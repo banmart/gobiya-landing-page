@@ -35,13 +35,24 @@ const insights = [
   }
 ];
 
-const InsightsSlider = () => {
+interface InsightsSliderProps {
+  filterCategory?: string;
+}
+
+const InsightsSlider: React.FC<InsightsSliderProps> = ({ filterCategory }) => {
   const trackRef = useRef<HTMLDivElement>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [maxIndex, setMaxIndex] = useState(0);
   const isDragging = useRef(false);
   const startX = useRef(0);
   const currentX = useRef(0);
+
+  const filteredInsights = filterCategory 
+    ? insights.filter(i => i.category === filterCategory) 
+    : insights;
+
+  // If filteredInsights is empty, fallback to all insights
+  const displayInsights = filteredInsights.length > 0 ? filteredInsights : insights;
 
   useEffect(() => {
     const calcMax = () => {
@@ -132,7 +143,7 @@ const InsightsSlider = () => {
           onPointerLeave={onPointerUp}
         >
           <div ref={trackRef} className="flex gap-6 sm:gap-8 w-max pr-5 sm:pr-8 lg:pr-12">
-            {insights.map((insight) => (
+            {displayInsights.map((insight) => (
               <div 
                 key={insight.id} 
                 className="insight-card relative w-[85vw] sm:w-[45vw] lg:w-[350px] xl:w-[400px] aspect-[4/5] overflow-hidden group cursor-pointer select-none"

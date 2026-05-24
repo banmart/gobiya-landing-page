@@ -3,7 +3,7 @@ import { Shader, Swirl, ChromaFlow, FlutedGlass, FilmGrain } from 'shaders/react
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { MotionPathPlugin } from 'gsap/MotionPathPlugin';
-import { Clock, ArrowRight } from 'lucide-react';
+import { Clock, ArrowRight, ShieldAlert, TrendingUp, Search, Network, PenTool, BarChart, Megaphone, Target, Briefcase } from 'lucide-react';
 import HorizontalScrollText from './HorizontalScrollText';
 import ParallaxMedia from './ParallaxMedia';
 import ServicesBento from './ServicesBento';
@@ -30,6 +30,17 @@ interface PageConfig {
   rotatingWords: string[];
   outcomeMessage: string;
   ctaText: string;
+  introScrollText?: string;
+  introHeading?: React.ReactNode;
+  introParagraph?: string;
+  introVideo1?: string;
+  introVideo2?: string;
+  bentoHeadline?: React.ReactNode;
+  bentoDescription?: string;
+  insightCategory?: string;
+  bentoCards?: any[];
+  showCalculator?: boolean;
+  calculatorProps?: any;
 }
 
 const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
@@ -186,16 +197,22 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
 
   // Map route path to specific page copy and outcome messages
   const getPageConfig = (currentPath: string): PageConfig => {
-    const normalPath = currentPath.toLowerCase().replace(/\/$/, ''); // normalize trailing slash
+    const normalPath = currentPath.toLowerCase().replace(/\/$/, '');
     
-    const defaultPageConfig = {
+    const defaultPageConfig: PageConfig = {
+      subtitle: 'Gobiya Services > Growth Solutions',
+      title: 'High-performance digital growth assets built for dominance.',
+      rotatingWords: ['recover traffic.', 'scale sales.', 'secure dominance.'],
+      outcomeMessage: 'Outcome-driven search & pipeline engineering',
+      ctaText: 'Get growth audit',
       introScrollText: "AI-powered SEO and content, delivering fast rankings and recovery. Through cutting-edge AI and data strategies, we help brands recover traffic and skyrocket visibility.",
       introHeading: <>Stop guessing with your growth. <br className="hidden sm:block" /><span className="sm:hidden"> </span>Start dominating with data.</>,
       introParagraph: "Our proprietary methodology combines machine learning insights with elite technical architecture, ensuring your brand captures the most valuable real estate available.",
       introVideo1: "/videos/space-girl.webm",
       introVideo2: "/videos/gobiyaRace.webm",
       bentoHeadline: <>Forensic analysis meets<br/>pipeline architecture.</>,
-      bentoDescription: "We do not provide reports. We architect proprietary growth assets that command sector respect and generate predictable B2B revenue."
+      bentoDescription: "We do not provide reports. We architect proprietary growth assets that command sector respect and generate predictable B2B revenue.",
+      showCalculator: false
     };
     
     switch (normalPath) {
@@ -209,8 +226,19 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
           introScrollText: 'Entity-level SEO and content architectures delivering search dominance. Through algorithmic data strategies, we help brands recover traffic and scale visibility.',
           introHeading: <>Stop guessing with your SEO. <br className="hidden sm:block" /><span className="sm:hidden"> </span>Start dominating with data.</>,
           introParagraph: 'Our proprietary methodology combines machine learning insights with elite technical SEO, ensuring your brand captures the most valuable search real estate available.',
+          introVideo1: "/videos/sc-hero-background-compressed.webm",
+          introVideo2: "/videos/ark------final-----01.webm",
           bentoHeadline: <>Forensic analysis meets<br/>algorithmic dominance.</>,
-          bentoDescription: 'We do not provide generic reports. We architect proprietary organic assets that command sector respect and generate predictable inbound revenue.'
+          bentoDescription: 'We do not provide generic reports. We architect proprietary organic assets that command sector respect and generate predictable inbound revenue.',
+          insightCategory: 'SEO',
+          bentoCards: [
+            { href: '/services/seo', colSpan: 2, icon: <Search size={40} className="text-[#F26522] mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'Market Vector SEO', description: 'Hyper-local authority domination and signal optimization to capture high-intent search volumes.' },
+            { href: '/services/geo-optimization', colSpan: 1, icon: <TrendingUp size={40} className="text-white mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'Algorithm Alignment', description: 'Data-driven signal processing to ensure your entities meet AI search intent.' },
+            { href: '/google-penalty-recovery', colSpan: 1, icon: <ShieldAlert size={40} className="text-white mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'Trust Rebuilding', description: 'Reverse algorithmic drops by rebuilding robust E-E-A-T signals.' },
+            { href: '/services/lead-generation', colSpan: 2, gradient: true, icon: <Network size={40} className="text-white mb-6 sm:mb-10 relative z-10" strokeWidth={1.5} />, title: 'Revenue Conversion', description: 'Turn recovered organic traffic directly into qualified inbound revenue pipeline.' }
+          ],
+          showCalculator: true,
+          calculatorProps: { title: "Calculate Your SEO Traffic Leak", description: "Input the monthly organic traffic you lost. See the pipeline revenue we can recover.", sliderLabel: "Organic Traffic Lost" }
         };
       case '/services/lead-generation':
         return { ...defaultPageConfig,
@@ -222,8 +250,19 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
           introScrollText: 'High-resolve B2B prospecting built for scale. We engineer automated outbound sales systems that consistently generate qualified pipeline and drive predictable revenue.',
           introHeading: <>Scale your contract value. <br className="hidden sm:block" /><span className="sm:hidden"> </span>Automate your outbound.</>,
           introParagraph: 'We design and launch sophisticated cold outreach protocols and sales acquisition architectures for mid-market and enterprise brands, eliminating the reliance on unpredictable referrals.',
+          introVideo1: "/videos/space-girl.webm",
+          introVideo2: "/videos/gobiyaRace.webm",
           bentoHeadline: <>Predictable pipeline meets<br/>automated scale.</>,
-          bentoDescription: 'Stop relying on referrals. We architect outbound growth engines that consistently land meetings with your ideal customer profiles and drive enterprise conversions.'
+          bentoDescription: 'Stop relying on referrals. We architect outbound growth engines that consistently land meetings with your ideal customer profiles and drive enterprise conversions.',
+          insightCategory: 'Strategy',
+          bentoCards: [
+            { href: '/services/lead-generation', colSpan: 2, icon: <Network size={40} className="text-[#F26522] mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'Outbound Architecture', description: 'Cold email protocols and multi-channel prospecting flows built to scale without burning domains.' },
+            { href: '/services/advertising', colSpan: 1, icon: <Target size={40} className="text-white mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'Intent Capture', description: 'Target decision-makers actively searching for enterprise solutions.' },
+            { href: '/services/seo', colSpan: 1, icon: <BarChart size={40} className="text-white mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'Conversion Metrics', description: 'End-to-end CRM integration and revenue attribution tracking.' },
+            { href: '/company/about', colSpan: 2, gradient: true, icon: <Briefcase size={40} className="text-white mb-6 sm:mb-10 relative z-10" strokeWidth={1.5} />, title: 'Enterprise Sales Engineering', description: 'We do not just generate leads. We engineer systems that book meetings with qualified enterprise buyers.' }
+          ],
+          showCalculator: true,
+          calculatorProps: { title: "Calculate Pipeline Value", description: "Input your target monthly qualified meetings to see potential pipeline value generated.", sliderLabel: "Target Meetings / Month", sliderMin: 10, sliderMax: 500, sliderStep: 5, conversionRate: 0.2, ltv: 25000, resultLabel: "Potential Pipeline Value Generated", disclaimer: "*Based on 20% close rate and $25k average contract value." }
         };
       case '/services/geo-optimization':
         return { ...defaultPageConfig,
@@ -235,8 +274,17 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
           introScrollText: 'Generative Engine Optimization positions your brand natively inside AI. We engineer your digital footprint so language models cite you as the ultimate authority.',
           introHeading: <>Be cited by AI models. <br className="hidden sm:block" /><span className="sm:hidden"> </span>Capture the next search era.</>,
           introParagraph: 'Traditional search is evolving. We optimize your brand entities so that systems like ChatGPT, Claude, and Google AI Overviews recommend your solutions directly to high-intent users.',
+          introVideo1: "/videos/ark------final-----01.webm",
+          introVideo2: "/videos/space-girl.webm",
           bentoHeadline: <>Entity optimization meets<br/>LLM alignment.</>,
-          bentoDescription: 'Secure your place in generative AI responses. We engineer brand signals that force AI models to recognize you as the definitive market leader.'
+          bentoDescription: 'Secure your place in generative AI responses. We engineer brand signals that force AI models to recognize you as the definitive market leader.',
+          insightCategory: 'Strategy',
+          bentoCards: [
+            { href: '/services/geo-optimization', colSpan: 2, icon: <TrendingUp size={40} className="text-[#F26522] mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'LLM Brand Surfacing', description: 'Optimize your digital footprint to be the primary recommended entity in ChatGPT and Claude responses.' },
+            { href: '/services/seo', colSpan: 1, icon: <Search size={40} className="text-white mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'AI Overviews', description: 'Capture top real estate in Google\'s generative AI search results.' },
+            { href: '/services/lead-generation', colSpan: 1, icon: <PenTool size={40} className="text-white mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'Semantic PR', description: 'Seed your brand messaging directly into the training data pipelines.' },
+            { href: '/company/insights', colSpan: 2, gradient: true, icon: <Network size={40} className="text-white mb-6 sm:mb-10 relative z-10" strokeWidth={1.5} />, title: 'Generative Search Dominance', description: 'The search paradigm has shifted. We ensure your business is not left behind by the AI transition.' }
+          ]
         };
       case '/services/web-design':
         return { ...defaultPageConfig,
@@ -248,8 +296,19 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
           introScrollText: 'Speed-optimized, custom-engineered React platforms built to convert. We replace slow templates with lightning-fast landing pages and robust web applications.',
           introHeading: <>Outperform the competition. <br className="hidden sm:block" /><span className="sm:hidden"> </span>Build for speed.</>,
           introParagraph: 'Your website is your ultimate conversion asset. We leverage modern JavaScript frameworks like React and Next.js to deliver instant load times, flawless technical SEO, and premium user experiences.',
+          introVideo1: "/videos/smilecenter-screencast.webm",
+          introVideo2: "/videos/caveman.webm",
           bentoHeadline: <>Custom engineering meets<br/>conversion architecture.</>,
-          bentoDescription: 'No templates. No bloated code. We build bespoke, high-performance web applications that convert visitors into revenue and pass Core Web Vitals with flying colors.'
+          bentoDescription: 'No templates. No bloated code. We build bespoke, high-performance web applications that convert visitors into revenue and pass Core Web Vitals with flying colors.',
+          insightCategory: 'Technical',
+          bentoCards: [
+            { href: '/services/web-design', colSpan: 2, icon: <PenTool size={40} className="text-[#F26522] mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'React UI/UX Engineering', description: 'Next.js architectures delivering seamless interactions and sub-second page loads.' },
+            { href: '/services/seo', colSpan: 1, icon: <BarChart size={40} className="text-white mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'Core Web Vitals', description: 'Flawless performance metrics ensuring Google ranking boosts.' },
+            { href: '/services/advertising', colSpan: 1, icon: <Target size={40} className="text-white mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'Landing Page CRO', description: 'High-converting funnels explicitly designed to lower acquisition costs.' },
+            { href: '/company/success-stories', colSpan: 2, gradient: true, icon: <Briefcase size={40} className="text-white mb-6 sm:mb-10 relative z-10" strokeWidth={1.5} />, title: 'Conversion Architecture', description: 'Your site should be your best salesperson. We engineer platforms that maximize revenue yield from every visitor.' }
+          ],
+          showCalculator: true,
+          calculatorProps: { title: "Calculate CRO Revenue Uplift", description: "Input your monthly traffic to see the revenue impact of improving your conversion rate via high-performance web design.", sliderLabel: "Monthly Site Traffic", sliderMin: 5000, sliderMax: 200000, sliderStep: 5000, conversionRate: 0.015, ltv: 200, resultLabel: "Added Monthly Revenue (1.5% CRO Uplift)", disclaimer: "*Based on a 1.5% conversion rate increase and $200 Average Order Value." }
         };
       case '/services/advertising':
         return { ...defaultPageConfig,
@@ -261,8 +320,19 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
           introScrollText: 'Data-driven paid media strategies to maximize your return on ad spend. We engineer highly targeted campaigns across Google, Meta, and LinkedIn to scale acquisitions.',
           introHeading: <>Maximize your ad spend. <br className="hidden sm:block" /><span className="sm:hidden"> </span>Scale your acquisitions.</>,
           introParagraph: 'Stop burning cash on generic ad campaigns. We build precision-targeted paid pipelines that capture high-intent buyers, aggressively lower customer acquisition costs, and maximize ROAS.',
+          introVideo1: "/videos/gobiyaRace.webm",
+          introVideo2: "/videos/sc-hero-background-compressed.webm",
           bentoHeadline: <>Performance media meets<br/>funnel optimization.</>,
-          bentoDescription: 'We manage multi-channel ad pipelines that turn clicks into qualified leads. Our data-driven approach ensures every dollar spent drives measurable bottom-line growth.'
+          bentoDescription: 'We manage multi-channel ad pipelines that turn clicks into qualified leads. Our data-driven approach ensures every dollar spent drives measurable bottom-line growth.',
+          insightCategory: 'Analytics',
+          bentoCards: [
+            { href: '/services/advertising', colSpan: 2, icon: <Megaphone size={40} className="text-[#F26522] mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'Paid Search Domination', description: 'Google Ads strategies maximizing intent capture and aggressively lowering CPA.' },
+            { href: '/services/lead-generation', colSpan: 1, icon: <Target size={40} className="text-white mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'LinkedIn B2B', description: 'Precision targeting for enterprise decision-makers.' },
+            { href: '/services/web-design', colSpan: 1, icon: <BarChart size={40} className="text-white mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'Funnel Optimization', description: 'A/B testing and attribution modeling for max yield.' },
+            { href: '/company/approach', colSpan: 2, gradient: true, icon: <TrendingUp size={40} className="text-white mb-6 sm:mb-10 relative z-10" strokeWidth={1.5} />, title: 'Predictable ROAS Pipeline', description: 'We track every dollar spent to pipeline generated, ensuring your ad budget drives undeniable business growth.' }
+          ],
+          showCalculator: true,
+          calculatorProps: { title: "Calculate Paid Ad Returns", description: "Input your planned monthly ad spend to see projected pipeline returns.", sliderLabel: "Monthly Ad Spend", sliderMin: 5000, sliderMax: 100000, sliderStep: 5000, conversionRate: 4.5, ltv: 1, resultLabel: "Projected Pipeline (4.5x ROAS)", disclaimer: "*Based on a target 4.5x Return on Ad Spend." }
         };
       case '/google-penalty-recovery':
         return { ...defaultPageConfig,
@@ -274,8 +344,19 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
           introScrollText: 'Immediate intervention for devastating traffic drops. We perform forensic audits to identify algorithmic suppression, remove manual actions, and rebuild your search trust.',
           introHeading: <>Reverse your traffic drops. <br className="hidden sm:block" /><span className="sm:hidden"> </span>Recover your revenue.</>,
           introParagraph: "Whether you were hit by a Core Update, the Helpful Content Update (HCU), or a manual spam action, our forensic recovery protocols diagnose the exact failure points and rebuild your site's algorithmic trust.",
+          introVideo1: "/videos/caveman.webm",
+          introVideo2: "/videos/ark------final-----01.webm",
           bentoHeadline: <>Forensic diagnosis meets<br/>rapid recovery.</>,
-          bentoDescription: 'We deploy emergency triage protocols for suppressed domains. From pruning toxic content to rebuilding E-E-A-T signals, we secure your path back to search dominance.'
+          bentoDescription: 'We deploy emergency triage protocols for suppressed domains. From pruning toxic content to rebuilding E-E-A-T signals, we secure your path back to search dominance.',
+          insightCategory: 'SEO',
+          bentoCards: [
+            { href: '/google-penalty-recovery', colSpan: 2, icon: <ShieldAlert size={40} className="text-[#F26522] mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'Algorithmic Diagnostics', description: 'Deep-dive audits into Core Updates and HCU suppressions to identify the exact toxic vectors.' },
+            { href: '/services/seo', colSpan: 1, icon: <Search size={40} className="text-white mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'Manual Actions', description: 'Expert removal of spam penalties and toxic links.' },
+            { href: '/services/web-design', colSpan: 1, icon: <PenTool size={40} className="text-white mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'Content Pruning', description: 'Architectural restructuring to purge unhelpful content.' },
+            { href: '/company/success-stories', colSpan: 2, gradient: true, icon: <TrendingUp size={40} className="text-white mb-6 sm:mb-10 relative z-10" strokeWidth={1.5} />, title: 'Traffic Resurrection', description: 'We have recovered millions in lost pipeline revenue for brands devastated by Google updates.' }
+          ],
+          showCalculator: true,
+          calculatorProps: { title: "Calculate Penalty Revenue Leak", description: "Input the monthly traffic your site lost during the update. See the pipeline revenue leak.", sliderLabel: "Monthly Traffic Lost", sliderMin: 1000, sliderMax: 200000, sliderStep: 1000, conversionRate: 0.02, ltv: 500, resultLabel: "Monthly Revenue Leak", disclaimer: "*Based on 2% conversion rate and $500 LTV." }
         };
       case '/company/about':
         return { ...defaultPageConfig,
@@ -283,7 +364,8 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
           title: 'We engineer algorithmic dominance for elite brands.',
           rotatingWords: ['recover traffic.', 'build pipelines.', 'scale revenue.'],
           outcomeMessage: 'Elite engineering team for search & pipeline dominance',
-          ctaText: 'Meet the team'
+          ctaText: 'Meet the team',
+          insightCategory: 'Strategy'
         };
       case '/company/success-stories':
         return { ...defaultPageConfig,
@@ -291,7 +373,8 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
           title: 'Proven results. Search recovery and revenue scaling.',
           rotatingWords: ['case studies.', 'growth metrics.', 'revenue wins.'],
           outcomeMessage: 'Data-backed search recovery & pipeline success metrics',
-          ctaText: 'View case studies'
+          ctaText: 'View case studies',
+          insightCategory: 'Analytics'
         };
       case '/company/approach':
         return { ...defaultPageConfig,
@@ -299,7 +382,8 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
           title: 'Data-driven methodologies for search engine dominance.',
           rotatingWords: ['forensic analysis.', 'entity optimization.', 'algorithmic alignment.'],
           outcomeMessage: 'Proprietary AI strategies for algorithmic search recovery',
-          ctaText: 'Discover our methods'
+          ctaText: 'Discover our methods',
+          insightCategory: 'Technical'
         };
       case '/company/insights':
         return { ...defaultPageConfig,
@@ -335,7 +419,7 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
         };
     }
   };
-
+    
   const config = getPageConfig(path);
 
   return (
@@ -522,17 +606,17 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
 
       {/* SECTION: SERVICES BENTO */}
       <div data-logo-dark className="relative">
-        <ServicesBento headline={config.bentoHeadline} description={config.bentoDescription} />
+        <ServicesBento headline={config.bentoHeadline} description={config.bentoDescription} cards={config.bentoCards} />
       </div>
 
       {/* SECTION: LATEST INSIGHTS */}
       <div data-logo-dark className="relative">
-        <InsightsSlider />
+        <InsightsSlider filterCategory={config.insightCategory} />
       </div>
 
       {/* SECTION: CASE STUDIES PINNED */}
       <div className="relative">
-        <CaseStudiesPinned />
+        
       </div>
 
       {/* SECTION: SATISFIED CLIENTS */}
@@ -542,7 +626,7 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
 
       {/* SECTION: ROI CALCULATOR */}
       <div data-logo-dark className="relative">
-        <RoiCalculator />
+        {config.showCalculator !== false && <RoiCalculator {...(config.calculatorProps || {})} />}
       </div>
 
       {/* CONTACT SECTION (Only rendered on /contact route) */}
