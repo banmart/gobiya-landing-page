@@ -184,10 +184,12 @@ const AxionLanding = () => {
                   isFixed={true}
                   colors={['#111111', '#F26522']}
                   items={[
-                    { label: 'Services', link: '#' },
-                    { label: 'Case Studies', link: '#' },
-                    { label: 'Insights', link: '#' },
-                    { label: 'Contact', link: '#' }
+                    { label: 'SEO Traffic Recovery', link: '/google-penalty-recovery' },
+                    { label: 'B2B Lead Pipelines', link: '/services/lead-generation' },
+                    { label: 'Generative Search (GEO)', link: '/services/geo-optimization' },
+                    { label: 'Custom Web Apps', link: '/services/web-design' },
+                    { label: 'Paid Media Management', link: '/services/advertising' },
+                    { label: 'Search Engine Optimization', link: '/services/seo' }
                   ]}
                   socialItems={[
                     { label: 'Twitter', link: '#' },
@@ -407,11 +409,11 @@ const AxionLanding = () => {
           <div className="flex flex-col">
             <h4 className="text-[12px] font-semibold uppercase tracking-wider mb-6">Services</h4>
             <ul className="flex flex-col gap-4 text-[14px] text-gray-400">
-              <li><a href="#" className="hover:text-white transition-colors">AI Content Strategies</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Traffic Recovery</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Technical SEO</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Algorithmic Audits</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Programmatic SEO</a></li>
+              <li><a href="/services/geo-optimization" className="hover:text-white transition-colors">AI Content Strategies</a></li>
+              <li><a href="/google-penalty-recovery" className="hover:text-white transition-colors">Traffic Recovery</a></li>
+              <li><a href="/services/seo" className="hover:text-white transition-colors">Technical SEO</a></li>
+              <li><a href="/services/seo" className="hover:text-white transition-colors">Algorithmic Audits</a></li>
+              <li><a href="/services/lead-generation" className="hover:text-white transition-colors">Programmatic SEO</a></li>
             </ul>
           </div>
 

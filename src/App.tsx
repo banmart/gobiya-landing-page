@@ -51,13 +51,18 @@ function App({ url }: AppProps) {
   // Normalize path
   const normalizedPath = currentPath.toLowerCase().replace(/\/$/, '') || '/';
 
-  // Check if it's the home page
-  if (normalizedPath === '/') {
-    return <AxionLanding />;
-  }
-
-  // Render the service subpage for other paths
-  return <ServiceSubpage path={normalizedPath} />;
+  return (
+    <>
+      {/* Global Noise Overlay */}
+      <div className="noise-overlay" />
+      
+      {normalizedPath === '/' ? (
+        <AxionLanding />
+      ) : (
+        <ServiceSubpage path={normalizedPath} />
+      )}
+    </>
+  );
 }
 
 export default App;

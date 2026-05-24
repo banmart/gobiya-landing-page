@@ -161,10 +161,12 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
                   isFixed={true}
                   colors={['#111111', '#F26522']}
                   items={[
-                    { label: 'Services', link: '#' },
-                    { label: 'Case Studies', link: '#' },
-                    { label: 'Insights', link: '#' },
-                    { label: 'Contact', link: '#' }
+                    { label: 'SEO Traffic Recovery', link: '/google-penalty-recovery' },
+                    { label: 'B2B Lead Pipelines', link: '/services/lead-generation' },
+                    { label: 'Generative Search (GEO)', link: '/services/geo-optimization' },
+                    { label: 'Custom Web Apps', link: '/services/web-design' },
+                    { label: 'Paid Media Management', link: '/services/advertising' },
+                    { label: 'Search Engine Optimization', link: '/services/seo' }
                   ]}
                   socialItems={[
                     { label: 'Twitter', link: '#' },
