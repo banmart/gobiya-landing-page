@@ -284,9 +284,6 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
 
             {/* RIGHT - Custom Outcome Message */}
             <div className="flex items-center gap-4 sm:gap-6 ml-auto">
-              <span className="text-[13px] text-gray-900 hidden lg:block font-medium">
-                {config.outcomeMessage}
-              </span>
               <div className="hidden md:flex items-center gap-2">
                 <Clock className="w-3.5 h-3.5 text-gray-900" />
                 <span className="text-[13px] text-gray-900 font-medium">{time} in Los Angeles</span>
@@ -346,7 +343,10 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
               rotationInterval={3000}
             />
           </h1>
-          <div className="mt-6 flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-5">
+          <p className="mt-6 text-[15px] sm:text-[17px] text-gray-700 max-w-[800px] leading-relaxed">
+            {config.outcomeMessage}
+          </p>
+          <div className="mt-8 flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-5">
             <button className="group flex items-center bg-[#F26522] hover:bg-[#e05a1a] text-white pl-5 sm:pl-6 pr-2 py-2 transition-colors duration-300">
               <div className="flex flex-col overflow-hidden h-[20px] justify-start items-start relative mr-3">
                 <span className="text-[13px] sm:text-[14px] font-medium leading-[20px] transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-translate-y-full">
