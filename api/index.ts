@@ -3,7 +3,7 @@ import fs from 'fs';
 import path from 'path';
 
 // Define render function type from server bundle
-type RenderFn = () => { html: string };
+type RenderFn = (url: string) => { html: string };
 
 export default async function handler(req: IncomingMessage, res: any) {
   try {
@@ -32,7 +32,7 @@ export default async function handler(req: IncomingMessage, res: any) {
     let template = fs.readFileSync(templatePath, 'utf-8');
 
     // Run React SSR rendering
-    const { html } = render();
+    const { html } = render(pathname);
 
     // Replace placeholders with dynamic SSR output and dynamic canonical url
     template = template.replace('<!--ssr-outlet-->', html);
