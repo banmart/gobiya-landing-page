@@ -3,17 +3,26 @@ import { motion } from 'framer-motion';
 import { ShieldAlert, TrendingUp, Search, Network } from 'lucide-react';
 import BorderGlow from './BorderGlow';
 
-const ServicesBento = () => {
+interface ServicesBentoProps {
+  headline?: React.ReactNode;
+  description?: string;
+}
+
+const ServicesBento: React.FC<ServicesBentoProps> = ({ headline, description }) => {
   return (
     <section className="w-full bg-[#111] py-24 sm:py-32 px-5 sm:px-8 lg:px-12 relative overflow-hidden">
       <div className="max-w-[1440px] mx-auto relative z-10">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
           <div className="max-w-2xl">
             <h2 className="text-[clamp(2rem,4vw,3rem)] font-display font-medium text-white leading-[1.1] mb-6">
-              Forensic analysis meets<br/>pipeline architecture.
+              {headline || (
+                <>
+                  Forensic analysis meets<br/>pipeline architecture.
+                </>
+              )}
             </h2>
             <p className="text-gray-400 text-lg leading-relaxed font-body">
-              We do not provide reports. We architect proprietary growth assets that command sector respect and generate predictable B2B revenue.
+              {description || 'We do not provide reports. We architect proprietary growth assets that command sector respect and generate predictable B2B revenue.'}
             </p>
           </div>
           <p className="text-[14px] text-[#F26522] uppercase tracking-widest font-bold font-body">
