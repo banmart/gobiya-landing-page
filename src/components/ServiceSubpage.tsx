@@ -8,6 +8,7 @@ import SplitTextReveal from './SplitTextReveal';
 import ParallaxMedia from './ParallaxMedia';
 import ServicesBento from './ServicesBento';
 import InsightsSlider from './InsightsSlider';
+import InsightsGrid from './InsightsGrid';
 import CaseStudiesPinned from './CaseStudiesPinned';
 import SatisfiedClients from './SatisfiedClients';
 import RoiCalculator from './RoiCalculator';
@@ -540,7 +541,7 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
                 <Clock className="w-3.5 h-3.5 text-gray-900" />
                 <span className="text-[13px] text-gray-900 font-medium">{time} in Los Angeles</span>
               </div>
-              <button className="hidden sm:flex group items-center bg-gray-900 text-white pl-5 pr-2 py-2">
+              <a href="/contact" className="hidden sm:flex group items-center bg-gray-900 text-white pl-5 pr-2 py-2">
                 <div className="flex flex-col overflow-hidden h-[20px] justify-start items-start relative mr-3">
                   <span className="text-[13px] font-medium leading-[20px] transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-translate-y-full">Book a strategy call</span>
                   <span className="text-[13px] font-medium leading-[20px] absolute top-full transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-translate-y-full">Book a strategy call</span>
@@ -548,7 +549,7 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
                 <div className="w-6 h-6 bg-white flex items-center justify-center">
                   <ArrowRight className="w-3.5 h-3.5 text-gray-900 transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-rotate-45" />
                 </div>
-              </button>
+              </a>
               
               <div className="flex items-center justify-center px-2">
                 <StaggeredMenu 
@@ -599,7 +600,7 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
             {config.outcomeMessage}
           </p>
           <div className="mt-8 flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-5">
-            <button className="group flex items-center bg-[#F26522] hover:bg-[#e05a1a] text-white pl-5 sm:pl-6 pr-2 py-2 transition-colors duration-300">
+            <a href="/contact" className="group flex items-center bg-[#F26522] hover:bg-[#e05a1a] text-white pl-5 sm:pl-6 pr-2 py-2 transition-colors duration-300">
               <div className="flex flex-col overflow-hidden h-[20px] justify-start items-start relative mr-3">
                 <span className="text-[13px] sm:text-[14px] font-medium leading-[20px] transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-translate-y-full">
                   {config.ctaText}
@@ -611,7 +612,7 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
               <div className="w-7 h-7 sm:w-8 sm:h-8 bg-white flex items-center justify-center">
                 <ArrowRight className="w-4 h-4 text-[#F26522] transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-rotate-45" />
               </div>
-            </button>
+            </a>
             <div className="flex items-center gap-3 bg-white shadow-[0_2px_8px_rgba(0,0,0,0.08)] hover:shadow-[0_4px_16px_rgba(0,0,0,0.12)] transition-shadow duration-300 px-3 py-2 cursor-pointer">
               <svg className="w-5 h-5 sm:w-6 sm:h-6 text-[#E8704E] fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
                 <path d="m19.6 66.5 19.7-11 .3-1-.3-.5h-1l-3.3-.2-11.2-.3L14 53l-9.5-.5-2.4-.5L0 49l.2-1.5 2-1.3 2.9.2 6.3.5 9.5.6 6.9.4L38 49.1h1.6l.2-.7-.5-.4-.4-.4L29 41l-10.6-7-5.6-4.1-3-2-1.5-2-.6-4.2 2.7-3 3.7.3.9.2 3.7 2.9 8 6.1L37 36l1.5 1.2.6-.4.1-.3-.7-1.1L33 25l-6-10.4-2.7-4.3-.7-2.6c-.3-1-.4-2-.4-3l3-4.2L28 0l4.2.6L33.8 2l2.6 6 4.1 9.3L47 29.9l2 3.8 1 3.4.3 1h.7v-.5l.5-7.2 1-8.7 1-11.2.3-3.2 1.6-3.8 3-2L61 2.6l2 2.9-.3 1.8-1.1 7.7L59 27.1l-1.5 8.2h.9l1-1.1 4.1-5.4 6.9-8.6 3-3.5L77 13l2.3-1.8h4.3l3.1 4.7-1.4 4.9-4.4 5.6-3.7 4.7-5.3 7.1-3.2 5.7.3.4h.7l12-2.6 6.4-1.1 7.6-1.3 3.5 1.6.4 1.6-1.4 3.4-8.2 2-9.6 2-14.3 3.3-.2.1.2.3 6.4.6 2.8.2h6.8l12.6 1 3.3 2 1.9 2.7-.3 2-5.1 2.6-6.8-1.6-16-3.8-5.4-1.3h-.8v.4l4.6 4.5 8.3 7.5L89 80.1l.5 2.4-1.3 2-1.4-.2-9.2-7-3.6-3-8-6.8h-.5v.7l1.8 2.7 9.8 14.7.5 4.5-.7 1.4-2.6 1-2.7-.6-5.8-8-6-9-4.7-8.2-.5.4-2.9 30.2-1.3 1.5-3 1.2-2.5-2-1.4-3 1.4-6.2 1.6-8 1.3-6.4 1.2-7.9.7-2.6v-.2H49L43 72l-9 12.3-7.2 7.6-1.7.7-3-1.5.3-2.8L24 86l10-12.8 6-7.9 4-4.6-.1-.5h-.3L17.2 77.4l-4.7.6-2-2 .2-3 1-1 8-5.5Z"/>
@@ -625,90 +626,110 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
 
       
       {/* SECTION: SCROLL REVEAL INTRO */}
-      <section className="w-full relative" data-logo-dark>
-        <SplitTextReveal text={config.introScrollText} />
-      </section>
+      {path !== '/company/insights' && path !== '/contact' && (
+        <section className="w-full relative" data-logo-dark>
+          <SplitTextReveal text={config.introScrollText} />
+        </section>
+      )}
 
       {/* SECTION: INTRO CONTENT */}
-      <section className="bg-white pt-16 sm:pt-20 lg:pt-32 pb-12 sm:pb-16 lg:pb-24 overflow-hidden w-full max-w-[1440px] mx-auto">
-        <div className="px-5 sm:px-8 lg:px-12 flex items-center gap-3 mb-6 sm:mb-8">
-          <div className="w-6 h-6 sm:w-7 sm:h-7 bg-black text-white text-[11px] sm:text-[12px] font-semibold flex items-center justify-center">2</div>
-          <div className="text-[12px] sm:text-[13px] font-medium text-black border border-black px-3 sm:px-4 py-1 sm:py-1.5">Context & Methodology</div>
-        </div>
-        
-        <div className="px-5 sm:px-8 lg:px-12">
-          <h2 className="text-[clamp(1.5rem,4vw,3.2rem)] font-medium leading-[1.12] tracking-[-0.02em] text-gray-900 mb-12 sm:mb-16 lg:mb-28 max-w-4xl">
-            {config.introHeading}
-          </h2>
-
-          <div className="block lg:hidden">
-            <p className="text-[15px] sm:text-[17px] leading-[1.6] font-medium text-gray-900 mb-6">
-              {config.introParagraph}
-            </p>
-            <button className="group flex items-center bg-[#F26522] hover:bg-[#e05a1a] text-white pl-5 pr-2 py-2 transition-colors duration-300 mb-8 inline-flex">
-              <div className="flex flex-col overflow-hidden h-[20px] justify-start items-start relative mr-3">
-                <span className="text-[13px] font-medium leading-[20px] transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-translate-y-full">{config.ctaText}</span>
-                <span className="text-[13px] font-medium leading-[20px] absolute top-full transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-translate-y-full">{config.ctaText}</span>
-              </div>
-              <div className="w-7 h-7 bg-white flex items-center justify-center">
-                <ArrowRight className="w-4 h-4 text-[#F26522] transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-rotate-45" />
-              </div>
-            </button>
-            <div className="flex flex-col sm:flex-row gap-4 sm:gap-5 w-full">
-              <ParallaxMedia type="video" src={config.introVideo1} autoPlay muted loop playsInline className="w-full sm:w-[45%] aspect-[438/346]" />
-              <ParallaxMedia type="video" src={config.introVideo2} autoPlay muted loop playsInline className="w-full sm:w-[55%] aspect-[900/600]" />
-            </div>
+      {path !== '/company/insights' && path !== '/contact' && (
+        <section className="bg-white pt-16 sm:pt-20 lg:pt-32 pb-12 sm:pb-16 lg:pb-24 overflow-hidden w-full max-w-[1440px] mx-auto">
+          <div className="px-5 sm:px-8 lg:px-12 flex items-center gap-3 mb-6 sm:mb-8">
+            <div className="w-6 h-6 sm:w-7 sm:h-7 bg-black text-white text-[11px] sm:text-[12px] font-semibold flex items-center justify-center">2</div>
+            <div className="text-[12px] sm:text-[13px] font-medium text-black border border-black px-3 sm:px-4 py-1 sm:py-1.5">Context & Methodology</div>
           </div>
+          
+          <div className="px-5 sm:px-8 lg:px-12">
+            <h2 className="text-[clamp(1.5rem,4vw,3.2rem)] font-medium leading-[1.12] tracking-[-0.02em] text-gray-900 mb-12 sm:mb-16 lg:mb-28 max-w-4xl">
+              {config.introHeading}
+            </h2>
 
-          <div className="hidden lg:grid grid-cols-[26%_1fr_48%] items-end gap-6 xl:gap-8">
-            <div className="self-end">
-              <ParallaxMedia type="video" src={config.introVideo1} autoPlay muted loop playsInline className="w-full aspect-[438/346]" />
-            </div>
-            <div className="self-start flex flex-col items-start justify-start pt-2">
-              <p className="text-[16px] xl:text-[18px] leading-[1.65] font-medium text-gray-900 mb-8 whitespace-nowrap">
+            <div className="block lg:hidden">
+              <p className="text-[15px] sm:text-[17px] leading-[1.6] font-medium text-gray-900 mb-6">
                 {config.introParagraph}
               </p>
-              <button className="group flex items-center bg-[#F26522] hover:bg-[#e05a1a] text-white pl-6 pr-2 py-2 transition-colors duration-300">
+              <a href="/contact" className="group flex items-center bg-[#F26522] hover:bg-[#e05a1a] text-white pl-5 pr-2 py-2 transition-colors duration-300 mb-8 inline-flex">
                 <div className="flex flex-col overflow-hidden h-[20px] justify-start items-start relative mr-3">
-                  <span className="text-[14px] font-medium leading-[20px] transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-translate-y-full">{config.ctaText}</span>
-                  <span className="text-[14px] font-medium leading-[20px] absolute top-full transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-translate-y-full">{config.ctaText}</span>
+                  <span className="text-[13px] font-medium leading-[20px] transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-translate-y-full">{config.ctaText}</span>
+                  <span className="text-[13px] font-medium leading-[20px] absolute top-full transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-translate-y-full">{config.ctaText}</span>
                 </div>
-                <div className="w-8 h-8 bg-white flex items-center justify-center">
+                <div className="w-7 h-7 bg-white flex items-center justify-center">
                   <ArrowRight className="w-4 h-4 text-[#F26522] transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-rotate-45" />
                 </div>
-              </button>
+              </a>
+              <div className="flex flex-col sm:flex-row gap-4 sm:gap-5 w-full">
+                <ParallaxMedia type="video" src={config.introVideo1} autoPlay muted loop playsInline className="w-full sm:w-[45%] aspect-[438/346]" />
+                <ParallaxMedia type="video" src={config.introVideo2} autoPlay muted loop playsInline className="w-full sm:w-[55%] aspect-[900/600]" />
+              </div>
             </div>
-            <div className="self-end">
-              <ParallaxMedia type="video" src={config.introVideo2} autoPlay muted loop playsInline className="w-full aspect-[3/2]" />
+
+            <div className="hidden lg:grid grid-cols-[26%_1fr_48%] items-end gap-6 xl:gap-8">
+              <div className="self-end">
+                <ParallaxMedia type="video" src={config.introVideo1} autoPlay muted loop playsInline className="w-full aspect-[438/346]" />
+              </div>
+              <div className="self-start flex flex-col items-start justify-start pt-2">
+                <p className="text-[16px] xl:text-[18px] leading-[1.65] font-medium text-gray-900 mb-8 whitespace-nowrap">
+                  {config.introParagraph}
+                </p>
+                <a href="/contact" className="group flex items-center bg-[#F26522] hover:bg-[#e05a1a] text-white pl-6 pr-2 py-2 transition-colors duration-300">
+                  <div className="flex flex-col overflow-hidden h-[20px] justify-start items-start relative mr-3">
+                    <span className="text-[14px] font-medium leading-[20px] transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-translate-y-full">{config.ctaText}</span>
+                    <span className="text-[14px] font-medium leading-[20px] absolute top-full transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-translate-y-full">{config.ctaText}</span>
+                  </div>
+                  <div className="w-8 h-8 bg-white flex items-center justify-center">
+                    <ArrowRight className="w-4 h-4 text-[#F26522] transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-rotate-45" />
+                  </div>
+                </a>
+              </div>
+              <div className="self-end">
+                <ParallaxMedia type="video" src={config.introVideo2} autoPlay muted loop playsInline className="w-full aspect-[3/2]" />
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* SECTION: SERVICES BENTO */}
-      <div data-logo-dark className="relative">
-        <ServicesBento headline={config.bentoHeadline} description={config.bentoDescription} cards={config.bentoCards} />
-      </div>
+      {path !== '/company/insights' && path !== '/contact' && (
+        <div data-logo-dark className="relative">
+          <ServicesBento headline={config.bentoHeadline} description={config.bentoDescription} cards={config.bentoCards} />
+        </div>
+      )}
 
       {/* SECTION: LATEST INSIGHTS */}
-      <div data-logo-dark className="relative">
-        <InsightsSlider filterCategory={config.insightCategory} />
-      </div>
+      {path !== '/contact' && (
+        path !== '/company/insights' ? (
+          <div data-logo-dark className="relative">
+            <InsightsSlider filterCategory={config.insightCategory} />
+          </div>
+        ) : (
+          <div data-logo-dark className="relative">
+            <InsightsGrid />
+          </div>
+        )
+      )}
 
       {/* SECTION: CASE STUDIES PINNED */}
-      <div className="relative">
-        
-      </div>
+      {path !== '/company/insights' && path !== '/contact' && (
+        <div className="relative">
+          
+        </div>
+      )}
 
       {/* SECTION: SATISFIED CLIENTS */}
-      <div className="relative">
-        <SatisfiedClients />
-      </div>
+      {path !== '/company/insights' && path !== '/contact' && (
+        <div className="relative">
+          <SatisfiedClients />
+        </div>
+      )}
 
       {/* SECTION: ROI CALCULATOR */}
-      <div data-logo-dark className="relative">
-        {config.showCalculator !== false && <RoiCalculator {...(config.calculatorProps || {})} />}
-      </div>
+      {path !== '/company/insights' && path !== '/contact' && (
+        <div data-logo-dark className="relative">
+          {config.showCalculator !== false && <RoiCalculator {...(config.calculatorProps || {})} />}
+        </div>
+      )}
 
       {/* CONTACT SECTION (Only rendered on /contact route) */}
       {path === '/contact' && (

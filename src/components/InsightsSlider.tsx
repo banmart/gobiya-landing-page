@@ -1,39 +1,16 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { gsap } from 'gsap';
 import { ArrowRight, ArrowLeft } from 'lucide-react';
+import { supabase } from '../lib/supabase';
 
-const insights = [
-  {
-    id: 1,
-    title: 'The Future of AI in SEO for 2024',
-    category: 'SEO',
-    image: '/images/article-ai-seo-2024.webp',
-  },
-  {
-    id: 2,
-    title: 'Content Automation: Scaling Quality',
-    category: 'Content',
-    image: '/images/article-content-automation.webp',
-  },
-  {
-    id: 3,
-    title: 'Mastering Core Web Vitals',
-    category: 'Technical',
-    image: '/images/article-core-web-vitals.webp',
-  },
-  {
-    id: 4,
-    title: 'Predictive Analytics for Marketing',
-    category: 'Analytics',
-    image: '/images/article-predictive-analytics.webp',
-  },
-  {
-    id: 5,
-    title: 'AI Ethics in Digital Marketing',
-    category: 'Strategy',
-    image: '/images/article-ai-ethics.webp',
-  }
-];
+// Define the interface for an Insight item
+interface Insight {
+  id: number;
+  title: string;
+  category: string;
+  image_path: string;
+  image_url?: string; // We'll populate this from the bucket
+}
 
 interface InsightsSliderProps {
   filterCategory?: string;
@@ -43,9 +20,59 @@ const InsightsSlider: React.FC<InsightsSliderProps> = ({ filterCategory }) => {
   const trackRef = useRef<HTMLDivElement>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [maxIndex, setMaxIndex] = useState(0);
+  const [insights, setInsights] = useState<Insight[]>([]);
+  const [loading, setLoading] = useState(true);
+  
   const isDragging = useRef(false);
   const startX = useRef(0);
   const currentX = useRef(0);
+
+  // Fetch data from Supabase
+  useEffect(() => {
+    const fetchInsights = async () => {
+      try {
+        setLoading(true);
+        // Default to a fallback empty array if supabase throws or returns null
+        const { data, error } = await supabase
+          .from('insights')
+          .select('*')
+          .order('id', { ascending: true });
+
+        if (error) {
+          console.error("Error fetching insights:", error);
+          setInsights([]);
+          return;
+        }
+
+        if (data) {
+          // Process the image URLs from the bucket
+          const processedInsights = data.map((item: any) => {
+            let finalUrl = '';
+            if (item.image_path) {
+              const { data: urlData } = supabase.storage
+                .from('insights-images')
+                .getPublicUrl(item.image_path);
+              finalUrl = urlData.publicUrl;
+            } else if (item.image_url) {
+              finalUrl = item.image_url;
+            }
+            
+            return {
+              ...item,
+              image_url: finalUrl
+            };
+          });
+          setInsights(processedInsights);
+        }
+      } catch (err) {
+        console.error("Failed to fetch insights:", err);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchInsights();
+  }, []);
 
   const filteredInsights = filterCategory 
     ? insights.filter(i => i.category === filterCategory) 
@@ -56,7 +83,7 @@ const InsightsSlider: React.FC<InsightsSliderProps> = ({ filterCategory }) => {
 
   useEffect(() => {
     const calcMax = () => {
-      if (!trackRef.current) return;
+      if (!trackRef.current || loading || displayInsights.length === 0) return;
       const track = trackRef.current;
       const cards = track.children;
       if (cards.length === 0) return;
@@ -66,10 +93,12 @@ const InsightsSlider: React.FC<InsightsSliderProps> = ({ filterCategory }) => {
       const visibleCards = Math.floor(track.parentElement!.offsetWidth / cardWidth);
       setMaxIndex(Math.max(0, cards.length - visibleCards));
     };
-    calcMax();
+    
+    // Give DOM a tick to render before calculating
+    setTimeout(calcMax, 50);
     window.addEventListener('resize', calcMax);
     return () => window.removeEventListener('resize', calcMax);
-  }, []);
+  }, [loading, displayInsights.length]);
 
   const slideTo = (index: number) => {
     if (!trackRef.current) return;
@@ -107,6 +136,23 @@ const InsightsSlider: React.FC<InsightsSliderProps> = ({ filterCategory }) => {
     }
   };
 
+  // Render Skeletons during loading
+  const renderSkeletons = () => {
+    return Array(4).fill(0).map((_, idx) => (
+      <div 
+        key={`skeleton-${idx}`}
+        className="insight-card relative w-[85vw] sm:w-[45vw] lg:w-[350px] xl:w-[400px] aspect-[4/5] overflow-hidden bg-gray-800/50 animate-pulse rounded-sm"
+      >
+        <div className="absolute inset-0 p-6 sm:p-8 flex flex-col justify-end">
+          <div className="w-16 h-4 bg-gray-700 mb-4 rounded-sm" />
+          <div className="w-full h-6 bg-gray-700 mb-2 rounded-sm" />
+          <div className="w-2/3 h-6 bg-gray-700 mb-4 rounded-sm" />
+          <div className="w-24 h-4 bg-gray-700 rounded-sm" />
+        </div>
+      </div>
+    ));
+  };
+
   return (
     <section className="bg-[#111] py-20 lg:py-28 overflow-hidden w-full">
       <div className="w-full relative z-10">
@@ -119,14 +165,14 @@ const InsightsSlider: React.FC<InsightsSliderProps> = ({ filterCategory }) => {
               {/* Arrow buttons */}
               <button
                 onClick={handlePrev}
-                disabled={currentIndex === 0}
+                disabled={currentIndex === 0 || loading || displayInsights.length === 0}
                 className="w-11 h-11 border border-white/30 flex items-center justify-center text-white hover:bg-white hover:text-black transition-colors duration-300 disabled:opacity-20 disabled:pointer-events-none"
               >
                 <ArrowLeft className="w-4 h-4" />
               </button>
               <button
                 onClick={handleNext}
-                disabled={currentIndex >= maxIndex}
+                disabled={currentIndex >= maxIndex || loading || displayInsights.length === 0}
                 className="w-11 h-11 border border-white/30 flex items-center justify-center text-white hover:bg-white hover:text-black transition-colors duration-300 disabled:opacity-20 disabled:pointer-events-none"
               >
                 <ArrowRight className="w-4 h-4" />
@@ -143,33 +189,39 @@ const InsightsSlider: React.FC<InsightsSliderProps> = ({ filterCategory }) => {
           onPointerLeave={onPointerUp}
         >
           <div ref={trackRef} className="flex gap-6 sm:gap-8 w-max pr-5 sm:pr-8 lg:pr-12">
-            {displayInsights.map((insight) => (
-              <div 
-                key={insight.id} 
-                className="insight-card relative w-[85vw] sm:w-[45vw] lg:w-[350px] xl:w-[400px] aspect-[4/5] overflow-hidden group cursor-pointer select-none"
-              >
+            {loading ? (
+              renderSkeletons()
+            ) : displayInsights.length === 0 ? (
+              <div className="text-gray-400 text-lg w-full py-10">No insights available at the moment.</div>
+            ) : (
+              displayInsights.map((insight) => (
                 <div 
-                  className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-                  style={{ backgroundImage: `url(${insight.image})` }}
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-300" />
-                
-                <div className="absolute inset-0 p-6 sm:p-8 flex flex-col justify-end">
-                  <div className="mb-4 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                    <span className="inline-block px-3 py-1 bg-[#F26522] text-white text-[10px] uppercase tracking-wider font-semibold">
-                      {insight.category}
-                    </span>
-                  </div>
-                  <h3 className="text-white text-xl sm:text-2xl font-medium leading-tight mb-4 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">
-                    {insight.title}
-                  </h3>
-                  <div className="flex items-center text-[#F26522] translate-y-8 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 delay-150">
-                    <span className="text-[13px] font-semibold mr-2 uppercase tracking-wide">Read Article</span>
-                    <ArrowRight className="w-4 h-4 transform group-hover:translate-x-2 transition-transform duration-300" />
+                  key={insight.id} 
+                  className="insight-card relative w-[85vw] sm:w-[45vw] lg:w-[350px] xl:w-[400px] aspect-[4/5] overflow-hidden group cursor-pointer select-none"
+                >
+                  <div 
+                    className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+                    style={{ backgroundImage: `url(${insight.image_url})` }}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-300" />
+                  
+                  <div className="absolute inset-0 p-6 sm:p-8 flex flex-col justify-end">
+                    <div className="mb-4 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                      <span className="inline-block px-3 py-1 bg-[#F26522] text-white text-[10px] uppercase tracking-wider font-semibold">
+                        {insight.category}
+                      </span>
+                    </div>
+                    <h3 className="text-white text-xl sm:text-2xl font-medium leading-tight mb-4 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">
+                      {insight.title}
+                    </h3>
+                    <div className="flex items-center text-[#F26522] translate-y-8 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 delay-150">
+                      <span className="text-[13px] font-semibold mr-2 uppercase tracking-wide">Read Article</span>
+                      <ArrowRight className="w-4 h-4 transform group-hover:translate-x-2 transition-transform duration-300" />
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))
+            )}
           </div>
         </div>
       </div>

@@ -86,9 +86,9 @@ const RoiCalculator: React.FC<RoiCalculatorProps> = ({
 
           {/* Button */}
           <div className="mt-10 text-center">
-            <button className="bg-[#F26522] hover:bg-[#e05a1a] text-white px-8 py-4 rounded-none font-medium transition-colors w-full sm:w-auto font-body uppercase tracking-wider text-sm">
+            <a href="/contact" className="bg-[#F26522] hover:bg-[#e05a1a] text-white px-8 py-4 rounded-none font-medium transition-colors w-full sm:w-auto font-body uppercase tracking-wider text-sm inline-flex items-center justify-center">
               {ctaText}
-            </button>
+            </a>
           </div>
         </div>
 
