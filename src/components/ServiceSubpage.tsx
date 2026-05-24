@@ -669,7 +669,7 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
                 <ParallaxMedia type="video" src={config.introVideo1} autoPlay muted loop playsInline className="w-full aspect-[438/346]" />
               </div>
               <div className="self-start flex flex-col items-start justify-start pt-2">
-                <p className="text-[16px] xl:text-[18px] leading-[1.65] font-medium text-gray-900 mb-8 whitespace-nowrap">
+                <p className="text-[16px] xl:text-[18px] leading-[1.65] font-medium text-gray-900 mb-8 max-w-[90%]">
                   {config.introParagraph}
                 </p>
                 <a href="/contact" className="group flex items-center bg-[#F26522] hover:bg-[#e05a1a] text-white pl-6 pr-2 py-2 transition-colors duration-300">

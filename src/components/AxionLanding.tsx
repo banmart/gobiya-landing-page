@@ -324,8 +324,8 @@ const AxionLanding = () => {
               />
             </div>
             <div className="self-start flex flex-col items-start justify-start pt-2">
-              <p className="text-[16px] xl:text-[18px] leading-[1.65] font-medium text-gray-900 mb-8 whitespace-nowrap">
-                Our proprietary methodology combines<br/>machine learning insights with elite<br/>technical SEO for maximum ROI.
+              <p className="text-[16px] xl:text-[18px] leading-[1.65] font-medium text-gray-900 mb-8">
+                Our proprietary methodology combines machine learning insights with elite technical SEO for maximum ROI.
               </p>
               <a href="/contact" className="group flex items-center bg-[#F26522] hover:bg-[#e05a1a] text-white pl-6 pr-2 py-2 transition-colors duration-300">
                 <div className="flex flex-col overflow-hidden h-[20px] justify-start items-start relative mr-3">
