@@ -290,7 +290,7 @@ const AxionLanding = () => {
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-5 w-full">
               <ParallaxMedia 
                 type="video" 
-                src="/videos/space-girl.mp4" 
+                src="/videos/space-girl.webm" 
                 autoPlay={true}
                 muted={true}
                 loop={true}
@@ -299,7 +299,7 @@ const AxionLanding = () => {
               />
               <ParallaxMedia 
                 type="video" 
-                src="/videos/gobiyaRace.mp4" 
+                src="/videos/gobiyaRace.webm" 
                 autoPlay={true}
                 muted={true}
                 loop={true}
@@ -313,7 +313,7 @@ const AxionLanding = () => {
             <div className="self-end">
               <ParallaxMedia 
                 type="video" 
-                src="/videos/space-girl.mp4" 
+                src="/videos/space-girl.webm" 
                 autoPlay={true}
                 muted={true}
                 loop={true}
@@ -338,7 +338,7 @@ const AxionLanding = () => {
             <div className="self-end">
               <ParallaxMedia 
                 type="video" 
-                src="/videos/gobiyaRace.mp4" 
+                src="/videos/gobiyaRace.webm" 
                 autoPlay={true}
                 muted={true}
                 loop={true}

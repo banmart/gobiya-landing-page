@@ -111,7 +111,7 @@ const CaseStudiesPinned = () => {
           {/* Card 1 */}
           <div className="group cursor-pointer flex-none w-[85vw] md:w-[45vw] lg:w-[35vw] select-none">
             <div className="aspect-[4/3] overflow-hidden bg-[#1a1d2e] relative isolate mb-4 rounded-xl shadow-lg">
-              <ParallaxMedia type="video" src="/videos/caveman.mp4" autoPlay muted loop playsInline className="w-full h-full" />
+              <ParallaxMedia type="video" src="/videos/caveman.webm" autoPlay muted loop playsInline className="w-full h-full" />
               <div className="absolute bottom-4 left-4 h-9 bg-white flex items-center overflow-hidden w-9 group-hover:w-[148px] transition-all duration-300 ease-in-out z-10 px-2.5 rounded-full">
                 <div className="flex-shrink-0 w-4 h-4 mr-2 flex items-center justify-center -ml-0.5">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-gray-900 -rotate-45 group-hover:rotate-0 transition-transform duration-300 ease-in-out">
@@ -131,7 +131,7 @@ const CaseStudiesPinned = () => {
           {/* Card 2 */}
           <div className="group cursor-pointer flex-none w-[85vw] md:w-[45vw] lg:w-[35vw] select-none">
             <div className="aspect-[4/3] overflow-hidden bg-[#1a1d2e] relative isolate mb-4 rounded-xl shadow-lg">
-              <ParallaxMedia type="video" src="/videos/sc-hero-background-compressed.mp4" autoPlay muted loop playsInline className="w-full h-full" />
+              <ParallaxMedia type="video" src="/videos/sc-hero-background-compressed.webm" autoPlay muted loop playsInline className="w-full h-full" />
               <div className="absolute bottom-4 left-4 h-9 bg-gray-900 flex items-center overflow-hidden w-9 group-hover:w-[168px] transition-all duration-300 ease-in-out z-10 px-2.5 rounded-full">
                 <div className="flex-shrink-0 w-4 h-4 mr-2 flex items-center justify-center -ml-0.5">
                   <ArrowRight className="w-3.5 h-3.5 text-white -rotate-45 group-hover:rotate-0 transition-transform duration-300 ease-in-out" />
@@ -148,7 +148,7 @@ const CaseStudiesPinned = () => {
           {/* Card 3 */}
           <div className="group cursor-pointer flex-none w-[85vw] md:w-[45vw] lg:w-[35vw] select-none">
             <div className="aspect-[4/3] overflow-hidden bg-[#1a1d2e] relative isolate mb-4 rounded-xl shadow-lg">
-              <ParallaxMedia type="video" src="/videos/ark------final-----01.mp4" autoPlay muted loop playsInline className="w-full h-full" />
+              <ParallaxMedia type="video" src="/videos/ark------final-----01.webm" autoPlay muted loop playsInline className="w-full h-full" />
               <div className="absolute bottom-4 left-4 h-9 bg-gray-900 flex items-center overflow-hidden w-9 group-hover:w-[168px] transition-all duration-300 ease-in-out z-10 px-2.5 rounded-full">
                 <div className="flex-shrink-0 w-4 h-4 mr-2 flex items-center justify-center -ml-0.5">
                   <ArrowRight className="w-3.5 h-3.5 text-white -rotate-45 group-hover:rotate-0 transition-transform duration-300 ease-in-out" />
@@ -165,7 +165,7 @@ const CaseStudiesPinned = () => {
           {/* Card 4 */}
           <div className="group cursor-pointer flex-none w-[85vw] md:w-[45vw] lg:w-[35vw] select-none">
             <div className="aspect-[4/3] overflow-hidden bg-[#1a1d2e] relative isolate mb-4 rounded-xl shadow-lg">
-              <ParallaxMedia type="video" src="/videos/smilecenter-screencast.mp4" autoPlay muted loop playsInline className="w-full h-full" />
+              <ParallaxMedia type="video" src="/videos/smilecenter-screencast.webm" autoPlay muted loop playsInline className="w-full h-full" />
               <div className="absolute bottom-4 left-4 h-9 bg-gray-900 flex items-center overflow-hidden w-9 group-hover:w-[168px] transition-all duration-300 ease-in-out z-10 px-2.5 rounded-full">
                 <div className="flex-shrink-0 w-4 h-4 mr-2 flex items-center justify-center -ml-0.5">
                   <ArrowRight className="w-3.5 h-3.5 text-white -rotate-45 group-hover:rotate-0 transition-transform duration-300 ease-in-out" />
