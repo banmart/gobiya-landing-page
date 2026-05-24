@@ -1,0 +1,31 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "api/index.ts",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/assets/(.*)",
+      "dest": "/dist/client/assets/$1"
+    },
+    {
+      "src": "/images/(.*)",
+      "dest": "/dist/client/images/$1"
+    },
+    {
+      "src": "/videos/(.*)",
+      "dest": "/dist/client/videos/$1"
+    },
+    {
+      "src": "/(favicon.ico|humans.txt|robots.txt|sitemap.xml|llms.txt|llms-full.txt)",
+      "dest": "/dist/client/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "api/index.ts"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+.trust-carousel-container {
+  overflow: hidden;
+  display: flex;
+  width: 100%;
+  white-space: nowrap;
+  position: relative;
+  /* Fading edges */
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.trust-carousel-content {
+  display: flex;
+  animation: trust-scroll 25s linear infinite;
+}
+
+.trust-carousel-container:hover .trust-carousel-content {
+  animation-play-state: paused;
+}
+
+@keyframes trust-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}

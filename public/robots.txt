@@ -1,0 +1,56 @@
+# Gobiya — Los Angeles SEO Agency
+# https://www.gobiya.com
+
+# Default rules — allow all crawlers, only block private/auth surfaces
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /private/
+Disallow: /dashboard/
+Disallow: /account/
+Disallow: /sales/
+Disallow: /onboard
+Disallow: /checkout
+Disallow: /welcome/
+Disallow: /exclusive-offer
+
+# AI / LLM crawlers — explicitly allowed for AI search visibility
+User-agent: GPTBot
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /admin/
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+Disallow: /admin/
+
+User-agent: Anthropic-AI
+Allow: /
+Disallow: /admin/
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /admin/
+
+User-agent: Google-Extended
+Allow: /
+
+# Standard search engines
+User-agent: Googlebot
+Allow: /
+Disallow: /admin/
+
+User-agent: Bingbot
+Allow: /
+Disallow: /admin/
+
+# Sitemap
+Sitemap: https://www.gobiya.com/sitemap.xml

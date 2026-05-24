@@ -5,7 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite --port=3000 --host=0.0.0.0",
-    "build": "vite build",
+    "build:client": "vite build --outDir dist/client",
+    "build:ssr": "vite build --ssr src/entry-server.tsx --outDir dist/server",
+    "build": "npm run build:client && npm run build:ssr",
     "preview": "vite preview",
     "clean": "rm -rf dist",
     "lint": "tsc --noEmit"

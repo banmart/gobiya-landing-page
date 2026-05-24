@@ -1,0 +1,27 @@
+/* TEAM */
+
+Agency: Gobiya — Digital Marketing & B2B Lead Generation
+Strategic Director: Steve Martin
+Location: Los Angeles, California, USA
+Contact: contact [at] gobiya.com
+Twitter: @gobiya
+
+/* THANKS */
+
+Built with:
+- React 18
+- TypeScript
+- Tailwind CSS
+- Framer Motion
+- Vite
+- Supabase
+- Radix UI & Shadcn/ui
+
+/* SITE */
+
+Last update: 2026/04/19
+Language: English
+Doctype: HTML5
+Standards: HTML5, CSS3, ES6+
+IDE: VS Code / Cursor
+AI Assist: Antigravity (DeepMind)

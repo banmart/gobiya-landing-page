@@ -1,12 +1,117 @@
 import React, { useState, useEffect } from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { MotionPathPlugin } from 'gsap/MotionPathPlugin';
+
+gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
+
 import { Shader, Swirl, ChromaFlow, FlutedGlass, FilmGrain } from 'shaders/react';
 import { Clock, Menu, X, ArrowRight } from 'lucide-react';
 
 import RotatingText from './RotatingText';
 import StaggeredMenu from './StaggeredMenu';
+import Marquee from './Marquee';
+import HorizontalScrollText from './HorizontalScrollText';
+import BlurText from './BlurText';
+import GradualBlur from './GradualBlur';
+import ParallaxMedia from './ParallaxMedia';
+import CustomCursor from './CustomCursor';
+import ServicesBento from './ServicesBento';
+import CaseStudiesPinned from './CaseStudiesPinned';
+import InsightsSlider from './InsightsSlider';
+import SatisfiedClients from './SatisfiedClients';
+import RoiCalculator from './RoiCalculator';
 
 const AxionLanding = () => {
   const [time, setTime] = useState('');
+
+  useEffect(() => {
+    let ctx: gsap.Context;
+
+    function createTimeline() {
+      if (ctx) ctx.revert();
+      
+      ctx = gsap.context(() => {
+        const box = document.querySelector("#animated-logo") as HTMLElement;
+        if (!box) return;
+
+        const boxStartRect = box.getBoundingClientRect();
+        const containers = gsap.utils.toArray(".logo-marker") as HTMLElement[];
+        
+        if (containers.length === 0) return;
+
+        const points = containers.map((container) => {
+           const r = container.getBoundingClientRect();
+           return {
+             x: r.left + r.width / 2 - (boxStartRect.left + boxStartRect.width / 2),
+             y: r.top + r.height / 2 - (boxStartRect.top + boxStartRect.height / 2)
+           };
+        });
+
+        // Use the last marker as the end trigger so the animation
+        // completes exactly when you scroll to the final marker
+        const lastMarker = containers[containers.length - 1];
+
+        // Main motion path timeline
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: "#animated-logo",
+            start: "top top",
+            endTrigger: lastMarker,
+            end: "center center",
+            scrub: 1
+          }
+        });
+
+        // Motion path animation
+        tl.to(box, {
+          duration: 1,
+          ease: "none",
+          motionPath: {
+            path: points,
+            curviness: 1.5
+          }
+        }, 0);
+
+        // Scale animation - grow to 2.2 after starting to scroll
+        tl.set(box, { scale: 1 }, 0);
+        tl.to(box, {
+          scale: 2.2,
+          duration: 0.15,
+          ease: "power1.out"
+        }, 0);
+
+        // Scale animation - shrink back to 1 before reaching the end
+        tl.to(box, {
+          scale: 1,
+          duration: 0.15,
+          ease: "power1.in"
+        }, 0.85);
+
+        // Per-section inversion triggers
+        // Dark sections need filter: brightness(0) invert(1) to make logo white
+        const darkSections = gsap.utils.toArray("[data-logo-dark]") as HTMLElement[];
+        darkSections.forEach((section) => {
+          ScrollTrigger.create({
+            trigger: section,
+            start: "top 50%",
+            end: "bottom 50%",
+            onEnter: () => gsap.to(box, { filter: "brightness(0) invert(1)", duration: 0.3, overwrite: "auto" }),
+            onLeave: () => gsap.to(box, { filter: "brightness(1) invert(0)", duration: 0.3, overwrite: "auto" }),
+            onEnterBack: () => gsap.to(box, { filter: "brightness(0) invert(1)", duration: 0.3, overwrite: "auto" }),
+            onLeaveBack: () => gsap.to(box, { filter: "brightness(1) invert(0)", duration: 0.3, overwrite: "auto" }),
+          });
+        });
+      });
+    }
+
+    setTimeout(createTimeline, 100);
+    window.addEventListener("resize", createTimeline);
+    return () => {
+      window.removeEventListener("resize", createTimeline);
+      if (ctx) ctx.revert();
+    };
+  }, []);
 
   useEffect(() => {
     const updateTime = () => {
@@ -25,9 +130,20 @@ const AxionLanding = () => {
   }, []);
 
   return (
-    <div className="bg-white min-h-screen font-sans text-gray-900 selection:bg-[#F26522] selection:text-white">
+    <div className="min-h-screen bg-white relative font-sans selection:bg-[#F26522] selection:text-white page-wrapper">
+      <CustomCursor />
+
+      {/* FLOATING ANIMATED LOGO */}
+      <img 
+        id="animated-logo"
+        src="/images/gobiya---logo.webp" 
+        alt="Gobiya Logo" 
+        className="h-8 sm:h-9 w-auto object-contain absolute left-[5px] sm:left-[16px] top-[5px] sm:top-[8px] pointer-events-none" 
+        style={{ willChange: 'transform, filter', transition: 'filter 0.3s ease', zIndex: 9999 }}
+      />
+
       {/* SECTION 1: HERO */}
-      <section className="relative w-full h-screen bg-[#EFEFEF] overflow-hidden flex flex-col">
+      <section className="relative w-full h-screen bg-[#EFEFEF] overflow-hidden flex flex-col cursor-default">
         {/* Shaders Background */}
         <div className="absolute inset-0 z-10 pointer-events-none w-full h-full [&>div]:w-full [&>div]:h-full [&_canvas]:w-full [&_canvas]:h-full [&_canvas]:object-cover">
           <Shader>
@@ -42,8 +158,8 @@ const AxionLanding = () => {
         <div className="fixed top-0 left-0 z-50 w-full">
           <nav className="flex items-center justify-between bg-white/30 backdrop-blur-md border-b border-white/40 p-[5px] sm:px-4">
             {/* LEFT */}
-            <div className="flex items-center gap-6">
-              <img src="/images/gobiya---favicon.jpg" alt="Gobiya Logo" className="w-9 h-9 sm:w-10 sm:h-10 object-cover" />
+            <div className="flex items-center gap-6 relative z-50">
+              <div className="h-8 sm:h-9 w-[100px] sm:w-[110px]" /> {/* Invisible placeholder */}
             </div>
 
             {/* RIGHT */}
@@ -89,19 +205,17 @@ const AxionLanding = () => {
         {/* Hero Content */}
         <div className="relative z-20 flex-1 max-w-[1440px] w-full mx-auto flex flex-col justify-end px-5 sm:px-8 lg:px-12 pb-14 sm:pb-16 lg:pb-20">
           <p className="text-[13px] sm:text-[14px] text-gray-900 tracking-wide mb-5 sm:mb-8 uppercase font-medium">Gobiya AI & SEO Agency</p>
-          <h1 className="text-[clamp(1.75rem,7vw,4.2rem)] sm:text-[clamp(2.5rem,5vw,4.2rem)] font-medium leading-[1.08] tracking-[-0.03em] text-gray-900 max-w-5xl">
-            We engineer AI-driven SEO <br className="hidden sm:block" /><span className="sm:hidden"> </span>
-            for brands ready to dominate <br className="hidden sm:block" /><span className="sm:hidden"> </span>
-            search and&nbsp;
+          <h1 className="text-[clamp(1.5rem,5.5vw,3.2rem)] sm:text-[clamp(1.8rem,4.5vw,3.8rem)] font-medium leading-[1.15] tracking-[-0.03em] text-gray-900 max-w-[1200px]">
+            We engineer AI-driven SEO for brands ready to dominate search and&nbsp;
             <RotatingText
               texts={['recover traffic.', 'drive sales.', 'scale revenue.']}
-              mainClassName="inline-flex overflow-hidden text-[#F26522]"
+              mainClassName="inline-flex overflow-hidden text-[#F26522] align-text-bottom"
               staggerFrom={"last"}
               initial={{ y: "100%" }}
               animate={{ y: 0 }}
               exit={{ y: "-120%" }}
               staggerDuration={0.025}
-              splitLevelClassName="overflow-hidden pb-0.5 sm:pb-1 md:pb-1"
+              splitLevelClassName="overflow-hidden pb-1 -mb-1"
               transition={{ type: "spring", damping: 30, stiffness: 400 }}
               rotationInterval={3000}
             />
@@ -125,25 +239,42 @@ const AxionLanding = () => {
             </div>
           </div>
         </div>
+        <div className="logo-marker absolute left-[50%] bottom-[15%] w-10 h-10 pointer-events-none" />
       </section>
 
-      {/* SECTION 2: ABOUT */}
+      {/* SECTION 2: MARQUEE */}
+      <div className="relative w-full">
+        <Marquee items={['AI-DRIVEN SEO', 'CONTENT CLUSTERS', 'TRAFFIC RECOVERY', 'TECHNICAL SEO', 'ALGORITHMIC DOMINANCE']} />
+        <div className="logo-marker absolute right-[15%] top-[50%] w-10 h-10 -translate-y-1/2 pointer-events-none" />
+      </div>
+
+      {/* SECTION 3: SCROLL REVEAL INTRO */}
+      <section className="w-full relative" data-logo-dark>
+        <HorizontalScrollText 
+          text="AI-powered SEO and content, delivering fast rankings and recovery. Through cutting-edge AI and data strategies, we help brands recover traffic and skyrocket visibility." 
+        />
+        <div className="logo-marker absolute left-[10%] top-[50%] w-10 h-10 -translate-y-1/2 pointer-events-none" />
+      </section>
+
+      {/* SECTION 4: RECOGNIZED & TRUSTED BY (REMOVED) */}
+
+      {/* SECTION 5: ABOUT */}
       <section className="bg-white pt-16 sm:pt-20 lg:pt-32 pb-12 sm:pb-16 lg:pb-24 overflow-hidden w-full max-w-[1440px] mx-auto">
         <div className="px-5 sm:px-8 lg:px-12 flex items-center gap-3 mb-6 sm:mb-8">
-          <div className="w-6 h-6 sm:w-7 sm:h-7 bg-gray-900 text-white text-[11px] sm:text-[12px] font-semibold flex items-center justify-center">1</div>
-          <div className="text-[12px] sm:text-[13px] font-medium border border-gray-200 px-3 sm:px-4 py-1 sm:py-1.5">Introducing Gobiya</div>
+          <div className="w-6 h-6 sm:w-7 sm:h-7 bg-black text-white text-[11px] sm:text-[12px] font-semibold flex items-center justify-center">2</div>
+          <div className="text-[12px] sm:text-[13px] font-medium text-black border border-black px-3 sm:px-4 py-1 sm:py-1.5">Introducing Gobiya</div>
         </div>
         
         <div className="px-5 sm:px-8 lg:px-12">
           <h2 className="text-[clamp(1.5rem,4vw,3.2rem)] font-medium leading-[1.12] tracking-[-0.02em] text-gray-900 mb-12 sm:mb-16 lg:mb-28 max-w-4xl">
-            AI-powered SEO and content, <br className="hidden sm:block" /><span className="sm:hidden"> </span>
-            delivering fast rankings and recovery.
+            Stop guessing with your SEO. <br className="hidden sm:block" /><span className="sm:hidden"> </span>
+            Start dominating with data.
           </h2>
 
           {/* Responsive Content Area */}
           <div className="block lg:hidden">
             <p className="text-[15px] sm:text-[17px] leading-[1.6] font-medium text-gray-900 mb-6">
-              Through cutting-edge AI and data-driven strategies, we help brands in Los Angeles and worldwide recover lost traffic and skyrocket their online visibility.
+              Our proprietary methodology combines machine learning insights with elite technical SEO, ensuring your brand captures the most valuable search real estate available.
             </p>
             <button className="group flex items-center bg-[#F26522] hover:bg-[#e05a1a] text-white pl-5 pr-2 py-2 transition-colors duration-300 mb-8 inline-flex">
               <div className="flex flex-col overflow-hidden h-[20px] justify-start items-start relative mr-3">
@@ -155,18 +286,42 @@ const AxionLanding = () => {
               </div>
             </button>
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-5 w-full">
-              <img src="https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260516_090123_74be96d4-9c1b-40cf-932a-96f4f4babed3.png&w=1280&q=85" alt="Axion Office" className="w-full sm:w-[45%] aspect-[438/346] object-cover" />
-              <img src="https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260516_090133_c157d30b-a99a-4477-bec1-a446149ec3f2.png&w=1280&q=85" alt="Axion Team" className="w-full sm:w-[55%] aspect-[900/600] object-cover" />
+              <ParallaxMedia 
+                type="video" 
+                src="/videos/space-girl.mp4" 
+                autoPlay={true}
+                muted={true}
+                loop={true}
+                playsInline={true}
+                className="w-full sm:w-[45%] aspect-[438/346]" 
+              />
+              <ParallaxMedia 
+                type="video" 
+                src="/videos/gobiyaRace.mp4" 
+                autoPlay={true}
+                muted={true}
+                loop={true}
+                playsInline={true}
+                className="w-full sm:w-[55%] aspect-[900/600]" 
+              />
             </div>
           </div>
 
           <div className="hidden lg:grid grid-cols-[26%_1fr_48%] items-end gap-6 xl:gap-8">
             <div className="self-end">
-              <img src="https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260516_090123_74be96d4-9c1b-40cf-932a-96f4f4babed3.png&w=1280&q=85" alt="Axion Office" className="w-full aspect-[438/346] object-cover" />
+              <ParallaxMedia 
+                type="video" 
+                src="/videos/space-girl.mp4" 
+                autoPlay={true}
+                muted={true}
+                loop={true}
+                playsInline={true}
+                className="w-full aspect-[438/346]" 
+              />
             </div>
             <div className="self-start flex flex-col items-start justify-start pt-2">
               <p className="text-[16px] xl:text-[18px] leading-[1.65] font-medium text-gray-900 mb-8 whitespace-nowrap">
-                Through cutting-edge AI and data<br/>strategies, we help brands recover<br/>traffic and skyrocket visibility.
+                Our proprietary methodology combines<br/>machine learning insights with elite<br/>technical SEO for maximum ROI.
               </p>
               <button className="group flex items-center bg-[#F26522] hover:bg-[#e05a1a] text-white pl-6 pr-2 py-2 transition-colors duration-300">
                 <div className="flex flex-col overflow-hidden h-[20px] justify-start items-start relative mr-3">
@@ -179,78 +334,58 @@ const AxionLanding = () => {
               </button>
             </div>
             <div className="self-end">
-              <img src="https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260516_090133_c157d30b-a99a-4477-bec1-a446149ec3f2.png&w=1280&q=85" alt="Axion Team" className="w-full aspect-[3/2] object-cover" />
+              <ParallaxMedia 
+                type="video" 
+                src="/videos/gobiyaRace.mp4" 
+                autoPlay={true}
+                muted={true}
+                loop={true}
+                playsInline={true}
+                className="w-full aspect-[3/2]" 
+              />
             </div>
           </div>
         </div>
+        <div className="logo-marker absolute right-[20%] top-[50%] w-10 h-10 pointer-events-none" />
       </section>
 
-      {/* SECTION 3: CASE STUDIES */}
-      <section className="bg-[#F5F5F5] w-full">
-        <div className="pt-16 sm:pt-20 lg:pt-28 pb-16 sm:pb-20 lg:pb-28 max-w-[1440px] mx-auto">
-          <div className="px-5 sm:px-8 lg:px-12 flex items-center gap-3 mb-6 sm:mb-8">
-            <div className="w-6 h-6 sm:w-7 sm:h-7 bg-gray-900 text-white text-[11px] sm:text-[12px] font-semibold flex items-center justify-center">2</div>
-            <div className="text-[12px] sm:text-[13px] font-medium border border-gray-300 px-3 sm:px-4 py-1 sm:py-1.5">Client Success Stories</div>
-          </div>
-          
-          <h2 className="px-5 sm:px-8 lg:px-12 text-[clamp(1.75rem,7vw,4.2rem)] sm:text-[clamp(2.5rem,5vw,4.2rem)] font-medium leading-[1.08] tracking-[-0.03em] text-gray-900 mb-10 sm:mb-14 lg:mb-16">
-            Traffic Recovered
-          </h2>
+      {/* SECTION 6: SERVICES BENTO */}
+      <div data-logo-dark className="relative">
+        <ServicesBento />
+        <div className="logo-marker absolute left-[15%] top-[50%] w-10 h-10 pointer-events-none" />
+      </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 lg:gap-7 px-5 sm:px-8 lg:px-12">
-            
-            {/* Card 1: Narrativ */}
-            <div className="group cursor-pointer">
-              <div className="aspect-[329/246] overflow-hidden bg-[#1a1d2e] relative isolate mb-4">
-                <video src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260516_122702_390f5305-8719-41d5-ae80-d23ab3796c28.mp4" autoPlay muted loop playsInline className="w-full h-full object-cover" />
-                
-                {/* Hover Button */}
-                <div className="absolute bottom-4 left-4 h-9 bg-white flex items-center overflow-hidden w-9 group-hover:w-[148px] transition-all duration-300 ease-in-out z-10 px-2.5">
-                  <div className="flex-shrink-0 w-4 h-4 mr-2 flex items-center justify-center -ml-0.5">
-                    {/* Custom Link SVG as requested */}
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-gray-900 -rotate-45 group-hover:rotate-0 transition-transform duration-300 ease-in-out">
-                      <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-                      <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-                    </svg>
-                  </div>
-                  <span className="text-[13px] font-medium text-gray-900 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 delay-100">
-                    Learn more
-                  </span>
-                </div>
-              </div>
-              <h3 className="text-[14px] sm:text-[15px] font-semibold text-gray-900 mt-1">E-Commerce Giant</h3>
-              <p className="text-[13px] sm:text-[14px] text-gray-600 mt-1 leading-relaxed max-w-sm">Recovered 300% of lost traffic following a core update using AI-driven content clusters.</p>
-            </div>
+      {/* SECTION 6.5: LATEST INSIGHTS */}
+      <div data-logo-dark className="relative">
+        <InsightsSlider />
+        <div className="logo-marker absolute right-[15%] top-[50%] w-10 h-10 pointer-events-none" />
+      </div>
 
-            {/* Card 2: Luminar */}
-            <div className="group cursor-pointer">
-              <div className="aspect-square overflow-hidden bg-[#6b6b6b] relative isolate mb-4">
-                <video src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260516_123323_f909c2b8-ff6c-4edf-882b-8ebcdbe389b5.mp4" autoPlay muted loop playsInline className="w-full h-full object-cover" />
-                
-                {/* Hover Button */}
-                <div className="absolute bottom-4 left-4 h-9 bg-gray-900 flex items-center overflow-hidden w-9 group-hover:w-[168px] transition-all duration-300 ease-in-out z-10 px-2.5">
-                  <div className="flex-shrink-0 w-4 h-4 mr-2 flex items-center justify-center -ml-0.5">
-                    <ArrowRight className="w-3.5 h-3.5 text-white -rotate-45 group-hover:rotate-0 transition-transform duration-300 ease-in-out" />
-                  </div>
-                  <span className="text-[13px] font-medium text-white whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 delay-100">
-                    View case study
-                  </span>
-                </div>
-              </div>
-              <h3 className="text-[14px] sm:text-[15px] font-semibold text-gray-900 mt-1">B2B SaaS Leader</h3>
-              <p className="text-[13px] sm:text-[14px] text-gray-600 mt-1 leading-relaxed max-w-sm">Achieved #1 rankings for high-intent keywords in 90 days with algorithmic technical SEO fixes.</p>
-            </div>
+      {/* SECTION 7: CASE STUDIES PINNED */}
+      <div className="relative">
+        <CaseStudiesPinned />
+        <div className="logo-marker absolute left-[12%] top-[40%] w-10 h-10 pointer-events-none" />
+      </div>
 
-          </div>
-        </div>
-      </section>
+      {/* SECTION 7.5: SATISFIED CLIENTS */}
+      <div className="relative">
+        <SatisfiedClients />
+        <div className="logo-marker absolute right-[20%] top-[50%] w-10 h-10 pointer-events-none" />
+      </div>
 
-      {/* SECTION 4: FOOTER */}
-      <footer className="bg-[#111] text-white pt-20 sm:pt-28 pb-8 px-5 sm:px-8 lg:px-12 w-full overflow-hidden flex flex-col relative">
+      {/* SECTION 8: ROI CALCULATOR */}
+      <div data-logo-dark className="relative">
+        <RoiCalculator />
+        <div className="logo-marker absolute left-[10%] top-[50%] w-10 h-10 pointer-events-none" />
+      </div>
+
+      {/* SECTION 9: FOOTER */}
+      <footer className="bg-[#111] text-white pt-20 sm:pt-28 px-5 sm:px-8 lg:px-12 w-full overflow-hidden flex flex-col relative" data-logo-dark>
         <div className="max-w-[1440px] w-full mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1fr] gap-12 lg:gap-8 mb-10 sm:mb-20 relative z-10">
           
           {/* Col 1 */}
-          <div className="flex flex-col pr-0 lg:pr-12">
+          <div className="flex flex-col pr-0 lg:pr-12 relative">
+            <div className="logo-marker h-8 sm:h-9 w-[100px] sm:w-[110px] pointer-events-none mb-3" />
             <h3 className="text-3xl font-semibold tracking-tight mb-4">Gobiya.</h3>
             <p className="text-gray-400 text-[14px] sm:text-[15px] leading-relaxed mb-8 max-w-sm">
               We leverage cutting-edge AI and advanced data strategies to help brands recover lost traffic, dominate search, and scale revenue globally.
@@ -305,22 +440,38 @@ const AxionLanding = () => {
 
         </div>
 
-        {/* Huge Text */}
-        <div className="w-full flex justify-center items-center mt-4 sm:mt-10 mb-8 sm:mb-12 overflow-hidden relative">
-          <h2 className="text-[25vw] sm:text-[23vw] leading-[0.75] font-bold tracking-tighter text-white/[0.04] select-none text-center">
-            Gobiya.
-          </h2>
-        </div>
-
         {/* Bottom Bar */}
-        <div className="max-w-[1440px] w-full mx-auto flex flex-col sm:flex-row justify-between items-center gap-4 border-t border-white/10 pt-8 relative z-10">
+        <div className="max-w-[1440px] w-full mx-auto flex flex-col sm:flex-row justify-between items-center gap-4 border-t border-white/10 pt-8 pb-8 relative z-[60]">
           <p className="text-[13px] text-gray-500">© 2026 Gobiya. Engineering search dominance.</p>
           <div className="flex items-center gap-6 text-[13px] text-gray-500">
             <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
             <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
           </div>
         </div>
+
+        {/* Huge Text */}
+        <div className="w-full flex justify-center items-center mt-4 sm:mt-10 overflow-hidden relative">
+          <BlurText 
+            text="GOBIYA" 
+            animateBy="letters" 
+            delay={150}
+            className="text-[17vw] sm:text-[23vw] leading-[0.75] font-bold tracking-tighter text-white select-none text-center justify-center flex-nowrap whitespace-nowrap" 
+          />
+        </div>
       </footer>
+
+      {/* Gradual Blur fixed at the bottom of the page */}
+      <GradualBlur
+        target="page"
+        position="bottom"
+        height="6rem"
+        strength={2}
+        divCount={5}
+        curve="bezier"
+        exponential={true}
+        opacity={1}
+        zIndex={50}
+      />
     </div>
   );
 };

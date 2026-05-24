@@ -3,12 +3,104 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gobiya AI & SEO Agency</title>
+    <!--canonical-outlet-->
+    
+    <!-- Primary SEO Metadata (Outcomes Approach) -->
+    <title>Gobiya | AI SEO, Traffic Recovery & Algorithmic Search Dominance</title>
+    <meta name="description" content="We engineer AI-driven SEO and sales pipelines to recover lost organic traffic, scale predictable revenue, and secure long-term algorithmic dominance for high-stakes brands." />
     <link rel="icon" type="image/jpeg" href="/images/gobiya---favicon.jpg" />
+
+    <!-- Open Graph / Social Bot Metadata -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.gobiya.com" />
+    <meta property="og:title" content="Gobiya | AI SEO & Traffic Recovery Agency" />
+    <meta property="og:description" content="Recover lost organic search traffic, automate your B2B sales pipeline, and command search engine visibility with our outcome-driven AI engineering." />
+    <meta property="og:image" content="https://www.gobiya.com/images/gobiya---logo.webp" />
+
+    <!-- Twitter Bot Metadata -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://www.gobiya.com" />
+    <meta name="twitter:title" content="Gobiya | AI SEO & Traffic Recovery" />
+    <meta name="twitter:description" content="Recover organic search traffic, scale revenue, and secure algorithmic dominance." />
+    <meta name="twitter:image" content="https://www.gobiya.com/images/gobiya---logo.webp" />
+
+    <!-- Structured Schema for Bots (JSON-LD) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "ProfessionalService",
+            "@id": "https://www.gobiya.com/#agency",
+            "name": "Gobiya",
+            "url": "https://www.gobiya.com",
+            "telephone": "(310) 307-9830",
+            "logo": {
+              "@type": "ImageObject",
+              "@id": "https://www.gobiya.com/#logo",
+              "url": "https://www.gobiya.com/images/gobiya---logo.webp",
+              "caption": "Gobiya Logo"
+            },
+            "image": "https://www.gobiya.com/images/gobiya---logo.webp",
+            "description": "Gobiya is a premier AI-driven SEO and B2B pipeline agency engineering organic search recovery, algorithmic dominance, and predictable revenue growth for high-stakes brands.",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "138 N Berendo St",
+              "addressLocality": "Los Angeles",
+              "addressRegion": "CA",
+              "postalCode": "90004",
+              "addressCountry": "US"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": 34.0739,
+              "longitude": -118.2938
+            },
+            "foundingDate": "2010",
+            "sameAs": [
+              "https://twitter.com/gobiya",
+              "https://www.linkedin.com/company/gobiya"
+            ],
+            "areaServed": [
+              {
+                "@type": "AdministrativeArea",
+                "name": "Los Angeles"
+              },
+              {
+                "@type": "AdministrativeArea",
+                "name": "California"
+              },
+              {
+                "@type": "AdministrativeArea",
+                "name": "United States"
+              }
+            ],
+            "knowsAbout": [
+              "Search Engine Optimization",
+              "Google Algorithm Updates Recovery",
+              "B2B Lead Generation",
+              "Generative Engine Optimization",
+              "Sales Pipeline Architecture",
+              "Algorithmic Search Dominance",
+              "AI-Driven Digital Marketing"
+            ]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://www.gobiya.com/#website",
+            "url": "https://www.gobiya.com",
+            "name": "Gobiya",
+            "description": "AI-driven SEO, Organic Traffic Recovery, and Sales Pipeline Engineering.",
+            "publisher": {
+              "@id": "https://www.gobiya.com/#agency"
+            }
+          }
+        ]
+      }
+    </script>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root"><!--ssr-outlet--></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
-

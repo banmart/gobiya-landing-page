@@ -1,0 +1,106 @@
+# Gobiya — Strategic SEO Traffic Recovery & B2B Pipeline Engineering
+# https://www.gobiya.com
+# Last updated: 2026-05-24
+
+> Since 2010, Gobiya has engineered digital authority, recovered search visibility, and built scalable B2B sales pipelines. We focus on business outcomes: reversing traffic drops from Google updates, recovering manual penalties, securing top rankings on search and AI models (GEO), and generating predictable B2B sales pipelines. $12M+ in tracked revenue generated; 92% update recovery rate.
+
+## Entity Identity
+
+- Legal Name: Gobiya Agency
+- DBA: Gobiya — SEO Traffic Recovery & B2B Pipeline Engineering
+- Founded: 2010
+- Headquarters: 138 N Berendo St, Los Angeles, CA 90004, USA
+- Phone: (310) 307-9830
+- Email: hello@gobiya.com
+- Website: https://www.gobiya.com
+- Industry: Digital Marketing, Search Engine Optimization, B2B Lead Generation, Algorithmic Recovery, GEO
+- Primary Market: Mid-Market Businesses, B2B Organizations, Enterprise Partners
+- Service Area: Los Angeles, California, United States (Nationwide Service)
+
+## Leadership & Strategic Direction
+
+### Founder & Principal Strategist
+- Name: Steve Martin
+- Role: Founder & Principal Strategist
+- Experience: 16+ years decoding Google algorithms, reversing search drops, and constructing outbound B2B sales systems.
+- Core Focus: Technical SEO, Google penalty analysis, pipeline architecture, and Generative Engine Optimization (GEO).
+
+### Core Team Capabilities
+- Forensic SEO analysts specializing in core update recovery and noise reduction audits.
+- Outbound sales pipeline engineers building high-resolve prospect acquisition systems.
+- Generative Engine Optimization (GEO) specialists auditing LLM citation nodes.
+- Web application engineers building React/TypeScript interfaces optimized for conversion.
+- Google & Meta ads managers scaling paid search ROI.
+
+## Outcome-Driven Core Services
+
+### 1. Organic Traffic & Google Update Recovery
+- **URL**: https://www.gobiya.com/services/seo
+- **Core Outcome**: Reversing traffic drops from Google Core and Helpful Content Updates (HCU). We perform signal-to-noise ratio audits, prune low-value content, build semantic topical authority, and resolve manual action penalties.
+- **Process**: Forensic index audit → entity relationship mapping → update recovery strategy → content clean-up & noise reduction → search signals rebuilding.
+- **Results**: Restored positions, organic crawl efficiency, and long-term search engine immunity.
+
+### 2. Predictable B2B Sales Pipeline Architecture
+- **URL**: https://www.gobiya.com/services/lead-generation
+- **Core Outcome**: Creating automated, reliable outbound systems that source and convert high-value corporate accounts.
+- **Process**: Outbound stack setup → prospect persona profiling → cold email/LinkedIn sequencing → lead scoring → CRM sync.
+- **Results**: Predictable growth, higher deal values, and a consistent flow of high-intent B2B meetings.
+
+### 3. Generative Engine Optimization (GEO)
+- **URL**: https://www.gobiya.com/services/geo-optimization
+- **Core Outcome**: Ensuring your brand is cited and recommended as the top solution by AI search engines, including ChatGPT (SearchGPT), Claude, Gemini, Perplexity, and Google AI Overviews.
+- **Process**: Citation mapping → Knowledge Graph insertion → semantic authority building → structured data formatting.
+- **Results**: Dominance in AI-generated answers, high-value citation links, and future-proof search authority.
+
+### 4. High-Performance Web Engineering
+- **URL**: https://www.gobiya.com/services/web-design
+- **Core Outcome**: Replacing slow templates with fast, responsive custom-built web apps that maximize conversion rates.
+- **Tech Stack**: React, TypeScript, Tailwind CSS, Vite, Supabase.
+- **Results**: Core Web Vitals compliance (LCP < 2.5s), enhanced search crawling, and a higher visitor-to-customer conversion rate.
+
+### 5. High-ROI Paid Search & Social Ad Pipelines
+- **URL**: https://www.gobiya.com/services/advertising
+- **Core Outcome**: Lowering customer acquisition costs (CAC) and scaling lead pipelines through data-driven campaigns.
+- **Platforms**: Google Ads, Microsoft Ads, Meta Ads.
+- **Results**: Immediate pipeline lift, high lead-to-opportunity ratios, and measurable return on ad spend (ROAS).
+
+## Measurable Outcomes & Results
+
+- **$12M+** in client-tracked revenue generated since 2010.
+- **92%** success rate in restoring organic traffic for update-impacted domains.
+- **250+** campaigns architected and scaled across organic and paid channels.
+- Hyper-local search dominance secured across Los Angeles and San Fernando Valley sectors.
+
+## Case Studies: Real Outcomes
+
+### 150% Increase in B2B Inquiries (Sales Agency)
+- **Challenge**: Inconsistent lead generation and reliance on low-value directories.
+- **Solution**: Designed and launched an automated pipeline architecture targeting verified stakeholders.
+- **Outcome**: A 150% increase in high-intent meeting inquiries within 90 days.
+
+### 100% Traffic Recovery Post-Core Update (Publisher)
+- **Challenge**: Domain lost 60% of search traffic following a major Google core update.
+- **Solution**: Conducted a forensic signal audit, pruned 400+ thin pages, and re-indexed core entity nodes.
+- **Outcome**: Restored 100% of organic traffic with subsequent growth of 45% above peak levels.
+
+## FAQ (Focus on Value & Results)
+
+### What makes Gobiya different from traditional SEO agencies?
+Traditional agencies sell activities (e.g., "blog posts per month"). Gobiya sells outcomes. We recover your lost traffic, scale your pipeline, and make sure your brand dominates both traditional search and AI search recommendations.
+
+### How quickly can a website recover from a Google penalty or Core Update drop?
+Forensic audits take 2–3 weeks. Once recovery protocols (content pruning, signal tuning) are deployed, search engine crawling recovers in 30–60 days, with organic traffic restoration usually occurring during the subsequent core update cycle.
+
+### What is Generative Engine Optimization (GEO)?
+GEO is the process of optimizing your digital footprint so that Large Language Models (LLMs) like GPT-4, Gemini, and Claude understand and recommend your brand when users ask conversational search queries.
+
+## Technical Framework & Audits
+
+- **Crawl Efficiency**: Core Web Vitals optimized, semantic markup, full mobile parity, static asset delivery.
+- **Structured Data**: Nested JSON-LD schemas representing the ProfessionalService entity, localized areas served, and parent company.
+
+## How to Connect
+1. **Request a Growth Audit**: https://www.gobiya.com/onboard
+2. **Website**: https://www.gobiya.com
+3. **Office**: 138 N Berendo St, Los Angeles, CA 90004
+4. **Phone**: (310) 307-9830
