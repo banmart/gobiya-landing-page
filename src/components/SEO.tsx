@@ -1,16 +1,10 @@
-import { IncomingMessage } from 'http';
-import fs from 'fs';
-import path from 'path';
-
-// Define render function type from server bundle
-type RenderFn = (url: string) => { html: string };
+import React, { useEffect } from 'react';
 
 interface SEOMetadata {
   title: string;
   description: string;
 }
 
-// Outcome-focused metadata lookup map for crawlers and search bots
 const metadataMap: Record<string, SEOMetadata> = {
   '/': {
     title: 'Gobiya | AI SEO, Traffic Recovery & Algorithmic Search Dominance',
@@ -66,73 +60,54 @@ const metadataMap: Record<string, SEOMetadata> = {
   }
 };
 
-export default async function handler(req: IncomingMessage, res: any) {
-  try {
-    const url = req.url || '/';
-    const parsedUrl = new URL(url, 'https://www.gobiya.com');
-    const pathname = parsedUrl.pathname.toLowerCase().replace(/\/$/, '') || '/';
+interface SEOProps {
+  path: string;
+}
 
-    // Load server-side rendering logic
-    // Compiled by Vite to dist/server/entry-server.js during deployment build
-    const serverModulePath = path.join(process.cwd(), 'dist', 'server', 'entry-server.js');
-    
-    // Check if SSR bundle exists
-    if (!fs.existsSync(serverModulePath)) {
-      throw new Error(`SSR build output not found at ${serverModulePath}. Ensure npm run build completes successfully.`);
-    }
+const SEO: React.FC<SEOProps> = ({ path }) => {
 
-    const { render } = (await import(serverModulePath)) as { render: RenderFn };
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
 
-    // Read index.html from built client assets
-    const templatePath = path.join(process.cwd(), 'dist', 'client', 'index.html');
-    
-    if (!fs.existsSync(templatePath)) {
-      throw new Error(`Client build output template not found at ${templatePath}.`);
-    }
-
-    let template = fs.readFileSync(templatePath, 'utf-8');
-
-    // Run React SSR rendering
-    const { html } = render(pathname);
-
-    // Replace placeholders with dynamic SSR output
-    template = template.replace('<!--ssr-outlet-->', html);
-
-    // Dynamic canonical url builder
-    // Ensures bots index the URL path they crawled (e.g. /services/seo)
-    const canonicalUrl = `https://www.gobiya.com${pathname === '/' ? '' : pathname}`;
-    const canonicalTag = `<link rel="canonical" href="${canonicalUrl}" />`;
-    template = template.replace('<!--canonical-outlet-->', canonicalTag);
-
-    // Dynamically inject outcome-focused meta tags for the requested path
+    const pathname = path.toLowerCase().replace(/\/$/, '') || '/';
     const seo = metadataMap[pathname] || metadataMap['/'];
+    
+    // Update Title
+    document.title = seo.title;
+    
+    // Update Meta Description
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', seo.description);
+    }
+    
+    // Update Open Graph tags
+    const ogTitle = document.querySelector('meta[property="og:title"]');
+    if (ogTitle) ogTitle.setAttribute('content', seo.title);
+    
+    const ogDesc = document.querySelector('meta[property="og:description"]');
+    if (ogDesc) ogDesc.setAttribute('content', seo.description);
 
-    template = template.replace(
-      '<title>Gobiya | AI SEO, Traffic Recovery & Algorithmic Search Dominance</title>',
-      `<title>${seo.title}</title>`
-    );
-    template = template.replace(
-      '<meta name="description" content="We engineer AI-driven SEO and sales pipelines to recover lost organic traffic, scale predictable revenue, and secure long-term algorithmic dominance for high-stakes brands." />',
-      `<meta name="description" content="${seo.description}" />`
-    );
-    template = template.replace(
-      '<meta property="og:title" content="Gobiya | AI SEO & Traffic Recovery Agency" />',
-      `<meta property="og:title" content="${seo.title}" />`
-    );
-    template = template.replace(
-      '<meta property="og:description" content="Recover lost organic search traffic, automate your B2B sales pipeline, and command search engine visibility with our outcome-driven AI engineering." />',
-      `<meta property="og:description" content="${seo.description}" />`
-    );
-    template = template.replace(
-      '<meta name="twitter:title" content="Gobiya | AI SEO & Traffic Recovery" />',
-      `<meta name="twitter:title" content="${seo.title}" />`
-    );
-    template = template.replace(
-      '<meta name="twitter:description" content="Recover organic search traffic, scale revenue, and secure algorithmic dominance." />',
-      `<meta name="twitter:description" content="${seo.description}" />`
-    );
+    // Update Twitter tags
+    const twTitle = document.querySelector('meta[name="twitter:title"]');
+    if (twTitle) twTitle.setAttribute('content', seo.title);
+    
+    const twDesc = document.querySelector('meta[name="twitter:description"]');
+    if (twDesc) twDesc.setAttribute('content', seo.description);
 
-    // Dynamic JSON-LD Schema
+    // Update Canonical
+    const canonicalUrl = `https://www.gobiya.com${pathname === '/' ? '' : pathname}`;
+    let canonicalTag = document.querySelector('link[rel="canonical"]');
+    if (canonicalTag) {
+      canonicalTag.setAttribute('href', canonicalUrl);
+    } else {
+      canonicalTag = document.createElement('link');
+      canonicalTag.setAttribute('rel', 'canonical');
+      canonicalTag.setAttribute('href', canonicalUrl);
+      document.head.appendChild(canonicalTag);
+    }
+
+    // Update JSON-LD Schema
     const jsonLdSchema = {
       "@context": "https://schema.org",
       "@graph": [
@@ -187,14 +162,18 @@ export default async function handler(req: IncomingMessage, res: any) {
       ]
     };
 
-    const schemaTag = `<script id="schema-script" type="application/ld+json">${JSON.stringify(jsonLdSchema)}</script>`;
-    template = template.replace('<!--schema-outlet-->', schemaTag);
+    let schemaScript = document.getElementById('schema-script');
+    if (!schemaScript) {
+      schemaScript = document.createElement('script');
+      schemaScript.setAttribute('type', 'application/ld+json');
+      schemaScript.id = 'schema-script';
+      document.head.appendChild(schemaScript);
+    }
+    schemaScript.innerHTML = JSON.stringify(jsonLdSchema);
 
-    // Set response headers and return server-rendered page
-    res.setHeader('Content-Type', 'text/html; charset=utf-8');
-    res.status(200).send(template);
-  } catch (error: any) {
-    console.error('Vercel SSR rendering failed:', error);
-    res.status(500).send(`SSR Error: ${error.message}`);
-  }
-}
+  }, [path]);
+
+  return null;
+};
+
+export default SEO;

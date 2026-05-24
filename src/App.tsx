@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import AxionLanding from './components/AxionLanding';
 import ServiceSubpage from './components/ServiceSubpage';
+import SEO from './components/SEO';
 
 interface AppProps {
   url?: string;
@@ -53,6 +54,7 @@ function App({ url }: AppProps) {
 
   return (
     <>
+      <SEO path={normalizedPath} />
       {/* Global Noise Overlay */}
       <div className="noise-overlay" />
       
