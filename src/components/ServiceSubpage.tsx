@@ -365,7 +365,20 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
           rotatingWords: ['recover traffic.', 'build pipelines.', 'scale revenue.'],
           outcomeMessage: 'Elite engineering team for search & pipeline dominance',
           ctaText: 'Meet the team',
-          insightCategory: 'Strategy'
+          introScrollText: 'An elite collective of data scientists, SEO engineers, and revenue architects. We replace guesswork with algorithmic precision to guarantee your digital dominance.',
+          introHeading: <>Engineered for precision. <br className="hidden sm:block" /><span className="sm:hidden"> </span>Built for scale.</>,
+          introParagraph: 'We are not a traditional marketing agency. We are a specialized technical engineering firm focused purely on search algorithmic recovery, entity optimization, and B2B pipeline generation.',
+          introVideo1: "/videos/gobiyaRace.webm",
+          introVideo2: "/videos/space-girl.webm",
+          bentoHeadline: <>Our expertise meets<br/>your ambition.</>,
+          bentoDescription: 'We partner with enterprise and mid-market leaders who demand measurable outcomes, not vanity metrics. Discover the core pillars that drive our engineering team.',
+          insightCategory: 'Strategy',
+          bentoCards: [
+            { href: '/services/seo', colSpan: 2, icon: <Search size={40} className="text-[#F26522] mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'Algorithmic Experts', description: 'Deep technical understanding of search engine architectures and machine learning updates.' },
+            { href: '/services/lead-generation', colSpan: 1, icon: <Network size={40} className="text-white mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'Pipeline Architects', description: 'Systems builders obsessed with outbound revenue generation.' },
+            { href: '/company/approach', colSpan: 1, icon: <TrendingUp size={40} className="text-white mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'Data Scientists', description: 'Mathematical precision applied to content and search intent.' },
+            { href: '/contact', colSpan: 2, gradient: true, icon: <Briefcase size={40} className="text-white mb-6 sm:mb-10 relative z-10" strokeWidth={1.5} />, title: 'Partner With Us', description: 'Join the ranks of elite brands leveraging our proprietary growth methodologies.' }
+          ]
         };
       case '/company/success-stories':
         return { ...defaultPageConfig,
@@ -374,7 +387,20 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
           rotatingWords: ['case studies.', 'growth metrics.', 'revenue wins.'],
           outcomeMessage: 'Data-backed search recovery & pipeline success metrics',
           ctaText: 'View case studies',
-          insightCategory: 'Analytics'
+          introScrollText: 'Millions in recovered pipeline revenue. We provide undeniable proof of our engineering methodologies reversing algorithmic penalties and scaling inbound systems.',
+          introHeading: <>Proof of concept. <br className="hidden sm:block" /><span className="sm:hidden"> </span>Millions in revenue.</>,
+          introParagraph: 'Do not just take our word for it. Review our extensive library of forensic recoveries, pipeline implementations, and massive CRO uplifts for enterprise clients.',
+          introVideo1: "/videos/ark------final-----01.webm",
+          introVideo2: "/videos/smilecenter-screencast.webm",
+          bentoHeadline: <>Data-backed wins meet<br/>client success.</>,
+          bentoDescription: 'Every case study details the exact technical failures we diagnosed, the precise architecture we implemented, and the final pipeline revenue generated.',
+          insightCategory: 'Analytics',
+          bentoCards: [
+            { href: '/google-penalty-recovery', colSpan: 2, icon: <ShieldAlert size={40} className="text-[#F26522] mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'Penalty Reversals', description: 'Complete restoration of index status and traffic following devastating Google Core Updates.' },
+            { href: '/services/seo', colSpan: 1, icon: <Search size={40} className="text-white mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'Traffic Scaling', description: '300%+ increases in high-intent organic search volume.' },
+            { href: '/services/lead-generation', colSpan: 1, icon: <Target size={40} className="text-white mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'Pipeline Generation', description: 'Millions generated via automated B2B outbound sequences.' },
+            { href: '/contact', colSpan: 2, gradient: true, icon: <TrendingUp size={40} className="text-white mb-6 sm:mb-10 relative z-10" strokeWidth={1.5} />, title: 'Become Our Next Success', description: 'Stop losing revenue to competitors. Let us architect your dominance.' }
+          ]
         };
       case '/company/approach':
         return { ...defaultPageConfig,
@@ -383,7 +409,20 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
           rotatingWords: ['forensic analysis.', 'entity optimization.', 'algorithmic alignment.'],
           outcomeMessage: 'Proprietary AI strategies for algorithmic search recovery',
           ctaText: 'Discover our methods',
-          insightCategory: 'Technical'
+          introScrollText: 'We do not guess. We deploy forensic data analysis, reverse-engineer search algorithms, and architect proprietary growth assets that command market dominance.',
+          introHeading: <>Eradicate guesswork. <br className="hidden sm:block" /><span className="sm:hidden"> </span>Deploy pure data.</>,
+          introParagraph: 'Our approach strips away the vanity metrics of traditional agencies. We focus entirely on structural engineering, semantic entity alignment, and mathematical revenue models.',
+          introVideo1: "/videos/caveman.webm",
+          introVideo2: "/videos/space-girl.webm",
+          bentoHeadline: <>Algorithmic precision meets<br/>pipeline architecture.</>,
+          bentoDescription: 'From our initial forensic audit to the final deployment of your automated outbound systems, our methodology is ruthlessly optimized for ROI.',
+          insightCategory: 'Technical',
+          bentoCards: [
+            { href: '/services/seo', colSpan: 2, icon: <PenTool size={40} className="text-[#F26522] mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'Forensic Triage', description: 'We start by tearing down your current digital footprint to identify exactly where you are bleeding revenue.' },
+            { href: '/services/geo-optimization', colSpan: 1, icon: <Network size={40} className="text-white mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'Entity Alignment', description: 'Structuring your brand natively for AI language models.' },
+            { href: '/services/lead-generation', colSpan: 1, icon: <Target size={40} className="text-white mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'System Deployment', description: 'Launching customized outbound and inbound pipelines.' },
+            { href: '/company/about', colSpan: 2, gradient: true, icon: <TrendingUp size={40} className="text-white mb-6 sm:mb-10 relative z-10" strokeWidth={1.5} />, title: 'Iterative Scaling', description: 'We continuously analyze data sets to widen the gap between you and your competitors.' }
+          ]
         };
       case '/company/insights':
         return { ...defaultPageConfig,
@@ -391,7 +430,21 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
           title: 'Algorithmic intelligence and tactical search analysis.',
           rotatingWords: ['algorithm updates.', 'search trends.', 'AI shifts.'],
           outcomeMessage: 'Advanced tactical intelligence on Google & AI search',
-          ctaText: 'Read intelligence briefs'
+          ctaText: 'Read intelligence briefs',
+          introScrollText: 'Stay ahead of the curve. Access our tactical briefs, algorithmic teardowns, and engineering insights directly from the team actively shaping search dominance.',
+          introHeading: <>Tactical intelligence. <br className="hidden sm:block" /><span className="sm:hidden"> </span>Unfiltered data.</>,
+          introParagraph: 'We publish deep-dive analysis on Google Core Updates, the rise of Generative Engine Optimization, and the exact strategies we use to scale B2B pipelines.',
+          introVideo1: "/videos/sc-hero-background-compressed.webm",
+          introVideo2: "/videos/ark------final-----01.webm",
+          bentoHeadline: <>Advanced analytics meet<br/>actionable intelligence.</>,
+          bentoDescription: 'Consume the exact frameworks and strategies we utilize internally to drive millions in pipeline revenue for our partners.',
+          insightCategory: 'SEO',
+          bentoCards: [
+            { href: '/company/insights', colSpan: 2, icon: <BarChart size={40} className="text-[#F26522] mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'Algorithm Teardowns', description: 'Forensic breakdowns of Google updates and exactly what signals are currently being rewarded.' },
+            { href: '/services/geo-optimization', colSpan: 1, icon: <Network size={40} className="text-white mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'AI Overviews', description: 'The evolving landscape of ChatGPT and Gemini search.' },
+            { href: '/services/lead-generation', colSpan: 1, icon: <Target size={40} className="text-white mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'Outbound Tactics', description: 'High-converting email copy and sequencing frameworks.' },
+            { href: '/contact', colSpan: 2, gradient: true, icon: <Briefcase size={40} className="text-white mb-6 sm:mb-10 relative z-10" strokeWidth={1.5} />, title: 'Apply These Insights', description: 'Want these strategies implemented for your brand? Partner with our engineering team today.' }
+          ]
         };
       case '/company/careers':
         return { ...defaultPageConfig,
@@ -399,7 +452,21 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
           title: 'Join the vanguard of algorithmic search engineering.',
           rotatingWords: ['engineer growth.', 'solve penalties.', 'scale with us.'],
           outcomeMessage: 'Join our elite team of search & growth engineers',
-          ctaText: 'View open roles'
+          ctaText: 'View open roles',
+          introScrollText: 'We are looking for elite systems thinkers, technical SEOs, and outbound architects. Join a team obsessed with reverse-engineering growth and dominating markets.',
+          introHeading: <>Build the future. <br className="hidden sm:block" /><span className="sm:hidden"> </span>Engineer dominance.</>,
+          introParagraph: 'Gobiya is not for the faint of heart. We demand excellence, precision, and a relentless pursuit of data-backed results. If you are tired of generic agency work, welcome home.',
+          introVideo1: "/videos/gobiyaRace.webm",
+          introVideo2: "/videos/caveman.webm",
+          bentoHeadline: <>Elite culture meets<br/>massive ambition.</>,
+          bentoDescription: 'We offer remote flexibility, unparalleled technical challenges, and the opportunity to work alongside the sharpest minds in digital architecture.',
+          insightCategory: 'Strategy',
+          bentoCards: [
+            { href: '/company/careers', colSpan: 2, icon: <Briefcase size={40} className="text-[#F26522] mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'Technical SEO Engineers', description: 'Looking for specialists capable of forensic audits, server-log analysis, and entity architecture.' },
+            { href: '/company/careers', colSpan: 1, icon: <PenTool size={40} className="text-white mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'React Developers', description: 'Build blazing fast, high-converting digital assets.' },
+            { href: '/company/careers', colSpan: 1, icon: <Network size={40} className="text-white mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'Sales Architects', description: 'Design automated outbound and CRM pipelines.' },
+            { href: '/company/about', colSpan: 2, gradient: true, icon: <TrendingUp size={40} className="text-white mb-6 sm:mb-10 relative z-10" strokeWidth={1.5} />, title: 'Grow With Us', description: 'We invest heavily in the continuous education and algorithmic mastery of every team member.' }
+          ]
         };
       case '/contact':
         return { ...defaultPageConfig,
@@ -407,7 +474,21 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
           title: 'Partner with our engineering team to scale.',
           rotatingWords: ['dominate search.', 'build pipelines.', 'outpace rivals.'],
           outcomeMessage: 'Reach out for algorithmic audits and pipeline architecture',
-          ctaText: 'Message us below'
+          ctaText: 'Message us below',
+          introScrollText: 'Ready to eradicate the guesswork from your growth? Contact our engineering team today to schedule a forensic technical audit and pipeline strategy session.',
+          introHeading: <>Initiate your audit. <br className="hidden sm:block" /><span className="sm:hidden"> </span>Secure your pipeline.</>,
+          introParagraph: 'Fill out the form below to connect directly with our senior architecture team. We only take on partners where we can mathematically guarantee substantial ROI.',
+          introVideo1: "/videos/ark------final-----01.webm",
+          introVideo2: "/videos/sc-hero-background-compressed.webm",
+          bentoHeadline: <>Secure your baseline meets<br/>explosive scale.</>,
+          bentoDescription: 'Whether you are bleeding traffic from a Google penalty or need to scale your B2B enterprise pipeline, we have the technical infrastructure ready to deploy.',
+          insightCategory: 'Strategy',
+          bentoCards: [
+            { href: '/contact', colSpan: 2, icon: <Network size={40} className="text-[#F26522] mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'Strategy Session', description: 'Direct access to our senior engineers to diagnose your current growth bottlenecks.' },
+            { href: '/services/seo', colSpan: 1, icon: <Search size={40} className="text-white mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'Forensic Audit', description: 'Comprehensive teardown of your digital signals.' },
+            { href: '/services/lead-generation', colSpan: 1, icon: <Target size={40} className="text-white mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'Pipeline Review', description: 'Assessment of your current outbound capabilities.' },
+            { href: '/google-penalty-recovery', colSpan: 2, gradient: true, icon: <ShieldAlert size={40} className="text-white mb-6 sm:mb-10 relative z-10" strokeWidth={1.5} />, title: 'Emergency Triage', description: 'Hit by a core update? Contact us immediately for rapid penalty removal protocols.' }
+          ]
         };
       default:
         return { ...defaultPageConfig,
