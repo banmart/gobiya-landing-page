@@ -273,7 +273,7 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
           ctaText: 'Start recovery protocol',
           introScrollText: 'Immediate intervention for devastating traffic drops. We perform forensic audits to identify algorithmic suppression, remove manual actions, and rebuild your search trust.',
           introHeading: <>Reverse your traffic drops. <br className="hidden sm:block" /><span className="sm:hidden"> </span>Recover your revenue.</>,
-          introParagraph: 'Whether you were hit by a Core Update, the Helpful Content Update (HCU), or a manual spam action, our forensic recovery protocols diagnose the exact failure points and rebuild your site\\'s algorithmic trust.',
+          introParagraph: "Whether you were hit by a Core Update, the Helpful Content Update (HCU), or a manual spam action, our forensic recovery protocols diagnose the exact failure points and rebuild your site's algorithmic trust.",
           bentoHeadline: <>Forensic diagnosis meets<br/>rapid recovery.</>,
           bentoDescription: 'We deploy emergency triage protocols for suppressed domains. From pruning toxic content to rebuilding E-E-A-T signals, we secure your path back to search dominance.'
         };
