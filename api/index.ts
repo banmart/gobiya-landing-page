@@ -39,6 +39,30 @@ const metadataMap: Record<string, SEOMetadata> = {
   '/google-penalty-recovery': {
     title: 'Forensic Update & Google Penalty Recovery Protocol | Gobiya',
     description: 'Recover lost search traffic. We diagnose and reverse manual action penalties and organic traffic declines caused by Google helpful content & core updates.'
+  },
+  '/company/about': {
+    title: 'About Gobiya | AI-Driven SEO & B2B Pipeline Engineering Agency',
+    description: 'Learn about our approach to algorithmic dominance, generative search, and revenue-scaling pipelines.'
+  },
+  '/company/success-stories': {
+    title: 'Client Success Stories & SEO Case Studies | Gobiya',
+    description: 'Explore how we recover organic traffic, build predictive B2B pipelines, and secure market dominance.'
+  },
+  '/company/approach': {
+    title: 'Our Approach to Search Dominance & B2B Growth | Gobiya',
+    description: 'Discover our proprietary methodology for algorithmic audits, penalty recovery, and B2B pipeline acceleration.'
+  },
+  '/company/insights': {
+    title: 'Industry Insights, SEO Trends & Search Intelligence | Gobiya',
+    description: 'Deep dives into Google algorithm updates, generative search (GEO), and B2B marketing strategies.'
+  },
+  '/company/careers': {
+    title: 'Careers at Gobiya | Join Our Elite SEO & Engineering Team',
+    description: 'We are hiring top-tier SEO specialists, React engineers, and growth strategists to dominate the search landscape.'
+  },
+  '/contact': {
+    title: 'Contact Gobiya | Let\'s Scale Your Search Revenue',
+    description: 'Reach out to our engineering team in Los Angeles to discuss algorithmic audits, AI traffic recovery, and pipeline architecture.'
   }
 };
 

@@ -75,6 +75,36 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
             title: 'Forensic Update & Google Penalty Recovery Protocol | Gobiya',
             description: 'Recover lost search traffic. We diagnose and reverse manual action penalties and organic traffic declines caused by Google helpful content & core updates.'
           };
+        case '/company/about':
+          return {
+            title: 'About Gobiya | AI-Driven SEO & B2B Pipeline Engineering Agency',
+            description: 'Learn about our approach to algorithmic dominance, generative search, and revenue-scaling pipelines.'
+          };
+        case '/company/success-stories':
+          return {
+            title: 'Client Success Stories & SEO Case Studies | Gobiya',
+            description: 'Explore how we recover organic traffic, build predictive B2B pipelines, and secure market dominance.'
+          };
+        case '/company/approach':
+          return {
+            title: 'Our Approach to Search Dominance & B2B Growth | Gobiya',
+            description: 'Discover our proprietary methodology for algorithmic audits, penalty recovery, and B2B pipeline acceleration.'
+          };
+        case '/company/insights':
+          return {
+            title: 'Industry Insights, SEO Trends & Search Intelligence | Gobiya',
+            description: 'Deep dives into Google algorithm updates, generative search (GEO), and B2B marketing strategies.'
+          };
+        case '/company/careers':
+          return {
+            title: 'Careers at Gobiya | Join Our Elite SEO & Engineering Team',
+            description: 'We are hiring top-tier SEO specialists, React engineers, and growth strategists to dominate the search landscape.'
+          };
+        case '/contact':
+          return {
+            title: 'Contact Gobiya | Let\'s Scale Your Search Revenue',
+            description: 'Reach out to our engineering team in Los Angeles to discuss algorithmic audits, AI traffic recovery, and pipeline architecture.'
+          };
         default:
           return {
             title: 'Gobiya | AI SEO, Traffic Recovery & Algorithmic Search Dominance',
@@ -159,6 +189,54 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
           rotatingWords: ['reverse drops.', 'prune thin content.', 'restore index status.'],
           outcomeMessage: 'Forensic update recovery & search penalty removal',
           ctaText: 'Start recovery protocol'
+        };
+      case '/company/about':
+        return {
+          subtitle: 'Gobiya > About the Agency',
+          title: 'We engineer algorithmic dominance for elite brands.',
+          rotatingWords: ['recover traffic.', 'build pipelines.', 'scale revenue.'],
+          outcomeMessage: 'Elite engineering team for search & pipeline dominance',
+          ctaText: 'Meet the team'
+        };
+      case '/company/success-stories':
+        return {
+          subtitle: 'Gobiya > Success Stories',
+          title: 'Proven results. Search recovery and revenue scaling.',
+          rotatingWords: ['case studies.', 'growth metrics.', 'revenue wins.'],
+          outcomeMessage: 'Data-backed search recovery & pipeline success metrics',
+          ctaText: 'View case studies'
+        };
+      case '/company/approach':
+        return {
+          subtitle: 'Gobiya > Our Approach',
+          title: 'Data-driven methodologies for search engine dominance.',
+          rotatingWords: ['forensic analysis.', 'entity optimization.', 'algorithmic alignment.'],
+          outcomeMessage: 'Proprietary AI strategies for algorithmic search recovery',
+          ctaText: 'Discover our methods'
+        };
+      case '/company/insights':
+        return {
+          subtitle: 'Gobiya > Industry Insights',
+          title: 'Algorithmic intelligence and tactical search analysis.',
+          rotatingWords: ['algorithm updates.', 'search trends.', 'AI shifts.'],
+          outcomeMessage: 'Advanced tactical intelligence on Google & AI search',
+          ctaText: 'Read intelligence briefs'
+        };
+      case '/company/careers':
+        return {
+          subtitle: 'Gobiya > Careers',
+          title: 'Join the vanguard of algorithmic search engineering.',
+          rotatingWords: ['engineer growth.', 'solve penalties.', 'scale with us.'],
+          outcomeMessage: 'Join our elite team of search & growth engineers',
+          ctaText: 'View open roles'
+        };
+      case '/contact':
+        return {
+          subtitle: 'Gobiya > Connect',
+          title: 'Partner with our engineering team to scale.',
+          rotatingWords: ['dominate search.', 'build pipelines.', 'outpace rivals.'],
+          outcomeMessage: 'Reach out for algorithmic audits and pipeline architecture',
+          ctaText: 'Message us below'
         };
       default:
         return {
@@ -293,6 +371,83 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
         </div>
       </section>
 
+      {/* CONTACT SECTION (Only rendered on /contact route) */}
+      {path === '/contact' && (
+        <section className="relative w-full bg-white text-gray-900 py-20 sm:py-32 px-5 sm:px-8 lg:px-12 flex flex-col items-center">
+          <div className="max-w-[1440px] w-full mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
+            
+            {/* Left: Contact Info */}
+            <div className="flex flex-col justify-start">
+              <h2 className="text-3xl sm:text-5xl font-medium tracking-tight mb-8">Let's build your pipeline.</h2>
+              <p className="text-gray-600 text-[15px] sm:text-[16px] leading-relaxed max-w-md mb-12">
+                Whether you need a full algorithmic recovery audit or a predictable B2B sales pipeline, our engineering team is ready to scale your growth.
+              </p>
+              
+              <div className="flex flex-col gap-8">
+                <div>
+                  <h3 className="text-[12px] font-semibold uppercase tracking-wider text-gray-500 mb-2">Location</h3>
+                  <address className="not-italic text-[16px] sm:text-[18px] font-medium leading-relaxed">
+                    138 N Berendo St<br/>
+                    Los Angeles, CA 90004<br/>
+                    United States
+                  </address>
+                </div>
+                
+                <div>
+                  <h3 className="text-[12px] font-semibold uppercase tracking-wider text-gray-500 mb-2">Direct Line</h3>
+                  <a href="tel:+13103079830" className="text-[16px] sm:text-[18px] font-medium hover:text-[#F26522] transition-colors">
+                    (310) 307-9830
+                  </a>
+                </div>
+                
+                <div>
+                  <h3 className="text-[12px] font-semibold uppercase tracking-wider text-gray-500 mb-2">Email</h3>
+                  <a href="mailto:hello@gobiya.com" className="text-[16px] sm:text-[18px] font-medium hover:text-[#F26522] transition-colors">
+                    hello@gobiya.com
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Right: Contact Form */}
+            <div className="w-full bg-[#f9f9f9] p-8 sm:p-12 rounded-2xl shadow-sm border border-gray-100">
+              <form className="flex flex-col gap-6" onSubmit={(e) => e.preventDefault()}>
+                <div className="flex flex-col sm:flex-row gap-6">
+                  <div className="flex flex-col flex-1 gap-2">
+                    <label htmlFor="firstName" className="text-[13px] font-medium text-gray-700">First Name</label>
+                    <input type="text" id="firstName" className="w-full bg-white border border-gray-200 px-4 py-3 rounded outline-none focus:border-[#F26522] transition-colors text-[14px]" placeholder="Jane" />
+                  </div>
+                  <div className="flex flex-col flex-1 gap-2">
+                    <label htmlFor="lastName" className="text-[13px] font-medium text-gray-700">Last Name</label>
+                    <input type="text" id="lastName" className="w-full bg-white border border-gray-200 px-4 py-3 rounded outline-none focus:border-[#F26522] transition-colors text-[14px]" placeholder="Doe" />
+                  </div>
+                </div>
+                
+                <div className="flex flex-col gap-2">
+                  <label htmlFor="email" className="text-[13px] font-medium text-gray-700">Work Email</label>
+                  <input type="email" id="email" className="w-full bg-white border border-gray-200 px-4 py-3 rounded outline-none focus:border-[#F26522] transition-colors text-[14px]" placeholder="jane@company.com" />
+                </div>
+
+                <div className="flex flex-col gap-2">
+                  <label htmlFor="company" className="text-[13px] font-medium text-gray-700">Company Name</label>
+                  <input type="text" id="company" className="w-full bg-white border border-gray-200 px-4 py-3 rounded outline-none focus:border-[#F26522] transition-colors text-[14px]" placeholder="Acme Corp" />
+                </div>
+
+                <div className="flex flex-col gap-2">
+                  <label htmlFor="message" className="text-[13px] font-medium text-gray-700">How can we help?</label>
+                  <textarea id="message" rows={4} className="w-full bg-white border border-gray-200 px-4 py-3 rounded outline-none focus:border-[#F26522] transition-colors text-[14px] resize-none" placeholder="Tell us about your goals..."></textarea>
+                </div>
+
+                <button type="submit" className="mt-4 bg-gray-900 hover:bg-[#F26522] text-white py-4 px-6 rounded font-medium text-[14px] transition-colors duration-300 w-full sm:w-auto self-start">
+                  Submit Request
+                </button>
+              </form>
+            </div>
+
+          </div>
+        </section>
+      )}
+
       {/* FOOTER SECTION */}
       {/* Same as homepage, but contains a static logo in place of the scroll waypoint spacer */}
       <footer className="bg-[#111] text-white pt-20 sm:pt-28 px-5 sm:px-8 lg:px-12 w-full overflow-hidden flex flex-col relative" data-logo-dark>
@@ -340,11 +495,11 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
           <div className="flex flex-col">
             <h4 className="text-[12px] font-semibold uppercase tracking-wider mb-6">Company</h4>
             <ul className="flex flex-col gap-4 text-[14px] text-gray-400">
-              <li><a href="#" className="hover:text-white transition-colors">About the Agency</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Success Stories</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Our Approach</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Industry Insights</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Careers</a></li>
+              <li><a href="/company/about" className="hover:text-white transition-colors">About the Agency</a></li>
+              <li><a href="/company/success-stories" className="hover:text-white transition-colors">Success Stories</a></li>
+              <li><a href="/company/approach" className="hover:text-white transition-colors">Our Approach</a></li>
+              <li><a href="/company/insights" className="hover:text-white transition-colors">Industry Insights</a></li>
+              <li><a href="/company/careers" className="hover:text-white transition-colors">Careers</a></li>
             </ul>
           </div>
 
@@ -355,7 +510,7 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
               <li><a href="#" className="hover:text-white transition-colors">LinkedIn</a></li>
               <li><a href="#" className="hover:text-white transition-colors">Twitter (X)</a></li>
               <li><a href="#" className="hover:text-white transition-colors">Instagram</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Contact Us</a></li>
+              <li><a href="/contact" className="hover:text-white transition-colors">Contact Us</a></li>
             </ul>
           </div>
 
