@@ -4,7 +4,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { MotionPathPlugin } from 'gsap/MotionPathPlugin';
 import { Clock, ArrowRight, ShieldAlert, TrendingUp, Search, Network, PenTool, BarChart, Megaphone, Target, Briefcase } from 'lucide-react';
-import HorizontalScrollText from './HorizontalScrollText';
+import SplitTextReveal from './SplitTextReveal';
 import ParallaxMedia from './ParallaxMedia';
 import ServicesBento from './ServicesBento';
 import InsightsSlider from './InsightsSlider';
@@ -545,7 +545,7 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
       
       {/* SECTION: SCROLL REVEAL INTRO */}
       <section className="w-full relative" data-logo-dark>
-        <HorizontalScrollText text={config.introScrollText} />
+        <SplitTextReveal text={config.introScrollText} />
       </section>
 
       {/* SECTION: INTRO CONTENT */}
