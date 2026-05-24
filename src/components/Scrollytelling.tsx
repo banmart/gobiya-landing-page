@@ -60,9 +60,6 @@ interface ScrollytellingProps {
   framePrefix?: string;
   frameBaseUrl?: string;
   zoomFactor?: number;
-  title?: string;
-  subtitle?: string;
-  description?: string;
 }
 
 const Scrollytelling: React.FC<ScrollytellingProps> = ({
@@ -70,9 +67,6 @@ const Scrollytelling: React.FC<ScrollytellingProps> = ({
   framePrefix = 'ezgif-frame-',
   frameBaseUrl = '/frames/',
   zoomFactor = 1.35,
-  title = 'VELOCITY',
-  subtitle = 'Lightning-Fast SEO Rankings',
-  description = "Experience the exhilarating rush of immediate traffic. Just like a high-speed Indy car, we accelerate your brand's digital presence to the finish line—leaving your competitors in the rearview mirror."
 }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -239,13 +233,13 @@ const Scrollytelling: React.FC<ScrollytellingProps> = ({
         {/* Section 1: Introduction (Hero - Bottom Aligned) */}
         <section className="h-screen flex items-end justify-start px-12 md:px-24 pb-24 md:pb-32">
           <div className="text-left w-full">
-            <h1 className="text-5xl md:text-[8rem] font-black text-white uppercase tracking-tighter mix-blend-normal leading-[0.85] mb-6 drop-shadow-[0_10px_50px_rgba(0,0,0,0.8)]">
-              {title}
+            <h1 className="text-7xl md:text-[11rem] font-black text-white uppercase tracking-tighter mix-blend-normal leading-[0.85] mb-6 drop-shadow-[0_10px_50px_rgba(0,0,0,0.8)]">
+              VELOCITY
             </h1>
             <p className="text-xl md:text-3xl text-white/90 font-light mix-blend-normal tracking-[0.1em] max-w-2xl uppercase border-l-4 border-white pl-8">
-              {subtitle} <br />
+              Lightning-Fast SEO Rankings <br />
               <span className="text-white/60 text-sm tracking-widest block mt-4 leading-relaxed normal-case">
-                {description}
+                Experience the exhilarating rush of immediate traffic. Just like a high-speed Indy car, we accelerate your brand's digital presence to the finish line—leaving your competitors in the rearview mirror.
               </span>
             </p>
           </div>

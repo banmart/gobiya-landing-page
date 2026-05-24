@@ -10,7 +10,6 @@ import CustomCursor from './CustomCursor';
 
 interface ServiceSubpageProps {
   path: string;
-  children?: React.ReactNode;
 }
 
 interface PageConfig {
@@ -21,7 +20,7 @@ interface PageConfig {
   ctaText: string;
 }
 
-const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path, children }) => {
+const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
   const [time, setTime] = useState('');
 
   // Clock updating
@@ -371,13 +370,6 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path, children }) => {
           </div>
         </div>
       </section>
-
-      {/* DYNAMIC SERVICE CONTENT */}
-      {children && (
-        <div className="relative w-full bg-white z-30">
-          {children}
-        </div>
-      )}
 
       {/* CONTACT SECTION (Only rendered on /contact route) */}
       {path === '/contact' && (

@@ -1,12 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import AxionLanding from './components/AxionLanding';
 import ServiceSubpage from './components/ServiceSubpage';
-import SeoContent from './components/services/SeoContent';
-import LeadGenContent from './components/services/LeadGenContent';
-import GeoOptimizationContent from './components/services/GeoOptimizationContent';
-import WebDesignContent from './components/services/WebDesignContent';
-import AdvertisingContent from './components/services/AdvertisingContent';
-import PenaltyRecoveryContent from './components/services/PenaltyRecoveryContent';
 
 interface AppProps {
   url?: string;
@@ -65,14 +59,7 @@ function App({ url }: AppProps) {
       {normalizedPath === '/' ? (
         <AxionLanding />
       ) : (
-        <ServiceSubpage path={normalizedPath}>
-          {normalizedPath === '/services/seo' && <SeoContent />}
-          {normalizedPath === '/services/lead-generation' && <LeadGenContent />}
-          {normalizedPath === '/services/geo-optimization' && <GeoOptimizationContent />}
-          {normalizedPath === '/services/web-design' && <WebDesignContent />}
-          {normalizedPath === '/services/advertising' && <AdvertisingContent />}
-          {normalizedPath === '/google-penalty-recovery' && <PenaltyRecoveryContent />}
-        </ServiceSubpage>
+        <ServiceSubpage path={normalizedPath} />
       )}
     </>
   );
