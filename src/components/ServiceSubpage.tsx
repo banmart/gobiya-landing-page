@@ -40,6 +40,73 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
     return () => clearInterval(interval);
   }, []);
 
+  // Update client-side browser tab title and DOM meta tags on route changes
+  useEffect(() => {
+    const getSeoMetadata = (p: string) => {
+      const norm = p.toLowerCase().replace(/\/$/, '') || '/';
+      switch (norm) {
+        case '/services/seo':
+          return {
+            title: 'Search Engine Optimization (SEO) & Algorithmic Dominance | Gobiya',
+            description: 'Reclaim your search engine positions. We deliver entity-level SEO, topical authority architectures, and advanced technical search audits built for search dominance.'
+          };
+        case '/services/lead-generation':
+          return {
+            title: 'Predictable B2B Sales Pipeline & Lead Generation Systems | Gobiya',
+            description: 'Scale your contract value and outbound pipeline. We design and launch automated cold outreach and sales acquisition protocols for mid-market and enterprise brands.'
+          };
+        case '/services/geo-optimization':
+          return {
+            title: 'Generative Engine Optimization (GEO) & AI Search Visibility | Gobiya',
+            description: 'Position your brand to be cited and recommended natively by modern AI models including ChatGPT, Claude, Gemini, and Google AI Overviews.'
+          };
+        case '/services/web-design':
+          return {
+            title: 'High-Performance Custom Web Design & React Engineering | Gobiya',
+            description: 'Speed-optimized, custom-engineered React platforms built to convert. We replace slow templates with lightning-fast landing pages and applications.'
+          };
+        case '/services/advertising':
+          return {
+            title: 'High-Yield Paid Search (PPC) & Paid Social Ad Pipelines | Gobiya',
+            description: 'Maximize your return on ad spend (ROAS) and lower acquisition costs. Data-driven Google, Microsoft, and Meta Ads management tailored for revenue scaling.'
+          };
+        case '/google-penalty-recovery':
+          return {
+            title: 'Forensic Update & Google Penalty Recovery Protocol | Gobiya',
+            description: 'Recover lost search traffic. We diagnose and reverse manual action penalties and organic traffic declines caused by Google helpful content & core updates.'
+          };
+        default:
+          return {
+            title: 'Gobiya | AI SEO, Traffic Recovery & Algorithmic Search Dominance',
+            description: 'We engineer AI-driven SEO and sales pipelines to recover lost organic traffic, scale predictable revenue, and secure long-term algorithmic dominance for high-stakes brands.'
+          };
+      }
+    };
+
+    const seo = getSeoMetadata(path);
+    document.title = seo.title;
+
+    // Update standard description tag
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', seo.description);
+    }
+
+    // Update Open Graph tags
+    const ogTitle = document.querySelector('meta[property="og:title"]');
+    if (ogTitle) ogTitle.setAttribute('content', seo.title);
+    
+    const ogDescription = document.querySelector('meta[property="og:description"]');
+    if (ogDescription) ogDescription.setAttribute('content', seo.description);
+
+    // Update Twitter tags
+    const twitterTitle = document.querySelector('meta[name="twitter:title"]');
+    if (twitterTitle) twitterTitle.setAttribute('content', seo.title);
+
+    const twitterDescription = document.querySelector('meta[name="twitter:description"]');
+    if (twitterDescription) twitterDescription.setAttribute('content', seo.description);
+  }, [path]);
+
   // Map route path to specific page copy and outcome messages
   const getPageConfig = (currentPath: string): PageConfig => {
     const normalPath = currentPath.toLowerCase().replace(/\/$/, ''); // normalize trailing slash

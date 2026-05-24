@@ -1,15 +1,52 @@
-import { IncomingMessage, ServerResponse } from 'http';
+import { IncomingMessage } from 'http';
 import fs from 'fs';
 import path from 'path';
 
 // Define render function type from server bundle
 type RenderFn = (url: string) => { html: string };
 
+interface SEOMetadata {
+  title: string;
+  description: string;
+}
+
+// Outcome-focused metadata lookup map for crawlers and search bots
+const metadataMap: Record<string, SEOMetadata> = {
+  '/': {
+    title: 'Gobiya | AI SEO, Traffic Recovery & Algorithmic Search Dominance',
+    description: 'We engineer AI-driven SEO and sales pipelines to recover lost organic traffic, scale predictable revenue, and secure long-term algorithmic dominance for high-stakes brands.'
+  },
+  '/services/seo': {
+    title: 'Search Engine Optimization (SEO) & Algorithmic Dominance | Gobiya',
+    description: 'Reclaim your search engine positions. We deliver entity-level SEO, topical authority architectures, and advanced technical search audits built for search dominance.'
+  },
+  '/services/lead-generation': {
+    title: 'Predictable B2B Sales Pipeline & Lead Generation Systems | Gobiya',
+    description: 'Scale your contract value and outbound pipeline. We design and launch automated cold outreach and sales acquisition protocols for mid-market and enterprise brands.'
+  },
+  '/services/geo-optimization': {
+    title: 'Generative Engine Optimization (GEO) & AI Search Visibility | Gobiya',
+    description: 'Position your brand to be cited and recommended natively by modern AI models including ChatGPT, Claude, Gemini, and Google AI Overviews.'
+  },
+  '/services/web-design': {
+    title: 'High-Performance Custom Web Design & React Engineering | Gobiya',
+    description: 'Speed-optimized, custom-engineered React platforms built to convert. We replace slow templates with lightning-fast landing pages and applications.'
+  },
+  '/services/advertising': {
+    title: 'High-Yield Paid Search (PPC) & Paid Social Ad Pipelines | Gobiya',
+    description: 'Maximize your return on ad spend (ROAS) and lower acquisition costs. Data-driven Google, Microsoft, and Meta Ads management tailored for revenue scaling.'
+  },
+  '/google-penalty-recovery': {
+    title: 'Forensic Update & Google Penalty Recovery Protocol | Gobiya',
+    description: 'Recover lost search traffic. We diagnose and reverse manual action penalties and organic traffic declines caused by Google helpful content & core updates.'
+  }
+};
+
 export default async function handler(req: IncomingMessage, res: any) {
   try {
     const url = req.url || '/';
     const parsedUrl = new URL(url, 'https://www.gobiya.com');
-    const pathname = parsedUrl.pathname;
+    const pathname = parsedUrl.pathname.toLowerCase().replace(/\/$/, '') || '/';
 
     // Load server-side rendering logic
     // Compiled by Vite to dist/server/entry-server.js during deployment build
@@ -34,15 +71,42 @@ export default async function handler(req: IncomingMessage, res: any) {
     // Run React SSR rendering
     const { html } = render(pathname);
 
-    // Replace placeholders with dynamic SSR output and dynamic canonical url
+    // Replace placeholders with dynamic SSR output
     template = template.replace('<!--ssr-outlet-->', html);
 
     // Dynamic canonical url builder
     // Ensures bots index the URL path they crawled (e.g. /services/seo)
     const canonicalUrl = `https://www.gobiya.com${pathname === '/' ? '' : pathname}`;
     const canonicalTag = `<link rel="canonical" href="${canonicalUrl}" />`;
-    
     template = template.replace('<!--canonical-outlet-->', canonicalTag);
+
+    // Dynamically inject outcome-focused meta tags for the requested path
+    const seo = metadataMap[pathname] || metadataMap['/'];
+
+    template = template.replace(
+      '<title>Gobiya | AI SEO, Traffic Recovery & Algorithmic Search Dominance</title>',
+      `<title>${seo.title}</title>`
+    );
+    template = template.replace(
+      '<meta name="description" content="We engineer AI-driven SEO and sales pipelines to recover lost organic traffic, scale predictable revenue, and secure long-term algorithmic dominance for high-stakes brands." />',
+      `<meta name="description" content="${seo.description}" />`
+    );
+    template = template.replace(
+      '<meta property="og:title" content="Gobiya | AI SEO & Traffic Recovery Agency" />',
+      `<meta property="og:title" content="${seo.title}" />`
+    );
+    template = template.replace(
+      '<meta property="og:description" content="Recover lost organic search traffic, automate your B2B sales pipeline, and command search engine visibility with our outcome-driven AI engineering." />',
+      `<meta property="og:description" content="${seo.description}" />`
+    );
+    template = template.replace(
+      '<meta name="twitter:title" content="Gobiya | AI SEO & Traffic Recovery" />',
+      `<meta name="twitter:title" content="${seo.title}" />`
+    );
+    template = template.replace(
+      '<meta name="twitter:description" content="Recover organic search traffic, scale revenue, and secure algorithmic dominance." />',
+      `<meta name="twitter:description" content="${seo.description}" />`
+    );
 
     // Set response headers and return server-rendered page
     res.setHeader('Content-Type', 'text/html; charset=utf-8');
