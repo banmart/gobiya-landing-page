@@ -61,12 +61,11 @@ const SplitTextReveal: React.FC<SplitTextRevealProps> = ({ text = "", className 
   }, [text]);
 
   return (
-    <div ref={containerRef} className={`w-full py-24 sm:py-32 flex items-center justify-center px-5 sm:px-8 lg:px-12 bg-transparent ${className}`}>
+    <div ref={containerRef} className={`w-full py-24 sm:py-32 flex items-center justify-center px-5 sm:px-8 lg:px-12 bg-[#0e100f] ${className}`}>
       <div className="max-w-[80vw]">
         <h1 
           ref={textRef} 
-          className="split text-center font-display font-black text-[clamp(2rem,5vw,5rem)] tracking-[0.05rem] leading-[1.1] opacity-0 text-[#0e100f]"
-          style={{ fontFamily: 'Mori, sans-serif' }}
+          className="split text-center font-display font-medium text-[clamp(2rem,5vw,5rem)] tracking-[-0.02em] leading-[1.1] opacity-0 text-white"
         >
           {text}
         </h1>
