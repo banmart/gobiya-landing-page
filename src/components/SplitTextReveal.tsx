@@ -57,7 +57,12 @@ const SplitTextReveal: React.FC<SplitTextRevealProps> = ({ text = "", className 
 
     }, containerRef);
 
-    return () => ctx.revert();
+    return () => {
+      ctx.revert();
+      if (textRef.current) {
+        textRef.current.innerHTML = text;
+      }
+    };
   }, [text]);
 
   return (
