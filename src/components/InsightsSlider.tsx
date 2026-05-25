@@ -37,7 +37,7 @@ const InsightsSlider: React.FC<InsightsSliderProps> = ({ filterCategory }) => {
         const { data, error } = await supabase
           .from('insights')
           .select('*')
-          .order('id', { ascending: true });
+          .order('id', { ascending: false });
 
         if (error) {
           console.error("Error fetching insights:", error);
