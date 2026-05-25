@@ -96,6 +96,28 @@ export default async function handler(req: IncomingMessage, res: any) {
     const parsedUrl = new URL(url, 'https://www.gobiya.com');
     const pathname = parsedUrl.pathname.toLowerCase().replace(/\/$/, '') || '/';
 
+    // Server-side legacy redirections (301 Permanent Redirect)
+    const legacyRedirects: Record<string, string> = {
+      '/services/seo': '/services#seo',
+      '/services/lead-generation': '/services#lead-generation',
+      '/services/geo-optimization': '/services#geo-optimization',
+      '/services/web-design': '/services#web-design',
+      '/services/advertising': '/services#advertising',
+      '/google-penalty-recovery': '/services#penalty-recovery',
+    };
+
+    if (pathname.startsWith('/locations')) {
+      res.writeHead(301, { Location: '/services' });
+      res.end();
+      return;
+    }
+
+    if (legacyRedirects[pathname]) {
+      res.writeHead(301, { Location: legacyRedirects[pathname] });
+      res.end();
+      return;
+    }
+
     // Load server-side rendering logic
     // Compiled by Vite to dist/server/entry-server.js during deployment build
     const serverModulePath = path.join(process.cwd(), 'dist', 'server', 'entry-server.js');

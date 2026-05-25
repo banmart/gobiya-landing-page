@@ -85,6 +85,11 @@ function App({ url }: AppProps) {
     };
     
     const normalized = currentPath.toLowerCase().replace(/\/$/, '') || '/';
+    if (normalized.startsWith('/locations')) {
+      window.history.replaceState({}, '', '/services');
+      setCurrentPath('/services');
+      return;
+    }
     const target = legacyRedirects[normalized];
     if (target) {
       window.history.replaceState({}, '', target);
