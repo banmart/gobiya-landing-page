@@ -408,11 +408,7 @@ const ARTICLES: Record<string, ArticleData> = {
 
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
           Most teams don't realize the gap exists until they look at the numbers and find that 1% of their traffic is
-          producing 12% of their pipeline, and ask why. This is the problem an{' '}
-          <a href="/insights/automated-b2b-sales-pipeline-seo" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">
-            automated lead generation SEO
-          </a>{' '}
-          approach solves.
+          producing 12% of their pipeline, and ask why. This is the problem an automated lead generation SEO approach solves.
         </p>
 
         {/* ── INLINE CTA (lead gen service) ── */}
@@ -688,11 +684,7 @@ const ARTICLES: Record<string, ArticleData> = {
           the form-fill only as a confirmation step.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Two decisions matter most. First: whether your current lead gen program produces leads pre-qualified by{' '}
-          <a href="/insights/automated-b2b-sales-pipeline-seo" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">
-            AI citation
-          </a>
-          , or leads pre-qualified only by being willing to trade an email address for a download. Second: whether the team
+          Two decisions matter most. First: whether your current lead gen program produces leads pre-qualified by AI citation, or leads pre-qualified only by being willing to trade an email address for a download. Second: whether the team
           tracks AI citation share, conversion rate by AI source, and intent-routed pipeline — or only legacy metrics that
           no longer correlate with revenue.
         </p>
@@ -1060,7 +1052,7 @@ const ARTICLES: Record<string, ArticleData> = {
           Why point-solution AI tools alone don't produce the pipeline lift the demos promise
         </h3>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Buying an AI SDR handles one workflow: prospect research, message generation, sequence execution. The tool works as advertised in isolation. But the AI SDR is only as good as the signals fed into it and the CRM hygiene it writes back to. If the signal layer is broken — third-party intent data resold to every competitor, no <a href="/insights/outbound-seo-prospecting" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">first-party SEO signal routing</a>, no AI-source referral capture — the AI SDR is just executing high-volume sequences with better grammar, and the reply rate looks roughly identical to a human SDR running the same broken inputs.
+          Buying an AI SDR handles one workflow: prospect research, message generation, sequence execution. The tool works as advertised in isolation. But the AI SDR is only as good as the signals fed into it and the CRM hygiene it writes back to. If the signal layer is broken — third-party intent data resold to every competitor, no <a href="/insights/automated-b2b-sales-pipeline-seo" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">first-party SEO signal routing</a>, no AI-source referral capture — the AI SDR is just executing high-volume sequences with better grammar, and the reply rate looks roughly identical to a human SDR running the same broken inputs.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
           Point-solution AI is not sufficient for actual pipeline lift. Orchestration across the full motion is the layer that converts AI capability into revenue outcome. Without it, the team is paying for AI productivity on tasks the productivity gain doesn't compound through. Programs that show strong tool-level metrics while pipeline-to-close ratios stay flat are running automation theater, not automation.
@@ -1130,7 +1122,7 @@ const ARTICLES: Record<string, ArticleData> = {
           The signals that drive automation have to come from somewhere. The teams getting the strongest results in 2026 use SEO and content infrastructure as the primary signal generator: first-party page visits, AI-citation referrals, comparison-page engagement, downloaded gated assets, demo-request form-fills. Those signals are exclusive to the vendor, arrive in real time, and carry meaningful intent context the orchestration layer can act on without needing to buy third-party data that's been resold across the category.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
-          This is the operational bridge between <a href="/insights/automated-lead-generation-seo">automated lead generation SEO</a>, <a href="/insights/outbound-seo-prospecting">outbound SEO prospecting</a>, and B2B sales pipeline automation. Each one of those motions feeds the other. The SEO content captures direct conversions where it can, generates signals the outbound layer routes into sequences for visitors who didn't convert, and produces the data the automation layer needs to qualify and prioritize accounts at scale.
+          This is the operational bridge between automated lead generation SEO, <a href="/insights/outbound-seo-prospecting" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">outbound SEO prospecting</a>, and B2B sales pipeline automation. Each one of those motions feeds the other. The SEO content captures direct conversions where it can, generates signals the outbound layer routes into sequences for visitors who didn't convert, and produces the data the automation layer needs to qualify and prioritize accounts at scale.
         </p>
 
         {/* ── SECTION 6 ── */}
