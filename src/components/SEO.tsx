@@ -65,6 +65,10 @@ const metadataMap: Record<string, SEOMetadata> = {
   '/insights/automated-lead-generation-seo': {
     title: 'Automated Lead Generation SEO: How AI Pre-Qualifies Your Pipeline in 2026 | Gobiya',
     description: 'How AI-cited content produces pre-qualified pipeline at conversion rates traditional lead gen cannot match — and what the 2026 shift means for B2B teams.'
+  },
+  '/insights/outbound-seo-prospecting': {
+    title: 'Outbound SEO Prospecting: Timing-Anchored Outreach Powered by Intent Signals in 2026 | Gobiya',
+    description: 'How SEO-derived intent signals turn outbound from a volume game into a timing game — and what the 2026 data says about cold vs signal-anchored prospecting.'
   }
 };
 

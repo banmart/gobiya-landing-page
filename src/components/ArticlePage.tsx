@@ -721,6 +721,276 @@ const ARTICLES: Record<string, ArticleData> = {
       </>
     ),
   },
+
+  'outbound-seo-prospecting': {
+    slug: 'outbound-seo-prospecting',
+    title: 'Outbound SEO Prospecting: Timing-Anchored Outreach Powered by Intent Signals in 2026',
+    category: 'Strategy',
+    readTime: '12 min read',
+    date: 'May 25, 2026',
+    image: '/images/article-outbound-seo-prospecting.webp',
+    heroAlt: 'Abstract network visualization representing signal-anchored outbound SEO prospecting',
+    metaDescription: 'How SEO-derived intent signals turn outbound from a volume game into a timing game — and what the 2026 data says about cold vs signal-anchored prospecting.',
+    content: (
+      <>
+        {/* ── LEAD STATS ── */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 my-10 sm:my-14">
+          {[
+            { stat: '3.43%', label: 'Industry-average cold email reply rate across billions of sends', source: 'Instantly, 2026' },
+            { stat: '15–25%', label: 'Reply rate for signal-anchored outreach', source: 'Sopro / Salesmotion, 2026' },
+            { stat: '70–80%', label: 'Share of the B2B buying journey completed before rep contact', source: 'Salesmotion, 2026' },
+          ].map(({ stat, label, source }) => (
+            <div key={stat} className="border border-[#F26522]/30 bg-[#F26522]/5 p-6">
+              <p className="text-4xl font-bold text-[#F26522] mb-2 font-display">{stat}</p>
+              <p className="text-[14px] text-gray-900 leading-snug mb-1">{label}</p>
+              <p className="text-[11px] uppercase tracking-wider text-gray-500">{source}</p>
+            </div>
+          ))}
+        </div>
+
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          Outbound SEO prospecting can mean the difference between a sequence that lands in an inbox at the exact moment an account is researching the category and a sequence that fires into the void of someone who decided eighteen months ago that they don't need what's being sold. The vast majority of cold outbound now goes to accounts that aren't in-market. The Ehrenberg-Bass 95:5 rule is the most-cited frame for the problem: at any given moment, only about 5 percent of target buyers are actively in a buying cycle. Traditional outbound sprays the other 95 percent and hopes to catch someone mid-decision. SEO-derived signals tell you which 5 percent are actually in-market this week, which page they read, and what intent the page is built around.
+        </p>
+
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          This is the problem outbound SEO prospecting solves. The strongest B2B operators have stopped treating outbound and SEO as separate disciplines and started routing the intent data their content generates directly into the SDR queue. Most teams don't realize how much intent data their site is already producing — most of it gets discarded in analytics dashboards no one in the sales org has ever opened.
+        </p>
+
+        {/* ── INLINE CTA (interlinking to lead-generation) ── */}
+        <div className="bg-gray-900 text-white p-6 sm:p-8 my-10 sm:my-14 flex flex-col sm:flex-row items-start sm:items-center gap-6">
+          <div className="flex-1">
+            <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-2">Gobiya Service</p>
+            <p className="text-[17px] sm:text-[19px] font-medium leading-snug">
+              Route your SEO intent signals directly into your sales outbound queue.
+            </p>
+          </div>
+          <a
+            href="/services/lead-generation"
+            className="group flex items-center bg-[#F26522] hover:bg-[#e05a1a] text-white pl-5 pr-2 py-2 transition-colors duration-300 whitespace-nowrap shrink-0"
+          >
+            <span className="text-[13px] font-medium mr-3">Build Your Outreach System</span>
+            <div className="w-6 h-6 bg-white flex items-center justify-center">
+              <ArrowRight className="w-3.5 h-3.5 text-[#F26522] transition-transform duration-300 group-hover:-rotate-45" />
+            </div>
+          </a>
+        </div>
+
+        {/* ── SECTION 1 ── */}
+        <h2 className="text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          What outbound SEO prospecting actually does
+        </h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          Traditional outbound starts with a target account list and a sequence template. The SDR works the list top to bottom, the sequence fires, replies come back at industry-average rates, and the team chalks up the response to the message, the data, or the timing. None of those are usually the actual problem. The actual problem is that the list was assembled from firmographic fit — company size, industry, role — with no information about whether the account was in-market in the first place. Firmographic fit tells you who the buyer <em>could</em> be. It tells you nothing about whether the buyer is <em>currently looking</em>.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          Outbound SEO prospecting adds a behavioral layer on top of firmographic targeting. The SEO and content infrastructure that exists to attract organic traffic also generates a stream of intent signals — which accounts visited which pages, what referrer brought them, how long they engaged, whether they came from an AI citation or a Google result, what comparison query likely surfaced the page. Those signals are matched to account records via reverse-IP enrichment and routed to the SDR queue with context attached. This signal layer is what separates outbound SEO prospecting from cold outbound. It's not about sending more sequences. It's about sending fewer sequences to better-timed accounts with messaging anchored to a known research event.
+        </p>
+
+        <h3 className="text-[18px] sm:text-[20px] font-medium text-gray-900 mt-10 mb-4">
+          Why firmographic targeting alone produces the wrong math
+        </h3>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          Firmographic targeting handles the first pass: who could buy. But "could buy" and "is buying this quarter" are different states, and the gap between them is where outbound goes to die. Backlinko's analysis of 12 million outreach emails found only 8.5 percent receive any reply at all — including the "not interested" and "unsubscribe me" responses. The remaining 91.5 percent vanish into inboxes that were never going to engage in the first place.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          Volume-only outbound is not sufficient for a pipeline that compounds. Timing-anchored outreach is the layer that makes a sequence land. Without it, you have a high-effort prospecting motion that produces lottery-style outcomes. Programs reporting steady sequence volume while reply rates decline are sending more emails to the same not-in-market accounts.
+        </p>
+
+        {/* ── SECTION 2 ── */}
+        <h2 className="text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          How the signal-to-outreach framework reshapes outbound economics
+        </h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          Signal-anchored outbound operates under a fundamentally different framework than cold outbound. Instead of sending sequences and waiting for replies, the team waits for a signal that indicates an account has entered the 5 percent in-market window, then reaches out within minutes or hours of the signal firing. Sopro's 2026 data places cold email reply rates at 1 to 5 percent and signal-anchored outreach at 15 to 25 percent — a 3x to 25x improvement depending on signal quality and outreach speed. Instantly's 2026 Benchmark Report places the platform-wide cold reply average at 3.43 percent and notes that elite teams running intelligence-led outbound consistently hit double-digit replies on the same data.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          This framework exists for a reason. A buyer who has just read a comparison page on the vendor's site is not the same prospect as a buyer who fits the ICP but has shown no behavior. The intent gap between those two prospects is enormous, and it shows up in every downstream metric — open rate, reply rate, meeting-set rate, opportunity creation, deal velocity. The vendor that wires SEO intent directly into the SDR motion is reaching out at the moment the account is most receptive. The vendor that doesn't is paying full SDR cost for outreach to accounts the AI assistants have already steered toward competitors.
+        </p>
+
+        {/* ── COST SECTION ── */}
+        <h2 className="text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          The cost of pure cold outbound in 2026
+        </h2>
+        <div className="bg-[#f7f7f7] border border-gray-200 p-6 sm:p-10 my-8">
+          <h3 className="text-[15px] uppercase tracking-wider font-semibold text-gray-500 mb-6">SDR Economics & Efficiency Benchmarks — 2026</h3>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            {[
+              { label: 'Fully-loaded SDR (US average)', value: '$50k–$80k' },
+              { label: 'Cold outreach cost per booked meeting', value: '$300–$500' },
+              { label: 'Signal-anchored reply rate premium', value: '15%–25%' },
+            ].map(({ label, value }) => (
+              <div key={label} className="flex flex-col">
+                <span className="text-3xl font-bold text-gray-900 mb-1">{value}</span>
+                <span className="text-[13px] text-gray-600 leading-snug">{label}</span>
+              </div>
+            ))}
+          </div>
+          <p className="text-[12px] text-gray-500 mt-6 leading-relaxed border-t border-gray-200 pt-4">
+            <strong>Note:</strong> SDR economics and reply rate benchmarks vary by ACV, segment maturity, and message quality. The figures above reflect U.S. B2B SaaS averages from 2026 industry analyses. Audit your own reply rate by signal source before reallocating headcount.
+          </p>
+        </div>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          A fully-loaded SDR in the U.S. runs $50,000 to $80,000 per year and produces 30 to 50 qualified leads per month at the upper end of well-run programs. At a 3.43 percent reply rate, an SDR sending 100 cold emails per day across a 22-day workweek month is generating roughly 75 replies — most of which are "not interested," with maybe 20 substantive conversations and a smaller number of booked meetings. The cost per booked meeting in pure cold outbound regularly clears $300 to $500 once SDR salary, tooling, and data subscriptions are layered in. Enterprise segments routinely run higher.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          Frame it against signal-anchored alternatives. The same SDR working a list of 200 SEO-signal-qualified accounts per month — accounts that visited a competitor-comparison page, downloaded a category report, or arrived from an AI citation — operates in a different reply rate regime entirely. At 15 to 25 percent reply rates, the same SDR generates 30 to 50 substantive conversations from a list one-tenth the size. The visible activity volume is lower. The cost per meeting drops materially, and the meetings that do get booked convert to pipeline at a higher rate because the prospect was already in-market when the sequence fired. Volume-first outbound looks productive on the dashboard. Signal-first outbound produces revenue on the close report.
+        </p>
+
+        {/* ── PULL QUOTE ── */}
+        <blockquote className="border-l-4 border-[#F26522] pl-6 sm:pl-8 my-10 sm:my-14">
+          <p className="text-[18px] sm:text-[22px] font-medium leading-[1.5] text-gray-900 italic">
+            "Stop treating outbound and SEO as separate silos. Route the intent data your content generates directly to your SDR queues to turn cold prospecting into a high-converting timing game."
+          </p>
+        </blockquote>
+
+        {/* ── SECTION 3 ── */}
+        <h2 className="text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          How outbound SEO prospecting works from page visit to booked meeting
+        </h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          When an account visits a page on the vendor's site, the visit is captured via analytics and matched to a firmographic profile through reverse-IP enrichment or a similar identity-resolution layer. The match produces an account-level record with context attached: which page was visited, how long the visitor spent on it, what referrer brought them (Google, ChatGPT, Claude, Perplexity, direct, paid), what other pages on the site the account has touched historically, and what the dominant intent of the visited page suggests about where the account sits in the buying cycle. That enriched record is routed to the SDR queue in near real time — minutes to hours, not days — and the SDR's first touch becomes a response to a known research event rather than a cold opener.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          The sequence itself looks different too. A signal-anchored opener references the comparison set the page was built around, the question the page was structured to answer, or the category problem the AI citation that surfaced the page was tied to. The SDR isn't guessing what the account cares about — the page visit has already told them. Multi-channel sequences in 2026 average 40 percent higher engagement than single-channel sends, and that lift compounds further when each channel touch is anchored to the same intent signal rather than reading like three different reps reaching out about three different things.
+        </p>
+
+        <h3 className="text-[18px] sm:text-[20px] font-medium text-gray-900 mt-10 mb-4">
+          How automated lead generation SEO connects to the outbound layer
+        </h3>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          The same SEO infrastructure that generates inbound leads also feeds outbound prospecting. When an AI-cited page or a high-intent comparison page is visited by an account that doesn't convert on the form, the visit is still valuable — it becomes an outbound signal rather than an inbound lead. This is the operational bridge between{' '}
+          <a href="/insights/automated-lead-generation-seo" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">
+            automated lead generation SEO
+          </a>{' '}
+          and outbound SEO prospecting: the page captures every visitor it can convert directly, and routes every visitor it can't convert to outbound with the context already attached. Nothing is wasted. The 99 percent of visitors who don't fill out a form become the highest-quality SDR list the team has access to, because the visit itself was the qualification.
+        </p>
+
+        {/* ── DATA TABLE ── */}
+        <h2 className="text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          The reply rate problem by the numbers
+        </h2>
+        <div className="overflow-x-auto my-8">
+          <table className="w-full border-collapse text-[14px] sm:text-[15px]">
+            <thead>
+              <tr className="bg-gray-900 text-white">
+                <th className="text-left px-4 py-3 font-semibold text-[12px] uppercase tracking-wider">Prospecting Method</th>
+                <th className="text-left px-4 py-3 font-semibold text-[12px] uppercase tracking-wider">Reply Rate</th>
+                <th className="text-left px-4 py-3 font-semibold text-[12px] uppercase tracking-wider">Timing & Context</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-gray-200">
+              {[
+                ['Pure Cold Outreach', '1.0% - 5.0%', 'Out-of-market spraying, generic lists'],
+                ['Platform-wide Cold Email Average', '3.43%', 'Instantly 2026 data, high saturation'],
+                ['Signal-Based Target Outreach', '15.0% - 25.0%', 'Reaching out within hours of intent signals'],
+                ['AI-Referred Traffic Conversion', '14.2%', 'Highest buyer readiness, pre-qualified by LLMs'],
+              ].map(([method, rate, timing]) => (
+                <tr key={method as string} className="even:bg-gray-50">
+                  <td className="px-4 py-3 text-gray-800 leading-snug">{method}</td>
+                  <td className="px-4 py-3 font-bold text-[#F26522] whitespace-nowrap">{rate}</td>
+                  <td className="px-4 py-3 text-gray-500 whitespace-nowrap text-[13px]">{timing}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        {/* ── SECTION 4 ── */}
+        <h2 className="text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          What separates real outbound SEO prospecting from a "we have intent data" claim
+        </h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          Not every vendor or agency selling intent-based outbound operates at the same standard. The category has filled rapidly with third-party intent data resellers, generic firmographic filtering rebranded as "intent," and dashboards that surface signals nobody routes into outreach.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-4">
+          Real outbound SEO prospecting is built on first-party intent. Ask your providers:
+        </p>
+        <ul className="space-y-3 mb-8 pl-0">
+          {[
+            'Where do the signals originate? (First-party visits to comparison pages are exclusive and run in real time; third-party intent is resold to competitors and arrives too late.)',
+            'What is the signal-to-outreach latency? (Minutes/hours is the standard; days is too late.)',
+            'Are reply and meeting rates segmented by signal source? (Aggregated data hides low-quality sources.)',
+            'How is the SDR sequence customized to the specific page visited? (Generic openers defeat the purpose.)',
+            'Is there visibility into AI-source referrers? (ChatGPT, Claude, Gemini, and Perplexity pass identifiable headers.)',
+          ].map((item) => (
+            <li key={item} className="flex items-start gap-3 text-[16px] sm:text-[17px] leading-[1.6] text-gray-800">
+              <span className="mt-1.5 w-2 h-2 rounded-full bg-[#F26522] shrink-0" />
+              {item}
+            </li>
+          ))}
+        </ul>
+
+        {/* ── B2B TEAM CARDS ── */}
+        <h2 className="text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          Which B2B teams get the clearest return
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
+          {[
+            {
+              title: 'Sales-Led SaaS Teams',
+              body: 'Teams with established SEO traffic benefit fastest by routing existing anonymous site visits into targeted outreach campaigns without needing new content retainers.',
+              link: '/services/lead-generation',
+              linkLabel: 'Explore Outreach Systems',
+            },
+            {
+              title: 'ABM-Focused Enterprise',
+              body: 'Enterprise teams combine static named-account lists with real-time SEO page visit alerts to target multi-million dollar deals at the precise moment they begin researching.',
+              link: '/services/seo',
+              linkLabel: 'Explore ABM SEO',
+            },
+            {
+              title: 'Outsourced BDR Providers',
+              body: 'Agencies that replace third-party data feeds with clients first-party SEO signals secure a structural conversion advantage that generic list sellers cannot match.',
+              link: '/services/geo-optimization',
+              linkLabel: 'Explore GEO Integration',
+            },
+            {
+              title: 'High-Velocity B2B',
+              body: 'Shorter sales cycles require near-zero signal-to-outreach latency. Reaching out within minutes of a pricing page visit captures deals before the window closes.',
+              link: '/company/approach',
+              linkLabel: 'Our Approach',
+            },
+          ].map(({ title, body, link, linkLabel }) => (
+            <div key={title} className="border border-gray-200 p-6 hover:border-[#F26522]/40 transition-colors duration-300 group">
+              <h3 className="text-[16px] font-semibold text-gray-900 mb-3">{title}</h3>
+              <p className="text-[14px] text-gray-700 leading-relaxed mb-4">{body}</p>
+              <a href={link} className="inline-flex items-center gap-2 text-[12px] uppercase tracking-wider font-semibold text-[#F26522] group-hover:gap-3 transition-all duration-300">
+                {linkLabel} <ArrowRight className="w-3 h-3" />
+              </a>
+            </div>
+          ))}
+        </div>
+
+        {/* ── CONCLUSION ── */}
+        <h2 className="text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          Why Gobiya is positioned differently for B2B operators
+        </h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          Gobiya provides complete operational alignment between search acquisition and outbound pipeline engineering. We do not sell third-party intent databases or run generic email spam sequences. We audit your existing traffic, set up real-time reverse-IP enrichment layers, configure direct routing into your CRM, and build custom SEO structures designed specifically to generate high-intent outbound signals.
+        </p>
+
+        {/* ── FINAL CTA ── */}
+        <div className="bg-gray-900 text-white p-8 sm:p-12 my-10 sm:my-14">
+          <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-4">Request a Signal Audit</p>
+          <h3 className="text-[22px] sm:text-[28px] font-medium leading-[1.2] tracking-[-0.02em] mb-4 max-w-xl">
+            Identify the buying intent signals you are currently discarding.
+          </h3>
+          <p className="text-gray-400 text-[15px] leading-relaxed max-w-2xl mb-8">
+            A credible engagement starts with auditing your existing traffic. We run a comprehensive audit to map your anonymous traffic to target accounts, isolate high-intent SEO visits, and show you exactly where to insert signal-based outreach into your outbound flow.
+          </p>
+          <a
+            href="/contact"
+            className="group inline-flex items-center bg-[#F26522] hover:bg-[#e05a1a] text-white pl-6 pr-2 py-3 transition-colors duration-300"
+          >
+            <span className="text-[14px] font-medium mr-4">Request a signal audit</span>
+            <div className="w-8 h-8 bg-white flex items-center justify-center">
+              <ArrowRight className="w-4 h-4 text-[#F26522] transition-transform duration-500 group-hover:-rotate-45" />
+            </div>
+          </a>
+        </div>
+      </>
+    ),
+  },
 };
 
 // ─── Related Articles per slug ────────────────────────────────────────────────
@@ -733,16 +1003,16 @@ const RELATED_ARTICLES_MAP: Record<string, { href: string; category: string; tit
       image: '/images/article-lead-gen-seo.webp',
     },
     {
+      href: '/insights/outbound-seo-prospecting',
+      category: 'Strategy',
+      title: 'Outbound SEO Prospecting: Timing-Anchored Outreach Powered by Intent Signals in 2026',
+      image: '/images/article-outbound-seo-prospecting.webp',
+    },
+    {
       href: '/services/geo-optimization',
       category: 'GEO',
       title: 'Generative Engine Optimization: Be Cited by AI',
       image: '/images/article-ai-seo-2024.webp',
-    },
-    {
-      href: '/services/seo',
-      category: 'SEO',
-      title: 'Technical SEO & Algorithmic Dominance',
-      image: '/images/article-technical-seo.webp',
     },
   ],
   'automated-lead-generation-seo': [
@@ -753,16 +1023,36 @@ const RELATED_ARTICLES_MAP: Record<string, { href: string; category: string; tit
       image: '/images/article-b2b-pipeline-seo.webp',
     },
     {
+      href: '/insights/outbound-seo-prospecting',
+      category: 'Strategy',
+      title: 'Outbound SEO Prospecting: Timing-Anchored Outreach Powered by Intent Signals in 2026',
+      image: '/images/article-outbound-seo-prospecting.webp',
+    },
+    {
       href: '/services/lead-generation',
       category: 'Strategy',
       title: 'B2B Pipeline Architecture for Predictable Revenue',
       image: '/images/article-predictive-analytics.webp',
     },
+  ],
+  'outbound-seo-prospecting': [
     {
-      href: '/services/geo-optimization',
-      category: 'GEO',
-      title: 'Generative Engine Optimization: Be Cited by AI',
-      image: '/images/article-ai-seo-2024.webp',
+      href: '/insights/automated-b2b-sales-pipeline-seo',
+      category: 'Strategy',
+      title: 'Automated B2B Sales Pipeline SEO: How AI Citations Shape Your Shortlist in 2026',
+      image: '/images/article-b2b-pipeline-seo.webp',
+    },
+    {
+      href: '/insights/automated-lead-generation-seo',
+      category: 'Strategy',
+      title: 'Automated Lead Generation SEO: How AI Pre-Qualifies Your Pipeline in 2026',
+      image: '/images/article-lead-gen-seo.webp',
+    },
+    {
+      href: '/services/lead-generation',
+      category: 'Strategy',
+      title: 'B2B Pipeline Architecture for Predictable Revenue',
+      image: '/images/article-predictive-analytics.webp',
     },
   ],
 };
