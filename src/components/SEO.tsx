@@ -78,6 +78,10 @@ const metadataMap: Record<string, SEOMetadata> = {
     title: 'B2B Sales Pipeline Automation: The Orchestration Layer for AI-Driven Revenue | Gobiya',
     description: 'How orchestration between SEO, intent capture, enrichment, and outbound determines whether automation produces revenue — and why most B2B teams are deploying AI agents into broken workflows.'
   },
+  '/insights/best-seo-agency-for-b2b-brands': {
+    title: 'How to Choose the Best SEO Agency for B2B Brands in 2026 | Gobiya',
+    description: 'The 2026 evaluation framework for picking a B2B SEO partner — what to measure, what to ignore, and why most "best agency" lists are scoring the wrong things.'
+  },
   '/about/steve-martin': {
     title: 'Steve Martin | CEO, Lead Developer & Marketer | Gobiya',
     description: 'Professional credentials and author profile for Steve Martin, CEO, Lead Developer & Marketer at Gobiya. Specialized in advanced SEO, custom React engineering, and pipeline automation.'
