@@ -50,7 +50,7 @@ const AuthorPage: React.FC<AuthorPageProps> = ({ path }) => {
           "url": "https://www.gobiya.com"
         },
         "image": "https://www.gobiya.com/images/steve-portrait.webp",
-        "description": "Steve Martin is the CEO, Lead Developer, and Marketer at Gobiya, specialized in engineering high-speed React applications, search engine updating recovery, and signal-anchored sales pipeline architectures.",
+        "description": "Steve Martin is the CEO, Lead Developer, and Marketer at Gobiya, with 25+ years of experience helping contractors, dental practices, real estate, and SaaS startups grow through organic search, paid media, and custom React/Vite development.",
         "url": "https://www.gobiya.com/about/steve-martin",
         "sameAs": [
           "https://www.linkedin.com/in/stevemartingobiya/"
@@ -60,12 +60,12 @@ const AuthorPage: React.FC<AuthorPageProps> = ({ path }) => {
           "Generative Engine Optimization (GEO)",
           "React Engineering",
           "B2B Sales Pipeline Automation",
-          "Algorithmic Update Recovery",
-          "Paid Search (PPC) and Social Advertising"
+          "Paid Media (PPC)",
+          "Digital PR & Link Building"
         ],
         "alumniOf": {
           "@type": "EducationalOrganization",
-          "name": "University of California, Los Angeles"
+          "name": "Glendale Career College"
         }
       }
     };
@@ -189,7 +189,7 @@ const AuthorPage: React.FC<AuthorPageProps> = ({ path }) => {
             Steve Martin
           </h1>
           <p className="text-[clamp(1rem,2vw,1.25rem)] text-gray-700 font-medium">
-            CEO, Lead Developer & Marketer at Gobiya
+            Founder, Lead Developer & Marketer at Gobiya
           </p>
         </div>
       </section>
@@ -226,15 +226,15 @@ const AuthorPage: React.FC<AuthorPageProps> = ({ path }) => {
             <div className="w-full max-w-[320px] border-t border-gray-200 mt-8 pt-6 space-y-4">
               <div className="flex items-center gap-3">
                 <Award className="w-5 h-5 text-[#F26522]" />
-                <span className="text-[14px] text-gray-700 font-medium">UCLA Alumnus</span>
+                <span className="text-[14px] text-gray-700 font-medium">Glendale Career College (1996)</span>
               </div>
               <div className="flex items-center gap-3">
                 <ShieldCheck className="w-5 h-5 text-[#F26522]" />
-                <span className="text-[14px] text-gray-700 font-medium">10+ Years Growth Engineering</span>
+                <span className="text-[14px] text-gray-700 font-medium">25+ Years Search Engineering</span>
               </div>
               <div className="flex items-center gap-3">
                 <Code className="w-5 h-5 text-[#F26522]" />
-                <span className="text-[14px] text-gray-700 font-medium">Full-Stack & React Architect</span>
+                <span className="text-[14px] text-gray-700 font-medium">React, Supabase, & AI Integrations</span>
               </div>
             </div>
           </div>
@@ -245,21 +245,23 @@ const AuthorPage: React.FC<AuthorPageProps> = ({ path }) => {
               About & Credentials
             </h2>
             <p className="text-[16px] sm:text-[18px] leading-[1.8] text-gray-800 mb-6">
-              Steve Martin is a multi-disciplinary technical founder, lead developer, and growth marketer with over a decade of experience designing organic search and B2B acquisition models. As the CEO and lead engineer at Gobiya, he builds the programmatic bridges connecting complex backend codebases with enterprise search algorithms.
+              Steve Martin is a hands-on SEO and digital marketing specialist who builds the websites and tools. With over 25 years of experience helping contractors, dental and medical practices, real estate, and SaaS startups grow, he bridges the gap between clean engineering and organic search traffic.
             </p>
             <p className="text-[16px] sm:text-[18px] leading-[1.8] text-gray-800 mb-8">
-              Having scaled systems for startups and mid-market firms alike, Steve specializes in Algorithmic Traffic Recovery (HCU / Core update reversal), custom React-driven web designs passing Core Web Vitals, and Generative Engine Optimization (GEO) architectures to make brands discoverable within LLMs.
+              Currently focused on schema and entity optimization for AI search results (ChatGPT, Perplexity, Google AI Overviews), modern React/Vite builds, and AI-powered lead generation systems. Steve is looking for a full-time in-house role where he can ship.
             </p>
 
             <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
-              <Compass className="w-5 h-5 text-[#F26522]" /> Core Areas of Expertise
+              <Compass className="w-5 h-5 text-[#F26522]" /> Core Skills
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
               {[
-                { title: 'Generative Engine Optimization (GEO)', desc: 'Entity-level semantic styling to ensure brands are cited natively in ChatGPT, Claude, and Gemini.' },
-                { title: 'Full-Stack React Engineering', desc: 'Bespoke, high-performance landing systems built for maximum page speed and Google PageSpeed scores.' },
-                { title: 'Google Penalty Recovery', desc: 'Forensic diagnosis of algorithmic updates, search quality guidelines alignment, and recovery execution.' },
-                { title: 'B2B Pipeline Engineering', desc: 'Intent signal resolution systems converting anonymous page views directly into SDR sequence triggers.' }
+                { title: 'SEO for the AI Era', desc: 'Schema markup, entity optimization, structured data for AI Overviews and LLM citation, technical SEO, local SEO, GBP, and update recovery.' },
+                { title: 'Web Development & Design', desc: 'Custom React & Vite engineering, Tailwind CSS, Supabase, WordPress, Webflow, and high-performance layouts.' },
+                { title: 'AI & Automation Systems', desc: 'AI-powered chat assistants, native CRM builds, business lead scrapers, automated email drips, and prompt engineering.' },
+                { title: 'Paid Media (PPC)', desc: 'ROAS-driven ad campaign management across Google, Bing, Meta, and Yelp with monthly budgets up to $15K.' },
+                { title: 'Digital PR & Link Building', desc: 'HARO, Featured, Qwoted, Reddit, and community-driven authority building link strategies.' },
+                { title: 'Analytics & Search Tools', desc: 'Data audits and traffic resolving via Google Analytics, Search Console, SEMrush, and Ahrefs.' }
               ].map((skill) => (
                 <div key={skill.title} className="bg-gray-50 border border-gray-100 p-5 rounded-sm hover:border-[#F26522]/30 transition-colors">
                   <h4 className="font-semibold text-[15px] text-gray-900 mb-2">{skill.title}</h4>
@@ -271,22 +273,77 @@ const AuthorPage: React.FC<AuthorPageProps> = ({ path }) => {
             <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
               <Briefcase className="w-5 h-5 text-[#F26522]" /> Professional Experience
             </h3>
-            <div className="space-y-6 mb-12">
+            <div className="space-y-8 mb-12">
               <div className="border-l-2 border-[#F26522] pl-4">
-                <span className="text-[12px] uppercase tracking-wider text-gray-500 font-semibold">2023 - Present</span>
-                <h4 className="font-bold text-[16px] text-gray-900">CEO & Lead Developer</h4>
+                <span className="text-[12px] uppercase tracking-wider text-gray-500 font-semibold">2010 - Present</span>
+                <h4 className="font-bold text-[16px] text-gray-900">Founder & Principal Consultant</h4>
                 <p className="text-[14px] text-gray-600 font-medium">Gobiya — Los Angeles, CA</p>
-                <p className="text-[14px] text-gray-700 mt-2 leading-relaxed">
-                  Architecting intent-signal tracking integrations and Generative Engine Optimization models. Leading the engineering of custom speed-optimized React platforms and executing Google Helpful Content Update recovery protocols.
-                </p>
+                <ul className="list-disc pl-5 mt-2 text-[14px] text-gray-700 space-y-1.5 leading-relaxed">
+                  <li>Built modern React + Vite websites with AI-powered chat assistants and native CRM integrations, replacing expensive third-party tools.</li>
+                  <li>Implemented schema and entity optimization to surface client brands in AI Overviews and LLM-generated citation queries.</li>
+                  <li>Developed custom business lead scrapers and automated email drip campaigns to consistently supply qualified leads.</li>
+                  <li>Managed Google Ads budgets up to $15K/month with a documented 5x+ return on ad spend.</li>
+                </ul>
               </div>
+
               <div className="border-l-2 border-gray-300 pl-4">
-                <span className="text-[12px] uppercase tracking-wider text-gray-500 font-semibold">2018 - 2023</span>
-                <h4 className="font-bold text-[16px] text-gray-900">VP of Engineering & Performance Marketing</h4>
-                <p className="text-[14px] text-gray-600 font-medium">Digital Scale Consulting</p>
-                <p className="text-[14px] text-gray-700 mt-2 leading-relaxed">
-                  Managed multi-million dollar paid search budgets while designing technical SEO frameworks and custom headless landing page infrastructures to maximize conversion ratios.
-                </p>
+                <span className="text-[12px] uppercase tracking-wider text-gray-500 font-semibold">2024 - 2025</span>
+                <h4 className="font-bold text-[16px] text-gray-900">Digital Marketing & SEO Specialist</h4>
+                <p className="text-[14px] text-gray-600 font-medium">Simply Home Remodeling — Los Angeles, CA</p>
+                <ul className="list-disc pl-5 mt-2 text-[14px] text-gray-700 space-y-1.5 leading-relaxed">
+                  <li>Grew organic traffic by 45% through technical and local SEO, successfully ranking 12 high-intent service pages on page one of Google.</li>
+                  <li>Redesigned conversion funnels, increasing the page form-fill conversion rate from 2.3% to 7.8%.</li>
+                  <li>Optimized Google Ads campaigns to cut CPA by 35% while preserving quality.</li>
+                </ul>
+              </div>
+
+              <div className="border-l-2 border-gray-300 pl-4">
+                <span className="text-[12px] uppercase tracking-wider text-gray-500 font-semibold">2019 - 2023</span>
+                <h4 className="font-bold text-[16px] text-gray-900">Marketing & Lead Generation Lead</h4>
+                <p className="text-[14px] text-gray-600 font-medium">E&E Home Remodeling — Los Angeles, CA</p>
+                <ul className="list-disc pl-5 mt-2 text-[14px] text-gray-700 space-y-1.5 leading-relaxed">
+                  <li>Built a multi-channel inbound pipeline generating 200+ pre-qualified leads per month.</li>
+                  <li>Managed PPC campaigns on Google, Bing, and Facebook producing a 4.2x ROAS.</li>
+                  <li>Designed client email segmentation workflows that lifted click and engagement ratios by 62%.</li>
+                </ul>
+              </div>
+
+              <div className="border-l-2 border-gray-300 pl-4">
+                <span className="text-[12px] uppercase tracking-wider text-gray-500 font-semibold">2017 - 2020</span>
+                <h4 className="font-bold text-[16px] text-gray-900">Digital Marketing & Local SEO Specialist</h4>
+                <p className="text-[14px] text-gray-600 font-medium">All City Windows & Doors — Reseda, CA</p>
+                <ul className="list-disc pl-5 mt-2 text-[14px] text-gray-700 space-y-1.5 leading-relaxed">
+                  <li>Managed $15K/month Google Ads campaigns yielding a 5.7x return on ad spend.</li>
+                  <li>Ranked 47 commercial keywords through hyper-local SEO, reducing cost per lead by 40%.</li>
+                  <li>Led website redesign and conversion optimization, doubling scheduled appointments within 30 days of launch.</li>
+                </ul>
+              </div>
+
+              <div className="border-l-2 border-gray-300 pl-4">
+                <span className="text-[12px] uppercase tracking-wider text-gray-500 font-semibold">2005 - 2010</span>
+                <h4 className="font-bold text-[16px] text-gray-900">Internet Marketing & Website Manager</h4>
+                <p className="text-[14px] text-gray-600 font-medium">Mr. Speedy Plumbing & Rooter — Los Angeles, CA</p>
+                <ul className="list-disc pl-5 mt-2 text-[14px] text-gray-700 space-y-1.5 leading-relaxed">
+                  <li>Achieved #1 Google Maps and organic local rankings in Los Angeles for primary plumbing terms.</li>
+                </ul>
+              </div>
+
+              <div className="border-l-2 border-gray-300 pl-4">
+                <span className="text-[12px] uppercase tracking-wider text-gray-500 font-semibold">2000 - 2005</span>
+                <h4 className="font-bold text-[16px] text-gray-900">Web Developer</h4>
+                <p className="text-[14px] text-gray-600 font-medium">Sony Music / Webcastr.com — West Hollywood, CA</p>
+                <ul className="list-disc pl-5 mt-2 text-[14px] text-gray-700 space-y-1.5 leading-relaxed">
+                  <li>Built early-stage video streaming platform interfaces and backends for artist media content.</li>
+                </ul>
+              </div>
+
+              <div className="border-l-2 border-gray-300 pl-4">
+                <span className="text-[12px] uppercase tracking-wider text-gray-500 font-semibold">1996 - 2000</span>
+                <h4 className="font-bold text-[16px] text-gray-900">Website Tech Support</h4>
+                <p className="text-[14px] text-gray-600 font-medium">AT&T WorldNet — Burbank, CA</p>
+                <ul className="list-disc pl-5 mt-2 text-[14px] text-gray-700 space-y-1.5 leading-relaxed">
+                  <li>Provided technical inbound support helping users build and host their first websites.</li>
+                </ul>
               </div>
             </div>
 
