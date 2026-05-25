@@ -48,7 +48,7 @@ Deno.serve(async (req) => {
       },
       body: JSON.stringify({
         from: 'Gobiya Contact Form <onboarding@resend.dev>', // Update this to a verified domain if needed
-        to: 'banmart@gmail.com',
+        to: 'steve@gobiya.com',
         subject: `New Lead: ${firstName} ${lastName} from ${company || 'Unknown Company'}`,
         html: htmlContent,
       }),
