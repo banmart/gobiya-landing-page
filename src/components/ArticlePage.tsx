@@ -199,7 +199,7 @@ const ARTICLES: Record<string, ArticleData> = {
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
           The same content infrastructure that earns AI citations also feeds outbound. When AI-cited content surfaces an
           account, the visit can be matched to a firmographic profile and routed to the SDR queue with full context. This is
-          the bridge between automated lead generation SEO and outbound prospecting. The page does the discovery work. The
+          the bridge between <a href="/insights/automated-lead-generation-seo" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">automated lead generation SEO</a> and <a href="/insights/outbound-seo-prospecting" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">outbound SEO prospecting</a>. The page does the discovery work. The
           intent signal does the routing work. The SDR's first touch becomes a response to a known research session, not a
           cold start.
         </p>
@@ -333,8 +333,8 @@ const ARTICLES: Record<string, ArticleData> = {
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
           B2B operators still running ranking-first SEO are watching organic traffic erode while their rankings stay stable,
           and watching outbound reply rates flatten while their target accounts quietly shortlist competitors in AI tools
-          the SDR team never sees. The shift to automated B2B sales pipeline SEO isn't about chasing a new acronym. It's
-          about operating a program that the systems your buyers actually use will surface.
+          the SDR team never sees. Transitioning to a unified model of <a href="/insights/b2b-sales-pipeline-automation" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">B2B sales pipeline automation</a> isn't about chasing a new acronym. It's
+          about operating an orchestrated program that the systems your buyers actually use will surface.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
           Two decisions matter most. First: whether your current{' '}
@@ -543,10 +543,10 @@ const ARTICLES: Record<string, ArticleData> = {
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
           The same citation infrastructure that produces inbound also informs outbound. When an account visits an AI-cited
           page, that visit can be matched to a firmographic profile via reverse-IP enrichment and routed to the{' '}
-          <a href="/services/lead-generation" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">
-            SDR queue with full context
+          <a href="/insights/outbound-seo-prospecting" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">
+            SDR queue with full context via outbound SEO prospecting
           </a>
-          . The outbound touch becomes a response to a known research session, not a cold start. Without that connection,
+          . This integrated approach establishes the core framework for <a href="/insights/b2b-sales-pipeline-automation" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">B2B sales pipeline automation</a>. Without that connection,
           outbound sequences fire into accounts that may have already shortlisted a competitor twenty minutes earlier in
           ChatGPT.
         </p>
@@ -833,7 +833,7 @@ const ARTICLES: Record<string, ArticleData> = {
           A fully-loaded SDR in the U.S. runs $50,000 to $80,000 per year and produces 30 to 50 qualified leads per month at the upper end of well-run programs. At a 3.43 percent reply rate, an SDR sending 100 cold emails per day across a 22-day workweek month is generating roughly 75 replies — most of which are "not interested," with maybe 20 substantive conversations and a smaller number of booked meetings. The cost per booked meeting in pure cold outbound regularly clears $300 to $500 once SDR salary, tooling, and data subscriptions are layered in. Enterprise segments routinely run higher.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Frame it against signal-anchored alternatives. The same SDR working a list of 200 SEO-signal-qualified accounts per month — accounts that visited a competitor-comparison page, downloaded a category report, or arrived from an AI citation — operates in a different reply rate regime entirely. At 15 to 25 percent reply rates, the same SDR generates 30 to 50 substantive conversations from a list one-tenth the size. The visible activity volume is lower. The cost per meeting drops materially, and the meetings that do get booked convert to pipeline at a higher rate because the prospect was already in-market when the sequence fired. Volume-first outbound looks productive on the dashboard. Signal-first outbound produces revenue on the close report.
+          Frame it against signal-anchored alternatives. The same SDR working a list of 200 SEO-signal-qualified accounts per month — accounts that visited a competitor-comparison page, downloaded a category report, or arrived from a search engine citation qualified via <a href="/insights/automated-b2b-sales-pipeline-seo" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">automated B2B sales pipeline SEO</a> — operates in a different reply rate regime entirely. At 15 to 25 percent reply rates, the same SDR generates 30 to 50 substantive conversations from a list one-tenth the size. This alignment is what unlocks true <a href="/insights/b2b-sales-pipeline-automation" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">B2B sales pipeline automation</a>. The visible activity volume is lower. The cost per meeting drops materially, and the meetings that do get booked convert to pipeline at a higher rate because the prospect was already in-market when the sequence fired. Volume-first outbound looks productive on the dashboard. Signal-first outbound produces revenue on the close report.
         </p>
 
         {/* ── PULL QUOTE ── */}
@@ -1060,7 +1060,7 @@ const ARTICLES: Record<string, ArticleData> = {
           Why point-solution AI tools alone don't produce the pipeline lift the demos promise
         </h3>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Buying an AI SDR handles one workflow: prospect research, message generation, sequence execution. The tool works as advertised in isolation. But the AI SDR is only as good as the signals fed into it and the CRM hygiene it writes back to. If the signal layer is broken — third-party intent data resold to every competitor, no first-party SEO signal routing, no AI-source referral capture — the AI SDR is just executing high-volume sequences with better grammar, and the reply rate looks roughly identical to a human SDR running the same broken inputs.
+          Buying an AI SDR handles one workflow: prospect research, message generation, sequence execution. The tool works as advertised in isolation. But the AI SDR is only as good as the signals fed into it and the CRM hygiene it writes back to. If the signal layer is broken — third-party intent data resold to every competitor, no <a href="/insights/outbound-seo-prospecting" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">first-party SEO signal routing</a>, no AI-source referral capture — the AI SDR is just executing high-volume sequences with better grammar, and the reply rate looks roughly identical to a human SDR running the same broken inputs.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
           Point-solution AI is not sufficient for actual pipeline lift. Orchestration across the full motion is the layer that converts AI capability into revenue outcome. Without it, the team is paying for AI productivity on tasks the productivity gain doesn't compound through. Programs that show strong tool-level metrics while pipeline-to-close ratios stay flat are running automation theater, not automation.
