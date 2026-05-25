@@ -260,7 +260,7 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
             { href: '#web-design', colSpan: 2, icon: <Code size={40} className="text-[#F26522] mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'High-Speed React/Vite Dev', description: 'Sub-second loading, Core Web Vitals optimization, and built-in CRO conversion systems.' },
             { href: '#advertising', colSpan: 2, gradient: true, icon: <TrendingUp size={40} className="text-white mb-6 sm:mb-10 relative z-10" strokeWidth={1.5} />, title: 'ROAS-Driven Advertising', description: 'Paid ad pipelines managed to capture high-intent buyers and maximize ROI.' }
           ],
-          showCalculator: true,
+          showCalculator: false,
           calculatorProps: { title: "Calculate Your Digital Revenue Leak", description: "Input the traffic or lead volume you are currently losing. See how much pipeline we can recover.", sliderLabel: "Estimated Monthly Loss", sliderMin: 1000, sliderMax: 200000, sliderStep: 1000, conversionRate: 0.02, ltv: 500, resultLabel: "Monthly Revenue Leak", disclaimer: "*Based on 2% conversion rate and $500 LTV." }
         };
       case '/services/seo':
