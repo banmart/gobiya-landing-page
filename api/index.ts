@@ -92,6 +92,10 @@ const metadataMap: Record<string, SEOMetadata> = {
     title: 'SEO for B2B Lead Generation: How Committee-Architecture Content Outperforms Single-Persona Funnels | Gobiya',
     description: 'How content architected for an 11-person buying committee outperforms content built for a single converter — and why B2B lead gen SEO in 2026 looks fundamentally different from every other category.'
   },
+  '/insights/b2b-seo-agency-los-angeles': {
+    title: 'B2B SEO Agency in Los Angeles: Why Local Partnership Outperforms Remote Vendor Relationships in 2026 | Gobiya',
+    description: 'How proximity, time-zone alignment, and LA business culture fluency have become more valuable rather than less in an AI-search era — and what LA-based B2B operators should actually be evaluating.'
+  },
   '/about/steve-martin': {
     title: 'Steve Martin | CEO, Lead Developer & Marketer | Gobiya',
     description: 'Professional credentials and author profile for Steve Martin, CEO, Lead Developer & Marketer at Gobiya. Specialized in advanced SEO, custom React engineering, and pipeline automation.'
