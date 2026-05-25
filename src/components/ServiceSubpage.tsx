@@ -782,9 +782,9 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
                 {
                   id: 'web-design',
                   icon: <Code className="text-[#F26522] w-8 h-8" />,
-                  title: 'High-Performance React Engineering',
-                  description: 'Custom React & Vite landing pages and web applications built from scratch. Zero bloat, instant loading, flawless Core Web Vitals, and maximum conversion architecture.',
-                  deliverables: ['Sub-Second Loading Speeds', 'Custom UI/UX Engineering', 'Conversion Rate Optimization (CRO)']
+                  title: 'Website Design & Development',
+                  description: 'Custom React & Vite landing pages, web applications, and interactive platforms built from scratch with zero bloat, sub-second speed, and conversion architecture.',
+                  deliverables: ['Custom Apps & Mobile Platforms', 'Native CRMs & API Integrations', 'Crypto, Web3 & Smart Contracts', 'AI Video Systems & Automations']
                 },
                 {
                   id: 'advertising',
