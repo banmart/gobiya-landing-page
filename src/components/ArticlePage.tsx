@@ -991,6 +991,231 @@ const ARTICLES: Record<string, ArticleData> = {
       </>
     ),
   },
+
+  'b2b-sales-pipeline-automation': {
+    slug: 'b2b-sales-pipeline-automation',
+    title: 'B2B Sales Pipeline Automation: The Orchestration Layer for AI-Driven Revenue',
+    category: 'Strategy',
+    readTime: '13 min read',
+    date: 'May 25, 2026',
+    image: '/images/article-b2b-sales-pipeline-automation.webp',
+    heroAlt: 'Abstract network visualization representing B2B sales pipeline automation signal flow',
+    metaDescription: 'How orchestration between SEO, intent capture, enrichment, and outbound determines whether automation produces revenue — and why most B2B teams are deploying AI agents into broken workflows.',
+    content: (
+      <>
+        {/* ── LEAD STATS ── */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 my-10 sm:my-14">
+          {[
+            { stat: '83%', label: 'Executives expecting AI agents to autonomously execute pipeline actions', source: 'MarketsandMarkets, 2026' },
+            { stat: '3–5x', label: 'Pipeline lift from autonomous AI SDRs operating at 70% lower cost', source: 'Optijara, 2026' },
+            { stat: '<40%', label: 'Sellers who report AI agents have actually improved productivity', source: 'Gartner, 2026' },
+          ].map((item, idx) => (
+            <div key={idx} className="bg-gray-50 border border-gray-100 p-6 rounded-sm">
+              <span className="block text-4xl sm:text-5xl font-bold text-[#F26522] tracking-tight mb-2 font-display">{item.stat}</span>
+              <p className="text-[13px] text-gray-900 leading-snug mb-1">{item.label}</p>
+              <p className="text-[11px] uppercase tracking-wider text-gray-500">{item.source}</p>
+            </div>
+          ))}
+        </div>
+
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          B2B sales pipeline automation can mean the difference between an AI-augmented revenue engine that compounds quarter over quarter and a stack of disconnected tools that each work on paper but produce the same flat pipeline the team had before they were deployed. The 2026 data on AI in B2B sales is split. The case studies show 3 to 5x pipeline lift from autonomous AI SDRs at materially lower cost. The Gartner research shows fewer than 40 percent of sellers actually experience the productivity gain in practice. Both numbers are true. The gap between them is almost entirely an orchestration problem.
+        </p>
+
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          This is the problem B2B sales pipeline automation solves when it's built correctly. The strongest B2B operators have stopped buying point-solution AI tools and started designing the orchestration layer that ties signal capture, enrichment, routing, sequencing, and CRM hygiene into one motion. Most teams don't realize the gap exists until they audit their stack and find they own twelve tools, pay roughly $200,000 a year in software, and still have an SDR team manually copying data between systems because nothing actually integrates the way the vendor decks promised.
+        </p>
+
+        {/* ── INLINE CTA (interlinking to services) ── */}
+        <div className="bg-gray-900 text-white p-6 sm:p-8 my-10 sm:my-14 flex flex-col sm:flex-row items-start sm:items-center gap-6">
+          <div className="flex-1">
+            <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-2">Gobiya Service</p>
+            <p className="text-[17px] sm:text-[19px] font-medium leading-snug">
+              Establish a unified B2B sales pipeline orchestration layer driven by first-party signals.
+            </p>
+          </div>
+          <a
+            href="/services#lead-generation"
+            className="group flex items-center bg-[#F26522] hover:bg-[#e05a1a] text-white pl-5 pr-2 py-2 transition-colors duration-300 whitespace-nowrap shrink-0"
+          >
+            <span className="text-[13px] font-medium mr-3">Build Your Pipeline System</span>
+            <div className="w-6 h-6 bg-white flex items-center justify-center">
+              <ArrowRight className="w-3.5 h-3.5 text-[#F26522] transition-transform duration-300 group-hover:-rotate-45" />
+            </div>
+          </a>
+        </div>
+
+        {/* ── SECTION 1 ── */}
+        <h2 className="text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          What B2B sales pipeline automation actually does
+        </h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          Traditional sales automation was a set of point solutions. The CRM held records. The marketing automation platform sent emails. The sales engagement tool ran sequences. The enrichment tool added contact data. Each one was bought separately, integrated through whatever native connectors the vendor shipped, and operated as its own island within the revenue stack. That worked when the pipeline was simple and the buyer journey was linear. It works less well when buyers are researching in AI assistants the CRM doesn't see, generating intent signals across a dozen surfaces no single tool captures, and arriving at vendor sites already shortlisted.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          B2B sales pipeline automation in 2026 is fundamentally an orchestration problem rather than a tooling problem. The system identifies signals across every relevant surface — SEO traffic, AI-citation referrals, gated content, comparison page visits, third-party intent, hiring and funding triggers — enriches each signal with firmographic and contact data, routes the enriched signal to the right human or AI workflow within a latency window short enough to act on, executes the outreach with messaging anchored to the signal source, and writes the entire interaction back to the CRM as a clean record. This end-to-end orchestration is what separates real pipeline automation from a stack of tools sharing a Slack channel.
+        </p>
+
+        <h3 className="text-[18px] sm:text-[20px] font-medium text-gray-900 mt-10 mb-4">
+          Why point-solution AI tools alone don't produce the pipeline lift the demos promise
+        </h3>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          Buying an AI SDR handles one workflow: prospect research, message generation, sequence execution. The tool works as advertised in isolation. But the AI SDR is only as good as the signals fed into it and the CRM hygiene it writes back to. If the signal layer is broken — third-party intent data resold to every competitor, no first-party SEO signal routing, no AI-source referral capture — the AI SDR is just executing high-volume sequences with better grammar, and the reply rate looks roughly identical to a human SDR running the same broken inputs.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          Point-solution AI is not sufficient for actual pipeline lift. Orchestration across the full motion is the layer that converts AI capability into revenue outcome. Without it, the team is paying for AI productivity on tasks the productivity gain doesn't compound through. Programs that show strong tool-level metrics while pipeline-to-close ratios stay flat are running automation theater, not automation.
+        </p>
+
+        {/* ── SECTION 2 ── */}
+        <h2 className="text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          How the orchestration layer changes pipeline economics
+        </h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          A properly orchestrated B2B sales pipeline operates on a different cost structure than the legacy stack it replaces. Pipeline lift case studies in 2026 consistently report 3 to 5x pipeline volume at 70 percent lower cost when autonomous agents are layered onto first-party signal infrastructure that's already producing clean data. McKinsey's 2024 Global Survey found 66 percent of organizations using generative AI in sales reported revenue increases. AI cycle compression is measurable independently — typical sales cycle reduction stands at up to 36 percent when AI agents and predictive deal scoring are layered into the existing motion correctly.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          This framework exists for a reason. A team that automates a broken motion gets a faster broken motion. A team that orchestrates a clean motion compounds. The company that designs pipeline automation from signal capture through CRM writeback as one integrated workflow produces the case-study numbers. The company that bolts an AI SDR onto an unchanged stack produces the Gartner counter-statistic.
+        </p>
+
+        {/* ── SECTION 3 ── */}
+        <h2 className="text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          The cost of stack fragmentation most operators overlook
+        </h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          A typical mid-market B2B revenue stack in 2026 includes a CRM, a marketing automation platform, a sales engagement tool, an intent data provider, an enrichment tool, a meeting scheduler, a conversation intelligence platform, an attribution tool, an AI SDR, and a forecasting layer. The combined software cost regularly clears $200,000 annually for a team of 10 to 20 reps. What most operators don't realize is that the integration cost is usually higher than the license cost. RevOps time spent maintaining connectors, reconciling field mappings, and patching duplicate records can consume 20 to 30 percent of a RevOps team's capacity in any given quarter.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          A revenue team paying $200,000 in software, $150,000 in RevOps labor allocated to stack maintenance, and another $400,000 in SDR fully-loaded cost across four reps is operating a $750,000 annual motion. If the pipeline produced by that motion is structurally limited by signal leakage between disconnected tools, the actual pipeline ceiling is far below what the stack should be capable of producing. The visible cost is the software. The invisible cost is the pipeline that leaks at every integration seam, on every workflow that requires manual handoff to complete.
+        </p>
+
+        <blockquote className="border-l-4 border-[#F26522] pl-4 italic text-gray-600 my-6">
+          <strong>Note:</strong> Stack costs and integration overhead vary widely by team size, vertical, and existing infrastructure. The figures above reflect typical U.S. mid-market B2B SaaS configurations in 2026.
+        </blockquote>
+
+        {/* ── SECTION 4 ── */}
+        <h2 className="text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          How B2B sales pipeline automation works from signal to closed-won
+        </h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          A properly orchestrated motion looks like this. A signal fires across the surface area the team monitors — an account visits the pricing page after arriving from a ChatGPT citation, an existing prospect's company posts a relevant job opening, or a target account downloads a comparison report. The signal is captured by the first system to see it and pushed into a central orchestration layer. The orchestration layer enriches the signal, checks existing CRM records, applies qualification logic, and routes the enriched signal to the right next action — an AI agent for top-of-funnel outreach, a human SDR for higher-tier accounts, or a direct AE alert. The action executes within minutes to hours, and the outcome is written back to learn which sequences produce results.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          That workflow looks straightforward described in a paragraph. Building it across a real B2B stack is where automation programs typically stall. Average B2B sales cycles run over 35 days for simple deals and 60 days for complex ones, with manual qualification cited as the largest single bottleneck. Compression happens by eliminating manual handoffs, not by adding more disconnected AI to the motion.
+        </p>
+
+        {/* ── INLINE CTA (interlinking to automated-lead-generation-seo) ── */}
+        <div className="bg-[#f9f9f9] border border-gray-100 p-6 sm:p-8 my-10 sm:my-14 flex flex-col sm:flex-row items-start sm:items-center gap-6">
+          <div className="flex-1">
+            <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-bold mb-2">Related Spoke</p>
+            <p className="text-[16px] sm:text-[18px] font-semibold text-gray-900 leading-snug">
+              Discover how automated SEO content qualifies pipeline before reps make contact.
+            </p>
+          </div>
+          <a
+            href="/insights/automated-lead-generation-seo"
+            className="group flex items-center bg-[#F26522] hover:bg-[#e05a1a] text-white pl-5 pr-2 py-2 transition-colors duration-300 whitespace-nowrap shrink-0"
+          >
+            <span className="text-[13px] font-semibold mr-3">Read Lead Gen Article</span>
+            <div className="w-6 h-6 bg-white flex items-center justify-center">
+              <ArrowRight className="w-3.5 h-3.5 text-[#F26522] transition-transform duration-300 group-hover:-rotate-45" />
+            </div>
+          </a>
+        </div>
+
+        {/* ── SECTION 5 ── */}
+        <h3 className="text-[18px] sm:text-[20px] font-medium text-gray-900 mt-10 mb-4">
+          How outbound SEO prospecting and automated lead generation SEO feed the orchestration layer
+        </h3>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          The signals that drive automation have to come from somewhere. The teams getting the strongest results in 2026 use SEO and content infrastructure as the primary signal generator: first-party page visits, AI-citation referrals, comparison-page engagement, downloaded gated assets, demo-request form-fills. Those signals are exclusive to the vendor, arrive in real time, and carry meaningful intent context the orchestration layer can act on without needing to buy third-party data that's been resold across the category.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          This is the operational bridge between <a href="/insights/automated-lead-generation-seo">automated lead generation SEO</a>, <a href="/insights/outbound-seo-prospecting">outbound SEO prospecting</a>, and B2B sales pipeline automation. Each one of those motions feeds the other. The SEO content captures direct conversions where it can, generates signals the outbound layer routes into sequences for visitors who didn't convert, and produces the data the automation layer needs to qualify and prioritize accounts at scale.
+        </p>
+
+        {/* ── SECTION 6 ── */}
+        <h2 className="text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          The automation gap by the numbers
+        </h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          The 2026 picture on AI in B2B sales is genuinely split. Optijara reports companies using autonomous AI SDRs generating 3 to 5x more pipeline at 70 percent lower cost. McKinsey reports 66 percent of organizations using generative AI in sales saw revenue increases. At the same time, Gartner research indicates fewer than 40 percent of sellers report that AI agents actually improved their productivity. Both data sets are accurate. They're describing the same technology deployed under different operating conditions.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          The differentiator across the data is consistent. Teams that report the high end of the lift have orchestration in place — signal flows cleanly from capture to execution to CRM writeback, AI agents operate on first-party signals, RevOps owns the integration layer, and tool selection follows workflow design rather than the reverse.
+        </p>
+
+        <h3 className="text-[18px] sm:text-[20px] font-medium text-gray-900 mt-10 mb-4">
+          Why traditional sales automation stopped producing lift
+        </h3>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          Traditional sales automation was designed around a workflow assumption that no longer holds: that pipeline progression was linear, that data lived primarily in the CRM, and that the buyer's research happened largely after the sales rep made contact. None of those conditions describe how B2B buying works in 2026. Buyers research in AI assistants the CRM doesn't track, generate intent signals across surfaces the legacy MAP doesn't watch, and arrive at vendor sites already pre-shortlisted by tools the sales team has no visibility into.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          This isn't a defect in any single CRM or automation platform. It's the inherent limitation of a workflow architecture designed for a buyer journey that no longer exists. B2B sales pipeline automation in 2026 was built specifically to address the orchestration gap that legacy CRM-centric automation created.
+        </p>
+
+        {/* ── SECTION 7 ── */}
+        <h2 className="text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          What separates real B2B sales pipeline automation from an AI tools list
+        </h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          Not every vendor or agency selling sales pipeline automation operates at the same standard. The space has filled rapidly with point-solution tools claiming to deliver pipeline lift in isolation and with consulting engagements that promise orchestration but deliver a Notion document of recommended tools.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          Real pipeline automation engagements start by mapping the team's existing signal sources, integration points, data flows, and execution surfaces — and identifying where signals are being generated but not acted on, where data is being collected but not synced, and where handoffs are creating latency or loss. Tool selection follows that mapping, not the reverse. Ask what their measurement framework is for orchestration ROI, since vendors that can only report tool-level metrics (sequences sent, leads enriched, emails delivered) aren't measuring the seam-level integration that determines whether automation produces lift.
+        </p>
+
+        {/* ── SECTION 8 ── */}
+        <h2 className="text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          Why Gobiya is positioned differently for B2B operators
+        </h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          Gobiya is a logical starting point for B2B operators that want a pipeline automation program built around orchestration design rather than tool accumulation. Request an orchestration audit, walk through your current stack, signal sources, and integration seams, and find out exactly where your motion stands relative to the operational threshold that determines whether AI automation will produce lift or just add overhead.
+        </p>
+
+        {/* ── SECTION 9 ── */}
+        <h2 className="text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          Which B2B teams get the clearest return from pipeline automation
+        </h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          Different revenue configurations make the case for B2B sales pipeline automation in different ways. Here's where the return is most direct.
+        </p>
+        <ul className="list-disc pl-6 space-y-3 text-[16px] sm:text-[18px] leading-[1.7] text-gray-800 mb-8">
+          <li><strong>Mid-market B2B SaaS teams with a fragmented stack</strong> benefit fastest because the orchestration lift is highest where the integration debt is greatest. A team running a dozen tools that don't talk to each other can often unlock 20 to 30 percent pipeline lift through orchestration alone.</li>
+          <li><strong>Enterprise sales orgs with high-ACV deals</strong> benefit most from automation focused on signal-to-handoff acceleration, because the cost of latency between signal capture and AE engagement on a six- or seven-figure deal is enormous.</li>
+          <li><strong>Outbound-heavy revenue teams</strong> benefit from AI SDR layering only when the underlying signal infrastructure is clean. The orchestration audit comes first. AI SDR layering comes second.</li>
+        </ul>
+
+        {/* ── SECTION 10 ── */}
+        <h2 className="text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          What getting started with B2B sales pipeline automation actually looks like
+        </h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          A credible engagement starts with an orchestration audit, not a tool recommendation. That audit inventories the team's current signal sources, maps the existing data flows between tools, identifies the seams where signals are generated but not routed and where data is collected but not synced, measures the latency between key handoffs, and assesses CRM hygiene.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          The teams that get the most from B2B sales pipeline automation are the ones that run that audit deliberately and rebuild the orchestration layer before deploying new AI capability, rather than buying an AI SDR or agent platform and expecting it to compensate for a fragmented stack.
+        </p>
+
+        {/* ── BOTTOM CALLOUT ── */}
+        <div className="border-t border-b border-gray-200 py-8 my-10 sm:my-14 text-center">
+          <p className="text-[13px] uppercase tracking-wider text-gray-500 font-semibold mb-3">Orchestrate Your Revenue Engine</p>
+          <h3 className="text-xl sm:text-2xl font-medium text-gray-900 mb-6 max-w-2xl mx-auto leading-snug">
+            Ready to audit your stack for leakage?
+          </h3>
+          <a
+            href="/contact"
+            className="group inline-flex items-center bg-[#F26522] hover:bg-[#e05a1a] text-white pl-6 pr-2 py-3 transition-colors duration-300"
+          >
+            <span className="text-[14px] font-medium mr-4">Request an orchestration audit</span>
+            <div className="w-8 h-8 bg-white flex items-center justify-center">
+              <ArrowRight className="w-4 h-4 text-[#F26522] transition-transform duration-500 group-hover:-rotate-45" />
+            </div>
+          </a>
+        </div>
+      </>
+    ),
+  },
 };
 
 // ─── Related Articles per slug ────────────────────────────────────────────────
@@ -1009,10 +1234,10 @@ const RELATED_ARTICLES_MAP: Record<string, { href: string; category: string; tit
       image: '/images/article-outbound-seo-prospecting.webp',
     },
     {
-      href: '/services/geo-optimization',
-      category: 'GEO',
-      title: 'Generative Engine Optimization: Be Cited by AI',
-      image: '/images/article-ai-seo-2024.webp',
+      href: '/insights/b2b-sales-pipeline-automation',
+      category: 'Strategy',
+      title: 'B2B Sales Pipeline Automation: The Orchestration Layer for AI-Driven Revenue',
+      image: '/images/article-b2b-sales-pipeline-automation.webp',
     },
   ],
   'automated-lead-generation-seo': [
@@ -1029,10 +1254,10 @@ const RELATED_ARTICLES_MAP: Record<string, { href: string; category: string; tit
       image: '/images/article-outbound-seo-prospecting.webp',
     },
     {
-      href: '/services/lead-generation',
+      href: '/insights/b2b-sales-pipeline-automation',
       category: 'Strategy',
-      title: 'B2B Pipeline Architecture for Predictable Revenue',
-      image: '/images/article-predictive-analytics.webp',
+      title: 'B2B Sales Pipeline Automation: The Orchestration Layer for AI-Driven Revenue',
+      image: '/images/article-b2b-sales-pipeline-automation.webp',
     },
   ],
   'outbound-seo-prospecting': [
@@ -1049,10 +1274,30 @@ const RELATED_ARTICLES_MAP: Record<string, { href: string; category: string; tit
       image: '/images/article-lead-gen-seo.webp',
     },
     {
-      href: '/services/lead-generation',
+      href: '/insights/b2b-sales-pipeline-automation',
       category: 'Strategy',
-      title: 'B2B Pipeline Architecture for Predictable Revenue',
-      image: '/images/article-predictive-analytics.webp',
+      title: 'B2B Sales Pipeline Automation: The Orchestration Layer for AI-Driven Revenue',
+      image: '/images/article-b2b-sales-pipeline-automation.webp',
+    },
+  ],
+  'b2b-sales-pipeline-automation': [
+    {
+      href: '/insights/automated-b2b-sales-pipeline-seo',
+      category: 'Strategy',
+      title: 'Automated B2B Sales Pipeline SEO: How AI Citations Shape Your Shortlist in 2026',
+      image: '/images/article-b2b-pipeline-seo.webp',
+    },
+    {
+      href: '/insights/automated-lead-generation-seo',
+      category: 'Strategy',
+      title: 'Automated Lead Generation SEO: How AI Pre-Qualifies Your Pipeline in 2026',
+      image: '/images/article-lead-gen-seo.webp',
+    },
+    {
+      href: '/insights/outbound-seo-prospecting',
+      category: 'Strategy',
+      title: 'Outbound SEO Prospecting: Timing-Anchored Outreach Powered by Intent Signals in 2026',
+      image: '/images/article-outbound-seo-prospecting.webp',
     },
   ],
 };
