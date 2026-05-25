@@ -75,12 +75,16 @@ const InsightsSlider: React.FC<InsightsSliderProps> = ({ filterCategory }) => {
     fetchInsights();
   }, []);
 
-  const filteredInsights = filterCategory 
-    ? insights.filter(i => i.category === filterCategory) 
-    : insights;
-
-  // If filteredInsights is empty, fallback to all insights
-  const displayInsights = filteredInsights.length > 0 ? filteredInsights : insights;
+  const displayInsights = React.useMemo(() => {
+    if (!filterCategory) return insights;
+    return [...insights].sort((a, b) => {
+      const aMatches = a.category === filterCategory;
+      const bMatches = b.category === filterCategory;
+      if (aMatches && !bMatches) return -1;
+      if (!aMatches && bMatches) return 1;
+      return 0;
+    });
+  }, [insights, filterCategory]);
 
   useEffect(() => {
     const calcMax = () => {

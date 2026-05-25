@@ -1349,7 +1349,13 @@ const ArticlePage: React.FC<ArticlePageProps> = ({ slug }) => {
             </a>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            {(RELATED_ARTICLES_MAP[slug] || DEFAULT_RELATED_ARTICLES).map(({ href, category, title, image }) => (
+            {([...(RELATED_ARTICLES_MAP[slug] || DEFAULT_RELATED_ARTICLES)].sort((a, b) => {
+              const aMatches = a.category === article.category;
+              const bMatches = b.category === article.category;
+              if (aMatches && !bMatches) return -1;
+              if (!aMatches && bMatches) return 1;
+              return 0;
+            })).map(({ href, category, title, image }) => (
               <a
                 key={href}
                 href={href}
