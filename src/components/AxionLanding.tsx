@@ -193,16 +193,17 @@ const AxionLanding = () => {
                   isFixed={true}
                   colors={['#111111', '#F26522']}
                   items={[
-                    { label: 'SEO Traffic Recovery', link: '/google-penalty-recovery' },
-                    { label: 'B2B Lead Pipelines', link: '/services/lead-generation' },
-                    { label: 'Generative Search (GEO)', link: '/services/geo-optimization' },
-                    { label: 'Custom Web Apps', link: '/services/web-design' },
-                    { label: 'Paid Media Management', link: '/services/advertising' },
-                    { label: 'Search Engine Optimization', link: '/services/seo' }
+                    { label: 'Services', link: '/services' },
+                    { label: 'Company', isHeader: true },
+                    { label: 'About the Agency', link: '/company/about' },
+                    { label: 'Success Stories', link: '/company/success-stories' },
+                    { label: 'Our Approach', link: '/company/approach' },
+                    { label: 'Industry Insights', link: '/company/insights' },
+                    { label: 'Careers', link: '/company/careers' }
                   ]}
                   socialItems={[
                     { label: 'Twitter', link: '#' },
-                    { label: 'LinkedIn', link: '#' }
+                    { label: 'LinkedIn', link: 'https://www.linkedin.com/in/stevemartingobiya/' }
                   ]}
                   menuButtonColor="#111"
                   openMenuButtonColor="#111"

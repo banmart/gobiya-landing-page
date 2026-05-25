@@ -34,11 +34,31 @@ function App({ url }: AppProps) {
         const urlObj = new URL(anchor.href);
         // Only intercept local links
         if (urlObj.origin === window.location.origin) {
+          // If it's a hash link on the current path, smooth scroll to the target
+          if (urlObj.hash && urlObj.pathname === window.location.pathname) {
+            e.preventDefault();
+            const element = document.querySelector(urlObj.hash);
+            if (element) {
+              element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              window.history.pushState({}, '', urlObj.pathname + urlObj.hash);
+            }
+            return;
+          }
+          
           e.preventDefault();
-          window.history.pushState({}, '', urlObj.pathname);
+          window.history.pushState({}, '', urlObj.pathname + urlObj.hash);
           setCurrentPath(urlObj.pathname);
-          // Scroll to top
-          window.scrollTo({ top: 0, behavior: 'instant' });
+          // Scroll to top if no hash, else scroll to hash
+          if (urlObj.hash) {
+            setTimeout(() => {
+              const element = document.querySelector(urlObj.hash);
+              if (element) {
+                element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              }
+            }, 100);
+          } else {
+            window.scrollTo({ top: 0, behavior: 'instant' });
+          }
         }
       }
     };
@@ -50,6 +70,27 @@ function App({ url }: AppProps) {
       document.removeEventListener('click', handleAnchorClick);
     };
   }, []);
+
+  // Handle legacy redirects on mount and path change
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    
+    const legacyRedirects: Record<string, string> = {
+      '/services/seo': '/services#seo',
+      '/services/lead-generation': '/services#lead-generation',
+      '/services/geo-optimization': '/services#geo-optimization',
+      '/services/web-design': '/services#web-design',
+      '/services/advertising': '/services#advertising',
+      '/google-penalty-recovery': '/services#penalty-recovery',
+    };
+    
+    const normalized = currentPath.toLowerCase().replace(/\/$/, '') || '/';
+    const target = legacyRedirects[normalized];
+    if (target) {
+      window.history.replaceState({}, '', target);
+      setCurrentPath('/services');
+    }
+  }, [currentPath]);
 
   // Normalize path
   const normalizedPath = currentPath.toLowerCase().replace(/\/$/, '') || '/';

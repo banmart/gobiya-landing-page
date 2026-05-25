@@ -83,7 +83,7 @@ export const StaggeredMenu = ({
     }
     itemEntranceTweenRef.current?.kill();
 
-    const itemEls = Array.from(panel.querySelectorAll('.sm-panel-itemLabel'));
+    const itemEls = Array.from(panel.querySelectorAll('.sm-panel-itemLabel, .sm-panel-headerText'));
     const numberEls = Array.from(panel.querySelectorAll('.sm-panel-list[data-numbering] .sm-panel-item'));
     const socialTitle = panel.querySelector('.sm-socials-title');
     const socialLinks = Array.from(panel.querySelectorAll('.sm-socials-link'));
@@ -399,13 +399,24 @@ export const StaggeredMenu = ({
           <div className="sm-panel-inner">
             <ul className="sm-panel-list" role="list" data-numbering={displayItemNumbering || undefined}>
               {items && items.length ? (
-                items.map((it: any, idx: number) => (
-                  <li className="sm-panel-itemWrap" key={it.label + idx}>
-                    <a className="sm-panel-item" href={it.link} aria-label={it.ariaLabel} data-index={idx + 1}>
-                      <span className="sm-panel-itemLabel">{it.label}</span>
-                    </a>
-                  </li>
-                ))
+                items.map((it: any, idx: number) => {
+                  if (it.isHeader) {
+                    return (
+                      <li className="sm-panel-headerWrap mt-8 first:mt-0 mb-2 border-b border-gray-100 pb-2" key={it.label + idx}>
+                        <span className="sm-panel-headerText text-[11px] font-bold uppercase tracking-wider text-gray-400 block translate-y-[140%] rotate-[10deg] origin-[50%_100%]">
+                          {it.label}
+                        </span>
+                      </li>
+                    );
+                  }
+                  return (
+                    <li className="sm-panel-itemWrap" key={it.label + idx}>
+                      <a className="sm-panel-item" href={it.link} aria-label={it.ariaLabel} data-index={idx + 1}>
+                        <span className="sm-panel-itemLabel">{it.label}</span>
+                      </a>
+                    </li>
+                  );
+                })
               ) : (
                 <li className="sm-panel-itemWrap" aria-hidden="true">
                   <span className="sm-panel-item">

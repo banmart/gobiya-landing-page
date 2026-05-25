@@ -58,6 +58,10 @@ const metadataMap: Record<string, SEOMetadata> = {
     title: 'Contact Gobiya | Let\'s Scale Your Search Revenue',
     description: 'Reach out to our engineering team in Los Angeles to discuss algorithmic audits, AI traffic recovery, and pipeline architecture.'
   },
+  '/services': {
+    title: 'Bespoke Services & Consolidated Digital Growth Engines | Gobiya',
+    description: 'We consolidate forensic SEO, traffic recovery, generative engine optimization (GEO), high-speed React engineering, and automated outbound sales pipelines.'
+  },
   '/insights/automated-b2b-sales-pipeline-seo': {
     title: 'Automated B2B Sales Pipeline SEO: How AI Citations Shape Your Shortlist in 2026 | Gobiya',
     description: 'How AI-cited content qualifies B2B vendors for buyer shortlists — and what the 2026 shift to AI-driven research means for your pipeline.'

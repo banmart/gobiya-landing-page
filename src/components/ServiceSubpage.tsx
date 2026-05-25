@@ -82,6 +82,27 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
     };
   }, [path]);
 
+  // Handle hash/anchor scroll on initial mount or path/hash change
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const handleHashScroll = () => {
+      const hash = window.location.hash;
+      if (hash) {
+        const element = document.querySelector(hash);
+        if (element) {
+          // Wait for rendering to complete
+          setTimeout(() => {
+            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }, 300);
+        }
+      }
+    };
+    
+    handleHashScroll();
+    window.addEventListener('hashchange', handleHashScroll);
+    return () => window.removeEventListener('hashchange', handleHashScroll);
+  }, [path]);
+
   // Clock updating
   useEffect(() => {
     const updateTime = () => {
@@ -217,6 +238,31 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
     };
     
     switch (normalPath) {
+      case '/services':
+        return { ...defaultPageConfig,
+          subtitle: 'Gobiya Services > Consolidated Growth Solutions',
+          title: 'Bespoke services engineered for organic and pipeline dominance.',
+          rotatingWords: ['recover traffic.', 'build pipelines.', 'cite brand AI.', 'engineer speed.'],
+          outcomeMessage: 'We consolidate forensic SEO and automated B2B sales development into a single high-impact engine.',
+          ctaText: 'Get growth audit',
+          introScrollText: 'We engineer systems, not just strategies. Reclaiming lost organic traffic, automating cold pipeline generation, and aligning entities for search models.',
+          introHeading: <>Five specialized lines. <br className="hidden sm:block" /><span className="sm:hidden"> </span>One consolidated engine.</>,
+          introParagraph: 'At Gobiya, we do not run broad campaigns or provide boilerplate agency retainers. We build custom React/Supabase platforms, configure real-time intent-signals, and execute recovery protocols that get results.',
+          introVideo1: "/videos/space-girl.webm",
+          introVideo2: "/videos/gobiyaRace.webm",
+          bentoHeadline: <>Integrated capabilities.<br/>Measurable returns.</>,
+          bentoDescription: 'Every service is engineered to scale your customer acquisitions, drive down CAC, and ensure long-term algorithmic safety. Verify our capabilities below.',
+          insightCategory: 'Strategy',
+          bentoCards: [
+            { href: '#penalty-recovery', colSpan: 2, icon: <ShieldAlert size={40} className="text-[#F26522] mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'Traffic Recovery Protocol', description: 'Forensic drop diagnosis, content pruning, and E-E-A-T rebuilding to reverse search penalties.' },
+            { href: '#lead-generation', colSpan: 1, icon: <Network size={40} className="text-white mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'Pipeline Architecture', description: 'Automated cold outreach and target account CRM routing driven by site intent signals.' },
+            { href: '#geo-optimization', colSpan: 1, icon: <Search size={40} className="text-white mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'AI Citations (GEO)', description: 'Entity alignment to get your brand recommended natively inside ChatGPT, Claude, and Gemini.' },
+            { href: '#web-design', colSpan: 2, icon: <Code size={40} className="text-[#F26522] mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'High-Speed React/Vite Dev', description: 'Sub-second loading, Core Web Vitals optimization, and built-in CRO conversion systems.' },
+            { href: '#advertising', colSpan: 2, gradient: true, icon: <TrendingUp size={40} className="text-white mb-6 sm:mb-10 relative z-10" strokeWidth={1.5} />, title: 'ROAS-Driven Advertising', description: 'Paid ad pipelines managed to capture high-intent buyers and maximize ROI.' }
+          ],
+          showCalculator: true,
+          calculatorProps: { title: "Calculate Your Digital Revenue Leak", description: "Input the traffic or lead volume you are currently losing. See how much pipeline we can recover.", sliderLabel: "Estimated Monthly Loss", sliderMin: 1000, sliderMax: 200000, sliderStep: 1000, conversionRate: 0.02, ltv: 500, resultLabel: "Monthly Revenue Leak", disclaimer: "*Based on 2% conversion rate and $500 LTV." }
+        };
       case '/services/seo':
         return { ...defaultPageConfig,
           subtitle: 'Gobiya Services > Search Engine Optimization',
@@ -556,16 +602,17 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
                   isFixed={true}
                   colors={['#111111', '#F26522']}
                   items={[
-                    { label: 'SEO Traffic Recovery', link: '/google-penalty-recovery' },
-                    { label: 'B2B Lead Pipelines', link: '/services/lead-generation' },
-                    { label: 'Generative Search (GEO)', link: '/services/geo-optimization' },
-                    { label: 'Custom Web Apps', link: '/services/web-design' },
-                    { label: 'Paid Media Management', link: '/services/advertising' },
-                    { label: 'Search Engine Optimization', link: '/services/seo' }
+                    { label: 'Services', link: '/services' },
+                    { label: 'Company', isHeader: true },
+                    { label: 'About the Agency', link: '/company/about' },
+                    { label: 'Success Stories', link: '/company/success-stories' },
+                    { label: 'Our Approach', link: '/company/approach' },
+                    { label: 'Industry Insights', link: '/company/insights' },
+                    { label: 'Careers', link: '/company/careers' }
                   ]}
                   socialItems={[
                     { label: 'Twitter', link: '#' },
-                    { label: 'LinkedIn', link: '#' }
+                    { label: 'LinkedIn', link: 'https://www.linkedin.com/in/stevemartingobiya/' }
                   ]}
                   menuButtonColor="#111"
                   openMenuButtonColor="#111"
@@ -694,6 +741,83 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
       {path !== '/company/insights' && path !== '/contact' && (
         <div data-logo-dark className="relative">
           <ServicesBento headline={config.bentoHeadline} description={config.bentoDescription} cards={config.bentoCards} />
+        </div>
+      )}
+
+      {/* DETAILED SERVICES SECTIONS FOR CONSOLIDATED HUB */}
+      {path === '/services' && (
+        <div className="w-full">
+          {[
+            { id: 'seo', path: '/services/seo', label: '01 / Search Engine Optimization' },
+            { id: 'lead-generation', path: '/services/lead-generation', label: '02 / B2B Pipeline Architecture' },
+            { id: 'geo-optimization', path: '/services/geo-optimization', label: '03 / Generative Engine Optimization (GEO)' },
+            { id: 'penalty-recovery', path: '/google-penalty-recovery', label: '04 / Forensic Update Recovery Protocol' },
+            { id: 'web-design', path: '/services/web-design', label: '05 / High-Performance React Engineering' },
+            { id: 'advertising', path: '/services/advertising', label: '06 / Paid Search & Paid Social Advertising' }
+          ].map((service) => {
+            const svcConfig = getPageConfig(service.path);
+            return (
+              <section 
+                key={service.id} 
+                id={service.id} 
+                className="w-full pt-28 pb-20 border-t border-gray-200 relative scroll-mt-20 bg-white"
+                data-logo-dark
+              >
+                {/* Section Title Indicator */}
+                <div className="max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-12 mb-16 flex items-center gap-4">
+                  <span className="text-[12px] sm:text-[13px] font-bold text-[#F26522] tracking-wider uppercase">
+                    {service.label}
+                  </span>
+                  <div className="h-[1px] bg-gray-200 flex-1" />
+                </div>
+
+                {/* Scroll Reveal Intro for this service */}
+                <div className="w-full relative mb-12">
+                  <SplitTextReveal text={svcConfig.introScrollText} />
+                </div>
+
+                {/* Intro Content block for this service */}
+                <div className="bg-white pb-12 sm:pb-16 lg:pb-24 overflow-hidden w-full max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-12">
+                  <h3 className="text-[clamp(1.5rem,4vw,3.2rem)] font-medium leading-[1.12] tracking-[-0.02em] text-gray-900 mb-12 sm:mb-16 lg:mb-28 max-w-4xl">
+                    {svcConfig.introHeading}
+                  </h3>
+                  <p className="text-[16px] xl:text-[18px] leading-[1.65] font-medium text-gray-900 mb-12 max-w-3xl">
+                    {svcConfig.introParagraph}
+                  </p>
+                  
+                  {/* Videos layout */}
+                  <div className="hidden lg:grid grid-cols-[26%_1fr_48%] items-end gap-6 xl:gap-8 mb-16">
+                    <div className="self-end">
+                      <ParallaxMedia type="video" src={svcConfig.introVideo1} autoPlay muted loop playsInline className="w-full aspect-[438/346] rounded-lg overflow-hidden border border-gray-100" />
+                    </div>
+                    <div className="self-start flex flex-col items-start justify-start pt-2">
+                      <p className="text-[15px] text-gray-500 leading-relaxed">
+                        Every system is engineered end-to-end to maximize conversions and protect organic authority.
+                      </p>
+                    </div>
+                    <div className="self-end">
+                      <ParallaxMedia type="video" src={svcConfig.introVideo2} autoPlay muted loop playsInline className="w-full aspect-[3/2] rounded-lg overflow-hidden border border-gray-100" />
+                    </div>
+                  </div>
+                  
+                  {/* Mobile Videos layout */}
+                  <div className="flex flex-col sm:flex-row gap-4 sm:gap-5 w-full lg:hidden mb-12">
+                    <ParallaxMedia type="video" src={svcConfig.introVideo1} autoPlay muted loop playsInline className="w-full sm:w-[45%] aspect-[438/346] rounded-lg overflow-hidden border border-gray-100" />
+                    <ParallaxMedia type="video" src={svcConfig.introVideo2} autoPlay muted loop playsInline className="w-full sm:w-[55%] aspect-[900/600] rounded-lg overflow-hidden border border-gray-100" />
+                  </div>
+                </div>
+
+                {/* Bento Cards Details for this service */}
+                <div className="relative">
+                  <ServicesBento 
+                    headline={svcConfig.bentoHeadline} 
+                    description={svcConfig.bentoDescription} 
+                    cards={svcConfig.bentoCards} 
+                  />
+                </div>
+              </section>
+            );
+          })}
         </div>
       )}
 
