@@ -260,7 +260,7 @@ const ARTICLES: Record<string, ArticleData> = {
           What separates legitimate automation from a marketing claim
         </h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Not every agency or platform calling itself "AI SEO" operates at the same standard. Start with measurement. Ask
+          Not every <a href="/insights/best-seo-agency-for-b2b-brands" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">agency</a> or platform calling itself "AI SEO" operates at the same standard. Start with measurement. Ask
           any prospective vendor what they track. If the only metrics they report are Google rankings, organic clicks, and
           domain authority, they are not running AI-aware pipeline SEO — they are running classical{' '}
           <a href="/services/seo" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">
@@ -305,7 +305,7 @@ const ARTICLES: Record<string, ArticleData> = {
             },
             {
               title: 'Outsourced Services Firms',
-              body: 'Agencies and consultancies benefit most from earned-media-led citation strategies, because their categories are saturated with self-promotional content that AI engines have learned to deprioritise.',
+              body: '<a href="/insights/b2b-seo-agency-los-angeles" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">Agencies</a> and consultancies benefit most from earned-media-led citation strategies, because their categories are saturated with self-promotional content that AI engines have learned to deprioritise.',
               link: '/services/lead-generation',
               linkLabel: 'Explore lead gen',
             },
@@ -441,7 +441,7 @@ const ARTICLES: Record<string, ArticleData> = {
           out a thousand of those forms and learned the only consequence is a six-week SDR sequence they didn't ask for.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Automated lead generation SEO replaces volume-first capture with intent-first capture. The system identifies the
+          <a href="/insights/seo-for-b2b-lead-generation" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">Automated lead generation SEO</a> replaces volume-first capture with intent-first capture. The system identifies the
           buyer-research questions{' '}
           <a href="/services/geo-optimization" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">
             AI tools are surfacing in the category
@@ -892,7 +892,7 @@ const ARTICLES: Record<string, ArticleData> = {
           What separates real outbound SEO prospecting from a "we have intent data" claim
         </h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Not every vendor or agency selling intent-based outbound operates at the same standard. The category has filled rapidly with third-party intent data resellers, generic firmographic filtering rebranded as "intent," and dashboards that surface signals nobody routes into outreach.
+          Not every vendor or <a href="/insights/best-seo-agency-for-b2b-brands" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">agency</a> selling intent-based outbound operates at the same standard. The category has filled rapidly with third-party intent data resellers, generic firmographic filtering rebranded as "intent," and dashboards that surface signals nobody routes into outreach.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-4">
           Real outbound SEO prospecting is built on first-party intent. Ask your providers:
@@ -958,7 +958,7 @@ const ARTICLES: Record<string, ArticleData> = {
           Why Gobiya is positioned differently for B2B operators
         </h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Gobiya provides complete operational alignment between search acquisition and outbound pipeline engineering. We do not sell third-party intent databases or run generic email spam sequences. We audit your existing traffic, set up real-time reverse-IP enrichment layers, configure direct routing into your CRM, and build custom SEO structures designed specifically to generate high-intent outbound signals.
+          As a <a href="/insights/b2b-seo-agency-los-angeles" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">B2B SEO agency in Los Angeles</a>, Gobiya provides complete operational alignment between search acquisition and outbound pipeline engineering. We do not sell third-party intent databases or run generic email spam sequences. We audit your existing traffic, set up real-time reverse-IP enrichment layers, configure direct routing into your CRM, and build custom SEO structures designed specifically to generate high-intent outbound signals.
         </p>
 
         {/* ── FINAL CTA ── */}
@@ -1122,7 +1122,7 @@ const ARTICLES: Record<string, ArticleData> = {
           The signals that drive automation have to come from somewhere. The teams getting the strongest results in 2026 use SEO and content infrastructure as the primary signal generator: first-party page visits, AI-citation referrals, comparison-page engagement, downloaded gated assets, demo-request form-fills. Those signals are exclusive to the vendor, arrive in real time, and carry meaningful intent context the orchestration layer can act on without needing to buy third-party data that's been resold across the category.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
-          This is the operational bridge between automated lead generation SEO, <a href="/insights/outbound-seo-prospecting" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">outbound SEO prospecting</a>, and B2B sales pipeline automation. Each one of those motions feeds the other. The SEO content captures direct conversions where it can, generates signals the outbound layer routes into sequences for visitors who didn't convert, and produces the data the automation layer needs to qualify and prioritize accounts at scale.
+          This is the operational bridge between <a href="/insights/seo-for-b2b-lead-generation" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">SEO for B2B lead generation</a>, <a href="/insights/outbound-seo-prospecting" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">outbound SEO prospecting</a>, and B2B sales pipeline automation. Each one of those motions feeds the other. The SEO content captures direct conversions where it can, generates signals the outbound layer routes into sequences for visitors who didn't convert, and produces the data the automation layer needs to qualify and prioritize accounts at scale.
         </p>
 
         {/* ── SECTION 6 ── */}
@@ -1930,10 +1930,10 @@ const RELATED_ARTICLES_MAP: Record<string, { href: string; category: string; tit
       image: '/images/article-outbound-seo-prospecting.webp',
     },
     {
-      href: '/insights/b2b-sales-pipeline-automation',
+      href: '/insights/best-seo-agency-for-b2b-brands',
       category: 'Strategy',
-      title: 'B2B Sales Pipeline Automation: The Orchestration Layer for AI-Driven Revenue',
-      image: '/images/article-b2b-sales-pipeline-automation.webp',
+      title: 'How to Choose the Best SEO Agency for B2B Brands in 2026',
+      image: '/images/article-best-seo-agency.webp',
     },
   ],
   'automated-lead-generation-seo': [
@@ -1950,18 +1950,18 @@ const RELATED_ARTICLES_MAP: Record<string, { href: string; category: string; tit
       image: '/images/article-outbound-seo-prospecting.webp',
     },
     {
-      href: '/insights/b2b-sales-pipeline-automation',
+      href: '/insights/seo-for-b2b-lead-generation',
       category: 'Strategy',
-      title: 'B2B Sales Pipeline Automation: The Orchestration Layer for AI-Driven Revenue',
-      image: '/images/article-b2b-sales-pipeline-automation.webp',
+      title: 'SEO for B2B Lead Generation: How Committee-Architecture Content Outperforms Single-Persona Funnels',
+      image: '/images/article-seo-b2b-lead-generation.webp',
     },
   ],
   'outbound-seo-prospecting': [
     {
-      href: '/insights/automated-b2b-sales-pipeline-seo',
+      href: '/insights/b2b-seo-agency-los-angeles',
       category: 'Strategy',
-      title: 'Automated B2B Sales Pipeline SEO: How AI Citations Shape Your Shortlist in 2026',
-      image: '/images/article-b2b-pipeline-seo.webp',
+      title: 'B2B SEO Agency in Los Angeles: Why Local Partnership Outperforms Remote Vendor Relationships in 2026',
+      image: '/images/article-b2b-seo-agency-los-angeles.webp',
     },
     {
       href: '/insights/automated-lead-generation-seo',
@@ -1984,10 +1984,10 @@ const RELATED_ARTICLES_MAP: Record<string, { href: string; category: string; tit
       image: '/images/article-b2b-pipeline-seo.webp',
     },
     {
-      href: '/insights/automated-lead-generation-seo',
+      href: '/insights/best-seo-agency-for-b2b-brands',
       category: 'Strategy',
-      title: 'Automated Lead Generation SEO: How AI Pre-Qualifies Your Pipeline in 2026',
-      image: '/images/article-lead-gen-seo.webp',
+      title: 'How to Choose the Best SEO Agency for B2B Brands in 2026',
+      image: '/images/article-best-seo-agency.webp',
     },
     {
       href: '/insights/outbound-seo-prospecting',
