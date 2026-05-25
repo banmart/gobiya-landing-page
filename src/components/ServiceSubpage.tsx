@@ -673,14 +673,14 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
 
       
       {/* SECTION: SCROLL REVEAL INTRO */}
-      {path !== '/company/insights' && path !== '/contact' && (
+      {path !== '/company/insights' && path !== '/contact' && path !== '/services' && (
         <section className="w-full relative" data-logo-dark>
           <SplitTextReveal text={config.introScrollText} />
         </section>
       )}
 
       {/* SECTION: INTRO CONTENT */}
-      {path !== '/company/insights' && path !== '/contact' && (
+      {path !== '/company/insights' && path !== '/contact' && path !== '/services' && (
         <section className="bg-white pt-16 sm:pt-20 lg:pt-32 pb-12 sm:pb-16 lg:pb-24 overflow-hidden w-full max-w-[1440px] mx-auto">
           <div className="px-5 sm:px-8 lg:px-12 flex items-center gap-3 mb-6 sm:mb-8">
             <div className="w-6 h-6 sm:w-7 sm:h-7 bg-black text-white text-[11px] sm:text-[12px] font-semibold flex items-center justify-center">2</div>
@@ -738,7 +738,7 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
       )}
 
       {/* SECTION: SERVICES BENTO */}
-      {path !== '/company/insights' && path !== '/contact' && (
+      {path !== '/company/insights' && path !== '/contact' && path !== '/services' && (
         <div data-logo-dark className="relative">
           <ServicesBento headline={config.bentoHeadline} description={config.bentoDescription} cards={config.bentoCards} />
         </div>
@@ -825,7 +825,7 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
       )}
 
       {/* SECTION: LATEST INSIGHTS */}
-      {path !== '/contact' && (
+      {path !== '/contact' && path !== '/services' && (
         path !== '/company/insights' ? (
           <div data-logo-dark className="relative">
             <InsightsSlider filterCategory={config.insightCategory} />
@@ -838,14 +838,14 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
       )}
 
       {/* SECTION: CASE STUDIES PINNED */}
-      {path !== '/company/insights' && path !== '/contact' && (
+      {path !== '/company/insights' && path !== '/contact' && path !== '/services' && (
         <div className="relative">
           
         </div>
       )}
 
       {/* SECTION: SATISFIED CLIENTS */}
-      {path !== '/company/insights' && path !== '/contact' && (
+      {path !== '/company/insights' && path !== '/contact' && path !== '/services' && (
         <div className="relative">
           <SatisfiedClients />
         </div>
