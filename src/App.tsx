@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import AxionLanding from './components/AxionLanding';
 import ServiceSubpage from './components/ServiceSubpage';
 import ArticlePage from './components/ArticlePage';
+import AuthorPage from './components/AuthorPage';
 import SEO from './components/SEO';
 
 interface AppProps {
@@ -65,6 +66,8 @@ function App({ url }: AppProps) {
       
       {normalizedPath === '/' ? (
         <AxionLanding />
+      ) : normalizedPath === '/about/steve-martin' || normalizedPath === '/author/steve-martin' ? (
+        <AuthorPage path={normalizedPath} />
       ) : articleSlug ? (
         <ArticlePage slug={articleSlug} />
       ) : (

@@ -1126,9 +1126,13 @@ const ArticlePage: React.FC<ArticlePageProps> = ({ slug }) => {
       "datePublished": "2026-05-25",
       "dateModified": "2026-05-25",
       "author": {
-        "@type": "Organization",
-        "name": "Gobiya",
-        "url": "https://www.gobiya.com"
+        "@type": "Person",
+        "name": "Steve Martin",
+        "jobTitle": "CEO, Lead Developer & Marketer",
+        "url": "https://www.gobiya.com/about/steve-martin",
+        "sameAs": [
+          "https://www.linkedin.com/in/stevemartingobiya/"
+        ]
       },
       "publisher": {
         "@type": "Organization",
@@ -1247,7 +1251,7 @@ const ArticlePage: React.FC<ArticlePageProps> = ({ slug }) => {
             <span className="w-1 h-1 rounded-full bg-gray-400" />
             <span>{article.readTime}</span>
             <span className="w-1 h-1 rounded-full bg-gray-400" />
-            <span>By Gobiya</span>
+            <span>By <a href="/about/steve-martin" className="underline hover:text-[#F26522] transition-colors font-medium">Steve Martin</a></span>
           </div>
         </div>
       </section>
