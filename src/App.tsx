@@ -3,6 +3,7 @@ import AxionLanding from './components/AxionLanding';
 import ServiceSubpage from './components/ServiceSubpage';
 import ArticlePage from './components/ArticlePage';
 import AuthorPage from './components/AuthorPage';
+import ThankYouPage from './components/ThankYouPage';
 import SEO from './components/SEO';
 
 interface AppProps {
@@ -116,6 +117,8 @@ function App({ url }: AppProps) {
         <AuthorPage path={normalizedPath} />
       ) : articleSlug ? (
         <ArticlePage slug={articleSlug} />
+      ) : normalizedPath === '/thank-you' ? (
+        <ThankYouPage />
       ) : (
         <ServiceSubpage path={normalizedPath} />
       )}
