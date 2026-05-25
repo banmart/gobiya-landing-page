@@ -744,81 +744,84 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
         </div>
       )}
 
-      {/* DETAILED SERVICES SECTIONS FOR CONSOLIDATED HUB */}
+      {/* SIMPLE SERVICES SHOWCASE FOR CONSOLIDATED PATH */}
       {path === '/services' && (
-        <div className="w-full">
-          {[
-            { id: 'seo', path: '/services/seo', label: '01 / Search Engine Optimization' },
-            { id: 'lead-generation', path: '/services/lead-generation', label: '02 / B2B Pipeline Architecture' },
-            { id: 'geo-optimization', path: '/services/geo-optimization', label: '03 / Generative Engine Optimization (GEO)' },
-            { id: 'penalty-recovery', path: '/google-penalty-recovery', label: '04 / Forensic Update Recovery Protocol' },
-            { id: 'web-design', path: '/services/web-design', label: '05 / High-Performance React Engineering' },
-            { id: 'advertising', path: '/services/advertising', label: '06 / Paid Search & Paid Social Advertising' }
-          ].map((service) => {
-            const svcConfig = getPageConfig(service.path);
-            return (
-              <section 
-                key={service.id} 
-                id={service.id} 
-                className="w-full pt-28 pb-20 border-t border-gray-200 relative scroll-mt-20 bg-white"
-                data-logo-dark
-              >
-                {/* Section Title Indicator */}
-                <div className="max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-12 mb-16 flex items-center gap-4">
-                  <span className="text-[12px] sm:text-[13px] font-bold text-[#F26522] tracking-wider uppercase">
-                    {service.label}
-                  </span>
-                  <div className="h-[1px] bg-gray-200 flex-1" />
-                </div>
-
-                {/* Scroll Reveal Intro for this service */}
-                <div className="w-full relative mb-12">
-                  <SplitTextReveal text={svcConfig.introScrollText} />
-                </div>
-
-                {/* Intro Content block for this service */}
-                <div className="bg-white pb-12 sm:pb-16 lg:pb-24 overflow-hidden w-full max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-12">
-                  <h3 className="text-[clamp(1.5rem,4vw,3.2rem)] font-medium leading-[1.12] tracking-[-0.02em] text-gray-900 mb-12 sm:mb-16 lg:mb-28 max-w-4xl">
-                    {svcConfig.introHeading}
-                  </h3>
-                  <p className="text-[16px] xl:text-[18px] leading-[1.65] font-medium text-gray-900 mb-12 max-w-3xl">
-                    {svcConfig.introParagraph}
-                  </p>
-                  
-                  {/* Videos layout */}
-                  <div className="hidden lg:grid grid-cols-[26%_1fr_48%] items-end gap-6 xl:gap-8 mb-16">
-                    <div className="self-end">
-                      <ParallaxMedia type="video" src={svcConfig.introVideo1} autoPlay muted loop playsInline className="w-full aspect-[438/346] rounded-lg overflow-hidden border border-gray-100" />
+        <section className="bg-white py-16 sm:py-24 border-t border-gray-200" data-logo-dark>
+          <div className="max-w-[1440px] w-full mx-auto px-5 sm:px-8 lg:px-12">
+            <h2 className="text-2xl sm:text-4xl font-semibold tracking-tight text-gray-900 mb-12">Our Specialized Capabilities</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {[
+                {
+                  id: 'seo',
+                  icon: <Search className="text-[#F26522] w-8 h-8" />,
+                  title: 'Search Engine Optimization',
+                  description: 'Rebuild organic signals and reclaim search engine visibility. We map out topical authority structures and execute forensic technical audits built to win high-intent organic traffic.',
+                  deliverables: ['Topical Authority Architectures', 'Algorithmic Search Audits', 'EEAT Signal Optimization']
+                },
+                {
+                  id: 'lead-generation',
+                  icon: <Network className="text-[#F26522] w-8 h-8" />,
+                  title: 'B2B Pipeline Architecture',
+                  description: 'Construct automated sales systems driven by real-time intent signals. We design and launch cold outreach and database routing to consistently book qualified meetings.',
+                  deliverables: ['Automated Cold Outreach', 'Intent Signal Tracking', 'CRM Routing & Attribution']
+                },
+                {
+                  id: 'geo-optimization',
+                  icon: <Search className="text-[#F26522] w-8 h-8" />,
+                  title: 'Generative Engine Optimization (GEO)',
+                  description: 'Position your brand to be cited and recommended natively inside generative AI engines. We align your entities so ChatGPT, Claude, and Google AI Overviews reference you directly.',
+                  deliverables: ['AI Citation & Reference Building', 'Semantic PR Strategies', 'Entity Graph Integration']
+                },
+                {
+                  id: 'penalty-recovery',
+                  icon: <ShieldAlert className="text-[#F26522] w-8 h-8" />,
+                  title: 'Google Penalty Recovery',
+                  description: 'Emergency triage and recovery protocols for domains hit by Core Updates, Helpful Content Updates, or manual spam actions. We diagnose drops and restore index standing.',
+                  deliverables: ['Forensic Update Audit', 'Content Pruning & Restructuring', 'Algorithmic Trust Restorations']
+                },
+                {
+                  id: 'web-design',
+                  icon: <Code className="text-[#F26522] w-8 h-8" />,
+                  title: 'High-Performance React Engineering',
+                  description: 'Custom React & Vite landing pages and web applications built from scratch. Zero bloat, instant loading, flawless Core Web Vitals, and maximum conversion architecture.',
+                  deliverables: ['Sub-Second Loading Speeds', 'Custom UI/UX Engineering', 'Conversion Rate Optimization (CRO)']
+                },
+                {
+                  id: 'advertising',
+                  icon: <TrendingUp className="text-[#F26522] w-8 h-8" />,
+                  title: 'ROAS-Driven PPC Advertising',
+                  description: 'Precision-targeted paid search and paid social ad pipelines. We maximize return on ad spend (ROAS) and lower customer acquisition costs across Google, Microsoft, and Meta.',
+                  deliverables: ['Intent-Based Search Ads', 'LinkedIn B2B Lead Pipelines', 'A/B Testing & Funnel Management']
+                }
+              ].map((service) => (
+                <div key={service.id} id={service.id} className="bg-[#f9f9f9] border border-gray-100 p-8 rounded-2xl flex flex-col justify-between hover:border-gray-200 transition-all duration-300 scroll-mt-24">
+                  <div>
+                    <div className="mb-6 flex items-center justify-between">
+                      {service.icon}
+                      <span className="text-[11px] font-bold text-gray-400 uppercase tracking-widest">Service Capabilities</span>
                     </div>
-                    <div className="self-start flex flex-col items-start justify-start pt-2">
-                      <p className="text-[15px] text-gray-500 leading-relaxed">
-                        Every system is engineered end-to-end to maximize conversions and protect organic authority.
-                      </p>
-                    </div>
-                    <div className="self-end">
-                      <ParallaxMedia type="video" src={svcConfig.introVideo2} autoPlay muted loop playsInline className="w-full aspect-[3/2] rounded-lg overflow-hidden border border-gray-100" />
-                    </div>
+                    <h3 className="text-xl font-bold text-gray-900 mb-4">{service.title}</h3>
+                    <p className="text-gray-600 text-[14px] leading-relaxed mb-6">{service.description}</p>
                   </div>
-                  
-                  {/* Mobile Videos layout */}
-                  <div className="flex flex-col sm:flex-row gap-4 sm:gap-5 w-full lg:hidden mb-12">
-                    <ParallaxMedia type="video" src={svcConfig.introVideo1} autoPlay muted loop playsInline className="w-full sm:w-[45%] aspect-[438/346] rounded-lg overflow-hidden border border-gray-100" />
-                    <ParallaxMedia type="video" src={svcConfig.introVideo2} autoPlay muted loop playsInline className="w-full sm:w-[55%] aspect-[900/600] rounded-lg overflow-hidden border border-gray-100" />
+                  <div>
+                    <h4 className="text-[12px] font-semibold text-gray-900 uppercase tracking-wider mb-3">Key Deliverables</h4>
+                    <ul className="flex flex-col gap-2 mb-6">
+                      {service.deliverables.map((item, idx) => (
+                        <li key={idx} className="flex items-center gap-2 text-[13px] text-gray-600">
+                          <span className="w-1.5 h-1.5 rounded-full bg-[#F26522]" />
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                    <a href="/contact" className="text-[13px] font-semibold text-[#F26522] hover:text-[#e05a1a] flex items-center gap-1 transition-colors">
+                      Inquire about this service <ArrowRight className="w-3.5 h-3.5" />
+                    </a>
                   </div>
                 </div>
-
-                {/* Bento Cards Details for this service */}
-                <div className="relative">
-                  <ServicesBento 
-                    headline={svcConfig.bentoHeadline} 
-                    description={svcConfig.bentoDescription} 
-                    cards={svcConfig.bentoCards} 
-                  />
-                </div>
-              </section>
-            );
-          })}
-        </div>
+              ))}
+            </div>
+          </div>
+        </section>
       )}
 
       {/* SECTION: LATEST INSIGHTS */}
