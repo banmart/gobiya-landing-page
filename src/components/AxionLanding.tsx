@@ -40,6 +40,7 @@ const AxionLanding = () => {
         
         if (containers.length === 0) return;
 
+        // Calculate points relative to initial logo position
         const points = containers.map((container) => {
            const r = container.getBoundingClientRect();
            return {
@@ -48,45 +49,54 @@ const AxionLanding = () => {
            };
         });
 
-        // Use the last marker as the end trigger so the animation
-        // completes exactly when you scroll to the final marker
-        const lastMarker = containers[containers.length - 1];
+        // Map each marker to the exact scroll position (in pixels) where it centers in the viewport
+        const scrollPositions = containers.map((container, index) => {
+          if (index === 0) return 0;
+          const r = container.getBoundingClientRect();
+          const targetScroll = r.top + r.height / 2 - window.innerHeight / 2;
+          return Math.max(0, targetScroll);
+        });
 
-        // Main motion path timeline
+        const maxScroll = scrollPositions[scrollPositions.length - 1];
+
+        // Create timeline scrubbed by page scroll from 0 to maxScroll
         const tl = gsap.timeline({
           scrollTrigger: {
-            trigger: "#animated-logo",
+            trigger: "body",
             start: "top top",
-            endTrigger: lastMarker,
-            end: "center center",
+            end: `+=${maxScroll}`,
             scrub: 1
           }
         });
 
-        // Motion path animation
-        tl.to(box, {
-          duration: 1,
-          ease: "none",
-          motionPath: {
-            path: points,
-            curviness: 1.5
-          }
-        }, 0);
+        // Segment-by-segment absolute-scroll-based movement triggers
+        for (let i = 0; i < containers.length - 1; i++) {
+          const endPos = points[i+1];
+          const startTime = scrollPositions[i];
+          const duration = scrollPositions[i+1] - scrollPositions[i];
 
-        // Scale animation - grow to 2.2 after starting to scroll
+          tl.to(box, {
+            x: endPos.x,
+            y: endPos.y,
+            duration: duration,
+            ease: "power1.inOut" // Smooth deceleration/acceleration between markers
+          }, startTime);
+        }
+
+        // Scale animation
+        const scaleDuration = Math.min(200, maxScroll * 0.15);
         tl.set(box, { scale: 1 }, 0);
         tl.to(box, {
           scale: 2.2,
-          duration: 0.15,
+          duration: scaleDuration,
           ease: "power1.out"
         }, 0);
 
-        // Scale animation - shrink back to 1 before reaching the end
         tl.to(box, {
           scale: 1,
-          duration: 0.15,
+          duration: scaleDuration,
           ease: "power1.in"
-        }, 0.85);
+        }, maxScroll - scaleDuration);
 
         // Per-section inversion triggers
         // Dark sections need filter: brightness(0) invert(1) to make logo white
