@@ -3,7 +3,7 @@ import { Shader, Swirl, ChromaFlow, FlutedGlass, FilmGrain } from 'shaders/react
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { MotionPathPlugin } from 'gsap/MotionPathPlugin';
-import { Clock, ArrowRight, ShieldAlert, TrendingUp, Search, Network, PenTool, BarChart, Megaphone, Target, Briefcase } from 'lucide-react';
+import { Clock, ArrowRight, ShieldAlert, TrendingUp, Search, Network, PenTool, BarChart, Megaphone, Target, Briefcase, Code } from 'lucide-react';
 import SplitTextReveal from './SplitTextReveal';
 import ParallaxMedia from './ParallaxMedia';
 import ServicesBento from './ServicesBento';
@@ -362,23 +362,23 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
       case '/company/about':
         return { ...defaultPageConfig,
           subtitle: 'Gobiya > About the Agency',
-          title: 'We engineer algorithmic dominance for elite brands.',
-          rotatingWords: ['recover traffic.', 'build pipelines.', 'scale revenue.'],
-          outcomeMessage: 'Elite engineering team for search & pipeline dominance',
-          ctaText: 'Meet the team',
-          introScrollText: 'An elite collective of data scientists, SEO engineers, and revenue architects. We replace guesswork with algorithmic precision to guarantee your digital dominance.',
-          introHeading: <>Engineered for precision. <br className="hidden sm:block" /><span className="sm:hidden"> </span>Built for scale.</>,
-          introParagraph: 'We are not a traditional marketing agency. We are a specialized technical engineering firm focused purely on search algorithmic recovery, entity optimization, and B2B pipeline generation.',
+          title: 'Steve Martin & Gobiya: Engineering search dominance.',
+          rotatingWords: ['SEO specialists.', 'web developers.', 'growth marketers.'],
+          outcomeMessage: 'Led by Steve Martin — 25+ years of digital marketing and full-stack development experience.',
+          ctaText: 'View profile',
+          introScrollText: 'Hands-on Senior SEO & Digital Marketing Specialist who builds the systems. From early web development roots in 2000 to scaling enterprise growth and AI citations.',
+          introHeading: <>Combining technical code <br className="hidden sm:block" /><span className="sm:hidden"> </span>with organic conversion.</>,
+          introParagraph: 'Steve Martin runs Gobiya to help brands automate their B2B pipelines, reclaim rankings after core updates, and construct React/Supabase web designs that convert at elite ratios.',
           introVideo1: "/videos/gobiyaRace.webm",
           introVideo2: "/videos/space-girl.webm",
-          bentoHeadline: <>Our expertise meets<br/>your ambition.</>,
-          bentoDescription: 'We partner with enterprise and mid-market leaders who demand measurable outcomes, not vanity metrics. Discover the core pillars that drive our engineering team.',
+          bentoHeadline: <>Built on experience.<br/>Dedicated to shipping.</>,
+          bentoDescription: 'Steve is a veteran technical founder who has managed up to $15K/month Google Ads budgets and scaled organic pipelines. Explore his core E-E-A-T credentials below.',
           insightCategory: 'Strategy',
           bentoCards: [
-            { href: '/services/seo', colSpan: 2, icon: <Search size={40} className="text-[#F26522] mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'Algorithmic Experts', description: 'Deep technical understanding of search engine architectures and machine learning updates.' },
-            { href: '/services/lead-generation', colSpan: 1, icon: <Network size={40} className="text-white mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'Pipeline Architects', description: 'Systems builders obsessed with outbound revenue generation.' },
-            { href: '/company/approach', colSpan: 1, icon: <TrendingUp size={40} className="text-white mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'Data Scientists', description: 'Mathematical precision applied to content and search intent.' },
-            { href: '/contact', colSpan: 2, gradient: true, icon: <Briefcase size={40} className="text-white mb-6 sm:mb-10 relative z-10" strokeWidth={1.5} />, title: 'Partner With Us', description: 'Join the ranks of elite brands leveraging our proprietary growth methodologies.' }
+            { href: '/about/steve-martin', colSpan: 2, icon: <Briefcase size={40} className="text-[#F26522] mb-6 sm:mb-10" strokeWidth={1.5} />, title: '25+ Years Experience', description: 'Bridging full-stack software engineering and organic search traffic acquisition since 2000.' },
+            { href: '/services/web-design', colSpan: 1, icon: <Code size={40} className="text-white mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'Core Dev Stack', description: 'React, Vite, Tailwind CSS, Supabase, and custom AI chat/automation builds.' },
+            { href: '/services/geo-optimization', colSpan: 1, icon: <Search size={40} className="text-white mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'AI-Era SEO', description: 'Schema markup, entity optimization, and structured citations for LLMs.' },
+            { href: '/about/steve-martin', colSpan: 2, gradient: true, icon: <TrendingUp size={40} className="text-white mb-6 sm:mb-10 relative z-10" strokeWidth={1.5} />, title: 'Steve Martin Credentials', description: 'View professional experience, client projects, certifications, and UCLA background.' }
           ]
         };
       case '/company/success-stories':
