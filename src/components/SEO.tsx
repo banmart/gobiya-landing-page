@@ -57,6 +57,14 @@ const metadataMap: Record<string, SEOMetadata> = {
   '/contact': {
     title: 'Contact Gobiya | Let\'s Scale Your Search Revenue',
     description: 'Reach out to our engineering team in Los Angeles to discuss algorithmic audits, AI traffic recovery, and pipeline architecture.'
+  },
+  '/insights/automated-b2b-sales-pipeline-seo': {
+    title: 'Automated B2B Sales Pipeline SEO: How AI Citations Shape Your Shortlist in 2026 | Gobiya',
+    description: 'How AI-cited content qualifies B2B vendors for buyer shortlists — and what the 2026 shift to AI-driven research means for your pipeline.'
+  },
+  '/insights/automated-lead-generation-seo': {
+    title: 'Automated Lead Generation SEO: How AI Pre-Qualifies Your Pipeline in 2026 | Gobiya',
+    description: 'How AI-cited content produces pre-qualified pipeline at conversion rates traditional lead gen cannot match — and what the 2026 shift means for B2B teams.'
   }
 };
 
@@ -70,7 +78,11 @@ const SEO: React.FC<SEOProps> = ({ path }) => {
     if (typeof window === 'undefined') return;
 
     const pathname = path.toLowerCase().replace(/\/$/, '') || '/';
-    const seo = metadataMap[pathname] || metadataMap['/'];
+    // For article slugs, fall back to a generic insights title if not explicitly listed
+    const seo = metadataMap[pathname] || (pathname.startsWith('/insights/') ? {
+      title: 'Industry Insights | Gobiya',
+      description: 'Deep dives into Google algorithm updates, generative search (GEO), and B2B marketing strategies from the Gobiya team.'
+    } : metadataMap['/']);
     
     // Update Title
     document.title = seo.title;

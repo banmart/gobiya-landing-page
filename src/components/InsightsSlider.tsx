@@ -10,6 +10,7 @@ interface Insight {
   category: string;
   image_path: string;
   image_url?: string; // We'll populate this from the bucket
+  slug?: string;
 }
 
 interface InsightsSliderProps {
@@ -194,11 +195,18 @@ const InsightsSlider: React.FC<InsightsSliderProps> = ({ filterCategory }) => {
             ) : displayInsights.length === 0 ? (
               <div className="text-gray-400 text-lg w-full py-10">No insights available at the moment.</div>
             ) : (
-              displayInsights.map((insight) => (
-                <div 
-                  key={insight.id} 
-                  className="insight-card relative w-[85vw] sm:w-[45vw] lg:w-[350px] xl:w-[400px] aspect-[4/5] overflow-hidden group cursor-pointer select-none"
-                >
+              displayInsights.map((insight) => {
+                const href = insight.slug
+                  ? `/insights/${insight.slug}`
+                  : undefined;
+                const CardTag = href ? 'a' : 'div';
+                const cardProps: any = {
+                  key: insight.id,
+                  className: 'insight-card relative w-[85vw] sm:w-[45vw] lg:w-[350px] xl:w-[400px] aspect-[4/5] overflow-hidden group select-none ' + (href ? 'cursor-pointer' : ''),
+                  ...(href ? { href } : {}),
+                };
+                return (
+                  <CardTag {...cardProps}>
                   <div 
                     className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
                     style={{ backgroundImage: `url(${insight.image_url})` }}
@@ -219,8 +227,9 @@ const InsightsSlider: React.FC<InsightsSliderProps> = ({ filterCategory }) => {
                       <ArrowRight className="w-4 h-4 transform group-hover:translate-x-2 transition-transform duration-300" />
                     </div>
                   </div>
-                </div>
-              ))
+                  </CardTag>
+                );
+              })
             )}
           </div>
         </div>

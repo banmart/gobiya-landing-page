@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import AxionLanding from './components/AxionLanding';
 import ServiceSubpage from './components/ServiceSubpage';
+import ArticlePage from './components/ArticlePage';
 import SEO from './components/SEO';
 
 interface AppProps {
@@ -52,6 +53,10 @@ function App({ url }: AppProps) {
   // Normalize path
   const normalizedPath = currentPath.toLowerCase().replace(/\/$/, '') || '/';
 
+  // Detect article routes: /insights/[slug]
+  const articleMatch = normalizedPath.match(/^\/insights\/([a-z0-9-]+)$/);
+  const articleSlug = articleMatch ? articleMatch[1] : null;
+
   return (
     <>
       <SEO path={normalizedPath} />
@@ -60,6 +65,8 @@ function App({ url }: AppProps) {
       
       {normalizedPath === '/' ? (
         <AxionLanding />
+      ) : articleSlug ? (
+        <ArticlePage slug={articleSlug} />
       ) : (
         <ServiceSubpage path={normalizedPath} />
       )}
