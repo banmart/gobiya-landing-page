@@ -82,6 +82,10 @@ const metadataMap: Record<string, SEOMetadata> = {
     title: 'How to Choose the Best SEO Agency for B2B Brands in 2026 | Gobiya',
     description: 'The 2026 evaluation framework for picking a B2B SEO partner — what to measure, what to ignore, and why most "best agency" lists are scoring the wrong things.'
   },
+  '/insights/seo-for-b2b-lead-generation': {
+    title: 'SEO for B2B Lead Generation: How Committee-Architecture Content Outperforms Single-Persona Funnels | Gobiya',
+    description: 'How content architected for an 11-person buying committee outperforms content built for a single converter — and why B2B lead gen SEO in 2026 looks fundamentally different from every other category.'
+  },
   '/about/steve-martin': {
     title: 'Steve Martin | CEO, Lead Developer & Marketer | Gobiya',
     description: 'Professional credentials and author profile for Steve Martin, CEO, Lead Developer & Marketer at Gobiya. Specialized in advanced SEO, custom React engineering, and pipeline automation.'
