@@ -2100,7 +2100,34 @@ interface ArticlePageProps {
 
 const ArticlePage: React.FC<ArticlePageProps> = ({ slug }) => {
   const [time, setTime] = useState('');
+  const [canShare, setCanShare] = useState(false);
   const article = ARTICLES[slug];
+
+  useEffect(() => {
+    setCanShare(typeof navigator !== 'undefined' && !!navigator.share);
+  }, []);
+
+  const handleShare = async (platform?: string) => {
+    const articleUrl = `https://www.gobiya.com/insights/${slug}`;
+    if (!platform && canShare) {
+      try {
+        await navigator.share({
+          title: article?.title ?? '',
+          text: article?.metaDescription ?? '',
+          url: articleUrl,
+        });
+        return;
+      } catch {}
+    }
+    const encoded = encodeURIComponent(articleUrl);
+    const title = encodeURIComponent(article?.title ?? '');
+    const urls: Record<string, string> = {
+      twitter: `https://twitter.com/intent/tweet?url=${encoded}&text=${title}`,
+      linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=${encoded}`,
+      facebook: `https://www.facebook.com/sharer/sharer.php?u=${encoded}`,
+    };
+    if (platform && urls[platform]) window.open(urls[platform], '_blank', 'noopener,noreferrer');
+  };
 
   useEffect(() => {
     const updateTime = () => {
@@ -2289,6 +2316,49 @@ const ArticlePage: React.FC<ArticlePageProps> = ({ slug }) => {
 
           {/* Main article content */}
           <article className="max-w-[760px]" id="article-content">
+
+            {/* ── MOBILE-ONLY: Share + Audio (above TOC) ── */}
+            <div className="lg:hidden mb-8">
+              {slug === 'b2b-seo-agency-los-angeles' && (
+                <div className="border border-gray-200 rounded-lg p-5 mb-4">
+                  <p className="text-[11px] uppercase tracking-wider font-semibold text-gray-500 mb-3">Listen to this article</p>
+                  <audio controls className="w-full">
+                    <source src="/audio/Why_LA_B2B_SEO_must_be_local.m4a" type="audio/mp4" />
+                    Your browser does not support the audio element.
+                  </audio>
+                </div>
+              )}
+              <div className="border border-gray-200 rounded-lg p-5">
+                <div className="flex items-center gap-3 mb-4">
+                  <img src={article.image} alt={article.heroAlt} className="w-14 h-14 object-cover rounded-md flex-shrink-0" />
+                  <div className="min-w-0">
+                    <p className="text-[11px] uppercase tracking-wider font-semibold text-gray-500 mb-1">Share this article</p>
+                    <p className="text-[13px] text-gray-800 font-medium leading-snug line-clamp-2">{article.title}</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3">
+                  {canShare ? (
+                    <button onClick={() => handleShare()} className="flex-1 flex items-center justify-center gap-2 bg-[#F26522] text-white text-[13px] font-semibold py-2.5 px-4 rounded-full hover:bg-[#e05a1a] transition-colors">
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" /></svg>
+                      Share
+                    </button>
+                  ) : (
+                    <>
+                      <button onClick={() => handleShare('twitter')} className="w-10 h-10 border border-gray-200 flex items-center justify-center text-gray-600 hover:text-[#F26522] hover:border-[#F26522] transition-colors rounded-full" aria-label="Share on Twitter">
+                        <Twitter className="w-4 h-4" />
+                      </button>
+                      <button onClick={() => handleShare('linkedin')} className="w-10 h-10 border border-gray-200 flex items-center justify-center text-gray-600 hover:text-[#F26522] hover:border-[#F26522] transition-colors rounded-full" aria-label="Share on LinkedIn">
+                        <Linkedin className="w-4 h-4" />
+                      </button>
+                      <button onClick={() => handleShare('facebook')} className="w-10 h-10 border border-gray-200 flex items-center justify-center text-gray-600 hover:text-[#F26522] hover:border-[#F26522] transition-colors rounded-full" aria-label="Share on Facebook">
+                        <Facebook className="w-4 h-4" />
+                      </button>
+                    </>
+                  )}
+                </div>
+              </div>
+            </div>
+
             {article.content}
           </article>
 
@@ -2318,17 +2388,18 @@ const ArticlePage: React.FC<ArticlePageProps> = ({ slug }) => {
 
               {/* Share Article */}
               <div className="border border-gray-200 p-6 mb-6">
-                <p className="text-[11px] uppercase tracking-wider font-semibold text-gray-500 mb-4">Share This Article</p>
+                <p className="text-[11px] uppercase tracking-wider font-semibold text-gray-500 mb-3">Share This Article</p>
+                <img src={article.image} alt={article.heroAlt} className="w-full aspect-[16/9] object-cover rounded-md mb-4" />
                 <div className="flex items-center gap-3">
-                  <a href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(`https://www.gobiya.com/insights/${slug}`)}&text=${encodeURIComponent(article.title)}`} target="_blank" rel="noopener noreferrer" className="w-10 h-10 border border-gray-200 flex items-center justify-center text-gray-600 hover:text-[#F26522] hover:border-[#F26522] transition-colors rounded-full" aria-label="Share on Twitter">
+                  <button onClick={() => handleShare('twitter')} className="w-10 h-10 border border-gray-200 flex items-center justify-center text-gray-600 hover:text-[#F26522] hover:border-[#F26522] transition-colors rounded-full" aria-label="Share on Twitter">
                     <Twitter className="w-4 h-4" />
-                  </a>
-                  <a href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(`https://www.gobiya.com/insights/${slug}`)}`} target="_blank" rel="noopener noreferrer" className="w-10 h-10 border border-gray-200 flex items-center justify-center text-gray-600 hover:text-[#F26522] hover:border-[#F26522] transition-colors rounded-full" aria-label="Share on LinkedIn">
+                  </button>
+                  <button onClick={() => handleShare('linkedin')} className="w-10 h-10 border border-gray-200 flex items-center justify-center text-gray-600 hover:text-[#F26522] hover:border-[#F26522] transition-colors rounded-full" aria-label="Share on LinkedIn">
                     <Linkedin className="w-4 h-4" />
-                  </a>
-                  <a href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(`https://www.gobiya.com/insights/${slug}`)}`} target="_blank" rel="noopener noreferrer" className="w-10 h-10 border border-gray-200 flex items-center justify-center text-gray-600 hover:text-[#F26522] hover:border-[#F26522] transition-colors rounded-full" aria-label="Share on Facebook">
+                  </button>
+                  <button onClick={() => handleShare('facebook')} className="w-10 h-10 border border-gray-200 flex items-center justify-center text-gray-600 hover:text-[#F26522] hover:border-[#F26522] transition-colors rounded-full" aria-label="Share on Facebook">
                     <Facebook className="w-4 h-4" />
-                  </a>
+                  </button>
                 </div>
               </div>
 
