@@ -2116,6 +2116,194 @@ const ARTICLES: Record<string, ArticleData> = {
       </>
     ),
   },
+
+  'local-seo-los-angeles': {
+    slug: 'local-seo-los-angeles',
+    title: 'Local SEO for Los Angeles Businesses: How the 2026 Algorithm and AI Layer Determine Who Gets Found',
+    category: 'Local SEO',
+    readTime: '13 min read',
+    date: 'May 26, 2026',
+    image: '/images/article-local-seo-los-angeles.webp',
+    heroAlt: 'Aerial night view of Los Angeles cityscape with glowing orange data network lines connecting business districts',
+    metaDescription: 'How Google\'s 2026 local search algorithm — and the AI layer now sitting on top of it — determines whether LA customers find your business or your competitor\'s, and what local LA operators should actually be doing about it.',
+    content: (
+      <>
+        {/* ── TABLE OF CONTENTS ── */}
+        <details className="bg-gray-50 border border-gray-200 rounded-lg p-6 sm:p-8 my-10 sm:my-14 group" open>
+          <summary className="text-[14px] font-semibold uppercase tracking-wider text-gray-500 cursor-pointer list-none flex items-center justify-between">
+            Table of Contents
+            <svg className="w-4 h-4 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" /></svg>
+          </summary>
+          <div className="mt-4 pt-4 border-t border-gray-200">
+            <ol className="list-decimal list-inside flex flex-col gap-2.5">
+              {[
+                { id: 'la-local-search-2026', label: 'LA Local Search — 2026 update' },
+                { id: 'what-local-seo-does', label: 'What local SEO for LA businesses actually does in 2026' },
+                { id: 'algorithm-updates', label: 'How the 2026 algorithm updates reshaped LA local SEO' },
+                { id: 'cost-of-invisibility', label: 'The cost of being invisible in LA\'s saturated local market' },
+                { id: 'how-it-works', label: 'How local SEO for LA businesses actually works in 2026' },
+                { id: 'real-vs-fake', label: 'What separates a real LA local SEO program from a listing service' },
+                { id: 'positioned-differently', label: 'Why Gobiya is positioned differently for LA local businesses' },
+                { id: 'clearest-return', label: 'Which LA businesses get the clearest return' },
+                { id: 'getting-started', label: 'What getting started actually looks like' },
+                { id: 'making-right-call', label: 'Making the right call for your LA local search visibility' },
+              ].map((item) => (
+                <li key={item.id}>
+                  <a href={`#${item.id}`} className="text-[15px] text-gray-700 hover:text-[#F26522] transition-colors">
+                    {item.label}
+                  </a>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </details>
+
+        {/* ── LEAD STATS ── */}
+        <div id="la-local-search-2026" className="scroll-mt-24" />
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 my-10 sm:my-14">
+          {[
+            { stat: '46%', label: 'Share of all Google searches that now carry local intent', source: 'Whitespark Local Search Ranking Factors, 2026' },
+            { stat: '32%', label: 'Share of local pack ranking weight assigned to Google Business Profile signals — the single largest factor an LA business can directly control', source: 'Whitespark / BrightLocal, 2026' },
+            { stat: '1.2% vs 35.9%', label: 'Rate at which ChatGPT recommends local business locations vs. their visibility in Google\'s 3-Pack — the AI-local visibility gap most LA businesses haven\'t measured', source: 'SOCi 2026 Local Visibility Index' },
+          ].map(({ stat, label, source }) => (
+            <div key={stat} className="border border-[#F26522]/30 bg-[#F26522]/5 p-6">
+              <p className="text-4xl font-bold text-[#F26522] mb-2 font-display">{stat}</p>
+              <p className="text-[14px] text-gray-900 leading-snug mb-1">{label}</p>
+              <p className="text-[11px] uppercase tracking-wider text-gray-500">{source}</p>
+            </div>
+          ))}
+        </div>
+
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          Local SEO for Los Angeles businesses in 2026 is a different discipline than it was even two years ago. Google's local algorithm has tightened around a specific signal hierarchy: Google Business Profile (32%), on-page signals (19%), reviews (16%), links (15%), behavioral signals (8%), citations (7%). The March 2026 Core Update pushed AI Overviews into 68% of local queries. Zero-click searches have crossed 60%. And a parallel AI-recommendation layer has emerged where Gemini, ChatGPT, and Perplexity surface local business recommendations from a different signal set that most LA business owners have never audited.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          This multi-surface complexity is exactly why partnering with a <a href="/insights/b2b-seo-agency-los-angeles" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">B2B SEO agency rooted in Los Angeles</a> matters — proximity to the city's specific neighborhood dynamics, publication ecosystem, and customer behavior patterns shapes every tactic in a real local SEO program.
+        </p>
+
+        {/* ── SECTION: What local SEO does ── */}
+        <div id="what-local-seo-does" className="scroll-mt-24" />
+        <h2 className="text-[1.6rem] sm:text-[2rem] font-display font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">What local SEO for Los Angeles businesses actually does in 2026</h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          Local SEO for an LA business in 2026 is fundamentally a multi-surface optimization discipline. The system optimizes the Google Business Profile against every field Google uses for ranking — primary category accuracy, profile completeness, photo volume and recency, post activity, attributes, services, products. It builds and maintains review velocity (the single ranking factor that has risen most in importance through 2025-2026). It ensures NAP (Name, Address, Phone) consistency across the GBP, website, and every directory citation. It produces on-page content with proper LocalBusiness schema, neighborhood-specific landing pages, and content that reflects how LA residents actually search.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          And it engineers the business's presence in the AI-recommendation layer — because Gemini, ChatGPT, and Perplexity are increasingly the first stop for LA residents asking "where should I go" before they ever open Google Maps. This multi-surface architecture is the same methodology applied in <a href="/insights/b2b-organic-traffic-growth" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">B2B organic traffic growth programs</a>: optimizing for composition of visibility across surfaces, not just volume on a single platform.
+        </p>
+
+        <div className="bg-gray-50 border-l-4 border-[#F26522] p-6 sm:p-8 my-10">
+          <h3 className="text-[15px] font-semibold uppercase tracking-wider text-[#F26522] mb-3">Why a complete Google Business Profile alone isn't enough anymore</h3>
+          <p className="text-[15px] sm:text-[16px] leading-[1.7] text-gray-700">
+            In a saturated LA market, basic GBP completeness is now table stakes — every competitor has the same baseline. The businesses winning the 3-Pack are doing the things that compound on top of completeness: review velocity, photo volume past the 250-image threshold, active GBP posting, neighborhood-level content, geo-tagged service pages, and earned mentions on "Best Of" lists and local publications. Profile completeness alone leaves the business doing the cheapest, most replicable part of local SEO and stopping where every competitor has already stopped.
+          </p>
+        </div>
+
+        {/* ── SECTION: Algorithm updates ── */}
+        <div id="algorithm-updates" className="scroll-mt-24" />
+        <h2 className="text-[1.6rem] sm:text-[2rem] font-display font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">How the 2026 algorithm updates reshaped LA local SEO</h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          The March 2026 Core Update pushed AI Overviews into 68 percent of local queries, meaning businesses without structured data, photo volume, and E-E-A-T signals are losing visibility on searches they used to win. Review recency has become the single most important individual ranking factor according to Whitespark's 2026 survey, overtaking review count and rating. The relevance pillar has tightened around primary category accuracy and entity recognition. And keyword stuffing in business names now triggers GBP policy enforcement suspensions.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          Google has every incentive to push spam out of the organic local pack and reward businesses demonstrating actual local legitimacy. LA businesses that haven't restructured around the 2026 signal hierarchy are competing against a 2024 version of the algorithm that no longer exists. The same shift in AI-driven search behavior documented in <a href="/insights/automated-b2b-sales-pipeline-seo" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">B2B pipeline SEO research</a> applies at the local level: the surfaces producing visibility have multiplied, and the signal sets don't always overlap.
+        </p>
+
+        {/* ── SECTION: Cost of invisibility ── */}
+        <div id="cost-of-invisibility" className="scroll-mt-24" />
+        <h2 className="text-[1.6rem] sm:text-[2rem] font-display font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">The cost of being invisible in LA's saturated local market</h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          LA hosts one of the densest local business markets in the United States. A mid-sized LA service business that captures a top-3 local pack position for its primary category in its specific neighborhood is typically looking at 50 to 200+ additional customer contacts per month from organic local search alone. A dental practice's new patient is worth $1,500–$3,000 in lifetime value. A personal injury attorney's qualified case can be worth $50,000+. The cost of local SEO work to compete for those positions is materially smaller than the revenue value of holding them.
+        </p>
+        <div className="bg-amber-50 border border-amber-200 rounded-lg p-5 my-8 text-[14px] text-amber-900 leading-relaxed">
+          <strong>Note:</strong> Customer-contact and revenue value estimates vary significantly by category, neighborhood, and business model. Run your own customer-acquisition math against the value of a top-3 local pack position before making local SEO budget decisions.
+        </div>
+
+        {/* ── SECTION: How it works ── */}
+        <div id="how-it-works" className="scroll-mt-24" />
+        <h2 className="text-[1.6rem] sm:text-[2rem] font-display font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">How local SEO for LA businesses actually works in 2026</h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          A credible program starts with an audit of the actual local search results the business is competing in, not a generic checklist. The audit checks current rank for core service terms across multiple specific LA neighborhoods (rankings vary materially by exact location — a business ranking #2 in Silver Lake may rank #12 in Pasadena for the same query), evaluates competitor 3-Pack incumbents, reviews the GBP against the 2026 signal hierarchy, audits review velocity and rating against direct competitors, checks NAP consistency, and runs the business through Gemini, ChatGPT, and Perplexity to baseline AI-recommendation visibility.
+        </p>
+
+        <div className="bg-gray-50 border-l-4 border-[#F26522] p-6 sm:p-8 my-10">
+          <h3 className="text-[15px] font-semibold uppercase tracking-wider text-[#F26522] mb-3">How LA business search rankings actually get earned in 2026</h3>
+          <p className="text-[15px] sm:text-[16px] leading-[1.7] text-gray-700">
+            The proximity pillar (55% of local ranking decisions per Whitespark 2026) is largely outside a business's control. But prominence and relevance are entirely controllable — and they're where the rankings competition actually happens. Prominence is earned through review volume, velocity, response rate, third-party mentions on authoritative LA sources, and branded search volume over time. Relevance is earned through primary category accuracy, services listed, attributes, neighborhood-specific content, and keywords appearing naturally in customer reviews. An LA business systematically earning these signals over 6–12 months will out-rank a business with stronger proximity in many queries.
+          </p>
+        </div>
+
+        {/* ── SECTION: Real vs fake ── */}
+        <div id="real-vs-fake" className="scroll-mt-24" />
+        <h2 className="text-[1.6rem] sm:text-[2rem] font-display font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">What separates a real LA local SEO program from a "we'll set up your Google listing" service</h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          Ask what the recurring monthly work actually consists of. If the answer is "we set up your Google Business Profile and submit you to directories," the provider is selling a one-time service. Real local SEO programs operate on monthly or weekly cadences — review request systems, GBP post production, photo refreshes, review response within 24–48 hours, citation audits, on-page content updates, rank tracking across multiple LA neighborhoods, and AI-layer monitoring.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          Ask whether the provider tracks rankings from multiple specific locations within LA, not just a single citywide rank. Ask whether they have a documented review acquisition system integrated into the business's customer workflow — passive requests produce 1–2% conversion while integrated systems produce 25–40%. Ask whether they have a position on AI-layer visibility. The same questions that distinguish a real <a href="/insights/best-seo-agency-for-b2b-brands" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">B2B SEO agency from a commodity provider</a> apply equally to local SEO: does the program operate against the current algorithm, or a 2019 playbook with refreshed branding?
+        </p>
+
+        {/* ── SECTION: Gobiya ── */}
+        <div id="positioned-differently" className="scroll-mt-24" />
+        <h2 className="text-[1.6rem] sm:text-[2rem] font-display font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">Why Gobiya is positioned differently for LA local businesses</h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          Gobiya is built in Los Angeles, staffed in Los Angeles, and works in LA hours. Local SEO programs are built on a neighborhood-by-neighborhood understanding of how LA's specific geography, publication ecosystem, and customer behavior patterns shape rankings. Every engagement starts with a multi-neighborhood rank audit and a competitive GBP analysis — not a generic local SEO template.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          The methodology covers all five ranking pillars simultaneously: GBP optimization, review velocity engineering, NAP consistency, neighborhood-specific on-page content, and AI-layer visibility. Reporting includes rank tracking across the specific LA neighborhoods where the client's customers are searching — not a single citywide number that masks the neighborhood-level variation that determines what real customers actually see. The same <a href="/insights/seo-for-b2b-lead-generation" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">pipeline-first SEO methodology</a> applied to B2B lead generation drives local SEO programs: every signal is tracked against actual customer contacts, not abstract ranking positions.
+        </p>
+
+        {/* ── SECTION: Who benefits ── */}
+        <div id="clearest-return" className="scroll-mt-24" />
+        <h2 className="text-[1.6rem] sm:text-[2rem] font-display font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">Which LA businesses get the clearest return from local SEO</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 my-8">
+          {[
+            { role: 'Restaurants, Bars & Hospitality', detail: 'Most competitive local search environment in the city. Review velocity and earned LA-specific food publication coverage (Eater LA, LA Times Food, Infatuation LA) matter most.' },
+            { role: 'Service Businesses', detail: 'Plumbing, HVAC, electrical, auto repair, contractors — strong commercial-intent local search, highest single-customer revenue, most favorable ROI math.' },
+            { role: 'Professional Services', detail: 'Dentists, attorneys, doctors, accountants — review quality over volume, E-E-A-T signals, AI Overview eligibility increasingly important for health and legal queries.' },
+            { role: 'Retail, Fitness & Wellness', detail: 'Direction-request actions on GBP often correlate more directly with revenue than calls. Neighborhood-level visibility matters more than citywide ranking.' },
+          ].map(({ role, detail }) => (
+            <div key={role} className="border border-gray-200 p-5 sm:p-6">
+              <p className="text-[13px] uppercase tracking-wider font-semibold text-[#F26522] mb-2">{role}</p>
+              <p className="text-[14px] text-gray-700 leading-relaxed">{detail}</p>
+            </div>
+          ))}
+        </div>
+
+        {/* ── SECTION: Getting started ── */}
+        <div id="getting-started" className="scroll-mt-24" />
+        <h2 className="text-[1.6rem] sm:text-[2rem] font-display font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">What getting started with local SEO for an LA business actually looks like</h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          A credible engagement starts with a local visibility audit, not a sales pitch. The audit checks current rankings across multiple specific LA neighborhoods for core service terms, baselines the GBP against the 2026 signal hierarchy, evaluates review velocity and rating against direct competitors in the relevant LA neighborhood, audits NAP consistency across major citation sources, runs the business through Gemini, ChatGPT, and Perplexity to baseline AI-recommendation visibility, and produces a hypothesis-driven roadmap tying gaps to specific customer-contact and revenue projections.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          The LA businesses that get the most from local SEO treat it as an ongoing operational discipline — review acquisition built into customer workflow, GBP treated as a real asset, content production focused on neighborhood-specific terms, AI-layer presence monitored as actively as Google rankings. The same composition-first approach that drives <a href="/insights/automated-lead-generation-seo" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">automated lead generation SEO</a> for B2B operators applies: the surface mix that produces visibility has changed, and programs that haven't adapted are paying the cost of the old model.
+        </p>
+
+        {/* ── SECTION: Making the call ── */}
+        <div id="making-right-call" className="scroll-mt-24" />
+        <h2 className="text-[1.6rem] sm:text-[2rem] font-display font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">Making the right call for your LA local search visibility</h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          LA businesses still treating local SEO as a one-time directory submission are paying the cost of invisibility in 46 percent of LA-relevant searches every day, while their competitors quietly compound review velocity, GBP signals, and AI-layer presence into rankings that get harder to dislodge with every passing month.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          Two decisions matter most. First: whether your current local SEO presence is genuinely competitive in your specific LA neighborhood and category, or whether you're holding rankings you haven't actually earned. Second: whether the person responsible operates against the 2026 signal hierarchy, or a 2019 directory-submission playbook with refreshed branding.
+        </p>
+
+        {/* ── CTA ── */}
+        <div className="bg-gray-900 rounded-xl p-8 sm:p-10 my-14">
+          <p className="text-[11px] uppercase tracking-wider font-semibold text-[#F26522] mb-3">Get A Local Visibility Audit</p>
+          <h3 className="text-white text-[1.4rem] sm:text-[1.7rem] font-display font-medium leading-[1.2] mb-4">Find out where your LA business stands across Google's local surfaces and the AI-recommendation layer.</h3>
+          <p className="text-gray-400 text-[15px] leading-relaxed mb-6">Walk through your current local search presence before the competitive gap widens into something expensive to close.</p>
+          <a href="/contact" className="inline-flex items-center gap-3 bg-[#F26522] hover:bg-[#e05a1a] text-white pl-6 pr-2 py-2.5 transition-colors duration-300 font-medium text-[14px]">
+            Request a local visibility audit
+            <div className="w-7 h-7 bg-white flex items-center justify-center">
+              <svg className="w-3.5 h-3.5 text-[#F26522]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"/></svg>
+            </div>
+          </a>
+        </div>
+      </>
+    ),
+  },
 };
 
 // ─── Related Articles per slug ────────────────────────────────────────────────
@@ -2276,6 +2464,27 @@ const RELATED_ARTICLES_MAP: Record<string, { href: string; category: string; tit
       category: 'Strategy',
       title: 'Automated B2B Sales Pipeline SEO: How AI Citations Shape Your Shortlist in 2026',
       image: '/images/article-b2b-pipeline-seo.webp',
+    },
+    {
+      href: '/insights/best-seo-agency-for-b2b-brands',
+      category: 'Strategy',
+      title: 'How to Choose the Best SEO Agency for B2B Brands in 2026',
+      image: '/images/article-best-seo-agency.webp',
+    },
+  ],
+
+  'local-seo-los-angeles': [
+    {
+      href: '/insights/b2b-seo-agency-los-angeles',
+      category: 'Strategy',
+      title: 'B2B SEO Agency in Los Angeles: Why Local Partnership Outperforms Remote Vendor Relationships in 2026',
+      image: '/images/article-b2b-seo-agency-los-angeles.webp',
+    },
+    {
+      href: '/insights/b2b-organic-traffic-growth',
+      category: 'Strategy',
+      title: 'B2B Organic Traffic Growth: Why Traffic and Pipeline Decoupled in 2026',
+      image: '/images/article-b2b-organic-traffic-growth.webp',
     },
     {
       href: '/insights/best-seo-agency-for-b2b-brands',
