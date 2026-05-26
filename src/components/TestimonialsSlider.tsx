@@ -28,15 +28,15 @@ const testimonials: Testimonial[] = [
   {
     id: 3,
     text: "Our enterprise sales pipeline doubled in 3 months after implementing their AI-driven approach.",
-    company: "TechFlow Solutions",
-    author: "Sarah Jenkins",
+    company: "Doc Prep",
+    author: "Carla Vasquez",
     image_url: "/images/testimonial-sarah.png"
   },
   {
     id: 4,
     text: "The best technical SEO partnership we've ever had. Highly recommend their local Los Angeles team.",
-    company: "GrowthStack",
-    author: "David Chen",
+    company: "Total Capital Inc",
+    author: "Eli Zilberstein",
     image_url: "/images/testimonial-david.png"
   }
 ];
