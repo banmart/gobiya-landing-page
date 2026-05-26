@@ -364,11 +364,7 @@ const AxionLanding = () => {
         <div className="logo-marker absolute right-[20%] top-[50%] w-10 h-10 pointer-events-none" />
       </section>
 
-      {/* SECTION 6: SERVICES BENTO */}
-      <div data-logo-dark className="relative">
-        <ServicesBento />
-        <div className="logo-marker absolute left-[15%] top-[50%] w-10 h-10 pointer-events-none" />
-      </div>
+
 
       {/* SECTION 6.5: LATEST INSIGHTS */}
       <div data-logo-dark className="relative">
