@@ -1390,9 +1390,13 @@ const ARTICLES: Record<string, ArticleData> = {
     content: (
       <>
         {/* ── TABLE OF CONTENTS ── */}
-        <nav className="bg-gray-50 border border-gray-200 rounded-lg p-6 sm:p-8 my-10 sm:my-14">
-          <h2 className="text-[14px] font-semibold uppercase tracking-wider text-gray-500 mb-4">Table of Contents</h2>
-          <ol className="list-decimal list-inside flex flex-col gap-2.5">
+        <details className="bg-gray-50 border border-gray-200 rounded-lg p-6 sm:p-8 my-10 sm:my-14 group" open>
+          <summary className="text-[14px] font-semibold uppercase tracking-wider text-gray-500 cursor-pointer list-none flex items-center justify-between">
+            Table of Contents
+            <svg className="w-4 h-4 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" /></svg>
+          </summary>
+          <div className="mt-4 pt-4 border-t border-gray-200">
+            <ol className="list-decimal list-inside flex flex-col gap-2.5">
             {[
               { id: 'buying-committee-era', label: 'The Buying Committee Era — 2026 update' },
               { id: 'what-seo-b2b-lead-gen-does', label: 'What SEO for B2B lead generation actually does in 2026' },
@@ -1411,8 +1415,9 @@ const ARTICLES: Record<string, ArticleData> = {
                 </a>
               </li>
             ))}
-          </ol>
-        </nav>
+            </ol>
+          </div>
+        </details>
 
         {/* ── LEAD STATS ── */}
         <div id="buying-committee-era" className="scroll-mt-24" />
@@ -1659,9 +1664,13 @@ const ARTICLES: Record<string, ArticleData> = {
     content: (
       <>
         {/* ── TABLE OF CONTENTS ── */}
-        <nav className="bg-gray-50 border border-gray-200 rounded-lg p-6 sm:p-8 my-10 sm:my-14">
-          <h2 className="text-[14px] font-semibold uppercase tracking-wider text-gray-500 mb-4">Table of Contents</h2>
-          <ol className="list-decimal list-inside flex flex-col gap-2.5">
+        <details className="bg-gray-50 border border-gray-200 rounded-lg p-6 sm:p-8 my-10 sm:my-14 group" open>
+          <summary className="text-[14px] font-semibold uppercase tracking-wider text-gray-500 cursor-pointer list-none flex items-center justify-between">
+            Table of Contents
+            <svg className="w-4 h-4 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" /></svg>
+          </summary>
+          <div className="mt-4 pt-4 border-t border-gray-200">
+            <ol className="list-decimal list-inside flex flex-col gap-2.5">
             {[
               { id: 'la-market-2026', label: 'The LA B2B SEO Agency Market — 2026 update' },
               { id: 'what-la-agency-does', label: 'What a B2B SEO agency in LA actually does in 2026' },
@@ -1680,8 +1689,9 @@ const ARTICLES: Record<string, ArticleData> = {
                 </a>
               </li>
             ))}
-          </ol>
-        </nav>
+            </ol>
+          </div>
+        </details>
 
         {/* ── LEAD STATS ── */}
         <div id="la-market-2026" className="scroll-mt-24" />
@@ -2285,6 +2295,16 @@ const ArticlePage: React.FC<ArticlePageProps> = ({ slug }) => {
           {/* Sidebar */}
           <aside className="hidden lg:block">
             <div className="sticky top-24">
+
+              {slug === 'b2b-seo-agency-los-angeles' && (
+                <div className="border border-gray-200 p-6 mb-6">
+                  <p className="text-[11px] uppercase tracking-wider font-semibold text-gray-500 mb-4">Listen to this article</p>
+                  <audio controls className="w-full custom-audio">
+                    <source src="/audio/Why_LA_B2B_SEO_must_be_local.m4a" type="audio/mp4" />
+                    Your browser does not support the audio element.
+                  </audio>
+                </div>
+              )}
 
               {/* Article meta */}
               <div className="border border-gray-200 p-6 mb-6">
