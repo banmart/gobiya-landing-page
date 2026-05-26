@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Clock, ArrowRight, ArrowLeft, ChevronRight } from 'lucide-react';
+import { Clock, ArrowRight, ArrowLeft, ChevronRight, Twitter, Linkedin, Facebook } from 'lucide-react';
 import { Shader, Swirl, ChromaFlow, FlutedGlass, FilmGrain } from 'shaders/react';
 import StaggeredMenu from './StaggeredMenu';
 import BlurText from './BlurText';
@@ -2313,6 +2313,22 @@ const ArticlePage: React.FC<ArticlePageProps> = ({ slug }) => {
                   <div><span className="font-semibold text-gray-900">Published:</span> {article.date}</div>
                   <div><span className="font-semibold text-gray-900">Reading time:</span> {article.readTime}</div>
                   <div><span className="font-semibold text-gray-900">Category:</span> {article.category}</div>
+                </div>
+              </div>
+
+              {/* Share Article */}
+              <div className="border border-gray-200 p-6 mb-6">
+                <p className="text-[11px] uppercase tracking-wider font-semibold text-gray-500 mb-4">Share This Article</p>
+                <div className="flex items-center gap-3">
+                  <a href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(`https://www.gobiya.com/insights/${slug}`)}&text=${encodeURIComponent(article.title)}`} target="_blank" rel="noopener noreferrer" className="w-10 h-10 border border-gray-200 flex items-center justify-center text-gray-600 hover:text-[#F26522] hover:border-[#F26522] transition-colors rounded-full" aria-label="Share on Twitter">
+                    <Twitter className="w-4 h-4" />
+                  </a>
+                  <a href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(`https://www.gobiya.com/insights/${slug}`)}`} target="_blank" rel="noopener noreferrer" className="w-10 h-10 border border-gray-200 flex items-center justify-center text-gray-600 hover:text-[#F26522] hover:border-[#F26522] transition-colors rounded-full" aria-label="Share on LinkedIn">
+                    <Linkedin className="w-4 h-4" />
+                  </a>
+                  <a href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(`https://www.gobiya.com/insights/${slug}`)}`} target="_blank" rel="noopener noreferrer" className="w-10 h-10 border border-gray-200 flex items-center justify-center text-gray-600 hover:text-[#F26522] hover:border-[#F26522] transition-colors rounded-full" aria-label="Share on Facebook">
+                    <Facebook className="w-4 h-4" />
+                  </a>
                 </div>
               </div>
 
