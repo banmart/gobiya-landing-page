@@ -19,6 +19,7 @@ import CustomCursor from './CustomCursor';
 import ServicesBento from './ServicesBento';
 import CaseStudiesPinned from './CaseStudiesPinned';
 import InsightsSlider from './InsightsSlider';
+import TestimonialsSlider from './TestimonialsSlider';
 import SatisfiedClients from './SatisfiedClients';
 import RoiCalculator from './RoiCalculator';
 
@@ -376,6 +377,12 @@ const AxionLanding = () => {
       <div className="relative">
         <CaseStudiesPinned />
         <div className="logo-marker absolute left-[12%] top-[40%] w-10 h-10 pointer-events-none" />
+      </div>
+
+      {/* SECTION 7.25: TESTIMONIALS */}
+      <div data-logo-dark className="relative">
+        <TestimonialsSlider />
+        <div className="logo-marker absolute right-[12%] top-[50%] w-10 h-10 pointer-events-none" />
       </div>
 
       {/* SECTION 7.5: SATISFIED CLIENTS */}
