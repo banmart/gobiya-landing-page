@@ -2390,17 +2390,27 @@ const ArticlePage: React.FC<ArticlePageProps> = ({ slug }) => {
               <div className="border border-gray-200 p-6 mb-6">
                 <p className="text-[11px] uppercase tracking-wider font-semibold text-gray-500 mb-3">Share This Article</p>
                 <img src={article.image} alt={article.heroAlt} className="w-full aspect-[16/9] object-cover rounded-md mb-4" />
-                <div className="flex items-center gap-3">
-                  <button onClick={() => handleShare('twitter')} className="w-10 h-10 border border-gray-200 flex items-center justify-center text-gray-600 hover:text-[#F26522] hover:border-[#F26522] transition-colors rounded-full" aria-label="Share on Twitter">
-                    <Twitter className="w-4 h-4" />
+                {canShare ? (
+                  <button
+                    onClick={() => handleShare()}
+                    className="w-full flex items-center justify-center gap-2 bg-[#F26522] text-white text-[13px] font-semibold py-2.5 px-4 rounded-full hover:bg-[#e05a1a] transition-colors"
+                  >
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" /></svg>
+                    Share this article
                   </button>
-                  <button onClick={() => handleShare('linkedin')} className="w-10 h-10 border border-gray-200 flex items-center justify-center text-gray-600 hover:text-[#F26522] hover:border-[#F26522] transition-colors rounded-full" aria-label="Share on LinkedIn">
-                    <Linkedin className="w-4 h-4" />
-                  </button>
-                  <button onClick={() => handleShare('facebook')} className="w-10 h-10 border border-gray-200 flex items-center justify-center text-gray-600 hover:text-[#F26522] hover:border-[#F26522] transition-colors rounded-full" aria-label="Share on Facebook">
-                    <Facebook className="w-4 h-4" />
-                  </button>
-                </div>
+                ) : (
+                  <div className="flex items-center gap-3">
+                    <button onClick={() => handleShare('twitter')} className="w-10 h-10 border border-gray-200 flex items-center justify-center text-gray-600 hover:text-[#F26522] hover:border-[#F26522] transition-colors rounded-full" aria-label="Share on Twitter">
+                      <Twitter className="w-4 h-4" />
+                    </button>
+                    <button onClick={() => handleShare('linkedin')} className="w-10 h-10 border border-gray-200 flex items-center justify-center text-gray-600 hover:text-[#F26522] hover:border-[#F26522] transition-colors rounded-full" aria-label="Share on LinkedIn">
+                      <Linkedin className="w-4 h-4" />
+                    </button>
+                    <button onClick={() => handleShare('facebook')} className="w-10 h-10 border border-gray-200 flex items-center justify-center text-gray-600 hover:text-[#F26522] hover:border-[#F26522] transition-colors rounded-full" aria-label="Share on Facebook">
+                      <Facebook className="w-4 h-4" />
+                    </button>
+                  </div>
+                )}
               </div>
 
               {/* CTA box */}
