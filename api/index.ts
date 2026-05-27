@@ -52,7 +52,7 @@ const metadataMap: Record<string, SEOMetadata> = {
     title: 'Our Approach to Search Dominance & B2B Growth | Gobiya',
     description: 'Discover our proprietary methodology for algorithmic audits, penalty recovery, and B2B pipeline acceleration.'
   },
-  '/company/insights': {
+  '/insights': {
     title: 'Industry Insights, SEO Trends & Search Intelligence | Gobiya',
     description: 'Deep dives into Google algorithm updates, generative search (GEO), and B2B marketing strategies.'
   },
@@ -120,6 +120,7 @@ export default async function handler(req: IncomingMessage, res: any) {
       '/services/web-design': '/services#web-design',
       '/services/advertising': '/services#advertising',
       '/google-penalty-recovery': '/services#penalty-recovery',
+      '/company/insights': '/insights',
     };
 
     if (pathname.startsWith('/locations')) {

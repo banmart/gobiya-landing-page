@@ -199,7 +199,7 @@ const AxionLanding = () => {
                     { label: 'About the Agency', link: '/company/about' },
                     { label: 'Success Stories', link: '/company/success-stories' },
                     { label: 'Our Approach', link: '/company/approach' },
-                    { label: 'Industry Insights', link: '/company/insights' },
+                    { label: 'Industry Insights', link: '/insights' },
                     { label: 'Careers', link: '/company/careers' }
                   ]}
                   socialItems={[
@@ -440,7 +440,7 @@ const AxionLanding = () => {
               <li><a href="/company/about" className="hover:text-white transition-colors">About the Agency</a></li>
               <li><a href="/company/success-stories" className="hover:text-white transition-colors">Success Stories</a></li>
               <li><a href="/company/approach" className="hover:text-white transition-colors">Our Approach</a></li>
-              <li><a href="/company/insights" className="hover:text-white transition-colors">Industry Insights</a></li>
+              <li><a href="/insights" className="hover:text-white transition-colors">Industry Insights</a></li>
               <li><a href="/company/careers" className="hover:text-white transition-colors">Careers</a></li>
             </ul>
           </div>

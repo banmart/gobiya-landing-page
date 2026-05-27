@@ -93,7 +93,7 @@ async function seed() {
 
   console.log('🎉  Done. The article is now in Supabase.');
   console.log('   URL: https://www.gobiya.com/insights/automated-b2b-sales-pipeline-seo');
-  console.log('   It will appear in the homepage InsightsSlider and the /company/insights grid.');
+  console.log('   It will appear in the homepage InsightsSlider and the /insights grid.');
 }
 
 seed();

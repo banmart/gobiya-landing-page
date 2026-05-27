@@ -158,7 +158,7 @@ const AuthorPage: React.FC<AuthorPageProps> = ({ path }) => {
                     { label: 'About the Agency', link: '/company/about' },
                     { label: 'Success Stories', link: '/company/success-stories' },
                     { label: 'Our Approach', link: '/company/approach' },
-                    { label: 'Industry Insights', link: '/company/insights' },
+                    { label: 'Industry Insights', link: '/insights' },
                     { label: 'Careers', link: '/company/careers' }
                   ]}
                   socialItems={[
@@ -332,7 +332,7 @@ const AuthorPage: React.FC<AuthorPageProps> = ({ path }) => {
               <ul className="space-y-3 text-[13px] text-gray-400">
                 <li><a href="/company/about" className="hover:text-white transition-colors">About Us</a></li>
                 <li><a href="/company/approach" className="hover:text-white transition-colors">Our Approach</a></li>
-                <li><a href="/company/insights" className="hover:text-white transition-colors">Insights</a></li>
+                <li><a href="/insights" className="hover:text-white transition-colors">Insights</a></li>
                 <li><a href="/contact" className="hover:text-white transition-colors">Contact</a></li>
               </ul>
             </div>

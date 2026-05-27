@@ -83,6 +83,7 @@ function App({ url }: AppProps) {
       '/services/web-design': '/services#web-design',
       '/services/advertising': '/services#advertising',
       '/google-penalty-recovery': '/services#penalty-recovery',
+      '/company/insights': '/insights',
     };
     
     const normalized = currentPath.toLowerCase().replace(/\/$/, '') || '/';
@@ -94,7 +95,8 @@ function App({ url }: AppProps) {
     const target = legacyRedirects[normalized];
     if (target) {
       window.history.replaceState({}, '', target);
-      setCurrentPath('/services');
+      const targetPath = target.split('#')[0];
+      setCurrentPath(targetPath);
     }
   }, [currentPath]);
 

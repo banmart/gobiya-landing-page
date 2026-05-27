@@ -171,7 +171,7 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
             title: 'Our Approach to Search Dominance & B2B Growth | Gobiya',
             description: 'Discover our proprietary methodology for algorithmic audits, penalty recovery, and B2B pipeline acceleration.'
           };
-        case '/company/insights':
+        case '/insights':
           return {
             title: 'Industry Insights, SEO Trends & Search Intelligence | Gobiya',
             description: 'Deep dives into Google algorithm updates, generative search (GEO), and B2B marketing strategies.'
@@ -331,7 +331,7 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
             { href: '/services/geo-optimization', colSpan: 2, icon: <TrendingUp size={40} className="text-[#F26522] mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'LLM Brand Surfacing', description: 'Optimize your digital footprint to be the primary recommended entity in ChatGPT and Claude responses.' },
             { href: '/services/seo', colSpan: 1, icon: <Search size={40} className="text-white mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'AI Overviews', description: 'Capture top real estate in Google\'s generative AI search results.' },
             { href: '/services/lead-generation', colSpan: 1, icon: <PenTool size={40} className="text-white mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'Semantic PR', description: 'Seed your brand messaging directly into the training data pipelines.' },
-            { href: '/company/insights', colSpan: 2, gradient: true, icon: <Network size={40} className="text-white mb-6 sm:mb-10 relative z-10" strokeWidth={1.5} />, title: 'Generative Search Dominance', description: 'The search paradigm has shifted. We ensure your business is not left behind by the AI transition.' }
+            { href: '/insights', colSpan: 2, gradient: true, icon: <Network size={40} className="text-white mb-6 sm:mb-10 relative z-10" strokeWidth={1.5} />, title: 'Generative Search Dominance', description: 'The search paradigm has shifted. We ensure your business is not left behind by the AI transition.' }
           ]
         };
       case '/services/web-design':
@@ -472,7 +472,7 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
             { href: '/company/about', colSpan: 2, gradient: true, icon: <TrendingUp size={40} className="text-white mb-6 sm:mb-10 relative z-10" strokeWidth={1.5} />, title: 'Iterative Scaling', description: 'We continuously analyze data sets to widen the gap between you and your competitors.' }
           ]
         };
-      case '/company/insights':
+      case '/insights':
         return { ...defaultPageConfig,
           subtitle: 'Gobiya > Industry Insights',
           title: 'Algorithmic intelligence and tactical search analysis.',
@@ -488,7 +488,7 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
           bentoDescription: 'Consume the exact frameworks and strategies we utilize internally to drive millions in pipeline revenue for our partners.',
           insightCategory: 'SEO',
           bentoCards: [
-            { href: '/company/insights', colSpan: 2, icon: <BarChart size={40} className="text-[#F26522] mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'Algorithm Teardowns', description: 'Forensic breakdowns of Google updates and exactly what signals are currently being rewarded.' },
+            { href: '/insights', colSpan: 2, icon: <BarChart size={40} className="text-[#F26522] mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'Algorithm Teardowns', description: 'Forensic breakdowns of Google updates and exactly what signals are currently being rewarded.' },
             { href: '/services/geo-optimization', colSpan: 1, icon: <Network size={40} className="text-white mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'AI Overviews', description: 'The evolving landscape of ChatGPT and Gemini search.' },
             { href: '/services/lead-generation', colSpan: 1, icon: <Target size={40} className="text-white mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'Outbound Tactics', description: 'High-converting email copy and sequencing frameworks.' },
             { href: '/contact', colSpan: 2, gradient: true, icon: <Briefcase size={40} className="text-white mb-6 sm:mb-10 relative z-10" strokeWidth={1.5} />, title: 'Apply These Insights', description: 'Want these strategies implemented for your brand? Partner with our engineering team today.' }
@@ -608,7 +608,7 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
                     { label: 'About the Agency', link: '/company/about' },
                     { label: 'Success Stories', link: '/company/success-stories' },
                     { label: 'Our Approach', link: '/company/approach' },
-                    { label: 'Industry Insights', link: '/company/insights' },
+                    { label: 'Industry Insights', link: '/insights' },
                     { label: 'Careers', link: '/company/careers' }
                   ]}
                   socialItems={[
@@ -674,14 +674,14 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
 
       
       {/* SECTION: SCROLL REVEAL INTRO */}
-      {path !== '/company/insights' && path !== '/contact' && path !== '/services' && (
+      {path !== '/insights' && path !== '/contact' && path !== '/services' && (
         <section className="w-full relative" data-logo-dark>
           <SplitTextReveal text={config.introScrollText} />
         </section>
       )}
 
       {/* SECTION: INTRO CONTENT */}
-      {path !== '/company/insights' && path !== '/contact' && path !== '/services' && (
+      {path !== '/insights' && path !== '/contact' && path !== '/services' && (
         <section className="bg-white pt-16 sm:pt-20 lg:pt-32 pb-12 sm:pb-16 lg:pb-24 overflow-hidden w-full max-w-[1440px] mx-auto">
           <div className="px-5 sm:px-8 lg:px-12 flex items-center gap-3 mb-6 sm:mb-8">
             <div className="w-6 h-6 sm:w-7 sm:h-7 bg-black text-white text-[11px] sm:text-[12px] font-semibold flex items-center justify-center">2</div>
@@ -739,7 +739,7 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
       )}
 
       {/* SECTION: SERVICES BENTO */}
-      {path !== '/company/insights' && path !== '/contact' && path !== '/services' && (
+      {path !== '/insights' && path !== '/contact' && path !== '/services' && (
         <div data-logo-dark className="relative">
           <ServicesBento headline={config.bentoHeadline} description={config.bentoDescription} cards={config.bentoCards} />
         </div>
@@ -827,7 +827,7 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
 
       {/* SECTION: LATEST INSIGHTS */}
       {path !== '/contact' && path !== '/services' && (
-        path !== '/company/insights' ? (
+        path !== '/insights' ? (
           <div data-logo-dark className="relative">
             <InsightsSlider filterCategory={config.insightCategory} />
           </div>
@@ -839,21 +839,21 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
       )}
 
       {/* SECTION: CASE STUDIES PINNED */}
-      {path !== '/company/insights' && path !== '/contact' && path !== '/services' && (
+      {path !== '/insights' && path !== '/contact' && path !== '/services' && (
         <div className="relative">
           
         </div>
       )}
 
       {/* SECTION: SATISFIED CLIENTS */}
-      {path !== '/company/insights' && path !== '/contact' && path !== '/services' && (
+      {path !== '/insights' && path !== '/contact' && path !== '/services' && (
         <div className="relative">
           <SatisfiedClients />
         </div>
       )}
 
       {/* SECTION: ROI CALCULATOR */}
-      {path !== '/company/insights' && path !== '/contact' && (
+      {path !== '/insights' && path !== '/contact' && (
         <div data-logo-dark className="relative">
           {config.showCalculator !== false && <RoiCalculator {...(config.calculatorProps || {})} />}
         </div>
@@ -1027,7 +1027,7 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
               <li><a href="/company/about" className="hover:text-white transition-colors">About the Agency</a></li>
               <li><a href="/company/success-stories" className="hover:text-white transition-colors">Success Stories</a></li>
               <li><a href="/company/approach" className="hover:text-white transition-colors">Our Approach</a></li>
-              <li><a href="/company/insights" className="hover:text-white transition-colors">Industry Insights</a></li>
+              <li><a href="/insights" className="hover:text-white transition-colors">Industry Insights</a></li>
               <li><a href="/company/careers" className="hover:text-white transition-colors">Careers</a></li>
             </ul>
           </div>

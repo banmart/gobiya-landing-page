@@ -46,7 +46,7 @@ const metadataMap: Record<string, SEOMetadata> = {
     title: 'Our Approach to Search Dominance & B2B Growth | Gobiya',
     description: 'Discover our proprietary methodology for algorithmic audits, penalty recovery, and B2B pipeline acceleration.'
   },
-  '/company/insights': {
+  '/insights': {
     title: 'Industry Insights, SEO Trends & Search Intelligence | Gobiya',
     description: 'Deep dives into Google algorithm updates, generative search (GEO), and B2B marketing strategies.'
   },

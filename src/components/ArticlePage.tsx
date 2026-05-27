@@ -2625,7 +2625,7 @@ const ArticlePage: React.FC<ArticlePageProps> = ({ slug }) => {
         <div className="text-center px-6">
           <p className="text-[#F26522] text-[12px] uppercase tracking-widest font-semibold mb-4">404</p>
           <h1 className="text-3xl font-medium text-gray-900 mb-4">Article not found</h1>
-          <a href="/company/insights" className="text-[#F26522] underline">Back to Insights</a>
+          <a href="/insights" className="text-[#F26522] underline">Back to Insights</a>
         </div>
       </div>
     );
@@ -2679,7 +2679,7 @@ const ArticlePage: React.FC<ArticlePageProps> = ({ slug }) => {
                     { label: 'About the Agency', link: '/company/about' },
                     { label: 'Success Stories', link: '/company/success-stories' },
                     { label: 'Our Approach', link: '/company/approach' },
-                    { label: 'Industry Insights', link: '/company/insights' },
+                    { label: 'Industry Insights', link: '/insights' },
                     { label: 'Careers', link: '/company/careers' }
                   ]}
                   socialItems={[
@@ -2701,7 +2701,7 @@ const ArticlePage: React.FC<ArticlePageProps> = ({ slug }) => {
           <nav className="flex items-center gap-2 text-[12px] text-gray-600 mb-6" aria-label="breadcrumb">
             <a href="/" className="hover:text-gray-900 transition-colors">Home</a>
             <ChevronRight className="w-3 h-3" />
-            <a href="/company/insights" className="hover:text-gray-900 transition-colors">Insights</a>
+            <a href="/insights" className="hover:text-gray-900 transition-colors">Insights</a>
             <ChevronRight className="w-3 h-3" />
             <span className="text-gray-900 truncate max-w-[200px]">{article.title}</span>
           </nav>
@@ -2888,7 +2888,7 @@ const ArticlePage: React.FC<ArticlePageProps> = ({ slug }) => {
               Related Insights
             </h2>
             <a
-              href="/company/insights"
+              href="/insights"
               className="hidden sm:flex items-center gap-2 text-[13px] text-gray-400 hover:text-white transition-colors font-medium"
             >
               All Insights <ArrowRight className="w-4 h-4" />
@@ -2958,7 +2958,7 @@ const ArticlePage: React.FC<ArticlePageProps> = ({ slug }) => {
             <ul className="flex flex-col gap-4 text-[14px] text-gray-400">
               <li><a href="/company/about" className="hover:text-white transition-colors">About the Agency</a></li>
               <li><a href="/company/success-stories" className="hover:text-white transition-colors">Success Stories</a></li>
-              <li><a href="/company/insights" className="hover:text-white transition-colors">Industry Insights</a></li>
+              <li><a href="/insights" className="hover:text-white transition-colors">Industry Insights</a></li>
               <li><a href="/contact" className="hover:text-white transition-colors">Contact Us</a></li>
             </ul>
           </div>
