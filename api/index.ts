@@ -108,6 +108,10 @@ const metadataMap: Record<string, SEOMetadata> = {
     title: 'B2B Organic Traffic Growth: Why Traffic and Pipeline Decoupled in 2026 | Gobiya',
     description: 'How traffic and pipeline decoupled in B2B during 2025-2026, why the best B2B SEO programs are now growing less traffic on purpose, and what the new organic growth math actually looks like.'
   },
+  '/insights/multi-location-seo-website-structure': {
+    title: 'Multi-Location SEO Website Structure Explained: Architecting for Search Dominance | Gobiya',
+    description: 'How website architecture — URL hierarchy, page-to-GBP mapping, content uniqueness, and internal linking — determines whether locations rank independently or cannibalize each other.'
+  },
   '/about/steve-martin': {
     title: 'Steve Martin | CEO, Lead Developer & Marketer | Gobiya',
     description: 'Professional credentials and author profile for Steve Martin, CEO, Lead Developer & Marketer at Gobiya. Specialized in advanced SEO, custom React engineering, and pipeline automation.'
