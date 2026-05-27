@@ -1410,7 +1410,7 @@ const ARTICLES: Record<string, ArticleData> = {
           How the AI search shift reshaped the evaluation criteria that matter
         </h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          A B2B SEO agency in 2026 is being evaluated against a fundamentally different set of criteria than the same agency was being evaluated against in 2022. The role of an SEO agency in this market is not just to rank pages — it's to make sure the brand is present in the AI-synthesized answer at the moment the buyer is forming the shortlist. This is where <a href="/insights/automated-b2b-sales-pipeline-seo" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">automated B2B sales pipeline SEO</a> becomes critical. Any agency that hasn't reframed its services around that outcome is selling 2019 SEO with 2026 invoicing.
+          A <a href="/insights/b2b-seo-agency" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">B2B SEO agency</a> in 2026 is being evaluated against a fundamentally different set of criteria than the same agency was being evaluated against in 2022. The role of an SEO agency in this market is not just to rank pages — it's to make sure the brand is present in the AI-synthesized answer at the moment the buyer is forming the shortlist. This is where <a href="/insights/automated-b2b-sales-pipeline-seo" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">automated B2B sales pipeline SEO</a> becomes critical. Any agency that hasn't reframed its services around that outcome is selling 2019 SEO with 2026 invoicing.
         </p>
 
         {/* ── COST BOX ── */}
@@ -1597,7 +1597,7 @@ const ARTICLES: Record<string, ArticleData> = {
           How committee buying reshaped the discipline of B2B SEO
         </h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          A B2B SEO program in 2026 is operating against a fundamentally different buyer behavior than the same program was operating against five years ago. Forrester's 2026 Buyers' Journey Survey of 18,000 buyers found generative AI and conversational search are now named as the most meaningful research source — outranking vendor websites, product experts, and sales representatives. 6sense's 2025 B2B Buyer Experience Report found 95 percent of buyers walk in with their shortlist defined on day one, 83 percent have pre-defined requirements, and 94 percent use AI in some part of their research. Demandbase's 2025 buying group research identified 10 distinct decision-maker functions across the typical committee.
+          A <a href="/insights/b2b-seo-agency" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">B2B SEO program</a> in 2026 is operating against a fundamentally different buyer behavior than the same program was operating against five years ago. Forrester's 2026 Buyers' Journey Survey of 18,000 buyers found generative AI and conversational search are now named as the most meaningful research source — outranking vendor websites, product experts, and sales representatives. 6sense's 2025 B2B Buyer Experience Report found 95 percent of buyers walk in with their shortlist defined on day one, 83 percent have pre-defined requirements, and 94 percent use AI in some part of their research. Demandbase's 2025 buying group research identified 10 distinct decision-maker functions across the typical committee.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
           The category got more complex faster than the buying process got more efficient. Software stacks expanded. Security and compliance requirements hardened. Procurement processes professionalized. Risk aversion intensified. The natural response from buyers was to involve more stakeholders earlier in the process. The role of B2B SEO in that market is no longer to convert a single buyer. It's to surface the brand across every research channel every committee member will touch — and that includes the <a href="/services/geo-optimization" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">generative engine optimization</a> layer where AI assistants synthesize answers for committee members researching independently.
@@ -2893,6 +2893,225 @@ const ARTICLES: Record<string, ArticleData> = {
       </>
     ),
   },
+
+  'b2b-seo-agency': {
+    slug: 'b2b-seo-agency',
+    title: 'B2B SEO Agency Explained: Choosing the Right Revenue Partner',
+    category: 'Strategy',
+    readTime: '12 min read',
+    date: 'May 27, 2026',
+    image: '/images/article-b2b-seo-agency.webp',
+    heroAlt: 'Minimalist digital illustration of a B2B organic pipeline with a central brand node connecting to multiple buying committee stakeholders represented by clean geometric icons and orange glowing lines',
+    metaDescription: 'What a B2B SEO agency actually is, how it differs structurally from generalists serving B2B clients, and why the distinction matters in the AI search era.',
+    content: (
+      <>
+        {/* ── LEAD STATS ── */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 my-10 sm:my-14">
+          {[
+            { stat: '89%', label: 'B2B buyers using the internet for purchase research', source: 'SEO Sherpa 2026' },
+            { stat: '11', label: 'Stakeholders involved in the average B2B purchase decision', source: 'Onely 2026' },
+            { stat: '20x', label: 'Conversion rate of high buying-intent B2B keywords vs top-of-funnel', source: 'Grow and Convert, 2026' },
+          ].map(({ stat, label, source }) => (
+            <div key={stat} className="border border-[#F26522]/30 bg-[#F26522]/5 p-6">
+              <p className="text-4xl font-bold text-[#F26522] mb-2 font-display">{stat}</p>
+              <p className="text-[14px] text-gray-900 leading-snug mb-1">{label}</p>
+              <p className="text-[11px] uppercase tracking-wider text-gray-500">{source}</p>
+            </div>
+          ))}
+        </div>
+
+        {/* ── TABLE OF CONTENTS ── */}
+        <details className="bg-gray-50 border border-gray-200 rounded-lg p-6 sm:p-8 my-10 sm:my-14 group" open>
+          <summary className="text-[14px] font-semibold uppercase tracking-wider text-gray-500 cursor-pointer list-none flex items-center justify-between">
+            Table of Contents
+            <svg className="w-4 h-4 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" /></svg>
+          </summary>
+          <ul className="mt-6 space-y-3.5 text-[15px] font-medium text-gray-900 border-t border-gray-200 pt-6">
+            {[
+              { id: 'b2b-seo-agency-category', label: 'The B2B SEO Agency Category — 2026 update' },
+              { id: 'what-is-b2b-seo-agency', label: 'What a B2B SEO agency actually is' },
+              { id: 'category-emergence', label: 'How the B2B SEO category emerged and why it matters more in 2026' },
+              { id: 'cost-of-generalist', label: 'The cost of hiring a generalist agency for B2B work' },
+              { id: 'how-engagement-works', label: 'How a real B2B SEO agency engagement should work in 2026' },
+              { id: 'separates-real-b2b-seo', label: 'What separates a real B2B SEO agency from a generalist with a B2B services page' },
+              { id: 'positioned-differently', label: 'Why Gobiya is positioned differently for B2B operators' },
+              { id: 'who-benefits', label: 'Which B2B operators benefit most from working with a specialist B2B SEO agency' },
+              { id: 'getting-started', label: 'What getting started with a B2B SEO agency engagement actually looks like' },
+              { id: 'making-call', label: 'Making the right call for your B2B SEO partnership' },
+            ].map(({ id, label }) => (
+              <li key={id} className="flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#F26522] shrink-0" />
+                <a href={`#${id}`} className="hover:text-[#F26522] transition-colors">{label}</a>
+              </li>
+            ))}
+          </ul>
+        </details>
+
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          A B2B SEO agency is not a generalist SEO agency that happens to serve B2B clients. The category is structurally different enough that the distinction has become operationally meaningful — and increasingly so as AI search reshapes the broader SEO discipline. The keywords B2B agencies target have lower search volumes but higher intent. The content they produce has to serve multi-stakeholder buying committees rather than single decision-makers. The sales cycles they're optimizing for run 90 to 180+ days, not minutes. The conversion events they measure are pipeline contribution and revenue, not transactions. The measurement model they operate against connects content directly to CRM data and closed deals, not to traffic dashboards and ranking reports. None of these characteristics are accidental specializations. They are structural requirements of the B2B SEO problem itself, and agencies that haven't built around them produce predictable failures regardless of how skilled their general SEO practice is.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          This is the problem the B2B SEO agency category solves. The strongest B2B operators have stopped hiring generalist agencies that "also do B2B" and started hiring specialists whose entire operating model is built around the structural realities of B2B buying. Most operators don't realize the difference matters until they're 9-12 months into a relationship with a generalist agency producing strong traffic numbers and flat pipeline, asking why the two metrics no longer correlate.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          This article covers what a B2B SEO agency actually is as a category, how it differs structurally from generalist SEO agencies serving B2B clients, what the cost of category confusion looks like, and what separates a real B2B SEO agency from a generalist with a B2B services page.
+        </p>
+
+        {/* ── SECTION: What a B2B SEO agency actually is ── */}
+        <div id="what-is-b2b-seo-agency" className="scroll-mt-24" />
+        <h2 className="text-[1.6rem] sm:text-[2rem] font-display font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">What a B2B SEO agency actually is</h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          A B2B SEO agency is an organic search firm whose entire operating model — methodology, measurement, staffing, vertical depth, tooling, and reporting — is built around the structural requirements of B2B buying rather than retrofitted from a generalist B2B-and-B2C practice. The distinction matters because B2B and B2C SEO diverge across at least six dimensions that fundamentally change how the work gets done.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          <strong>Buyer behavior diverges.</strong> B2C buyers usually make decisions individually, in short timeframes, on emotional or impulse triggers. B2B buyers make decisions as 11-person committees, over 90 to 180+ day cycles, against rational evaluation frameworks and risk-averse approval processes. SEO that wins B2C decisions reaches one buyer at one moment. SEO that wins B2B decisions reaches multiple stakeholders across multiple moments over multiple months.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          <strong>Keyword universes diverge.</strong> B2C keyword research targets high-volume terms with clear transactional intent. B2B keyword research targets lower-volume terms that often have only 50 to 500 monthly searches but carry massive intent and per-conversion value. An agency operating on B2C keyword instincts will dismiss B2B terms as not worth pursuing — and miss the keywords that actually drive revenue.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          <strong>Content strategy diverges.</strong> B2C content optimizes for emotional resonance, social proof, and ease of purchase. B2B content optimizes for technical depth, multi-stakeholder relevance, and credibility signals that survive procurement and security review. CFOs need ROI justification, IT teams need security details, end users need features, and procurement needs vendor qualifications. A single piece of B2C content can serve the entire buyer journey. A B2B content program needs distinct content for distinct stakeholders at distinct stages.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          <strong>Conversion models diverge.</strong> B2C conversion is a transaction — a credit card swipe, a checkout, an add-to-cart. B2B conversion is a lead becoming an opportunity becoming a closed deal across weeks or months of nurture. The optimization problem is fundamentally different.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          <strong>Measurement frameworks diverge.</strong> B2C agencies report on traffic, conversion rate, and revenue per session within a single funnel. B2B agencies have to attribute organic traffic to pipeline that may close 6 months later, after touching the CRM through demos, trials, multi-stakeholder meetings, and procurement review. The measurement infrastructure is materially more complex, and agencies without it cannot demonstrate B2B ROI in the way B2B CFOs require.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          <strong>Sales motion integration diverges.</strong> B2C agencies operate independently of the sales function (in most cases, there isn't one). B2B agencies operate as extensions of the revenue team, coordinating with sales on which accounts to target, which content to produce, which CRM stages to optimize for. An agency without that integration is producing content into a black box and hoping it correlates with pipeline.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          These six divergences are what make B2B SEO a category. An agency operating across all six dimensions correctly is a B2B SEO agency. An agency operating across some of them is a generalist that happens to take B2B clients. The two categories produce measurably different outcomes for B2B operators, and the gap has widened — not narrowed — as AI search has added a seventh dimension where B2B-specialist methodologies for AI citation, earned-media placement, and entity-based optimization are diverging further from B2C-generalist approaches.
+        </p>
+
+        <div className="bg-gray-50 border-l-4 border-[#F26522] p-6 sm:p-8 my-10">
+          <h3 className="text-[15px] font-semibold uppercase tracking-wider text-[#F26522] mb-3">Why a generalist agency's B2B services page isn't enough</h3>
+          <p className="text-[15px] sm:text-[16px] leading-[1.7] text-gray-700">
+            Most agencies have a B2B services page. The page exists because B2B clients ask whether the agency serves B2B before they sign, and the page provides reassurance. But the existence of a B2B services page is a marketing artifact, not an operational specialization. The agency's underlying methodology, staffing, measurement infrastructure, and case study experience may still be 70-80% B2C, with B2B treated as an addressable adjacent market rather than the operational focus.
+          </p>
+          <p className="text-[15px] sm:text-[16px] leading-[1.7] text-gray-700 mt-4">
+            A B2B services page is not sufficient evidence of B2B SEO agency specialization. Operating focus across all six structural dimensions is what makes an agency a B2B specialist. Without that operating focus, the agency is applying B2C instincts to B2B problems and producing B2C-shaped outcomes — traffic growth that doesn't connect to pipeline, content that wins single buyers but not committees, measurement that satisfies the marketing dashboard but doesn't survive the CFO's revenue attribution question. Programs with strong B2C-style metrics and weak B2B pipeline contribution are usually generalist agencies producing generalist work for B2B clients who needed specialist work. This divergence is similar to local search programs, where a setup-and-forget approach decays without a continuous <a href="/insights/los-angeles-local-seo-explained" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">local SEO operational cadence</a>.
+          </p>
+        </div>
+
+        {/* ── SECTION: Category Emergence ── */}
+        <div id="category-emergence" className="scroll-mt-24" />
+        <h2 className="text-[1.6rem] sm:text-[2rem] font-display font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">How the B2B SEO category emerged and why it matters more in 2026</h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          The B2B SEO agency category emerged because the structural differences between B2B and B2C SEO outgrew the generalist agency model. Through the early 2010s, the differences were real but manageable — a competent generalist agency could serve B2B clients adequately by tuning their B2C methodology slightly. Through the late 2010s, B2B sales cycles lengthened, buying committees grew, and the gap between B2B keywords and B2C keywords widened. By the early 2020s, the structural divergence had become large enough that specialist agencies began outperforming generalists serving B2B clients on every meaningful pipeline metric. By 2026, the gap has compounded further as AI search has added new dimensions where B2B-specialist optimization approaches (entity authority, earned-media placement, AI citation tracking across ChatGPT/Claude/Perplexity/Gemini) operate differently from B2C-specialist approaches (still optimized primarily for Google traditional search and AI Overviews). For businesses requiring geographic visibility, these local factors are detailed in our guide on <a href="/insights/local-seo-los-angeles" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">local SEO for Los Angeles businesses</a>.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          The category matters more in 2026 because the cost of category confusion has increased. AI search has compressed the buyer research timeline — buyers now arrive at vendor sites with their shortlist effectively defined from AI assistants, and the agencies that have built specialist methodologies for AI citation in B2B categories are producing measurable share-of-shortlist outcomes that generalists serving B2B can't match. The 280% increase in demo requests one specialist agency produced for a SaaS client, the 17% improvement in AI search citations another delivered in 12 weeks, the $1B+ in client revenue a third claims to have generated under its "Customer Generation" methodology — these are outcomes that emerge from operating models built specifically around B2B buying dynamics, not from generalist SEO scaled to B2B clients. The market has bifurcated, and the bifurcation is accelerating.
+        </p>
+
+        {/* ── SECTION: Cost of Generalist ── */}
+        <div id="cost-of-generalist" className="scroll-mt-24" />
+        <h2 className="text-[1.6rem] sm:text-[2rem] font-display font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">The cost of hiring a generalist agency for B2B work</h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          A mid-market B2B SaaS company hiring a generalist SEO agency at $8,000-$25,000 per month is operating on a $100,000-$300,000 annual program. The visible deliverables look similar to what a B2B specialist would produce — content, technical SEO, link building, reporting. The invisible difference is what the work actually optimizes for. A generalist agency optimizes for traffic, ranking, and conversion rate on the assumption that those metrics correlate with revenue. A B2B specialist optimizes for pipeline contribution, opportunity creation, and closed-won attribution on the knowledge that traffic-and-ranking optimization in B2B has decoupled from pipeline outcomes in measurable ways — a phenomenon explored in our analysis of <a href="/insights/b2b-organic-traffic-growth" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">B2B organic traffic growth</a> (the 21.4% organic conversion uplift on declining B2B traffic that Factors.ai documented in their 2026 benchmark of 100+ B2B companies is the cleanest evidence of this decoupling).
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          Frame the cost in concrete terms. A B2B SaaS company with a $25,000 average deal size needs roughly 200 closed deals annually to hit a $5M ARR contribution target. If the SEO program is structurally limited by generalist methodology — chasing high-volume top-of-funnel terms instead of low-volume high-intent terms, producing single-buyer content for committee buying decisions, reporting on rankings instead of pipeline — the program will produce traffic growth without proportional pipeline growth, and the company will spend a year discovering through CFO scrutiny that the channel isn't producing the revenue contribution it's being paid for. The retainer cost is the same. The pipeline outcome is dramatically different. The opportunity cost of a year spent with the wrong agency type is the closed-won deals that went to competitors whose specialist agencies were producing pipeline-contributing content while the generalist was producing rankings.
+        </p>
+        <div className="bg-amber-50 border border-amber-200 rounded-lg p-5 my-8 text-[14px] text-amber-900 leading-relaxed">
+          <strong>Note:</strong> B2B SEO agency retainer ranges, pipeline math, and outcome variance depend significantly on company stage, ACV, vertical, and competitive density. The figures above reflect U.S. mid-market B2B SaaS averages in 2026. Audit your own pipeline attribution against any agency's reported outcomes before committing to a specialist or generalist relationship.
+        </div>
+
+        {/* ── SECTION: How engagement works ── */}
+        <div id="how-engagement-works" className="scroll-mt-24" />
+        <h2 className="text-[1.6rem] sm:text-[2rem] font-display font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">How a real B2B SEO agency engagement should work in 2026</h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          A credible engagement starts with revenue and pipeline architecture, not a content calendar. The agency reviews the operator's CRM structure, identifies how organic traffic is currently attributed (or, in most cases, isn't attributed) to opportunities and closed-won, designs the attribution model the program will be measured against, and ties the entire engagement to pipeline targets rather than ranking promises. The agency demonstrates B2B-specific vertical fluency — not just "we work with SaaS" but actual category fluency in the operator's sub-vertical, with case studies showing measurable pipeline contribution rather than traffic charts.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          The ongoing work reflects the B2B operational model. Keyword research prioritizes intent over volume — comparison terms, alternative-to terms, integration terms, "best [tool category] for [specific use case]" terms — with low aggregate search volume but high per-conversion value. Content production targets the full buying committee with role-by-role assets: technical evaluator content (integration guides, architecture documentation, security overviews), economic buyer content (ROI frameworks, vendor comparison analysis, analyst-style category overviews), end-user content (workflow tutorials, productivity-focused use cases), procurement content (security documentation, compliance overviews, reference materials), and executive content (thought leadership in trade publications). Earned media and authority signals receive disproportionate investment because B2B AI citations skew heavily toward third-party sources rather than vendor domains. AI search visibility is tracked as a primary metric, with citation share across ChatGPT, Claude, Perplexity, and Gemini reported alongside traditional Google rankings. Reporting connects specific content to specific pipeline outcomes — not "we produced 12 articles this month" but "this comparison page generated 47 SQLs and influenced $340K in closed pipeline over the last 90 days."
+        </p>
+
+        <div className="bg-gray-50 border-l-4 border-[#F26522] p-6 sm:p-8 my-10">
+          <h3 id="seo-lead-generation" className="text-[15px] font-semibold uppercase tracking-wider text-[#F26522] mb-3">How lead generation operates inside the B2B SEO agency model</h3>
+          <p className="text-[15px] sm:text-[16px] leading-[1.7] text-gray-700">
+            The way a B2B SEO agency handles lead generation is one of the cleanest indicators of whether it operates as a real specialist. Our dedicated guide on <a href="/insights/seo-for-b2b-lead-generation" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">SEO for B2B lead generation</a> outlines this committee-coverage approach, which ensures that every role on the 11-person buying committee can independently encounter the brand in their preferred research channel, with content built for their specific stage of the evaluation.
+          </p>
+          <p className="text-[15px] sm:text-[16px] leading-[1.7] text-gray-700 mt-4">
+            The operational difference is enormous. A generalist agency producing 12 articles a month for a B2B SaaS client typically produces 12 articles aimed at the same persona, hitting the same stage of the funnel. A B2B specialist producing 12 articles a month produces a deliberate mix across roles, stages, and channels — three pieces for technical evaluators, two for procurement, two thought-leadership pieces for executive sponsors, three for the end-user role, and two for mid-funnel comparison consideration. The total output is the same. The pipeline contribution diverges sharply over a 6-12 month engagement.
+          </p>
+        </div>
+
+        {/* ── SECTION: Separates Real B2B SEO ── */}
+        <div id="separates-real-b2b-seo" className="scroll-mt-24" />
+        <h2 className="text-[1.6rem] sm:text-[2rem] font-display font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">What separates a real B2B SEO agency from a generalist with a B2B services page</h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          Not every agency claiming B2B expertise is operating as a B2B specialist. The category is heavily populated with generalist firms that added B2B services pages to their websites in 2023 without changing their underlying methodology, with full-service digital marketing agencies that include SEO as one of many services rather than a specialization, and with rebranded content marketing shops claiming "B2B SEO" capability they haven't actually built.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          Start with the client roster. Ask the agency what percentage of their client roster is B2B specifically — not "B2B-friendly" but actually B2B, with a verifiable list. Ask for case studies in the operator's specific vertical, with pipeline and revenue metrics rather than traffic and ranking metrics. Agencies that can only show traffic case studies for B2B clients are not measuring what B2B CFOs measure, which means they're optimizing for the wrong outcomes regardless of skill. Ask how many strategists handle each account — the strong B2B specialists tend to keep account loads at 3-5 clients per strategist, because B2B engagements require depth that generalist agencies can't sustain at higher loads. Ask about vertical depth — the agency should have demonstrated experience in the operator's specific sub-vertical (SaaS, fintech, cybersecurity, healthtech, manufacturing, professional services, vertical SaaS, etc.) rather than generic "B2B" experience. Ask about AI search capability — citation tracking across ChatGPT/Claude/Perplexity/Gemini, earned-media placement methodology, AI Overview optimization for B2B-specific query patterns. Ask about measurement infrastructure — CRM integration, pipeline attribution model, the specific dashboard the operator will use to evaluate the engagement's ROI. Ask whether the agency has B2B-native operators on the team — strategists who have worked inside B2B revenue functions and understand how MQLs become SQLs become opportunities become closed-won. A real B2B SEO agency answers all of these questions with specifics. A generalist with a B2B services page answers most of them with generalities and hedges on the rest.
+        </p>
+
+        {/* ── SECTION: Why Gobiya is Positioned Differently ── */}
+        <div id="positioned-differently" className="scroll-mt-24" />
+        <h2 className="text-[1.6rem] sm:text-[2rem] font-display font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">Why Gobiya is positioned differently for B2B operators</h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          Gobiya is a dedicated B2B SEO agency built exclusively around the pipeline-first model. We do not serve B2C clients, we do not run consumer e-commerce playbooks, and we do not measure success on aggregate session volume. Our team consists of B2B revenue operators and technical search engineers who have sat in corporate marketing seats and understand how to translate organic search clicks into CRM opportunity stages.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          Every client engagement is built on a custom CRM-connected attribution loop: we map which keyword clusters generate sales meetings, which content assets pre-qualify procurement requirements, and which third-party websites actually feed the outbound sales sequence. We operate with transparent workflows, direct engineer-to-marketer communication, and performance-based accountability that aligns with your ARR contribution targets.
+        </p>
+
+        {/* ── SECTION: Who benefits ── */}
+        <div id="who-benefits" className="scroll-mt-24" />
+        <h2 className="text-[1.6rem] sm:text-[2rem] font-display font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">Which B2B operators benefit most from working with a specialist B2B SEO agency</h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          Different B2B configurations face different versions of the specialist-vs-generalist question. Here's how the fit usually breaks down.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          <strong>Mid-market B2B SaaS operators</strong> typically have the most to gain from B2B specialization because the buying committee dynamics, long sales cycles, and pipeline-attribution complexity that define B2B SaaS are exactly the problems generalist agencies are weakest at solving. Mid-market is also where the price gap between specialists and generalists is least prohibitive, making the ROI math particularly favorable.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          <strong>Enterprise B2B operators</strong> benefit from specialists primarily because the technical SEO complexity at enterprise scale (large content libraries, international architecture, multi-domain strategies, compliance considerations) compounds with B2B-specific methodology requirements, often requiring a complex <a href="/insights/multi-location-seo-website-structure" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">multi-location SEO website structure</a> to serve regional offices without internal cannibalization. Enterprise B2B engagements also have the revenue scale to justify specialist retainers in the $25,000-$50,000+/month range where the deepest B2B agency practices operate.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          <strong>B2B services and consulting firms</strong> benefit from specialist B2B SEO agencies oriented around earned media and named-author authority signals, because their categories reward credibility over content volume in ways B2C-derived methodologies don't naturally produce. A specialist agency with a digital PR practice baked into the engagement is meaningfully different from a generalist with a separate digital PR upcharge.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          <strong>Vertical SaaS operators</strong> face the cleanest case for B2B specialist agencies because their categories are typically too niche for generalist agencies to develop real fluency in — and a specialist agency with vertical depth in proptech, fintech, healthtech, or industrial SaaS will outperform a generalist regardless of the generalist's overall skill level. The specific configuration varies by operator, which is why a category-fit conversation matters more than any default "best agency" recommendation.
+        </p>
+
+        {/* ── SECTION: Getting Started ── */}
+        <div id="getting-started" className="scroll-mt-24" />
+        <h2 className="text-[1.6rem] sm:text-[2rem] font-display font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">What getting started with a B2B SEO agency engagement actually looks like</h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          A credible engagement starts with a pipeline-and-attribution audit, not a content calendar review. The audit evaluates the operator's current attribution model from organic traffic through to closed-won revenue, identifies the gaps where pipeline contribution is being undercounted or miscredited, baselines current AI search citation share across the four major engines for category-defining queries, assesses content coverage across the buying committee roles, and produces a pipeline-targeted roadmap rather than a traffic projection. The shortlist of agencies being evaluated gets assembled against the structural criteria above — B2B specialization, vertical depth, measurement infrastructure, AI search capability, team composition — rather than against the agencies that happen to surface first in a search. This selection framework mirrors the criteria detailed in our guide on choosing the <a href="/insights/best-seo-agency-for-b2b-brands" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">best SEO agency for B2B brands</a>.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          The B2B operators that get the most from a specialist agency engagement are the ones that approach the relationship as a strategic revenue partnership rather than a tactical content vendor. The question of "should we hire a B2B SEO agency" usually has an obvious answer (yes, for most B2B operators above a certain stage). The question of "should we hire a B2B specialist or a generalist that takes B2B clients" has a less obvious answer that determines whether the next 12 months of investment produces pipeline-contributing returns or traffic-growth-with-flat-pipeline outcomes.
+        </p>
+
+        {/* ── SECTION: Making Call ── */}
+        <div id="making-call" className="scroll-mt-24" />
+        <h2 className="text-[1.6rem] sm:text-[2rem] font-display font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">Making the right call for your B2B SEO partnership</h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          B2B operators still hiring generalist agencies for B2B work are paying full retainer cost for methodologies optimized against the wrong outcomes — traffic and rankings rather than pipeline and revenue — while their specialist-served competitors quietly compound revenue attribution and AI citation presence that generalist methodologies aren't built to produce. The shift to working with a real B2B SEO agency isn't about brand prestige. It's about category fit. The structural realities of B2B buying require structural methodologies that B2B specialists have built and generalists serving B2B haven't.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          Two decisions matter most. First: whether the agency you're working with (or considering) operates across all six structural dimensions of B2B SEO — buyer behavior, keyword universe, content strategy, conversion model, measurement framework, sales motion integration — or whether it operates a generalist methodology with B2B clients tacked on. Second: whether the engagement is measured against pipeline and revenue attribution that survives CFO scrutiny, or against traffic and ranking metrics that look fine on a marketing dashboard but don't predict the outcomes the budget is implicitly accountable for.
+        </p>
+
+        {/* ── CTA ── */}
+        <div className="bg-gray-900 rounded-xl p-8 sm:p-10 my-14">
+          <p className="text-[11px] uppercase tracking-wider font-semibold text-[#F26522] mb-3">Scale Your B2B Pipeline</p>
+          <h3 className="text-white text-[1.4rem] sm:text-[1.7rem] font-display font-medium leading-[1.2] mb-4">Request a CRM pipeline and organic search attribution audit from Gobiya.</h3>
+          <p className="text-gray-400 text-[15px] leading-relaxed mb-6">Walk through how your current organic search setup attributes revenue and identify the gaps before another year gets optimized against the wrong outcomes.</p>
+          <a href="/contact" className="inline-flex items-center gap-3 bg-[#F26522] hover:bg-[#e05a1a] text-white pl-6 pr-2 py-2.5 transition-colors duration-300 font-medium text-[14px]">
+            Request a pipeline-and-attribution audit
+            <div className="w-7 h-7 bg-white flex items-center justify-center ml-3">
+              <svg className="w-3.5 h-3.5 text-[#F26522]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"/></svg>
+            </div>
+          </a>
+        </div>
+      </>
+    ),
+  },
 };
 
 // ─── Related Articles per slug ────────────────────────────────────────────────
@@ -2992,10 +3211,10 @@ const RELATED_ARTICLES_MAP: Record<string, { href: string; category: string; tit
       image: '/images/article-lead-gen-seo.webp',
     },
     {
-      href: '/insights/outbound-seo-prospecting',
+      href: '/insights/b2b-seo-agency',
       category: 'Strategy',
-      title: 'Outbound SEO Prospecting: Timing-Anchored Outreach Powered by Intent Signals in 2026',
-      image: '/images/article-outbound-seo-prospecting.webp',
+      title: 'B2B SEO Agency Explained: Choosing the Right Revenue Partner',
+      image: '/images/article-b2b-seo-agency.webp',
     },
   ],
 
@@ -3007,10 +3226,10 @@ const RELATED_ARTICLES_MAP: Record<string, { href: string; category: string; tit
       image: '/images/article-b2b-pipeline-seo.webp',
     },
     {
-      href: '/insights/automated-lead-generation-seo',
+      href: '/insights/b2b-seo-agency',
       category: 'Strategy',
-      title: 'Automated Lead Generation SEO: How AI Pre-Qualifies Your Pipeline in 2026',
-      image: '/images/article-lead-gen-seo.webp',
+      title: 'B2B SEO Agency Explained: Choosing the Right Revenue Partner',
+      image: '/images/article-b2b-seo-agency.webp',
     },
     {
       href: '/insights/best-seo-agency-for-b2b-brands',
@@ -3049,16 +3268,37 @@ const RELATED_ARTICLES_MAP: Record<string, { href: string; category: string; tit
       image: '/images/article-seo-b2b-lead-generation.webp',
     },
     {
-      href: '/insights/automated-b2b-sales-pipeline-seo',
+      href: '/insights/b2b-seo-agency',
       category: 'Strategy',
-      title: 'Automated B2B Sales Pipeline SEO: How AI Citations Shape Your Shortlist in 2026',
-      image: '/images/article-b2b-pipeline-seo.webp',
+      title: 'B2B SEO Agency Explained: Choosing the Right Revenue Partner',
+      image: '/images/article-b2b-seo-agency.webp',
     },
     {
       href: '/insights/best-seo-agency-for-b2b-brands',
       category: 'Strategy',
       title: 'How to Choose the Best SEO Agency for B2B Brands in 2026',
       image: '/images/article-best-seo-agency.webp',
+    },
+  ],
+
+  'b2b-seo-agency': [
+    {
+      href: '/insights/best-seo-agency-for-b2b-brands',
+      category: 'Strategy',
+      title: 'How to Choose the Best SEO Agency for B2B Brands in 2026',
+      image: '/images/article-best-seo-agency.webp',
+    },
+    {
+      href: '/insights/seo-for-b2b-lead-generation',
+      category: 'Strategy',
+      title: 'SEO for B2B Lead Generation: How Committee-Architecture Content Outperforms Single-Persona Funnels',
+      image: '/images/article-seo-b2b-lead-generation.webp',
+    },
+    {
+      href: '/insights/b2b-organic-traffic-growth',
+      category: 'Strategy',
+      title: 'B2B Organic Traffic Growth: Why Traffic and Pipeline Decoupled in 2026',
+      image: '/images/article-b2b-organic-traffic-growth.webp',
     },
   ],
 
