@@ -15,9 +15,10 @@ interface Insight {
 
 interface InsightsSliderProps {
   filterCategory?: string;
+  limit?: number;
 }
 
-const InsightsSlider: React.FC<InsightsSliderProps> = ({ filterCategory }) => {
+const InsightsSlider: React.FC<InsightsSliderProps> = ({ filterCategory, limit }) => {
   const trackRef = useRef<HTMLDivElement>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [maxIndex, setMaxIndex] = useState(0);
@@ -76,15 +77,21 @@ const InsightsSlider: React.FC<InsightsSliderProps> = ({ filterCategory }) => {
   }, []);
 
   const displayInsights = React.useMemo(() => {
-    if (!filterCategory) return insights;
-    return [...insights].sort((a, b) => {
-      const aMatches = a.category === filterCategory;
-      const bMatches = b.category === filterCategory;
-      if (aMatches && !bMatches) return -1;
-      if (!aMatches && bMatches) return 1;
-      return 0;
-    });
-  }, [insights, filterCategory]);
+    let list = insights;
+    if (filterCategory) {
+      list = [...insights].sort((a, b) => {
+        const aMatches = a.category === filterCategory;
+        const bMatches = b.category === filterCategory;
+        if (aMatches && !bMatches) return -1;
+        if (!aMatches && bMatches) return 1;
+        return 0;
+      });
+    }
+    if (limit) {
+      return list.slice(0, limit);
+    }
+    return list;
+  }, [insights, filterCategory, limit]);
 
   useEffect(() => {
     const calcMax = () => {

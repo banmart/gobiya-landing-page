@@ -2,11 +2,32 @@ import React, { useCallback, useLayoutEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import './StaggeredMenu.css';
 
+const DEFAULT_MENU_ITEMS = [
+  { label: 'Solutions', isHeader: true },
+  { label: 'SEO', link: '/services/seo' },
+  { label: 'GEO', link: '/services/geo-optimization' },
+  { label: 'Penalty Recovery', link: '/google-penalty-recovery' },
+  { label: 'Lead Generation', link: '/services/lead-generation' },
+  { label: 'Web Development', link: '/services/web-development' },
+  { label: 'PPC Advertising', link: '/services/ppc-advertising' },
+  { label: 'Company', isHeader: true },
+  { label: 'About the Agency', link: '/company/about' },
+  { label: 'Success Stories', link: '/company/success-stories' },
+  { label: 'Our Approach', link: '/company/approach' },
+  { label: 'Industry Insights', link: '/insights' },
+  { label: 'Careers', link: '/company/careers' }
+];
+
+const DEFAULT_SOCIAL_ITEMS = [
+  { label: 'Twitter', link: '#' },
+  { label: 'LinkedIn', link: 'https://www.linkedin.com/in/stevemartingobiya/' }
+];
+
 export const StaggeredMenu = ({
   position = 'right',
   colors = ['#B497CF', '#5227FF'],
-  items = [],
-  socialItems = [],
+  items = DEFAULT_MENU_ITEMS,
+  socialItems = DEFAULT_SOCIAL_ITEMS,
   displaySocials = true,
   displayItemNumbering = true,
   className,

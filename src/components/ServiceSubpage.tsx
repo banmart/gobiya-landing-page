@@ -13,6 +13,8 @@ import InsightsGrid from './InsightsGrid';
 import CaseStudiesPinned from './CaseStudiesPinned';
 import SatisfiedClients from './SatisfiedClients';
 import RoiCalculator from './RoiCalculator';
+import Header from './Header';
+import Footer from './Footer';
 
 gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
 
@@ -254,19 +256,7 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
 
   // Clock updating
   useEffect(() => {
-    const updateTime = () => {
-      const now = new Date();
-      const options: Intl.DateTimeFormatOptions = { 
-        timeZone: 'America/Los_Angeles', 
-        hour: 'numeric', 
-        minute: '2-digit',
-        hour12: true
-      };
-      setTime(now.toLocaleTimeString('en-US', options));
-    };
-    updateTime();
-    const interval = setInterval(updateTime, 1000);
-    return () => clearInterval(interval);
+    // Add logic if needed
   }, []);
 
   // Update client-side browser tab title and DOM meta tags on route changes
@@ -717,60 +707,8 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
         </div>
 
         {/* Navigation */}
-        <div className="fixed top-0 left-0 z-50 w-full">
-          <nav className="flex items-center justify-between bg-white/30 backdrop-blur-md border-b border-white/40 p-[5px] sm:px-4">
-            {/* LEFT - Static Logo for Subpages */}
-            <div className="flex items-center gap-6 relative z-50">
-              <a href="/">
-                <img 
-                  src="/images/gobiya---logo.webp" 
-                  alt="Gobiya Logo" 
-                  className="h-8 sm:h-9 w-auto object-contain" 
-                />
-              </a>
-            </div>
-
-            {/* RIGHT - Custom Outcome Message */}
-            <div className="flex items-center gap-4 sm:gap-6 ml-auto">
-              <div className="hidden md:flex items-center gap-2">
-                <Clock className="w-3.5 h-3.5 text-gray-900" />
-                <span className="text-[13px] text-gray-900 font-medium">{time} in Los Angeles</span>
-              </div>
-              <a href="/contact" className="hidden sm:flex group items-center bg-gray-900 text-white pl-5 pr-2 py-2">
-                <div className="flex flex-col overflow-hidden h-[20px] justify-start items-start relative mr-3">
-                  <span className="text-[13px] font-medium leading-[20px] transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-translate-y-full">Book a strategy call</span>
-                  <span className="text-[13px] font-medium leading-[20px] absolute top-full transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-translate-y-full">Book a strategy call</span>
-                </div>
-                <div className="w-6 h-6 bg-white flex items-center justify-center">
-                  <ArrowRight className="w-3.5 h-3.5 text-gray-900 transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-rotate-45" />
-                </div>
-              </a>
-              
-              <div className="flex items-center justify-center px-2">
-                <StaggeredMenu 
-                  isFixed={true}
-                  colors={['#111111', '#F26522']}
-                  items={[
-                    { label: 'Services', link: '/services' },
-                    { label: 'Company', isHeader: true },
-                    { label: 'About the Agency', link: '/company/about' },
-                    { label: 'Success Stories', link: '/company/success-stories' },
-                    { label: 'Our Approach', link: '/company/approach' },
-                    { label: 'Industry Insights', link: '/insights' },
-                    { label: 'Careers', link: '/company/careers' }
-                  ]}
-                  socialItems={[
-                    { label: 'Twitter', link: '#' },
-                    { label: 'LinkedIn', link: 'https://www.linkedin.com/in/stevemartingobiya/' }
-                  ]}
-                  menuButtonColor="#111"
-                  openMenuButtonColor="#111"
-                  accentColor="#F26522"
-                />
-              </div>
-            </div>
-          </nav>
-        </div>
+        {/* Navigation */}
+        <Header theme="light" />
 
         {/* Hero Content - Adjusted margins/padding to remove large empty vertical space */}
         <div className="relative z-20 max-w-[1440px] w-full mx-auto flex flex-col justify-center px-5 sm:px-8 lg:px-12 pt-16 pb-0">
@@ -1638,10 +1576,10 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
       )}
 
       {/* SECTION: LATEST INSIGHTS */}
-      {path !== '/contact' && path !== '/services' && path !== '/company/approach' && path !== '/company/success-stories' && (
+      {path !== '/contact' && path !== '/services' && path !== '/company/approach' && path !== '/company/success-stories' && path !== '/company/about' && path !== '/company/careers' && (
         path !== '/insights' ? (
           <div data-logo-dark className="relative">
-            <InsightsSlider filterCategory={config.insightCategory} />
+            <InsightsSlider filterCategory={config.insightCategory} limit={3} />
           </div>
         ) : (
           <div data-logo-dark className="relative">
@@ -1789,106 +1727,9 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
         </section>
       )}
 
-      {/* FOOTER SECTION */}
-      {/* Same as homepage, but contains a static logo in place of the scroll waypoint spacer */}
-      <footer className="bg-[#111] text-white pt-20 sm:pt-28 px-5 sm:px-8 lg:px-12 w-full overflow-hidden flex flex-col relative" data-logo-dark>
-        <div className="max-w-[1440px] w-full mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1fr] gap-12 lg:gap-8 mb-10 sm:mb-20 relative z-10">
-          
-          {/* Col 1 */}
-          <div className="flex flex-col pr-0 lg:pr-12">
-            <a href="/">
-              <img 
-                src="/images/gobiya---logo.webp" 
-                alt="Gobiya Logo" 
-                className="h-8 sm:h-9 w-auto object-contain mb-4 invert brightness-0" 
-              />
-            </a>
-            <h3 className="text-3xl font-semibold tracking-tight mb-4">Gobiya.</h3>
-            <p className="text-gray-400 text-[14px] sm:text-[15px] leading-relaxed mb-8 max-w-sm">
-              We leverage cutting-edge AI and advanced data strategies to help brands recover lost traffic, dominate search, and scale revenue globally.
-            </p>
-            <h4 className="text-[12px] font-semibold uppercase tracking-wider mb-3">Subscribe</h4>
-            <div className="flex items-center w-full max-w-sm bg-white/10 p-1">
-              <input 
-                type="email" 
-                placeholder="Enter your E-mail" 
-                className="bg-transparent text-[14px] text-white placeholder-gray-500 w-full px-4 py-2 outline-none"
-              />
-              <button className="bg-white text-black px-4 py-2 text-[13px] font-semibold hover:bg-gray-200 transition-colors">
-                Submit
-              </button>
-            </div>
-          </div>
+      {/* ── FOOTER ── */}
+      <Footer />
 
-          {/* Col 2 */}
-          <div className="flex flex-col">
-            <h4 className="text-[12px] font-semibold uppercase tracking-wider mb-6">Services</h4>
-            <ul className="flex flex-col gap-4 text-[14px] text-gray-400">
-              <li><a href="/services/geo-optimization" className="hover:text-white transition-colors">AI Content Strategies</a></li>
-              <li><a href="/services/seo" className="hover:text-white transition-colors">Traffic Recovery</a></li>
-              <li><a href="/google-penalty-recovery" className="hover:text-white transition-colors">Technical SEO</a></li>
-              <li><a href="/services/seo" className="hover:text-white transition-colors">Algorithmic Audits</a></li>
-              <li><a href="/services/lead-generation" className="hover:text-white transition-colors">Programmatic SEO</a></li>
-            </ul>
-          </div>
-
-          {/* Col 3 */}
-          <div className="flex flex-col">
-            <h4 className="text-[12px] font-semibold uppercase tracking-wider mb-6">Company</h4>
-            <ul className="flex flex-col gap-4 text-[14px] text-gray-400">
-              <li><a href="/company/about" className="hover:text-white transition-colors">About the Agency</a></li>
-              <li><a href="/company/success-stories" className="hover:text-white transition-colors">Success Stories</a></li>
-              <li><a href="/company/approach" className="hover:text-white transition-colors">Our Approach</a></li>
-              <li><a href="/insights" className="hover:text-white transition-colors">Industry Insights</a></li>
-              <li><a href="/company/careers" className="hover:text-white transition-colors">Careers</a></li>
-            </ul>
-          </div>
-
-          {/* Col 4 */}
-          <div className="flex flex-col">
-            <h4 className="text-[12px] font-semibold uppercase tracking-wider mb-6">Connect</h4>
-            <ul className="flex flex-col gap-4 text-[14px] text-gray-400">
-              <li><a href="#" className="hover:text-white transition-colors">LinkedIn</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Twitter (X)</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Instagram</a></li>
-              <li><a href="/contact" className="hover:text-white transition-colors">Contact Us</a></li>
-            </ul>
-          </div>
-
-        </div>
-
-        {/* Bottom Bar */}
-        <div className="max-w-[1440px] w-full mx-auto flex flex-col sm:flex-row justify-between items-center gap-4 border-t border-white/10 pt-8 pb-8 relative z-[60]">
-          <p className="text-[13px] text-gray-500">© 2026 Gobiya. Engineering search dominance.</p>
-          <div className="flex items-center gap-6 text-[13px] text-gray-500">
-            <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
-          </div>
-        </div>
-
-        {/* Huge Text */}
-        <div className="w-full flex justify-center items-center mt-4 sm:mt-10 overflow-hidden relative">
-          <BlurText 
-            text="GOBIYA" 
-            animateBy="letters" 
-            delay={150}
-            className="text-[17vw] sm:text-[23vw] leading-[0.75] font-bold tracking-tighter text-white select-none text-center justify-center flex-nowrap whitespace-nowrap" 
-          />
-        </div>
-      </footer>
-
-      {/* Gradual Blur fixed at the bottom of the page */}
-      <GradualBlur
-        target="page"
-        position="bottom"
-        height="6rem"
-        strength={2}
-        divCount={5}
-        curve="bezier"
-        exponential={true}
-        opacity={1}
-        zIndex={50}
-      />
     </div>
   );
 };

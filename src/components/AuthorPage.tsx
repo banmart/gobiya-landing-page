@@ -5,6 +5,8 @@ import StaggeredMenu from './StaggeredMenu';
 import BlurText from './BlurText';
 import GradualBlur from './GradualBlur';
 import CustomCursor from './CustomCursor';
+import Header from './Header';
+import Footer from './Footer';
 
 interface AuthorPageProps {
   path: string;
@@ -124,55 +126,8 @@ const AuthorPage: React.FC<AuthorPageProps> = ({ path }) => {
             <FlutedGlass aberration={0.61} angle={31} frequency={8} highlight={0.12} highlightSoftness={0} lightAngle={-90} refraction={4} shape="rounded" softness={1} speed={0.15} />
             <FilmGrain strength={0.05} />
           </Shader>
-        </div>
-
-        {/* Nav */}
-        <div className="fixed top-0 left-0 z-50 w-full">
-          <nav className="flex items-center justify-between bg-white/30 backdrop-blur-md border-b border-white/40 p-[5px] sm:px-4">
-            <div className="flex items-center gap-6 relative z-50">
-              <a href="/">
-                <img src="/images/gobiya---logo.webp" alt="Gobiya Logo" className="h-8 sm:h-9 w-auto object-contain" />
-              </a>
-            </div>
-            <div className="flex items-center gap-4 sm:gap-6 ml-auto">
-              <div className="hidden md:flex items-center gap-2">
-                <Clock className="w-3.5 h-3.5 text-gray-900" />
-                <span className="text-[13px] text-gray-900 font-medium">{time} in Los Angeles</span>
-              </div>
-              <a href="/contact" className="hidden sm:flex group items-center bg-gray-900 text-white pl-5 pr-2 py-2">
-                <div className="flex flex-col overflow-hidden h-[20px] justify-start items-start relative mr-3">
-                  <span className="text-[13px] font-medium leading-[20px] transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-translate-y-full">Book a strategy call</span>
-                  <span className="text-[13px] font-medium leading-[20px] absolute top-full transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-translate-y-full">Book a strategy call</span>
-                </div>
-                <div className="w-6 h-6 bg-white flex items-center justify-center">
-                  <ArrowRight className="w-3.5 h-3.5 text-gray-900 transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-rotate-45" />
-                </div>
-              </a>
-              <div className="flex items-center justify-center px-2">
-                <StaggeredMenu
-                  isFixed={true}
-                  colors={['#111111', '#F26522']}
-                  items={[
-                    { label: 'Services', link: '/services' },
-                    { label: 'Company', isHeader: true },
-                    { label: 'About the Agency', link: '/company/about' },
-                    { label: 'Success Stories', link: '/company/success-stories' },
-                    { label: 'Our Approach', link: '/company/approach' },
-                    { label: 'Industry Insights', link: '/insights' },
-                    { label: 'Careers', link: '/company/careers' }
-                  ]}
-                  socialItems={[
-                    { label: 'Twitter', link: '#' },
-                    { label: 'LinkedIn', link: 'https://www.linkedin.com/in/stevemartingobiya/' },
-                  ]}
-                  menuButtonColor="#111"
-                  openMenuButtonColor="#111"
-                  accentColor="#F26522"
-                />
-              </div>
-            </div>
-          </nav>
-        </div>
+          {/* Nav */}
+        <Header theme="light" />        </div>
 
         {/* Hero title */}
         <div className="relative z-20 max-w-[1440px] w-full mx-auto px-5 sm:px-8 lg:px-12 pb-10 sm:pb-14 pt-20">
@@ -307,45 +262,7 @@ const AuthorPage: React.FC<AuthorPageProps> = ({ path }) => {
       </section>
 
       {/* ── FOOTER ── */}
-      <footer className="bg-[#111] text-white pt-20 sm:pt-28 px-5 sm:px-8 lg:px-12 w-full overflow-hidden flex flex-col relative" data-logo-dark>
-        <div className="max-w-[1440px] w-full mx-auto flex flex-col lg:flex-row lg:justify-between items-start gap-12 lg:gap-0 pb-16 border-b border-white/10 relative z-20">
-          <div className="flex flex-col max-w-sm">
-            <div className="h-8 sm:h-9 w-[100px] sm:w-[110px] mb-6">
-              <img src="/images/gobiya---logo.webp" alt="Gobiya Logo" className="h-full w-auto object-contain filter brightness-0 invert" />
-            </div>
-            <p className="text-[14px] text-gray-400 leading-relaxed mb-6">
-              We engineer AI-driven SEO and sales pipelines to recover lost organic traffic, scale predictable revenue, and secure long-term algorithmic dominance for high-stakes brands.
-            </p>
-          </div>
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-8 sm:gap-16">
-            <div>
-              <h4 className="text-[12px] uppercase tracking-wider font-bold mb-4 text-[#F26522]">Services</h4>
-              <ul className="space-y-3 text-[13px] text-gray-400">
-                <li><a href="/google-penalty-recovery" className="hover:text-white transition-colors">Traffic Recovery</a></li>
-                <li><a href="/services/lead-generation" className="hover:text-white transition-colors">Sales Pipelines</a></li>
-                <li><a href="/services/geo-optimization" className="hover:text-white transition-colors">AI Citations (GEO)</a></li>
-                <li><a href="/services/web-design" className="hover:text-white transition-colors">Custom Web Apps</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-[12px] uppercase tracking-wider font-bold mb-4 text-[#F26522]">Company</h4>
-              <ul className="space-y-3 text-[13px] text-gray-400">
-                <li><a href="/company/about" className="hover:text-white transition-colors">About Us</a></li>
-                <li><a href="/company/approach" className="hover:text-white transition-colors">Our Approach</a></li>
-                <li><a href="/insights" className="hover:text-white transition-colors">Insights</a></li>
-                <li><a href="/contact" className="hover:text-white transition-colors">Contact</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div className="max-w-[1440px] w-full mx-auto pt-8 pb-12 flex flex-col sm:flex-row justify-between items-center gap-4 text-[12px] text-gray-500 relative z-20">
-          <span>&copy; 2026 Gobiya. All rights reserved.</span>
-          <div className="flex gap-6">
-            <a href="https://www.linkedin.com/in/stevemartingobiya/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">LinkedIn</a>
-            <a href="/contact" className="hover:text-white transition-colors">Contact</a>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 };

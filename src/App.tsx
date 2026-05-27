@@ -4,6 +4,7 @@ import ServiceSubpage from './components/ServiceSubpage';
 import ArticlePage from './components/ArticlePage';
 import AuthorPage from './components/AuthorPage';
 import ThankYouPage from './components/ThankYouPage';
+import SolutionPage from './components/SolutionPage';
 import SEO from './components/SEO';
 
 interface AppProps {
@@ -77,13 +78,9 @@ function App({ url }: AppProps) {
     if (typeof window === 'undefined') return;
     
     const legacyRedirects: Record<string, string> = {
-      '/services/seo': '/services#seo',
-      '/services/lead-generation': '/services#lead-generation',
-      '/services/geo-optimization': '/services#geo-optimization',
-      '/services/web-design': '/services#web-design',
-      '/services/advertising': '/services#advertising',
-      '/google-penalty-recovery': '/services#penalty-recovery',
       '/company/insights': '/insights',
+      '/services/web-design': '/services/web-development',
+      '/services/advertising': '/services/ppc-advertising',
     };
     
     const normalized = currentPath.toLowerCase().replace(/\/$/, '') || '/';
@@ -107,6 +104,16 @@ function App({ url }: AppProps) {
   const articleMatch = normalizedPath.match(/^\/insights\/([a-z0-9-]+)$/);
   const articleSlug = articleMatch ? articleMatch[1] : null;
 
+  // Detect solution routes
+  const isSolutionRoute = [
+    '/services/seo',
+    '/services/lead-generation',
+    '/services/geo-optimization',
+    '/services/web-development',
+    '/services/ppc-advertising',
+    '/google-penalty-recovery'
+  ].includes(normalizedPath);
+
   return (
     <>
       <SEO path={normalizedPath} />
@@ -121,6 +128,8 @@ function App({ url }: AppProps) {
         <ArticlePage slug={articleSlug} />
       ) : normalizedPath === '/thank-you' ? (
         <ThankYouPage />
+      ) : isSolutionRoute ? (
+        <SolutionPage path={normalizedPath} />
       ) : (
         <ServiceSubpage path={normalizedPath} />
       )}

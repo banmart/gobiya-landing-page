@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Clock, ArrowRight, ArrowLeft, ChevronRight, Twitter, Linkedin, Facebook } from 'lucide-react';
 import { Shader, Swirl, ChromaFlow, FlutedGlass, FilmGrain } from 'shaders/react';
-import StaggeredMenu from './StaggeredMenu';
+import Header from './Header';
+import Footer from './Footer';
 import BlurText from './BlurText';
 import GradualBlur from './GradualBlur';
 import CustomCursor from './CustomCursor';
@@ -22,6 +23,268 @@ interface ArticleData {
 // Each article is statically registered here so we can do fast client-side
 // routing without a DB round-trip. Add new articles to this map.
 const ARTICLES: Record<string, ArticleData> = {
+  'google-manual-action-removal-agency-caused-penalty': {
+    slug: 'google-manual-action-removal-agency-caused-penalty',
+    title: 'Google Manual Action Removal When Your Agency Caused the Scaled Content Abuse Penalty',
+    category: 'SEO',
+    readTime: '10 min read',
+    date: 'May 27, 2026',
+    image: '/images/article-agency-penalty.png',
+    heroAlt: 'Abstract representation of a Google penalty disrupting a B2B data pipeline',
+    metaDescription: 'What to do when your in-house team is suddenly responsible for recovering a Google manual action your agency triggered.',
+    content: (
+      <>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          What to do when your in-house team is suddenly responsible for recovering a Google manual action your agency triggered — how to diagnose the situation, manage the executive narrative, and run a credible recovery while the agency relationship unwinds.
+        </p>
+        
+        {/* ── TABLE OF CONTENTS ── */}
+        <details className="bg-gray-50 border border-gray-200 rounded-lg p-6 sm:p-8 my-10 sm:my-14 group" open>
+          <summary className="text-[14px] font-semibold uppercase tracking-wider text-gray-500 cursor-pointer list-none flex items-center justify-between">
+            Table of Contents
+            <svg className="w-4 h-4 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" /></svg>
+          </summary>
+          <ul className="mt-6 space-y-3.5 text-[15px] font-medium text-gray-900 border-t border-gray-200 pt-6">
+            {[
+              { id: 'agency-caused-penalty-era', label: 'The Agency-Caused Penalty Era — 2026 update' },
+              { id: 'what-likely-happened', label: 'What likely actually happened' },
+              { id: 'agency-conversation', label: 'How the agency conversation should actually go' },
+              { id: 'cost-wrong-party', label: 'The cost of letting the wrong party handle the recovery' },
+              { id: 'executive-narrative', label: 'How to manage the executive narrative while the recovery runs' },
+              { id: 'independent-recovery', label: 'What independent recovery actually looks like' },
+              { id: 'what-to-look-for', label: 'What to look for in an independent recovery specialist' },
+              { id: 'why-gobiya', label: 'Why Gobiya is positioned differently for in-house teams handling agency-caused penalties' },
+              { id: 'getting-started', label: 'What getting started actually looks like' },
+              { id: 'right-call', label: 'Making the right call in the first 72 hours' },
+            ].map(({ id, label }) => (
+              <li key={id} className="flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#F26522] shrink-0" />
+                <a href={`#${id}`} className="hover:text-[#F26522] transition-colors">{label}</a>
+              </li>
+            ))}
+          </ul>
+        </details>
+
+        {/* ── SECTION 1 ── */}
+        <h2 id="agency-caused-penalty-era" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          The Agency-Caused Penalty Era — 2026 update
+        </h2>
+        <ul className="space-y-3 mb-8 pl-0">
+          {[
+            'March 2024 → March 2026 — Two years of escalating Google enforcement against scaled content abuse, with the March 2026 spam update described as the fastest rollout in Google search history (Breakline 2026)',
+            '100% — Typical organic visibility loss when a scaled content abuse manual action is applied — full deindexation, not gradual ranking decline (DigitalApplied / Lexicon Legal Content 2026)',
+            '60–70% — Failure rate of first reconsideration requests when handled by the same agency that caused the penalty, or by generalist SEO firms without scaled content abuse case experience (multiple 2026 industry estimates)',
+          ].map((item) => (
+            <li key={item} className="flex items-start gap-3 text-[16px] sm:text-[17px] leading-[1.6] text-gray-800">
+              <span className="mt-1.5 w-2 h-2 rounded-full bg-[#F26522] shrink-0" />
+              {item}
+            </li>
+          ))}
+        </ul>
+
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          If you're reading this, your business probably just lost most of its organic traffic. Your agency told you they could "scale content production with AI" or "produce 100+ articles per month" or "dominate long-tail organic" — and the implementation hit Google's scaled content abuse threshold, and Google responded by deindexing large portions of your site or your site entirely. You're now sitting in front of an executive team that wants two things from you: get the traffic back, and explain how this happened on your watch. The agency is variously defensive, missing, or proposing to fix the problem they caused. None of those options is going to work.
+        </p>
+
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          This is the specific problem in-house marketing teams face when an agency-produced content program triggers a Google manual action. The work ahead has three layers running in parallel: technical recovery of the penalty itself, contractual unwinding of the agency relationship that produced it, and executive narrative management while both processes are underway. Doing any one of them wrong extends the other two. The strongest in-house teams in this situation treat the recovery as a project with three distinct workstreams rather than a single SEO problem. Most teams don't, and the result is either a botched recovery (60-70% of first reconsiderations fail) or a recovery that succeeds technically but leaves the underlying conditions intact, producing a second penalty inside 6-12 months.
+        </p>
+        
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          This article covers what to do when your agency caused a Google scaled content abuse manual action: how to confirm what actually happened, how to handle the agency relationship from a position of clarity, what a credible independent recovery looks like, and how to manage the executive conversation while the recovery runs.
+        </p>
+
+        {/* ── SECTION 2 ── */}
+        <h2 id="what-likely-happened" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          What likely actually happened
+        </h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          Most agency-caused scaled content abuse penalties follow a recognizable pattern. The agency proposed a content production model built on AI-assisted writing at scale — sometimes branded as "AI-powered SEO," sometimes as "programmatic content," sometimes as "scaled organic growth." The pitch deck showed strong projected output (50-200+ articles per month), competitive pricing per article ($50-$200 versus $500-$2,000 for human-written), and an implementation timeline measured in weeks rather than months. The implementation went smoothly for the first 3-6 months. Traffic grew. Rankings improved. The agency reported up-and-to-the-right metrics. Internal stakeholders were pleased. Then sometime between month 6 and month 18, the traffic collapsed. The Search Console manual actions report showed a notice citing "scaled content abuse" or "aggressive spam techniques, such as large-scale content abuse."
+        </p>
+
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          What actually happened underneath the agency's reporting is consistent across cases. The agency was producing content at a publishing velocity that exceeded human production speed (10+ articles per day sustained over months is a primary detection signal). The content was thin — typically 600-1,200 words per page, formulaically structured, with minimal expertise signals, no original research, and templated patterns that repeat across the library. The content targeted high-volume informational keywords without serving the intent of the searchers who clicked through, producing high pogo-stick behavior (users immediately leaving the page) that Google's behavioral signals registered. The agency's "AI-powered" methodology was, in operational terms, mass-producing low-value pages primarily to manipulate rankings — which is the literal definition of scaled content abuse in Google's 2024 policy. The traffic growth was real but the underlying pattern was unsustainable, and Google's enforcement systems were trained to detect exactly the pattern the agency was building.
+        </p>
+
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          The agency knows this — at the very least at the leadership level. Some agencies caused these penalties through ignorance, some through optimistic underestimation of detection risk, some through outright bad faith with full awareness. The proportion of each varies but the outcome is the same. Your business now has a manual action, the agency that caused it is either denying responsibility or proposing to fix it with more of the same methodology, and you have to make decisions about all three workstreams (technical, contractual, narrative) inside a compressed timeline.
+        </p>
+
+        <h3 className="text-[18px] sm:text-[20px] font-medium text-gray-900 mt-10 mb-4">
+          How to confirm the agency actually caused this
+        </h3>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          Before any decisions about the agency relationship, confirm the cause with specificity. Pull the Search Console manual actions report — the notification language matters. Notifications citing "scaled content abuse" or "aggressive spam techniques, such as large-scale content abuse" are unambiguous. Other manual action types (unnatural links, hacked content, thin affiliate content, structured data abuse) have different language and different remediation paths, and assuming scaled content abuse when the actual penalty is something else extends the recovery timeline.
+        </p>
+        
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          Then map the timeline. When was the manual action applied? What content was published in the 3-6 months before the action? Who produced that content? If the agency is responsible for the majority of the content published in that window, and the content exhibits the patterns described above (high velocity, thin depth, missing expertise signals, formulaic structure), the causation is clear. If the in-house team was also producing scaled content in parallel — which sometimes happens when in-house teams scale up alongside the agency — the cause is shared, which has implications for both the recovery scope and the agency conversation.
+        </p>
+
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          This diagnostic step matters because the conversations that follow (with the agency, with the executive team, with the recovery service) all depend on having a precise read on what happened. Vague assertions of agency responsibility produce vague responses. Specific documentation of what the agency produced, when, against what brief, with what oversight, produces a much sharper conversation.
+        </p>
+
+        {/* ── INLINE CTA ── */}
+        <div className="bg-gray-900 text-white p-6 sm:p-8 my-10 sm:my-14 flex flex-col sm:flex-row items-start sm:items-center gap-6">
+          <div className="flex-1">
+            <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-2">Gobiya Service</p>
+            <p className="text-[17px] sm:text-[19px] font-medium leading-snug">
+              Recover your organic pipeline from algorithmic and manual penalties.
+            </p>
+          </div>
+          <a
+            href="/google-penalty-recovery"
+            className="group flex items-center bg-[#F26522] hover:bg-[#e05a1a] text-white pl-5 pr-2 py-2 transition-colors duration-300 whitespace-nowrap shrink-0"
+          >
+            <span className="text-[13px] font-medium mr-3">Penalty Recovery Services</span>
+            <div className="w-6 h-6 bg-white flex items-center justify-center">
+              <ArrowRight className="w-3.5 h-3.5 text-[#F26522] transition-transform duration-300 group-hover:-rotate-45" />
+            </div>
+          </a>
+        </div>
+
+        {/* ── SECTION 3 ── */}
+        <h2 id="agency-conversation" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          How the agency conversation should actually go
+        </h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          The agency that caused the penalty cannot credibly recover it. This is the most important operational principle of this entire situation, and it's the one most in-house teams get wrong out of misplaced loyalty, inertia, or the agency's continued assertion that they can fix what they caused. The agency that produced scaled content abuse content does not have, by definition, the editorial standards, methodology, or judgment required to remediate it. Letting the same agency lead the recovery is the single most reliable way to produce a failed first reconsideration and extend the penalty by 6-12 weeks.
+        </p>
+        
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          The conversation with the agency needs to cover four specific points. <strong>First:</strong> acknowledgment of the situation as it actually is. The agency produced content that triggered a Google policy violation. That's a factual claim, not a contested one, and the conversation can't proceed productively if the agency disputes it. <strong>Second:</strong> contractual posture. What does the contract say about deliverables, quality standards, Google policy compliance, and remediation obligations? Most content production contracts have clauses that arguably cover this situation, and even where they don't, the agency's commercial interest in not having a public penalty case attached to their name often produces useful flexibility on credits, refunds, or remediation cost contributions. <strong>Third:</strong> disengagement terms. The agency is being released from ongoing content production immediately. This isn't punitive — it's operationally necessary, because the recovery requires confidence that no new scaled-abuse content is being produced while the remediation runs. <strong>Fourth:</strong> content asset handoff. Who owns the existing content library, what's the licensing status, and what does the agency need to provide (CMS access, author credentials, source documents) for the remediation team to work with the content during the audit-and-rewrite phase.
+        </p>
+
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          These conversations are easier when the in-house team has executive air cover. They are harder when the executive team is still processing what happened and the in-house lead is trying to manage the agency relationship without explicit authority to terminate. The narrative-management workstream (covered below) often needs to move faster than the contractual workstream to create that authority.
+        </p>
+
+        {/* ── SECTION 4 ── */}
+        <h2 id="cost-wrong-party" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          The cost of letting the wrong party handle the recovery
+        </h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          The cost structure of an agency-caused scaled content abuse penalty has visible and invisible components. The visible cost is the lost organic traffic and pipeline contribution during the penalty period. For a content-dependent business — typical for the companies that hire scaled-content-production agencies in the first place — the organic dependence is usually 40-70% of total traffic and a meaningful share of pipeline or revenue. A 6-12 week recovery timeline translates to 1.5 to 3 months of zeroed contribution from that channel, plus 4-8 weeks of gradual rebuild as rankings restore after the manual action is removed. A mid-market business in the $500K-$5M monthly revenue range typically sees revenue impact in the $300K-$3M range from the penalty event itself, before any recovery costs are layered in.
+        </p>
+
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          The invisible cost is the second penalty. If the in-house team lets the agency that caused the first penalty lead the recovery, the failure rate on the first reconsideration request is 60-70%, the recovery extends by 6-8 weeks for the second reconsideration, and the underlying content production methodology that caused the original penalty often gets reinstated quietly during the recovery (since the agency has no clear understanding of what actually crossed the policy line, they tend to oscillate between over-remediating and under-remediating). The result is a meaningful share of agency-caused penalty cases producing a <em>second</em> penalty within 6-12 months of the first recovery — usually more severe, since Google's enforcement systems have now flagged the site for elevated scrutiny.
+        </p>
+        
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          The math is fairly direct. Engaging an independent recovery specialist costs $25,000-$150,000+ depending on site size and content library complexity. Letting the agency that caused the penalty lead the recovery costs the same in lost revenue from extended timeline (often more, since the timeline doubles), plus the cost of the eventual second recovery when the methodology hasn't actually changed. The visible cost looks comparable in the short term. The total cost diverges sharply.
+        </p>
+
+        {/* ── PULL QUOTE ── */}
+        <blockquote className="border-l-4 border-[#F26522] pl-6 sm:pl-8 my-10 sm:my-14 bg-gray-50 py-4 pr-4">
+          <p className="text-[15px] sm:text-[16px] font-medium leading-[1.5] text-gray-800">
+            <strong>Note:</strong> Penalty impact and recovery cost ranges vary significantly by industry, organic dependence, site size, and content library complexity. The figures above reflect commonly observed ranges for U.S. mid-market content-dependent businesses hit by agency-caused scaled content abuse penalties in 2025-2026. Run your own organic contribution math against the recovery timeline before making engagement decisions.
+          </p>
+        </blockquote>
+
+        {/* ── SECTION 5 ── */}
+        <h2 id="executive-narrative" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          How to manage the executive narrative while the recovery runs
+        </h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          The executive conversation is the workstream most in-house teams under-invest in, and it's the one that determines whether the recovery succeeds in business terms even if it succeeds technically. The CMO/CEO/board needs three things from the in-house lead during the recovery period: a credible diagnosis of what happened (not blame-shifting, just accurate causation), a credible plan for recovery (with realistic timelines), and a credible plan to prevent recurrence (which usually involves changes to how content production gets vendor-managed going forward).
+        </p>
+        
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          The diagnosis conversation needs to be precise. "Our agency produced scaled content abuse content that triggered a Google policy violation" is a clear, accurate causal statement. It doesn't blame the agency in a way that invites debate; it states what happened. The follow-up question from any competent executive is "how did this get past our oversight?" — and the in-house team needs to be ready with an honest answer about what oversight existed, what failed, and what changes. Defensive answers extend the executive conversation by weeks. Honest answers, including acknowledgment of in-house process gaps that allowed the agency methodology to go unchallenged, build the trust required to lead the recovery.
+        </p>
+
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          The recovery plan conversation needs to set realistic expectations. The 6-12 week timeline is the typical recovery window when remediation is done correctly. Executives who expect faster recovery are setting up the in-house team for failure; executives who understand the realistic timeline can support a recovery that requires patience. The plan needs named milestones: audit completion (typically 2-3 weeks), remediation completion (typically 3-5 weeks), reconsideration submission (typically 1 week), Google review (typically 2-4 weeks), recrawl and ranking restoration (typically 4-8 weeks following manual action removal). Each milestone has visible deliverables that can be reported on.
+        </p>
+        
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          The prevention conversation is often the most important strategically. The penalty happened because an agency relationship produced content the in-house team didn't have adequate oversight of. The fix isn't just better agency selection; it's a content production governance model that catches policy violations before they become penalties. This usually involves explicit policy compliance language in vendor contracts, sample-rate quality auditing on agency-produced content, named editorial accountability inside the in-house team for everything published under the company's domain, and a working understanding of Google's spam policies among the team members responsible for content vendor management.
+        </p>
+
+        {/* ── SECTION 6 ── */}
+        <h2 id="independent-recovery" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          What independent recovery actually looks like
+        </h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          A credible independent recovery starts by engaging a specialist who has documented case experience with scaled content abuse manual actions specifically — not generic penalty recovery, not "AI content optimization," not full-service SEO with a recovery services page. The specialist runs a triage audit in the first 1-2 weeks: confirming the penalty type, assessing the affected content library, scoping the remediation work, and proposing a realistic timeline and cost. This triage is the gate that determines whether the engagement proceeds; it gives the in-house team a low-commitment way to evaluate whether the specialist understands the problem before scoping the full recovery.
+        </p>
+
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          The recovery itself runs as a structured project. The audit phase scores every page in the affected content library against Google's intent-and-value framework, segmenting pages into retain/rewrite/remove buckets. The remediation phase executes against the audit: pages flagged for removal are 410'd, pages flagged for rewriting receive substantive editorial investment (original research, expert input, factual verification, structural depth), and the publishing cadence is slowed to sustainable human-production speed. The documentation phase assembles the reconsideration request as a detailed argument that the underlying pattern has changed — not "we removed the AI content" but specific evidence of what was audited, what was remediated, what the new editorial process looks like, and how the patterns Google's detection systems flagged are no longer present. The reconsideration phase submits the request through Search Console and waits for human review (typically 2-4 weeks). The post-removal phase monitors recrawl and ranking restoration, which typically takes another 4-8 weeks after the manual action is removed.
+        </p>
+        
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          Throughout the recovery, the specialist also helps the in-house team build the prevention infrastructure for the post-recovery state — usually some combination of content policy documentation, vendor selection criteria for any future content production partner, and editorial oversight workflow that prevents the conditions that produced the original penalty from reasserting themselves. This is the work the agency that caused the penalty cannot credibly do, and it's the work that determines whether the recovery is a one-time event or the foundation for a sustainable content operation.
+        </p>
+
+        {/* ── SECTION 7 ── */}
+        <h2 id="what-to-look-for" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          What to look for in an independent recovery specialist
+        </h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          Start with specific scaled content abuse case experience. Ask how many of these cases the specialist has resolved, with verifiable outcomes (manual action removed, traffic restored). Generic penalty recovery experience isn't a substitute. Ask about audit methodology and request to see a sample audit deliverable (with client information redacted). The audit should be a substantial document, not a spreadsheet with three columns. Ask about editorial/remediation capacity — who actually rewrites the content, what their subject matter expertise is, and at what production rate. Ask about reconsideration writing experience — who specifically writes the reconsideration, what their success rate is on first submissions, and whether they have examples (redacted) of successful reconsideration requests. Ask about pricing structure — fixed retainers regardless of site size suggest under-scoped work; volume-based pricing suggests the specialist actually understands the work. Ask about timeline expectations — anyone guaranteeing a specific recovery date is misrepresenting how the Google reconsideration process works, since the queue is outside any specialist's control. Ask about the prevention work — does the engagement include the governance infrastructure that prevents recurrence, or is it strictly a one-time cleanup. A real independent recovery specialist has explicit answers to all of these questions, anchored in documented cases. A generalist with a penalty recovery services page has generic answers and avoids the specifics.
+        </p>
+
+        {/* ── SECTION 8 ── */}
+        <h2 id="why-gobiya" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          Why Gobiya is positioned differently for in-house teams handling agency-caused penalties
+        </h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          Gobiya combines deep architectural <a href="/services/seo" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">SEO capability</a> with verifiable penalty recovery protocols. We maintain strict independence from mass-production agencies and deploy our own editorial and forensic teams to rebuild trust metrics. Our recovery isn't just about deleting thin pages—it's about re-establishing the entity-level signals that prove expertise to Google's neural matching systems, while equipping executive teams with the data they need to report up.
+        </p>
+
+        {/* ── SECTION 9 ── */}
+        <h2 id="getting-started" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          What getting started actually looks like
+        </h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          A credible engagement starts with a 1-2 week triage audit, not a full recovery proposal. The triage confirms the penalty type (some teams misdiagnose), assesses the affected content library, baselines the current revenue impact, and produces a scoped recovery proposal with realistic timeline and cost estimates. The triage is fast enough that the in-house team can engage a specialist to run it while still having the conversation with the existing agency, without committing to a full recovery engagement before the diagnostic work is done. Many in-house teams use the triage as a way to get clarity on the situation before they have the harder conversations with the agency and the executive team — the triage produces the precise documentation those conversations require.
+        </p>
+        
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          The full recovery engagement follows the triage, with scope, deliverables, and timeline explicit before the audit phase begins. The in-house team's job during the recovery is executive narrative management, agency relationship unwinding, and oversight of the specialist's work — not running the recovery directly. The specialist's job is the audit, remediation, documentation, and reconsideration work. The division of labor matters because in-house teams that try to lead the technical recovery themselves while also managing the executive and contractual workstreams typically under-resource the technical work and produce slower or weaker recoveries.
+        </p>
+
+        {/* ── SECTION 10 ── */}
+        <h2 id="right-call" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          Making the right call in the first 72 hours
+        </h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          The 72 hours after a manual action is identified are the highest-leverage window in the entire recovery process. Decisions made well in this window — engaging an independent specialist, beginning the agency conversation, briefing the executive team accurately — compound positively across the recovery. Decisions made poorly in this window — letting the agency lead the response, delaying executive briefing, hoping the penalty resolves on its own — extend the recovery by weeks and increase the probability of a failed first reconsideration.
+        </p>
+
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          Two decisions matter most. First: whether the recovery will be led by an independent specialist with documented scaled content abuse case experience, or by the agency that produced the conditions for the penalty. The right answer is independent; the wrong answer compounds the damage. Second: whether the executive narrative will be managed proactively, with a clear diagnosis and realistic recovery plan delivered in the first week, or whether the conversation will be defensive and reactive across the duration of the recovery. The right answer is proactive; the wrong answer extends the executive crisis well beyond the duration of the technical recovery.
+        </p>
+        
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          Gobiya is a logical starting point for in-house teams navigating an agency-caused scaled content abuse manual action — built around independent recovery work with documented case experience, support across the technical, contractual, and narrative workstreams, and the governance infrastructure that prevents the conditions for a second penalty. Request a triage audit, walk through your current manual action and the agency relationship that produced it, and get the precise documentation you need for both the recovery and the executive conversations that are about to define the next quarter of your work — before another week of zeroed organic traffic compounds the impact this penalty is already producing.
+        </p>
+
+        {/* ── FINAL CTA ── */}
+        <div className="bg-gray-900 text-white p-8 sm:p-12 my-10 sm:my-14">
+          <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-4">Start With an Audit</p>
+          <h3 className="text-[22px] sm:text-[28px] font-medium leading-[1.2] tracking-[-0.02em] mb-4 max-w-xl">
+            Triage the manual action and begin your path to algorithmic trust.
+          </h3>
+          <p className="text-gray-400 text-[15px] leading-relaxed max-w-2xl mb-8">
+            Stop losing pipeline. Let our specialists trace the exact toxicity vectors, rebuild E-E-A-T, and manage the reconsideration process from start to finish.
+          </p>
+          <a
+            href="/google-penalty-recovery"
+            className="group inline-flex items-center bg-[#F26522] hover:bg-[#e05a1a] text-white pl-6 pr-2 py-3 transition-colors duration-300"
+          >
+            <span className="text-[14px] font-medium mr-4">Request a triage audit</span>
+            <div className="w-8 h-8 bg-white flex items-center justify-center">
+              <ArrowRight className="w-4 h-4 text-[#F26522] transition-transform duration-500 group-hover:-rotate-45" />
+            </div>
+          </a>
+        </div>
+      </>
+    ),
+  },
   'automated-b2b-sales-pipeline-seo': {
     slug: 'automated-b2b-sales-pipeline-seo',
     title: 'Automated B2B Sales Pipeline SEO: How AI Citations Shape Your Shortlist in 2026',
@@ -3519,52 +3782,7 @@ const ArticlePage: React.FC<ArticlePageProps> = ({ slug }) => {
         </div>
 
         {/* Nav */}
-        <div className="fixed top-0 left-0 z-50 w-full">
-          <nav className="flex items-center justify-between bg-white/30 backdrop-blur-md border-b border-white/40 p-[5px] sm:px-4">
-            <div className="flex items-center gap-6 relative z-50">
-              <a href="/">
-                <img src="/images/gobiya---logo.webp" alt="Gobiya Logo" className="h-8 sm:h-9 w-auto object-contain" />
-              </a>
-            </div>
-            <div className="flex items-center gap-4 sm:gap-6 ml-auto">
-              <div className="hidden md:flex items-center gap-2">
-                <Clock className="w-3.5 h-3.5 text-gray-900" />
-                <span className="text-[13px] text-gray-900 font-medium">{time} in Los Angeles</span>
-              </div>
-              <a href="/contact" className="hidden sm:flex group items-center bg-gray-900 text-white pl-5 pr-2 py-2">
-                <div className="flex flex-col overflow-hidden h-[20px] justify-start items-start relative mr-3">
-                  <span className="text-[13px] font-medium leading-[20px] transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-translate-y-full">Book a strategy call</span>
-                  <span className="text-[13px] font-medium leading-[20px] absolute top-full transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-translate-y-full">Book a strategy call</span>
-                </div>
-                <div className="w-6 h-6 bg-white flex items-center justify-center">
-                  <ArrowRight className="w-3.5 h-3.5 text-gray-900 transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-rotate-45" />
-                </div>
-              </a>
-              <div className="flex items-center justify-center px-2">
-                <StaggeredMenu
-                  isFixed={true}
-                  colors={['#111111', '#F26522']}
-                  items={[
-                    { label: 'Services', link: '/services' },
-                    { label: 'Company', isHeader: true },
-                    { label: 'About the Agency', link: '/company/about' },
-                    { label: 'Success Stories', link: '/company/success-stories' },
-                    { label: 'Our Approach', link: '/company/approach' },
-                    { label: 'Industry Insights', link: '/insights' },
-                    { label: 'Careers', link: '/company/careers' }
-                  ]}
-                  socialItems={[
-                    { label: 'Twitter', link: '#' },
-                    { label: 'LinkedIn', link: 'https://www.linkedin.com/in/stevemartingobiya/' }
-                  ]}
-                  menuButtonColor="#111"
-                  openMenuButtonColor="#111"
-                  accentColor="#F26522"
-                />
-              </div>
-            </div>
-          </nav>
-        </div>
+        <Header theme="light" />
 
         {/* Hero text */}
         <div className="relative z-20 max-w-[1440px] w-full mx-auto px-5 sm:px-8 lg:px-12 pb-10 sm:pb-14 pt-20">
@@ -3772,7 +3990,7 @@ const ArticlePage: React.FC<ArticlePageProps> = ({ slug }) => {
               if (aMatches && !bMatches) return -1;
               if (!aMatches && bMatches) return 1;
               return 0;
-            })).map(({ href, category, title, image }) => (
+            })).slice(0, 3).map(({ href, category, title, image }) => (
               <a
                 key={href}
                 href={href}
@@ -3804,62 +4022,8 @@ const ArticlePage: React.FC<ArticlePageProps> = ({ slug }) => {
       </section>
 
       {/* ── FOOTER ── */}
-      <footer className="bg-[#111] text-white pt-20 sm:pt-28 px-5 sm:px-8 lg:px-12 w-full overflow-hidden flex flex-col relative border-t border-white/10">
-        <div className="max-w-[1440px] w-full mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1fr] gap-12 lg:gap-8 mb-10 sm:mb-20 relative z-10">
-          <div className="flex flex-col pr-0 lg:pr-12">
-            <a href="/">
-              <img src="/images/gobiya---logo.webp" alt="Gobiya Logo" className="h-8 sm:h-9 w-auto object-contain mb-4 invert brightness-0" />
-            </a>
-            <h3 className="text-3xl font-semibold tracking-tight mb-4">Gobiya.</h3>
-            <p className="text-gray-400 text-[14px] sm:text-[15px] leading-relaxed mb-8 max-w-sm">
-              We leverage cutting-edge AI and advanced data strategies to help brands recover lost traffic, dominate search, and scale revenue globally.
-            </p>
-          </div>
-          <div className="flex flex-col">
-            <h4 className="text-[12px] font-semibold uppercase tracking-wider mb-6">Services</h4>
-            <ul className="flex flex-col gap-4 text-[14px] text-gray-400">
-              <li><a href="/services/geo-optimization" className="hover:text-white transition-colors">AI Content Strategies</a></li>
-              <li><a href="/google-penalty-recovery" className="hover:text-white transition-colors">Traffic Recovery</a></li>
-              <li><a href="/services/seo" className="hover:text-white transition-colors">Technical SEO</a></li>
-              <li><a href="/services/lead-generation" className="hover:text-white transition-colors">B2B Pipeline</a></li>
-            </ul>
-          </div>
-          <div className="flex flex-col">
-            <h4 className="text-[12px] font-semibold uppercase tracking-wider mb-6">Company</h4>
-            <ul className="flex flex-col gap-4 text-[14px] text-gray-400">
-              <li><a href="/company/about" className="hover:text-white transition-colors">About the Agency</a></li>
-              <li><a href="/company/success-stories" className="hover:text-white transition-colors">Success Stories</a></li>
-              <li><a href="/insights" className="hover:text-white transition-colors">Industry Insights</a></li>
-              <li><a href="/contact" className="hover:text-white transition-colors">Contact Us</a></li>
-            </ul>
-          </div>
-          <div className="flex flex-col">
-            <h4 className="text-[12px] font-semibold uppercase tracking-wider mb-6">Connect</h4>
-            <ul className="flex flex-col gap-4 text-[14px] text-gray-400">
-              <li><a href="#" className="hover:text-white transition-colors">LinkedIn</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Twitter (X)</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Instagram</a></li>
-            </ul>
-          </div>
-        </div>
-        <div className="max-w-[1440px] w-full mx-auto flex flex-col sm:flex-row justify-between items-center gap-4 border-t border-white/10 pt-8 pb-8 relative z-[60]">
-          <p className="text-[13px] text-gray-500">© 2026 Gobiya. Engineering search dominance.</p>
-          <div className="flex items-center gap-6 text-[13px] text-gray-500">
-            <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
-          </div>
-        </div>
-        <div className="w-full flex justify-center items-center mt-4 sm:mt-10 overflow-hidden relative">
-          <BlurText
-            text="GOBIYA"
-            animateBy="letters"
-            delay={150}
-            className="text-[17vw] sm:text-[23vw] leading-[0.75] font-bold tracking-tighter text-white select-none text-center justify-center flex-nowrap whitespace-nowrap"
-          />
-        </div>
-      </footer>
+      <Footer />
 
-      <GradualBlur target="page" position="bottom" height="6rem" strength={2} divCount={5} curve="bezier" exponential={true} opacity={1} zIndex={50} />
     </div>
   );
 };
