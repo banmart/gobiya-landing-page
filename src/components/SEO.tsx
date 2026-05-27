@@ -90,6 +90,18 @@ const metadataMap: Record<string, SEOMetadata> = {
     title: 'B2B SEO Agency in Los Angeles: Why Local Partnership Outperforms Remote Vendor Relationships in 2026 | Gobiya',
     description: 'How proximity, time-zone alignment, and LA business culture fluency have become more valuable rather than less in an AI-search era — and what LA-based B2B operators should actually be evaluating.'
   },
+  '/insights/local-seo-los-angeles': {
+    title: 'Local SEO for Los Angeles Businesses: How the 2026 Algorithm and AI Layer Determine Who Gets Found | Gobiya',
+    description: 'How Google\'s 2026 local search algorithm — and the AI layer now sitting on top of it — determines whether LA customers find your business or your competitor\'s.'
+  },
+  '/insights/los-angeles-local-seo-explained': {
+    title: 'Los Angeles Local SEO Explained: The Operational Cadence Required for Search Dominance | Gobiya',
+    description: 'The actual operational rhythm of running local SEO in LA — what the weekly cadence looks like, what produces visible ranking movement at 30 / 60 / 90 days, and why most LA businesses stall.'
+  },
+  '/insights/b2b-organic-traffic-growth': {
+    title: 'B2B Organic Traffic Growth: Why Traffic and Pipeline Decoupled in 2026 | Gobiya',
+    description: 'How traffic and pipeline decoupled in B2B during 2025-2026, why the best B2B SEO programs are now growing less traffic on purpose, and what the new organic growth math actually looks like.'
+  },
   '/about/steve-martin': {
     title: 'Steve Martin | CEO, Lead Developer & Marketer | Gobiya',
     description: 'Professional credentials and author profile for Steve Martin, CEO, Lead Developer & Marketer at Gobiya. Specialized in advanced SEO, custom React engineering, and pipeline automation.'

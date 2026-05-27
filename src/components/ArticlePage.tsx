@@ -48,6 +48,30 @@ const ARTICLES: Record<string, ArticleData> = {
           ))}
         </div>
 
+        {/* ── TABLE OF CONTENTS ── */}
+        <details className="bg-gray-50 border border-gray-200 rounded-lg p-6 sm:p-8 my-10 sm:my-14 group" open>
+          <summary className="text-[14px] font-semibold uppercase tracking-wider text-gray-500 cursor-pointer list-none flex items-center justify-between">
+            Table of Contents
+            <svg className="w-4 h-4 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" /></svg>
+          </summary>
+          <ul className="mt-6 space-y-3.5 text-[15px] font-medium text-gray-900 border-t border-gray-200 pt-6">
+            {[
+              { id: 'b2b-pipeline-seo-does', label: 'What automated B2B sales pipeline SEO actually does' },
+              { id: 'ai-citation-framework', label: 'How the AI citation framework shapes your pipeline outcome' },
+              { id: 'cost-of-invisibility', label: 'The cost of invisibility most operators overlook' },
+              { id: 'how-it-works', label: 'How automated B2B sales pipeline SEO works — from query to captured pipeline' },
+              { id: 'legitimate-automation', label: 'What separates legitimate automation from a marketing claim' },
+              { id: 'clearest-return', label: 'Which B2B motions get the clearest return' },
+              { id: 'making-right-call', label: 'Making the right call for your pipeline' },
+            ].map(({ id, label }) => (
+              <li key={id} className="flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#F26522] shrink-0" />
+                <a href={`#${id}`} className="hover:text-[#F26522] transition-colors">{label}</a>
+              </li>
+            ))}
+          </ul>
+        </details>
+
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
           Automated B2B sales pipeline SEO can mean the difference between a vendor appearing on an AI-generated shortlist
           and a website that never gets surfaced when a buyer asks ChatGPT, Claude, or Perplexity which providers they
@@ -84,7 +108,7 @@ const ARTICLES: Record<string, ArticleData> = {
         </div>
 
         {/* ── SECTION 1 ── */}
-        <h2 className="text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+        <h2 id="b2b-pipeline-seo-does" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
           What automated B2B sales pipeline SEO actually does
         </h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
@@ -128,7 +152,7 @@ const ARTICLES: Record<string, ArticleData> = {
         </p>
 
         {/* ── SECTION 2 ── */}
-        <h2 className="text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+        <h2 id="ai-citation-framework" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
           How the AI citation framework shapes your pipeline outcome
         </h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
@@ -145,7 +169,7 @@ const ARTICLES: Record<string, ArticleData> = {
         </p>
 
         {/* ── COST SECTION ── */}
-        <h2 className="text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+        <h2 id="cost-of-invisibility" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
           The cost of invisibility most operators overlook
         </h2>
         <div className="bg-[#f7f7f7] border border-gray-200 p-6 sm:p-10 my-8">
@@ -178,7 +202,7 @@ const ARTICLES: Record<string, ArticleData> = {
         </p>
 
         {/* ── SECTION 3 ── */}
-        <h2 className="text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+        <h2 id="how-it-works" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
           How automated B2B sales pipeline SEO works — from query to captured pipeline
         </h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
@@ -205,7 +229,7 @@ const ARTICLES: Record<string, ArticleData> = {
         </p>
 
         {/* ── DATA TABLE ── */}
-        <h2 className="text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+        <h2 id="citation-problem" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
           The citation problem by the numbers
         </h2>
         <div className="overflow-x-auto my-8">
@@ -256,7 +280,7 @@ const ARTICLES: Record<string, ArticleData> = {
         </div>
 
         {/* ── SECTION 4 ── */}
-        <h2 className="text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+        <h2 id="legitimate-automation" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
           What separates legitimate automation from a marketing claim
         </h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
@@ -286,7 +310,7 @@ const ARTICLES: Record<string, ArticleData> = {
         </ul>
 
         {/* ── B2B MOTION CARDS ── */}
-        <h2 className="text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+        <h2 id="clearest-return" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
           Which B2B motions get the clearest return
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
@@ -327,7 +351,7 @@ const ARTICLES: Record<string, ArticleData> = {
         </div>
 
         {/* ── CONCLUSION ── */}
-        <h2 className="text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+        <h2 id="making-right-call" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
           Making the right call for your pipeline
         </h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
@@ -398,6 +422,31 @@ const ARTICLES: Record<string, ArticleData> = {
           ))}
         </div>
 
+        {/* ── TABLE OF CONTENTS ── */}
+        <details className="bg-gray-50 border border-gray-200 rounded-lg p-6 sm:p-8 my-10 sm:my-14 group" open>
+          <summary className="text-[14px] font-semibold uppercase tracking-wider text-gray-500 cursor-pointer list-none flex items-center justify-between">
+            Table of Contents
+            <svg className="w-4 h-4 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" /></svg>
+          </summary>
+          <ul className="mt-6 space-y-3.5 text-[15px] font-medium text-gray-900 border-t border-gray-200 pt-6">
+            {[
+              { id: 'automated-lead-gen-does', label: 'What automated lead generation SEO actually does' },
+              { id: 'pre-qualification-flywheel', label: 'How the AI pre-qualification flywheel changes lead economics' },
+              { id: 'cost-of-wrong-metric', label: 'The cost of optimizing for the wrong metric' },
+              { id: 'how-lead-gen-works', label: 'How automated lead generation SEO works — from citation to closed pipeline' },
+              { id: 'lead-quality-numbers', label: 'The lead quality problem by the numbers' },
+              { id: 'separates-real-lead-gen', label: 'What separates real automated lead generation SEO from a content retainer' },
+              { id: 'clearest-return-teams', label: 'Which B2B teams get the clearest return' },
+              { id: 'making-call-funnel', label: 'Making the right call for your funnel' },
+            ].map(({ id, label }) => (
+              <li key={id} className="flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#F26522] shrink-0" />
+                <a href={`#${id}`} className="hover:text-[#F26522] transition-colors">{label}</a>
+              </li>
+            ))}
+          </ul>
+        </details>
+
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
           Automated lead generation SEO can mean the difference between a sales team working pre-qualified inbound and a
           team grinding through form-fills who downloaded an ebook eight weeks ago and ghosted. AI assistants now sit
@@ -431,7 +480,7 @@ const ARTICLES: Record<string, ArticleData> = {
         </div>
 
         {/* ── SECTION 1 ── */}
-        <h2 className="text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+        <h2 id="automated-lead-gen-does" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
           What automated lead generation SEO actually does
         </h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
@@ -469,7 +518,7 @@ const ARTICLES: Record<string, ArticleData> = {
         </p>
 
         {/* ── SECTION 2: FLYWHEEL ── */}
-        <h2 className="text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+        <h2 id="pre-qualification-flywheel" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
           How the AI pre-qualification flywheel changes lead economics
         </h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
@@ -486,7 +535,7 @@ const ARTICLES: Record<string, ArticleData> = {
         </p>
 
         {/* ── COST BOX ── */}
-        <h2 className="text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+        <h2 id="cost-of-wrong-metric" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
           The cost of optimizing for the wrong metric
         </h2>
         <div className="bg-[#f7f7f7] border border-gray-200 p-6 sm:p-10 my-8">
@@ -516,7 +565,7 @@ const ARTICLES: Record<string, ArticleData> = {
         </p>
 
         {/* ── SECTION 3 ── */}
-        <h2 className="text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+        <h2 id="how-lead-gen-works" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
           How automated lead generation SEO works — from citation to closed pipeline
         </h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
@@ -547,7 +596,7 @@ const ARTICLES: Record<string, ArticleData> = {
           ChatGPT.
         </p>
 
-        {/* ── GEO CTA ── */}
+        {/* ── RELATED CTA / BOX ── */}
         <div className="bg-gray-900 text-white p-6 sm:p-8 my-10 sm:my-14 flex flex-col sm:flex-row items-start sm:items-center gap-6">
           <div className="flex-1">
             <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-2">Related Article</p>
@@ -567,7 +616,7 @@ const ARTICLES: Record<string, ArticleData> = {
         </div>
 
         {/* ── DATA TABLE ── */}
-        <h2 className="text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+        <h2 id="lead-quality-numbers" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
           The lead quality problem by the numbers
         </h2>
         <div className="overflow-x-auto my-8">
@@ -599,7 +648,7 @@ const ARTICLES: Record<string, ArticleData> = {
         </div>
 
         {/* ── SECTION 4: SEPARATING REAL FROM REBRAND ── */}
-        <h2 className="text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+        <h2 id="separates-real-lead-gen" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
           What separates real automated lead generation SEO from a content retainer
         </h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
@@ -628,7 +677,7 @@ const ARTICLES: Record<string, ArticleData> = {
         </ul>
 
         {/* ── B2B TEAM CARDS ── */}
-        <h2 className="text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+        <h2 id="clearest-return-teams" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
           Which B2B teams get the clearest return
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
@@ -669,7 +718,7 @@ const ARTICLES: Record<string, ArticleData> = {
         </div>
 
         {/* ── CONCLUSION ── */}
-        <h2 className="text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+        <h2 id="making-call-funnel" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
           Making the right call for your funnel
         </h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
@@ -740,6 +789,31 @@ const ARTICLES: Record<string, ArticleData> = {
           ))}
         </div>
 
+        {/* ── TABLE OF CONTENTS ── */}
+        <details className="bg-gray-50 border border-gray-200 rounded-lg p-6 sm:p-8 my-10 sm:my-14 group" open>
+          <summary className="text-[14px] font-semibold uppercase tracking-wider text-gray-500 cursor-pointer list-none flex items-center justify-between">
+            Table of Contents
+            <svg className="w-4 h-4 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" /></svg>
+          </summary>
+          <ul className="mt-6 space-y-3.5 text-[15px] font-medium text-gray-900 border-t border-gray-200 pt-6">
+            {[
+              { id: 'outbound-prospecting-does', label: 'What outbound SEO prospecting actually does' },
+              { id: 'signal-outreach-framework', label: 'How the signal-to-outreach framework reshapes outbound economics' },
+              { id: 'cost-cold-outbound', label: 'The cost of pure cold outbound in 2026' },
+              { id: 'how-prospecting-works', label: 'How outbound SEO prospecting works from page visit to booked meeting' },
+              { id: 'reply-rate-problem', label: 'The reply rate problem by the numbers' },
+              { id: 'separates-real-prospecting', label: 'What separates real outbound SEO prospecting from a "we have intent data" claim' },
+              { id: 'clearest-return-teams', label: 'Which B2B teams get the clearest return' },
+              { id: 'positioned-differently', label: 'Why Gobiya is positioned differently for B2B operators' },
+            ].map(({ id, label }) => (
+              <li key={id} className="flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#F26522] shrink-0" />
+                <a href={`#${id}`} className="hover:text-[#F26522] transition-colors">{label}</a>
+              </li>
+            ))}
+          </ul>
+        </details>
+
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
           Outbound SEO prospecting can mean the difference between a sequence that lands in an inbox at the exact moment an account is researching the category and a sequence that fires into the void of someone who decided eighteen months ago that they don't need what's being sold. The vast majority of cold outbound now goes to accounts that aren't in-market. The Ehrenberg-Bass 95:5 rule is the most-cited frame for the problem: at any given moment, only about 5 percent of target buyers are actively in a buying cycle. Traditional outbound sprays the other 95 percent and hopes to catch someone mid-decision. SEO-derived signals tell you which 5 percent are actually in-market this week, which page they read, and what intent the page is built around.
         </p>
@@ -768,7 +842,7 @@ const ARTICLES: Record<string, ArticleData> = {
         </div>
 
         {/* ── SECTION 1 ── */}
-        <h2 className="text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+        <h2 id="outbound-prospecting-does" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
           What outbound SEO prospecting actually does
         </h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
@@ -789,7 +863,7 @@ const ARTICLES: Record<string, ArticleData> = {
         </p>
 
         {/* ── SECTION 2 ── */}
-        <h2 className="text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+        <h2 id="signal-outreach-framework" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
           How the signal-to-outreach framework reshapes outbound economics
         </h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
@@ -800,7 +874,7 @@ const ARTICLES: Record<string, ArticleData> = {
         </p>
 
         {/* ── COST SECTION ── */}
-        <h2 className="text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+        <h2 id="cost-cold-outbound" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
           The cost of pure cold outbound in 2026
         </h2>
         <div className="bg-[#f7f7f7] border border-gray-200 p-6 sm:p-10 my-8">
@@ -836,7 +910,7 @@ const ARTICLES: Record<string, ArticleData> = {
         </blockquote>
 
         {/* ── SECTION 3 ── */}
-        <h2 className="text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+        <h2 id="how-prospecting-works" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
           How outbound SEO prospecting works from page visit to booked meeting
         </h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
@@ -858,7 +932,7 @@ const ARTICLES: Record<string, ArticleData> = {
         </p>
 
         {/* ── DATA TABLE ── */}
-        <h2 className="text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+        <h2 id="reply-rate-problem" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
           The reply rate problem by the numbers
         </h2>
         <div className="overflow-x-auto my-8">
@@ -888,7 +962,7 @@ const ARTICLES: Record<string, ArticleData> = {
         </div>
 
         {/* ── SECTION 4 ── */}
-        <h2 className="text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+        <h2 id="separates-real-prospecting" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
           What separates real outbound SEO prospecting from a "we have intent data" claim
         </h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
@@ -913,7 +987,7 @@ const ARTICLES: Record<string, ArticleData> = {
         </ul>
 
         {/* ── B2B TEAM CARDS ── */}
-        <h2 className="text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+        <h2 id="clearest-return-teams" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
           Which B2B teams get the clearest return
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
@@ -954,7 +1028,7 @@ const ARTICLES: Record<string, ArticleData> = {
         </div>
 
         {/* ── CONCLUSION ── */}
-        <h2 className="text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+        <h2 id="positioned-differently" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
           Why Gobiya is positioned differently for B2B operators
         </h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
@@ -1010,6 +1084,32 @@ const ARTICLES: Record<string, ArticleData> = {
           ))}
         </div>
 
+        {/* ── TABLE OF CONTENTS ── */}
+        <details className="bg-gray-50 border border-gray-200 rounded-lg p-6 sm:p-8 my-10 sm:my-14 group" open>
+          <summary className="text-[14px] font-semibold uppercase tracking-wider text-gray-500 cursor-pointer list-none flex items-center justify-between">
+            Table of Contents
+            <svg className="w-4 h-4 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" /></svg>
+          </summary>
+          <ul className="mt-6 space-y-3.5 text-[15px] font-medium text-gray-900 border-t border-gray-200 pt-6">
+            {[
+              { id: 'pipeline-automation-does', label: 'What B2B sales pipeline automation actually does' },
+              { id: 'orchestration-layer-economics', label: 'How the orchestration layer changes pipeline economics' },
+              { id: 'cost-stack-fragmentation', label: 'The cost of stack fragmentation most operators overlook' },
+              { id: 'how-automation-works', label: 'How B2B sales pipeline automation works from signal to closed-won' },
+              { id: 'automation-gap', label: 'The automation gap by the numbers' },
+              { id: 'separates-real-automation', label: 'What separates real B2B sales pipeline automation from an AI tools list' },
+              { id: 'positioned-differently', label: 'Why Gobiya is positioned differently for B2B operators' },
+              { id: 'clearest-return-teams', label: 'Which B2B teams get the clearest return from pipeline automation' },
+              { id: 'getting-started', label: 'What getting started with B2B sales pipeline automation actually looks like' },
+            ].map(({ id, label }) => (
+              <li key={id} className="flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#F26522] shrink-0" />
+                <a href={`#${id}`} className="hover:text-[#F26522] transition-colors">{label}</a>
+              </li>
+            ))}
+          </ul>
+        </details>
+
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
           B2B sales pipeline automation can mean the difference between an AI-augmented revenue engine that compounds quarter over quarter and a stack of disconnected tools that each work on paper but produce the same flat pipeline the team had before they were deployed. The 2026 data on AI in B2B sales is split. The case studies show 3 to 5x pipeline lift from autonomous AI SDRs at materially lower cost. The Gartner research shows fewer than 40 percent of sellers actually experience the productivity gain in practice. Both numbers are true. The gap between them is almost entirely an orchestration problem.
         </p>
@@ -1038,7 +1138,7 @@ const ARTICLES: Record<string, ArticleData> = {
         </div>
 
         {/* ── SECTION 1 ── */}
-        <h2 className="text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+        <h2 id="pipeline-automation-does" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
           What B2B sales pipeline automation actually does
         </h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
@@ -1059,7 +1159,7 @@ const ARTICLES: Record<string, ArticleData> = {
         </p>
 
         {/* ── SECTION 2 ── */}
-        <h2 className="text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+        <h2 id="orchestration-layer-economics" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
           How the orchestration layer changes pipeline economics
         </h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
@@ -1070,7 +1170,7 @@ const ARTICLES: Record<string, ArticleData> = {
         </p>
 
         {/* ── SECTION 3 ── */}
-        <h2 className="text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+        <h2 id="cost-stack-fragmentation" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
           The cost of stack fragmentation most operators overlook
         </h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
@@ -1085,7 +1185,7 @@ const ARTICLES: Record<string, ArticleData> = {
         </blockquote>
 
         {/* ── SECTION 4 ── */}
-        <h2 className="text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+        <h2 id="how-automation-works" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
           How B2B sales pipeline automation works from signal to closed-won
         </h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
@@ -1126,7 +1226,7 @@ const ARTICLES: Record<string, ArticleData> = {
         </p>
 
         {/* ── SECTION 6 ── */}
-        <h2 className="text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+        <h2 id="automation-gap" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
           The automation gap by the numbers
         </h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
@@ -1147,7 +1247,7 @@ const ARTICLES: Record<string, ArticleData> = {
         </p>
 
         {/* ── SECTION 7 ── */}
-        <h2 className="text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+        <h2 id="separates-real-automation" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
           What separates real B2B sales pipeline automation from an AI tools list
         </h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
@@ -1158,7 +1258,7 @@ const ARTICLES: Record<string, ArticleData> = {
         </p>
 
         {/* ── SECTION 8 ── */}
-        <h2 className="text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+        <h2 id="positioned-differently" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
           Why Gobiya is positioned differently for B2B operators
         </h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
@@ -1166,7 +1266,7 @@ const ARTICLES: Record<string, ArticleData> = {
         </p>
 
         {/* ── SECTION 9 ── */}
-        <h2 className="text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+        <h2 id="clearest-return-teams" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
           Which B2B teams get the clearest return from pipeline automation
         </h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
@@ -1179,7 +1279,7 @@ const ARTICLES: Record<string, ArticleData> = {
         </ul>
 
         {/* ── SECTION 10 ── */}
-        <h2 className="text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+        <h2 id="getting-started" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
           What getting started with B2B sales pipeline automation actually looks like
         </h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
@@ -1236,6 +1336,30 @@ const ARTICLES: Record<string, ArticleData> = {
           ))}
         </div>
 
+        {/* ── TABLE OF CONTENTS ── */}
+        <details className="bg-gray-50 border border-gray-200 rounded-lg p-6 sm:p-8 my-10 sm:my-14 group" open>
+          <summary className="text-[14px] font-semibold uppercase tracking-wider text-gray-500 cursor-pointer list-none flex items-center justify-between">
+            Table of Contents
+            <svg className="w-4 h-4 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" /></svg>
+          </summary>
+          <ul className="mt-6 space-y-3.5 text-[15px] font-medium text-gray-900 border-t border-gray-200 pt-6">
+            {[
+              { id: 'what-best-means', label: 'What "best" actually means for a B2B SEO agency in 2026' },
+              { id: 'evaluation-criteria-shift', label: 'How the AI search shift reshaped the evaluation criteria that matter' },
+              { id: 'cost-wrong-agency', label: 'The cost of picking the wrong B2B SEO agency' },
+              { id: 'how-agency-engagement-works', label: 'How a real B2B SEO agency engagement should work in 2026' },
+              { id: 'evaluation-checklist', label: 'How to actually evaluate a B2B SEO agency: the question set that matters' },
+              { id: 'positioned-differently', label: 'Why Gobiya is positioned differently for B2B operators' },
+              { id: 'making-right-call', label: 'Making the right call for your B2B SEO program' },
+            ].map(({ id, label }) => (
+              <li key={id} className="flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#F26522] shrink-0" />
+                <a href={`#${id}`} className="hover:text-[#F26522] transition-colors">{label}</a>
+              </li>
+            ))}
+          </ul>
+        </details>
+
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
           Choosing the best SEO agency for B2B brands in 2026 is a fundamentally different decision than it was even two years ago. The buyer journey now starts in ChatGPT, Claude, Perplexity, and Gemini for more than half of B2B research sessions. The pages that rank #3 on Google are often not the pages AI engines cite. And the agencies that built their reputations on traditional keyword rankings are not, in most cases, the agencies producing pipeline today. So the question of which agency to hire has shifted — from "who ranks our keywords" to "who actually moves our pipeline in a market where buyers research in AI tools the agency may or may not even be measuring."
         </p>
@@ -1245,7 +1369,7 @@ const ARTICLES: Record<string, ArticleData> = {
         </p>
 
         {/* ── SECTION 1 ── */}
-        <h2 className="text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+        <h2 id="what-best-means" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
           What "best" actually means for a B2B SEO agency in 2026
         </h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
@@ -1282,7 +1406,7 @@ const ARTICLES: Record<string, ArticleData> = {
         </p>
         
         {/* ── SECTION 2 ── */}
-        <h2 className="text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+        <h2 id="evaluation-criteria-shift" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
           How the AI search shift reshaped the evaluation criteria that matter
         </h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
@@ -1290,7 +1414,7 @@ const ARTICLES: Record<string, ArticleData> = {
         </p>
 
         {/* ── COST BOX ── */}
-        <h2 className="text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+        <h2 id="cost-wrong-agency" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
           The cost of picking the wrong B2B SEO agency
         </h2>
         <div className="bg-[#f7f7f7] border border-gray-200 p-6 sm:p-10 my-8">
@@ -1303,7 +1427,7 @@ const ARTICLES: Record<string, ArticleData> = {
         </div>
 
         {/* ── SECTION 3 ── */}
-        <h2 className="text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+        <h2 id="how-agency-engagement-works" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
           How a real B2B SEO agency engagement should work in 2026
         </h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
@@ -1328,7 +1452,7 @@ const ARTICLES: Record<string, ArticleData> = {
         </blockquote>
 
         {/* ── DATA TABLE / CHECKLIST ── */}
-        <h2 className="text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+        <h2 id="evaluation-checklist" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
           How to actually evaluate a B2B SEO agency: the question set that matters
         </h2>
         <div className="overflow-x-auto my-8">
@@ -1357,7 +1481,7 @@ const ARTICLES: Record<string, ArticleData> = {
         </div>
 
         {/* ── SECTION 4 ── */}
-        <h2 className="text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+        <h2 id="positioned-differently" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
           Why Gobiya is positioned differently for B2B operators
         </h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
@@ -1365,7 +1489,7 @@ const ARTICLES: Record<string, ArticleData> = {
         </p>
 
         {/* ── CONCLUSION ── */}
-        <h2 className="text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+        <h2 id="making-right-call" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
           Making the right call for your B2B SEO program
         </h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
@@ -1811,7 +1935,7 @@ const ARTICLES: Record<string, ArticleData> = {
           The substantive work itself follows. The agency runs an initial AI search audit across ChatGPT, Claude, Perplexity, and Gemini for the operator's category-defining queries, baselines current citation share, and identifies which third-party sources each engine is citing — because more than 85 percent of non-paid AI citations originate from earned media rather than the vendor's own domain. The agency maps the buying committee structure for the specific vertical and builds the content architecture against the actual committee rather than a generic persona template. This is the same <a href="/services/geo-optimization" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">generative engine optimization</a> discipline that determines whether AI assistants cite or ignore a brand during the research phase.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          The ongoing engagement reflects local partnership in operational detail. Content production is balanced against earned-media placement in LA-relevant trade publications — the Hollywood Reporter for entertainment-tech, Aviation Week for aerospace, Endpoints for biotech, AdExchanger for adtech, Inman for proptech. Freshness updates on revenue-tied pages are scheduled at the cadence AI engines actually cite from — monthly to quarterly, not annually. The agency operates as a local extension of the operator's revenue team, not as a content vendor running a generic playbook from another zip code.
+          The ongoing engagement reflects local partnership in operational detail. Content production is balanced against earned-media placement in LA-relevant trade publications — the Hollywood Reporter for entertainment-tech, Aviation Week for aerospace, Endpoints for biotech, AdExchanger for adtech, Inman for proptech. Freshness updates on revenue-tied pages are scheduled at the <a href="/insights/los-angeles-local-seo-explained" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">cadence AI engines actually cite from</a> — monthly to quarterly, not annually. The agency operates as a local extension of the operator's revenue team, not as a content vendor running a generic playbook from another zip code.
         </p>
 
         <h3 className="text-[clamp(1.1rem,2vw,1.5rem)] font-medium leading-[1.3] tracking-[-0.01em] text-gray-900 mt-10 mb-4">
@@ -2088,7 +2212,7 @@ const ARTICLES: Record<string, ArticleData> = {
           A credible engagement starts with a composition audit, not a traffic projection. The audit segments existing organic traffic by source, intent, and pipeline contribution. It maps which traffic shapes correlate with closed-won opportunities and which produce no measurable pipeline impact. It runs the brand through ChatGPT, Claude, Perplexity, and Gemini to baseline current AI citation share. It identifies clusters over-producing traffic relative to pipeline and clusters under-producing traffic relative to their pipeline potential.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          The output is a hypothesis-driven roadmap — not "we will grow traffic by X percent" but "we will shift composition toward Y, accept a Z percent decline in aggregate sessions if necessary, and target a W percent increase in pipeline contribution over the next 12 months." The same rigour that makes a <a href="/insights/b2b-seo-agency-los-angeles" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">local B2B SEO agency partnership in Los Angeles</a> valuable applies here: proximity to the business means the composition audit reflects actual sales cycle intelligence, not templated benchmarks.
+          The output is a hypothesis-driven roadmap — not "we will grow traffic by X percent" but "we will shift composition toward Y, accept a Z percent decline in aggregate sessions if necessary, and target a W percent increase in pipeline contribution over the next 12 months." The same rigour that makes a <a href="/insights/b2b-seo-agency-los-angeles" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">local B2B SEO agency partnership in Los Angeles</a> valuable applies here: proximity to the business means the composition audit reflects actual sales cycle intelligence, not templated benchmarks, establishing the same disciplined <a href="/insights/los-angeles-local-seo-explained" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">operational cadence</a> required to compete in saturated local markets.
         </p>
 
         {/* ── SECTION: Making the call ── */}
@@ -2236,7 +2360,7 @@ const ARTICLES: Record<string, ArticleData> = {
         <div id="real-vs-fake" className="scroll-mt-24" />
         <h2 className="text-[1.6rem] sm:text-[2rem] font-display font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">What separates a real LA local SEO program from a "we'll set up your Google listing" service</h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Ask what the recurring monthly work actually consists of. If the answer is "we set up your Google Business Profile and submit you to directories," the provider is selling a one-time service. Real local SEO programs operate on monthly or weekly cadences — review request systems, GBP post production, photo refreshes, review response within 24–48 hours, citation audits, on-page content updates, rank tracking across multiple LA neighborhoods, and AI-layer monitoring.
+          Ask what the recurring monthly work actually consists of. If the answer is "we set up your Google Business Profile and submit you to directories," the provider is selling a one-time service. Real local SEO programs operate on the kind of structured <a href="/insights/los-angeles-local-seo-explained" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">operational cadence</a> that produces ranking movement — review request systems, GBP post production, photo refreshes, review response within 24–48 hours, citation audits, on-page content updates, rank tracking across multiple LA neighborhoods, and AI-layer monitoring.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
           Ask whether the provider tracks rankings from multiple specific locations within LA, not just a single citywide rank. Ask whether they have a documented review acquisition system integrated into the business's customer workflow — passive requests produce 1–2% conversion while integrated systems produce 25–40%. Ask whether they have a position on AI-layer visibility. The same questions that distinguish a real <a href="/insights/best-seo-agency-for-b2b-brands" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">B2B SEO agency from a commodity provider</a> apply equally to local SEO: does the program operate against the current algorithm, or a 2019 playbook with refreshed branding?
@@ -2296,7 +2420,240 @@ const ARTICLES: Record<string, ArticleData> = {
           <p className="text-gray-400 text-[15px] leading-relaxed mb-6">Walk through your current local search presence before the competitive gap widens into something expensive to close.</p>
           <a href="/contact" className="inline-flex items-center gap-3 bg-[#F26522] hover:bg-[#e05a1a] text-white pl-6 pr-2 py-2.5 transition-colors duration-300 font-medium text-[14px]">
             Request a local visibility audit
-            <div className="w-7 h-7 bg-white flex items-center justify-center">
+            <div className="w-7 h-7 bg-white flex items-center justify-center ml-3">
+              <svg className="w-3.5 h-3.5 text-[#F26522]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"/></svg>
+            </div>
+          </a>
+        </div>
+      </>
+    ),
+  },
+
+  'los-angeles-local-seo-explained': {
+    slug: 'los-angeles-local-seo-explained',
+    title: 'Los Angeles Local SEO Explained: The Operational Cadence Required for Search Dominance',
+    category: 'Local SEO',
+    readTime: '10 min read',
+    date: 'May 27, 2026',
+    image: '/images/article-los-angeles-local-seo-explained.webp',
+    heroAlt: 'Minimalist digital illustration of a city map grid with glowing orange nodes representing local SEO connections in Los Angeles',
+    metaDescription: 'The actual operational rhythm of running local SEO in LA — what the weekly cadence looks like, what produces visible ranking movement at 30 / 60 / 90 days, and why most LA businesses stall.',
+    content: (
+      <>
+        {/* ── LEAD STATS ── */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 my-10 sm:my-14">
+          {[
+            { stat: '47.2%', label: 'Share of all local pack clicks that go to pin #1', source: 'Visionary 2026 Mass Consumer Panel' },
+            { stat: '2.7x', label: 'Click lift for Google Business Profiles with 30+ photos vs fewer than 10', source: 'SE Ranking 2026' },
+            { stat: '6–8 wks', label: 'Window in which ranking drops typically occur when review velocity stops', source: 'SE Ranking 2026' },
+          ].map(({ stat, label, source }) => (
+            <div key={stat} className="border border-[#F26522]/30 bg-[#F26522]/5 p-6">
+              <p className="text-4xl font-bold text-[#F26522] mb-2 font-display">{stat}</p>
+              <p className="text-[14px] text-gray-900 leading-snug mb-1">{label}</p>
+              <p className="text-[11px] uppercase tracking-wider text-gray-500">{source}</p>
+            </div>
+          ))}
+        </div>
+
+        {/* ── TABLE OF CONTENTS ── */}
+        <details className="bg-gray-50 border border-gray-200 rounded-lg p-6 sm:p-8 my-10 sm:my-14 group" open>
+          <summary className="text-[14px] font-semibold uppercase tracking-wider text-gray-500 cursor-pointer list-none flex items-center justify-between">
+            Table of Contents
+            <svg className="w-4 h-4 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" /></svg>
+          </summary>
+          <ul className="mt-6 space-y-3.5 text-[15px] font-medium text-gray-900 border-t border-gray-200 pt-6">
+            {[
+              { id: 'operational-cadence', label: 'The Operational Cadence — 2026 update' },
+              { id: 'ongoing-work', label: 'What Los Angeles local SEO actually looks like as ongoing work' },
+              { id: 'saturation', label: 'How LA\'s saturation makes cadence matter more than anywhere else' },
+              { id: 'cost-of-inconsistent', label: 'The cost of inconsistent cadence in LA' },
+              { id: 'operating-rhythm', label: 'What a real LA local SEO operating rhythm looks like' },
+              { id: 'progress-milestones', label: 'What progress actually looks like at 30 / 60 / 90 days' },
+              { id: 'real-discipline', label: 'What separates a real LA local SEO operating discipline from a "set it and forget it" service' },
+              { id: 'positioned-differently', label: 'Why Gobiya is positioned differently for LA businesses' },
+              { id: 'business-types', label: 'Which LA business types benefit most from disciplined cadence vs occasional bursts' },
+              { id: 'getting-started', label: 'What getting started with an LA local SEO operating cadence actually looks like' },
+              { id: 'making-call', label: 'Making the right call for your LA local SEO operating model' },
+            ].map(({ id, label }) => (
+              <li key={id} className="flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#F26522] shrink-0" />
+                <a href={`#${id}`} className="hover:text-[#F26522] transition-colors">{label}</a>
+              </li>
+            ))}
+          </ul>
+        </details>
+
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          Los Angeles local SEO is, more than anything else, a discipline of operational consistency. The strategic case for doing it — covered in the <a href="/insights/local-seo-los-angeles" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">pillar piece on local SEO for LA businesses</a> — is essentially settled at this point. Local search drives 46% of all Google traffic, Google Business Profile signals carry 32% of the ranking weight, and the AI-recommendation layer is reshaping the broader visibility surface. None of that is in serious dispute anymore. What separates LA businesses that win the 3-Pack from those that don't is rarely a strategic insight. It's the operational rhythm — the specific work that gets done every week and every month, by a specific person or team, against a specific cadence the algorithm rewards.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          This is the problem most LA local SEO programs actually fail at. Not strategy. Cadence. The strongest LA operators have built local SEO into the operating rhythm of the business itself — review acquisition baked into customer workflow, GBP optimization handled on a recurring weekly schedule, neighborhood content produced against a content calendar rather than ad-hoc, AI-layer visibility monitored monthly. Most LA businesses don't realize how much consistency-driven their local rankings are until they go quiet for six to eight weeks and watch their 3-Pack position slip to a competitor who didn't.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          This article covers what running Los Angeles local SEO operationally in 2026 actually looks like, what the recurring weekly and monthly workflows are, what kind of progress to expect at the 30-, 60-, and 90-day marks, and what separates a real operating cadence from a one-time setup that drifts.
+        </p>
+
+        {/* ── SECTION: Operational Cadence ── */}
+        <div id="operational-cadence" className="scroll-mt-24" />
+        <h2 className="text-[1.6rem] sm:text-[2rem] font-display font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">The Operational Cadence — 2026 update</h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          The weekly rhythm of local search signals is what establishes dominance. GBPs receiving more than one review per week outrank stable-velocity profiles by an average of 1.7 positions. Fresh photos, weekly posts, and quick responses are the operational mechanisms that reinforce relevance.
+        </p>
+
+        {/* ── SECTION: Ongoing Work ── */}
+        <div id="ongoing-work" className="scroll-mt-24" />
+        <h2 className="text-[1.6rem] sm:text-[2rem] font-display font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">What Los Angeles local SEO actually looks like as ongoing work</h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          Most LA business owners imagine local SEO as a project — something you do once, get set up, and then leave alone while it produces results. That model occasionally works for businesses in low-competition rural categories. It does not work in LA. LA's local search environment is too saturated and too actively contested for any business in a competitive category to set up and leave alone. The businesses that hold 3-Pack positions in LA in 2026 are the ones doing the recurring work that compounds — and the businesses that lose their positions are usually not losing them to a better strategy. They're losing them to a competitor who kept showing up week after week.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          Los Angeles local SEO as ongoing work has a definable shape. At the weekly level: review acquisition prompts going out to recent customers, review responses to anything new that arrived in the last 7 days, Google Business Profile post production (one to two posts per week is the sustainable cadence), photo uploads (consistent uploads over time signal authority better than bulk uploads), and Q&A monitoring on the GBP for new customer questions. At the monthly level: GBP attribute and service review, citation audits across the major LA-relevant directories, on-page content production (typically one to two neighborhood-specific or service-specific pages per month), competitor rank tracking across multiple LA neighborhoods, and AI-layer presence audit (running the business through Gemini, ChatGPT, and Perplexity for category-defining queries to track recommendation visibility). At the quarterly level: deeper competitive analysis, content cluster review, NAP consistency audit across the long tail of citations, and a strategic review of which neighborhoods and queries the business is actually winning versus which it's still climbing.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          This operating shape is what the algorithm actually rewards. The 2026 Whitespark data shows that GBPs receiving more than one review per week outrank stable-velocity GBPs by 1.7 positions on average. Businesses that respond to reviews within 24 hours see 18% higher review velocity than slow responders. The compounding effect of weekly work over six to twelve months is what produces durable LA 3-Pack positions. The absence of that work is what produces the 6-to-8-week ranking drops the data documents in competitive markets.
+        </p>
+
+        <div className="bg-gray-50 border-l-4 border-[#F26522] p-6 sm:p-8 my-10">
+          <h3 className="text-[15px] font-semibold uppercase tracking-wider text-[#F26522] mb-3">Why one-time setup followed by silence almost always fails in LA</h3>
+          <p className="text-[15px] sm:text-[16px] leading-[1.7] text-gray-700">
+            One-time setup handles the first pass: the business gets claimed, the profile gets filled in, basic citations get submitted. The dashboard looks better immediately. But the algorithm does not maintain rankings on the basis of a profile that was complete six months ago. It maintains rankings on the basis of ongoing signal — fresh reviews, fresh photos, fresh posts, fresh on-page content, sustained behavioral engagement. A business that goes silent after setup is sending the algorithm a signal that the business has gone dormant, and the algorithm responds by reweighting toward more-active competitors.
+          </p>
+          <p className="text-[15px] sm:text-[16px] leading-[1.7] text-gray-700 mt-4">
+            One-time setup is not sufficient to compete in LA's local market over any meaningful time horizon. Recurring operational cadence is the layer that maintains and compounds the ranking position. Without it, the setup work decays — sometimes within a quarter, often within two — and the business ends up paying for new setup work every twelve to eighteen months instead of paying for ongoing maintenance that compounds. Programs that report a strong initial ranking lift followed by gradual erosion over the following months are usually setup-only programs masquerading as ongoing engagements.
+          </p>
+        </div>
+
+        {/* ── SECTION: Saturation ── */}
+        <div id="saturation" className="scroll-mt-24" />
+        <h2 className="text-[1.6rem] sm:text-[2rem] font-display font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">How LA's saturation makes cadence matter more than anywhere else</h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          LA is one of the most local-business-saturated metros in the United States, and the saturation is uneven in ways that change the operational requirements. Some neighborhoods (DTLA, Hollywood, Santa Monica) have effectively unlimited competitive density in nearly every consumer category. Other neighborhoods (parts of the Valley, parts of the South Bay, parts of Long Beach) are competitive but less brutal. The operational cadence required to hold a 3-Pack position in DTLA for "Italian restaurant" is materially different from the cadence required for "Italian restaurant" in Mar Vista. Both require ongoing work. The DTLA case requires more of it, on a tighter cadence, against more aggressive competitors.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          The competitive density also means LA businesses face faster ranking decay when cadence stops. The 6-to-8-week window for ranking drops after review velocity stops is the published industry average; in highly competitive LA categories it can be tighter — sometimes 4 to 6 weeks. Competitors are actively producing the signals the algorithm rewards, and an LA business that pauses is not just stopping its own signal production — it's allowing competitors to compound while it stalls. The relative gap widens faster than the absolute gap. This is why LA local SEO works as a discipline of cadence rather than a discipline of one-time effort: the saturation environment punishes inconsistency more aggressively than less-competitive markets do.
+        </p>
+
+        {/* ── SECTION: Cost of Inconsistent Cadence ── */}
+        <div id="cost-of-inconsistent" className="scroll-mt-24" />
+        <h2 className="text-[1.6rem] sm:text-[2rem] font-display font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">The cost of inconsistent cadence in LA</h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          A mid-sized LA business holding a 3-Pack position in a competitive category captures the lion's share of organic local clicks in its area — 47.2% to pin #1, 24.8% to pin #2, 16.4% to pin #3, with the rest distributed across the "View more" expansion that captures the remaining 11.6%. The math is brutal at every position drop. A business moving from #1 to #2 loses roughly half of its local pack click share. A business moving from #3 to #4 loses everything — pin #4 is functionally invisible to the majority of local searchers who never expand past the 3-Pack. In LA's most competitive categories, a single inconsistent quarter can move a business from #2 to #4, and rebuilding to #2 typically takes three to six months of restored cadence.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          Frame it concretely. An LA service business — say, a dental practice or a plumbing company — holding a #2 position in its neighborhood captures roughly 25% of local pack clicks for its core queries, which might mean 80 to 200 new customer contacts per month depending on category and density. Falling to #4 reduces that to single-digit contacts per month from the 3-Pack. The revenue impact varies by category, but for a dental practice at $2,000 average lifetime value per new patient, losing 60 to 150 new patient contacts per month for two or three quarters compounds to six- or seven-figure ARR impact. The visible cost is the local SEO retainer (or the cost of doing the work in-house). The invisible cost is the patients, plumbing calls, or restaurant covers that went to the competitor who stayed consistent while the business in question paused.
+        </p>
+        <div className="bg-amber-50 border border-amber-200 rounded-lg p-5 my-8 text-[14px] text-amber-900 leading-relaxed">
+          <strong>Note:</strong> Customer-contact and revenue impact estimates vary significantly by category, neighborhood, and average customer value. The figures above reflect commonly observed ranges in LA service categories in 2026. Run your own math against your own ranking volatility and customer-acquisition value before making cadence investment decisions.
+        </div>
+
+        {/* ── SECTION: Operating Rhythm ── */}
+        <div id="operating-rhythm" className="scroll-mt-24" />
+        <h2 className="text-[1.6rem] sm:text-[2rem] font-display font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">What a real LA local SEO operating rhythm looks like</h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          A credible operating rhythm has specific shape at three levels of frequency.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          <strong>Weekly work</strong> includes review request prompts going out to customers from the prior week (built into the customer workflow rather than handled manually one-by-one), review responses to anything new posted in the last seven days (with the 24-hour response threshold treated as a discipline target), one or two Google Business Profile posts produced and scheduled, two to three photos uploaded (real, current, taken at the business — not stock or repurposed marketing assets), and Q&A monitoring on the GBP. The weekly cadence is what feeds the freshness signal Google rewards. Businesses that report doing local SEO "monthly" or "quarterly" are almost always under-investing at the weekly layer where most of the algorithmic reward actually sits.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          <strong>Monthly work</strong> includes a GBP attribute and service-list review (Google frequently adds new attributes that competitors will adopt before the business does), a citation audit across the 30-50 highest-priority LA-relevant directories (NAP discrepancies suppress rankings, and Yelp, Bing Places, Apple Maps, and the major LA-specific directories all need to match), one or two new on-page content pieces (neighborhood pages, service-specific pages, or FAQ expansions), competitor rank tracking from at least 3-5 specific physical locations across the relevant LA neighborhoods (single citywide ranks hide local pack volatility that varies by exact location), and the AI-layer presence audit across Gemini, ChatGPT, and Perplexity for category-defining queries.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          <strong>Quarterly work</strong> includes a deeper competitive analysis (which competitors are gaining, which are losing, why), a content cluster review (which pages are producing traffic and contacts, which are dead weight), a long-tail citation audit (the tail of smaller citations that accumulates errors over time), an earned-mention review (where the business has been mentioned in LA-relevant press, "Best Of" lists, neighborhood blogs, community sites), and a strategic review of which queries and neighborhoods the business is actually competing in and where it's making real progress versus stalling.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          The total time investment for a single-location LA business runs roughly 8 to 15 hours per month at the weekly and monthly layer combined, plus 4 to 8 hours per quarter at the quarterly layer. That's a meaningful but defined commitment — and the businesses that hit that number consistently over twelve to twenty-four months are the ones that compound durable 3-Pack positions in LA's competitive categories.
+        </p>
+
+        {/* ── SECTION: Progress Milestones ── */}
+        <div id="progress-milestones" className="scroll-mt-24" />
+        <h2 className="text-[1.6rem] sm:text-[2rem] font-display font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">What progress actually looks like at 30 / 60 / 90 days</h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          Local SEO progress is not linear. The signals compound, but the timeline is governed by how quickly Google reweights its algorithm against the business and how quickly competitors react.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          <strong>At 30 days:</strong> GBP completeness improvements are typically reflected in rankings within 1-4 weeks per the 2026 industry data, with category changes often visible within days. A business starting from a half-finished GBP can expect to see meaningful rank movement within the first month from completeness improvements alone. Review velocity changes have not yet had time to compound — the data shows review velocity improvements take 2-3 months to produce consistent gains. On-page changes are starting to be indexed but typically haven't moved rankings yet.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          <strong>At 60 days:</strong> Review velocity improvements are starting to compound. The 24-hour response discipline is producing measurable behavioral signal improvement. Photo volume past the 30-photo threshold is producing the 2.7x click lift the data documents. On-page content from the first month is influencing rankings (the 4-8 week timeline). Citation cleanup from month one is fully reflected. A business should see clear rank movement on its core queries by this point, with some queries moving meaningfully and others still climbing.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          <strong>At 90 days:</strong> The full effect of the first 60 days of consistent cadence is reflected in rankings. Review velocity is fully compounding. AI-layer visibility is starting to shift for businesses that have produced AI-optimized content in months one and two. The business should have a clear picture of which queries are responding to the work and which are facing structural competitive challenges (an entrenched #1 with deep moats, or proximity disadvantages that can't be overcome with prominence/relevance work alone). The 90-day mark is the right point to recalibrate strategy based on what the data is actually showing — not to abandon the program, but to refine where the next 90 days of work should be concentrated.
+        </p>
+
+        {/* ── SECTION: Real Discipline vs Setup ── */}
+        <div id="real-discipline" className="scroll-mt-24" />
+        <h2 className="text-[1.6rem] sm:text-[2rem] font-display font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">What separates a real LA local SEO operating discipline from a &quot;set it and forget it&quot; service</h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          Not every provider offering Los Angeles local SEO operates against the cadence reality. The category is heavily populated with white-label setup services, one-time GBP optimization vendors, and agencies that bill monthly for work that's actually one-time-only repackaged. Selecting a partner requires the same diligence as choosing the <a href="/insights/best-seo-agency-for-b2b-brands" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">best SEO agency for B2B brands</a>: you need to look past the marketing deck and audit their actual operational rhythm.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          Start with what the recurring work consists of. Ask the provider — agency, freelancer, or internal team member — to describe what they will actually do in week 1 versus week 5 versus week 9 of the engagement. If the answer is essentially the same activities repeating with different framing, the cadence is real. If the answer is &quot;we did the setup in month one and now we're maintaining,&quot; the cadence is not real and the maintenance is going to look like checking on the profile occasionally rather than doing the recurring work the algorithm rewards.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          Ask whether the provider has a documented review acquisition system integrated with the business's customer workflow, since passive review requests produce 1-2% conversion while integrated systems produce 25-40%, and the gap matters enormously over a year of compounding velocity. Ask whether the provider tracks rankings from multiple specific physical locations within LA, since single citywide ranks hide the neighborhood-level volatility that determines what most customers actually see.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          Ask what the provider's response time discipline is on review responses — if they don't have a target (24 hours is the algorithmic threshold), they don't have an operating discipline. Ask whether the provider has visibility into AI-layer recommendations (Gemini, ChatGPT, Perplexity) for the business's category, since that surface has emerged faster than most local SEO providers have updated their methodologies. A real LA local SEO operating discipline shows up in the calendar — what gets done every week, what gets done every month, what gets done every quarter — not in the deck. It can't be substituted with a setup project and a maintenance retainer that bills for not much actual work.
+        </p>
+
+        {/* ── SECTION: Why Gobiya is Positioned Differently ── */}
+        <div id="positioned-differently" className="scroll-mt-24" />
+        <h2 className="text-[1.6rem] sm:text-[2rem] font-display font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">Why Gobiya is positioned differently for LA businesses</h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          Gobiya is built in Los Angeles, staffed in Los Angeles, and works in LA hours. Local SEO programs are built on a neighborhood-by-neighborhood understanding of how LA's specific geography, publication ecosystem, and customer behavior patterns shape rankings. Every engagement starts with a multi-neighborhood rank audit and a competitive GBP analysis — not a generic local SEO template.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          The methodology covers all five ranking pillars simultaneously: GBP optimization, review velocity engineering, NAP consistency, neighborhood-specific on-page content, and AI-layer visibility. Reporting includes rank tracking across the specific LA neighborhoods where the client's customers are searching — not a single citywide number that masks the neighborhood-level variation that determines what real customers actually see. The same <a href="/insights/seo-for-b2b-lead-generation" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">pipeline-first SEO methodology</a> applied to B2B lead generation drives local SEO programs: every signal is tracked against actual customer contacts, not abstract ranking positions.
+        </p>
+
+        {/* ── SECTION: Business Types ── */}
+        <div id="business-types" className="scroll-mt-24" />
+        <h2 className="text-[1.6rem] sm:text-[2rem] font-display font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">Which LA business types benefit most from disciplined cadence vs occasional bursts</h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          Different LA business categories tolerate cadence interruption differently. Here's how the fit usually breaks down.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          <strong>LA businesses in highly saturated categories</strong> (restaurants and bars in DTLA, Hollywood, Santa Monica; dental practices in Westside neighborhoods; personal injury attorneys; med spas) face the tightest cadence requirements because competitive density means even a 4-6 week pause produces visible ranking decay. These businesses cannot afford a cadence break and need the operating discipline built in from the start.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          <strong>LA businesses in moderately competitive categories</strong> (most home services, professional services in less-saturated neighborhoods, specialty retail) face meaningful but less brutal cadence requirements. A short cadence break — a quarter that gets interrupted by a business priority — is recoverable in these markets, though it costs months of climbing back to where the business was.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          <strong>LA businesses in geographically limited markets</strong> (single-neighborhood operators who don't compete with the entire city) face cadence requirements driven more by the specific local competitive set than by citywide dynamics. The operational discipline still matters but the volume of work required is lower.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          <strong>LA multi-location businesses</strong> (chains, franchises, multi-location service operations) face the most operationally complex local SEO challenge in LA, because every location has its own GBP, its own review stream, its own neighborhood-specific content needs, and its own competitive set. The cadence discipline scales linearly with location count, and businesses that try to centralize all of it under one process typically underperform location-level operators who run each location's GBP individually. The specific configuration varies by business model, which is why an <a href="/insights/b2b-organic-traffic-growth" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">operational audit</a> matters more than any default cadence template.
+        </p>
+
+        {/* ── SECTION: Getting Started ── */}
+        <div id="getting-started" className="scroll-mt-24" />
+        <h2 className="text-[1.6rem] sm:text-[2rem] font-display font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">What getting started with an LA local SEO operating cadence actually looks like</h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          A credible engagement starts with a cadence audit and a documented operating plan, not a sales pitch. The audit checks what work is currently being done — by whom, on what schedule, against what targets — and identifies the gaps between current practice and the 2026 cadence standard. It maps the customer workflow to identify where review acquisition can be integrated, since passive review requests are the single biggest cadence failure most LA businesses have. It establishes the weekly/monthly/quarterly schedule that will run for the next 90 days, with named responsibilities and concrete deliverables at each cadence layer. It baselines current ranking position from multiple specific LA locations so progress can be measured against the actual starting point rather than vague impressions.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          The LA businesses that get the most from Los Angeles local SEO are the ones that approach it as an operating discipline embedded in the business — review requests baked into customer workflow, GBP work handled on a recurring schedule by a named person or team, content production calendared rather than ad-hoc, AI-layer visibility monitored monthly. The question of "should we do local SEO" is settled. The question of "are we doing it on the cadence the algorithm actually rewards" is the question most LA businesses are quietly answering with no.
+        </p>
+
+        {/* ── SECTION: Making Call ── */}
+        <div id="making-call" className="scroll-mt-24" />
+        <h2 className="text-[1.6rem] sm:text-[2rem] font-display font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">Making the right call for your LA local SEO operating model</h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          LA businesses still running local SEO as a one-time setup followed by silence are paying the cost of 6-8 week ranking decay every time they pause, while competitors with disciplined weekly cadence compound positions that get harder to dislodge every month. The shift to a real operating cadence isn't about doing more work for its own sake. It's about operating local SEO as the recurring discipline the 2026 algorithm — and LA's competitive saturation — actually requires.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          Two decisions matter most. First: whether your current local SEO work has a real weekly and monthly cadence with named responsibilities and tracked outputs, or whether it operates as a setup project with informal maintenance that drifts whenever business priorities pull attention away. Second: whether the person or provider responsible for the work understands that LA local SEO is a discipline of consistency rather than a discipline of bursts, and operates against that reality with the calendar to prove it.
+        </p>
+
+        {/* ── CTA ── */}
+        <div className="bg-gray-900 rounded-xl p-8 sm:p-10 my-14">
+          <p className="text-[11px] uppercase tracking-wider font-semibold text-[#F26522] mb-3">Get A Local Visibility Audit</p>
+          <h3 className="text-white text-[1.4rem] sm:text-[1.7rem] font-display font-medium leading-[1.2] mb-4">Find out where your LA business stands across Google's local surfaces and the AI-recommendation layer.</h3>
+          <p className="text-gray-400 text-[15px] leading-relaxed mb-6">Walk through your current local search presence before the competitive gap widens into something expensive to close.</p>
+          <a href="/contact" className="inline-flex items-center gap-3 bg-[#F26522] hover:bg-[#e05a1a] text-white pl-6 pr-2 py-2.5 transition-colors duration-300 font-medium text-[14px]">
+            Request an operating-cadence audit
+            <div className="w-7 h-7 bg-white flex items-center justify-center ml-3">
               <svg className="w-3.5 h-3.5 text-[#F26522]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"/></svg>
             </div>
           </a>
@@ -2487,10 +2844,31 @@ const RELATED_ARTICLES_MAP: Record<string, { href: string; category: string; tit
       image: '/images/article-b2b-organic-traffic-growth.webp',
     },
     {
-      href: '/insights/best-seo-agency-for-b2b-brands',
+      href: '/insights/los-angeles-local-seo-explained',
+      category: 'Local SEO',
+      title: 'Los Angeles Local SEO Explained: The Operational Cadence Required for Search Dominance',
+      image: '/images/article-los-angeles-local-seo-explained.webp',
+    },
+  ],
+
+  'los-angeles-local-seo-explained': [
+    {
+      href: '/insights/local-seo-los-angeles',
+      category: 'Local SEO',
+      title: 'Local SEO for Los Angeles Businesses: How the 2026 Algorithm and AI Layer Determine Who Gets Found',
+      image: '/images/article-local-seo-los-angeles.webp',
+    },
+    {
+      href: '/insights/b2b-seo-agency-los-angeles',
       category: 'Strategy',
-      title: 'How to Choose the Best SEO Agency for B2B Brands in 2026',
-      image: '/images/article-best-seo-agency.webp',
+      title: 'B2B SEO Agency in Los Angeles: Why Local Partnership Outperforms Remote Vendor Relationships in 2026',
+      image: '/images/article-b2b-seo-agency-los-angeles.webp',
+    },
+    {
+      href: '/insights/b2b-organic-traffic-growth',
+      category: 'Strategy',
+      title: 'B2B Organic Traffic Growth: Why Traffic and Pipeline Decoupled in 2026',
+      image: '/images/article-b2b-organic-traffic-growth.webp',
     },
   ],
 };
