@@ -47,6 +47,154 @@ interface PageConfig {
 
 const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
   const [time, setTime] = useState('');
+  const [activeSchema, setActiveSchema] = useState<'business' | 'website' | 'article'>('business');
+  const [copiedSchema, setCopiedSchema] = useState(false);
+  const [activeSection, setActiveSection] = useState('algorithmic-shift');
+  const [activeSuccessSection, setActiveSuccessSection] = useState('recovery-case');
+  const [simulatedVisitors, setSimulatedVisitors] = useState([
+    { company: 'Acme Corp', page: '/services/seo', time: '2s ago', intent: 98 },
+    { company: 'Enterprise Inc', page: '/services/lead-gen', time: '12s ago', intent: 85 },
+    { company: 'Global Logistics', page: '/company/approach', time: '24s ago', intent: 92 },
+    { company: 'Fintech Solutions', page: '/services/geo', time: '40s ago', intent: 88 }
+  ]);
+
+  const schemas = {
+    business: {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Enterprise Client",
+      "url": "https://www.clientdomain.com",
+      "knowsAbout": [
+        "https://en.wikipedia.org/wiki/Search_engine_optimization",
+        "https://en.wikipedia.org/wiki/Information_retrieval",
+        "https://en.wikipedia.org/wiki/B2B_marketing"
+      ],
+      "areaServed": "Global",
+      "description": "Enterprise software platform engineered for high-intent pipeline growth and search visibility."
+    },
+    website: {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Enterprise Platform",
+      "url": "https://www.clientdomain.com",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Enterprise Client"
+      }
+    },
+    article: {
+      "@context": "https://schema.org",
+      "@type": "TechArticle",
+      "headline": "Algorithmic Pipeline Domination in the AI Era",
+      "about": [
+        {
+          "@type": "Thing",
+          "name": "Entity Optimization"
+        }
+      ],
+      "author": {
+        "@type": "Person",
+        "name": "Industry Authority"
+      }
+    }
+  };
+
+  const sections = [
+    { id: 'algorithmic-shift', label: 'Semantic Entities' },
+    { id: 'topical-authority', label: 'Topical Architecture' },
+    { id: 'geo-optimization-llm', label: 'AI Citations (GEO)' },
+    { id: 'pipeline-orchestration', label: 'Revenue Pipelines' }
+  ];
+
+  const successSections = [
+    { id: 'recovery-case', label: 'Algorithmic Recovery' },
+    { id: 'pipeline-case', label: 'Pipeline Automation' },
+    { id: 'geo-case', label: 'AI Citations (GEO)' },
+    { id: 'conversion-case', label: 'Performance Dev' }
+  ];
+
+  const handleScrollToSection = (id: string) => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
+  const copyToClipboard = (text: string) => {
+    navigator.clipboard.writeText(text);
+    setCopiedSchema(true);
+    setTimeout(() => setCopiedSchema(false), 2000);
+  };
+
+  useEffect(() => {
+    if (path !== '/company/approach') return;
+    
+    const handleScroll = () => {
+      const scrollPos = window.scrollY + 300;
+      for (const section of sections) {
+        const el = document.getElementById(section.id);
+        if (el) {
+          const top = el.offsetTop;
+          const height = el.offsetHeight;
+          if (scrollPos >= top && scrollPos < top + height) {
+            setActiveSection(section.id);
+            break;
+          }
+        }
+      }
+    };
+    
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [path]);
+
+  useEffect(() => {
+    if (path !== '/company/success-stories') return;
+    
+    const handleScroll = () => {
+      const scrollPos = window.scrollY + 300;
+      for (const section of successSections) {
+        const el = document.getElementById(section.id);
+        if (el) {
+          const top = el.offsetTop;
+          const height = el.offsetHeight;
+          if (scrollPos >= top && scrollPos < top + height) {
+            setActiveSuccessSection(section.id);
+            break;
+          }
+        }
+      }
+    };
+    
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [path]);
+
+  useEffect(() => {
+    if (path !== '/company/success-stories') return;
+    const interval = setInterval(() => {
+      setSimulatedVisitors(prev => {
+        const companies = ['SpaceX', 'Stripe', 'Airbnb', 'HubSpot', 'Salesforce', 'Figma', 'Slack', 'Chevron'];
+        const pages = ['/services/seo', '/services/lead-gen', '/services/geo', '/company/approach', '/company/success-stories'];
+        const randomCompany = companies[Math.floor(Math.random() * companies.length)];
+        const randomPage = pages[Math.floor(Math.random() * pages.length)];
+        const randomIntent = Math.floor(Math.random() * 25) + 75; // 75-100
+        
+        return [
+          { company: randomCompany, page: randomPage, time: 'Just now', intent: randomIntent },
+          ...prev.slice(0, 3).map(v => {
+            if (v.time === 'Just now') return { ...v, time: '3s ago' };
+            if (v.time.endsWith('s ago')) {
+              const seconds = parseInt(v.time) + 3;
+              return { ...v, time: `${seconds}s ago` };
+            }
+            return v;
+          })
+        ];
+      });
+    }, 4000);
+    return () => clearInterval(interval);
+  }, [path]);
 
   useEffect(() => {
     let ctx: gsap.Context;
@@ -674,14 +822,14 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
 
       
       {/* SECTION: SCROLL REVEAL INTRO */}
-      {path !== '/insights' && path !== '/contact' && path !== '/services' && (
+      {path !== '/insights' && path !== '/contact' && path !== '/services' && path !== '/company/approach' && path !== '/company/success-stories' && (
         <section className="w-full relative" data-logo-dark>
           <SplitTextReveal text={config.introScrollText} />
         </section>
       )}
 
       {/* SECTION: INTRO CONTENT */}
-      {path !== '/insights' && path !== '/contact' && path !== '/services' && (
+      {path !== '/insights' && path !== '/contact' && path !== '/services' && path !== '/company/approach' && path !== '/company/success-stories' && (
         <section className="bg-white pt-16 sm:pt-20 lg:pt-32 pb-12 sm:pb-16 lg:pb-24 overflow-hidden w-full max-w-[1440px] mx-auto">
           <div className="px-5 sm:px-8 lg:px-12 flex items-center gap-3 mb-6 sm:mb-8">
             <div className="w-6 h-6 sm:w-7 sm:h-7 bg-black text-white text-[11px] sm:text-[12px] font-semibold flex items-center justify-center">2</div>
@@ -739,10 +887,674 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
       )}
 
       {/* SECTION: SERVICES BENTO */}
-      {path !== '/insights' && path !== '/contact' && path !== '/services' && (
+      {path !== '/insights' && path !== '/contact' && path !== '/services' && path !== '/company/approach' && path !== '/company/success-stories' && (
         <div data-logo-dark className="relative">
           <ServicesBento headline={config.bentoHeadline} description={config.bentoDescription} cards={config.bentoCards} />
         </div>
+      )}
+
+      {/* DETAILED METHODOLOGY FOR THE APPROACH PATH */}
+      {path === '/company/approach' && (
+        <section className="bg-white py-20 sm:py-32 border-t border-gray-150 relative z-20" data-logo-dark>
+          <div className="max-w-[1440px] w-full mx-auto px-5 sm:px-8 lg:px-12">
+            <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-16">
+              
+              {/* Sticky Sidebar Navigation */}
+              <aside className="hidden lg:block">
+                <div className="sticky top-24 flex flex-col gap-8">
+                  <div>
+                    <span className="text-[11px] font-bold text-gray-400 uppercase tracking-widest block mb-1">Our Methodology</span>
+                    <h3 className="text-xl font-bold text-gray-900">Search Blueprint</h3>
+                  </div>
+                  
+                  <nav className="flex flex-col border-l border-gray-150 pl-4 py-2">
+                    {sections.map((sec) => (
+                      <button
+                        key={sec.id}
+                        onClick={() => handleScrollToSection(sec.id)}
+                        className={`text-left text-[14px] py-2 transition-all duration-300 relative border-l-2 -ml-[17px] pl-4 cursor-pointer ${
+                          activeSection === sec.id
+                            ? 'text-[#F26522] border-[#F26522] font-semibold'
+                            : 'text-gray-400 border-transparent hover:text-gray-700 hover:border-gray-300'
+                        }`}
+                      >
+                        {sec.label}
+                      </button>
+                    ))}
+                  </nav>
+
+                  <div className="bg-[#f9f9f9] border border-gray-100 p-6 rounded-xl">
+                    <h4 className="text-[12px] font-bold uppercase tracking-wider text-gray-900 mb-2">Target Metrics</h4>
+                    <ul className="flex flex-col gap-3">
+                      <li className="flex justify-between text-[13px] text-gray-600">
+                        <span>Word count baseline:</span>
+                        <span className="font-semibold text-gray-900">2,200+</span>
+                      </li>
+                      <li className="flex justify-between text-[13px] text-gray-600">
+                        <span>LLM Citation Rate:</span>
+                        <span className="font-semibold text-gray-900">90%+</span>
+                      </li>
+                      <li className="flex justify-between text-[13px] text-gray-600">
+                        <span>Rendering Latency:</span>
+                        <span className="font-semibold text-gray-900">&lt;100ms</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </aside>
+
+              {/* Main Copy Area */}
+              <div className="flex flex-col gap-24 max-w-4xl">
+                
+                {/* Intro Callout */}
+                <div className="border-l-4 border-[#F26522] pl-6 py-2">
+                  <p className="text-[clamp(1.1rem,2vw,1.4rem)] text-gray-800 font-medium leading-relaxed">
+                    Search engine optimization is no longer a marketing checklist. It is a technical engineering discipline. 
+                    Below is Gobiya's detailed operating model for algorithmic dominance, entity-based indexing, 
+                    and closed-loop B2B pipeline conversion.
+                  </p>
+                </div>
+
+                {/* Section 1: Algorithmic Shift */}
+                <article id="algorithmic-shift" className="scroll-mt-24">
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="w-8 h-8 rounded bg-gray-900 text-white flex items-center justify-center font-bold text-[14px]">01</div>
+                    <span className="text-[12px] font-semibold text-[#F26522] uppercase tracking-wider">The Paradigm Shift</span>
+                  </div>
+                  <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 tracking-tight mb-8">
+                    Keywords are Strings. Google Indexes Things.
+                  </h2>
+                  <div className="text-gray-600 text-[15px] sm:text-[16px] leading-[1.75] flex flex-col gap-6">
+                    <p>
+                      In the early eras of organic search engine optimization, websites were indexed based on direct string-matching algorithms. If a page was designed to rank for a query like "B2B sales pipeline integration tools," the primary operational objective was to verify the presence of that phrase in meta titles, headings, and copy at a specific keyword density. Today, Google's Helpful Content System, core quality classifiers, and neural matching algorithms operate on a fundamentally different paradigm. Search engines no longer index strings; they index entities.
+                    </p>
+                    <p>
+                      An entity is a distinct, well-defined concept, organization, person, place, or thing that is cataloged in Google's Knowledge Graph, often represented by a unique machine-readable Knowledge Graph ID (KGMID). When a user inputs a query, the search engine does not search for pages containing those letters. Instead, it decomposes the prompt into recognized entities, resolves the user's implicit and explicit intent, and queries its graph database. It looks for pages that establish a high-salience connection to the requested entity node.
+                    </p>
+                    <p>
+                      Under this framework, Gobiya's approach is designed around semantic triples (Subject-Predicate-Object). We map out your business entities, service offerings, and target categories to ensure they are represented in the precise format search crawlers expect. Rather than writing arbitrary articles targeting high search volume keywords, we construct content structures that minimize semantic distance to verified authority nodes.
+                    </p>
+                    <p>
+                      This entity-based methodology is also the absolute foundation of Generative Engine Optimization (GEO). Modern Large Language Models (LLMs) such as OpenAI's GPT-4, Anthropic's Claude 3.5, and Google's Gemini do not navigate page authority vectors like traditional search engines. They map out semantic spaces. To ensure your brand is cited and surfaced inside these conversational answers, you must define your entity connections explicitly.
+                    </p>
+                  </div>
+                </article>
+
+                {/* Section 2: Topical Authority */}
+                <article id="topical-authority" className="scroll-mt-24">
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="w-8 h-8 rounded bg-gray-900 text-white flex items-center justify-center font-bold text-[14px]">02</div>
+                    <span className="text-[12px] font-semibold text-[#F26522] uppercase tracking-wider">Topical Authority</span>
+                  </div>
+                  <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 tracking-tight mb-8">
+                    Topological Architecture & Schema Engineering
+                  </h2>
+                  <div className="text-gray-600 text-[15px] sm:text-[16px] leading-[1.75] flex flex-col gap-6">
+                    <p>
+                      Search dominance requires topical completeness. You cannot rank high-value transactional landing pages if your site lacks the foundational informational resources that prove expertise. For example, ranking a service page for "B2B sales development pipeline setup" requires an exhaustive topological content map covering peripheral queries: outbound pipeline metrics, lead response times, cold email sequence structures, CRM integration flows, and team scaling guides.
+                    </p>
+                    <p>
+                      Gobiya maps out your market sector as an interconnected semantic graph. We structure your content using strict pillar-and-cluster hubs that flow PageRank and semantic signals smoothly from high-volume informational nodes down to high-intent transactional pages. By carefully mapping intent profiles, we eliminate internal keyword cannibalization, ensuring each URL targets a unique, isolated search intent.
+                    </p>
+                    <p>
+                      We explicitly define these relationships for search bots using advanced, nested JSON-LD structured schema. Rather than basic schema templates, we build customized schema graphs connecting your organization, services, authors, and target markets. We use properties like `about`, `mentions`, and `knowsAbout` pointing directly to DBpedia and Wikipedia entity records. This removes the need for search bots to guess page topics, accelerating indexation and boosting entity authority rankings.
+                    </p>
+
+                    {/* Interactive Schema Visualizer component */}
+                    <div className="mt-8 bg-gray-900 text-gray-150 rounded-xl overflow-hidden shadow-lg border border-gray-800">
+                      <div className="bg-gray-800 px-6 py-4 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                        <div>
+                          <h4 className="text-[13px] font-bold uppercase tracking-wider text-white">Interactive Schema Blueprint</h4>
+                          <p className="text-[12px] text-gray-400">Select entity type to view nested JSON-LD structure</p>
+                        </div>
+                        <div className="flex gap-2">
+                          {(['business', 'website', 'article'] as const).map((type) => (
+                            <button
+                              key={type}
+                              onClick={() => setActiveSchema(type)}
+                              className={`text-[12px] px-3 py-1 rounded transition-colors cursor-pointer ${
+                                activeSchema === type
+                                  ? 'bg-[#F26522] text-white font-semibold'
+                                  : 'bg-gray-700 hover:bg-gray-600 text-gray-300'
+                              }`}
+                            >
+                              {type.charAt(0).toUpperCase() + type.slice(1)}
+                            </button>
+                          ))}
+                        </div>
+                      </div>
+                      <div className="p-6 font-mono text-[13px] overflow-x-auto relative max-h-[300px]">
+                        <button
+                          onClick={() => copyToClipboard(JSON.stringify(schemas[activeSchema], null, 2))}
+                          className="absolute right-4 top-4 bg-gray-800 hover:bg-gray-700 text-gray-300 text-[11px] px-3 py-1.5 rounded border border-gray-700 transition-colors cursor-pointer"
+                        >
+                          {copiedSchema ? 'Copied!' : 'Copy Code'}
+                        </button>
+                        <pre className="text-green-400">{JSON.stringify(schemas[activeSchema], null, 2)}</pre>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+
+                {/* Section 3: GEO & LLM Citations */}
+                <article id="geo-optimization-llm" className="scroll-mt-24">
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="w-8 h-8 rounded bg-gray-900 text-white flex items-center justify-center font-bold text-[14px]">03</div>
+                    <span className="text-[12px] font-semibold text-[#F26522] uppercase tracking-wider">Generative Optimization</span>
+                  </div>
+                  <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 tracking-tight mb-8">
+                    Generative Engine Optimization & LLM Visibility
+                  </h2>
+                  <div className="text-gray-600 text-[15px] sm:text-[16px] leading-[1.75] flex flex-col gap-6">
+                    <p>
+                      The search environment is undergoing its most significant transition in twenty years. Users are shifting from traditional search queries to dynamic conversational prompts answered directly by LLMs like ChatGPT, Claude, Perplexity, and Gemini. If your brand is not recognized by these models, you are missing out on the primary channel where B2B buyers form their shortlists.
+                    </p>
+                    <p>
+                      Generative Engine Optimization (GEO) is the practice of ensuring your brand entities are referenced and recommended as the definitive answer within generative AI responses. Traditional search engines rank pages based on backlinks and keyword placement. LLM retrieval pipelines and Retrieval-Augmented Generation (RAG) models index pages based on authority overlap, semantic alignment, and the volume of factual mentions across trusted databases.
+                    </p>
+                    <p>
+                      Our GEO strategy builds semantic citation loops. We map out the publications, datasets, trade journals, and directories that LLM builders use to pre-train and fine-tune their models. We then execute targeted PR campaigns to place your brand name, data, and technical definitions inside these trusted sources.
+                    </p>
+                    <p>
+                      We also format your on-site content to match the natural extraction habits of LLMs. This involves structuring page data into clear summaries, tabular formats, and direct Q&A blocks that crawlers can easily parse. When an AI agent scans your page, it finds structured, quote-ready statements that translate directly into citations.
+                    </p>
+                  </div>
+                </article>
+
+                {/* Section 4: Pipeline Orchestration */}
+                <article id="pipeline-orchestration" className="scroll-mt-24">
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="w-8 h-8 rounded bg-gray-900 text-white flex items-center justify-center font-bold text-[14px]">04</div>
+                    <span className="text-[12px] font-semibold text-[#F26522] uppercase tracking-wider">Revenue Pipelines</span>
+                  </div>
+                  <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 tracking-tight mb-8">
+                    Pipeline Integration & Conversion Architecture
+                  </h2>
+                  <div className="text-gray-600 text-[15px] sm:text-[16px] leading-[1.75] flex flex-col gap-6">
+                    <p>
+                      Organic search traffic is ultimately a vanity metric unless it converts into pipeline value. Traditional agency models celebrate traffic growth even if it fails to generate qualified revenue. Gobiya operates under a pipeline-first framework. We connect search traffic to automated sales development systems, turning your website into an active, high-yield pipeline generator.
+                    </p>
+                    <p>
+                      We build our web applications with custom React and Vite architectures. Standard templates and heavy page-builders are riddled with code bloat and database overhead that damage conversion rates. By delivering sub-second load times, we satisfy Core Web Vitals and capture high-intent users who would otherwise bounce due to lag.
+                    </p>
+                    <p>
+                      We integrate anonymous visitor de-anonymization technologies directly into the page layer. By resolving visiting IP addresses to specific corporate networks in real time, we log which organizations are researching your products and what pages they read. This intent data is fed directly into your CRM (Salesforce or HubSpot) and triggers automated, timing-optimized sales sequences targeting matching buyers at those accounts.
+                    </p>
+                    <p>
+                      We close the feedback loop with advanced multi-touch attribution. We trace every B2B pipeline opportunity back to the specific content hubs and entity nodes that initially captured the buyer's attention. This ensures that every investment in our search engineering protocol is directly justified by measurable closed-won revenue metrics.
+                    </p>
+
+                    {/* Metrics Comparison Table */}
+                    <div className="mt-12 overflow-x-auto border border-gray-150 rounded-xl">
+                      <table className="w-full text-[14px] text-left">
+                        <thead>
+                          <tr className="bg-gray-50 border-b border-gray-150 text-gray-900 font-semibold">
+                            <th className="p-4 sm:p-5">Performance Vector</th>
+                            <th className="p-4 sm:p-5">Traditional Agency SEO</th>
+                            <th className="p-4 sm:p-5 text-[#F26522]">Gobiya Pipeline Engineering</th>
+                          </tr>
+                        </thead>
+                        <tbody className="divide-y divide-gray-150 text-gray-600">
+                          <tr>
+                            <td className="p-4 sm:p-5 font-medium text-gray-900">Key Metric</td>
+                            <td className="p-4 sm:p-5">Keyword ranking positions & general traffic volume</td>
+                            <td className="p-4 sm:p-5 text-gray-900 font-medium">Qualified B2B meetings & attributed pipeline</td>
+                          </tr>
+                          <tr>
+                            <td className="p-4 sm:p-5 font-medium text-gray-900">Content Model</td>
+                            <td className="p-4 sm:p-5">High-volume, keyword-targeted articles (thin content)</td>
+                            <td className="p-4 sm:p-5 text-gray-900 font-medium">Entity-mapped, comprehensive topical hubs</td>
+                          </tr>
+                          <tr>
+                            <td className="p-4 sm:p-5 font-medium text-gray-900">AI Readiness</td>
+                            <td className="p-4 sm:p-5">None (optimized purely for legacy Google search bots)</td>
+                            <td className="p-4 sm:p-5 text-gray-900 font-medium">Generative Engine Optimization (GEO) citation structures</td>
+                          </tr>
+                          <tr>
+                            <td className="p-4 sm:p-5 font-medium text-gray-900">Lead Sourcing</td>
+                            <td className="p-4 sm:p-5">Passive contact forms with zero intent tracking</td>
+                            <td className="p-4 sm:p-5 text-gray-900 font-medium">Reverse-IP deanonymization & CRM integrations</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </article>
+
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* DETAILED METHODOLOGY FOR THE APPROACH PATH */}
+      {path === '/company/approach' && (
+        <section className="bg-white py-20 sm:py-32 border-t border-gray-150 relative z-20" data-logo-dark>
+          <div className="max-w-[1440px] w-full mx-auto px-5 sm:px-8 lg:px-12">
+            <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-16">
+              
+              {/* Sticky Sidebar Navigation */}
+              <aside className="hidden lg:block">
+                <div className="sticky top-24 flex flex-col gap-8">
+                  <div>
+                    <span className="text-[11px] font-bold text-gray-400 uppercase tracking-widest block mb-1">Our Methodology</span>
+                    <h3 className="text-xl font-bold text-gray-900">Search Blueprint</h3>
+                  </div>
+                  
+                  <nav className="flex flex-col border-l border-gray-150 pl-4 py-2">
+                    {sections.map((sec) => (
+                      <button
+                        key={sec.id}
+                        onClick={() => handleScrollToSection(sec.id)}
+                        className={`text-left text-[14px] py-2 transition-all duration-300 relative border-l-2 -ml-[17px] pl-4 cursor-pointer ${
+                          activeSection === sec.id
+                            ? 'text-[#F26522] border-[#F26522] font-semibold'
+                            : 'text-gray-400 border-transparent hover:text-gray-700 hover:border-gray-300'
+                        }`}
+                      >
+                        {sec.label}
+                      </button>
+                    ))}
+                  </nav>
+
+                  <div className="bg-[#f9f9f9] border border-gray-100 p-6 rounded-xl">
+                    <h4 className="text-[12px] font-bold uppercase tracking-wider text-gray-900 mb-2">Target Metrics</h4>
+                    <ul className="flex flex-col gap-3">
+                      <li className="flex justify-between text-[13px] text-gray-600">
+                        <span>Word count baseline:</span>
+                        <span className="font-semibold text-gray-900">2,200+</span>
+                      </li>
+                      <li className="flex justify-between text-[13px] text-gray-600">
+                        <span>LLM Citation Rate:</span>
+                        <span className="font-semibold text-gray-900">90%+</span>
+                      </li>
+                      <li className="flex justify-between text-[13px] text-gray-600">
+                        <span>Rendering Latency:</span>
+                        <span className="font-semibold text-gray-900">&lt;100ms</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </aside>
+
+              {/* Main Copy Area */}
+              <div className="flex flex-col gap-24 max-w-4xl">
+                
+                {/* Intro Callout */}
+                <div className="border-l-4 border-[#F26522] pl-6 py-2">
+                  <p className="text-[clamp(1.1rem,2vw,1.4rem)] text-gray-800 font-medium leading-relaxed">
+                    Search engine optimization is no longer a marketing checklist. It is a technical engineering discipline. 
+                    Below is Gobiya's detailed operating model for algorithmic dominance, entity-based indexing, 
+                    and closed-loop B2B pipeline conversion.
+                  </p>
+                </div>
+
+                {/* Section 1: Algorithmic Shift */}
+                <article id="algorithmic-shift" className="scroll-mt-24">
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="w-8 h-8 rounded bg-gray-900 text-white flex items-center justify-center font-bold text-[14px]">01</div>
+                    <span className="text-[12px] font-semibold text-[#F26522] uppercase tracking-wider">The Paradigm Shift</span>
+                  </div>
+                  <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 tracking-tight mb-8">
+                    Keywords are Strings. Google Indexes Things.
+                  </h2>
+                  <div className="text-gray-600 text-[15px] sm:text-[16px] leading-[1.75] flex flex-col gap-6">
+                    <p>
+                      In the early eras of organic search engine optimization, websites were indexed based on direct string-matching algorithms. If a page was designed to rank for a query like "B2B sales pipeline integration tools," the primary operational objective was to verify the presence of that phrase in meta titles, headings, and copy at a specific keyword density. Today, Google's Helpful Content System, core quality classifiers, and neural matching algorithms operate on a fundamentally different paradigm. Search engines no longer index strings; they index entities.
+                    </p>
+                    <p>
+                      An entity is a distinct, well-defined concept, organization, person, place, or thing that is cataloged in Google's Knowledge Graph, often represented by a unique machine-readable Knowledge Graph ID (KGMID). When a user inputs a query, the search engine does not search for pages containing those letters. Instead, it decomposes the prompt into recognized entities, resolves the user's implicit and explicit intent, and queries its graph database. It looks for pages that establish a high-salience connection to the requested entity node.
+                    </p>
+                    <p>
+                      Under this framework, Gobiya's approach is designed around semantic triples (Subject-Predicate-Object). We map out your business entities, service offerings, and target categories to ensure they are represented in the precise format search crawlers expect. Rather than writing arbitrary articles targeting high search volume keywords, we construct content structures that minimize semantic distance to verified authority nodes.
+                    </p>
+                    <p>
+                      This entity-based methodology is also the absolute foundation of Generative Engine Optimization (GEO). Modern Large Language Models (LLMs) such as OpenAI's GPT-4, Anthropic's Claude 3.5, and Google's Gemini do not navigate page authority vectors like traditional search engines. They map out semantic spaces. To ensure your brand is cited and surfaced inside these conversational answers, you must define your entity connections explicitly.
+                    </p>
+                  </div>
+                </article>
+
+                {/* Section 2: Topical Authority */}
+                <article id="topical-authority" className="scroll-mt-24">
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="w-8 h-8 rounded bg-gray-900 text-white flex items-center justify-center font-bold text-[14px]">02</div>
+                    <span className="text-[12px] font-semibold text-[#F26522] uppercase tracking-wider">Topical Authority</span>
+                  </div>
+                  <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 tracking-tight mb-8">
+                    Topological Architecture & Schema Engineering
+                  </h2>
+                  <div className="text-gray-600 text-[15px] sm:text-[16px] leading-[1.75] flex flex-col gap-6">
+                    <p>
+                      Search dominance requires topical completeness. You cannot rank high-value transactional landing pages if your site lacks the foundational informational resources that prove expertise. For example, ranking a service page for "B2B sales development pipeline setup" requires an exhaustive topological content map covering peripheral queries: outbound pipeline metrics, lead response times, cold email sequence structures, CRM integration flows, and team scaling guides.
+                    </p>
+                    <p>
+                      Gobiya maps out your market sector as an interconnected semantic graph. We structure your content using strict pillar-and-cluster hubs that flow PageRank and semantic signals smoothly from high-volume informational nodes down to high-intent transactional pages. By carefully mapping intent profiles, we eliminate internal keyword cannibalization, ensuring each URL targets a unique, isolated search intent.
+                    </p>
+                    <p>
+                      We explicitly define these relationships for search bots using advanced, nested JSON-LD structured schema. Rather than basic schema templates, we build customized schema graphs connecting your organization, services, authors, and target markets. We use properties like `about`, `mentions`, and `knowsAbout` pointing directly to DBpedia and Wikipedia entity records. This removes the need for search bots to guess page topics, accelerating indexation and boosting entity authority rankings.
+                    </p>
+
+                    {/* Interactive Schema Visualizer component */}
+                    <div className="mt-8 bg-gray-900 text-gray-150 rounded-xl overflow-hidden shadow-lg border border-gray-800">
+                      <div className="bg-gray-800 px-6 py-4 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                        <div>
+                          <h4 className="text-[13px] font-bold uppercase tracking-wider text-white">Interactive Schema Blueprint</h4>
+                          <p className="text-[12px] text-gray-400">Select entity type to view nested JSON-LD structure</p>
+                        </div>
+                        <div className="flex gap-2">
+                          {(['business', 'website', 'article'] as const).map((type) => (
+                            <button
+                              key={type}
+                              onClick={() => setActiveSchema(type)}
+                              className={`text-[12px] px-3 py-1 rounded transition-colors cursor-pointer ${
+                                activeSchema === type
+                                  ? 'bg-[#F26522] text-white font-semibold'
+                                  : 'bg-gray-700 hover:bg-gray-600 text-gray-300'
+                              }`}
+                            >
+                              {type.charAt(0).toUpperCase() + type.slice(1)}
+                            </button>
+                          ))}
+                        </div>
+                      </div>
+                      <div className="p-6 font-mono text-[13px] overflow-x-auto relative max-h-[300px]">
+                        <button
+                          onClick={() => copyToClipboard(JSON.stringify(schemas[activeSchema], null, 2))}
+                          className="absolute right-4 top-4 bg-gray-800 hover:bg-gray-700 text-gray-300 text-[11px] px-3 py-1.5 rounded border border-gray-700 transition-colors cursor-pointer"
+                        >
+                          {copiedSchema ? 'Copied!' : 'Copy Code'}
+                        </button>
+                        <pre className="text-green-400">{JSON.stringify(schemas[activeSchema], null, 2)}</pre>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+
+                {/* Section 3: GEO & LLM Citations */}
+                <article id="geo-optimization-llm" className="scroll-mt-24">
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="w-8 h-8 rounded bg-gray-900 text-white flex items-center justify-center font-bold text-[14px]">03</div>
+                    <span className="text-[12px] font-semibold text-[#F26522] uppercase tracking-wider">Generative Optimization</span>
+                  </div>
+                  <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 tracking-tight mb-8">
+                    Generative Engine Optimization & LLM Visibility
+                  </h2>
+                  <div className="text-gray-600 text-[15px] sm:text-[16px] leading-[1.75] flex flex-col gap-6">
+                    <p>
+                      The search environment is undergoing its most significant transition in twenty years. Users are shifting from traditional search queries to dynamic conversational prompts answered directly by LLMs like ChatGPT, Claude, Perplexity, and Gemini. If your brand is not recognized by these models, you are missing out on the primary channel where B2B buyers form their shortlists.
+                    </p>
+                    <p>
+                      Generative Engine Optimization (GEO) is the practice of ensuring your brand entities are referenced and recommended as the definitive answer within generative AI responses. Traditional search engines rank pages based on backlinks and keyword placement. LLM retrieval pipelines and Retrieval-Augmented Generation (RAG) models index pages based on authority overlap, semantic alignment, and the volume of factual mentions across trusted databases.
+                    </p>
+                    <p>
+                      Our GEO strategy builds semantic citation loops. We map out the publications, datasets, trade journals, and directories that LLM builders use to pre-train and fine-tune their models. We then execute targeted PR campaigns to place your brand name, data, and technical definitions inside these trusted sources.
+                    </p>
+                    <p>
+                      We also format your on-site content to match the natural extraction habits of LLMs. This involves structuring page data into clear summaries, tabular formats, and direct Q&A blocks that crawlers can easily parse. When an AI agent scans your page, it finds structured, quote-ready statements that translate directly into citations.
+                    </p>
+                  </div>
+                </article>
+
+                {/* Section 4: Pipeline Orchestration */}
+                <article id="pipeline-orchestration" className="scroll-mt-24">
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="w-8 h-8 rounded bg-gray-900 text-white flex items-center justify-center font-bold text-[14px]">04</div>
+                    <span className="text-[12px] font-semibold text-[#F26522] uppercase tracking-wider">Revenue Pipelines</span>
+                  </div>
+                  <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 tracking-tight mb-8">
+                    Pipeline Integration & Conversion Architecture
+                  </h2>
+                  <div className="text-gray-600 text-[15px] sm:text-[16px] leading-[1.75] flex flex-col gap-6">
+                    <p>
+                      Organic search traffic is ultimately a vanity metric unless it converts into pipeline value. Traditional agency models celebrate traffic growth even if it fails to generate qualified revenue. Gobiya operates under a pipeline-first framework. We connect search traffic to automated sales development systems, turning your website into an active, high-yield pipeline generator.
+                    </p>
+                    <p>
+                      We build our web applications with custom React and Vite architectures. Standard templates and heavy page-builders are riddled with code bloat and database overhead that damage conversion rates. By delivering sub-second load times, we satisfy Core Web Vitals and capture high-intent users who would otherwise bounce due to lag.
+                    </p>
+                    <p>
+                      We integrate anonymous visitor de-anonymization technologies directly into the page layer. By resolving visiting IP addresses to specific corporate networks in real time, we log which organizations are researching your products and what pages they read. This intent data is fed directly into your CRM (Salesforce or HubSpot) and triggers automated, timing-optimized sales sequences targeting matching buyers at those accounts.
+                    </p>
+                    <p>
+                      We close the feedback loop with advanced multi-touch attribution. We trace every B2B pipeline opportunity back to the specific content hubs and entity nodes that initially captured the buyer's attention. This ensures that every investment in our search engineering protocol is directly justified by measurable closed-won revenue metrics.
+                    </p>
+
+                    {/* Metrics Comparison Table */}
+                    <div className="mt-12 overflow-x-auto border border-gray-150 rounded-xl">
+                      <table className="w-full text-[14px] text-left">
+                        <thead>
+                          <tr className="bg-gray-50 border-b border-gray-150 text-gray-900 font-semibold">
+                            <th className="p-4 sm:p-5">Performance Vector</th>
+                            <th className="p-4 sm:p-5">Traditional Agency SEO</th>
+                            <th className="p-4 sm:p-5 text-[#F26522]">Gobiya Pipeline Engineering</th>
+                          </tr>
+                        </thead>
+                        <tbody className="divide-y divide-gray-150 text-gray-600">
+                          <tr>
+                            <td className="p-4 sm:p-5 font-medium text-gray-900">Key Metric</td>
+                            <td className="p-4 sm:p-5">Keyword ranking positions & general traffic volume</td>
+                            <td className="p-4 sm:p-5 text-gray-900 font-medium">Qualified B2B meetings & attributed pipeline</td>
+                          </tr>
+                          <tr>
+                            <td className="p-4 sm:p-5 font-medium text-gray-900">Content Model</td>
+                            <td className="p-4 sm:p-5">High-volume, keyword-targeted articles (thin content)</td>
+                            <td className="p-4 sm:p-5 text-gray-900 font-medium">Entity-mapped, comprehensive topical hubs</td>
+                          </tr>
+                          <tr>
+                            <td className="p-4 sm:p-5 font-medium text-gray-900">AI Readiness</td>
+                            <td className="p-4 sm:p-5">None (optimized purely for legacy Google search bots)</td>
+                            <td className="p-4 sm:p-5 text-gray-900 font-medium">Generative Engine Optimization (GEO) citation structures</td>
+                          </tr>
+                          <tr>
+                            <td className="p-4 sm:p-5 font-medium text-gray-900">Lead Sourcing</td>
+                            <td className="p-4 sm:p-5">Passive contact forms with zero intent tracking</td>
+                            <td className="p-4 sm:p-5 text-gray-900 font-medium">Reverse-IP deanonymization & CRM integrations</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </article>
+
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* DETAILED CASE STUDIES FOR SUCCESS STORIES PATH */}
+      {path === '/company/success-stories' && (
+        <section className="bg-white py-20 sm:py-32 border-t border-gray-150 relative z-20" data-logo-dark>
+          <div className="max-w-[1440px] w-full mx-auto px-5 sm:px-8 lg:px-12">
+            <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-16">
+              
+              {/* Sticky Sidebar Navigation */}
+              <aside className="hidden lg:block">
+                <div className="sticky top-24 flex flex-col gap-8">
+                  <div>
+                    <span className="text-[11px] font-bold text-gray-400 uppercase tracking-widest block mb-1">Our Success Stories</span>
+                    <h3 className="text-xl font-bold text-gray-900">Proven Results</h3>
+                  </div>
+                  
+                  <nav className="flex flex-col border-l border-gray-150 pl-4 py-2">
+                    {successSections.map((sec) => (
+                      <button
+                        key={sec.id}
+                        onClick={() => handleScrollToSection(sec.id)}
+                        className={`text-left text-[14px] py-2 transition-all duration-300 relative border-l-2 -ml-[17px] pl-4 cursor-pointer ${
+                          activeSuccessSection === sec.id
+                            ? 'text-[#F26522] border-[#F26522] font-semibold'
+                            : 'text-gray-400 border-transparent hover:text-gray-700 hover:border-gray-300'
+                        }`}
+                      >
+                        {sec.label}
+                      </button>
+                    ))}
+                  </nav>
+
+                  <div className="bg-[#f9f9f9] border border-gray-100 p-6 rounded-xl">
+                    <h4 className="text-[12px] font-bold uppercase tracking-wider text-gray-900 mb-2">Agency Performance</h4>
+                    <ul className="flex flex-col gap-3">
+                      <li className="flex justify-between text-[13px] text-gray-600">
+                        <span>Attributed ACV:</span>
+                        <span className="font-semibold text-gray-900">$3.4M+</span>
+                      </li>
+                      <li className="flex justify-between text-[13px] text-gray-600">
+                        <span>Recovery Window:</span>
+                        <span className="font-semibold text-gray-900">90 Days</span>
+                      </li>
+                      <li className="flex justify-between text-[13px] text-gray-600">
+                        <span>Core Web Vitals:</span>
+                        <span className="font-semibold text-gray-900">100/100</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </aside>
+
+              {/* Main Copy Area */}
+              <div className="flex flex-col gap-24 max-w-4xl">
+                
+                {/* Intro Callout */}
+                <div className="border-l-4 border-[#F26522] pl-6 py-2">
+                  <p className="text-[clamp(1.1rem,2vw,1.4rem)] text-gray-800 font-medium leading-relaxed">
+                    We do not provide vanity growth metrics. We build search recovery systems and outbound pipelines that translate directly into closed-won contract value. 
+                    Below are the technical case studies detailing Gobiya's algorithmic operations and B2B pipeline integrations.
+                  </p>
+                </div>
+
+                {/* Section 1: Algorithmic Update Recovery */}
+                <article id="recovery-case" className="scroll-mt-24">
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="w-8 h-8 rounded bg-gray-900 text-white flex items-center justify-center font-bold text-[14px]">01</div>
+                    <span className="text-[12px] font-semibold text-[#F26522] uppercase tracking-wider">Algorithmic Recovery Case Study</span>
+                  </div>
+                  <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 tracking-tight mb-8">
+                    Reversing Helpful Content Penalties for Enterprise SaaS
+                  </h2>
+                  <div className="text-gray-600 text-[15px] sm:text-[16px] leading-[1.75] flex flex-col gap-6">
+                    <p>
+                      In mid-2025, our client—a leading enterprise B2B collaboration software brand—experienced a devastating 62% drop in organic search impressions and sessions immediately following a major Google Helpful Content Update. The ranking decline impacted not only informational resource sections but also high-intent commercial landing pages and primary brand queries, causing a massive decline in direct pipeline opportunities.
+                    </p>
+                    <p>
+                      We initiated our Forensic Update Triage Protocol. We began by reviewing raw server access logs to analyze crawlers' patterns and behaviors. The audit identified significant rendering budget blockages: search engine crawlers were spending substantial CPU time rendering heavy, client-side React bundles instead of indexing critical content. We completely refactored their rendering stack to utilize Server-Side Rendering (SSR) and edge-caching configurations, reducing the Time to First Byte (TTFB) from 1.2 seconds to a consistent 80 milliseconds.
+                    </p>
+                    <p>
+                      Simultaneously, we executed our Content Pruning Framework. We analyzed all indexable URLs against organic traffic and search database metrics. We identified that over 40% of the site's indexed blog section comprised thin, outdated, or redundant information that was dragging down the domain-wide quality multiplier. Over a two-week window, we pruned and 301-redirected 1,200 thin articles and consolidated 300 related informational resources into 15 high-authority, comprehensive topical hubs.
+                    </p>
+                    <p>
+                      We then rebuilt their E-E-A-T (Experience, Expertise, Authoritativeness, Trustworthiness) trust signals. We mapped every piece of content to verified author entities using nested JSON-LD schema markup, connecting their authors directly to verified academic databases and industry networks. Within 90 days, Google's algorithmic suppressions were completely lifted, restoring organic search traffic to 410,000 monthly sessions—representing a 108% recovery from the pre-update peak.
+                    </p>
+                  </div>
+                </article>
+
+                {/* Section 2: B2B Pipeline Automation */}
+                <article id="pipeline-case" className="scroll-mt-24">
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="w-8 h-8 rounded bg-gray-900 text-white flex items-center justify-center font-bold text-[14px]">02</div>
+                    <span className="text-[12px] font-semibold text-[#F26522] uppercase tracking-wider">Pipeline Engineering Case Study</span>
+                  </div>
+                  <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 tracking-tight mb-8">
+                    Scaling Outbound Meetings for Enterprise Logistics
+                  </h2>
+                  <div className="text-gray-600 text-[15px] sm:text-[16px] leading-[1.75] flex flex-col gap-6">
+                    <p>
+                      A mid-market logistics operator approached Gobiya with stagnant organic pipeline values. Although their site was ranking for generic informational search queries, their traffic failed to convert into qualified sales opportunities. Their sales department was forced to rely on manual outbound cold calling and expensive, inaccurate database lists.
+                    </p>
+                    <p>
+                      Our strategy focused on a unified B2B Pipeline Integration. We mapped their service offerings into a structured topical authority graph, designing 30 comprehensive content hubs targeting high-intent long-tail queries related to supply chain software, warehousing routes, and international customs regulations.
+                    </p>
+                    <p>
+                      We integrated real-time reverse-IP de-anonymization technologies directly into the page layer. This allowed us to identify visiting corporate accounts, what specific warehousing content they were reading, and their overall interaction duration in real time. We routed these intent signals directly to their CRM system (HubSpot/Salesforce), automatically triggering personalized cold outreach campaigns targeting decision-makers at the matching corporate domains.
+                    </p>
+                    <p>
+                      Within six months of deployment, this automated pipeline generated 142 qualified meetings with high-intent enterprise buyers and added $3.4M in closed-won annual contract value (ACV).
+                    </p>
+
+                    {/* Live Simulated Intent Dashboard */}
+                    <div className="mt-8 bg-gray-900 text-gray-150 rounded-xl overflow-hidden shadow-lg border border-gray-800">
+                      <div className="bg-gray-800 px-6 py-4 flex justify-between items-center">
+                        <div>
+                          <h4 className="text-[13px] font-bold uppercase tracking-wider text-white">Live Intent Signal Simulation</h4>
+                          <p className="text-[12px] text-gray-400">Real-time visitor deanonymization feed</p>
+                        </div>
+                        <span className="flex h-3 w-3 relative">
+                          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                          <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+                        </span>
+                      </div>
+                      <div className="p-6 font-mono text-[13px] overflow-x-auto">
+                        <div className="flex flex-col gap-4">
+                          <div className="grid grid-cols-[120px_1fr_80px_60px] gap-4 border-b border-gray-800 pb-2 text-gray-400 text-[11px] uppercase tracking-wider">
+                            <span>Account</span>
+                            <span>Active Path</span>
+                            <span>Visited</span>
+                            <span>Intent</span>
+                          </div>
+                          {simulatedVisitors.map((visitor, idx) => (
+                            <div key={idx} className="grid grid-cols-[120px_1fr_80px_60px] gap-4 items-center text-[12px] animate-fade-rise">
+                              <span className="text-white font-medium truncate">{visitor.company}</span>
+                              <span className="text-gray-400 truncate">{visitor.page}</span>
+                              <span className="text-gray-500 text-[11px]">{visitor.time}</span>
+                              <span className={`font-semibold text-right ${visitor.intent >= 90 ? 'text-green-400' : 'text-[#F26522]'}`}>{visitor.intent}%</span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+
+                {/* Section 3: GEO & LLM Citations */}
+                <article id="geo-case" className="scroll-mt-24">
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="w-8 h-8 rounded bg-gray-900 text-white flex items-center justify-center font-bold text-[14px]">03</div>
+                    <span className="text-[12px] font-semibold text-[#F26522] uppercase tracking-wider">Generative Engine Case Study</span>
+                  </div>
+                  <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 tracking-tight mb-8">
+                    Generative Search Dominance for Fintech Platforms
+                  </h2>
+                  <div className="text-gray-600 text-[15px] sm:text-[16px] leading-[1.75] flex flex-col gap-6">
+                    <p>
+                      As AI search platforms grew to dominate B2B research cycles, an enterprise fintech platform saw traditional organic traffic patterns shift. High-intent corporate buyers were no longer searching for core compliance keywords on Google; instead, they were prompting AI engines like ChatGPT, Claude, and Perplexity to compile recommendations and shortlists. The fintech platform was omitted from these model recommendations.
+                    </p>
+                    <p>
+                      Gobiya designed a comprehensive Generative Engine Optimization (GEO) campaign. We mapped the semantic retrieval patterns these models utilize during payment gateway and B2B accounting queries. We established clear entity relations using nested JSON-LD schema structured markup, linking the fintech domain to verified Knowledge Graph definitions using `about` and `knowsAbout` references.
+                    </p>
+                    <p>
+                      We optimized the semantic structure of their technical compliance articles, formatting data into clear summaries, comparison tables, and direct Q&A blocks designed specifically for Retrieval-Augmented Generation (RAG) models. Additionally, we ran a targeted semantic PR campaign, placing mentions of their fintech architecture in high-authority repositories and open journals that LLMs utilize in their pre-training and real-time search directories.
+                    </p>
+                    <p>
+                      Within 120 days, the brand went from 0% recommendation presence to being cited in 84% of B2B fintech compliance queries on ChatGPT and Claude, prompting a 240% increase in pre-qualified sales calls.
+                    </p>
+                  </div>
+                </article>
+
+                {/* Section 4: Performance Dev */}
+                <article id="conversion-case" className="scroll-mt-24">
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="w-8 h-8 rounded bg-gray-900 text-white flex items-center justify-center font-bold text-[14px]">04</div>
+                    <span className="text-[12px] font-semibold text-[#F26522] uppercase tracking-wider">Technical Engineering Case Study</span>
+                  </div>
+                  <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 tracking-tight mb-8">
+                    Sub-Second React Architecture for Cyber Security
+                  </h2>
+                  <div className="text-gray-600 text-[15px] sm:text-[16px] leading-[1.75] flex flex-col gap-6">
+                    <p>
+                      An enterprise cybersecurity provider was directing high-spend PPC ad traffic to a legacy WordPress site. Due to outdated themes, database overhead, and heavy plugins, their page load speeds averaged 4.6 seconds, failing Core Web Vitals and causing a high bounce rate of 58%. The conversion rate from paid traffic to demo requests was stuck at 0.8%.
+                    </p>
+                    <p>
+                      Gobiya completely rebuilt the digital application from scratch using React, Vite, and tailwind.css, achieving a page load speed of 0.4 seconds. We eliminated slow plugins, built custom lightweight components, and structured clean conversion funnels (sticky CTAs, micro-interactive forms, and live security calculators).
+                    </p>
+                    <p>
+                      We integrated closed-loop multi-touch attribution metrics to trace the user journey from the first touch (whether a search recommendation or GEO citation) to the final demo submission. By eliminating loading lag and styling the user experience with modern UI principles, the site's bounce rate dropped to 22%, and the conversion rate surged from 0.8% to 2.8%, producing a 250% increase in demo request volume.
+                    </p>
+                  </div>
+                </article>
+
+              </div>
+            </div>
+          </div>
+        </section>
       )}
 
       {/* SIMPLE SERVICES SHOWCASE FOR CONSOLIDATED PATH */}
@@ -826,7 +1638,7 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
       )}
 
       {/* SECTION: LATEST INSIGHTS */}
-      {path !== '/contact' && path !== '/services' && (
+      {path !== '/contact' && path !== '/services' && path !== '/company/approach' && path !== '/company/success-stories' && (
         path !== '/insights' ? (
           <div data-logo-dark className="relative">
             <InsightsSlider filterCategory={config.insightCategory} />
