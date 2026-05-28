@@ -3157,6 +3157,379 @@ const ARTICLES: Record<string, ArticleData> = {
     ),
   },
 
+  'best-website-structure-multiple-locations-different-cities': {
+    slug: 'best-website-structure-multiple-locations-different-cities',
+    title: 'What Is the Best Website Structure for a Business With Multiple Locations in Different Cities?',
+    category: 'Local SEO',
+    readTime: '14 min read',
+    date: 'May 28, 2026',
+    image: '/images/article-multi-city-website-structure.webp',
+    heroAlt: 'Stylized US map with glowing orange network lines connecting city nodes to a single root domain — illustrating single-domain authority consolidation for multi-city businesses',
+    metaDescription: 'The single-domain subdirectory decision, state-city-location hierarchy, cross-city cannibalization failure, and how geographic market separation changes the structural choices for multi-city businesses.',
+    content: (
+      <>
+        {/* ── JSON-LD FAQ SCHEMA ── */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "Should a multi-city business use subdirectories or subdomains?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Subdirectories (yourdomain.com/locations/chicago/) are the correct choice for nearly all multi-city businesses. They consolidate domain authority so every backlink and content signal earned across all cities accrues to one root domain, flowing down to support every city page. Subdomains (chicago.yourdomain.com) split that authority and force each city to build ranking power largely independently — a significant disadvantage for newer city markets."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "What is the correct URL hierarchy for a multi-city business website?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The 2026 consensus hierarchy is: Home > /locations/ (hub page) > /locations/[state]/ (optional, for businesses with many cities across multiple states) > /locations/[city]/ (city page) > /locations/[city]/[neighborhood]/ (individual location, when a city has multiple locations). This structure is mirrored in breadcrumb navigation and gives Google a clear crawl path to every market the business serves."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Why are my city location pages not ranking on Google?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The most common cause is near-identical templated content across city pages — only the city name and address differ. Google suppresses near-duplicate pages rather than ranking them independently. The fix is genuine city-specific content: local service areas, city-specific team members, local testimonials, city-specific FAQ content, and references to local landmarks and neighborhood characteristics that make each page genuinely distinct."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "What is the difference between a physical location page and a service-area page?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "A physical location page maps 1:1 to a verified Google Business Profile with a real address and ranks for location-specific queries. A service-area page targets cities where the business serves customers but has no physical office — it can rank organically for '[service] in [city]' queries but should never claim a physical address or create a GBP for that location, which violates Google's guidelines and risks GBP suspension."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "How much does fixing a broken multi-city website structure cost?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Structural remediation — migrating from subdomains to subdirectories, consolidating separate domains, or rebuilding a flat structure into a proper hierarchy — typically involves a multi-month technical SEO project with costs running into tens of thousands of dollars, depending on site complexity, number of cities, and existing URL patterns requiring redirect mapping. The cost is almost always smaller than the revenue currently being lost from invisible city markets."
+                  }
+                }
+              ]
+            })
+          }}
+        />
+
+        {/* ── LEAD STATS ── */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 my-10 sm:my-14">
+          {[
+            { stat: '18→0', label: 'City location pages suppressed when a regional business launched 18 near-identical pages — the canonical cross-city structural failure', source: 'Uygen 2026' },
+            { stat: '46%', label: 'Share of all Google searches carrying local intent — each invisible city is a daily, per-city customer cost', source: 'Whitespark Local Search Ranking Factors, 2026' },
+            { stat: '76%', label: 'Local searchers who visit a business within 24 hours of a local search — the revenue impact of structural invisibility is immediate', source: 'Google Consumer Insights, 2026' },
+          ].map(({ stat, label, source }) => (
+            <div key={stat} className="border border-[#F26522]/30 bg-[#F26522]/5 p-6">
+              <p className="text-4xl font-bold text-[#F26522] mb-2 font-display">{stat}</p>
+              <p className="text-[14px] text-gray-900 leading-snug mb-1">{label}</p>
+              <p className="text-[11px] uppercase tracking-wider text-gray-500">{source}</p>
+            </div>
+          ))}
+        </div>
+
+        {/* ── TABLE OF CONTENTS ── */}
+        <details className="bg-gray-50 border border-gray-200 rounded-lg p-6 sm:p-8 my-10 sm:my-14 group" open>
+          <summary className="text-[14px] font-semibold uppercase tracking-wider text-gray-500 cursor-pointer list-none flex items-center justify-between">
+            Table of Contents
+            <svg className="w-4 h-4 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" /></svg>
+          </summary>
+          <ul className="mt-6 space-y-3.5 text-[15px] font-medium text-gray-900 border-t border-gray-200 pt-6">
+            {[
+              { id: 'cross-city-structure-2026', label: 'The Cross-City Structure Question — 2026 update' },
+              { id: 'subdirectories-vs-subdomains', label: 'Subdirectories vs subdomains vs separate domains' },
+              { id: 'why-cross-city-matters-more', label: 'Why the single-domain decision matters more for cross-city businesses' },
+              { id: 'state-city-location-hierarchy', label: 'The state-city-location hierarchy' },
+              { id: 'cross-city-cannibalization', label: 'The cross-city cannibalization failure and how to avoid it' },
+              { id: 'cost-of-wrong-structure', label: 'The cost of getting cross-city structure wrong' },
+              { id: 'service-area-vs-physical', label: 'Service-area cities vs physical-location cities' },
+              { id: 'properly-architected-vs-flat', label: 'What separates a properly-architected multi-city site from a flat collection of city pages' },
+              { id: 'why-gobiya', label: 'Why Gobiya is positioned differently for multi-city businesses' },
+              { id: 'highest-structural-stakes', label: 'Which multi-city businesses face the highest structural stakes' },
+              { id: 'getting-it-right', label: 'What getting the structure right actually looks like' },
+              { id: 'making-call', label: 'Making the right call for your multi-city structure' },
+              { id: 'faq', label: 'Frequently Asked Questions' },
+            ].map(({ id, label }) => (
+              <li key={id} className="flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#F26522] shrink-0" />
+                <a href={`#${id}`} className="hover:text-[#F26522] transition-colors">{label}</a>
+              </li>
+            ))}
+          </ul>
+        </details>
+
+        {/* ── INTRO ── */}
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          The best website structure for a business with multiple locations in different cities is, in nearly all cases, a single authoritative domain with a clean city-level subdirectory hierarchy — something like <code className="bg-gray-100 px-1.5 py-0.5 rounded text-[0.9em] text-gray-800">yourdomain.com/locations/chicago/</code> rather than <code className="bg-gray-100 px-1.5 py-0.5 rounded text-[0.9em] text-gray-800">chicago.yourdomain.com</code> or a separate <code className="bg-gray-100 px-1.5 py-0.5 rounded text-[0.9em] text-gray-800">MyBusinessChicago.com</code>. This answer is close to settled among 2026 local SEO practitioners, and the reasoning is specific: a single domain consolidates all the authority signals your business earns across every city into one domain, while subdomains split that authority and separate domains fragment it entirely.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          For a business operating in genuinely different cities — distinct metros, sometimes distinct states, each with its own competitive set and its own local search behavior — the structural decision is more consequential than it is for a business with several locations clustered in one metro. Each city represents a genuinely separate market the business needs to rank in independently. The foundational principles of <a href="/insights/multi-location-seo-website-structure" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">multi-location SEO website structure</a> apply in full — and the stakes for getting the decision wrong compound with every additional city the business enters.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          This is the structural problem multi-city businesses get wrong most often, and it's the one that's most expensive to fix later. The strongest multi-city operators settle the domain-and-hierarchy decision before they build the site, because retrofitting a broken structure — migrating from subdomains to subdirectories, consolidating separate domains, or rebuilding a flat structure into a proper hierarchy — is a meaningful technical project with real SEO risk.
+        </p>
+
+        {/* ── SECTION 1 ── */}
+        <div id="cross-city-structure-2026" className="scroll-mt-24" />
+        <h2 className="text-[1.6rem] sm:text-[2rem] font-display font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">The Cross-City Structure Question — 2026 update</h2>
+        <ul className="space-y-3 mb-8 pl-0">
+          {[
+            <><strong>Single root domain</strong> — The near-universal 2026 expert consensus for multi-city businesses: subdirectories pool domain authority, subdomains dilute it, and separate domains fragment it (Uygen / Intellibright / NuroSparX 2026)</>,
+            <><strong>/locations/[city]/</strong> — The URL pattern that essentially every credible 2026 multi-location guide converges on, with a /locations/ hub page as the crawlable index and authority-distribution point</>,
+            <><strong>18 → near-zero</strong> — A regional service business with locations in 18 cities published 18 near-identical location pages; Google suppressed most of them rather than ranking them — the canonical cross-city structural failure (Uygen 2026)</>,
+          ].map((item, i) => (
+            <li key={i} className="flex items-start gap-3 text-[16px] sm:text-[17px] leading-[1.6] text-gray-800">
+              <span className="mt-1.5 w-2 h-2 rounded-full bg-[#F26522] shrink-0" />
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+
+        {/* ── SECTION 2 ── */}
+        <div id="subdirectories-vs-subdomains" className="scroll-mt-24" />
+        <h2 className="text-[1.6rem] sm:text-[2rem] font-display font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">The single-domain decision: subdirectories vs subdomains vs separate domains</h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          The first and most consequential structural decision is where your city locations live relative to your main domain. There are three options, and for the overwhelming majority of multi-city businesses, only one is correct.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          <strong>Subdirectories (yourdomain.com/locations/chicago/)</strong> keep every city location on the main domain as a folder path. This is the recommended structure for almost all multi-city businesses because it consolidates domain authority. Every backlink, every piece of content, every authority signal your business earns anywhere — for any city, for the brand overall — accrues to the single root domain, and that consolidated authority flows down through the internal link structure to support every city's location pages. A new city you launch benefits immediately from the authority the domain has accumulated across all the other cities.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          <strong>Subdomains (chicago.yourdomain.com)</strong> put each city on its own subdomain under the main domain. Google treats subdomains as substantially separate properties for authority purposes — which means the authority your brand earns doesn't flow as cleanly between the subdomain and the root domain, and each city subdomain has to build its own authority more independently. The 2026 consensus is that subdomains dilute authority relative to subdirectories. There are narrow cases where subdomains make sense — typically very large enterprises with hundreds or thousands of locations where the operational benefits of separating technical infrastructure outweigh the authority dilution. For a typical multi-city business under 100 locations, subdomains are the wrong choice.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          <strong>Separate domains (MyBusinessChicago.com, MyBusinessDenver.com)</strong> give each city its own standalone domain. This is the worst option for SEO in nearly all cases. It fragments authority completely — every city domain starts from zero and has to build authority entirely independently, with no benefit from the brand's overall authority or from the authority earned in other cities. It multiplies the operational burden: separate technical SEO, separate analytics, separate Search Console, separate link-building for each domain. The only defensible cases are genuine franchise models where each location is independently owned with its own distinct brand, or businesses where each city operation is legally and operationally separate to a degree that shared branding would be misleading.
+        </p>
+
+        <div className="bg-gray-50 border-l-4 border-[#F26522] p-6 sm:p-8 my-10">
+          <h3 className="text-[15px] font-semibold uppercase tracking-wider text-[#F26522] mb-3">The compounding authority gap over time</h3>
+          <p className="text-[15px] sm:text-[16px] leading-[1.7] text-gray-700">
+            A business that launches on subdirectories and operates in 10 cities has one domain accumulating authority from all 10 cities' worth of content, links, and signals, with each city benefiting from the whole. A business that launches the same 10 cities on separate domains has 10 domains each building authority from scratch, none benefiting from the others, and 10× the operational overhead. Five years later, the subdirectory business has a strong consolidated domain ranking well across all cities. The separate-domain business has 10 weak domains each struggling individually. The structural decision made at launch determines which outcome the business experiences.
+          </p>
+        </div>
+
+        {/* ── INLINE CTA ── */}
+        <div className="bg-gray-900 text-white p-6 sm:p-8 my-10 sm:my-14 flex flex-col sm:flex-row items-start sm:items-center gap-6">
+          <div className="flex-1">
+            <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-2">Gobiya Service</p>
+            <p className="text-[17px] sm:text-[19px] font-medium leading-snug">
+              Fix your multi-city website structure before another city market becomes invisible.
+            </p>
+          </div>
+          <a
+            href="/services/seo"
+            className="group flex items-center bg-[#F26522] hover:bg-[#e05a1a] text-white pl-5 pr-2 py-2 transition-colors duration-300 whitespace-nowrap shrink-0"
+          >
+            <span className="text-[13px] font-medium mr-3">Multi-City SEO Architecture</span>
+            <div className="w-6 h-6 bg-white flex items-center justify-center">
+              <ArrowRight className="w-3.5 h-3.5 text-[#F26522] transition-transform duration-300 group-hover:-rotate-45" />
+            </div>
+          </a>
+        </div>
+
+        {/* ── SECTION 3 ── */}
+        <div id="why-cross-city-matters-more" className="scroll-mt-24" />
+        <h2 className="text-[1.6rem] sm:text-[2rem] font-display font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">Why the single-domain decision matters more for cross-city businesses specifically</h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          For a business with several locations in one metro — five coffee shops across Los Angeles, say — the authority-consolidation benefit of a single domain is real but less decisive, because the locations share a metro-level market and Google's proximity signals do much of the work of distinguishing them. The full picture of <a href="/insights/local-seo-los-angeles" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">how LA's local algorithm weights proximity, prominence, and relevance</a> makes clear why single-metro operators have some geographic shortcut available to them.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          For a business with locations in genuinely different cities — Chicago, Denver, Seattle, Austin — the single-domain decision is more consequential, because each city is a separate market with a separate competitive set, and the business needs each city's pages to rank independently in that city's local results against that city's competitors. The consolidated authority of a single domain is what gives each city's pages the authority foundation to compete in their respective markets. A business that fragments authority across subdomains or separate domains forces each city to compete in its market with only the authority that city has independently earned — which, for newer cities, is close to none. This is why cross-city businesses pay a steeper price for the wrong structural decision than single-metro businesses do.
+        </p>
+
+        {/* ── SECTION 4 ── */}
+        <div id="state-city-location-hierarchy" className="scroll-mt-24" />
+        <h2 className="text-[1.6rem] sm:text-[2rem] font-display font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">The state-city-location hierarchy</h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          Once the single-domain subdirectory decision is made, the next structural question is how to organize the hierarchy — particularly for businesses operating across multiple states and multiple cities, sometimes with multiple locations in a single city.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          The standard 2026 hierarchy follows a geographic nesting pattern: <strong>Home &gt; Locations (hub) &gt; [State or Region] &gt; [City] &gt; [Individual Location, if multiple per city].</strong> In URL terms, this looks like <code className="bg-gray-100 px-1.5 py-0.5 rounded text-[0.9em] text-gray-800">yourdomain.com/locations/</code> for the hub, <code className="bg-gray-100 px-1.5 py-0.5 rounded text-[0.9em] text-gray-800">yourdomain.com/locations/colorado/</code> for a state page (optional for businesses with many locations across several states), <code className="bg-gray-100 px-1.5 py-0.5 rounded text-[0.9em] text-gray-800">yourdomain.com/locations/denver/</code> for a city page, and <code className="bg-gray-100 px-1.5 py-0.5 rounded text-[0.9em] text-gray-800">yourdomain.com/locations/denver/downtown/</code> for an individual location when a city has more than one. The hierarchy is mirrored in breadcrumb navigation, which provides an additional geographic signal to crawlers and helps users understand where they are in the structure.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          <strong>The /locations/ hub page</strong> is a critical and frequently-omitted component. It serves two functions: it gives Google a single crawlable index of every location the business operates, and it acts as an authority-distribution point, passing link equity from the homepage and the overall domain down to individual city and location pages through internal links. Every city and location page should be reachable from this hub. Without a hub, the location pages are harder for Google to discover and crawl comprehensively, and the internal authority flow that supports their rankings is weaker.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          <strong>State or regional pages</strong> are optional and depend on scale. A business in 4 cities probably doesn't need state-level pages — the hub can link directly to city pages. A business in 40 cities across 12 states benefits from state-level pages that organize the structure, provide a layer of geographic relevance, and create a cleaner crawl path.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          <strong>The one-city-multiple-locations problem</strong> is a specific complication of the hierarchy. When a business has several locations in a single city — three urgent care clinics in Denver, say — the structure needs to distinguish them without cannibalizing. The standard approach is a city-level page that serves as a hub for that city and ranks for city-level queries, with individual location pages beneath it, each mapped 1:1 to its own Google Business Profile. The same <a href="/insights/los-angeles-local-seo-explained" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">1:1 GBP-to-page mapping discipline</a> that defines a properly-architected local presence applies here: each location page contains genuinely location-specific content — the specific address, neighborhood, hours, and staff — that gives Google a distinct local entity to rank.
+        </p>
+
+        {/* ── SECTION 5 ── */}
+        <div id="cross-city-cannibalization" className="scroll-mt-24" />
+        <h2 className="text-[1.6rem] sm:text-[2rem] font-display font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">The cross-city cannibalization failure and how to avoid it</h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          The single most common failure mode for multi-city businesses is structural, not content-quality-related, and it's worth understanding precisely because it's both common and avoidable. The pattern: a business launches location pages for every city it operates in, but the pages are near-identical — the same service description, the same value proposition, the same body content, with only the city name and address swapped in. A regional service business that launched 18 city location pages this way watched Google suppress most of them rather than ranking them.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          This is not a Google penalty. There's no manual action involved. It's an algorithmic suppression that happens when Google encounters many near-duplicate pages and, unable to distinguish meaningful differences between them, declines to rank most of them — choosing one (or none) rather than ranking 18 versions of substantively the same page. The business effectively asked Google to pick between 18 near-identical pages, and Google's response is usually to suppress rather than to pick.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          The fix is genuine content differentiation per city. The differentiation has to come from the genuinely local elements: the specific service area and neighborhoods served in each city, local landmarks and geographic references, city-specific service considerations, location-specific team members, city-specific customer testimonials and case studies, local pricing or service availability differences, and city-specific FAQ content addressing the questions that city's customers actually ask. The content for each city page has to contain enough genuinely city-specific material that Google recognizes it as a distinct, valuable page serving a distinct local market — not a template with the city name swapped in. This is the same content-uniqueness principle that distinguishes a real <a href="/insights/multi-location-seo-website-structure" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">multi-location SEO website structure</a> from a single-location site with location names added.
+        </p>
+
+        <blockquote className="border-l-4 border-[#F26522] pl-6 sm:pl-8 my-10 sm:my-14">
+          <p className="text-[18px] sm:text-[22px] font-medium leading-[1.5] text-gray-900 italic">
+            "Structure sets the ceiling. Content reaches toward it. Cross-city businesses need both because the geographic market separation gives them no proximity shortcut around either requirement."
+          </p>
+        </blockquote>
+
+        {/* ── SECTION 6 ── */}
+        <div id="cost-of-wrong-structure" className="scroll-mt-24" />
+        <h2 className="text-[1.6rem] sm:text-[2rem] font-display font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">The cost of getting cross-city structure wrong</h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          A multi-city business that gets the structure wrong pays in two compounding ways. First, the immediate cost: the business is invisible in the cities where its structure has fragmented authority or where its templated content has been suppressed. A 5-location business on one generic website is effectively invisible in 4 of 5 markets. A business operating in 10 cities with a broken structure might be ranking in 1 or 2 and invisible in 8. With 46% of all Google searches carrying local intent and 76% of local searchers visiting a business within 24 hours, the invisible-city cost is measured in lost customers daily, per city.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          Second, the remediation cost. Fixing a broken cross-city structure is more involved than fixing a single-metro structure because the fixes often involve domain-level changes. Migrating from separate domains to a consolidated single domain requires careful 301-redirect mapping, consolidation of analytics and Search Console properties, and a period of ranking volatility during the migration. Rebuilding a flat structure into a proper state-city-location hierarchy requires URL restructuring with redirects. Each of these is a real technical SEO project with cost measured in tens of thousands of dollars and timeline measured in months, plus the risk of temporary ranking loss during the migration.
+        </p>
+        <div className="bg-amber-50 border border-amber-200 rounded-lg p-5 my-8 text-[14px] text-amber-900 leading-relaxed">
+          <strong>Note:</strong> The visibility and remediation cost ranges vary significantly by industry, number of cities, existing structure, and competitive density of the individual city markets. Run your own per-city customer-value math against the cost of structural remediation before making decisions.
+        </div>
+
+        {/* ── SECTION 7 ── */}
+        <div id="service-area-vs-physical" className="scroll-mt-24" />
+        <h2 className="text-[1.6rem] sm:text-[2rem] font-display font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">Service-area cities vs physical-location cities</h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          A structural nuance specific to multi-city businesses: the difference between cities where you have a physical location and cities where you serve customers but have no physical presence. This distinction matters because Google's policies treat them very differently, and getting it wrong creates risk.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          For cities where you have a genuine physical location, you can and should have a dedicated location page mapped 1:1 to a verified Google Business Profile with that location's real address. For cities where you serve customers but have no physical office — a service-area business covering a metro from a single hub — you cannot create a fake location page with a fake address, and you cannot create a Google Business Profile for a location that doesn't physically exist. Doing so violates Google's guidelines and risks GBP suspension. Instead, the correct approach is service-area pages on your website (which can rank organically for "[service] in [city]" queries) combined with proper service-area designation in your single legitimate Google Business Profile.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          The website structure supports this cleanly within the single-domain hierarchy: service-area city pages live in the same <code className="bg-gray-100 px-1.5 py-0.5 rounded text-[0.9em] text-gray-800">/locations/</code> or a parallel <code className="bg-gray-100 px-1.5 py-0.5 rounded text-[0.9em] text-gray-800">/service-areas/</code> structure, clearly distinguished from physical-location pages, with content reflecting genuine service in those areas rather than a fictional physical presence. This is a frequent source of trouble for growing multi-city businesses that expand their service footprint faster than their physical footprint.
+        </p>
+
+        {/* ── SECTION 8 ── */}
+        <div id="properly-architected-vs-flat" className="scroll-mt-24" />
+        <h2 className="text-[1.6rem] sm:text-[2rem] font-display font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">What separates a properly-architected multi-city site from a flat collection of city pages</h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          Not every web team building a multi-city website understands the structural principles that determine whether the site will rank across its cities or fragment. Most web developers optimize for visual design and user navigation — both legitimate but neither sufficient to produce a multi-city SEO-friendly architecture.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          Start with the domain decision. Ask whether the build will use a single domain with city subdirectories, and if anyone proposes subdomains or separate domains per city, ask for the specific reasoning. Ask about the hierarchy — will there be a /locations/ hub, will the URL structure follow a consistent state-city-location pattern, and how will cities with multiple locations be handled. Ask about content differentiation — who is producing the genuinely city-specific content for each city page, and what's the editorial process that ensures the pages aren't near-identical templates. Ask about the physical-location vs service-area distinction — does the team understand the difference and will they represent the two correctly. Ask about GBP-to-page mapping — will each physical location's GBP point to its own dedicated page within the hierarchy.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          The same evaluation discipline that applies to choosing the <a href="/insights/best-seo-agency-for-b2b-brands" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">best SEO agency for B2B brands</a> applies here: look past visual styling and audit technical capabilities. A properly-architected multi-city site has explicit, defensible answers to all of these questions before site build begins. A flat collection of city pages has hand-waving answers and produces the cross-city cannibalization failure six months later.
+        </p>
+
+        {/* ── SECTION 9 ── */}
+        <div id="why-gobiya" className="scroll-mt-24" />
+        <h2 className="text-[1.6rem] sm:text-[2rem] font-display font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">Why Gobiya is positioned differently for multi-city businesses</h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          Gobiya approaches multi-city website structure as a technical engineering challenge, not a content production exercise. Our team has built and audited structures for businesses operating anywhere from three to hundreds of locations across multiple states. We don't guess at URL hierarchies or copy boilerplate templates — we audit crawl maps, design clean state-city-location hierarchies, map 1:1 GBP relationships, build custom LocalBusiness schema architectures that prevent cross-city cannibalization, and produce genuine per-city content differentiation through our editorial process.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          The same <a href="/services/seo" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">technical SEO methodology</a> applied to single-location and B2B operators drives our multi-city engagements: every architectural decision is backed by live crawl data, authority-flow modeling, and performance tracking across each individual city market. We provide open, documented build plans and migration strategies — including explicit redirect mapping and ranking-volatility expectations for businesses remediating a broken existing structure.
+        </p>
+
+        {/* ── SECTION 10 ── */}
+        <div id="highest-structural-stakes" className="scroll-mt-24" />
+        <h2 className="text-[1.6rem] sm:text-[2rem] font-display font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">Which multi-city businesses face the highest structural stakes</h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          Different multi-city configurations face different versions of the structural problem. Here's how the stakes break down.
+        </p>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 my-8">
+          {[
+            { role: 'Regional Service Businesses', detail: 'HVAC, plumbing, healthcare groups, professional services adding offices in new metros — face the structural decision at each expansion. These businesses also face the physical-location vs service-area distinction most acutely as their service footprint outpaces their physical footprint.' },
+            { role: 'Franchise Systems', detail: 'Face the structural decision complicated by the franchisor-franchisee relationship. The single-domain corporate model with location subdirectories almost always outperforms a constellation of franchisee-owned domains for search visibility.' },
+            { role: 'Multi-Location Retail & Restaurants', detail: 'Face the structural problem with the added challenge that content is genuinely similar across locations. These businesses lean more heavily on city-specific imagery, local reviews, and location-specific structured data as the differentiation signals.' },
+            { role: 'Enterprise Businesses (100+ Locations)', detail: 'The narrow case where subdomain structures sometimes become defensible due to operational scale. Even here, most enterprises are better served by a single-domain subdirectory model with strong templating and content-differentiation systems.' },
+          ].map(({ role, detail }) => (
+            <div key={role} className="border border-gray-200 p-5 sm:p-6">
+              <p className="text-[13px] uppercase tracking-wider font-semibold text-[#F26522] mb-2">{role}</p>
+              <p className="text-[14px] text-gray-700 leading-relaxed">{detail}</p>
+            </div>
+          ))}
+        </div>
+
+        {/* ── SECTION 11 ── */}
+        <div id="getting-it-right" className="scroll-mt-24" />
+        <h2 className="text-[1.6rem] sm:text-[2rem] font-display font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">What getting the structure right actually looks like</h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          A credible engagement starts with a structural audit and decision framework, not a redesign mockup. The audit evaluates the current structure (if one exists), models the authority-consolidation implications of the current vs recommended structure, maps the correct state-city-location hierarchy for the business's specific city footprint, identifies where physical-location and service-area cities need different treatment, and produces a build plan (for new sites) or a migration plan (for existing broken structures) with explicit redirect strategy and ranking-volatility expectations.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          For a business getting this right at launch, the work is straightforward — establish the single domain, build the hierarchy, set up the hub, and ensure per-city content differentiation from day one. For a business remediating a broken structure, the work is a careful migration that preserves the authority the business has earned while restructuring how it's organized. The multi-city businesses that get the most from getting their structure right are the ones that treat it as the foundational decision it is — settled before the site is built, or remediated deliberately before more downstream local SEO work is layered on top of a broken foundation. The downstream discipline of an <a href="/insights/los-angeles-local-seo-explained" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">operational local SEO cadence</a> only compounds returns when the structure underneath it is right.
+        </p>
+
+        {/* ── SECTION 12 ── */}
+        <div id="making-call" className="scroll-mt-24" />
+        <h2 className="text-[1.6rem] sm:text-[2rem] font-display font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">Making the right call for your multi-city structure</h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          Multi-city businesses still running on fragmented structures — separate domains per city, subdomains diluting authority, or flat collections of templated city pages — are invisible in most of the cities they operate in, while their better-architected competitors rank across every market on a consolidated domain that compounds authority with every city they add. The shift to a proper multi-city structure isn't about chasing a technical trend. It's about making the single foundational decision that determines whether every downstream local SEO effort — the GBP optimization, the review acquisition, the content production — actually produces rankings or hits an architectural ceiling.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          Two decisions matter most. First: whether your locations live on a single authoritative domain with a clean city-subdirectory hierarchy, or whether they're fragmented across subdomains or separate domains in a way that splits the authority each city needs to rank. Second: whether each city's page contains genuinely city-specific content that Google recognizes as distinct and valuable, or whether your city pages are near-identical templates that Google will suppress rather than rank.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          Gobiya is a logical starting point for multi-city businesses that want a website structure built around how Google actually ranks businesses across different city markets in 2026 — single-domain authority consolidation, a clean state-city-location hierarchy, genuine per-city content differentiation, and correct handling of physical locations versus service areas. Request a structural audit, walk through how your locations are currently organized and where the authority fragmentation or content cannibalization is costing you city-market visibility, and find out exactly what the right structure looks like for your specific city footprint — before another quarter of local SEO work hits a structural ceiling no amount of downstream effort can break through.
+        </p>
+
+        {/* ── FINAL CTA ── */}
+        <div className="bg-gray-900 rounded-xl p-8 sm:p-10 my-14">
+          <p className="text-[11px] uppercase tracking-wider font-semibold text-[#F26522] mb-3">Get A Multi-City Structural Audit</p>
+          <h3 className="text-white text-[1.4rem] sm:text-[1.7rem] font-display font-medium leading-[1.2] mb-4">Find out where your multi-city structure is fragmenting authority and suppressing city-market rankings.</h3>
+          <p className="text-gray-400 text-[15px] leading-relaxed mb-6">Walk through your current domain structure, city hierarchy, and content differentiation before the architectural gap widens into something expensive to close.</p>
+          <a href="/contact" className="inline-flex items-center gap-3 bg-[#F26522] hover:bg-[#e05a1a] text-white pl-6 pr-2 py-2.5 transition-colors duration-300 font-medium text-[14px]">
+            Request a structural audit
+            <div className="w-7 h-7 bg-white flex items-center justify-center ml-3">
+              <svg className="w-3.5 h-3.5 text-[#F26522]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"/></svg>
+            </div>
+          </a>
+        </div>
+
+        {/* ── FAQ SECTION ── */}
+        <div id="faq" className="scroll-mt-24" />
+        <h2 className="text-[1.6rem] sm:text-[2rem] font-display font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">Frequently Asked Questions</h2>
+        <div className="space-y-6">
+          {[
+            {
+              q: 'Should a multi-city business use subdirectories or subdomains?',
+              a: 'Subdirectories (yourdomain.com/locations/chicago/) are the correct choice for nearly all multi-city businesses. They consolidate domain authority so every backlink and content signal earned across all cities accrues to one root domain, flowing down to support every city page. Subdomains split that authority and force each city to build ranking power largely independently — a significant disadvantage for newer city markets.'
+            },
+            {
+              q: 'What is the correct URL hierarchy for a multi-city business website?',
+              a: 'The 2026 consensus hierarchy is: Home > /locations/ (hub page) > /locations/[state]/ (optional, for businesses with many cities across multiple states) > /locations/[city]/ (city page) > /locations/[city]/[neighborhood]/ (individual location, when a city has multiple locations). This structure is mirrored in breadcrumb navigation and gives Google a clear crawl path to every market the business serves.'
+            },
+            {
+              q: 'Why are my city location pages not ranking on Google?',
+              a: 'The most common cause is near-identical templated content across city pages — only the city name and address differ. Google suppresses near-duplicate pages rather than ranking them independently. The fix is genuine city-specific content: local service areas, city-specific team members, local testimonials, city-specific FAQ content, and references to local landmarks and neighborhood characteristics that make each page genuinely distinct.'
+            },
+            {
+              q: 'What is the difference between a physical location page and a service-area page?',
+              a: 'A physical location page maps 1:1 to a verified Google Business Profile with a real address and ranks for location-specific queries. A service-area page targets cities where the business serves customers but has no physical office — it can rank organically for "[service] in [city]" queries but should never claim a physical address or create a GBP for that location, which violates Google\'s guidelines and risks GBP suspension.'
+            },
+            {
+              q: 'How much does fixing a broken multi-city website structure cost?',
+              a: 'Structural remediation — migrating from subdomains to subdirectories, consolidating separate domains, or rebuilding a flat structure into a proper hierarchy — typically involves a multi-month technical SEO project with costs running into tens of thousands of dollars, depending on site complexity, number of cities, and existing URL patterns requiring redirect mapping. The cost is almost always smaller than the revenue currently being lost from invisible city markets.'
+            },
+          ].map(({ q, a }) => (
+            <details key={q} className="border border-gray-200 rounded-lg group">
+              <summary className="flex items-center justify-between p-5 sm:p-6 cursor-pointer list-none">
+                <span className="text-[15px] sm:text-[16px] font-medium text-gray-900 pr-4">{q}</span>
+                <svg className="w-5 h-5 text-[#F26522] shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" /></svg>
+              </summary>
+              <div className="px-5 sm:px-6 pb-5 sm:pb-6">
+                <p className="text-[15px] sm:text-[16px] leading-[1.7] text-gray-700 border-t border-gray-100 pt-4">{a}</p>
+              </div>
+            </details>
+          ))}
+        </div>
+      </>
+    ),
+  },
+
   'b2b-seo-agency': {
     slug: 'b2b-seo-agency',
     title: 'B2B SEO Agency Explained: Choosing the Right Revenue Partner',
@@ -3621,10 +3994,31 @@ const RELATED_ARTICLES_MAP: Record<string, { href: string; category: string; tit
       image: '/images/article-los-angeles-local-seo-explained.webp',
     },
     {
-      href: '/insights/b2b-seo-agency-los-angeles',
-      category: 'Strategy',
-      title: 'B2B SEO Agency in Los Angeles: Why Local Partnership Outperforms Remote Vendor Relationships in 2026',
-      image: '/images/article-b2b-seo-agency-los-angeles.webp',
+      href: '/insights/best-website-structure-multiple-locations-different-cities',
+      category: 'Local SEO',
+      title: 'What Is the Best Website Structure for a Business With Multiple Locations in Different Cities?',
+      image: '/images/article-multi-city-website-structure.webp',
+    },
+  ],
+
+  'best-website-structure-multiple-locations-different-cities': [
+    {
+      href: '/insights/multi-location-seo-website-structure',
+      category: 'Local SEO',
+      title: 'Multi-Location SEO Website Structure Explained: Architecting for Search Dominance',
+      image: '/images/article-multi-location-seo-website-structure.webp',
+    },
+    {
+      href: '/insights/local-seo-los-angeles',
+      category: 'Local SEO',
+      title: 'Local SEO for Los Angeles Businesses: How the 2026 Algorithm and AI Layer Determine Who Gets Found',
+      image: '/images/article-local-seo-los-angeles.webp',
+    },
+    {
+      href: '/insights/los-angeles-local-seo-explained',
+      category: 'Local SEO',
+      title: 'Los Angeles Local SEO Explained: The Operational Cadence Required for Search Dominance',
+      image: '/images/article-los-angeles-local-seo-explained.webp',
     },
   ],
 };
