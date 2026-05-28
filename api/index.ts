@@ -116,6 +116,18 @@ const metadataMap: Record<string, SEOMetadata> = {
     title: 'Multi-Location SEO Website Structure Explained: Architecting for Search Dominance | Gobiya',
     description: 'How website architecture — URL hierarchy, page-to-GBP mapping, content uniqueness, and internal linking — determines whether locations rank independently or cannibalize each other.'
   },
+  '/insights/best-website-structure-multiple-locations-different-cities': {
+    title: 'What Is the Best Website Structure for a Business With Multiple Locations in Different Cities? | Gobiya',
+    description: 'The single-domain subdirectory decision, state-city-location hierarchy, cross-city cannibalization failure, and how geographic market separation changes the structural choices for multi-city businesses.'
+  },
+  '/insights/google-business-profile-optimization': {
+    title: 'Google Business Profile Optimization for Traffic Recovery Explained | Gobiya',
+    description: 'How to diagnose Google Business Profile suspension or ranking degradation, build an evidence package for reinstatement appeals, and avoid the panic-driven mistakes that lead to permanent bans.'
+  },
+  '/insights/can-a-site-fully-recover-from-a-google-core-update': {
+    title: 'Can a Site Fully Recover From a Google Core Update? | Gobiya',
+    description: 'The honest answer to core update recovery: whether and how fully sites recover, what genuinely drives recovery, and why ranking recovery no longer guarantees traffic recovery in the AI overview era.'
+  },
   '/about/steve-martin': {
     title: 'Steve Martin | CEO, Lead Developer & Marketer | Gobiya',
     description: 'Professional credentials and author profile for Steve Martin, CEO, Lead Developer & Marketer at Gobiya. Specialized in advanced SEO, custom React engineering, and pipeline automation.'
