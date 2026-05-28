@@ -6,15 +6,12 @@ import { MotionPathPlugin } from 'gsap/MotionPathPlugin';
 gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
 
 import { Shader, Swirl, ChromaFlow, FlutedGlass, FilmGrain } from 'shaders/react';
-import { Clock, Menu, X, ArrowRight } from 'lucide-react';
+import { Clock, Menu, X, ArrowRight, Check } from 'lucide-react';
 
-import RotatingText from './RotatingText';
 import Header from './Header';
 import Footer from './Footer';
 import Marquee from './Marquee';
 import HorizontalScrollText from './HorizontalScrollText';
-import BlurText from './BlurText';
-import GradualBlur from './GradualBlur';
 import ParallaxMedia from './ParallaxMedia';
 import CustomCursor from './CustomCursor';
 import ServicesBento from './ServicesBento';
@@ -26,6 +23,27 @@ import RoiCalculator from './RoiCalculator';
 
 const AxionLanding = () => {
   const [time, setTime] = useState('');
+  const [activeStep, setActiveStep] = useState(0);
+  
+  // Interactive Hero Form State
+  const [domain, setDomain] = useState('');
+  const [selectedServices, setSelectedServices] = useState<string[]>([]);
+  const [formState, setFormState] = useState<'idle' | 'submitting' | 'success'>('idle');
+
+  const handleServiceToggle = (service: string) => {
+    setSelectedServices(prev =>
+      prev.includes(service) ? prev.filter(s => s !== service) : [...prev, service]
+    );
+  };
+
+  const handleFormSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!domain) return;
+    setFormState('submitting');
+    setTimeout(() => {
+      setFormState('success');
+    }, 1500);
+  };
 
   useEffect(() => {
     let ctx: gsap.Context;
@@ -125,12 +143,8 @@ const AxionLanding = () => {
     };
   }, []);
 
-  useEffect(() => {
-    // Add logic if needed
-  }, []);
-
   return (
-    <div className="min-h-screen bg-white relative font-sans selection:bg-[#F26522] selection:text-white page-wrapper">
+    <div className="min-h-screen bg-[#050505] relative font-sans selection:bg-[#F26522] selection:text-white page-wrapper">
       <CustomCursor />
 
       {/* FLOATING ANIMATED LOGO */}
@@ -143,62 +157,164 @@ const AxionLanding = () => {
       />
 
       {/* SECTION 1: HERO */}
-      <section className="relative w-full h-screen bg-[#EFEFEF] overflow-hidden flex flex-col cursor-default">
+      <section className="relative w-full min-h-screen pt-24 lg:pt-32 pb-16 bg-[#050505] overflow-hidden flex flex-col justify-center cursor-default">
         {/* Shaders Background */}
-        <div className="absolute inset-0 z-10 pointer-events-none w-full h-full [&>div]:w-full [&>div]:h-full [&_canvas]:w-full [&_canvas]:h-full [&_canvas]:object-cover">
+        <div className="absolute inset-0 z-10 pointer-events-none w-full h-full [&>div]:w-full [&>div]:h-full [&_canvas]:w-full [&_canvas]:h-full [&_canvas]:object-cover opacity-85">
           <Shader>
-            <Swirl colorA="#ffffff" colorB="#f0f0f0" detail={1.7} />
-            <ChromaFlow baseColor="#ffffff" downColor="#ff5f03" leftColor="#ff5f03" rightColor="#ff5f03" upColor="#ff5f03" momentum={13} radius={3.5} />
+            <Swirl colorA="#050505" colorB="#0f0f0f" detail={1.7} />
+            <ChromaFlow baseColor="#050505" downColor="#f26522" leftColor="#f26522" rightColor="#f26522" upColor="#f26522" momentum={13} radius={3.5} />
             <FlutedGlass aberration={0.61} angle={31} frequency={8} highlight={0.12} highlightSoftness={0} lightAngle={-90} refraction={4} shape="rounded" softness={1} speed={0.15} />
             <FilmGrain strength={0.05} />
           </Shader>
         </div>
 
         {/* Navigation */}
-        <Header theme="light" />
+        <Header theme="dark" />
 
         {/* Hero Content */}
-        <div className="relative z-20 flex-1 max-w-[1440px] w-full mx-auto flex flex-col justify-end px-5 sm:px-8 lg:px-12 pb-14 sm:pb-16 lg:pb-20">
-          <p className="text-[13px] sm:text-[14px] text-gray-900 tracking-wide mb-5 sm:mb-8 uppercase font-medium">Gobiya AI & SEO Agency</p>
-          <h1 className="text-[clamp(1.5rem,5.5vw,3.2rem)] sm:text-[clamp(1.8rem,4.5vw,3.8rem)] font-medium leading-[1.15] tracking-[-0.03em] text-gray-900 max-w-[1200px]">
-            We engineer AI-driven SEO for brands ready to dominate search and&nbsp;
-            <RotatingText
-              texts={['recover traffic.', 'drive sales.', 'scale revenue.']}
-              mainClassName="inline-flex overflow-hidden text-[#F26522] align-text-bottom"
-              staggerFrom={"last"}
-              initial={{ y: "100%" }}
-              animate={{ y: 0 }}
-              exit={{ y: "-120%" }}
-              staggerDuration={0.025}
-              splitLevelClassName="overflow-hidden pb-1 -mb-1"
-              transition={{ type: "spring", damping: 30, stiffness: 400 }}
-              rotationInterval={3000}
-            />
-          </h1>
-          <p className="mt-6 text-[15px] sm:text-[17px] text-gray-700 max-w-[800px] leading-relaxed">
-            Accepting new clients in LA & beyond
-          </p>
-          <div className="mt-8 sm:mt-12 flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-5">
-            <a href="/contact" className="group flex items-center bg-[#F26522] hover:bg-[#e05a1a] text-white pl-5 sm:pl-6 pr-2 py-2 transition-colors duration-300">
-              <div className="flex flex-col overflow-hidden h-[20px] justify-start items-start relative mr-3">
-                <span className="text-[13px] sm:text-[14px] font-medium leading-[20px] transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-translate-y-full">Start a project</span>
-                <span className="text-[13px] sm:text-[14px] font-medium leading-[20px] absolute top-full transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-translate-y-full">Start a project</span>
+        <div className="relative z-20 flex-1 max-w-[1440px] w-full mx-auto flex items-center px-5 sm:px-8 lg:px-12 py-12 lg:py-20">
+          <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-12 lg:gap-16 w-full items-center">
+            
+            {/* Left Column: Heading and Subtitle */}
+            <div className="flex flex-col justify-center text-left">
+              <p className="text-[13px] sm:text-[14px] text-gray-400 tracking-wide mb-5 sm:mb-8 uppercase font-medium">Gobiya AI & SEO Agency</p>
+              <h1 className="text-[clamp(2.2rem,5vw,3.8rem)] font-medium leading-[1.1] tracking-[-0.03em] text-white font-display mb-6">
+                We make sure customers find you everywhere from <span className="text-[#F26522] font-semibold">Google</span> to <span className="text-[#F26522] font-semibold">ChatGPT</span>.
+              </h1>
+              <p className="text-[16px] sm:text-[18px] text-gray-400 max-w-[700px] leading-relaxed mb-8">
+                We engineer AI-driven SEO, topical architectures, and automated B2B sales pipelines to recover lost organic traffic, scale predictable revenue, and secure long-term algorithmic dominance.
+              </p>
+              
+              <div className="flex flex-wrap items-center gap-4 sm:gap-5">
+                <a href="#capabilities" className="group flex items-center bg-[#F26522] hover:bg-[#e05a1a] text-white pl-5 sm:pl-6 pr-2 py-2 transition-colors duration-300">
+                  <div className="flex flex-col overflow-hidden h-[20px] justify-start items-start relative mr-3">
+                    <span className="text-[13px] sm:text-[14px] font-medium leading-[20px] transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-translate-y-full">Explore capabilities</span>
+                    <span className="text-[13px] sm:text-[14px] font-medium leading-[20px] absolute top-full transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-translate-y-full">Explore capabilities</span>
+                  </div>
+                  <div className="w-7 h-7 sm:w-8 sm:h-8 bg-white flex items-center justify-center">
+                    <ArrowRight className="w-4 h-4 text-[#F26522] transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-rotate-45" />
+                  </div>
+                </a>
               </div>
-              <div className="w-7 h-7 sm:w-8 sm:h-8 bg-white flex items-center justify-center">
-                <ArrowRight className="w-4 h-4 text-[#F26522] transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-rotate-45" />
-              </div>
-            </a>
-            <div className="flex items-center gap-3 bg-white shadow-[0_2px_8px_rgba(0,0,0,0.08)] hover:shadow-[0_4px_16px_rgba(0,0,0,0.12)] transition-shadow duration-300 px-3 py-2 cursor-pointer">
-              <svg className="w-5 h-5 sm:w-6 sm:h-6 text-[#E8704E] fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-                <path d="m19.6 66.5 19.7-11 .3-1-.3-.5h-1l-3.3-.2-11.2-.3L14 53l-9.5-.5-2.4-.5L0 49l.2-1.5 2-1.3 2.9.2 6.3.5 9.5.6 6.9.4L38 49.1h1.6l.2-.7-.5-.4-.4-.4L29 41l-10.6-7-5.6-4.1-3-2-1.5-2-.6-4.2 2.7-3 3.7.3.9.2 3.7 2.9 8 6.1L37 36l1.5 1.2.6-.4.1-.3-.7-1.1L33 25l-6-10.4-2.7-4.3-.7-2.6c-.3-1-.4-2-.4-3l3-4.2L28 0l4.2.6L33.8 2l2.6 6 4.1 9.3L47 29.9l2 3.8 1 3.4.3 1h.7v-.5l.5-7.2 1-8.7 1-11.2.3-3.2 1.6-3.8 3-2L61 2.6l2 2.9-.3 1.8-1.1 7.7L59 27.1l-1.5 8.2h.9l1-1.1 4.1-5.4 6.9-8.6 3-3.5L77 13l2.3-1.8h4.3l3.1 4.7-1.4 4.9-4.4 5.6-3.7 4.7-5.3 7.1-3.2 5.7.3.4h.7l12-2.6 6.4-1.1 7.6-1.3 3.5 1.6.4 1.6-1.4 3.4-8.2 2-9.6 2-14.3 3.3-.2.1.2.3 6.4.6 2.8.2h6.8l12.6 1 3.3 2 1.9 2.7-.3 2-5.1 2.6-6.8-1.6-16-3.8-5.4-1.3h-.8v.4l4.6 4.5 8.3 7.5L89 80.1l.5 2.4-1.3 2-1.4-.2-9.2-7-3.6-3-8-6.8h-.5v.7l1.8 2.7 9.8 14.7.5 4.5-.7 1.4-2.6 1-2.7-.6-5.8-8-6-9-4.7-8.2-.5.4-2.9 30.2-1.3 1.5-3 1.2-2.5-2-1.4-3 1.4-6.2 1.6-8 1.3-6.4 1.2-7.9.7-2.6v-.2H49L43 72l-9 12.3-7.2 7.6-1.7.7-3-1.5.3-2.8L24 86l10-12.8 6-7.9 4-4.6-.1-.5h-.3L17.2 77.4l-4.7.6-2-2 .2-3 1-1 8-5.5Z"/>
-              </svg>
-              <span className="text-[13px] sm:text-[14px] font-medium text-gray-900">Certified Partner</span>
-              <span className="text-[10px] sm:text-[11px] bg-gray-900 text-white px-1.5 sm:px-2 py-0.5 rounded">Featured</span>
             </div>
+
+            {/* Right Column: Interactive Form Card */}
+            <div className="relative w-full max-w-[480px] lg:max-w-none mx-auto">
+              <div className="liquid-glass p-8 rounded-2xl border border-white/10 bg-black/40 backdrop-blur-md shadow-2xl shadow-black/80">
+                {formState !== 'success' ? (
+                  <form onSubmit={handleFormSubmit} className="space-y-6">
+                    <div>
+                      <h3 className="text-xl font-medium text-white mb-2 font-display">How can we help you get found?</h3>
+                      <p className="text-sm text-gray-400">Select services of interest and request a direct audit.</p>
+                    </div>
+
+                    <div className="space-y-3">
+                      {[
+                        { id: 'geo', label: 'GEO / AI Overview Citation' },
+                        { id: 'seo', label: 'Forensic SEO & Traffic Recovery' },
+                        { id: 'b2b', label: 'B2B Pipeline & Outbound Automation' },
+                        { id: 'dev', label: 'Bespoke React Engineering' }
+                      ].map((service) => {
+                        const isChecked = selectedServices.includes(service.id);
+                        return (
+                          <div 
+                            key={service.id} 
+                            onClick={() => handleServiceToggle(service.id)}
+                            className={`flex items-center justify-between p-3.5 rounded-lg border transition-all duration-300 cursor-pointer ${
+                              isChecked 
+                                ? 'bg-[#F26522]/10 border-[#F26522] text-white' 
+                                : 'bg-white/5 border-white/10 text-gray-300 hover:bg-white/10 hover:border-white/20'
+                            }`}
+                          >
+                            <span className="text-[14px] font-medium">{service.label}</span>
+                            <div className={`w-5 h-5 rounded flex items-center justify-center border transition-all duration-300 ${
+                              isChecked 
+                                ? 'bg-[#F26522] border-[#F26522] text-white' 
+                                : 'border-white/30 text-transparent'
+                            }`}>
+                              <Check className="w-3.5 h-3.5" strokeWidth={3} />
+                            </div>
+                          </div>
+                        );
+                      })}
+                    </div>
+
+                    <div className="space-y-2">
+                      <label className="block text-xs uppercase tracking-wider font-semibold text-gray-400">Your Website Domain</label>
+                      <input 
+                        type="text" 
+                        required
+                        value={domain}
+                        onChange={(e) => setDomain(e.target.value)}
+                        placeholder="e.g. yourcompany.com" 
+                        className="w-full bg-white/5 border border-white/10 focus:border-[#F26522] focus:bg-white/10 text-white rounded-lg p-3.5 text-[14px] outline-none transition-all"
+                      />
+                    </div>
+
+                    <button 
+                      type="submit"
+                      disabled={formState === 'submitting'}
+                      className="w-full flex items-center justify-center bg-[#F26522] hover:bg-[#e05a1a] disabled:bg-gray-700 text-white py-3.5 px-6 font-semibold tracking-wide uppercase transition-colors duration-300 cursor-pointer rounded-lg text-sm"
+                    >
+                      {formState === 'submitting' ? (
+                        <div className="flex items-center gap-2">
+                          <span className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
+                          <span>Analyzing Domain...</span>
+                        </div>
+                      ) : (
+                        <span>Request Forensic Audit</span>
+                      )}
+                    </button>
+                  </form>
+                ) : (
+                  <div className="text-center py-10 space-y-5 animate-fade-rise">
+                    <div className="w-16 h-16 bg-[#F26522]/10 border border-[#F26522] rounded-full flex items-center justify-center mx-auto">
+                      <Check className="w-8 h-8 text-[#F26522]" strokeWidth={2.5} />
+                    </div>
+                    <div>
+                      <h3 className="text-2xl font-medium text-white mb-2 font-display">Request Received</h3>
+                      <p className="text-gray-400 text-[15px] leading-relaxed max-w-sm mx-auto">
+                        We are running a forensic baseline of <strong className="text-white">{domain}</strong> against major AI engines and Google core updates. Our team will contact you with the audit package within 24 hours.
+                      </p>
+                    </div>
+                    <button 
+                      onClick={() => {
+                        setFormState('idle');
+                        setDomain('');
+                        setSelectedServices([]);
+                      }}
+                      className="text-[#F26522] hover:text-[#e05a1a] transition-colors text-sm font-semibold underline underline-offset-4 font-body"
+                    >
+                      Audit another website
+                    </button>
+                  </div>
+                )}
+              </div>
+            </div>
+
           </div>
         </div>
-        <div className="logo-marker absolute left-[50%] bottom-[15%] w-10 h-10 pointer-events-none" />
+        <div className="logo-marker absolute left-[50%] bottom-[10%] w-10 h-10 pointer-events-none" />
       </section>
+
+      {/* STATS BAR */}
+      <div className="flex flex-col md:flex-row w-full bg-[#e05a1a] border-y border-white/10 z-20 relative">
+        {[
+          { value: '58%', label: 'Zero-Click searches', text: 'intercepted by AI Overviews & featured snippets.' },
+          { value: '+2,012%', label: 'AI referral growth', text: 'for our optimized category-defining entity nodes.' },
+          { value: '3-6m', label: 'Average recovery timeline', text: 'for search updates during broad evaluation cycles.' },
+          { value: '100', label: 'Core Web Vitals', text: 'score guaranteed on our custom React applications.' }
+        ].map((stat, idx) => (
+          <div key={idx} className={`flex-1 p-8 lg:p-10 ${idx % 2 === 0 ? 'bg-[#F26522]' : 'bg-[#e05a1a]'} text-white`}>
+            <div className="text-[clamp(2.2rem,3.5vw,3rem)] font-bold tracking-tighter leading-none mb-2 font-display">
+              {stat.value}
+            </div>
+            <div className="text-[13px] sm:text-[14px] leading-tight font-medium opacity-90 font-body">
+              <span className="font-semibold block sm:inline">{stat.label}</span> — <span className="opacity-80 font-normal">{stat.text}</span>
+            </div>
+          </div>
+        ))}
+      </div>
 
       {/* SECTION 2: MARQUEE */}
       <div className="relative w-full">
@@ -214,13 +330,93 @@ const AxionLanding = () => {
         <div className="logo-marker absolute left-[10%] top-[50%] w-10 h-10 -translate-y-1/2 pointer-events-none" />
       </section>
 
-      {/* SECTION 4: RECOGNIZED & TRUSTED BY (REMOVED) */}
+      {/* SECTION 3.5: CORE CAPABILITIES */}
+      <div id="capabilities" className="relative scroll-mt-20">
+        <ServicesBento />
+        <div className="logo-marker absolute right-[15%] top-[50%] w-10 h-10 -translate-y-1/2 pointer-events-none" />
+      </div>
+
+      {/* SECTION 3.75: FORENSIC METHODOLOGY */}
+      <section className="py-24 lg:py-32 px-5 sm:px-8 lg:px-12 bg-white text-gray-900 relative">
+        <div className="logo-marker absolute left-[12%] top-[40%] w-10 h-10 pointer-events-none" />
+        <div className="max-w-[1440px] mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.1fr] gap-16 lg:gap-24 items-start">
+            
+            {/* Left Column: Image/Badge Mockup */}
+            <div className="relative hidden lg:block">
+              <div className="absolute inset-0 bg-gradient-to-tr from-[#F26522]/20 to-transparent transform -translate-x-4 translate-y-4 rounded-xl -z-10" />
+              <img 
+                src="/images/seo_exec.webp" 
+                alt="Forensic Audits Platform" 
+                className="w-full rounded-xl shadow-2xl shadow-gray-200 object-cover aspect-[4/3]"
+              />
+              <div className="absolute -top-6 -left-6 bg-[#F26522] text-white p-6 shadow-xl rounded-br-3xl">
+                <div className="text-2xl font-bold font-display tracking-tight">Forensic</div>
+                <div className="text-sm font-medium opacity-90">Analysis Suite</div>
+              </div>
+            </div>
+
+            {/* Right Column: Accordion */}
+            <div>
+              <p className="text-sm font-bold tracking-widest uppercase text-[#F26522] mb-4 font-body">Methodology</p>
+              <h2 className="text-[clamp(2rem,3.5vw,3rem)] font-medium text-gray-900 mb-12 leading-[1.1] font-display">
+                Our approach to search recovery & dominance.
+              </h2>
+              
+              <div className="space-y-2 border-t border-gray-200 font-body">
+                {[
+                  {
+                    title: '01 / Diagnostic Audit',
+                    content: 'We audit your domain against search core update rollouts, tracking keyword and click decay metrics to isolate the exact quality, intent, or technical vector that triggered demotion.'
+                  },
+                  {
+                    title: '02 / Entity Mapping',
+                    content: 'We model your market as an interconnected semantic graph and map each service to its corresponding entity node, resolving keyword cannibalization at the codebase and URL layer.'
+                  },
+                  {
+                    title: '03 / Trust Restoration',
+                    content: 'We build real-world E-E-A-T signals through expert author schemas, credentials, and digital PR campaigns, returning trust back to your root domain.'
+                  },
+                  {
+                    title: '04 / Generative SEO (GEO)',
+                    content: 'We restructure content into direct Q&A blocks and structured tables so that generative search engines (ChatGPT, Gemini, Claude, AIOs) easily parse and cite your brand.'
+                  }
+                ].map((step, idx) => {
+                  const isOpen = activeStep === idx;
+                  return (
+                    <div key={idx} className="border-b border-gray-200">
+                      <button 
+                        onClick={() => setActiveStep(isOpen ? -1 : idx)}
+                        className="w-full py-6 flex items-center justify-between text-left group"
+                      >
+                        <span className={`text-xl lg:text-2xl font-medium transition-colors ${isOpen ? 'text-[#111111]' : 'text-gray-900 group-hover:text-[#F26522]'}`}>
+                          <span className="text-[#F26522] mr-4 inline-block w-4">{isOpen ? '-' : '+'}</span>
+                          {step.title}
+                        </span>
+                      </button>
+                      
+                      <div 
+                        className={`overflow-hidden transition-all duration-500 ease-in-out ${isOpen ? 'max-h-[500px] opacity-100 mb-8' : 'max-h-0 opacity-0'}`}
+                      >
+                        <p className="text-lg text-gray-600 leading-relaxed pl-8 border-l-2 border-[#F26522]/20 ml-2">
+                          {step.content}
+                        </p>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
 
       {/* SECTION 5: ABOUT */}
-      <section className="bg-white pt-16 sm:pt-20 lg:pt-32 pb-12 sm:pb-16 lg:pb-24 overflow-hidden w-full max-w-[1440px] mx-auto">
+      <section className="bg-white pt-16 sm:pt-20 lg:pt-32 pb-12 sm:pb-16 lg:pb-24 overflow-hidden w-full max-w-[1440px] mx-auto relative">
         <div className="px-5 sm:px-8 lg:px-12 flex items-center gap-3 mb-6 sm:mb-8">
           <div className="w-6 h-6 sm:w-7 sm:h-7 bg-black text-white text-[11px] sm:text-[12px] font-semibold flex items-center justify-center">2</div>
-          <div className="text-[12px] sm:text-[13px] font-medium text-black border border-black px-3 sm:px-4 py-1 sm:py-1.5">Introducing Gobiya</div>
+          <div className="text-[12px] sm:text-[13px] font-medium text-black border border-black px-3 sm:px-4 py-1 sm:py-1.5 font-body">Introducing Gobiya</div>
         </div>
         
         <div className="px-5 sm:px-8 lg:px-12">
@@ -230,7 +426,7 @@ const AxionLanding = () => {
           </h2>
 
           {/* Responsive Content Area */}
-          <div className="block lg:hidden">
+          <div className="block lg:hidden font-body">
             <p className="text-[15px] sm:text-[17px] leading-[1.6] font-medium text-gray-900 mb-6">
               Our proprietary methodology combines machine learning insights with elite technical SEO, ensuring your brand captures the most valuable search real estate available.
             </p>
@@ -265,7 +461,7 @@ const AxionLanding = () => {
             </div>
           </div>
 
-          <div className="hidden lg:grid grid-cols-[26%_1fr_48%] items-end gap-6 xl:gap-8">
+          <div className="hidden lg:grid grid-cols-[26%_1fr_48%] items-end gap-6 xl:gap-8 font-body">
             <div className="self-end">
               <ParallaxMedia 
                 type="video" 
@@ -306,8 +502,6 @@ const AxionLanding = () => {
         </div>
         <div className="logo-marker absolute right-[20%] top-[50%] w-10 h-10 pointer-events-none" />
       </section>
-
-
 
       {/* SECTION 6.5: LATEST INSIGHTS */}
       <div data-logo-dark className="relative">
