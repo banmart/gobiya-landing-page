@@ -34,6 +34,10 @@ const metadataMap: Record<string, SEOMetadata> = {
     title: 'Forensic Update & Google Penalty Recovery Protocol | Gobiya',
     description: 'Recover lost search traffic. We diagnose and reverse manual action penalties and organic traffic declines caused by Google helpful content & core updates.'
   },
+  '/on-page-seo-los-angeles': {
+    title: 'On-Page SEO Services in Los Angeles | Gobiya',
+    description: 'Topical authority modeling, schema graph injection, and speed-optimized React structures built to convert Los Angeles organic search traffic into pipeline.'
+  },
   '/company/about': {
     title: 'About Gobiya | AI-Driven SEO & B2B Pipeline Engineering Agency',
     description: 'Learn about our approach to algorithmic dominance, generative search, and revenue-scaling pipelines.'

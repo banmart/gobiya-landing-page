@@ -360,6 +360,62 @@ const SOLUTIONS_DATA: Record<string, SolutionData> = {
       description: 'By eliminating broad match waste and restructuring LinkedIn campaigns around account-based intent signals, we drastically lowered CAC and scaled profitable pipeline.',
       ctaText: 'Analyze my ad account'
     }
+  },
+
+  '/on-page-seo-los-angeles': {
+    h1: 'We engineer high-converting, on-page SEO structures.',
+    subHeadline: 'Topical authority modeling, schema graph injection, and speed-optimized React architectures built to convert Los Angeles organic search traffic into pipeline.',
+    rotatingWords: ['build traffic.', 'optimize pages.', 'increase conversions.'],
+    insightCategory: 'SEO',
+    ctaText: 'Start your On-Page SEO campaign',
+    ctaLink: '/contact',
+    
+    stats: [
+      { value: '+245%', label: 'average organic traffic growth', text: 'for Los Angeles service and e-commerce brands within 6 months.' },
+      { value: '100', label: 'Core Web Vitals mobile score', text: 'achieved through custom clean-code rendering structures.' },
+      { value: '1.2s', label: 'average Time to Interactive', text: 'ensuring search bots crawl and index your layout instantly.' },
+      { value: '+35%', label: 'average lift in conversion rate', text: 'by aligning on-page content directly with searcher intent.' }
+    ],
+    
+    approachTitle: 'Semantic entity modeling. Structural precision.',
+    approachSubtitle: 'On-page SEO is no longer about keyword density; it is about semantic structure, performance, and conversion design. We build clean, search-ready templates that convert.',
+    approach: [
+      { icon: Search, title: 'Topical Entity Modeling.', desc: 'We audit and map your keywords as semantic entities, structuring heading hierarchies to cover topics exhaustively.' },
+      { icon: Activity, title: 'Speed & Structural Optimization.', desc: 'We build clean-code React components, eliminating page-builder script bloat for sub-second rendering.' },
+      { icon: Target, title: 'Conversion Path Integration.', desc: 'We align CTA placement, scroll anchors, and layout flows directly with the intent of incoming queries.' }
+    ],
+    
+    valueCards: [
+      { title: 'Semantic Schema Injection', text: 'We define page context explicitly using rich JSON-LD Organization, Product, and Service schemas.' },
+      { title: 'Heading & Link Architecture', text: 'We construct logical internal linking graphs that distribute authority to high-value service hubs.', highlight: true },
+      { title: 'User Experience Alignment', text: 'We eliminate layout shifts, optimize images to WebP, and ensure perfect mobile performance.' },
+      { title: 'Continuous Intent Mapping', text: 'We review search query reports weekly to refine headings and content as query habits drift.' }
+    ],
+    
+    executionTitle: 'Surgically optimizing every layout for indexing and conversion.',
+    heroImage: '/images/onpage_hero.webp',
+    executionImage: '/images/seo_exec.webp',
+    executionSteps: [
+      { title: 'Semantic Audit', content: 'We map your existing pages to Google\'s semantic index to identify keyword cannibalization, content gaps, and internal link blocks.' },
+      { title: 'Structural Coding', content: 'We optimize headings, metadata, image tags, and schema. We write custom, lightweight JSX elements instead of relying on heavy plugins.' },
+      { title: 'Internal Link Graphing', content: 'We configure internal anchor-text distribution, ensuring page-rank flows to your money pages while pruning low-value redirects.' },
+      { title: 'Attribution & Analytics', content: 'We set up real-time Search Console monitoring and pipeline tracking to connect organic landing page impressions directly to CRM pipeline.' }
+    ],
+    
+    caseStudy: {
+      tag: 'LA Service Agency',
+      headline: 'Los Angeles professional service firm scales organic leads by +380% in 5 months.',
+      description: 'By correcting internal linking loops, injecting advanced Service schemas, and rewriting key landing pages to match B2B user intent, we restored search prominence in LA\'s most competitive sector.',
+      ctaText: 'Re-engineer my on-page SEO'
+    },
+    
+    faqTitle: 'Frequently asked questions about Los Angeles on-page SEO.',
+    faqs: [
+      { question: 'How is on-page SEO different for Los Angeles businesses?', answer: 'The Los Angeles market is highly competitive and localized. On-page SEO in LA requires combining traditional content optimization with localized entity schemas, naming conventions, and structural signals to establish geographic relevance without keyword stuffing.' },
+      { question: 'Why does website speed affect on-page rankings?', answer: 'Google\'s Core Web Vitals are direct ranking signals. If a page is slow to render (high LCP or TTI), search engines demote the ranking in favor of faster, responsive layouts to ensure a positive user experience.' },
+      { question: 'What is semantic entity optimization?', answer: 'Semantic SEO focuses on covering topics exhaustively rather than repeating keywords. It involves structuring headings and body content around related concepts (entities) that Google\'s algorithm associates with the core query.' },
+      { question: 'How do you measure the success of an on-page SEO campaign?', answer: 'We track improvements in organic impressions, keyword rank positioning for core service queries, click-through rates, and bottom-of-funnel conversions (leads and meetings booked).' }
+    ]
   }
 };
 
@@ -400,6 +456,7 @@ const SolutionPage: React.FC<{ path: string }> = ({ path }) => {
       '/services/lead-generation': 'B2B Pipeline Architecture & Lead Generation Services | Gobiya',
       '/services/web-development': 'Custom React & Vite Web Development for Performance Brands | Gobiya',
       '/services/ppc-advertising': 'ROAS-Driven PPC & Paid Media Management | Gobiya',
+      '/on-page-seo-los-angeles': 'On-Page SEO Services in Los Angeles | Gobiya',
     };
     if (baseTitles[path]) {
       document.title = baseTitles[path];

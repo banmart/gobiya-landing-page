@@ -147,6 +147,10 @@ const metadataMap: Record<string, SEOMetadata> = {
   '/insights/chatgpt-vs-google-for-business-discovery': {
     title: 'ChatGPT vs Google for Business Discovery: What You Must Know | Gobiya',
     description: 'Google processes billions of searches, but 93% in AI Mode end clickless. ChatGPT converts 4.4x better. How to optimize your brand for both.'
+  },
+  '/on-page-seo-los-angeles': {
+    title: 'On-Page SEO Services in Los Angeles | Gobiya',
+    description: 'Topical authority modeling, schema graph injection, and speed-optimized React architectures built to convert Los Angeles organic search traffic into pipeline.'
   }
 };
 

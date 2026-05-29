@@ -5,6 +5,7 @@ import './StaggeredMenu.css';
 const DEFAULT_MENU_ITEMS = [
   { label: 'Solutions', isHeader: true },
   { label: 'SEO', link: '/services/seo' },
+  { label: 'On-Page SEO LA', link: '/on-page-seo-los-angeles' },
   { label: 'GEO', link: '/services/geo-optimization' },
   { label: 'Penalty Recovery', link: '/google-penalty-recovery' },
   { label: 'Lead Generation', link: '/services/lead-generation' },

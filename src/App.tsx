@@ -111,7 +111,8 @@ function App({ url }: AppProps) {
     '/services/geo-optimization',
     '/services/web-development',
     '/services/ppc-advertising',
-    '/google-penalty-recovery'
+    '/google-penalty-recovery',
+    '/on-page-seo-los-angeles'
   ].includes(normalizedPath);
 
   return (
