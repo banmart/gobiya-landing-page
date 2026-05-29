@@ -160,6 +160,7 @@
   color: #4b5563 !important; /* text-gray-600 */
 }
 
+/* bg-[#f7f7f7] light cards contrast rules */
 .dark-article div[class*="bg-[#f7f7f7]"] p:not([class*="text-gray-500"]),
 .dark-article div[class*="bg-[#f7f7f7]"] span:not([class*="text-gray-500"]),
 .dark-article div[class*="bg-[#f7f7f7]"] h1,
@@ -176,5 +177,32 @@
 .dark-article div[class*="bg-[#f7f7f7]"] h3[class*="text-gray-500"] {
   color: #4b5563 !important; /* text-gray-600 */
 }
+
+/* bg-gray-50 light cards and callout contrast rules */
+.dark-article div[class*="bg-gray-50"] p:not([class*="text-[#F26522]"]):not([class*="text-gray-500"]):not([class*="text-gray-400"]),
+.dark-article div[class*="bg-gray-50"] span:not([class*="text-[#F26522]"]):not([class*="text-gray-500"]):not([class*="text-gray-400"]),
+.dark-article div[class*="bg-gray-50"] h1,
+.dark-article div[class*="bg-gray-50"] h2,
+.dark-article div[class*="bg-gray-50"] h3,
+.dark-article div[class*="bg-gray-50"] h4,
+.dark-article div[class*="bg-gray-50"] h5,
+.dark-article div[class*="bg-gray-50"] h6,
+.dark-article div[class*="bg-gray-50"] li {
+  color: #111827 !important; /* text-gray-900 */
+}
+
+.dark-article div[class*="bg-gray-50"] p[class*="text-gray-500"],
+.dark-article div[class*="bg-gray-50"] span[class*="text-gray-500"],
+.dark-article div[class*="bg-gray-50"] p[class*="text-gray-400"],
+.dark-article div[class*="bg-gray-50"] span[class*="text-gray-400"] {
+  color: #4b5563 !important; /* text-gray-600 */
+}
+
+/* Preserve brand orange color for stats and accents inside articles */
+.dark-article [class*="text-[#F26522]"],
+.dark-article [class*="text-[#F26522]"] * {
+  color: #F26522 !important;
+}
+
 
 
