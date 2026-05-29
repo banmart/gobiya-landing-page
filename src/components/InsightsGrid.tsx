@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { supabase } from '../lib/supabase';
+import { ARTICLES } from './ArticlePage';
 
 interface Insight {
   id: number;
@@ -25,13 +26,12 @@ const InsightsGrid: React.FC = () => {
           .order('id', { ascending: false });
 
         if (error) {
-          console.error("Error fetching insights:", error);
-          setInsightsByCategory({});
-          return;
+          console.error("Error fetching insights from database:", error);
         }
 
+        let processed: Insight[] = [];
         if (data) {
-          const processed = data.map((item: any) => {
+          processed = data.map((item: any) => {
             let finalUrl = '';
             if (item.image_path) {
               const { data: urlData } = supabase.storage
@@ -47,16 +47,34 @@ const InsightsGrid: React.FC = () => {
               image_url: finalUrl
             };
           });
-
-          // Group by category
-          const grouped: Record<string, Insight[]> = {};
-          processed.forEach(insight => {
-            const cat = insight.category || 'Uncategorized';
-            if (!grouped[cat]) grouped[cat] = [];
-            grouped[cat].push(insight);
-          });
-          setInsightsByCategory(grouped);
         }
+
+        // Merge static articles from ARTICLES registry
+        const merged = [...processed];
+        Object.values(ARTICLES).forEach((art) => {
+          const exists = processed.some(
+            (item: any) => item.slug && item.slug.toLowerCase() === art.slug.toLowerCase()
+          );
+          if (!exists) {
+            merged.push({
+              id: -Math.floor(Math.random() * 1000000) - 1,
+              title: art.title,
+              category: art.category,
+              image_path: '',
+              image_url: art.image,
+              slug: art.slug,
+            });
+          }
+        });
+
+        // Group by category
+        const grouped: Record<string, Insight[]> = {};
+        merged.forEach(insight => {
+          const cat = insight.category || 'Uncategorized';
+          if (!grouped[cat]) grouped[cat] = [];
+          grouped[cat].push(insight);
+        });
+        setInsightsByCategory(grouped);
       } catch (err) {
         console.error("Failed to fetch insights:", err);
       } finally {

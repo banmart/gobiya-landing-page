@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Clock, ArrowRight, Linkedin, Award, Briefcase, Code, Compass, ShieldCheck } from 'lucide-react';
-import { Shader, Swirl, ChromaFlow, FlutedGlass, FilmGrain } from 'shaders/react';
+import DeferredShader, { Swirl, ChromaFlow, FlutedGlass, FilmGrain } from './DeferredShader';
 import StaggeredMenu from './StaggeredMenu';
 import BlurText from './BlurText';
 import GradualBlur from './GradualBlur';
@@ -120,12 +120,12 @@ const AuthorPage: React.FC<AuthorPageProps> = ({ path }) => {
       <section className="relative w-full h-[55vh] min-h-[400px] bg-[#050505] overflow-hidden flex flex-col justify-end cursor-default">
         {/* Shader background */}
         <div className="absolute inset-0 z-10 pointer-events-none w-full h-full [&>div]:w-full [&>div]:h-full [&_canvas]:w-full [&_canvas]:h-full [&_canvas]:object-cover opacity-85">
-          <Shader>
+          <DeferredShader>
             <Swirl colorA="#050505" colorB="#0f0f0f" detail={1.7} />
             <ChromaFlow baseColor="#050505" downColor="#f26522" leftColor="#f26522" rightColor="#f26522" upColor="#f26522" momentum={13} radius={3.5} />
             <FlutedGlass aberration={0.61} angle={31} frequency={8} highlight={0.12} highlightSoftness={0} lightAngle={-90} refraction={4} shape="rounded" softness={1} speed={0.15} />
             <FilmGrain strength={0.05} />
-          </Shader>
+          </DeferredShader>
         </div>
         
         {/* Nav */}

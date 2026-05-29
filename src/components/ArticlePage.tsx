@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Clock, ArrowRight, ArrowLeft, ChevronRight, Twitter, Linkedin, Facebook, Link, Share2 } from 'lucide-react';
-import { Shader, Swirl, ChromaFlow, FlutedGlass, FilmGrain } from 'shaders/react';
+import DeferredShader, { Swirl, ChromaFlow, FlutedGlass, FilmGrain } from './DeferredShader';
 import Header from './Header';
 import Footer from './Footer';
 import BlurText from './BlurText';
@@ -23,6 +23,294 @@ interface ArticleData {
 // Each article is statically registered here so we can do fast client-side
 // routing without a DB round-trip. Add new articles to this map.
 const ARTICLES: Record<string, ArticleData> = {
+  'what-is-the-difference-between-a-manual-action-and-an-algorithmic-penalty': {
+    slug: 'what-is-the-difference-between-a-manual-action-and-an-algorithmic-penalty',
+    title: 'What Is the Difference Between a Manual Action and an Algorithmic Penalty?',
+    category: 'SEO',
+    readTime: '9 min read',
+    date: 'May 29, 2026',
+    image: '/images/article-what-is-the-difference-between-a-manual-action-and-an-algorithmic-penalty.webp',
+    heroAlt: 'Visual contrast between a human-reviewed Google manual action warning and an automated algorithmic calculation',
+    metaDescription: 'The single most important distinction in Google traffic recovery: why a human-issued manual action and an automated algorithmic suppression are completely different problems.',
+    content: (
+      <>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8 font-medium">
+          The single most important distinction in Google traffic recovery: why a human-issued manual action and an automated algorithmic suppression are completely different problems, how to tell instantly which one you have, and why confusing them is the root cause of most failed recoveries.
+        </p>
+
+        {/* ── TABLE OF CONTENTS ── */}
+        <details className="bg-gray-50 border border-gray-200 rounded-lg p-6 sm:p-8 my-10 sm:my-14 group" open>
+          <summary className="text-[14px] font-semibold uppercase tracking-wider text-gray-500 cursor-pointer list-none flex items-center justify-between">
+            Table of Contents
+            <svg className="w-4 h-4 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" /></svg>
+          </summary>
+          <ul className="mt-6 space-y-3.5 text-[15px] font-medium text-gray-900 border-t border-gray-200 pt-6">
+            {[
+              { id: 'core-distinction', label: 'The Core Distinction — 2026 update' },
+              { id: 'manual-action', label: 'What a manual action actually is' },
+              { id: 'algorithmic-suppression', label: 'What an algorithmic suppression actually is' },
+              { id: 'four-dimensions', label: 'The four dimensions of difference' },
+              { id: 'five-minute-confirmation', label: 'How to confirm which one you have in under five minutes' },
+              { id: 'both-at-once', label: 'When you have both at once' },
+              { id: 'root-of-failed-recoveries', label: 'Why confusing the two is the root of most failed recoveries' },
+              { id: 'guesswork-vs-credible', label: 'What separates a credible recovery approach from guesswork' },
+              { id: 'why-gobiya', label: 'Why Gobiya is positioned differently for penalized sites' },
+              { id: 'consequential-situations', label: 'Which situations make the distinction most consequential' },
+              { id: 'diagnosis-right', label: 'What getting the diagnosis right actually looks like' },
+              { id: 'making-right-call', label: 'Making the right call for your recovery' },
+              { id: 'faqs', label: 'Frequently Asked Questions (FAQ)' }
+            ].map(({ id, label }) => (
+              <li key={id} className="flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#F26522] shrink-0" />
+                <a href={`#${id}`} className="hover:text-[#F26522] transition-colors">{label}</a>
+              </li>
+            ))}
+          </ul>
+        </details>
+
+        {/* ── SECTION 1: The Core Distinction ── */}
+        <h2 id="core-distinction" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          The Core Distinction — 2026 update
+        </h2>
+        <ul className="space-y-3 mb-8 pl-0">
+          {[
+            '2 fundamentally different problems — A manual action (a human reviewer flagging a specific violation, with a notification and a reconsideration process) and an algorithmic suppression (the ranking system re-evaluating your site, with no notification and no reconsideration) require completely different recovery approaches.',
+            '10–30 days vs 6 months–2 years — Typical recovery timelines: manual actions clear in weeks after a successful reconsideration; algorithmic suppressions take months to years and often require the next update cycle.',
+            'Search Console → Security & Manual Actions — The single free, instant check that tells you which one you have: a notification means manual; "No issues detected" means algorithmic.'
+          ].map((item, idx) => (
+            <li key={idx} className="flex items-start gap-3 text-[16px] sm:text-[17px] leading-[1.6] text-gray-800">
+              <span className="mt-1.5 w-2 h-2 rounded-full bg-[#F26522] shrink-0" />
+              {item}
+            </li>
+          ))}
+        </ul>
+
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          The difference between a manual action and an algorithmic penalty is the most important thing to understand when your site loses Google traffic, because the two are completely different problems with completely different causes, completely different ways of finding out you have them, and completely different recovery paths — and the most common, most costly mistake in traffic recovery is treating one like the other. A manual action is issued by a human reviewer at Google who has examined your site, determined it violates a specific spam policy, and applied an action that you are notified about in Search Console. An algorithmic suppression (often loosely called an "algorithmic penalty") happens automatically when Google's ranking systems re-evaluate your site and conclude it should rank lower — with no human involvement, no notification, and nothing to "appeal." The recovery for a manual action is a procedural process: fix the violation, submit a reconsideration request, wait for a human to review and lift it. The recovery for an algorithmic suppression is a substantive process: improve the underlying quality or signal problems and wait for the ranking system to recrawl and re-evaluate. Submitting a reconsideration request for an algorithmic suppression is pointless — there's no manual action to reconsider. Waiting passively for an algorithmic re-evaluation when you actually have a manual action is equally pointless — the manual action won't lift until you fix it and ask for review.
+        </p>
+
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          This distinction is the foundation of all traffic recovery, and getting it wrong sends people down the wrong path entirely. The strongest operators confirm which type they have before doing anything else, because the diagnosis determines the entire recovery approach. Most operators skip the diagnosis, assume the wrong type, and waste weeks or months on a recovery path that can't work for the problem they actually have.
+        </p>
+
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          This article covers exactly what each type is, the four dimensions on which they differ, how to confirm which one you have in under five minutes, what happens when you have both at once, and why the distinction governs everything that follows in a recovery.
+        </p>
+
+        {/* ── SECTION 2: What a manual action actually is ── */}
+        <h2 id="manual-action" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          What a manual action actually is
+        </h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          A manual action is a penalty applied by a human reviewer on Google's Search Quality team. A person at Google examined your site (often prompted by an automated flag or a spam report), determined that it violates one of Google's spam policies, and manually applied an action that suppresses or removes affected pages from search results. The defining characteristics: a human made the decision, it targets a specific identified violation, and — critically — Google tells you about it.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          The notification appears in Google Search Console under Security & Manual Actions → Manual Actions. This is the single most useful fact about manual actions: there is no guesswork. The notification states the violation type (unnatural links to your site, unnatural links from your site, thin content with little or no added value, pure spam, cloaking, sneaky redirects, scaled content abuse, user-generated spam, and others) and identifies the affected pages or whether the action is sitewide. You know exactly what the problem is and where it applies, because Google has told you in plain language.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          Common manual action triggers in 2026 include unnatural inbound or outbound links (link schemes, paid links passing PageRank, large-scale link manipulation), thin content with little added value, pure spam (aggressive spam techniques, auto-generated gibberish), cloaking and sneaky redirects (showing different content to Google than to users), scaled content abuse (mass-produced low-value content, frequently AI-generated and detailed in our <a href="/insights/google-manual-action-removal-agency-caused-penalty" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">agency-caused penalty case guide</a>), and user-generated spam (spammy comments, forum posts, profile spam). Each violation type has a specific remediation, and the recovery requires fixing the specific thing the notification names.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          The recovery path for a manual action is procedural and well-defined: fully fix the violation the notification identifies (partial fixes get reconsideration requests rejected), document the remediation, and submit a reconsideration request through Search Console. A human reviewer then evaluates whether you've actually fixed the problem, and if you have, lifts the action. Manual actions clear relatively quickly once properly remediated — typically 10 to 30 days, or 2 to 4 weeks after the reconsideration request — and you receive a notification confirming the action has been removed. The reconsideration request is the defining feature of manual action recovery: it exists only for manual actions, because only manual actions involve a human decision that another human can be asked to reconsider.
+        </p>
+
+        {/* ── SECTION 3: What an algorithmic suppression actually is ── */}
+        <h2 id="algorithmic-suppression" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          What an algorithmic suppression actually is
+        </h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          An algorithmic suppression happens when Google's automated ranking systems re-evaluate your site and rank it lower — with no human reviewer, no specific flagged violation, and no notification. Your rankings drop, your traffic falls, and Search Console shows no manual action. The defining characteristics: an automated system made the adjustment, it reflects a broad re-evaluation rather than a specific flagged violation, and Google does not tell you it happened — you have to detect it yourself.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          A terminology note worth making, because it affects how you think about recovery: Google itself does not technically classify algorithmic adjustments as "penalties." A penalty implies punishment for a violation. A core update, by contrast, is a re-evaluation of relative quality — your site didn't necessarily do anything wrong; the ranking system reassessed which content best serves the queries and concluded other content does it better. "Algorithmic penalty" is common usage and everyone understands what it means, but the more accurate framing is "algorithmic suppression" or "algorithmic re-evaluation," and that framing matters because it shapes the recovery: you're not removing a punishment, you're re-earning a position.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          Algorithmic suppressions come from several systems. Core updates (like the March 2026 core update) are broad re-evaluations of content quality and relevance across the entire web — purely algorithmic, no human involved. To understand the mechanics of these events, explore our guide on <a href="/insights/can-a-site-fully-recover-from-a-google-core-update" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">algorithmic traffic recovery</a>. The Helpful Content system (now folded into core ranking) evaluates whether content was created primarily for people or for search engines, and catches sites publishing large volumes of low-value or AI-generated content. SpamBrain, Google's AI-based spam detection system, handles most spam detection algorithmically (though the Search Quality team also issues manual actions for severe cases). Link-based algorithmic systems devalue manipulative link patterns automatically. Each of these can suppress a site's rankings without any notification.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          The recovery path for an algorithmic suppression is substantive, not procedural. There is no reconsideration request to submit — there's no manual action to reconsider. Recovery requires identifying what the algorithm is suppressing you for (usually content quality, search intent mismatch, weak E-E-A-T signals, link quality, or some combination), fixing it substantively, and waiting for Google to recrawl and re-evaluate. The timeline is much longer than for manual actions — weeks to months for partial recovery, often 6 months to 2 years for full recovery, and frequently the recovery doesn't fully register until the next core update re-runs the evaluation with your improvements factored in. The wait-for-the-next-cycle dynamic is the defining feature of algorithmic recovery, and it's why algorithmic recovery is slower and less certain than manual action recovery.
+        </p>
+
+        {/* ── SECTION 4: The four dimensions of difference ── */}
+        <h2 id="four-dimensions" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          The four dimensions of difference
+        </h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          The distinction is cleanest when laid out across the four dimensions that matter for recovery:
+        </p>
+        <div className="bg-gray-50 border border-gray-200 p-6 sm:p-8 my-8 space-y-4">
+          <div>
+            <h4 className="text-[16px] font-bold text-gray-900">1. Cause</h4>
+            <p className="text-[15px] text-gray-700">A manual action is caused by a human reviewer's decision that your site violates a specific policy. An algorithmic suppression is caused by an automated system's re-evaluation of your site's quality, relevance, or signals. Human versus machine, specific violation versus broad re-evaluation.</p>
+          </div>
+          <div>
+            <h4 className="text-[16px] font-bold text-gray-900">2. Notification</h4>
+            <p className="text-[15px] text-gray-700">A manual action comes with a notification in Search Console that names the violation and the affected pages — no guesswork. An algorithmic suppression comes with no notification at all — you detect it by observing a traffic drop and matching it to a known update or diagnosing it yourself. Told versus undetected.</p>
+          </div>
+          <div>
+            <h4 className="text-[16px] font-bold text-gray-900">3. Recovery mechanism</h4>
+            <p className="text-[15px] text-gray-700">A manual action is recovered by fixing the named violation and submitting a reconsideration request that a human reviews. An algorithmic suppression is recovered by substantively improving the underlying issues and waiting for the ranking system to recrawl and re-evaluate — no reconsideration request exists or applies. Procedural-with-appeal versus substantive-with-wait.</p>
+          </div>
+          <div>
+            <h4 className="text-[16px] font-bold text-gray-900">4. Timeline</h4>
+            <p className="text-[15px] text-gray-700">A manual action clears in roughly 10-30 days after a successful reconsideration. An algorithmic suppression takes weeks to months at minimum, often 6 months to 2 years for full recovery, frequently requiring the next update cycle. Weeks versus months-to-years.</p>
+          </div>
+        </div>
+
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          These four dimensions are why conflating the two wastes so much time and effort. A site owner who assumes they have a manual action (when it's actually algorithmic) might spend weeks preparing and submitting a reconsideration request that Google will simply respond to by noting there's no manual action to reconsider — weeks lost. A site owner who assumes they have an algorithmic issue (when it's actually a manual action) might wait passively for a re-evaluation that will never come, because the manual action persists until they actively fix it and request review — months lost. The recovery path depends entirely on which type you have, and the diagnosis is therefore the first and most important step.
+        </p>
+
+        {/* ── SECTION 5: How to confirm which one you have in under five minutes ── */}
+        <h2 id="five-minute-confirmation" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          How to confirm which one you have in under five minutes
+        </h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          The diagnosis is fast, free, and definitive. Open Google Search Console and navigate to <strong>Security & Manual Actions → Manual Actions</strong>. This single report answers the question.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          <strong>If there's a notification:</strong> you have a manual action. The report tells you the violation type and the affected pages. There's no ambiguity — Google has explicitly flagged your site. Your recovery path is the manual action path: fix the named violation fully, document it, submit a reconsideration request.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          <strong>If it says "No issues detected":</strong> you do not have a manual action. Your traffic loss, if it's a Google ranking issue, is algorithmic. Your recovery path is the algorithmic path: identify what the ranking system is suppressing you for, fix it substantively, and wait for re-evaluation.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          If the Manual Actions report is clean and you've confirmed the drop isn't a manual action, the next step for an algorithmic diagnosis is to cross-reference your traffic drop date against known Google update dates (using the Google Search Status Dashboard). A drop that aligns with a confirmed core update or spam update rollout points to that update as the cause. A drop that doesn't align with any known update may indicate a technical issue, a reporting anomaly, or a more gradual algorithmic re-evaluation rather than a discrete update event. For local search visibility issues, you should instead audit for <a href="/insights/google-business-profile-optimization" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">Google Business Profile optimization</a> or suspension problems.
+        </p>
+
+        {/* ── SECTION 6: When you have both at once ── */}
+        <h2 id="both-at-once" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          When you have both at once
+        </h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          A complicating but real scenario: a site can have a manual action and an algorithmic suppression simultaneously. A site might receive a manual action for unnatural links while also being hit by a core update for low content quality — two separate problems, two separate recovery paths, present at the same time. This is genuinely confusing in the moment because the symptoms (traffic loss) look identical, and trying to fix everything at once without a clear sequence usually produces confusion about what's actually working.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          The sequencing rule for combined cases: <strong>address the manual action first</strong>. Fix the violation, submit the reconsideration request, and get the manual action lifted. Then move into the algorithmic recovery — the substantive content and signal improvement work — as a separate, sequenced effort. The reason for this order is that the manual action is the more clearly defined and faster-resolving problem (you know exactly what it is, and it clears in weeks once fixed), while the algorithmic recovery is the longer, more diffuse effort. Resolving the clear, fast problem first removes one variable, and then the algorithmic recovery can proceed without the manual action confounding your ability to measure whether the quality improvements are working.
+        </p>
+
+        {/* ── SECTION 7: Why confusing the two is the root of most failed recoveries ── */}
+        <h2 id="root-of-failed-recoveries" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          Why confusing the two is the root of most failed recoveries
+        </h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          The reason this distinction deserves a dedicated explanation is that confusing the two types is, more than any other single factor, the root cause of failed and prolonged recoveries. The failure modes are specific and common:
+        </p>
+        <ul className="space-y-3 mb-8 pl-0">
+          {[
+            'Filing reconsideration requests for algorithmic drops — A site owner sees a traffic drop, assumes a "penalty," and submits a reconsideration request — but there is no manual action, so the request is rejected immediately by automated systems.',
+            'Waiting passively for algorithmic recovery when you have a manual action — A site owner assumes the drop is algorithmic and wait for a re-evaluation that will never come, because the manual action persists until they actively fix it and request review.',
+            'Applying the wrong remediation entirely — A site owner with an algorithmic content-quality suppression starts disavowing links (a manual-action-link-penalty remedy) — addressing a problem they don\'t have while ignoring the content thinness.',
+            'Panic-acting before diagnosing at all — Skipping the five-minute Search Console check entirely and beginning aggressive corrective action (deleting pages, disavowing links) based on a guess about the cause.'
+          ].map((item, idx) => (
+            <li key={idx} className="flex items-start gap-3 text-[16px] sm:text-[17px] leading-[1.6] text-gray-800">
+              <span className="mt-1.5 w-2 h-2 rounded-full bg-[#F26522] shrink-0" />
+              {item}
+            </li>
+          ))}
+        </ul>
+
+        {/* ── SECTION 8: What separates a credible recovery approach from guesswork ── */}
+        <h2 id="guesswork-vs-credible" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          What separates a credible recovery approach from guesswork
+        </h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          Not every provider offering Google penalty recovery operates with the diagnostic discipline the distinction requires. The category includes specialists who diagnose correctly before acting and a long tail of providers who apply a generic "recovery" process regardless of the actual problem type. A credible recovery approach starts with the manual-vs-algorithmic diagnosis, applies the correct path for the confirmed type, sequences combined cases correctly, and sets timelines that match the actual problem. Guesswork applies a generic recovery process without confirming what's actually wrong.
+        </p>
+
+        {/* ── SECTION 9: Why Gobiya is positioned differently for penalized sites ── */}
+        <h2 id="why-gobiya" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          Why Gobiya is positioned differently for penalized sites
+        </h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          Gobiya is positioned differently for penalized sites because of our rigorous diagnostic discipline and code-level execution capability. Before recommending any action, we confirm whether the drop is a manual action or an algorithmic suppression using live Search Console diagnostics—preventing the wasted weeks of guessing. For manual actions, Gobiya offers proven <a href="/google-penalty-recovery" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">penalty recovery protocols</a> and reconsideration request writing that achieves high first-submission success. For algorithmic suppressions, we execute substantive content audits and semantic <a href="/services/seo" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">SEO architectures</a> to align entities with Google's quality framework. We sequence combined cases (manual action first, followed by algorithmic quality work) to provide a clear path to ranking restoration with honest, data-backed timelines.
+        </p>
+
+        {/* ── SECTION 10: Which situations make the distinction most consequential ── */}
+        <h2 id="consequential-situations" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          Which situations make the distinction most consequential
+        </h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          The manual-vs-algorithmic distinction matters in every recovery, but it's most consequential in certain situations. Here's how the stakes break down:
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          <strong>Sites with link-based issues</strong> face the distinction acutely because link problems can be either manual (an unnatural links manual action, recovered via link cleanup plus reconsideration) or algorithmic (automated link devaluation, recovered via link profile improvement with no reconsideration).
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          <strong>Sites hit during spam updates</strong> face the trickiest diagnosis because spam updates can trigger both — SpamBrain handles most spam algorithmically, but the Search Quality team also issues manual actions for severe violations during the same period.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          <strong>Sites with scaled or AI-generated content</strong> face the distinction because scaled content abuse can manifest as either a manual action (the human-reviewed scaled content abuse action) or an algorithmic suppression (the Helpful Content system's algorithmic devaluation). Both require content quality overhaul, but only the manual action involves a reconsideration request.
+        </p>
+
+        {/* ── SECTION 11: What getting the diagnosis right actually looks like ── */}
+        <h2 id="diagnosis-right" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          What getting the diagnosis right actually looks like
+        </h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          A credible recovery starts with the five-minute diagnosis and builds from there. Check Search Console's Manual Actions report: notification means manual, "no issues detected" means algorithmic. For a manual action, read the violation type and affected pages, plan the specific remediation, fix the violation completely, document the remediation, and submit the reconsideration request. For an algorithmic suppression, cross-reference the drop against known update dates, identify what the ranking system is suppressing you for (quality, intent, E-E-A-T, links), do the substantive improvement work, and wait for recrawl and re-evaluation — understanding the months-to-next-cycle timeline.
+        </p>
+
+        {/* ── SECTION 12: Making the right call for your recovery ── */}
+        <h2 id="making-right-call" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          Making the right call for your recovery
+        </h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          Sites that have lost Google traffic face a foundational fork that determines everything downstream: correctly identify whether the loss is a manual action or an algorithmic suppression, or guess wrong and pour recovery effort into a path that can't work. The distinction isn't a technicality — it's the difference between a reconsideration request that lifts a manual action in weeks and a reconsideration request that addresses nothing because the drop was algorithmic; between substantive quality work that earns back algorithmic position and passive waiting for a manual action that will never lift on its own.
+        </p>
+
+        {/* ── INLINE CTA ── */}
+        <div className="bg-gray-900 text-white p-6 sm:p-8 my-10 sm:my-14 flex flex-col sm:flex-row items-start sm:items-center gap-6">
+          <div className="flex-1">
+            <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-2">Gobiya Service</p>
+            <p className="text-[17px] sm:text-[19px] font-medium leading-snug">
+              Recover your organic pipeline from algorithmic and manual penalties.
+            </p>
+          </div>
+          <a
+            href="/google-penalty-recovery"
+            className="group flex items-center bg-[#F26522] hover:bg-[#e05a1a] text-white pl-5 pr-2 py-2 transition-colors duration-300 whitespace-nowrap shrink-0"
+          >
+            <span className="text-[13px] font-medium mr-3">Penalty Recovery Services</span>
+            <div className="w-6 h-6 bg-white flex items-center justify-center">
+              <ArrowRight className="w-3.5 h-3.5 text-[#F26522] transition-transform duration-300 group-hover:-rotate-45" />
+            </div>
+          </a>
+        </div>
+
+        {/* ── FAQ SECTION ── */}
+        <h2 id="faqs" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          Frequently Asked Questions (FAQ)
+        </h2>
+        <div className="space-y-6 mb-12">
+          <div className="border-b border-gray-200 pb-4">
+            <h3 className="text-[18px] font-semibold text-gray-900 mb-2 font-sans">
+              Can I submit a reconsideration request for an algorithmic update drop?
+            </h3>
+            <p className="text-[16px] text-gray-700 leading-[1.6]">
+              No. Reconsideration requests are reviewed by Google employees and apply strictly to manual actions. If Search Console displays "No issues detected," your drop is algorithmic, and there is no manual action to appeal.
+            </p>
+          </div>
+          <div className="border-b border-gray-200 pb-4">
+            <h3 className="text-[18px] font-semibold text-gray-900 mb-2 font-sans">
+              How long does it take to recover from a Google manual action vs. an algorithmic suppression?
+            </h3>
+            <p className="text-[16px] text-gray-700 leading-[1.6]">
+              A manual action typically clears in 10 to 30 days after a successful reconsideration request. An algorithmic suppression is much slower, usually requiring weeks to months of content quality upgrades, and often won't resolve until the next Google core update cycle runs (which can take 6 months to 2 years).
+            </p>
+          </div>
+          <div className="border-b border-gray-200 pb-4">
+            <h3 className="text-[18px] font-semibold text-gray-900 mb-2 font-sans">
+              What is the first step I should take after seeing a traffic drop?
+            </h3>
+            <p className="text-[16px] text-gray-700 leading-[1.6]">
+              Immediately check the <strong>Security & Manual Actions → Manual Actions</strong> report in Google Search Console. If a notification is present, you have a manual action. If it says "No issues detected," your drop is algorithmic.
+            </p>
+          </div>
+        </div>
+      </>
+    ),
+  },
   'google-manual-action-removal-agency-caused-penalty': {
     slug: 'google-manual-action-removal-agency-caused-penalty',
     title: 'Google Manual Action Removal When Your Agency Caused the Scaled Content Abuse Penalty',
@@ -4638,6 +4926,27 @@ const RELATED_ARTICLES_MAP: Record<string, { href: string; category: string; tit
     },
   ],
 
+  'what-is-the-difference-between-a-manual-action-and-an-algorithmic-penalty': [
+    {
+      href: '/insights/google-manual-action-removal-agency-caused-penalty',
+      category: 'SEO',
+      title: 'Google Manual Action Removal When Your Agency Caused the Scaled Content Abuse Penalty',
+      image: '/images/article-agency-penalty.png',
+    },
+    {
+      href: '/insights/can-a-site-fully-recover-from-a-google-core-update',
+      category: 'SEO',
+      title: 'Can a Site Fully Recover From a Google Core Update?',
+      image: '/images/article-can-a-site-fully-recover-from-a-google-core-update.webp',
+    },
+    {
+      href: '/insights/google-business-profile-optimization',
+      category: 'Local SEO',
+      title: 'Google Business Profile Optimization for Traffic Recovery Explained',
+      image: '/images/article-google-business-profile-optimization.webp',
+    },
+  ],
+
   'can-a-site-fully-recover-from-a-google-core-update': [
     {
       href: '/insights/google-manual-action-removal-agency-caused-penalty',
@@ -4755,32 +5064,65 @@ const ArticlePage: React.FC<ArticlePageProps> = ({ slug }) => {
     const ogImage = document.querySelector('meta[property="og:image"]');
     if (ogImage) ogImage.setAttribute('content', `https://www.gobiya.com${article.image}`);
 
-    // Article JSON-LD
+    // Article & FAQ JSON-LD
     const schema = {
       "@context": "https://schema.org",
-      "@type": "Article",
-      "headline": article.title,
-      "description": article.metaDescription,
-      "image": `https://www.gobiya.com${article.image}`,
-      "datePublished": "2026-05-25",
-      "dateModified": "2026-05-25",
-      "author": {
-        "@type": "Person",
-        "name": "Steve Martin",
-        "jobTitle": "CEO, Lead Developer & Marketer",
-        "url": "https://www.gobiya.com/about/steve-martin",
-        "sameAs": [
-          "https://www.linkedin.com/in/stevemartingobiya/"
-        ]
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "Gobiya",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://www.gobiya.com/images/gobiya---logo.webp"
-        }
-      }
+      "@graph": [
+        {
+          "@type": "Article",
+          "headline": article.title,
+          "description": article.metaDescription,
+          "image": `https://www.gobiya.com${article.image}`,
+          "datePublished": slug === 'what-is-the-difference-between-a-manual-action-and-an-algorithmic-penalty' ? "2026-05-29" : "2026-05-25",
+          "dateModified": slug === 'what-is-the-difference-between-a-manual-action-and-an-algorithmic-penalty' ? "2026-05-29" : "2026-05-25",
+          "author": {
+            "@type": "Person",
+            "name": "Steve Martin",
+            "jobTitle": "CEO, Lead Developer & Marketer",
+            "url": "https://www.gobiya.com/about/steve-martin",
+            "sameAs": [
+              "https://www.linkedin.com/in/stevemartingobiya/"
+            ]
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Gobiya",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://www.gobiya.com/images/gobiya---logo.webp"
+            }
+          }
+        },
+        ...(slug === 'what-is-the-difference-between-a-manual-action-and-an-algorithmic-penalty' ? [{
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Can I submit a reconsideration request for an algorithmic update drop?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. Reconsideration requests are reviewed by Google employees and apply strictly to manual actions. If Search Console displays 'No issues detected,' your drop is algorithmic, and there is no manual action to appeal."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How long does it take to recover from a Google manual action vs. an algorithmic suppression?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "A manual action typically clears in 10 to 30 days after a successful reconsideration request. An algorithmic suppression is much slower, usually requiring weeks to months of content quality upgrades, and often won't resolve until the next Google core update cycle runs."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What is the first step I should take after seeing a traffic drop?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Immediately check the Security & Manual Actions -> Manual Actions report in Google Search Console. If a notification is present, you have a manual action. If it says 'No issues detected,' your drop is algorithmic."
+              }
+            }
+          ]
+        }] : [])
+      ]
     };
     let scriptTag = document.getElementById('article-schema') as HTMLScriptElement | null;
     if (!scriptTag) {
@@ -4813,12 +5155,12 @@ const ArticlePage: React.FC<ArticlePageProps> = ({ slug }) => {
       <section className="relative w-full h-[65vh] min-h-[480px] bg-[#050505] overflow-hidden flex flex-col justify-end cursor-default">
         {/* Shader background */}
         <div className="absolute inset-0 z-10 pointer-events-none w-full h-full [&>div]:w-full [&>div]:h-full [&_canvas]:w-full [&_canvas]:h-full [&_canvas]:object-cover opacity-85">
-          <Shader>
+          <DeferredShader>
             <Swirl colorA="#050505" colorB="#0f0f0f" detail={1.7} />
             <ChromaFlow baseColor="#050505" downColor="#f26522" leftColor="#f26522" rightColor="#f26522" upColor="#f26522" momentum={13} radius={3.5} />
             <FlutedGlass aberration={0.61} angle={31} frequency={8} highlight={0.12} highlightSoftness={0} lightAngle={-90} refraction={4} shape="rounded" softness={1} speed={0.15} />
             <FilmGrain strength={0.05} />
-          </Shader>
+          </DeferredShader>
         </div>
 
         {/* Nav */}

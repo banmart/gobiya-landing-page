@@ -2,6 +2,7 @@ import React, { useRef, useState, useEffect } from 'react';
 import { gsap } from 'gsap';
 import { ArrowRight, ArrowLeft } from 'lucide-react';
 import { supabase } from '../lib/supabase';
+import { ARTICLES } from './ArticlePage';
 
 // Define the interface for an Insight item
 interface Insight {
@@ -41,14 +42,13 @@ const InsightsSlider: React.FC<InsightsSliderProps> = ({ filterCategory, limit }
           .order('id', { ascending: false });
 
         if (error) {
-          console.error("Error fetching insights:", error);
-          setInsights([]);
-          return;
+          console.error("Error fetching insights from database:", error);
         }
 
+        let processed: Insight[] = [];
         if (data) {
           // Process the image URLs from the bucket
-          const processedInsights = data.map((item: any) => {
+          processed = data.map((item: any) => {
             let finalUrl = '';
             if (item.image_path) {
               const { data: urlData } = supabase.storage
@@ -64,8 +64,27 @@ const InsightsSlider: React.FC<InsightsSliderProps> = ({ filterCategory, limit }
               image_url: finalUrl
             };
           });
-          setInsights(processedInsights);
         }
+
+        // Merge static articles from ARTICLES registry
+        const merged = [...processed];
+        Object.values(ARTICLES).forEach((art) => {
+          const exists = processed.some(
+            (item: any) => item.slug && item.slug.toLowerCase() === art.slug.toLowerCase()
+          );
+          if (!exists) {
+            merged.push({
+              id: -Math.floor(Math.random() * 1000000) - 1,
+              title: art.title,
+              category: art.category,
+              image_path: '',
+              image_url: art.image,
+              slug: art.slug,
+            });
+          }
+        });
+
+        setInsights(merged);
       } catch (err) {
         console.error("Failed to fetch insights:", err);
       } finally {

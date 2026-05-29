@@ -139,6 +139,10 @@ const metadataMap: Record<string, SEOMetadata> = {
   '/insights/google-manual-action-removal-agency-caused-penalty': {
     title: 'Google Manual Action Removal When Your Agency Caused Scaled Content Abuse Penalty | Gobiya',
     description: 'What to do when your in-house team is suddenly responsible for recovering a Google manual action your agency triggered. Diagnosis, narrative, and reconsideration appeal steps.'
+  },
+  '/insights/what-is-the-difference-between-a-manual-action-and-an-algorithmic-penalty': {
+    title: 'What Is the Difference Between a Manual Action and an Algorithmic Penalty? | Gobiya',
+    description: 'The single most important distinction in Google traffic recovery: why a human-issued manual action and an automated algorithmic suppression are completely different problems.'
   }
 };
 
