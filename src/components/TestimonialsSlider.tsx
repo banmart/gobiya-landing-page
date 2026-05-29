@@ -37,7 +37,7 @@ const testimonials: Testimonial[] = [
     text: "The best technical SEO partnership we've ever had. Highly recommend their local Los Angeles team.",
     company: "Total Capital Inc",
     author: "Eli Zilberstein",
-    image_url: "/images/testimonial-david.png"
+    image_url: "/images/eli-portrait.webp"
   }
 ];
 
