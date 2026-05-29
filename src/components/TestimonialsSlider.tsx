@@ -30,7 +30,7 @@ const testimonials: Testimonial[] = [
     text: "Our enterprise sales pipeline doubled in 3 months after implementing their AI-driven approach.",
     company: "Doc Prep",
     author: "Carla Vasquez",
-    image_url: "/images/testimonial-sarah.png"
+    image_url: "/images/doc-prep.jpeg"
   },
   {
     id: 4,
