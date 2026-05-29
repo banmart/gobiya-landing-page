@@ -143,6 +143,10 @@ const metadataMap: Record<string, SEOMetadata> = {
   '/insights/what-is-the-difference-between-a-manual-action-and-an-algorithmic-penalty': {
     title: 'What Is the Difference Between a Manual Action and an Algorithmic Penalty? | Gobiya',
     description: 'The single most important distinction in Google traffic recovery: why a human-issued manual action and an automated algorithmic suppression are completely different problems.'
+  },
+  '/insights/chatgpt-vs-google-for-business-discovery': {
+    title: 'ChatGPT vs Google for Business Discovery: What You Must Know | Gobiya',
+    description: 'Google processes billions of searches, but 93% in AI Mode end clickless. ChatGPT converts 4.4x better. How to optimize your brand for both.'
   }
 };
 

@@ -23,6 +23,207 @@ interface ArticleData {
 // Each article is statically registered here so we can do fast client-side
 // routing without a DB round-trip. Add new articles to this map.
 const ARTICLES: Record<string, ArticleData> = {
+  'chatgpt-vs-google-for-business-discovery': {
+    slug: 'chatgpt-vs-google-for-business-discovery',
+    title: 'ChatGPT vs Google for Business Discovery: What You Must Know',
+    category: 'SEO',
+    readTime: '8 min read',
+    date: 'May 29, 2026',
+    image: '/images/article-chatgpt-vs-google-for-business-discovery.webp',
+    heroAlt: 'Split comparison screen between Google Search blue links and ChatGPT conversational AI business recommendation',
+    metaDescription: 'Google processes billions of searches, but 93% in AI Mode end clickless. ChatGPT converts 4.4x better. How to optimize your brand for both.',
+    content: (
+      <>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8 font-medium">
+          The debate of <strong>ChatGPT vs Google for business discovery</strong> isn't academic, it's a revenue-allocation problem that most brands are only beginning to recognize. Google still handles 15+ billion searches per day. But 93% of searches in Google's AI Mode now end without a single click to an external website (Semrush, 2025). At the same time, visitors who arrive from AI-generated recommendations convert 4.4x better than traditional organic visitors when they do land on a page. That tension is the core problem every growth-focused brand needs to resolve right now.
+        </p>
+
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          At Gobiya, we're watching this split show up in client traffic patterns week over week: high impressions on Google, shrinking clicks, and a growing share of high-intent buyers arriving from AI-generated recommendations they can't attribute properly. The impressions look healthy. The revenue picture tells a different story. This article breaks down the mechanics behind both discovery channels, where each one breaks down, and what to do about it.
+        </p>
+
+        {/* ── TABLE OF CONTENTS ── */}
+        <details className="bg-gray-50 border border-gray-200 rounded-lg p-6 sm:p-8 my-10 sm:my-14 group" open>
+          <summary className="text-[14px] font-semibold uppercase tracking-wider text-gray-500 cursor-pointer list-none flex items-center justify-between">
+            Table of Contents
+            <svg className="w-4 h-4 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" /></svg>
+          </summary>
+          <ul className="mt-6 space-y-3.5 text-[15px] font-medium text-gray-900 border-t border-gray-200 pt-6">
+            {[
+              { id: 'intent-gap', label: 'The intent gap between Google browsers and AI seekers' },
+              { id: 'traffic-conversion-data', label: 'ChatGPT vs Google for business discovery: what the traffic and conversion data actually shows' },
+              { id: 'how-ai-decides', label: 'How AI assistants decide which businesses to surface' },
+              { id: 'local-discovery-GBP', label: 'Local discovery and the Google Business Profile blind spot' },
+              { id: 'seven-step-plan', label: 'Optimizing for ChatGPT vs Google for business discovery: your 7-step action plan' },
+              { id: 'first-mover-window', label: 'The window to move first is still open' },
+              { id: 'faqs', label: 'Frequently Asked Questions (FAQ)' }
+            ].map(({ id, label }) => (
+              <li key={id} className="flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#F26522] shrink-0" />
+                <a href={`#${id}`} className="hover:text-[#F26522] transition-colors">{label}</a>
+              </li>
+            ))}
+          </ul>
+        </details>
+
+        {/* ── SECTION 1 ── */}
+        <h2 id="intent-gap" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          The intent gap between Google browsers and AI seekers
+        </h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          When someone searches on Google, they're scanning options. The SERP delivers ten blue links, a local pack, reviews, and comparison signals. The user controls the filtering, and the behavior is exploratory by design. This is exactly why roughly 60% of traditional Google searches end without a click, according to Bain research: the user gets the answer from the SERP itself without visiting any site.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          A customer asking ChatGPT "what's the best B2B accounting software for a 50-person company" isn't browsing. They're asking a trusted assistant to complete the evaluation for them. The intent pattern tends to be more recommendation-oriented than comparative: users are often ready to accept an answer rather than continue filtering options. This is why AI-referred visitors may convert at higher rates when they do reach a page, they've likely already moved through much of the consideration phase inside the conversation.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          The formatting and sourcing behind each answer are shaped by entirely different systems. A brand optimized for one channel can be completely absent from the other. Google rewards keyword relevance and click-worthy titles. AI assistants reward entity clarity, structured signals, and corroborated authority. These are not the same optimization targets, and treating them as such is how brands end up invisible in both.
+        </p>
+
+        {/* ── SECTION 2 ── */}
+        <h2 id="traffic-conversion-data" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          ChatGPT vs Google for business discovery: what the traffic and conversion data actually shows
+        </h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          Google processes roughly 99 to 136 billion monthly visits versus ChatGPT's 4 to 5.6 billion. If raw traffic volume is the only metric that matters, Google wins by a margin that isn't close. But the clicks-per-visit metric changes the picture significantly: ChatGPT users click an average of 1.4 external links per session, compared to 0.6 from Google users, according to Semrush's 2024 platform behavior report.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          Google is also cannibalizing its own click traffic faster than most brands have accounted for. When Google shows an AI Overview, organic CTR drops to 8% from a baseline of 15% without one. A Seer Interactive study found that CTR falls from 1.76% to 0.61% for queries with AI Overviews, a 61% decline. By Q2 2026, 93% of searches in Google's full AI Mode ended without an external click, per Semrush tracking data. These figures span a range of commercial and informational query categories, not just niche or long-tail searches. To understand how updates impact visibility, check out our guide on <a href="/insights/can-a-site-fully-recover-from-a-google-core-update" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">algorithmic traffic recovery</a>.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          The conversion quality edge belongs to AI channels, but the volume base still belongs to Google. A brand that abandons one for the other leaves both value pools on the table. The right response isn't to pick a channel. It's to engineer visibility in both, using two different technical playbooks that happen to share a common foundation.
+        </p>
+
+        {/* ── SECTION 3 ── */}
+        <h2 id="how-ai-decides" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          How AI assistants decide which businesses to surface
+        </h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          Standard ChatGPT draws answers from its training data, which has a knowledge cutoff and no live business listings. Browse-enabled ChatGPT retrieves from current web sources, but what it retrieves depends entirely on what's been indexed and how clearly that content signals the brand's authority and relevance. For a useful primer on how ChatGPT sources and updates information, see this explainer on <a href="https://www.scribbr.com/frequently-asked-questions/chatgpt-information/" target="_blank" rel="noopener noreferrer" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">how ChatGPT gets its information</a>. For local business queries, observed patterns and source analysis indicate ChatGPT's retrieval mix typically includes business websites, directory mentions, and review data. Many businesses have optimized for none of these layers with AI retrieval in mind.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          Entity signals are the currency of AI citation. Structured data, consistent NAP (name, address, phone) across all web properties, schema markup on service and FAQ pages, and corroborating mentions from authoritative third-party sources are what tell AI systems a business is real, credible, and relevant. The most effective schema types for business citation are Organization, LocalBusiness, FAQPage, and Service markup implemented in JSON-LD. For traditional search integration, we detail these in our guide on <a href="/services/seo" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">SEO architectures</a>. For practical guidance on markup specifically oriented toward AI retrieval, review best practices for <a href="https://www.seoptimer.com/blog/schema-markup-for-ai-search/" target="_blank" rel="noopener noreferrer" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">schema markup for AI search</a>. AI citation mechanics reward entity clarity over keyword density, the opposite of how most brands have been trained to think about optimization.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          Without intentional entity engineering, a brand doesn't exist in the knowledge layer that AI assistants draw from. This isn't a content volume problem. It's a signal architecture problem. Brands that address this now are locking in AI-native visibility before their competitors recognize the gap. One documented 12-week GEO experiment on a B2B company showed a 16.5% appearance rate across relevant AI responses and 42 cited mentions after just six weeks of structured entity work, a useful early benchmark, though the study focused on visibility rather than revenue attribution. The window for first-mover advantage is open, though the pace of adoption suggests it won't stay that way.
+        </p>
+
+        {/* ── SECTION 4 ── */}
+        <h2 id="local-discovery-GBP" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          Local discovery and the Google Business Profile blind spot
+        </h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          Google Business Profile is built for proximity-based discovery: local packs, Maps placements, direction requests, and phone clicks from someone nearby. An <a href="/insights/google-business-profile-optimization" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">optimized GBP profile</a> can improve Discovery search visibility, the scenario where a customer searches for a service category rather than a specific business name, though the impact varies by category competitiveness and market. For transactional, location-ready intent, GBP remains one of the strongest local tools available.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          When a customer asks ChatGPT "who's the best commercial HVAC contractor in Los Angeles," the assistant doesn't pull a live map. It synthesizes an answer from whatever structured, machine-readable information it can access about relevant businesses in that category. A complete GBP profile doesn't automatically transfer into that synthesis layer. If you want to explore technical approaches for connecting business listings into conversational models, this guide on <a href="https://windsor.ai/how-to-connect-google-business-profile-to-chatgpt/" target="_blank" rel="noopener noreferrer" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">how to connect Google Business Profile to ChatGPT</a> is a useful starting point. ChatGPT-style prompts for local discovery tend to be longer and more conversational than Google queries, phrased as "recommend a contractor near me for..." rather than "HVAC contractor LA", and the retrieval logic behind each is completely different.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          In competitive service categories, a business with weaker GBP signals but stronger entity architecture can dominate AI-generated recommendations while ranking below a competitor on traditional Google Maps. These are two different optimization targets requiring two different technical approaches. Brands that have only optimized for local Google visibility are effectively invisible when customers shift their discovery query to a conversational AI assistant.
+        </p>
+
+        {/* ── SECTION 5 ── */}
+        <h2 id="seven-step-plan" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          Optimizing for ChatGPT vs Google for business discovery: your 7-step action plan
+        </h2>
+        
+        <h3 className="text-[18px] sm:text-[20px] font-medium text-gray-900 mt-8 mb-4">Steps 1-3: Build the technical foundation both channels require</h3>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-4">
+          <strong>Step 1: Audit and unify your NAP data</strong> across your website, GBP, directories, and social profiles. Inconsistency here tells AI systems you're an ambiguous entity, which is disqualifying. Every variation in business name spelling, address format, or phone number is a signal conflict that reduces your likelihood of being cited.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-4">
+          <strong>Step 2: Implement schema markup</strong> on your core service pages, FAQ sections, and pricing pages. JSON-LD is the preferred format. Start with Organization and LocalBusiness schemas to establish entity identity, then add FAQPage and Service markup to make your content directly extractable by AI retrieval systems.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          <strong>Step 3: Ensure full crawlability and indexability</strong> with clean internal linking and no orphaned pages, because AI systems can't synthesize content they can't access.
+        </p>
+
+        <h3 className="text-[18px] sm:text-[20px] font-medium text-gray-900 mt-8 mb-4">Steps 4-5: Build the authority signals that AI citation rewards</h3>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-4">
+          <strong>Step 4: Build topical depth</strong> on your core service areas through well-structured, answer-oriented content that directly addresses the questions customers ask AI assistants. This means clear headings, question-style subheadings, and short standalone answers within your pages, not long undifferentiated blocks of text. Semantic coverage of a topic signals authority to AI systems far more effectively than keyword repetition.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          <strong>Step 5: Earn mentions and citations from authoritative third-party sources</strong>, industry directories, verified press coverage, partner pages, and knowledge bases that reference your business by name and entity details. These external signals do for AI visibility what backlinks do for Google rankings.
+        </p>
+
+        <h3 className="text-[18px] sm:text-[20px] font-medium text-gray-900 mt-8 mb-4">Steps 6-7: Engineer your AI-native visibility systematically</h3>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-4">
+          <strong>Step 6: Monitor which AI platforms are surfacing your brand</strong> for the queries your customers actually use. Run your core service queries through ChatGPT (with browsing enabled), Gemini, and Perplexity. Document which competitors appear, what sources are cited, and what entity signals those competitors have that you don't. This gap analysis becomes your prioritized remediation roadmap.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          <strong>Step 7: Treat AI visibility as an ongoing engineering discipline,</strong> not a one-time content project. The signals that determine AI citation are structural: entity data, schema consistency, authority architecture. They require regular maintenance as your business evolves and as AI retrieval systems update their weighting.
+        </p>
+
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          This is where Gobiya's <a href="/services/geo-optimization" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">Generative Engine Optimization service</a> operates: diagnosing the entity signal gaps that keep a brand out of AI-generated answers and rebuilding the authority architecture so the brand gets recommended natively. The work is forensic, systematic, and measurable, a different category from publishing more blog content and hoping for the best.
+        </p>
+
+        {/* ── SECTION 6 ── */}
+        <h2 id="first-mover-window" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          The window to move first is still open
+        </h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          Google and ChatGPT-style assistants serve different customer intents, reward different technical signals, and require different optimization strategies. Treating them as the same channel is how brands end up invisible in both. Google still owns the volume base, but its click traffic is contracting sharply as AI Overviews and AI Mode absorb more queries without sending users anywhere. For a broader discussion of the changing dynamics between AI search and traditional search engines, see this analysis of <a href="https://growth-engines.com/insights/seo-aeo/ai-search-vs-google/" target="_blank" rel="noopener noreferrer" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">AI search vs Google</a>. AI assistants own the conversion quality edge, but only for brands that have done the entity engineering work to earn a place in their answers.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          The 4.4x conversion advantage of AI-referred visitors reflects the difference between a user who is still filtering options and a user who has already accepted a recommendation. Brands that engineer their entity signals into AI recommendation layers now are building a compounding early-mover asset. Businesses that earn AI citations first are likely to be harder to displace as AI-driven discovery becomes a more dominant channel for their customer base.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          When it comes to <strong>ChatGPT vs Google for business discovery</strong>, the brands that win won't be the ones that picked the right channel, they'll be the ones that engineered visibility in both. If your brand isn't showing up when customers ask an AI assistant for a recommendation in your category, a competitor may be capturing that visibility right now. Gobiya's Generative Engine Optimization service is built specifically to change that. <a href="/contact" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">Reach out to Gobiya</a> to find out exactly where your brand stands in AI-generated answers today.
+        </p>
+
+        {/* ── INLINE CTA ── */}
+        <div className="bg-gray-900 text-white p-6 sm:p-8 my-10 sm:my-14 flex flex-col sm:flex-row items-start sm:items-center gap-6">
+          <div className="flex-1">
+            <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-2">Gobiya Service</p>
+            <p className="text-[17px] sm:text-[19px] font-medium leading-snug">
+              Optimize your brand's presence in AI-generated search engines and recommendations.
+            </p>
+          </div>
+          <a
+            href="/services/geo-optimization"
+            className="group flex items-center bg-[#F26522] hover:bg-[#e05a1a] text-white pl-5 pr-2 py-2 transition-colors duration-300 whitespace-nowrap shrink-0"
+          >
+            <span className="text-[13px] font-medium mr-3">Generative Engine Optimization</span>
+            <div className="w-6 h-6 bg-white flex items-center justify-center">
+              <ArrowRight className="w-3.5 h-3.5 text-[#F26522] transition-transform duration-300 group-hover:-rotate-45" />
+            </div>
+          </a>
+        </div>
+
+        {/* ── FAQ SECTION ── */}
+        <h2 id="faqs" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          Frequently Asked Questions (FAQ)
+        </h2>
+        <div className="space-y-6 mb-12">
+          <div className="border-b border-gray-200 pb-4">
+            <h3 className="text-[18px] font-semibold text-gray-900 mb-2 font-sans">
+              How does ChatGPT compare to Google in overall search volume?
+            </h3>
+            <p className="text-[16px] text-gray-700 leading-[1.6]">
+              Google handles over 100 billion monthly visits, whereas ChatGPT processes around 4 to 5.6 billion monthly visits. While Google maintains a massive raw volume advantage, ChatGPT users have higher engagement metrics and convert better when they navigate to a recommended site.
+            </p>
+          </div>
+          <div className="border-b border-gray-200 pb-4">
+            <h3 className="text-[18px] font-semibold text-gray-900 mb-2 font-sans">
+              What is the difference in conversion rates between AI referrals and Google search traffic?
+            </h3>
+            <p className="text-[16px] text-gray-700 leading-[1.6]">
+              AI-referred visitors are observed to convert at up to 4.4 times the rate of traditional search visitors. This intent gap exists because conversational seekers are looking for synthesis and recommendations rather than just browsing multiple options, moving them further down the sales funnel before they reach a site.
+            </p>
+          </div>
+          <div className="border-b border-gray-200 pb-4">
+            <h3 className="text-[18px] font-semibold text-gray-900 mb-2 font-sans">
+              What schema markup should businesses implement for ChatGPT visibility?
+            </h3>
+            <p className="text-[16px] text-gray-700 leading-[1.6]">
+              To establish clear machine-readable entity signals, businesses should implement Organization, LocalBusiness, Service, and FAQPage schemas. Writing these in JSON-LD is the best practice for AI retrieval engines.
+            </p>
+          </div>
+        </div>
+      </>
+    ),
+  },
   'what-is-the-difference-between-a-manual-action-and-an-algorithmic-penalty': {
     slug: 'what-is-the-difference-between-a-manual-action-and-an-algorithmic-penalty',
     title: 'What Is the Difference Between a Manual Action and an Algorithmic Penalty?',
@@ -4967,6 +5168,27 @@ const RELATED_ARTICLES_MAP: Record<string, { href: string; category: string; tit
       image: '/images/article-b2b-organic-traffic-growth.webp',
     },
   ],
+
+  'chatgpt-vs-google-for-business-discovery': [
+    {
+      href: '/insights/google-business-profile-optimization',
+      category: 'Local SEO',
+      title: 'Google Business Profile Optimization for Traffic Recovery Explained',
+      image: '/images/article-google-business-profile-optimization.webp',
+    },
+    {
+      href: '/insights/can-a-site-fully-recover-from-a-google-core-update',
+      category: 'SEO',
+      title: 'Can a Site Fully Recover From a Google Core Update?',
+      image: '/images/article-can-a-site-fully-recover-from-a-google-core-update.webp',
+    },
+    {
+      href: '/insights/b2b-organic-traffic-growth',
+      category: 'Strategy',
+      title: 'B2B Organic Traffic Growth: Why Traffic and Pipeline Decoupled in 2026',
+      image: '/images/article-b2b-organic-traffic-growth.webp',
+    },
+  ],
 };
 
 // Fallback for articles not in the map
@@ -5073,8 +5295,8 @@ const ArticlePage: React.FC<ArticlePageProps> = ({ slug }) => {
           "headline": article.title,
           "description": article.metaDescription,
           "image": `https://www.gobiya.com${article.image}`,
-          "datePublished": slug === 'what-is-the-difference-between-a-manual-action-and-an-algorithmic-penalty' ? "2026-05-29" : "2026-05-25",
-          "dateModified": slug === 'what-is-the-difference-between-a-manual-action-and-an-algorithmic-penalty' ? "2026-05-29" : "2026-05-25",
+          "datePublished": (slug === 'what-is-the-difference-between-a-manual-action-and-an-algorithmic-penalty' || slug === 'chatgpt-vs-google-for-business-discovery') ? "2026-05-29" : "2026-05-25",
+          "dateModified": (slug === 'what-is-the-difference-between-a-manual-action-and-an-algorithmic-penalty' || slug === 'chatgpt-vs-google-for-business-discovery') ? "2026-05-29" : "2026-05-25",
           "author": {
             "@type": "Person",
             "name": "Steve Martin",
@@ -5118,6 +5340,35 @@ const ArticlePage: React.FC<ArticlePageProps> = ({ slug }) => {
               "acceptedAnswer": {
                 "@type": "Answer",
                 "text": "Immediately check the Security & Manual Actions -> Manual Actions report in Google Search Console. If a notification is present, you have a manual action. If it says 'No issues detected,' your drop is algorithmic."
+              }
+            }
+          ]
+        }] : []),
+        ...(slug === 'chatgpt-vs-google-for-business-discovery' ? [{
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "How does ChatGPT compare to Google in overall search volume?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Google handles over 100 billion monthly visits, whereas ChatGPT processes around 4 to 5.6 billion monthly visits. While Google maintains a massive raw volume advantage, ChatGPT users have higher engagement metrics and convert better when they navigate to a recommended site."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What is the difference in conversion rates between AI referrals and Google search traffic?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "AI-referred visitors are observed to convert at up to 4.4 times the rate of traditional search visitors. This intent gap exists because conversational seekers are looking for synthesis and recommendations rather than just browsing multiple options, moving them further down the sales funnel before they reach a site."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What schema markup should businesses implement for ChatGPT visibility?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "To establish clear machine-readable entity signals, businesses should implement Organization, LocalBusiness, Service, and FAQPage schemas. Writing these in JSON-LD is the best practice for AI retrieval engines."
               }
             }
           ]
