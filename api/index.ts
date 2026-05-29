@@ -28,11 +28,11 @@ const metadataMap: Record<string, SEOMetadata> = {
     title: 'Generative Engine Optimization (GEO) & AI Search Visibility | Gobiya',
     description: 'Position your brand to be cited and recommended natively by modern AI models including ChatGPT, Claude, Gemini, and Google AI Overviews.'
   },
-  '/services/web-design': {
-    title: 'High-Performance Custom Web Design & React Engineering | Gobiya',
+  '/services/web-development': {
+    title: 'High-Performance Custom Web Development & React Engineering | Gobiya',
     description: 'Speed-optimized, custom-engineered React platforms built to convert. We replace slow templates with lightning-fast landing pages and applications.'
   },
-  '/services/advertising': {
+  '/services/ppc-advertising': {
     title: 'High-Yield Paid Search (PPC) & Paid Social Ad Pipelines | Gobiya',
     description: 'Maximize your return on ad spend (ROAS) and lower acquisition costs. Data-driven Google, Microsoft, and Meta Ads management tailored for revenue scaling.'
   },
@@ -135,6 +135,10 @@ const metadataMap: Record<string, SEOMetadata> = {
   '/author/steve-martin': {
     title: 'Steve Martin | CEO, Lead Developer & Marketer | Gobiya',
     description: 'Professional credentials and author profile for Steve Martin, CEO, Lead Developer & Marketer at Gobiya. Specialized in advanced SEO, custom React engineering, and pipeline automation.'
+  },
+  '/insights/google-manual-action-removal-agency-caused-penalty': {
+    title: 'Google Manual Action Removal When Your Agency Caused Scaled Content Abuse Penalty | Gobiya',
+    description: 'What to do when your in-house team is suddenly responsible for recovering a Google manual action your agency triggered. Diagnosis, narrative, and reconsideration appeal steps.'
   }
 };
 
@@ -146,12 +150,8 @@ export default async function handler(req: IncomingMessage, res: any) {
 
     // Server-side legacy redirections (301 Permanent Redirect)
     const legacyRedirects: Record<string, string> = {
-      '/services/seo': '/services#seo',
-      '/services/lead-generation': '/services#lead-generation',
-      '/services/geo-optimization': '/services#geo-optimization',
-      '/services/web-design': '/services#web-design',
-      '/services/advertising': '/services#advertising',
-      '/google-penalty-recovery': '/services#penalty-recovery',
+      '/services/web-design': '/services/web-development',
+      '/services/advertising': '/services/ppc-advertising',
       '/company/insights': '/insights',
     };
 

@@ -113,37 +113,39 @@ const AuthorPage: React.FC<AuthorPageProps> = ({ path }) => {
   ];
 
   return (
-    <div className="min-h-screen bg-white relative font-sans selection:bg-[#F26522] selection:text-white page-wrapper">
+    <div className="min-h-screen bg-[#050505] text-white relative font-sans selection:bg-[#F26522] selection:text-white page-wrapper">
       <CustomCursor />
 
       {/* ── HERO ── */}
-      <section className="relative w-full h-[55vh] min-h-[400px] bg-[#EFEFEF] overflow-hidden flex flex-col justify-end cursor-default">
+      <section className="relative w-full h-[55vh] min-h-[400px] bg-[#050505] overflow-hidden flex flex-col justify-end cursor-default">
         {/* Shader background */}
-        <div className="absolute inset-0 z-10 pointer-events-none w-full h-full [&>div]:w-full [&>div]:h-full [&_canvas]:w-full [&_canvas]:h-full [&_canvas]:object-cover">
+        <div className="absolute inset-0 z-10 pointer-events-none w-full h-full [&>div]:w-full [&>div]:h-full [&_canvas]:w-full [&_canvas]:h-full [&_canvas]:object-cover opacity-85">
           <Shader>
-            <Swirl colorA="#ffffff" colorB="#f0f0f0" detail={1.7} />
-            <ChromaFlow baseColor="#ffffff" downColor="#ff5f03" leftColor="#ff5f03" rightColor="#ff5f03" upColor="#ff5f03" momentum={13} radius={3.5} />
+            <Swirl colorA="#050505" colorB="#0f0f0f" detail={1.7} />
+            <ChromaFlow baseColor="#050505" downColor="#f26522" leftColor="#f26522" rightColor="#f26522" upColor="#f26522" momentum={13} radius={3.5} />
             <FlutedGlass aberration={0.61} angle={31} frequency={8} highlight={0.12} highlightSoftness={0} lightAngle={-90} refraction={4} shape="rounded" softness={1} speed={0.15} />
             <FilmGrain strength={0.05} />
           </Shader>
-          {/* Nav */}
-        <Header theme="light" />        </div>
+        </div>
+        
+        {/* Nav */}
+        <Header theme="dark" />
 
         {/* Hero title */}
         <div className="relative z-20 max-w-[1440px] w-full mx-auto px-5 sm:px-8 lg:px-12 pb-10 sm:pb-14 pt-20">
-          <nav className="flex items-center gap-2 text-[12px] text-gray-600 mb-6" aria-label="breadcrumb">
-            <a href="/" className="hover:text-gray-900 transition-colors">Home</a>
-            <ChevronRight className="w-3 h-3 text-gray-400" />
-            <span className="text-gray-900 font-medium">Steve Martin Profile</span>
+          <nav className="flex items-center gap-2 text-[12px] text-gray-400 mb-6" aria-label="breadcrumb">
+            <a href="/" className="hover:text-white transition-colors">Home</a>
+            <ChevronRight className="w-3 h-3 text-gray-500" />
+            <span className="text-white font-medium">Steve Martin Profile</span>
           </nav>
           
           <span className="inline-block px-3 py-1 bg-[#F26522] text-white text-[10px] uppercase tracking-wider font-semibold mb-4">
             Leadership & Engineering
           </span>
-          <h1 className="text-[clamp(2rem,5vw,3.5rem)] font-medium leading-[1.1] tracking-[-0.03em] text-gray-900 max-w-[900px] mb-2 font-display">
+          <h1 className="text-[clamp(2rem,5vw,3.5rem)] font-medium leading-[1.1] tracking-[-0.03em] text-white max-w-[900px] mb-2 font-display">
             Steve Martin
           </h1>
-          <p className="text-[clamp(1rem,2vw,1.25rem)] text-gray-700 font-medium">
+          <p className="text-[clamp(1rem,2vw,1.25rem)] text-gray-300 font-medium">
             Founder, Lead Developer & Marketer at Gobiya
           </p>
         </div>
@@ -155,15 +157,15 @@ const AuthorPage: React.FC<AuthorPageProps> = ({ path }) => {
           
           {/* Left Column: Picture & Meta */}
           <div className="lg:col-span-4 flex flex-col items-center lg:items-start">
-            <div className="w-full max-w-[320px] aspect-square overflow-hidden border border-gray-200 bg-gray-50 mb-6 shadow-lg">
+            <div className="w-full max-w-[320px] aspect-square overflow-hidden border border-white/10 bg-white/5 mb-6 shadow-2xl">
               <img 
                 src="/images/steve-portrait.webp" 
                 alt="Steve Martin - CEO, Lead Developer & Marketer" 
                 className="w-full h-full object-cover"
               />
             </div>
-            <h2 className="text-xl font-bold text-gray-900 mb-1">Steve Martin</h2>
-            <p className="text-sm text-gray-600 mb-6 uppercase tracking-wider font-semibold">Gobiya Leadership</p>
+            <h2 className="text-xl font-bold text-white mb-1">Steve Martin</h2>
+            <p className="text-sm text-gray-400 mb-6 uppercase tracking-wider font-semibold">Gobiya Leadership</p>
             
             <a 
               href="https://www.linkedin.com/in/stevemartingobiya/" 
@@ -178,35 +180,35 @@ const AuthorPage: React.FC<AuthorPageProps> = ({ path }) => {
               </div>
             </a>
 
-            <div className="w-full max-w-[320px] border-t border-gray-200 mt-8 pt-6 space-y-4">
+            <div className="w-full max-w-[320px] border-t border-white/10 mt-8 pt-6 space-y-4">
               <div className="flex items-center gap-3">
                 <Award className="w-5 h-5 text-[#F26522]" />
-                <span className="text-[14px] text-gray-700 font-medium">Glendale Career College (1996)</span>
+                <span className="text-[14px] text-gray-300 font-medium">Glendale Career College (1996)</span>
               </div>
               <div className="flex items-center gap-3">
                 <ShieldCheck className="w-5 h-5 text-[#F26522]" />
-                <span className="text-[14px] text-gray-700 font-medium">25+ Years Search Engineering</span>
+                <span className="text-[14px] text-gray-300 font-medium">25+ Years Search Engineering</span>
               </div>
               <div className="flex items-center gap-3">
                 <Code className="w-5 h-5 text-[#F26522]" />
-                <span className="text-[14px] text-gray-700 font-medium">React, Supabase, & AI Integrations</span>
+                <span className="text-[14px] text-gray-300 font-medium">React, Supabase, & AI Integrations</span>
               </div>
             </div>
           </div>
 
           {/* Right Column: Experience and E-E-A-T Details */}
           <div className="lg:col-span-8">
-            <h2 className="text-2xl sm:text-3xl font-medium text-gray-900 tracking-tight mb-6 font-display border-b border-gray-100 pb-4">
+            <h2 className="text-2xl sm:text-3xl font-medium text-white tracking-tight mb-6 font-display border-b border-white/10 pb-4">
               About & Credentials
             </h2>
-            <p className="text-[16px] sm:text-[18px] leading-[1.8] text-gray-800 mb-6">
+            <p className="text-[16px] sm:text-[18px] leading-[1.8] text-gray-300 mb-6">
               Steve Martin is a hands-on SEO and digital marketing specialist who builds the websites and tools. With over 25 years of experience helping contractors, dental and medical practices, real estate, and SaaS startups grow, he bridges the gap between clean engineering and organic search traffic.
             </p>
-            <p className="text-[16px] sm:text-[18px] leading-[1.8] text-gray-800 mb-8">
+            <p className="text-[16px] sm:text-[18px] leading-[1.8] text-gray-300 mb-8">
               Currently focused on schema and entity optimization for AI search results (ChatGPT, Perplexity, Google AI Overviews), modern React/Vite builds, and AI-powered lead generation systems. Steve is looking for a full-time in-house role where he can ship.
             </p>
 
-            <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+            <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
               <Compass className="w-5 h-5 text-[#F26522]" /> Core Skills
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
@@ -218,19 +220,21 @@ const AuthorPage: React.FC<AuthorPageProps> = ({ path }) => {
                 { title: 'Digital PR & Link Building', desc: 'HARO, Featured, Qwoted, Reddit, and community-driven authority building link strategies.' },
                 { title: 'Analytics & Search Tools', desc: 'Data audits and traffic resolving via Google Analytics, Search Console, SEMrush, and Ahrefs.' }
               ].map((skill) => (
-                <div key={skill.title} className="bg-gray-50 border border-gray-100 p-5 rounded-sm hover:border-[#F26522]/30 transition-colors">
-                  <h4 className="font-semibold text-[15px] text-gray-900 mb-2">{skill.title}</h4>
-                  <p className="text-[13px] text-gray-600 leading-relaxed">{skill.desc}</p>
+                <div key={skill.title} className="bg-white/5 border border-white/10 p-5 rounded-sm hover:border-[#F26522]/30 transition-colors">
+                  <h4 className="font-semibold text-[15px] text-white mb-2">{skill.title}</h4>
+                  <p className="text-[13px] text-gray-400 leading-relaxed">{skill.desc}</p>
                 </div>
               ))}
-            </div>            {/* Written Articles Section */}
-            <h2 className="text-2xl sm:text-3xl font-medium text-gray-900 tracking-tight mb-6 font-display border-b border-gray-100 pb-4 pt-6">
+            </div>
+
+            {/* Written Articles Section */}
+            <h2 className="text-2xl sm:text-3xl font-medium text-white tracking-tight mb-6 font-display border-b border-white/10 pb-4 pt-6">
               Articles Written by Steve Martin
             </h2>
             <div className="space-y-6">
               {articles.map((article) => (
-                <div key={article.slug} className="flex flex-col sm:flex-row gap-6 border-b border-gray-100 pb-6 group">
-                  <div className="sm:w-40 w-full aspect-[16/10] overflow-hidden shrink-0 bg-gray-100">
+                <div key={article.slug} className="flex flex-col sm:flex-row gap-6 border-b border-white/10 pb-6 group">
+                  <div className="sm:w-40 w-full aspect-[16/10] overflow-hidden shrink-0 bg-white/5">
                     <img 
                       src={article.image} 
                       alt={article.title} 
@@ -241,13 +245,13 @@ const AuthorPage: React.FC<AuthorPageProps> = ({ path }) => {
                     <span className="text-[11px] uppercase tracking-wider text-[#F26522] font-bold block mb-1">
                       {article.category}
                     </span>
-                    <h3 className="font-bold text-[16px] sm:text-[18px] text-gray-900 leading-snug mb-2 group-hover:text-[#F26522] transition-colors">
+                    <h3 className="font-bold text-[16px] sm:text-[18px] text-white leading-snug mb-2 group-hover:text-[#F26522] transition-colors">
                       <a href={`/insights/${article.slug}`}>{article.title}</a>
                     </h3>
-                    <p className="text-[13px] text-gray-600 leading-relaxed mb-3">
+                    <p className="text-[13px] text-gray-400 leading-relaxed mb-3">
                       {article.description}
                     </p>
-                    <div className="flex items-center gap-3 text-[12px] text-gray-500">
+                    <div className="flex items-center gap-3 text-[12px] text-gray-400">
                       <span>{article.date}</span>
                       <span>•</span>
                       <span>{article.readTime}</span>

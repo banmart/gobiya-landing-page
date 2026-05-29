@@ -22,7 +22,7 @@
 ### Founder & Principal Strategist
 - Name: Steve Martin
 - Role: Founder & Principal Strategist
-- Experience: 16+ years decoding Google algorithms, reversing search drops, and constructing outbound B2B sales systems.
+- Experience: 25+ years decoding Google algorithms, reversing search drops, and constructing outbound B2B sales systems.
 - Core Focus: Technical SEO, Google penalty analysis, pipeline architecture, and Generative Engine Optimization (GEO).
 
 ### Core Team Capabilities
@@ -53,13 +53,13 @@
 - **Results**: Dominance in AI-generated answers, high-value citation links, and future-proof search authority.
 
 ### 4. High-Performance Web Engineering
-- **URL**: https://www.gobiya.com/services/web-design
+- **URL**: https://www.gobiya.com/services/web-development
 - **Core Outcome**: Replacing slow templates with fast, responsive custom-built web apps that maximize conversion rates.
 - **Tech Stack**: React, TypeScript, Tailwind CSS, Vite, Supabase.
 - **Results**: Core Web Vitals compliance (LCP < 2.5s), enhanced search crawling, and a higher visitor-to-customer conversion rate.
 
 ### 5. High-ROI Paid Search & Social Ad Pipelines
-- **URL**: https://www.gobiya.com/services/advertising
+- **URL**: https://www.gobiya.com/services/ppc-advertising
 - **Core Outcome**: Lowering customer acquisition costs (CAC) and scaling lead pipelines through data-driven campaigns.
 - **Platforms**: Google Ads, Microsoft Ads, Meta Ads.
 - **Results**: Immediate pipeline lift, high lead-to-opportunity ratios, and measurable return on ad spend (ROAS).

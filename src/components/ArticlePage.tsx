@@ -4786,10 +4786,10 @@ const ArticlePage: React.FC<ArticlePageProps> = ({ slug }) => {
   // 404 fallback
   if (!article) {
     return (
-      <div className="min-h-screen bg-white flex items-center justify-center">
+      <div className="min-h-screen bg-[#050505] flex items-center justify-center text-white">
         <div className="text-center px-6">
           <p className="text-[#F26522] text-[12px] uppercase tracking-widest font-semibold mb-4">404</p>
-          <h1 className="text-3xl font-medium text-gray-900 mb-4">Article not found</h1>
+          <h1 className="text-3xl font-medium text-white mb-4">Article not found</h1>
           <a href="/insights" className="text-[#F26522] underline">Back to Insights</a>
         </div>
       </div>
@@ -4797,46 +4797,46 @@ const ArticlePage: React.FC<ArticlePageProps> = ({ slug }) => {
   }
 
   return (
-    <div className="min-h-screen bg-white relative font-sans selection:bg-[#F26522] selection:text-white page-wrapper">
+    <div className="min-h-screen bg-[#050505] text-white relative font-sans selection:bg-[#F26522] selection:text-white page-wrapper">
       <CustomCursor />
 
       {/* ── HERO ── */}
-      <section className="relative w-full h-[65vh] min-h-[480px] bg-[#EFEFEF] overflow-hidden flex flex-col justify-end cursor-default">
+      <section className="relative w-full h-[65vh] min-h-[480px] bg-[#050505] overflow-hidden flex flex-col justify-end cursor-default">
         {/* Shader background */}
-        <div className="absolute inset-0 z-10 pointer-events-none w-full h-full [&>div]:w-full [&>div]:h-full [&_canvas]:w-full [&_canvas]:h-full [&_canvas]:object-cover">
+        <div className="absolute inset-0 z-10 pointer-events-none w-full h-full [&>div]:w-full [&>div]:h-full [&_canvas]:w-full [&_canvas]:h-full [&_canvas]:object-cover opacity-85">
           <Shader>
-            <Swirl colorA="#ffffff" colorB="#f0f0f0" detail={1.7} />
-            <ChromaFlow baseColor="#ffffff" downColor="#ff5f03" leftColor="#ff5f03" rightColor="#ff5f03" upColor="#ff5f03" momentum={13} radius={3.5} />
+            <Swirl colorA="#050505" colorB="#0f0f0f" detail={1.7} />
+            <ChromaFlow baseColor="#050505" downColor="#f26522" leftColor="#f26522" rightColor="#f26522" upColor="#f26522" momentum={13} radius={3.5} />
             <FlutedGlass aberration={0.61} angle={31} frequency={8} highlight={0.12} highlightSoftness={0} lightAngle={-90} refraction={4} shape="rounded" softness={1} speed={0.15} />
             <FilmGrain strength={0.05} />
           </Shader>
         </div>
 
         {/* Nav */}
-        <Header theme="light" />
+        <Header theme="dark" />
 
         {/* Hero text */}
         <div className="relative z-20 max-w-[1440px] w-full mx-auto px-5 sm:px-8 lg:px-12 pb-10 sm:pb-14 pt-20">
           {/* Breadcrumb */}
-          <nav className="flex items-center gap-2 text-[12px] text-gray-600 mb-6" aria-label="breadcrumb">
-            <a href="/" className="hover:text-gray-900 transition-colors">Home</a>
-            <ChevronRight className="w-3 h-3" />
-            <a href="/insights" className="hover:text-gray-900 transition-colors">Insights</a>
-            <ChevronRight className="w-3 h-3" />
-            <span className="text-gray-900 truncate max-w-[200px]">{article.title}</span>
+          <nav className="flex items-center gap-2 text-[12px] text-gray-400 mb-6" aria-label="breadcrumb">
+            <a href="/" className="hover:text-white transition-colors">Home</a>
+            <ChevronRight className="w-3 h-3 text-gray-500" />
+            <a href="/insights" className="hover:text-white transition-colors">Insights</a>
+            <ChevronRight className="w-3 h-3 text-gray-500" />
+            <span className="text-white truncate max-w-[200px]">{article.title}</span>
           </nav>
 
           <span className="inline-block px-3 py-1 bg-[#F26522] text-white text-[10px] uppercase tracking-wider font-semibold mb-4">
             {article.category}
           </span>
-          <h1 className="text-[clamp(1.4rem,4vw,3rem)] font-medium leading-[1.15] tracking-[-0.03em] text-gray-900 max-w-[900px] mb-4">
+          <h1 className="text-[clamp(1.4rem,4vw,3rem)] font-medium leading-[1.15] tracking-[-0.03em] text-white max-w-[900px] mb-4">
             {article.title}
           </h1>
-          <div className="flex items-center gap-4 text-[13px] text-gray-600">
+          <div className="flex items-center gap-4 text-[13px] text-gray-400">
             <span>{article.date}</span>
-            <span className="w-1 h-1 rounded-full bg-gray-400" />
+            <span className="w-1 h-1 rounded-full bg-gray-600" />
             <span>{article.readTime}</span>
-            <span className="w-1 h-1 rounded-full bg-gray-400" />
+            <span className="w-1 h-1 rounded-full bg-gray-600" />
             <span>By <a href="/about/steve-martin" className="underline hover:text-[#F26522] transition-colors font-medium">Steve Martin</a></span>
           </div>
         </div>
@@ -4844,7 +4844,7 @@ const ArticlePage: React.FC<ArticlePageProps> = ({ slug }) => {
 
       {/* ── HERO IMAGE ── */}
       <div className="w-full max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-12 -mt-8 relative z-30">
-        <div className="w-full aspect-[16/7] overflow-hidden shadow-2xl">
+        <div className="w-full aspect-[16/7] overflow-hidden shadow-2xl border border-white/10">
           <img
             src={article.image}
             alt={article.heroAlt}
@@ -4859,25 +4859,25 @@ const ArticlePage: React.FC<ArticlePageProps> = ({ slug }) => {
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-12 xl:gap-20">
 
           {/* Main article content */}
-          <article className="max-w-[760px]" id="article-content">
+          <article className="max-w-[760px] dark-article" id="article-content">
 
             {/* ── MOBILE-ONLY: Share + Audio (above TOC) ── */}
             <div className="lg:hidden mb-8">
               {slug === 'b2b-seo-agency-los-angeles' && (
-                <div className="border border-gray-200 rounded-lg p-5 mb-4">
-                  <p className="text-[11px] uppercase tracking-wider font-semibold text-gray-500 mb-3">Listen to this article</p>
+                <div className="border border-white/10 rounded-lg p-5 mb-4 bg-white/5">
+                  <p className="text-[11px] uppercase tracking-wider font-semibold text-gray-400 mb-3">Listen to this article</p>
                   <audio controls className="w-full">
                     <source src="/audio/Why_LA_B2B_SEO_must_be_local.m4a" type="audio/mp4" />
                     Your browser does not support the audio element.
                   </audio>
                 </div>
               )}
-              <div className="border border-gray-200 rounded-lg p-5">
+              <div className="border border-white/10 rounded-lg p-5 bg-white/5">
                 <div className="flex items-center gap-3 mb-4">
                   <img src={article.image} alt={article.heroAlt} className="w-14 h-14 object-cover rounded-md flex-shrink-0" />
                   <div className="min-w-0">
-                    <p className="text-[11px] uppercase tracking-wider font-semibold text-gray-500 mb-1">Share this article</p>
-                    <p className="text-[13px] text-gray-800 font-medium leading-snug line-clamp-2">{article.title}</p>
+                    <p className="text-[11px] uppercase tracking-wider font-semibold text-gray-400 mb-1">Share this article</p>
+                    <p className="text-[13px] text-gray-300 font-medium leading-snug line-clamp-2">{article.title}</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3">
@@ -4888,13 +4888,13 @@ const ArticlePage: React.FC<ArticlePageProps> = ({ slug }) => {
                     </button>
                   ) : (
                     <>
-                      <button onClick={() => handleShare('twitter')} className="w-10 h-10 border border-gray-200 flex items-center justify-center text-gray-600 hover:text-[#F26522] hover:border-[#F26522] transition-colors rounded-full" aria-label="Share on Twitter">
+                      <button onClick={() => handleShare('twitter')} className="w-10 h-10 border border-white/10 flex items-center justify-center text-gray-400 hover:text-[#F26522] hover:border-[#F26522] transition-colors rounded-full" aria-label="Share on Twitter">
                         <Twitter className="w-4 h-4" />
                       </button>
-                      <button onClick={() => handleShare('linkedin')} className="w-10 h-10 border border-gray-200 flex items-center justify-center text-gray-600 hover:text-[#F26522] hover:border-[#F26522] transition-colors rounded-full" aria-label="Share on LinkedIn">
+                      <button onClick={() => handleShare('linkedin')} className="w-10 h-10 border border-white/10 flex items-center justify-center text-gray-400 hover:text-[#F26522] hover:border-[#F26522] transition-colors rounded-full" aria-label="Share on LinkedIn">
                         <Linkedin className="w-4 h-4" />
                       </button>
-                      <button onClick={() => handleShare('facebook')} className="w-10 h-10 border border-gray-200 flex items-center justify-center text-gray-600 hover:text-[#F26522] hover:border-[#F26522] transition-colors rounded-full" aria-label="Share on Facebook">
+                      <button onClick={() => handleShare('facebook')} className="w-10 h-10 border border-white/10 flex items-center justify-center text-gray-400 hover:text-[#F26522] hover:border-[#F26522] transition-colors rounded-full" aria-label="Share on Facebook">
                         <Facebook className="w-4 h-4" />
                       </button>
                     </>
@@ -4911,8 +4911,8 @@ const ArticlePage: React.FC<ArticlePageProps> = ({ slug }) => {
             <div className="sticky top-24">
 
               {slug === 'b2b-seo-agency-los-angeles' && (
-                <div className="border border-gray-200 p-6 mb-6">
-                  <p className="text-[11px] uppercase tracking-wider font-semibold text-gray-500 mb-4">Listen to this article</p>
+                <div className="border border-white/10 p-6 mb-6 bg-white/5">
+                  <p className="text-[11px] uppercase tracking-wider font-semibold text-gray-400 mb-4">Listen to this article</p>
                   <audio controls className="w-full custom-audio">
                     <source src="/audio/Why_LA_B2B_SEO_must_be_local.m4a" type="audio/mp4" />
                     Your browser does not support the audio element.
@@ -4921,18 +4921,18 @@ const ArticlePage: React.FC<ArticlePageProps> = ({ slug }) => {
               )}
 
               {/* Article meta */}
-              <div className="border border-gray-200 p-6 mb-6">
-                <p className="text-[11px] uppercase tracking-wider font-semibold text-gray-500 mb-4">About This Article</p>
-                <div className="flex flex-col gap-3 text-[14px] text-gray-700">
-                  <div><span className="font-semibold text-gray-900">Published:</span> {article.date}</div>
-                  <div><span className="font-semibold text-gray-900">Reading time:</span> {article.readTime}</div>
-                  <div><span className="font-semibold text-gray-900">Category:</span> {article.category}</div>
+              <div className="border border-white/10 p-6 mb-6 bg-white/5">
+                <p className="text-[11px] uppercase tracking-wider font-semibold text-gray-400 mb-4">About This Article</p>
+                <div className="flex flex-col gap-3 text-[14px] text-gray-300">
+                  <div><span className="font-semibold text-white">Published:</span> {article.date}</div>
+                  <div><span className="font-semibold text-white">Reading time:</span> {article.readTime}</div>
+                  <div><span className="font-semibold text-white">Category:</span> {article.category}</div>
                 </div>
               </div>
 
               {/* Share Article */}
-              <div className="border border-gray-200 p-6 mb-6">
-                <p className="text-[11px] uppercase tracking-wider font-semibold text-gray-500 mb-3">Share This Article</p>
+              <div className="border border-white/10 p-6 mb-6 bg-white/5">
+                <p className="text-[11px] uppercase tracking-wider font-semibold text-gray-400 mb-3">Share This Article</p>
                 <img src={article.image} alt={article.heroAlt} className="w-full aspect-[16/9] object-cover rounded-md mb-4" />
                 {canShare ? (
                   <button
@@ -4944,13 +4944,13 @@ const ArticlePage: React.FC<ArticlePageProps> = ({ slug }) => {
                   </button>
                 ) : (
                   <div className="flex items-center gap-3">
-                    <button onClick={() => handleShare('twitter')} className="w-10 h-10 border border-gray-200 flex items-center justify-center text-gray-600 hover:text-[#F26522] hover:border-[#F26522] transition-colors rounded-full" aria-label="Share on Twitter">
+                    <button onClick={() => handleShare('twitter')} className="w-10 h-10 border border-white/10 flex items-center justify-center text-gray-400 hover:text-[#F26522] hover:border-[#F26522] transition-colors rounded-full" aria-label="Share on Twitter">
                       <Twitter className="w-4 h-4" />
                     </button>
-                    <button onClick={() => handleShare('linkedin')} className="w-10 h-10 border border-gray-200 flex items-center justify-center text-gray-600 hover:text-[#F26522] hover:border-[#F26522] transition-colors rounded-full" aria-label="Share on LinkedIn">
+                    <button onClick={() => handleShare('linkedin')} className="w-10 h-10 border border-white/10 flex items-center justify-center text-gray-400 hover:text-[#F26522] hover:border-[#F26522] transition-colors rounded-full" aria-label="Share on LinkedIn">
                       <Linkedin className="w-4 h-4" />
                     </button>
-                    <button onClick={() => handleShare('facebook')} className="w-10 h-10 border border-gray-200 flex items-center justify-center text-gray-600 hover:text-[#F26522] hover:border-[#F26522] transition-colors rounded-full" aria-label="Share on Facebook">
+                    <button onClick={() => handleShare('facebook')} className="w-10 h-10 border border-white/10 flex items-center justify-center text-gray-400 hover:text-[#F26522] hover:border-[#F26522] transition-colors rounded-full" aria-label="Share on Facebook">
                       <Facebook className="w-4 h-4" />
                     </button>
                   </div>
@@ -4958,7 +4958,7 @@ const ArticlePage: React.FC<ArticlePageProps> = ({ slug }) => {
               </div>
 
               {/* CTA box */}
-              <div className="bg-gray-900 p-6 mb-6">
+              <div className="border border-white/10 bg-white/5 p-6 mb-6">
                 <p className="text-[11px] uppercase tracking-wider font-semibold text-[#F26522] mb-3">Get A Citation Audit</p>
                 <p className="text-white text-[14px] leading-relaxed mb-4">
                   Find out where your brand stands across ChatGPT, Claude, Perplexity, and Gemini.
@@ -4975,8 +4975,8 @@ const ArticlePage: React.FC<ArticlePageProps> = ({ slug }) => {
               </div>
 
               {/* Related services */}
-              <div className="border border-gray-200 p-6">
-                <p className="text-[11px] uppercase tracking-wider font-semibold text-gray-500 mb-4">Related Services</p>
+              <div className="border border-white/10 p-6 bg-white/5">
+                <p className="text-[11px] uppercase tracking-wider font-semibold text-gray-400 mb-4">Related Services</p>
                 <div className="flex flex-col gap-3">
                   {[
                     { href: '/services/lead-generation', label: 'B2B Pipeline Architecture' },
@@ -4987,7 +4987,7 @@ const ArticlePage: React.FC<ArticlePageProps> = ({ slug }) => {
                     <a
                       key={href}
                       href={href}
-                      className="flex items-center gap-2 text-[13px] text-gray-700 hover:text-[#F26522] transition-colors group"
+                      className="flex items-center gap-2 text-[13px] text-gray-300 hover:text-[#F26522] transition-colors group"
                     >
                       <ArrowRight className="w-3 h-3 text-[#F26522] group-hover:translate-x-1 transition-transform duration-300" />
                       {label}
@@ -5001,7 +5001,7 @@ const ArticlePage: React.FC<ArticlePageProps> = ({ slug }) => {
       </main>
 
       {/* ── RELATED ARTICLES ── */}
-      <section className="bg-[#111] py-20 lg:py-28 w-full">
+      <section className="bg-[#050505] border-t border-white/10 py-20 lg:py-28 w-full">
         <div className="max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-12">
           <div className="flex items-center justify-between mb-10 sm:mb-14">
             <h2 className="text-[clamp(1.5rem,3vw,2.2rem)] font-medium leading-[1.12] tracking-[-0.02em] text-white">
@@ -5025,7 +5025,7 @@ const ArticlePage: React.FC<ArticlePageProps> = ({ slug }) => {
               <a
                 key={href}
                 href={href}
-                className="group relative w-full aspect-[4/5] overflow-hidden block"
+                className="group relative w-full aspect-[4/5] overflow-hidden block border border-white/10"
               >
                 <div
                   className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"

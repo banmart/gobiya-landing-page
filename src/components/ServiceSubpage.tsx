@@ -60,6 +60,22 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
     { company: 'Fintech Solutions', page: '/services/geo', time: '40s ago', intent: 88 }
   ]);
 
+  const [contactDomain, setContactDomain] = useState('');
+  const [contactServices, setContactServices] = useState<string[]>([]);
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const params = new URLSearchParams(window.location.search);
+    const domainParam = params.get('domain');
+    const servicesParam = params.get('services');
+    if (domainParam) {
+      setContactDomain(domainParam);
+    }
+    if (servicesParam) {
+      setContactServices(servicesParam.split(',').filter(Boolean));
+    }
+  }, [path]);
+
   const schemas = {
     business: {
       "@context": "https://schema.org",
@@ -690,32 +706,31 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
   const config = getPageConfig(path);
 
   return (
-    <div className="min-h-screen bg-white relative font-sans selection:bg-[#F26522] selection:text-white page-wrapper">
+    <div className="min-h-screen bg-[#050505] text-white relative font-sans selection:bg-[#F26522] selection:text-white page-wrapper">
       <CustomCursor />
 
       {/* HERO SECTION */}
       {/* Reduced height (h-[60vh] instead of h-screen) and removed top padding to bring content close to header */}
-      <section className="relative w-full h-[65vh] min-h-[480px] bg-[#EFEFEF] overflow-hidden flex flex-col justify-center cursor-default">
+      <section className="relative w-full h-[65vh] min-h-[480px] bg-[#050505] overflow-hidden flex flex-col justify-center cursor-default">
         {/* Shaders Background */}
-        <div className="absolute inset-0 z-10 pointer-events-none w-full h-full [&>div]:w-full [&>div]:h-full [&_canvas]:w-full [&_canvas]:h-full [&_canvas]:object-cover">
+        <div className="absolute inset-0 z-10 pointer-events-none w-full h-full [&>div]:w-full [&>div]:h-full [&_canvas]:w-full [&_canvas]:h-full [&_canvas]:object-cover opacity-85">
           <Shader>
-            <Swirl colorA="#ffffff" colorB="#f0f0f0" detail={1.7} />
-            <ChromaFlow baseColor="#ffffff" downColor="#ff5f03" leftColor="#ff5f03" rightColor="#ff5f03" upColor="#ff5f03" momentum={13} radius={3.5} />
+            <Swirl colorA="#050505" colorB="#0f0f0f" detail={1.7} />
+            <ChromaFlow baseColor="#050505" downColor="#f26522" leftColor="#f26522" rightColor="#f26522" upColor="#f26522" momentum={13} radius={3.5} />
             <FlutedGlass aberration={0.61} angle={31} frequency={8} highlight={0.12} highlightSoftness={0} lightAngle={-90} refraction={4} shape="rounded" softness={1} speed={0.15} />
             <FilmGrain strength={0.05} />
           </Shader>
         </div>
 
         {/* Navigation */}
-        {/* Navigation */}
-        <Header theme="light" />
+        <Header theme="dark" />
 
         {/* Hero Content - Adjusted margins/padding to remove large empty vertical space */}
         <div className="relative z-20 max-w-[1440px] w-full mx-auto flex flex-col justify-center px-5 sm:px-8 lg:px-12 pt-16 pb-0">
-          <p className="text-[13px] sm:text-[14px] text-gray-900 tracking-wide mb-4 uppercase font-medium">
+          <p className="text-[13px] sm:text-[14px] text-gray-400 tracking-wide mb-4 uppercase font-medium">
             {config.subtitle}
           </p>
-          <h1 className="text-[clamp(1.5rem,5.5vw,3.2rem)] sm:text-[clamp(1.8rem,4.5vw,3.8rem)] font-medium leading-[1.15] tracking-[-0.03em] text-gray-900 max-w-[1200px]">
+          <h1 className="text-[clamp(1.5rem,5.5vw,3.2rem)] sm:text-[clamp(1.8rem,4.5vw,3.8rem)] font-medium leading-[1.15] tracking-[-0.03em] text-white max-w-[1200px]">
             {config.title.substring(0, config.title.lastIndexOf(' ')+1)}
             <RotatingText
               texts={config.rotatingWords}
@@ -730,7 +745,7 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
               rotationInterval={3000}
             />
           </h1>
-          <p className="mt-6 text-[15px] sm:text-[17px] text-gray-700 max-w-[800px] leading-relaxed">
+          <p className="mt-6 text-[15px] sm:text-[17px] text-gray-400 max-w-[800px] leading-relaxed">
             {config.outcomeMessage}
           </p>
           <div className="mt-8 flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-5">
@@ -747,11 +762,11 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
                 <ArrowRight className="w-4 h-4 text-[#F26522] transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-rotate-45" />
               </div>
             </a>
-            <div className="flex items-center gap-3 bg-white shadow-[0_2px_8px_rgba(0,0,0,0.08)] hover:shadow-[0_4px_16px_rgba(0,0,0,0.12)] transition-shadow duration-300 px-3 py-2 cursor-pointer">
+            <div className="flex items-center gap-3 bg-white/5 border border-white/10 hover:bg-white/10 transition-shadow duration-300 px-3 py-2 cursor-pointer">
               <svg className="w-5 h-5 sm:w-6 sm:h-6 text-[#E8704E] fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
                 <path d="m19.6 66.5 19.7-11 .3-1-.3-.5h-1l-3.3-.2-11.2-.3L14 53l-9.5-.5-2.4-.5L0 49l.2-1.5 2-1.3 2.9.2 6.3.5 9.5.6 6.9.4L38 49.1h1.6l.2-.7-.5-.4-.4-.4L29 41l-10.6-7-5.6-4.1-3-2-1.5-2-.6-4.2 2.7-3 3.7.3.9.2 3.7 2.9 8 6.1L37 36l1.5 1.2.6-.4.1-.3-.7-1.1L33 25l-6-10.4-2.7-4.3-.7-2.6c-.3-1-.4-2-.4-3l3-4.2L28 0l4.2.6L33.8 2l2.6 6 4.1 9.3L47 29.9l2 3.8 1 3.4.3 1h.7v-.5l.5-7.2 1-8.7 1-11.2.3-3.2 1.6-3.8 3-2L61 2.6l2 2.9-.3 1.8-1.1 7.7L59 27.1l-1.5 8.2h.9l1-1.1 4.1-5.4 6.9-8.6 3-3.5L77 13l2.3-1.8h4.3l3.1 4.7-1.4 4.9-4.4 5.6-3.7 4.7-5.3 7.1-3.2 5.7.3.4h.7l12-2.6 6.4-1.1 7.6-1.3 3.5 1.6.4 1.6-1.4 3.4-8.2 2-9.6 2-14.3 3.3-.2.1.2.3 6.4.6 2.8.2h6.8l12.6 1 3.3 2 1.9 2.7-.3 2-5.1 2.6-6.8-1.6-16-3.8-5.4-1.3h-.8v.4l4.6 4.5 8.3 7.5L89 80.1l.5 2.4-1.3 2-1.4-.2-9.2-7-3.6-3-8-6.8h-.5v.7l1.8 2.7 9.8 14.7.5 4.5-.7 1.4-2.6 1-2.7-.6-5.8-8-6-9-4.7-8.2-.5.4-2.9 30.2-1.3 1.5-3 1.2-2.5-2-1.4-3 1.4-6.2 1.6-8 1.3-6.4 1.2-7.9.7-2.6v-.2H49L43 72l-9 12.3-7.2 7.6-1.7.7-3-1.5.3-2.8L24 86l10-12.8 6-7.9 4-4.6-.1-.5h-.3L17.2 77.4l-4.7.6-2-2 .2-3 1-1 8-5.5Z"/>
               </svg>
-              <span className="text-[13px] sm:text-[14px] font-medium text-gray-900">Certified Partner</span>
+              <span className="text-[13px] sm:text-[14px] font-medium text-white">Certified Partner</span>
               <span className="text-[10px] sm:text-[11px] bg-gray-900 text-white px-1.5 sm:px-2 py-0.5 rounded">Featured</span>
             </div>
           </div>
@@ -768,19 +783,19 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
 
       {/* SECTION: INTRO CONTENT */}
       {path !== '/insights' && path !== '/contact' && path !== '/services' && path !== '/company/approach' && path !== '/company/success-stories' && (
-        <section className="bg-white pt-16 sm:pt-20 lg:pt-32 pb-12 sm:pb-16 lg:pb-24 overflow-hidden w-full max-w-[1440px] mx-auto">
+        <section className="bg-[#050505] text-white pt-16 sm:pt-20 lg:pt-32 pb-12 sm:pb-16 lg:pb-24 overflow-hidden w-full max-w-[1440px] mx-auto">
           <div className="px-5 sm:px-8 lg:px-12 flex items-center gap-3 mb-6 sm:mb-8">
-            <div className="w-6 h-6 sm:w-7 sm:h-7 bg-black text-white text-[11px] sm:text-[12px] font-semibold flex items-center justify-center">2</div>
-            <div className="text-[12px] sm:text-[13px] font-medium text-black border border-black px-3 sm:px-4 py-1 sm:py-1.5">Context & Methodology</div>
+            <div className="w-6 h-6 sm:w-7 sm:h-7 bg-[#F26522] text-white text-[11px] sm:text-[12px] font-semibold flex items-center justify-center">2</div>
+            <div className="text-[12px] sm:text-[13px] font-medium text-white border border-white/20 px-3 sm:px-4 py-1 sm:py-1.5">Context & Methodology</div>
           </div>
           
           <div className="px-5 sm:px-8 lg:px-12">
-            <h2 className="text-[clamp(1.5rem,4vw,3.2rem)] font-medium leading-[1.12] tracking-[-0.02em] text-gray-900 mb-12 sm:mb-16 lg:mb-28 max-w-4xl">
+            <h2 className="text-[clamp(1.5rem,4vw,3.2rem)] font-medium leading-[1.12] tracking-[-0.02em] text-white mb-12 sm:mb-16 lg:mb-28 max-w-4xl">
               {config.introHeading}
             </h2>
 
             <div className="block lg:hidden">
-              <p className="text-[15px] sm:text-[17px] leading-[1.6] font-medium text-gray-900 mb-6">
+              <p className="text-[15px] sm:text-[17px] leading-[1.6] font-medium text-gray-300 mb-6">
                 {config.introParagraph}
               </p>
               <a href="/contact" className="group flex items-center bg-[#F26522] hover:bg-[#e05a1a] text-white pl-5 pr-2 py-2 transition-colors duration-300 mb-8 inline-flex">
@@ -803,7 +818,7 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
                 <ParallaxMedia type="video" src={config.introVideo1} autoPlay muted loop playsInline className="w-full aspect-[438/346]" />
               </div>
               <div className="self-start flex flex-col items-start justify-start pt-2">
-                <p className="text-[16px] xl:text-[18px] leading-[1.65] font-medium text-gray-900 mb-8 max-w-[90%]">
+                <p className="text-[16px] xl:text-[18px] leading-[1.65] font-medium text-gray-300 mb-8 max-w-[90%]" style={{ contentVisibility: 'auto' }}>
                   {config.introParagraph}
                 </p>
                 <a href="/contact" className="group flex items-center bg-[#F26522] hover:bg-[#e05a1a] text-white pl-6 pr-2 py-2 transition-colors duration-300">
@@ -824,16 +839,9 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
         </section>
       )}
 
-      {/* SECTION: SERVICES BENTO */}
-      {path !== '/insights' && path !== '/contact' && path !== '/services' && path !== '/company/approach' && path !== '/company/success-stories' && (
-        <div data-logo-dark className="relative">
-          <ServicesBento headline={config.bentoHeadline} description={config.bentoDescription} cards={config.bentoCards} />
-        </div>
-      )}
-
       {/* DETAILED METHODOLOGY FOR THE APPROACH PATH */}
       {path === '/company/approach' && (
-        <section className="bg-white py-20 sm:py-32 border-t border-gray-150 relative z-20" data-logo-dark>
+        <section className="bg-[#050505] text-white py-20 sm:py-32 border-t border-white/10 relative z-20" data-logo-dark>
           <div className="max-w-[1440px] w-full mx-auto px-5 sm:px-8 lg:px-12">
             <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-16">
               
@@ -842,10 +850,10 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
                 <div className="sticky top-24 flex flex-col gap-8">
                   <div>
                     <span className="text-[11px] font-bold text-gray-400 uppercase tracking-widest block mb-1">Our Methodology</span>
-                    <h3 className="text-xl font-bold text-gray-900">Search Blueprint</h3>
+                    <h3 className="text-xl font-bold text-white">Search Blueprint</h3>
                   </div>
                   
-                  <nav className="flex flex-col border-l border-gray-150 pl-4 py-2">
+                  <nav className="flex flex-col border-l border-white/10 pl-4 py-2">
                     {sections.map((sec) => (
                       <button
                         key={sec.id}
@@ -853,7 +861,7 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
                         className={`text-left text-[14px] py-2 transition-all duration-300 relative border-l-2 -ml-[17px] pl-4 cursor-pointer ${
                           activeSection === sec.id
                             ? 'text-[#F26522] border-[#F26522] font-semibold'
-                            : 'text-gray-400 border-transparent hover:text-gray-700 hover:border-gray-300'
+                            : 'text-gray-400 border-transparent hover:text-white hover:border-gray-600'
                         }`}
                       >
                         {sec.label}
@@ -861,20 +869,20 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
                     ))}
                   </nav>
 
-                  <div className="bg-[#f9f9f9] border border-gray-100 p-6 rounded-xl">
-                    <h4 className="text-[12px] font-bold uppercase tracking-wider text-gray-900 mb-2">Target Metrics</h4>
+                  <div className="bg-white/5 border border-white/10 p-6 rounded-xl">
+                    <h4 className="text-[12px] font-bold uppercase tracking-wider text-white mb-2">Target Metrics</h4>
                     <ul className="flex flex-col gap-3">
-                      <li className="flex justify-between text-[13px] text-gray-600">
+                      <li className="flex justify-between text-[13px] text-gray-400">
                         <span>Word count baseline:</span>
-                        <span className="font-semibold text-gray-900">2,200+</span>
+                        <span className="font-semibold text-white">2,200+</span>
                       </li>
-                      <li className="flex justify-between text-[13px] text-gray-600">
+                      <li className="flex justify-between text-[13px] text-gray-400">
                         <span>LLM Citation Rate:</span>
-                        <span className="font-semibold text-gray-900">90%+</span>
+                        <span className="font-semibold text-white">90%+</span>
                       </li>
-                      <li className="flex justify-between text-[13px] text-gray-600">
+                      <li className="flex justify-between text-[13px] text-gray-400">
                         <span>Rendering Latency:</span>
-                        <span className="font-semibold text-gray-900">&lt;100ms</span>
+                        <span className="font-semibold text-white">&lt;100ms</span>
                       </li>
                     </ul>
                   </div>
@@ -886,7 +894,7 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
                 
                 {/* Intro Callout */}
                 <div className="border-l-4 border-[#F26522] pl-6 py-2">
-                  <p className="text-[clamp(1.1rem,2vw,1.4rem)] text-gray-800 font-medium leading-relaxed">
+                  <p className="text-[clamp(1.1rem,2vw,1.4rem)] text-gray-300 font-medium leading-relaxed">
                     Search engine optimization is no longer a marketing checklist. It is a technical engineering discipline. 
                     Below is Gobiya's detailed operating model for algorithmic dominance, entity-based indexing, 
                     and closed-loop B2B pipeline conversion.
@@ -896,13 +904,13 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
                 {/* Section 1: Algorithmic Shift */}
                 <article id="algorithmic-shift" className="scroll-mt-24">
                   <div className="flex items-center gap-3 mb-6">
-                    <div className="w-8 h-8 rounded bg-gray-900 text-white flex items-center justify-center font-bold text-[14px]">01</div>
+                    <div className="w-8 h-8 rounded bg-[#F26522] text-white flex items-center justify-center font-bold text-[14px]">01</div>
                     <span className="text-[12px] font-semibold text-[#F26522] uppercase tracking-wider">The Paradigm Shift</span>
                   </div>
-                  <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 tracking-tight mb-8">
+                  <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight mb-8">
                     Keywords are Strings. Google Indexes Things.
                   </h2>
-                  <div className="text-gray-600 text-[15px] sm:text-[16px] leading-[1.75] flex flex-col gap-6">
+                  <div className="text-gray-400 text-[15px] sm:text-[16px] leading-[1.75] flex flex-col gap-6">
                     <p>
                       In the early eras of organic search engine optimization, websites were indexed based on direct string-matching algorithms. If a page was designed to rank for a query like "B2B sales pipeline integration tools," the primary operational objective was to verify the presence of that phrase in meta titles, headings, and copy at a specific keyword density. Today, Google's Helpful Content System, core quality classifiers, and neural matching algorithms operate on a fundamentally different paradigm. Search engines no longer index strings; they index entities.
                     </p>
@@ -921,13 +929,13 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
                 {/* Section 2: Topical Authority */}
                 <article id="topical-authority" className="scroll-mt-24">
                   <div className="flex items-center gap-3 mb-6">
-                    <div className="w-8 h-8 rounded bg-gray-900 text-white flex items-center justify-center font-bold text-[14px]">02</div>
+                    <div className="w-8 h-8 rounded bg-[#F26522] text-white flex items-center justify-center font-bold text-[14px]">02</div>
                     <span className="text-[12px] font-semibold text-[#F26522] uppercase tracking-wider">Topical Authority</span>
                   </div>
-                  <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 tracking-tight mb-8">
+                  <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight mb-8">
                     Topological Architecture & Schema Engineering
                   </h2>
-                  <div className="text-gray-600 text-[15px] sm:text-[16px] leading-[1.75] flex flex-col gap-6">
+                  <div className="text-gray-400 text-[15px] sm:text-[16px] leading-[1.75] flex flex-col gap-6">
                     <p>
                       Search dominance requires topical completeness. You cannot rank high-value transactional landing pages if your site lacks the foundational informational resources that prove expertise. For example, ranking a service page for "B2B sales development pipeline setup" requires an exhaustive topological content map covering peripheral queries: outbound pipeline metrics, lead response times, cold email sequence structures, CRM integration flows, and team scaling guides.
                     </p>
@@ -977,13 +985,13 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
                 {/* Section 3: GEO & LLM Citations */}
                 <article id="geo-optimization-llm" className="scroll-mt-24">
                   <div className="flex items-center gap-3 mb-6">
-                    <div className="w-8 h-8 rounded bg-gray-900 text-white flex items-center justify-center font-bold text-[14px]">03</div>
+                    <div className="w-8 h-8 rounded bg-[#F26522] text-white flex items-center justify-center font-bold text-[14px]">03</div>
                     <span className="text-[12px] font-semibold text-[#F26522] uppercase tracking-wider">Generative Optimization</span>
                   </div>
-                  <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 tracking-tight mb-8">
+                  <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight mb-8">
                     Generative Engine Optimization & LLM Visibility
                   </h2>
-                  <div className="text-gray-600 text-[15px] sm:text-[16px] leading-[1.75] flex flex-col gap-6">
+                  <div className="text-gray-400 text-[15px] sm:text-[16px] leading-[1.75] flex flex-col gap-6">
                     <p>
                       The search environment is undergoing its most significant transition in twenty years. Users are shifting from traditional search queries to dynamic conversational prompts answered directly by LLMs like ChatGPT, Claude, Perplexity, and Gemini. If your brand is not recognized by these models, you are missing out on the primary channel where B2B buyers form their shortlists.
                     </p>
@@ -1002,13 +1010,13 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
                 {/* Section 4: Pipeline Orchestration */}
                 <article id="pipeline-orchestration" className="scroll-mt-24">
                   <div className="flex items-center gap-3 mb-6">
-                    <div className="w-8 h-8 rounded bg-gray-900 text-white flex items-center justify-center font-bold text-[14px]">04</div>
+                    <div className="w-8 h-8 rounded bg-[#F26522] text-white flex items-center justify-center font-bold text-[14px]">04</div>
                     <span className="text-[12px] font-semibold text-[#F26522] uppercase tracking-wider">Revenue Pipelines</span>
                   </div>
-                  <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 tracking-tight mb-8">
+                  <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight mb-8">
                     Pipeline Integration & Conversion Architecture
                   </h2>
-                  <div className="text-gray-600 text-[15px] sm:text-[16px] leading-[1.75] flex flex-col gap-6">
+                  <div className="text-gray-400 text-[15px] sm:text-[16px] leading-[1.75] flex flex-col gap-6">
                     <p>
                       Organic search traffic is ultimately a vanity metric unless it converts into pipeline value. Traditional agency models celebrate traffic growth even if it fails to generate qualified revenue. Gobiya operates under a pipeline-first framework. We connect search traffic to automated sales development systems, turning your website into an active, high-yield pipeline generator.
                     </p>
@@ -1023,269 +1031,35 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
                     </p>
 
                     {/* Metrics Comparison Table */}
-                    <div className="mt-12 overflow-x-auto border border-gray-150 rounded-xl">
+                    <div className="mt-12 overflow-x-auto border border-white/10 rounded-xl">
                       <table className="w-full text-[14px] text-left">
                         <thead>
-                          <tr className="bg-gray-50 border-b border-gray-150 text-gray-900 font-semibold">
+                          <tr className="bg-white/5 border-b border-white/10 text-white font-semibold">
                             <th className="p-4 sm:p-5">Performance Vector</th>
-                            <th className="p-4 sm:p-5">Traditional Agency SEO</th>
+                            <th className="p-4 sm:p-5 text-gray-300">Traditional Agency SEO</th>
                             <th className="p-4 sm:p-5 text-[#F26522]">Gobiya Pipeline Engineering</th>
                           </tr>
                         </thead>
-                        <tbody className="divide-y divide-gray-150 text-gray-600">
+                        <tbody className="divide-y divide-white/10 text-gray-400">
                           <tr>
-                            <td className="p-4 sm:p-5 font-medium text-gray-900">Key Metric</td>
+                            <td className="p-4 sm:p-5 font-medium text-white">Key Metric</td>
                             <td className="p-4 sm:p-5">Keyword ranking positions & general traffic volume</td>
-                            <td className="p-4 sm:p-5 text-gray-900 font-medium">Qualified B2B meetings & attributed pipeline</td>
+                            <td className="p-4 sm:p-5 text-white font-medium">Qualified B2B meetings & attributed pipeline</td>
                           </tr>
                           <tr>
-                            <td className="p-4 sm:p-5 font-medium text-gray-900">Content Model</td>
+                            <td className="p-4 sm:p-5 font-medium text-white">Content Model</td>
                             <td className="p-4 sm:p-5">High-volume, keyword-targeted articles (thin content)</td>
-                            <td className="p-4 sm:p-5 text-gray-900 font-medium">Entity-mapped, comprehensive topical hubs</td>
+                            <td className="p-4 sm:p-5 text-white font-medium">Entity-mapped, comprehensive topical hubs</td>
                           </tr>
                           <tr>
-                            <td className="p-4 sm:p-5 font-medium text-gray-900">AI Readiness</td>
+                            <td className="p-4 sm:p-5 font-medium text-white">AI Readiness</td>
                             <td className="p-4 sm:p-5">None (optimized purely for legacy Google search bots)</td>
-                            <td className="p-4 sm:p-5 text-gray-900 font-medium">Generative Engine Optimization (GEO) citation structures</td>
+                            <td className="p-4 sm:p-5 text-white font-medium">Generative Engine Optimization (GEO) citation structures</td>
                           </tr>
                           <tr>
-                            <td className="p-4 sm:p-5 font-medium text-gray-900">Lead Sourcing</td>
+                            <td className="p-4 sm:p-5 font-medium text-white">Lead Sourcing</td>
                             <td className="p-4 sm:p-5">Passive contact forms with zero intent tracking</td>
-                            <td className="p-4 sm:p-5 text-gray-900 font-medium">Reverse-IP deanonymization & CRM integrations</td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
-                </article>
-
-              </div>
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* DETAILED METHODOLOGY FOR THE APPROACH PATH */}
-      {path === '/company/approach' && (
-        <section className="bg-white py-20 sm:py-32 border-t border-gray-150 relative z-20" data-logo-dark>
-          <div className="max-w-[1440px] w-full mx-auto px-5 sm:px-8 lg:px-12">
-            <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-16">
-              
-              {/* Sticky Sidebar Navigation */}
-              <aside className="hidden lg:block">
-                <div className="sticky top-24 flex flex-col gap-8">
-                  <div>
-                    <span className="text-[11px] font-bold text-gray-400 uppercase tracking-widest block mb-1">Our Methodology</span>
-                    <h3 className="text-xl font-bold text-gray-900">Search Blueprint</h3>
-                  </div>
-                  
-                  <nav className="flex flex-col border-l border-gray-150 pl-4 py-2">
-                    {sections.map((sec) => (
-                      <button
-                        key={sec.id}
-                        onClick={() => handleScrollToSection(sec.id)}
-                        className={`text-left text-[14px] py-2 transition-all duration-300 relative border-l-2 -ml-[17px] pl-4 cursor-pointer ${
-                          activeSection === sec.id
-                            ? 'text-[#F26522] border-[#F26522] font-semibold'
-                            : 'text-gray-400 border-transparent hover:text-gray-700 hover:border-gray-300'
-                        }`}
-                      >
-                        {sec.label}
-                      </button>
-                    ))}
-                  </nav>
-
-                  <div className="bg-[#f9f9f9] border border-gray-100 p-6 rounded-xl">
-                    <h4 className="text-[12px] font-bold uppercase tracking-wider text-gray-900 mb-2">Target Metrics</h4>
-                    <ul className="flex flex-col gap-3">
-                      <li className="flex justify-between text-[13px] text-gray-600">
-                        <span>Word count baseline:</span>
-                        <span className="font-semibold text-gray-900">2,200+</span>
-                      </li>
-                      <li className="flex justify-between text-[13px] text-gray-600">
-                        <span>LLM Citation Rate:</span>
-                        <span className="font-semibold text-gray-900">90%+</span>
-                      </li>
-                      <li className="flex justify-between text-[13px] text-gray-600">
-                        <span>Rendering Latency:</span>
-                        <span className="font-semibold text-gray-900">&lt;100ms</span>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </aside>
-
-              {/* Main Copy Area */}
-              <div className="flex flex-col gap-24 max-w-4xl">
-                
-                {/* Intro Callout */}
-                <div className="border-l-4 border-[#F26522] pl-6 py-2">
-                  <p className="text-[clamp(1.1rem,2vw,1.4rem)] text-gray-800 font-medium leading-relaxed">
-                    Search engine optimization is no longer a marketing checklist. It is a technical engineering discipline. 
-                    Below is Gobiya's detailed operating model for algorithmic dominance, entity-based indexing, 
-                    and closed-loop B2B pipeline conversion.
-                  </p>
-                </div>
-
-                {/* Section 1: Algorithmic Shift */}
-                <article id="algorithmic-shift" className="scroll-mt-24">
-                  <div className="flex items-center gap-3 mb-6">
-                    <div className="w-8 h-8 rounded bg-gray-900 text-white flex items-center justify-center font-bold text-[14px]">01</div>
-                    <span className="text-[12px] font-semibold text-[#F26522] uppercase tracking-wider">The Paradigm Shift</span>
-                  </div>
-                  <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 tracking-tight mb-8">
-                    Keywords are Strings. Google Indexes Things.
-                  </h2>
-                  <div className="text-gray-600 text-[15px] sm:text-[16px] leading-[1.75] flex flex-col gap-6">
-                    <p>
-                      In the early eras of organic search engine optimization, websites were indexed based on direct string-matching algorithms. If a page was designed to rank for a query like "B2B sales pipeline integration tools," the primary operational objective was to verify the presence of that phrase in meta titles, headings, and copy at a specific keyword density. Today, Google's Helpful Content System, core quality classifiers, and neural matching algorithms operate on a fundamentally different paradigm. Search engines no longer index strings; they index entities.
-                    </p>
-                    <p>
-                      An entity is a distinct, well-defined concept, organization, person, place, or thing that is cataloged in Google's Knowledge Graph, often represented by a unique machine-readable Knowledge Graph ID (KGMID). When a user inputs a query, the search engine does not search for pages containing those letters. Instead, it decomposes the prompt into recognized entities, resolves the user's implicit and explicit intent, and queries its graph database. It looks for pages that establish a high-salience connection to the requested entity node.
-                    </p>
-                    <p>
-                      Under this framework, Gobiya's approach is designed around semantic triples (Subject-Predicate-Object). We map out your business entities, service offerings, and target categories to ensure they are represented in the precise format search crawlers expect. Rather than writing arbitrary articles targeting high search volume keywords, we construct content structures that minimize semantic distance to verified authority nodes.
-                    </p>
-                    <p>
-                      This entity-based methodology is also the absolute foundation of Generative Engine Optimization (GEO). Modern Large Language Models (LLMs) such as OpenAI's GPT-4, Anthropic's Claude 3.5, and Google's Gemini do not navigate page authority vectors like traditional search engines. They map out semantic spaces. To ensure your brand is cited and surfaced inside these conversational answers, you must define your entity connections explicitly.
-                    </p>
-                  </div>
-                </article>
-
-                {/* Section 2: Topical Authority */}
-                <article id="topical-authority" className="scroll-mt-24">
-                  <div className="flex items-center gap-3 mb-6">
-                    <div className="w-8 h-8 rounded bg-gray-900 text-white flex items-center justify-center font-bold text-[14px]">02</div>
-                    <span className="text-[12px] font-semibold text-[#F26522] uppercase tracking-wider">Topical Authority</span>
-                  </div>
-                  <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 tracking-tight mb-8">
-                    Topological Architecture & Schema Engineering
-                  </h2>
-                  <div className="text-gray-600 text-[15px] sm:text-[16px] leading-[1.75] flex flex-col gap-6">
-                    <p>
-                      Search dominance requires topical completeness. You cannot rank high-value transactional landing pages if your site lacks the foundational informational resources that prove expertise. For example, ranking a service page for "B2B sales development pipeline setup" requires an exhaustive topological content map covering peripheral queries: outbound pipeline metrics, lead response times, cold email sequence structures, CRM integration flows, and team scaling guides.
-                    </p>
-                    <p>
-                      Gobiya maps out your market sector as an interconnected semantic graph. We structure your content using strict pillar-and-cluster hubs that flow PageRank and semantic signals smoothly from high-volume informational nodes down to high-intent transactional pages. By carefully mapping intent profiles, we eliminate internal keyword cannibalization, ensuring each URL targets a unique, isolated search intent.
-                    </p>
-                    <p>
-                      We explicitly define these relationships for search bots using advanced, nested JSON-LD structured schema. Rather than basic schema templates, we build customized schema graphs connecting your organization, services, authors, and target markets. We use properties like `about`, `mentions`, and `knowsAbout` pointing directly to DBpedia and Wikipedia entity records. This removes the need for search bots to guess page topics, accelerating indexation and boosting entity authority rankings.
-                    </p>
-
-                    {/* Interactive Schema Visualizer component */}
-                    <div className="mt-8 bg-gray-900 text-gray-150 rounded-xl overflow-hidden shadow-lg border border-gray-800">
-                      <div className="bg-gray-800 px-6 py-4 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
-                        <div>
-                          <h4 className="text-[13px] font-bold uppercase tracking-wider text-white">Interactive Schema Blueprint</h4>
-                          <p className="text-[12px] text-gray-400">Select entity type to view nested JSON-LD structure</p>
-                        </div>
-                        <div className="flex gap-2">
-                          {(['business', 'website', 'article'] as const).map((type) => (
-                            <button
-                              key={type}
-                              onClick={() => setActiveSchema(type)}
-                              className={`text-[12px] px-3 py-1 rounded transition-colors cursor-pointer ${
-                                activeSchema === type
-                                  ? 'bg-[#F26522] text-white font-semibold'
-                                  : 'bg-gray-700 hover:bg-gray-600 text-gray-300'
-                              }`}
-                            >
-                              {type.charAt(0).toUpperCase() + type.slice(1)}
-                            </button>
-                          ))}
-                        </div>
-                      </div>
-                      <div className="p-6 font-mono text-[13px] overflow-x-auto relative max-h-[300px]">
-                        <button
-                          onClick={() => copyToClipboard(JSON.stringify(schemas[activeSchema], null, 2))}
-                          className="absolute right-4 top-4 bg-gray-800 hover:bg-gray-700 text-gray-300 text-[11px] px-3 py-1.5 rounded border border-gray-700 transition-colors cursor-pointer"
-                        >
-                          {copiedSchema ? 'Copied!' : 'Copy Code'}
-                        </button>
-                        <pre className="text-green-400">{JSON.stringify(schemas[activeSchema], null, 2)}</pre>
-                      </div>
-                    </div>
-                  </div>
-                </article>
-
-                {/* Section 3: GEO & LLM Citations */}
-                <article id="geo-optimization-llm" className="scroll-mt-24">
-                  <div className="flex items-center gap-3 mb-6">
-                    <div className="w-8 h-8 rounded bg-gray-900 text-white flex items-center justify-center font-bold text-[14px]">03</div>
-                    <span className="text-[12px] font-semibold text-[#F26522] uppercase tracking-wider">Generative Optimization</span>
-                  </div>
-                  <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 tracking-tight mb-8">
-                    Generative Engine Optimization & LLM Visibility
-                  </h2>
-                  <div className="text-gray-600 text-[15px] sm:text-[16px] leading-[1.75] flex flex-col gap-6">
-                    <p>
-                      The search environment is undergoing its most significant transition in twenty years. Users are shifting from traditional search queries to dynamic conversational prompts answered directly by LLMs like ChatGPT, Claude, Perplexity, and Gemini. If your brand is not recognized by these models, you are missing out on the primary channel where B2B buyers form their shortlists.
-                    </p>
-                    <p>
-                      Generative Engine Optimization (GEO) is the practice of ensuring your brand entities are referenced and recommended as the definitive answer within generative AI responses. Traditional search engines rank pages based on backlinks and keyword placement. LLM retrieval pipelines and Retrieval-Augmented Generation (RAG) models index pages based on authority overlap, semantic alignment, and the volume of factual mentions across trusted databases.
-                    </p>
-                    <p>
-                      Our GEO strategy builds semantic citation loops. We map out the publications, datasets, trade journals, and directories that LLM builders use to pre-train and fine-tune their models. We then execute targeted PR campaigns to place your brand name, data, and technical definitions inside these trusted sources.
-                    </p>
-                    <p>
-                      We also format your on-site content to match the natural extraction habits of LLMs. This involves structuring page data into clear summaries, tabular formats, and direct Q&A blocks that crawlers can easily parse. When an AI agent scans your page, it finds structured, quote-ready statements that translate directly into citations.
-                    </p>
-                  </div>
-                </article>
-
-                {/* Section 4: Pipeline Orchestration */}
-                <article id="pipeline-orchestration" className="scroll-mt-24">
-                  <div className="flex items-center gap-3 mb-6">
-                    <div className="w-8 h-8 rounded bg-gray-900 text-white flex items-center justify-center font-bold text-[14px]">04</div>
-                    <span className="text-[12px] font-semibold text-[#F26522] uppercase tracking-wider">Revenue Pipelines</span>
-                  </div>
-                  <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 tracking-tight mb-8">
-                    Pipeline Integration & Conversion Architecture
-                  </h2>
-                  <div className="text-gray-600 text-[15px] sm:text-[16px] leading-[1.75] flex flex-col gap-6">
-                    <p>
-                      Organic search traffic is ultimately a vanity metric unless it converts into pipeline value. Traditional agency models celebrate traffic growth even if it fails to generate qualified revenue. Gobiya operates under a pipeline-first framework. We connect search traffic to automated sales development systems, turning your website into an active, high-yield pipeline generator.
-                    </p>
-                    <p>
-                      We build our web applications with custom React and Vite architectures. Standard templates and heavy page-builders are riddled with code bloat and database overhead that damage conversion rates. By delivering sub-second load times, we satisfy Core Web Vitals and capture high-intent users who would otherwise bounce due to lag.
-                    </p>
-                    <p>
-                      We integrate anonymous visitor de-anonymization technologies directly into the page layer. By resolving visiting IP addresses to specific corporate networks in real time, we log which organizations are researching your products and what pages they read. This intent data is fed directly into your CRM (Salesforce or HubSpot) and triggers automated, timing-optimized sales sequences targeting matching buyers at those accounts.
-                    </p>
-                    <p>
-                      We close the feedback loop with advanced multi-touch attribution. We trace every B2B pipeline opportunity back to the specific content hubs and entity nodes that initially captured the buyer's attention. This ensures that every investment in our search engineering protocol is directly justified by measurable closed-won revenue metrics.
-                    </p>
-
-                    {/* Metrics Comparison Table */}
-                    <div className="mt-12 overflow-x-auto border border-gray-150 rounded-xl">
-                      <table className="w-full text-[14px] text-left">
-                        <thead>
-                          <tr className="bg-gray-50 border-b border-gray-150 text-gray-900 font-semibold">
-                            <th className="p-4 sm:p-5">Performance Vector</th>
-                            <th className="p-4 sm:p-5">Traditional Agency SEO</th>
-                            <th className="p-4 sm:p-5 text-[#F26522]">Gobiya Pipeline Engineering</th>
-                          </tr>
-                        </thead>
-                        <tbody className="divide-y divide-gray-150 text-gray-600">
-                          <tr>
-                            <td className="p-4 sm:p-5 font-medium text-gray-900">Key Metric</td>
-                            <td className="p-4 sm:p-5">Keyword ranking positions & general traffic volume</td>
-                            <td className="p-4 sm:p-5 text-gray-900 font-medium">Qualified B2B meetings & attributed pipeline</td>
-                          </tr>
-                          <tr>
-                            <td className="p-4 sm:p-5 font-medium text-gray-900">Content Model</td>
-                            <td className="p-4 sm:p-5">High-volume, keyword-targeted articles (thin content)</td>
-                            <td className="p-4 sm:p-5 text-gray-900 font-medium">Entity-mapped, comprehensive topical hubs</td>
-                          </tr>
-                          <tr>
-                            <td className="p-4 sm:p-5 font-medium text-gray-900">AI Readiness</td>
-                            <td className="p-4 sm:p-5">None (optimized purely for legacy Google search bots)</td>
-                            <td className="p-4 sm:p-5 text-gray-900 font-medium">Generative Engine Optimization (GEO) citation structures</td>
-                          </tr>
-                          <tr>
-                            <td className="p-4 sm:p-5 font-medium text-gray-900">Lead Sourcing</td>
-                            <td className="p-4 sm:p-5">Passive contact forms with zero intent tracking</td>
-                            <td className="p-4 sm:p-5 text-gray-900 font-medium">Reverse-IP deanonymization & CRM integrations</td>
+                            <td className="p-4 sm:p-5 text-white font-medium">Reverse-IP deanonymization & CRM integrations</td>
                           </tr>
                         </tbody>
                       </table>
@@ -1301,7 +1075,7 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
 
       {/* DETAILED CASE STUDIES FOR SUCCESS STORIES PATH */}
       {path === '/company/success-stories' && (
-        <section className="bg-white py-20 sm:py-32 border-t border-gray-150 relative z-20" data-logo-dark>
+        <section className="bg-[#050505] text-white py-20 sm:py-32 border-t border-white/10 relative z-20" data-logo-dark>
           <div className="max-w-[1440px] w-full mx-auto px-5 sm:px-8 lg:px-12">
             <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-16">
               
@@ -1310,10 +1084,10 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
                 <div className="sticky top-24 flex flex-col gap-8">
                   <div>
                     <span className="text-[11px] font-bold text-gray-400 uppercase tracking-widest block mb-1">Our Success Stories</span>
-                    <h3 className="text-xl font-bold text-gray-900">Proven Results</h3>
+                    <h3 className="text-xl font-bold text-white">Proven Results</h3>
                   </div>
                   
-                  <nav className="flex flex-col border-l border-gray-150 pl-4 py-2">
+                  <nav className="flex flex-col border-l border-white/10 pl-4 py-2">
                     {successSections.map((sec) => (
                       <button
                         key={sec.id}
@@ -1321,7 +1095,7 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
                         className={`text-left text-[14px] py-2 transition-all duration-300 relative border-l-2 -ml-[17px] pl-4 cursor-pointer ${
                           activeSuccessSection === sec.id
                             ? 'text-[#F26522] border-[#F26522] font-semibold'
-                            : 'text-gray-400 border-transparent hover:text-gray-700 hover:border-gray-300'
+                            : 'text-gray-400 border-transparent hover:text-white hover:border-gray-600'
                         }`}
                       >
                         {sec.label}
@@ -1329,20 +1103,20 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
                     ))}
                   </nav>
 
-                  <div className="bg-[#f9f9f9] border border-gray-100 p-6 rounded-xl">
-                    <h4 className="text-[12px] font-bold uppercase tracking-wider text-gray-900 mb-2">Agency Performance</h4>
+                  <div className="bg-white/5 border border-white/10 p-6 rounded-xl">
+                    <h4 className="text-[12px] font-bold uppercase tracking-wider text-white mb-2">Agency Performance</h4>
                     <ul className="flex flex-col gap-3">
-                      <li className="flex justify-between text-[13px] text-gray-600">
+                      <li className="flex justify-between text-[13px] text-gray-400">
                         <span>Attributed ACV:</span>
-                        <span className="font-semibold text-gray-900">$3.4M+</span>
+                        <span className="font-semibold text-white">$3.4M+</span>
                       </li>
-                      <li className="flex justify-between text-[13px] text-gray-600">
+                      <li className="flex justify-between text-[13px] text-gray-400">
                         <span>Recovery Window:</span>
-                        <span className="font-semibold text-gray-900">90 Days</span>
+                        <span className="font-semibold text-white">90 Days</span>
                       </li>
-                      <li className="flex justify-between text-[13px] text-gray-600">
+                      <li className="flex justify-between text-[13px] text-gray-400">
                         <span>Core Web Vitals:</span>
-                        <span className="font-semibold text-gray-900">100/100</span>
+                        <span className="font-semibold text-white">100/100</span>
                       </li>
                     </ul>
                   </div>
@@ -1354,7 +1128,7 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
                 
                 {/* Intro Callout */}
                 <div className="border-l-4 border-[#F26522] pl-6 py-2">
-                  <p className="text-[clamp(1.1rem,2vw,1.4rem)] text-gray-800 font-medium leading-relaxed">
+                  <p className="text-[clamp(1.1rem,2vw,1.4rem)] text-gray-300 font-medium leading-relaxed">
                     We do not provide vanity growth metrics. We build search recovery systems and outbound pipelines that translate directly into closed-won contract value. 
                     Below are the technical case studies detailing Gobiya's algorithmic operations and B2B pipeline integrations.
                   </p>
@@ -1363,13 +1137,13 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
                 {/* Section 1: Algorithmic Update Recovery */}
                 <article id="recovery-case" className="scroll-mt-24">
                   <div className="flex items-center gap-3 mb-6">
-                    <div className="w-8 h-8 rounded bg-gray-900 text-white flex items-center justify-center font-bold text-[14px]">01</div>
+                    <div className="w-8 h-8 rounded bg-[#F26522] text-white flex items-center justify-center font-bold text-[14px]">01</div>
                     <span className="text-[12px] font-semibold text-[#F26522] uppercase tracking-wider">Algorithmic Recovery Case Study</span>
                   </div>
-                  <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 tracking-tight mb-8">
+                  <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight mb-8">
                     Reversing Helpful Content Penalties for Enterprise SaaS
                   </h2>
-                  <div className="text-gray-600 text-[15px] sm:text-[16px] leading-[1.75] flex flex-col gap-6">
+                  <div className="text-gray-400 text-[15px] sm:text-[16px] leading-[1.75] flex flex-col gap-6">
                     <p>
                       In mid-2025, our client—a leading enterprise B2B collaboration software brand—experienced a devastating 62% drop in organic search impressions and sessions immediately following a major Google Helpful Content Update. The ranking decline impacted not only informational resource sections but also high-intent commercial landing pages and primary brand queries, causing a massive decline in direct pipeline opportunities.
                     </p>
@@ -1388,13 +1162,13 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
                 {/* Section 2: B2B Pipeline Automation */}
                 <article id="pipeline-case" className="scroll-mt-24">
                   <div className="flex items-center gap-3 mb-6">
-                    <div className="w-8 h-8 rounded bg-gray-900 text-white flex items-center justify-center font-bold text-[14px]">02</div>
+                    <div className="w-8 h-8 rounded bg-[#F26522] text-white flex items-center justify-center font-bold text-[14px]">02</div>
                     <span className="text-[12px] font-semibold text-[#F26522] uppercase tracking-wider">Pipeline Engineering Case Study</span>
                   </div>
-                  <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 tracking-tight mb-8">
+                  <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight mb-8">
                     Scaling Outbound Meetings for Enterprise Logistics
                   </h2>
-                  <div className="text-gray-600 text-[15px] sm:text-[16px] leading-[1.75] flex flex-col gap-6">
+                  <div className="text-gray-400 text-[15px] sm:text-[16px] leading-[1.75] flex flex-col gap-6">
                     <p>
                       A mid-market logistics operator approached Gobiya with stagnant organic pipeline values. Although their site was ranking for generic informational search queries, their traffic failed to convert into qualified sales opportunities. Their sales department was forced to rely on manual outbound cold calling and expensive, inaccurate database lists.
                     </p>
@@ -1445,13 +1219,13 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
                 {/* Section 3: GEO & LLM Citations */}
                 <article id="geo-case" className="scroll-mt-24">
                   <div className="flex items-center gap-3 mb-6">
-                    <div className="w-8 h-8 rounded bg-gray-900 text-white flex items-center justify-center font-bold text-[14px]">03</div>
+                    <div className="w-8 h-8 rounded bg-[#F26522] text-white flex items-center justify-center font-bold text-[14px]">03</div>
                     <span className="text-[12px] font-semibold text-[#F26522] uppercase tracking-wider">Generative Engine Case Study</span>
                   </div>
-                  <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 tracking-tight mb-8">
+                  <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight mb-8">
                     Generative Search Dominance for Fintech Platforms
                   </h2>
-                  <div className="text-gray-600 text-[15px] sm:text-[16px] leading-[1.75] flex flex-col gap-6">
+                  <div className="text-gray-400 text-[15px] sm:text-[16px] leading-[1.75] flex flex-col gap-6">
                     <p>
                       As AI search platforms grew to dominate B2B research cycles, an enterprise fintech platform saw traditional organic traffic patterns shift. High-intent corporate buyers were no longer searching for core compliance keywords on Google; instead, they were prompting AI engines like ChatGPT, Claude, and Perplexity to compile recommendations and shortlists. The fintech platform was omitted from these model recommendations.
                     </p>
@@ -1470,13 +1244,13 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
                 {/* Section 4: Performance Dev */}
                 <article id="conversion-case" className="scroll-mt-24">
                   <div className="flex items-center gap-3 mb-6">
-                    <div className="w-8 h-8 rounded bg-gray-900 text-white flex items-center justify-center font-bold text-[14px]">04</div>
+                    <div className="w-8 h-8 rounded bg-[#F26522] text-white flex items-center justify-center font-bold text-[14px]">04</div>
                     <span className="text-[12px] font-semibold text-[#F26522] uppercase tracking-wider">Technical Engineering Case Study</span>
                   </div>
-                  <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 tracking-tight mb-8">
+                  <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight mb-8">
                     Sub-Second React Architecture for Cyber Security
                   </h2>
-                  <div className="text-gray-600 text-[15px] sm:text-[16px] leading-[1.75] flex flex-col gap-6">
+                  <div className="text-gray-400 text-[15px] sm:text-[16px] leading-[1.75] flex flex-col gap-6">
                     <p>
                       An enterprise cybersecurity provider was directing high-spend PPC ad traffic to a legacy WordPress site. Due to outdated themes, database overhead, and heavy plugins, their page load speeds averaged 4.6 seconds, failing Core Web Vitals and causing a high bounce rate of 58%. The conversion rate from paid traffic to demo requests was stuck at 0.8%.
                     </p>
@@ -1497,9 +1271,9 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
 
       {/* SIMPLE SERVICES SHOWCASE FOR CONSOLIDATED PATH */}
       {path === '/services' && (
-        <section className="bg-white py-16 sm:py-24 border-t border-gray-200" data-logo-dark>
+        <section className="bg-[#050505] text-white py-16 sm:py-24 border-t border-white/10 relative z-20" data-logo-dark>
           <div className="max-w-[1440px] w-full mx-auto px-5 sm:px-8 lg:px-12">
-            <h2 className="text-2xl sm:text-4xl font-semibold tracking-tight text-gray-900 mb-12">Our Specialized Capabilities</h2>
+            <h2 className="text-2xl sm:text-4xl font-semibold tracking-tight text-white mb-12">Our Specialized Capabilities</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
                 {
@@ -1545,21 +1319,22 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
                   deliverables: ['Intent-Based Search Ads', 'LinkedIn B2B Lead Pipelines', 'A/B Testing & Funnel Management']
                 }
               ].map((service) => (
-                <div key={service.id} id={service.id} className="bg-[#f9f9f9] border border-gray-100 p-8 rounded-2xl flex flex-col justify-between hover:border-gray-200 transition-all duration-300 scroll-mt-24">
+                <div key={service.id} id={service.id} className="bg-white/5 border border-white/10 p-8 rounded-2xl flex flex-col justify-between hover:border-white/20 transition-all duration-300 scroll-mt-24">
                   <div>
                     <div className="mb-6 flex items-center justify-between">
                       {service.icon}
                       <span className="text-[11px] font-bold text-gray-400 uppercase tracking-widest">Service Capabilities</span>
                     </div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-4">{service.title}</h3>
-                    <p className="text-gray-600 text-[14px] leading-relaxed mb-6">{service.description}</p>
+                    <h3 className="text-xl font-bold text-white mb-4">{service.title}</h3>
+                    <p className="text-gray-400 text-[14px] leading-relaxed mb-6">{service.description}</p>
                   </div>
                   <div>
-                    <h4 className="text-[12px] font-semibold text-gray-900 uppercase tracking-wider mb-3">Key Deliverables</h4>
+                    <h4 className="text-[12px] font-semibold text-white uppercase tracking-wider mb-3">Key Deliverables</h4>
                     <ul className="flex flex-col gap-2 mb-6">
                       {service.deliverables.map((item, idx) => (
-                        <li key={idx} className="flex items-center gap-2 text-[13px] text-gray-600">
+                        <li key={idx} className="flex items-center gap-2 text-[13px] text-gray-400">
                           <span className="w-1.5 h-1.5 rounded-full bg-[#F26522]" />
+
                           {item}
                         </li>
                       ))}
@@ -1611,20 +1386,20 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
 
       {/* CONTACT SECTION (Only rendered on /contact route) */}
       {path === '/contact' && (
-        <section className="relative w-full bg-white text-gray-900 py-20 sm:py-32 px-5 sm:px-8 lg:px-12 flex flex-col items-center">
+        <section className="relative w-full bg-[#050505] text-white py-20 sm:py-32 px-5 sm:px-8 lg:px-12 flex flex-col items-center">
           <div className="max-w-[1440px] w-full mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
             
             {/* Left: Contact Info */}
             <div className="flex flex-col justify-start">
-              <h2 className="text-3xl sm:text-5xl font-medium tracking-tight mb-8">Let's build your pipeline.</h2>
-              <p className="text-gray-600 text-[15px] sm:text-[16px] leading-relaxed max-w-md mb-12">
+              <h2 className="text-3xl sm:text-5xl font-medium tracking-tight mb-8 text-white">Let's build your pipeline.</h2>
+              <p className="text-gray-400 text-[15px] sm:text-[16px] leading-relaxed max-w-md mb-12">
                 Whether you need a full algorithmic recovery audit or a predictable B2B sales pipeline, our engineering team is ready to scale your growth.
               </p>
               
               <div className="flex flex-col gap-8">
                 <div>
                   <h3 className="text-[12px] font-semibold uppercase tracking-wider text-gray-500 mb-2">Location</h3>
-                  <address className="not-italic text-[16px] sm:text-[18px] font-medium leading-relaxed">
+                  <address className="not-italic text-[16px] sm:text-[18px] font-medium leading-relaxed text-gray-300">
                     138 N Berendo St<br/>
                     Los Angeles, CA 90004<br/>
                     United States
@@ -1633,14 +1408,14 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
                 
                 <div>
                   <h3 className="text-[12px] font-semibold uppercase tracking-wider text-gray-500 mb-2">Direct Line</h3>
-                  <a href="tel:+13103079830" className="text-[16px] sm:text-[18px] font-medium hover:text-[#F26522] transition-colors">
+                  <a href="tel:+13103079830" className="text-[16px] sm:text-[18px] font-medium text-gray-300 hover:text-[#F26522] transition-colors">
                     (310) 307-9830
                   </a>
                 </div>
                 
                 <div>
                   <h3 className="text-[12px] font-semibold uppercase tracking-wider text-gray-500 mb-2">Email</h3>
-                  <a href="mailto:hello@gobiya.com" className="text-[16px] sm:text-[18px] font-medium hover:text-[#F26522] transition-colors">
+                  <a href="mailto:hello@gobiya.com" className="text-[16px] sm:text-[18px] font-medium text-gray-300 hover:text-[#F26522] transition-colors">
                     hello@gobiya.com
                   </a>
                 </div>
@@ -1648,13 +1423,13 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
             </div>
 
             {/* Right: Contact Form */}
-            <div className="w-full bg-[#f9f9f9] p-8 sm:p-12 rounded-2xl shadow-sm border border-gray-100">
+            <div className="w-full bg-white/5 p-8 sm:p-12 rounded-2xl shadow-sm border border-white/10">
               <form 
                 className="flex flex-col gap-6" 
                 onSubmit={async (e) => {
                   e.preventDefault();
-                  const form = e.target;
-                  const submitBtn = form.querySelector('button[type="submit"]');
+                  const form = e.target as HTMLFormElement;
+                  const submitBtn = form.querySelector('button[type="submit"]') as HTMLButtonElement;
                   
                   try {
                     if (submitBtn) {
@@ -1663,12 +1438,24 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
                     }
                     
                     const formData = new FormData(form);
+                    const selectedServiceNames = contactServices
+                      .map(s => {
+                        if (s === 'geo') return 'GEO / AI Overview Citation';
+                        if (s === 'seo') return 'Forensic SEO & Traffic Recovery';
+                        if (s === 'b2b') return 'B2B Pipeline & Outbound Automation';
+                        if (s === 'dev') return 'Bespoke React Engineering';
+                        return s;
+                      })
+                      .join(', ');
+
                     const data = {
                       firstName: formData.get('firstName'),
                       lastName: formData.get('lastName'),
                       email: formData.get('email'),
                       company: formData.get('company'),
-                      message: formData.get('message'),
+                      website: formData.get('website'),
+                      services: contactServices,
+                      message: `[Selected Services: ${selectedServiceNames || 'None'}] [Website: ${formData.get('website')}] -- ${formData.get('message')}`,
                     };
                     
                     const { error } = await supabase.functions.invoke('contact-form', {
@@ -1693,31 +1480,87 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
               >
                 <div className="flex flex-col sm:flex-row gap-6">
                   <div className="flex flex-col flex-1 gap-2">
-                    <label htmlFor="firstName" className="text-[13px] font-medium text-gray-700">First Name</label>
-                    <input type="text" name="firstName" id="firstName" required className="w-full bg-white border border-gray-200 px-4 py-3 rounded outline-none focus:border-[#F26522] transition-colors text-[14px]" placeholder="Jane" />
+                    <label htmlFor="firstName" className="text-[13px] font-medium text-gray-400">First Name</label>
+                    <input type="text" name="firstName" id="firstName" required className="w-full bg-white/5 border border-white/10 focus:border-[#F26522] focus:bg-white/10 text-white rounded p-4 py-3 outline-none transition-all text-[14px]" placeholder="Jane" />
                   </div>
                   <div className="flex flex-col flex-1 gap-2">
-                    <label htmlFor="lastName" className="text-[13px] font-medium text-gray-700">Last Name</label>
-                    <input type="text" name="lastName" id="lastName" required className="w-full bg-white border border-gray-200 px-4 py-3 rounded outline-none focus:border-[#F26522] transition-colors text-[14px]" placeholder="Doe" />
+                    <label htmlFor="lastName" className="text-[13px] font-medium text-gray-400">Last Name</label>
+                    <input type="text" name="lastName" id="lastName" required className="w-full bg-white/5 border border-white/10 focus:border-[#F26522] focus:bg-white/10 text-white rounded p-4 py-3 outline-none transition-all text-[14px]" placeholder="Doe" />
                   </div>
                 </div>
                 
                 <div className="flex flex-col gap-2">
-                  <label htmlFor="email" className="text-[13px] font-medium text-gray-700">Work Email</label>
-                  <input type="email" name="email" id="email" required className="w-full bg-white border border-gray-200 px-4 py-3 rounded outline-none focus:border-[#F26522] transition-colors text-[14px]" placeholder="jane@company.com" />
+                  <label htmlFor="email" className="text-[13px] font-medium text-gray-400">Work Email</label>
+                  <input type="email" name="email" id="email" required className="w-full bg-white/5 border border-white/10 focus:border-[#F26522] focus:bg-white/10 text-white rounded p-4 py-3 outline-none transition-all text-[14px]" placeholder="jane@company.com" />
                 </div>
 
                 <div className="flex flex-col gap-2">
-                  <label htmlFor="company" className="text-[13px] font-medium text-gray-700">Company Name</label>
-                  <input type="text" name="company" id="company" className="w-full bg-white border border-gray-200 px-4 py-3 rounded outline-none focus:border-[#F26522] transition-colors text-[14px]" placeholder="Acme Corp" />
+                  <label htmlFor="company" className="text-[13px] font-medium text-gray-400">Company Name</label>
+                  <input type="text" name="company" id="company" className="w-full bg-white/5 border border-white/10 focus:border-[#F26522] focus:bg-white/10 text-white rounded p-4 py-3 outline-none transition-all text-[14px]" placeholder="Acme Corp" />
                 </div>
 
                 <div className="flex flex-col gap-2">
-                  <label htmlFor="message" className="text-[13px] font-medium text-gray-700">How can we help?</label>
-                  <textarea name="message" id="message" required rows={4} className="w-full bg-white border border-gray-200 px-4 py-3 rounded outline-none focus:border-[#F26522] transition-colors text-[14px] resize-none" placeholder="Tell us about your goals..."></textarea>
+                  <label htmlFor="website" className="text-[13px] font-medium text-gray-400">Website Domain</label>
+                  <input 
+                    type="text" 
+                    name="website" 
+                    id="website" 
+                    required 
+                    value={contactDomain}
+                    onChange={(e) => setContactDomain(e.target.value)}
+                    className="w-full bg-white/5 border border-white/10 focus:border-[#F26522] focus:bg-white/10 text-white rounded p-4 py-3 outline-none transition-all text-[14px]" 
+                    placeholder="yourcompany.com" 
+                  />
                 </div>
 
-                <button type="submit" className="mt-4 bg-gray-900 hover:bg-[#F26522] text-white py-4 px-6 rounded font-medium text-[14px] transition-colors duration-300 w-full sm:w-auto self-start disabled:opacity-70 disabled:cursor-not-allowed">
+                <div className="flex flex-col gap-3">
+                  <label className="text-[13px] font-medium text-gray-400">Services of Interest</label>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    {[
+                      { id: 'geo', label: 'GEO / AI Overview Citation' },
+                      { id: 'seo', label: 'Forensic SEO & Traffic Recovery' },
+                      { id: 'b2b', label: 'B2B Pipeline & Outbound' },
+                      { id: 'dev', label: 'Bespoke React Engineering' }
+                    ].map((service) => {
+                      const isChecked = contactServices.includes(service.id);
+                      return (
+                        <div 
+                          key={service.id} 
+                          onClick={() => {
+                            setContactServices(prev =>
+                              prev.includes(service.id) 
+                                ? prev.filter(s => s !== service.id) 
+                                : [...prev, service.id]
+                            );
+                          }}
+                          className={`flex items-center justify-between p-3 rounded border transition-all duration-300 cursor-pointer ${
+                            isChecked 
+                              ? 'bg-[#F26522]/10 border-[#F26522] text-white' 
+                              : 'bg-white/5 border-white/10 text-gray-300 hover:bg-white/10 hover:border-white/20'
+                          }`}
+                        >
+                          <span className="text-[13px] font-medium">{service.label}</span>
+                          <div className={`w-4 h-4 rounded flex items-center justify-center border transition-all duration-300 ${
+                            isChecked 
+                              ? 'bg-[#F26522] border-[#F26522] text-white' 
+                              : 'border-white/30 text-transparent'
+                          }`}>
+                            <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="3">
+                              <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                            </svg>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+
+                <div className="flex flex-col gap-2">
+                  <label htmlFor="message" className="text-[13px] font-medium text-gray-400">How can we help?</label>
+                  <textarea name="message" id="message" required rows={4} className="w-full bg-white/5 border border-white/10 focus:border-[#F26522] focus:bg-white/10 text-white rounded p-4 py-3 outline-none transition-all text-[14px] resize-none" placeholder="Tell us about your goals..."></textarea>
+                </div>
+
+                <button type="submit" className="mt-4 bg-[#F26522] hover:bg-[#e05a1a] text-white py-4 px-6 rounded font-semibold tracking-wide uppercase transition-colors duration-300 w-full sm:w-auto self-start disabled:opacity-70 disabled:cursor-not-allowed">
                   Submit Request
                 </button>
               </form>

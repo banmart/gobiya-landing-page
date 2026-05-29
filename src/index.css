@@ -91,3 +91,58 @@
   font-weight: 900;
   src: url(https://assets.codepen.io/16327/PPMori-SemiBold.woff) format('woff');
 }
+
+/* Dark Article Styling overrides for pre-rendered markdown blogs */
+.dark-article {
+  color: #9ca3af; /* text-gray-400 */
+}
+.dark-article h1,
+.dark-article h2,
+.dark-article h3,
+.dark-article h4,
+.dark-article h5,
+.dark-article h6,
+.dark-article strong {
+  color: #ffffff;
+}
+.dark-article p {
+  color: #d1d5db; /* text-gray-300 */
+}
+.dark-article details {
+  background-color: rgba(255, 255, 255, 0.03) !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+.dark-article details ul {
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+.dark-article details ul a {
+  color: #9ca3af !important;
+}
+.dark-article details ul a:hover {
+  color: #F26522 !important;
+}
+.dark-article blockquote {
+  border-left-color: #F26522 !important;
+  color: #ffffff !important;
+  background-color: rgba(255, 255, 255, 0.02) !important;
+}
+.dark-article table {
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+.dark-article th {
+  background-color: rgba(255, 255, 255, 0.03) !important;
+  color: #ffffff !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+.dark-article td {
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  color: #d1d5db !important;
+}
+.dark-article a {
+  color: #F26522;
+  transition: color 0.2s;
+}
+.dark-article a:hover {
+  color: #e05a1a;
+}
+

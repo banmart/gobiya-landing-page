@@ -39,10 +39,11 @@ const AxionLanding = () => {
   const handleFormSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!domain) return;
-    setFormState('submitting');
-    setTimeout(() => {
-      setFormState('success');
-    }, 1500);
+    const servicesParam = selectedServices.join(',');
+    const targetUrl = `/contact?domain=${encodeURIComponent(domain)}&services=${encodeURIComponent(servicesParam)}`;
+    window.history.pushState({}, '', targetUrl);
+    window.dispatchEvent(new PopStateEvent('popstate'));
+    window.scrollTo(0, 0);
   };
 
   useEffect(() => {
