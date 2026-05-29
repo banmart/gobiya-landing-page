@@ -16,7 +16,7 @@ const testimonials: Testimonial[] = [
     text: "Traffic up and more calls from the website.",
     company: "SafetyCentric",
     author: "Pete Urueta",
-    image_url: "/images/testimonial-pete.png"
+    image_url: "/images/pete-AI.jpeg"
   },
   {
     id: 2,
