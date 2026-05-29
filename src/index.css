@@ -204,5 +204,17 @@
   color: #F26522 !important;
 }
 
-
-
+/* bg-amber-50 caution cards contrast rules */
+.dark-article div[class*="bg-amber-50"],
+.dark-article div[class*="bg-amber-50"] p,
+.dark-article div[class*="bg-amber-50"] span,
+.dark-article div[class*="bg-amber-50"] strong {
+  color: #78350f !important; /* text-amber-900 */
+}
+/* Ensure white text inside orange links/buttons in dark articles is readable */
+.dark-article a[class*="text-white"],
+.dark-article a[class*="text-white"] span,
+.dark-article a[class*="bg-[#F26522]"],
+.dark-article a[class*="bg-[#F26522]"] span {
+  color: #ffffff !important;
+}
