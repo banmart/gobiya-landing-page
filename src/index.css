@@ -105,7 +105,8 @@
 .dark-article strong {
   color: #ffffff;
 }
-.dark-article p {
+.dark-article p,
+.dark-article li {
   color: #d1d5db; /* text-gray-300 */
 }
 .dark-article details {
