@@ -32,7 +32,7 @@ const ServicesBento: React.FC<ServicesBentoProps> = ({ headline, description, ca
               )}
             </h2>
             <p className="text-gray-400 text-lg leading-relaxed font-body">
-              {description || "We don't send reports. We architect proprietary growth assets that command sector respect and generate predictable B2B revenue. Through cutting-edge AI and data strategies, we help brands recover traffic and skyrocket visibility — fast."}
+              {description || 'We do not provide reports. We architect proprietary growth assets that command sector respect and generate predictable B2B revenue.'}
             </p>
           </div>
           <p className="text-[14px] text-[#F26522] uppercase tracking-widest font-bold font-body">

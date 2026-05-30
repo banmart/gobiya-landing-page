@@ -45,10 +45,10 @@ const Footer: React.FC = () => {
           <div className="flex flex-col">
             <h4 className="text-[12px] font-semibold uppercase tracking-wider mb-6">Company</h4>
             <ul className="flex flex-col gap-4 text-[14px] text-gray-400">
-              <li><a href="/company/about" className="hover:text-white transition-colors">About</a></li>
+              <li><a href="/company/about" className="hover:text-white transition-colors">About the Agency</a></li>
               <li><a href="/company/success-stories" className="hover:text-white transition-colors">Success Stories</a></li>
               <li><a href="/company/approach" className="hover:text-white transition-colors">Our Approach</a></li>
-              <li><a href="/insights" className="hover:text-white transition-colors">Insights</a></li>
+              <li><a href="/insights" className="hover:text-white transition-colors">Industry Insights</a></li>
               <li><a href="/company/careers" className="hover:text-white transition-colors">Careers</a></li>
             </ul>
           </div>
@@ -58,9 +58,9 @@ const Footer: React.FC = () => {
             <h4 className="text-[12px] font-semibold uppercase tracking-wider mb-6">Connect</h4>
             <ul className="flex flex-col gap-4 text-[14px] text-gray-400">
               <li><a href="#" className="hover:text-white transition-colors">LinkedIn</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">X</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">Twitter (X)</a></li>
               <li><a href="#" className="hover:text-white transition-colors">Instagram</a></li>
-              <li><a href="/contact" className="hover:text-white transition-colors">Contact</a></li>
+              <li><a href="/contact" className="hover:text-white transition-colors">Contact Us</a></li>
             </ul>
           </div>
 

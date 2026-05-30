@@ -20,7 +20,7 @@ const testimonials: Testimonial[] = [
   },
   {
     id: 2,
-    text: "Built and launched our contractor marketplace without any interruptions — and for exactly what we agreed.",
+    text: "Built and launched our contractor marketplace without any inturruptions and for what we agreed.",
     company: "RemodelMe Pros",
     author: "Mike Pinkston",
     image_url: "/images/testimonial-mike.png"

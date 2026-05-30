@@ -92,10 +92,10 @@ const CaseStudiesPinned = () => {
           </div>
         </div>
         <h2 className="text-[clamp(1.75rem,7vw,4.2rem)] sm:text-[clamp(2.5rem,5vw,4.2rem)] font-medium leading-[1.08] tracking-[-0.03em] text-gray-900 mb-2 sm:mb-4">
-          AI YouTube Pre-Roll Ads
+          AI Youtube Pre-Roll Ads
         </h2>
         <p className="text-gray-600 font-body text-base sm:text-lg lg:text-xl mb-10 sm:mb-14">
-          Free with new full website development. <a href="/contact" className="text-[#F26522] hover:text-[#e05a1a] transition-colors font-semibold underline underline-offset-4">Learn more →</a>
+          Free with New Full Website Development
         </p>
       </div>
 
@@ -120,12 +120,12 @@ const CaseStudiesPinned = () => {
                   </svg>
                 </div>
                 <span className="text-[13px] font-medium text-gray-900 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 delay-100">
-                  View case study
+                  Learn more
                 </span>
               </div>
             </div>
-            <h3 className="text-[16px] sm:text-[18px] font-display font-medium text-gray-900 mt-3">RemodelMe Pros</h3>
-            <p className="text-[14px] text-gray-600 mt-1.5 leading-relaxed font-body">New website with native CRM and contractor marketplace. (React + Vite)</p>
+            <h3 className="text-[16px] sm:text-[18px] font-display font-medium text-gray-900 mt-3">RemodelMe Pros Contractors</h3>
+            <p className="text-[14px] text-gray-600 mt-1.5 leading-relaxed font-body">React Vite. New Website w/ Native CRM and marketplace.</p>
           </div>
 
           {/* Card 2 */}
@@ -142,7 +142,7 @@ const CaseStudiesPinned = () => {
               </div>
             </div>
             <h3 className="text-[16px] sm:text-[18px] font-display font-medium text-gray-900 mt-3">SafetyCentric</h3>
-            <p className="text-[14px] text-gray-600 mt-1.5 leading-relaxed font-body">Commercial security integrators platform. (React + Vite)</p>
+            <p className="text-[14px] text-gray-600 mt-1.5 leading-relaxed font-body">Commercial Security Integrators - React Vite.</p>
           </div>
 
           {/* Card 3 */}
@@ -158,8 +158,8 @@ const CaseStudiesPinned = () => {
                 </span>
               </div>
             </div>
-            <h3 className="text-[16px] sm:text-[18px] font-display font-medium text-gray-900 mt-3">The Ark (Crypto on PulseChain)</h3>
-            <p className="text-[14px] text-gray-600 mt-1.5 leading-relaxed font-body">Web3, WalletConnect, smart contracts. (React + Vite)</p>
+            <h3 className="text-[16px] sm:text-[18px] font-display font-medium text-gray-900 mt-3">The Ark Crypto on Pulsechain</h3>
+            <p className="text-[14px] text-gray-600 mt-1.5 leading-relaxed font-body">Web3, Wallet Connect, Smart Contracts - React Vite.</p>
           </div>
 
           {/* Card 4 */}
@@ -175,8 +175,8 @@ const CaseStudiesPinned = () => {
                 </span>
               </div>
             </div>
-            <h3 className="text-[16px] sm:text-[18px] font-display font-medium text-gray-900 mt-3">SmileCenter Dental</h3>
-            <p className="text-[14px] text-gray-600 mt-1.5 leading-relaxed font-body max-w-[90%]">Multi-location structure with Yelp and office pages. (React + Vite)</p>
+            <h3 className="text-[16px] sm:text-[18px] font-display font-medium text-gray-900 mt-3">SmileCenter Dental Offices</h3>
+            <p className="text-[14px] text-gray-600 mt-1.5 leading-relaxed font-body max-w-[90%]">New Website Upgrade. Multi-Location Structure with Yelp and office pages. - React Vite.</p>
           </div>
 
         </div>

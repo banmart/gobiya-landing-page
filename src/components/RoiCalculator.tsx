@@ -17,7 +17,7 @@ export interface RoiCalculatorProps {
 
 const RoiCalculator: React.FC<RoiCalculatorProps> = ({
   title = "Calculate Your Revenue Leak",
-  description = "Drag the slider to the monthly traffic you lost during the latest Google update, and see the pipeline revenue we can help you recover.",
+  description = "Use the slider to input the monthly traffic your site lost during the latest Google algorithm update. See the pipeline revenue we can help you recover.",
   sliderLabel = "Monthly Traffic Lost",
   sliderMin = 1000,
   sliderMax = 100000,
@@ -25,8 +25,8 @@ const RoiCalculator: React.FC<RoiCalculatorProps> = ({
   resultLabel = "Potential Recovered Value",
   conversionRate = 0.025,
   ltv = 500,
-  disclaimer = "*Based on an average 2.5% conversion rate and $500 lifetime value.",
-  ctaText = "Start Your Recovery Audit →"
+  disclaimer = "*Based on an average 2.5% conversion rate and $500 Lifetime Value.",
+  ctaText = "Start Your Recovery Audit"
 }) => {
   const [metricValue, setMetricValue] = useState(sliderMin + (sliderMax - sliderMin) * 0.15);
   const count = useMotionValue(0);
