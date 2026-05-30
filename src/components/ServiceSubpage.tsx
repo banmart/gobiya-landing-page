@@ -1354,7 +1354,7 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
       {path !== '/contact' && path !== '/services' && path !== '/company/approach' && path !== '/company/success-stories' && path !== '/company/about' && path !== '/company/careers' && (
         path !== '/insights' ? (
           <div data-logo-dark className="relative">
-            <InsightsSlider filterCategory={config.insightCategory} limit={3} />
+            <InsightsSlider filterCategory={config.insightCategory} limit={3} currentPath={path} />
           </div>
         ) : (
           <div data-logo-dark className="relative">

@@ -834,7 +834,7 @@ const SolutionPage: React.FC<{ path: string }> = ({ path }) => {
 
       {/* SECTION: LATEST INSIGHTS */}
       <div data-logo-dark className="relative bg-[#EFEFEF]">
-        <InsightsSlider limit={3} filterCategory={data.insightCategory} />
+        <InsightsSlider limit={3} filterCategory={data.insightCategory} currentPath={path} />
       </div>
 
       {/* ── FOOTER ── */}

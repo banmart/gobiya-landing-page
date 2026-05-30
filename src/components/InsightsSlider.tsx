@@ -17,9 +17,10 @@ interface Insight {
 interface InsightsSliderProps {
   filterCategory?: string;
   limit?: number;
+  currentPath?: string;
 }
 
-const InsightsSlider: React.FC<InsightsSliderProps> = ({ filterCategory, limit }) => {
+const InsightsSlider: React.FC<InsightsSliderProps> = ({ filterCategory, limit, currentPath }) => {
   const trackRef = useRef<HTMLDivElement>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [maxIndex, setMaxIndex] = useState(0);
@@ -96,9 +97,57 @@ const InsightsSlider: React.FC<InsightsSliderProps> = ({ filterCategory, limit }
   }, []);
 
   const displayInsights = React.useMemo(() => {
-    let list = insights;
-    if (filterCategory) {
-      list = [...insights].sort((a, b) => {
+    let list = [...insights];
+
+    const getRelevanceScore = (insight: Insight, path: string): number => {
+      const normPath = path.toLowerCase().replace(/\/$/, '');
+      const textToSearch = `${insight.title} ${insight.slug || ''} ${insight.category || ''}`.toLowerCase();
+      
+      let keywords: string[] = [];
+      if (normPath.includes('geo-optimization') || normPath.includes('/geo')) {
+        keywords = ['geo', 'generative', 'ai', 'chatgpt', 'perplexity', 'claude', 'gemini', 'engine optimization'];
+      } else if (normPath.includes('penalty-recovery') || normPath.includes('penalty')) {
+        keywords = ['penalty', 'manual action', 'algorithmic', 'core update', 'helpful content', 'recovery', 'spam'];
+      } else if (normPath.includes('seo')) {
+        keywords = ['seo', 'search engine', 'ranking', 'organic', 'topical', 'local seo', 'penalty', 'manual action', 'core update'];
+      } else if (normPath.includes('lead-generation') || normPath.includes('lead-gen')) {
+        keywords = ['lead', 'pipeline', 'outbound', 'prospecting', 'sales', 'b2b'];
+      } else if (normPath.includes('web-development') || normPath.includes('web-design')) {
+        keywords = ['web', 'react', 'vite', 'performance', 'speed', 'design', 'coding'];
+      } else if (normPath.includes('ppc-advertising') || normPath.includes('advertising')) {
+        keywords = ['ppc', 'advertising', 'ads', 'google ads', 'meta ads', 'paid', 'roas'];
+      }
+
+      if (keywords.length === 0) return 0;
+
+      let score = 0;
+      keywords.forEach(kw => {
+        if (textToSearch.includes(kw)) {
+          score += 1;
+        }
+      });
+      return score;
+    };
+
+    if (currentPath) {
+      list.sort((a, b) => {
+        const scoreA = getRelevanceScore(a, currentPath);
+        const scoreB = getRelevanceScore(b, currentPath);
+        if (scoreA !== scoreB) {
+          return scoreB - scoreA; // descending order of relevance score
+        }
+        
+        // Secondary fallback to category matching
+        if (filterCategory) {
+          const aMatches = a.category === filterCategory;
+          const bMatches = b.category === filterCategory;
+          if (aMatches && !bMatches) return -1;
+          if (!aMatches && bMatches) return 1;
+        }
+        return 0;
+      });
+    } else if (filterCategory) {
+      list.sort((a, b) => {
         const aMatches = a.category === filterCategory;
         const bMatches = b.category === filterCategory;
         if (aMatches && !bMatches) return -1;
@@ -106,11 +155,12 @@ const InsightsSlider: React.FC<InsightsSliderProps> = ({ filterCategory, limit }
         return 0;
       });
     }
+
     if (limit) {
       return list.slice(0, limit);
     }
     return list;
-  }, [insights, filterCategory, limit]);
+  }, [insights, filterCategory, limit, currentPath]);
 
   useEffect(() => {
     const calcMax = () => {
