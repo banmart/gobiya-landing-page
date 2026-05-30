@@ -151,6 +151,10 @@ const metadataMap: Record<string, SEOMetadata> = {
   '/on-page-seo-los-angeles': {
     title: 'On-Page SEO Services in Los Angeles | Gobiya',
     description: 'Topical authority modeling, schema graph injection, and speed-optimized React architectures built to convert Los Angeles organic search traffic into pipeline.'
+  },
+  '/insights/what-is-generative-engine-optimization-and-how-does-it-work': {
+    title: 'What Is Generative Engine Optimization and How Does It Work? | Gobiya',
+    description: 'The definitional guide to GEO: how Retrieval-Augmented Generation (RAG) pipelines cite sources, how it builds on traditional SEO, and what makes content citable.'
   }
 };
 
