@@ -178,29 +178,39 @@ const AxionLanding = () => {
             
             {/* Left Column: Heading and Subtitle */}
             <div className="flex flex-col justify-center text-left">
-              <p className="text-[13px] sm:text-[14px] text-gray-400 tracking-wide mb-5 sm:mb-8 uppercase font-medium">Gobiya AI & SEO Agency</p>
+              <p className="text-[13px] sm:text-[14px] text-gray-400 tracking-wide mb-5 sm:mb-8 uppercase font-medium">Gobiya — AI & SEO Agency</p>
               <h1 className="text-[clamp(2.2rem,5vw,3.8rem)] font-medium leading-[1.1] tracking-[-0.03em] text-white font-display mb-6">
-                We make sure customers find you everywhere from <span className="text-[#F26522] font-semibold">Google</span> to <span className="text-[#F26522] font-semibold">ChatGPT</span>.
+                We make sure customers find you everywhere — from Google to ChatGPT.
               </h1>
               <p className="text-[16px] sm:text-[18px] text-gray-400 max-w-[700px] leading-relaxed mb-8">
                 We engineer AI-driven SEO, topical architectures, and automated B2B sales pipelines to recover lost organic traffic, scale predictable revenue, and secure long-term algorithmic dominance.
               </p>
               
               <div className="flex flex-wrap items-center gap-4 sm:gap-5">
-                <a href="#capabilities" className="group flex items-center bg-[#F26522] hover:bg-[#e05a1a] text-white pl-5 sm:pl-6 pr-2 py-2 transition-colors duration-300">
+                <a href="#hero-form-card" className="group flex items-center bg-[#F26522] hover:bg-[#e05a1a] text-white pl-5 sm:pl-6 pr-2 py-2 transition-colors duration-300">
                   <div className="flex flex-col overflow-hidden h-[20px] justify-start items-start relative mr-3">
-                    <span className="text-[13px] sm:text-[14px] font-medium leading-[20px] transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-translate-y-full">Explore capabilities</span>
-                    <span className="text-[13px] sm:text-[14px] font-medium leading-[20px] absolute top-full transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-translate-y-full">Explore capabilities</span>
+                    <span className="text-[13px] sm:text-[14px] font-medium leading-[20px] transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-translate-y-full">Request a Forensic Audit</span>
+                    <span className="text-[13px] sm:text-[14px] font-medium leading-[20px] absolute top-full transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-translate-y-full">Request a Forensic Audit</span>
                   </div>
                   <div className="w-7 h-7 sm:w-8 sm:h-8 bg-white flex items-center justify-center">
                     <ArrowRight className="w-4 h-4 text-[#F26522] transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-rotate-45" />
+                  </div>
+                </a>
+                
+                <a href="#capabilities" className="group flex items-center border border-white/20 hover:border-white text-white pl-5 sm:pl-6 pr-2 py-2 transition-colors duration-300">
+                  <div className="flex flex-col overflow-hidden h-[20px] justify-start items-start relative mr-3">
+                    <span className="text-[13px] sm:text-[14px] font-medium leading-[20px] transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-translate-y-full">Explore Capabilities</span>
+                    <span className="text-[13px] sm:text-[14px] font-medium leading-[20px] absolute top-full transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-translate-y-full">Explore Capabilities</span>
+                  </div>
+                  <div className="w-7 h-7 sm:w-8 sm:h-8 bg-white/10 flex items-center justify-center">
+                    <ArrowRight className="w-4 h-4 text-white transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-rotate-45" />
                   </div>
                 </a>
               </div>
             </div>
 
             {/* Right Column: Interactive Form Card */}
-            <div className="relative w-full max-w-[480px] lg:max-w-none mx-auto">
+            <div id="hero-form-card" className="relative w-full max-w-[480px] lg:max-w-none mx-auto scroll-mt-28">
               <div className="liquid-glass p-8 rounded-2xl border border-white/10 bg-black/40 backdrop-blur-md shadow-2xl shadow-black/80">
                 {formState !== 'success' ? (
                   <form onSubmit={handleFormSubmit} className="space-y-6">
@@ -299,12 +309,12 @@ const AxionLanding = () => {
       </section>
 
       {/* STATS BAR */}
-      <div className="flex flex-col md:flex-row w-full bg-[#e05a1a] border-y border-white/10 z-20 relative">
+      <div className="flex flex-col md:flex-row w-full bg-[#e05a1a] border-y border-white/10 z-20 relative font-body">
         {[
-          { value: '58%', label: 'Zero-Click searches', text: 'intercepted by AI Overviews & featured snippets.' },
-          { value: '+2,012%', label: 'AI referral growth', text: 'for our optimized category-defining entity nodes.' },
-          { value: '3-6m', label: 'Average recovery timeline', text: 'for search updates during broad evaluation cycles.' },
-          { value: '100', label: 'Core Web Vitals', text: 'score guaranteed on our custom React applications.' }
+          { value: '58%', label: 'of searches are now zero-click', text: "intercepted by AI Overviews & featured snippets. We make sure you're the one being cited." },
+          { value: '+2,012%', label: 'AI referral growth', text: 'for our optimized, category-defining entity nodes.' },
+          { value: '3–6 months', label: 'average recovery timeline', text: "through Google's broad evaluation cycles." },
+          { value: '100', label: 'Core Web Vitals score', text: 'guaranteed on our custom React builds.' }
         ].map((stat, idx) => (
           <div key={idx} className={`flex-1 p-8 lg:p-10 ${idx % 2 === 0 ? 'bg-[#F26522]' : 'bg-[#e05a1a]'} text-white`}>
             <div className="text-[clamp(2.2rem,3.5vw,3rem)] font-bold tracking-tighter leading-none mb-2 font-display">
@@ -368,19 +378,19 @@ const AxionLanding = () => {
                 {[
                   {
                     title: '01 / Diagnostic Audit',
-                    content: 'We audit your domain against search core update rollouts, tracking keyword and click decay metrics to isolate the exact quality, intent, or technical vector that triggered demotion.'
+                    content: 'We audit your domain against core update rollouts, tracking keyword and click-decay metrics to isolate the exact quality, intent, or technical vector that triggered demotion.'
                   },
                   {
                     title: '02 / Entity Mapping',
-                    content: 'We model your market as an interconnected semantic graph and map each service to its corresponding entity node, resolving keyword cannibalization at the codebase and URL layer.'
+                    content: 'We model your market as a semantic graph and map each service to its entity node, resolving keyword cannibalization at the codebase and URL layer.'
                   },
                   {
                     title: '03 / Trust Restoration',
-                    content: 'We build real-world E-E-A-T signals through expert author schemas, credentials, and digital PR campaigns, returning trust back to your root domain.'
+                    content: 'We build real-world E-E-A-T signals through expert author schemas, credentials, and digital PR — returning trust to your root domain.'
                   },
                   {
                     title: '04 / Generative SEO (GEO)',
-                    content: 'We restructure content into direct Q&A blocks and structured tables so that generative search engines (ChatGPT, Gemini, Claude, AIOs) easily parse and cite your brand.'
+                    content: 'We restructure content into Q&A blocks and structured tables so generative engines (ChatGPT, Gemini, Claude, AIOs) easily parse and cite your brand.'
                   }
                 ].map((step, idx) => {
                   const isOpen = activeStep === idx;
@@ -426,15 +436,14 @@ const AxionLanding = () => {
             Start dominating with data.
           </h2>
 
-          {/* Responsive Content Area */}
           <div className="block lg:hidden font-body">
             <p className="text-[15px] sm:text-[17px] leading-[1.6] font-medium text-gray-900 mb-6">
-              Our proprietary methodology combines machine learning insights with elite technical SEO, ensuring your brand captures the most valuable search real estate available.
+              Our proprietary methodology combines machine-learning insight with elite technical SEO, ensuring your brand captures the most valuable search real estate available — across Google and AI.
             </p>
-            <a href="/contact" className="group flex items-center bg-[#F26522] hover:bg-[#e05a1a] text-white pl-5 pr-2 py-2 transition-colors duration-300 mb-8 inline-flex">
+            <a href="/company/about" className="group flex items-center bg-[#F26522] hover:bg-[#e05a1a] text-white pl-5 pr-2 py-2 transition-colors duration-300 mb-8 inline-flex">
               <div className="flex flex-col overflow-hidden h-[20px] justify-start items-start relative mr-3">
-                <span className="text-[13px] font-medium leading-[20px] transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-translate-y-full">About our agency</span>
-                <span className="text-[13px] font-medium leading-[20px] absolute top-full transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-translate-y-full">About our agency</span>
+                <span className="text-[13px] font-medium leading-[20px] transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-translate-y-full">About Our Agency</span>
+                <span className="text-[13px] font-medium leading-[20px] absolute top-full transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-translate-y-full">About Our Agency</span>
               </div>
               <div className="w-7 h-7 bg-white flex items-center justify-center">
                 <ArrowRight className="w-4 h-4 text-[#F26522] transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-rotate-45" />
@@ -461,7 +470,7 @@ const AxionLanding = () => {
               />
             </div>
           </div>
-
+ 
           <div className="hidden lg:grid grid-cols-[26%_1fr_48%] items-end gap-6 xl:gap-8 font-body">
             <div className="self-end">
               <ParallaxMedia 
@@ -476,12 +485,12 @@ const AxionLanding = () => {
             </div>
             <div className="self-start flex flex-col items-start justify-start pt-2">
               <p className="text-[16px] xl:text-[18px] leading-[1.65] font-medium text-gray-900 mb-8">
-                Our proprietary methodology combines machine learning insights with elite technical SEO for maximum ROI.
+                Our proprietary methodology combines machine-learning insight with elite technical SEO, ensuring your brand captures the most valuable search real estate available — across Google and AI.
               </p>
-              <a href="/contact" className="group flex items-center bg-[#F26522] hover:bg-[#e05a1a] text-white pl-6 pr-2 py-2 transition-colors duration-300">
+              <a href="/company/about" className="group flex items-center bg-[#F26522] hover:bg-[#e05a1a] text-white pl-6 pr-2 py-2 transition-colors duration-300">
                 <div className="flex flex-col overflow-hidden h-[20px] justify-start items-start relative mr-3">
-                  <span className="text-[14px] font-medium leading-[20px] transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-translate-y-full">About our agency</span>
-                  <span className="text-[14px] font-medium leading-[20px] absolute top-full transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-translate-y-full">About our agency</span>
+                  <span className="text-[14px] font-medium leading-[20px] transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-translate-y-full">About Our Agency</span>
+                  <span className="text-[14px] font-medium leading-[20px] absolute top-full transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-translate-y-full">About Our Agency</span>
                 </div>
                 <div className="w-8 h-8 bg-white flex items-center justify-center">
                   <ArrowRight className="w-4 h-4 text-[#F26522] transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-rotate-45" />
