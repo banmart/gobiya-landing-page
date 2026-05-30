@@ -282,67 +282,67 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
       switch (norm) {
         case '/services/seo':
           return {
-            title: 'Search Engine Optimization (SEO) & Algorithmic Dominance | Gobiya',
+            title: 'Organic Traffic Recovery & Search Dominance | Gobiya',
             description: 'Reclaim your search engine positions. We deliver entity-level SEO, topical authority architectures, and advanced technical search audits built for search dominance.'
           };
         case '/services/lead-generation':
           return {
-            title: 'Predictable B2B Sales Pipeline & Lead Generation Systems | Gobiya',
+            title: 'Predictable B2B Sales Pipelines & Lead Generation | Gobiya',
             description: 'Scale your contract value and outbound pipeline. We design and launch automated cold outreach and sales acquisition protocols for mid-market and enterprise brands.'
           };
         case '/services/geo-optimization':
           return {
-            title: 'Generative Engine Optimization (GEO) & AI Search Visibility | Gobiya',
+            title: 'Generative Engine Optimization (GEO) & AI Visibility | Gobiya',
             description: 'Position your brand to be cited and recommended natively by modern AI models including ChatGPT, Claude, Gemini, and Google AI Overviews.'
           };
-        case '/services/web-design':
+        case '/services/web-development':
           return {
-            title: 'High-Performance Custom Web Design & React Engineering | Gobiya',
+            title: 'Conversion-Engineered React & Web Development | Gobiya',
             description: 'Speed-optimized, custom-engineered React platforms built to convert. We replace slow templates with lightning-fast landing pages and applications.'
           };
-        case '/services/advertising':
+        case '/services/ppc-advertising':
           return {
-            title: 'High-Yield Paid Search (PPC) & Paid Social Ad Pipelines | Gobiya',
+            title: 'High-Yield Paid Search (PPC) & Ad Pipelines | Gobiya',
             description: 'Maximize your return on ad spend (ROAS) and lower acquisition costs. Data-driven Google, Microsoft, and Meta Ads management tailored for revenue scaling.'
           };
         case '/google-penalty-recovery':
           return {
-            title: 'Forensic Update & Google Penalty Recovery Protocol | Gobiya',
+            title: 'Google Penalty Recovery & Core Update Recovery | Gobiya',
             description: 'Recover lost search traffic. We diagnose and reverse manual action penalties and organic traffic declines caused by Google helpful content & core updates.'
           };
         case '/company/about':
           return {
-            title: 'About Gobiya | AI-Driven SEO & B2B Pipeline Engineering Agency',
+            title: 'About Gobiya | Search Recovery & Pipeline Agency',
             description: 'Learn about our approach to algorithmic dominance, generative search, and revenue-scaling pipelines.'
           };
         case '/company/success-stories':
           return {
-            title: 'Client Success Stories & SEO Case Studies | Gobiya',
+            title: 'Search Recovery & Sales Pipeline Case Studies | Gobiya',
             description: 'Explore how we recover organic traffic, build predictive B2B pipelines, and secure market dominance.'
           };
         case '/company/approach':
           return {
-            title: 'Our Approach to Search Dominance & B2B Growth | Gobiya',
+            title: 'Our Search Dominance & Pipeline Methodology | Gobiya',
             description: 'Discover our proprietary methodology for algorithmic audits, penalty recovery, and B2B pipeline acceleration.'
           };
         case '/insights':
           return {
-            title: 'Industry Insights, SEO Trends & Search Intelligence | Gobiya',
+            title: 'SEO Updates, B2B Outbound & Search Intelligence | Gobiya',
             description: 'Deep dives into Google algorithm updates, generative search (GEO), and B2B marketing strategies.'
           };
         case '/company/careers':
           return {
-            title: 'Careers at Gobiya | Join Our Elite SEO & Engineering Team',
+            title: 'Join Our Technical SEO & Software Dev Team | Gobiya',
             description: 'We are hiring top-tier SEO specialists, React engineers, and growth strategists to dominate the search landscape.'
           };
         case '/contact':
           return {
-            title: 'Contact Gobiya | Let\'s Scale Your Search Revenue',
+            title: 'Contact Gobiya | Reclaim & Scale Your Search Revenue',
             description: 'Reach out to our engineering team in Los Angeles to discuss algorithmic audits, AI traffic recovery, and pipeline architecture.'
           };
         default:
           return {
-            title: 'Gobiya | AI SEO, Traffic Recovery & Algorithmic Search Dominance',
+            title: 'SEO Traffic Recovery & B2B Pipeline Engineering | Gobiya',
             description: 'We engineer AI-driven SEO and sales pipelines to recover lost organic traffic, scale predictable revenue, and secure long-term algorithmic dominance for high-stakes brands.'
           };
       }

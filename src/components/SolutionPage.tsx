@@ -450,12 +450,12 @@ const SolutionPage: React.FC<{ path: string }> = ({ path }) => {
     window.scrollTo({ top: 0, behavior: 'instant' });
 
     const baseTitles: Record<string, string> = {
-      '/services/seo': 'Technical & Forensic SEO Services in Los Angeles | Gobiya',
-      '/services/geo-optimization': 'Generative Engine Optimization (GEO) Services | Gobiya',
-      '/google-penalty-recovery': 'Google Penalty Recovery & Traffic Restoration Services | Gobiya',
-      '/services/lead-generation': 'B2B Pipeline Architecture & Lead Generation Services | Gobiya',
-      '/services/web-development': 'Custom React & Vite Web Development for Performance Brands | Gobiya',
-      '/services/ppc-advertising': 'ROAS-Driven PPC & Paid Media Management | Gobiya',
+      '/services/seo': 'Organic Traffic Recovery & Search Dominance | Gobiya',
+      '/services/geo-optimization': 'Generative Engine Optimization (GEO) & AI Visibility | Gobiya',
+      '/google-penalty-recovery': 'Google Penalty Recovery & Core Update Recovery | Gobiya',
+      '/services/lead-generation': 'Predictable B2B Sales Pipelines & Lead Generation | Gobiya',
+      '/services/web-development': 'Conversion-Engineered React & Web Development | Gobiya',
+      '/services/ppc-advertising': 'High-Yield Paid Search (PPC) & Ad Pipelines | Gobiya',
       '/on-page-seo-los-angeles': 'On-Page SEO Services in Los Angeles | Gobiya',
     };
     if (baseTitles[path]) {
