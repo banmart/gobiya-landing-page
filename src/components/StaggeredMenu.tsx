@@ -16,7 +16,17 @@ const DEFAULT_MENU_ITEMS = [
   { label: 'Success Stories', link: '/company/success-stories' },
   { label: 'Our Approach', link: '/company/approach' },
   { label: 'Industry Insights', link: '/insights' },
-  { label: 'Careers', link: '/company/careers' }
+  { label: 'Careers', link: '/company/careers' },
+  { label: 'Locations', isHeader: true },
+  { label: 'All Locations', link: '/locations' },
+  { label: 'Glendale', link: '/locations/glendale-seo' },
+  { label: 'Burbank', link: '/locations/burbank-seo' },
+  { label: 'Pasadena', link: '/locations/pasadena-seo' },
+  { label: 'Long Beach', link: '/locations/long-beach-seo' },
+  { label: 'Anaheim', link: '/locations/anaheim-seo' },
+  { label: 'Costa Mesa', link: '/locations/costa-mesa-seo' },
+  { label: 'Irvine', link: '/locations/irvine-seo' },
+  { label: 'Santa Ana', link: '/locations/santa-ana-seo' },
 ];
 
 const DEFAULT_SOCIAL_ITEMS = [
