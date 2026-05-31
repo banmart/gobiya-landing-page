@@ -23,6 +23,268 @@ interface ArticleData {
 // Each article is statically registered here so we can do fast client-side
 // routing without a DB round-trip. Add new articles to this map.
 const ARTICLES: Record<string, ArticleData> = {
+  'how-do-b2b-companies-use-seo-to-generate-predictable-revenue': {
+    slug: 'how-do-b2b-companies-use-seo-to-generate-predictable-revenue',
+    title: 'How B2B Companies Use SEO to Generate Predictable Revenue',
+    category: 'Strategy',
+    readTime: '10 min read',
+    date: 'May 31, 2026',
+    image: '/images/article-how-do-b2b-companies-use-seo-to-generate-predictable-revenue.webp',
+    heroAlt: 'Lifelike, sleek, high-tech B2B revenue and SEO dashboard in a dark room setting with glowing vibrant orange highlights showing upward organic search traffic and sales pipeline growth',
+    metaDescription: 'Why most B2B SEO programs fail to connect to pipeline, how to map content to the buying committee, target decision-stage clusters, and set up attribution.',
+    content: (
+      <>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8 font-medium">
+          How do B2B companies use SEO to generate predictable revenue? Most share the same frustrating pattern: organic traffic climbs steadily month over month, but the pipeline report stays flat. Leadership celebrates the rankings; sales asks where the leads are. The disconnect is not a content problem or a keyword problem. It is a structural one. The program was built to generate visibility, not revenue.
+        </p>
+
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          For B2B companies that want predictable, attributable revenue, organic search is more than a traffic channel, it is a <a href="/services/lead-generation" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">B2B pipeline architecture</a> problem. That distinction changes everything: which keywords you target, how you build content, what you measure, and how you connect search activity to closed deals inside your CRM. Gobiya approaches B2B organic search exactly this way, combining forensic keyword targeting with automated sales infrastructure to close the gap between impressions and closed revenue.
+        </p>
+
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          What follows is a repeatable framework covering the five structural decisions that separate B2B SEO strategies that produce qualified pipeline from the ones that produce quarterly traffic reports nobody acts on.
+        </p>
+
+        {/* ── TABLE OF CONTENTS ── */}
+        <details className="bg-gray-50 border border-gray-200 rounded-lg p-6 sm:p-8 my-10 sm:my-14 group" open>
+          <summary className="text-[14px] font-semibold uppercase tracking-wider text-gray-500 cursor-pointer list-none flex items-center justify-between">
+            Table of Contents
+            <svg className="w-4 h-4 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" /></svg>
+          </summary>
+          <ul className="mt-6 space-y-3.5 text-[15px] font-medium text-gray-900 border-t border-gray-200 pt-6">
+            {[
+              { id: 'why-fails', label: 'Why B2B SEO so rarely connects to pipeline' },
+              { id: 'buying-committee', label: 'How B2B companies use SEO to generate predictable revenue: map content to the full buying committee' },
+              { id: 'keyword-clusters', label: 'Build high-intent keyword clusters that capture decision-stage buyers' },
+              { id: 'attribution-infra', label: 'Set up attribution infrastructure before publishing' },
+              { id: 'timeline-expectations', label: 'What your first 90 to 365 days should actually look like' },
+              { id: 'pipeline-automation', label: 'Pair SEO with pipeline automation to compound lead flow' },
+              { id: 'five-decisions', label: 'The five decisions that separate traffic from revenue' },
+              { id: 'faqs', label: 'Frequently Asked Questions (FAQ)' }
+            ].map(({ id, label }) => (
+              <li key={id} className="flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#F26522] shrink-0" />
+                <a href={'#' + id} className="hover:text-[#F26522] transition-colors">{label}</a>
+              </li>
+            ))}
+          </ul>
+        </details>
+
+        {/* ── SECTION 1 ── */}
+        <h2 id="why-fails" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          Why B2B SEO so rarely connects to pipeline
+        </h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          Before you can fix the structure, you need to understand why it breaks. The most common failure mode is targeting the wrong intent at the wrong stage. Most B2B SEO programs are built around high-volume informational keywords because the search volume is attractive and the content is easy to produce. The result is a steady stream of researchers who read, learn, and leave. Organic sessions rise; demo requests stay flat. This decoupling of search metrics from business outcomes is analyzed in detail in our guide to <a href="/insights/b2b-organic-traffic-growth" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">B2B organic traffic growth</a>.
+        </p>
+
+        <h3 className="text-[18px] sm:text-[20px] font-medium text-gray-900 mt-8 mb-4">The gap between organic sessions and qualified leads</h3>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          The buyer who searches "what is data privacy compliance" is not the same buyer who searches "data privacy compliance software for SaaS companies." The first query represents a problem-aware researcher; the second represents an active evaluator. B2B SEO programs that optimize for the first category at the expense of the second are building an audience, not a pipeline. Furthermore, in the era of AI search, brands must optimize for how AI models retrieve citations, which is where <a href="/services/geo-optimization" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">Generative Engine Optimization</a> (GEO) plays a critical role.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          The most credible documented cases of SEO-driven revenue, including Panto AI's 3.5x organic MQL growth and emma's 40% of inbound demo requests from organic content, succeeded because they optimized for conversions and qualified leads, not raw sessions. This is <a href="/insights/seo-for-b2b-lead-generation" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">demand generation SEO</a> in practice: intent-led, outcome-measured, and structurally different from traffic-first programs.
+        </p>
+
+        <h3 className="text-[18px] sm:text-[20px] font-medium text-gray-900 mt-8 mb-4">The multi-stakeholder problem generic SEO ignores</h3>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          According to Gartner, B2B purchases involve an average of six or more stakeholders across procurement, operations, finance, and the end user. A single landing page targeting a single search query does not serve a buying committee. It serves one person, once.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          Generic SEO misses the economic buyer, the operational evaluator, and the procurement gatekeeper entirely. Effective B2B SEO must address decision-influencer intent and economic-buyer intent simultaneously, which requires a different content architecture than what most programs use.
+        </p>
+
+        {/* ── SECTION 2 ── */}
+        <h2 id="buying-committee" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          How B2B companies use SEO to generate predictable revenue: map content to the full buying committee
+        </h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          The most reliable way to close the sessions-to-pipeline gap is to build content that serves the actual buying journey, not just the search engine. That means mapping content types to the specific intent layers that move a buying committee from problem awareness to vendor selection, what practitioners now call a content-led pipeline approach.
+        </p>
+
+        <h3 className="text-[18px] sm:text-[20px] font-medium text-gray-900 mt-8 mb-4">The three intent layers that matter in B2B</h3>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          Buyer-education intent covers awareness and problem framing: stakeholders who are diagnosing a challenge but have not yet defined a solution category. Use-case intent covers operational fit and stakeholder alignment: evaluators who understand the category and are asking whether your solution works in their context. Comparison and decision intent covers vendor shortlisting: buyers who have defined the problem, explored the category, and are now choosing between options.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          Most B2B content programs over-invest in buyer education and under-invest in use-case and comparison content, the formats closest to pipeline creation. According to a Demand Gen Report study, 78% of B2B buyers request white papers during the evaluation stage, making structured educational assets a strong alignment tool for multi-stakeholder groups.
+        </p>
+
+        <h3 className="text-[18px] sm:text-[20px] font-medium text-gray-900 mt-8 mb-4">Content types that produce the highest pipeline value</h3>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          White papers and thought leadership serve problem-aware stakeholders who are building internal consensus. Use-case pages and ROI calculators serve mid-funnel evaluators who need to see operational fit. Comparison and alternative pages serve decision-stage buyers who are shortlisting vendors.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          Emma generated 40% of inbound demo requests from comparison and funnel-aligned content within nine months. Panto AI achieved 3.5x organic MQLs through topic clusters mapped deliberately to intent stages, demonstrating the value of <a href="/insights/automated-lead-generation-seo" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">automated lead generation SEO</a>. The lesson is consistent: content architecture must serve the buying journey. Content that only serves the search engine generates sessions that never become opportunities.
+        </p>
+
+        {/* ── SECTION 3 ── */}
+        <h2 id="keyword-clusters" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          Build high-intent keyword clusters that capture decision-stage buyers
+        </h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          Once you have the content architecture mapped to intent layers, keyword selection becomes precise. You are not looking for the highest search volume. You are looking for the highest pipeline signal, which lives in a specific set of keyword categories that most programs underweight. This is the foundation of organic pipeline generation: traffic that is pre-qualified by intent before it ever lands on your site.
+        </p>
+
+        <h3 className="text-[18px] sm:text-[20px] font-medium text-gray-900 mt-8 mb-4">Keyword categories that accelerate B2B pipeline</h3>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          Four keyword categories carry the strongest pipeline signal for B2B:
+        </p>
+        <ul className="space-y-3 mb-6 pl-0">
+          {[
+            'Comparison keywords such as "best [software category]" capture buyers who have defined the problem and are evaluating solutions.',
+            'Alternative keywords such as "[competitor] alternatives" capture buyers who have already tried a competing solution and are actively looking to switch.',
+            'Integration keywords such as "[software] integration with [platform]" capture buyers evaluating technical fit.',
+            'Use-case keywords such as "[outcome] software for [industry]" capture buyers who have mapped the solution to a specific business context.'
+          ].map((item, idx) => (
+            <li key={idx} className="flex items-start gap-3 text-[16px] sm:text-[17px] leading-[1.6] text-gray-800">
+              <span className="mt-1.5 w-2 h-2 rounded-full bg-[#F26522] shrink-0" />
+              {item}
+            </li>
+          ))}
+        </ul>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          BlueTally built this approach systematically: high-intent blog content and industry landing pages drove organic traffic from 52 to 7,663 monthly visitors, with 80 pages reaching top-3 positions. The traffic behind those results was not volume traffic. It was intent-qualified traffic.
+        </p>
+
+        <h3 className="text-[18px] sm:text-[20px] font-medium text-gray-900 mt-8 mb-4">How to build a keyword cluster around buying stages</h3>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          The cluster model pairs one commercial-intent pillar page with use-case and integration satellite pages linked to it. For a technical breakdown of this architecture, see our guide on <a href="/insights/automated-b2b-sales-pipeline-seo" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">automated B2B sales pipeline SEO</a>. The pillar page, typically a comparison or category page, captures decision-stage buyers directly. The satellite pages capture mid-funnel researchers and route them toward the commercial page through deliberate internal linking. <strong>The cluster must be built for conversion, not just rankings.</strong> CTAs on documentation pages, gated ROI frameworks, and clear paths to demo requests are what turn ranked pages into qualified pipeline. A cluster that ranks and converts nothing is infrastructure with no return.
+        </p>
+
+        {/* ── SECTION 4 ── */}
+        <h2 id="attribution-infra" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          Set up attribution infrastructure before publishing
+        </h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          Many B2B teams skip attribution setup, publish content, and then cannot prove SEO's contribution to pipeline six months later when someone asks. Attribution is not a reporting task you complete after the fact. It is infrastructure you build before the first page goes live, and it is the mechanism that makes SEO-to-revenue attribution legible to leadership.
+        </p>
+
+        <h3 className="text-[18px] sm:text-[20px] font-medium text-gray-900 mt-8 mb-4">Which attribution model fits long B2B sales cycles</h3>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          Last-click attribution systematically undercounts SEO's contribution in long-cycle B2B because organic search is almost always the discovery channel, not the conversion channel. U-shaped attribution credits first touch and lead conversion most heavily, a reasonable starting point when SEO initiates the buyer journey. For practical guidance on implementing multi-touch approaches, see HubSpot's overview of <a href="https://www.hubspot.com/startups/tech-stacks/sales-csx/multi-touch-attribution" target="_blank" rel="noopener noreferrer" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">multi-touch attribution</a> for B2B teams.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          W-shaped attribution credits first touch, lead creation, and opportunity creation, making it more representative when SEO assists multiple handoffs across a multi-month sales cycle. Once you have enough clean event history in your CRM, <strong>data-driven or algorithmic attribution becomes the most accurate option</strong> because it distributes credit based on observed behavior rather than fixed percentage rules. For a deeper look at implementing marketing attribution that distributes credit across touchpoints, read this primer on <a href="https://improvado.io/blog/b2b-marketing-attribution" target="_blank" rel="noopener noreferrer" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">b2b marketing attribution</a>.
+        </p>
+
+        <h3 className="text-[18px] sm:text-[20px] font-medium text-gray-900 mt-8 mb-4">The tracking stack that connects search to closed revenue</h3>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          GA4 provides solid web behavior data but has limited native visibility into closed revenue. CRM integration is non-negotiable: the CRM is where leads become opportunities and opportunities become revenue. Server-side tracking improves data quality when ad blockers or browser restrictions degrade cookie-based attribution. For B2B specifically, <strong>account-level tracking matters more than session-level tracking.</strong> One organic session rarely represents the full buying committee, so platforms that connect multiple contacts from the same account to a single opportunity produce significantly more accurate attribution than session-only web analytics. If you're evaluating attribution approaches for SaaS, this discussion of <a href="https://mouseflow.com/blog/b2b-saas-revenue-attribution-models/" target="_blank" rel="noopener noreferrer" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">B2B SaaS revenue attribution models</a> is a useful reference.
+        </p>
+
+        <h3 className="text-[18px] sm:text-[20px] font-medium text-gray-900 mt-8 mb-4">The revenue-linked KPIs to track from day one</h3>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          The metrics that signal SEO is producing predictable organic growth are specific: organic MQLs, organic demo requests and demo conversion rate, pipeline contribution from organic-sourced or organic-influenced opportunities, CAC reduction from organic substitution, and organic-influenced ARR. Keyword positions and organic sessions are leading indicators, not outcomes. They should move before MQLs and pipeline do, which makes them useful for diagnosing program health early, not for reporting revenue contribution to leadership. Use published <a href="https://firstpagesage.com/seo-blog/b2b-landing-page-conversion-rates/" target="_blank" rel="noopener noreferrer" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">B2B landing page conversion rate benchmarks</a> to set realistic conversion expectations for your commercial pages.
+        </p>
+
+        {/* ── SECTION 5 ── */}
+        <h2 id="timeline-expectations" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          What your first 90 to 365 days should actually look like
+        </h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          Unrealistic expectations destroy B2B SEO programs faster than poor execution. Teams abandon the program at month four because revenue has not appeared, without understanding that month four is infrastructure, not harvest. Setting accurate stage-by-stage expectations prevents this failure.
+        </p>
+
+        <h3 className="text-[18px] sm:text-[20px] font-medium text-gray-900 mt-8 mb-4">90-day foundation: what to build, not what to expect</h3>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          The first 90 days are infrastructure work. The four priorities are: technical cleanup (crawlability, Core Web Vitals, and indexation); revenue-critical page optimization; buying-stage content mapping; and initial cluster publication. Do not expect MQLs yet. The milestones that matter in this window are pages indexed within 72 hours, technical issues resolved, priority pages within two clicks of the homepage, and early ranking movement on target keywords. The foundation built here determines whether pipeline lift appears at month six or month twelve.
+        </p>
+
+        <h3 className="text-[18px] sm:text-[20px] font-medium text-gray-900 mt-8 mb-4">180-day qualified lead lift and 365-day pipeline contribution</h3>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          At 180 days, the leading indicator shifts to conversion behavior: growing organic conversions, first consistent MQLs from search, and improving demo or contact-form conversion rates from commercial-intent pages. At 365 days, organic should be contributing to pipeline in a measurable, attributable way.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          Decentriq recorded a 34% increase in demo conversions alongside 106% organic traffic growth. <strong>These results followed the same structure: intent-mapped content, technical foundations, and pipeline-linked measurement.</strong> Track business outcomes, not rankings. MQLs and pipeline move after impressions and click-through rates do, not before.
+        </p>
+
+        {/* ── SECTION 6 ── */}
+        <h2 id="pipeline-automation" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          Pair SEO with pipeline automation to compound lead flow
+        </h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          Organic search is a precision instrument, but pairing it with <a href="/insights/b2b-sales-pipeline-automation" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">B2B sales pipeline automation</a> compounds its impact by capturing ICP accounts that match your buyer profile before they actively search. The two channels compound each other directly.
+        </p>
+
+        <h3 className="text-[18px] sm:text-[20px] font-medium text-gray-900 mt-8 mb-4">Why organic search alone leaves pipeline on the table</h3>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          Automated outbound pipeline architecture targets high-fit accounts through <a href="/insights/outbound-seo-prospecting" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">outbound SEO prospecting</a> — using intent signals to trigger personalized outreach while organic content builds trust. When prospects have already encountered your brand through organic content, outbound sequences tend to see stronger engagement, because familiarity shortens the trust gap. Outbound sequences also surface intent signals that feed back into content priorities. Neither channel is as efficient alone as it is when both are running from the same playbook.
+        </p>
+
+        <h3 className="text-[18px] sm:text-[20px] font-medium text-gray-900 mt-8 mb-4">How Gobiya builds SEO and pipeline architecture together</h3>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          Gobiya treats organic search as a revenue asset, not a reporting service. On the SEO side, our <a href="/services/seo" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">B2B SEO services</a> focus on forensic keyword targeting, conversion-focused content architecture, and CRM-integrated attribution. On the sales side, it includes automated outbound prospecting and pipeline infrastructure built for scale. Search traffic does not produce ranked pages in isolation, it feeds a predictable, measurable B2B revenue engine. For B2B companies that need lead flow without depending entirely on paid advertising or manual outreach, this integrated model is the architecture behind sustainable organic pipeline growth.
+        </p>
+
+        {/* ── SECTION 7 ── */}
+        <h2 id="five-decisions" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          The five decisions that separate traffic from revenue
+        </h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          The B2B companies that generate predictable revenue from organic search are not the ones with the most content or the highest domain authority. They are the ones that treat SEO as an engineered system aligned to their pipeline architecture, not a visibility program that runs parallel to sales.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          The framework is five decisions made in sequence: diagnose the traffic-to-pipeline gap before building anything; map content to multi-stakeholder buying intent across all three intent layers; target decision-stage keyword clusters that carry pipeline signal; build attribution infrastructure before the first page publishes; and execute a 90-to-365-day roadmap benchmarked against revenue-linked KPIs. These five decisions are structural priorities, every other element of B2B SEO strategy is contextual around them.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          Understanding how B2B companies use SEO to generate predictable revenue ultimately comes down to treating organic search as pipeline architecture from day one. If you want to implement this framework with a team that has built it across multiple B2B verticals, partnering with a specialized <a href="/insights/b2b-seo-agency" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">B2B SEO agency</a> like Gobiya ensures both sides of the system are engineered correctly: the organic pipeline engine and the outbound infrastructure that compounds it. The starting point is a forensic audit of where your current program breaks down and what the clearest path to pipeline looks like from there.
+        </p>
+
+        {/* ── INLINE CTA ── */}
+        <div className="bg-gray-900 text-white p-6 sm:p-8 my-10 sm:my-14 flex flex-col sm:flex-row items-start sm:items-center gap-6">
+          <div className="flex-1">
+            <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-2">Gobiya Service</p>
+            <p className="text-[17px] sm:text-[19px] font-medium leading-snug">
+              Establish a predictable organic revenue engine. Work with our B2B growth engineers.
+            </p>
+          </div>
+          <a
+            href="/services/lead-generation"
+            className="group flex items-center bg-[#F26522] hover:bg-[#e05a1a] text-white pl-5 pr-2 py-2 transition-colors duration-300 whitespace-nowrap shrink-0"
+          >
+            <span className="text-[13px] font-medium mr-3">Explore B2B Pipeline Services</span>
+            <div className="w-6 h-6 bg-white flex items-center justify-center">
+              <ArrowRight className="w-3.5 h-3.5 text-[#F26522] transition-transform duration-300 group-hover:-rotate-45" />
+            </div>
+          </a>
+        </div>
+
+        {/* ── FAQ SECTION ── */}
+        <h2 id="faqs" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          Frequently Asked Questions (FAQ)
+        </h2>
+        <div className="space-y-6 mb-12">
+          <div className="border-b border-gray-200 pb-4">
+            <h3 className="text-[18px] font-semibold text-gray-900 mb-2 font-sans">
+              Why does B2B SEO often fail to connect to revenue?
+            </h3>
+            <p className="text-[16px] text-gray-700 leading-[1.6]">
+              B2B SEO often fails because it optimizes for high-volume informational keywords at the expense of high-intent, decision-stage keywords. This results in researchers visiting the site and leaving, rather than active evaluators converting into MQLs.
+            </p>
+          </div>
+          <div className="border-b border-gray-200 pb-4">
+            <h3 className="text-[18px] font-semibold text-gray-900 mb-2 font-sans">
+              How does a topic cluster map to B2B buying stages?
+            </h3>
+            <p className="text-[16px] text-gray-700 leading-[1.6]">
+              A topic cluster pairs a commercial-intent pillar page (capturing decision-stage buyers) with satellite use-case or integration pages. Mid-funnel searchers are captured by the satellite pages and routed to the pillar page through deliberate internal linking.
+            </p>
+          </div>
+          <div className="border-b border-gray-200 pb-4">
+            <h3 className="text-[18px] font-semibold text-gray-900 mb-2 font-sans">
+              Which attribution model is best for long B2B sales cycles?
+            </h3>
+            <p className="text-[16px] text-gray-700 leading-[1.6]">
+              U-shaped attribution is ideal for initiating discovery, while W-shaped is better for multi-month sales cycles as it credits first touch, lead creation, and opportunity creation. Algorithmic or data-driven attribution is the most accurate once sufficient clean event history exists in the CRM.
+            </p>
+          </div>
+        </div>
+      </>
+    ),
+  },
+
   'chatgpt-vs-google-for-business-discovery': {
     slug: 'chatgpt-vs-google-for-business-discovery',
     title: 'ChatGPT vs Google for Business Discovery: What You Must Know',
@@ -5103,6 +5365,27 @@ const ARTICLES: Record<string, ArticleData> = {
 
 // ─── Related Articles per slug ────────────────────────────────────────────────
 const RELATED_ARTICLES_MAP: Record<string, { href: string; category: string; title: string; image: string }[]> = {
+  'how-do-b2b-companies-use-seo-to-generate-predictable-revenue': [
+    {
+      href: '/insights/automated-b2b-sales-pipeline-seo',
+      category: 'Strategy',
+      title: 'Automated B2B Sales Pipeline SEO: How AI Citations Shape Your Shortlist in 2026',
+      image: '/images/article-b2b-pipeline-seo.webp',
+    },
+    {
+      href: '/insights/b2b-organic-traffic-growth',
+      category: 'Strategy',
+      title: 'B2B Organic Traffic Growth: Why Traffic and Pipeline Decoupled in 2026',
+      image: '/images/article-b2b-organic-traffic-growth.webp',
+    },
+    {
+      href: '/insights/seo-for-b2b-lead-generation',
+      category: 'Strategy',
+      title: 'SEO for B2B Lead Generation: How Committee-Architecture Content Outperforms Single-Persona Funnels',
+      image: '/images/article-seo-b2b-lead-generation.webp',
+    },
+  ],
+
   'automated-b2b-sales-pipeline-seo': [
     {
       href: '/insights/automated-lead-generation-seo',
@@ -5583,8 +5866,8 @@ const ArticlePage: React.FC<ArticlePageProps> = ({ slug }) => {
           "headline": article.title,
           "description": article.metaDescription,
           "image": `https://www.gobiya.com${article.image}`,
-          "datePublished": (slug === 'what-is-generative-engine-optimization-and-how-does-it-work') ? "2026-05-30" : (slug === 'what-is-the-difference-between-a-manual-action-and-an-algorithmic-penalty' || slug === 'chatgpt-vs-google-for-business-discovery') ? "2026-05-29" : "2026-05-25",
-          "dateModified": (slug === 'what-is-generative-engine-optimization-and-how-does-it-work') ? "2026-05-30" : (slug === 'what-is-the-difference-between-a-manual-action-and-an-algorithmic-penalty' || slug === 'chatgpt-vs-google-for-business-discovery') ? "2026-05-29" : "2026-05-25",
+          "datePublished": (slug === 'how-do-b2b-companies-use-seo-to-generate-predictable-revenue') ? "2026-05-31" : (slug === 'what-is-generative-engine-optimization-and-how-does-it-work') ? "2026-05-30" : (slug === 'what-is-the-difference-between-a-manual-action-and-an-algorithmic-penalty' || slug === 'chatgpt-vs-google-for-business-discovery') ? "2026-05-29" : "2026-05-25",
+          "dateModified": (slug === 'how-do-b2b-companies-use-seo-to-generate-predictable-revenue') ? "2026-05-31" : (slug === 'what-is-generative-engine-optimization-and-how-does-it-work') ? "2026-05-30" : (slug === 'what-is-the-difference-between-a-manual-action-and-an-algorithmic-penalty' || slug === 'chatgpt-vs-google-for-business-discovery') ? "2026-05-29" : "2026-05-25",
           "author": {
             "@type": "Person",
             "name": "Steve Martin",
@@ -5603,7 +5886,37 @@ const ArticlePage: React.FC<ArticlePageProps> = ({ slug }) => {
             }
           }
         },
-        ...(slug === 'what-is-the-difference-between-a-manual-action-and-an-algorithmic-penalty' ? [{
+        
+        ...(slug === 'how-do-b2b-companies-use-seo-to-generate-predictable-revenue' ? [{
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Why does B2B SEO often fail to connect to revenue?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "B2B SEO often fails because it optimizes for high-volume informational keywords at the expense of high-intent, decision-stage keywords. This results in researchers visiting the site and leaving, rather than active evaluators converting into MQLs."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How does a topic cluster map to B2B buying stages?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "A topic cluster pairs a commercial-intent pillar page (capturing decision-stage buyers) with satellite use-case or integration pages. Mid-funnel searchers are captured by the satellite pages and routed to the pillar page through deliberate internal linking."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Which attribution model is best for long B2B sales cycles?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "U-shaped attribution is ideal for initiating discovery, while W-shaped is better for multi-month sales cycles as it credits first touch, lead creation, and opportunity creation. Algorithmic or data-driven attribution is the most accurate once sufficient clean event history exists in the CRM."
+              }
+            }
+          ]
+        }] : []),
+...(slug === 'what-is-the-difference-between-a-manual-action-and-an-algorithmic-penalty' ? [{
           "@type": "FAQPage",
           "mainEntity": [
             {

@@ -138,6 +138,10 @@ const metadataMap: Record<string, SEOMetadata> = {
     title: 'ChatGPT vs Google for Business Discovery | Gobiya',
     description: 'Google processes billions of searches, but 93% in AI Mode end clickless. ChatGPT converts 4.4x better. How to optimize your brand for both.'
   },
+  '/insights/how-do-b2b-companies-use-seo-to-generate-predictable-revenue': {
+    title: 'How B2B Companies Use SEO to Generate Predictable Revenue | Gobiya',
+    description: 'Why B2B SEO programs fail to connect to pipeline and how to map content to the buying committee, target decision-stage clusters, and set up attribution.'
+  },
   '/insights/what-is-generative-engine-optimization-and-how-does-it-work': {
     title: 'Generative Engine Optimization (GEO) Explained | Gobiya',
     description: 'The definitional guide to GEO: how Retrieval-Augmented Generation (RAG) pipelines cite sources, how it builds on traditional SEO, and what makes content citable.'
