@@ -20,6 +20,7 @@ import InsightsSlider from './InsightsSlider';
 import TestimonialsSlider from './TestimonialsSlider';
 import SatisfiedClients from './SatisfiedClients';
 import RoiCalculator from './RoiCalculator';
+import LocationsHub from './LocationsHub';
 
 const AxionLanding = () => {
   const [time, setTime] = useState('');
@@ -526,6 +527,12 @@ const AxionLanding = () => {
       <div className="relative">
         <SatisfiedClients />
         <div className="logo-marker absolute right-[20%] top-[50%] w-10 h-10 pointer-events-none" />
+      </div>
+
+      {/* SECTION 7.75: LOCATIONS HUB */}
+      <div data-logo-dark className="relative">
+        <LocationsHub />
+        <div className="logo-marker absolute left-[15%] top-[50%] w-10 h-10 pointer-events-none" />
       </div>
 
       {/* SECTION 8: ROI CALCULATOR */}

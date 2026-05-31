@@ -5,6 +5,7 @@ import ArticlePage from './components/ArticlePage';
 import AuthorPage from './components/AuthorPage';
 import ThankYouPage from './components/ThankYouPage';
 import SolutionPage from './components/SolutionPage';
+import LocationPage from './components/LocationPage';
 import SEO from './components/SEO';
 
 interface AppProps {
@@ -84,11 +85,6 @@ function App({ url }: AppProps) {
     };
     
     const normalized = currentPath.toLowerCase().replace(/\/$/, '') || '/';
-    if (normalized.startsWith('/locations')) {
-      window.history.replaceState({}, '', '/services');
-      setCurrentPath('/services');
-      return;
-    }
     const target = legacyRedirects[normalized];
     if (target) {
       window.history.replaceState({}, '', target);
@@ -103,6 +99,10 @@ function App({ url }: AppProps) {
   // Detect article routes: /insights/[slug]
   const articleMatch = normalizedPath.match(/^\/insights\/([a-z0-9-]+)$/);
   const articleSlug = articleMatch ? articleMatch[1] : null;
+
+  // Detect location routes: /locations/[city-slug]
+  const locationMatch = normalizedPath.match(/^\/locations\/([a-z0-9-]+)$/);
+  const locationPath = locationMatch ? normalizedPath : null;
 
   // Detect solution routes
   const isSolutionRoute = [
@@ -129,6 +129,8 @@ function App({ url }: AppProps) {
         <ArticlePage slug={articleSlug} />
       ) : normalizedPath === '/thank-you' ? (
         <ThankYouPage />
+      ) : locationPath ? (
+        <LocationPage path={locationPath} />
       ) : isSolutionRoute ? (
         <SolutionPage path={normalizedPath} />
       ) : (
