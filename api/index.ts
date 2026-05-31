@@ -171,12 +171,6 @@ export default async function handler(req: IncomingMessage, res: any) {
       '/company/insights': '/insights',
     };
 
-    if (pathname.startsWith('/locations')) {
-      res.writeHead(301, { Location: '/services' });
-      res.end();
-      return;
-    }
-
     if (legacyRedirects[pathname]) {
       res.writeHead(301, { Location: legacyRedirects[pathname] });
       res.end();
