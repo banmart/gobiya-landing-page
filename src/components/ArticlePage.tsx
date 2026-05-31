@@ -5361,6 +5361,274 @@ const ARTICLES: Record<string, ArticleData> = {
       </>
     ),
   },
+  'seo-case-study-traffic-recovery': {
+    slug: 'seo-case-study-traffic-recovery',
+    title: 'SEO Case Study Traffic Recovery: How We Recovered 320% Organic Traffic After Google',
+    category: 'SEO',
+    readTime: '12 min read',
+    date: 'May 31, 2026',
+    image: '/images/how-we-recovered-320-organic-traffic-after-google-1780266793291.webp',
+    heroAlt: 'Forensic SEO case study showing Google Search Console organic traffic data recovering and climbing to 320 percent after a core algorithm update',
+    metaDescription: 'A forensic SEO case study on traffic recovery after Google\'s March 2026 dual-update event. Learn the exact 12-week diagnostic sequence and fix order Gobiya used.',
+    content: (
+      <>
+        {/* ── JSON-LD FAQ SCHEMA ── */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "How do you differentiate between a Google core update drop and a spam update hit?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "A core update redistributes rankings across an entire domain or topic cluster based on content quality and relevance. A spam update typically causes sharp, page-specific ranking collapses linked to manipulative patterns, such as toxic links or scaled thin content."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "What are the first technical fixes to prioritize during an SEO recovery process?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "You should first prioritize collapsing multi-hop redirect chains to single hops, resolving 5xx server errors, fixing canonicalization conflicts, and aligning sitemaps. Resolving foundation-level technical issues ensures Googlebot can crawl and re-evaluate content updates efficiently."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "How does content pruning and consolidation help in recovering lost organic traffic?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Pruning involves redirecting (301) or removing (deindexing) low-performing, thin, or duplicate pages that drag down the overall quality of the domain. Consolidating this search equity and internal linking toward high-value pages signals topical authority to Google, helping reclaim lost search visibility."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "How long does it take to see traffic recovery after applying these technical and content fixes?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "For a mid-sized site, technical fixes can propagate in Google Search Console coverage reports within 3 weeks, while rewritten content typically shows ranking recovery within 4 to 6 weeks. A complete recovery and traffic lift (such as the 320% recovery documented in this case study) generally takes around 8 to 12 weeks of disciplined execution."
+                  }
+                }
+              ]
+            })
+          }}
+        />
+
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8 font-medium">
+          This is a forensic <a href="/company/success-stories" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">SEO case study on traffic recovery</a>, specifically, how Gobiya diagnosed and reversed a severe organic traffic collapse following Google's March 2026 dual-update event. If you're looking for a replicable post-update SEO recovery playbook, not a list of generic best practices, this documents the exact diagnostic sequence and fix order that worked.
+        </p>
+
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          The first week of March 2026, a B2B e-commerce client watched their organic traffic fall off a cliff. Google's first <a href="/insights/can-a-site-fully-recover-from-a-google-core-update" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">broad core update</a> of the year rolled out alongside a concurrent spam algorithm update, and within days, core money pages that had been generating consistent revenue dropped from page one to page three and beyond. By the time they contacted Gobiya, two previous agencies had already attempted fixes. Neither moved the needle.
+        </p>
+
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          What followed was a 12-week forensic recovery process that ended with the site surpassing its pre-update organic traffic baseline by 320%, a client-reported outcome documented in their Google Search Console data across the recovery window. This isn't a general guide about SEO best practices. It's the exact diagnostic sequence and fix order used to identify root causes, remediate the technical layer, restructure the content, and rebuild off-site authority. The order of operations mattered as much as the fixes themselves. If your site took a hit in the March 2026 update or any subsequent core event, this <a href="/google-penalty-recovery" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">traffic drop recovery playbook</a> documents what actually worked, and why the sequence is as important as the tactics.
+        </p>
+
+        {/* ── TABLE OF CONTENTS ── */}
+        <details className="bg-gray-50 border border-gray-200 rounded-lg p-6 sm:p-8 my-10 sm:my-14 group" open>
+          <summary className="text-[14px] font-semibold uppercase tracking-wider text-gray-500 cursor-pointer list-none flex items-center justify-between">
+            Table of Contents
+            <svg className="w-4 h-4 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" /></svg>
+          </summary>
+          <ul className="mt-6 space-y-3.5 text-[15px] font-medium text-gray-900 border-t border-gray-200 pt-6">
+            {[
+              { id: 'traffic-drop', label: 'The traffic drop that looked unsolvable' },
+              { id: 'forensic-diagnosis', label: 'Forensic diagnosis: reading the data before touching anything' },
+              { id: 'technical-recovery', label: 'SEO case study technical recovery steps: unblocking the crawl and clarifying the index' },
+              { id: 'content-surgery', label: 'Content surgery: what we removed, rewrote, and consolidated' },
+              { id: 'off-site-authority', label: 'Off-site authority: backlinks, toxic links, and entity signals' },
+              { id: 'recovery-curve', label: 'The recovery curve and what the data confirmed' },
+              { id: 'what-it-means', label: 'What this SEO case study traffic recovery means for your site' },
+              { id: 'faqs', label: 'Frequently Asked Questions (FAQ)' }
+            ].map(({ id, label }) => (
+              <li key={id} className="flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#F26522] shrink-0" />
+                <a href={'#' + id} className="hover:text-[#F26522] transition-colors">{label}</a>
+              </li>
+            ))}
+          </ul>
+        </details>
+
+        {/* ── SECTION 1 ── */}
+        <h2 id="traffic-drop" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          The traffic drop that looked unsolvable
+        </h2>
+        
+        <h3 className="text-[18px] sm:text-[20px] font-medium text-gray-900 mt-8 mb-4">What the client's data showed the morning after the update</h3>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          When we pulled the GSC data, the picture was specific and ugly. According to the client's Search Console export, impressions had started declining in the first week of March 2026, with a secondary drop in clicks following approximately four days later. Three core category pages, each previously ranking between positions 2 and 5, had fallen to positions 14 through 22. A transactional product cluster accounting for roughly 40% of organic revenue had effectively disappeared from the first two pages of results. These figures come from the client's own <a href="/services/seo" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">Search Console and ranking data</a> and are presented here as reported outcomes rather than independently verified benchmarks.
+        </p>
+
+        <h3 className="text-[18px] sm:text-[20px] font-medium text-gray-900 mt-8 mb-4">Why the first two agencies missed the root cause</h3>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          The client had already run through two rounds of fixes before reaching out to us. The <a href="/insights/b2b-seo-agency" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">previous agencies</a> had made content tweaks, cleaned up a handful of redirects, and submitted a disavow file. None of it worked. The problem wasn't that the tactics were wrong in isolation; it was that they were applied without a real diagnosis. Fixing symptoms without mapping the architecture underneath is how recovery timelines stretch from weeks into quarters.
+        </p>
+
+        <h3 className="text-[18px] sm:text-[20px] font-medium text-gray-900 mt-8 mb-4">How to tell a core update hit from a spam update hit</h3>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          The March 2026 event was actually two overlapping updates, documented separately in Google's Search Central announcements, and treating them as one caused the previous recovery attempts to fail. <strong>A core update redistributes rankings across a topic cluster based on quality signals; a spam update creates sharp, page-specific collapses tied to link quality or manipulative patterns.</strong> This client had both: broad ranking redistribution from the core update affecting the whole domain, and a cluster of pages with link patterns flagged by the <a href="/insights/what-is-the-difference-between-a-manual-action-and-an-algorithmic-penalty" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">spam update hit</a>. The technical and content layers needed to be treated separately before any consolidation work could begin.
+        </p>
+
+        {/* ── SECTION 2 ── */}
+        <h2 id="forensic-diagnosis" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          Forensic diagnosis: reading the data before touching anything
+        </h2>
+
+        <h3 className="text-[18px] sm:text-[20px] font-medium text-gray-900 mt-8 mb-4">Mapping the GSC timeline to the update calendar</h3>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          The first step was pulling 16 weeks of GSC data and overlaying it against Google's March 2026 update rollout dates. This revealed something important: impressions started shifting before clicks dropped, with a gap of approximately four days between those two events. That distinction told us rankings were moving before users registered the loss in engagement, which helped separate pages with indexation problems from pages with genuine quality problems.
+        </p>
+
+        <h3 className="text-[18px] sm:text-[20px] font-medium text-gray-900 mt-8 mb-4">Crawl audit findings: what was quietly breaking the site</h3>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          The crawl surfaced compounding problems that were invisible at the surface level. Per the Screaming Frog audit conducted at project intake, several redirect chains had grown to three and four hops across the site's history of migrations and URL restructuring. Server logs confirmed a cluster of pages returning intermittent 5xx errors during peak traffic windows, degrading Googlebot's crawl consistency. Canonicalization conflicts existed between paginated URLs and their parent category pages, creating index confusion about which version of each page should rank. <strong>None of these issues were catastrophic individually, but together they were fragmenting crawl budget and diluting link equity across the wrong URLs.</strong> For a practical reference on how different HTTP response codes affect SEO and why intermittent 5xxs matter, we reviewed industry documentation on <a href="https://www.searchenginejournal.com/technical-seo/http-status-codes/" target="_blank" rel="noopener noreferrer" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">HTTP status codes for SEO</a>.
+        </p>
+
+        <h3 className="text-[18px] sm:text-[20px] font-medium text-gray-900 mt-8 mb-4">Content quality signals and E-E-A-T gaps</h3>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          The content audit was equally revealing. A set of previously top-performing pages had been ranking primarily on backlink strength rather than genuine topical depth, and post-update, Google's quality systems had reassessed those pages and found them thin. There was also a layer of supporting pages created to capture long-tail variants: pages with shallow content, no referring domains, and engagement patterns indicating users weren't finding what they came for. These pages were dragging the site's overall quality perception down at the domain level, the kind of site-wide assessment the Helpful Content system is designed to make. For additional context on how helpful content assessments operate in practice, we consulted industry guidance on the <a href="https://www.semrush.com/blog/helpful-content/" target="_blank" rel="noopener noreferrer" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">Helpful Content signal</a>.
+        </p>
+
+        {/* ── SECTION 3 ── */}
+        <h2 id="technical-recovery" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          SEO case study technical recovery steps: unblocking the crawl and clarifying the index
+        </h2>
+
+        <h3 className="text-[18px] sm:text-[20px] font-medium text-gray-900 mt-8 mb-4">Collapsing redirect chains and fixing server response errors</h3>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          The decision was to address redirect chain collapse before touching any content. The logic is straightforward: if crawl budget is being wasted on multi-hop traversal, content improvements won't propagate cleanly because Googlebot isn't efficiently reaching the final URLs. All multi-hop chains were collapsed to single-hop redirects first. Alongside that work, the 5xx audit traced the intermittent server errors to a configuration issue causing timeouts under load. According to server logs, a configuration-level fix corresponded with a rapid drop in 5xx errors within 48 hours of deployment.
+        </p>
+
+        <h3 className="text-[18px] sm:text-[20px] font-medium text-gray-900 mt-8 mb-4">Canonical tag corrections and sitemap hygiene</h3>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          With the crawl unblocked, the next step was resolving the canonicalization conflicts on paginated URLs. Several paginated pages had canonical tags pointing to themselves rather than to their parent category, telling Google to treat them as independent indexable pages rather than supporting URLs. The XML sitemap was audited and cleaned: pages canonicalized away from themselves were removed from the sitemap to eliminate the conflicting signals about what should actually be indexed.
+        </p>
+
+        <h3 className="text-[18px] sm:text-[20px] font-medium text-gray-900 mt-8 mb-4">Validating fixes through crawl re-runs and GSC coverage reports</h3>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          <strong>Every fix batch was followed by a validation cycle.</strong> Each round involved re-crawling the affected URLs, comparing coverage report errors before and after the change, and confirming Googlebot was beginning to re-process the corrected pages. Based on the client's GSC coverage snapshots, the technical layer took approximately three weeks to register clearly in coverage data, consistent with the recrawl patterns Gobiya has observed across comparable mid-size sites with active crawl demand, though this range can vary significantly depending on site architecture and crawl frequency.
+        </p>
+
+        {/* ── SECTION 4 ── */}
+        <h2 id="content-surgery" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          Content surgery: what we removed, rewrote, and consolidated
+        </h2>
+
+        <h3 className="text-[18px] sm:text-[20px] font-medium text-gray-900 mt-8 mb-4">Identifying pages that were actively hurting the site</h3>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          The scoring framework for page fate used three signals as a starting threshold: fewer than 200 organic sessions in the preceding six months, zero referring domains, and a bounce-heavy engagement pattern. Pages meeting all three criteria were classified as net-negative assets. These thresholds are specific to this client's vertical and traffic profile and should be calibrated per site rather than applied universally. The underlying principle, though, holds regardless: a short page with genuine depth and real engagement earns its place in the index. A long page with no engagement and no external validation does not.
+        </p>
+
+        <h3 className="text-[18px] sm:text-[20px] font-medium text-gray-900 mt-8 mb-4">The consolidation and pruning process</h3>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          Twenty-three thin pages were either 301-redirected into stronger parent pages or removed and submitted for deindexation; eleven pages were selected for full rewrites based on search volume, topical relevance, and the quality gap between the existing content and what was outranking it. (These counts reflect the client's content management records for this engagement.) The rewrites pursued a clear set of priorities: original analysis that didn't exist elsewhere, structured supporting evidence that matched user intent precisely, and page architecture that signaled topical authority rather than just targeting a keyword phrase.
+        </p>
+
+        <h3 className="text-[18px] sm:text-[20px] font-medium text-gray-900 mt-8 mb-4">Rebuilding topical authority through internal linking</h3>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          Consolidating thin pages freed up internal link equity that had been distributed across weak URLs. Re-routing those internal links toward the pages targeted for recovery sent stronger topical relevance signals to Googlebot and accelerated re-indexation of the rewritten content. Based on crawl timestamps logged during the project, the internal linking restructure, completed in one week, correlated with noticeably faster recrawl of the rewritten pages, though establishing direct causation between a single structural change and recrawl speed requires caution.
+        </p>
+
+        {/* ── SECTION 5 ── */}
+        <h2 id="off-site-authority" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          Off-site authority: backlinks, toxic links, and entity signals
+        </h2>
+
+        <h3 className="text-[18px] sm:text-[20px] font-medium text-gray-900 mt-8 mb-4">Backlink audit and the disavow decision</h3>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          The backlink review, conducted using third-party audit tooling, flagged referring domains that had either gone toxic themselves or shown signals consistent with spam-update penalties in March 2026. The disavow decision followed a documented methodology: links from domains with obvious spam signals, a history of link manipulation, or dramatic visibility drops coinciding with the March update were disavowed. Links from weak but legitimately operating sites were left alone. An indiscriminate disavow file removes legitimate equity alongside bad links, so precision mattered as much here as it did in the content pruning process. We used guidance on evaluating <a href="https://seranking.com/blog/referring-domains/" target="_blank" rel="noopener noreferrer" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">referring domains</a> to inform which domains to prioritize for disavow versus those to monitor.
+        </p>
+
+        <h3 className="text-[18px] sm:text-[20px] font-medium text-gray-900 mt-8 mb-4">Rebuilding referring domain velocity</h3>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          Rather than waiting for rankings to improve before pursuing new links, the off-site work ran in parallel with the technical and content fixes. New referring domains were targeted from editorially relevant, authoritative sources within the client's vertical, specifically, trade publications and established industry resource sites where the client had existing credibility. Running link acquisition in parallel with on-site remediation kept the authority trajectory moving upward while the fixes were being processed by Google's systems.
+        </p>
+
+        <h3 className="text-[18px] sm:text-[20px] font-medium text-gray-900 mt-8 mb-4">Strengthening entity signals through structured data</h3>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          Organization schema, FAQ schema on the rewritten pages, and author entity markup for bylined content were added as part of the recovery's final layer. This is standard practice in Gobiya's forensic recovery methodology: technical fixes stabilize crawl and index health, content fixes address quality signals, and <a href="/insights/google-business-profile-optimization" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">structured data</a> supports trust re-establishment with Google's quality systems by clarifying who created the content and what entity it represents. These signals don't create rankings directly, but they reinforce the E-E-A-T foundation that core updates consistently reward, and GSC enhancements reports were monitored to confirm correct implementation.
+        </p>
+
+        {/* ── SECTION 6 ── */}
+        <h2 id="recovery-curve" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          The recovery curve and what the data confirmed
+        </h2>
+
+        <h3 className="text-[18px] sm:text-[20px] font-medium text-gray-900 mt-8 mb-4">Traffic metrics at weeks 4, 8, and 12</h3>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          According to the client's GSC data, by week four impressions had stabilized and the top-of-funnel rankings that had shifted to page two began moving back toward page one. By week eight, click-through rates on the rewritten pages had improved measurably, confirming that the updated content was aligning more precisely with search intent than the original versions had. By week twelve, the site had surpassed its pre-update organic traffic baseline, reaching 320% of where it stood when the March 2026 update first hit, as reported in the client's analytics export.
+        </p>
+
+        <h3 className="text-[18px] sm:text-[20px] font-medium text-gray-900 mt-8 mb-4">What accelerated the recovery versus what slowed it</h3>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          The technical fixes had the highest initial leverage because they allowed the content fixes to propagate correctly. Without clean crawl access and clear canonicalization, the rewritten pages would have taken significantly longer to be re-evaluated. Content consolidation came second, with the rewritten pages showing ranking improvement within four to six weeks of being indexed. The backlink layer contributed more to stabilizing long-term authority than to kickstarting the initial rebound. In the team's assessment, this sequencing, technical first, content second, authority in parallel, was the primary factor separating this recovery from the two prior attempts that failed. Fixing the right things in the wrong order is still failing.
+        </p>
+
+        <h3 className="text-[18px] sm:text-[20px] font-medium text-gray-900 mt-8 mb-4">Diagnostic questions to ask before you touch anything</h3>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          Before running any fix on a traffic-damaged site, several questions need clear answers. Can Googlebot crawl and process the site cleanly, without wasted redirect hops, server errors, or canonical confusion? Are the underperforming pages genuinely useful, or are they ranking on residual authority that a quality-focused update would naturally remove? Is the off-site profile aligned with the content quality level now expected post-update? Every decision in this recovery flowed from that diagnostic sequence, and every fix was ordered accordingly.
+        </p>
+
+        {/* ── SECTION 7 ── */}
+        <h2 id="what-it-means" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          What this SEO case study traffic recovery means for your site
+        </h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          The 320% organic traffic recovery in this case study didn't come from a single tactic or a lucky timing window. It came from running a disciplined, sequenced process that addressed the technical layer first, the content layer second, and the authority layer in parallel. For any site owner staring at a post-update traffic collapse right now, the most important thing to understand is that speed matters less than sequence. Publishing new content before fixing crawl and canonicalization issues wastes the effort entirely.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          Gobiya's forensic SEO methodology is built on exactly this sequence: diagnose before you fix, fix the foundation before you build on it, and validate each layer before moving to the next. If your site took a hit in a recent Google update and the standard fixes haven't moved the needle, the problem is almost certainly architectural, not cosmetic. The agencies that missed it before weren't wrong to try, they were working without a complete diagnostic picture. Post-update SEO recovery fails when it treats the symptom (lost rankings) rather than the system (crawl, content quality, and authority working together). For an industry perspective on how the March core update shifted rankings and what changed, see the coverage of the <a href="https://searchengineland.com/march-2026-google-core-update-what-changed-474397" target="_blank" rel="noopener noreferrer" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">March 2026 Google core update</a>.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          If you want this same forensic process run on your own site, reach out to the Gobiya team. We'll map what's broken against a full technical and content diagnostic, prioritize fixes by actual leverage, and give you the exact sequence to start restoring organic traffic, without wasting effort on surface-level changes that won't hold. <a href="/contact" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">Request a forensic SEO audit from Gobiya.</a>
+        </p>
+
+        {/* ── FAQ SECTION ── */}
+        <h2 id="faqs" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          Frequently Asked Questions (FAQ)
+        </h2>
+        <div className="space-y-6 mb-12">
+          <div className="border-b border-gray-200 pb-4">
+            <h3 className="text-[18px] font-semibold text-gray-900 mb-2 font-sans">
+              How do you differentiate between a Google core update drop and a spam update hit?
+            </h3>
+            <p className="text-[16px] text-gray-700 leading-[1.6]">
+              A core update redistributes rankings across an entire domain or topic cluster based on content quality and relevance. A spam update typically causes sharp, page-specific ranking collapses linked to manipulative patterns, such as toxic links or scaled thin content.
+            </p>
+          </div>
+          <div className="border-b border-gray-200 pb-4">
+            <h3 className="text-[18px] font-semibold text-gray-900 mb-2 font-sans">
+              What are the first technical fixes to prioritize during an SEO recovery process?
+            </h3>
+            <p className="text-[16px] text-gray-700 leading-[1.6]">
+              You should first prioritize collapsing multi-hop redirect chains to single hops, resolving 5xx server errors, fixing canonicalization conflicts, and aligning sitemaps. Resolving foundation-level technical issues ensures Googlebot can crawl and re-evaluate content updates efficiently.
+            </p>
+          </div>
+          <div className="border-b border-gray-200 pb-4">
+            <h3 className="text-[18px] font-semibold text-gray-900 mb-2 font-sans">
+              How does content pruning and consolidation help in recovering lost organic traffic?
+            </h3>
+            <p className="text-[16px] text-gray-700 leading-[1.6]">
+              Pruning involves redirecting (301) or removing (deindexing) low-performing, thin, or duplicate pages that drag down the overall quality of the domain. Consolidating this search equity and internal linking toward high-value pages signals topical authority to Google, helping reclaim lost search visibility.
+            </p>
+          </div>
+          <div className="border-b border-gray-200 pb-4">
+            <h3 className="text-[18px] font-semibold text-gray-900 mb-2 font-sans">
+              How long does it take to see traffic recovery after applying these technical and content fixes?
+            </h3>
+            <p className="text-[16px] text-gray-700 leading-[1.6]">
+              For a mid-sized site, technical fixes can propagate in Google Search Console coverage reports within 3 weeks, while rewritten content typically shows ranking recovery within 4 to 6 weeks. A complete recovery and traffic lift (such as the 320% recovery documented in this case study) generally takes around 8 to 12 weeks of disciplined execution.
+            </p>
+          </div>
+        </div>
+      </>
+    ),
+  },
 };
 
 // ─── Related Articles per slug ────────────────────────────────────────────────
@@ -5758,6 +6026,26 @@ const RELATED_ARTICLES_MAP: Record<string, { href: string; category: string; tit
       category: 'Strategy',
       title: 'B2B Organic Traffic Growth: Why Traffic and Pipeline Decoupled in 2026',
       image: '/images/article-b2b-organic-traffic-growth.webp',
+    },
+  ],
+  'seo-case-study-traffic-recovery': [
+    {
+      href: '/insights/can-a-site-fully-recover-from-a-google-core-update',
+      category: 'SEO',
+      title: 'Can a Site Fully Recover From a Google Core Update?',
+      image: '/images/article-can-a-site-fully-recover-from-a-google-core-update.webp',
+    },
+    {
+      href: '/insights/google-business-profile-optimization',
+      category: 'SEO',
+      title: 'Google Business Profile Optimization for Traffic Recovery Explained',
+      image: '/images/article-google-business-profile-optimization.webp',
+    },
+    {
+      href: '/insights/what-is-the-difference-between-a-manual-action-and-an-algorithmic-penalty',
+      category: 'SEO',
+      title: 'What Is the Difference Between a Manual Action and an Algorithmic Penalty?',
+      image: '/images/article-what-is-the-difference-between-a-manual-action-and-an-algorithmic-penalty.webp',
     },
   ],
 };

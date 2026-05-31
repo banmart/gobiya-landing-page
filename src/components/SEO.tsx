@@ -142,6 +142,10 @@ const metadataMap: Record<string, SEOMetadata> = {
     title: 'How B2B Companies Use SEO to Generate Predictable Revenue | Gobiya',
     description: 'Why B2B SEO programs fail to connect to pipeline and how to map content to the buying committee, target decision-stage clusters, and set up attribution.'
   },
+  '/insights/seo-case-study-traffic-recovery': {
+    title: 'SEO Case Study Traffic Recovery: Recover 320% Organic Traffic | Gobiya',
+    description: 'A forensic SEO case study on traffic recovery after Google\'s March 2026 dual-update event. Learn the exact 12-week diagnostic sequence and fix order Gobiya used.'
+  },
   '/insights/what-is-generative-engine-optimization-and-how-does-it-work': {
     title: 'Generative Engine Optimization (GEO) Explained | Gobiya',
     description: 'The definitional guide to GEO: how Retrieval-Augmented Generation (RAG) pipelines cite sources, how it builds on traditional SEO, and what makes content citable.'
