@@ -6,6 +6,7 @@ import AuthorPage from './components/AuthorPage';
 import ThankYouPage from './components/ThankYouPage';
 import SolutionPage from './components/SolutionPage';
 import LocationPage from './components/LocationPage';
+import LocationsHubPage from './components/LocationsHubPage';
 import SEO from './components/SEO';
 
 interface AppProps {
@@ -129,6 +130,8 @@ function App({ url }: AppProps) {
         <ArticlePage slug={articleSlug} />
       ) : normalizedPath === '/thank-you' ? (
         <ThankYouPage />
+      ) : normalizedPath === '/locations' ? (
+        <LocationsHubPage />
       ) : locationPath ? (
         <LocationPage path={locationPath} />
       ) : isSolutionRoute ? (

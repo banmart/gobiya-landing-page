@@ -147,77 +147,73 @@ const LocationsHub: React.FC = () => {
           </a>
         </div>
 
-        {/* ── LOS ANGELES COUNTY ── */}
-        <div className="mb-16">
-          {/* Region header with image */}
-          <div className="relative rounded-2xl overflow-hidden mb-6 h-[200px] lg:h-[240px]">
-            <img
-              src="/images/location-los-angeles.webp"
-              alt="Los Angeles County skyline"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-[#050505] via-[#050505]/70 to-transparent" />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#050505]/60 via-transparent to-transparent" />
-            <div className="absolute inset-0 flex flex-col justify-end p-8">
-              <div className="flex items-center gap-3 mb-2">
-                <div className="w-8 h-8 bg-[#F26522] flex items-center justify-center rounded-sm">
-                  <MapPin className="w-4 h-4 text-white" />
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          {/* ── LOS ANGELES COUNTY ── */}
+          <div>
+            <div className="relative rounded-2xl overflow-hidden mb-6 h-[200px] lg:h-[240px]">
+              <img
+                src="/images/location-los-angeles.webp"
+                alt="Los Angeles County skyline"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-[#050505] via-[#050505]/70 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#050505]/60 via-transparent to-transparent" />
+              <div className="absolute inset-0 flex flex-col justify-end p-8">
+                <div className="flex items-center gap-3 mb-2">
+                  <div className="w-8 h-8 bg-[#F26522] flex items-center justify-center rounded-sm">
+                    <MapPin className="w-4 h-4 text-white" />
+                  </div>
+                  <span className="text-[12px] font-bold tracking-widest uppercase text-[#F26522]">Los Angeles County</span>
                 </div>
-                <span className="text-[12px] font-bold tracking-widest uppercase text-[#F26522]">Los Angeles County</span>
+                <p className="text-[clamp(1.6rem,2.5vw,2rem)] font-medium text-white font-display leading-tight">
+                  Serving 10M+ residents across LA.
+                </p>
               </div>
-              <p className="text-[clamp(1.6rem,3vw,2.4rem)] font-medium text-white font-display leading-tight">
-                Serving 10M+ residents across LA's most competitive markets.
-              </p>
+            </div>
+
+            <div className="mb-6 py-3 border-y border-white/10 bg-white/[0.02]">
+              <HorizontalMarquee items={MARQUEE_ITEMS_LA} />
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {LA_CITIES.map((city, idx) => (
+                <CityCard key={idx} city={city} accent={idx % 2 === 0 ? 'orange' : 'dark'} />
+              ))}
             </div>
           </div>
 
-          {/* City marquee */}
-          <div className="mb-6 py-3 border-y border-white/10 bg-white/[0.02]">
-            <HorizontalMarquee items={MARQUEE_ITEMS_LA} />
-          </div>
-
-          {/* City cards grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {LA_CITIES.map((city, idx) => (
-              <CityCard key={idx} city={city} accent={idx % 2 === 0 ? 'orange' : 'dark'} />
-            ))}
-          </div>
-        </div>
-
-        {/* ── ORANGE COUNTY ── */}
-        <div>
-          {/* Region header with image */}
-          <div className="relative rounded-2xl overflow-hidden mb-6 h-[200px] lg:h-[240px]">
-            <img
-              src="/images/location-orange-county.webp"
-              alt="Orange County California coastline"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-[#050505] via-[#050505]/70 to-transparent" />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#050505]/60 via-transparent to-transparent" />
-            <div className="absolute inset-0 flex flex-col justify-end p-8">
-              <div className="flex items-center gap-3 mb-2">
-                <div className="w-8 h-8 bg-[#F26522] flex items-center justify-center rounded-sm">
-                  <MapPin className="w-4 h-4 text-white" />
+          {/* ── ORANGE COUNTY ── */}
+          <div>
+            <div className="relative rounded-2xl overflow-hidden mb-6 h-[200px] lg:h-[240px]">
+              <img
+                src="/images/location-orange-county.webp"
+                alt="Orange County California coastline"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-[#050505] via-[#050505]/70 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#050505]/60 via-transparent to-transparent" />
+              <div className="absolute inset-0 flex flex-col justify-end p-8">
+                <div className="flex items-center gap-3 mb-2">
+                  <div className="w-8 h-8 bg-[#F26522] flex items-center justify-center rounded-sm">
+                    <MapPin className="w-4 h-4 text-white" />
+                  </div>
+                  <span className="text-[12px] font-bold tracking-widest uppercase text-[#F26522]">Orange County</span>
                 </div>
-                <span className="text-[12px] font-bold tracking-widest uppercase text-[#F26522]">Orange County</span>
+                <p className="text-[clamp(1.6rem,2.5vw,2rem)] font-medium text-white font-display leading-tight">
+                  Enterprise growth in OC markets.
+                </p>
               </div>
-              <p className="text-[clamp(1.6rem,3vw,2.4rem)] font-medium text-white font-display leading-tight">
-                Enterprise growth in OC's fastest-scaling business markets.
-              </p>
             </div>
-          </div>
 
-          {/* City marquee */}
-          <div className="mb-6 py-3 border-y border-white/10 bg-white/[0.02]">
-            <HorizontalMarquee items={MARQUEE_ITEMS_OC} reverse />
-          </div>
+            <div className="mb-6 py-3 border-y border-white/10 bg-white/[0.02]">
+              <HorizontalMarquee items={MARQUEE_ITEMS_OC} reverse />
+            </div>
 
-          {/* City cards grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {OC_CITIES.map((city, idx) => (
-              <CityCard key={idx} city={city} accent={idx % 2 !== 0 ? 'orange' : 'dark'} />
-            ))}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {OC_CITIES.map((city, idx) => (
+                <CityCard key={idx} city={city} accent={idx % 2 !== 0 ? 'orange' : 'dark'} />
+              ))}
+            </div>
           </div>
         </div>
 
