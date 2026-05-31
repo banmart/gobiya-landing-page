@@ -8,6 +8,7 @@ import SolutionPage from './components/SolutionPage';
 import LocationPage from './components/LocationPage';
 import LocationsHubPage from './components/LocationsHubPage';
 import SEO from './components/SEO';
+import PageTransition, { navigateWithTransition } from './components/PageTransition';
 
 interface AppProps {
   url?: string;
@@ -50,19 +51,21 @@ function App({ url }: AppProps) {
           }
           
           e.preventDefault();
-          window.history.pushState({}, '', urlObj.pathname + urlObj.hash);
-          setCurrentPath(urlObj.pathname);
-          // Scroll to top if no hash, else scroll to hash
-          if (urlObj.hash) {
-            setTimeout(() => {
-              const element = document.querySelector(urlObj.hash);
-              if (element) {
-                element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-              }
-            }, 100);
-          } else {
-            window.scrollTo({ top: 0, behavior: 'instant' });
-          }
+          navigateWithTransition(() => {
+            window.history.pushState({}, '', urlObj.pathname + urlObj.hash);
+            setCurrentPath(urlObj.pathname);
+            // Scroll to top if no hash, else scroll to hash
+            if (urlObj.hash) {
+              setTimeout(() => {
+                const element = document.querySelector(urlObj.hash);
+                if (element) {
+                  element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+              }, 100);
+            } else {
+              window.scrollTo({ top: 0, behavior: 'instant' });
+            }
+          });
         }
       }
     };
@@ -139,6 +142,8 @@ function App({ url }: AppProps) {
       ) : (
         <ServiceSubpage path={normalizedPath} />
       )}
+      
+      <PageTransition />
     </>
   );
 }

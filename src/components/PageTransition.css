@@ -1,0 +1,35 @@
+/* ── Transition overlay layers ───────────────────────────── */
+.pt-overlay {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;   /* never blocks interaction */
+  overflow: hidden;
+  z-index: 9999;
+}
+
+/* Primary black shutter — sits below the accent */
+.pt-overlay--primary {
+  z-index: 9998;
+}
+
+/* Orange accent flash — sits on top of the black layer */
+.pt-overlay--accent {
+  z-index: 9999;
+}
+
+/* ── Individual shutter blocks ───────────────────────────── */
+.pt-block {
+  position: absolute;
+  will-change: transform;    /* GPU-composited for silky 60 fps */
+}
+
+.pt-overlay--primary .pt-block {
+  background: #050505;       /* Gobiya pitch-black */
+}
+
+.pt-overlay--accent .pt-block {
+  background: #F26522;       /* Gobiya orange */
+  opacity: 0.92;
+}
