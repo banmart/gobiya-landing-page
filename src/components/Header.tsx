@@ -5,9 +5,10 @@ import StaggeredMenu from './StaggeredMenu';
 interface HeaderProps {
   // Option to use the dark theme for the nav (transparent with white menu icon and inverted logo)
   theme?: 'light' | 'dark';
+  hideLogo?: boolean;
 }
 
-const Header: React.FC<HeaderProps> = ({ theme = 'light' }) => {
+const Header: React.FC<HeaderProps> = ({ theme = 'light', hideLogo = false }) => {
   const [time, setTime] = useState('');
 
   useEffect(() => {
@@ -32,7 +33,7 @@ const Header: React.FC<HeaderProps> = ({ theme = 'light' }) => {
       <nav className={`flex items-center justify-between backdrop-blur-md border-b p-[5px] sm:px-4 ${
         isDark ? 'bg-white/5 border-white/10' : 'bg-white/30 border-white/40'
       }`}>
-        <div className="flex items-center gap-6 relative z-50">
+        <div className={`flex items-center gap-6 relative z-50 transition-opacity duration-300 ${hideLogo ? 'opacity-0 pointer-events-none' : ''}`}>
           <a href="/">
             <img 
               src="/images/gobiya---logo.webp" 

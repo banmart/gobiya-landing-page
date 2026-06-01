@@ -155,11 +155,11 @@ const AxionLanding = () => {
         src="/images/gobiya---logo.webp" 
         alt="Gobiya Logo" 
         className="h-8 sm:h-9 w-auto object-contain absolute left-[5px] sm:left-[16px] top-[5px] sm:top-[8px] pointer-events-none" 
-        style={{ willChange: 'transform, filter', transition: 'filter 0.3s ease', zIndex: 9999 }}
+        style={{ willChange: 'transform, filter', transition: 'filter 0.3s ease', zIndex: 9999, filter: 'brightness(0) invert(1)' }}
       />
 
       {/* SECTION 1: HERO */}
-      <section className="relative w-full min-h-screen pt-24 lg:pt-32 pb-16 bg-[#050505] overflow-hidden flex flex-col justify-center cursor-default">
+      <section data-logo-dark className="relative w-full min-h-screen pt-24 lg:pt-32 pb-16 bg-[#050505] overflow-hidden flex flex-col justify-center cursor-default">
         {/* Shaders Background */}
         <div className="absolute inset-0 z-10 pointer-events-none w-full h-full [&>div]:w-full [&>div]:h-full [&_canvas]:w-full [&_canvas]:h-full [&_canvas]:object-cover opacity-85">
           <DeferredShader>
@@ -171,7 +171,7 @@ const AxionLanding = () => {
         </div>
 
         {/* Navigation */}
-        <Header theme="dark" />
+        <Header theme="dark" hideLogo={true} />
 
         {/* Hero Content */}
         <div className="relative z-20 flex-1 max-w-[1440px] w-full mx-auto flex items-center px-5 sm:px-8 lg:px-12 py-12 lg:py-20">
@@ -319,7 +319,7 @@ const AxionLanding = () => {
       </div>
 
       {/* SECTION 2: MARQUEE */}
-      <div className="relative w-full">
+      <div data-logo-dark className="relative w-full">
         <Marquee items={['AI-DRIVEN SEO', 'CONTENT CLUSTERS', 'TRAFFIC RECOVERY', 'TECHNICAL SEO', 'ALGORITHMIC DOMINANCE']} />
         <div className="logo-marker absolute right-[15%] top-[50%] w-10 h-10 -translate-y-1/2 pointer-events-none" />
       </div>
@@ -333,7 +333,7 @@ const AxionLanding = () => {
       </section>
 
       {/* SECTION 3.5: CORE CAPABILITIES */}
-      <div id="capabilities" className="relative scroll-mt-20">
+      <div id="capabilities" data-logo-dark className="relative scroll-mt-20">
         <ServicesBento />
         <div className="logo-marker absolute right-[15%] top-[50%] w-10 h-10 -translate-y-1/2 pointer-events-none" />
       </div>
