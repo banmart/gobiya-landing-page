@@ -13,8 +13,8 @@ interface SEOMetadata {
 // Outcome-focused metadata lookup map for crawlers and search bots
 const metadataMap: Record<string, SEOMetadata> = {
   '/': {
-    title: 'SEO Traffic Recovery & B2B Pipeline Engineering | Gobiya',
-    description: 'We engineer AI-driven SEO and sales pipelines to recover lost organic traffic, scale predictable revenue, and secure long-term algorithmic dominance for high-stakes brands.'
+    title: 'Content Marketing Agency & Search Engine Optimization Firm | Los Angeles | Gobiya',
+    description: 'Gobiya is a Search Engine Optimization Firm and Content Marketing Agency in Los Angeles. We engineer AI-driven SEO to recover lost traffic and scale revenue.'
   },
   '/services/seo': {
     title: 'Organic Traffic Recovery & Search Dominance | Gobiya',
@@ -216,11 +216,11 @@ export default async function handler(req: IncomingMessage, res: any) {
     } : metadataMap['/']);
 
     template = template.replace(
-      '<title>Gobiya | AI SEO, Traffic Recovery & Algorithmic Search Dominance</title>',
+      '<title>Content Marketing Agency & Search Engine Optimization Firm | Los Angeles | Gobiya</title>',
       `<title>${seo.title}</title>`
     );
     template = template.replace(
-      '<meta name="description" content="We engineer AI-driven SEO and sales pipelines to recover lost organic traffic, scale predictable revenue, and secure long-term algorithmic dominance for high-stakes brands." />',
+      '<meta name="description" content="Gobiya is a Search Engine Optimization Firm and Content Marketing Agency in Los Angeles. We engineer AI-driven SEO to recover lost traffic and scale revenue." />',
       `<meta name="description" content="${seo.description}" />`
     );
     template = template.replace(

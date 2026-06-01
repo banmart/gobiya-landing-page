@@ -7,8 +7,8 @@ interface SEOMetadata {
 
 const metadataMap: Record<string, SEOMetadata> = {
   '/': {
-    title: 'SEO Traffic Recovery & B2B Pipeline Engineering | Gobiya',
-    description: 'We engineer AI-driven SEO and sales pipelines to recover lost organic traffic, scale predictable revenue, and secure long-term algorithmic dominance for high-stakes brands.'
+    title: 'Content Marketing Agency & Search Engine Optimization Firm | Los Angeles | Gobiya',
+    description: 'Gobiya is a Search Engine Optimization Firm and Content Marketing Agency in Los Angeles. We engineer AI-driven SEO to recover lost traffic and scale revenue.'
   },
   '/services/seo': {
     title: 'Technical SEO Services & Traffic Recovery | Gobiya',

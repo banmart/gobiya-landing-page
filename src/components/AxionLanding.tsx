@@ -184,7 +184,7 @@ const AxionLanding = () => {
                 We make sure customers find you everywhere from <span className="text-[#F26522] font-semibold">Google</span> to <span className="text-[#F26522] font-semibold">ChatGPT</span>.
               </h1>
               <p className="text-[16px] sm:text-[18px] text-gray-400 max-w-[700px] leading-relaxed mb-8">
-                We engineer AI-driven SEO, topical architectures, and automated B2B sales pipelines to recover lost organic traffic, scale predictable revenue, and secure long-term algorithmic dominance.
+                As a premier search engine optimization firm and content marketing agency in Los Angeles, we engineer AI-driven SEO, topical architectures, and automated sales pipelines to recover lost traffic and scale predictable revenue.
               </p>
               
               <div className="flex flex-wrap items-center gap-4 sm:gap-5">
@@ -430,7 +430,7 @@ const AxionLanding = () => {
           {/* Responsive Content Area */}
           <div className="block lg:hidden font-body">
             <p className="text-[15px] sm:text-[17px] leading-[1.6] font-medium text-gray-900 mb-6">
-              Our proprietary methodology combines machine learning insights with elite technical SEO, ensuring your brand captures the most valuable search real estate available.
+              Gobiya is a specialized search engine optimization firm and content marketing agency in Los Angeles. Our proprietary methodology combines machine learning insights with elite technical SEO, ensuring your brand captures the most valuable search real estate available.
             </p>
             <a href="/contact" className="group flex items-center bg-[#F26522] hover:bg-[#e05a1a] text-white pl-5 pr-2 py-2 transition-colors duration-300 mb-8 inline-flex">
               <div className="flex flex-col overflow-hidden h-[20px] justify-start items-start relative mr-3">
@@ -477,7 +477,7 @@ const AxionLanding = () => {
             </div>
             <div className="self-start flex flex-col items-start justify-start pt-2">
               <p className="text-[16px] xl:text-[18px] leading-[1.65] font-medium text-gray-900 mb-8">
-                Our proprietary methodology combines machine learning insights with elite technical SEO for maximum ROI.
+                Gobiya is a specialized search engine optimization firm and content marketing agency in Los Angeles. Our proprietary methodology combines machine learning insights with elite technical SEO for maximum ROI.
               </p>
               <a href="/contact" className="group flex items-center bg-[#F26522] hover:bg-[#e05a1a] text-white pl-6 pr-2 py-2 transition-colors duration-300">
                 <div className="flex flex-col overflow-hidden h-[20px] justify-start items-start relative mr-3">
