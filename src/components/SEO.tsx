@@ -11,32 +11,32 @@ const metadataMap: Record<string, SEOMetadata> = {
     description: 'We engineer AI-driven SEO and sales pipelines to recover lost organic traffic, scale predictable revenue, and secure long-term algorithmic dominance for high-stakes brands.'
   },
   '/services/seo': {
-    title: 'Organic Traffic Recovery & Search Dominance | Gobiya',
-    description: 'Reclaim your search engine positions. We deliver entity-level SEO, topical authority architectures, and advanced technical search audits built for search dominance.'
+    title: 'Technical SEO Services & Traffic Recovery | Gobiya',
+    description: 'Get expert technical SEO services to reclaim your search positions. We deliver entity-level SEO, topical authority architectures, and advanced technical audits.'
   },
   '/services/lead-generation': {
-    title: 'Predictable B2B Sales Pipelines & Lead Generation | Gobiya',
-    description: 'Scale your contract value and outbound pipeline. We design and launch automated cold outreach and sales acquisition protocols for mid-market and enterprise brands.'
+    title: 'B2B Lead Generation & Predictable Sales Pipelines | Gobiya',
+    description: 'Scale your contract value with our B2B lead generation services. We design and launch automated cold outreach and sales acquisition protocols.'
   },
   '/services/geo-optimization': {
     title: 'Generative Engine Optimization (GEO) & AI Visibility | Gobiya',
-    description: 'Position your brand to be cited and recommended natively by modern AI models including ChatGPT, Claude, Gemini, and Google AI Overviews.'
+    description: 'Get ahead with Generative Engine Optimization. Position your brand to be cited and recommended natively by ChatGPT, Claude, Gemini, and AI Overviews.'
   },
   '/services/web-development': {
-    title: 'Conversion-Engineered React & Web Development | Gobiya',
-    description: 'Speed-optimized, custom-engineered React platforms built to convert. We replace slow templates with lightning-fast landing pages and applications.'
+    title: 'React Web Development & Conversion-Engineered Platforms | Gobiya',
+    description: 'Get custom React web development services built to convert. We replace slow templates with lightning-fast landing pages and high-performance applications.'
   },
   '/services/ppc-advertising': {
-    title: 'High-Yield Paid Search (PPC) & Ad Pipelines | Gobiya',
-    description: 'Maximize your return on ad spend (ROAS) and lower acquisition costs. Data-driven Google, Microsoft, and Meta Ads management tailored for revenue scaling.'
+    title: 'High-Yield PPC Advertising & Paid Search Pipelines | Gobiya',
+    description: 'Scale revenue with our data-driven PPC advertising services. Maximize ROAS and lower acquisition costs across Google, Microsoft, and Meta Ads.'
   },
   '/google-penalty-recovery': {
     title: 'Google Penalty Recovery & Core Update Recovery | Gobiya',
-    description: 'Recover lost search traffic. We diagnose and reverse manual action penalties and organic traffic declines caused by Google helpful content & core updates.'
+    description: 'Get expert Google penalty recovery services. We diagnose and reverse manual action penalties and organic traffic declines caused by core updates.'
   },
   '/on-page-seo-los-angeles': {
-    title: 'On-Page SEO Services in Los Angeles | Gobiya',
-    description: 'Topical authority modeling, schema graph injection, and speed-optimized React structures built to convert Los Angeles organic search traffic into pipeline.'
+    title: 'On-Page SEO Los Angeles Services & CRO | Gobiya',
+    description: 'Dominate local rankings with our On-Page SEO Los Angeles solutions. We build speed-optimized React structures and schema graphs to convert organic traffic.'
   },
   '/company/about': {
     title: 'About Gobiya | Search Recovery & Pipeline Agency',
@@ -63,8 +63,8 @@ const metadataMap: Record<string, SEOMetadata> = {
     description: 'Reach out to our engineering team in Los Angeles to discuss algorithmic audits, AI traffic recovery, and pipeline architecture.'
   },
   '/services': {
-    title: 'Forensic SEO & B2B Pipeline Services | Gobiya',
-    description: 'We consolidate forensic SEO, traffic recovery, generative engine optimization (GEO), high-speed React engineering, and automated outbound sales pipelines.'
+    title: 'Forensic SEO and B2B Pipeline Services | Gobiya',
+    description: 'We engineer professional SEO and B2B pipeline services, consolidating organic traffic recovery, generative engine optimization (GEO), and React web development.'
   },
   '/insights/automated-b2b-sales-pipeline-seo': {
     title: 'How AI Citations Shape Your B2B Vendor Shortlist | Gobiya',

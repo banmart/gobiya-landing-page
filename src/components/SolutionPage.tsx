@@ -56,8 +56,8 @@ interface SolutionData {
 
 const SOLUTIONS_DATA: Record<string, SolutionData> = {
   '/services/seo': {
-    h1: 'We engineer technical SEO that wins entities, not just keywords.',
-    subHeadline: 'Forensic audits, topical authority architectures, and EEAT signal engineering — built for high-stakes brands operating in volatile algorithmic environments.',
+    h1: 'Technical SEO Services that win entities, not just keywords.',
+    subHeadline: 'Our technical SEO services deliver forensic audits, topical authority architectures, and EEAT signal engineering — built for high-stakes brands operating in volatile algorithmic environments.',
     rotatingWords: ['recover traffic.', 'scale pipelines.', 'secure dominance.'],
     insightCategory: 'SEO',
     ctaText: 'Start your SEO engagement',
@@ -123,7 +123,7 @@ const SOLUTIONS_DATA: Record<string, SolutionData> = {
   },
   
   '/services/geo-optimization': {
-    h1: 'We engineer the citations LLMs use to recommend your brand.',
+    h1: 'Generative Engine Optimization: We engineer the citations LLMs use to recommend your brand.',
     subHeadline: 'Generative Engine Optimization (GEO) for brands ready to be referenced natively inside ChatGPT, Claude, Perplexity, Gemini, and Google AI Overviews.',
     rotatingWords: ['dominate AIOs.', 'capture citations.', 'control AI.'],
     insightCategory: 'Strategy',
@@ -171,8 +171,8 @@ const SOLUTIONS_DATA: Record<string, SolutionData> = {
   },
 
   '/google-penalty-recovery': {
-    h1: 'We recover the traffic that algorithm updates took away.',
-    subHeadline: 'Forensic recovery audits for domains hit by Google Core Updates, the Helpful Content System, link spam updates, or manual actions. We diagnose the drop and restore index standing.',
+    h1: 'Google Penalty Recovery: We recover the traffic that algorithm updates took away.',
+    subHeadline: 'Our Google penalty recovery program delivers forensic audits for domains hit by Google Core Updates, Helpful Content updates, link spam, or manual actions.',
     rotatingWords: ['lift penalties.', 'restore traffic.', 'remove actions.'],
     insightCategory: 'SEO',
     ctaText: 'Audit my traffic loss',
@@ -219,8 +219,8 @@ const SOLUTIONS_DATA: Record<string, SolutionData> = {
   },
 
   '/services/lead-generation': {
-    h1: 'We engineer pipeline, not leads.',
-    subHeadline: 'Automated outbound, real-time intent signal tracking, and CRM routing — built to consistently book qualified meetings with the accounts your sales team actually wants.',
+    h1: 'B2B Lead Generation: We engineer predictable sales pipeline.',
+    subHeadline: 'Our B2B lead generation solutions leverage automated outbound, real-time intent signal tracking, and CRM routing to consistently book qualified meetings.',
     rotatingWords: ['generate leads.', 'scale sales.', 'capture intent.'],
     insightCategory: 'Strategy',
     ctaText: 'Book a pipeline strategy call',
@@ -267,8 +267,8 @@ const SOLUTIONS_DATA: Record<string, SolutionData> = {
   },
 
   '/services/web-development': {
-    h1: 'We engineer websites the way engineers build products.',
-    subHeadline: 'Custom React and Vite applications, native CRMs, Web3 platforms, and AI video systems — built from scratch with sub-second load times, conversion architecture, and zero template bloat.',
+    h1: 'React Web Development: We engineer websites the way engineers build products.',
+    subHeadline: 'Our React web development services build custom React/Vite applications, native CRMs, and Web3 platforms from scratch with sub-second load times.',
     rotatingWords: ['build apps.', 'engineer performance.', 'scale conversion.'],
     insightCategory: 'Technical',
     ctaText: 'Start a development project',
@@ -315,8 +315,8 @@ const SOLUTIONS_DATA: Record<string, SolutionData> = {
   },
 
   '/services/ppc-advertising': {
-    h1: 'We engineer paid media for return on ad spend, not impressions.',
-    subHeadline: 'Precision-targeted paid search, paid social, and LinkedIn B2B pipelines across Google, Microsoft, and Meta — engineered to maximize ROAS and lower customer acquisition cost.',
+    h1: 'PPC Advertising: We engineer paid media for return on ad spend, not impressions.',
+    subHeadline: 'Our PPC advertising services deliver precision-targeted paid search, paid social, and LinkedIn B2B pipelines across Google, Microsoft, and Meta.',
     rotatingWords: ['drive ROAS.', 'scale media.', 'lower CAC.'],
     insightCategory: 'Analytics',
     ctaText: 'Book a paid media diagnostic',
@@ -363,8 +363,8 @@ const SOLUTIONS_DATA: Record<string, SolutionData> = {
   },
 
   '/on-page-seo-los-angeles': {
-    h1: 'We engineer high-converting, on-page SEO structures.',
-    subHeadline: 'Topical authority modeling, schema graph injection, and speed-optimized React architectures built to convert Los Angeles organic search traffic into pipeline.',
+    h1: 'On-Page SEO Los Angeles: We engineer high-converting structures.',
+    subHeadline: 'Our On-Page SEO Los Angeles services provide topical authority modeling, schema graph injection, and speed-optimized React architectures built to convert traffic.',
     rotatingWords: ['build traffic.', 'optimize pages.', 'increase conversions.'],
     insightCategory: 'SEO',
     ctaText: 'Start your On-Page SEO campaign',
@@ -450,13 +450,13 @@ const SolutionPage: React.FC<{ path: string }> = ({ path }) => {
     window.scrollTo({ top: 0, behavior: 'instant' });
 
     const baseTitles: Record<string, string> = {
-      '/services/seo': 'Organic Traffic Recovery & Search Dominance | Gobiya',
+      '/services/seo': 'Technical SEO Services & Traffic Recovery | Gobiya',
       '/services/geo-optimization': 'Generative Engine Optimization (GEO) & AI Visibility | Gobiya',
       '/google-penalty-recovery': 'Google Penalty Recovery & Core Update Recovery | Gobiya',
-      '/services/lead-generation': 'Predictable B2B Sales Pipelines & Lead Generation | Gobiya',
-      '/services/web-development': 'Conversion-Engineered React & Web Development | Gobiya',
-      '/services/ppc-advertising': 'High-Yield Paid Search (PPC) & Ad Pipelines | Gobiya',
-      '/on-page-seo-los-angeles': 'On-Page SEO Services in Los Angeles | Gobiya',
+      '/services/lead-generation': 'B2B Lead Generation & Predictable Sales Pipelines | Gobiya',
+      '/services/web-development': 'React Web Development & Conversion-Engineered Platforms | Gobiya',
+      '/services/ppc-advertising': 'High-Yield PPC Advertising & Paid Search Pipelines | Gobiya',
+      '/on-page-seo-los-angeles': 'On-Page SEO Los Angeles Services & CRO | Gobiya',
     };
     if (baseTitles[path]) {
       document.title = baseTitles[path];
