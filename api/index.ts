@@ -243,11 +243,12 @@ export default async function handler(req: IncomingMessage, res: any) {
     // Dynamic JSON-LD Schema
     const graph: any[] = [
       {
-        "@type": "ProfessionalService",
+        "@type": "InternetMarketingService",
         "@id": "https://www.gobiya.com/#agency",
         "name": "Gobiya",
         "url": "https://www.gobiya.com",
-        "telephone": "(310) 307-9830",
+        "telephone": "(323) 744-1338",
+        "foundingDate": "2012-11-15",
         "logo": {
           "@type": "ImageObject",
           "@id": "https://www.gobiya.com/#logo",
@@ -258,16 +259,16 @@ export default async function handler(req: IncomingMessage, res: any) {
         "description": "Gobiya is a premier AI-driven SEO and B2B pipeline agency engineering organic search recovery, algorithmic dominance, and predictable revenue growth for high-stakes brands.",
         "address": {
           "@type": "PostalAddress",
-          "streetAddress": "138 N Berendo St",
+          "streetAddress": "3580 Wilshire Blvd, Ste 132",
           "addressLocality": "Los Angeles",
           "addressRegion": "CA",
-          "postalCode": "90004",
+          "postalCode": "90010",
           "addressCountry": "US"
         },
         "geo": {
           "@type": "GeoCoordinates",
-          "latitude": 34.0739,
-          "longitude": -118.2938
+          "latitude": 34.0617,
+          "longitude": -118.3039
         }
       },
       {

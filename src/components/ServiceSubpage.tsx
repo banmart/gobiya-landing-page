@@ -1405,16 +1405,16 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
                 <div>
                   <h3 className="text-[12px] font-semibold uppercase tracking-wider text-gray-500 mb-2">Location</h3>
                   <address className="not-italic text-[16px] sm:text-[18px] font-medium leading-relaxed text-gray-300">
-                    138 N Berendo St<br/>
-                    Los Angeles, CA 90004<br/>
+                    3580 Wilshire Blvd, Ste 132<br/>
+                    Los Angeles, CA 90010<br/>
                     United States
                   </address>
                 </div>
                 
                 <div>
                   <h3 className="text-[12px] font-semibold uppercase tracking-wider text-gray-500 mb-2">Direct Line</h3>
-                  <a href="tel:+13103079830" className="text-[16px] sm:text-[18px] font-medium text-gray-300 hover:text-[#F26522] transition-colors">
-                    (310) 307-9830
+                  <a href="tel:+13237441338" className="text-[16px] sm:text-[18px] font-medium text-gray-300 hover:text-[#F26522] transition-colors">
+                    (323) 744-1338
                   </a>
                 </div>
                 
