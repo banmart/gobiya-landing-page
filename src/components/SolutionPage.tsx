@@ -132,7 +132,7 @@ const SOLUTIONS_DATA: Record<string, SolutionData> = {
     ctaLink: '/contact',
     
     stats: [
-      { value: '45%', label: 'of modern search queries', text: 'now trigger AI-generated summaries above traditional results.' },
+      { value: '70-90%', label: 'AI bias toward Earned Media', text: 'revealed by researchers, heavily favoring independent third-party evaluations over brand or social sites.' },
       { value: '3x', label: 'higher conversion rate', text: 'for users arriving via direct LLM recommendation vs traditional search.' },
       { value: '92%', label: 'of executives surveyed', text: 'believe Generative AI search will disrupt their current SEO traffic.' },
       { value: '+400%', label: 'growth in conversational queries', text: 'requiring semantic entity optimization instead of keyword density.' }
@@ -142,24 +142,24 @@ const SOLUTIONS_DATA: Record<string, SolutionData> = {
     approachSubtitle: "Modern LLMs do not navigate page-authority vectors. They retrieve from semantic spaces. We ensure your brand is densely and authoritatively represented across the sources AI systems trust.",
     approach: [
       { icon: Search, title: 'AI citation baseline audit.', desc: "We test your brand against the queries your buyers actually run inside ChatGPT, Claude, Perplexity, and Gemini to log when you are cited and when competitors take your place." },
-      { icon: Activity, title: 'Semantic PR & citation building.', desc: "We execute targeted PR placements, data drops, and definitional content that put your brand name and statistics inside the trusted sources LLM builders use." },
-      { icon: Target, title: 'Entity graph integration.', desc: "We define your brand's entity relationships explicitly through schema, Wikipedia presence, and structured external profiles, minimizing semantic distance to verified authority anchors." }
+      { icon: Activity, title: 'Earned Media & PR Dominance.', desc: "We build presence across independent review directories and publisher sites. AI search models exhibit a systematic 70-90% bias toward third-party Earned Media over brand-owned or social content." },
+      { icon: Target, title: 'Justification Engineering.', desc: "We format and enrich your pages to satisfy justification attributes. AIs don't just index; they synthesize justified shortlists based on specific buying criteria." }
     ],
     
     valueCards: [
-      { title: 'Semantic Mapping', text: 'We map the publications, datasets, and directories that LLMs use during retrieval.' },
-      { title: 'Quote-Ready Architecture', text: 'We restructure your pages to match LLM extraction habits with direct Q&A blocks and tabular comparisons.', highlight: true },
-      { title: 'Definitional Content', text: 'When a retrieval pipeline scans your page, it finds quote-ready answers, not marketing prose.' },
-      { title: 'Citation Rate Tracking', text: 'We measure share of voice inside generative answers and monitor citation drift.' }
+      { title: 'Earned Media Dominance', text: 'We audit and optimize your brand authority across the third-party platforms and publisher review sites AI search retrieves from.' },
+      { title: 'API-able Brand Structuring', text: 'We turn your website into a scannable API for AI agents by structuring specifications, pricing, and product logic cleanly.', highlight: true },
+      { title: 'Justification Formatting', text: 'When an AI scans your page, it extracts clear, scannable comparisons, pros/cons, and value propositions for its shortlist justifications.' },
+      { title: 'Citation Rate Tracking', text: 'We measure share of voice inside generative answers across models and monitor citation drift.' }
     ],
     
     executionTitle: 'From raw data to verified AI citation.',
     heroImage: '/images/geo_hero.webp',
     executionImage: '/images/seo_exec.webp',
     executionSteps: [
-      { title: 'Entity Gap Analysis', content: 'We surface the entity gap between where you sit today and where the answer engines expect a category leader to sit.' },
-      { title: 'Content Restructuring', content: 'We add clean summaries at the top of every section, schema markup, and explicit definitional statements to feed retrieval pipelines directly.' },
-      { title: 'Off-site Authority Building', content: 'We build structured external profiles and connect your organization node to the topical entities you want to be retrieved for.' },
+      { title: 'Entity & Earned Media Audit', content: 'We map the entity gap between your site and the third-party publisher review directories and comparison portals that LLMs use during retrieval.' },
+      { title: 'Shortlist Restructuring', content: 'We restructure your pages to match LLM extraction habits, deploying clean Q&A matrices, pros/cons sheets, and structured tables to feed AI reasoning frameworks.' },
+      { title: 'Off-site Authority Building', content: 'We target authoritative local-language and vertical-specific media, establishing the backlinks and external profiles needed to build AI-perceived authority.' },
       { title: 'Monitoring & Optimization', content: 'We track your LLM citation rate as a primary KPI across model providers and re-deploy entity reinforcement where coverage decays.' }
     ],
     
