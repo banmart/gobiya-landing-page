@@ -219,3 +219,33 @@
 .dark-article a[class*="bg-[#F26522]"] span {
   color: #ffffff !important;
 }
+
+/* ──────────────────────────────────────────────────────────────────────────
+   GLOBAL STYLES OVERRIDE: REMOVE ROUNDED CORNERS FROM IMAGES AND CARDS
+   ────────────────────────────────────────────────────────────────────────── */
+img,
+video,
+iframe,
+picture,
+canvas,
+.rounded-sm,
+.rounded-md,
+.rounded-lg,
+.rounded-xl,
+.rounded-2xl,
+.rounded-3xl,
+[class*="rounded-sm"],
+[class*="rounded-md"],
+[class*="rounded-lg"],
+[class*="rounded-xl"],
+[class*="rounded-2xl"],
+[class*="rounded-3xl"],
+[class*="rounded-s-"],
+[class*="rounded-e-"],
+[class*="rounded-t-"],
+[class*="rounded-b-"],
+.border-glow-card,
+.liquid-glass {
+  border-radius: 0px !important;
+  --border-radius: 0px !important;
+}
