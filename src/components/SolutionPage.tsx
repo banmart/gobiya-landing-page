@@ -6,6 +6,7 @@ import Header from './Header';
 import Footer from './Footer';
 import RotatingText from './RotatingText';
 import InsightsSlider from './InsightsSlider';
+import ParallaxMedia from './ParallaxMedia';
 import { Shader, Swirl, ChromaFlow, FlutedGlass, FilmGrain } from 'shaders/react';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -477,7 +478,7 @@ const SolutionPage: React.FC<{ path: string }> = ({ path }) => {
       <section className="relative w-full pt-32 lg:pt-40 pb-20 bg-[#050505] overflow-hidden flex flex-col justify-center border-b border-white/10">
         <div className="absolute inset-0 z-0 pointer-events-none opacity-40">
            {/* Abstract tech illustration or image placeholder */}
-           <img src={data.heroImage || "/images/geo_hero.webp"} alt="AI Technology Background" className="w-full h-full object-cover mix-blend-overlay" />
+           <ParallaxMedia type="image" src={data.heroImage || "/images/geo_hero.webp"} alt="AI Technology Background" className="w-full h-full mix-blend-overlay" />
            <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent" />
         </div>
 
@@ -600,10 +601,11 @@ const SolutionPage: React.FC<{ path: string }> = ({ path }) => {
             {/* Left side Image Mockup */}
             <div className="relative reveal-up hidden lg:block">
               <div className="absolute inset-0 bg-gradient-to-tr from-[#F26522]/20 to-transparent transform -translate-x-4 translate-y-4 rounded-xl -z-10" />
-              <img 
+              <ParallaxMedia 
+                type="image"
                 src={data.executionImage} 
                 alt="Strategy Execution Dashboard" 
-                className="w-full rounded-xl shadow-2xl shadow-gray-200 object-cover aspect-[4/3]"
+                className="w-full rounded-xl shadow-2xl shadow-gray-200 aspect-[4/3]"
               />
               {/* Floating Badge */}
               <div className="absolute -top-6 -left-6 bg-[#F26522] text-white p-6 shadow-xl rounded-br-3xl">
@@ -657,7 +659,7 @@ const SolutionPage: React.FC<{ path: string }> = ({ path }) => {
       <section className="py-24 lg:py-32 px-5 sm:px-8 lg:px-12 bg-[#0A1118] relative overflow-hidden text-center lg:text-left">
         {/* Background elements */}
         <div className="absolute inset-0 opacity-10 mix-blend-screen pointer-events-none">
-          <img src={data.caseStudy.backgroundImage || "/images/case_study_bg.webp"} alt="Tech BG" className="w-full h-full object-cover" />
+          <ParallaxMedia type="image" src={data.caseStudy.backgroundImage || "/images/case_study_bg.webp"} alt="Tech BG" className="w-full h-full" />
         </div>
         
         <div className="max-w-[1440px] mx-auto relative z-10 reveal-up">

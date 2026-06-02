@@ -347,10 +347,11 @@ const AxionLanding = () => {
             {/* Left Column: Image/Badge Mockup */}
             <div className="relative hidden lg:block">
               <div className="absolute inset-0 bg-gradient-to-tr from-[#F26522]/20 to-transparent transform -translate-x-4 translate-y-4 rounded-xl -z-10" />
-              <img 
+              <ParallaxMedia 
+                type="image"
                 src="/images/seo_exec.webp" 
                 alt="Forensic Audits Platform" 
-                className="w-full rounded-xl shadow-2xl shadow-gray-200 object-cover aspect-[4/3]"
+                className="w-full rounded-xl shadow-2xl shadow-gray-200 aspect-[4/3]"
               />
               <div className="absolute -top-6 -left-6 bg-[#F26522] text-white p-6 shadow-xl rounded-br-3xl">
                 <div className="text-2xl font-bold font-display tracking-tight">Forensic</div>

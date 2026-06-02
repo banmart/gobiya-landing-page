@@ -4,6 +4,7 @@ import Header from './Header';
 import Footer from './Footer';
 import LocationsHub from './LocationsHub';
 import CustomCursor from './CustomCursor';
+import ParallaxMedia from './ParallaxMedia';
 
 const LocationsHubPage: React.FC = () => {
   useEffect(() => {
@@ -61,15 +62,17 @@ const LocationsHubPage: React.FC = () => {
         {/* Background imagery */}
         <div className="absolute inset-0 z-0 pointer-events-none">
           <div className="absolute inset-0 grid grid-cols-2">
-            <img
+            <ParallaxMedia
+              type="image"
               src="/images/location-los-angeles.webp"
               alt="Los Angeles"
-              className="w-full h-full object-cover opacity-25"
+              className="w-full h-full opacity-25"
             />
-            <img
+            <ParallaxMedia
+              type="image"
               src="/images/location-orange-county.webp"
               alt="Orange County"
-              className="w-full h-full object-cover opacity-25"
+              className="w-full h-full opacity-25"
             />
           </div>
           {/* Centre fade */}

@@ -1,6 +1,7 @@
 import React from 'react';
 import { ArrowRight, MapPin } from 'lucide-react';
 import './LocationsHub.css';
+import ParallaxMedia from './ParallaxMedia';
 
 const LA_CITIES = [
   {
@@ -151,10 +152,11 @@ const LocationsHub: React.FC = () => {
           {/* ── LOS ANGELES COUNTY ── */}
           <div>
             <div className="relative rounded-2xl overflow-hidden mb-6 h-[200px] lg:h-[240px]">
-              <img
+              <ParallaxMedia
+                type="image"
                 src="/images/location-los-angeles.webp"
                 alt="Los Angeles County skyline"
-                className="w-full h-full object-cover"
+                className="w-full h-full"
               />
               <div className="absolute inset-0 bg-gradient-to-r from-[#050505] via-[#050505]/70 to-transparent" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#050505]/60 via-transparent to-transparent" />
@@ -185,10 +187,11 @@ const LocationsHub: React.FC = () => {
           {/* ── ORANGE COUNTY ── */}
           <div>
             <div className="relative rounded-2xl overflow-hidden mb-6 h-[200px] lg:h-[240px]">
-              <img
+              <ParallaxMedia
+                type="image"
                 src="/images/location-orange-county.webp"
                 alt="Orange County California coastline"
-                className="w-full h-full object-cover"
+                className="w-full h-full"
               />
               <div className="absolute inset-0 bg-gradient-to-r from-[#050505] via-[#050505]/70 to-transparent" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#050505]/60 via-transparent to-transparent" />

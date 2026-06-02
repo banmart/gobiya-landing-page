@@ -5,6 +5,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Header from './Header';
 import Footer from './Footer';
 import InsightsSlider from './InsightsSlider';
+import ParallaxMedia from './ParallaxMedia';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -595,10 +596,11 @@ const LocationPage: React.FC<{ path: string }> = ({ path }) => {
       <section className="relative w-full pt-32 lg:pt-40 pb-20 bg-[#050505] overflow-hidden flex flex-col justify-center border-b border-white/10">
         {/* Hero image background */}
         <div className="absolute inset-0 z-0 pointer-events-none">
-          <img
+          <ParallaxMedia
+            type="image"
             src={data.heroImage}
             alt={`${data.city}, ${data.state} SEO Agency`}
-            className="w-full h-full object-cover opacity-30 mix-blend-luminosity"
+            className="w-full h-full opacity-30 mix-blend-luminosity"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-[#050505] via-[#050505]/85 to-[#050505]/50" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-transparent" />
@@ -745,10 +747,11 @@ const LocationPage: React.FC<{ path: string }> = ({ path }) => {
             {/* Left — Hero image panel */}
             <div className="relative reveal-up hidden lg:block">
               <div className="absolute inset-0 bg-gradient-to-tr from-[#F26522]/20 to-transparent transform -translate-x-4 translate-y-4 rounded-xl -z-10" />
-              <img
+              <ParallaxMedia
+                type="image"
                 src={data.heroImage}
                 alt={`SEO strategy execution in ${data.city}`}
-                className="w-full rounded-xl shadow-2xl shadow-gray-200 object-cover aspect-[4/3]"
+                className="w-full rounded-xl shadow-2xl shadow-gray-200 aspect-[4/3]"
               />
               <div className="absolute -top-6 -left-6 bg-[#F26522] text-white p-6 shadow-xl rounded-br-3xl">
                 <div className="text-2xl font-bold font-display tracking-tight">{data.city}</div>
@@ -796,7 +799,12 @@ const LocationPage: React.FC<{ path: string }> = ({ path }) => {
       {/* ── CASE STUDY ── */}
       <section className="py-24 lg:py-32 px-5 sm:px-8 lg:px-12 bg-[#050505] relative overflow-hidden">
         <div className="absolute inset-0 opacity-10 pointer-events-none">
-          <img src={data.heroImage} alt="" className="w-full h-full object-cover mix-blend-luminosity" />
+          <ParallaxMedia
+            type="image"
+            src={data.heroImage}
+            alt=""
+            className="w-full h-full mix-blend-luminosity"
+          />
         </div>
         <div className="max-w-[1440px] mx-auto relative z-10 reveal-up">
           <div className="max-w-[900px]">
