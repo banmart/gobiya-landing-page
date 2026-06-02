@@ -362,7 +362,7 @@ const AxionLanding = () => {
             <div>
               <p className="text-sm font-bold tracking-widest uppercase text-[#F26522] mb-4 font-body">Methodology</p>
               <h2 className="text-[clamp(2rem,3.5vw,3rem)] font-medium text-gray-900 mb-12 leading-[1.1] font-display">
-                Our approach to search recovery & dominance.
+                How do we recover lost search traffic and dominate? (Our Methodology)
               </h2>
               
               <div className="space-y-2 border-t border-gray-200 font-body">
@@ -540,6 +540,48 @@ const AxionLanding = () => {
         <RoiCalculator />
         <div className="logo-marker absolute left-[10%] top-[50%] w-10 h-10 pointer-events-none" />
       </div>
+
+      {/* SECTION 8.5: FAQ */}
+      <section data-logo-dark className="py-24 sm:py-32 px-5 sm:px-8 lg:px-12 bg-[#050505] text-white border-t border-white/10 relative z-20">
+        <div className="logo-marker absolute right-[15%] top-[50%] w-10 h-10 pointer-events-none" />
+        <div className="max-w-[1440px] mx-auto">
+          <p className="text-sm font-bold tracking-widest uppercase text-[#F26522] mb-4 font-body">[ FAQ ]</p>
+          <h2 className="text-[clamp(2rem,3.5vw,3.2rem)] font-medium text-white mb-12 leading-[1.12] font-display max-w-2xl">
+            Frequently Asked Questions
+          </h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 font-body text-gray-400">
+            {[
+              {
+                q: "How does Generative Engine Optimization (GEO) work?",
+                a: "GEO structures your brand's digital footprints—including custom schema graphs, entity connections, and structured tables—so conversational LLMs (such as ChatGPT, Claude, Perplexity, and Gemini) can confidently parse, recommend, and cite your business as a trusted authority."
+              },
+              {
+                q: "How long does it take to recover from a Google Core Update penalty?",
+                a: "Reversing algorithmic suppressions typically takes 12 to 24 weeks. The recovery process involves a forensic update audit, consolidation or pruning of thin URLs, and building clear E-E-A-T credentials that Google's quality classifiers recognize during core update cycles."
+              },
+              {
+                q: "Why do traditional SEO metrics fail B2B companies?",
+                a: "Traditional SEO tracks traffic volume and generic rankings. B2B programs require targeting low-volume, high-intent keyword clusters (like alternatives, comparison pages, and integration tables) that speak to multi-stakeholder buying committees, attributing traffic directly to CRM pipeline value."
+              },
+              {
+                q: "What is the difference between manual actions and algorithmic suppressions?",
+                a: "A manual action is issued by a Google reviewer and explicitly listed in Search Console's manual actions panel; it is cleared by submitting a reconsideration request. An algorithmic suppression is automated, has no notification, and only recovers when the underlying quality classifiers are satisfied during a core rollout."
+              }
+            ].map((item, idx) => (
+              <div key={idx} className="border-t border-white/10 pt-6">
+                <h3 className="text-lg font-medium text-white mb-3 flex items-start gap-2">
+                  <span className="text-[#F26522] font-mono">Q:</span>
+                  {item.q}
+                </h3>
+                <p className="leading-relaxed pl-6 text-gray-400">
+                  {item.a}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* SECTION 9: FOOTER */}
       <Footer />

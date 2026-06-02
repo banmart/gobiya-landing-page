@@ -34,6 +34,7 @@ const InsightsSlider: React.FC<InsightsSliderProps> = ({ filterCategory, limit, 
   // Fetch data from Supabase
   useEffect(() => {
     const fetchInsights = async () => {
+      let processed: Insight[] = [];
       try {
         setLoading(true);
         // Default to a fallback empty array if supabase throws or returns null
@@ -46,7 +47,6 @@ const InsightsSlider: React.FC<InsightsSliderProps> = ({ filterCategory, limit, 
           console.error("Error fetching insights from database:", error);
         }
 
-        let processed: Insight[] = [];
         if (data) {
           // Process the image URLs from the bucket
           processed = data.map((item: any) => {
@@ -66,31 +66,30 @@ const InsightsSlider: React.FC<InsightsSliderProps> = ({ filterCategory, limit, 
             };
           });
         }
-
-        // Merge static articles from ARTICLES registry
-        const merged = [...processed];
-        Object.values(ARTICLES).forEach((art) => {
-          const exists = processed.some(
-            (item: any) => item.slug && item.slug.toLowerCase() === art.slug.toLowerCase()
-          );
-          if (!exists) {
-            merged.push({
-              id: -Math.floor(Math.random() * 1000000) - 1,
-              title: art.title,
-              category: art.category,
-              image_path: '',
-              image_url: art.image,
-              slug: art.slug,
-            });
-          }
-        });
-
-        setInsights(merged);
       } catch (err) {
-        console.error("Failed to fetch insights:", err);
-      } finally {
-        setLoading(false);
+        console.error("Failed to fetch insights from database:", err);
       }
+
+      // Merge static articles from ARTICLES registry (always run even if database call fails)
+      const merged = [...processed];
+      Object.values(ARTICLES).forEach((art) => {
+        const exists = processed.some(
+          (item: any) => item.slug && item.slug.toLowerCase() === art.slug.toLowerCase()
+        );
+        if (!exists) {
+          merged.push({
+            id: -Math.floor(Math.random() * 1000000) - 1,
+            title: art.title,
+            category: art.category,
+            image_path: '',
+            image_url: art.image,
+            slug: art.slug,
+          });
+        }
+      });
+
+      setInsights(merged);
+      setLoading(false);
     };
 
     fetchInsights();

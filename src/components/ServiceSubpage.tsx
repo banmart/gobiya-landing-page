@@ -913,7 +913,7 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
                     <span className="text-[12px] font-semibold text-[#F26522] uppercase tracking-wider">The Paradigm Shift</span>
                   </div>
                   <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight mb-8">
-                    Keywords are Strings. Google Indexes Things.
+                    How does entity-based search work? (Keywords are strings, Google indexes things)
                   </h2>
                   <div className="text-gray-400 text-[15px] sm:text-[16px] leading-[1.75] flex flex-col gap-6">
                     <p>
@@ -938,7 +938,7 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
                     <span className="text-[12px] font-semibold text-[#F26522] uppercase tracking-wider">Topical Authority</span>
                   </div>
                   <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight mb-8">
-                    Topological Architecture & Schema Engineering
+                    Why does topical authority matter for B2B search? (Topological Architecture & Schema Engineering)
                   </h2>
                   <div className="text-gray-400 text-[15px] sm:text-[16px] leading-[1.75] flex flex-col gap-6">
                     <p>
@@ -994,7 +994,7 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
                     <span className="text-[12px] font-semibold text-[#F26522] uppercase tracking-wider">Generative Optimization</span>
                   </div>
                   <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight mb-8">
-                    Generative Engine Optimization & LLM Visibility
+                    How do I optimize my business for ChatGPT, Claude, and Perplexity? (Generative Engine Optimization & LLM Visibility)
                   </h2>
                   <div className="text-gray-400 text-[15px] sm:text-[16px] leading-[1.75] flex flex-col gap-6">
                     <p>
@@ -1019,7 +1019,7 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
                     <span className="text-[12px] font-semibold text-[#F26522] uppercase tracking-wider">Revenue Pipelines</span>
                   </div>
                   <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight mb-8">
-                    Pipeline Integration & Conversion Architecture
+                    How do I convert organic traffic into revenue? (Pipeline Integration & Conversion Architecture)
                   </h2>
                   <div className="text-gray-400 text-[15px] sm:text-[16px] leading-[1.75] flex flex-col gap-6">
                     <p>

@@ -63,20 +63,23 @@ const HorizontalScrollText: React.FC<HorizontalScrollTextProps> = ({ text }) => 
           className="flex w-max whitespace-nowrap gap-[4vw] pl-[100vw] text-[clamp(2rem,10vw,12rem)] font-semibold leading-[1.1] text-white uppercase"
         >
           {words.map((word, wordIdx) => (
-            <div key={wordIdx} className="inline-flex">
-              {word.split('').map((char, cIdx) => {
-                const currentIndex = charIndex++;
-                return (
-                  <span 
-                    key={currentIndex} 
-                    ref={(el) => { charsRef.current[currentIndex] = el; }} 
-                    className="inline-block"
-                  >
-                    {char}
-                  </span>
-                );
-              })}
-            </div>
+            <React.Fragment key={wordIdx}>
+              <div className="inline-flex">
+                {word.split('').map((char, cIdx) => {
+                  const currentIndex = charIndex++;
+                  return (
+                    <span 
+                      key={currentIndex} 
+                      ref={(el) => { charsRef.current[currentIndex] = el; }} 
+                      className="inline-block"
+                    >
+                      {char}
+                    </span>
+                  );
+                })}
+              </div>
+              {wordIdx < words.length - 1 && " "}
+            </React.Fragment>
           ))}
         </h3>
       </div>

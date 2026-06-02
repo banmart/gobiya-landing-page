@@ -18,6 +18,7 @@ const InsightsGrid: React.FC = () => {
 
   useEffect(() => {
     const fetchInsights = async () => {
+      let processed: Insight[] = [];
       try {
         setLoading(true);
         const { data, error } = await supabase
@@ -29,7 +30,6 @@ const InsightsGrid: React.FC = () => {
           console.error("Error fetching insights from database:", error);
         }
 
-        let processed: Insight[] = [];
         if (data) {
           processed = data.map((item: any) => {
             let finalUrl = '';
@@ -48,38 +48,37 @@ const InsightsGrid: React.FC = () => {
             };
           });
         }
-
-        // Merge static articles from ARTICLES registry
-        const merged = [...processed];
-        Object.values(ARTICLES).forEach((art) => {
-          const exists = processed.some(
-            (item: any) => item.slug && item.slug.toLowerCase() === art.slug.toLowerCase()
-          );
-          if (!exists) {
-            merged.push({
-              id: -Math.floor(Math.random() * 1000000) - 1,
-              title: art.title,
-              category: art.category,
-              image_path: '',
-              image_url: art.image,
-              slug: art.slug,
-            });
-          }
-        });
-
-        // Group by category
-        const grouped: Record<string, Insight[]> = {};
-        merged.forEach(insight => {
-          const cat = insight.category || 'Uncategorized';
-          if (!grouped[cat]) grouped[cat] = [];
-          grouped[cat].push(insight);
-        });
-        setInsightsByCategory(grouped);
       } catch (err) {
-        console.error("Failed to fetch insights:", err);
-      } finally {
-        setLoading(false);
+        console.error("Failed to fetch insights from database:", err);
       }
+
+      // Merge static articles from ARTICLES registry (always run even if database call fails)
+      const merged = [...processed];
+      Object.values(ARTICLES).forEach((art) => {
+        const exists = processed.some(
+          (item: any) => item.slug && item.slug.toLowerCase() === art.slug.toLowerCase()
+        );
+        if (!exists) {
+          merged.push({
+            id: -Math.floor(Math.random() * 1000000) - 1,
+            title: art.title,
+            category: art.category,
+            image_path: '',
+            image_url: art.image,
+            slug: art.slug,
+          });
+        }
+      });
+
+      // Group by category
+      const grouped: Record<string, Insight[]> = {};
+      merged.forEach(insight => {
+        const cat = insight.category || 'Uncategorized';
+        if (!grouped[cat]) grouped[cat] = [];
+        grouped[cat].push(insight);
+      });
+      setInsightsByCategory(grouped);
+      setLoading(false);
     };
 
     fetchInsights();

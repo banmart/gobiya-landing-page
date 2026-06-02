@@ -241,58 +241,100 @@ export default async function handler(req: IncomingMessage, res: any) {
     );
 
     // Dynamic JSON-LD Schema
+    const graph: any[] = [
+      {
+        "@type": "ProfessionalService",
+        "@id": "https://www.gobiya.com/#agency",
+        "name": "Gobiya",
+        "url": "https://www.gobiya.com",
+        "telephone": "(310) 307-9830",
+        "logo": {
+          "@type": "ImageObject",
+          "@id": "https://www.gobiya.com/#logo",
+          "url": "https://www.gobiya.com/images/gobiya---logo.webp",
+          "caption": "Gobiya Logo"
+        },
+        "image": "https://www.gobiya.com/images/gobiya---logo.webp",
+        "description": "Gobiya is a premier AI-driven SEO and B2B pipeline agency engineering organic search recovery, algorithmic dominance, and predictable revenue growth for high-stakes brands.",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "138 N Berendo St",
+          "addressLocality": "Los Angeles",
+          "addressRegion": "CA",
+          "postalCode": "90004",
+          "addressCountry": "US"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 34.0739,
+          "longitude": -118.2938
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://www.gobiya.com/#website",
+        "url": "https://www.gobiya.com",
+        "name": "Gobiya",
+        "description": "AI-driven SEO, Organic Traffic Recovery, and Sales Pipeline Engineering.",
+        "publisher": {
+          "@id": "https://www.gobiya.com/#agency"
+        }
+      },
+      {
+        "@type": "WebPage",
+        "@id": `${canonicalUrl}/#webpage`,
+        "url": canonicalUrl,
+        "name": seo.title,
+        "description": seo.description,
+        "isPartOf": {
+          "@id": "https://www.gobiya.com/#website"
+        }
+      }
+    ];
+
+    if (pathname === '/') {
+      graph.push({
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How does Generative Engine Optimization (GEO) work?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "GEO structures your brand's digital footprints—including custom schema graphs, entity connections, and structured tables—so conversational LLMs (such as ChatGPT, Claude, Perplexity, and Gemini) can confidently parse, recommend, and cite your business as a trusted authority."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How long does it take to recover from a Google Core Update penalty?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Reversing algorithmic suppressions typically takes 12 to 24 weeks. The recovery process involves a forensic update audit, consolidation or pruning of thin URLs, and building clear E-E-A-T credentials that Google's quality classifiers recognize during core update cycles."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Why do traditional SEO metrics fail B2B companies?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Traditional SEO tracks traffic volume and generic rankings. B2B programs require targeting low-volume, high-intent keyword clusters (like alternatives, comparison pages, and integration tables) that speak to multi-stakeholder buying committees, attributing traffic directly to CRM pipeline value."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the difference between manual actions and algorithmic suppressions?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A manual action is issued by a Google reviewer and explicitly listed in Search Console's manual actions panel; it is cleared by submitting a reconsideration request. An algorithmic suppression is automated, has no notification, and only recovers when the underlying quality classifiers are satisfied during a core rollout."
+            }
+          }
+        ]
+      });
+    }
+
     const jsonLdSchema = {
       "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "ProfessionalService",
-          "@id": "https://www.gobiya.com/#agency",
-          "name": "Gobiya",
-          "url": "https://www.gobiya.com",
-          "telephone": "(310) 307-9830",
-          "logo": {
-            "@type": "ImageObject",
-            "@id": "https://www.gobiya.com/#logo",
-            "url": "https://www.gobiya.com/images/gobiya---logo.webp",
-            "caption": "Gobiya Logo"
-          },
-          "image": "https://www.gobiya.com/images/gobiya---logo.webp",
-          "description": "Gobiya is a premier AI-driven SEO and B2B pipeline agency engineering organic search recovery, algorithmic dominance, and predictable revenue growth for high-stakes brands.",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "138 N Berendo St",
-            "addressLocality": "Los Angeles",
-            "addressRegion": "CA",
-            "postalCode": "90004",
-            "addressCountry": "US"
-          },
-          "geo": {
-            "@type": "GeoCoordinates",
-            "latitude": 34.0739,
-            "longitude": -118.2938
-          }
-        },
-        {
-          "@type": "WebSite",
-          "@id": "https://www.gobiya.com/#website",
-          "url": "https://www.gobiya.com",
-          "name": "Gobiya",
-          "description": "AI-driven SEO, Organic Traffic Recovery, and Sales Pipeline Engineering.",
-          "publisher": {
-            "@id": "https://www.gobiya.com/#agency"
-          }
-        },
-        {
-          "@type": "WebPage",
-          "@id": `${canonicalUrl}/#webpage`,
-          "url": canonicalUrl,
-          "name": seo.title,
-          "description": seo.description,
-          "isPartOf": {
-            "@id": "https://www.gobiya.com/#website"
-          }
-        }
-      ]
+      "@graph": graph
     };
 
     // Secondary JSON-LD Schema builder for specific page types (Articles and ProfilePage)
