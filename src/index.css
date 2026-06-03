@@ -249,3 +249,30 @@ canvas,
   border-radius: 0px !important;
   --border-radius: 0px !important;
 }
+
+/* Hide inline TOC inside article content on desktop viewports */
+@media (min-width: 1024px) {
+  #article-content details.bg-gray-50 {
+    display: none !important;
+  }
+}
+
+/* Custom subtle scrollbar style for sticky sidebar */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.1) transparent;
+}
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+

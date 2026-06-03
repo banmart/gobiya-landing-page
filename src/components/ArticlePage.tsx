@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Clock, ArrowRight, ArrowLeft, ChevronRight, Twitter, Linkedin, Facebook, Link, Share2 } from 'lucide-react';
+import { Clock, ArrowRight, ArrowLeft, ChevronRight, ChevronLeft, Twitter, Linkedin, Facebook, Link, Share2, Check, BookOpen, Wrench } from 'lucide-react';
 import DeferredShader, { Swirl, ChromaFlow, FlutedGlass, FilmGrain } from './DeferredShader';
 import Header from './Header';
 import Footer from './Footer';
@@ -23,6 +23,76 @@ interface ArticleData {
 // Each article is statically registered here so we can do fast client-side
 // routing without a DB round-trip. Add new articles to this map.
 const ARTICLES: Record<string, ArticleData> = {
+  'gobiya-vs-enterprise-seo-agencies': {
+    slug: 'gobiya-vs-enterprise-seo-agencies',
+    title: 'Gobiya vs Enterprise B2B SEO Agencies: An Honest Comparison',
+    category: 'Strategy',
+    readTime: '9 min read',
+    date: 'June 3, 2026',
+    image: '/images/article-predictive-analytics.webp',
+    heroAlt: 'A modern B2B comparison matrix showing performance and cost trade-offs between dynamic boutique agencies and traditional bloated enterprise agencies',
+    metaDescription: 'An honest comparison of Gobiya vs traditional enterprise SEO agencies for B2B brands looking for speed, GEO citation, and CRM pipelines.',
+    content: (
+      <>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8 font-medium">
+          When high-growth B2B companies search for search engine optimization support, they typically arrive at a crossroad: hire a traditional, large-scale enterprise agency or partner with a specialized, agile search engineering shop. The enterprise choice offers the comfort of a recognized name, but it often carries bloated retainers, junior account oversight, and slow execution cycles. The specialized engineering choice focuses on speed, entity mapping, and pipeline value.
+        </p>
+
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          This comparison is designed to help B2B buying committees evaluate both models across the four capabilities that determine modern search success: page rendering speed, GEO (Generative Engine Optimization) citation rate, technical execution speed, and CRM pipeline attribution.
+        </p>
+
+        <h2 id="comparison-table" className="text-xl font-bold text-gray-900 mt-10 mb-4 font-display">Gobiya vs Enterprise Agencies: Operational Comparison</h2>
+        <div className="overflow-x-auto my-8">
+          <table className="w-full text-left border-collapse text-gray-800">
+            <thead>
+              <tr className="border-b border-gray-300 bg-gray-50">
+                <th className="p-4 font-semibold text-[14px]">Metric</th>
+                <th className="p-4 font-semibold text-[14px] text-[#F26522]">Gobiya Search Engineering</th>
+                <th className="p-4 font-semibold text-[14px]">Traditional Enterprise SEO Agency</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-b border-gray-200">
+                <td className="p-4 font-semibold text-[14px]">Execution Stack</td>
+                <td className="p-4 text-[14px]">Bespoke React/Vite serverless, no-plugin JSX rendering</td>
+                <td className="p-4 text-[14px]">Heavy page builders (WordPress, Webflow) with visual plugins</td>
+              </tr>
+              <tr className="border-b border-gray-200">
+                <td className="p-4 font-semibold text-[14px]">Mobile Page Speed</td>
+                <td className="p-4 text-[14px]">Core Web Vitals score of 100 guaranteed, &lt;1.0s TTI</td>
+                <td className="p-4 text-[14px]">Core Web Vitals scores of 40-60, 3-5s load delays</td>
+              </tr>
+              <tr className="border-b border-gray-200">
+                <td className="p-4 font-semibold text-[14px]">GEO Citation Optimization</td>
+                <td className="p-4 text-[14px]">Custom Organization schema graphs & earned media entity linkage</td>
+                <td className="p-4 text-[14px]">Basic LocalBusiness schema, keyword-focused tags only</td>
+              </tr>
+              <tr className="border-b border-gray-200">
+                <td className="p-4 font-semibold text-[14px]">Pipeline Tracking</td>
+                <td className="p-4 text-[14px]">Reverse-IP de-anonymization linked to CRM pipeline deals</td>
+                <td className="p-4 text-[14px]">Vanity search metrics (impressions, ranking count, clicks)</td>
+              </tr>
+              <tr className="border-b border-gray-200">
+                <td className="p-4 font-semibold text-[14px]">Team Seniority</td>
+                <td className="p-4 text-[14px]">Direct access to senior search engineers and lead builders</td>
+                <td className="p-4 text-[14px]">Account managers delegation to junior coordinators</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2 id="why-model-shifts" className="text-xl font-bold text-gray-900 mt-10 mb-4 font-display">Why the B2B SEO Model Shifted in 2026</h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          The B2B buying journey has changed fundamentally. Today, buyers do not simply click through blue links on Google. Over half of search sessions in B2B begin in conversational AI tools like ChatGPT, Claude, Perplexity, and Gemini. A traditional agency optimized for ranking position does not measure or affect whether those models recommend your brand. Gobiya designs onpage content and schemas specifically to feed RAG reasoning frameworks, ensuring your business is cited natively.
+        </p>
+
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          By combining speed, entity mapping, and automated pipeline intelligence, Gobiya offers the agility and performance B2B brands need to win in high-stakes, search-driven environments.
+        </p>
+      </>
+    )
+  },
   'how-do-b2b-companies-use-seo-to-generate-predictable-revenue': {
     slug: 'how-do-b2b-companies-use-seo-to-generate-predictable-revenue',
     title: 'How B2B Companies Use SEO to Generate Predictable Revenue',
@@ -5633,6 +5703,27 @@ const ARTICLES: Record<string, ArticleData> = {
 
 // ─── Related Articles per slug ────────────────────────────────────────────────
 const RELATED_ARTICLES_MAP: Record<string, { href: string; category: string; title: string; image: string }[]> = {
+  'gobiya-vs-enterprise-seo-agencies': [
+    {
+      href: '/insights/best-seo-agency-for-b2b-brands',
+      category: 'Strategy',
+      title: 'Choose the Right B2B SEO Agency in 2026',
+      image: '/images/article-best-seo-agency.webp',
+    },
+    {
+      href: '/insights/how-do-b2b-companies-use-seo-to-generate-predictable-revenue',
+      category: 'Strategy',
+      title: 'How B2B Companies Use SEO to Generate Predictable Revenue',
+      image: '/images/article-how-do-b2b-companies-use-seo-to-generate-predictable-revenue.webp',
+    },
+    {
+      href: '/services/geo-optimization',
+      category: 'GEO',
+      title: 'Generative Engine Optimization: Be Cited by AI',
+      image: '/images/article-ai-seo-2024.webp',
+    },
+  ],
+
   'how-do-b2b-companies-use-seo-to-generate-predictable-revenue': [
     {
       href: '/insights/automated-b2b-sales-pipeline-seo',
@@ -6072,6 +6163,68 @@ const DEFAULT_RELATED_ARTICLES = [
   },
 ];
 
+const GROWTH_CHECKLIST = [
+  'More visibility on Google Search & Maps',
+  'Get cited on ChatGPT, Claude, and Gemini',
+  'Thumb-stopping content across social feeds',
+  'High-converting paid media campaigns',
+  'Smarter email flow with stronger retention'
+];
+
+const CASE_STUDIES = [
+  {
+    client: 'SafetyCentric',
+    title: 'Commercial Security Integrators React Build',
+    description: 'We engineered a high-performance commercial security React application with bespoke CRM lead pipelines, intent-based landing captures, and flawless speed metrics.',
+    metric: 'SafetyCentric Success',
+    submetric: 'React & Vite Stack'
+  },
+  {
+    client: 'RemodelMe Pros',
+    title: 'Contractor Marketplace & Native CRM Architecture',
+    description: 'Re-architected local contractor portal with custom database pipelines, optimizing customer acquisition and pipeline automation.',
+    metric: 'RemodelMe Pros Success',
+    submetric: 'Marketplace Platform'
+  },
+  {
+    client: 'CNN Brasil',
+    title: 'Core Update Traffic Recovery & Technical SEO Upgrade',
+    description: 'Collaborated with CNN Brasil to enhance search engine indexation structures, leading to a 91% increase in total pageviews, surpassing 1 billion pageviews.',
+    metric: '91% Pageviews Increase',
+    submetric: '> 1 Billion Pageviews'
+  },
+  {
+    client: 'Enterprise SaaS',
+    title: 'Generative AI Citation & Conversational Search Optimization',
+    description: 'Structured technical documents into quote-friendly passages, establishing the brand as the recommended default citation across ChatGPT & Claude.',
+    metric: '85% Share of Voice',
+    submetric: 'Conversational Search'
+  },
+  {
+    client: 'E-commerce Brand',
+    title: 'Helpful Content Update Algorithmic Recovery',
+    description: 'Pruned thin category landing pages, resolved internal link blocks, and consolidated topic clusters to recover traffic within 90 days.',
+    metric: '320% Search Rebound',
+    submetric: '90 Days Recovery'
+  }
+];
+
+const GUIDE_LINKS = [
+  { label: 'AI Retrieval Optimization', href: '/services/geo-optimization' },
+  { label: 'B2B SEO Strategy Guide', href: '/services/lead-generation' },
+  { label: 'Manual Penalty Recovery', href: '/google-manual-action-removal-agency-caused-penalty' },
+  { label: 'Local Search Dominance', href: '/services/seo' },
+  { label: 'AI Search Citation Playbook', href: '/insights/chatgpt-vs-google-for-business-discovery' }
+];
+
+const TECH_LINKS = [
+  { label: 'Generative Citation Audit', href: '/contact' },
+  { label: 'ROI & Pipeline Calculator', href: '/services/lead-generation' },
+  { label: 'Schema Blueprint Builder', href: '/services/geo-optimization' },
+  { label: 'Robots.txt & Bot Audit', href: '/insights/what-is-generative-engine-optimization-and-how-does-it-work' },
+  { label: 'Keyword Cluster Classifier', href: '/services/seo' }
+];
+
 // ─── Component ────────────────────────────────────────────────────────────────
 interface ArticlePageProps {
   slug: string;
@@ -6082,6 +6235,49 @@ const ArticlePage: React.FC<ArticlePageProps> = ({ slug }) => {
   const [canShare, setCanShare] = useState(false);
   const [copied, setCopied] = useState(false);
   const article = ARTICLES[slug];
+
+  const [toc, setToc] = useState<{ id: string; label: string }[]>([]);
+  const [activeId, setActiveId] = useState<string>('');
+  const [activeSlide, setActiveSlide] = useState<number>(0);
+
+  useEffect(() => {
+    if (!article) return;
+    
+    // Parse h2 elements inside article body to construct TOC dynamically
+    const timer = setTimeout(() => {
+      const headings = document.querySelectorAll('#article-content h2[id]');
+      const items = Array.from(headings).map((h) => ({
+        id: h.id,
+        label: h.textContent || '',
+      }));
+      setToc(items);
+    }, 150);
+
+    return () => clearTimeout(timer);
+  }, [article, slug]);
+
+  useEffect(() => {
+    if (toc.length === 0) return;
+
+    const headings = document.querySelectorAll('#article-content h2[id]');
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries.find((e) => e.isIntersecting);
+        if (visible) {
+          setActiveId(visible.target.id);
+        }
+      },
+      { 
+        rootMargin: '-100px 0px -70% 0px', 
+        threshold: 0 
+      }
+    );
+
+    headings.forEach((h) => observer.observe(h));
+    return () => {
+      headings.forEach((h) => observer.unobserve(h));
+    };
+  }, [toc]);
 
   useEffect(() => {
     setCanShare(typeof navigator !== 'undefined' && !!navigator.share);
@@ -6376,7 +6572,7 @@ const ArticlePage: React.FC<ArticlePageProps> = ({ slug }) => {
 
       {/* ── ARTICLE BODY ── */}
       <main className="w-full max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-12 py-12 sm:py-20">
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-12 xl:gap-20">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-12 xl:gap-16">
 
           {/* Main article content */}
           <article className="max-w-[760px] dark-article" id="article-content">
@@ -6431,14 +6627,86 @@ const ArticlePage: React.FC<ArticlePageProps> = ({ slug }) => {
             </div>
 
             {article.content}
+
+            {/* ── MOBILE-ONLY: Conversion Widgets ── */}
+            <div className="lg:hidden mt-12 pt-12 border-t border-white/10 flex flex-col gap-8">
+              {/* Let's Grow Your Business */}
+              <div className="border border-white/10 bg-white/5 p-6">
+                <h3 className="text-lg font-semibold text-white mb-2">Let's Grow Your Business</h3>
+                <p className="text-gray-400 text-sm mb-4">Partner with Gobiya to scale your organic channels and secure citations in conversational search engines.</p>
+                <ul className="space-y-3.5 mb-6">
+                  {GROWTH_CHECKLIST.map((item, index) => (
+                    <li key={index} className="flex items-start gap-3 text-[14px] text-gray-300 leading-snug">
+                      <Check className="w-4 h-4 text-[#F26522] shrink-0 mt-0.5" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+                <a
+                  href="/contact"
+                  className="w-full text-center bg-[#F26522] hover:bg-[#e05a1a] text-white py-3.5 text-xs font-semibold uppercase tracking-wider transition-colors block"
+                >
+                  Book a Call
+                </a>
+              </div>
+
+              {/* Case Studies Carousel */}
+              <div className="border border-white/10 bg-white/5 p-6">
+                <div className="flex justify-between items-center mb-4">
+                  <span className="text-[12px] uppercase font-bold text-gray-400 tracking-wider">Case Studies</span>
+                  <div className="flex items-center gap-1.5">
+                    <button
+                      onClick={() => setActiveSlide((prev) => (prev === 0 ? CASE_STUDIES.length - 1 : prev - 1))}
+                      className="w-6 h-6 border border-white/10 flex items-center justify-center text-gray-400 hover:text-white transition-colors"
+                      aria-label="Previous Case Study"
+                    >
+                      <ChevronLeft className="w-3.5 h-3.5" />
+                    </button>
+                    <button
+                      onClick={() => setActiveSlide((prev) => (prev === CASE_STUDIES.length - 1 ? 0 : prev + 1))}
+                      className="w-6 h-6 border border-white/10 flex items-center justify-center text-gray-400 hover:text-white transition-colors"
+                      aria-label="Next Case Study"
+                    >
+                      <ChevronRight className="w-3.5 h-3.5" />
+                    </button>
+                  </div>
+                </div>
+                <div className="min-h-[170px] flex flex-col justify-between">
+                  <div>
+                    <p className="text-[11px] uppercase tracking-wider font-semibold text-[#F26522] mb-1.5">
+                      {CASE_STUDIES[activeSlide].client}
+                    </p>
+                    <h4 className="text-white text-[16px] font-semibold leading-tight mb-2.5">
+                      {CASE_STUDIES[activeSlide].title}
+                    </h4>
+                    <p className="text-[13px] text-gray-400 leading-relaxed">
+                      {CASE_STUDIES[activeSlide].description}
+                    </p>
+                  </div>
+                  <div className="mt-5 pt-4 border-t border-white/5 flex justify-between items-center">
+                    <div>
+                      <div className="text-[#F26522] text-xl font-bold leading-none">{CASE_STUDIES[activeSlide].metric}</div>
+                      <div className="text-[11px] text-gray-500 mt-1 uppercase font-medium tracking-wider">{CASE_STUDIES[activeSlide].submetric}</div>
+                    </div>
+                    <a
+                      href="/services"
+                      className="text-[11px] font-semibold text-white uppercase tracking-wider hover:text-[#F26522] transition-colors flex items-center gap-1 group"
+                    >
+                      Read case study
+                      <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform animate-bounce-horizontal" />
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
           </article>
 
           {/* Sidebar */}
           <aside className="hidden lg:block">
-            <div className="sticky top-24">
+            <div className="sticky top-24 flex flex-col gap-6">
 
               {slug === 'b2b-seo-agency-los-angeles' && (
-                <div className="border border-white/10 p-6 mb-6 bg-white/5">
+                <div className="border border-white/10 p-6 bg-white/5">
                   <p className="text-[11px] uppercase tracking-wider font-semibold text-gray-400 mb-4">Listen to this article</p>
                   <audio controls className="w-full custom-audio">
                     <source src="/audio/Why_LA_B2B_SEO_must_be_local.m4a" type="audio/mp4" />
@@ -6447,87 +6715,158 @@ const ArticlePage: React.FC<ArticlePageProps> = ({ slug }) => {
                 </div>
               )}
 
-              {/* Article meta */}
-              <div className="border border-white/10 p-6 mb-6 bg-white/5">
-                <p className="text-[11px] uppercase tracking-wider font-semibold text-gray-400 mb-4">About This Article</p>
-                <div className="flex flex-col gap-3 text-[14px] text-gray-300">
-                  <div><span className="font-semibold text-white">Published:</span> {article.date}</div>
-                  <div><span className="font-semibold text-white">Reading time:</span> {article.readTime}</div>
-                  <div><span className="font-semibold text-white">Category:</span> {article.category}</div>
-                </div>
-              </div>
-
-              {/* Share Article */}
-              <div className="border border-white/10 p-6 mb-6 bg-white/5">
-                <p className="text-[11px] uppercase tracking-wider font-semibold text-gray-400 mb-3">Share This Article</p>
-                <img src={article.image} alt={article.heroAlt} className="w-full aspect-[16/9] object-cover rounded-md mb-4" />
-                <div className="flex items-center gap-3">
-                  <button onClick={() => handleShare('linkedin')} className="w-10 h-10 border border-white/10 flex items-center justify-center text-gray-400 hover:text-[#F26522] hover:border-[#F26522] transition-colors rounded-full" aria-label="Share on LinkedIn">
-                    <Linkedin className="w-4 h-4" />
-                  </button>
-                  <button onClick={() => handleShare('twitter')} className="w-10 h-10 border border-white/10 flex items-center justify-center text-gray-400 hover:text-[#F26522] hover:border-[#F26522] transition-colors rounded-full" aria-label="Share on Twitter">
-                    <Twitter className="w-4 h-4" />
-                  </button>
-                  <button onClick={() => handleShare('facebook')} className="w-10 h-10 border border-white/10 flex items-center justify-center text-gray-400 hover:text-[#F26522] hover:border-[#F26522] transition-colors rounded-full" aria-label="Share on Facebook">
-                    <Facebook className="w-4 h-4" />
-                  </button>
-                  <button
-                    onClick={() => handleShare('copy')}
-                    className="w-10 h-10 border border-white/10 flex items-center justify-center text-gray-400 hover:text-[#F26522] hover:border-[#F26522] transition-colors rounded-full relative"
-                    aria-label="Copy Link"
-                  >
-                    {copied ? (
-                      <span className="text-[9px] text-[#F26522] font-semibold">Copied!</span>
-                    ) : (
-                      <Link className="w-4 h-4" />
-                    )}
-                  </button>
-                  {canShare && (
-                    <button onClick={() => handleShare('native')} className="w-10 h-10 border border-white/10 flex items-center justify-center text-gray-400 hover:text-[#F26522] hover:border-[#F26522] transition-colors rounded-full" aria-label="More Sharing Options">
-                      <Share2 className="w-4 h-4" />
+              {/* Table of Contents with Social Share controls */}
+              <div className="border border-[#F26522]/30 p-6 bg-white/[0.02]">
+                <div className="flex justify-between items-center mb-5 border-b border-white/10 pb-3">
+                  <span className="text-[12px] uppercase font-bold text-[#F26522] tracking-wider">Table of Contents</span>
+                  <div className="flex items-center gap-2">
+                    <button onClick={() => handleShare('facebook')} className="text-gray-400 hover:text-white transition-colors cursor-pointer" aria-label="Share on Facebook">
+                      <Facebook className="w-3.5 h-3.5" />
                     </button>
-                  )}
+                    <button onClick={() => handleShare('linkedin')} className="text-gray-400 hover:text-white transition-colors cursor-pointer" aria-label="Share on LinkedIn">
+                      <Linkedin className="w-3.5 h-3.5" />
+                    </button>
+                    <button onClick={() => handleShare('twitter')} className="text-gray-400 hover:text-white transition-colors cursor-pointer" aria-label="Share on Twitter">
+                      <Twitter className="w-3.5 h-3.5" />
+                    </button>
+                    <button onClick={() => handleShare('copy')} className="text-gray-400 hover:text-white transition-colors cursor-pointer relative" aria-label="Copy Link">
+                      {copied ? <span className="text-[9px] text-[#F26522] font-semibold">Copied</span> : <Link className="w-3.5 h-3.5" />}
+                    </button>
+                  </div>
                 </div>
+                {toc.length > 0 ? (
+                  <ul className="space-y-3.5 text-[14px] font-medium">
+                    {toc.map((item) => {
+                      const isActive = activeId === item.id;
+                      return (
+                        <li key={item.id} className="transition-all duration-300">
+                          <a
+                            href={`#${item.id}`}
+                            onClick={(e) => {
+                              e.preventDefault();
+                              document.getElementById(item.id)?.scrollIntoView({ behavior: 'smooth' });
+                              setActiveId(item.id);
+                            }}
+                            className={`block text-[14px] leading-snug transition-all duration-200 ${
+                              isActive
+                                ? 'text-[#F26522] border-l-2 border-[#F26522] pl-3 -ml-3 font-semibold'
+                                : 'text-gray-400 hover:text-white pl-0 border-l-2 border-transparent'
+                            }`}
+                          >
+                            {item.label}
+                          </a>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                ) : (
+                  <p className="text-gray-500 text-xs italic">Parsing article headers...</p>
+                )}
               </div>
 
-              {/* CTA box */}
-              <div className="border border-white/10 bg-white/5 p-6 mb-6">
-                <p className="text-[11px] uppercase tracking-wider font-semibold text-[#F26522] mb-3">Get A Citation Audit</p>
-                <p className="text-white text-[14px] leading-relaxed mb-4">
-                  Find out where your brand stands across ChatGPT, Claude, Perplexity, and Gemini.
-                </p>
+              {/* Let's Grow Your Business Checklist */}
+              <div className="border border-white/10 p-6 bg-white/5">
+                <h3 className="text-lg font-semibold text-white mb-2">Let's Grow Your Business</h3>
+                <p className="text-gray-400 text-sm mb-4">Scale search footprint, organic pipeline, and RAG search citation metrics.</p>
+                <ul className="space-y-3.5 my-5">
+                  {GROWTH_CHECKLIST.map((item, index) => (
+                    <li key={index} className="flex items-start gap-3 text-[13.5px] text-gray-300 leading-snug">
+                      <Check className="w-4 h-4 text-[#F26522] shrink-0 mt-0.5" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
                 <a
                   href="/contact"
-                  className="group flex items-center bg-[#F26522] hover:bg-[#e05a1a] text-white pl-4 pr-2 py-2 transition-colors duration-300 text-[13px] font-medium w-full justify-between"
+                  className="w-full text-center bg-[#F26522] hover:bg-[#e05a1a] text-white py-3.5 text-xs font-semibold uppercase tracking-wider transition-colors block"
                 >
-                  Request audit
-                  <div className="w-6 h-6 bg-white flex items-center justify-center ml-3">
-                    <ArrowRight className="w-3 h-3 text-[#F26522] group-hover:-rotate-45 transition-transform duration-300" />
-                  </div>
+                  Book a Call
                 </a>
               </div>
 
-              {/* Related services */}
+              {/* Case Studies Carousel widget */}
               <div className="border border-white/10 p-6 bg-white/5">
-                <p className="text-[11px] uppercase tracking-wider font-semibold text-gray-400 mb-4">Related Services</p>
-                <div className="flex flex-col gap-3">
-                  {[
-                    { href: '/services/lead-generation', label: 'B2B Pipeline Architecture' },
-                    { href: '/services/geo-optimization', label: 'Generative Engine Optimization' },
-                    { href: '/services/seo', label: 'Search Engine Optimization' },
-                    { href: '/google-penalty-recovery', label: 'Penalty Recovery' },
-                  ].map(({ href, label }) => (
+                <div className="flex justify-between items-center mb-4">
+                  <span className="text-[12px] uppercase font-bold text-gray-400 tracking-wider">Case Studies</span>
+                  <div className="flex items-center gap-1.5">
+                    <button
+                      onClick={() => setActiveSlide((prev) => (prev === 0 ? CASE_STUDIES.length - 1 : prev - 1))}
+                      className="w-6 h-6 border border-white/10 flex items-center justify-center text-gray-400 hover:text-white transition-colors cursor-pointer"
+                      aria-label="Previous Case Study"
+                    >
+                      <ChevronLeft className="w-3.5 h-3.5" />
+                    </button>
+                    <button
+                      onClick={() => setActiveSlide((prev) => (prev === CASE_STUDIES.length - 1 ? 0 : prev + 1))}
+                      className="w-6 h-6 border border-white/10 flex items-center justify-center text-gray-400 hover:text-white transition-colors cursor-pointer"
+                      aria-label="Next Case Study"
+                    >
+                      <ChevronRight className="w-3.5 h-3.5" />
+                    </button>
+                  </div>
+                </div>
+                <div className="min-h-[170px] flex flex-col justify-between">
+                  <div>
+                    <p className="text-[11px] uppercase tracking-wider font-semibold text-[#F26522] mb-1.5">
+                      {CASE_STUDIES[activeSlide].client}
+                    </p>
+                    <h4 className="text-white text-[15px] font-semibold leading-tight mb-2">
+                      {CASE_STUDIES[activeSlide].title}
+                    </h4>
+                    <p className="text-[13px] text-gray-400 leading-relaxed">
+                      {CASE_STUDIES[activeSlide].description}
+                    </p>
+                  </div>
+                  <div className="mt-5 pt-4 border-t border-white/5 flex justify-between items-center">
+                    <div>
+                      <div className="text-[#F26522] text-xl font-bold leading-none">{CASE_STUDIES[activeSlide].metric}</div>
+                      <div className="text-[11px] text-gray-500 mt-1 uppercase font-medium tracking-wider">{CASE_STUDIES[activeSlide].submetric}</div>
+                    </div>
                     <a
-                      key={href}
-                      href={href}
+                      href="/services"
+                      className="text-[11px] font-semibold text-white uppercase tracking-wider hover:text-[#F26522] transition-colors flex items-center gap-1 group"
+                    >
+                      Read case study
+                      <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              {/* Guides list widget */}
+              <div className="border border-white/10 p-6 bg-white/5">
+                <p className="text-[12px] uppercase font-bold text-gray-400 tracking-wider mb-4 border-b border-white/5 pb-2">Guides</p>
+                <div className="flex flex-col gap-3">
+                  {GUIDE_LINKS.map((link, index) => (
+                    <a
+                      key={index}
+                      href={link.href}
                       className="flex items-center gap-2 text-[13px] text-gray-300 hover:text-[#F26522] transition-colors group"
                     >
-                      <ArrowRight className="w-3 h-3 text-[#F26522] group-hover:translate-x-1 transition-transform duration-300" />
-                      {label}
+                      <BookOpen className="w-3.5 h-3.5 text-[#F26522] group-hover:scale-110 transition-transform shrink-0" />
+                      <span className="truncate">{link.label}</span>
                     </a>
                   ))}
                 </div>
               </div>
+
+              {/* Tools & Tech list widget */}
+              <div className="border border-white/10 p-6 bg-white/5">
+                <p className="text-[12px] uppercase font-bold text-gray-400 tracking-wider mb-4 border-b border-white/5 pb-2">Tools & Tech</p>
+                <div className="flex flex-col gap-3">
+                  {TECH_LINKS.map((link, index) => (
+                    <a
+                      key={index}
+                      href={link.href}
+                      className="flex items-center gap-2 text-[13px] text-gray-300 hover:text-[#F26522] transition-colors group"
+                    >
+                      <Wrench className="w-3.5 h-3.5 text-[#F26522] group-hover:rotate-12 transition-transform shrink-0" />
+                      <span className="truncate">{link.label}</span>
+                    </a>
+                  ))}
+                </div>
+              </div>
+
             </div>
           </aside>
         </div>

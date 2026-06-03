@@ -86,7 +86,7 @@ const Footer: React.FC = () => {
 
         {/* Bottom Bar */}
         <div className="max-w-[1440px] w-full mx-auto flex flex-col sm:flex-row justify-between items-center gap-4 border-t border-white/10 pt-8 pb-8 relative z-[60]">
-          <p className="text-[13px] text-gray-500">© 2026 Gobiya. Engineering search dominance.</p>
+          <p className="text-[13px] text-gray-500">© 2026 Gobiya. Operating since 2012 | BBB A+ Rated. Engineering search dominance.</p>
           <div className="flex items-center gap-6 text-[13px] text-gray-500">
             <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
             <a href="#" className="hover:text-white transition-colors">Terms of Service</a>

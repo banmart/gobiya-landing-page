@@ -431,7 +431,7 @@ const AxionLanding = () => {
           {/* Responsive Content Area */}
           <div className="block lg:hidden font-body">
             <p className="text-[15px] sm:text-[17px] leading-[1.6] font-medium text-gray-900 mb-6">
-              Gobiya is a specialized search engine optimization firm and content marketing agency in Los Angeles. Our proprietary methodology combines machine learning insights with elite technical SEO, ensuring your brand captures the most valuable search real estate available.
+              Gobiya is a BBB A+ rated search engine optimization firm and content marketing agency in Los Angeles, operating since 2012. Our proprietary methodology combines machine learning insights with elite technical SEO, ensuring your brand captures the most valuable search real estate available.
             </p>
             <a href="/contact" className="group flex items-center bg-[#F26522] hover:bg-[#e05a1a] text-white pl-5 pr-2 py-2 transition-colors duration-300 mb-8 inline-flex">
               <div className="flex flex-col overflow-hidden h-[20px] justify-start items-start relative mr-3">
@@ -478,7 +478,7 @@ const AxionLanding = () => {
             </div>
             <div className="self-start flex flex-col items-start justify-start pt-2">
               <p className="text-[16px] xl:text-[18px] leading-[1.65] font-medium text-gray-900 mb-8">
-                Gobiya is a specialized search engine optimization firm and content marketing agency in Los Angeles. Our proprietary methodology combines machine learning insights with elite technical SEO for maximum ROI.
+                Gobiya is a BBB A+ rated search engine optimization firm and content marketing agency in Los Angeles, operating since 2012. Our proprietary methodology combines machine learning insights with elite technical SEO for maximum ROI.
               </p>
               <a href="/contact" className="group flex items-center bg-[#F26522] hover:bg-[#e05a1a] text-white pl-6 pr-2 py-2 transition-colors duration-300">
                 <div className="flex flex-col overflow-hidden h-[20px] justify-start items-start relative mr-3">

@@ -68,6 +68,10 @@ const metadataMap: Record<string, SEOMetadata> = {
     title: 'Forensic SEO & B2B Pipeline Services | Gobiya',
     description: 'We consolidate forensic SEO, traffic recovery, generative engine optimization (GEO), high-speed React engineering, and automated outbound sales pipelines.'
   },
+  '/insights/gobiya-vs-enterprise-seo-agencies': {
+    title: 'Gobiya vs Enterprise B2B SEO Agencies: An Honest Comparison | Gobiya',
+    description: 'An honest operational and performance comparison of Gobiya search engineering vs traditional enterprise B2B SEO agencies.'
+  },
   '/insights/automated-b2b-sales-pipeline-seo': {
     title: 'How AI Citations Shape Your B2B Vendor Shortlist | Gobiya',
     description: 'How AI-cited content qualifies B2B vendors for buyer shortlists — and what the 2026 shift to AI-driven research means for your pipeline.'
@@ -169,6 +173,16 @@ export default async function handler(req: IncomingMessage, res: any) {
       '/services/web-design': '/services/web-development',
       '/services/advertising': '/services/ppc-advertising',
       '/company/insights': '/insights',
+      '/what-we-do.html': '/services/seo',
+      '/locations/burbank': '/locations/burbank-seo',
+      '/locations/glendale': '/locations/glendale-seo',
+      '/locations/pasadena': '/locations/pasadena-seo',
+      '/locations/long-beach': '/locations/long-beach-seo',
+      '/locations/anaheim': '/locations/anaheim-seo',
+      '/locations/costa-mesa': '/locations/costa-mesa-seo',
+      '/locations/irvine': '/locations/irvine-seo',
+      '/locations/santa-ana': '/locations/santa-ana-seo',
+      '/locations/sherman-oaks': '/locations'
     };
 
     if (legacyRedirects[pathname]) {
@@ -247,6 +261,12 @@ export default async function handler(req: IncomingMessage, res: any) {
         "@id": "https://www.gobiya.com/#agency",
         "name": "Gobiya",
         "url": "https://www.gobiya.com",
+        "sameAs": [
+          "https://www.linkedin.com/in/stevemartingobiya/",
+          "https://x.com/SteveMarti66556",
+          "https://www.facebook.com/people/Gobiya/100064043744190/",
+          "https://m.yelp.com/biz/gobiya-los-angeles-5"
+        ],
         "telephone": "(323) 744-1338",
         "foundingDate": "2012-11-15",
         "logo": {

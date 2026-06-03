@@ -485,11 +485,14 @@ const SolutionPage: React.FC<{ path: string }> = ({ path }) => {
         {/* Hero Content */}
         <div className="relative z-20 max-w-[1440px] w-full mx-auto px-5 sm:px-8 lg:px-12 mb-16 lg:mb-24">
           <div className="max-w-[1000px]">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm mb-6">
-              <Search className="w-4 h-4 text-[#F26522]" />
-              <span className="text-[13px] sm:text-[14px] text-gray-300 tracking-wide uppercase font-medium">
-                Gobiya Services {'>'} {data.insightCategory}
-              </span>
+            <div className="flex flex-wrap items-center gap-3 mb-6">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm">
+                <Search className="w-4 h-4 text-[#F26522]" />
+                <span className="text-[13px] sm:text-[14px] text-gray-300 tracking-wide uppercase font-medium">
+                  Gobiya Services {'>'} {data.insightCategory}
+                </span>
+              </div>
+              <span className="text-[12px] text-gray-500 font-medium">Last Updated: June 2026</span>
             </div>
             
             <h1 className="text-[clamp(2.5rem,6vw,4.5rem)] font-medium leading-[1.05] tracking-tight text-white mb-6 font-display">

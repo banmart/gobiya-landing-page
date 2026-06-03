@@ -86,6 +86,16 @@ function App({ url }: AppProps) {
       '/company/insights': '/insights',
       '/services/web-design': '/services/web-development',
       '/services/advertising': '/services/ppc-advertising',
+      '/what-we-do.html': '/services/seo',
+      '/locations/burbank': '/locations/burbank-seo',
+      '/locations/glendale': '/locations/glendale-seo',
+      '/locations/pasadena': '/locations/pasadena-seo',
+      '/locations/long-beach': '/locations/long-beach-seo',
+      '/locations/anaheim': '/locations/anaheim-seo',
+      '/locations/costa-mesa': '/locations/costa-mesa-seo',
+      '/locations/irvine': '/locations/irvine-seo',
+      '/locations/santa-ana': '/locations/santa-ana-seo',
+      '/locations/sherman-oaks': '/locations'
     };
     
     const normalized = currentPath.toLowerCase().replace(/\/$/, '') || '/';

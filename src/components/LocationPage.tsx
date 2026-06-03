@@ -617,11 +617,14 @@ const LocationPage: React.FC<{ path: string }> = ({ path }) => {
           </nav>
 
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm mb-6">
-            <MapPin className="w-4 h-4 text-[#F26522]" />
-            <span className="text-[13px] text-gray-300 tracking-wide uppercase font-medium">
-              {data.city}, {data.state} · {data.county}
-            </span>
+          <div className="flex flex-wrap items-center gap-3 mb-6">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm">
+              <MapPin className="w-4 h-4 text-[#F26522]" />
+              <span className="text-[13px] text-gray-300 tracking-wide uppercase font-medium">
+                {data.city}, {data.state} · {data.county}
+              </span>
+            </div>
+            <span className="text-[12px] text-gray-500 font-medium">Last Updated: June 2026</span>
           </div>
 
           <h1 className="text-[clamp(2.5rem,6vw,4.5rem)] font-medium leading-[1.05] tracking-tight text-white mb-6 font-display max-w-[900px]">

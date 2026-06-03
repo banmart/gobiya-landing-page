@@ -66,6 +66,10 @@ const metadataMap: Record<string, SEOMetadata> = {
     title: 'Forensic SEO and B2B Pipeline Services | Gobiya',
     description: 'We engineer professional SEO and B2B pipeline services, consolidating organic traffic recovery, generative engine optimization (GEO), and React web development.'
   },
+  '/insights/gobiya-vs-enterprise-seo-agencies': {
+    title: 'Gobiya vs Enterprise B2B SEO Agencies: An Honest Comparison | Gobiya',
+    description: 'An honest operational and performance comparison of Gobiya search engineering vs traditional enterprise B2B SEO agencies.'
+  },
   '/insights/automated-b2b-sales-pipeline-seo': {
     title: 'How AI Citations Shape Your B2B Vendor Shortlist | Gobiya',
     description: 'How AI-cited content qualifies B2B vendors for buyer shortlists — and what the 2026 shift to AI-driven research means for your pipeline.'
@@ -218,6 +222,12 @@ const SEO: React.FC<SEOProps> = ({ path }) => {
         "@id": "https://www.gobiya.com/#agency",
         "name": "Gobiya",
         "url": "https://www.gobiya.com",
+        "sameAs": [
+          "https://www.linkedin.com/in/stevemartingobiya/",
+          "https://x.com/SteveMarti66556",
+          "https://www.facebook.com/people/Gobiya/100064043744190/",
+          "https://m.yelp.com/biz/gobiya-los-angeles-5"
+        ],
         "telephone": "(323) 744-1338",
         "foundingDate": "2012-11-15",
         "logo": {
