@@ -5,6 +5,7 @@ import ArticlePage from './components/ArticlePage';
 import AuthorPage from './components/AuthorPage';
 import ThankYouPage from './components/ThankYouPage';
 import SolutionPage from './components/SolutionPage';
+import RegionalHubPage from './components/RegionalHubPage';
 import SEO from './components/SEO';
 import PageTransition, { navigateWithTransition } from './components/PageTransition';
 
@@ -110,6 +111,10 @@ function App({ url }: AppProps) {
   const articleMatch = normalizedPath.match(/^\/insights\/([a-z0-9-]+)$/);
   const articleSlug = articleMatch ? articleMatch[1] : null;
 
+  // Detect regional hub routes: /markets/[region]
+  const regionalHubMatch = normalizedPath.match(/^\/markets\/([a-z0-9-]+)$/);
+  const regionalHubSlug = regionalHubMatch ? regionalHubMatch[1] : null;
+
   // Detect solution routes
   const isSolutionRoute = [
     '/services/seo',
@@ -137,6 +142,8 @@ function App({ url }: AppProps) {
         <ThankYouPage />
       ) : isSolutionRoute ? (
         <SolutionPage path={normalizedPath} />
+      ) : regionalHubSlug ? (
+        <RegionalHubPage region={regionalHubSlug} />
       ) : (
         <ServiceSubpage path={normalizedPath} />
       )}

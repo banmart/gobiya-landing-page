@@ -11,6 +11,8 @@ const DEFAULT_MENU_ITEMS = [
   { label: 'Lead Generation', link: '/services/lead-generation' },
   { label: 'Web Development', link: '/services/web-development' },
   { label: 'PPC Advertising', link: '/services/ppc-advertising' },
+  { label: 'Markets', isHeader: true },
+  { label: 'Southern California', link: '/markets/southern-california' },
   { label: 'Company', isHeader: true },
   { label: 'About the Agency', link: '/company/about' },
   { label: 'Success Stories', link: '/company/success-stories' },
@@ -18,6 +20,7 @@ const DEFAULT_MENU_ITEMS = [
   { label: 'Industry Insights', link: '/insights' },
   { label: 'Careers', link: '/company/careers' },
 ];
+
 
 const DEFAULT_SOCIAL_ITEMS = [
   { label: 'Twitter', link: '#' },

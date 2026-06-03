@@ -6,7 +6,7 @@ const Footer: React.FC = () => {
   return (
     <>
       <footer className="bg-[#111] text-white pt-20 sm:pt-28 px-5 sm:px-8 lg:px-12 w-full overflow-hidden flex flex-col relative" data-logo-dark>
-        <div className="max-w-[1440px] w-full mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1fr] gap-12 lg:gap-8 mb-10 sm:mb-20 relative z-10">
+        <div className="max-w-[1440px] w-full mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1fr_1fr] gap-12 lg:gap-8 mb-10 sm:mb-20 relative z-10">
           
           {/* Col 1 */}
           <div className="flex flex-col pr-0 lg:pr-12 relative">
@@ -53,7 +53,18 @@ const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* Col 4 — Connect */}
+          {/* Col 4 — Markets */}
+          <div className="flex flex-col">
+            <h4 className="text-[12px] font-semibold uppercase tracking-wider mb-6">Markets</h4>
+            <ul className="flex flex-col gap-4 text-[14px] text-gray-400">
+              <li><a href="/markets/southern-california" className="hover:text-white transition-colors">Southern California</a></li>
+              <li><a href="/markets/southern-california" className="hover:text-white transition-colors">Los Angeles</a></li>
+              <li><a href="/markets/southern-california" className="hover:text-white transition-colors">Orange County</a></li>
+              <li><a href="/markets/southern-california" className="hover:text-white transition-colors">San Diego</a></li>
+            </ul>
+          </div>
+
+          {/* Col 5 — Connect */}
           <div className="flex flex-col">
             <h4 className="text-[12px] font-semibold uppercase tracking-wider mb-6">Connect</h4>
             <ul className="flex flex-col gap-4 text-[14px] text-gray-400">
@@ -66,6 +77,7 @@ const Footer: React.FC = () => {
           </div>
 
         </div>
+
 
         {/* Bottom Bar */}
         <div className="max-w-[1440px] w-full mx-auto flex flex-col sm:flex-row justify-between items-center gap-4 border-t border-white/10 pt-8 pb-8 relative z-[60]">

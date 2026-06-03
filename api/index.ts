@@ -13,152 +13,165 @@ interface SEOMetadata {
 // Outcome-focused metadata lookup map for crawlers and search bots
 const metadataMap: Record<string, SEOMetadata> = {
   '/': {
-    title: 'Content Marketing Agency & Search Engine Optimization Firm | Los Angeles | Gobiya',
-    description: 'Gobiya is a Search Engine Optimization Firm and Content Marketing Agency in Los Angeles. We engineer AI-driven SEO to recover lost traffic and scale revenue.'
+    title: 'More Traffic, More Leads, Less Guesswork | Gobiya',
+    description: 'Tired of being invisible online? Gobiya helps you rank higher, get cited by AI, and turn traffic into customers. Free audit, real results.'
   },
   '/services/seo': {
-    title: 'Organic Traffic Recovery & Search Dominance | Gobiya',
-    description: 'Reclaim your search engine positions. We deliver entity-level SEO, topical authority architectures, and advanced technical search audits built for search dominance.'
+    title: 'Reclaim Your Rankings & Hijack Search Traffic | Gobiya',
+    description: 'Is your organic search traffic tanking? We pinpoint the exact technical roadblocks killing your rankings and deploy custom recovery strategies that stick.'
   },
   '/services/lead-generation': {
-    title: 'Predictable B2B Sales Pipelines & Lead Generation | Gobiya',
-    description: 'Scale your contract value and outbound pipeline. We design and launch automated cold outreach and sales acquisition protocols for mid-market and enterprise brands.'
+    title: 'Forget Cold Calling: Build a Predictive Inbound Pipeline | Gobiya',
+    description: 'Stop chasing bad-fit leads. We design and launch automated acquisition systems that fill your calendar with pre-qualified buyers on autopilot.'
   },
   '/services/geo-optimization': {
-    title: 'Generative Engine Optimization (GEO) & AI Visibility | Gobiya',
-    description: 'Position your brand to be cited and recommended natively by modern AI models including ChatGPT, Claude, Gemini, and Google AI Overviews.'
+    title: 'Get Cited by ChatGPT or Stay Invisible to AI Search | Gobiya',
+    description: 'Conversational AI is stealing search traffic. Here is how we engineer your website\'s data and structure so ChatGPT, Claude, and Gemini recommend your brand natively.'
   },
   '/services/web-development': {
-    title: 'Conversion-Engineered React & Web Development | Gobiya',
-    description: 'Speed-optimized, custom-engineered React platforms built to convert. We replace slow templates with lightning-fast landing pages and applications.'
+    title: 'Ditch the Slow Templates: Speed-Engineered Custom React | Gobiya',
+    description: 'Is a sluggish template leaking conversions? We replace bloated CMS setups with sub-second custom React pages designed to turn visitors into buyers instantly.'
   },
   '/services/ppc-advertising': {
-    title: 'High-Yield Paid Search (PPC) & Ad Pipelines | Gobiya',
-    description: 'Maximize your return on ad spend (ROAS) and lower acquisition costs. Data-driven Google, Microsoft, and Meta Ads management tailored for revenue scaling.'
+    title: 'Stop Burning Ad Spend: High-ROAS Paid Acquisition | Gobiya',
+    description: 'Tired of burning thousands on ads without seeing results? We architect and optimize Google, Microsoft, and Meta campaigns for maximum conversion value.'
   },
   '/google-penalty-recovery': {
-    title: 'Google Penalty Recovery & Core Update Recovery | Gobiya',
-    description: 'Recover lost search traffic. We diagnose and reverse manual action penalties and organic traffic declines caused by Google helpful content & core updates.'
-  },
-  '/company/about': {
-    title: 'About Gobiya | Search Recovery & Pipeline Agency',
-    description: 'Learn about our approach to algorithmic dominance, generative search, and revenue-scaling pipelines.'
-  },
-  '/company/success-stories': {
-    title: 'Search Recovery & Sales Pipeline Case Studies | Gobiya',
-    description: 'Explore how we recover organic traffic, build predictive B2B pipelines, and secure market dominance.'
-  },
-  '/company/approach': {
-    title: 'Our Search Dominance & Pipeline Methodology | Gobiya',
-    description: 'Discover our proprietary methodology for algorithmic audits, penalty recovery, and B2B pipeline acceleration.'
-  },
-  '/insights': {
-    title: 'SEO Updates, B2B Outbound & Search Intelligence | Gobiya',
-    description: 'Deep dives into Google algorithm updates, generative search (GEO), and B2B marketing strategies.'
-  },
-  '/company/careers': {
-    title: 'Join Our Technical SEO & Software Dev Team | Gobiya',
-    description: 'We are hiring top-tier SEO specialists, React engineers, and growth strategists to dominate the search landscape.'
-  },
-  '/contact': {
-    title: 'Contact Gobiya | Reclaim & Scale Your Search Revenue',
-    description: 'Reach out to our engineering team in Los Angeles to discuss algorithmic audits, AI traffic recovery, and pipeline architecture.'
-  },
-  '/services': {
-    title: 'Forensic SEO & B2B Pipeline Services | Gobiya',
-    description: 'We consolidate forensic SEO, traffic recovery, generative engine optimization (GEO), high-speed React engineering, and automated outbound sales pipelines.'
-  },
-  '/insights/gobiya-vs-enterprise-seo-agencies': {
-    title: 'Gobiya vs Enterprise B2B SEO Agencies: An Honest Comparison | Gobiya',
-    description: 'An honest operational and performance comparison of Gobiya search engineering vs traditional enterprise B2B SEO agencies.'
-  },
-  '/insights/automated-b2b-sales-pipeline-seo': {
-    title: 'How AI Citations Shape Your B2B Vendor Shortlist | Gobiya',
-    description: 'How AI-cited content qualifies B2B vendors for buyer shortlists — and what the 2026 shift to AI-driven research means for your pipeline.'
-  },
-  '/insights/automated-lead-generation-seo': {
-    title: 'Scale Inbound Sales With AI-Driven Lead Gen SEO | Gobiya',
-    description: 'How AI-cited content produces pre-qualified pipeline at conversion rates traditional lead gen cannot match — and what the 2026 shift means for B2B teams.'
-  },
-  '/insights/outbound-seo-prospecting': {
-    title: 'Timing-Anchored Outbound SEO Prospecting Guide | Gobiya',
-    description: 'How SEO-derived intent signals turn outbound from a volume game into a timing game — and what the 2026 data says about cold vs signal-anchored prospecting.'
-  },
-  '/insights/b2b-sales-pipeline-automation': {
-    title: 'Orchestrating AI for B2B Sales Automation | Gobiya',
-    description: 'How orchestration between SEO, intent capture, enrichment, and outbound determines whether automation produces revenue — and why most B2B teams are deploying AI agents into broken workflows.'
-  },
-  '/insights/best-seo-agency-for-b2b-brands': {
-    title: 'Choose the Right B2B SEO Agency in 2026 | Gobiya',
-    description: 'The 2026 evaluation framework for picking a B2B SEO partner — what to measure, what to ignore, and why most "best agency" lists are scoring the wrong things.'
-  },
-  '/insights/seo-for-b2b-lead-generation': {
-    title: 'B2B Lead Gen SEO: Target the Buying Committee | Gobiya',
-    description: 'How content architected for an 11-person buying committee outperforms content built for a single converter — and why B2B lead gen SEO in 2026 looks fundamentally different from every other category.'
-  },
-  '/insights/b2b-seo-agency': {
-    title: 'B2B SEO Agency vs Generalist: The Vital Difference | Gobiya',
-    description: 'What a B2B SEO agency actually is, how it differs structurally from generalists serving B2B clients, and why the distinction matters in the AI search era.'
-  },
-  '/insights/b2b-seo-agency-los-angeles': {
-    title: 'Los Angeles B2B SEO Agency: Local Partnership wins | Gobiya',
-    description: 'How proximity, time-zone alignment, and LA business culture fluency have become more valuable rather than less in an AI-search era — and what LA-based B2B operators should actually be evaluating.'
-  },
-  '/insights/local-seo-los-angeles': {
-    title: 'Los Angeles Local SEO & AI Search Dominance Guide | Gobiya',
-    description: 'How Google\'s 2026 local search algorithm — and the AI layer now sitting on top of it — determines whether LA customers find your business or your competitor\'s.'
-  },
-  '/insights/los-angeles-local-seo-explained': {
-    title: 'Operational Cadence for LA Search Dominance | Gobiya',
-    description: 'The actual operational rhythm of running local SEO in LA — what the weekly cadence looks like, what produces visible ranking movement at 30 / 60 / 90 days, and why most LA businesses stall.'
-  },
-  '/insights/b2b-organic-traffic-growth': {
-    title: 'Decouple B2B Traffic From Revenue Pipelines | Gobiya',
-    description: 'How traffic and pipeline decoupled in B2B during 2025-2026, why the best B2B SEO programs are now growing less traffic on purpose, and what the new organic growth math actually looks like.'
-  },
-  '/insights/multi-location-seo-website-structure': {
-    title: 'Multi-Location Website SEO Architectures | Gobiya',
-    description: 'How website architecture — URL hierarchy, page-to-GBP mapping, content uniqueness, and internal linking — determines whether locations rank independently or cannibalize each other.'
-  },
-  '/insights/best-website-structure-multiple-locations-different-cities': {
-    title: 'Best Site Architecture for Multi-City Locations | Gobiya',
-    description: 'The single-domain subdirectory decision, state-city-location hierarchy, cross-city cannibalization failure, and how geographic market separation changes the structural choices for multi-city businesses.'
-  },
-  '/insights/google-business-profile-optimization': {
-    title: 'Google Business Profile Optimization Guide | Gobiya',
-    description: 'How to diagnose Google Business Profile suspension or ranking degradation, build an evidence package for reinstatement appeals, and avoid the panic-driven mistakes that lead to permanent bans.'
-  },
-  '/insights/can-a-site-fully-recover-from-a-google-core-update': {
-    title: 'Can You Fully Recover from a Google Core Update? | Gobiya',
-    description: 'The honest answer to core update recovery: whether and how fully sites recover, what genuinely drives recovery, and why ranking recovery no longer guarantees traffic recovery in the AI overview era.'
-  },
-  '/about/steve-martin': {
-    title: 'Steve Martin | CEO, Lead Developer & Marketer | Gobiya',
-    description: 'Professional credentials and author profile for Steve Martin, CEO, Lead Developer & Marketer at Gobiya. Specialized in advanced SEO, custom React engineering, and pipeline automation.'
-  },
-  '/author/steve-martin': {
-    title: 'Steve Martin | CEO, Lead Developer & Marketer | Gobiya',
-    description: 'Professional credentials and author profile for Steve Martin, CEO, Lead Developer & Marketer at Gobiya. Specialized in advanced SEO, custom React engineering, and pipeline automation.'
-  },
-  '/insights/google-manual-action-removal-agency-caused-penalty': {
-    title: 'Google Manual Action Removal Checklist | Gobiya',
-    description: 'What to do when your in-house team is suddenly responsible for recovering a Google manual action your agency triggered. Diagnosis, narrative, and reconsideration appeal steps.'
-  },
-  '/insights/what-is-the-difference-between-a-manual-action-and-an-algorithmic-penalty': {
-    title: 'Manual Action vs Algorithmic Penalty: Key Differences | Gobiya',
-    description: 'The single most important distinction in Google traffic recovery: why a human-issued manual action and an automated algorithmic suppression are completely different problems.'
-  },
-  '/insights/chatgpt-vs-google-for-business-discovery': {
-    title: 'ChatGPT vs Google for Business Discovery | Gobiya',
-    description: 'Google processes billions of searches, but 93% in AI Mode end clickless. ChatGPT converts 4.4x better. How to optimize your brand for both.'
+    title: 'Hit by a Core Update? Rebuild Your Google Traffic Fast | Gobiya',
+    description: 'A sudden drop in search traffic is a nightmare. We conduct forensic audits to reverse Google penalty manual actions and algorithmic updates.'
   },
   '/on-page-seo-los-angeles': {
-    title: 'On-Page SEO Services in Los Angeles | Gobiya',
-    description: 'Topical authority modeling, schema graph injection, and speed-optimized React structures built to convert Los Angeles organic search traffic into pipeline.'
+    title: 'Dominate LA Search: Enterprise On-Page SEO That Converts | Gobiya',
+    description: 'LA is hyper-competitive. We structure entity-level schema, build topical authority, and optimize every page element so local buyers find you first.'
+  },
+  '/company/about': {
+    title: 'The Gobiya Story: Precision growth engineering since 2012 | Gobiya',
+    description: 'We aren\'t a template-churning agency. Meet the Los Angeles growth engineers rebuilding traffic pipelines, recovering penalties, and solving generative SEO.'
+  },
+  '/company/success-stories': {
+    title: 'Inside Our Wins: Real Case Studies, 300%+ Traffic Growth | Gobiya',
+    description: 'No vanity metrics here. Read the breakdown of how we reversed manual actions, scaled B2B outbound pipelines, and secured generative engine citations.'
+  },
+  '/company/approach': {
+    title: 'Our Blueprint: Algorithmic Audits & Pipeline Acceleration | Gobiya',
+    description: 'Our exact methodology for diagnosing traffic leaks, building topical authority models, and scaling outbound acquisition campaigns.'
+  },
+  '/insights': {
+    title: 'Unfiltered Growth: SEO Audits, GEO Tactics & AI Shifts | Gobiya',
+    description: 'No generic fluff. The Gobiya team shares real operational insights, Google core update recovery checklists, and AI engine optimization tactics.'
+  },
+  '/company/careers': {
+    title: 'Solve Hard Search & Engineering Problems With Us | Gobiya',
+    description: 'Tired of generic marketing tasks? We\'re looking for elite React developers, SEO forensic specialists, and sales engineers to join our team in LA.'
+  },
+  '/contact': {
+    title: 'Let\'s Audit Your Site: Request a Free Growth Session | Gobiya',
+    description: 'Ready to stop losing traffic and revenue to competitors? Talk directly to our lead engineers. We will analyze your site and outline a custom recovery roadmap.'
+  },
+  '/services': {
+    title: 'Our Capabilities: Technical SEO, GEO & Pipeline Engineering | Gobiya',
+    description: 'We combine forensic SEO, generative search optimization, high-speed React engineering, and automated outbound sales to build a compounding pipeline.'
+  },
+  '/markets/southern-california': {
+    title: 'LA & SoCal SEO Agency: Rank #1 in the Most Competitive Market | Gobiya',
+    description: 'Southern California is brutal. We engineer SEO dominance, AI citations, and B2B pipeline systems for LA, Orange County, and San Diego enterprises. Free audit.'
+  },
+  '/insights/gobiya-vs-enterprise-seo-agencies': {
+
+    title: 'The Honest Truth: Gobiya vs. Enterprise SEO Agencies | Gobiya',
+    description: 'Why traditional enterprise agencies charge $20k/mo for dashboard reports and slow checklists—and how technical growth engineers do SEO differently.'
+  },
+  '/insights/automated-b2b-sales-pipeline-seo': {
+    title: 'How AI Citations Are Quietly Hijacking B2B Decisions | Gobiya',
+    description: 'B2B buyers are asking ChatGPT for recommendations before visiting your site. Here is how citation share decides who gets on the vendor shortlist.'
+  },
+  '/insights/automated-lead-generation-seo': {
+    title: 'Turn Search Intent Into Pre-Qualified Pipeline | Gobiya',
+    description: 'Traffic is vanity. We show you how to map high-intent search clusters to your B2B sales funnel to drive real contract value, not just page views.'
+  },
+  '/insights/outbound-seo-prospecting': {
+    title: 'Stop Spamming: Turn Outbound Into a Timing Game | Gobiya',
+    description: 'Cold emailing is dead unless you have timing. Learn how to monitor search intent signals to pitch buyers at the exact second they need you.'
+  },
+  '/insights/b2b-sales-pipeline-automation': {
+    title: 'Why Your AI Sales Agents Are Failing to Book Demos | Gobiya',
+    description: 'Most B2B teams deploy AI tools into broken workflows. Here is the operational framework for connecting search intent, enrichment, and automated outreach.'
+  },
+  '/insights/best-seo-agency-for-b2b-brands': {
+    title: 'Evaluation Checklist: Don\'t Hire the Wrong B2B SEO Partner | Gobiya',
+    description: 'Most B2B agency evaluation sheets are scoring the wrong metrics. Here is what to actually ask, what to ignore, and how to verify real technical authority.'
+  },
+  '/insights/seo-for-b2b-lead-generation': {
+    title: 'B2B Lead Gen SEO: Target the Real Buying Committee | Gobiya',
+    description: 'Stop building content for individual clicks. Learn how to architect landing pages that satisfy all 11 decision-makers in a B2B buying committee.'
+  },
+  '/insights/b2b-seo-agency': {
+    title: 'B2B SEO Agency vs. Generalist: The Vital Difference | Gobiya',
+    description: 'Generalist SEO tactics will waste your budget. Discover why B2B requires an entirely different playbook focused on pipeline value over raw traffic volume.'
+  },
+  '/insights/b2b-seo-agency-los-angeles': {
+    title: 'LA B2B SEO: Why Proximity Matters in the AI Era | Gobiya',
+    description: 'Remote agencies lose context. Learn why local partnership, real-time collaboration, and Los Angeles business fluency are key to winning local organic rankings.'
+  },
+  '/insights/local-seo-los-angeles': {
+    title: 'LA Local SEO: Crack Google\'s Local Algorithm | Gobiya',
+    description: 'Google\'s local algorithm is changing fast. Here is the exact checklist for ranking in the Los Angeles local pack and getting recommended by Gemini.'
+  },
+  '/insights/los-angeles-local-seo-explained': {
+    title: 'The 90-Day Cadence: How We Win Local Search in LA | Gobiya',
+    description: 'Local SEO isn\'t a set-it-and-forget-it task. Here is the weekly operational rhythm that actually moves the needle in the competitive LA market.'
+  },
+  '/insights/b2b-organic-traffic-growth': {
+    title: 'Organic Traffic is Decoupling From Pipeline Revenue | Gobiya',
+    description: 'Why B2B programs are deliberately targeting less traffic to generate more pipeline—and what the new organic growth math actually looks like.'
+  },
+  '/insights/multi-location-seo-website-structure': {
+    title: 'Prevent Cannibalization: Multi-Location SEO Architecture | Gobiya',
+    description: 'Are your locations competing against each other for the same city queries? How to design a URL hierarchy that lets every branch rank independently.'
+  },
+  '/insights/best-website-structure-multiple-locations-different-cities': {
+    title: 'Subdirectory vs. Subdomain: Best Multi-City SEO Setup | Gobiya',
+    description: 'The ultimate technical guide to structuring a multi-city website directory. Avoid the structural errors that leave 80% of your locations invisible.'
+  },
+  '/insights/google-business-profile-optimization': {
+    title: 'Google Business Profile Suspended? Reclaim Your Listing | Gobiya',
+    description: 'Don\'t panic. Learn how to build an evidence package for GBP reinstatement appeals and avoid the mistakes that lead to permanent blacklisting.'
+  },
+  '/insights/can-a-site-fully-recover-from-a-google-core-update': {
+    title: 'Can You Actually Recover From a Google Core Update? | Gobiya',
+    description: 'The honest truth about algorithm drops. Why ranking recovery no longer guarantees traffic recovery, and how to adapt to AI overviews.'
+  },
+  '/insights/google-manual-action-removal-agency-caused-penalty': {
+    title: 'Your Agency Triggered a Manual Action. Now What? | Gobiya',
+    description: 'A step-by-step diagnostic checklist for when your in-house team inherits a Google penalty. Learn how to file a successful reconsideration appeal.'
+  },
+  '/insights/what-is-the-difference-between-a-manual-action-and-an-algorithmic-penalty': {
+    title: 'Manual Action vs. Algorithmic Penalty: The Vital Split | Gobiya',
+    description: 'If you treat a human-issued manual action and an automated algorithm drop the same way, you\'ll fail to recover. Learn the crucial difference.'
+  },
+  '/insights/chatgpt-vs-google-for-business-discovery': {
+    title: 'ChatGPT vs. Google: Where Are Your Customers Searching? | Gobiya',
+    description: 'Traditional Google clicks are declining while ChatGPT conversion rates are 4.4x higher. Learn how to optimize your brand\'s footprint for both.'
+  },
+  '/insights/how-do-b2b-companies-use-seo-to-generate-predictable-revenue': {
+    title: 'The Blueprint for Generating Predictable B2B Pipeline | Gobiya',
+    description: 'Why B2B companies fail to connect SEO to pipeline revenue, and how mapping search clusters to decision-maker needs resolves it.'
+  },
+  '/insights/seo-case-study-traffic-recovery': {
+    title: 'Case Study: How We Recovered 320% Organic Search Traffic | Gobiya',
+    description: 'A step-by-step forensic breakdown of a website\'s recovery after a Google helpful content update. See the exact diagnostic audit we ran.'
   },
   '/insights/what-is-generative-engine-optimization-and-how-does-it-work': {
-    title: 'Generative Engine Optimization (GEO) Explained | Gobiya',
-    description: 'The definitional guide to GEO: how Retrieval-Augmented Generation (RAG) pipelines cite sources, how it builds on traditional SEO, and what makes content citable.'
+    title: 'RAG & GEO: What is Generative Engine Optimization? | Gobiya',
+    description: 'A complete technical guide to how RAG-based search engines cite content, why traditional SEO isn\'t enough, and how to optimize for LLMs.'
+  },
+  '/about/steve-martin': {
+    title: 'Steve Martin | Growth Engineer & Founder of Gobiya | Gobiya',
+    description: 'Credentials and author profile for Steve Martin. Over 15 years engineering search engine dominance, custom React platforms, and sales pipeline automation.'
+  },
+  '/author/steve-martin': {
+    title: 'Steve Martin | Growth Engineer & Founder of Gobiya | Gobiya',
+    description: 'Credentials and author profile for Steve Martin. Over 15 years engineering search engine dominance, custom React platforms, and sales pipeline automation.'
   }
 };
 
@@ -227,11 +240,11 @@ export default async function handler(req: IncomingMessage, res: any) {
     } : metadataMap['/']);
 
     template = template.replace(
-      '<title>Content Marketing Agency & Search Engine Optimization Firm | Los Angeles | Gobiya</title>',
+      '<title>More Traffic, More Leads, Less Guesswork | Gobiya</title>',
       `<title>${seo.title}</title>`
     );
     template = template.replace(
-      '<meta name="description" content="Gobiya is a Search Engine Optimization Firm and Content Marketing Agency in Los Angeles. We engineer AI-driven SEO to recover lost traffic and scale revenue." />',
+      '<meta name="description" content="Tired of being invisible online? Gobiya helps you rank higher, get cited by AI, and turn traffic into customers. Free audit, real results." />',
       `<meta name="description" content="${seo.description}" />`
     );
     template = template.replace(
