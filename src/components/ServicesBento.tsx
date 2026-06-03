@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ShieldAlert, TrendingUp, Search, Network } from 'lucide-react';
+import { ShieldAlert, TrendingUp, Search, Network, Code } from 'lucide-react';
 import BorderGlow from './BorderGlow';
 
 interface BentoCard {
@@ -45,20 +45,24 @@ const ServicesBento: React.FC<ServicesBentoProps> = ({ headline, description, ca
           
           {(cards || [
             {
-              href: '/google-penalty-recovery', colSpan: 2, icon: <ShieldAlert size={40} className="text-[#F26522] mb-6 sm:mb-10" strokeWidth={1.5} />,
-              title: 'Penalty Recovery', description: 'Expert removal of manual actions and rapid recovery from Google HCU / Core Updates. We diagnose and repair algorithmic suppression to restore search dominance.'
-            },
-            {
-              href: '/services/lead-generation', colSpan: 1, icon: <Network size={40} className="text-white mb-6 sm:mb-10" strokeWidth={1.5} />,
-              title: 'Pipeline Architecture', description: 'Automated outbound sales systems and high-resolve B2B prospecting built for scale.'
-            },
-            {
-              href: '/services/seo', colSpan: 1, icon: <Search size={40} className="text-white mb-6 sm:mb-10" strokeWidth={1.5} />,
-              title: 'Market Vector SEO', description: 'Hyper-local authority domination and signal optimization across Greater Los Angeles.'
-            },
-            {
-              href: '/services/geo-optimization', colSpan: 2, gradient: true, icon: <TrendingUp size={40} className="text-white mb-6 sm:mb-10 relative z-10" strokeWidth={1.5} />,
+              href: '/capabilities/generative-engine-optimization', colSpan: 2, gradient: true, icon: <TrendingUp size={40} className="text-white mb-6 sm:mb-10 relative z-10" strokeWidth={1.5} />,
               title: 'Generative Engine Optimization', description: 'Engineering brand signals and entity authority so your business is natively recommended by AI models like ChatGPT, Gemini, and Perplexity.'
+            },
+            {
+              href: '/capabilities/forensic-seo-penalty-recovery', colSpan: 1, icon: <ShieldAlert size={40} className="text-white mb-6 sm:mb-10" strokeWidth={1.5} />,
+              title: 'Forensic SEO & Penalty Recovery', description: 'Expert removal of manual actions and recovery from Google updates, rebuilding trust signals and EEAT.'
+            },
+            {
+              href: '/capabilities/conversion-architecture', colSpan: 1, icon: <Network size={40} className="text-white mb-6 sm:mb-10" strokeWidth={1.5} />,
+              title: 'Conversion Architecture', description: 'Automated outbound pipelines, reverse-IP tracking, and CRM routing to consistently book B2B meetings.'
+            },
+            {
+              href: '/capabilities/semantic-search-intelligence', colSpan: 1, icon: <Search size={40} className="text-white mb-6 sm:mb-10" strokeWidth={1.5} />,
+              title: 'Semantic Search Intelligence', description: 'Topical authority clusters, entity schema graphs, and vector-space optimization to command modern search engines.'
+            },
+            {
+              href: '/capabilities/custom-digital-infrastructure', colSpan: 1, icon: <Code size={40} className="text-[#F26522] mb-6 sm:mb-10" strokeWidth={1.5} />,
+              title: 'Custom Digital Infrastructure', description: 'Bespoke sub-second React/Vite development and database/API platforms built to rank and convert.'
             }
           ]).map((card, index) => (
             <a key={index} href={card.href} className={`md:col-span-${card.colSpan} block h-full`}>

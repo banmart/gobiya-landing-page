@@ -56,88 +56,19 @@ interface SolutionData {
 }
 
 const SOLUTIONS_DATA: Record<string, SolutionData> = {
-  '/services/seo': {
-    h1: 'Technical SEO Services that win entities, not just keywords.',
-    subHeadline: 'Our technical SEO services deliver forensic audits, topical authority architectures, and EEAT signal engineering — built for high-stakes brands operating in volatile algorithmic environments.',
-    rotatingWords: ['recover traffic.', 'scale pipelines.', 'secure dominance.'],
-    insightCategory: 'SEO',
-    ctaText: 'Start your SEO engagement',
-    ctaLink: '/contact',
-    
-    stats: [
-      { value: '+300mm', label: 'people use ChatGPT weekly', text: 'with users sending over 1 billion messages per day.' },
-      { value: '+70%', label: 'of Gen Z and Millennials', text: 'trust AI-generated answers more when brands are mentioned in responses.' },
-      { value: '+200%', label: 'increase in branded citations', text: 'across AI search platforms in 2024 alone.' },
-      { value: '+3.5bn', label: 'AI-assisted searches', text: 'expected monthly by the end of 2025.' }
-    ],
-    
-    approachTitle: 'A future-facing strategy for AI discovery.',
-    approachSubtitle: "Custom AI search optimization strategies designed to future-proof your brand's discoverability, increase your representation in LLM responses, and build a presence in the next generation of search.",
-    approach: [
-      { icon: Search, title: 'Competitive research.', desc: 'We analyze how AI systems perceive your brand across the web, identify gaps in content or optimizations, and benchmark your AI presence and sentiment against competitors.' },
-      { icon: Activity, title: 'Optimize on, and off-site content.', desc: 'We refine on-page content with improved structuring, better longtail keyword inclusion and schema, and boost your off-page authority via digital PR, guest posting, and media mentions.' },
-      { icon: Trophy, title: 'Strengthen brand through E-E-A-T.', desc: 'We ensure your brand is defined, authoritative, and clearly positioned as a trusted entity, supported by relevant content, expert authors and reviewers, and strong off page signals.' }
-    ],
-    
-    valueCards: [
-      { title: 'Data-Backed Optimization', text: 'We use insights from AI visibility audits and real-time monitoring to build authority.' },
-      { title: 'Crafting Content for AI', text: 'We work hard to craft content that satisfies user needs while being easily parsed, trusted, and cited by AI.', highlight: true },
-      { title: 'Continuous Adaptation', text: 'The AI search landscape is evolving rapidly. We continuously adapt your architecture.' },
-      { title: 'Building LLM Trust Signals', text: 'From structured data and technical SEO to PR campaigns and expert bios.' }
-    ],
-    
-    executionTitle: 'From discovery, to engagement and conversion.',
-    heroImage: '/images/seo_hero.webp',
-    executionImage: '/images/seo_exec.webp',
-    executionSteps: [
-      { title: 'Auditing & Analysis', content: 'AI search engine optimization begins with a comprehensive audit of how your brand is represented across AI platforms and search models like ChatGPT, Gemini, AI Overviews, and Perplexity. We assess your opportunities to improve by auditing existing content, content gaps, technical SEO, and offsite signals such as backlinks and brand mentions.' },
-      { title: 'Visibility & Optimization', content: 'We model your market as an interconnected semantic graph and map each service to its corresponding entity node. We eliminate keyword cannibalization at the URL level so every page targets a unique intent.' },
-      { title: 'Conversion Optimization', content: 'We engineer conversion paths into the page layer from the first line of code. CTA placement, scroll behavior, form architecture, and trust signal sequencing are designed against documented buyer behavior.' },
-      { title: 'Testing & Reporting', content: 'We monitor your ranking surface against every confirmed and unconfirmed core update. When volatility appears, we run forensic deltas to identify which entities were impacted, and we adjust.' }
-    ],
-    
-    caseStudy: {
-      tag: 'Fintech Provider',
-      headline: 'Financial technology provider sees a +994% increase in referral traffic from LLMs.',
-      description: 'Technical site fixes, online reputation management and brand building through digital PR helps tech giant increase mentions / citations from ChatGPT, Perplexity and Gemini.',
-      ctaText: 'Book a call to learn more'
-    },
-    
-    learningCenterTitle: 'Conquer AI search optimization at your own pace.',
-    learningCenterSubtitle: 'Our learning center offers in-depth resources and bite-sized content to make you an AI optimization orchestrator.',
-    videos: [
-      { title: "How to Get Mentioned in Google's AI Search Results", author: 'Steve Martin', src: '/videos/ark------final-----01.webm' },
-      { title: 'The Future of Organic Traffic', author: 'Steve Martin', src: '/videos/caveman.webm' },
-      { title: '3X SEO Traffic With AI', author: 'Steve Martin', src: '/videos/gobiyaRace.webm' },
-      { title: 'Next-Gen SEO: How to Dominate Search in 2025', author: 'Steve Martin', src: '/videos/sc-hero-background-compressed.webm' },
-      { title: 'How to Rank on SearchGPT (And Other AI Search Engines)', author: 'Steve Martin', src: '/videos/smilecenter-screencast.webm' },
-      { title: 'SearchGPT: How to Get Ready', author: 'Steve Martin', src: '/videos/space-girl.webm' }
-    ],
-    
-    faqTitle: "Frequently asked questions about Google's AI Overviews, LLMs and AI Search Optimization.",
-    faqs: [
-      { question: 'What is the difference between AI Search Optimization and Generative Engine Optimization (GEO)?', answer: 'AI Search Optimization involves tailoring your overall digital presence to be recognized and prioritized by AI models. Generative Engine Optimization (GEO) focuses specifically on optimizing content so that it is cited as a source in generative responses like AI Overviews.' },
-      { question: 'Why are brand mentions and citations important for AI SEO?', answer: 'Brand mentions and citations act as trust signals for LLMs. The more frequently a brand is mentioned in authoritative contexts, the more likely the AI is to recommend it.' },
-      { question: 'What technical elements are key to making content AI-ready?', answer: 'Structured data (schema markup), clean semantic HTML, fast load times, and logical entity relationships are crucial for AI engines to parse and understand your content effectively.' },
-      { question: 'How does EEAT tie into AI SEO?', answer: 'Experience, Expertise, Authoritativeness, and Trustworthiness (EEAT) remain foundational. AI models are trained to prefer high-quality, verified sources, meaning strong EEAT directly correlates with better AI visibility.' }
-    ]
-  },
-  
-  '/services/geo-optimization': {
+  '/capabilities/generative-engine-optimization': {
     h1: 'Generative Engine Optimization: We engineer the citations LLMs use to recommend your brand.',
     subHeadline: 'Generative Engine Optimization (GEO) for brands ready to be referenced natively inside ChatGPT, Claude, Perplexity, Gemini, and Google AI Overviews.',
     rotatingWords: ['dominate AIOs.', 'capture citations.', 'control AI.'],
     insightCategory: 'Strategy',
     ctaText: 'Start your GEO program',
     ctaLink: '/contact',
-    
     stats: [
       { value: '70-90%', label: 'AI bias toward Earned Media', text: 'revealed by researchers, heavily favoring independent third-party evaluations over brand or social sites.' },
       { value: '3x', label: 'higher conversion rate', text: 'for users arriving via direct LLM recommendation vs traditional search.' },
       { value: '92%', label: 'of executives surveyed', text: 'believe Generative AI search will disrupt their current SEO traffic.' },
       { value: '+400%', label: 'growth in conversational queries', text: 'requiring semantic entity optimization instead of keyword density.' }
     ],
-    
     approachTitle: "Architecting your brand for the generative era.",
     approachSubtitle: "Modern LLMs do not navigate page-authority vectors. They retrieve from semantic spaces. We ensure your brand is densely and authoritatively represented across the sources AI systems trust.",
     approach: [
@@ -145,14 +76,12 @@ const SOLUTIONS_DATA: Record<string, SolutionData> = {
       { icon: Activity, title: 'Earned Media & PR Dominance.', desc: "We build presence across independent review directories and publisher sites. AI search models exhibit a systematic 70-90% bias toward third-party Earned Media over brand-owned or social content." },
       { icon: Target, title: 'Justification Engineering.', desc: "We format and enrich your pages to satisfy justification attributes. AIs don't just index; they synthesize justified shortlists based on specific buying criteria." }
     ],
-    
     valueCards: [
       { title: 'Earned Media Dominance', text: 'We audit and optimize your brand authority across the third-party platforms and publisher review sites AI search retrieves from.' },
       { title: 'API-able Brand Structuring', text: 'We turn your website into a scannable API for AI agents by structuring specifications, pricing, and product logic cleanly.', highlight: true },
       { title: 'Justification Formatting', text: 'When an AI scans your page, it extracts clear, scannable comparisons, pros/cons, and value propositions for its shortlist justifications.' },
       { title: 'Citation Rate Tracking', text: 'We measure share of voice inside generative answers across models and monitor citation drift.' }
     ],
-    
     executionTitle: 'From raw data to verified AI citation.',
     heroImage: '/images/geo_hero.webp',
     executionImage: '/images/seo_exec.webp',
@@ -162,7 +91,6 @@ const SOLUTIONS_DATA: Record<string, SolutionData> = {
       { title: 'Off-site Authority Building', content: 'We target authoritative local-language and vertical-specific media, establishing the backlinks and external profiles needed to build AI-perceived authority.' },
       { title: 'Monitoring & Optimization', content: 'We track your LLM citation rate as a primary KPI across model providers and re-deploy entity reinforcement where coverage decays.' }
     ],
-    
     caseStudy: {
       tag: 'Enterprise SaaS',
       headline: 'SaaS platform captures 85% share of voice in top-tier AI conversational queries.',
@@ -171,36 +99,32 @@ const SOLUTIONS_DATA: Record<string, SolutionData> = {
     }
   },
 
-  '/google-penalty-recovery': {
-    h1: 'Google Penalty Recovery: We recover the traffic that algorithm updates took away.',
-    subHeadline: 'Our Google penalty recovery program delivers forensic audits for domains hit by Google Core Updates, Helpful Content updates, link spam, or manual actions.',
-    rotatingWords: ['lift penalties.', 'restore traffic.', 'remove actions.'],
+  '/capabilities/forensic-seo-penalty-recovery': {
+    h1: 'Forensic SEO & Penalty Recovery: Reclaim Your Rank and Stop Algorithmic Bleeding.',
+    subHeadline: 'We diagnose Google updates, reverse manual actions, prune toxic content, and build topical authority architectures that recover your organic revenue pipeline.',
+    rotatingWords: ['reverse updates.', 'reclaim traffic.', 'engineer EEAT.'],
     insightCategory: 'SEO',
     ctaText: 'Audit my traffic loss',
     ctaLink: '/contact',
-    
     stats: [
       { value: '68%', label: 'of sites hit by core updates', text: 'never fully recover their previous peak traffic without structural changes.' },
       { value: '3-6', label: 'months average recovery time', text: 'for manual actions when proper forensic diagnosis is applied.' },
-      { value: '100%', label: 'success rate removing', text: 'pure spam and unnatural link manual actions for enterprise clients.' },
-      { value: '+850%', label: 'traffic rebound post-HCU', text: 'for our top performing recovery case study in the SaaS sector.' }
+      { value: '+850%', label: 'traffic rebound post-HCU', text: 'for our top performing recovery case study in the SaaS sector.' },
+      { value: '+200%', label: 'increase in organic pipeline', text: 'rebuilt for enterprises recovering from algorithmic drops.' }
     ],
-    
-    approachTitle: "Forensic diagnosis. Surgical remediation.",
+    approachTitle: 'Forensic diagnosis. Surgical remediation.',
     approachSubtitle: "A manual action or a severe algorithmic suppression is not a standard SEO problem; it is an existential business crisis. We do not try to optimize a penalized site. We forensically rebuild its trust metrics.",
     approach: [
       { icon: Search, title: 'Forensic update audit.', desc: "We anchor your traffic loss to confirmed update windows and benchmark affected segments to isolate the precise structural or content signal that was demoted." },
       { icon: Target, title: 'Quality classifier modeling.', desc: "We model your site against Google's quality rater guidelines and the documented characteristics of Helpful Content System demotions." },
       { icon: Zap, title: 'Algorithmic trust restoration.', desc: "We harden authorship and credentialing, repair internal link equity, restore citation density, and engineer the structured data Google requires to re-classify the domain." }
     ],
-    
     valueCards: [
       { title: 'Precise Diagnosis', text: 'We segment the affected URLs by topical cluster, page type, query intent, and historical ranking depth.' },
       { title: 'Content Pruning & Restructuring', text: 'We prune low-value, thin, and AI-generated content that drags the domain-level quality signal downward.', highlight: true },
       { title: 'EEAT Signal Repair', text: 'We rebuild the trust signals the demotion stripped, hardening authorship and credentialing.' },
       { title: 'Recovery Monitoring', text: 'We log re-indexation events, ranking returns, and click-through recovery daily.' }
     ],
-    
     executionTitle: 'Rebuilding algorithmic trust from the ground up.',
     heroImage: '/images/penalty_hero.webp',
     executionImage: '/images/seo_exec.webp',
@@ -210,7 +134,6 @@ const SOLUTIONS_DATA: Record<string, SolutionData> = {
       { title: 'Link Risk Mitigation', content: "We audit your entire backlink profile, disavow toxic link vectors, and submit rigorous reconsideration requests for manual actions." },
       { title: 'Re-validation Strategy', content: "We force re-crawling of the pruned and repaired architecture, pushing Google's systems to re-evaluate the domain's quality score based on the new baseline." }
     ],
-    
     caseStudy: {
       tag: 'E-commerce Brand',
       headline: 'E-commerce retailer recovers from -80% HCU drop, exceeding previous peak traffic.',
@@ -219,21 +142,19 @@ const SOLUTIONS_DATA: Record<string, SolutionData> = {
     }
   },
 
-  '/services/lead-generation': {
-    h1: 'B2B Lead Generation: We engineer predictable sales pipeline.',
-    subHeadline: 'Our B2B lead generation solutions leverage automated outbound, real-time intent signal tracking, and CRM routing to consistently book qualified meetings.',
-    rotatingWords: ['generate leads.', 'scale sales.', 'capture intent.'],
+  '/capabilities/conversion-architecture': {
+    h1: 'Conversion Architecture: We Turn Invisible Traffic into Qualified Sales Pipeline.',
+    subHeadline: 'We build and optimize high-converting CRM integrations, intent-tracking funnels, and automated outbound systems that transform anonymous visitors into sales-ready pipeline.',
+    rotatingWords: ['capture intent.', 'scale pipeline.', 'maximize CRO.'],
     insightCategory: 'Strategy',
-    ctaText: 'Book a pipeline strategy call',
+    ctaText: 'Build your pipeline',
     ctaLink: '/contact',
-    
     stats: [
-      { value: '4x', label: 'increase in booked meetings', text: 'when outbound is triggered by real-time intent signals rather than cold lists.' },
-      { value: '82%', label: 'of B2B buyers', text: 'view 5-8 pieces of content from the winning vendor before booking a call.' },
-      { value: '65%', label: 'lower CAC', text: 'for companies utilizing closed-loop pipeline architecture.' },
-      { value: '+$12M', label: 'in closed-won revenue', text: 'attributed directly to our automated pipeline systems last year.' }
+      { value: '4.8x', label: 'Average ROAS across accounts', text: 'by shifting optimization targets from top-of-funnel clicks to closed-won revenue.' },
+      { value: '3.5x', label: 'higher conversion rates', text: 'on average for platforms engineered with bespoke conversion architecture.' },
+      { value: '+$12M', label: 'in closed-won revenue', text: 'attributed directly to our automated pipeline systems last year.' },
+      { value: '-42%', label: 'reduction in CPA', text: 'within the first 90 days of restructuring CRM and paid acquisition pathways.' }
     ],
-    
     approachTitle: 'Architecting predictable B2B revenue.',
     approachSubtitle: 'B2B lead generation fails when marketing optimizes for top-of-funnel volume rather than bottom-of-funnel intent. We engineer high-intent acquisition systems that integrate search visibility, conversion architecture, and CRM routing.',
     approach: [
@@ -241,14 +162,12 @@ const SOLUTIONS_DATA: Record<string, SolutionData> = {
       { icon: Zap, title: 'Reverse-IP de-anonymization.', desc: 'We deploy reverse-IP and identity resolution to log the pages each account reads, assembling an account-level engagement record before any form is submitted.' },
       { icon: Trophy, title: 'Automated outbound sequence design.', desc: 'We design cold outreach sequences across email and LinkedIn timed against account-level intent triggers to maximize meeting conversion.' }
     ],
-    
     valueCards: [
       { title: 'Intent Infrastructure', text: 'We build the systems to identify which accounts are in-market before they self-identify.' },
       { title: 'Closed-Loop Engine', text: 'We integrate Salesforce or HubSpot with your outbound platform so every meeting traces back to its originating signal.', highlight: true },
       { title: 'Multi-Touch Sequences', text: 'We run continuous A/B tests against open rate, reply rate, and meeting conversion across channels.' },
       { title: 'Pipeline Optimization', text: 'We optimize the engine continuously against the constraint that limits pipeline yield.' }
     ],
-    
     executionTitle: 'From anonymous intent to closed-won revenue.',
     heroImage: '/images/lead_hero.webp',
     executionImage: '/images/seo_exec.webp',
@@ -258,7 +177,6 @@ const SOLUTIONS_DATA: Record<string, SolutionData> = {
       { title: 'Outbound Orchestration', content: 'We build the routing logic and lifecycle stages required to trigger automated outreach the exact moment a target account exhibits high-intent behavior on your site.' },
       { title: 'Attribution & Yield Management', content: 'We report against the metrics that matter — qualified meetings, opportunity creation rate, pipeline value, and closed-won attribution.' }
     ],
-    
     caseStudy: {
       tag: 'B2B Enterprise',
       headline: 'Logistics platform scales to $4.2M in net-new pipeline in 6 months.',
@@ -267,36 +185,75 @@ const SOLUTIONS_DATA: Record<string, SolutionData> = {
     }
   },
 
-  '/services/web-development': {
-    h1: 'React Web Development: We engineer websites the way engineers build products.',
-    subHeadline: 'Our React web development services build custom React/Vite applications, native CRMs, and Web3 platforms from scratch with sub-second load times.',
-    rotatingWords: ['build apps.', 'engineer performance.', 'scale conversion.'],
+  '/capabilities/semantic-search-intelligence': {
+    h1: 'Semantic Search Intelligence: Dominate the Vector Space and Entity Graphs.',
+    subHeadline: 'Google and AI models search semantic graphs, not strings. We map your brand as a primary entity, resolve crawl boundaries, and build topical authority.',
+    rotatingWords: ['map entities.', 'build authority.', 'own the graph.'],
+    insightCategory: 'SEO',
+    ctaText: 'Analyze search footprint',
+    ctaLink: '/contact',
+    stats: [
+      { value: '92%', label: 'of search queries in B2B', text: 'rely on semantic understanding of buying intent rather than direct keyword matching.' },
+      { value: '3x', label: 'higher authority score', text: 'generated across Google\'s knowledge graph within 180 days of semantic structure deployment.' },
+      { value: '400%', label: 'increase in semantic citations', text: 'across Perplexity and Gemini for brand queries mapping to Wikidata nodes.' },
+      { value: '0', label: 'keyword cannibalization', text: 'ensured through logical entity-to-URL mapping across all site directories.' }
+    ],
+    approachTitle: 'Modern algorithms query relationships, not keyword density.',
+    approachSubtitle: 'Semantic search is built on semantic vectors and entities. We ensure your content structures satisfy these algorithms, organizing your site directory into clear semantic hubs.',
+    approach: [
+      { icon: Search, title: 'Semantic Entity Mapping.', desc: 'We organize your product and services data into clean entity nodes that search crawlers parse and connect natively.' },
+      { icon: Activity, title: 'Wikidata & Knowledge Sync.', desc: 'We align your off-site profiles and citations to Wikidata entity nodes, creating consistent and authoritative identity anchors.' },
+      { icon: Target, title: 'Topical Hub Architecture.', desc: 'We design parent-child subdirectory relationships to exhaustively cover high-value topics and eliminate keyword overlap.' }
+    ],
+    valueCards: [
+      { title: 'Entity Graph Alignment', text: 'We map site content to structured entities, allowing algorithms to parse specifications instantly.' },
+      { title: 'Topical Cluster Mapping', text: 'We group related content into pillars, establishing high topical authority profiles.', highlight: true },
+      { title: 'Semantic Schema Graphing', text: 'We inject advanced nested JSON-LD graphs detailing geographic and organizational details.' },
+      { title: 'Knowledge Graph Sync', text: 'We synchronize brand citations across verified knowledge databases.' }
+    ],
+    executionTitle: 'Engineering the ultimate semantic search graph.',
+    heroImage: '/images/seo_hero.webp',
+    executionImage: '/images/seo_exec.webp',
+    executionSteps: [
+      { title: 'Semantic Audit & Base Mapping', content: 'We analyze query intents for your sector, identifying structural gaps in entity representation compared to major competitors.' },
+      { title: 'Schema Graph Injection', content: 'We write and deploy comprehensive JSON-LD schemas linking your services, authors, and organization to verified Wikidata entries.' },
+      { title: 'Content Pillar Restructuring', content: 'We reorganize thin content subfolders into authoritative pillar nodes, resolving duplicate keyword cannibalization.' },
+      { title: 'Entity Citation Monitoring', content: 'We monitor knowledge graph insertions and entity rankings, tuning structural signals to capture volatile search categories.' }
+    ],
+    caseStudy: {
+      tag: 'Enterprise SaaS',
+      headline: 'SaaS platform maps 85% topical authority in AI semantic graphs.',
+      description: 'By restructuring semantic entity models and linking site profiles directly to Wikidata, the brand gained dominant market share in conversational queries.',
+      ctaText: 'Explore semantic audits'
+    }
+  },
+
+  '/capabilities/custom-digital-infrastructure': {
+    h1: 'Custom Digital Infrastructure: Sub-Second React Engines Built for Scale.',
+    subHeadline: 'We replace slow, bloated templates with custom React/Vite systems, high-speed database layers, and API infrastructures built from scratch to convert and rank at peak efficiency.',
+    rotatingWords: ['sub-second speed.', 'custom code.', 'unbreakable scale.'],
     insightCategory: 'Technical',
     ctaText: 'Start a development project',
     ctaLink: '/contact',
-    
     stats: [
-      { value: '< 1s', label: 'Time to Interactive', text: 'guaranteed on all our custom React and Vite application builds.' },
+      { value: '< 1s', label: 'Time to Interactive', text: 'guaranteed on all our custom React and Vite web applications.' },
       { value: '3.5x', label: 'higher conversion rates', text: 'on average for platforms engineered with bespoke conversion architecture.' },
       { value: '100', label: 'Core Web Vitals scores', text: 'across mobile and desktop, ensuring maximum algorithmic ranking eligibility.' },
       { value: '0', label: 'template bloat', text: 'Every line of code is written from scratch for your specific business logic.' }
     ],
-    
     approachTitle: 'Performance architecture. Sub-second speed.',
     approachSubtitle: 'Page-builder templates throttle Core Web Vitals, organic ranking eligibility, and conversion rate. We build sites from scratch in React and Vite, with conversion architecture engineered into the page layer.',
     approach: [
-      { icon: Search, title: 'Technical baseline audit.', desc: 'We benchmark the current site against rendering performance, indexation health, and conversion friction to define the technical targets the new build must meet.' },
+      { icon: Search, title: 'Technical baseline audit.', desc: 'We benchmark the current site against rendering performance, indexation health, and conversion friction to define the technical targets.' },
       { icon: Zap, title: 'Architecture & stack selection.', desc: 'We design the application architecture in React and Vite for bundle size, rendering speed, and SEO compatibility with SSG/SSR models.' },
-      { icon: Activity, title: 'Native integration layer.', desc: 'We build native integrations with your CRM, intent infrastructure, smart contracts, AI pipelines, and Web3 wallet connections directly into the application.' }
+      { icon: Activity, title: 'Native integration layer.', desc: 'We build native integrations with your CRM, intent infrastructure, smart contracts, AI pipelines, and custom databases directly into the application.' }
     ],
-    
     valueCards: [
       { title: 'React & Vite Stack', text: 'Engineered for sub-second page loads and seamless, app-like user experiences.' },
       { title: 'Conversion Engineering', text: 'CTA placement, scroll behavior, and trust signals designed against documented buyer behavior.', highlight: true },
       { title: 'SEO Rendering Native', text: 'Clean HTML delivery ensuring Googlebot can crawl and index your content instantly.' },
-      { title: 'Custom Systems', text: 'From native CRMs and marketplace platforms to secure Web3 integrations.' }
+      { title: 'Custom Systems', text: 'From native CRMs and marketplace platforms to secure database setups.' }
     ],
-    
     executionTitle: 'Engineering products that win indexation and conversion.',
     heroImage: '/images/web_hero.webp',
     executionImage: '/images/web_exec.webp',
@@ -306,123 +263,18 @@ const SOLUTIONS_DATA: Record<string, SolutionData> = {
       { title: 'API & Database Integration', content: 'We connect marketing automation, analytics, and complex custom databases (like Supabase or PostgreSQL) directly to the application state.' },
       { title: 'Performance Hand-off', content: 'We launch a site that meets sub-second load times, clean Core Web Vitals, full schema implementation, and the rendering standards modern search engines require.' }
     ],
-    
     caseStudy: {
       tag: 'Web3 Platform',
-      headline: 'Crypto trading platform handles 10k+ concurrent users with zero latency.',
+      headline: 'Trading platform handles 10k+ concurrent users with zero latency.',
       description: 'We engineered a custom React application with complex smart contract integrations, delivering real-time data feeds and flawless user experience under extreme load.',
       ctaText: 'Build your platform'
     }
-  },
-
-  '/services/ppc-advertising': {
-    h1: 'PPC Advertising: We engineer paid media for return on ad spend, not impressions.',
-    subHeadline: 'Our PPC advertising services deliver precision-targeted paid search, paid social, and LinkedIn B2B pipelines across Google, Microsoft, and Meta.',
-    rotatingWords: ['drive ROAS.', 'scale media.', 'lower CAC.'],
-    insightCategory: 'Analytics',
-    ctaText: 'Book a paid media diagnostic',
-    ctaLink: '/contact',
-    
-    stats: [
-      { value: '4.8x', label: 'Average ROAS across accounts', text: 'by shifting optimization targets from top-of-funnel clicks to closed-won revenue.' },
-      { value: '-42%', label: 'reduction in CPA', text: 'within the first 90 days of restructuring ad account architectures.' },
-      { value: '80%', label: 'of B2B ad spend is wasted', text: 'on broad targeting that fails to reach true enterprise decision-makers.' },
-      { value: '100%', label: 'transparent attribution', text: 'connecting every dollar spent directly to your CRM pipeline stages.' }
-    ],
-    
-    approachTitle: 'Scaling revenue, not vanity metrics.',
-    approachSubtitle: 'Most paid media programs chase impressions and clicks while actual pipeline decays. We invert that. We engineer paid media against ROAS, qualified pipeline, and closed-won attribution.',
-    approach: [
-      { icon: Target, title: 'Account and intent audit.', desc: 'We audit your existing accounts and attribution model to surface where budget is being wasted on low-intent surfaces and where conversion friction suppresses ROAS.' },
-      { icon: Search, title: 'Intent-based search architecture.', desc: 'We rebuild your paid search around buyer intent, segmenting campaigns by funnel stage and engineering negative keyword libraries to capture high-intent slices.' },
-      { icon: Activity, title: 'LinkedIn B2B pipeline campaigns.', desc: 'We architect LinkedIn campaigns against company size, role seniority, and intent signal so paid social produces sales-qualified pipeline.' }
-    ],
-    
-    valueCards: [
-      { title: 'ROAS-Driven Execution', text: 'We optimize for return on ad spend, qualified pipeline, and closed-won attribution.' },
-      { title: 'Intent-Aligned Targeting', text: 'We surface ads only to genuinely in-market buyers to maximize the value of every click.', highlight: true },
-      { title: 'Continuous A/B Testing', text: 'We run statistically valid tests against creative, copy, landing experience, and offer.' },
-      { title: 'Multi-Touch Attribution', text: 'We connect spend to revenue through a defensible attribution model, not last-click stats.' }
-    ],
-    
-    executionTitle: 'Architecting profitable acquisition funnels.',
-    heroImage: '/images/ppc_hero.webp',
-    executionImage: '/images/seo_exec.webp',
-    executionSteps: [
-      { title: 'Funnel Stage Segmentation', content: "We structure campaigns based on the buyer journey, ensuring top-of-funnel awareness campaigns transition smoothly into high-intent retargeting and conversion pipelines." },
-      { title: 'Landing Experience Optimization', content: "We don't just send traffic to a homepage. We build and test dedicated landing pages with targeted copy and frictionless forms to maximize the conversion rate of paid traffic." },
-      { title: 'Bid Strategy Engineering', content: "We deploy advanced automated bidding strategies (tROAS, tCPA) guided by precise offline conversion tracking fed directly from your CRM." },
-      { title: 'Weekly Funnel Management', content: "We manage the funnel as a system — not a single ad — reporting against funnel-stage conversion rates rather than top-of-funnel surface metrics, reallocating spend to what produces." }
-    ],
-    
-    caseStudy: {
-      tag: 'B2B Services',
-      headline: 'Professional services firm scales ROAS from 1.2x to 6.5x in 4 months.',
-      description: 'By eliminating broad match waste and restructuring LinkedIn campaigns around account-based intent signals, we drastically lowered CAC and scaled profitable pipeline.',
-      ctaText: 'Analyze my ad account'
-    }
-  },
-
-  '/on-page-seo-los-angeles': {
-    h1: 'On-Page SEO Los Angeles: We engineer high-converting structures.',
-    subHeadline: 'Our On-Page SEO Los Angeles services provide topical authority modeling, schema graph injection, and speed-optimized React architectures built to convert traffic.',
-    rotatingWords: ['build traffic.', 'optimize pages.', 'increase conversions.'],
-    insightCategory: 'SEO',
-    ctaText: 'Start your On-Page SEO campaign',
-    ctaLink: '/contact',
-    
-    stats: [
-      { value: '+245%', label: 'average organic traffic growth', text: 'for Los Angeles service and e-commerce brands within 6 months.' },
-      { value: '100', label: 'Core Web Vitals mobile score', text: 'achieved through custom clean-code rendering structures.' },
-      { value: '1.2s', label: 'average Time to Interactive', text: 'ensuring search bots crawl and index your layout instantly.' },
-      { value: '+35%', label: 'average lift in conversion rate', text: 'by aligning on-page content directly with searcher intent.' }
-    ],
-    
-    approachTitle: 'Semantic entity modeling. Structural precision.',
-    approachSubtitle: 'On-page SEO is no longer about keyword density; it is about semantic structure, performance, and conversion design. We build clean, search-ready templates that convert.',
-    approach: [
-      { icon: Search, title: 'Topical Entity Modeling.', desc: 'We audit and map your keywords as semantic entities, structuring heading hierarchies to cover topics exhaustively.' },
-      { icon: Activity, title: 'Speed & Structural Optimization.', desc: 'We build clean-code React components, eliminating page-builder script bloat for sub-second rendering.' },
-      { icon: Target, title: 'Conversion Path Integration.', desc: 'We align CTA placement, scroll anchors, and layout flows directly with the intent of incoming queries.' }
-    ],
-    
-    valueCards: [
-      { title: 'Semantic Schema Injection', text: 'We define page context explicitly using rich JSON-LD Organization, Product, and Service schemas.' },
-      { title: 'Heading & Link Architecture', text: 'We construct logical internal linking graphs that distribute authority to high-value service hubs.', highlight: true },
-      { title: 'User Experience Alignment', text: 'We eliminate layout shifts, optimize images to WebP, and ensure perfect mobile performance.' },
-      { title: 'Continuous Intent Mapping', text: 'We review search query reports weekly to refine headings and content as query habits drift.' }
-    ],
-    
-    executionTitle: 'Surgically optimizing every layout for indexing and conversion.',
-    heroImage: '/images/onpage_hero.webp',
-    executionImage: '/images/seo_exec.webp',
-    executionSteps: [
-      { title: 'Semantic Audit', content: 'We map your existing pages to Google\'s semantic index to identify keyword cannibalization, content gaps, and internal link blocks.' },
-      { title: 'Structural Coding', content: 'We optimize headings, metadata, image tags, and schema. We write custom, lightweight JSX elements instead of relying on heavy plugins.' },
-      { title: 'Internal Link Graphing', content: 'We configure internal anchor-text distribution, ensuring page-rank flows to your money pages while pruning low-value redirects.' },
-      { title: 'Attribution & Analytics', content: 'We set up real-time Search Console monitoring and pipeline tracking to connect organic landing page impressions directly to CRM pipeline.' }
-    ],
-    
-    caseStudy: {
-      tag: 'LA Service Agency',
-      headline: 'Los Angeles professional service firm scales organic leads by +380% in 5 months.',
-      description: 'By correcting internal linking loops, injecting advanced Service schemas, and rewriting key landing pages to match B2B user intent, we restored search prominence in LA\'s most competitive sector.',
-      ctaText: 'Re-engineer my on-page SEO'
-    },
-    
-    faqTitle: 'Frequently asked questions about Los Angeles on-page SEO.',
-    faqs: [
-      { question: 'How is on-page SEO different for Los Angeles businesses?', answer: 'The Los Angeles market is highly competitive and localized. On-page SEO in LA requires combining traditional content optimization with localized entity schemas, naming conventions, and structural signals to establish geographic relevance without keyword stuffing.' },
-      { question: 'Why does website speed affect on-page rankings?', answer: 'Google\'s Core Web Vitals are direct ranking signals. If a page is slow to render (high LCP or TTI), search engines demote the ranking in favor of faster, responsive layouts to ensure a positive user experience.' },
-      { question: 'What is semantic entity optimization?', answer: 'Semantic SEO focuses on covering topics exhaustively rather than repeating keywords. It involves structuring headings and body content around related concepts (entities) that Google\'s algorithm associates with the core query.' },
-      { question: 'How do you measure the success of an on-page SEO campaign?', answer: 'We track improvements in organic impressions, keyword rank positioning for core service queries, click-through rates, and bottom-of-funnel conversions (leads and meetings booked).' }
-    ]
   }
 };
 
 const SolutionPage: React.FC<{ path: string }> = ({ path }) => {
   // Use a fallback to SEO data if path doesn't perfectly match
-  const data = SOLUTIONS_DATA[path] || SOLUTIONS_DATA['/services/seo'];
+  const data = SOLUTIONS_DATA[path] || SOLUTIONS_DATA['/capabilities/forensic-seo-penalty-recovery'];
   const [activeStep, setActiveStep] = useState(0);
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
 
@@ -451,13 +303,11 @@ const SolutionPage: React.FC<{ path: string }> = ({ path }) => {
     window.scrollTo({ top: 0, behavior: 'instant' });
 
     const baseTitles: Record<string, string> = {
-      '/services/seo': 'Technical SEO Services & Traffic Recovery | Gobiya',
-      '/services/geo-optimization': 'Generative Engine Optimization (GEO) & AI Visibility | Gobiya',
-      '/google-penalty-recovery': 'Google Penalty Recovery & Core Update Recovery | Gobiya',
-      '/services/lead-generation': 'B2B Lead Generation & Predictable Sales Pipelines | Gobiya',
-      '/services/web-development': 'React Web Development & Conversion-Engineered Platforms | Gobiya',
-      '/services/ppc-advertising': 'High-Yield PPC Advertising & Paid Search Pipelines | Gobiya',
-      '/on-page-seo-los-angeles': 'On-Page SEO Los Angeles Services & CRO | Gobiya',
+      '/capabilities/generative-engine-optimization': 'Generative Engine Optimization (GEO) & AI Visibility | Gobiya',
+      '/capabilities/forensic-seo-penalty-recovery': 'Forensic SEO & Google Penalty Recovery | Gobiya',
+      '/capabilities/conversion-architecture': 'Conversion Architecture: Turn Traffic into Pipeline | Gobiya',
+      '/capabilities/semantic-search-intelligence': 'Semantic Search Intelligence & Entity SEO | Gobiya',
+      '/capabilities/custom-digital-infrastructure': 'Custom React Web & Digital Infrastructure | Gobiya',
     };
     if (baseTitles[path]) {
       document.title = baseTitles[path];

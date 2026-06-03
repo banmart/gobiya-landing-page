@@ -30,14 +30,14 @@ const Footer: React.FC = () => {
 
           {/* Col 2 */}
           <div className="flex flex-col">
-            <h4 className="text-[12px] font-semibold uppercase tracking-wider mb-6">Services</h4>
+            <h4 className="text-[12px] font-semibold uppercase tracking-wider mb-6">Capabilities</h4>
             <ul className="flex flex-col gap-4 text-[14px] text-gray-400">
-              <li><a href="/services/geo-optimization" className="hover:text-white transition-colors">AI Content Strategies</a></li>
-              <li><a href="/google-penalty-recovery" className="hover:text-white transition-colors">Traffic Recovery</a></li>
-              <li><a href="/services/seo" className="hover:text-white transition-colors">Technical SEO</a></li>
-              <li><a href="/markets/southern-california" className="hover:text-white transition-colors">SoCal Market Hub</a></li>
-              <li><a href="/services/seo" className="hover:text-white transition-colors">Algorithmic Audits</a></li>
-              <li><a href="/services/lead-generation" className="hover:text-white transition-colors">Programmatic SEO</a></li>
+              <li><a href="/capabilities/generative-engine-optimization" className="hover:text-white transition-colors">Generative Engine Optimization</a></li>
+              <li><a href="/capabilities/forensic-seo-penalty-recovery" className="hover:text-white transition-colors">Forensic SEO & Penalty Recovery</a></li>
+              <li><a href="/capabilities/conversion-architecture" className="hover:text-white transition-colors">Conversion Architecture</a></li>
+              <li><a href="/capabilities/semantic-search-intelligence" className="hover:text-white transition-colors">Semantic Search Intelligence</a></li>
+              <li><a href="/capabilities/custom-digital-infrastructure" className="hover:text-white transition-colors">Custom Digital Infrastructure</a></li>
+              <li><a href="/capabilities" className="hover:text-white transition-colors">All Capabilities Overview</a></li>
             </ul>
           </div>
 

@@ -7,16 +7,15 @@
 - **Search & AI Dominance**: Securing high-value search real estate via semantic entity audits, technical schema building, and Generative Engine Optimization (GEO) to dominate modern AI-search models (ChatGPT, Gemini, Claude, Perplexity).
 
 ## Outcome-Oriented Service Paths
-- [Forensic Organic Traffic Recovery Protocol](/google-penalty-recovery)
-- [Search Engine Optimization & Algorithmic Dominance](/services/seo)
-- [Predictable B2B Sales Pipeline Architecture](/services/lead-generation)
-- [Generative Engine (GEO) & AI Search Domination](/services/geo-optimization)
-- [Custom Web Development & React Engineering](/services/web-development)
-- [ROAS-Driven PPC & Paid Media Management](/services/ppc-advertising)
+- [Forensic SEO & Penalty Recovery Protocol](/capabilities/forensic-seo-penalty-recovery)
+- [Generative Engine Optimization (GEO) & AI Search Domination](/capabilities/generative-engine-optimization)
+- [B2B Conversion Architecture & Outbound Pipelines](/capabilities/conversion-architecture)
+- [Semantic Search Intelligence & Entity Optimization](/capabilities/semantic-search-intelligence)
+- [Custom Digital Infrastructure & High-Speed React Dev](/capabilities/custom-digital-infrastructure)
 
 ## Service Areas
 We deliver digital authority and traffic recovery nationwide, with hyper-local physical mapping across Los Angeles County (redirected to our solutions):
-- [Services & Solutions Overview](/services)
+- [Capabilities Overview](/capabilities)
 
 ## Executive Philosophy
 Gobiya shifts SEO from a cost-center to a revenue-driver. We bypass vanity metrics to focus strictly on commercial outcomes: restored organic traffic streams, secure search dominance, and predictable business-to-business pipeline growth.

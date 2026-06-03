@@ -91,10 +91,17 @@ function App({ url }: AppProps) {
     
     const legacyRedirects: Record<string, string> = {
       '/company/insights': '/insights',
-      '/services/web-design': '/services/web-development',
-      '/services/advertising': '/services/ppc-advertising',
-      '/what-we-do.html': '/services/seo',
-      '/on-page-seo-los-angeles': '/markets/southern-california'
+      '/on-page-seo-los-angeles': '/markets/southern-california',
+      '/services': '/capabilities',
+      '/services/seo': '/capabilities/forensic-seo-penalty-recovery',
+      '/services/geo-optimization': '/capabilities/generative-engine-optimization',
+      '/services/lead-generation': '/capabilities/conversion-architecture',
+      '/services/web-development': '/capabilities/custom-digital-infrastructure',
+      '/services/web-design': '/capabilities/custom-digital-infrastructure',
+      '/services/ppc-advertising': '/capabilities/conversion-architecture',
+      '/services/advertising': '/capabilities/conversion-architecture',
+      '/google-penalty-recovery': '/capabilities/forensic-seo-penalty-recovery',
+      '/what-we-do.html': '/capabilities/forensic-seo-penalty-recovery'
     };
     
     const target = legacyRedirects[normalized];
@@ -118,12 +125,11 @@ function App({ url }: AppProps) {
 
   // Detect solution routes
   const isSolutionRoute = [
-    '/services/seo',
-    '/services/lead-generation',
-    '/services/geo-optimization',
-    '/services/web-development',
-    '/services/ppc-advertising',
-    '/google-penalty-recovery'
+    '/capabilities/generative-engine-optimization',
+    '/capabilities/forensic-seo-penalty-recovery',
+    '/capabilities/conversion-architecture',
+    '/capabilities/semantic-search-intelligence',
+    '/capabilities/custom-digital-infrastructure'
   ].includes(normalizedPath);
 
   return (

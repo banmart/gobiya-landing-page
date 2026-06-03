@@ -280,10 +280,10 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
     const getSeoMetadata = (p: string) => {
       const norm = p.toLowerCase().replace(/\/$/, '') || '/';
       switch (norm) {
-        case '/services':
+        case '/capabilities':
           return {
-            title: 'Forensic SEO and B2B Pipeline Services | Gobiya',
-            description: 'We engineer professional SEO and B2B pipeline services, consolidating organic traffic recovery, generative engine optimization (GEO), and React web development.'
+            title: 'Our Core Capabilities: Forensic SEO, GEO & Pipeline Dev | Gobiya',
+            description: 'We consolidate generative engine optimization, forensic traffic recovery, conversion architecture, and high-performance React engineering into a single high-impact engine.'
           };
         case '/services/seo':
           return {
@@ -398,27 +398,27 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
     };
     
     switch (normalPath) {
-      case '/services':
+      case '/capabilities':
         return { ...defaultPageConfig,
-          subtitle: 'Gobiya Services > Consolidated Growth Solutions',
-          title: 'Bespoke SEO and B2B pipeline services engineered for dominance.',
+          subtitle: 'Gobiya Capabilities > Consolidated Growth Solutions',
+          title: 'Bespoke SEO and B2B pipeline capabilities engineered for dominance.',
           rotatingWords: ['recover traffic.', 'build pipelines.', 'cite brand AI.', 'engineer speed.'],
           outcomeMessage: 'We consolidate forensic SEO and automated B2B sales development into a single high-impact engine.',
           ctaText: 'Get growth audit',
-          introScrollText: 'We engineer high-performance SEO and B2B pipeline services, not just strategies. Reclaiming lost organic traffic, automating cold pipeline generation, and aligning entities for search models.',
+          introScrollText: 'We engineer high-performance SEO and B2B pipeline capabilities, not just strategies. Reclaiming lost organic traffic, automating cold pipeline generation, and aligning entities for search models.',
           introHeading: <>Five specialized lines. <br className="hidden sm:block" /><span className="sm:hidden"> </span>One consolidated engine.</>,
           introParagraph: 'At Gobiya, we do not run broad campaigns or provide boilerplate agency retainers. We build custom React/Supabase platforms, configure real-time intent-signals, and execute recovery protocols that get results.',
           introVideo1: "/videos/space-girl.webm",
           introVideo2: "/videos/gobiyaRace.webm",
           bentoHeadline: <>Integrated capabilities.<br/>Measurable returns.</>,
-          bentoDescription: 'Every service is engineered to scale your customer acquisitions, drive down CAC, and ensure long-term algorithmic safety. Verify our capabilities below.',
+          bentoDescription: 'Every capability is engineered to scale your customer acquisitions, drive down CAC, and ensure long-term algorithmic safety. Verify our capabilities below.',
           insightCategory: 'Strategy',
           bentoCards: [
-            { href: '#penalty-recovery', colSpan: 2, icon: <ShieldAlert size={40} className="text-[#F26522] mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'Traffic Recovery Protocol', description: 'Forensic drop diagnosis, content pruning, and E-E-A-T rebuilding to reverse search penalties.' },
-            { href: '#lead-generation', colSpan: 1, icon: <Network size={40} className="text-white mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'Pipeline Architecture', description: 'Automated cold outreach and target account CRM routing driven by site intent signals.' },
-            { href: '#geo-optimization', colSpan: 1, icon: <Search size={40} className="text-white mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'AI Citations (GEO)', description: 'Entity alignment to get your brand recommended natively inside ChatGPT, Claude, and Gemini.' },
-            { href: '#web-design', colSpan: 2, icon: <Code size={40} className="text-[#F26522] mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'High-Speed React/Vite Dev', description: 'Sub-second loading, Core Web Vitals optimization, and built-in CRO conversion systems.' },
-            { href: '#advertising', colSpan: 2, gradient: true, icon: <TrendingUp size={40} className="text-white mb-6 sm:mb-10 relative z-10" strokeWidth={1.5} />, title: 'ROAS-Driven Advertising', description: 'Paid ad pipelines managed to capture high-intent buyers and maximize ROI.' }
+            { href: '/capabilities/forensic-seo-penalty-recovery', colSpan: 2, icon: <ShieldAlert size={40} className="text-[#F26522] mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'Forensic SEO & Penalty Recovery', description: 'Forensic drop diagnosis, manual actions removal, and HCU/Core update recovery.' },
+            { href: '/capabilities/conversion-architecture', colSpan: 1, icon: <Network size={40} className="text-white mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'Conversion Architecture', description: 'Automated cold outreach, CRM routing, and intent-signal pipelines.' },
+            { href: '/capabilities/generative-engine-optimization', colSpan: 1, icon: <Search size={40} className="text-white mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'Generative Engine Optimization', description: 'Brand citations and entity alignment for ChatGPT, Claude, and Gemini.' },
+            { href: '/capabilities/custom-digital-infrastructure', colSpan: 2, icon: <Code size={40} className="text-[#F26522] mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'Custom Digital Infrastructure', description: 'Sub-second React/Vite development, database tuning, and API platforms.' },
+            { href: '/capabilities/semantic-search-intelligence', colSpan: 2, gradient: true, icon: <TrendingUp size={40} className="text-white mb-6 sm:mb-10 relative z-10" strokeWidth={1.5} />, title: 'Semantic Search Intelligence', description: 'Topical authority clusters, entity schema graphs, and vector-space rankings.' }
           ],
           showCalculator: false,
           calculatorProps: { title: "Calculate Your Digital Revenue Leak", description: "Input the traffic or lead volume you are currently losing. See how much pipeline we can recover.", sliderLabel: "Estimated Monthly Loss", sliderMin: 1000, sliderMax: 200000, sliderStep: 1000, conversionRate: 0.02, ltv: 500, resultLabel: "Monthly Revenue Leak", disclaimer: "*Based on 2% conversion rate and $500 LTV." }

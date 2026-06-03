@@ -10,29 +10,25 @@ const metadataMap: Record<string, SEOMetadata> = {
     title: 'More Traffic, More Leads, Less Guesswork | Gobiya',
     description: 'Tired of being invisible online? Gobiya helps you rank higher, get cited by AI, and turn traffic into customers. Free audit, real results.'
   },
-  '/services/seo': {
-    title: 'Reclaim Your Rankings & Hijack Search Traffic | Gobiya',
-    description: 'Is your organic search traffic tanking? We pinpoint the exact technical roadblocks killing your rankings and deploy custom recovery strategies that stick.'
-  },
-  '/services/lead-generation': {
-    title: 'Forget Cold Calling: Build a Predictive Inbound Pipeline | Gobiya',
-    description: 'Stop chasing bad-fit leads. We design and launch automated acquisition systems that fill your calendar with pre-qualified buyers on autopilot.'
-  },
-  '/services/geo-optimization': {
+  '/capabilities/generative-engine-optimization': {
     title: 'Get Cited by ChatGPT or Stay Invisible to AI Search | Gobiya',
     description: 'Conversational AI is stealing search traffic. Here is how we engineer your website\'s data and structure so ChatGPT, Claude, and Gemini recommend your brand natively.'
   },
-  '/services/web-development': {
+  '/capabilities/forensic-seo-penalty-recovery': {
+    title: 'Reclaim Your Rankings: Forensic SEO & Penalty Recovery | Gobiya',
+    description: 'Did a Google update destroy your traffic? We diagnose quality classifier drops, reverse manual actions, and rebuild topical authority to recover your pipeline.'
+  },
+  '/capabilities/conversion-architecture': {
+    title: 'Forget Cold Calling: Build a Predictive Inbound Pipeline | Gobiya',
+    description: 'Stop chasing bad-fit leads. We design and launch automated acquisition systems that fill your calendar with pre-qualified buyers on autopilot.'
+  },
+  '/capabilities/semantic-search-intelligence': {
+    title: 'Dominate the Entity Graph & Semantic Search Space | Gobiya',
+    description: 'Google query algorithms understand concepts, not just words. We structure your brand as a primary entity node and map topical clusters to capture high-intent search.'
+  },
+  '/capabilities/custom-digital-infrastructure': {
     title: 'Ditch the Slow Templates: Speed-Engineered Custom React | Gobiya',
     description: 'Is a sluggish template leaking conversions? We replace bloated CMS setups with sub-second custom React pages designed to turn visitors into buyers instantly.'
-  },
-  '/services/ppc-advertising': {
-    title: 'Stop Burning Ad Spend: High-ROAS Paid Acquisition | Gobiya',
-    description: 'Tired of burning thousands on ads without seeing results? We architect and optimize Google, Microsoft, and Meta campaigns for maximum conversion value.'
-  },
-  '/google-penalty-recovery': {
-    title: 'Hit by a Core Update? Rebuild Your Google Traffic Fast | Gobiya',
-    description: 'A sudden drop in search traffic is a nightmare. We conduct forensic audits to reverse Google penalty manual actions and algorithmic updates.'
   },
   '/company/about': {
     title: 'The Gobiya Story: Precision growth engineering since 2012 | Gobiya',
@@ -58,9 +54,9 @@ const metadataMap: Record<string, SEOMetadata> = {
     title: 'Let\'s Audit Your Site: Request a Free Growth Session | Gobiya',
     description: 'Ready to stop losing traffic and revenue to competitors? Talk directly to our lead engineers. We will analyze your site and outline a custom recovery roadmap.'
   },
-  '/services': {
-    title: 'Our Capabilities: Technical SEO, GEO & Pipeline Engineering | Gobiya',
-    description: 'We combine forensic SEO, generative search optimization, high-speed React engineering, and automated outbound sales to build a compounding pipeline.'
+  '/capabilities': {
+    title: 'Our Core Capabilities: Forensic SEO, GEO & Pipeline Dev | Gobiya',
+    description: 'Explore our specialized capabilities: generative engine optimization, forensic traffic recovery, conversion architecture, and high-performance React engineering.'
   },
   '/markets/southern-california': {
     title: 'LA & SoCal SEO Agency: Rank #1 in the Most Competitive Market | Gobiya',

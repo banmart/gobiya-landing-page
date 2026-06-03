@@ -3,13 +3,12 @@ import { gsap } from 'gsap';
 import './StaggeredMenu.css';
 
 const DEFAULT_MENU_ITEMS = [
-  { label: 'Solutions', isHeader: true },
-  { label: 'SEO', link: '/services/seo' },
-  { label: 'GEO', link: '/services/geo-optimization' },
-  { label: 'Penalty Recovery', link: '/google-penalty-recovery' },
-  { label: 'Lead Generation', link: '/services/lead-generation' },
-  { label: 'Web Development', link: '/services/web-development' },
-  { label: 'PPC Advertising', link: '/services/ppc-advertising' },
+  { label: 'Capabilities', isHeader: true },
+  { label: 'Forensic SEO & Penalty Recovery', link: '/capabilities/forensic-seo-penalty-recovery' },
+  { label: 'Generative Engine Optimization (GEO)', link: '/capabilities/generative-engine-optimization' },
+  { label: 'Conversion Architecture', link: '/capabilities/conversion-architecture' },
+  { label: 'Semantic Search Intelligence', link: '/capabilities/semantic-search-intelligence' },
+  { label: 'Custom Digital Infrastructure', link: '/capabilities/custom-digital-infrastructure' },
   { label: 'Markets', isHeader: true },
   { label: 'Southern California', link: '/markets/southern-california' },
   { label: 'Company', isHeader: true },

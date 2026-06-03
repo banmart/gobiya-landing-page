@@ -32,37 +32,37 @@
 - Web application engineers building React/TypeScript interfaces optimized for conversion.
 - Google & Meta ads managers scaling paid search ROI.
 
-## Outcome-Driven Core Services
+## Outcome-Driven Core Capabilities
 
-### 1. Organic Traffic & Google Update Recovery
-- **URL**: https://www.gobiya.com/services/seo
-- **Core Outcome**: Reversing traffic drops from Google Core and Helpful Content Updates (HCU). We perform signal-to-noise ratio audits, prune low-value content, build semantic topical authority, and resolve manual action penalties.
+### 1. Forensic SEO & Google Update Recovery
+- **URL**: https://www.gobiya.com/capabilities/forensic-seo-penalty-recovery
+- **Core Outcome**: Reversing traffic drops from Google Core and Helpful Content Updates (HCU). We perform signal-to-noise audits, prune thin content, restore index status, and rebuild EEAT.
 - **Process**: Forensic index audit → entity relationship mapping → update recovery strategy → content clean-up & noise reduction → search signals rebuilding.
 - **Results**: Restored positions, organic crawl efficiency, and long-term search engine immunity.
 
-### 2. Predictable B2B Sales Pipeline Architecture
-- **URL**: https://www.gobiya.com/services/lead-generation
-- **Core Outcome**: Creating automated, reliable outbound systems that source and convert high-value corporate accounts.
-- **Process**: Outbound stack setup → prospect persona profiling → cold email/LinkedIn sequencing → lead scoring → CRM sync.
-- **Results**: Predictable growth, higher deal values, and a consistent flow of high-intent B2B meetings.
-
-### 3. Generative Engine Optimization (GEO)
-- **URL**: https://www.gobiya.com/services/geo-optimization
-- **Core Outcome**: Ensuring your brand is cited and recommended as the top solution by AI search engines, including ChatGPT (SearchGPT), Claude, Gemini, Perplexity, and Google AI Overviews.
+### 2. Generative Engine Optimization (GEO)
+- **URL**: https://www.gobiya.com/capabilities/generative-engine-optimization
+- **Core Outcome**: Ensuring your brand is cited and recommended as the top solution by AI search engines, including ChatGPT, Claude, Gemini, Perplexity, and Google AI Overviews.
 - **Process**: Citation mapping → Knowledge Graph insertion → semantic authority building → structured data formatting.
 - **Results**: Dominance in AI-generated answers, high-value citation links, and future-proof search authority.
 
-### 4. High-Performance Web Engineering
-- **URL**: https://www.gobiya.com/services/web-development
-- **Core Outcome**: Replacing slow templates with fast, responsive custom-built web apps that maximize conversion rates.
+### 3. Conversion Architecture & B2B Pipelines
+- **URL**: https://www.gobiya.com/capabilities/conversion-architecture
+- **Core Outcome**: Creating automated, reliable outbound systems and paid acquisition funnels that de-anonymize site traffic and convert target accounts.
+- **Process**: Outbound stack setup → reverse-IP tracking → cold email/LinkedIn sequencing → lead scoring → CRM sync.
+- **Results**: Predictable growth, higher deal values, and a consistent flow of high-intent B2B meetings.
+
+### 4. Semantic Search Intelligence
+- **URL**: https://www.gobiya.com/capabilities/semantic-search-intelligence
+- **Core Outcome**: Establishing entity authority, nesting JSON-LD schemas, and structuring topical clusters to dominate semantic search vector spaces.
+- **Process**: Semantic audit → Wikidata sync → schema graph injection → topical cluster organization.
+- **Results**: Highly indexable semantic graphs and high authority rankings on modern search engines.
+
+### 5. Custom Digital Infrastructure
+- **URL**: https://www.gobiya.com/capabilities/custom-digital-infrastructure
+- **Core Outcome**: Replacing slow templates with fast, responsive custom-built React/Vite apps and API/database infrastructures that maximize conversion rates.
 - **Tech Stack**: React, TypeScript, Tailwind CSS, Vite, Supabase.
 - **Results**: Core Web Vitals compliance (LCP < 2.5s), enhanced search crawling, and a higher visitor-to-customer conversion rate.
-
-### 5. High-ROI Paid Search & Social Ad Pipelines
-- **URL**: https://www.gobiya.com/services/ppc-advertising
-- **Core Outcome**: Lowering customer acquisition costs (CAC) and scaling lead pipelines through data-driven campaigns.
-- **Platforms**: Google Ads, Microsoft Ads, Meta Ads.
-- **Results**: Immediate pipeline lift, high lead-to-opportunity ratios, and measurable return on ad spend (ROAS).
 
 ## Measurable Outcomes & Results
 

@@ -16,65 +16,29 @@ const metadataMap: Record<string, SEOMetadata> = {
     title: 'More Traffic, More Leads, Less Guesswork | Gobiya',
     description: 'Tired of being invisible online? Gobiya helps you rank higher, get cited by AI, and turn traffic into customers. Free audit, real results.'
   },
-  '/services/seo': {
-    title: 'Reclaim Your Rankings & Hijack Search Traffic | Gobiya',
-    description: 'Is your organic search traffic tanking? We pinpoint the exact technical roadblocks killing your rankings and deploy custom recovery strategies that stick.'
-  },
-  '/services/lead-generation': {
-    title: 'Forget Cold Calling: Build a Predictive Inbound Pipeline | Gobiya',
-    description: 'Stop chasing bad-fit leads. We design and launch automated acquisition systems that fill your calendar with pre-qualified buyers on autopilot.'
-  },
-  '/services/geo-optimization': {
+  '/capabilities/generative-engine-optimization': {
     title: 'Get Cited by ChatGPT or Stay Invisible to AI Search | Gobiya',
     description: 'Conversational AI is stealing search traffic. Here is how we engineer your website\'s data and structure so ChatGPT, Claude, and Gemini recommend your brand natively.'
   },
-  '/services/web-development': {
+  '/capabilities/forensic-seo-penalty-recovery': {
+    title: 'Reclaim Your Rankings: Forensic SEO & Penalty Recovery | Gobiya',
+    description: 'Did a Google update destroy your traffic? We diagnose quality classifier drops, reverse manual actions, and rebuild topical authority to recover your pipeline.'
+  },
+  '/capabilities/conversion-architecture': {
+    title: 'Forget Cold Calling: Build a Predictive Inbound Pipeline | Gobiya',
+    description: 'Stop chasing bad-fit leads. We design and launch automated acquisition systems that fill your calendar with pre-qualified buyers on autopilot.'
+  },
+  '/capabilities/semantic-search-intelligence': {
+    title: 'Dominate the Entity Graph & Semantic Search Space | Gobiya',
+    description: 'Google query algorithms understand concepts, not just words. We structure your brand as a primary entity node and map topical clusters to capture high-intent search.'
+  },
+  '/capabilities/custom-digital-infrastructure': {
     title: 'Ditch the Slow Templates: Speed-Engineered Custom React | Gobiya',
     description: 'Is a sluggish template leaking conversions? We replace bloated CMS setups with sub-second custom React pages designed to turn visitors into buyers instantly.'
   },
-  '/services/ppc-advertising': {
-    title: 'Stop Burning Ad Spend: High-ROAS Paid Acquisition | Gobiya',
-    description: 'Tired of burning thousands on ads without seeing results? We architect and optimize Google, Microsoft, and Meta campaigns for maximum conversion value.'
-  },
-  '/google-penalty-recovery': {
-    title: 'Hit by a Core Update? Rebuild Your Google Traffic Fast | Gobiya',
-    description: 'A sudden drop in search traffic is a nightmare. We conduct forensic audits to reverse Google penalty manual actions and algorithmic updates.'
-  },
-  '/markets/southern-california': {
-    title: 'LA & SoCal SEO Agency: Rank #1 in the Most Competitive Market | Gobiya',
-    description: 'Southern California is brutal. We engineer SEO dominance, AI citations, and B2B pipeline systems for LA, Orange County, and San Diego enterprises. Free audit.'
-  },
-  '/company/about': {
-    title: 'The Gobiya Story: Precision growth engineering since 2012 | Gobiya',
-    description: 'We aren\'t a template-churning agency. Meet the Los Angeles growth engineers rebuilding traffic pipelines, recovering penalties, and solving generative SEO.'
-  },
-  '/company/success-stories': {
-    title: 'Inside Our Wins: Real Case Studies, 300%+ Traffic Growth | Gobiya',
-    description: 'No vanity metrics here. Read the breakdown of how we reversed manual actions, scaled B2B outbound pipelines, and secured generative engine citations.'
-  },
-  '/company/approach': {
-    title: 'Our Blueprint: Algorithmic Audits & Pipeline Acceleration | Gobiya',
-    description: 'Our exact methodology for diagnosing traffic leaks, building topical authority models, and scaling outbound acquisition campaigns.'
-  },
-  '/insights': {
-    title: 'Unfiltered Growth: SEO Audits, GEO Tactics & AI Shifts | Gobiya',
-    description: 'No generic fluff. The Gobiya team shares real operational insights, Google core update recovery checklists, and AI engine optimization tactics.'
-  },
-  '/company/careers': {
-    title: 'Solve Hard Search & Engineering Problems With Us | Gobiya',
-    description: 'Tired of generic marketing tasks? We\'re looking for elite React developers, SEO forensic specialists, and sales engineers to join our team in LA.'
-  },
-  '/contact': {
-    title: 'Let\'s Audit Your Site: Request a Free Growth Session | Gobiya',
-    description: 'Ready to stop losing traffic and revenue to competitors? Talk directly to our lead engineers. We will analyze your site and outline a custom recovery roadmap.'
-  },
-  '/services': {
-    title: 'Our Capabilities: Technical SEO, GEO & Pipeline Engineering | Gobiya',
-    description: 'We combine forensic SEO, generative search optimization, high-speed React engineering, and automated outbound sales to build a compounding pipeline.'
-  },
-  '/markets/southern-california': {
-    title: 'LA & SoCal SEO Agency: Rank #1 in the Most Competitive Market | Gobiya',
-    description: 'Southern California is brutal. We engineer SEO dominance, AI citations, and B2B pipeline systems for LA, Orange County, and San Diego enterprises. Free audit.'
+  '/capabilities': {
+    title: 'Our Core Capabilities: Forensic SEO, GEO & Pipeline Dev | Gobiya',
+    description: 'Explore our specialized capabilities: generative engine optimization, forensic traffic recovery, conversion architecture, and high-performance React engineering.'
   },
   '/insights/gobiya-vs-enterprise-seo-agencies': {
 
@@ -189,11 +153,18 @@ export default async function handler(req: IncomingMessage, res: any) {
 
     // Server-side legacy redirections (301 Permanent Redirect)
     const legacyRedirects: Record<string, string> = {
-      '/services/web-design': '/services/web-development',
-      '/services/advertising': '/services/ppc-advertising',
       '/company/insights': '/insights',
-      '/what-we-do.html': '/services/seo',
-      '/on-page-seo-los-angeles': '/markets/southern-california'
+      '/on-page-seo-los-angeles': '/markets/southern-california',
+      '/services': '/capabilities',
+      '/services/seo': '/capabilities/forensic-seo-penalty-recovery',
+      '/services/geo-optimization': '/capabilities/generative-engine-optimization',
+      '/services/lead-generation': '/capabilities/conversion-architecture',
+      '/services/web-development': '/capabilities/custom-digital-infrastructure',
+      '/services/web-design': '/capabilities/custom-digital-infrastructure',
+      '/services/ppc-advertising': '/capabilities/conversion-architecture',
+      '/services/advertising': '/capabilities/conversion-architecture',
+      '/google-penalty-recovery': '/capabilities/forensic-seo-penalty-recovery',
+      '/what-we-do.html': '/capabilities/forensic-seo-penalty-recovery'
     };
 
     if (legacyRedirects[pathname]) {

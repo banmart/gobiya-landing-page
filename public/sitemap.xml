@@ -12,32 +12,34 @@
     <priority>0.90</priority>
   </url>
   <url>
-    <loc>https://www.gobiya.com/services/seo</loc>
+    <loc>https://www.gobiya.com/capabilities/forensic-seo-penalty-recovery</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.90</priority>
   </url>
   <url>
-    <loc>https://www.gobiya.com/services/lead-generation</loc>
+    <loc>https://www.gobiya.com/capabilities/generative-engine-optimization</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.90</priority>
   </url>
   <url>
-    <loc>https://www.gobiya.com/services/geo-optimization</loc>
-    <lastmod>2026-05-24</lastmod>
+    <loc>https://www.gobiya.com/capabilities/conversion-architecture</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
+    <priority>0.90</priority>
   </url>
   <url>
-    <loc>https://www.gobiya.com/services/web-development</loc>
-    <lastmod>2026-05-24</lastmod>
+    <loc>https://www.gobiya.com/capabilities/semantic-search-intelligence</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.80</priority>
+    <priority>0.90</priority>
   </url>
   <url>
-    <loc>https://www.gobiya.com/services/ppc-advertising</loc>
-    <lastmod>2026-05-24</lastmod>
+    <loc>https://www.gobiya.com/capabilities/custom-digital-infrastructure</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.80</priority>
+    <priority>0.90</priority>
   </url>
   <url>
     <loc>https://www.gobiya.com/insights</loc>
@@ -172,16 +174,10 @@
     <priority>0.70</priority>
   </url>
   <url>
-    <loc>https://www.gobiya.com/services</loc>
-    <lastmod>2026-05-28</lastmod>
+    <loc>https://www.gobiya.com/capabilities</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://www.gobiya.com/google-penalty-recovery</loc>
-    <lastmod>2026-05-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.90</priority>
   </url>
   <url>
     <loc>https://www.gobiya.com/company/about</loc>
