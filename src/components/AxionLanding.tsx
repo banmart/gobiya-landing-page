@@ -361,28 +361,28 @@ const AxionLanding = () => {
 
             {/* Right Column: Accordion */}
             <div>
-              <p className="text-sm font-bold tracking-widest uppercase text-[#F26522] mb-4 font-body">Methodology</p>
+              <p className="text-sm font-bold tracking-widest uppercase text-[#F26522] mb-4 font-body">Capabilities</p>
               <h2 className="text-[clamp(2rem,3.5vw,3rem)] font-medium text-gray-900 mb-12 leading-[1.1] font-display">
-                How do we recover lost search traffic and dominate? (Our Methodology)
+                Core Operational Capabilities
               </h2>
               
               <div className="space-y-2 border-t border-gray-200 font-body">
                 {[
                   {
-                    title: '01 / Diagnostic Audit',
-                    content: 'We audit your domain against search core update rollouts, tracking keyword and click decay metrics to isolate the exact quality, intent, or technical vector that triggered demotion.'
+                    title: '01 / Conversion Architecture & Behavioral Psychology',
+                    content: 'Structuring digital ecosystems and landing pages optimized around user intent and conversion triggers.'
                   },
                   {
-                    title: '02 / Entity Mapping',
-                    content: 'We model your market as an interconnected semantic graph and map each service to its corresponding entity node, resolving keyword cannibalization at the codebase and URL layer.'
+                    title: '02 / Semantic Search & GEO (Generative Engine Optimization)',
+                    content: 'Engineering content and technical data states to ensure brand visibility within traditional search indexes, LLM-driven knowledge graphs, and AI-generated summaries.'
                   },
                   {
-                    title: '03 / Trust Restoration',
-                    content: 'We build real-world E-E-A-T signals through expert author schemas, credentials, and digital PR campaigns, returning trust back to your root domain.'
+                    title: '03 / Algorithmic Penalty Recovery',
+                    content: 'Diagnosing core web vital friction, indexing roadblocks, and complex crawl-frequency drops to restore organic traffic lost to major search algorithm updates.'
                   },
                   {
-                    title: '04 / Generative SEO (GEO)',
-                    content: 'We restructure content into direct Q&A blocks and structured tables so that generative search engines (ChatGPT, Gemini, Claude, AIOs) easily parse and cite your brand.'
+                    title: '04 / Sub-Second Infrastructure',
+                    content: 'Designing and deploying rapid, custom web environments (such as React and Vite-based frameworks) coupled with optimized schema markup to maximize data density and site performance.'
                   }
                 ].map((step, idx) => {
                   const isOpen = activeStep === idx;
@@ -430,9 +430,14 @@ const AxionLanding = () => {
 
           {/* Responsive Content Area */}
           <div className="block lg:hidden font-body">
-            <p className="text-[15px] sm:text-[17px] leading-[1.6] font-medium text-gray-900 mb-6">
-              Gobiya is a BBB A+ rated search engine optimization firm and content marketing agency in Los Angeles, operating since 2012. Our proprietary methodology combines machine learning insights with elite technical SEO, ensuring your brand captures the most valuable search real estate available.
-            </p>
+            <div className="space-y-4 text-[15px] sm:text-[17px] leading-[1.6] font-medium text-gray-900 mb-6">
+              <p>
+                <strong>Gobiya</strong> is a precision-engineered digital firm and growth agency based in Los Angeles, California. Founded in 2012, the agency specializes in advanced search mechanics, performance marketing, and digital infrastructure design.
+              </p>
+              <p className="text-gray-600 font-normal text-sm sm:text-base">
+                Rather than deploying broad, generalist marketing tactics, Gobiya focuses on high-stakes technical environments and data-driven revenue generation. The agency operates primarily out of its headquarters on Wilshire Boulevard in Los Angeles, servicing mid-market to enterprise brands that require high-performance technical SEO and scalable digital revenue engines.
+              </p>
+            </div>
             <a href="/contact" className="group flex items-center bg-[#F26522] hover:bg-[#e05a1a] text-white pl-5 pr-2 py-2 transition-colors duration-300 mb-8 inline-flex">
               <div className="flex flex-col overflow-hidden h-[20px] justify-start items-start relative mr-3">
                 <span className="text-[13px] font-medium leading-[20px] transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-translate-y-full">About our agency</span>
@@ -477,9 +482,14 @@ const AxionLanding = () => {
               />
             </div>
             <div className="self-start flex flex-col items-start justify-start pt-2">
-              <p className="text-[16px] xl:text-[18px] leading-[1.65] font-medium text-gray-900 mb-8">
-                Gobiya is a BBB A+ rated search engine optimization firm and content marketing agency in Los Angeles, operating since 2012. Our proprietary methodology combines machine learning insights with elite technical SEO for maximum ROI.
-              </p>
+              <div className="space-y-4 text-[16px] xl:text-[18px] leading-[1.65] font-medium text-gray-900 mb-8">
+                <p>
+                  <strong>Gobiya</strong> is a precision-engineered digital firm and growth agency based in Los Angeles, California. Founded in 2012, the agency specializes in advanced search mechanics, performance marketing, and digital infrastructure design.
+                </p>
+                <p className="text-gray-600 font-normal text-sm xl:text-base">
+                  Rather than deploying broad, generalist marketing tactics, Gobiya focuses on high-stakes technical environments and data-driven revenue generation. The agency operates primarily out of its headquarters on Wilshire Boulevard in Los Angeles, servicing mid-market to enterprise brands that require high-performance technical SEO and scalable digital revenue engines.
+                </p>
+              </div>
               <a href="/contact" className="group flex items-center bg-[#F26522] hover:bg-[#e05a1a] text-white pl-6 pr-2 py-2 transition-colors duration-300">
                 <div className="flex flex-col overflow-hidden h-[20px] justify-start items-start relative mr-3">
                   <span className="text-[14px] font-medium leading-[20px] transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-translate-y-full">About our agency</span>

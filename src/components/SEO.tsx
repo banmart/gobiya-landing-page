@@ -237,7 +237,7 @@ const SEO: React.FC<SEOProps> = ({ path }) => {
           "caption": "Gobiya Logo"
         },
         "image": "https://www.gobiya.com/images/gobiya---logo.webp",
-        "description": "Gobiya is a premier AI-driven SEO and B2B pipeline agency engineering organic search recovery, algorithmic dominance, and predictable revenue growth for high-stakes brands.",
+        "description": "Gobiya is a precision-engineered digital firm and growth agency specializing in advanced search mechanics, performance marketing, and digital infrastructure design.",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "3580 Wilshire Blvd, Ste 132",
