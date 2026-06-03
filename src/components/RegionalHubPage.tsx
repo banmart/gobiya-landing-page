@@ -485,7 +485,8 @@ const RegionalHubPage: React.FC<RegionalHubPageProps> = ({ region }) => {
             <div className="flex flex-col gap-6">
               <SplitTextReveal
                 text={data.introText}
-                className="text-[16px] sm:text-[18px] text-white/55 leading-relaxed"
+                containerClassName="w-full"
+                textClassName="split text-[16px] sm:text-[18px] text-white/55 leading-relaxed opacity-0"
               />
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-4 border-t border-white/10 pt-8">
                 {[
