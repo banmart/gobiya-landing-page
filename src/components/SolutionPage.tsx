@@ -83,7 +83,7 @@ const SOLUTIONS_DATA: Record<string, SolutionData> = {
       { title: 'Citation Rate Tracking', text: 'We measure share of voice inside generative answers across models and monitor citation drift.' }
     ],
     executionTitle: 'From raw data to verified AI citation.',
-    heroImage: '/images/geo_hero.webp',
+    heroImage: '/images/geo_hero.png',
     executionImage: '/images/seo_exec.webp',
     executionSteps: [
       { title: 'Entity & Earned Media Audit', content: 'We map the entity gap between your site and the third-party publisher review directories and comparison portals that LLMs use during retrieval.' },
@@ -126,7 +126,7 @@ const SOLUTIONS_DATA: Record<string, SolutionData> = {
       { title: 'Recovery Monitoring', text: 'We log re-indexation events, ranking returns, and click-through recovery daily.' }
     ],
     executionTitle: 'Rebuilding algorithmic trust from the ground up.',
-    heroImage: '/images/penalty_hero.webp',
+    heroImage: '/images/penalty_hero.png',
     executionImage: '/images/seo_exec.webp',
     executionSteps: [
       { title: 'Identify the Toxic Vectors', content: "We run forensic deltas on your analytics, Search Console, and server logs to pinpoint exactly which update targeted your site and which specific pages triggered the classifiers." },
@@ -169,7 +169,7 @@ const SOLUTIONS_DATA: Record<string, SolutionData> = {
       { title: 'Pipeline Optimization', text: 'We optimize the engine continuously against the constraint that limits pipeline yield.' }
     ],
     executionTitle: 'From anonymous intent to closed-won revenue.',
-    heroImage: '/images/lead_hero.webp',
+    heroImage: '/images/lead_hero.png',
     executionImage: '/images/seo_exec.webp',
     executionSteps: [
       { title: 'ICP & Account Modeling', content: 'We start by modeling your ideal customer profile against the actual intent signals available to capture them, ensuring we target accounts your sales team actually wants.' },
@@ -212,7 +212,7 @@ const SOLUTIONS_DATA: Record<string, SolutionData> = {
       { title: 'Knowledge Graph Sync', text: 'We synchronize brand citations across verified knowledge databases.' }
     ],
     executionTitle: 'Engineering the ultimate semantic search graph.',
-    heroImage: '/images/seo_hero.webp',
+    heroImage: '/images/seo_hero.png',
     executionImage: '/images/seo_exec.webp',
     executionSteps: [
       { title: 'Semantic Audit & Base Mapping', content: 'We analyze query intents for your sector, identifying structural gaps in entity representation compared to major competitors.' },
@@ -255,7 +255,7 @@ const SOLUTIONS_DATA: Record<string, SolutionData> = {
       { title: 'Custom Systems', text: 'From native CRMs and marketplace platforms to secure database setups.' }
     ],
     executionTitle: 'Engineering products that win indexation and conversion.',
-    heroImage: '/images/web_hero.webp',
+    heroImage: '/images/web_hero.png',
     executionImage: '/images/web_exec.webp',
     executionSteps: [
       { title: 'System Architecture Design', content: 'We define the component hierarchy, routing strategy, and rendering model calibrated specifically to your indexation and conversion requirements.' },
@@ -328,7 +328,7 @@ const SolutionPage: React.FC<{ path: string }> = ({ path }) => {
       <section className="relative w-full pt-32 lg:pt-40 pb-20 bg-[#050505] overflow-hidden flex flex-col justify-center border-b border-white/10">
         <div className="absolute inset-0 z-0 pointer-events-none opacity-40">
            {/* Abstract tech illustration or image placeholder */}
-           <ParallaxMedia type="image" src={data.heroImage || "/images/geo_hero.webp"} alt="AI Technology Background" className="w-full h-full mix-blend-overlay" />
+           <ParallaxMedia type="image" src={data.heroImage || "/images/geo_hero.png"} alt="AI Technology Background" className="w-full h-full mix-blend-overlay" />
            <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent" />
         </div>
 
