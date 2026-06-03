@@ -292,6 +292,16 @@ const RegionalHubPage: React.FC<RegionalHubPageProps> = ({ region }) => {
           <div className="absolute inset-0 bg-gradient-to-br from-[#1a0a00] via-[#0d0d0d] to-[#050515] pointer-events-none" />
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_60%_20%,rgba(242,101,34,0.10),transparent)] pointer-events-none" />
 
+          {/* Background Image Hero */}
+          <div className="absolute inset-0 z-0 pointer-events-none opacity-25">
+            <img 
+              src="/images/markets_hero_background.png" 
+              alt="Markets Hero Background" 
+              className="w-full h-full object-cover mix-blend-overlay"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0d0d0d] via-transparent to-transparent" />
+          </div>
+
           {/* Grid overlay */}
           <div className="absolute inset-0 opacity-[0.03] pointer-events-none"
             style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.8) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.8) 1px,transparent 1px)', backgroundSize: '60px 60px' }} />
