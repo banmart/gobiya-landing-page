@@ -34,10 +34,6 @@ const metadataMap: Record<string, SEOMetadata> = {
     title: 'Hit by a Core Update? Rebuild Your Google Traffic Fast | Gobiya',
     description: 'A sudden drop in search traffic is a nightmare. We conduct forensic audits to reverse Google penalty manual actions and algorithmic updates.'
   },
-  '/on-page-seo-los-angeles': {
-    title: 'Dominate LA Search: Enterprise On-Page SEO That Converts | Gobiya',
-    description: 'LA is hyper-competitive. We structure entity-level schema, build topical authority, and optimize every page element so local buyers find you first.'
-  },
   '/company/about': {
     title: 'The Gobiya Story: Precision growth engineering since 2012 | Gobiya',
     description: 'We aren\'t a template-churning agency. Meet the Los Angeles growth engineers rebuilding traffic pipelines, recovering penalties, and solving generative SEO.'

@@ -35,7 +35,7 @@ const Footer: React.FC = () => {
               <li><a href="/services/geo-optimization" className="hover:text-white transition-colors">AI Content Strategies</a></li>
               <li><a href="/google-penalty-recovery" className="hover:text-white transition-colors">Traffic Recovery</a></li>
               <li><a href="/services/seo" className="hover:text-white transition-colors">Technical SEO</a></li>
-              <li><a href="/on-page-seo-los-angeles" className="hover:text-white transition-colors">On-Page SEO LA</a></li>
+              <li><a href="/markets/southern-california" className="hover:text-white transition-colors">SoCal Market Hub</a></li>
               <li><a href="/services/seo" className="hover:text-white transition-colors">Algorithmic Audits</a></li>
               <li><a href="/services/lead-generation" className="hover:text-white transition-colors">Programmatic SEO</a></li>
             </ul>

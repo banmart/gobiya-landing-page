@@ -93,7 +93,8 @@ function App({ url }: AppProps) {
       '/company/insights': '/insights',
       '/services/web-design': '/services/web-development',
       '/services/advertising': '/services/ppc-advertising',
-      '/what-we-do.html': '/services/seo'
+      '/what-we-do.html': '/services/seo',
+      '/on-page-seo-los-angeles': '/markets/southern-california'
     };
     
     const target = legacyRedirects[normalized];
@@ -122,8 +123,7 @@ function App({ url }: AppProps) {
     '/services/geo-optimization',
     '/services/web-development',
     '/services/ppc-advertising',
-    '/google-penalty-recovery',
-    '/on-page-seo-los-angeles'
+    '/google-penalty-recovery'
   ].includes(normalizedPath);
 
   return (

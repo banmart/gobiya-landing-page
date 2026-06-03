@@ -40,9 +40,9 @@ const metadataMap: Record<string, SEOMetadata> = {
     title: 'Hit by a Core Update? Rebuild Your Google Traffic Fast | Gobiya',
     description: 'A sudden drop in search traffic is a nightmare. We conduct forensic audits to reverse Google penalty manual actions and algorithmic updates.'
   },
-  '/on-page-seo-los-angeles': {
-    title: 'Dominate LA Search: Enterprise On-Page SEO That Converts | Gobiya',
-    description: 'LA is hyper-competitive. We structure entity-level schema, build topical authority, and optimize every page element so local buyers find you first.'
+  '/markets/southern-california': {
+    title: 'LA & SoCal SEO Agency: Rank #1 in the Most Competitive Market | Gobiya',
+    description: 'Southern California is brutal. We engineer SEO dominance, AI citations, and B2B pipeline systems for LA, Orange County, and San Diego enterprises. Free audit.'
   },
   '/company/about': {
     title: 'The Gobiya Story: Precision growth engineering since 2012 | Gobiya',
@@ -192,7 +192,8 @@ export default async function handler(req: IncomingMessage, res: any) {
       '/services/web-design': '/services/web-development',
       '/services/advertising': '/services/ppc-advertising',
       '/company/insights': '/insights',
-      '/what-we-do.html': '/services/seo'
+      '/what-we-do.html': '/services/seo',
+      '/on-page-seo-los-angeles': '/markets/southern-california'
     };
 
     if (legacyRedirects[pathname]) {
