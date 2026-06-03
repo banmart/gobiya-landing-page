@@ -6,7 +6,7 @@ const Footer: React.FC = () => {
   return (
     <>
       <footer className="bg-[#111] text-white pt-20 sm:pt-28 px-5 sm:px-8 lg:px-12 w-full overflow-hidden flex flex-col relative" data-logo-dark>
-        <div className="max-w-[1440px] w-full mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1fr_1fr] gap-12 lg:gap-8 mb-10 sm:mb-20 relative z-10">
+        <div className="max-w-[1440px] w-full mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1fr] gap-12 lg:gap-8 mb-10 sm:mb-20 relative z-10">
           
           {/* Col 1 */}
           <div className="flex flex-col pr-0 lg:pr-12 relative">
@@ -53,24 +53,7 @@ const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* Col 4 — Locations */}
-          <div className="flex flex-col">
-            <h4 className="text-[12px] font-semibold uppercase tracking-wider mb-6">Locations</h4>
-            <ul className="flex flex-col gap-3 text-[14px] text-gray-400">
-              <li><a href="/locations" className="hover:text-[#F26522] transition-colors font-medium text-white/70">All Locations</a></li>
-              <li className="text-[11px] uppercase tracking-widest text-gray-600 pt-1">Los Angeles</li>
-              <li><a href="/locations/glendale-seo" className="hover:text-white transition-colors">Glendale</a></li>
-              <li><a href="/locations/burbank-seo" className="hover:text-white transition-colors">Burbank</a></li>
-              <li><a href="/locations/pasadena-seo" className="hover:text-white transition-colors">Pasadena</a></li>
-              <li><a href="/locations/long-beach-seo" className="hover:text-white transition-colors">Long Beach</a></li>
-              <li className="text-[11px] uppercase tracking-widest text-gray-600 pt-1">Orange County</li>
-              <li><a href="/locations/anaheim-seo" className="hover:text-white transition-colors">Anaheim</a></li>
-              <li><a href="/locations/costa-mesa-seo" className="hover:text-white transition-colors">Costa Mesa</a></li>
-              <li><a href="/locations/irvine-seo" className="hover:text-white transition-colors">Irvine</a></li>
-              <li><a href="/locations/santa-ana-seo" className="hover:text-white transition-colors">Santa Ana</a></li>
-            </ul>
-          </div>
-          {/* Col 5 — Connect */}
+          {/* Col 4 — Connect */}
           <div className="flex flex-col">
             <h4 className="text-[12px] font-semibold uppercase tracking-wider mb-6">Connect</h4>
             <ul className="flex flex-col gap-4 text-[14px] text-gray-400">

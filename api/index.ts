@@ -168,21 +168,18 @@ export default async function handler(req: IncomingMessage, res: any) {
     const parsedUrl = new URL(url, 'https://www.gobiya.com');
     const pathname = parsedUrl.pathname.toLowerCase().replace(/\/$/, '') || '/';
 
+    if (pathname === '/locations' || pathname.startsWith('/locations/')) {
+      res.writeHead(301, { Location: '/contact' });
+      res.end();
+      return;
+    }
+
     // Server-side legacy redirections (301 Permanent Redirect)
     const legacyRedirects: Record<string, string> = {
       '/services/web-design': '/services/web-development',
       '/services/advertising': '/services/ppc-advertising',
       '/company/insights': '/insights',
-      '/what-we-do.html': '/services/seo',
-      '/locations/burbank': '/locations/burbank-seo',
-      '/locations/glendale': '/locations/glendale-seo',
-      '/locations/pasadena': '/locations/pasadena-seo',
-      '/locations/long-beach': '/locations/long-beach-seo',
-      '/locations/anaheim': '/locations/anaheim-seo',
-      '/locations/costa-mesa': '/locations/costa-mesa-seo',
-      '/locations/irvine': '/locations/irvine-seo',
-      '/locations/santa-ana': '/locations/santa-ana-seo',
-      '/locations/sherman-oaks': '/locations'
+      '/what-we-do.html': '/services/seo'
     };
 
     if (legacyRedirects[pathname]) {

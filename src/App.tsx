@@ -5,8 +5,6 @@ import ArticlePage from './components/ArticlePage';
 import AuthorPage from './components/AuthorPage';
 import ThankYouPage from './components/ThankYouPage';
 import SolutionPage from './components/SolutionPage';
-import LocationPage from './components/LocationPage';
-import LocationsHubPage from './components/LocationsHubPage';
 import SEO from './components/SEO';
 import PageTransition, { navigateWithTransition } from './components/PageTransition';
 
@@ -82,23 +80,21 @@ function App({ url }: AppProps) {
   useEffect(() => {
     if (typeof window === 'undefined') return;
     
+    const normalized = currentPath.toLowerCase().replace(/\/$/, '') || '/';
+    
+    if (normalized === '/locations' || normalized.startsWith('/locations/')) {
+      window.history.replaceState({}, '', '/contact');
+      setCurrentPath('/contact');
+      return;
+    }
+    
     const legacyRedirects: Record<string, string> = {
       '/company/insights': '/insights',
       '/services/web-design': '/services/web-development',
       '/services/advertising': '/services/ppc-advertising',
-      '/what-we-do.html': '/services/seo',
-      '/locations/burbank': '/locations/burbank-seo',
-      '/locations/glendale': '/locations/glendale-seo',
-      '/locations/pasadena': '/locations/pasadena-seo',
-      '/locations/long-beach': '/locations/long-beach-seo',
-      '/locations/anaheim': '/locations/anaheim-seo',
-      '/locations/costa-mesa': '/locations/costa-mesa-seo',
-      '/locations/irvine': '/locations/irvine-seo',
-      '/locations/santa-ana': '/locations/santa-ana-seo',
-      '/locations/sherman-oaks': '/locations'
+      '/what-we-do.html': '/services/seo'
     };
     
-    const normalized = currentPath.toLowerCase().replace(/\/$/, '') || '/';
     const target = legacyRedirects[normalized];
     if (target) {
       window.history.replaceState({}, '', target);
@@ -113,10 +109,6 @@ function App({ url }: AppProps) {
   // Detect article routes: /insights/[slug]
   const articleMatch = normalizedPath.match(/^\/insights\/([a-z0-9-]+)$/);
   const articleSlug = articleMatch ? articleMatch[1] : null;
-
-  // Detect location routes: /locations/[city-slug]
-  const locationMatch = normalizedPath.match(/^\/locations\/([a-z0-9-]+)$/);
-  const locationPath = locationMatch ? normalizedPath : null;
 
   // Detect solution routes
   const isSolutionRoute = [
@@ -143,10 +135,6 @@ function App({ url }: AppProps) {
         <ArticlePage slug={articleSlug} />
       ) : normalizedPath === '/thank-you' ? (
         <ThankYouPage />
-      ) : normalizedPath === '/locations' ? (
-        <LocationsHubPage />
-      ) : locationPath ? (
-        <LocationPage path={locationPath} />
       ) : isSolutionRoute ? (
         <SolutionPage path={normalizedPath} />
       ) : (
