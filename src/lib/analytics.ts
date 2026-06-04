@@ -58,6 +58,12 @@ export function trackFormSubmit(params: {
   form_name: string;
   services?: string;
   has_domain: boolean;
+  lead_magnet?: string;
+  source_page?: string;
+  booking_date?: string;
+  budget?: string;
+  timeline?: string;
+  scopes?: string;
 }): void {
   if (typeof window === 'undefined' || typeof window.gtag !== 'function') return;
 
@@ -65,6 +71,12 @@ export function trackFormSubmit(params: {
     form_name: params.form_name,
     services_selected: params.services ?? 'none',
     has_domain: params.has_domain,
+    lead_magnet: params.lead_magnet,
+    source_page: params.source_page,
+    booking_date: params.booking_date,
+    budget: params.budget,
+    timeline: params.timeline,
+    scopes: params.scopes,
     page_path: window.location.pathname,
   });
 }

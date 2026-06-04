@@ -4,6 +4,7 @@ import ServiceSubpage from './components/ServiceSubpage';
 import ArticlePage from './components/ArticlePage';
 import AuthorPage from './components/AuthorPage';
 import ThankYouPage from './components/ThankYouPage';
+import BookingPage from './components/BookingPage';
 import SolutionPage from './components/SolutionPage';
 import RegionalHubPage from './components/RegionalHubPage';
 import SEO from './components/SEO';
@@ -140,6 +141,8 @@ function App({ url }: AppProps) {
       
       {normalizedPath === '/' ? (
         <AxionLanding />
+      ) : normalizedPath === '/book' || normalizedPath === '/book-call' ? (
+        <BookingPage />
       ) : normalizedPath === '/about/steve-martin' || normalizedPath === '/author/steve-martin' ? (
         <AuthorPage path={normalizedPath} />
       ) : articleSlug ? (

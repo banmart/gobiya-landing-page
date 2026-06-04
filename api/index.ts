@@ -137,6 +137,14 @@ const metadataMap: Record<string, SEOMetadata> = {
     title: 'Knowledge Graph Optimization vs. GEO: The Vital Difference | Gobiya',
     description: 'Understand the key differences between Google Knowledge Graph optimization and GEO in scope, era, and target engines. Learn how entity resolution gates AI citations.'
   },
+  '/book': {
+    title: 'Book a Pipeline Strategy Call | Gobiya',
+    description: 'Schedule a 15-minute 1-on-1 strategy call with our lead developer & marketer Steve Martin to audit your organic pipeline and search traffic.'
+  },
+  '/book-call': {
+    title: 'Book a Pipeline Strategy Call | Gobiya',
+    description: 'Schedule a 15-minute 1-on-1 strategy call with our lead developer & marketer Steve Martin to audit your organic pipeline and search traffic.'
+  },
   '/about/steve-martin': {
     title: 'Steve Martin | Growth Engineer & Founder of Gobiya | Gobiya',
     description: 'Credentials and author profile for Steve Martin. Over 15 years engineering search engine dominance, custom React platforms, and sales pipeline automation.'

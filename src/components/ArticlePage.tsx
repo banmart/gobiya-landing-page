@@ -7,6 +7,7 @@ import BlurText from './BlurText';
 import GradualBlur from './GradualBlur';
 import CustomCursor from './CustomCursor';
 import { trackCTA } from '../lib/analytics';
+import LeadMagnetCTA from './LeadMagnetCTA';
 
 interface ArticleData {
   slug: string;
@@ -7251,6 +7252,9 @@ const ArticlePage: React.FC<ArticlePageProps> = ({ slug }) => {
 
             {article.content}
 
+            {/* Dynamic Contextual Lead Magnet CTA */}
+            <LeadMagnetCTA category={article.category} slug={slug} />
+
             {/* ── MOBILE-ONLY: Conversion Widgets ── */}
             <div className="lg:hidden mt-12 pt-12 border-t border-white/10 flex flex-col gap-8">
               {/* Let's Grow Your Business */}
@@ -7266,7 +7270,7 @@ const ArticlePage: React.FC<ArticlePageProps> = ({ slug }) => {
                   ))}
                 </ul>
                 <a
-                  href="/contact"
+                  href="/book-call"
                   className="w-full text-center bg-[#F26522] hover:bg-[#e05a1a] text-white py-3.5 text-xs font-semibold uppercase tracking-wider transition-colors block"
                 >
                   Book a Call
@@ -7400,7 +7404,7 @@ const ArticlePage: React.FC<ArticlePageProps> = ({ slug }) => {
                   ))}
                 </ul>
                 <a
-                  href="/contact"
+                  href="/book-call"
                   className="w-full text-center bg-[#F26522] hover:bg-[#e05a1a] text-white py-3.5 text-xs font-semibold uppercase tracking-wider transition-colors block"
                 >
                   Book a Call

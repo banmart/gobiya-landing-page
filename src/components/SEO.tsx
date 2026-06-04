@@ -54,6 +54,14 @@ const metadataMap: Record<string, SEOMetadata> = {
     title: 'Let\'s Audit Your Site: Request a Free Growth Session | Gobiya',
     description: 'Ready to stop losing traffic and revenue to competitors? Talk directly to our lead engineers. We will analyze your site and outline a custom recovery roadmap.'
   },
+  '/book': {
+    title: 'Book a Pipeline Strategy Call | Gobiya',
+    description: 'Schedule a 15-minute 1-on-1 strategy call with our lead developer & marketer Steve Martin to audit your organic pipeline and search traffic.'
+  },
+  '/book-call': {
+    title: 'Book a Pipeline Strategy Call | Gobiya',
+    description: 'Schedule a 15-minute 1-on-1 strategy call with our lead developer & marketer Steve Martin to audit your organic pipeline and search traffic.'
+  },
   '/capabilities': {
     title: 'Our Core Capabilities: Forensic SEO, GEO & Pipeline Dev | Gobiya',
     description: 'Explore our specialized capabilities: generative engine optimization, forensic traffic recovery, conversion architecture, and high-performance React engineering.'
