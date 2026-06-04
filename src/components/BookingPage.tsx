@@ -303,6 +303,21 @@ const BookingPage: React.FC = () => {
                   Book a live 1-on-1 strategy call with Steve Martin, CEO & Lead Engineer at Gobiya. We'll examine your domain's entity mapping, diagnose search drop triggers, and layout a concrete technical roadmap.
                 </p>
 
+                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 bg-white/5 border border-white/10 p-5 rounded-xl">
+                  <img 
+                    src="/images/steve-portrait.webp" 
+                    alt="Steve Martin" 
+                    className="w-16 h-16 sm:w-20 sm:h-20 rounded-full object-cover border-2 border-[#F26522] shrink-0 shadow-lg shadow-orange-500/10" 
+                  />
+                  <div>
+                    <h3 className="text-[16px] font-bold text-white leading-tight">Steve Martin</h3>
+                    <p className="text-[12px] text-[#F26522] font-semibold mt-0.5">CEO & Lead Growth Engineer</p>
+                    <p className="text-[12px] text-gray-400 mt-1.5 leading-relaxed">
+                      25+ Years bridging full-stack software development and high-stakes organic search recovery.
+                    </p>
+                  </div>
+                </div>
+
                 <div className="border border-white/10 rounded-xl p-5 bg-white/5 space-y-4">
                   <div className="flex items-center gap-3">
                     <div className="w-8 h-8 rounded-full bg-[#F26522]/10 border border-[#F26522]/30 flex items-center justify-center">
@@ -322,6 +337,20 @@ const BookingPage: React.FC = () => {
                       <p className="text-[13px] font-bold text-white leading-none">15-30 Minute Strategy Session</p>
                       <p className="text-[11px] text-gray-400 mt-1">Actionable takeaways. No sales deck, just engineering insights.</p>
                     </div>
+                  </div>
+                </div>
+
+                <div className="border border-white/10 rounded-xl p-5 bg-white/5 space-y-3">
+                  <p className="text-[11px] font-bold text-gray-400 uppercase tracking-wider">Featured Podcast Episode</p>
+                  <h4 className="text-[14px] font-semibold text-white leading-snug">Winning with Generative Engine Optimization (GEO)</h4>
+                  <p className="text-[12px] text-gray-400 leading-relaxed">
+                    Listen to Steve Martin outline how LLMs build client shortlists and what criteria they use to pull citations.
+                  </p>
+                  <div className="pt-2">
+                    <audio controls className="w-full" style={{ filter: 'invert(1) hue-rotate(180deg)' }}>
+                      <source src="/audio/Winning_with_generative_engine_optimization.m4a" type="audio/mp4" />
+                      Your browser does not support the audio element.
+                    </audio>
                   </div>
                 </div>
 

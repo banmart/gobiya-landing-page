@@ -227,6 +227,23 @@ const AuthorPage: React.FC<AuthorPageProps> = ({ path }) => {
               ))}
             </div>
 
+            {/* Podcast Section */}
+            <div className="border-t border-white/10 pt-8 mt-8 mb-10">
+              <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2 font-display">
+                <Award className="w-5 h-5 text-[#F26522]" /> Featured Podcast Episode
+              </h3>
+              <div className="bg-white/5 border border-white/10 rounded-xl p-6">
+                <h4 className="text-[16px] font-semibold text-white mb-2">Winning with Generative Engine Optimization (GEO)</h4>
+                <p className="text-sm text-gray-400 leading-relaxed mb-4">
+                  Listen to Steve Martin discuss how generative engine citations work, key entity verification datasets, and why traditional B2B search signals are changing in the era of ChatGPT, Claude, and Perplexity.
+                </p>
+                <audio controls className="w-full" style={{ filter: 'invert(1) hue-rotate(180deg)' }}>
+                  <source src="/audio/Winning_with_generative_engine_optimization.m4a" type="audio/mp4" />
+                  Your browser does not support the audio element.
+                </audio>
+              </div>
+            </div>
+
             {/* Written Articles Section */}
             <h2 className="text-2xl sm:text-3xl font-medium text-white tracking-tight mb-6 font-display border-b border-white/10 pb-4 pt-6">
               Articles Written by Steve Martin

@@ -519,6 +519,41 @@ const SolutionPage: React.FC<{ path: string }> = ({ path }) => {
         </div>
       </section>
 
+      {/* ── PODCAST EPISODE (Optional for GEO) ── */}
+      {path === '/capabilities/generative-engine-optimization' && (
+        <section className="py-24 px-5 sm:px-8 lg:px-12 bg-[#09090b] border-t border-b border-white/10 relative overflow-hidden">
+          <div className="max-w-[1440px] mx-auto reveal-up">
+            <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-12 lg:gap-16 items-center">
+              <div>
+                <span className="inline-block px-3 py-1 bg-[#F26522]/10 border border-[#F26522]/20 text-[#F26522] text-[10px] uppercase tracking-wider font-semibold mb-4">
+                  Listen: Deep Dive Podcast
+                </span>
+                <h2 className="text-[clamp(1.8rem,3.5vw,2.5rem)] font-medium text-white mb-6 leading-tight font-display">
+                  Winning with Generative Engine Optimization (GEO)
+                </h2>
+                <p className="text-gray-400 text-[15px] sm:text-[16px] leading-relaxed mb-8">
+                  In this episode, Steve Martin details the underlying citation mechanics for models like ChatGPT, Claude, Perplexity, and Gemini. Learn how structured entity graphs, Wikidata profiles, and off-site verification records influence LLM shortlist recommendations.
+                </p>
+                <div className="bg-white/5 border border-white/10 rounded-xl p-5 max-w-xl">
+                  <audio controls className="w-full" style={{ filter: 'invert(1) hue-rotate(180deg)' }}>
+                    <source src="/audio/Winning_with_generative_engine_optimization.m4a" type="audio/mp4" />
+                    Your browser does not support the audio element.
+                  </audio>
+                </div>
+              </div>
+              <div className="relative aspect-[4/3] w-full hidden lg:block rounded-xl overflow-hidden shadow-2xl">
+                <img 
+                  src="/images/article-what-is-generative-engine-optimization-and-how-does-it-work.webp" 
+                  alt="GEO podcast visual representation"
+                  className="w-full h-full object-cover opacity-60"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* ── 5. CASE STUDY (Dark Blue/Black) ── */}
       <section className="py-24 lg:py-32 px-5 sm:px-8 lg:px-12 bg-[#0A1118] relative overflow-hidden text-center lg:text-left">
         {/* Background elements */}
