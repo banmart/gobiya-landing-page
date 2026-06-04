@@ -1,6 +1,7 @@
 import React from 'react';
 import BlurText from './BlurText';
 import GradualBlur from './GradualBlur';
+import { trackCTA } from '../lib/analytics';
 
 const Footer: React.FC = () => {
   return (
@@ -72,7 +73,14 @@ const Footer: React.FC = () => {
               <li><a href="https://x.com/SteveMarti66556" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">X (Twitter)</a></li>
               <li><a href="https://www.facebook.com/people/Gobiya/100064043744190/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Facebook</a></li>
               <li><a href="https://m.yelp.com/biz/gobiya-los-angeles-5" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Yelp</a></li>
-              <li><a href="/contact" className="hover:text-white transition-colors">Contact Us</a></li>
+              <li><a
+                href="/contact"
+                id="footer-contact-link"
+                data-cta-location="footer_nav"
+                data-cta-text="Contact Us"
+                onClick={() => trackCTA({ cta_location: 'footer_nav', cta_text: 'Contact Us' })}
+                className="hover:text-white transition-colors"
+              >Contact Us</a></li>
             </ul>
           </div>
 

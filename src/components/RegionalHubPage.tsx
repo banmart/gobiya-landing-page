@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { trackCTA } from '../lib/analytics';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import {
@@ -361,6 +362,9 @@ const RegionalHubPage: React.FC<RegionalHubPageProps> = ({ region }) => {
               <a
                 href="/contact"
                 id="regional-hub-cta-primary"
+                data-cta-location="regional_hub_hero"
+                data-cta-text="Get a free SoCal audit"
+                onClick={() => trackCTA({ cta_location: 'regional_hub_hero', cta_text: 'Get a free SoCal audit' })}
                 className="group flex items-center text-white bg-[#F26522] pl-6 pr-3 py-3 hover:bg-[#d9551a] transition-colors"
               >
                 <span className="text-[14px] font-semibold mr-3">Get a free SoCal audit</span>
@@ -424,6 +428,9 @@ const RegionalHubPage: React.FC<RegionalHubPageProps> = ({ region }) => {
               <a
                 href="/contact"
                 id="regional-case-study-cta"
+                data-cta-location="regional_hub_case_study"
+                data-cta-text="Can we do this for your brand?"
+                onClick={() => trackCTA({ cta_location: 'regional_hub_case_study', cta_text: 'Can we do this for your brand?' })}
                 className="group inline-flex items-center gap-3 mt-8 text-[14px] font-semibold text-[#F26522] hover:text-[#d9551a] transition-colors"
               >
                 Can we do this for your brand?
@@ -548,6 +555,9 @@ const RegionalHubPage: React.FC<RegionalHubPageProps> = ({ region }) => {
                 <a
                   href="/contact"
                   id="regional-hub-bottom-cta"
+                  data-cta-location="regional_hub_bottom"
+                  data-cta-text="Request a free SoCal audit"
+                  onClick={() => trackCTA({ cta_location: 'regional_hub_bottom', cta_text: 'Request a free SoCal audit' })}
                   className="group flex items-center bg-white text-[#F26522] pl-6 pr-3 py-3 hover:bg-gray-100 transition-colors"
                 >
                   <span className="text-[14px] font-bold mr-3">Request a free SoCal audit</span>

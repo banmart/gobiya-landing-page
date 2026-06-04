@@ -1,4 +1,5 @@
 import { supabase } from '../lib/supabase';
+import { trackCTA } from '../lib/analytics';
 import React, { useState, useEffect } from 'react';
 import DeferredShader, { Swirl, ChromaFlow, FlutedGlass, FilmGrain } from './DeferredShader';
 import { gsap } from 'gsap';
@@ -762,7 +763,14 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
             {config.outcomeMessage}
           </p>
           <div className="mt-8 flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-5">
-            <a href="/contact" className="group flex items-center bg-[#F26522] hover:bg-[#e05a1a] text-white pl-5 sm:pl-6 pr-2 py-2 transition-colors duration-300">
+            <a
+              href="/contact"
+              id="service-hero-cta"
+              data-cta-location="service_hero"
+              data-cta-text={config.ctaText}
+              onClick={() => trackCTA({ cta_location: 'service_hero', cta_text: config.ctaText })}
+              className="group flex items-center bg-[#F26522] hover:bg-[#e05a1a] text-white pl-5 sm:pl-6 pr-2 py-2 transition-colors duration-300"
+            >
               <div className="flex flex-col overflow-hidden h-[20px] justify-start items-start relative mr-3">
                 <span className="text-[13px] sm:text-[14px] font-medium leading-[20px] transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-translate-y-full">
                   {config.ctaText}
@@ -811,7 +819,14 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
               <p className="text-[15px] sm:text-[17px] leading-[1.6] font-medium text-gray-300 mb-6">
                 {config.introParagraph}
               </p>
-              <a href="/contact" className="group flex items-center bg-[#F26522] hover:bg-[#e05a1a] text-white pl-5 pr-2 py-2 transition-colors duration-300 mb-8 inline-flex">
+              <a
+                href="/contact"
+                id="service-intro-cta-mobile"
+                data-cta-location="service_intro_mobile"
+                data-cta-text={config.ctaText}
+                onClick={() => trackCTA({ cta_location: 'service_intro_mobile', cta_text: config.ctaText })}
+                className="group flex items-center bg-[#F26522] hover:bg-[#e05a1a] text-white pl-5 pr-2 py-2 transition-colors duration-300 mb-8 inline-flex"
+              >
                 <div className="flex flex-col overflow-hidden h-[20px] justify-start items-start relative mr-3">
                   <span className="text-[13px] font-medium leading-[20px] transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-translate-y-full">{config.ctaText}</span>
                   <span className="text-[13px] font-medium leading-[20px] absolute top-full transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-translate-y-full">{config.ctaText}</span>
@@ -834,7 +849,14 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
                 <p className="text-[16px] xl:text-[18px] leading-[1.65] font-medium text-gray-300 mb-8 max-w-[90%]" style={{ contentVisibility: 'auto' }}>
                   {config.introParagraph}
                 </p>
-                <a href="/contact" className="group flex items-center bg-[#F26522] hover:bg-[#e05a1a] text-white pl-6 pr-2 py-2 transition-colors duration-300">
+                <a
+                  href="/contact"
+                  id="service-intro-cta-desktop"
+                  data-cta-location="service_intro_desktop"
+                  data-cta-text={config.ctaText}
+                  onClick={() => trackCTA({ cta_location: 'service_intro_desktop', cta_text: config.ctaText })}
+                  className="group flex items-center bg-[#F26522] hover:bg-[#e05a1a] text-white pl-6 pr-2 py-2 transition-colors duration-300"
+                >
                   <div className="flex flex-col overflow-hidden h-[20px] justify-start items-start relative mr-3">
                     <span className="text-[14px] font-medium leading-[20px] transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-translate-y-full">{config.ctaText}</span>
                     <span className="text-[14px] font-medium leading-[20px] absolute top-full transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-translate-y-full">{config.ctaText}</span>

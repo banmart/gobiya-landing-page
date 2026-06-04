@@ -7,6 +7,7 @@ gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
 
 import DeferredShader, { Swirl, ChromaFlow, FlutedGlass, FilmGrain } from './DeferredShader';
 import { Clock, Menu, X, ArrowRight, Check } from 'lucide-react';
+import { trackCTA, trackFormSubmit } from '../lib/analytics';
 
 import Header from './Header';
 import Footer from './Footer';
@@ -39,6 +40,7 @@ const AxionLanding = () => {
   const handleFormSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!domain) return;
+    trackFormSubmit({ form_name: 'homepage_hero_audit', services: selectedServices.join(','), has_domain: !!domain });
     const servicesParam = selectedServices.join(',');
     const targetUrl = `/contact?domain=${encodeURIComponent(domain)}&services=${encodeURIComponent(servicesParam)}`;
     window.history.pushState({}, '', targetUrl);
@@ -437,7 +439,14 @@ const AxionLanding = () => {
                 Rather than deploying broad, generalist marketing tactics, Gobiya focuses on high-stakes technical environments and data-driven revenue generation. The agency operates primarily out of its headquarters on Wilshire Boulevard in Los Angeles, servicing mid-market to enterprise brands that require high-performance technical SEO and scalable digital revenue engines.
               </p>
             </div>
-            <a href="/contact" className="group flex items-center bg-[#F26522] hover:bg-[#e05a1a] text-white pl-5 pr-2 py-2 transition-colors duration-300 mb-8 inline-flex">
+            <a
+              href="/contact"
+              id="homepage-about-cta-mobile"
+              data-cta-location="homepage_about_mobile"
+              data-cta-text="About our agency"
+              onClick={() => trackCTA({ cta_location: 'homepage_about_mobile', cta_text: 'About our agency' })}
+              className="group flex items-center bg-[#F26522] hover:bg-[#e05a1a] text-white pl-5 pr-2 py-2 transition-colors duration-300 mb-8 inline-flex"
+            >
               <div className="flex flex-col overflow-hidden h-[20px] justify-start items-start relative mr-3">
                 <span className="text-[13px] font-medium leading-[20px] transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-translate-y-full">About our agency</span>
                 <span className="text-[13px] font-medium leading-[20px] absolute top-full transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-translate-y-full">About our agency</span>
@@ -489,7 +498,14 @@ const AxionLanding = () => {
                   Rather than deploying broad, generalist marketing tactics, Gobiya focuses on high-stakes technical environments and data-driven revenue generation. The agency operates primarily out of its headquarters on Wilshire Boulevard in Los Angeles, servicing mid-market to enterprise brands that require high-performance technical SEO and scalable digital revenue engines.
                 </p>
               </div>
-              <a href="/contact" className="group flex items-center bg-[#F26522] hover:bg-[#e05a1a] text-white pl-6 pr-2 py-2 transition-colors duration-300">
+              <a
+                href="/contact"
+                id="homepage-about-cta-desktop"
+                data-cta-location="homepage_about_desktop"
+                data-cta-text="About our agency"
+                onClick={() => trackCTA({ cta_location: 'homepage_about_desktop', cta_text: 'About our agency' })}
+                className="group flex items-center bg-[#F26522] hover:bg-[#e05a1a] text-white pl-6 pr-2 py-2 transition-colors duration-300"
+              >
                 <div className="flex flex-col overflow-hidden h-[20px] justify-start items-start relative mr-3">
                   <span className="text-[14px] font-medium leading-[20px] transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-translate-y-full">About our agency</span>
                   <span className="text-[14px] font-medium leading-[20px] absolute top-full transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-translate-y-full">About our agency</span>

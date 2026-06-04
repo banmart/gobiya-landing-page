@@ -6,6 +6,7 @@ import Footer from './Footer';
 import BlurText from './BlurText';
 import GradualBlur from './GradualBlur';
 import CustomCursor from './CustomCursor';
+import { trackCTA } from '../lib/analytics';
 
 interface ArticleData {
   slug: string;
@@ -6868,6 +6869,23 @@ const ArticlePage: React.FC<ArticlePageProps> = ({ slug }) => {
     const interval = setInterval(updateTime, 1000);
     return () => clearInterval(interval);
   }, []);
+
+  // GA4 CTA click tracking — delegated listener covers all /contact links in article body
+  useEffect(() => {
+    if (!article) return;
+    const handleClick = (e: MouseEvent) => {
+      const target = (e.target as HTMLElement).closest('a[href="/contact"]');
+      if (!target) return;
+      const linkText = (target as HTMLAnchorElement).textContent?.trim().slice(0, 60) || 'CTA';
+      trackCTA({
+        cta_location: `article_${article.slug}`,
+        cta_text: linkText,
+        destination: '/contact',
+      });
+    };
+    document.addEventListener('click', handleClick);
+    return () => document.removeEventListener('click', handleClick);
+  }, [article]);
 
   // SEO updates
   useEffect(() => {

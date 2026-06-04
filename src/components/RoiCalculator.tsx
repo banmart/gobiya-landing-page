@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, useMotionValue, useTransform, animate } from 'framer-motion';
+import { trackCTA } from '../lib/analytics';
 
 export interface RoiCalculatorProps {
   title?: string;
@@ -84,9 +85,15 @@ const RoiCalculator: React.FC<RoiCalculatorProps> = ({
             <p className="text-gray-500 text-sm mt-6 font-body">{disclaimer}</p>
           </div>
 
-          {/* Button */}
           <div className="mt-10 text-center">
-            <a href="/contact" className="bg-[#F26522] hover:bg-[#e05a1a] text-white px-8 py-4 rounded-none font-medium transition-colors w-full sm:w-auto font-body uppercase tracking-wider text-sm inline-flex items-center justify-center">
+            <a
+              href="/contact"
+              id="roi-calculator-cta"
+              data-cta-location="roi_calculator"
+              data-cta-text={ctaText}
+              onClick={() => trackCTA({ cta_location: 'roi_calculator', cta_text: ctaText ?? 'Start Your Recovery Audit' })}
+              className="bg-[#F26522] hover:bg-[#e05a1a] text-white px-8 py-4 rounded-none font-medium transition-colors w-full sm:w-auto font-body uppercase tracking-wider text-sm inline-flex items-center justify-center"
+            >
               {ctaText}
             </a>
           </div>

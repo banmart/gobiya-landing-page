@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Clock, ArrowRight } from 'lucide-react';
 import StaggeredMenu from './StaggeredMenu';
+import { trackCTA } from '../lib/analytics';
 
 interface HeaderProps {
   // Option to use the dark theme for the nav (transparent with white menu icon and inverted logo)
@@ -54,6 +55,10 @@ const Header: React.FC<HeaderProps> = ({ theme = 'light', hideLogo = false }) =>
           {/* CTA Button */}
           <a 
             href="/contact" 
+            id="header-cta"
+            data-cta-location="header_nav"
+            data-cta-text="Book a strategy call"
+            onClick={() => trackCTA({ cta_location: 'header_nav', cta_text: 'Book a strategy call' })}
             className={`hidden sm:flex group items-center text-white pl-5 pr-2 py-2 ${
               isDark ? 'bg-[#F26522]' : 'bg-gray-900'
             }`}
