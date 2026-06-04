@@ -6761,7 +6761,7 @@ const GUIDE_LINKS = [
 ];
 
 const TECH_LINKS = [
-  { label: 'Generative Citation Audit', href: '/contact' },
+  { label: 'Generative Citation Audit', href: '/book' },
   { label: 'ROI & Pipeline Calculator', href: '/services/lead-generation' },
   { label: 'Schema Blueprint Builder', href: '/services/geo-optimization' },
   { label: 'Robots.txt & Bot Audit', href: '/insights/what-is-generative-engine-optimization-and-how-does-it-work' },
@@ -6875,13 +6875,13 @@ const ArticlePage: React.FC<ArticlePageProps> = ({ slug }) => {
   useEffect(() => {
     if (!article) return;
     const handleClick = (e: MouseEvent) => {
-      const target = (e.target as HTMLElement).closest('a[href="/contact"]');
+      const target = (e.target as HTMLElement).closest('a[href="/book"]');
       if (!target) return;
       const linkText = (target as HTMLAnchorElement).textContent?.trim().slice(0, 60) || 'CTA';
       trackCTA({
         cta_location: `article_${article.slug}`,
         cta_text: linkText,
-        destination: '/contact',
+        destination: '/book',
       });
     };
     document.addEventListener('click', handleClick);
@@ -7270,7 +7270,7 @@ const ArticlePage: React.FC<ArticlePageProps> = ({ slug }) => {
                   ))}
                 </ul>
                 <a
-                  href="/book-call"
+                  href="/book"
                   className="w-full text-center bg-[#F26522] hover:bg-[#e05a1a] text-white py-3.5 text-xs font-semibold uppercase tracking-wider transition-colors block"
                 >
                   Book a Call
@@ -7404,7 +7404,7 @@ const ArticlePage: React.FC<ArticlePageProps> = ({ slug }) => {
                   ))}
                 </ul>
                 <a
-                  href="/book-call"
+                  href="/book"
                   className="w-full text-center bg-[#F26522] hover:bg-[#e05a1a] text-white py-3.5 text-xs font-semibold uppercase tracking-wider transition-colors block"
                 >
                   Book a Call

@@ -54,7 +54,7 @@ const Header: React.FC<HeaderProps> = ({ theme = 'light', hideLogo = false }) =>
           
           {/* CTA Button */}
           <a 
-            href="/contact" 
+            href="/book" 
             id="header-cta"
             data-cta-location="header_nav"
             data-cta-text="Book a strategy call"

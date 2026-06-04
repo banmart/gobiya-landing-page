@@ -163,7 +163,7 @@ const LeadMagnetCTA: React.FC<LeadMagnetCTAProps> = ({ category, slug }) => {
       source: `magnet_success_${magnet.id}`
     });
     
-    window.history.pushState({}, '', `/book-call?${params.toString()}`);
+    window.history.pushState({}, '', `/book?${params.toString()}`);
     window.dispatchEvent(new PopStateEvent('popstate'));
     window.scrollTo(0, 0);
   };

@@ -74,7 +74,7 @@ const Footer: React.FC = () => {
               <li><a href="https://www.facebook.com/people/Gobiya/100064043744190/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Facebook</a></li>
               <li><a href="https://m.yelp.com/biz/gobiya-los-angeles-5" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Yelp</a></li>
               <li><a
-                href="/contact"
+                href="/book"
                 id="footer-contact-link"
                 data-cta-location="footer_nav"
                 data-cta-text="Contact Us"

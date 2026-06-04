@@ -360,7 +360,7 @@ const RegionalHubPage: React.FC<RegionalHubPageProps> = ({ region }) => {
             {/* CTAs */}
             <div className="hero-fade flex flex-wrap gap-4 mb-14">
               <a
-                href="/contact"
+                href="/book"
                 id="regional-hub-cta-primary"
                 data-cta-location="regional_hub_hero"
                 data-cta-text="Get a free SoCal audit"
@@ -426,7 +426,7 @@ const RegionalHubPage: React.FC<RegionalHubPageProps> = ({ region }) => {
                 {data.localCaseStudyDesc}
               </p>
               <a
-                href="/contact"
+                href="/book"
                 id="regional-case-study-cta"
                 data-cta-location="regional_hub_case_study"
                 data-cta-text="Can we do this for your brand?"
@@ -553,7 +553,7 @@ const RegionalHubPage: React.FC<RegionalHubPageProps> = ({ region }) => {
               </p>
               <div className="flex flex-wrap gap-4">
                 <a
-                  href="/contact"
+                  href="/book"
                   id="regional-hub-bottom-cta"
                   data-cta-location="regional_hub_bottom"
                   data-cta-text="Request a free SoCal audit"

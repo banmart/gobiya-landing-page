@@ -42,7 +42,7 @@ const AxionLanding = () => {
     if (!domain) return;
     trackFormSubmit({ form_name: 'homepage_hero_audit', services: selectedServices.join(','), has_domain: !!domain });
     const servicesParam = selectedServices.join(',');
-    const targetUrl = `/contact?domain=${encodeURIComponent(domain)}&services=${encodeURIComponent(servicesParam)}`;
+    const targetUrl = `/book?domain=${encodeURIComponent(domain)}&services=${encodeURIComponent(servicesParam)}`;
     window.history.pushState({}, '', targetUrl);
     window.dispatchEvent(new PopStateEvent('popstate'));
     window.scrollTo(0, 0);
@@ -440,7 +440,7 @@ const AxionLanding = () => {
               </p>
             </div>
             <a
-              href="/contact"
+              href="/book"
               id="homepage-about-cta-mobile"
               data-cta-location="homepage_about_mobile"
               data-cta-text="About our agency"
@@ -499,7 +499,7 @@ const AxionLanding = () => {
                 </p>
               </div>
               <a
-                href="/contact"
+                href="/book"
                 id="homepage-about-cta-desktop"
                 data-cta-location="homepage_about_desktop"
                 data-cta-text="About our agency"

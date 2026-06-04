@@ -615,7 +615,7 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
             { href: '/google-penalty-recovery', colSpan: 2, icon: <ShieldAlert size={40} className="text-[#F26522] mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'Penalty Reversals', description: 'Complete restoration of index status and traffic following devastating Google Core Updates.' },
             { href: '/services/seo', colSpan: 1, icon: <Search size={40} className="text-white mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'Traffic Scaling', description: '300%+ increases in high-intent organic search volume.' },
             { href: '/services/lead-generation', colSpan: 1, icon: <Target size={40} className="text-white mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'Pipeline Generation', description: 'Millions generated via automated B2B outbound sequences.' },
-            { href: '/contact', colSpan: 2, gradient: true, icon: <TrendingUp size={40} className="text-white mb-6 sm:mb-10 relative z-10" strokeWidth={1.5} />, title: 'Become Our Next Success', description: 'Stop losing revenue to competitors. Let us architect your dominance.' }
+            { href: '/book', colSpan: 2, gradient: true, icon: <TrendingUp size={40} className="text-white mb-6 sm:mb-10 relative z-10" strokeWidth={1.5} />, title: 'Become Our Next Success', description: 'Stop losing revenue to competitors. Let us architect your dominance.' }
           ]
         };
       case '/company/approach':
@@ -659,7 +659,7 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
             { href: '/insights', colSpan: 2, icon: <BarChart size={40} className="text-[#F26522] mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'Algorithm Teardowns', description: 'Forensic breakdowns of Google updates and exactly what signals are currently being rewarded.' },
             { href: '/services/geo-optimization', colSpan: 1, icon: <Network size={40} className="text-white mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'AI Overviews', description: 'The evolving landscape of ChatGPT and Gemini search.' },
             { href: '/services/lead-generation', colSpan: 1, icon: <Target size={40} className="text-white mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'Outbound Tactics', description: 'High-converting email copy and sequencing frameworks.' },
-            { href: '/contact', colSpan: 2, gradient: true, icon: <Briefcase size={40} className="text-white mb-6 sm:mb-10 relative z-10" strokeWidth={1.5} />, title: 'Apply These Insights', description: 'Want these strategies implemented for your brand? Partner with our engineering team today.' }
+            { href: '/book', colSpan: 2, gradient: true, icon: <Briefcase size={40} className="text-white mb-6 sm:mb-10 relative z-10" strokeWidth={1.5} />, title: 'Apply These Insights', description: 'Want these strategies implemented for your brand? Partner with our engineering team today.' }
           ]
         };
       case '/company/careers':
@@ -700,7 +700,7 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
           bentoDescription: 'Whether you are bleeding traffic from a Google penalty or need to scale your B2B enterprise pipeline, we have the technical infrastructure ready to deploy.',
           insightCategory: 'Strategy',
           bentoCards: [
-            { href: '/contact', colSpan: 2, icon: <Network size={40} className="text-[#F26522] mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'Strategy Session', description: 'Direct access to our senior engineers to diagnose your current growth bottlenecks.' },
+            { href: '/book', colSpan: 2, icon: <Network size={40} className="text-[#F26522] mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'Strategy Session', description: 'Direct access to our senior engineers to diagnose your current growth bottlenecks.' },
             { href: '/services/seo', colSpan: 1, icon: <Search size={40} className="text-white mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'Forensic Audit', description: 'Comprehensive teardown of your digital signals.' },
             { href: '/services/lead-generation', colSpan: 1, icon: <Target size={40} className="text-white mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'Pipeline Review', description: 'Assessment of your current outbound capabilities.' },
             { href: '/google-penalty-recovery', colSpan: 2, gradient: true, icon: <ShieldAlert size={40} className="text-white mb-6 sm:mb-10 relative z-10" strokeWidth={1.5} />, title: 'Emergency Triage', description: 'Hit by a core update? Contact us immediately for rapid penalty removal protocols.' }
@@ -764,7 +764,7 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
           </p>
           <div className="mt-8 flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-5">
             <a
-              href="/contact"
+              href="/book"
               id="service-hero-cta"
               data-cta-location="service_hero"
               data-cta-text={config.ctaText}
@@ -820,7 +820,7 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
                 {config.introParagraph}
               </p>
               <a
-                href="/contact"
+                href="/book"
                 id="service-intro-cta-mobile"
                 data-cta-location="service_intro_mobile"
                 data-cta-text={config.ctaText}
@@ -850,7 +850,7 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
                   {config.introParagraph}
                 </p>
                 <a
-                  href="/contact"
+                  href="/book"
                   id="service-intro-cta-desktop"
                   data-cta-location="service_intro_desktop"
                   data-cta-text={config.ctaText}
@@ -1374,7 +1374,7 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
                         </li>
                       ))}
                     </ul>
-                    <a href="/contact" className="text-[13px] font-semibold text-[#F26522] hover:text-[#e05a1a] flex items-center gap-1 transition-colors">
+                    <a href="/book" className="text-[13px] font-semibold text-[#F26522] hover:text-[#e05a1a] flex items-center gap-1 transition-colors">
                       Inquire about this service <ArrowRight className="w-3.5 h-3.5" />
                     </a>
                   </div>
