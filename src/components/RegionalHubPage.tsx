@@ -91,12 +91,15 @@ const REGIONAL_HUBS: Record<string, RegionalHubData> = {
     ],
     schemaJson: {
       "@context": "https://schema.org",
-      "@type": "ProfessionalService",
+      "@type": ["LocalBusiness", "ProfessionalService"],
+      "@id": "https://www.gobiya.com/#organization",
       "name": "Gobiya — Southern California",
       "url": "https://www.gobiya.com/markets/southern-california/",
       "logo": "https://www.gobiya.com/images/gobiya---logo.webp",
       "foundingDate": "2012",
       "description": "Precision SEO, Generative Engine Optimization (GEO), and B2B pipeline engineering for enterprises in Los Angeles, Orange County, and San Diego.",
+      "telephone": "(323) 744-1338",
+      "priceRange": "$$$$",
       "areaServed": [
         { "@type": "City", "name": "Los Angeles", "sameAs": "https://www.wikidata.org/wiki/Q65" },
         { "@type": "City", "name": "Irvine", "sameAs": "https://www.wikidata.org/wiki/Q170143" },
@@ -109,13 +112,12 @@ const REGIONAL_HUBS: Record<string, RegionalHubData> = {
       ],
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "Wilshire Boulevard",
+        "streetAddress": "3580 Wilshire Blvd, Ste 132",
         "addressLocality": "Los Angeles",
         "addressRegion": "CA",
+        "postalCode": "90010",
         "addressCountry": "US"
       },
-      "telephone": "+1-310-000-0000",
-      "priceRange": "$$$$",
       "knowsAbout": [
         "https://en.wikipedia.org/wiki/Search_engine_optimization",
         "https://en.wikipedia.org/wiki/Generative_artificial_intelligence",

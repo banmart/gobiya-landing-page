@@ -79,9 +79,11 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
   const schemas = {
     business: {
       "@context": "https://schema.org",
-      "@type": "ProfessionalService",
+      "@type": ["LocalBusiness", "ProfessionalService"],
       "name": "Enterprise Client",
       "url": "https://www.clientdomain.com",
+      "telephone": "+1-555-000-0000",
+      "priceRange": "$$$",
       "knowsAbout": [
         "https://en.wikipedia.org/wiki/Search_engine_optimization",
         "https://en.wikipedia.org/wiki/Information_retrieval",
@@ -102,12 +104,18 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
     },
     article: {
       "@context": "https://schema.org",
-      "@type": "TechArticle",
+      "@type": "BlogPosting",
       "headline": "Algorithmic Pipeline Domination in the AI Era",
+      "url": "https://www.clientdomain.com/insights/algorithmic-pipeline-domination",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://www.clientdomain.com/insights/algorithmic-pipeline-domination/#webpage"
+      },
       "about": [
         {
-          "@type": "Thing",
-          "name": "Entity Optimization"
+          "@type": "Service",
+          "name": "Entity Optimization",
+          "url": "https://www.clientdomain.com/services/entity-optimization"
         }
       ],
       "author": {

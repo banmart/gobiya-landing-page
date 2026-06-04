@@ -6887,10 +6887,15 @@ const ArticlePage: React.FC<ArticlePageProps> = ({ slug }) => {
       "@context": "https://schema.org",
       "@graph": [
         {
-          "@type": "Article",
+          "@type": "BlogPosting",
           "headline": article.title,
           "description": article.metaDescription,
           "image": `https://www.gobiya.com${article.image}`,
+          "url": `https://www.gobiya.com/insights/${slug}`,
+          "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": `https://www.gobiya.com/insights/${slug}/#webpage`
+          },
           "datePublished": (slug === 'what-is-the-difference-between-google-knowledge-graph-optimization-and-geo') ? "2026-06-04" : (slug === 'what-data-sources-do-llms-crawl-to-verify-b2b-company-information') ? "2026-06-03" : (slug === 'how-do-b2b-companies-use-seo-to-generate-predictable-revenue') ? "2026-05-31" : (slug === 'what-is-generative-engine-optimization-and-how-does-it-work') ? "2026-05-30" : (slug === 'what-is-the-difference-between-a-manual-action-and-an-algorithmic-penalty' || slug === 'chatgpt-vs-google-for-business-discovery') ? "2026-05-29" : "2026-05-25",
           "dateModified": (slug === 'what-is-the-difference-between-google-knowledge-graph-optimization-and-geo') ? "2026-06-04" : (slug === 'what-data-sources-do-llms-crawl-to-verify-b2b-company-information') ? "2026-06-03" : (slug === 'how-do-b2b-companies-use-seo-to-generate-predictable-revenue') ? "2026-05-31" : (slug === 'what-is-generative-engine-optimization-and-how-does-it-work') ? "2026-05-30" : (slug === 'what-is-the-difference-between-a-manual-action-and-an-algorithmic-penalty' || slug === 'chatgpt-vs-google-for-business-discovery') ? "2026-05-29" : "2026-05-25",
           "author": {
@@ -6904,6 +6909,7 @@ const ArticlePage: React.FC<ArticlePageProps> = ({ slug }) => {
           },
           "publisher": {
             "@type": "Organization",
+            "@id": "https://www.gobiya.com/#organization",
             "name": "Gobiya",
             "logo": {
               "@type": "ImageObject",

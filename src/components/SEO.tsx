@@ -223,8 +223,8 @@ const SEO: React.FC<SEOProps> = ({ path }) => {
     // Update JSON-LD Schema
     const graph: any[] = [
       {
-        "@type": "InternetMarketingService",
-        "@id": "https://www.gobiya.com/#agency",
+        "@type": ["LocalBusiness", "ProfessionalService"],
+        "@id": "https://www.gobiya.com/#organization",
         "name": "Gobiya",
         "url": "https://www.gobiya.com",
         "sameAs": [
@@ -235,6 +235,8 @@ const SEO: React.FC<SEOProps> = ({ path }) => {
         ],
         "telephone": "(323) 744-1338",
         "foundingDate": "2012-11-15",
+        "priceRange": "$$$$",
+        "numberOfEmployees": { "@type": "QuantitativeValue", "value": 5 },
         "logo": {
           "@type": "ImageObject",
           "@id": "https://www.gobiya.com/#logo",
@@ -242,7 +244,7 @@ const SEO: React.FC<SEOProps> = ({ path }) => {
           "caption": "Gobiya Logo"
         },
         "image": "https://www.gobiya.com/images/gobiya---logo.webp",
-        "description": "Gobiya is a precision-engineered digital firm and growth agency specializing in advanced search mechanics, performance marketing, and digital infrastructure design.",
+        "description": "Gobiya is a precision-engineered B2B SEO, Generative Engine Optimization (GEO), and sales pipeline agency based in Los Angeles, CA. We recover lost organic traffic, architect AI citation strategies, and engineer automated outbound sales systems for mid-market and enterprise brands.",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "3580 Wilshire Blvd, Ste 132",
@@ -255,7 +257,30 @@ const SEO: React.FC<SEOProps> = ({ path }) => {
           "@type": "GeoCoordinates",
           "latitude": 34.0617,
           "longitude": -118.3039
-        }
+        },
+        "areaServed": [
+          { "@type": "City", "name": "Los Angeles", "sameAs": "https://www.wikidata.org/wiki/Q65" },
+          { "@type": "City", "name": "San Diego", "sameAs": "https://www.wikidata.org/wiki/Q16552" },
+          { "@type": "AdministrativeArea", "name": "Southern California", "sameAs": "https://www.wikidata.org/wiki/Q84827" },
+          { "@type": "Country", "name": "United States", "sameAs": "https://www.wikidata.org/wiki/Q30" }
+        ],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Gobiya Services",
+          "itemListElement": [
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Forensic SEO & Penalty Recovery", "url": "https://www.gobiya.com/capabilities/forensic-seo-penalty-recovery" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Generative Engine Optimization (GEO)", "url": "https://www.gobiya.com/capabilities/generative-engine-optimization" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Conversion Architecture & B2B Pipeline", "url": "https://www.gobiya.com/capabilities/conversion-architecture" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Semantic Search Intelligence", "url": "https://www.gobiya.com/capabilities/semantic-search-intelligence" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Custom Digital Infrastructure", "url": "https://www.gobiya.com/capabilities/custom-digital-infrastructure" } }
+          ]
+        },
+        "knowsAbout": [
+          "https://en.wikipedia.org/wiki/Search_engine_optimization",
+          "https://en.wikipedia.org/wiki/Generative_artificial_intelligence",
+          "https://en.wikipedia.org/wiki/B2B_marketing",
+          "https://en.wikipedia.org/wiki/Pay-per-click"
+        ]
       },
       {
         "@type": "WebSite",
@@ -264,7 +289,7 @@ const SEO: React.FC<SEOProps> = ({ path }) => {
         "name": "Gobiya",
         "description": "AI-driven SEO, Organic Traffic Recovery, and Sales Pipeline Engineering.",
         "publisher": {
-          "@id": "https://www.gobiya.com/#agency"
+          "@id": "https://www.gobiya.com/#organization"
         }
       },
       {
