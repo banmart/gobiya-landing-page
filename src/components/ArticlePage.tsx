@@ -6200,6 +6200,253 @@ const ARTICLES: Record<string, ArticleData> = {
       </>
     ),
   },
+  'are-ai-search-engines-scraping-hidden-api-data-or-public-html-text-blocks': {
+    slug: 'are-ai-search-engines-scraping-hidden-api-data-or-public-html-text-blocks',
+    title: 'Are AI Search Engines Scraping Hidden API Data or Public HTML Text Blocks?',
+    category: 'GEO',
+    readTime: '10 min read',
+    date: 'June 4, 2026',
+    image: '/images/are-ai-search-engines-scraping-hidden-api-data-or-public-html-text-blocks.webp',
+    heroAlt: 'Technical diagram showing AI crawlers like GPTBot and Claude-SearchBot downloading public server-rendered HTML text blocks while bypassing client-side JavaScript API calls',
+    metaDescription: 'Discover if AI engines scrape hidden APIs or read public HTML. Learn how AI crawler rendering divides impact your SEO and how to fix JavaScript invisibility.',
+    content: (
+      <>
+        {/* ── JSON-LD FAQ SCHEMA ── */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "Do AI search engines scrape data from private or hidden APIs?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No, AI engines do not scrape private or authenticated APIs. They make standard HTTP requests to public URLs and parse the raw HTML response. If your content depends on client-side JavaScript to fetch data from APIs after the page loads, AI crawlers will not see it."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Do ClaudeBot, GPTBot, and PerplexityBot render JavaScript?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No. Unlike Googlebot, which uses a headless browser to render JavaScript (often with a delay), major AI bots like GPTBot, ClaudeBot, PerplexityBot, Bytespider, and Meta-ExternalAgent only fetch and read raw server-rendered HTML. They do not execute JavaScript at all."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "How can I verify if my website is visible to AI search engines?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The simplest test is to disable JavaScript in your browser settings and refresh your page. Any text, images, or schema data that disappears when JavaScript is turned off is client-side rendered and completely invisible to AI search engine crawlers."
+                  }
+                }
+              ]
+            })
+          }}
+        />
+
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8 font-medium">
+          The technical answer is unambiguous, and it\'s the opposite of what the question assumes: AI engines read public, server-rendered HTML — and most of them don\'t execute JavaScript at all, which means content rendered client-side from API calls is invisible to them. Here\'s the mechanism, the evidence, and what it means for your architecture.
+        </p>
+
+        {/* ── STATS / UPDATE ── */}
+        <div className="bg-gray-50 border-l-4 border-[#F26522] p-6 my-10 space-y-4">
+          <p className="text-sm font-bold uppercase text-[#F26522] tracking-wider">AI Crawler Content Acquisition — 2026 Update</p>
+          <ul className="space-y-3 text-gray-700 text-sm font-body">
+            <li><strong>Zero JS execution</strong> — An analysis of over 500 million GPTBot fetches found no evidence of JavaScript ever being executed; GPTBot downloads JS files about 11.5% of the time but never runs them (Vercel/MERJ, 2026).</li>
+            <li><strong>Only Googlebot renders JS</strong> — Among major crawlers, only Googlebot fully renders JavaScript; GPTBot, ClaudeBot, PerplexityBot, Bytespider, and Meta-ExternalAgent read raw HTML only, with Bing offering limited rendering.</li>
+            <li><strong>92%</strong> — Share of ChatGPT agent queries that rely on Bing\'s search index — and Bingbot itself has only limited JS rendering, compounding the invisibility risk for client-side-rendered sites.</li>
+          </ul>
+        </div>
+
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          Are AI search engines scraping hidden API data or public HTML text blocks? The answer is public HTML text blocks — and the framing of the question gets the technical reality backwards in a way worth correcting, because the correction is the single most important and most actionable fact in technical GEO. AI engines do not access hidden, private, or authenticated APIs. They fetch your pages the way a simple HTTP client does — they request the URL and read the raw HTML that the server returns. And here is the part that matters most: the major AI crawlers do not execute JavaScript. They read the initial HTML response and nothing more. This means that if your content is rendered client-side — injected into the page by JavaScript running in the browser, often by fetching data from your APIs <em>after</em> the page loads — the AI crawlers never see it. They\'re not scraping your hidden API data; they can\'t even reach the content that your client-side API calls produce, because they don\'t run the JavaScript that makes those calls. They see the empty shell your server sends before any JavaScript executes.
+        </p>
+
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          This is the technical reality that determines whether a site is visible to AI engines at all, and it\'s binary in a way most of GEO is not. The strongest technical teams understand that content acquisition by AI crawlers is a rendering question first and a content question second — that all the citation-worthy content in the world is invisible if it only exists after client-side JavaScript runs. Most teams don\'t realize their modern JavaScript-framework site is sending an empty shell to every AI crawler until they check, and discover their content was never in the AI engines\' view of the web at all.
+        </p>
+
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          This article covers exactly how AI engines acquire content, the decisive difference between Googlebot and the AI crawlers on JavaScript rendering, why client-side rendering makes a site invisible to AI engines, the crawler taxonomy and robots.txt implications, and how to fix a rendering problem that\'s keeping your content out of AI answers.
+        </p>
+
+        {/* ── SECTION 1 ── */}
+        <h2 id="how-ai-engines-acquire-content" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          How AI engines actually acquire content
+        </h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          The mechanism is simpler and more limited than the "hidden API scraping" framing suggests. When an AI crawler fetches a page, it makes an HTTP request to the URL and receives the server\'s response — the raw HTML, plus references to CSS, JavaScript, and other resources. The crawler parses the HTML it received. That\'s the content it has. For a server-rendered page, the HTML response already contains the headings, text, links, and structured data — the crawler reads it all immediately. For a client-side-rendered page, the HTML response is a minimal shell: some navigation, a root container div, and script tags that <em>would</em> load and run the application in a browser. The crawler reads that shell, finds little or no actual content, and moves on.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          The key technical fact is what happens (or doesn\'t) next. In a real browser, the JavaScript in those script tags executes: it runs the application, makes API calls to fetch data, builds the page\'s components, and injects the full content into the DOM — and within seconds, the human visitor sees a complete page. The AI crawlers don\'t do this. They don\'t execute the JavaScript, don\'t wait for rendering, don\'t make the API calls the JavaScript would have made, and don\'t make a second attempt later. They take the initial HTML response and that\'s it. The Vercel/MERJ analysis of over 500 million GPTBot fetches found zero evidence of JavaScript execution — GPTBot downloads JavaScript files about 11.5% of the time but never runs them. The same holds for ClaudeBot, PerplexityBot, Meta\'s ExternalAgent, and Bytespider: none of the major AI crawlers execute JavaScript.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          So the answer to the question is precise: AI engines read public HTML text blocks — specifically, the raw HTML the server returns before any JavaScript runs. They do not scrape hidden API data, and they cannot access content that depends on client-side JavaScript (including content their target page would have fetched from your APIs in the browser). What\'s in the initial server HTML response is what they see. Everything else is invisible. For a detailed breakdown of what data points language models retrieve off-site, see our guide on <a href="/insights/what-data-sources-do-llms-crawl-to-verify-b2b-company-information" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">what data sources LLMs crawl to verify B2B company information</a>.
+        </p>
+
+        {/* ── SECTION 2 ── */}
+        <h2 id="decisive-divide-rendering" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          The decisive divide: Googlebot renders, AI crawlers don\'t
+        </h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          The most important distinction in this entire topic is between Googlebot and everyone else, because it\'s the source of a dangerous false sense of security.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          Googlebot renders JavaScript. It uses a two-wave indexing process: first it fetches and indexes the raw HTML, then later — using a headless Chromium-based Web Rendering Service — it may execute the JavaScript and index the rendered content. This rendering is not instant (it can lag the initial crawl by hours to weeks) and it\'s not guaranteed (heavy scripts, blocked resources, and timing issues can cause rendered content to be missed), but Googlebot can, in general, eventually see client-side-rendered content. The question "can Google render JavaScript?" was largely settled years ago: yes, with caveats.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          The AI crawlers cannot. GPTBot, ClaudeBot, PerplexityBot, Bytespider, and Meta-ExternalAgent render no JavaScript whatsoever — none of them. Bing has only partial, less-reliable JavaScript support, and Applebot relies mostly on static HTML. This divide is dangerous precisely because Google\'s rendering capability masks the problem: a site can be indexed perfectly well by Google (because Googlebot eventually rendered it) while being completely invisible to ChatGPT, Perplexity, and Claude (because their crawlers only ever saw the empty shell). Technical audits routinely turn up single-page applications that rank fine in Google search yet are practically invisible in ChatGPT Search and Perplexity. The site owner sees healthy Google rankings and assumes the technical foundation is sound — while the entire AI-search channel can\'t see the content at all. To learn more about how conversational search behaves differently, read our breakdown of <a href="/insights/chatgpt-vs-google-for-business-discovery" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">ChatGPT vs Google for business discovery</a>.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          The problem compounds through the Bing dependency. A large share of ChatGPT\'s search functionality relies on Bing\'s index — by one 2026 measure, around 92% of ChatGPT agent queries lean on Bing\'s search index — and Bingbot itself has only limited JavaScript rendering. So a client-side-rendered site faces a double exposure: the AI crawlers can\'t render it directly, and the Bing index that many AI engines query also struggles to render it. The site falls out of both the direct-crawl path and the search-index path that feed AI answers.
+        </p>
+
+        {/* ── SECTION 3 ── */}
+        <h2 id="csr-invisibility-risk" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          Why client-side rendering makes a site invisible to AI engines
+        </h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          The mechanism of the invisibility is worth spelling out, because it explains why this is binary rather than a matter of degree. A client-side-rendered single-page application (built with React, Vue, or Angular in their default client-rendered configuration) sends the same minimal initial HTML to every requester: a shell with navigation, a root div, and script tags. For a human with a browser, the scripts run and the page fills in. For an AI crawler that doesn\'t run scripts, the shell is the entire page — there is no content in it to read, extract, or cite.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          There is no partial visibility here. A client-side-rendered page either has its content in the initial HTML response or it does not. The AI crawlers don\'t render, don\'t wait, and don\'t retry, so there\'s no second chance for the content to appear. If the initial HTML is an empty shell, the site is invisible to the AI systems processing billions of queries — not partially visible, not poorly ranked, but absent from their view of the web entirely. This is what makes rendering the most binary factor in GEO: you\'re either in the initial HTML or you\'re not, and there\'s no partial credit. It\'s also, conversely, why fixing it produces immediate results rather than the slow compounding of content optimization — once the content is in the server HTML, the crawlers can see it on their next fetch.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          This binary quality is why rendering should be checked first in any GEO technical audit. All the entity verification, structured data, citation-worthy content, and authority signals in the world are moot if the AI crawler receives an empty shell. The content has to exist in the server\'s HTML response before any other GEO factor can matter. For details on how we map topical graphs, see <a href="/insights/what-is-the-difference-between-google-knowledge-graph-optimization-and-geo" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">Google Knowledge Graph Optimization vs GEO</a>.
+        </p>
+
+        {/* ── SECTION 4 ── */}
+        <h2 id="crawler-taxonomy-robots-txt" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          The AI crawler taxonomy and robots.txt implications
+        </h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          Acquiring content correctly also requires understanding which crawlers are involved, because the AI bot landscape is more differentiated than "AI crawlers" suggests, and the robots.txt decisions have real consequences.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          The crawlers split by purpose. OpenAI operates several: GPTBot (collects training data for the GPT models), OAI-SearchBot (powers ChatGPT\'s search function), and ChatGPT-User (makes live fetches when a user references a specific URL in a conversation). Anthropic similarly operates ClaudeBot (training) and Claude-SearchBot (search). Perplexity operates PerplexityBot. Others in server logs include Google-Extended (Google\'s AI training crawler, separate from Googlebot), Bytespider (ByteDance), and Meta-ExternalAgent. The purpose distinction matters for robots.txt strategy: blocking the <em>training</em> crawlers (GPTBot, ClaudeBot, Google-Extended) opts you out of model training but the <em>search</em> crawlers (OAI-SearchBot, Claude-SearchBot, PerplexityBot) are what fetch content for live AI search answers — so a site that wants to appear in AI search answers should allow the search crawlers even if it chooses to block the training crawlers. Blocking everything by default, a common reflexive move, removes the site from AI search visibility entirely.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          A related robots.txt trap, specific to the rendering problem: some configurations block the JavaScript, CSS, or API endpoints that crawlers need. While the AI crawlers don\'t execute JS, blocking these resources can interfere with crawlers (including Googlebot) that do attempt rendering, and can prevent proper page understanding. Confirm robots.txt doesn\'t block the resources needed to understand the page. To check how AI search visibility feeds into your B2B funnel goals, refer to our piece on <a href="/insights/automated-b2b-sales-pipeline-seo" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">automated B2B sales pipeline SEO</a>.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          One more operational reality: there is no Search Console equivalent for AI crawlers. The only reliable way to confirm AI crawlers are actually accessing your content is to check your server logs for their user-agent strings — GPTBot, OAI-SearchBot, ClaudeBot, Claude-SearchBot, PerplexityBot, Bytespider, and the others. Server-log monitoring is the AI-crawler analog of Search Console, and it\'s how a technical team verifies that the content acquisition is actually happening.
+        </p>
+
+        {/* ── SECTION 5 ── */}
+        <h2 id="how-to-fix-rendering" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          How to fix a rendering problem that\'s hiding your content
+        </h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          The fix is well-established and, unlike most GEO work, produces fast results. The foundational solution is to ensure critical content is server-rendered — present in the initial HTML response the server returns, before any client-side JavaScript runs.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          <strong>Server-side rendering (SSR)</strong> is the primary recommendation: frameworks like Next.js, Nuxt, and Angular Universal render the page\'s content on the server and send complete HTML, so crawlers (and AI crawlers specifically) receive the headings, text, links, and structured data immediately. <strong>Static site generation (SSG)</strong> achieves the same end by pre-building HTML pages at build time, and is an excellent foundation where content doesn\'t need per-request server rendering. For 2026 new builds, SSR or SSG should be the default foundation rather than client-side rendering. <strong>Pre-rendering or dynamic rendering</strong> — serving a pre-rendered HTML snapshot to crawlers — is a viable migration workaround for existing client-side-rendered sites where a full SSR migration isn\'t immediately feasible, though it\'s a bridge rather than a long-term architecture.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          The verification is simple and should be done on every important page: load the page with JavaScript disabled in the browser, and look at what remains. If the critical content — the claims, product descriptions, pricing, author signals — is still there with JS off, it\'s in the server HTML and AI crawlers can see it. If the page is blank or a shell with JS disabled, the content is client-side-rendered and invisible to AI crawlers. Also verify, in the raw HTML source (view-source, not the rendered DOM in dev tools), that schema markup and metadata are present in the server response rather than injected by JavaScript — structured data that only appears after JS runs is invisible to the crawlers that don\'t run JS.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          This is genuinely the highest-leverage, fastest-acting fix in technical GEO. It\'s a one-time architectural correction (versus the ongoing work of content and authority optimization), and the moment the content is in the server HTML, the AI crawlers can see it on their next fetch. For a site that\'s been invisible to AI engines due to client-side rendering, fixing the rendering is the difference between absence and presence. Read more on how this impacts customer conversion on our page detailing <a href="/insights/automated-lead-generation-seo" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">automated lead generation SEO</a>.
+        </p>
+
+        {/* ── SECTION 6 ── */}
+        <h2 id="technical-geo-vs-content" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          What separates a real technical-GEO audit from a content-only approach
+        </h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          Not every provider offering GEO or AI-visibility services checks the rendering layer, and a content-only approach can spend months optimizing content that the AI crawlers literally cannot see.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          Start with whether the provider checks rendering at all. Ask how they\'d determine whether AI crawlers can actually access a site\'s content. If the answer is about content quality, keywords, or schema without first confirming the content is in the server HTML, they\'re skipping the binary precondition. A credible technical-GEO audit checks rendering first — testing pages with JavaScript disabled, inspecting the raw HTML source, confirming critical content and structured data are server-rendered. Ask whether they distinguish Googlebot\'s rendering capability from the AI crawlers\' lack of it, since a provider who assumes "Google can render it so we\'re fine" misses the entire AI-crawler exposure. Ask whether they verify AI crawler access through server logs, since that\'s the only way to confirm the crawlers are actually reaching the content. Ask whether they understand the crawler taxonomy and robots.txt implications (allowing search crawlers even when blocking training crawlers). Ask about the architecture recommendation — SSR or SSG as the foundation, with dynamic rendering as a migration bridge. A real technical-GEO practice treats rendering as the first-checked, highest-leverage factor. A content-only approach optimizes content that may never have been visible to the crawlers in the first place.
+        </p>
+
+        {/* ── SECTION 7 ── */}
+        <h2 id="why-gobiya-is-different" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          Why Gobiya is positioned differently for technical AI visibility
+        </h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          Gobiya is built specifically around the technical mechanics of the modern search ecosystem. We don\'t just write articles or optimize metadata; we audit rendering engines, analyze crawl budgets, write custom server-side React architectures, and implement entity graphs that verify your brand across the web. Our team treats AI visibility as a technical challenge first, ensuring your content is fully accessible and formatted for vector retrieval.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          By combining server-side rendering expertise with deep knowledge of search crawler behaviors, we bridge the gap between software development and organic marketing. When you work with Gobiya, we verify every template, test server-log crawl activity for user agents, and structure your templates for immediate RAG extraction. To review our core services, explore our dedicated <a href="/capabilities/generative-engine-optimization" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">Generative Engine Optimization services page</a>.
+        </p>
+
+        {/* ── SECTION 8 ── */}
+        <h2 id="high-risk-architectures" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          Which sites are most at risk from the rendering problem
+        </h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          Different architectures carry different exposure to the AI-crawler rendering problem. Here\'s how the risk breaks down.
+        </p>
+        <ul className="list-disc pl-6 space-y-3 text-gray-800 mb-8 text-[15px] sm:text-[17px] font-body">
+          <li><strong>Single-page applications with client-side rendering</strong> (React, Vue, or Angular in default CSR configuration) are at the highest risk — they send empty shells to every AI crawler, and the entire site can be invisible to AI engines while ranking fine in Google. These sites have the most to gain from an SSR or SSG migration, and the fix is the highest-leverage action available to them.</li>
+          <li><strong>Sites that rank well in Google but are absent from AI answers</strong> exhibit the signature symptom of the rendering problem — Google\'s rendering masks an exposure that the non-rendering AI crawlers reveal. The diagnosis is almost always worth running for these sites, because the rendering gap is a common and fixable cause.</li>
+          <li><strong>Sites with content or data loaded via client-side API calls</strong> face a specific version of the problem — content that\'s fetched from APIs after the page loads is exactly what the non-rendering crawlers can\'t reach, regardless of how valuable the content is. Server-rendering the API-sourced content is the fix.</li>
+          <li><strong>Sites with JavaScript-injected structured data</strong> face a subtle version: the schema markup that\'s supposed to support entity verification and rich understanding is invisible if it\'s injected by JavaScript rather than present in the server HTML. Moving structured data into the server response is essential. The specific exposure depends on the architecture, which is why a rendering audit matters more than any assumption that "modern framework" equals "AI-visible."</li>
+        </ul>
+
+        {/* ── SECTION 9 ── */}
+        <h2 id="getting-rendering-right" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          What getting the rendering layer right actually looks like
+        </h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          A credible engagement checks rendering before anything else. The audit tests important pages with JavaScript disabled to see what content survives, inspects the raw HTML source to confirm critical content and structured data are server-rendered, reviews robots.txt for the crawler taxonomy and for inadvertent blocking of needed resources, checks server logs for AI crawler user agents to confirm access is actually happening, and identifies whether the architecture (CSR, SSR, SSG, or hybrid) is sending content or empty shells to the AI crawlers. Where the audit finds client-side rendering hiding content, the remediation is the SSR/SSG/pre-rendering work that puts the content in the server HTML — a one-time architectural correction with immediate effect.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          The technical teams that get AI visibility right understand that content acquisition is a rendering question first: the AI crawlers read public server HTML and don\'t run JavaScript, so the content has to be in that server HTML or it doesn\'t exist to them. The question "are AI search engines scraping hidden API data or public HTML text blocks" has a clear technical answer — public, server-rendered HTML, not hidden APIs, and not client-side-rendered content — and understanding that answer is what lets a team ensure their content is actually in the crawlers\' view of the web rather than hidden behind JavaScript the crawlers never run.
+        </p>
+
+        {/* ── SECTION 10 ── */}
+        <h2 id="making-the-right-call" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          Making the right call for your technical AI visibility
+        </h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          Teams running client-side-rendered sites may be invisible to every AI engine except Google without realizing it — ranking fine in Google search while their content sits behind JavaScript that GPTBot, ClaudeBot, and PerplexityBot never execute, absent from the AI answers their market increasingly relies on. The shift to a server-rendered foundation isn\'t about chasing a framework trend. It\'s about ensuring the AI crawlers — which read raw HTML and don\'t run JavaScript — actually receive your content rather than an empty shell.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          Two decisions matter most. First: whether your critical content and structured data are present in the initial server HTML response, or whether they\'re injected by client-side JavaScript that the AI crawlers never execute — a difference you can confirm in minutes by loading your pages with JavaScript disabled. Second: whether your robots.txt and crawler strategy deliberately allow the AI search crawlers (OAI-SearchBot, Claude-SearchBot, PerplexityBot) that fetch content for live AI answers, or whether a reflexive blanket block is removing you from AI search visibility entirely.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          Gobiya is a logical starting point for technical teams that want to be visible to AI engines at the acquisition layer — built around rendering audits that confirm your content is in the server HTML the AI crawlers actually read, SSR/SSG architecture guidance, crawler-taxonomy-aware robots.txt configuration, and server-log verification that the AI crawlers are reaching your content. Request a rendering audit, load your key pages with JavaScript disabled to see what the AI crawlers see, and find out whether your content is actually in their view of the web — before another quarter of AI-search visibility is lost to content hidden behind JavaScript the crawlers never run. <a href="/book" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">Request a technical rendering audit from Gobiya today.</a>
+        </p>
+
+        {/* ── FAQ SECTION ── */}
+        <h2 id="faqs" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          Frequently Asked Questions (FAQ)
+        </h2>
+        <div className="space-y-6 mb-12">
+          <div className="border-b border-gray-200 pb-4">
+            <h3 className="text-[18px] font-semibold text-gray-900 mb-2 font-sans">
+              Do AI search engines scrape data from private or hidden APIs?
+            </h3>
+            <p className="text-[16px] text-gray-700 leading-[1.6]">
+              No, AI engines do not scrape private or authenticated APIs. They make standard HTTP requests to public URLs and parse the raw HTML response. If your content depends on client-side JavaScript to fetch data from APIs after the page loads, AI crawlers will not see it.
+            </p>
+          </div>
+          <div className="border-b border-gray-200 pb-4">
+            <h3 className="text-[18px] font-semibold text-gray-900 mb-2 font-sans">
+              Do ClaudeBot, GPTBot, and PerplexityBot render JavaScript?
+            </h3>
+            <p className="text-[16px] text-gray-700 leading-[1.6]">
+              No. Unlike Googlebot, which uses a headless browser to render JavaScript (often with a delay), major AI bots like GPTBot, ClaudeBot, PerplexityBot, Bytespider, and Meta-ExternalAgent only fetch and read raw server-rendered HTML. They do not execute JavaScript at all.
+            </p>
+          </div>
+          <div className="border-b border-gray-200 pb-4">
+            <h3 className="text-[18px] font-semibold text-gray-900 mb-2 font-sans">
+              How can I verify if my website is visible to AI search engines?
+            </h3>
+            <p className="text-[16px] text-gray-700 leading-[1.6]">
+              The simplest test is to disable JavaScript in your browser settings and refresh your page. Any text, images, or schema data that disappears when JavaScript is turned off is client-side rendered and completely invisible to AI search engine crawlers.
+            </p>
+          </div>
+        </div>
+      </>
+    )
+  },
 };
 
 // ─── Related Articles per slug ────────────────────────────────────────────────
@@ -6680,6 +6927,26 @@ const RELATED_ARTICLES_MAP: Record<string, { href: string; category: string; tit
       category: 'SEO',
       title: 'What Is the Difference Between a Manual Action and an Algorithmic Penalty?',
       image: '/images/article-what-is-the-difference-between-a-manual-action-and-an-algorithmic-penalty.webp',
+    },
+  ],
+  'are-ai-search-engines-scraping-hidden-api-data-or-public-html-text-blocks': [
+    {
+      href: '/insights/what-is-generative-engine-optimization-and-how-does-it-work',
+      category: 'GEO',
+      title: 'What is Generative Engine Optimization and How Does it Work?',
+      image: '/images/article-what-is-generative-engine-optimization-and-how-does-it-work.webp',
+    },
+    {
+      href: '/insights/what-data-sources-do-llms-crawl-to-verify-b2b-company-information',
+      category: 'GEO',
+      title: 'What Data Sources Do LLMs Crawl to Verify B2B Company Information?',
+      image: '/images/article-what-data-sources-do-llms-crawl-to-verify-b2b-company-information.webp',
+    },
+    {
+      href: '/insights/chatgpt-vs-google-for-business-discovery',
+      category: 'SEO',
+      title: 'ChatGPT vs Google for Business Discovery: What You Must Know',
+      image: '/images/article-chatgpt-vs-google-for-business-discovery.webp',
     },
   ],
 };

@@ -84,6 +84,15 @@ const AuthorPage: React.FC<AuthorPageProps> = ({ path }) => {
 
   const articles = [
     {
+      title: 'Are AI Search Engines Scraping Hidden API Data or Public HTML Text Blocks?',
+      slug: 'are-ai-search-engines-scraping-hidden-api-data-or-public-html-text-blocks',
+      category: 'GEO',
+      readTime: '10 min read',
+      date: 'June 4, 2026',
+      image: '/images/are-ai-search-engines-scraping-hidden-api-data-or-public-html-text-blocks.webp',
+      description: 'The technical mechanisms of content acquisition by AI engines, the Googlebot rendering divide, and how to fix JavaScript invisibility.'
+    },
+    {
       title: 'Automated B2B Sales Pipeline SEO: How AI Citations Shape Your Shortlist in 2026',
       slug: 'automated-b2b-sales-pipeline-seo',
       category: 'Strategy',
