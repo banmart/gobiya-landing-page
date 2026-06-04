@@ -569,7 +569,7 @@ const ARTICLES: Record<string, ArticleData> = {
             </p>
           </div>
           <a
-            href="/contact"
+            href="/book"
             className="group flex items-center bg-[#F26522] hover:bg-[#e05a1a] text-white pl-5 pr-2 py-2 transition-colors duration-300 whitespace-nowrap shrink-0"
           >
             <span className="text-[13px] font-medium mr-3">Request a Verification Audit</span>
@@ -810,7 +810,7 @@ const ARTICLES: Record<string, ArticleData> = {
             Find out exactly where your entity foundation and your generative visibility stand today.
           </p>
           <a
-            href="/contact"
+            href="/book"
             className="group inline-flex items-center bg-[#F26522] hover:bg-[#e05a1a] text-white pl-5 pr-2 py-2 transition-colors duration-300 whitespace-nowrap"
           >
             <span className="text-[13px] font-medium mr-3">Request an entity-and-generative assessment</span>
@@ -1002,7 +1002,7 @@ const ARTICLES: Record<string, ArticleData> = {
           The 4.4x conversion advantage of AI-referred visitors reflects the difference between a user who is still filtering options and a user who has already accepted a recommendation. Brands that engineer their entity signals into AI recommendation layers now are building a compounding early-mover asset. Businesses that earn AI citations first are likely to be harder to displace as AI-driven discovery becomes a more dominant channel for their customer base.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
-          When it comes to <strong>ChatGPT vs Google for business discovery</strong>, the brands that win won't be the ones that picked the right channel, they'll be the ones that engineered visibility in both. If your brand isn't showing up when customers ask an AI assistant for a recommendation in your category, a competitor may be capturing that visibility right now. Gobiya's Generative Engine Optimization service is built specifically to change that. <a href="/contact" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">Reach out to Gobiya</a> to find out exactly where your brand stands in AI-generated answers today.
+          When it comes to <strong>ChatGPT vs Google for business discovery</strong>, the brands that win won't be the ones that picked the right channel, they'll be the ones that engineered visibility in both. If your brand isn't showing up when customers ask an AI assistant for a recommendation in your category, a competitor may be capturing that visibility right now. Gobiya's Generative Engine Optimization service is built specifically to change that. <a href="/book" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">Reach out to Gobiya</a> to find out exactly where your brand stands in AI-generated answers today.
         </p>
 
         {/* ── INLINE CTA ── */}
@@ -1557,7 +1557,7 @@ const ARTICLES: Record<string, ArticleData> = {
           Two decisions matter most. First: whether your content is technically accessible to AI crawlers and structured for the passage-level retrieval that generative engines actually perform, or whether it's invisible to the AI layer because it's blocked, unstructured, or lacking the citation-earning characteristics the discipline is built on. Second: whether you're measuring your presence in AI answers — citation share across the major engines — or whether you're still measuring only traditional rankings and missing the visibility surface that's reshaping how people find information.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
-          Gobiya is a logical starting point for organizations that want to understand and improve their presence in AI-generated answers — built around the actual retrieval-and-citation mechanism generative engines use, the technical and structural work that makes content citable, measurement of citation share across ChatGPT, Claude, Perplexity, and Google AI, and the earned-media strategy that AI citations draw on. Request a GEO audit, walk through how your brand currently appears (or doesn't) in AI answers for your category, and find out exactly where you stand on the visibility surface that's becoming the first point of contact between your customers and the information they use to decide. <a href="/contact" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">Reach out to Gobiya</a> today.
+          Gobiya is a logical starting point for organizations that want to understand and improve their presence in AI-generated answers — built around the actual retrieval-and-citation mechanism generative engines use, the technical and structural work that makes content citable, measurement of citation share across ChatGPT, Claude, Perplexity, and Google AI, and the earned-media strategy that AI citations draw on. Request a GEO audit, walk through how your brand currently appears (or doesn't) in AI answers for your category, and find out exactly where you stand on the visibility surface that's becoming the first point of contact between your customers and the information they use to decide. <a href="/book" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">Reach out to Gobiya</a> today.
         </p>
 
         {/* ── INLINE CTA ── */}
@@ -2234,7 +2234,7 @@ const ARTICLES: Record<string, ArticleData> = {
             third-party sources each engine trusts, and audit your owned content for AI extractability.
           </p>
           <a
-            href="/contact"
+            href="/book"
             className="group inline-flex items-center bg-[#F26522] hover:bg-[#e05a1a] text-white pl-6 pr-2 py-3 transition-colors duration-300"
           >
             <span className="text-[14px] font-medium mr-4">Request a citation audit</span>
@@ -2602,7 +2602,7 @@ const ARTICLES: Record<string, ArticleData> = {
             capture current citation share, and identify exactly where the funnel is leaking AI-sourced intent.
           </p>
           <a
-            href="/contact"
+            href="/book"
             className="group inline-flex items-center bg-[#F26522] hover:bg-[#e05a1a] text-white pl-6 pr-2 py-3 transition-colors duration-300"
           >
             <span className="text-[14px] font-medium mr-4">Request a lead-source audit</span>
@@ -2897,7 +2897,7 @@ const ARTICLES: Record<string, ArticleData> = {
             A credible engagement starts with auditing your existing traffic. We run a comprehensive audit to map your anonymous traffic to target accounts, isolate high-intent SEO visits, and show you exactly where to insert signal-based outreach into your outbound flow.
           </p>
           <a
-            href="/contact"
+            href="/book"
             className="group inline-flex items-center bg-[#F26522] hover:bg-[#e05a1a] text-white pl-6 pr-2 py-3 transition-colors duration-300"
           >
             <span className="text-[14px] font-medium mr-4">Request a signal audit</span>
@@ -3148,7 +3148,7 @@ const ARTICLES: Record<string, ArticleData> = {
             Ready to audit your stack for leakage?
           </h3>
           <a
-            href="/contact"
+            href="/book"
             className="group inline-flex items-center bg-[#F26522] hover:bg-[#e05a1a] text-white pl-6 pr-2 py-3 transition-colors duration-300"
           >
             <span className="text-[14px] font-medium mr-4">Request an orchestration audit</span>
@@ -3599,7 +3599,7 @@ const ARTICLES: Record<string, ArticleData> = {
               Request a committee and content audit. We'll map the actual buying committee for your category, identify the underserved roles, and tie findings to a pipeline hypothesis.
             </p>
             <a
-              href="/contact"
+              href="/book"
               className="group inline-flex items-center bg-[#F26522] hover:bg-[#e05a1a] text-white pl-6 pr-2 py-3 transition-colors duration-300"
             >
               <span className="text-[14px] font-medium mr-4">Request a committee audit</span>
@@ -3870,7 +3870,7 @@ const ARTICLES: Record<string, ArticleData> = {
               Request a local-partnership conversation. We'll walk through your current SEO program, what's actually being measured, and where local partnership changes the outcome.
             </p>
             <a
-              href="/contact"
+              href="/book"
               className="group inline-flex items-center bg-[#F26522] hover:bg-[#e05a1a] text-white pl-6 pr-2 py-3 transition-colors duration-300"
             >
               <span className="text-[14px] font-medium mr-4">Start a local conversation</span>
@@ -4082,7 +4082,7 @@ const ARTICLES: Record<string, ArticleData> = {
           <p className="text-[11px] uppercase tracking-wider font-semibold text-[#F26522] mb-3">Get A Composition Audit</p>
           <h3 className="text-white text-[1.4rem] sm:text-[1.7rem] font-display font-medium leading-[1.2] mb-4">Find out what your organic traffic is actually producing for pipeline.</h3>
           <p className="text-gray-400 text-[15px] leading-relaxed mb-6">Walk through your current organic traffic and the pipeline it's actually producing — before another quarter of growth gets reported on a metric that has stopped predicting the outcome your program is being paid to produce.</p>
-          <a href="/contact" className="inline-flex items-center gap-3 bg-[#F26522] hover:bg-[#e05a1a] text-white pl-6 pr-2 py-2.5 transition-colors duration-300 font-medium text-[14px]">
+          <a href="/book" className="inline-flex items-center gap-3 bg-[#F26522] hover:bg-[#e05a1a] text-white pl-6 pr-2 py-2.5 transition-colors duration-300 font-medium text-[14px]">
             Request a composition audit
             <div className="w-7 h-7 bg-white flex items-center justify-center">
               <svg className="w-3.5 h-3.5 text-[#F26522]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"/></svg>
@@ -4270,7 +4270,7 @@ const ARTICLES: Record<string, ArticleData> = {
           <p className="text-[11px] uppercase tracking-wider font-semibold text-[#F26522] mb-3">Get A Local Visibility Audit</p>
           <h3 className="text-white text-[1.4rem] sm:text-[1.7rem] font-display font-medium leading-[1.2] mb-4">Find out where your LA business stands across Google's local surfaces and the AI-recommendation layer.</h3>
           <p className="text-gray-400 text-[15px] leading-relaxed mb-6">Walk through your current local search presence before the competitive gap widens into something expensive to close.</p>
-          <a href="/contact" className="inline-flex items-center gap-3 bg-[#F26522] hover:bg-[#e05a1a] text-white pl-6 pr-2 py-2.5 transition-colors duration-300 font-medium text-[14px]">
+          <a href="/book" className="inline-flex items-center gap-3 bg-[#F26522] hover:bg-[#e05a1a] text-white pl-6 pr-2 py-2.5 transition-colors duration-300 font-medium text-[14px]">
             Request a local visibility audit
             <div className="w-7 h-7 bg-white flex items-center justify-center ml-3">
               <svg className="w-3.5 h-3.5 text-[#F26522]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"/></svg>
@@ -4503,7 +4503,7 @@ const ARTICLES: Record<string, ArticleData> = {
           <p className="text-[11px] uppercase tracking-wider font-semibold text-[#F26522] mb-3">Get A Local Visibility Audit</p>
           <h3 className="text-white text-[1.4rem] sm:text-[1.7rem] font-display font-medium leading-[1.2] mb-4">Find out where your LA business stands across Google's local surfaces and the AI-recommendation layer.</h3>
           <p className="text-gray-400 text-[15px] leading-relaxed mb-6">Walk through your current local search presence before the competitive gap widens into something expensive to close.</p>
-          <a href="/contact" className="inline-flex items-center gap-3 bg-[#F26522] hover:bg-[#e05a1a] text-white pl-6 pr-2 py-2.5 transition-colors duration-300 font-medium text-[14px]">
+          <a href="/book" className="inline-flex items-center gap-3 bg-[#F26522] hover:bg-[#e05a1a] text-white pl-6 pr-2 py-2.5 transition-colors duration-300 font-medium text-[14px]">
             Request an operating-cadence audit
             <div className="w-7 h-7 bg-white flex items-center justify-center ml-3">
               <svg className="w-3.5 h-3.5 text-[#F26522]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"/></svg>
@@ -4735,7 +4735,7 @@ const ARTICLES: Record<string, ArticleData> = {
           <p className="text-[11px] uppercase tracking-wider font-semibold text-[#F26522] mb-3">Get A Multi-Location Audit</p>
           <h3 className="text-white text-[1.4rem] sm:text-[1.7rem] font-display font-medium leading-[1.2] mb-4">Find out how your website represents each of your locations and where the structural gaps are creating cannibalization.</h3>
           <p className="text-gray-400 text-[15px] leading-relaxed mb-6">Walk through your current multi-location hierarchy before the competitive gap widens into something expensive to close.</p>
-          <a href="/contact" className="inline-flex items-center gap-3 bg-[#F26522] hover:bg-[#e05a1a] text-white pl-6 pr-2 py-2.5 transition-colors duration-300 font-medium text-[14px]">
+          <a href="/book" className="inline-flex items-center gap-3 bg-[#F26522] hover:bg-[#e05a1a] text-white pl-6 pr-2 py-2.5 transition-colors duration-300 font-medium text-[14px]">
             Request an architectural audit
             <div className="w-7 h-7 bg-white flex items-center justify-center ml-3">
               <svg className="w-3.5 h-3.5 text-[#F26522]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"/></svg>
@@ -5070,7 +5070,7 @@ const ARTICLES: Record<string, ArticleData> = {
           <p className="text-[11px] uppercase tracking-wider font-semibold text-[#F26522] mb-3">Get A Multi-City Structural Audit</p>
           <h3 className="text-white text-[1.4rem] sm:text-[1.7rem] font-display font-medium leading-[1.2] mb-4">Find out where your multi-city structure is fragmenting authority and suppressing city-market rankings.</h3>
           <p className="text-gray-400 text-[15px] leading-relaxed mb-6">Walk through your current domain structure, city hierarchy, and content differentiation before the architectural gap widens into something expensive to close.</p>
-          <a href="/contact" className="inline-flex items-center gap-3 bg-[#F26522] hover:bg-[#e05a1a] text-white pl-6 pr-2 py-2.5 transition-colors duration-300 font-medium text-[14px]">
+          <a href="/book" className="inline-flex items-center gap-3 bg-[#F26522] hover:bg-[#e05a1a] text-white pl-6 pr-2 py-2.5 transition-colors duration-300 font-medium text-[14px]">
             Request a structural audit
             <div className="w-7 h-7 bg-white flex items-center justify-center ml-3">
               <svg className="w-3.5 h-3.5 text-[#F26522]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"/></svg>
@@ -5922,7 +5922,7 @@ const ARTICLES: Record<string, ArticleData> = {
           <p className="text-[11px] uppercase tracking-wider font-semibold text-[#F26522] mb-3">Scale Your B2B Pipeline</p>
           <h3 className="text-white text-[1.4rem] sm:text-[1.7rem] font-display font-medium leading-[1.2] mb-4">Request a CRM pipeline and organic search attribution audit from Gobiya.</h3>
           <p className="text-gray-400 text-[15px] leading-relaxed mb-6">Walk through how your current organic search setup attributes revenue and identify the gaps before another year gets optimized against the wrong outcomes.</p>
-          <a href="/contact" className="inline-flex items-center gap-3 bg-[#F26522] hover:bg-[#e05a1a] text-white pl-6 pr-2 py-2.5 transition-colors duration-300 font-medium text-[14px]">
+          <a href="/book" className="inline-flex items-center gap-3 bg-[#F26522] hover:bg-[#e05a1a] text-white pl-6 pr-2 py-2.5 transition-colors duration-300 font-medium text-[14px]">
             Request a pipeline-and-attribution audit
             <div className="w-7 h-7 bg-white flex items-center justify-center ml-3">
               <svg className="w-3.5 h-3.5 text-[#F26522]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"/></svg>
@@ -6156,7 +6156,7 @@ const ARTICLES: Record<string, ArticleData> = {
           Gobiya's forensic SEO methodology is built on exactly this sequence: diagnose before you fix, fix the foundation before you build on it, and validate each layer before moving to the next. If your site took a hit in a recent Google update and the standard fixes haven't moved the needle, the problem is almost certainly architectural, not cosmetic. The agencies that missed it before weren't wrong to try, they were working without a complete diagnostic picture. Post-update SEO recovery fails when it treats the symptom (lost rankings) rather than the system (crawl, content quality, and authority working together). For an industry perspective on how the March core update shifted rankings and what changed, see the coverage of the <a href="https://searchengineland.com/march-2026-google-core-update-what-changed-474397" target="_blank" rel="noopener noreferrer" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">March 2026 Google core update</a>.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          If you want this same forensic process run on your own site, reach out to the Gobiya team. We'll map what's broken against a full technical and content diagnostic, prioritize fixes by actual leverage, and give you the exact sequence to start restoring organic traffic, without wasting effort on surface-level changes that won't hold. <a href="/contact" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">Request a forensic SEO audit from Gobiya.</a>
+          If you want this same forensic process run on your own site, reach out to the Gobiya team. We'll map what's broken against a full technical and content diagnostic, prioritize fixes by actual leverage, and give you the exact sequence to start restoring organic traffic, without wasting effort on surface-level changes that won't hold. <a href="/book" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">Request a forensic SEO audit from Gobiya.</a>
         </p>
 
         {/* ── FAQ SECTION ── */}

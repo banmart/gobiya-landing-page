@@ -189,10 +189,16 @@ const AxionLanding = () => {
               </p>
               
               <div className="flex flex-wrap items-center gap-4 sm:gap-5">
-                <a href="#capabilities" className="group flex items-center bg-[#F26522] hover:bg-[#e05a1a] text-white pl-5 sm:pl-6 pr-2 py-2 transition-colors duration-300">
+                <a 
+                  href="/book" 
+                  data-cta-location="homepage_hero_sub"
+                  data-cta-text="Book a strategy call"
+                  onClick={() => trackCTA({ cta_location: 'homepage_hero_sub', cta_text: 'Book a strategy call', destination: '/book' })}
+                  className="group flex items-center bg-[#F26522] hover:bg-[#e05a1a] text-white pl-5 sm:pl-6 pr-2 py-2 transition-colors duration-300"
+                >
                   <div className="flex flex-col overflow-hidden h-[20px] justify-start items-start relative mr-3">
-                    <span className="text-[13px] sm:text-[14px] font-medium leading-[20px] transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-translate-y-full">Explore capabilities</span>
-                    <span className="text-[13px] sm:text-[14px] font-medium leading-[20px] absolute top-full transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-translate-y-full">Explore capabilities</span>
+                    <span className="text-[13px] sm:text-[14px] font-medium leading-[20px] transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-translate-y-full">Book a strategy call</span>
+                    <span className="text-[13px] sm:text-[14px] font-medium leading-[20px] absolute top-full transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-translate-y-full">Book a strategy call</span>
                   </div>
                   <div className="w-7 h-7 sm:w-8 sm:h-8 bg-white flex items-center justify-center">
                     <ArrowRight className="w-4 h-4 text-[#F26522] transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-rotate-45" />

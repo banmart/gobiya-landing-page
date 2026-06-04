@@ -87,11 +87,15 @@ const RoiCalculator: React.FC<RoiCalculatorProps> = ({
 
           <div className="mt-10 text-center">
             <a
-              href="/contact"
+              href="/book"
               id="roi-calculator-cta"
               data-cta-location="roi_calculator"
               data-cta-text={ctaText}
-              onClick={() => trackCTA({ cta_location: 'roi_calculator', cta_text: ctaText ?? 'Start Your Recovery Audit' })}
+              onClick={() => trackCTA({ 
+                cta_location: 'roi_calculator', 
+                cta_text: ctaText ?? 'Start Your Recovery Audit',
+                destination: '/book'
+              })}
               className="bg-[#F26522] hover:bg-[#e05a1a] text-white px-8 py-4 rounded-none font-medium transition-colors w-full sm:w-auto font-body uppercase tracking-wider text-sm inline-flex items-center justify-center"
             >
               {ctaText}

@@ -8,6 +8,7 @@ import RotatingText from './RotatingText';
 import InsightsSlider from './InsightsSlider';
 import ParallaxMedia from './ParallaxMedia';
 import { Shader, Swirl, ChromaFlow, FlutedGlass, FilmGrain } from 'shaders/react';
+import { trackCTA } from '../lib/analytics';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -62,7 +63,7 @@ const SOLUTIONS_DATA: Record<string, SolutionData> = {
     rotatingWords: ['dominate AIOs.', 'capture citations.', 'control AI.'],
     insightCategory: 'Strategy',
     ctaText: 'Start your GEO program',
-    ctaLink: '/contact',
+    ctaLink: '/book',
     stats: [
       { value: '70-90%', label: 'AI bias toward Earned Media', text: 'revealed by researchers, heavily favoring independent third-party evaluations over brand or social sites.' },
       { value: '3x', label: 'higher conversion rate', text: 'for users arriving via direct LLM recommendation vs traditional search.' },
@@ -105,7 +106,7 @@ const SOLUTIONS_DATA: Record<string, SolutionData> = {
     rotatingWords: ['reverse updates.', 'reclaim traffic.', 'engineer EEAT.'],
     insightCategory: 'SEO',
     ctaText: 'Audit my traffic loss',
-    ctaLink: '/contact',
+    ctaLink: '/book',
     stats: [
       { value: '68%', label: 'of sites hit by core updates', text: 'never fully recover their previous peak traffic without structural changes.' },
       { value: '3-6', label: 'months average recovery time', text: 'for manual actions when proper forensic diagnosis is applied.' },
@@ -148,7 +149,7 @@ const SOLUTIONS_DATA: Record<string, SolutionData> = {
     rotatingWords: ['capture intent.', 'scale pipeline.', 'maximize CRO.'],
     insightCategory: 'Strategy',
     ctaText: 'Build your pipeline',
-    ctaLink: '/contact',
+    ctaLink: '/book',
     stats: [
       { value: '4.8x', label: 'Average ROAS across accounts', text: 'by shifting optimization targets from top-of-funnel clicks to closed-won revenue.' },
       { value: '3.5x', label: 'higher conversion rates', text: 'on average for platforms engineered with bespoke conversion architecture.' },
@@ -191,7 +192,7 @@ const SOLUTIONS_DATA: Record<string, SolutionData> = {
     rotatingWords: ['map entities.', 'build authority.', 'own the graph.'],
     insightCategory: 'SEO',
     ctaText: 'Analyze search footprint',
-    ctaLink: '/contact',
+    ctaLink: '/book',
     stats: [
       { value: '92%', label: 'of search queries in B2B', text: 'rely on semantic understanding of buying intent rather than direct keyword matching.' },
       { value: '3x', label: 'higher authority score', text: 'generated across Google\'s knowledge graph within 180 days of semantic structure deployment.' },
@@ -234,7 +235,7 @@ const SOLUTIONS_DATA: Record<string, SolutionData> = {
     rotatingWords: ['sub-second speed.', 'custom code.', 'unbreakable scale.'],
     insightCategory: 'Technical',
     ctaText: 'Start a development project',
-    ctaLink: '/contact',
+    ctaLink: '/book',
     stats: [
       { value: '< 1s', label: 'Time to Interactive', text: 'guaranteed on all our custom React and Vite web applications.' },
       { value: '3.5x', label: 'higher conversion rates', text: 'on average for platforms engineered with bespoke conversion architecture.' },
@@ -352,7 +353,17 @@ const SolutionPage: React.FC<{ path: string }> = ({ path }) => {
               {data.subHeadline}
             </p>
             
-            <a href={data.ctaLink} className="group inline-flex items-center bg-[#F26522] hover:bg-[#e05a1a] text-white pl-6 pr-2 py-2 transition-colors duration-300">
+            <a 
+              href={data.ctaLink} 
+              data-cta-location={`solution_hero_${path.split('/').pop()}`}
+              data-cta-text={data.ctaText}
+              onClick={() => trackCTA({ 
+                cta_location: `solution_hero_${path.split('/').pop()}`, 
+                cta_text: data.ctaText,
+                destination: data.ctaLink
+              })}
+              className="group inline-flex items-center bg-[#F26522] hover:bg-[#e05a1a] text-white pl-6 pr-2 py-2 transition-colors duration-300"
+            >
               <div className="flex flex-col overflow-hidden h-[20px] justify-start items-start relative mr-4">
                 <span className="text-[14px] sm:text-[15px] font-medium leading-[20px] transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-translate-y-full">
                   {data.ctaText}
@@ -682,7 +693,17 @@ const SolutionPage: React.FC<{ path: string }> = ({ path }) => {
       <section className="py-24 px-5 sm:px-8 lg:px-12 bg-[#F26522]">
         <div className="max-w-[1440px] mx-auto text-center reveal-up">
           <h2 className="text-[clamp(2.5rem,5vw,4rem)] font-bold text-white leading-tight font-display">
-            Ready to unlock growth? <a href="/contact" className="underline decoration-2 underline-offset-8 hover:text-black hover:decoration-black transition-colors duration-300">Let's talk!</a>
+            Ready to unlock growth? <a 
+              href="/book" 
+              data-cta-location={`solution_bottom_${path.split('/').pop()}`}
+              data-cta-text="Let's talk!"
+              onClick={() => trackCTA({ 
+                cta_location: `solution_bottom_${path.split('/').pop()}`, 
+                cta_text: "Let's talk!",
+                destination: '/book'
+              })}
+              className="underline decoration-2 underline-offset-8 hover:text-black hover:decoration-black transition-colors duration-300"
+            >Let's talk!</a>
           </h2>
         </div>
       </section>
