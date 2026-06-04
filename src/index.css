@@ -147,21 +147,31 @@
   color: #e05a1a;
 }
 
-/* Ensure proper contrast inside light cards/tables within dark articles */
+/* Ensure proper contrast inside dark-themed cards/tables within dark articles */
 .dark-article tr.bg-white td:not([class*="text-[#F26522]"]),
 .dark-article tr.bg-white th,
 .dark-article tr[class*="bg-gray-50"] td:not([class*="text-[#F26522]"]),
 .dark-article tr[class*="bg-gray-50"] th {
-  color: #111827 !important; /* text-gray-900 */
-  border-color: rgba(0, 0, 0, 0.08) !important;
+  color: #ffffff !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+.dark-article tr.bg-white,
+.dark-article tr[class*="bg-gray-50"] {
+  background-color: rgba(255, 255, 255, 0.02) !important;
 }
 
 .dark-article tr.bg-white td[class*="text-gray-500"],
 .dark-article tr[class*="bg-gray-50"] td[class*="text-gray-500"] {
-  color: #4b5563 !important; /* text-gray-600 */
+  color: #9ca3af !important;
 }
 
-/* bg-[#f7f7f7] light cards contrast rules */
+/* bg-[#f7f7f7] dark cards contrast rules */
+.dark-article div[class*="bg-[#f7f7f7]"] {
+  background-color: rgba(255, 255, 255, 0.03) !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
 .dark-article div[class*="bg-[#f7f7f7]"] p:not([class*="text-gray-500"]),
 .dark-article div[class*="bg-[#f7f7f7]"] span:not([class*="text-gray-500"]),
 .dark-article div[class*="bg-[#f7f7f7]"] h1,
@@ -170,16 +180,21 @@
 .dark-article div[class*="bg-[#f7f7f7]"] h4,
 .dark-article div[class*="bg-[#f7f7f7]"] h5,
 .dark-article div[class*="bg-[#f7f7f7]"] h6 {
-  color: #111827 !important; /* text-gray-900 */
+  color: #ffffff !important;
 }
 
 .dark-article div[class*="bg-[#f7f7f7]"] p[class*="text-gray-500"],
 .dark-article div[class*="bg-[#f7f7f7]"] span[class*="text-gray-500"],
 .dark-article div[class*="bg-[#f7f7f7]"] h3[class*="text-gray-500"] {
-  color: #4b5563 !important; /* text-gray-600 */
+  color: #9ca3af !important;
 }
 
-/* bg-gray-50 light cards and callout contrast rules */
+/* bg-gray-50 dark cards and callout contrast rules */
+.dark-article div[class*="bg-gray-50"] {
+  background-color: rgba(255, 255, 255, 0.03) !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
 .dark-article div[class*="bg-gray-50"] p:not([class*="text-[#F26522]"]):not([class*="text-gray-500"]):not([class*="text-gray-400"]),
 .dark-article div[class*="bg-gray-50"] span:not([class*="text-[#F26522]"]):not([class*="text-gray-500"]):not([class*="text-gray-400"]),
 .dark-article div[class*="bg-gray-50"] h1,
@@ -189,14 +204,14 @@
 .dark-article div[class*="bg-gray-50"] h5,
 .dark-article div[class*="bg-gray-50"] h6,
 .dark-article div[class*="bg-gray-50"] li {
-  color: #111827 !important; /* text-gray-900 */
+  color: #ffffff !important;
 }
 
 .dark-article div[class*="bg-gray-50"] p[class*="text-gray-500"],
 .dark-article div[class*="bg-gray-50"] span[class*="text-gray-500"],
 .dark-article div[class*="bg-gray-50"] p[class*="text-gray-400"],
-.dark-article div[class*="bg-gray-50"] span[class*="text-gray-400"] {
-  color: #4b5563 !important; /* text-gray-600 */
+.dark-article div[class*="bg-gray-400"] span[class*="text-gray-400"] {
+  color: #9ca3af !important;
 }
 
 /* Preserve brand orange color for stats and accents inside articles */
@@ -205,12 +220,27 @@
   color: #F26522 !important;
 }
 
-/* bg-amber-50 caution cards contrast rules */
-.dark-article div[class*="bg-amber-50"],
+/* bg-amber-50 and warning cards styled dark mode inside dark articles */
+.dark-article div[class*="bg-[#FFF8F6]"] {
+  background-color: rgba(239, 68, 68, 0.05) !important;
+  border-color: rgba(239, 68, 68, 0.15) !important;
+}
+
+.dark-article div[class*="bg-[#FFF8F6]"] p,
+.dark-article div[class*="bg-[#FFF8F6]"] span,
+.dark-article div[class*="bg-[#FFF8F6]"] strong {
+  color: #ffffff !important;
+}
+
+.dark-article div[class*="bg-amber-50"] {
+  background-color: rgba(245, 158, 11, 0.05) !important;
+  border-color: rgba(245, 158, 11, 0.15) !important;
+}
+
 .dark-article div[class*="bg-amber-50"] p,
 .dark-article div[class*="bg-amber-50"] span,
 .dark-article div[class*="bg-amber-50"] strong {
-  color: #78350f !important; /* text-amber-900 */
+  color: #ffffff !important;
 }
 /* Ensure white text inside orange links/buttons in dark articles is readable */
 .dark-article a[class*="text-white"],
