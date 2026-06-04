@@ -8,6 +8,7 @@ type RenderFn = (url: string) => { html: string };
 interface SEOMetadata {
   title: string;
   description: string;
+  image?: string;
 }
 
 // Outcome-focused metadata lookup map for crawlers and search bots
@@ -137,6 +138,11 @@ const metadataMap: Record<string, SEOMetadata> = {
     title: 'Knowledge Graph Optimization vs. GEO: The Vital Difference | Gobiya',
     description: 'Understand the key differences between Google Knowledge Graph optimization and GEO in scope, era, and target engines. Learn how entity resolution gates AI citations.'
   },
+  '/insights/are-ai-search-engines-scraping-hidden-api-data-or-public-html-text-blocks': {
+    title: 'Are AI Search Engines Scraping Hidden API Data or Public HTML Text Blocks? | Gobiya',
+    description: 'Discover if AI engines scrape hidden APIs or read public HTML. Learn how AI crawler rendering divides impact your SEO and how to fix JavaScript invisibility.',
+    image: '/images/are-ai-search-engines-scraping-hidden-api-data-or-public-html-text-blocks.webp'
+  },
   '/book': {
     title: 'Book a Pipeline Strategy Call | Gobiya',
     description: 'Schedule a 15-minute 1-on-1 strategy call with our lead developer & marketer Steve Martin to audit your organic pipeline and search traffic.'
@@ -227,6 +233,21 @@ export default async function handler(req: IncomingMessage, res: any) {
       description: 'Deep dives into Google algorithm updates, generative search (GEO), and B2B marketing strategies from the Gobiya team.'
     } : metadataMap['/']);
 
+    // Build ogImageUrl
+    let ogImageUrl = 'https://www.gobiya.com/images/gobiya---logo.webp';
+    if (seo.image) {
+      ogImageUrl = seo.image.startsWith('http') ? seo.image : `https://www.gobiya.com${seo.image}`;
+    } else if (pathname.startsWith('/insights/')) {
+      const slug = pathname.substring('/insights/'.length);
+      if (slug === 'are-ai-search-engines-scraping-hidden-api-data-or-public-html-text-blocks') {
+        ogImageUrl = `https://www.gobiya.com/images/are-ai-search-engines-scraping-hidden-api-data-or-public-html-text-blocks.webp`;
+      } else if (slug === 'seo-case-study-traffic-recovery') {
+        ogImageUrl = `https://www.gobiya.com/images/how-we-recovered-320-organic-traffic-after-google-1780266793291.webp`;
+      } else {
+        ogImageUrl = `https://www.gobiya.com/images/article-${slug}.webp`;
+      }
+    }
+
     template = template.replace(
       '<title>More Traffic, More Leads, Less Guesswork | Gobiya</title>',
       `<title>${seo.title}</title>`
@@ -244,12 +265,20 @@ export default async function handler(req: IncomingMessage, res: any) {
       `<meta property="og:description" content="${seo.description}" />`
     );
     template = template.replace(
+      '<meta property="og:image" content="https://www.gobiya.com/images/gobiya---logo.webp" />',
+      `<meta property="og:image" content="${ogImageUrl}" />`
+    );
+    template = template.replace(
       '<meta name="twitter:title" content="Gobiya | AI SEO & Traffic Recovery" />',
       `<meta name="twitter:title" content="${seo.title}" />`
     );
     template = template.replace(
       '<meta name="twitter:description" content="Recover organic search traffic, scale revenue, and secure algorithmic dominance." />',
       `<meta name="twitter:description" content="${seo.description}" />`
+    );
+    template = template.replace(
+      '<meta name="twitter:image" content="https://www.gobiya.com/images/gobiya---logo.webp" />',
+      `<meta name="twitter:image" content="${ogImageUrl}" />`
     );
 
     // Dynamic JSON-LD Schema
@@ -385,7 +414,7 @@ export default async function handler(req: IncomingMessage, res: any) {
     let secondarySchemaTag = '';
     if (pathname.startsWith('/insights/')) {
       const slug = pathname.substring('/insights/'.length);
-      const publishDate = (slug === 'what-is-the-difference-between-google-knowledge-graph-optimization-and-geo') ? "2026-06-04" :
+      const publishDate = (slug === 'are-ai-search-engines-scraping-hidden-api-data-or-public-html-text-blocks' || slug === 'what-is-the-difference-between-google-knowledge-graph-optimization-and-geo') ? "2026-06-04" :
                           (slug === 'what-data-sources-do-llms-crawl-to-verify-b2b-company-information') ? "2026-06-03" :
                           (slug === 'what-is-generative-engine-optimization-and-how-does-it-work') ? "2026-05-30" : 
                           (slug === 'what-is-the-difference-between-a-manual-action-and-an-algorithmic-penalty' || slug === 'chatgpt-vs-google-for-business-discovery') ? "2026-05-29" : 
@@ -396,7 +425,7 @@ export default async function handler(req: IncomingMessage, res: any) {
           "@type": "BlogPosting",
           "headline": seo.title.replace(' | Gobiya', ''),
           "description": seo.description,
-          "image": `https://www.gobiya.com/images/article-${slug}.webp`,
+          "image": ogImageUrl,
           "url": `https://www.gobiya.com/insights/${slug}`,
           "mainEntityOfPage": {
             "@type": "WebPage",
@@ -571,6 +600,36 @@ export default async function handler(req: IncomingMessage, res: any) {
               "acceptedAnswer": {
                 "@type": "Answer",
                 "text": "Google's Knowledge Panel descriptions, which historically drew from Wikipedia, are increasingly being replaced by Gemini-generated multi-source summaries. This indicates that the entity understanding layer (Knowledge Graph) and the generative answering layer (AI Overviews/AI Mode) are merging into a single system inside Google."
+              }
+            }
+          ]
+        });
+      } else if (slug === 'are-ai-search-engines-scraping-hidden-api-data-or-public-html-text-blocks') {
+        articleGraph.push({
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Do AI search engines scrape data from private or hidden APIs?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No, AI engines do not scrape private or authenticated APIs. They make standard HTTP requests to public URLs and parse the raw HTML response. If your content depends on client-side JavaScript to fetch data from APIs after the page loads, AI crawlers will not see it."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Do ClaudeBot, GPTBot, and PerplexityBot render JavaScript?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. Unlike Googlebot, which uses a headless browser to render JavaScript (often with a delay), major AI bots like GPTBot, ClaudeBot, PerplexityBot, Bytespider, and Meta-ExternalAgent only fetch and read raw server-rendered HTML. They do not execute JavaScript at all."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How can I verify if my website is visible to AI search engines?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The simplest test is to disable JavaScript in your browser settings and refresh your page. Any text, images, or schema data that disappears when JavaScript is turned off is client-side rendered and completely invisible to AI search engine crawlers."
               }
             }
           ]
