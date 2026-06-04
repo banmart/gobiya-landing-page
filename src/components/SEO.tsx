@@ -143,6 +143,14 @@ const metadataMap: Record<string, SEOMetadata> = {
     title: 'The Blueprint for Generating Predictable B2B Pipeline | Gobiya',
     description: 'Why B2B companies fail to connect SEO to pipeline revenue, and how mapping search clusters to decision-maker needs resolves it.'
   },
+  '/insights/what-data-sources-do-llms-crawl-to-verify-b2b-company-information': {
+    title: 'What B2B Sources Do LLMs Crawl to Verify Company Info? | Gobiya',
+    description: 'How ChatGPT, Claude, and Perplexity crawl external data sources to verify B2B business details. Establish a consistent entity footprint to secure citations.'
+  },
+  '/insights/what-is-the-difference-between-google-knowledge-graph-optimization-and-geo': {
+    title: 'Knowledge Graph Optimization vs. GEO: The Vital Difference | Gobiya',
+    description: 'Understand the key differences between Google Knowledge Graph optimization and GEO in scope, era, and target engines. Learn how entity resolution gates AI citations.'
+  },
   '/insights/seo-case-study-traffic-recovery': {
     title: 'Case Study: How We Recovered 320% Organic Search Traffic | Gobiya',
     description: 'A step-by-step forensic breakdown of a website\'s recovery after a Google helpful content update. See the exact diagnostic audit we ran.'

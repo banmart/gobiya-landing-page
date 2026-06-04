@@ -129,6 +129,14 @@ const metadataMap: Record<string, SEOMetadata> = {
     title: 'RAG & GEO: What is Generative Engine Optimization? | Gobiya',
     description: 'A complete technical guide to how RAG-based search engines cite content, why traditional SEO isn\'t enough, and how to optimize for LLMs.'
   },
+  '/insights/what-data-sources-do-llms-crawl-to-verify-b2b-company-information': {
+    title: 'What B2B Sources Do LLMs Crawl to Verify Company Info? | Gobiya',
+    description: 'How ChatGPT, Claude, and Perplexity crawl external data sources to verify B2B business details. Establish a consistent entity footprint to secure citations.'
+  },
+  '/insights/what-is-the-difference-between-google-knowledge-graph-optimization-and-geo': {
+    title: 'Knowledge Graph Optimization vs. GEO: The Vital Difference | Gobiya',
+    description: 'Understand the key differences between Google Knowledge Graph optimization and GEO in scope, era, and target engines. Learn how entity resolution gates AI citations.'
+  },
   '/about/steve-martin': {
     title: 'Steve Martin | Growth Engineer & Founder of Gobiya | Gobiya',
     description: 'Credentials and author profile for Steve Martin. Over 15 years engineering search engine dominance, custom React platforms, and sales pipeline automation.'
@@ -344,7 +352,9 @@ export default async function handler(req: IncomingMessage, res: any) {
     let secondarySchemaTag = '';
     if (pathname.startsWith('/insights/')) {
       const slug = pathname.substring('/insights/'.length);
-      const publishDate = (slug === 'what-is-generative-engine-optimization-and-how-does-it-work') ? "2026-05-30" : 
+      const publishDate = (slug === 'what-is-the-difference-between-google-knowledge-graph-optimization-and-geo') ? "2026-06-04" :
+                          (slug === 'what-data-sources-do-llms-crawl-to-verify-b2b-company-information') ? "2026-06-03" :
+                          (slug === 'what-is-generative-engine-optimization-and-how-does-it-work') ? "2026-05-30" : 
                           (slug === 'what-is-the-difference-between-a-manual-action-and-an-algorithmic-penalty' || slug === 'chatgpt-vs-google-for-business-discovery') ? "2026-05-29" : 
                           "2026-05-25";
 
@@ -462,6 +472,66 @@ export default async function handler(req: IncomingMessage, res: any) {
               "acceptedAnswer": {
                 "@type": "Answer",
                 "text": "Yes. AI engines use specialized user agents like GPTBot (OpenAI), PerplexityBot, and ClaudeBot to crawl content. Ensuring that your robots.txt file explicitly permits these crawlers and avoiding CDN blocklists is a critical technical requirement to enter the retrieval pool."
+              }
+            }
+          ]
+        });
+      } else if (slug === 'what-data-sources-do-llms-crawl-to-verify-b2b-company-information') {
+        articleGraph.push({
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Which B2B data sources do LLMs trust the most for entity verification?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "LLMs rely on a tiered source hierarchy. Structured reference databases like Wikipedia and Wikidata are Tier 1 (the gold standard). Professional databases like LinkedIn and Crunchbase form Tier 2, while business reviews platforms like G2, Capterra, and TrustRadius constitute Tier 3. High-engagement media platforms (like Reddit and YouTube) and the company's own site serve as lower-tier signals."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Why does inconsistent data across B2B directories lead to AI silence?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "LLMs verify entities by triangulating facts across multiple external databases. If they encounter contradictory data—such as differing company categories, leadership names, or locations—the model's confidence scores drop. To avoid hallucinating wrong answers, conversational engines will typically omit the company entirely rather than risk citing incorrect information."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How can a B2B company technically signal its entity relationships to AI crawlers?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The most direct method is implementing Organization schema in JSON-LD format on the company website, utilizing the sameAs property. This explicitly declares the machine-readable links between your website and your official profiles on Wikidata, LinkedIn, Crunchbase, and category-specific review platforms."
+              }
+            }
+          ]
+        });
+      } else if (slug === 'what-is-the-difference-between-google-knowledge-graph-optimization-and-geo') {
+        articleGraph.push({
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What is the primary difference between Google Knowledge Graph optimization and GEO?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Google Knowledge Graph optimization focuses on entity resolution specifically within Google's database to correctly represent your brand (often resulting in a Knowledge Panel), whereas Generative Engine Optimization (GEO) focuses on getting your content cited and recommended across the entire multi-engine AI ecosystem (such as ChatGPT, Claude, Gemini, and Perplexity)."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Why is Knowledge Graph optimization considered a foundation for GEO?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Generative engines utilize RAG (Retrieval-Augmented Generation) pipelines and require high confidence to cite sources without hallucinating. A cleanly resolved entity in Google's Knowledge Graph, supported by structured data like Wikidata and schema markup, provides the verification foundation that these engines rely on to cite a brand."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How are Google Knowledge Panels and AI answers converging?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Google's Knowledge Panel descriptions, which historically drew from Wikipedia, are increasingly being replaced by Gemini-generated multi-source summaries. This indicates that the entity understanding layer (Knowledge Graph) and the generative answering layer (AI Overviews/AI Mode) are merging into a single system inside Google."
               }
             }
           ]
