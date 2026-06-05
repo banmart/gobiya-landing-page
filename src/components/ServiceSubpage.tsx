@@ -134,10 +134,8 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
   ];
 
   const successSections = [
-    { id: 'recovery-case', label: 'Algorithmic Recovery' },
-    { id: 'pipeline-case', label: 'Pipeline Automation' },
-    { id: 'geo-case', label: 'AI Citations (GEO)' },
-    { id: 'conversion-case', label: 'Performance Dev' }
+    { id: 'recovery-case', label: 'SmileCenter Dentistry' },
+    { id: 'pipeline-case', label: 'American Livescan' },
   ];
 
   const handleScrollToSection = (id: string) => {
@@ -1108,20 +1106,20 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
         </section>
       )}
 
-      {/* DETAILED CASE STUDIES FOR SUCCESS STORIES PATH */}
+      {/* REAL CASE STUDIES FOR SUCCESS STORIES PATH */}
       {path === '/company/success-stories' && (
         <section className="bg-[#050505] text-white py-20 sm:py-32 border-t border-white/10 relative z-20" data-logo-dark>
           <div className="max-w-[1440px] w-full mx-auto px-5 sm:px-8 lg:px-12">
             <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-16">
-              
+
               {/* Sticky Sidebar Navigation */}
               <aside className="hidden lg:block">
                 <div className="sticky top-24 flex flex-col gap-8">
                   <div>
-                    <span className="text-[11px] font-bold text-gray-400 uppercase tracking-widest block mb-1">Our Success Stories</span>
+                    <span className="text-[11px] font-bold text-gray-400 uppercase tracking-widest block mb-1">Our Case Studies</span>
                     <h3 className="text-xl font-bold text-white">Proven Results</h3>
                   </div>
-                  
+
                   <nav className="flex flex-col border-l border-white/10 pl-4 py-2">
                     {successSections.map((sec) => (
                       <button
@@ -1139,15 +1137,23 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
                   </nav>
 
                   <div className="bg-white/5 border border-white/10 p-6 rounded-xl">
-                    <h4 className="text-[12px] font-bold uppercase tracking-wider text-white mb-2">Agency Performance</h4>
+                    <h4 className="text-[12px] font-bold uppercase tracking-wider text-white mb-4">Client Results</h4>
                     <ul className="flex flex-col gap-3">
                       <li className="flex justify-between text-[13px] text-gray-400">
-                        <span>Attributed ACV:</span>
-                        <span className="font-semibold text-white">$3.4M+</span>
+                        <span>SmileCenter inquiries:</span>
+                        <span className="font-semibold text-[#F26522]">5x</span>
                       </li>
                       <li className="flex justify-between text-[13px] text-gray-400">
-                        <span>Recovery Window:</span>
-                        <span className="font-semibold text-white">90 Days</span>
+                        <span>Livescan bookings:</span>
+                        <span className="font-semibold text-[#F26522]">3x</span>
+                      </li>
+                      <li className="flex justify-between text-[13px] text-gray-400">
+                        <span>SmileCenter impressions:</span>
+                        <span className="font-semibold text-white">75K → 213K</span>
+                      </li>
+                      <li className="flex justify-between text-[13px] text-gray-400">
+                        <span>Livescan walk-ins:</span>
+                        <span className="font-semibold text-white">+30%</span>
                       </li>
                       <li className="flex justify-between text-[13px] text-gray-400">
                         <span>Core Web Vitals:</span>
@@ -1155,148 +1161,192 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
                       </li>
                     </ul>
                   </div>
+
+                  <a
+                    href="/book"
+                    className="group flex items-center bg-[#F26522] hover:bg-[#e05a1a] text-white pl-5 pr-2 py-2.5 transition-colors duration-300 self-start"
+                  >
+                    <div className="flex flex-col overflow-hidden h-[20px] justify-start items-start relative mr-3">
+                      <span className="text-[13px] font-medium leading-[20px] transition-transform duration-500 group-hover:-translate-y-full">Get started</span>
+                      <span className="text-[13px] font-medium leading-[20px] absolute top-full transition-transform duration-500 group-hover:-translate-y-full">Get started</span>
+                    </div>
+                    <div className="w-7 h-7 bg-white flex items-center justify-center">
+                      <ArrowRight className="w-4 h-4 text-[#F26522] transition-transform duration-500 group-hover:-rotate-45" />
+                    </div>
+                  </a>
                 </div>
               </aside>
 
               {/* Main Copy Area */}
               <div className="flex flex-col gap-24 max-w-4xl">
-                
+
                 {/* Intro Callout */}
                 <div className="border-l-4 border-[#F26522] pl-6 py-2">
                   <p className="text-[clamp(1.1rem,2vw,1.4rem)] text-gray-300 font-medium leading-relaxed">
-                    We do not provide vanity growth metrics. We build search recovery systems and outbound pipelines that translate directly into closed-won contract value. 
-                    Below are the technical case studies detailing Gobiya's algorithmic operations and B2B pipeline integrations.
+                    Real clients. Real numbers. Here is exactly what we built, why we built it, and what moved as a result.
                   </p>
                 </div>
 
-                {/* Section 1: Algorithmic Update Recovery */}
+                {/* ── CASE STUDY 1: SmileCenter ── */}
                 <article id="recovery-case" className="scroll-mt-24">
                   <div className="flex items-center gap-3 mb-6">
                     <div className="w-8 h-8 rounded bg-[#F26522] text-white flex items-center justify-center font-bold text-[14px]">01</div>
-                    <span className="text-[12px] font-semibold text-[#F26522] uppercase tracking-wider">Algorithmic Recovery Case Study</span>
+                    <span className="text-[12px] font-semibold text-[#F26522] uppercase tracking-wider">Multi-Location SEO &amp; Conversion Architecture</span>
                   </div>
-                  <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight mb-8">
-                    Reversing Helpful Content Penalties for Enterprise SaaS
-                  </h2>
-                  <div className="text-gray-400 text-[15px] sm:text-[16px] leading-[1.75] flex flex-col gap-6">
+
+                  {/* Headline + CTA row */}
+                  <div className="flex flex-wrap items-start justify-between gap-4 mb-8">
+                    <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
+                      SmileCenter Dentistry — 5x Patient Inquiries Across Southern California
+                    </h2>
+                    <a
+                      href="/case-studies/smile-center-dentistry"
+                      className="group flex items-center gap-2 text-[#F26522] hover:text-white border border-[#F26522]/40 hover:border-white/20 px-4 py-2 text-[13px] font-semibold transition-colors flex-shrink-0"
+                    >
+                      Full case study <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:-rotate-45" />
+                    </a>
+                  </div>
+
+                  {/* Metrics strip */}
+                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8">
+                    {[
+                      { value: '5x', label: 'Form completions' },
+                      { value: '5x', label: 'Phone calls' },
+                      { value: '2.8x', label: 'Search impressions' },
+                      { value: '+44%', label: 'Organic clicks' },
+                    ].map((m) => (
+                      <div key={m.label} className="bg-white/5 border border-white/10 p-4">
+                        <div className="text-[clamp(1.4rem,2.5vw,2rem)] font-bold text-[#F26522] font-display leading-none mb-1">{m.value}</div>
+                        <div className="text-[11px] text-gray-400 uppercase tracking-wider">{m.label}</div>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="text-gray-400 text-[15px] sm:text-[16px] leading-[1.75] flex flex-col gap-5">
                     <p>
-                      In mid-2025, our client—a leading enterprise B2B collaboration software brand—experienced a devastating 62% drop in organic search impressions and sessions immediately following a major Google Helpful Content Update. The ranking decline impacted not only informational resource sections but also high-intent commercial landing pages and primary brand queries, causing a massive decline in direct pipeline opportunities.
+                      SmileCenter runs dental offices across multiple Southern California markets — Anaheim, Palmdale, Downey, Long Beach, Whittier, West Covina, and the Antelope Valley. Its previous website was a single, slow, generic site that funneled every visitor into the same place, with no clear path to the nearest office and no friction-free way to book or call.
                     </p>
                     <p>
-                      We initiated our Forensic Update Triage Protocol. We began by reviewing raw server access logs to analyze crawlers' patterns and behaviors. The audit identified significant rendering budget blockages: search engine crawlers were spending substantial CPU time rendering heavy, client-side React bundles instead of indexing critical content. We completely refactored their rendering stack to utilize Server-Side Rendering (SSR) and edge-caching configurations, reducing the Time to First Byte (TTFB) from 1.2 seconds to a consistent 80 milliseconds.
+                      <strong className="text-white">What we built:</strong> We rebuilt the site on a custom React/Vite foundation and gave every office its own dedicated, individually optimized page with local schema markup, consistent NAP data, and location-specific content. We added prominent click-to-call on mobile, simplified booking forms, and location-aware CTAs that route a visitor to their nearest office in the fewest possible steps. We also integrated Yelp and Google Business signals to reinforce each location in map and "near me" results.
                     </p>
                     <p>
-                      Simultaneously, we executed our Content Pruning Framework. We analyzed all indexable URLs against organic traffic and search database metrics. We identified that over 40% of the site's indexed blog section comprised thin, outdated, or redundant information that was dragging down the domain-wide quality multiplier. Over a two-week window, we pruned and 301-redirected 1,200 thin articles and consolidated 300 related informational resources into 15 high-authority, comprehensive topical hubs.
+                      <strong className="text-white">The result:</strong> Form completions and inbound phone calls each grew 5x — not from a flood of new traffic, but from the same visitors converting far more effectively. Total search impressions nearly tripled from 75.3K to 213K as the site began surfacing for "dentist near me," "emergency dentist near me," and "dentist open Sunday." SmileCenter now holds top-5 positions for branded searches across all its markets.
                     </p>
-                    <p>
-                      We then rebuilt their E-E-A-T (Experience, Expertise, Authoritativeness, Trustworthiness) trust signals. We mapped every piece of content to verified author entities using nested JSON-LD schema markup, connecting their authors directly to verified academic databases and industry networks. Within 90 days, Google's algorithmic suppressions were completely lifted, restoring organic search traffic to 410,000 monthly sessions—representing a 108% recovery from the pre-update peak.
-                    </p>
+
+                    {/* Local rankings table */}
+                    <div className="border border-white/10 overflow-hidden mt-2">
+                      <div className="bg-white/5 px-5 py-3 grid grid-cols-[1fr_100px] text-[11px] uppercase tracking-widest text-gray-500 font-semibold">
+                        <span>Search Query</span>
+                        <span className="text-right">Position</span>
+                      </div>
+                      {[
+                        { q: 'smile center downey', pos: '#2' },
+                        { q: 'smile center palmdale', pos: 'Top 5' },
+                        { q: 'anaheim smile center', pos: 'Top 5' },
+                        { q: 'smile center long beach', pos: 'Top 5' },
+                        { q: 'smile center whittier', pos: 'Top 5' },
+                      ].map((r) => (
+                        <div key={r.q} className="px-5 py-3 grid grid-cols-[1fr_100px] border-t border-white/[0.06] items-center">
+                          <span className="text-[13px] text-gray-300 font-mono">"{r.q}"</span>
+                          <span className="text-right text-[13px] font-bold text-[#F26522]">{r.pos}</span>
+                        </div>
+                      ))}
+                    </div>
+
+                    <p className="text-gray-500 text-[13px]">Period: last 3 months vs. prior 3 months. Stack: React / Vite, location pages, Yelp + Google Business integration.</p>
                   </div>
                 </article>
 
-                {/* Section 2: B2B Pipeline Automation */}
+                {/* ── CASE STUDY 2: American Livescan ── */}
                 <article id="pipeline-case" className="scroll-mt-24">
                   <div className="flex items-center gap-3 mb-6">
                     <div className="w-8 h-8 rounded bg-[#F26522] text-white flex items-center justify-center font-bold text-[14px]">02</div>
-                    <span className="text-[12px] font-semibold text-[#F26522] uppercase tracking-wider">Pipeline Engineering Case Study</span>
+                    <span className="text-[12px] font-semibold text-[#F26522] uppercase tracking-wider">Site Rebuild · Local SEO · Google Business Profile</span>
                   </div>
-                  <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight mb-8">
-                    Scaling Outbound Meetings for Enterprise Logistics
-                  </h2>
-                  <div className="text-gray-400 text-[15px] sm:text-[16px] leading-[1.75] flex flex-col gap-6">
+
+                  {/* Headline + CTA row */}
+                  <div className="flex flex-wrap items-start justify-between gap-4 mb-8">
+                    <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
+                      American Livescan — 3x Bookings &amp; Calls After Legacy Site Migration
+                    </h2>
+                    <a
+                      href="/case-studies/american-livescan"
+                      className="group flex items-center gap-2 text-[#F26522] hover:text-white border border-[#F26522]/40 hover:border-white/20 px-4 py-2 text-[13px] font-semibold transition-colors flex-shrink-0"
+                    >
+                      Full case study <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:-rotate-45" />
+                    </a>
+                  </div>
+
+                  {/* Metrics strip */}
+                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8">
+                    {[
+                      { value: '3x', label: 'Online bookings' },
+                      { value: '3x', label: 'Phone calls' },
+                      { value: '+30%', label: 'Walk-in traffic' },
+                      { value: '+47%', label: 'Organic clicks' },
+                    ].map((m) => (
+                      <div key={m.label} className="bg-white/5 border border-white/10 p-4">
+                        <div className="text-[clamp(1.4rem,2.5vw,2rem)] font-bold text-[#F26522] font-display leading-none mb-1">{m.value}</div>
+                        <div className="text-[11px] text-gray-400 uppercase tracking-wider">{m.label}</div>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="text-gray-400 text-[15px] sm:text-[16px] leading-[1.75] flex flex-col gap-5">
                     <p>
-                      A mid-market logistics operator approached Gobiya with stagnant organic pipeline values. Although their site was ranking for generic informational search queries, their traffic failed to convert into qualified sales opportunities. Their sales department was forced to rely on manual outbound cold calling and expensive, inaccurate database lists.
+                      American Livescan is a high-volume Live Scan fingerprinting and background-check provider in Los Angeles, serving walk-in customers, online bookings, and mobile appointments. The business was running on an aging site built on legacy <code className="bg-white/10 text-white px-1.5 py-0.5 text-[13px]">.htm/.html</code> pages — slow, hard to update, and architecturally incapable of competing for the "near me" searches that drive a local, walk-in service.
                     </p>
                     <p>
-                      Our strategy focused on a unified B2B Pipeline Integration. We mapped their service offerings into a structured topical authority graph, designing 30 comprehensive content hubs targeting high-intent long-tail queries related to supply chain software, warehousing routes, and international customs regulations.
+                      <strong className="text-white">What we built:</strong> We replaced the legacy site with a modern, clean-URL architecture — migrating carefully so every page's search equity transferred instead of being lost. We built dedicated pages for each service line (Live Scan fingerprinting, mobile fingerprinting, passport photos, background checks), optimized the Google Business Profile for map-pack visibility, and launched a content engine targeting high-intent queries: California record-sealing under SB 731, cannabis screening law, REAL ID, passport-photo rejections.
                     </p>
                     <p>
-                      We integrated real-time reverse-IP de-anonymization technologies directly into the page layer. This allowed us to identify visiting corporate accounts, what specific warehousing content they were reading, and their overall interaction duration in real time. We routed these intent signals directly to their CRM system (HubSpot/Salesforce), automatically triggering personalized cold outreach campaigns targeting decision-makers at the matching corporate domains.
-                    </p>
-                    <p>
-                      Within six months of deployment, this automated pipeline generated 142 qualified meetings with high-intent enterprise buyers and added $3.4M in closed-won annual contract value (ACV).
+                      <strong className="text-white">The result:</strong> Walk-in traffic grew 30%, online appointments and phone calls each grew 3x. The passport-photos page went from position 55.8 to page one (position 10) — from 1 click to 79 — opening a service line that wasn't competing before. "Walk in live scan near me" went from no visibility to page one (~position 7). American Livescan now holds #1–2 for brand searches with a 15%+ click-through rate.
                     </p>
 
-                    {/* Live Simulated Intent Dashboard */}
-                    <div className="mt-8 bg-gray-900 text-gray-150 rounded-xl overflow-hidden shadow-lg border border-gray-800">
-                      <div className="bg-gray-800 px-6 py-4 flex justify-between items-center">
-                        <div>
-                          <h4 className="text-[13px] font-bold uppercase tracking-wider text-white">Live Intent Signal Simulation</h4>
-                          <p className="text-[12px] text-gray-400">Real-time visitor deanonymization feed</p>
-                        </div>
-                        <span className="flex h-3 w-3 relative">
-                          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                          <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
-                        </span>
+                    {/* Near me rankings table */}
+                    <div className="border border-white/10 overflow-hidden mt-2">
+                      <div className="bg-white/5 px-5 py-3 grid grid-cols-[1fr_110px_110px] text-[11px] uppercase tracking-widest text-gray-500 font-semibold">
+                        <span>Query</span>
+                        <span className="text-center">Before</span>
+                        <span className="text-right text-[#F26522]">After</span>
                       </div>
-                      <div className="p-6 font-mono text-[13px] overflow-x-auto">
-                        <div className="flex flex-col gap-4">
-                          <div className="grid grid-cols-[120px_1fr_80px_60px] gap-4 border-b border-gray-800 pb-2 text-gray-400 text-[11px] uppercase tracking-wider">
-                            <span>Account</span>
-                            <span>Active Path</span>
-                            <span>Visited</span>
-                            <span>Intent</span>
-                          </div>
-                          {simulatedVisitors.map((visitor, idx) => (
-                            <div key={idx} className="grid grid-cols-[120px_1fr_80px_60px] gap-4 items-center text-[12px] animate-fade-rise">
-                              <span className="text-white font-medium truncate">{visitor.company}</span>
-                              <span className="text-gray-400 truncate">{visitor.page}</span>
-                              <span className="text-gray-500 text-[11px]">{visitor.time}</span>
-                              <span className={`font-semibold text-right ${visitor.intent >= 90 ? 'text-green-400' : 'text-[#F26522]'}`}>{visitor.intent}%</span>
-                            </div>
-                          ))}
+                      {[
+                        { q: 'walk in live scan near me', before: 'No visibility', after: 'Page 1 (~Pos. 7)' },
+                        { q: 'livescan near me', before: '3 clicks', after: '16 clicks (+3x CTR)' },
+                        { q: 'passport photos', before: 'Pos. 55.8', after: 'Pos. 10 (Page 1)' },
+                        { q: 'Brand searches', before: '—', after: '#1–2, 15%+ CTR' },
+                      ].map((r) => (
+                        <div key={r.q} className="px-5 py-3 grid grid-cols-[1fr_110px_110px] border-t border-white/[0.06] items-center">
+                          <span className="text-[13px] text-gray-300 font-mono pr-3">"{r.q}"</span>
+                          <span className="text-center text-[13px] text-gray-500">{r.before}</span>
+                          <span className="text-right text-[13px] font-bold text-[#F26522]">{r.after}</span>
                         </div>
-                      </div>
+                      ))}
                     </div>
+
+                    <p className="text-gray-500 text-[13px]">Period: last 6 months vs. prior 6 months. Engagement: website redesign, GMB optimization, local SEO, content engine.</p>
                   </div>
                 </article>
 
-                {/* Section 3: GEO & LLM Citations */}
-                <article id="geo-case" className="scroll-mt-24">
-                  <div className="flex items-center gap-3 mb-6">
-                    <div className="w-8 h-8 rounded bg-[#F26522] text-white flex items-center justify-center font-bold text-[14px]">03</div>
-                    <span className="text-[12px] font-semibold text-[#F26522] uppercase tracking-wider">Generative Engine Case Study</span>
+                {/* ── Bottom CTA ── */}
+                <div className="border-t border-white/10 pt-12 flex flex-col sm:flex-row items-start sm:items-center gap-6">
+                  <div>
+                    <p className="text-[13px] text-gray-400 uppercase tracking-wider mb-2">Ready to be next?</p>
+                    <p className="text-lg font-medium text-white">Let's build your case study.</p>
                   </div>
-                  <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight mb-8">
-                    Generative Search Dominance for Fintech Platforms
-                  </h2>
-                  <div className="text-gray-400 text-[15px] sm:text-[16px] leading-[1.75] flex flex-col gap-6">
-                    <p>
-                      As AI search platforms grew to dominate B2B research cycles, an enterprise fintech platform saw traditional organic traffic patterns shift. High-intent corporate buyers were no longer searching for core compliance keywords on Google; instead, they were prompting AI engines like ChatGPT, Claude, and Perplexity to compile recommendations and shortlists. The fintech platform was omitted from these model recommendations.
-                    </p>
-                    <p>
-                      Gobiya designed a comprehensive Generative Engine Optimization (GEO) campaign. We mapped the semantic retrieval patterns these models utilize during payment gateway and B2B accounting queries. We established clear entity relations using nested JSON-LD schema structured markup, linking the fintech domain to verified Knowledge Graph definitions using `about` and `knowsAbout` references.
-                    </p>
-                    <p>
-                      We optimized the semantic structure of their technical compliance articles, formatting data into clear summaries, comparison tables, and direct Q&A blocks designed specifically for Retrieval-Augmented Generation (RAG) models. Additionally, we ran a targeted semantic PR campaign, placing mentions of their fintech architecture in high-authority repositories and open journals that LLMs utilize in their pre-training and real-time search directories.
-                    </p>
-                    <p>
-                      Within 120 days, the brand went from 0% recommendation presence to being cited in 84% of B2B fintech compliance queries on ChatGPT and Claude, prompting a 240% increase in pre-qualified sales calls.
-                    </p>
-                  </div>
-                </article>
-
-                {/* Section 4: Performance Dev */}
-                <article id="conversion-case" className="scroll-mt-24">
-                  <div className="flex items-center gap-3 mb-6">
-                    <div className="w-8 h-8 rounded bg-[#F26522] text-white flex items-center justify-center font-bold text-[14px]">04</div>
-                    <span className="text-[12px] font-semibold text-[#F26522] uppercase tracking-wider">Technical Engineering Case Study</span>
-                  </div>
-                  <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight mb-8">
-                    Sub-Second React Architecture for Cyber Security
-                  </h2>
-                  <div className="text-gray-400 text-[15px] sm:text-[16px] leading-[1.75] flex flex-col gap-6">
-                    <p>
-                      An enterprise cybersecurity provider was directing high-spend PPC ad traffic to a legacy WordPress site. Due to outdated themes, database overhead, and heavy plugins, their page load speeds averaged 4.6 seconds, failing Core Web Vitals and causing a high bounce rate of 58%. The conversion rate from paid traffic to demo requests was stuck at 0.8%.
-                    </p>
-                    <p>
-                      Gobiya completely rebuilt the digital application from scratch using React, Vite, and tailwind.css, achieving a page load speed of 0.4 seconds. We eliminated slow plugins, built custom lightweight components, and structured clean conversion funnels (sticky CTAs, micro-interactive forms, and live security calculators).
-                    </p>
-                    <p>
-                      We integrated closed-loop multi-touch attribution metrics to trace the user journey from the first touch (whether a search recommendation or GEO citation) to the final demo submission. By eliminating loading lag and styling the user experience with modern UI principles, the site's bounce rate dropped to 22%, and the conversion rate surged from 0.8% to 2.8%, producing a 250% increase in demo request volume.
-                    </p>
-                  </div>
-                </article>
+                  <a
+                    href="/book"
+                    className="group flex items-center bg-[#F26522] hover:bg-[#e05a1a] text-white pl-5 pr-2 py-2 transition-colors duration-300"
+                  >
+                    <div className="flex flex-col overflow-hidden h-[20px] justify-start items-start relative mr-3">
+                      <span className="text-[13px] font-medium leading-[20px] transition-transform duration-500 group-hover:-translate-y-full">Start your audit</span>
+                      <span className="text-[13px] font-medium leading-[20px] absolute top-full transition-transform duration-500 group-hover:-translate-y-full">Start your audit</span>
+                    </div>
+                    <div className="w-8 h-8 bg-white flex items-center justify-center">
+                      <ArrowRight className="w-4 h-4 text-[#F26522] transition-transform duration-500 group-hover:-rotate-45" />
+                    </div>
+                  </a>
+                </div>
 
               </div>
             </div>
