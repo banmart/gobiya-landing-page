@@ -95,6 +95,7 @@ function App({ url }: AppProps) {
     const legacyRedirects: Record<string, string> = {
       '/company/insights': '/insights',
       '/on-page-seo-los-angeles': '/markets/southern-california',
+      '/success-stories': '/company/success-stories',
       '/services': '/capabilities',
       '/services/seo': '/capabilities/forensic-seo-penalty-recovery',
       '/services/geo-optimization': '/capabilities/generative-engine-optimization',

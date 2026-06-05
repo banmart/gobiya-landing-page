@@ -36,7 +36,11 @@ const metadataMap: Record<string, SEOMetadata> = {
   },
   '/company/success-stories': {
     title: 'Inside Our Wins: Real Case Studies, 300%+ Traffic Growth | Gobiya',
-    description: 'No vanity metrics here. Read the breakdown of how we reversed manual actions, scaled B2B outbound pipelines, and secured generative engine citations.'
+    description: 'No vanity metrics here. Read how SmileCenter Dentistry achieved 5x patient inquiries and American Livescan grew online bookings threefold.'
+  },
+  '/success-stories': {
+    title: 'Inside Our Wins: Real Case Studies, 300%+ Traffic Growth | Gobiya',
+    description: 'No vanity metrics here. Read how SmileCenter Dentistry achieved 5x patient inquiries and American Livescan grew online bookings threefold.'
   },
   '/company/approach': {
     title: 'Our Blueprint: Algorithmic Audits & Pipeline Acceleration | Gobiya',

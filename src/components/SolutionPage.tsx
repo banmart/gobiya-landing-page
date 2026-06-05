@@ -108,10 +108,10 @@ const SOLUTIONS_DATA: Record<string, SolutionData> = {
     ctaText: 'Audit my traffic loss',
     ctaLink: '/book',
     stats: [
-      { value: '68%', label: 'of sites hit by core updates', text: 'never fully recover their previous peak traffic without structural changes.' },
-      { value: '3-6', label: 'months average recovery time', text: 'for manual actions when proper forensic diagnosis is applied.' },
-      { value: '+850%', label: 'traffic rebound post-HCU', text: 'for our top performing recovery case study in the SaaS sector.' },
-      { value: '+200%', label: 'increase in organic pipeline', text: 'rebuilt for enterprises recovering from algorithmic drops.' }
+      { value: '5x', label: 'Patient Inquiries', text: 'inbound phone calls and form completions grew fivefold across multiple office locations.' },
+      { value: '2.8x', label: 'Search Impression Growth', text: 'monthly impressions rose from 75K to 213K following structural local audits.' },
+      { value: '+44%', label: 'Organic Clicks', text: 'steady growth in organic visitor click volume over a three-month window.' },
+      { value: 'Top 5', label: 'Branded Local Rankings', text: 'achieved and held across Anaheim, Palmdale, Downey, Long Beach, and West Covina markets.' }
     ],
     approachTitle: 'Forensic diagnosis. Surgical remediation.',
     approachSubtitle: "A manual action or a severe algorithmic suppression is not a standard SEO problem; it is an existential business crisis. We do not try to optimize a penalized site. We forensically rebuild its trust metrics.",
@@ -136,10 +136,11 @@ const SOLUTIONS_DATA: Record<string, SolutionData> = {
       { title: 'Re-validation Strategy', content: "We force re-crawling of the pruned and repaired architecture, pushing Google's systems to re-evaluate the domain's quality score based on the new baseline." }
     ],
     caseStudy: {
-      tag: 'E-commerce Brand',
-      headline: 'E-commerce retailer recovers from -80% HCU drop, exceeding previous peak traffic.',
-      description: 'After a devastating Helpful Content Update penalty, we pruned 40,000 thin category pages, consolidated product reviews, and restored algorithmic trust within 4 months.',
-      ctaText: 'Start your recovery'
+      tag: 'Dental Clinic Group',
+      headline: 'SmileCenter Dentistry — 5x Patient Inquiries Across Southern California.',
+      description: 'By resolving multi-location crawl bloat, implementing dedicated local landing pages with matching local schemas, and optimizing Google Business profiles, we grew patient appointments and phone calls fivefold.',
+      backgroundImage: '/images/smilecenter-office.webp',
+      ctaText: 'View the case study'
     }
   },
 
@@ -237,10 +238,10 @@ const SOLUTIONS_DATA: Record<string, SolutionData> = {
     ctaText: 'Start a development project',
     ctaLink: '/book',
     stats: [
-      { value: '< 1s', label: 'Time to Interactive', text: 'guaranteed on all our custom React and Vite web applications.' },
-      { value: '3.5x', label: 'higher conversion rates', text: 'on average for platforms engineered with bespoke conversion architecture.' },
-      { value: '100', label: 'Core Web Vitals scores', text: 'across mobile and desktop, ensuring maximum algorithmic ranking eligibility.' },
-      { value: '0', label: 'template bloat', text: 'Every line of code is written from scratch for your specific business logic.' }
+      { value: '3x', label: 'Online Bookings & Calls', text: 'appointments and phone call volume grew threefold post-migration.' },
+      { value: '+30%', label: 'Walk-In Customer Traffic', text: 'increase in physical foot traffic measured at the point of service.' },
+      { value: '100/100', label: 'Core Web Vitals Score', text: 'achieved and maintained across mobile and desktop interfaces.' },
+      { value: '+47%', label: 'Organic Click Growth', text: 'improvement in high-intent keyword search click volumes.' }
     ],
     approachTitle: 'Performance architecture. Sub-second speed.',
     approachSubtitle: 'Page-builder templates throttle Core Web Vitals, organic ranking eligibility, and conversion rate. We build sites from scratch in React and Vite, with conversion architecture engineered into the page layer.',
@@ -265,10 +266,11 @@ const SOLUTIONS_DATA: Record<string, SolutionData> = {
       { title: 'Performance Hand-off', content: 'We launch a site that meets sub-second load times, clean Core Web Vitals, full schema implementation, and the rendering standards modern search engines require.' }
     ],
     caseStudy: {
-      tag: 'Web3 Platform',
-      headline: 'Trading platform handles 10k+ concurrent users with zero latency.',
-      description: 'We engineered a custom React application with complex smart contract integrations, delivering real-time data feeds and flawless user experience under extreme load.',
-      ctaText: 'Build your platform'
+      tag: 'Local Service Provider',
+      headline: 'American Livescan Fingerprinting — 3x Online Appointments & Phone Calls.',
+      description: 'We replaced their legacy .htm/.html page template architecture with a custom React/Vite development stack, migrating existing page SEO authority without loss and growing online bookings threefold.',
+      backgroundImage: '/images/livescan-office.webp',
+      ctaText: 'View the case study'
     }
   }
 };

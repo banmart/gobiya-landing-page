@@ -340,20 +340,6 @@ const BookingPage: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="border border-white/10 rounded-xl p-5 bg-white/5 space-y-3">
-                  <p className="text-[11px] font-bold text-gray-400 uppercase tracking-wider">Featured Podcast Episode</p>
-                  <h4 className="text-[14px] font-semibold text-white leading-snug">Winning with Generative Engine Optimization (GEO)</h4>
-                  <p className="text-[12px] text-gray-400 leading-relaxed">
-                    Listen to Steve Martin outline how LLMs build client shortlists and what criteria they use to pull citations.
-                  </p>
-                  <div className="pt-2">
-                    <audio controls className="w-full" style={{ filter: 'invert(1) hue-rotate(180deg)' }}>
-                      <source src="/audio/Winning_with_generative_engine_optimization.m4a" type="audio/mp4" />
-                      Your browser does not support the audio element.
-                    </audio>
-                  </div>
-                </div>
-
                 <div className="flex items-center gap-2.5 text-xs text-gray-500">
                   <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
                   <span>Steve is currently accepting qualified pipeline opportunities in CA/US regions.</span>
