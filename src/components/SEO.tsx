@@ -174,6 +174,14 @@ const metadataMap: Record<string, SEOMetadata> = {
   '/author/steve-martin': {
     title: 'Steve Martin | Growth Engineer & Founder of Gobiya | Gobiya',
     description: 'Credentials and author profile for Steve Martin. Over 15 years engineering search engine dominance, custom React platforms, and sales pipeline automation.'
+  },
+  '/case-studies/smile-center-dentistry': {
+    title: 'SmileCenter Dentistry: 5x Patient Inquiries With Multi-Location SEO | Gobiya',
+    description: 'How we rebuilt SmileCenter\'s website on React/Vite, architected individual location pages for Southern California markets, and drove a 5x increase in form completions and phone calls.'
+  },
+  '/case-studies/american-livescan': {
+    title: 'American Livescan: 3x Bookings & Calls With Site Rebuild + Local SEO | Gobiya',
+    description: 'How we replaced a legacy .htm site with a clean-URL architecture, optimized the Google Business Profile, and tripled online appointments and phone calls for a high-volume LA fingerprinting service.'
   }
 };
 

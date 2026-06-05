@@ -7,6 +7,8 @@ import ThankYouPage from './components/ThankYouPage';
 import BookingPage from './components/BookingPage';
 import SolutionPage from './components/SolutionPage';
 import RegionalHubPage from './components/RegionalHubPage';
+import SmileCenterCaseStudy from './components/SmileCenterCaseStudy';
+import AmericanLivescanCaseStudy from './components/AmericanLivescanCaseStudy';
 import SEO from './components/SEO';
 import PageTransition, { navigateWithTransition } from './components/PageTransition';
 
@@ -153,6 +155,10 @@ function App({ url }: AppProps) {
         <SolutionPage path={normalizedPath} />
       ) : regionalHubSlug ? (
         <RegionalHubPage region={regionalHubSlug} />
+      ) : normalizedPath === '/case-studies/smile-center-dentistry' ? (
+        <SmileCenterCaseStudy />
+      ) : normalizedPath === '/case-studies/american-livescan' ? (
+        <AmericanLivescanCaseStudy />
       ) : (
         <ServiceSubpage path={normalizedPath} />
       )}

@@ -309,18 +309,25 @@ const AxionLanding = () => {
       {/* STATS BAR */}
       <div className="flex flex-col md:flex-row w-full bg-[#e05a1a] border-y border-white/10 z-20 relative">
         {[
-          { value: '58%', label: 'Zero-Click searches', text: 'intercepted by AI Overviews & featured snippets.' },
-          { value: '+2,012%', label: 'AI referral growth', text: 'for our optimized category-defining entity nodes.' },
-          { value: '3-6m', label: 'Average recovery timeline', text: 'for search updates during broad evaluation cycles.' },
+          { value: '5x', label: 'Patient inquiries', text: 'SmileCenter Dentistry — form completions & phone calls.', href: '/case-studies/smile-center-dentistry', client: 'SmileCenter' },
+          { value: '3x', label: 'Bookings & calls', text: 'American Livescan — online appointments & inbound calls.', href: '/case-studies/american-livescan', client: 'Livescan' },
+          { value: '+30%', label: 'Walk-in traffic', text: 'American Livescan — driven by GMB optimization & site rebuild.', href: '/case-studies/american-livescan', client: 'Livescan' },
           { value: '100', label: 'Core Web Vitals', text: 'score guaranteed on our custom React applications.' }
         ].map((stat, idx) => (
-          <div key={idx} className={`flex-1 p-8 lg:p-10 ${idx % 2 === 0 ? 'bg-[#F26522]' : 'bg-[#e05a1a]'} text-white`}>
+          <div key={idx} className={`flex-1 p-8 lg:p-10 ${idx % 2 === 0 ? 'bg-[#F26522]' : 'bg-[#e05a1a]'} text-white ${stat.href ? 'group cursor-pointer hover:brightness-110 transition-[filter] duration-300' : ''}`}
+            onClick={stat.href ? () => { window.history.pushState({}, '', stat.href); window.dispatchEvent(new PopStateEvent('popstate')); window.scrollTo(0,0); } : undefined}
+          >
             <div className="text-[clamp(2.2rem,3.5vw,3rem)] font-bold tracking-tighter leading-none mb-2 font-display">
               {stat.value}
             </div>
             <div className="text-[13px] sm:text-[14px] leading-tight font-medium opacity-90 font-body">
               <span className="font-semibold block sm:inline">{stat.label}</span> — <span className="opacity-80 font-normal">{stat.text}</span>
             </div>
+            {stat.href && (
+              <div className="mt-2 text-[11px] font-semibold uppercase tracking-widest opacity-60 group-hover:opacity-100 transition-opacity flex items-center gap-1">
+                View case study →
+              </div>
+            )}
           </div>
         ))}
       </div>

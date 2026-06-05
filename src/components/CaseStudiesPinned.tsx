@@ -163,9 +163,13 @@ const CaseStudiesPinned = () => {
           </div>
 
           {/* Card 4 */}
-          <div className="group cursor-pointer flex-none w-[85vw] md:w-[45vw] lg:w-[35vw] select-none">
+          <a href="/case-studies/smile-center-dentistry" className="group cursor-pointer flex-none w-[85vw] md:w-[45vw] lg:w-[35vw] select-none">
             <div className="aspect-[4/3] overflow-hidden bg-[#1a1d2e] relative isolate mb-4 rounded-xl shadow-lg">
               <ParallaxMedia type="video" src="/videos/smilecenter-screencast.webm" autoPlay muted loop playsInline className="w-full h-full" />
+              {/* Metric badge */}
+              <div className="absolute top-4 right-4 bg-[#F26522] text-white text-[12px] font-bold px-3 py-1.5 z-10 rounded-full">
+                5x Inquiries
+              </div>
               <div className="absolute bottom-4 left-4 h-9 bg-gray-900 flex items-center overflow-hidden w-9 group-hover:w-[168px] transition-all duration-300 ease-in-out z-10 px-2.5 rounded-full">
                 <div className="flex-shrink-0 w-4 h-4 mr-2 flex items-center justify-center -ml-0.5">
                   <ArrowRight className="w-3.5 h-3.5 text-white -rotate-45 group-hover:rotate-0 transition-transform duration-300 ease-in-out" />
@@ -176,8 +180,29 @@ const CaseStudiesPinned = () => {
               </div>
             </div>
             <h3 className="text-[16px] sm:text-[18px] font-display font-medium text-gray-900 mt-3">SmileCenter Dental Offices</h3>
-            <p className="text-[14px] text-gray-600 mt-1.5 leading-relaxed font-body max-w-[90%]">New Website Upgrade. Multi-Location Structure with Yelp and office pages. - React Vite.</p>
-          </div>
+            <p className="text-[14px] text-gray-600 mt-1.5 leading-relaxed font-body max-w-[90%]">5x patient inquiries · 2.8x search impressions · Multi-location SEO · React Vite.</p>
+          </a>
+
+          {/* Card 5 */}
+          <a href="/case-studies/american-livescan" className="group cursor-pointer flex-none w-[85vw] md:w-[45vw] lg:w-[35vw] select-none">
+            <div className="aspect-[4/3] overflow-hidden bg-[#1a1d2e] relative isolate mb-4 rounded-xl shadow-lg">
+              <img src="/images/livescan-office.webp" alt="American Livescan" className="w-full h-full object-cover" />
+              {/* Metric badge */}
+              <div className="absolute top-4 right-4 bg-[#F26522] text-white text-[12px] font-bold px-3 py-1.5 z-10 rounded-full">
+                3x Bookings
+              </div>
+              <div className="absolute bottom-4 left-4 h-9 bg-gray-900 flex items-center overflow-hidden w-9 group-hover:w-[168px] transition-all duration-300 ease-in-out z-10 px-2.5 rounded-full">
+                <div className="flex-shrink-0 w-4 h-4 mr-2 flex items-center justify-center -ml-0.5">
+                  <ArrowRight className="w-3.5 h-3.5 text-white -rotate-45 group-hover:rotate-0 transition-transform duration-300 ease-in-out" />
+                </div>
+                <span className="text-[13px] font-medium text-white whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 delay-100">
+                  View case study
+                </span>
+              </div>
+            </div>
+            <h3 className="text-[16px] sm:text-[18px] font-display font-medium text-gray-900 mt-3">American Livescan Fingerprinting</h3>
+            <p className="text-[14px] text-gray-600 mt-1.5 leading-relaxed font-body max-w-[90%]">3x online bookings & calls · +30% walk-ins · Local SEO & site rebuild · Los Angeles.</p>
+          </a>
 
         </div>
       </div>
