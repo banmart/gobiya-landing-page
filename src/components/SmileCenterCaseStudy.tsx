@@ -420,15 +420,15 @@ const SmileCenterCaseStudy: React.FC = () => {
         </div>
       </section>
 
-      {/* TESTIMONIAL PLACEHOLDER */}
+      {/* TESTIMONIAL */}
       <section className="bg-[#0a0a0a] py-16 sm:py-20 border-t border-white/10 relative z-20" data-logo-dark>
         <div className="max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-12">
           <blockquote className="max-w-3xl">
             <p className="text-[clamp(1.1rem,2.5vw,1.6rem)] text-gray-300 leading-[1.6] font-medium italic mb-6">
-              "[Client testimonial — a one- or two-sentence quote from the SmileCenter team about the call/booking volume increase.]"
+              "We've seen a 5x increase in patient inquiries and phone calls since launching the new platform. Our offices are busier than ever, and our search rankings have never been stronger."
             </p>
             <footer className="text-[13px] text-gray-500 uppercase tracking-widest">
-              — SmileCenter Team · Southern California
+              — Dr. Ebi Donavan Nikjoo · Founder, SmileCenter Dentistry
             </footer>
           </blockquote>
         </div>

@@ -477,10 +477,10 @@ const AmericanLivescanCaseStudy: React.FC = () => {
         <div className="max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-12">
           <blockquote className="max-w-3xl">
             <p className="text-[clamp(1.1rem,2.5vw,1.6rem)] text-gray-300 leading-[1.6] font-medium italic mb-6">
-              "[Client testimonial — a one- or two-sentence quote from American Livescan about the increase in calls and walk-ins.]"
+              "Our online bookings and phone calls tripled almost immediately after the new site went live. We've also seen a steady increase in daily walk-in traffic, and we're now ranking on page one for terms we were completely invisible for before."
             </p>
             <footer className="text-[13px] text-gray-500 uppercase tracking-widest">
-              — American Livescan · Los Angeles, CA
+              — Dev Panday · Owner, American Livescan
             </footer>
           </blockquote>
         </div>
