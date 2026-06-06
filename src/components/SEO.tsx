@@ -7,8 +7,36 @@ interface SEOMetadata {
 
 const metadataMap: Record<string, SEOMetadata> = {
   '/': {
-    title: 'More Traffic, More Leads, Less Guesswork | Gobiya',
-    description: 'Tired of being invisible online? Gobiya helps you rank higher, get cited by AI, and turn traffic into customers. Free audit, real results.'
+    title: 'AI SEO & GEO Agency: Get Cited by ChatGPT & Google | Gobiya',
+    description: 'Stop losing clicks to AI Overviews. Gobiya is a technical AI SEO & Generative Engine Optimization (GEO) agency. We optimize your brand entity to rank #1 on Google and get cited natively by ChatGPT, Claude, and Gemini.'
+  },
+  '/locations/glendale': {
+    title: 'Glendale AI SEO & GEO Services | local map pack optimization | Gobiya',
+    description: 'Stop losing local Glendale leads. We optimize your Google Business Profile and local entity schema to rank #1 in maps and get cited natively in AI searches.'
+  },
+  '/locations/beverly-hills': {
+    title: 'Beverly Hills Premium AI SEO & GEO Services | Gobiya',
+    description: 'Luxury local SEO and Generative Engine Optimization. We align your brand entity with high-authority coordinates to rank top-5 on Google and get cited by ChatGPT.'
+  },
+  '/locations/northridge': {
+    title: 'Northridge Local SEO & Google Maps Optimization Services | Gobiya',
+    description: 'Dominating Northridge local search. We optimize your San Fernando Valley entity footprint to rank top-3 in map packs and win AI search recommendations.'
+  },
+  '/locations/studio-city': {
+    title: 'Studio City Local SEO & AI Citation GEO Services | Gobiya',
+    description: 'Own Ventura Blvd search. We optimize local entity graphs for Studio City creative agencies and businesses to rank top-5 on Google and get cited by Claude and Gemini.'
+  },
+  '/on-page-seo-los-angeles': {
+    title: 'On-Page SEO Los Angeles: Engineered for Google & AI Citations | Gobiya',
+    description: 'Stop losing clicks. We architect high-performance, entity-optimized on-page SEO across Los Angeles to win Google rankings and ChatGPT citations. Get a free audit.'
+  },
+  '/services/local-seo': {
+    title: 'Local SEO Service Los Angeles: Elite Maps & AI Domination | Gobiya',
+    description: 'Stop losing local customers. Our elite local SEO service connects Google Maps, GBP optimization, and AI citations to put your brand at position #1. Free audit.'
+  },
+  '/local-seo-service': {
+    title: 'Local SEO Service Los Angeles: Elite Maps & AI Domination | Gobiya',
+    description: 'Stop losing local customers. Our elite local SEO service connects Google Maps, GBP optimization, and AI citations to put your brand at position #1. Free audit.'
   },
   '/capabilities/generative-engine-optimization': {
     title: 'Get Cited by ChatGPT or Stay Invisible to AI Search | Gobiya',
@@ -112,8 +140,8 @@ const metadataMap: Record<string, SEOMetadata> = {
     description: 'Remote agencies lose context. Learn why local partnership, real-time collaboration, and Los Angeles business fluency are key to winning local organic rankings.'
   },
   '/insights/local-seo-los-angeles': {
-    title: 'LA Local SEO: Crack Google\'s Local Algorithm | Gobiya',
-    description: 'Google\'s local algorithm is changing fast. Here is the exact checklist for ranking in the Los Angeles local pack and getting recommended by Gemini.'
+    title: 'Local SEO Service Los Angeles: Elite Maps & AI Domination | Gobiya',
+    description: 'Stop losing local customers. Our elite local SEO service connects Google Maps, GBP optimization, and AI citations to put your brand at position #1. Free audit.'
   },
   '/insights/los-angeles-local-seo-explained': {
     title: 'The 90-Day Cadence: How We Win Local Search in LA | Gobiya',

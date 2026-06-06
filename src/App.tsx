@@ -125,7 +125,14 @@ function App({ url }: AppProps) {
     
     const normalized = currentPath.toLowerCase().replace(/\/$/, '') || '/';
     
-    if (normalized === '/locations' || normalized.startsWith('/locations/')) {
+    const allowedLocations = [
+      '/locations/glendale',
+      '/locations/beverly-hills',
+      '/locations/northridge',
+      '/locations/studio-city'
+    ];
+    
+    if ((normalized === '/locations' || normalized.startsWith('/locations/')) && !allowedLocations.includes(normalized)) {
       window.history.replaceState({}, '', '/contact');
       setCurrentPath('/contact');
       return;
@@ -162,9 +169,9 @@ function App({ url }: AppProps) {
   const articleMatch = normalizedPath.match(/^\/insights\/([a-z0-9-]+)$/);
   const articleSlug = articleMatch ? articleMatch[1] : null;
 
-  // Detect regional hub routes: /markets/[region]
-  const regionalHubMatch = normalizedPath.match(/^\/markets\/([a-z0-9-]+)$/);
-  const regionalHubSlug = regionalHubMatch ? regionalHubMatch[1] : null;
+  // Detect regional hub routes: /markets/[region] or /locations/[region]
+  const regionalHubMatch = normalizedPath.match(/^\/(markets|locations)\/([a-z0-9-]+)$/);
+  const regionalHubSlug = regionalHubMatch ? regionalHubMatch[2] : null;
 
   // Detect solution routes
   const isSolutionRoute = [

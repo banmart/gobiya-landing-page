@@ -185,7 +185,7 @@ const AxionLanding = () => {
                 We make sure customers find you everywhere from <span className="text-[#F26522] font-semibold">Google</span> to <span className="text-[#F26522] font-semibold">ChatGPT</span>.
               </h1>
               <p className="text-[16px] sm:text-[18px] text-gray-400 max-w-[700px] leading-relaxed mb-8">
-                As a premier search engine optimization firm and content marketing agency in Los Angeles, we engineer AI-driven SEO, topical architectures, and automated sales pipelines to recover lost traffic and scale predictable revenue.
+                As a premier B2B AI SEO & GEO agency, we engineer search visibility, AI citations, and hyper-local target maps across Los Angeles neighborhoods (from Beverly Hills to Glendale) to recover lost traffic and scale predictable pipeline.
               </p>
               
               <div className="flex flex-wrap items-center gap-4 sm:gap-5">
