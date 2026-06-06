@@ -4,13 +4,10 @@ import './StaggeredMenu.css';
 
 const DEFAULT_MENU_ITEMS = [
   { label: 'Capabilities', isHeader: true },
-  { label: 'Forensic SEO & Penalty Recovery', link: '/capabilities/forensic-seo-penalty-recovery' },
-  { label: 'Generative Engine Optimization (GEO)', link: '/capabilities/generative-engine-optimization' },
-  { label: 'Conversion Architecture', link: '/capabilities/conversion-architecture' },
-  { label: 'Semantic Search Intelligence', link: '/capabilities/semantic-search-intelligence' },
-  { label: 'Custom Digital Infrastructure', link: '/capabilities/custom-digital-infrastructure' },
-  { label: 'Markets', isHeader: true },
-  { label: 'Southern California', link: '/markets/southern-california' },
+  { label: 'Web Development', link: '/capabilities/web-development' },
+  { label: 'Native CRM', link: '/capabilities/native-crm' },
+  { label: 'SEO & Discoverability', link: '/capabilities/seo-discoverability' },
+  { label: 'Blockchain & Web3 Dev', link: '/capabilities/blockchain-web3-development' },
   { label: 'Company', isHeader: true },
   { label: 'About the Agency', link: '/company/about' },
   { label: 'Success Stories', link: '/company/success-stories' },

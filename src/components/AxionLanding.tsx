@@ -180,12 +180,12 @@ const AxionLanding = () => {
             
             {/* Left Column: Heading and Subtitle */}
             <div className="flex flex-col justify-center text-left">
-              <p className="text-[13px] sm:text-[14px] text-gray-400 tracking-wide mb-5 sm:mb-8 uppercase font-medium">Gobiya AI & SEO Agency</p>
+              <p className="text-[13px] sm:text-[14px] text-gray-400 tracking-wide mb-5 sm:mb-8 uppercase font-medium">Gobiya Web Design & Engineering</p>
               <h1 className="text-[clamp(2.2rem,5vw,3.8rem)] font-medium leading-[1.1] tracking-[-0.03em] text-white font-display mb-6">
-                We make sure customers find you everywhere from <span className="text-[#F26522] font-semibold">Google</span> to <span className="text-[#F26522] font-semibold">ChatGPT</span>.
+                We don't sell SEO. We build fast, modern websites engineered to <span className="text-[#F26522] font-semibold">rank and convert</span>.
               </h1>
               <p className="text-[16px] sm:text-[18px] text-gray-400 max-w-[700px] leading-relaxed mb-8">
-                As a premier B2B AI SEO & GEO agency, we engineer search visibility, AI citations, and hyper-local target maps across Los Angeles neighborhoods (from Beverly Hills to Glendale) to recover lost traffic and scale predictable pipeline.
+                We replace bloated page-builders with sub-second custom React/Vite builds, integrate lightweight customer pipelines directly into your codebase for 100% data ownership, and implement secure smart contracts natively.
               </p>
               
               <div className="flex flex-wrap items-center gap-4 sm:gap-5">
@@ -219,10 +219,10 @@ const AxionLanding = () => {
 
                     <div className="space-y-3">
                       {[
-                        { id: 'geo', label: 'GEO / AI Overview Citation' },
-                        { id: 'seo', label: 'Forensic SEO & Traffic Recovery' },
-                        { id: 'b2b', label: 'B2B Pipeline & Outbound Automation' },
-                        { id: 'dev', label: 'Bespoke React Engineering' }
+                        { id: 'dev', label: 'Web Development (React & Vite)' },
+                        { id: 'crm', label: 'Native CRM & Lead Pipelines' },
+                        { id: 'seo', label: 'SEO & Discoverability' },
+                        { id: 'web3', label: 'Blockchain & Web3 Dev' }
                       ].map((service) => {
                         const isChecked = selectedServices.includes(service.id);
                         return (
@@ -271,7 +271,7 @@ const AxionLanding = () => {
                           <span>Analyzing Domain...</span>
                         </div>
                       ) : (
-                        <span>Request Forensic Audit</span>
+                        <span>Request Build Audit</span>
                       )}
                     </button>
                   </form>
@@ -283,7 +283,7 @@ const AxionLanding = () => {
                     <div>
                       <h3 className="text-2xl font-medium text-white mb-2 font-display">Request Received</h3>
                       <p className="text-gray-400 text-[15px] leading-relaxed max-w-sm mx-auto">
-                        We are running a forensic baseline of <strong className="text-white">{domain}</strong> against major AI engines and Google core updates. Our team will contact you with the audit package within 24 hours.
+                        We are running a baseline performance audit of <strong className="text-white">{domain}</strong>. Our team will contact you with custom build recommendations within 24 hours.
                       </p>
                     </div>
                     <button 
@@ -311,8 +311,8 @@ const AxionLanding = () => {
         {[
           { value: '5x', label: 'Patient inquiries', text: 'SmileCenter Dentistry — form completions & phone calls.', href: '/case-studies/smile-center-dentistry', client: 'SmileCenter' },
           { value: '3x', label: 'Bookings & calls', text: 'American Livescan — online appointments & inbound calls.', href: '/case-studies/american-livescan', client: 'Livescan' },
-          { value: '+30%', label: 'Walk-in traffic', text: 'American Livescan — driven by GMB optimization & site rebuild.', href: '/case-studies/american-livescan', client: 'Livescan' },
-          { value: '100', label: 'Core Web Vitals', text: 'score guaranteed on our custom React applications.' }
+          { value: '+30%', label: 'Walk-in traffic', text: 'American Livescan — driven by speed & technical discoverability.', href: '/case-studies/american-livescan', client: 'Livescan' },
+          { value: '100', label: 'Core Web Vitals', text: 'score guaranteed on our custom React/Vite builds.' }
         ].map((stat, idx) => (
           <div key={idx} className={`flex-1 p-8 lg:p-10 ${idx % 2 === 0 ? 'bg-[#F26522]' : 'bg-[#e05a1a]'} text-white ${stat.href ? 'group cursor-pointer hover:brightness-110 transition-[filter] duration-300' : ''}`}
             onClick={stat.href ? () => { window.history.pushState({}, '', stat.href); window.dispatchEvent(new PopStateEvent('popstate')); window.scrollTo(0,0); } : undefined}
@@ -334,14 +334,14 @@ const AxionLanding = () => {
 
       {/* SECTION 2: MARQUEE */}
       <div data-logo-dark className="relative w-full">
-        <Marquee items={['AI-DRIVEN SEO', 'CONTENT CLUSTERS', 'TRAFFIC RECOVERY', 'TECHNICAL SEO', 'ALGORITHMIC DOMINANCE']} />
+        <Marquee items={['CUSTOM WEB DEV', 'NATIVE CRM', 'BUILT-IN SEO', 'SMART CONTRACTS', 'CORE WEB VITALS', 'REACT & VITE']} />
         <div className="logo-marker absolute right-[15%] top-[50%] w-10 h-10 -translate-y-1/2 pointer-events-none" />
       </div>
 
       {/* SECTION 3: SCROLL REVEAL INTRO */}
       <section className="w-full relative" data-logo-dark>
         <HorizontalScrollText 
-          text="AI-powered SEO and content, delivering fast rankings and recovery. Through cutting-edge AI and data strategies, we help brands recover traffic and skyrocket visibility." 
+          text="We don't sell SEO. We build fast, modern websites engineered to rank and convert — with native CRM and blockchain built in." 
         />
         <div className="logo-marker absolute left-[10%] top-[50%] w-10 h-10 -translate-y-1/2 pointer-events-none" />
       </section>
@@ -383,20 +383,20 @@ const AxionLanding = () => {
               <div className="space-y-2 border-t border-gray-200 font-body">
                 {[
                   {
-                    title: '01 / Conversion Architecture & Behavioral Psychology',
-                    content: 'Structuring digital ecosystems and landing pages optimized around user intent and conversion triggers.'
+                    title: '01 / Web Development (React & Vite)',
+                    content: 'We build high-performance custom websites in React and Vite, engineered from the ground up for sub-second speeds and flawless crawler readability.'
                   },
                   {
-                    title: '02 / Semantic Search & GEO (Generative Engine Optimization)',
-                    content: 'Engineering content and technical data states to ensure brand visibility within traditional search indexes, LLM-driven knowledge graphs, and AI-generated summaries.'
+                    title: '02 / Native CRM Integration',
+                    content: 'Bespoke customer databases and lead pipelines built directly into your application codebase, giving you 100% data ownership.'
                   },
                   {
-                    title: '03 / Algorithmic Penalty Recovery',
-                    content: 'Diagnosing core web vital friction, indexing roadblocks, and complex crawl-frequency drops to restore organic traffic lost to major search algorithm updates.'
+                    title: '03 / SEO & Discoverability',
+                    content: 'Built-in crawler-readiness, semantic graphs, and structuring designed to capture search rankings and AI citations natively.'
                   },
                   {
-                    title: '04 / Sub-Second Infrastructure',
-                    content: 'Designing and deploying rapid, custom web environments (such as React and Vite-based frameworks) coupled with optimized schema markup to maximize data density and site performance.'
+                    title: '04 / Blockchain & Web3 Dev',
+                    content: 'Custom Solidity/Rust smart contracts, dApps, and secure decentralized wallet integrations engineered into your product stack.'
                   }
                 ].map((step, idx) => {
                   const isOpen = activeStep === idx;

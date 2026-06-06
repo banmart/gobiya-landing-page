@@ -125,33 +125,34 @@ function App({ url }: AppProps) {
     
     const normalized = currentPath.toLowerCase().replace(/\/$/, '') || '/';
     
-    const allowedLocations = [
-      '/locations/glendale',
-      '/locations/beverly-hills',
-      '/locations/northridge',
-      '/locations/studio-city'
-    ];
-    
-    if ((normalized === '/locations' || normalized.startsWith('/locations/')) && !allowedLocations.includes(normalized)) {
-      window.history.replaceState({}, '', '/contact');
-      setCurrentPath('/contact');
+    if (
+      normalized === '/locations' || normalized.startsWith('/locations/') ||
+      normalized === '/markets' || normalized.startsWith('/markets/')
+    ) {
+      window.history.replaceState({}, '', '/');
+      setCurrentPath('/');
       return;
     }
     
     const legacyRedirects: Record<string, string> = {
       '/company/insights': '/insights',
-      '/on-page-seo-los-angeles': '/markets/southern-california',
+      '/on-page-seo-los-angeles': '/capabilities/seo-discoverability',
       '/success-stories': '/company/success-stories',
       '/services': '/capabilities',
-      '/services/seo': '/capabilities/forensic-seo-penalty-recovery',
-      '/services/geo-optimization': '/capabilities/generative-engine-optimization',
-      '/services/lead-generation': '/capabilities/conversion-architecture',
-      '/services/web-development': '/capabilities/custom-digital-infrastructure',
-      '/services/web-design': '/capabilities/custom-digital-infrastructure',
-      '/services/ppc-advertising': '/capabilities/conversion-architecture',
-      '/services/advertising': '/capabilities/conversion-architecture',
-      '/google-penalty-recovery': '/capabilities/forensic-seo-penalty-recovery',
-      '/what-we-do.html': '/capabilities/forensic-seo-penalty-recovery'
+      '/services/seo': '/capabilities/seo-discoverability',
+      '/services/geo-optimization': '/capabilities/seo-discoverability',
+      '/services/lead-generation': '/capabilities/native-crm',
+      '/services/web-development': '/capabilities/web-development',
+      '/services/web-design': '/capabilities/web-development',
+      '/services/ppc-advertising': '/capabilities/native-crm',
+      '/services/advertising': '/capabilities/native-crm',
+      '/google-penalty-recovery': '/capabilities/seo-discoverability',
+      '/what-we-do.html': '/capabilities/seo-discoverability',
+      '/capabilities/generative-engine-optimization': '/capabilities/seo-discoverability',
+      '/capabilities/forensic-seo-penalty-recovery': '/capabilities/seo-discoverability',
+      '/capabilities/conversion-architecture': '/capabilities/native-crm',
+      '/capabilities/semantic-search-intelligence': '/capabilities/seo-discoverability',
+      '/capabilities/custom-digital-infrastructure': '/capabilities/web-development'
     };
     
     const target = legacyRedirects[normalized];
@@ -169,17 +170,12 @@ function App({ url }: AppProps) {
   const articleMatch = normalizedPath.match(/^\/insights\/([a-z0-9-]+)$/);
   const articleSlug = articleMatch ? articleMatch[1] : null;
 
-  // Detect regional hub routes: /markets/[region] or /locations/[region]
-  const regionalHubMatch = normalizedPath.match(/^\/(markets|locations)\/([a-z0-9-]+)$/);
-  const regionalHubSlug = regionalHubMatch ? regionalHubMatch[2] : null;
-
   // Detect solution routes
   const isSolutionRoute = [
-    '/capabilities/generative-engine-optimization',
-    '/capabilities/forensic-seo-penalty-recovery',
-    '/capabilities/conversion-architecture',
-    '/capabilities/semantic-search-intelligence',
-    '/capabilities/custom-digital-infrastructure'
+    '/capabilities/web-development',
+    '/capabilities/native-crm',
+    '/capabilities/seo-discoverability',
+    '/capabilities/blockchain-web3-development'
   ].includes(normalizedPath);
 
   return (
@@ -200,8 +196,6 @@ function App({ url }: AppProps) {
         <ThankYouPage />
       ) : isSolutionRoute ? (
         <SolutionPage path={normalizedPath} />
-      ) : regionalHubSlug ? (
-        <RegionalHubPage region={regionalHubSlug} />
       ) : normalizedPath === '/case-studies/smile-center-dentistry' ? (
         <SmileCenterCaseStudy />
       ) : normalizedPath === '/case-studies/american-livescan' ? (

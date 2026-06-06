@@ -7,14 +7,14 @@ const Footer: React.FC = () => {
   return (
     <>
       <footer className="bg-[#111] text-white pt-20 sm:pt-28 px-5 sm:px-8 lg:px-12 w-full overflow-hidden flex flex-col relative" data-logo-dark>
-        <div className="max-w-[1440px] w-full mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1fr_1fr] gap-12 lg:gap-8 mb-10 sm:mb-20 relative z-10">
+        <div className="max-w-[1440px] w-full mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1fr] gap-12 lg:gap-8 mb-10 sm:mb-20 relative z-10">
           
           {/* Col 1 */}
           <div className="flex flex-col pr-0 lg:pr-12 relative">
             <div className="logo-marker h-8 sm:h-9 w-[100px] sm:w-[110px] pointer-events-none mb-3" />
             <h3 className="text-3xl font-semibold tracking-tight mb-4">Gobiya.</h3>
             <p className="text-gray-400 text-[14px] sm:text-[15px] leading-relaxed mb-8 max-w-sm">
-              We leverage cutting-edge AI and advanced data strategies to help brands recover lost traffic, dominate search, and scale revenue globally.
+              We build fast, modern websites engineered to rank and convert — with native CRM and blockchain built in.
             </p>
             <h4 className="text-[12px] font-semibold uppercase tracking-wider mb-3">Subscribe</h4>
             <div className="flex items-center w-full max-w-sm bg-white/10 p-1">
@@ -33,11 +33,10 @@ const Footer: React.FC = () => {
           <div className="flex flex-col">
             <h4 className="text-[12px] font-semibold uppercase tracking-wider mb-6">Capabilities</h4>
             <ul className="flex flex-col gap-4 text-[14px] text-gray-400">
-              <li><a href="/capabilities/generative-engine-optimization" className="hover:text-white transition-colors">Generative Engine Optimization</a></li>
-              <li><a href="/capabilities/forensic-seo-penalty-recovery" className="hover:text-white transition-colors">Forensic SEO & Penalty Recovery</a></li>
-              <li><a href="/capabilities/conversion-architecture" className="hover:text-white transition-colors">Conversion Architecture</a></li>
-              <li><a href="/capabilities/semantic-search-intelligence" className="hover:text-white transition-colors">Semantic Search Intelligence</a></li>
-              <li><a href="/capabilities/custom-digital-infrastructure" className="hover:text-white transition-colors">Custom Digital Infrastructure</a></li>
+              <li><a href="/capabilities/web-development" className="hover:text-white transition-colors">Web Development</a></li>
+              <li><a href="/capabilities/native-crm" className="hover:text-white transition-colors">Native CRM</a></li>
+              <li><a href="/capabilities/seo-discoverability" className="hover:text-white transition-colors">SEO & Discoverability</a></li>
+              <li><a href="/capabilities/blockchain-web3-development" className="hover:text-white transition-colors">Blockchain & Web3 Dev</a></li>
               <li><a href="/capabilities" className="hover:text-white transition-colors">All Capabilities Overview</a></li>
             </ul>
           </div>
@@ -54,18 +53,7 @@ const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* Col 4 — Markets */}
-          <div className="flex flex-col">
-            <h4 className="text-[12px] font-semibold uppercase tracking-wider mb-6">Markets</h4>
-            <ul className="flex flex-col gap-4 text-[14px] text-gray-400">
-              <li><a href="/markets/southern-california" className="hover:text-white transition-colors">Southern California</a></li>
-              <li><a href="/markets/southern-california" className="hover:text-white transition-colors">Los Angeles</a></li>
-              <li><a href="/markets/southern-california" className="hover:text-white transition-colors">Orange County</a></li>
-              <li><a href="/markets/southern-california" className="hover:text-white transition-colors">San Diego</a></li>
-            </ul>
-          </div>
-
-          {/* Col 5 — Connect */}
+          {/* Col 4 — Connect */}
           <div className="flex flex-col">
             <h4 className="text-[12px] font-semibold uppercase tracking-wider mb-6">Connect</h4>
             <ul className="flex flex-col gap-4 text-[14px] text-gray-400">

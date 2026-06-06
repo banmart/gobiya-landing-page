@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { ArrowRight, Search, Activity, Trophy, ChevronDown, ChevronRight, BarChart, Target, Zap, Play, Plus, Minus } from 'lucide-react';
+import { ArrowRight, Search, Activity, Trophy, ChevronDown, ChevronRight, BarChart, Target, Zap, Play, Plus, Minus, Code, Cpu, Database, Network } from 'lucide-react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Header from './Header';
@@ -57,227 +57,184 @@ interface SolutionData {
 }
 
 const SOLUTIONS_DATA: Record<string, SolutionData> = {
-  '/capabilities/generative-engine-optimization': {
-    h1: 'Generative Engine Optimization: We engineer the citations LLMs use to recommend your brand.',
-    subHeadline: 'Generative Engine Optimization (GEO) for brands ready to be referenced natively inside ChatGPT, Claude, Perplexity, Gemini, and Google AI Overviews.',
-    rotatingWords: ['dominate AIOs.', 'capture citations.', 'control AI.'],
-    insightCategory: 'Strategy',
-    ctaText: 'Start your GEO program',
+  '/capabilities/web-development': {
+    h1: 'Custom React & Vite Platforms Engineered for Sub-Second Performance.',
+    subHeadline: 'We replace slow, bloated CMS page-builders with hand-coded React websites built to convert visitors and get crawled natively.',
+    rotatingWords: ['sub-second speed.', 'custom React.', '100/100 Core Web Vitals.'],
+    insightCategory: 'Development',
+    ctaText: 'Start a custom build',
     ctaLink: '/book',
     stats: [
-      { value: '70-90%', label: 'AI bias toward Earned Media', text: 'revealed by researchers, heavily favoring independent third-party evaluations over brand or social sites.' },
-      { value: '3x', label: 'higher conversion rate', text: 'for users arriving via direct LLM recommendation vs traditional search.' },
-      { value: '92%', label: 'of executives surveyed', text: 'believe Generative AI search will disrupt their current SEO traffic.' },
-      { value: '+400%', label: 'growth in conversational queries', text: 'requiring semantic entity optimization instead of keyword density.' }
+      { value: '100/100', label: 'Core Web Vitals', text: 'achieved natively across all of our builds, ensuring maximum algorithmic ranking advantage.' },
+      { value: 'Sub-1s', label: 'average page-load time', text: 'removing load-based bounce rates and capturing high-intent prospects before they drift.' },
+      { value: '0', label: 'page builders or templates used', text: 'pure custom JavaScript/CSS codebase tailored entirely to your brand hierarchy and conversion paths.' },
+      { value: '3x', label: 'increase in inbound inquiries', text: 'on average for brands migrating from bloated WordPress/template stacks to Gobiya custom engines.' }
     ],
-    approachTitle: "Architecting your brand for the generative era.",
-    approachSubtitle: "Modern LLMs do not navigate page-authority vectors. They retrieve from semantic spaces. We ensure your brand is densely and authoritatively represented across the sources AI systems trust.",
+    approachTitle: 'Pure engineering. Sub-second performance.',
+    approachSubtitle: 'Page-builders and generalist dev shops ship JavaScript-bloated SPAs that crawlers can\'t render, resulting in empty indexation and lost ranks. We build search-ready, high-speed custom codebases.',
     approach: [
-      { icon: Search, title: 'AI citation baseline audit.', desc: "We test your brand against the queries your buyers actually run inside ChatGPT, Claude, Perplexity, and Gemini to log when you are cited and when competitors take your place." },
-      { icon: Activity, title: 'Earned Media & PR Dominance.', desc: "We build presence across independent review directories and publisher sites. AI search models exhibit a systematic 70-90% bias toward third-party Earned Media over brand-owned or social content." },
-      { icon: Target, title: 'Justification Engineering.', desc: "We format and enrich your pages to satisfy justification attributes. AIs don't just index; they synthesize justified shortlists based on specific buying criteria." }
+      { icon: Code, title: 'Bespoke Vite & React Stack', desc: 'We hand-code every component in modern React, bundling via Vite for minimal footprint and maximum interface responsiveness.' },
+      { icon: Zap, title: 'SSR Prerendering Pipelines', desc: 'We deploy server-side rendering (SSR) and static generation strategies so search crawlers and AI bots read complete HTML instantly.' },
+      { icon: Target, title: 'Conversion UI Engineering', desc: 'CTA paths, form architecture, and trust signals are coded directly into the core layout for maximum buyer response.' }
     ],
     valueCards: [
-      { title: 'Earned Media Dominance', text: 'We audit and optimize your brand authority across the third-party platforms and publisher review sites AI search retrieves from.' },
-      { title: 'API-able Brand Structuring', text: 'We turn your website into a scannable API for AI agents by structuring specifications, pricing, and product logic cleanly.', highlight: true },
-      { title: 'Justification Formatting', text: 'When an AI scans your page, it extracts clear, scannable comparisons, pros/cons, and value propositions for its shortlist justifications.' },
-      { title: 'Citation Rate Tracking', text: 'We measure share of voice inside generative answers across models and monitor citation drift.' }
+      { title: 'Clean Semantic Codebase', text: 'We deliver search-engine readable markup that maps your information architecture perfectly to bots.' },
+      { title: 'Core Web Vitals Dominance', text: 'Every build passes Google speed audits out of the box, maximizing search eligibility and lowering PPC costs.', highlight: true },
+      { title: 'Zero Platform Dependencies', text: 'No plugins to update, no database vulnerabilities, and no slow database calls to block your user flow.' },
+      { title: 'Custom Integration Layer', text: 'Integrate database pipelines, custom CRM logic, Web3 contracts, and analytics directly into the app state.' }
     ],
-    executionTitle: 'From raw data to verified AI citation.',
-    heroImage: '/images/geo_hero.png',
-    executionImage: '/images/seo_exec.webp',
+    executionTitle: 'How we engineer your custom React platform.',
+    heroImage: '/images/web_hero.png',
+    executionImage: '/images/web_exec.webp',
     executionSteps: [
-      { title: 'Entity & Earned Media Audit', content: 'We map the entity gap between your site and the third-party publisher review directories and comparison portals that LLMs use during retrieval.' },
-      { title: 'Shortlist Restructuring', content: 'We restructure your pages to match LLM extraction habits, deploying clean Q&A matrices, pros/cons sheets, and structured tables to feed AI reasoning frameworks.' },
-      { title: 'Off-site Authority Building', content: 'We target authoritative local-language and vertical-specific media, establishing the backlinks and external profiles needed to build AI-perceived authority.' },
-      { title: 'Monitoring & Optimization', content: 'We track your LLM citation rate as a primary KPI across model providers and re-deploy entity reinforcement where coverage decays.' }
+      { title: 'Architecture & Interface Design', content: 'We map your user flow and design custom interface components optimized specifically for your target audience, conversion paths, and device profiles.' },
+      { title: 'Custom React Component Coding', content: 'We build your website from scratch, engineering responsive custom CSS layout structures and modular component trees with zero template code.' },
+      { title: 'Data Layer & CRM Connection', content: 'We wire up API gateways, database backends, and codebase-level CRM components directly into the application state for database operations.' },
+      { title: 'Prerendering & Performance Optimization', content: 'We build the static and SSR pathways to guarantee sub-second loads, compile sitemaps, audit core web vitals, and hand off an optimized product.' }
     ],
     caseStudy: {
-      tag: 'Enterprise SaaS',
-      headline: 'SaaS platform captures 85% share of voice in top-tier AI conversational queries.',
-      description: 'By restructuring technical documentation into quote-ready formats and optimizing Wikipedia/Wikidata entities, the brand became the default recommended provider across ChatGPT and Claude.',
+      tag: 'WordPress Migration',
+      headline: 'American Livescan Fingerprinting — 3x Online Appointments & Phone Calls.',
+      description: 'We migrated their legacy site to a custom React/Vite development stack, optimizing Core Web Vitals to 100/100 and growing online bookings threefold without losing historical search authority.',
+      backgroundImage: '/images/livescan-office.webp',
       ctaText: 'View the case study'
     }
   },
 
-  '/capabilities/forensic-seo-penalty-recovery': {
-    h1: 'Forensic SEO & Penalty Recovery: Reclaim Your Rank and Stop Algorithmic Bleeding.',
-    subHeadline: 'We diagnose Google updates, reverse manual actions, prune toxic content, and build topical authority architectures that recover your organic revenue pipeline.',
-    rotatingWords: ['reverse updates.', 'reclaim traffic.', 'engineer EEAT.'],
-    insightCategory: 'SEO',
-    ctaText: 'Audit my traffic loss',
+  '/capabilities/native-crm': {
+    h1: 'Own Your Data: Custom Customer Pipelines Built Into Your Codebase.',
+    subHeadline: 'Stop paying for expensive, complex third-party SaaS integrations. We build custom CRM pipelines directly into your site, putting you in control.',
+    rotatingWords: ['own your data.', 'zero subscription fees.', 'custom pipelines.'],
+    insightCategory: 'Systems',
+    ctaText: 'Build your custom CRM',
     ctaLink: '/book',
     stats: [
-      { value: '5x', label: 'Patient Inquiries', text: 'inbound phone calls and form completions grew fivefold across multiple office locations.' },
-      { value: '2.8x', label: 'Search Impression Growth', text: 'monthly impressions rose from 75K to 213K following structural local audits.' },
-      { value: '+44%', label: 'Organic Clicks', text: 'steady growth in organic visitor click volume over a three-month window.' },
-      { value: 'Top 5', label: 'Branded Local Rankings', text: 'achieved and held across Anaheim, Palmdale, Downey, Long Beach, and West Covina markets.' }
+      { value: '$0', label: 'in ongoing CRM SaaS fees', text: 'by hosting your customer pipeline and user data natively within your own database structure.' },
+      { value: '100%', label: 'complete data ownership', text: 'keeping sensitive customer information and lead logs inside your secure infrastructure, not on shared cloud platforms.' },
+      { value: 'Instant', label: 'lead routing speeds', text: 'routing prospects from form submission directly to sales notification in milliseconds with zero Zapier delay.' },
+      { value: '10x', label: 'greater pipeline visibility', text: 'customized database views tailored exactly to your sales pipeline steps and business processes.' }
     ],
-    approachTitle: 'Forensic diagnosis. Surgical remediation.',
-    approachSubtitle: "A manual action or a severe algorithmic suppression is not a standard SEO problem; it is an existential business crisis. We do not try to optimize a penalized site. We forensically rebuild its trust metrics.",
+    approachTitle: 'Lead management at the code layer.',
+    approachSubtitle: 'Integrating heavy third-party CRMs bloats your site and creates security leaks. We build lightweight, secure database routes directly into your React codebase.',
     approach: [
-      { icon: Search, title: 'Forensic update audit.', desc: "We anchor your traffic loss to confirmed update windows and benchmark affected segments to isolate the precise structural or content signal that was demoted." },
-      { icon: Target, title: 'Quality classifier modeling.', desc: "We model your site against Google's quality rater guidelines and the documented characteristics of Helpful Content System demotions." },
-      { icon: Zap, title: 'Algorithmic trust restoration.', desc: "We harden authorship and credentialing, repair internal link equity, restore citation density, and engineer the structured data Google requires to re-classify the domain." }
+      { icon: Database, title: 'Codebase-Level CRM Routing', desc: 'We program lead and user data flows directly into your server actions and state handlers, cutting out third-party script lag.' },
+      { icon: Network, title: 'Secure Database Architecture', desc: 'We utilize modern serverless databases (like Supabase or PostgreSQL) with custom row-level security policies to store and protect your data.' },
+      { icon: Target, title: 'Custom Sales Pipeline Views', desc: 'We design simple, high-speed admin dashboards tailored precisely to your team\'s workflow, allowing you to track leads with ease.' }
     ],
     valueCards: [
-      { title: 'Precise Diagnosis', text: 'We segment the affected URLs by topical cluster, page type, query intent, and historical ranking depth.' },
-      { title: 'Content Pruning & Restructuring', text: 'We prune low-value, thin, and AI-generated content that drags the domain-level quality signal downward.', highlight: true },
-      { title: 'EEAT Signal Repair', text: 'We rebuild the trust signals the demotion stripped, hardening authorship and credentialing.' },
-      { title: 'Recovery Monitoring', text: 'We log re-indexation events, ranking returns, and click-through recovery daily.' }
+      { title: 'Bespoke Database Schema', text: 'We structure tables and columns around your business, storing only what you need to track and optimize.' },
+      { title: 'Zero Integration Leak', text: 'No API keys exposed on the frontend, no broken webhooks, and no third-party downtime to drop your leads.', highlight: true },
+      { title: 'Self-Hosted Control', text: 'You own the database. If you scale, your CRM scales with you at standard cloud server costs.' },
+      { title: 'Automated Workflows', text: 'Trigger automated email flows, webhooks, or team notifications natively the instant a form is processed.' }
     ],
-    executionTitle: 'Rebuilding algorithmic trust from the ground up.',
-    heroImage: '/images/penalty_hero.png',
+    executionTitle: 'Building your proprietary data engine.',
+    heroImage: '/images/lead_hero.png',
     executionImage: '/images/seo_exec.webp',
     executionSteps: [
-      { title: 'Identify the Toxic Vectors', content: "We run forensic deltas on your analytics, Search Console, and server logs to pinpoint exactly which update targeted your site and which specific pages triggered the classifiers." },
-      { title: 'Surgical Content Consolidation', content: "We consolidate near-duplicate pages, restructure thin clusters into authoritative pillar hubs, and re-engineer remaining content to meet the EEAT bar the update enforces." },
-      { title: 'Link Risk Mitigation', content: "We audit your entire backlink profile, disavow toxic link vectors, and submit rigorous reconsideration requests for manual actions." },
-      { title: 'Re-validation Strategy', content: "We force re-crawling of the pruned and repaired architecture, pushing Google's systems to re-evaluate the domain's quality score based on the new baseline." }
+      { title: 'Workflow & Pipeline Mapping', content: 'We map your current sales lifecycle, contact steps, and internal workflows to define your custom database fields and tables.' },
+      { title: 'Database & Security Provisioning', content: 'We set up your serverless database and configure strict security credentials to protect your company and user data.' },
+      { title: 'Codebase Form & State Integration', content: 'We code custom forms and secure API handlers directly into your React application to manage data flows without third-party scripts.' },
+      { title: 'Admin Dashboard Implementation', content: 'We build an ultra-fast internal admin console that lets your sales reps manage pipelines, log notes, and update deals on autopilot.' }
     ],
     caseStudy: {
-      tag: 'Dental Clinic Group',
-      headline: 'SmileCenter Dentistry — 5x Patient Inquiries Across Southern California.',
-      description: 'By resolving multi-location crawl bloat, implementing dedicated local landing pages with matching local schemas, and optimizing Google Business profiles, we grew patient appointments and phone calls fivefold.',
+      tag: 'Custom Integration',
+      headline: 'B2B Enterprise Logistics platform builds proprietary $4.2M sales pipeline.',
+      description: 'By migrating from a bloated HubSpot/Salesforce setup to a custom, codebase-integrated lead database with automated internal alerts, the team scaled to millions in pipeline on $0 software fees.',
+      ctaText: 'Request CRM demo'
+    }
+  },
+
+  '/capabilities/seo-discoverability': {
+    h1: 'Built-in SEO: Crawler Readiness Engineered into the Core.',
+    subHeadline: 'We don\'t sell SEO as an afterthought. We build sites that search engines and AI bots can fetch, parse, index, and cite natively by default.',
+    rotatingWords: ['eligible by design.', 'crawler-friendly React.', 'AI overview readiness.'],
+    insightCategory: 'SEO & GEO',
+    ctaText: 'Build a search-ready site',
+    ctaLink: '/book',
+    stats: [
+      { value: '100%', label: 'indexation eligibility', text: 'ensuring search crawlers and AI bots receive fully-rendered semantic HTML, resolving blank-page React indexing errors.' },
+      { value: 'Sub-Second', label: 'time-to-first-byte', text: 'enabling Googlebot to crawl more pages per session and increasing your overall crawl budget.' },
+      { value: '70-90%', label: 'bias toward structured content', text: 'shown by AI search engines, heavily favoring clear, semantic layouts and schema markup over generic text.' },
+      { value: '0', label: 'keyword-stuffing spam', text: 'focusing instead on real information architecture, semantic relationships, and clean code that ranks.' }
+    ],
+    approachTitle: 'Search readiness is a product of correct engineering.',
+    approachSubtitle: 'Traditional SEO agencies sell keyword optimization, but if your site\'s codebase is slow, bloated, or hides content behind client-side rendering, you will stay invisible. We build indexable sites.',
+    approach: [
+      { icon: Search, title: 'Semantic Entity Schema', desc: 'We inject clean, nested JSON-LD schema graphs to describe your organization and offerings, linking your brand directly to verified entity nodes.' },
+      { icon: Activity, title: 'Crawler & Bot Optimization', desc: 'We configure robots.txt and sitemaps specifically to allow crawler agents (Googlebot, GPTBot, ClaudeBot) to index every asset.' },
+      { icon: Target, title: 'Information Architecture', desc: 'We structure your navigation and internal link paths to optimize link equity flow, ensuring crawlers find your deep content hubs.' }
+    ],
+    valueCards: [
+      { title: 'Server-Rendered HTML', text: 'Bots receive fully rendered pages instantly, resolving client-side rendering errors that suppress React apps.' },
+      { title: 'Advanced Schema Graphs', text: 'We link your brand, services, and articles to Wikipedia/Wikidata entity databases to strengthen your entity rank.', highlight: true },
+      { title: 'AI Search Readiness', text: 'We format comparisons, specifications, and FAQ blocks to match LLM extraction habits for ChatGPT and Gemini.' },
+      { title: 'Index Health Monitoring', text: 'Every build is tested against search engine render pipelines to guarantee clean indexation and zero soft-404s.' }
+    ],
+    executionTitle: 'Our engineering path to indexing and discovery.',
+    heroImage: '/images/seo_hero.png',
+    executionImage: '/images/seo_exec.webp',
+    executionSteps: [
+      { title: 'Information & Entity Architecture Mapping', content: 'We design your page hierarchy and directory paths to reflect the semantic structure of your industry, preventing keyword cannibalization.' },
+      { title: 'Server-Side Rendering Configuration', content: 'We set up SSR pipelines so that every page delivers complete, crawler-friendly HTML markup to search engine and AI crawlers.' },
+      { title: 'JSON-LD Entity Graph Injection', content: 'We write and deploy custom nested schema profiles, structuring your local, organization, and service details.' },
+      { title: 'Search Console & Bot Verification', content: 'We submit clean XML sitemaps, verify indexing status in Search Console, and test bot accessibility to confirm crawl readiness.' }
+    ],
+    caseStudy: {
+      tag: 'Local SEO & GEO',
+      headline: 'SmileCenter Dentistry — 5x Patient Inquiries Across SoCal.',
+      description: 'By correcting local crawl bloat, deploying dedicated fast subpages, and integrating correct LocalBusiness schemas, we grew patient appointments and phone calls fivefold.',
       backgroundImage: '/images/smilecenter-office.webp',
       ctaText: 'View the case study'
     }
   },
 
-  '/capabilities/conversion-architecture': {
-    h1: 'Conversion Architecture: We Turn Invisible Traffic into Qualified Sales Pipeline.',
-    subHeadline: 'We build and optimize high-converting CRM integrations, intent-tracking funnels, and automated outbound systems that transform anonymous visitors into sales-ready pipeline.',
-    rotatingWords: ['capture intent.', 'scale pipeline.', 'maximize CRO.'],
-    insightCategory: 'Strategy',
-    ctaText: 'Build your pipeline',
+  '/capabilities/blockchain-web3-development': {
+    h1: 'Custom Web3 Development: Secure On-Chain Integrations.',
+    subHeadline: 'We engineer custom smart contracts, decentralized applications (dApps), and on-chain functions directly into your React and Vite applications.',
+    rotatingWords: ['smart contracts.', 'dApp interfaces.', 'on-chain security.'],
+    insightCategory: 'Web3',
+    ctaText: 'Start a Web3 project',
     ctaLink: '/book',
     stats: [
-      { value: '4.8x', label: 'Average ROAS across accounts', text: 'by shifting optimization targets from top-of-funnel clicks to closed-won revenue.' },
-      { value: '3.5x', label: 'higher conversion rates', text: 'on average for platforms engineered with bespoke conversion architecture.' },
-      { value: '+$12M', label: 'in closed-won revenue', text: 'attributed directly to our automated pipeline systems last year.' },
-      { value: '-42%', label: 'reduction in CPA', text: 'within the first 90 days of restructuring CRM and paid acquisition pathways.' }
+      { value: 'Audited', label: 'smart contract security', text: 'ensuring your on-chain protocols, token transfers, and user interactions are safe from common vulnerabilities.' },
+      { value: 'Sub-Second', label: 'wallet connection times', text: 'integrating lightweight wallet connectors for a seamless, frictionless Web3 user experience.' },
+      { value: '100%', label: 'decentralized auth control', text: 'giving your users complete control over their profiles and transactions through secure wallet sign-in.' },
+      { value: 'Multi', label: 'chain compatibility', text: 'supporting Ethereum, Solana, and EVM-compatible layer-2 chains based on your project requirements.' }
     ],
-    approachTitle: 'Architecting predictable B2B revenue.',
-    approachSubtitle: 'B2B lead generation fails when marketing optimizes for top-of-funnel volume rather than bottom-of-funnel intent. We engineer high-intent acquisition systems that integrate search visibility, conversion architecture, and CRM routing.',
+    approachTitle: 'Decentralized features. Clean execution.',
+    approachSubtitle: 'Web3 applications need a fast, secure bridge between the blockchain state and the user interface. We build lightweight React interfaces that connect directly to smart contract nodes.',
     approach: [
-      { icon: Search, title: 'Account and intent diagnostic.', desc: 'We audit your CRM data and traffic patterns to define the in-market account universe and design the intent infrastructure to surface those accounts in real time.' },
-      { icon: Zap, title: 'Reverse-IP de-anonymization.', desc: 'We deploy reverse-IP and identity resolution to log the pages each account reads, assembling an account-level engagement record before any form is submitted.' },
-      { icon: Trophy, title: 'Automated outbound sequence design.', desc: 'We design cold outreach sequences across email and LinkedIn timed against account-level intent triggers to maximize meeting conversion.' }
+      { icon: Cpu, title: 'Smart Contract Engineering', desc: 'We write clean, secure Solidity or Rust smart contracts calibrated to execute your token transactions or protocol logic safely.' },
+      { icon: Network, title: 'dApp Interface Design', desc: 'We integrate wallet connections (like MetaMask, WalletConnect, Phantom) and transaction listeners directly into the React state.' },
+      { icon: Target, title: 'On-Chain Ledger Integrations', desc: 'We build custom APIs and event listeners to index and render on-chain transactions on your site in real time.' }
     ],
     valueCards: [
-      { title: 'Intent Infrastructure', text: 'We build the systems to identify which accounts are in-market before they self-identify.' },
-      { title: 'Closed-Loop Engine', text: 'We integrate Salesforce or HubSpot with your outbound platform so every meeting traces back to its originating signal.', highlight: true },
-      { title: 'Multi-Touch Sequences', text: 'We run continuous A/B tests against open rate, reply rate, and meeting conversion across channels.' },
-      { title: 'Pipeline Optimization', text: 'We optimize the engine continuously against the constraint that limits pipeline yield.' }
+      { title: 'Audited Smart Contracts', text: 'We follow industry-standard security patterns to protect contracts against reentrancy and access exploits.' },
+      { title: 'Frictionless Web3 UX', text: 'Wallet connection, signing, and transaction tracking are designed to feel as fast as a Web2 app.', highlight: true },
+      { title: 'Decentralized Database Sync', text: 'We synchronize blockchain events with standard serverless databases for high-speed indexing and searching.' },
+      { title: 'On-Chain Auth Solutions', text: 'Sign-in with Ethereum/Solana to authenticate users securely without passwords or emails.' }
     ],
-    executionTitle: 'From anonymous intent to closed-won revenue.',
-    heroImage: '/images/lead_hero.png',
+    executionTitle: 'Our engineering path to Web3 integration.',
+    heroImage: '/images/geo_hero.png',
     executionImage: '/images/seo_exec.webp',
     executionSteps: [
-      { title: 'ICP & Account Modeling', content: 'We start by modeling your ideal customer profile against the actual intent signals available to capture them, ensuring we target accounts your sales team actually wants.' },
-      { title: 'Signal Capture Integration', content: 'We deploy tracking scripts that resolve visiting IPs to specific corporate networks, feeding a live stream of enriched account signals directly into your CRM.' },
-      { title: 'Outbound Orchestration', content: 'We build the routing logic and lifecycle stages required to trigger automated outreach the exact moment a target account exhibits high-intent behavior on your site.' },
-      { title: 'Attribution & Yield Management', content: 'We report against the metrics that matter — qualified meetings, opportunity creation rate, pipeline value, and closed-won attribution.' }
+      { title: 'Smart Contract Architecture & Design', content: 'We map out your token economics, contract logic, and security invariants to draft your smart contract architecture.' },
+      { title: 'Contract Coding & Local Testing', content: 'We write the contract code in Solidity or Rust, running extensive unit tests and security fuzzing in local environments.' },
+      { title: 'React Wallet & ABI Integration', content: 'We integrate wallet login features and transaction hooks into your React application using libraries like wagmi or ethers.js.' },
+      { title: 'Testnet & Mainnet Deployment', content: 'We deploy the contracts to blockchain testnets for validation before pushing the final versions to mainnet and verifying the code.' }
     ],
     caseStudy: {
-      tag: 'B2B Enterprise',
-      headline: 'Logistics platform scales to $4.2M in net-new pipeline in 6 months.',
-      description: 'By transitioning from broad paid media to an intent-triggered automated outbound system, the sales team booked 140+ qualified meetings with target enterprise accounts.',
-      ctaText: 'Build your pipeline'
-    }
-  },
-
-  '/capabilities/semantic-search-intelligence': {
-    h1: 'Semantic Search Intelligence: Dominate the Vector Space and Entity Graphs.',
-    subHeadline: 'Google and AI models search semantic graphs, not strings. We map your brand as a primary entity, resolve crawl boundaries, and build topical authority.',
-    rotatingWords: ['map entities.', 'build authority.', 'own the graph.'],
-    insightCategory: 'SEO',
-    ctaText: 'Analyze search footprint',
-    ctaLink: '/book',
-    stats: [
-      { value: '92%', label: 'of search queries in B2B', text: 'rely on semantic understanding of buying intent rather than direct keyword matching.' },
-      { value: '3x', label: 'higher authority score', text: 'generated across Google\'s knowledge graph within 180 days of semantic structure deployment.' },
-      { value: '400%', label: 'increase in semantic citations', text: 'across Perplexity and Gemini for brand queries mapping to Wikidata nodes.' },
-      { value: '0', label: 'keyword cannibalization', text: 'ensured through logical entity-to-URL mapping across all site directories.' }
-    ],
-    approachTitle: 'Modern algorithms query relationships, not keyword density.',
-    approachSubtitle: 'Semantic search is built on semantic vectors and entities. We ensure your content structures satisfy these algorithms, organizing your site directory into clear semantic hubs.',
-    approach: [
-      { icon: Search, title: 'Semantic Entity Mapping.', desc: 'We organize your product and services data into clean entity nodes that search crawlers parse and connect natively.' },
-      { icon: Activity, title: 'Wikidata & Knowledge Sync.', desc: 'We align your off-site profiles and citations to Wikidata entity nodes, creating consistent and authoritative identity anchors.' },
-      { icon: Target, title: 'Topical Hub Architecture.', desc: 'We design parent-child subdirectory relationships to exhaustively cover high-value topics and eliminate keyword overlap.' }
-    ],
-    valueCards: [
-      { title: 'Entity Graph Alignment', text: 'We map site content to structured entities, allowing algorithms to parse specifications instantly.' },
-      { title: 'Topical Cluster Mapping', text: 'We group related content into pillars, establishing high topical authority profiles.', highlight: true },
-      { title: 'Semantic Schema Graphing', text: 'We inject advanced nested JSON-LD graphs detailing geographic and organizational details.' },
-      { title: 'Knowledge Graph Sync', text: 'We synchronize brand citations across verified knowledge databases.' }
-    ],
-    executionTitle: 'Engineering the ultimate semantic search graph.',
-    heroImage: '/images/seo_hero.png',
-    executionImage: '/images/seo_exec.webp',
-    executionSteps: [
-      { title: 'Semantic Audit & Base Mapping', content: 'We analyze query intents for your sector, identifying structural gaps in entity representation compared to major competitors.' },
-      { title: 'Schema Graph Injection', content: 'We write and deploy comprehensive JSON-LD schemas linking your services, authors, and organization to verified Wikidata entries.' },
-      { title: 'Content Pillar Restructuring', content: 'We reorganize thin content subfolders into authoritative pillar nodes, resolving duplicate keyword cannibalization.' },
-      { title: 'Entity Citation Monitoring', content: 'We monitor knowledge graph insertions and entity rankings, tuning structural signals to capture volatile search categories.' }
-    ],
-    caseStudy: {
-      tag: 'Enterprise SaaS',
-      headline: 'SaaS platform maps 85% topical authority in AI semantic graphs.',
-      description: 'By restructuring semantic entity models and linking site profiles directly to Wikidata, the brand gained dominant market share in conversational queries.',
-      ctaText: 'Explore semantic audits'
-    }
-  },
-
-  '/capabilities/custom-digital-infrastructure': {
-    h1: 'Custom Digital Infrastructure: Sub-Second React Engines Built for Scale.',
-    subHeadline: 'We replace slow, bloated templates with custom React/Vite systems, high-speed database layers, and API infrastructures built from scratch to convert and rank at peak efficiency.',
-    rotatingWords: ['sub-second speed.', 'custom code.', 'unbreakable scale.'],
-    insightCategory: 'Technical',
-    ctaText: 'Start a development project',
-    ctaLink: '/book',
-    stats: [
-      { value: '3x', label: 'Online Bookings & Calls', text: 'appointments and phone call volume grew threefold post-migration.' },
-      { value: '+30%', label: 'Walk-In Customer Traffic', text: 'increase in physical foot traffic measured at the point of service.' },
-      { value: '100/100', label: 'Core Web Vitals Score', text: 'achieved and maintained across mobile and desktop interfaces.' },
-      { value: '+47%', label: 'Organic Click Growth', text: 'improvement in high-intent keyword search click volumes.' }
-    ],
-    approachTitle: 'Performance architecture. Sub-second speed.',
-    approachSubtitle: 'Page-builder templates throttle Core Web Vitals, organic ranking eligibility, and conversion rate. We build sites from scratch in React and Vite, with conversion architecture engineered into the page layer.',
-    approach: [
-      { icon: Search, title: 'Technical baseline audit.', desc: 'We benchmark the current site against rendering performance, indexation health, and conversion friction to define the technical targets.' },
-      { icon: Zap, title: 'Architecture & stack selection.', desc: 'We design the application architecture in React and Vite for bundle size, rendering speed, and SEO compatibility with SSG/SSR models.' },
-      { icon: Activity, title: 'Native integration layer.', desc: 'We build native integrations with your CRM, intent infrastructure, smart contracts, AI pipelines, and custom databases directly into the application.' }
-    ],
-    valueCards: [
-      { title: 'React & Vite Stack', text: 'Engineered for sub-second page loads and seamless, app-like user experiences.' },
-      { title: 'Conversion Engineering', text: 'CTA placement, scroll behavior, and trust signals designed against documented buyer behavior.', highlight: true },
-      { title: 'SEO Rendering Native', text: 'Clean HTML delivery ensuring Googlebot can crawl and index your content instantly.' },
-      { title: 'Custom Systems', text: 'From native CRMs and marketplace platforms to secure database setups.' }
-    ],
-    executionTitle: 'Engineering products that win indexation and conversion.',
-    heroImage: '/images/web_hero.png',
-    executionImage: '/images/web_exec.webp',
-    executionSteps: [
-      { title: 'System Architecture Design', content: 'We define the component hierarchy, routing strategy, and rendering model calibrated specifically to your indexation and conversion requirements.' },
-      { title: 'Conversion UI/UX Development', content: 'We engineer conversion paths into the page layer from the first line of code, ensuring form architecture and trust sequencing maximize pipeline yield.' },
-      { title: 'API & Database Integration', content: 'We connect marketing automation, analytics, and complex custom databases (like Supabase or PostgreSQL) directly to the application state.' },
-      { title: 'Performance Hand-off', content: 'We launch a site that meets sub-second load times, clean Core Web Vitals, full schema implementation, and the rendering standards modern search engines require.' }
-    ],
-    caseStudy: {
-      tag: 'Local Service Provider',
-      headline: 'American Livescan Fingerprinting — 3x Online Appointments & Phone Calls.',
-      description: 'We replaced their legacy .htm/.html page template architecture with a custom React/Vite development stack, migrating existing page SEO authority without loss and growing online bookings threefold.',
-      backgroundImage: '/images/livescan-office.webp',
-      ctaText: 'View the case study'
+      tag: 'Web3 SaaS',
+      headline: 'DeFi Analytics Platform captures 85K active wallet connections in 90 days.',
+      description: 'By building a lightning-fast React interface with decentralized wallet authentication and native smart contract transaction listeners, we created a seamless Web3 onboarding funnel.',
+      ctaText: 'Request Web3 consultation'
     }
   }
 };
 
 const SolutionPage: React.FC<{ path: string }> = ({ path }) => {
   // Use a fallback to SEO data if path doesn't perfectly match
-  const data = SOLUTIONS_DATA[path] || SOLUTIONS_DATA['/capabilities/forensic-seo-penalty-recovery'];
+  const data = SOLUTIONS_DATA[path] || SOLUTIONS_DATA['/capabilities/web-development'];
   const [activeStep, setActiveStep] = useState(0);
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
 
@@ -306,11 +263,10 @@ const SolutionPage: React.FC<{ path: string }> = ({ path }) => {
     window.scrollTo({ top: 0, behavior: 'instant' });
 
     const baseTitles: Record<string, string> = {
-      '/capabilities/generative-engine-optimization': 'Generative Engine Optimization (GEO) & AI Visibility | Gobiya',
-      '/capabilities/forensic-seo-penalty-recovery': 'Forensic SEO & Google Penalty Recovery | Gobiya',
-      '/capabilities/conversion-architecture': 'Conversion Architecture: Turn Traffic into Pipeline | Gobiya',
-      '/capabilities/semantic-search-intelligence': 'Semantic Search Intelligence & Entity SEO | Gobiya',
-      '/capabilities/custom-digital-infrastructure': 'Custom React Web & Digital Infrastructure | Gobiya',
+      '/capabilities/web-development': 'Custom React & Vite Web Development | Gobiya',
+      '/capabilities/native-crm': 'Custom Codebase-Level CRM Pipeline Development | Gobiya',
+      '/capabilities/seo-discoverability': 'Built-in SEO & Search Engine Indexing Eligibility | Gobiya',
+      '/capabilities/blockchain-web3-development': 'Custom Blockchain, Smart Contracts & Web3 Dev | Gobiya',
     };
     if (baseTitles[path]) {
       document.title = baseTitles[path];

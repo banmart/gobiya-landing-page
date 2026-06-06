@@ -5,7 +5,7 @@ import DeferredShader, { Swirl, ChromaFlow, FlutedGlass, FilmGrain } from './Def
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { MotionPathPlugin } from 'gsap/MotionPathPlugin';
-import { Clock, ArrowRight, ShieldAlert, TrendingUp, Search, Network, PenTool, BarChart, Megaphone, Target, Briefcase, Code } from 'lucide-react';
+import { Clock, ArrowRight, ShieldAlert, TrendingUp, Search, Network, PenTool, BarChart, Megaphone, Target, Briefcase, Code, Cpu, Database } from 'lucide-react';
 import SplitTextReveal from './SplitTextReveal';
 import ParallaxMedia from './ParallaxMedia';
 import ServicesBento from './ServicesBento';
@@ -407,28 +407,26 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
     switch (normalPath) {
       case '/capabilities':
         return { ...defaultPageConfig,
-          subtitle: 'Gobiya Capabilities > Consolidated Growth Solutions',
-          title: 'Bespoke SEO and B2B pipeline capabilities engineered for dominance.',
-          rotatingWords: ['recover traffic.', 'build pipelines.', 'cite brand AI.', 'engineer speed.'],
-          outcomeMessage: 'We consolidate forensic SEO and automated B2B sales development into a single high-impact engine.',
+          subtitle: 'Gobiya Capabilities > Core Offerings',
+          title: 'Custom web development, native CRM, built-in SEO, and blockchain engineering.',
+          rotatingWords: ['engineer speed.', 'own your CRM.', 'get cited by AI.', 'deploy smart contracts.'],
+          outcomeMessage: 'We build fast, modern web applications with native CRM pipelines, search discoverability, and custom Web3 integrations.',
           ctaText: 'Get growth audit',
-          introScrollText: 'We engineer high-performance SEO and B2B pipeline capabilities, not just strategies. Reclaiming lost organic traffic, automating cold pipeline generation, and aligning entities for search models.',
-          introHeading: <>Five specialized lines. <br className="hidden sm:block" /><span className="sm:hidden"> </span>One consolidated engine.</>,
-          introParagraph: 'At Gobiya, we do not run broad campaigns or provide boilerplate agency retainers. We build custom React/Supabase platforms, configure real-time intent-signals, and execute recovery protocols that get results.',
+          introScrollText: 'We build premium, custom React and Vite sites with native CRM databases, built-in SEO discoverability, and Web3 capabilities.',
+          introHeading: <>Four core pillars. <br className="hidden sm:block" /><span className="sm:hidden"> </span>One powerful custom product.</>,
+          introParagraph: 'At Gobiya, we do not run generic SEO campaigns. We build custom React/Vite platforms, engineer native pipeline integrations, and write secure smart contracts that drive enterprise growth.',
           introVideo1: "/videos/space-girl.webm",
           introVideo2: "/videos/gobiyaRace.webm",
           bentoHeadline: <>Integrated capabilities.<br/>Measurable returns.</>,
-          bentoDescription: 'Every capability is engineered to scale your customer acquisitions, drive down CAC, and ensure long-term algorithmic safety. Verify our capabilities below.',
+          bentoDescription: 'Every capability is engineered to deliver a fast, indexable web application with complete data ownership and specialized Web3 capabilities. Verify our core pillars below.',
           insightCategory: 'Strategy',
           bentoCards: [
-            { href: '/capabilities/forensic-seo-penalty-recovery', colSpan: 2, icon: <ShieldAlert size={40} className="text-[#F26522] mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'Forensic SEO & Penalty Recovery', description: 'Forensic drop diagnosis, manual actions removal, and HCU/Core update recovery.' },
-            { href: '/capabilities/conversion-architecture', colSpan: 1, icon: <Network size={40} className="text-white mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'Conversion Architecture', description: 'Automated cold outreach, CRM routing, and intent-signal pipelines.' },
-            { href: '/capabilities/generative-engine-optimization', colSpan: 1, icon: <Search size={40} className="text-white mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'Generative Engine Optimization', description: 'Brand citations and entity alignment for ChatGPT, Claude, and Gemini.' },
-            { href: '/capabilities/custom-digital-infrastructure', colSpan: 2, icon: <Code size={40} className="text-[#F26522] mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'Custom Digital Infrastructure', description: 'Sub-second React/Vite development, database tuning, and API platforms.' },
-            { href: '/capabilities/semantic-search-intelligence', colSpan: 2, gradient: true, icon: <TrendingUp size={40} className="text-white mb-6 sm:mb-10 relative z-10" strokeWidth={1.5} />, title: 'Semantic Search Intelligence', description: 'Topical authority clusters, entity schema graphs, and vector-space rankings.' }
+            { href: '/capabilities/web-development', colSpan: 2, gradient: true, icon: <Code size={40} className="text-white mb-6 sm:mb-10 relative z-10" strokeWidth={1.5} />, title: 'Web Development', description: 'Custom React/Vite sites engineered for sub-second page loads and flawless crawlability.' },
+            { href: '/capabilities/native-crm', colSpan: 1, icon: <Database size={40} className="text-white mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'Native CRM', description: 'Pipeline and lead databases built directly into your codebase, ensuring 100% data ownership.' },
+            { href: '/capabilities/seo-discoverability', colSpan: 2, icon: <Search size={40} className="text-white mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'SEO & Discoverability', description: 'Built-in crawler-readiness, semantic data mapping, and formatting designed for Google and AI citation eligibility.' },
+            { href: '/capabilities/blockchain-web3-development', colSpan: 1, icon: <Cpu size={40} className="text-[#F26522] mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'Blockchain & Web3 Dev', description: 'On-chain solutions, custom smart contracts, and decentralized application features integrated natively.' }
           ],
-          showCalculator: false,
-          calculatorProps: { title: "Calculate Your Digital Revenue Leak", description: "Input the traffic or lead volume you are currently losing. See how much pipeline we can recover.", sliderLabel: "Estimated Monthly Loss", sliderMin: 1000, sliderMax: 200000, sliderStep: 1000, conversionRate: 0.02, ltv: 500, resultLabel: "Monthly Revenue Leak", disclaimer: "*Based on 2% conversion rate and $500 LTV." }
+          showCalculator: false
         };
       case '/services/seo':
         return { ...defaultPageConfig,

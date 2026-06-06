@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ShieldAlert, TrendingUp, Search, Network, Code } from 'lucide-react';
+import { ShieldAlert, TrendingUp, Search, Network, Code, Cpu, Database } from 'lucide-react';
 import BorderGlow from './BorderGlow';
 
 interface BentoCard {
@@ -45,24 +45,20 @@ const ServicesBento: React.FC<ServicesBentoProps> = ({ headline, description, ca
           
           {(cards || [
             {
-              href: '/capabilities/generative-engine-optimization', colSpan: 2, gradient: true, icon: <TrendingUp size={40} className="text-white mb-6 sm:mb-10 relative z-10" strokeWidth={1.5} />,
-              title: 'Generative Engine Optimization', description: 'Engineering brand signals and entity authority so your business is natively recommended by AI models like ChatGPT, Gemini, and Perplexity.'
+              href: '/capabilities/web-development', colSpan: 2, gradient: true, icon: <Code size={40} className="text-white mb-6 sm:mb-10 relative z-10" strokeWidth={1.5} />,
+              title: 'Web Development', description: 'We build high-performance custom sites in React and Vite, engineered from the ground up for sub-second speeds and flawless crawler readability.'
             },
             {
-              href: '/capabilities/forensic-seo-penalty-recovery', colSpan: 1, icon: <ShieldAlert size={40} className="text-white mb-6 sm:mb-10" strokeWidth={1.5} />,
-              title: 'Forensic SEO & Penalty Recovery', description: 'Expert removal of manual actions and recovery from Google updates, rebuilding trust signals and EEAT.'
+              href: '/capabilities/native-crm', colSpan: 1, icon: <Database size={40} className="text-white mb-6 sm:mb-10" strokeWidth={1.5} />,
+              title: 'Native CRM', description: 'Custom customer and pipeline management tools built directly into your application codebase, giving you 100% data ownership.'
             },
             {
-              href: '/capabilities/conversion-architecture', colSpan: 1, icon: <Network size={40} className="text-white mb-6 sm:mb-10" strokeWidth={1.5} />,
-              title: 'Conversion Architecture', description: 'Automated outbound pipelines, reverse-IP tracking, and CRM routing to consistently book B2B meetings.'
+              href: '/capabilities/seo-discoverability', colSpan: 2, icon: <Search size={40} className="text-white mb-6 sm:mb-10" strokeWidth={1.5} />,
+              title: 'SEO & Discoverability', description: 'Built-in crawler readiness, flawless XML structures, clean semantic HTML, and formatting designed to capture search rankings and AI citations natively.'
             },
             {
-              href: '/capabilities/semantic-search-intelligence', colSpan: 1, icon: <Search size={40} className="text-white mb-6 sm:mb-10" strokeWidth={1.5} />,
-              title: 'Semantic Search Intelligence', description: 'Topical authority clusters, entity schema graphs, and vector-space optimization to command modern search engines.'
-            },
-            {
-              href: '/capabilities/custom-digital-infrastructure', colSpan: 1, icon: <Code size={40} className="text-[#F26522] mb-6 sm:mb-10" strokeWidth={1.5} />,
-              title: 'Custom Digital Infrastructure', description: 'Bespoke sub-second React/Vite development and database/API platforms built to rank and convert.'
+              href: '/capabilities/blockchain-web3-development', colSpan: 1, icon: <Cpu size={40} className="text-[#F26522] mb-6 sm:mb-10" strokeWidth={1.5} />,
+              title: 'Blockchain & Web3 Dev', description: 'Bespoke smart contracts, decentralized applications (dApps), and on-chain integrations engineered directly into your product stack.'
             }
           ]).map((card, index) => (
             <a key={index} href={card.href} className={`md:col-span-${card.colSpan} block h-full`}>

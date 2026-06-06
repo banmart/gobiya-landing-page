@@ -14,32 +14,28 @@ interface SEOMetadata {
 // Outcome-focused metadata lookup map for crawlers and search bots
 const metadataMap: Record<string, SEOMetadata> = {
   '/': {
-    title: 'More Traffic, More Leads, Less Guesswork | Gobiya',
-    description: 'Tired of being invisible online? Gobiya helps you rank higher, get cited by AI, and turn traffic into customers. Free audit, real results.'
+    title: 'Custom Web Development, Native CRM & Blockchain | Gobiya',
+    description: 'We build fast, modern React/Vite websites engineered to rank and convert natively. Complete with codebase-level CRMs and custom Web3 blockchain integrations. Get a free audit.'
   },
-  '/capabilities/generative-engine-optimization': {
-    title: 'Get Cited by ChatGPT or Stay Invisible to AI Search | Gobiya',
-    description: 'Conversational AI is stealing search traffic. Here is how we engineer your website\'s data and structure so ChatGPT, Claude, and Gemini recommend your brand natively.'
+  '/capabilities/web-development': {
+    title: 'Custom React & Vite Web Development Services | Gobiya',
+    description: 'We build fully custom, sub-second React and Vite websites engineered for Core Web Vitals, indexability, and clean user experience. No templates.'
   },
-  '/capabilities/forensic-seo-penalty-recovery': {
-    title: 'Reclaim Your Rankings: Forensic SEO & Penalty Recovery | Gobiya',
-    description: 'Did a Google update destroy your traffic? We diagnose quality classifier drops, reverse manual actions, and rebuild topical authority to recover your pipeline.'
+  '/capabilities/native-crm': {
+    title: 'Codebase-Level Custom Native CRM Engineering | Gobiya',
+    description: 'Stop paying monthly software fees. We design and compile bespoke customer database and pipeline management systems built directly into your website\'s code.'
   },
-  '/capabilities/conversion-architecture': {
-    title: 'Forget Cold Calling: Build a Predictive Inbound Pipeline | Gobiya',
-    description: 'Stop chasing bad-fit leads. We design and launch automated acquisition systems that fill your calendar with pre-qualified buyers on autopilot.'
+  '/capabilities/seo-discoverability': {
+    title: 'Built-in SEO & Search Engine Indexing Eligibility | Gobiya',
+    description: 'Search engine crawlability, indexation health, and AI citation eligibility are built into our codebase by default. We build sites that get found.'
   },
-  '/capabilities/semantic-search-intelligence': {
-    title: 'Dominate the Entity Graph & Semantic Search Space | Gobiya',
-    description: 'Google query algorithms understand concepts, not just words. We structure your brand as a primary entity node and map topical clusters to capture high-intent search.'
-  },
-  '/capabilities/custom-digital-infrastructure': {
-    title: 'Ditch the Slow Templates: Speed-Engineered Custom React | Gobiya',
-    description: 'Is a sluggish template leaking conversions? We replace bloated CMS setups with sub-second custom React pages designed to turn visitors into buyers instantly.'
+  '/capabilities/blockchain-web3-development': {
+    title: 'Custom Blockchain, Smart Contracts & Web3 Dev | Gobiya',
+    description: 'We engineer secure smart contracts, decentralized applications (dApps), and on-chain integrations directly into your web applications.'
   },
   '/capabilities': {
-    title: 'Our Core Capabilities: Forensic SEO, GEO & Pipeline Dev | Gobiya',
-    description: 'Explore our specialized capabilities: generative engine optimization, forensic traffic recovery, conversion architecture, and high-performance React engineering.'
+    title: 'Our Core Capabilities: Web Development, Native CRM, SEO & Blockchain | Gobiya',
+    description: 'Explore our engineering capabilities: custom React/Vite development, native codebase-level CRM pipelines, built-in SEO discoverability, and smart contract Web3 integrations.'
   },
   '/insights/gobiya-vs-enterprise-seo-agencies': {
 
@@ -167,8 +163,11 @@ export default async function handler(req: IncomingMessage, res: any) {
     const parsedUrl = new URL(url, 'https://www.gobiya.com');
     const pathname = parsedUrl.pathname.toLowerCase().replace(/\/$/, '') || '/';
 
-    if (pathname === '/locations' || pathname.startsWith('/locations/')) {
-      res.writeHead(301, { Location: '/contact' });
+    if (
+      pathname === '/locations' || pathname.startsWith('/locations/') ||
+      pathname === '/markets' || pathname.startsWith('/markets/')
+    ) {
+      res.writeHead(301, { Location: '/' });
       res.end();
       return;
     }
@@ -176,18 +175,23 @@ export default async function handler(req: IncomingMessage, res: any) {
     // Server-side legacy redirections (301 Permanent Redirect)
     const legacyRedirects: Record<string, string> = {
       '/company/insights': '/insights',
-      '/on-page-seo-los-angeles': '/markets/southern-california',
+      '/on-page-seo-los-angeles': '/capabilities/seo-discoverability',
       '/success-stories': '/company/success-stories',
       '/services': '/capabilities',
-      '/services/seo': '/capabilities/forensic-seo-penalty-recovery',
-      '/services/geo-optimization': '/capabilities/generative-engine-optimization',
-      '/services/lead-generation': '/capabilities/conversion-architecture',
-      '/services/web-development': '/capabilities/custom-digital-infrastructure',
-      '/services/web-design': '/capabilities/custom-digital-infrastructure',
-      '/services/ppc-advertising': '/capabilities/conversion-architecture',
-      '/services/advertising': '/capabilities/conversion-architecture',
-      '/google-penalty-recovery': '/capabilities/forensic-seo-penalty-recovery',
-      '/what-we-do.html': '/capabilities/forensic-seo-penalty-recovery'
+      '/services/seo': '/capabilities/seo-discoverability',
+      '/services/geo-optimization': '/capabilities/seo-discoverability',
+      '/services/lead-generation': '/capabilities/native-crm',
+      '/services/web-development': '/capabilities/web-development',
+      '/services/web-design': '/capabilities/web-development',
+      '/services/ppc-advertising': '/capabilities/native-crm',
+      '/services/advertising': '/capabilities/native-crm',
+      '/google-penalty-recovery': '/capabilities/seo-discoverability',
+      '/what-we-do.html': '/capabilities/seo-discoverability',
+      '/capabilities/generative-engine-optimization': '/capabilities/seo-discoverability',
+      '/capabilities/forensic-seo-penalty-recovery': '/capabilities/seo-discoverability',
+      '/capabilities/conversion-architecture': '/capabilities/native-crm',
+      '/capabilities/semantic-search-intelligence': '/capabilities/seo-discoverability',
+      '/capabilities/custom-digital-infrastructure': '/capabilities/web-development'
     };
 
     if (legacyRedirects[pathname]) {
@@ -330,11 +334,10 @@ export default async function handler(req: IncomingMessage, res: any) {
           "@type": "OfferCatalog",
           "name": "Gobiya Services",
           "itemListElement": [
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Forensic SEO & Penalty Recovery", "url": "https://www.gobiya.com/capabilities/forensic-seo-penalty-recovery" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Generative Engine Optimization (GEO)", "url": "https://www.gobiya.com/capabilities/generative-engine-optimization" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Conversion Architecture & B2B Pipeline", "url": "https://www.gobiya.com/capabilities/conversion-architecture" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Semantic Search Intelligence", "url": "https://www.gobiya.com/capabilities/semantic-search-intelligence" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Custom Digital Infrastructure", "url": "https://www.gobiya.com/capabilities/custom-digital-infrastructure" } }
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Web Development", "url": "https://www.gobiya.com/capabilities/web-development" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Native CRM", "url": "https://www.gobiya.com/capabilities/native-crm" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "SEO & Discoverability", "url": "https://www.gobiya.com/capabilities/seo-discoverability" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Blockchain & Web3 Development", "url": "https://www.gobiya.com/capabilities/blockchain-web3-development" } }
           ]
         },
         "knowsAbout": [

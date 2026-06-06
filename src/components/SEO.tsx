@@ -7,56 +7,24 @@ interface SEOMetadata {
 
 const metadataMap: Record<string, SEOMetadata> = {
   '/': {
-    title: 'AI SEO & GEO Agency: Get Cited by ChatGPT & Google | Gobiya',
-    description: 'Stop losing clicks to AI Overviews. Gobiya is a technical AI SEO & Generative Engine Optimization (GEO) agency. We optimize your brand entity to rank #1 on Google and get cited natively by ChatGPT, Claude, and Gemini.'
+    title: 'Custom Web Development, Native CRM & Blockchain | Gobiya',
+    description: 'We build fast, modern React/Vite websites engineered to rank and convert natively. Complete with codebase-level CRMs and custom Web3 blockchain integrations. Get a free audit.'
   },
-  '/locations/glendale': {
-    title: 'Glendale AI SEO & GEO Services | local map pack optimization | Gobiya',
-    description: 'Stop losing local Glendale leads. We optimize your Google Business Profile and local entity schema to rank #1 in maps and get cited natively in AI searches.'
+  '/capabilities/web-development': {
+    title: 'Custom React & Vite Web Development Services | Gobiya',
+    description: 'We build fully custom, sub-second React and Vite websites engineered for Core Web Vitals, indexability, and clean user experience. No templates.'
   },
-  '/locations/beverly-hills': {
-    title: 'Beverly Hills Premium AI SEO & GEO Services | Gobiya',
-    description: 'Luxury local SEO and Generative Engine Optimization. We align your brand entity with high-authority coordinates to rank top-5 on Google and get cited by ChatGPT.'
+  '/capabilities/native-crm': {
+    title: 'Codebase-Level Custom Native CRM Engineering | Gobiya',
+    description: 'Stop paying monthly software fees. We design and compile bespoke customer database and pipeline management systems built directly into your website\'s code.'
   },
-  '/locations/northridge': {
-    title: 'Northridge Local SEO & Google Maps Optimization Services | Gobiya',
-    description: 'Dominating Northridge local search. We optimize your San Fernando Valley entity footprint to rank top-3 in map packs and win AI search recommendations.'
+  '/capabilities/seo-discoverability': {
+    title: 'Built-in SEO & Search Engine Indexing Eligibility | Gobiya',
+    description: 'Search engine crawlability, indexation health, and AI citation eligibility are built into our codebase by default. We build sites that get found.'
   },
-  '/locations/studio-city': {
-    title: 'Studio City Local SEO & AI Citation GEO Services | Gobiya',
-    description: 'Own Ventura Blvd search. We optimize local entity graphs for Studio City creative agencies and businesses to rank top-5 on Google and get cited by Claude and Gemini.'
-  },
-  '/on-page-seo-los-angeles': {
-    title: 'On-Page SEO Los Angeles: Engineered for Google & AI Citations | Gobiya',
-    description: 'Stop losing clicks. We architect high-performance, entity-optimized on-page SEO across Los Angeles to win Google rankings and ChatGPT citations. Get a free audit.'
-  },
-  '/services/local-seo': {
-    title: 'Local SEO Service Los Angeles: Elite Maps & AI Domination | Gobiya',
-    description: 'Stop losing local customers. Our elite local SEO service connects Google Maps, GBP optimization, and AI citations to put your brand at position #1. Free audit.'
-  },
-  '/local-seo-service': {
-    title: 'Local SEO Service Los Angeles: Elite Maps & AI Domination | Gobiya',
-    description: 'Stop losing local customers. Our elite local SEO service connects Google Maps, GBP optimization, and AI citations to put your brand at position #1. Free audit.'
-  },
-  '/capabilities/generative-engine-optimization': {
-    title: 'Get Cited by ChatGPT or Stay Invisible to AI Search | Gobiya',
-    description: 'Conversational AI is stealing search traffic. Here is how we engineer your website\'s data and structure so ChatGPT, Claude, and Gemini recommend your brand natively.'
-  },
-  '/capabilities/forensic-seo-penalty-recovery': {
-    title: 'Reclaim Your Rankings: Forensic SEO & Penalty Recovery | Gobiya',
-    description: 'Did a Google update destroy your traffic? We diagnose quality classifier drops, reverse manual actions, and rebuild topical authority to recover your pipeline.'
-  },
-  '/capabilities/conversion-architecture': {
-    title: 'Forget Cold Calling: Build a Predictive Inbound Pipeline | Gobiya',
-    description: 'Stop chasing bad-fit leads. We design and launch automated acquisition systems that fill your calendar with pre-qualified buyers on autopilot.'
-  },
-  '/capabilities/semantic-search-intelligence': {
-    title: 'Dominate the Entity Graph & Semantic Search Space | Gobiya',
-    description: 'Google query algorithms understand concepts, not just words. We structure your brand as a primary entity node and map topical clusters to capture high-intent search.'
-  },
-  '/capabilities/custom-digital-infrastructure': {
-    title: 'Ditch the Slow Templates: Speed-Engineered Custom React | Gobiya',
-    description: 'Is a sluggish template leaking conversions? We replace bloated CMS setups with sub-second custom React pages designed to turn visitors into buyers instantly.'
+  '/capabilities/blockchain-web3-development': {
+    title: 'Custom Blockchain, Smart Contracts & Web3 Dev | Gobiya',
+    description: 'We engineer secure smart contracts, decentralized applications (dApps), and on-chain integrations directly into your web applications.'
   },
   '/company/about': {
     title: 'The Gobiya Story: Precision growth engineering since 2012 | Gobiya',
@@ -95,12 +63,8 @@ const metadataMap: Record<string, SEOMetadata> = {
     description: 'Schedule a 15-minute 1-on-1 strategy call with our lead developer & marketer Steve Martin to audit your organic pipeline and search traffic.'
   },
   '/capabilities': {
-    title: 'Our Core Capabilities: Forensic SEO, GEO & Pipeline Dev | Gobiya',
-    description: 'Explore our specialized capabilities: generative engine optimization, forensic traffic recovery, conversion architecture, and high-performance React engineering.'
-  },
-  '/markets/southern-california': {
-    title: 'LA & SoCal SEO Agency: Rank #1 in the Most Competitive Market | Gobiya',
-    description: 'Southern California is brutal. We engineer SEO dominance, AI citations, and B2B pipeline systems for LA, Orange County, and San Diego enterprises. Free audit.'
+    title: 'Our Core Capabilities: Web Development, Native CRM, SEO & Blockchain | Gobiya',
+    description: 'Explore our engineering capabilities: custom React/Vite development, native codebase-level CRM pipelines, built-in SEO discoverability, and smart contract Web3 integrations.'
   },
   '/insights/gobiya-vs-enterprise-seo-agencies': {
 
@@ -316,11 +280,10 @@ const SEO: React.FC<SEOProps> = ({ path }) => {
           "@type": "OfferCatalog",
           "name": "Gobiya Services",
           "itemListElement": [
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Forensic SEO & Penalty Recovery", "url": "https://www.gobiya.com/capabilities/forensic-seo-penalty-recovery" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Generative Engine Optimization (GEO)", "url": "https://www.gobiya.com/capabilities/generative-engine-optimization" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Conversion Architecture & B2B Pipeline", "url": "https://www.gobiya.com/capabilities/conversion-architecture" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Semantic Search Intelligence", "url": "https://www.gobiya.com/capabilities/semantic-search-intelligence" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Custom Digital Infrastructure", "url": "https://www.gobiya.com/capabilities/custom-digital-infrastructure" } }
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Web Development", "url": "https://www.gobiya.com/capabilities/web-development" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Native CRM", "url": "https://www.gobiya.com/capabilities/native-crm" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "SEO & Discoverability", "url": "https://www.gobiya.com/capabilities/seo-discoverability" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Blockchain & Web3 Development", "url": "https://www.gobiya.com/capabilities/blockchain-web3-development" } }
           ]
         },
         "knowsAbout": [
