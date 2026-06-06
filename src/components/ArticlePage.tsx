@@ -37,12 +37,22 @@ const ARTICLES: Record<string, ArticleData> = {
     content: (
       <>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8 font-medium">
-          When high-growth B2B companies search for search engine optimization support, they typically arrive at a crossroad: hire a traditional, large-scale enterprise agency or partner with a specialized, agile search engineering shop. The enterprise choice offers the comfort of a recognized name, but it often carries bloated retainers, junior account oversight, and slow execution cycles. The specialized engineering choice focuses on speed, entity mapping, and pipeline value.
+          High-growth B2B companies looking for search engine optimization support usually hit a fork in the road. Do you hire a big-name enterprise agency, or partner with an agile, specialized search engineering shop? Large agencies offer name comfort. But they also bring bloated retainers, junior coordinators, and slow cycles. An engineering shop is different. It prioritizes speed, entity mapping, and raw pipeline metrics over slide decks.
         </p>
 
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
           This comparison is designed to help B2B buying committees evaluate both models across the four capabilities that determine modern search success: page rendering speed, GEO (Generative Engine Optimization) citation rate, technical execution speed, and CRM pipeline attribution.
         </p>
+
+        <div className="border-l-4 border-[#F26522] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
+          <img src="/images/steve-portrait.webp" alt="Steve Martin" className="w-12 h-12 object-cover border border-white/10 shrink-0" />
+          <div>
+            <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-1 font-sans">Steve's Take</p>
+            <p className="text-[15px] italic text-white leading-relaxed font-sans">
+              "I've watched enterprise agencies charge $20,000 a month only to delegate the work to junior account managers who have never built a website. In the AI era, search is an engineering problem. You need builders, not coordinators."
+            </p>
+          </div>
+        </div>
 
         <h2 id="comparison-table" className="text-xl font-bold text-gray-900 mt-10 mb-4 font-display">Gobiya vs Enterprise Agencies: Operational Comparison</h2>
         <div className="overflow-x-auto my-8">
@@ -107,12 +117,22 @@ const ARTICLES: Record<string, ArticleData> = {
     content: (
       <>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8 font-medium">
-          How do B2B companies use SEO to generate predictable revenue? Most share the same frustrating pattern: organic traffic climbs steadily month over month, but the pipeline report stays flat. Leadership celebrates the rankings; sales asks where the leads are. The disconnect is not a content problem or a keyword problem. It is a structural one. The program was built to generate visibility, not revenue.
+          How do B2B companies actually turn SEO into predictable revenue? Most fall into a frustrating trap. Organic traffic goes up every month, but the CRM pipeline stays flat. Executives celebrate. Sales teams sigh. This disconnect is not a content problem. It is a structural one. The program was built to generate visibility, not deals.
         </p>
 
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
           For B2B companies that want predictable, attributable revenue, organic search is more than a traffic channel, it is a <a href="/services/lead-generation" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">B2B pipeline architecture</a> problem. That distinction changes everything: which keywords you target, how you build content, what you measure, and how you connect search activity to closed deals inside your CRM. Gobiya approaches B2B organic search exactly this way, combining forensic keyword targeting with automated sales infrastructure to close the gap between impressions and closed revenue.
         </p>
+
+        <div className="border-l-4 border-[#F26522] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
+          <img src="/images/steve-portrait.webp" alt="Steve Martin" className="w-12 h-12 object-cover border border-white/10 shrink-0" />
+          <div>
+            <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-1 font-sans">Steve's Take</p>
+            <p className="text-[15px] italic text-white leading-relaxed font-sans">
+              "If you are measuring organic search sessions instead of inbound demo requests, you are reporting on vanity. Fix your CRM attribution first. Then build content clusters around buying stages, not high-volume search queries."
+            </p>
+          </div>
+        </div>
 
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
           What follows is a repeatable framework covering the five structural decisions that separate B2B SEO strategies that produce qualified pipeline from the ones that produce quarterly traffic reports nobody acts on.
@@ -369,8 +389,18 @@ const ARTICLES: Record<string, ArticleData> = {
     content: (
       <>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8 font-medium">
-          The source hierarchy AI engines actually use to confirm a company exists, what it does, and whether it's worth citing — why they cross-reference multiple sources rather than trusting any one, and why inconsistent data across those sources makes a model stay silent about your brand entirely.
+          Where do AI engines go to verify a B2B company? They don't just trust your website. They cross-reference external databases to confirm who you are. If your data is inconsistent across these sources, AI models will simply ignore you. Here is the source hierarchy they actually use.
         </p>
+
+        <div className="border-l-4 border-[#F26522] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
+          <img src="/images/steve-portrait.webp" alt="Steve Martin" className="w-12 h-12 object-cover border border-white/10 shrink-0" />
+          <div>
+            <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-1 font-sans">Steve's Take</p>
+            <p className="text-[15px] italic text-white leading-relaxed font-sans">
+              "AI systems prioritize structured reference platforms like Wikidata and professional directories like LinkedIn. If your details don't match exactly across them, models trigger a 'hallucination penalty' and exclude you."
+            </p>
+          </div>
+        </div>
 
         <div className="border border-gray-200 p-6 bg-gray-50 mb-8 rounded-lg">
           <ul className="space-y-4 pl-0">
@@ -625,8 +655,18 @@ const ARTICLES: Record<string, ArticleData> = {
     content: (
       <>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8 font-medium">
-          They sound like rivals and get treated as either/or — but Knowledge Graph optimization and Generative Engine Optimization are different in scope, era, and target engines while being deeply connected, with the former functioning as the foundation the latter is built on. Here's the actual relationship.
+          Knowledge Graph optimization and Generative Engine Optimization (GEO) are often treated as rivals. In reality, they are two sides of the same coin. The Knowledge Graph maps who you are, while GEO gets you cited in AI answers. Here is how they work together.
         </p>
+
+        <div className="border-l-4 border-[#F26522] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
+          <img src="/images/steve-portrait.webp" alt="Steve Martin" className="w-12 h-12 object-cover border border-white/10 shrink-0" />
+          <div>
+            <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-1 font-sans">Steve's Take</p>
+            <p className="text-[15px] italic text-white leading-relaxed font-sans">
+              "Without a solid Knowledge Graph foundation, AI engines have low confidence in your site. Think of KG as entity verification, and GEO as optimization for extraction. You need both to win."
+            </p>
+          </div>
+        </div>
 
         {/* ── update highlights ── */}
         <div className="border border-gray-200 p-6 bg-gray-50 mb-8 rounded-lg">
@@ -868,8 +908,18 @@ const ARTICLES: Record<string, ArticleData> = {
     content: (
       <>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8 font-medium">
-          The debate of <strong>ChatGPT vs Google for business discovery</strong> isn't academic, it's a revenue-allocation problem that most brands are only beginning to recognize. Google still handles 15+ billion searches per day. But 93% of searches in Google's AI Mode now end without a single click to an external website (Semrush, 2025). At the same time, visitors who arrive from AI-generated recommendations convert 4.4x better than traditional organic visitors when they do land on a page. That tension is the core problem every growth-focused brand needs to resolve right now.
+          The choice between <strong>ChatGPT and Google for business discovery</strong> is a major budget decision. Google still commands raw volume. But over 90% of searches in AI modes now result in zero clicks. Paradoxically, the few visitors who do click through from AI recommendations convert at over four times the rate of standard searchers. Reconciling this tension is critical.
         </p>
+
+        <div className="border-l-4 border-[#F26522] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
+          <img src="/images/steve-portrait.webp" alt="Steve Martin" className="w-12 h-12 object-cover border border-white/10 shrink-0" />
+          <div>
+            <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-1 font-sans">Steve's Take</p>
+            <p className="text-[15px] italic text-white leading-relaxed font-sans">
+              "Google brings traffic; ChatGPT brings buyers. Traditional SEO targets keywords to drive clicks, while AI search requires you to establish authority so the model recommends you directly."
+            </p>
+          </div>
+        </div>
 
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
           At Gobiya, we're watching this split show up in client traffic patterns week over week: high impressions on Google, shrinking clicks, and a growing share of high-intent buyers arriving from AI-generated recommendations they can't attribute properly. The impressions look healthy. The revenue picture tells a different story. This article breaks down the mechanics behind both discovery channels, where each one breaks down, and what to do about it.
@@ -1069,8 +1119,18 @@ const ARTICLES: Record<string, ArticleData> = {
     content: (
       <>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8 font-medium">
-          The single most important distinction in Google traffic recovery: why a human-issued manual action and an automated algorithmic suppression are completely different problems, how to tell instantly which one you have, and why confusing them is the root cause of most failed recoveries.
+          If your Google traffic drops overnight, you need to understand one key distinction: is it a manual action or an algorithmic suppression? Confusing them is why most recovery attempts fail. They are completely different problems, requiring completely different fixes. Let's make sure you diagnose yours correctly.
         </p>
+
+        <div className="border-l-4 border-[#F26522] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
+          <img src="/images/steve-portrait.webp" alt="Steve Martin" className="w-12 h-12 object-cover border border-white/10 shrink-0" />
+          <div>
+            <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-1 font-sans">Steve's Take</p>
+            <p className="text-[15px] italic text-white leading-relaxed font-sans">
+              "If Google Search Console displays 'No issues detected,' stop submitting reconsideration requests. There is no human on the other side to read them. Focus on lifting your content quality instead."
+            </p>
+          </div>
+        </div>
 
         {/* ── TABLE OF CONTENTS ── */}
         <details className="bg-gray-50 border border-gray-200 rounded-lg p-6 sm:p-8 my-10 sm:my-14 group" open>
@@ -1357,8 +1417,18 @@ const ARTICLES: Record<string, ArticleData> = {
     content: (
       <>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8 font-medium">
-          Generative Engine Optimization (GEO) is the practice of structuring and optimizing content so that AI engines — ChatGPT, Claude, Perplexity, Google's AI Overviews and AI Mode, Gemini — cite it as a source when they generate answers to user questions. Where traditional SEO optimizes for ranking position in a list of blue links, GEO optimizes for being one of the sources an AI synthesizes its answer from and references. The distinction matters because the way people find information has shifted. Increasingly, a buyer researching a product, a patient researching a condition, or a professional researching a vendor doesn't type a query into Google and click through ten results — they ask an AI a question and receive a synthesized answer that draws from and cites a handful of sources. If your content is among those sources, you're present at the moment the person forms their understanding. If it isn't, you're invisible to that entire mode of research, no matter how well you rank in traditional search.
+          Generative Engine Optimization (GEO) is the next evolution of search. While traditional SEO optimizes for ranking in lists of blue links, GEO optimizes for being cited by conversational AI engines like ChatGPT, Perplexity, and Claude. Buyers no longer click ten links. They ask an AI and read the synthesized answer. If you're not in the citations, you don't exist.
         </p>
+
+        <div className="border-l-4 border-[#F26522] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
+          <img src="/images/steve-portrait.webp" alt="Steve Martin" className="w-12 h-12 object-cover border border-white/10 shrink-0" />
+          <div>
+            <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-1 font-sans">Steve's Take</p>
+            <p className="text-[15px] italic text-white leading-relaxed font-sans">
+              "GEO is about passage relevance and evidence. You must structure content to be easily extracted by RAG systems, and back up your assertions with statistics so the model trusts you enough to cite you."
+            </p>
+          </div>
+        </div>
 
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
           This is the shift GEO addresses, and it's why the discipline has moved from a niche academic idea to a mainstream marketing concern in roughly two years. The strongest operators have recognized that AI-generated answers are becoming a primary information surface, that being cited in those answers is a distinct optimization problem from ranking in traditional search, and that the content structures and signals that earn AI citations are measurably different from the ones that earned keyword rankings. Most operators are still optimizing exclusively for traditional search and discovering, often through declining traffic that their rankings don't explain, that the AI layer has become a place they're absent from.
@@ -1624,8 +1694,18 @@ const ARTICLES: Record<string, ArticleData> = {
     content: (
       <>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
-          What to do when your in-house team is suddenly responsible for recovering a Google manual action your agency triggered — how to diagnose the situation, manage the executive narrative, and run a credible recovery while the agency relationship unwinds.
+          Is your in-house team suddenly responsible for recovering a Google manual action your agency triggered? It's a stressful spot. You must diagnose the penalty, manage executive expectations, and launch a recovery path—all while winding down the agency contract. Here is how to handle it.
         </p>
+
+        <div className="border-l-4 border-[#F26522] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
+          <img src="/images/steve-portrait.webp" alt="Steve Martin" className="w-12 h-12 object-cover border border-white/10 shrink-0" />
+          <div>
+            <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-1 font-sans">Steve's Take</p>
+            <p className="text-[15px] italic text-white leading-relaxed font-sans">
+              "When agencies cause a penalty with low-quality AI content, they usually offer to 'fix it for free.' Don't let them. If their systems triggered the filter in the first place, they do not possess the skills to recover it. Bring in independent help."
+            </p>
+          </div>
+        </div>
         
         {/* ── TABLE OF CONTENTS ── */}
         <details className="bg-gray-50 border border-gray-200 rounded-lg p-6 sm:p-8 my-10 sm:my-14 group" open>
@@ -1925,13 +2005,18 @@ const ARTICLES: Record<string, ArticleData> = {
         </details>
 
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
-          Automated B2B sales pipeline SEO can mean the difference between a vendor appearing on an AI-generated shortlist
-          and a website that never gets surfaced when a buyer asks ChatGPT, Claude, or Perplexity which providers they
-          should evaluate. AI assistants now handle the early stages of most B2B research — and the vast majority of that
-          research happens before any sales rep is contacted. So buyers arrive at vendor websites with their shortlist
-          already built, and traditional SEO playbooks — optimised for Google's blue links — often land on the wrong side
-          of that filter.
+          Will your brand appear on the AI-generated shortlist when a buyer researches options? That is the question automated B2B pipeline SEO answers. Most B2B research happens autonomously before a sales rep is ever contacted. If you are optimized only for standard blue links, you will miss the AI evaluation filter entirely.
         </p>
+
+        <div className="border-l-4 border-[#F26522] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
+          <img src="/images/steve-portrait.webp" alt="Steve Martin" className="w-12 h-12 object-cover border border-white/10 shrink-0" />
+          <div>
+            <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-1 font-sans">Steve's Take</p>
+            <p className="text-[15px] italic text-white leading-relaxed font-sans">
+              "B2B buying committees don't browse the web anymore to make their shortlist. They let AI models do the comparison. If your content doesn't supply clean RAG snippets, you don't even make the longlist."
+            </p>
+          </div>
+        </div>
 
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
           This is the problem an automated B2B sales pipeline SEO approach solves. The strongest B2B operators have rebuilt
@@ -2300,12 +2385,18 @@ const ARTICLES: Record<string, ArticleData> = {
         </details>
 
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
-          Automated lead generation SEO can mean the difference between a sales team working pre-qualified inbound and a
-          team grinding through form-fills who downloaded an ebook eight weeks ago and ghosted. AI assistants now sit
-          between the buyer and the vendor for a growing share of B2B research, and the leads that come out the other side
-          of that filter behave fundamentally differently — they convert faster, spend more time on site, and arrive with
-          the vendor already shortlisted in their head.
+          Stop asking your sales team to cold-call users who downloaded an ebook two months ago. They aren't leads. Automated lead gen SEO uses AI engines to pre-qualify buyers before they reach your site. These prospects arrive with high intent, convert faster, and already know your value proposition.
         </p>
+
+        <div className="border-l-4 border-[#F26522] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
+          <img src="/images/steve-portrait.webp" alt="Steve Martin" className="w-12 h-12 object-cover border border-white/10 shrink-0" />
+          <div>
+            <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-1 font-sans">Steve's Take</p>
+            <p className="text-[15px] italic text-white leading-relaxed font-sans">
+              "High-intent traffic referred by ChatGPT converts up to 4.4 times better than standard organic. When AI answers pre-qualify a prospect, you're skipped right past the research stage directly to the buy stage."
+            </p>
+          </div>
+        </div>
 
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
           Most teams don't realize the gap exists until they look at the numbers and find that 1% of their traffic is
@@ -2667,8 +2758,18 @@ const ARTICLES: Record<string, ArticleData> = {
         </details>
 
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
-          Outbound SEO prospecting can mean the difference between a sequence that lands in an inbox at the exact moment an account is researching the category and a sequence that fires into the void of someone who decided eighteen months ago that they don't need what's being sold. The vast majority of cold outbound now goes to accounts that aren't in-market. The Ehrenberg-Bass 95:5 rule is the most-cited frame for the problem: at any given moment, only about 5 percent of target buyers are actively in a buying cycle. Traditional outbound sprays the other 95 percent and hopes to catch someone mid-decision. SEO-derived signals tell you which 5 percent are actually in-market this week, which page they read, and what intent the page is built around.
+          Only about 5% of your target accounts are in-market at any given moment. Traditional outbound campaigns spray the other 95% and pray for timing. Outbound SEO prospecting is different. It captures intent signals from your organic pages to tell you which accounts are researching right now, what they read, and when to reach out.
         </p>
+
+        <div className="border-l-4 border-[#F26522] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
+          <img src="/images/steve-portrait.webp" alt="Steve Martin" className="w-12 h-12 object-cover border border-white/10 shrink-0" />
+          <div>
+            <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-1 font-sans">Steve's Take</p>
+            <p className="text-[15px] italic text-white leading-relaxed font-sans">
+              "Your website already generates high-intent account IP data. Routing those signals directly to your outbound sales team turns cold emails into warm, timing-perfect outreach."
+            </p>
+          </div>
+        </div>
 
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
           This is the problem outbound SEO prospecting solves. The strongest B2B operators have stopped treating outbound and SEO as separate disciplines and started routing the intent data their content generates directly into the SDR queue. Most teams don't realize how much intent data their site is already producing — most of it gets discarded in analytics dashboards no one in the sales org has ever opened.
@@ -2963,8 +3064,18 @@ const ARTICLES: Record<string, ArticleData> = {
         </details>
 
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
-          B2B sales pipeline automation can mean the difference between an AI-augmented revenue engine that compounds quarter over quarter and a stack of disconnected tools that each work on paper but produce the same flat pipeline the team had before they were deployed. The 2026 data on AI in B2B sales is split. The case studies show 3 to 5x pipeline lift from autonomous AI SDRs at materially lower cost. The Gartner research shows fewer than 40 percent of sellers actually experience the productivity gain in practice. Both numbers are true. The gap between them is almost entirely an orchestration problem.
+          Stacking up disconnected AI tools won't fix a broken sales process. True B2B pipeline automation requires a unified orchestration layer. When your SEO intent capture, enrichment, and CRM routing are integrated, you compound revenue. When they are fragmented, productivity falls.
         </p>
+
+        <div className="border-l-4 border-[#F26522] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
+          <img src="/images/steve-portrait.webp" alt="Steve Martin" className="w-12 h-12 object-cover border border-white/10 shrink-0" />
+          <div>
+            <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-1 font-sans">Steve's Take</p>
+            <p className="text-[15px] italic text-white leading-relaxed font-sans">
+              "Most teams pay for twelve tools and still have reps copy-pasting data between tabs. Focus on building the orchestration layer that links your signal capture to your CRM action."
+            </p>
+          </div>
+        </div>
 
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
           This is the problem B2B sales pipeline automation solves when it's built correctly. The strongest B2B operators have stopped buying point-solution AI tools and started designing the orchestration layer that ties signal capture, enrichment, routing, sequencing, and CRM hygiene into one motion. Most teams don't realize the gap exists until they audit their stack and find they own twelve tools, pay roughly $200,000 a year in software, and still have an SDR team manually copying data between systems because nothing actually integrates the way the vendor decks promised.
@@ -3213,8 +3324,18 @@ const ARTICLES: Record<string, ArticleData> = {
         </details>
 
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
-          Choosing the best SEO agency for B2B brands in 2026 is a fundamentally different decision than it was even two years ago. The buyer journey now starts in ChatGPT, Claude, Perplexity, and Gemini for more than half of B2B research sessions. The pages that rank #3 on Google are often not the pages AI engines cite. And the agencies that built their reputations on traditional keyword rankings are not, in most cases, the agencies producing pipeline today. So the question of which agency to hire has shifted — from "who ranks our keywords" to "who actually moves our pipeline in a market where buyers research in AI tools the agency may or may not even be measuring."
+          Choosing the best B2B SEO agency is a new challenge. The B2B buyer journey now starts in conversational search—ChatGPT, Claude, and Perplexity—for over half of all research. Traditional keyword agencies are failing to adapt. The agencies that produce real pipeline today are the ones who understand AI citation mechanics.
         </p>
+
+        <div className="border-l-4 border-[#F26522] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
+          <img src="/images/steve-portrait.webp" alt="Steve Martin" className="w-12 h-12 object-cover border border-white/10 shrink-0" />
+          <div>
+            <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-1 font-sans">Steve's Take</p>
+            <p className="text-[15px] italic text-white leading-relaxed font-sans">
+              "Stop hiring SEO agencies based on how well they rank their own site for 'SEO agency.' Check their understanding of RAG retrieval, schema graph nesting, and CRM sales integration instead."
+            </p>
+          </div>
+        </div>
 
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
           This is the problem a structured evaluation framework solves. The strongest B2B operators have stopped picking agencies on case study aesthetics and started picking on disclosed methodology, attribution capability, and operating discipline around AI search. Most teams don't realize the gap exists until they're a year into an agency relationship and looking at flat pipeline alongside rising rankings, and asking why those two numbers no longer correlate.
@@ -3415,8 +3536,19 @@ const ARTICLES: Record<string, ArticleData> = {
           The Buying Committee Era — 2026 update
         </h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          SEO for B2B lead generation can mean the difference between a content program that produces a steady flow of forms-filled-by-champions-who-can't-get-their-team-to-agree and a program that arms every stakeholder on the buying committee with the answer they need at the moment they ask it. The 2026 data is unambiguous on this point. Buying committees have ballooned to 11.2 people. Each one researches independently. Each one can veto. And 40 to 60 percent of qualified pipeline dies not because a competitor won but because the committee couldn't reach internal consensus. That changes the entire shape of what B2B lead generation SEO is supposed to produce.
+          B2B lead generation fails when you optimize for a single persona. Modern buying committees involve over 11 stakeholders. Each researches independently. Each holds veto power. To close pipeline, your SEO must arm every stakeholder with role-specific answers.
         </p>
+
+        <div className="border-l-4 border-[#F26522] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
+          <img src="/images/steve-portrait.webp" alt="Steve Martin" className="w-12 h-12 object-cover border border-white/10 shrink-0" />
+          <div>
+            <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-1 font-sans">Steve's Take</p>
+            <p className="text-[15px] italic text-white leading-relaxed font-sans">
+              "When you target champions only, you get orphaned MQLs. Your content must satisfy the IT director, the CFO, and the procurement lead too. Build multi-role content clusters."
+            </p>
+          </div>
+        </div>
+
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
           This is the problem a buying-committee content architecture solves. The strongest B2B operators have stopped building content around a single buyer persona and started building content around the <em>roles</em> on the committee — the technical evaluator, the economic buyer, the end user, the procurement reviewer, the legal stakeholder, the executive sponsor. Most teams don't realize the gap exists until they're a year into a program with strong MQL volume and flat closed-won, and ask why the champions who fill out their forms keep losing the internal sale.
         </p>
@@ -3689,8 +3821,19 @@ const ARTICLES: Record<string, ArticleData> = {
           The LA B2B SEO Agency Market — 2026 update
         </h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Choosing a B2B SEO agency in Los Angeles in 2026 is, for most LA-based B2B operators, fundamentally a question about local partnership — not a question about which national agency has the best deck. The operator typing "B2B SEO agency Los Angeles" into a search bar or asking ChatGPT for LA recommendations is, almost without exception, signaling proximity preference: they want to be able to meet their agency partner in person, share a time zone with the people doing the work, work with strategists who understand LA's distinct business culture, and hold an agency accountable in the same way they would any other local vendor relationship. National firms can produce competent work. They can't produce local partnership.
+          Hiring a B2B SEO agency in Los Angeles is about finding a local partner, not just a vendor with a flashy deck. B2B operators who want to win in LA need time-zone alignment, face-to-face planning sessions, and real familiarity with Southern California's business ecosystem. Remote agencies simply cannot offer this level of operational integration.
         </p>
+
+        <div className="border-l-4 border-[#F26522] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
+          <img src="/images/steve-portrait.webp" alt="Steve Martin" className="w-12 h-12 object-cover border border-white/10 shrink-0" />
+          <div>
+            <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-1 font-sans">Steve's Take</p>
+            <p className="text-[15px] italic text-white leading-relaxed font-sans">
+              "LA's tech and SaaS corridor operates differently than Silicon Valley or New York. Working with a local search team means your strategy moves at the speed of local network updates, not delayed monthly reviews."
+            </p>
+          </div>
+        </div>
+
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
           The strongest LA-based B2B operators have stopped treating geography as an irrelevant variable in agency selection and started treating it as a primary one — because the operational benefits of working with a local partner compound over a 12-month engagement in ways national agencies can't replicate. Most teams don't realize how much the proximity gap matters until they're 9 months into a national relationship with monthly calls that never quite catch up to where the business actually is, asking why their agency feels like a vendor rather than a partner. The criteria for evaluating this fit overlap significantly with the broader framework of <a href="/insights/best-seo-agency-for-b2b-brands" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">choosing the best SEO agency for B2B brands</a> — but with proximity as a primary variable rather than a tiebreaker.
         </p>
@@ -3957,8 +4100,19 @@ const ARTICLES: Record<string, ArticleData> = {
         </div>
 
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          B2B organic traffic growth in 2026 has detached from the metric that used to define it. The old math was simple: more organic traffic, more pipeline, more revenue. That math has broken — not slowly, and not subtly. Factors.ai's 2026 analysis of more than 100 B2B companies found median organic traffic dropped 1.25 percent year over year, while organic conversion rates rose 21.4 percent for the same cohort. Fewer people are arriving. The right people are still arriving.
+          In B2B organic search, traffic and revenue have decoupled. The old goal of maximizing monthly page views is dead. High-performing programs focus on traffic composition—reaching the right buying committee members with specific high-intent queries rather than attracting large numbers of unqualified visitors.
         </p>
+
+        <div className="border-l-4 border-[#F26522] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
+          <img src="/images/steve-portrait.webp" alt="Steve Martin" className="w-12 h-12 object-cover border border-white/10 shrink-0" />
+          <div>
+            <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-1 font-sans">Steve's Take</p>
+            <p className="text-[15px] italic text-white leading-relaxed font-sans">
+              "We regularly see B2B brands lose 20% of their organic traffic but gain 30% in qualified pipeline because they pruned low-intent blog posts. Stop celebrating vanity traffic metrics."
+            </p>
+          </div>
+        </div>
+
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
           This is the problem a modern B2B organic traffic growth strategy solves. The strongest operators have stopped optimizing for traffic volume as the leading indicator and started optimizing for the <em>composition</em> of organic traffic — which channels, which intent, which buyer roles, which signals make it through to pipeline. This directly connects to how <a href="/insights/seo-for-b2b-lead-generation" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">SEO for B2B lead generation</a> has fundamentally changed in the AI search era.
         </p>
@@ -4151,8 +4305,19 @@ const ARTICLES: Record<string, ArticleData> = {
         </div>
 
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Local SEO for Los Angeles businesses in 2026 is a different discipline than it was even two years ago. Google's local algorithm has tightened around a specific signal hierarchy: Google Business Profile (32%), on-page signals (19%), reviews (16%), links (15%), behavioral signals (8%), citations (7%). The March 2026 Core Update pushed AI Overviews into 68% of local queries. Zero-click searches have crossed 60%. And a parallel AI-recommendation layer has emerged where Gemini, ChatGPT, and Perplexity surface local business recommendations from a different signal set that most LA business owners have never audited.
+          Winning Los Angeles local SEO requires optimizing across multiple surfaces. With Google's March 2026 core update pushing AI Overviews into over two-thirds of local searches, standard business profile optimization is no longer enough. Your business must establish presence in the new AI-recommendation layer where models query local business entity clusters.
         </p>
+
+        <div className="border-l-4 border-[#F26522] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
+          <img src="/images/steve-portrait.webp" alt="Steve Martin" className="w-12 h-12 object-cover border border-white/10 shrink-0" />
+          <div>
+            <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-1 font-sans">Steve's Take</p>
+            <p className="text-[15px] italic text-white leading-relaxed font-sans">
+              "LA is too competitive to rely on basic Google profile setups. You need localized schema markup, review velocity past the 3-Pack threshold, and geo-targeted service subdirectories to stand out."
+            </p>
+          </div>
+        </div>
+
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
           This multi-surface complexity is exactly why partnering with a <a href="/insights/b2b-seo-agency-los-angeles" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">B2B SEO agency rooted in Los Angeles</a> matters — proximity to the city's specific neighborhood dynamics, publication ecosystem, and customer behavior patterns shapes every tactic in a real local SEO program.
         </p>
@@ -4336,8 +4501,19 @@ const ARTICLES: Record<string, ArticleData> = {
         </details>
 
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Los Angeles local SEO is, more than anything else, a discipline of operational consistency. The strategic case for doing it — covered in the <a href="/insights/local-seo-los-angeles" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">pillar piece on local SEO for LA businesses</a> — is essentially settled at this point. Local search drives 46% of all Google traffic, Google Business Profile signals carry 32% of the ranking weight, and the AI-recommendation layer is reshaping the broader visibility surface. None of that is in serious dispute anymore. What separates LA businesses that win the 3-Pack from those that don't is rarely a strategic insight. It's the operational rhythm — the specific work that gets done every week and every month, by a specific person or team, against a specific cadence the algorithm rewards.
+          In LA local search, strategy is cheap. Operational consistency is expensive. What separates the businesses dominating Google's local 3-Pack from those that fall behind is not a secret tactic, but a weekly operating cadence that signals constant local relevance.
         </p>
+
+        <div className="border-l-4 border-[#F26522] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
+          <img src="/images/steve-portrait.webp" alt="Steve Martin" className="w-12 h-12 object-cover border border-white/10 shrink-0" />
+          <div>
+            <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-1 font-sans">Steve's Take</p>
+            <p className="text-[15px] italic text-white leading-relaxed font-sans">
+              "Google's algorithm measures profile activity and review velocity. If you go dark for even six weeks, your rankings drop to active competitors. Build local SEO directly into your customer support workflows."
+            </p>
+          </div>
+        </div>
+
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
           This is the problem most LA local SEO programs actually fail at. Not strategy. Cadence. The strongest LA operators have built local SEO into the operating rhythm of the business itself — review acquisition baked into customer workflow, GBP optimization handled on a recurring weekly schedule, neighborhood content produced against a content calendar rather than ad-hoc, AI-layer visibility monitored monthly. Most LA businesses don't realize how much consistency-driven their local rankings are until they go quiet for six to eight weeks and watch their 3-Pack position slip to a competitor who didn't.
         </p>
@@ -4568,8 +4744,19 @@ const ARTICLES: Record<string, ArticleData> = {
         </details>
 
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Multi-location SEO website structure is the single biggest technical decision a multi-location operator makes — and the one most likely to be made implicitly, by a web developer who doesn't specialize in local SEO, in the first weeks of a website rebuild. The decision shapes whether each location ranks independently in its own market or whether the locations quietly compete against each other for the same brand-plus-city queries, leaving the operator with one location getting all the visibility and the rest functionally invisible. The 2026 data on multi-location SEO is consistent across every credible source: businesses that get the architecture right produce independent traffic engines at every location, while businesses that get the architecture wrong produce one strong location and several ghost locations no matter how much local SEO work they do downstream.
+          Site architecture is the single most important technical choice for multi-location brands. Built wrong, your location pages cannibalize each other, leaving one branch visible and the rest hidden. Built right, each location serves as a local authority node with its own crawl path and authority signals.
         </p>
+
+        <div className="border-l-4 border-[#F26522] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
+          <img src="/images/steve-portrait.webp" alt="Steve Martin" className="w-12 h-12 object-cover border border-white/10 shrink-0" />
+          <div>
+            <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-1 font-sans">Steve's Take</p>
+            <p className="text-[15px] italic text-white leading-relaxed font-sans">
+              "Never let web developers design your URL structures without SEO input. They will build flat, single-page templates with a generic drop-down list, which Google treats as a single URL. Every city needs a directory path."
+            </p>
+          </div>
+        </div>
+
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
           This is the problem a proper multi-location SEO website structure solves. The strongest multi-location operators have stopped treating their website as a single brand asset with location information scattered across it and started treating it as a federation of location-specific pages, each with its own authority, content, and search footprint, all linked through a coherent architecture that helps rather than hurts. Most operators don't realize how much their architecture is hurting them until they look at their analytics — especially as <a href="/insights/b2b-organic-traffic-growth" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">organic traffic and pipeline decoupled</a> in 2026 — and discover that one location is producing 80% of organic traffic while the other locations look invisible — and assume that's a local SEO problem rather than the technical SEO problem it actually is.
         </p>
@@ -4857,8 +5044,19 @@ const ARTICLES: Record<string, ArticleData> = {
 
         {/* ── INTRO ── */}
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          The best website structure for a business with multiple locations in different cities is, in nearly all cases, a single authoritative domain with a clean city-level subdirectory hierarchy — something like <code className="bg-gray-100 px-1.5 py-0.5 rounded text-[0.9em] text-gray-800">yourdomain.com/locations/chicago/</code> rather than <code className="bg-gray-100 px-1.5 py-0.5 rounded text-[0.9em] text-gray-800">chicago.yourdomain.com</code> or a separate <code className="bg-gray-100 px-1.5 py-0.5 rounded text-[0.9em] text-gray-800">MyBusinessChicago.com</code>. This answer is close to settled among 2026 local SEO practitioners, and the reasoning is specific: a single domain consolidates all the authority signals your business earns across every city into one domain, while subdomains split that authority and separate domains fragment it entirely.
+          Should you use subdirectories, subdomains, or separate domains for multi-city locations? The consensus is clear: subdirectories pool root domain authority. Splitting cities into separate domains or subdomains dilutes link equity and makes ranking newer locations harder.
         </p>
+
+        <div className="border-l-4 border-[#F26522] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
+          <img src="/images/steve-portrait.webp" alt="Steve Martin" className="w-12 h-12 object-cover border border-white/10 shrink-0" />
+          <div>
+            <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-1 font-sans">Steve's Take</p>
+            <p className="text-[15px] italic text-white leading-relaxed font-sans">
+              "Never run separate domains like 'MyBrandChicago.com' alongside 'MyBrandDenver.com.' You will end up spending triple the budget on backlinks because you are maintaining separate sites rather than leveraging one authority domain."
+            </p>
+          </div>
+        </div>
+
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
           For a business operating in genuinely different cities — distinct metros, sometimes distinct states, each with its own competitive set and its own local search behavior — the structural decision is more consequential than it is for a business with several locations clustered in one metro. Each city represents a genuinely separate market the business needs to rank in independently. The foundational principles of <a href="/insights/multi-location-seo-website-structure" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">multi-location SEO website structure</a> apply in full — and the stakes for getting the decision wrong compound with every additional city the business enters.
         </p>
@@ -5231,8 +5429,19 @@ const ARTICLES: Record<string, ArticleData> = {
           The Recovery Reality — 2026 update
         </h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Can a site fully recover from a Google core update? Yes — full recovery happens, and it happens regularly for sites that correctly diagnose what went wrong and do the substantive work to fix it. But the honest, complete answer has three qualifications that most recovery content skips, and that this audience deserves to hear plainly. First, recovery is not guaranteed: Google's own documentation states that not all sites will fully recover, and some sites hit by a core update never return to their previous traffic levels regardless of the work they do. Second, recovery is slow: the typical timeline is three to six months, and full recovery often requires waiting for the next broad core update to take effect, because that's when Google re-runs the relative evaluation that determines rankings. Third — and this is the 2026-specific complication most recovery discussions miss entirely — ranking recovery no longer guarantees traffic recovery, because AI Overviews and zero-click results have changed the SERP underneath you, so a site can fully recover its rankings and still not recover its former traffic.
+          Can your site fully recover from a Google core update drop? Yes, but it requires patience. True recovery takes three to six months of substantive content pruning and quality consolidation. Earning back organic trust is a slow, relative evaluation process that usually runs on Google's next major update cycle.
         </p>
+
+        <div className="border-l-4 border-[#F26522] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
+          <img src="/images/steve-portrait.webp" alt="Steve Martin" className="w-12 h-12 object-cover border border-white/10 shrink-0" />
+          <div>
+            <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-1 font-sans">Steve's Take</p>
+            <p className="text-[15px] italic text-white leading-relaxed font-sans">
+              "When you get hit by a core update, don't rush to make tiny edits or disavow random backlinks. Google is evaluating your entire site's quality. Pruning thin pages is the fastest way to signal improvement."
+            </p>
+          </div>
+        </div>
+
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
           This is the reality a business needs to understand before investing months of effort into core update recovery. The strongest operators approach it with accurate expectations: recovery is achievable but not certain, slow rather than fast, cyclical rather than continuous, and measured against a moving target because the SERP itself keeps changing. Most businesses approach it with the opposite assumptions — that recovery is guaranteed if they do the right things, that it should happen quickly, and that getting their rankings back means getting their traffic back. Those assumptions lead to panic, to chasing tactical fixes that don't work, and to abandoning correct recovery work right before it would have paid off.
         </p>
@@ -5518,8 +5727,19 @@ const ARTICLES: Record<string, ArticleData> = {
           The GBP Recovery Era — 2026 update
         </h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Google Business Profile optimization is usually framed as a growth lever — the work you do to rank higher in the local pack, get more calls, more direction requests, more local customers. But for a business that has <em>lost</em> local visibility, GBP optimization is something else entirely: it's frequently the diagnosis and the cure for a traffic collapse that website-focused SEO can't touch. This is the part most businesses miss when their local traffic drops. They assume the problem is their website — an algorithm update, a technical issue, a content problem — and they pour effort into website SEO while the actual problem sits in their Google Business Profile, untouched. A suspended profile, a soft suspension, a profile quietly degraded by Google's automated moderation, a listing merged or duplicated by Google's systems, or NAP data corrupted by a third-party aggregator can erase local pack and Google Maps visibility overnight while the website continues ranking normally in organic results. The two are separate systems, and a business can have a perfectly healthy website and still vanish from local search.
+          When a local business loses search visibility, they often blame their website. But the real culprit is frequently a suspended or degraded Google Business Profile (GBP). A soft or hard profile suspension will drop your map pack visibility to zero, while your website rankings look perfectly normal.
         </p>
+
+        <div className="border-l-4 border-[#F26522] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
+          <img src="/images/steve-portrait.webp" alt="Steve Martin" className="w-12 h-12 object-cover border border-white/10 shrink-0" />
+          <div>
+            <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-1 font-sans">Steve's Take</p>
+            <p className="text-[15px] italic text-white leading-relaxed font-sans">
+              "Never delete a suspended profile to 'start over.' Google flags new profiles at the same address as guidelines evasion, resulting in a permanent ban. Correct the profile's data and submit an official reinstatement appeal instead."
+            </p>
+          </div>
+        </div>
+
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
           This is the diagnostic problem at the center of local traffic recovery. The strongest operators, when local visibility drops, check the Google Business Profile first — because GBP-driven visibility loss is both common and invisible to website analytics, and because the recovery path for a GBP problem is completely different from the recovery path for a website problem. Most businesses don't realize their traffic loss is a GBP problem until they've spent weeks optimizing a website that was never the issue, while the suspension that actually caused the collapse sits unaddressed and the revenue loss compounds at 15-25% per month.
         </p>
@@ -5768,8 +5988,19 @@ const ARTICLES: Record<string, ArticleData> = {
         </details>
 
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          A B2B SEO agency is not a generalist SEO agency that happens to serve B2B clients. The category is structurally different enough that the distinction has become operationally meaningful — and increasingly so as AI search reshapes the broader SEO discipline. The keywords B2B agencies target have lower search volumes but higher intent. The content they produce has to serve multi-stakeholder buying committees rather than single decision-makers. The sales cycles they're optimizing for run 90 to 180+ days, not minutes. The conversion events they measure are pipeline contribution and revenue, not transactions. The measurement model they operate against connects content directly to CRM data and closed deals, not to traffic dashboards and ranking reports. None of these characteristics are accidental specializations. They are structural requirements of the B2B SEO problem itself, and agencies that haven't built around them produce predictable failures regardless of how skilled their general SEO practice is.
+          B2B search requires a specialist. Generalist agencies target search volume; B2B agencies target pipeline value. From multi-stakeholder buying committees to 180-day sales cycles, the B2B SEO model must connect search directly to your CRM. Here is what separates a specialized partner from a generalist.
         </p>
+
+        <div className="border-l-4 border-[#F26522] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
+          <img src="/images/steve-portrait.webp" alt="Steve Martin" className="w-12 h-12 object-cover border border-white/10 shrink-0" />
+          <div>
+            <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-1 font-sans">Steve's Take</p>
+            <p className="text-[15px] italic text-white leading-relaxed font-sans">
+              "Generalist agencies run B2C playbooks on B2B accounts. They celebrate traffic spikes, but when the client asks where the revenue is, they blame the sales team. Work with B2B specialist search engineers."
+            </p>
+          </div>
+        </div>
+
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
           This is the problem the B2B SEO agency category solves. The strongest B2B operators have stopped hiring generalist agencies that "also do B2B" and started hiring specialists whose entire operating model is built around the structural realities of B2B buying. Most operators don't realize the difference matters until they're 9-12 months into a relationship with a generalist agency producing strong traffic numbers and flat pipeline, asking why the two metrics no longer correlate.
         </p>
@@ -5989,8 +6220,18 @@ const ARTICLES: Record<string, ArticleData> = {
         />
 
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8 font-medium">
-          This is a forensic <a href="/company/success-stories" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">SEO case study on traffic recovery</a>, specifically, how Gobiya diagnosed and reversed a severe organic traffic collapse following Google's March 2026 dual-update event. If you're looking for a replicable post-update SEO recovery playbook, not a list of generic best practices, this documents the exact diagnostic sequence and fix order that worked.
+          How do you recover from a sudden Google core update drop? This forensic case study details how Gobiya diagnosed and reversed a severe organic traffic collapse after Google's March 2026 update, leading to a 320% traffic lift. Here is our replicable step-by-step playbook.
         </p>
+
+        <div className="border-l-4 border-[#F26522] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
+          <img src="/images/steve-portrait.webp" alt="Steve Martin" className="w-12 h-12 object-cover border border-white/10 shrink-0" />
+          <div>
+            <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-1 font-sans">Steve's Take</p>
+            <p className="text-[15px] italic text-white leading-relaxed font-sans">
+              "Recovery is a sequence problem, not just a fix list. If you rewrite content before resolving server-side crawl issues, Googlebot won't index your updates. Fix technical issues first, then content."
+            </p>
+          </div>
+        </div>
 
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
           The first week of March 2026, a B2B e-commerce client watched their organic traffic fall off a cliff. Google's first <a href="/insights/can-a-site-fully-recover-from-a-google-core-update" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">broad core update</a> of the year rolled out alongside a concurrent spam algorithm update, and within days, core money pages that had been generating consistent revenue dropped from page one to page three and beyond. By the time they contacted Gobiya, two previous agencies had already attempted fixes. Neither moved the needle.
@@ -6249,8 +6490,18 @@ const ARTICLES: Record<string, ArticleData> = {
         />
 
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8 font-medium">
-          The technical answer is unambiguous, and it\'s the opposite of what the question assumes: AI engines read public, server-rendered HTML — and most of them don\'t execute JavaScript at all, which means content rendered client-side from API calls is invisible to them. Here\'s the mechanism, the evidence, and what it means for your architecture.
+          Do AI search engines scrape private APIs or read public HTML text blocks? The answer is simple: they fetch public, server-rendered HTML. Because AI crawlers do not execute JavaScript, any client-side rendered content on your website is completely invisible to their indexers.
         </p>
+
+        <div className="border-l-4 border-[#F26522] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
+          <img src="/images/steve-portrait.webp" alt="Steve Martin" className="w-12 h-12 object-cover border border-white/10 shrink-0" />
+          <div>
+            <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-1 font-sans">Steve's Take</p>
+            <p className="text-[15px] italic text-white leading-relaxed font-sans">
+              "If you want to test your site's AI visibility, turn off JavaScript in your browser. Whatever text disappears when JS is disabled is completely invisible to GPTBot, ClaudeBot, and PerplexityBot. Render server-side."
+            </p>
+          </div>
+        </div>
 
         {/* ── STATS / UPDATE ── */}
         <div className="bg-gray-50 border-l-4 border-[#F26522] p-6 my-10 space-y-4">
