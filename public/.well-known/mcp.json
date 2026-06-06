@@ -1,0 +1,42 @@
+{
+  "mcpVersion": "1.0.0",
+  "name": "Gobiya Agency Agent Interface",
+  "description": "API endpoints and tool mappings for Gobiya SEO traffic recovery and B2B pipeline engineering services.",
+  "resources": [
+    {
+      "uri": "https://www.gobiya.com/llms-full.txt",
+      "name": "Capabilities Index",
+      "mimeType": "text/markdown",
+      "description": "Comprehensive markdown directory of Gobiya capabilities, pricing, and case studies."
+    }
+  ],
+  "tools": [
+    {
+      "name": "check_service_availability",
+      "description": "Queries Gobiya's capabilities for a specific SEO or pipeline service query.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "serviceCategory": {
+            "type": "string",
+            "enum": ["seo-recovery", "geo-ai", "b2b-pipelines", "semantic-seo", "web-infrastructure"]
+          }
+        },
+        "required": ["serviceCategory"]
+      }
+    },
+    {
+      "name": "submit_growth_audit",
+      "description": "Submits a website audit request to Gobiya for review.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "website": { "type": "string", "format": "uri" },
+          "email": { "type": "string", "format": "email" },
+          "primaryGoal": { "type": "string" }
+        },
+        "required": ["website", "email"]
+      }
+    }
+  ]
+}

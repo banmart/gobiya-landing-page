@@ -80,6 +80,45 @@ function App({ url }: AppProps) {
     };
   }, []);
 
+  // Register WebMCP tools for AI-enabled browser engines (origin trials)
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    
+    // Check if the experimental navigator.modelContext API is available
+    if ('modelContext' in navigator) {
+      try {
+        const modelContext = (navigator as any).modelContext;
+        
+        // Register Gobiya's growth audit tool
+        modelContext.registerTool({
+          name: 'request_gobiya_growth_audit',
+          description: 'Allows an AI agent to submit a client site and email to request a custom B2B SEO/pipeline growth audit from Steve Martin at Gobiya.',
+          inputSchema: {
+            type: 'object',
+            properties: {
+              website: { type: 'string', description: 'The domain URL to be audited (e.g. https://example.com)' },
+              email: { type: 'string', description: 'The business email for delivery of findings' },
+              notes: { type: 'string', description: 'Optional context on current traffic drops or pipeline needs' }
+            },
+            required: ['website', 'email']
+          },
+          handler: async (args: { website: string; email: string; notes?: string }) => {
+            // Forward audit request to the onboarding flow
+            window.location.href = `/thank-you?agent=true&website=${encodeURIComponent(args.website)}&email=${encodeURIComponent(args.email)}`;
+            return {
+              success: true,
+              message: 'Audit request received. Redirecting to the Gobiya confirmation page. Steve Martin will deliver findings to the provided email.'
+            };
+          }
+        });
+        
+        console.log('WebMCP browser tools registered successfully.');
+      } catch (e) {
+        console.warn('Error registering WebMCP tools:', e);
+      }
+    }
+  }, []);
+
   // Handle legacy redirects on mount and path change
   useEffect(() => {
     if (typeof window === 'undefined') return;
