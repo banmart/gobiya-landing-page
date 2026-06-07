@@ -173,12 +173,12 @@ function App({ url }: AppProps) {
   const articleMatch = normalizedPath.match(/^\/insights\/([a-z0-9-]+)$/);
   const articleSlug = articleMatch ? articleMatch[1] : null;
 
-  // Detect solution routes
   const isSolutionRoute = [
     '/capabilities/web-development',
     '/capabilities/native-crm',
     '/capabilities/seo-discoverability',
-    '/capabilities/blockchain-web3-development'
+    '/capabilities/blockchain-web3-development',
+    '/capabilities/ai-prospect-scraper'
   ].includes(normalizedPath);
 
   return (

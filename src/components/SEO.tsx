@@ -26,6 +26,10 @@ const metadataMap: Record<string, SEOMetadata> = {
     title: 'Blockchain & Web3 Development — Smart Contracts, dApps | gobiya',
     description: 'We engineer secure smart contracts, decentralized applications (dApps), and on-chain integrations directly into your web applications.'
   },
+  '/capabilities/ai-prospect-scraper': {
+    title: 'AI Prospect Scraper & Drip Campaigns | gobiya',
+    description: 'Our native CRM includes an AI-powered prospect scraper that gathers NAP data and automatically creates customized drip email campaigns for your B2B leads.'
+  },
   '/company/about': {
     title: 'The Gobiya Story: Precision growth engineering since 2012 | Gobiya',
     description: 'We aren\'t a template-churning agency. Meet the growth engineers rebuilding traffic pipelines, recovering penalties, and solving generative SEO.'
@@ -45,6 +49,10 @@ const metadataMap: Record<string, SEOMetadata> = {
   '/insights': {
     title: 'Unfiltered Growth: SEO Audits, GEO Tactics & AI Shifts | Gobiya',
     description: 'No generic fluff. The Gobiya team shares real operational insights, Google core update recovery checklists, and AI engine optimization tactics.'
+  },
+  '/insights/dental-seo-agency': {
+    title: 'Dental SEO Agency Checklist: Red Flags & KPIs to Watch | Gobiya',
+    description: 'Avoid costly hiring mistakes. Use our comprehensive evaluation checklist for dental SEO agencies, covering contract traps, KPIs, and case study audits.'
   },
   '/company/careers': {
     title: 'Solve Hard Search & Engineering Problems With Us | Gobiya',
@@ -276,7 +284,8 @@ const SEO: React.FC<SEOProps> = ({ path }) => {
             { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Web Development", "url": "https://www.gobiya.com/capabilities/web-development" } },
             { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Native CRM", "url": "https://www.gobiya.com/capabilities/native-crm" } },
             { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "SEO & Discoverability", "url": "https://www.gobiya.com/capabilities/seo-discoverability" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Blockchain & Web3 Development", "url": "https://www.gobiya.com/capabilities/blockchain-web3-development" } }
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Blockchain & Web3 Development", "url": "https://www.gobiya.com/capabilities/blockchain-web3-development" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "AI Prospect Scraper", "url": "https://www.gobiya.com/capabilities/ai-prospect-scraper" } }
           ]
         },
         "knowsAbout": [

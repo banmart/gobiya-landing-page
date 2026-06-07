@@ -22,6 +22,7 @@ import InsightsSlider from './InsightsSlider';
 import TestimonialsSlider from './TestimonialsSlider';
 import SatisfiedClients from './SatisfiedClients';
 import LiveRevenueCounter from './LiveRevenueCounter';
+import RotatingAILogos from './RotatingAILogos';
 
 const AxionLanding = () => {
   const [time, setTime] = useState('');
@@ -204,6 +205,11 @@ const AxionLanding = () => {
                   <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 text-[#F26522] transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-rotate-45" />
                 </div>
               </a>
+              <div className="flex items-center gap-3 bg-white/5 border border-white/10 hover:bg-white/10 transition-shadow duration-300 px-3 py-2 cursor-pointer">
+                <RotatingAILogos />
+                <span className="text-[13px] sm:text-[14px] font-medium text-white">Certified Partner</span>
+                <span className="text-[10px] sm:text-[11px] bg-gray-900 text-white px-1.5 sm:px-2 py-0.5 rounded">Featured</span>
+              </div>
             </div>
             
             {/* Partner Logos */}
@@ -482,6 +488,11 @@ const AxionLanding = () => {
                   <ArrowRight className="w-4 h-4 text-[#F26522] transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-rotate-45" />
                 </div>
               </a>
+              <div className="mt-4 flex items-center justify-center gap-3 bg-white border border-gray-200 hover:bg-gray-50 transition-shadow duration-300 px-3 py-2 cursor-pointer mx-auto max-w-fit">
+                <RotatingAILogos />
+                <span className="text-[13px] sm:text-[14px] font-medium text-gray-900">Certified Partner</span>
+                <span className="text-[10px] sm:text-[11px] bg-gray-100 text-gray-900 px-1.5 sm:px-2 py-0.5 rounded">Featured</span>
+              </div>
             </motion.div>
 
             <motion.div 

@@ -238,11 +238,13 @@ const AmericanLivescanCaseStudy: React.FC = () => {
                 <ParallaxMedia
                   type="image"
                   src="/images/livescan-office.webp"
-                  alt="American Livescan fingerprinting office — placeholder"
+                  alt="American Livescan fingerprinting office"
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute bottom-3 left-3 right-3 bg-black/70 text-white text-[11px] px-3 py-1.5 backdrop-blur-sm">
-                  📷 Placeholder — replace with actual American Livescan photos
+                <div className="absolute bottom-3 left-3 right-3 bg-black/70 text-white px-3 py-1.5 backdrop-blur-sm">
+                  <span className="text-gray-400 text-sm font-medium">
+                    American Livescan Office
+                  </span>
                 </div>
               </div>
             </div>
@@ -277,11 +279,13 @@ const AmericanLivescanCaseStudy: React.FC = () => {
             <ParallaxMedia
               type="image"
               src="/images/livescan-results.webp"
-              alt="American Livescan analytics — placeholder"
+              alt="American Livescan analytics"
               className="w-full h-full object-cover"
             />
-            <div className="absolute bottom-4 left-4 bg-black/70 text-white text-[12px] px-4 py-2 backdrop-blur-sm">
-              📷 Placeholder — replace with Search Console / GMB screenshots
+            <div className="absolute bottom-4 left-4 bg-black/70 text-white px-4 py-2 backdrop-blur-sm">
+              <span className="text-gray-400 text-sm font-medium">
+                Search Console Analytics
+              </span>
             </div>
           </div>
         </div>

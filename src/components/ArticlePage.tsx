@@ -6210,6 +6210,344 @@ const ARTICLES: Record<string, ArticleData> = {
       </>
     )
   },
+  'dental-seo-agency': {
+    slug: 'dental-seo-agency',
+    title: 'Dental SEO Agency Checklist: Red Flags and KPIs to Watch',
+    category: 'Local SEO',
+    readTime: '11 min read',
+    date: 'June 7, 2026',
+    image: '/images/dental-seo-agency-hero.webp',
+    heroAlt: 'A professional, lifelike photo of a modern dental marketing and growth engineering meeting reviewing a glowing organic SEO traffic and patient pipeline dashboard',
+    metaDescription: 'Avoid costly hiring mistakes. Use our comprehensive evaluation checklist for dental SEO agencies, covering contract traps, KPIs, and case study audits.',
+    content: (
+      <>
+        {/* ── JSON-LD FAQ SCHEMA ── */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "What should a complete dental SEO package include?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "A full dental SEO engagement should cover six functional areas: local SEO for dentists, Google Business Profile (GBP) optimization, on-page content (service pages, city pages, FAQs), technical fixes (site speed, schema markup, mobile performance), backlink acquisition, and conversion rate optimization. Each area should come with concrete deliverables (e.g., GBP setup or audit, a specified number of content pages per month, and a structured technical audit with a prioritized fix list)."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "What are common red flags when evaluating a dental SEO agency?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Vague language about “SEO” without naming monthly deliverables is a key red flag, as is polished sales copy promising first-page rankings with no evidence. Long-term contracts, difficulty retrieving website files when you leave, and templated campaign approaches are also warning signs — remember: No deliverable, no accountability."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "How should I evaluate a dental SEO agency before signing a contract?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Apply a consistent diagnostic lens across scope, evidence, pricing, and contract terms and insist on written, specific deliverables for each functional area. Ask for audit reports, examples of multi-location work, GBP cadence, and clear performance KPIs before committing."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "How is dental SEO different from general SEO?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Dental SEO focuses on hyper-local intent and transactional queries (e.g., “dental implants Los Angeles” or “dentist near me”), so it prioritizes GBP expertise, citation consistency, and localized content that drives bookings. Generalist SEO firms often optimize for traffic, while dental digital marketing optimizes for the chair; see B2B SEO Agency vs. Generalist: The Vital Difference for context on specialization."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Do I need Google Business Profile (GBP) optimization for my dental practice?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes — GBP is critical for patients ready to book and should be a core deliverable. GBP work should include profile setup or audit, category selection, photo optimization, a post cadence, Q&A management, and tracked call activity to measure patient leads."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Should I add conversion rate optimization (CRO) or paid ads to my dental SEO package?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "CRO is highly recommended because better conversion ensures SEO-driven traffic becomes booked appointments; typical CRO deliverables include landing page improvements, click-to-call placement, booking form testing, and trust signals like review displays and doctor bios. Adding pay-per-click management makes sense for new practices, highly competitive markets, or any situation needing patient volume quickly while organic rankings build over the next 6–12 months."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "How should multi-location dental practices handle SEO?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Each location needs its own verified Google Business Profile (GBP), a unique location page with distinct content, and its own local citation footprint to avoid diluting rankings. Treating multiple locations with a single merged strategy usually weakens performance for every location rather than strengthening any of them."
+                  }
+                }
+              ]
+            })
+          }}
+        />
+
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8 font-medium">
+          Many dental practices that got burned by an SEO agency didn't lack budget. They lacked a framework for evaluation. They signed a lengthy contract based on a polished sales deck, waited months for results that never materialized, and then had to fight to recover their own website files when they tried to leave. If you're currently evaluating a <strong>dental SEO agency</strong>, the process you use before signing matters more than the proposal you receive.
+        </p>
+
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          The dental SEO space is genuinely crowded. Many agencies promise first-page rankings, more patients, and a flood of organic leads. The pitches sound nearly identical, which makes it difficult to separate a legitimate partner from one running templated campaigns on autopilot. The right approach is to apply a consistent diagnostic lens across every vendor you interview: scope, evidence, pricing, and contract terms. That's exactly the standard this checklist is built around. This guide gives you the tools to evaluate any dental SEO agency on all four dimensions before you commit a dollar.
+        </p>
+
+        <div className="border-l-4 border-[#F26522] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
+          <img src="/images/steve-portrait.webp" alt="Steve Martin" className="w-12 h-12 object-cover border border-white/10 shrink-0" />
+          <div>
+            <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-1 font-sans">Steve's Take</p>
+            <p className="text-[15px] italic text-white leading-relaxed font-sans">
+              "Most dental practices evaluate agencies on their ranking charts, not their new patient metrics. But if organic traffic doesn't translate to bookings, it's just vanity. You need to link search traffic directly to your calendar."
+            </p>
+          </div>
+        </div>
+
+        {/* ── TABLE OF CONTENTS ── */}
+        <details className="bg-gray-50 border border-gray-200 rounded-lg p-6 sm:p-8 my-10 sm:my-14 group" open>
+          <summary className="text-[14px] font-semibold uppercase tracking-wider text-gray-500 cursor-pointer list-none flex items-center justify-between">
+            Table of Contents
+            <svg className="w-4 h-4 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" /></svg>
+          </summary>
+          <ul className="mt-6 space-y-3.5 text-[15px] font-medium text-gray-900 border-t border-gray-200 pt-6">
+            {[
+              { id: 'complete-package', label: 'What a complete dental SEO package should actually include' },
+              { id: 'red-flags', label: 'Red flags that expose a risky dental SEO agency' },
+              { id: 'kpis', label: 'The KPIs that prove your dental SEO investment is working' },
+              { id: 'case-studies', label: 'How to read a dental SEO case study without getting fooled' },
+              { id: 'pricing', label: 'What dental SEO pricing looks like in 2026 (and what you get at each tier)' },
+              { id: 'contract-terms', label: 'Contract terms to demand before you sign anything' },
+              { id: 'framework', label: 'Use this framework before your next agency conversation' },
+            ].map((item) => (
+              <li key={item.id}>
+                <a href={`#${item.id}`} className="hover:text-[#F26522] transition-colors flex items-center gap-2">
+                  <span className="text-[#F26522] text-xs">◆</span> {item.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </details>
+
+        <h2 id="complete-package" className="text-xl sm:text-2xl font-bold text-gray-900 mt-12 mb-6 font-display">
+          What a complete dental SEO package should actually include
+        </h2>
+
+        <h3 className="text-lg font-bold text-gray-900 mt-8 mb-4 font-display">
+          The core service components worth paying for
+        </h3>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          A full dental SEO engagement covers six functional areas: local SEO for dentists, Google Business Profile (GBP) optimization, on-page content (service pages, city pages, FAQs), technical fixes (site speed, schema markup, mobile performance), backlink acquisition, and conversion rate optimization. Each of those areas has a concrete deliverable attached to it. If a dental SEO agency describes "SEO" without naming what they actually produce each month, that vagueness is already a signal worth noting.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          GBP deliverables, for example, should include profile setup or audit, category selection, photo optimization, post cadence, Q&A management, and tracked call activity. Content deliverables should specify a number of pages or posts per month. Technical deliverables should include a structured audit report and a prioritized fix list. <strong>No deliverable, no accountability.</strong> For practices focused on local search momentum, a clear operational cadence for GBP and local citations matters more than flashy promises. For example, Gobiya's guide on <a href="/insights/local-seo-explained" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">The 90-Day Cadence: How We Win Local Search</a> demonstrates the structure a local campaign requires.
+        </p>
+
+        <h3 className="text-lg font-bold text-gray-900 mt-8 mb-4 font-display">
+          What separates dental-specific SEO from generic SEO
+        </h3>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          Dental practices compete on hyper-local intent. A patient searching "dental implants Los Angeles" or "dentist near me" is ready to book, not browse. That kind of query demands GBP expertise, citation consistency across directories, and localized content that a general digital marketing agency rarely prioritizes as a core competency. Generic SEO firms optimize for traffic; dental digital marketing optimizes for the chair. If you're comparing vertical specialists to broad generalists, review the piece on <a href="/insights/b2b-seo-agency" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">B2B SEO Agency vs. Generalist: The Vital Difference</a> to understand how specialization changes deliverables and outcomes.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          Multi-location practices face additional complexity that most agencies underestimate. Each location needs its own verified GBP profile, its own location page with unique content, and its own local citation footprint. A single merged strategy across locations typically dilutes rankings for every location rather than strengthening any of them.
+        </p>
+
+        <h3 className="text-lg font-bold text-gray-900 mt-8 mb-4 font-display">
+          CRO and paid ads: optional or essential?
+        </h3>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          Some agencies stop at rankings. The better ones extend into conversion optimization, ensuring that the traffic SEO generates actually turns into booked appointments. CRO deliverables include landing page improvements, click-to-call placement, booking form testing, and trust signals like review displays and doctor bios. Adding pay-per-click management to a dental SEO package makes practical sense for a new practice, a highly competitive market, or any situation where the practice needs patient volume now while organic rankings build over the following 6 to 12 months.
+        </p>
+
+        <h2 id="red-flags" className="text-xl sm:text-2xl font-bold text-gray-900 mt-12 mb-6 font-display">
+          Red flags that expose a risky dental SEO agency
+        </h2>
+
+        <h3 className="text-lg font-bold text-gray-900 mt-8 mb-4 font-display">
+          Promises that no legitimate agency can keep
+        </h3>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          "First page in 30 days" is the clearest red flag in this industry. No ethical SEO provider can guarantee specific rankings within a specific timeframe, because Google's algorithm is not under their control. Any dental SEO agency that makes that promise is either misinformed or counting on you not holding them to it. Walk away.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          Overly low pricing paired with aggressive outcome promises is the second major warning sign. Comprehensive dentist SEO services require real content, real technical work, and substantive link acquisition. When pricing falls far below market rate, the agency is almost always cutting corners with recycled content, purchased links, or keyword-stuffed pages that create long-term penalties rather than durable rankings.
+        </p>
+
+        <h3 className="text-lg font-bold text-gray-900 mt-8 mb-4 font-display">
+          Contract and reporting warning signs
+        </h3>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          Vague exit clauses, annual commitments with steep early-termination fees, and missing asset ownership language are contractual traps that dentists encounter far more often than they should. Before signing anything, confirm in writing who owns the website, who owns the content, and who retains access to Google Analytics and Search Console if the relationship ends. Agencies that delay or deflect on those questions are likely building dependency by design.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          <strong>Vanity-metric reporting is a separate problem.</strong> Raw traffic numbers, keyword count charts, and impression totals look impressive in a PDF. They tell you almost nothing about whether your SEO investment is producing patients. Any agency reporting traffic without conversion or call attribution is measuring the wrong thing on purpose.
+        </p>
+
+        <h3 className="text-lg font-bold text-gray-900 mt-8 mb-4 font-display">
+          What a dishonest case study looks like
+        </h3>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          Agencies that show only keyword ranking charts without connecting those rankings to patient inquiries, calls, or booked appointments are hiding the only metric that actually matters to your business. A ranking improvement from position 14 to position 4 is irrelevant if it didn't produce a single phone call. Ask directly: did this practice get more patients, and how do you attribute that outcome to SEO specifically?
+        </p>
+
+        <h2 id="kpis" className="text-xl sm:text-2xl font-bold text-gray-900 mt-12 mb-6 font-display">
+          The KPIs that prove your dental SEO investment is working
+        </h2>
+
+        <h3 className="text-lg font-bold text-gray-900 mt-8 mb-4 font-display">
+          New patient leads and organic traffic: year 1 vs. year 2 benchmarks
+        </h3>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          Year 1 realistic targets are modest but measurable: 10% to 15% annual growth in new patients, a consistent month-over-month upward trend in organic traffic (not explosive, but steady), and visible GBP call and direction-request activity that proves local visibility is improving. SEO compounds over time, so the early months are about building the foundation through indexation, local citation consistency, and ranking movement on patient-intent keywords.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          Year 2 targets should be meaningfully higher. As rankings mature, expect a 10% to 25%+ lift over year 1 performance. Based on agency-reported benchmarks from dental SEO campaigns, ROI typically moves from near break-even in months 1 to 3 toward 3:1 to 5:1 in months 7 to 12, and 5:1 to 10:1 in year 2 and beyond. For website performance specifically, a strong dental SEO campaign should push your site's conversion rate into the 5% to 8% range, meaning visitors completing a booking or inquiry form.
+        </p>
+
+        <h3 className="text-lg font-bold text-gray-900 mt-8 mb-4 font-display">
+          Google Business Profile performance and call tracking
+        </h3>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          GBP calls, direction requests, and photo views are concrete activity signals that local SEO is working in practice, not just technically. Call tracking attribution is a deliverable any serious dental SEO agency should include as a baseline service, not an optional upgrade you negotiate into the contract. If an agency can't tell you how many calls your GBP generated last month, they're not measuring what matters.
+        </p>
+
+        <h3 className="text-lg font-bold text-gray-900 mt-8 mb-4 font-display">
+          How to distinguish trend from noise in monthly reports
+        </h3>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          A single month of traffic growth means nothing. The KPI that matters is a consistent upward trend across three or more months, paired with ranking movement on keywords that reflect actual patient intent. Ask your agency to show you the same metric family tracked over time: traffic against prior-period traffic, rankings against prior-period rankings. Switching between measurement methods when results are weak is a classic tactic for obscuring underperformance.
+        </p>
+
+        <h2 id="case-studies" className="text-xl sm:text-2xl font-bold text-gray-900 mt-12 mb-6 font-display">
+          How to read a dental SEO case study without getting fooled
+        </h2>
+
+        <h3 className="text-lg font-bold text-gray-900 mt-8 mb-4 font-display">
+          What concrete before/after evidence actually looks like
+        </h3>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          The most credible case studies show specific baseline and follow-up metrics in the same category. Documented examples from dental SEO campaigns include practices that went from 13 to 49 top-3 keyword rankings, practices that saw 231% organic traffic growth in six months, and campaigns that grew monthly patient inquiries from 15 to 58 over a 12-month period. That level of specificity is what separates a real result from marketing copy. If a case study doesn't show you a baseline, it's not a case study, it's a testimonial.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          Our own case study on <a href="/case-studies/smile-center-dentistry" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">SmileCenter Dentistry</a> (located at <a href="https://smilecenter.com" target="_blank" rel="noopener noreferrer" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">smilecenter.com</a>) displays this baseline verification, showing a 5x increase in Southern California patient inquiries through technical React structure changes and correct schema graphs. Similarly, the local optimization strategy at <a href="https://sonrisadental.com" target="_blank" rel="noopener noreferrer" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">sonrisadental.com</a> highlights the power of clean code architecture.
+        </p>
+
+        <h3 className="text-lg font-bold text-gray-900 mt-8 mb-4 font-display">
+          Questions to ask about any case study an agency presents
+        </h3>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          Before accepting a case study as evidence of competence, ask these four questions: What was the practice's starting baseline for traffic and new patients? How long did it take to achieve the highlighted results? Was this a new practice or an existing one with prior SEO history? Can you speak with the practice owner directly? <strong>An agency confident in their results will answer all four without hesitation.</strong> One that hedges or redirects is telling you something.
+        </p>
+
+        <h2 id="pricing" className="text-xl sm:text-2xl font-bold text-gray-900 mt-12 mb-6 font-display">
+          What dental SEO pricing looks like in 2026 (and what you get at each tier)
+        </h2>
+
+        <h3 className="text-lg font-bold text-gray-900 mt-8 mb-4 font-display">
+          The three pricing tiers and their typical deliverables
+        </h3>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          Dental SEO pricing in 2026 breaks into three operational tiers. The basic local tier runs $500 to $1,200 per month and covers GBP optimization, citation cleanup, and foundational on-page work, appropriate for low-competition markets or practices just beginning to invest in local SEO for dentists.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          The standard comprehensive tier runs $1,200 to $2,500 per month and includes full local SEO, ongoing content production, backlink acquisition, technical fixes, and monthly reporting. This is the right investment level for most single-location practices competing in mid-density markets. The aggressive multi-location tier runs $2,500 to $5,000 or more per month and adds expanded content, stronger backlink campaigns, CRO, paid ads management, and multi-location GBP management, the tier for practices competing in dense urban markets or operating across multiple locations.
+        </p>
+
+        <h3 className="text-lg font-bold text-gray-900 mt-8 mb-4 font-display">
+          Pricing models: retainer vs. project vs. hourly
+        </h3>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          A monthly retainer is the most practical structure for ongoing SEO because rankings require sustained effort over 12 to 24 months. Project-based pricing works well for one-time scopes: a technical audit, a site migration, or a penalty recovery engagement. Project work alone won't build the compounding advantage a practice needs over time. Hourly consulting at $100 to $300 per hour is appropriate for strategy or audit work, not for managing a full campaign.
+        </p>
+
+        <h2 id="contract-terms" className="text-xl sm:text-2xl font-bold text-gray-900 mt-12 mb-6 font-display">
+          Contract terms to demand before you sign anything
+        </h2>
+
+        <h3 className="text-lg font-bold text-gray-900 mt-8 mb-4 font-display">
+          The contract clauses that protect your practice
+        </h3>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          Confident dental SEO companies offer month-to-month or short 3 to 6 month initial terms with 30-day cancellation notice. Long annual commitments with vague exit language are a risk signal, not a sign of a premium partnership. Before signing, get written documentation on four specific items: the exact monthly deliverables, how new patients are attributed to SEO activity, which KPIs trigger any refund or performance clause, and who owns the website, content, and ad accounts when the contract ends. Those four items are non-negotiable. Any agency that pushes back on documenting them in the contract is protecting their interests, not yours.
+        </p>
+
+        <h3 className="text-lg font-bold text-gray-900 mt-8 mb-4 font-display">
+          Performance guarantees: what's credible vs. what's a sales tactic
+        </h3>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          A credible performance guarantee ties outcomes to patient bookings or call volume, with an objectively defined baseline and timeline written into the agreement. An incredible one promises specific rankings by a specific date with no attribution methodology. HIPAA-compliant reporting, market exclusivity by geography or specialty, and named case study disclosure rights are the additional contract terms that indicate an agency operates with professional standards rather than sales scripts.
+        </p>
+
+        <h3 className="text-lg font-bold text-gray-900 mt-8 mb-4 font-display">
+          Where Gobiya fits if you're evaluating technical dental SEO partners
+        </h3>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          For practices that need more than keyword rankings, specifically a fast custom website, native booking integration, multi-location local SEO, and full data ownership over their lead pipeline, that's where a technical dental SEO agency like Gobiya operates differently from standard dental digital marketing firms. Gobiya combines technical SEO with custom-built website infrastructure that practices own outright rather than rent from a vendor, giving clients both performance and long-term asset control. If you want a checklist-oriented evaluation approach before you hire, consult Gobiya's <a href="/insights/best-seo-agency-for-b2b-brands" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">Evaluation Checklist: Don't Hire the Wrong Partner</a> as a practical template for vendor interviews.
+        </p>
+
+        <h2 id="framework" className="text-xl sm:text-2xl font-bold text-gray-900 mt-12 mb-6 font-display">
+          Use this framework before your next agency conversation
+        </h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          Know what dentist SEO services to expect and demand deliverables for each one. Spot the red flags before signing: guaranteed rankings, long lock-in terms, vague exit language, and vanity-metric reporting. Hold your agency to KPI benchmarks tied to patient volume, not raw traffic. Verify case studies with specific before-and-after metrics in the same measurement category. Pay the right tier for your market, and protect yourself with contract terms that keep your assets and your data in your hands.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          Many dental practices don't lose money on bad SEO agencies because of bad luck. They lose it because they walked into the evaluation without a structured process. When that happens, the agency with the best sales pitch tends to win, not the agency with the best results. Use this checklist as a conversation guide in your next dental SEO agency interview. Ask every question on it. Request written answers for every contract item. Don't sign until all of them are documented. That single step eliminates most of the risk before the first invoice arrives.
+        </p>
+
+        {/* ── FAQ ACCORDION SECTION ── */}
+        <h2 id="faqs" className="text-xl sm:text-2xl font-bold text-gray-900 mt-12 mb-6 font-display">
+          Frequently asked questions about hiring a dental SEO agency
+        </h2>
+        <div className="space-y-6 my-10 border-t border-gray-200 pt-6">
+          {[
+            {
+              q: "What should a complete dental SEO package include?",
+              a: "A full dental SEO engagement should cover six functional areas: local SEO for dentists, Google Business Profile (GBP) optimization, on-page content (service pages, city pages, FAQs), technical fixes (site speed, schema markup, mobile performance), backlink acquisition, and conversion rate optimization. Each area should come with concrete deliverables (e.g., GBP setup or audit, a specified number of content pages per month, and a structured technical audit with a prioritized fix list)."
+            },
+            {
+              q: "What are common red flags when evaluating a dental SEO agency?",
+              a: "Vague language about “SEO” without naming monthly deliverables is a key red flag, as is polished sales copy promising first-page rankings with no evidence. Long-term contracts, difficulty retrieving website files when you leave, and templated campaign approaches are also warning signs — remember: No deliverable, no accountability."
+            },
+            {
+              q: "How should I evaluate a dental SEO agency before signing a contract?",
+              a: "Apply a consistent diagnostic lens across scope, evidence, pricing, and contract terms and insist on written, specific deliverables for each functional area. Ask for audit reports, examples of multi-location work, GBP cadence, and clear performance KPIs before committing."
+            },
+            {
+              q: "How is dental SEO different from general SEO?",
+              a: (
+                <>
+                  Dental SEO focuses on hyper-local intent and transactional queries (e.g., “dental implants Los Angeles” or “dentist near me”), so it prioritizes GBP expertise, citation consistency, and localized content that drives bookings. Generalist SEO firms often optimize for traffic, while dental digital marketing optimizes for the chair; see <a href="/insights/b2b-seo-agency" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">B2B SEO Agency vs. Generalist: The Vital Difference</a> for context on specialization.
+                </>
+              )
+            },
+            {
+              q: "Do I need Google Business Profile (GBP) optimization for my dental practice?",
+              a: "Yes — GBP is critical for patients ready to book and should be a core deliverable. GBP work should include profile setup or audit, category selection, photo optimization, a post cadence, Q&A management, and tracked call activity to measure patient leads."
+            },
+            {
+              q: "Should I add conversion rate optimization (CRO) or paid ads to my dental SEO package?",
+              a: "CRO is highly recommended because better conversion ensures SEO-driven traffic becomes booked appointments; typical CRO deliverables include landing page improvements, click-to-call placement, booking form testing, and trust signals like review displays and doctor bios. Adding pay-per-click management makes sense for new practices, highly competitive markets, or any situation needing patient volume quickly while organic rankings build over the next 6–12 months."
+            },
+            {
+              q: "How should multi-location dental practices handle SEO?",
+              a: "Each location needs its own verified Google Business Profile (GBP), a unique location page with distinct content, and its own local citation footprint to avoid diluting rankings. Treating multiple locations with a single merged strategy usually weakens performance for every location rather than strengthening any of them."
+            }
+          ].map((item, idx) => (
+            <div key={idx} className="border-b border-gray-200 pb-4">
+              <h3 className="text-[18px] font-semibold text-gray-900 mb-2 font-sans">{item.q}</h3>
+              <p className="text-[16px] text-gray-700 leading-[1.6]">{item.a}</p>
+            </div>
+          ))}
+        </div>
+      </>
+    )
+  },
 };
 
 // ─── Related Articles per slug ────────────────────────────────────────────────
@@ -6691,6 +7029,26 @@ const RELATED_ARTICLES_MAP: Record<string, { href: string; category: string; tit
       category: 'SEO',
       title: 'ChatGPT vs Google for Business Discovery: What You Must Know',
       image: '/images/article-chatgpt-vs-google-for-business-discovery.webp',
+    },
+  ],
+  'dental-seo-agency': [
+    {
+      href: '/insights/local-seo-explained',
+      category: 'Local SEO',
+      title: 'The 90-Day Cadence: How We Win Local Search',
+      image: '/images/article-los-angeles-local-seo-explained.webp',
+    },
+    {
+      href: '/insights/b2b-seo-agency',
+      category: 'Strategy',
+      title: 'B2B SEO Agency vs. Generalist: The Vital Difference',
+      image: '/images/article-b2b-seo-agency.webp',
+    },
+    {
+      href: '/insights/best-seo-agency-for-b2b-brands',
+      category: 'Strategy',
+      title: 'Evaluation Checklist: Don\'t Hire the Wrong B2B SEO Partner',
+      image: '/images/article-best-seo-agency.png',
     },
   ],
 };

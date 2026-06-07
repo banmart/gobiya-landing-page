@@ -9,6 +9,7 @@ import InsightsSlider from './InsightsSlider';
 import ParallaxMedia from './ParallaxMedia';
 import { Shader, Swirl, ChromaFlow, FlutedGlass, FilmGrain } from 'shaders/react';
 import { trackCTA } from '../lib/analytics';
+import RotatingAILogos from './RotatingAILogos';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -132,7 +133,7 @@ const SOLUTIONS_DATA: Record<string, SolutionData> = {
       { title: 'Bespoke Database Schema', text: 'We structure tables and columns around your business, storing only what you need to track and optimize.', backText: 'Stop forcing your sales process into rigid CRM templates. We define relational models specifically tailored to your unique pipelines and lifecycle stages.' },
       { title: 'Zero Integration Leak', text: 'No API keys exposed on the frontend, no broken webhooks, and no third-party downtime to drop your leads.', backText: 'Since the CRM is native to your application layer, data moves instantly from form submission to secure database without relying on fragile Zapier connections.' },
       { title: 'Self-Hosted Control', text: 'You own the database. If you scale, your CRM scales with you at standard cloud server costs.', backText: 'Say goodbye to per-seat licensing fees. You maintain 100% ownership of the data infrastructure, hosted securely in your own scalable environment.' },
-      { title: 'Automated Workflows', text: 'Trigger automated email flows, webhooks, or team notifications natively the instant a form is processed.', backText: 'We program custom event listeners that execute serverless functions instantly upon lead capture, ensuring your sales team is notified in milliseconds.' }
+      { title: 'AI Prospect Scraper', text: 'Included AI prospect scraper gathers NAP data and creates automated drip campaigns.', backText: 'Our native CRM features an AI-powered engine that scrapes company leads\' NAP and sets up customized drip email sequences automatically.' }
     ],
     executionTitle: 'Building your proprietary data engine.',
     heroImage: '/images/lead_hero.png',
@@ -148,6 +149,49 @@ const SOLUTIONS_DATA: Record<string, SolutionData> = {
       headline: 'B2B Enterprise Logistics platform builds proprietary $4.2M sales pipeline.',
       description: 'By migrating from a bloated HubSpot/Salesforce setup to a custom, codebase-integrated lead database with automated internal alerts, the team scaled to millions in pipeline on $0 software fees.',
       ctaText: 'Request CRM demo'
+    }
+  },
+
+  '/capabilities/ai-prospect-scraper': {
+    h1: 'AI-Powered Prospect Scraper & Custom Drip Campaigns',
+    subHeadline: 'Included with our Native CRM, this AI scraper extracts company NAP data and automatically builds hyper-personalized drip email sequences to scale your B2B outreach.',
+    rotatingWords: ['scrape prospect data.', 'automate drip emails.', 'scale outbound.'],
+    insightCategory: 'Systems',
+    ctaText: 'Explore AI Prospecting',
+    ctaLink: '/book',
+    stats: [
+      { value: '10x', label: 'faster lead generation', text: 'compared to manual data entry and generic list building, driving immediate pipeline growth.' },
+      { value: '100%', label: 'customized campaigns', text: 'every drip email is tailored to the scraped prospect data, ensuring high open and reply rates.' },
+      { value: 'Zero', label: 'third-party scraping fees', text: 'fully integrated into your Native CRM so you do not pay per-lead or monthly subscription costs.' },
+      { value: '24/7', label: 'automated outreach', text: 'continuously identifying and engaging high-value targets while your team focuses on closing deals.' }
+    ],
+    approachTitle: 'Automate your outbound with intelligent data capture.',
+    approachSubtitle: 'Stop relying on generic email blasts and outdated lead lists. Our integrated AI scraper captures fresh NAP data and crafts relevant messages on the fly.',
+    approach: [
+      { icon: Search, title: 'Intelligent NAP Extraction', desc: 'The AI engine autonomously scrapes Name, Address, and Phone data for your target accounts across the web.' },
+      { icon: Target, title: 'Hyper-Personalized Content', desc: 'Each prospect receives a custom drip campaign written specifically for their business context and pain points.' },
+      { icon: Network, title: 'Native CRM Integration', desc: 'All scraped data and email engagements flow seamlessly into your codebase-level CRM with zero lag.' }
+    ],
+    valueCards: [
+      { title: 'Instant Lead Enrichment', text: 'Automatically turn raw URLs or company names into fully populated CRM profiles.', backText: 'Our AI scraper does the heavy lifting, extracting decision-maker contact info and company details directly into your database.' },
+      { title: 'Smart Drip Sequences', text: 'Deploy multi-step email campaigns that adapt to prospect engagement.', backText: 'The AI crafts follow-up emails based on initial prospect data and engagement metrics, significantly increasing your reply rates.' },
+      { title: 'Seamless Workflow', text: 'From scraping to outreach to booked meetings, everything happens in one place.', backText: 'No more bouncing between external scraping tools, email sequence software, and your CRM. It\'s an all-in-one pipeline engine.' },
+      { title: 'Cost-Effective Scaling', text: 'Generate more leads without increasing your marketing software budget.', backText: 'Since the AI scraper is included natively with our CRM, you avoid the exorbitant fees charged by standalone B2B data providers.' }
+    ],
+    executionTitle: 'How we engineer your automated outbound engine.',
+    heroImage: '/images/lead_hero.png',
+    executionImage: '/images/seo_exec.webp',
+    executionSteps: [
+      { title: 'Define Target ICP', content: 'We work with you to map out your Ideal Customer Profile and set the parameters for the AI scraper to hunt.' },
+      { title: 'Configure Scraping Engine', content: 'We integrate the AI extraction tools into your Native CRM to begin pulling verified NAP data for target accounts.' },
+      { title: 'Design Drip Campaigns', content: 'We build the AI prompt templates that automatically generate personalized cold outreach and follow-up sequences.' },
+      { title: 'Launch & Optimize', content: 'We turn on the pipeline and continually refine the scraping parameters and email copy based on conversion data.' }
+    ],
+    caseStudy: {
+      tag: 'AI Outbound',
+      headline: 'B2B Logistics firm scales to 40+ booked meetings per month.',
+      description: 'By deploying the AI Prospect Scraper alongside their Native CRM, they eliminated $3,000/mo in ZoomInfo and outreach software costs while tripling their demo volume.',
+      ctaText: 'See how it works'
     }
   },
 
@@ -274,6 +318,7 @@ const SolutionPage: React.FC<{ path: string }> = ({ path }) => {
       '/capabilities/native-crm': 'Custom CRM Built Into Your Website | gobiya',
       '/capabilities/seo-discoverability': 'Technical SEO & Indexing for React Sites | gobiya',
       '/capabilities/blockchain-web3-development': 'Blockchain & Web3 Development — Smart Contracts, dApps | gobiya',
+      '/capabilities/ai-prospect-scraper': 'AI Prospect Scraper & Drip Campaigns | gobiya',
     };
     if (baseTitles[path]) {
       document.title = baseTitles[path];
@@ -318,29 +363,36 @@ const SolutionPage: React.FC<{ path: string }> = ({ path }) => {
               {data.subHeadline}
             </p>
             
-            <a 
-              href={data.ctaLink} 
-              data-cta-location={`solution_hero_${path.split('/').pop()}`}
-              data-cta-text={data.ctaText}
-              onClick={() => trackCTA({ 
-                cta_location: `solution_hero_${path.split('/').pop()}`, 
-                cta_text: data.ctaText,
-                destination: data.ctaLink
-              })}
-              className="group inline-flex items-center bg-[#F26522] hover:bg-[#e05a1a] text-white pl-6 pr-2 py-2 transition-colors duration-300"
-            >
-              <div className="flex flex-col overflow-hidden h-[20px] justify-start items-start relative mr-4">
-                <span className="text-[14px] sm:text-[15px] font-medium leading-[20px] transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-translate-y-full">
-                  {data.ctaText}
-                </span>
-                <span className="text-[14px] sm:text-[15px] font-medium leading-[20px] absolute top-full transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-translate-y-full">
-                  {data.ctaText}
-                </span>
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-5">
+              <a 
+                href={data.ctaLink} 
+                data-cta-location={`solution_hero_${path.split('/').pop()}`}
+                data-cta-text={data.ctaText}
+                onClick={() => trackCTA({ 
+                  cta_location: `solution_hero_${path.split('/').pop()}`, 
+                  cta_text: data.ctaText,
+                  destination: data.ctaLink
+                })}
+                className="group inline-flex items-center bg-[#F26522] hover:bg-[#e05a1a] text-white pl-6 pr-2 py-2 transition-colors duration-300"
+              >
+                <div className="flex flex-col overflow-hidden h-[20px] justify-start items-start relative mr-4">
+                  <span className="text-[14px] sm:text-[15px] font-medium leading-[20px] transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-translate-y-full">
+                    {data.ctaText}
+                  </span>
+                  <span className="text-[14px] sm:text-[15px] font-medium leading-[20px] absolute top-full transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-translate-y-full">
+                    {data.ctaText}
+                  </span>
+                </div>
+                <div className="w-8 h-8 sm:w-9 sm:h-9 bg-white flex items-center justify-center rounded-sm">
+                  <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 text-[#F26522] transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-rotate-45" />
+                </div>
+              </a>
+              <div className="flex items-center gap-3 bg-white/5 border border-white/10 hover:bg-white/10 transition-shadow duration-300 px-3 py-2 cursor-pointer">
+                <RotatingAILogos />
+                <span className="text-[13px] sm:text-[14px] font-medium text-white">Certified Partner</span>
+                <span className="text-[10px] sm:text-[11px] bg-gray-900 text-white px-1.5 sm:px-2 py-0.5 rounded">Featured</span>
               </div>
-              <div className="w-8 h-8 sm:w-9 sm:h-9 bg-white flex items-center justify-center rounded-sm">
-                <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 text-[#F26522] transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-rotate-45" />
-              </div>
-            </a>
+            </div>
           </div>
         </div>
       </section>
@@ -580,6 +632,12 @@ const SolutionPage: React.FC<{ path: string }> = ({ path }) => {
             </div>
             <div className="text-2xl font-bold font-display text-[#111111]">
               Lovable
+            </div>
+            <div className="text-2xl font-bold font-display flex items-center gap-2 text-[#111111]">
+              <span className="text-blue-500 font-sans">⚛</span> React
+            </div>
+            <div className="text-2xl font-bold font-display flex items-center gap-2 text-[#111111]">
+              <span className="text-black font-sans font-extrabold">▲</span> Next.js
             </div>
           </div>
         </div>

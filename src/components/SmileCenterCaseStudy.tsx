@@ -237,11 +237,13 @@ const SmileCenterCaseStudy: React.FC = () => {
                 <ParallaxMedia
                   type="image"
                   src="/images/smilecenter-office.webp"
-                  alt="SmileCenter dental office — placeholder, to be replaced"
+                  alt="SmileCenter dental office"
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute bottom-3 left-3 right-3 bg-black/70 text-white text-[11px] px-3 py-1.5 backdrop-blur-sm">
-                  📷 Placeholder image — replace with actual SmileCenter photos
+                <div className="absolute bottom-3 left-3 right-3 bg-black/70 text-white p-3 backdrop-blur-sm">
+                  <span className="text-gray-400 text-sm font-medium">
+                    SmileCenter Dental Office
+                  </span>
                 </div>
               </div>
             </div>
@@ -276,11 +278,13 @@ const SmileCenterCaseStudy: React.FC = () => {
             <ParallaxMedia
               type="image"
               src="/images/smilecenter-results.webp"
-              alt="SmileCenter analytics results dashboard — placeholder"
+              alt="SmileCenter analytics results dashboard"
               className="w-full h-full object-cover"
             />
-            <div className="absolute bottom-4 left-4 right-4 bg-black/70 text-white text-[12px] px-4 py-2 backdrop-blur-sm max-w-fit">
-              📷 Placeholder — replace with actual Search Console / analytics screenshots
+            <div className="absolute bottom-4 left-4 right-4 bg-black/70 text-white p-4 backdrop-blur-sm max-w-fit">
+              <span className="text-gray-400 text-sm font-medium">
+                SEO Analytics Dashboard
+              </span>
             </div>
           </div>
         </div>

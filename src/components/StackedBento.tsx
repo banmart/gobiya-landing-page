@@ -72,23 +72,74 @@ const SystemVisual: React.FC<{ index: number }> = ({ index }) => {
     );
   }
 
+  if (index === 3) {
+    return (
+      <div className="w-full h-full bg-[#0a0a0c] rounded-xl border border-white/10 p-4 relative overflow-hidden flex flex-col">
+        <div className="flex items-center gap-2 mb-4 pb-2 border-b border-white/10">
+          <Cpu size={14} className="text-[#F26522]" />
+          <span className="text-white/50 font-mono text-[10px]">WEB3_CONTRACT.SYS</span>
+        </div>
+        <div className="flex-1 flex flex-col justify-center gap-2 font-mono text-[10px] text-white/70">
+          <div className="flex justify-between items-center bg-white/5 p-2 border border-white/5 rounded">
+            <span className="text-[#F26522]">verifySignature()</span>
+            <span className="text-green-400 font-bold">SUCCESS</span>
+          </div>
+          <div className="flex justify-between items-center bg-white/5 p-2 border border-white/5 rounded">
+            <span className="text-blue-400">gasUsed:</span>
+            <span>21,000 gwei</span>
+          </div>
+          <div className="flex justify-between items-center bg-white/5 p-2 border border-white/5 rounded">
+            <span className="text-white/50">txHash:</span>
+            <span>0x71c...3a9f</span>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  if (index === 4) {
+    return (
+      <div className="w-full h-full bg-[#0a0a0c] rounded-xl border border-white/10 p-4 relative overflow-hidden flex flex-col">
+        <div className="flex items-center gap-2 mb-4 pb-2 border-b border-white/10">
+          <Search size={14} className="text-[#F26522]" />
+          <span className="text-white/50 font-mono text-[10px]">AI_LEAD_HUNTER.SYS</span>
+        </div>
+        <div className="flex-1 flex flex-col justify-center gap-2">
+          <div className="flex items-center gap-2 text-[10px] font-mono text-white/50">
+            <span className="animate-pulse text-[#F26522]">●</span>
+            <span>Target: B2B Logistics Companies</span>
+          </div>
+          <div className="bg-white/5 p-2 rounded border border-white/5 font-mono text-[10px] space-y-1">
+            <div className="flex justify-between">
+              <span className="text-[#F26522]">NAME:</span>
+              <span className="text-white">Apex Logistics Inc.</span>
+            </div>
+            <div className="flex justify-between">
+              <span className="text-[#F26522]">NAP:</span>
+              <span className="text-white/70">321 Cargo Rd, LA | (213) 555-0199</span>
+            </div>
+            <div className="flex justify-between">
+              <span className="text-[#F26522]">DRIP:</span>
+              <span className="text-green-400">Campaign Auto-Generated</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="w-full h-full bg-gradient-to-br from-[#1a1c23] to-[#0a0a0c] rounded-xl border border-white/10 p-4 relative overflow-hidden flex flex-col">
        <div className="flex items-center gap-2 mb-4 pb-2 border-b border-white/10">
           <BarChart2 size={14} className="text-white/50" />
-          <span className="text-white/50 font-mono text-[10px]">PIPELINE_METRICS</span>
+          <span className="text-white/50 font-mono text-[10px]">SYSTEM_STATUS</span>
         </div>
         <div className="flex-1 flex flex-col justify-center gap-3">
           <div className="flex justify-between items-center text-[10px] font-mono">
-            <span className="text-white/50">LEADS_CAPTURED</span>
-            <span className="text-white">+340%</span>
+            <span className="text-white/50">METRICS</span>
+            <span className="text-white">ONLINE</span>
           </div>
-          <div className="w-full bg-white/10 h-1 rounded-full overflow-hidden"><div className="bg-white h-full w-[80%]" /></div>
-          <div className="flex justify-between items-center text-[10px] font-mono mt-2">
-            <span className="text-white/50">CPA_REDUCTION</span>
-            <span className="text-green-400">-42%</span>
-          </div>
-          <div className="w-full bg-white/10 h-1 rounded-full overflow-hidden"><div className="bg-green-400 h-full w-[60%]" /></div>
+          <div className="w-full bg-white/10 h-1 rounded-full overflow-hidden"><div className="bg-white h-full w-[100%]" /></div>
         </div>
     </div>
   );
@@ -156,6 +207,10 @@ const StackedBento: React.FC<StackedBentoProps> = ({ headline, description, card
     {
       href: '/capabilities/blockchain-web3-development', colSpan: 1, icon: <Cpu size={40} className="text-[#F26522] mb-6 sm:mb-10" strokeWidth={1.5} />,
       title: 'Blockchain & Web3 Dev', description: 'Bespoke smart contracts, decentralized applications (dApps), and on-chain integrations engineered directly into your product stack.'
+    },
+    {
+      href: '/capabilities/ai-prospect-scraper', colSpan: 2, gradient: true, icon: <Search size={40} className="text-white mb-6 sm:mb-10 relative z-10" strokeWidth={1.5} />,
+      title: 'AI Prospect Scraper', description: 'Included with our Native CRM, this AI scraper extracts company NAP data and automatically builds hyper-personalized drip email sequences to scale your B2B outreach.'
     }
   ];
 
@@ -205,18 +260,24 @@ const StackedBento: React.FC<StackedBentoProps> = ({ headline, description, card
                       <h3 className="text-2xl sm:text-3xl font-display font-medium text-white mb-4 mt-6">{card.title}</h3>
                       <p className="text-gray-400 font-body text-base max-w-md">{card.description}</p>
                       
-                      {isLast && (
-                        <motion.button
-                          whileHover={{ scale: 1.05 }}
-                          whileTap={{ scale: 0.95 }}
-                          onClick={() => {
-                            setActiveCard(card);
-                            setModalOpen(true);
-                          }}
-                          className="mt-8 px-6 py-3 bg-[#F26522] text-white font-bold tracking-wider text-sm rounded-full w-max hover:bg-white hover:text-black transition-colors"
+                      {isLast ? (
+                        <a href={card.href}>
+                          <motion.button
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                            className="mt-8 px-6 py-3 bg-[#F26522] text-white font-bold tracking-wider text-sm rounded-full w-max hover:bg-white hover:text-black transition-colors"
+                          >
+                            Explore Capability
+                          </motion.button>
+                        </a>
+                      ) : (
+                        <a 
+                          href={card.href}
+                          className="inline-flex items-center gap-1.5 mt-6 text-sm font-semibold tracking-wider text-[#F26522] hover:text-white transition-colors group/link w-max"
                         >
-                          View Full Details
-                        </motion.button>
+                          LEARN MORE 
+                          <span className="transform transition-transform duration-300 group-hover/link:translate-x-1">→</span>
+                        </a>
                       )}
                     </div>
                     
