@@ -1,209 +1,214 @@
-import React, { useRef, useState, useEffect } from 'react';
-import { gsap } from 'gsap';
+import React, { useState, useEffect, useRef } from 'react';
 import { ArrowRight, ArrowLeft } from 'lucide-react';
-import ParallaxMedia from './ParallaxMedia';
+
+const caseStudies = [
+  {
+    id: 1,
+    title: "RemodelMe Pros Contractors",
+    description: "React Vite. New Website w/ Native CRM and marketplace.",
+    videoSrc: "/videos/caveman.webm",
+    link: undefined,
+    badge: undefined,
+    ctaText: "Learn more",
+  },
+  {
+    id: 2,
+    title: "SafetyCentric",
+    description: "Commercial Security Integrators - React Vite.",
+    videoSrc: "/videos/sc-hero-background-compressed.webm",
+    link: undefined,
+    badge: undefined,
+    ctaText: "View case study",
+  },
+  {
+    id: 3,
+    title: "The Ark Crypto on Pulsechain",
+    description: "Web3, Wallet Connect, Smart Contracts - React Vite.",
+    videoSrc: "/videos/ark------final-----01.webm",
+    link: undefined,
+    badge: undefined,
+    ctaText: "View case study",
+  },
+  {
+    id: 4,
+    title: "SmileCenter Dental Offices",
+    description: "5x patient inquiries · 2.8x search impressions · Multi-location SEO · React Vite.",
+    videoSrc: "/videos/smilecenter-screencast.webm",
+    link: "/case-studies/smile-center-dentistry",
+    badge: "5x Inquiries",
+    ctaText: "View case study",
+  },
+  {
+    id: 5,
+    title: "American Livescan Fingerprinting",
+    description: "3x online bookings & calls · +30% walk-ins · Local SEO & site rebuild.",
+    imageSrc: "/images/livescan-office.webp",
+    link: "/case-studies/american-livescan",
+    badge: "3x Bookings",
+    ctaText: "View case study",
+  }
+];
 
 const CaseStudiesPinned = () => {
-  const trackRef = useRef<HTMLDivElement>(null);
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [maxIndex, setMaxIndex] = useState(0);
-  const isDragging = useRef(false);
-  const startX = useRef(0);
-  const currentX = useRef(0);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
+  const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
 
   useEffect(() => {
-    const calcMax = () => {
-      if (!trackRef.current) return;
-      const track = trackRef.current;
-      const cards = track.children;
-      if (cards.length === 0) return;
-      const card = cards[0] as HTMLElement;
-      const gap = parseFloat(getComputedStyle(track).gap) || 24;
-      const cardWidth = card.offsetWidth + gap;
-      const visibleCards = Math.floor(track.parentElement!.offsetWidth / cardWidth);
-      setMaxIndex(Math.max(0, cards.length - visibleCards));
-    };
-    calcMax();
-    window.addEventListener('resize', calcMax);
-    return () => window.removeEventListener('resize', calcMax);
+    videoRefs.current = videoRefs.current.slice(0, caseStudies.length);
   }, []);
 
-  const slideTo = (index: number) => {
-    if (!trackRef.current) return;
-    const track = trackRef.current;
-    const cards = track.children;
-    if (cards.length === 0) return;
-    const card = cards[0] as HTMLElement;
-    const gap = parseFloat(getComputedStyle(track).gap) || 24;
-    const cardWidth = card.offsetWidth + gap;
-    const clamped = Math.max(0, Math.min(index, maxIndex));
-    setCurrentIndex(clamped);
-    gsap.to(track, { x: -(clamped * cardWidth), duration: 0.6, ease: 'power3.out' });
-  };
+  // Autoplay functionality
+  useEffect(() => {
+    if (caseStudies.length <= 1 || isHovered) return;
+    
+    const interval = setInterval(() => {
+      setActiveIndex((prev) => (prev === caseStudies.length - 1 ? 0 : prev + 1));
+    }, 6000); // 6 seconds per slide
+    
+    return () => clearInterval(interval);
+  }, [isHovered]);
 
-  const handlePrev = () => slideTo(currentIndex - 1);
-  const handleNext = () => slideTo(currentIndex + 1);
+  // Handle video play/pause
+  useEffect(() => {
+    videoRefs.current.forEach((video, index) => {
+      if (!video) return;
+      if (index === activeIndex) {
+        // Play the active video
+        video.play().catch(() => {});
+      } else {
+        // Pause inactive videos
+        video.pause();
+      }
+    });
+  }, [activeIndex]);
 
-  // Touch / drag support
-  const onPointerDown = (e: React.PointerEvent) => {
-    isDragging.current = true;
-    startX.current = e.clientX;
-    currentX.current = e.clientX;
+  const handlePrev = () => {
+    setActiveIndex((prev) => (prev === 0 ? caseStudies.length - 1 : prev - 1));
   };
-  const onPointerMove = (e: React.PointerEvent) => {
-    if (!isDragging.current) return;
-    currentX.current = e.clientX;
-  };
-  const onPointerUp = () => {
-    if (!isDragging.current) return;
-    isDragging.current = false;
-    const diff = startX.current - currentX.current;
-    if (Math.abs(diff) > 50) {
-      if (diff > 0) handleNext();
-      else handlePrev();
-    }
+  
+  const handleNext = () => {
+    setActiveIndex((prev) => (prev === caseStudies.length - 1 ? 0 : prev + 1));
   };
 
   return (
     <section className="bg-[#F5F5F5] w-full overflow-hidden relative py-16 sm:py-20 lg:py-28">
-      <div className="max-w-[1440px] mx-auto w-full px-5 sm:px-8 lg:px-12">
-        <div className="flex items-center justify-between mb-6 sm:mb-8">
-          <div className="flex items-center gap-3">
-            <div className="w-6 h-6 sm:w-7 sm:h-7 bg-[#F26522] text-white text-[11px] sm:text-[12px] font-semibold flex items-center justify-center">3</div>
-            <div className="text-[11px] sm:text-[12px] font-bold tracking-[0.2em] uppercase bg-gray-900 text-white px-4 py-2 rounded-full shadow-md">
-              Client Success Stories
+      <div className="w-full relative z-10 max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-12">
+        <div className="mb-10 sm:mb-14">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6">
+            <div>
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-6 h-6 sm:w-7 sm:h-7 bg-[#F26522] text-white text-[11px] sm:text-[12px] font-semibold flex items-center justify-center">3</div>
+                <div className="text-[11px] sm:text-[12px] font-bold tracking-[0.2em] uppercase bg-gray-900 text-white px-4 py-2 rounded-full shadow-md">
+                  Client Success Stories
+                </div>
+              </div>
+              <h2 className="text-[clamp(1.75rem,7vw,4.2rem)] sm:text-[clamp(2.5rem,5vw,4.2rem)] font-medium leading-[1.08] tracking-[-0.03em] text-gray-900 mb-2 sm:mb-4">
+                AI Youtube Pre-Roll Ads
+              </h2>
+              <p className="text-gray-600 font-body text-base sm:text-lg lg:text-xl">
+                Free with New Full Website Development
+              </p>
             </div>
-          </div>
-          <div className="flex items-center gap-3">
-            <button
-              onClick={handlePrev}
-              disabled={currentIndex === 0}
-              className="w-11 h-11 border border-gray-300 flex items-center justify-center text-gray-900 hover:bg-gray-900 hover:text-white transition-colors duration-300 disabled:opacity-20 disabled:pointer-events-none"
-            >
-              <ArrowLeft className="w-4 h-4" />
-            </button>
-            <button
-              onClick={handleNext}
-              disabled={currentIndex >= maxIndex}
-              className="w-11 h-11 border border-gray-300 flex items-center justify-center text-gray-900 hover:bg-gray-900 hover:text-white transition-colors duration-300 disabled:opacity-20 disabled:pointer-events-none"
-            >
-              <ArrowRight className="w-4 h-4" />
-            </button>
+            
+            <div className="flex items-center gap-3">
+              <button
+                onClick={handlePrev}
+                className="w-11 h-11 border border-gray-300 flex items-center justify-center text-gray-900 hover:bg-gray-900 hover:text-white transition-colors duration-300 rounded-full"
+              >
+                <ArrowLeft className="w-4 h-4" />
+              </button>
+              <button
+                onClick={handleNext}
+                className="w-11 h-11 border border-gray-300 flex items-center justify-center text-gray-900 hover:bg-gray-900 hover:text-white transition-colors duration-300 rounded-full"
+              >
+                <ArrowRight className="w-4 h-4" />
+              </button>
+            </div>
           </div>
         </div>
-        <h2 className="text-[clamp(1.75rem,7vw,4.2rem)] sm:text-[clamp(2.5rem,5vw,4.2rem)] font-medium leading-[1.08] tracking-[-0.03em] text-gray-900 mb-2 sm:mb-4">
-          AI Youtube Pre-Roll Ads
-        </h2>
-        <p className="text-gray-600 font-body text-base sm:text-lg lg:text-xl mb-10 sm:mb-14">
-          Free with New Full Website Development
-        </p>
-      </div>
 
-      <div
-        className="pl-5 sm:pl-8 lg:pl-12 w-full overflow-hidden cursor-grab active:cursor-grabbing"
-        onPointerDown={onPointerDown}
-        onPointerMove={onPointerMove}
-        onPointerUp={onPointerUp}
-        onPointerLeave={onPointerUp}
-      >
-        <div ref={trackRef} className="flex gap-5 sm:gap-6 lg:gap-7 w-max pr-5 sm:pr-8 lg:pr-12 pb-4">
-          
-          {/* Card 1 */}
-          <div className="group cursor-pointer flex-none w-[85vw] md:w-[45vw] lg:w-[35vw] select-none">
-            <div className="aspect-[4/3] overflow-hidden bg-[#1a1d2e] relative isolate mb-4 rounded-xl shadow-lg">
-              <ParallaxMedia type="video" src="/videos/caveman.webm" autoPlay muted loop playsInline className="w-full h-full" />
-              <div className="absolute bottom-4 left-4 h-9 bg-white flex items-center overflow-hidden w-9 group-hover:w-[148px] transition-all duration-300 ease-in-out z-10 px-2.5 rounded-full">
-                <div className="flex-shrink-0 w-4 h-4 mr-2 flex items-center justify-center -ml-0.5">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-gray-900 -rotate-45 group-hover:rotate-0 transition-transform duration-300 ease-in-out">
-                    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-                    <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-                  </svg>
+        <div 
+          className="w-full h-[500px] sm:h-[600px] flex flex-col sm:flex-row gap-2 sm:gap-4"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+        >
+          {caseStudies.map((study, index) => {
+            const isActive = index === activeIndex;
+            
+            return (
+              <div
+                key={study.id}
+                onClick={() => setActiveIndex(index)}
+                className={`relative overflow-hidden rounded-xl sm:rounded-2xl transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] cursor-pointer group bg-[#1a1d2e]
+                  ${isActive ? 'flex-[8] sm:flex-[8]' : 'flex-[1] sm:flex-[1]'}
+                `}
+              >
+                {study.videoSrc ? (
+                  <video 
+                    ref={el => videoRefs.current[index] = el}
+                    src={study.videoSrc}
+                    muted
+                    loop
+                    playsInline
+                    className={`absolute inset-0 w-full h-full object-cover transition-transform duration-1000 
+                      ${isActive ? 'scale-100' : 'scale-[1.15]'}
+                    `}
+                  />
+                ) : (
+                  <img 
+                    src={study.imageSrc} 
+                    alt={study.title}
+                    className={`absolute inset-0 w-full h-full object-cover transition-transform duration-1000 
+                      ${isActive ? 'scale-100' : 'scale-[1.15]'}
+                    `} 
+                  />
+                )}
+                
+                {/* Metric badge (only visible if there is a badge) */}
+                {study.badge && (
+                  <div className={`absolute top-4 right-4 bg-[#F26522] text-white text-[12px] font-bold px-3 py-1.5 z-10 rounded-full transition-opacity duration-500
+                    ${isActive ? 'opacity-100 delay-300' : 'opacity-0'}
+                  `}>
+                    {study.badge}
+                  </div>
+                )}
+                
+                {/* Overlay */}
+                <div className={`absolute inset-0 transition-opacity duration-700 
+                  ${isActive ? 'bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-100' : 'bg-black/60 group-hover:bg-black/40'}
+                `} />
+                
+                {/* Active Content */}
+                <div className={`absolute bottom-0 left-0 right-0 p-6 sm:p-10 flex flex-col justify-end transition-opacity duration-500
+                  ${isActive ? 'opacity-100 delay-300' : 'opacity-0 pointer-events-none'}
+                `}>
+                  <h3 className="text-white text-2xl sm:text-4xl font-medium leading-[1.15] mb-3 max-w-2xl font-display">
+                    {study.title}
+                  </h3>
+                  <p className="text-gray-300 font-body text-base sm:text-lg max-w-xl mb-6">
+                    {study.description}
+                  </p>
+                  
+                  {study.link ? (
+                    <a 
+                      href={study.link} 
+                      className="inline-flex items-center justify-center text-white bg-white/10 hover:bg-white hover:text-black backdrop-blur-md px-6 py-3 rounded-full text-sm font-semibold transition-colors duration-300 w-max"
+                      onClick={(e) => {
+                        e.stopPropagation(); // Prevent accordion click when clicking the link
+                      }}
+                    >
+                      {study.ctaText} <ArrowRight className="w-4 h-4 ml-2" />
+                    </a>
+                  ) : (
+                    <div className="inline-flex items-center justify-center text-white bg-white/10 px-6 py-3 rounded-full text-sm font-semibold w-max opacity-80">
+                      {study.ctaText}
+                    </div>
+                  )}
                 </div>
-                <span className="text-[13px] font-medium text-gray-900 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 delay-100">
-                  Learn more
-                </span>
               </div>
-            </div>
-            <h3 className="text-[16px] sm:text-[18px] font-display font-medium text-gray-900 mt-3">RemodelMe Pros Contractors</h3>
-            <p className="text-[14px] text-gray-600 mt-1.5 leading-relaxed font-body">React Vite. New Website w/ Native CRM and marketplace.</p>
-          </div>
-
-          {/* Card 2 */}
-          <div className="group cursor-pointer flex-none w-[85vw] md:w-[45vw] lg:w-[35vw] select-none">
-            <div className="aspect-[4/3] overflow-hidden bg-[#1a1d2e] relative isolate mb-4 rounded-xl shadow-lg">
-              <ParallaxMedia type="video" src="/videos/sc-hero-background-compressed.webm" autoPlay muted loop playsInline className="w-full h-full" />
-              <div className="absolute bottom-4 left-4 h-9 bg-gray-900 flex items-center overflow-hidden w-9 group-hover:w-[168px] transition-all duration-300 ease-in-out z-10 px-2.5 rounded-full">
-                <div className="flex-shrink-0 w-4 h-4 mr-2 flex items-center justify-center -ml-0.5">
-                  <ArrowRight className="w-3.5 h-3.5 text-white -rotate-45 group-hover:rotate-0 transition-transform duration-300 ease-in-out" />
-                </div>
-                <span className="text-[13px] font-medium text-white whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 delay-100">
-                  View case study
-                </span>
-              </div>
-            </div>
-            <h3 className="text-[16px] sm:text-[18px] font-display font-medium text-gray-900 mt-3">SafetyCentric</h3>
-            <p className="text-[14px] text-gray-600 mt-1.5 leading-relaxed font-body">Commercial Security Integrators - React Vite.</p>
-          </div>
-
-          {/* Card 3 */}
-          <div className="group cursor-pointer flex-none w-[85vw] md:w-[45vw] lg:w-[35vw] select-none">
-            <div className="aspect-[4/3] overflow-hidden bg-[#1a1d2e] relative isolate mb-4 rounded-xl shadow-lg">
-              <ParallaxMedia type="video" src="/videos/ark------final-----01.webm" autoPlay muted loop playsInline className="w-full h-full" />
-              <div className="absolute bottom-4 left-4 h-9 bg-gray-900 flex items-center overflow-hidden w-9 group-hover:w-[168px] transition-all duration-300 ease-in-out z-10 px-2.5 rounded-full">
-                <div className="flex-shrink-0 w-4 h-4 mr-2 flex items-center justify-center -ml-0.5">
-                  <ArrowRight className="w-3.5 h-3.5 text-white -rotate-45 group-hover:rotate-0 transition-transform duration-300 ease-in-out" />
-                </div>
-                <span className="text-[13px] font-medium text-white whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 delay-100">
-                  View case study
-                </span>
-              </div>
-            </div>
-            <h3 className="text-[16px] sm:text-[18px] font-display font-medium text-gray-900 mt-3">The Ark Crypto on Pulsechain</h3>
-            <p className="text-[14px] text-gray-600 mt-1.5 leading-relaxed font-body">Web3, Wallet Connect, Smart Contracts - React Vite.</p>
-          </div>
-
-          {/* Card 4 */}
-          <a href="/case-studies/smile-center-dentistry" className="group cursor-pointer flex-none w-[85vw] md:w-[45vw] lg:w-[35vw] select-none">
-            <div className="aspect-[4/3] overflow-hidden bg-[#1a1d2e] relative isolate mb-4 rounded-xl shadow-lg">
-              <ParallaxMedia type="video" src="/videos/smilecenter-screencast.webm" autoPlay muted loop playsInline className="w-full h-full" />
-              {/* Metric badge */}
-              <div className="absolute top-4 right-4 bg-[#F26522] text-white text-[12px] font-bold px-3 py-1.5 z-10 rounded-full">
-                5x Inquiries
-              </div>
-              <div className="absolute bottom-4 left-4 h-9 bg-gray-900 flex items-center overflow-hidden w-9 group-hover:w-[168px] transition-all duration-300 ease-in-out z-10 px-2.5 rounded-full">
-                <div className="flex-shrink-0 w-4 h-4 mr-2 flex items-center justify-center -ml-0.5">
-                  <ArrowRight className="w-3.5 h-3.5 text-white -rotate-45 group-hover:rotate-0 transition-transform duration-300 ease-in-out" />
-                </div>
-                <span className="text-[13px] font-medium text-white whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 delay-100">
-                  View case study
-                </span>
-              </div>
-            </div>
-            <h3 className="text-[16px] sm:text-[18px] font-display font-medium text-gray-900 mt-3">SmileCenter Dental Offices</h3>
-            <p className="text-[14px] text-gray-600 mt-1.5 leading-relaxed font-body max-w-[90%]">5x patient inquiries · 2.8x search impressions · Multi-location SEO · React Vite.</p>
-          </a>
-
-          {/* Card 5 */}
-          <a href="/case-studies/american-livescan" className="group cursor-pointer flex-none w-[85vw] md:w-[45vw] lg:w-[35vw] select-none">
-            <div className="aspect-[4/3] overflow-hidden bg-[#1a1d2e] relative isolate mb-4 rounded-xl shadow-lg">
-              <img src="/images/livescan-office.webp" alt="American Livescan" className="w-full h-full object-cover" />
-              {/* Metric badge */}
-              <div className="absolute top-4 right-4 bg-[#F26522] text-white text-[12px] font-bold px-3 py-1.5 z-10 rounded-full">
-                3x Bookings
-              </div>
-              <div className="absolute bottom-4 left-4 h-9 bg-gray-900 flex items-center overflow-hidden w-9 group-hover:w-[168px] transition-all duration-300 ease-in-out z-10 px-2.5 rounded-full">
-                <div className="flex-shrink-0 w-4 h-4 mr-2 flex items-center justify-center -ml-0.5">
-                  <ArrowRight className="w-3.5 h-3.5 text-white -rotate-45 group-hover:rotate-0 transition-transform duration-300 ease-in-out" />
-                </div>
-                <span className="text-[13px] font-medium text-white whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 delay-100">
-                  View case study
-                </span>
-              </div>
-            </div>
-            <h3 className="text-[16px] sm:text-[18px] font-display font-medium text-gray-900 mt-3">American Livescan Fingerprinting</h3>
-            <p className="text-[14px] text-gray-600 mt-1.5 leading-relaxed font-body max-w-[90%]">3x online bookings & calls · +30% walk-ins · Local SEO & site rebuild.</p>
-          </a>
-
+            );
+          })}
         </div>
       </div>
     </section>
