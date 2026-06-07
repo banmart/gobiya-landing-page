@@ -63,7 +63,7 @@ const InsightsGrid: React.FC = () => {
           // If the article is locally defined, override its image with the local one
           merged[existingIndex].image_url = art.image;
         } else {
-          merged.push({
+          merged.unshift({
             id: -Math.floor(Math.random() * 1000000) - 1,
             title: art.title,
             category: art.category,
