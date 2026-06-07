@@ -40,16 +40,6 @@ const testimonials: Testimonial[] = [
     image_url: "/images/pete-AI.jpeg",
     logo_url: "/images/smilecenter.webp",
     case_study_link: "/case-studies/smile-center-dentistry"
-  },
-  {
-    id: 4,
-    text: "We saw a 30% increase in walk-in traffic driven purely by technical discoverability and Core Web Vitals optimization. The team's forensic methodology is unmatched.",
-    company: "American Livescan",
-    author: "Carla Vasquez",
-    role: "Operations Director",
-    image_url: "/images/doc-prep.jpeg",
-    logo_url: "/images/americanlivescan.webp",
-    case_study_link: "/case-studies/american-livescan"
   }
 ];
 
