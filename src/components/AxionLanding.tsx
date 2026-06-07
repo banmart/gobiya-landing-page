@@ -8,6 +8,7 @@ gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
 import DeferredShader, { Swirl, ChromaFlow, FlutedGlass, FilmGrain } from './DeferredShader';
 import { Clock, Menu, X, ArrowRight, Check } from 'lucide-react';
 import { trackCTA, trackFormSubmit } from '../lib/analytics';
+import { motion } from 'framer-motion';
 
 import Header from './Header';
 import Footer from './Footer';
@@ -359,43 +360,58 @@ const AxionLanding = () => {
 
       {/* SECTION 5: ABOUT */}
       <section className="bg-white pt-16 sm:pt-20 lg:pt-32 pb-12 sm:pb-16 lg:pb-24 overflow-hidden w-full max-w-[1440px] mx-auto relative">
-        <div className="px-5 sm:px-8 lg:px-12 flex items-center gap-3 mb-6 sm:mb-8">
-          <div className="w-6 h-6 sm:w-7 sm:h-7 bg-black text-white text-[11px] sm:text-[12px] font-semibold flex items-center justify-center">2</div>
-          <div className="text-[12px] sm:text-[13px] font-medium text-black border border-black px-3 sm:px-4 py-1 sm:py-1.5 font-body">Introducing Gobiya</div>
-        </div>
-        
-        <div className="px-5 sm:px-8 lg:px-12">
-          <h2 className="text-[clamp(1.5rem,4vw,3.2rem)] font-medium leading-[1.12] tracking-[-0.02em] text-gray-900 mb-12 sm:mb-16 lg:mb-28 max-w-4xl">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.6 }}
+          className="px-5 sm:px-8 lg:px-12 flex flex-col items-center justify-center mb-12 sm:mb-16 lg:mb-24"
+        >
+          <div className="flex items-center gap-3 mb-6 sm:mb-8">
+            <div className="w-6 h-6 sm:w-7 sm:h-7 bg-black text-white text-[11px] sm:text-[12px] font-semibold flex items-center justify-center">2</div>
+            <div className="text-[12px] sm:text-[13px] font-medium text-black border border-black px-3 sm:px-4 py-1 sm:py-1.5 font-body">Introducing Gobiya</div>
+          </div>
+          
+          <h2 className="text-[clamp(1.5rem,4vw,3.2rem)] font-medium leading-[1.12] tracking-[-0.02em] text-gray-900 max-w-4xl text-center">
             Stop guessing with your SEO. <br className="hidden sm:block" /><span className="sm:hidden"> </span>
             Start dominating with data.
           </h2>
+        </motion.div>
 
+        <div className="px-5 sm:px-8 lg:px-12">
           {/* Responsive Content Area */}
           <div className="block lg:hidden font-body">
-            <div className="space-y-4 text-[15px] sm:text-[17px] leading-[1.6] font-medium text-gray-900 mb-6">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="space-y-4 text-[15px] sm:text-[17px] leading-[1.6] font-medium text-gray-900 mb-6 text-center"
+            >
               <p>
                 <strong>Gobiya</strong> is a precision-engineered digital firm and growth agency. Founded in 2012, the agency specializes in advanced search mechanics, performance marketing, and digital infrastructure design.
               </p>
               <p className="text-gray-600 font-normal text-sm sm:text-base">
                 Rather than deploying broad, generalist marketing tactics, Gobiya focuses on high-stakes technical environments and data-driven revenue generation. The agency operates primarily out of its headquarters on Wilshire Boulevard, servicing mid-market to enterprise brands that require high-performance technical SEO and scalable digital revenue engines.
               </p>
+            </motion.div>
+            <div className="flex justify-center w-full mb-8">
+              <a
+                href="/book"
+                id="homepage-about-cta-mobile"
+                data-cta-location="homepage_about_mobile"
+                data-cta-text="About our agency"
+                onClick={() => trackCTA({ cta_location: 'homepage_about_mobile', cta_text: 'About our agency' })}
+                className="group flex items-center bg-[#F26522] hover:bg-[#e05a1a] text-white pl-5 pr-2 py-2 transition-colors duration-300 inline-flex"
+              >
+                <div className="flex flex-col overflow-hidden h-[20px] justify-start items-start relative mr-3">
+                  <span className="text-[13px] font-medium leading-[20px] transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-translate-y-full">About our agency</span>
+                  <span className="text-[13px] font-medium leading-[20px] absolute top-full transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-translate-y-full">About our agency</span>
+                </div>
+                <div className="w-7 h-7 bg-white flex items-center justify-center">
+                  <ArrowRight className="w-4 h-4 text-[#F26522] transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-rotate-45" />
+                </div>
+              </a>
             </div>
-            <a
-              href="/book"
-              id="homepage-about-cta-mobile"
-              data-cta-location="homepage_about_mobile"
-              data-cta-text="About our agency"
-              onClick={() => trackCTA({ cta_location: 'homepage_about_mobile', cta_text: 'About our agency' })}
-              className="group flex items-center bg-[#F26522] hover:bg-[#e05a1a] text-white pl-5 pr-2 py-2 transition-colors duration-300 mb-8 inline-flex"
-            >
-              <div className="flex flex-col overflow-hidden h-[20px] justify-start items-start relative mr-3">
-                <span className="text-[13px] font-medium leading-[20px] transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-translate-y-full">About our agency</span>
-                <span className="text-[13px] font-medium leading-[20px] absolute top-full transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-translate-y-full">About our agency</span>
-              </div>
-              <div className="w-7 h-7 bg-white flex items-center justify-center">
-                <ArrowRight className="w-4 h-4 text-[#F26522] transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-rotate-45" />
-              </div>
-            </a>
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-5 w-full">
               <ParallaxMedia 
                 type="video" 
@@ -404,7 +420,7 @@ const AxionLanding = () => {
                 muted={true}
                 loop={true}
                 playsInline={true}
-                className="w-full sm:w-[45%] aspect-[438/346]" 
+                className="w-full sm:w-[50%] aspect-[4/5] object-cover rounded-sm" 
               />
               <ParallaxMedia 
                 type="video" 
@@ -413,13 +429,18 @@ const AxionLanding = () => {
                 muted={true}
                 loop={true}
                 playsInline={true}
-                className="w-full sm:w-[55%] aspect-[900/600]" 
+                className="w-full sm:w-[50%] aspect-[4/5] object-cover rounded-sm" 
               />
             </div>
           </div>
 
-          <div className="hidden lg:grid grid-cols-[26%_1fr_48%] items-end gap-6 xl:gap-8 font-body">
-            <div className="self-end">
+          <div className="hidden lg:grid grid-cols-[1fr_1.2fr_1fr] items-center gap-8 xl:gap-12 font-body">
+            <motion.div 
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+            >
               <ParallaxMedia 
                 type="video" 
                 src="/videos/space-girl.webm" 
@@ -427,11 +448,18 @@ const AxionLanding = () => {
                 muted={true}
                 loop={true}
                 playsInline={true}
-                className="w-full aspect-[438/346]" 
+                className="w-full aspect-[4/5] object-cover rounded-sm" 
               />
-            </div>
-            <div className="self-start flex flex-col items-start justify-start pt-2">
-              <div className="space-y-4 text-[16px] xl:text-[18px] leading-[1.65] font-medium text-gray-900 mb-8">
+            </motion.div>
+            
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="flex flex-col items-center justify-center text-center px-4"
+            >
+              <div className="space-y-5 text-[16px] xl:text-[18px] leading-[1.65] font-medium text-gray-900 mb-10">
                 <p>
                   <strong>Gobiya</strong> is a precision-engineered digital firm and growth agency. Founded in 2012, the agency specializes in advanced search mechanics, performance marketing, and digital infrastructure design.
                 </p>
@@ -445,7 +473,7 @@ const AxionLanding = () => {
                 data-cta-location="homepage_about_desktop"
                 data-cta-text="About our agency"
                 onClick={() => trackCTA({ cta_location: 'homepage_about_desktop', cta_text: 'About our agency' })}
-                className="group flex items-center bg-[#F26522] hover:bg-[#e05a1a] text-white pl-6 pr-2 py-2 transition-colors duration-300"
+                className="group flex items-center bg-[#F26522] hover:bg-[#e05a1a] text-white pl-6 pr-2 py-2 transition-colors duration-300 inline-flex"
               >
                 <div className="flex flex-col overflow-hidden h-[20px] justify-start items-start relative mr-3">
                   <span className="text-[14px] font-medium leading-[20px] transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-translate-y-full">About our agency</span>
@@ -455,8 +483,14 @@ const AxionLanding = () => {
                   <ArrowRight className="w-4 h-4 text-[#F26522] transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-rotate-45" />
                 </div>
               </a>
-            </div>
-            <div className="self-end">
+            </motion.div>
+
+            <motion.div 
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+            >
               <ParallaxMedia 
                 type="video" 
                 src="/videos/gobiyaRace.webm" 
@@ -464,9 +498,9 @@ const AxionLanding = () => {
                 muted={true}
                 loop={true}
                 playsInline={true}
-                className="w-full aspect-[3/2]" 
+                className="w-full aspect-[4/5] object-cover rounded-sm" 
               />
-            </div>
+            </motion.div>
           </div>
         </div>
         <div className="logo-marker absolute right-[20%] top-[50%] w-10 h-10 pointer-events-none" />
