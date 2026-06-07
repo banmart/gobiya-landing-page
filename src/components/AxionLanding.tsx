@@ -609,20 +609,20 @@ const AxionLanding = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 font-body text-gray-400">
             {[
               {
-                q: "How does Generative Engine Optimization (GEO) work?",
-                a: "GEO structures your brand's digital footprints—including custom schema graphs, entity connections, and structured tables—so conversational LLMs (such as ChatGPT, Claude, Perplexity, and Gemini) can confidently parse, recommend, and cite your business as a trusted authority."
+                q: "Do you build custom websites or use templates like WordPress?",
+                a: "We specialize in custom, high-performance web engineering. We build primarily with React and Vite to ensure blazing-fast load times, seamless animations, and ironclad security—all of which drastically outperform traditional template builders like WordPress."
               },
               {
-                q: "How long does it take to recover from a Google Core Update penalty?",
-                a: "Reversing algorithmic suppressions typically takes 12 to 24 weeks. The recovery process involves a forensic update audit, consolidation or pruning of thin URLs, and building clear E-E-A-T credentials that Google's quality classifiers recognize during core update cycles."
+                q: "How does Generative Engine Optimization (GEO) differ from traditional SEO?",
+                a: "While traditional SEO focuses on ranking in standard Google searches, GEO structures your digital footprint so conversational AI models (like ChatGPT, Perplexity, and Claude) cite your business as the authoritative answer when users ask complex, industry-specific questions."
               },
               {
-                q: "Why do traditional SEO metrics fail B2B companies?",
-                a: "Traditional SEO tracks traffic volume and generic rankings. B2B programs require targeting low-volume, high-intent keyword clusters (like alternatives, comparison pages, and integration tables) that speak to multi-stakeholder buying committees, attributing traffic directly to CRM pipeline value."
+                q: "How long does it take to design, build, and launch a new website?",
+                a: "A typical custom web application or corporate site takes 4 to 8 weeks from initial strategy to final deployment. This timeline includes UI/UX design, custom React engineering, technical SEO implementation, and native CRM integrations."
               },
               {
-                q: "What is the difference between manual actions and algorithmic suppressions?",
-                a: "A manual action is issued by a Google reviewer and explicitly listed in Search Console's manual actions panel; it is cleared by submitting a reconsideration request. An algorithmic suppression is automated, has no notification, and only recovers when the underlying quality classifiers are satisfied during a core rollout."
+                q: "Do you handle lead generation and CRM integration?",
+                a: "Yes. Our web builds aren't just digital brochures—they are lead-generation engines. We natively integrate your site with your CRM of choice to capture pipeline data, track attribution, and automate sales workflows from day one."
               }
             ].map((item, idx) => (
               <div key={idx} className="border-t border-white/10 pt-6">
