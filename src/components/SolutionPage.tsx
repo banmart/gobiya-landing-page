@@ -78,10 +78,10 @@ const SOLUTIONS_DATA: Record<string, SolutionData> = {
       { icon: Target, title: 'Conversion UI Engineering', desc: 'CTA paths, form architecture, and trust signals are coded directly into the core layout for maximum buyer response.' }
     ],
     valueCards: [
-      { title: 'Clean Semantic Codebase', text: 'We deliver search-engine readable markup that maps your information architecture perfectly to bots.' },
+      { title: 'Semantic HTML5 Architecture', text: 'We write clean, semantic markup that maps your information architecture perfectly to search engine bots.' },
       { title: 'Core Web Vitals Dominance', text: 'Every build passes Google speed audits out of the box, maximizing search eligibility and lowering PPC costs.', highlight: true },
-      { title: 'Zero Platform Dependencies', text: 'No plugins to update, no database vulnerabilities, and no slow database calls to block your user flow.' },
-      { title: 'Custom Integration Layer', text: 'Integrate database pipelines, custom CRM logic, Web3 contracts, and analytics directly into the app state.' }
+      { title: 'Dynamic Metadata Integration', text: 'From Open Graph tags to JSON-LD schema, we engineer metadata directly into the codebase for maximum rich snippet eligibility.' },
+      { title: 'Conversion-Driven UX', text: 'We integrate CRO principles and heatmap data to design intuitive, frictionless paths that convert traffic into pipeline.' }
     ],
     executionTitle: 'How we engineer your custom React platform.',
     heroImage: '/images/web_hero.png',
@@ -98,7 +98,14 @@ const SOLUTIONS_DATA: Record<string, SolutionData> = {
       description: 'We migrated their legacy site to a custom React/Vite development stack, optimizing Core Web Vitals to 100/100 and growing online bookings threefold without losing historical search authority.',
       backgroundImage: '/images/livescan-office.webp',
       ctaText: 'View the case study'
-    }
+    },
+    faqTitle: 'Web Development & Technical SEO FAQs',
+    faqs: [
+      { question: 'Why should I choose a custom React site over a template builder like WordPress?', answer: 'Traditional CMS platforms like WordPress rely on heavy plugins and clunky page builders, leading to bloated code and poor Core Web Vitals. A custom React/Vite build is lightweight, highly secure, infinitely scalable, and engineered to load in under a second, directly impacting your conversion rates and search rankings.' },
+      { question: 'Can you provide examples of how you handle metadata in your builds?', answer: 'Yes. Unlike standard single-page applications where metadata is often missed by crawlers, we utilize Server-Side Rendering (SSR). This means every page delivers fully formed HTML containing dynamic <title>, <meta name="description">, Open Graph tags, and complex nested JSON-LD schema graphs directly to Googlebot before any JavaScript executes.' },
+      { question: 'What is Conversion Rate Optimization (CRO) in web design?', answer: 'CRO is the systematic process of increasing the percentage of website visitors who take a desired action (like booking a call or filling out a form). We design our interfaces using UX best practices, user flow analysis, and clear call-to-actions to eliminate friction and maximize lead generation.' },
+      { question: 'Do you integrate existing CRMs into the new website?', answer: 'Absolutely. We build custom API gateways and secure webhooks directly into the application state, allowing your website to seamlessly sync data with platforms like Salesforce, HubSpot, or even bespoke codebase-level databases without relying on fragile third-party plugins.' }
+    ]
   },
 
   '/capabilities/native-crm': {
