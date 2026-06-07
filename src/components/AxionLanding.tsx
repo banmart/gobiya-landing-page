@@ -15,7 +15,7 @@ import Marquee from './Marquee';
 import HorizontalScrollText from './HorizontalScrollText';
 import ParallaxMedia from './ParallaxMedia';
 import CustomCursor from './CustomCursor';
-import ServicesBento from './ServicesBento';
+import StackedBento from './StackedBento';
 import CaseStudiesPinned from './CaseStudiesPinned';
 import InsightsSlider from './InsightsSlider';
 import TestimonialsSlider from './TestimonialsSlider';
@@ -371,7 +371,7 @@ const AxionLanding = () => {
 
       {/* SECTION 3.5: CORE CAPABILITIES */}
       <div id="capabilities" data-logo-dark className="relative scroll-mt-20">
-        <ServicesBento />
+        <StackedBento />
         <div className="logo-marker absolute right-[15%] top-[50%] w-10 h-10 -translate-y-1/2 pointer-events-none" />
       </div>
 

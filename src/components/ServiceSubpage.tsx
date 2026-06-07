@@ -8,7 +8,7 @@ import { MotionPathPlugin } from 'gsap/MotionPathPlugin';
 import { Clock, ArrowRight, ShieldAlert, TrendingUp, Search, Network, PenTool, BarChart, Megaphone, Target, Briefcase, Code, Cpu, Database } from 'lucide-react';
 import SplitTextReveal from './SplitTextReveal';
 import ParallaxMedia from './ParallaxMedia';
-import ServicesBento from './ServicesBento';
+import StackedBento from './StackedBento';
 import InsightsSlider from './InsightsSlider';
 import InsightsGrid from './InsightsGrid';
 import CaseStudiesPinned from './CaseStudiesPinned';
@@ -868,6 +868,15 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
             </div>
           </div>
         </section>
+      )}
+
+      {/* BENTO CARDS SECTION */}
+      {path !== '/insights' && path !== '/contact' && path !== '/services' && path !== '/company/approach' && path !== '/company/success-stories' && config.bentoHeadline && (
+        <StackedBento 
+          headline={config.bentoHeadline} 
+          description={config.bentoDescription} 
+          cards={config.bentoCards} 
+        />
       )}
 
       {/* DETAILED METHODOLOGY FOR THE APPROACH PATH */}
