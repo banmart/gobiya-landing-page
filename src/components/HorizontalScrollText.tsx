@@ -19,35 +19,28 @@ const HorizontalScrollText: React.FC<HorizontalScrollTextProps> = ({ text }) => 
     const validChars = charsRef.current.filter(Boolean);
 
     let ctx = gsap.context(() => {
-      const scrollTween = gsap.to(textRef.current, {
-        xPercent: -100,
-        ease: "none",
-        scrollTrigger: {
-          trigger: wrapperRef.current,
-          pin: true,
-          end: "+=5000px",
-          scrub: true
-        }
-      });
+      // Reveal container
+      gsap.set(textRef.current, { opacity: 1 });
 
-      validChars.forEach((char) => {
-        gsap.from(char, {
-          yPercent: "random(-200, 200)",
-          rotation: "random(-20, 20)",
-          ease: "back.out(1.2)",
-          scrollTrigger: {
-            trigger: char,
-            containerAnimation: scrollTween,
-            start: "left 100%",
-            end: "left 30%",
-            scrub: 1
-          }
-        });
+      gsap.from(validChars, {
+        duration: 1,
+        opacity: 0,
+        scale: 0,
+        y: 80,
+        rotationX: 180,
+        transformOrigin: "0% 50% -50",
+        ease: "back",
+        stagger: 0.05,
+        scrollTrigger: {
+          trigger: textRef.current,
+          start: "top 85%", // Trigger when the text comes into view
+          toggleActions: "play none none reverse"
+        }
       });
     }, wrapperRef);
 
     return () => ctx.revert();
-  }, []);
+  }, [text]);
 
   const words = text.split(' ');
   let charIndex = 0;
@@ -55,31 +48,36 @@ const HorizontalScrollText: React.FC<HorizontalScrollTextProps> = ({ text }) => 
   return (
     <section 
       ref={wrapperRef} 
-      className="overflow-hidden h-screen flex items-center w-full bg-[#111]"
+      className="w-full bg-[#111] py-32 flex justify-center items-center overflow-hidden"
     >
-      <div className="w-full h-full flex items-center">
+      <div className="w-full max-w-[1440px] px-5 sm:px-8 lg:px-12">
         <h3 
           ref={textRef} 
-          className="flex w-max whitespace-nowrap gap-[4vw] pl-[100vw] text-[clamp(2rem,10vw,12rem)] font-semibold leading-[1.1] text-white uppercase"
+          className="text-center font-display text-[clamp(2rem,6rem,4.5vw)] font-semibold leading-[1.2] text-white opacity-0"
+          style={{ 
+            willChange: 'transform', 
+            transform: 'translateZ(0)', 
+            textRendering: 'optimizeSpeed',
+            fontKerning: 'none'
+          }}
         >
           {words.map((word, wordIdx) => (
-            <React.Fragment key={wordIdx}>
-              <div className="inline-flex">
-                {word.split('').map((char, cIdx) => {
-                  const currentIndex = charIndex++;
-                  return (
-                    <span 
-                      key={currentIndex} 
-                      ref={(el) => { charsRef.current[currentIndex] = el; }} 
-                      className="inline-block"
-                    >
-                      {char}
-                    </span>
-                  );
-                })}
-              </div>
-              {wordIdx < words.length - 1 && " "}
-            </React.Fragment>
+            <span key={wordIdx} className="inline-block whitespace-nowrap">
+              {word.split('').map((char, cIdx) => {
+                const currentIndex = charIndex++;
+                return (
+                  <span 
+                    key={currentIndex} 
+                    ref={(el) => { charsRef.current[currentIndex] = el; }} 
+                    className="inline-block"
+                    style={{ willChange: 'transform' }}
+                  >
+                    {char}
+                  </span>
+                );
+              })}
+              {wordIdx < words.length - 1 && <span className="inline-block">&nbsp;</span>}
+            </span>
           ))}
         </h3>
       </div>
