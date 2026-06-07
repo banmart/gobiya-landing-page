@@ -20,7 +20,6 @@ import CaseStudiesPinned from './CaseStudiesPinned';
 import InsightsSlider from './InsightsSlider';
 import TestimonialsSlider from './TestimonialsSlider';
 import SatisfiedClients from './SatisfiedClients';
-import RoiCalculator from './RoiCalculator';
 
 const AxionLanding = () => {
   const [time, setTime] = useState('');
@@ -175,156 +174,61 @@ const AxionLanding = () => {
         <Header theme="dark" hideLogo={true} />
 
         {/* Hero Content */}
-        <div className="relative z-20 flex-1 max-w-[1440px] w-full mx-auto flex items-center px-5 sm:px-8 lg:px-12 py-12 lg:py-20">
-          <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-12 lg:gap-16 w-full items-center">
+        <div className="relative z-20 flex-1 max-w-[1440px] w-full mx-auto flex items-center justify-center px-5 sm:px-8 lg:px-12 py-12 lg:py-24">
+          
+          {/* Hero Heading and Subtitle */}
+          <div className="flex flex-col justify-center items-center text-center max-w-4xl">
+            <p className="text-[13px] sm:text-[14px] text-[#F26522] tracking-[0.2em] mb-5 sm:mb-8 uppercase font-bold">Gobiya Web Design & Engineering</p>
+            <h1 className="text-[clamp(2.5rem,6vw,4.5rem)] font-medium leading-[1.05] tracking-[-0.03em] text-white font-display mb-6">
+              Fast, custom websites engineered to <span className="text-[#F26522] font-semibold">rank</span> — with native CRM and blockchain built in.
+            </h1>
+            <p className="text-[16px] sm:text-[18px] lg:text-[20px] text-gray-400 max-w-[800px] leading-relaxed mb-10">
+              We replace bloated page-builders with sub-second custom React/Vite builds, integrate lightweight customer pipelines directly into your codebase for 100% data ownership, and implement secure smart contracts natively.
+            </p>
             
-            {/* Left Column: Heading and Subtitle */}
-            <div className="flex flex-col justify-center text-left">
-              <p className="text-[13px] sm:text-[14px] text-gray-400 tracking-wide mb-5 sm:mb-8 uppercase font-medium">Gobiya Web Design & Engineering</p>
-              <h1 className="text-[clamp(2.2rem,5vw,3.8rem)] font-medium leading-[1.1] tracking-[-0.03em] text-white font-display mb-6">
-                Fast, custom websites engineered to <span className="text-[#F26522] font-semibold">rank</span> — with native CRM and blockchain built in.
-              </h1>
-              <p className="text-[16px] sm:text-[18px] text-gray-400 max-w-[700px] leading-relaxed mb-8">
-                We replace bloated page-builders with sub-second custom React/Vite builds, integrate lightweight customer pipelines directly into your codebase for 100% data ownership, and implement secure smart contracts natively.
-              </p>
-              
-              <div className="flex flex-wrap items-center gap-4 sm:gap-5">
-                <a 
-                  href="/book" 
-                  data-cta-location="homepage_hero_sub"
-                  data-cta-text="Book a strategy call"
-                  onClick={() => trackCTA({ cta_location: 'homepage_hero_sub', cta_text: 'Book a strategy call', destination: '/book' })}
-                  className="group flex items-center bg-[#F26522] hover:bg-[#e05a1a] text-white pl-5 sm:pl-6 pr-2 py-2 transition-colors duration-300"
-                >
-                  <div className="flex flex-col overflow-hidden h-[20px] justify-start items-start relative mr-3">
-                    <span className="text-[13px] sm:text-[14px] font-medium leading-[20px] transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-translate-y-full">Book a strategy call</span>
-                    <span className="text-[13px] sm:text-[14px] font-medium leading-[20px] absolute top-full transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-translate-y-full">Book a strategy call</span>
-                  </div>
-                  <div className="w-7 h-7 sm:w-8 sm:h-8 bg-white flex items-center justify-center">
-                    <ArrowRight className="w-4 h-4 text-[#F26522] transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-rotate-45" />
-                  </div>
-                </a>
-              </div>
-              {/* Partner Logos */}
-              <div className="mt-12 pt-8 border-t border-white/10 max-w-[640px]">
-                <p className="text-[11px] uppercase tracking-wider text-gray-500 font-semibold mb-5 font-body">Satisfied Clients</p>
-                <div className="flex flex-wrap items-center gap-x-8 gap-y-6">
-                  {[
-                    '/images/remodelmepros.webp',
-                    '/images/smilecenter.webp',
-                    '/images/quickpass-logo.webp',
-                    '/images/mytrustwills.webp',
-                    '/images/tidder-pro-logo.webp',
-                    '/images/totalcapital.webp',
-                    '/images/logo-DeEgMiH0.png',
-                    '/images/americanlivescan.webp'
-                  ].map((logo, index) => (
-                    <img 
-                      key={index} 
-                      src={logo} 
-                      alt={`Client logo ${index + 1}`} 
-                      className="h-6 sm:h-7 w-auto object-contain brightness-0 invert opacity-45 hover:opacity-85 transition-opacity duration-300"
-                    />
-                  ))}
+            <div className="flex flex-wrap justify-center items-center gap-4 sm:gap-5">
+              <a 
+                href="/book" 
+                data-cta-location="homepage_hero_sub"
+                data-cta-text="Book a strategy call"
+                onClick={() => trackCTA({ cta_location: 'homepage_hero_sub', cta_text: 'Book a strategy call', destination: '/book' })}
+                className="group flex items-center bg-[#F26522] hover:bg-[#e05a1a] text-white pl-6 sm:pl-8 pr-2 py-3 transition-colors duration-300"
+              >
+                <div className="flex flex-col overflow-hidden h-[24px] justify-start items-start relative mr-4">
+                  <span className="text-[14px] sm:text-[16px] font-medium leading-[24px] transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-translate-y-full">Book a strategy call</span>
+                  <span className="text-[14px] sm:text-[16px] font-medium leading-[24px] absolute top-full transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-translate-y-full">Book a strategy call</span>
                 </div>
+                <div className="w-8 h-8 sm:w-10 sm:h-10 bg-white flex items-center justify-center">
+                  <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 text-[#F26522] transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-rotate-45" />
+                </div>
+              </a>
+            </div>
+            
+            {/* Partner Logos */}
+            <div className="mt-16 pt-8 border-t border-white/10 max-w-[900px] w-full">
+              <p className="text-[11px] uppercase tracking-wider text-gray-500 font-semibold mb-6 font-body">Satisfied Clients</p>
+              <div className="flex flex-wrap justify-center items-center gap-x-8 gap-y-6 sm:gap-x-12 sm:gap-y-8">
+                {[
+                  '/images/remodelmepros.webp',
+                  '/images/smilecenter.webp',
+                  '/images/quickpass-logo.webp',
+                  '/images/mytrustwills.webp',
+                  '/images/tidder-pro-logo.webp',
+                  '/images/totalcapital.webp',
+                  '/images/logo-DeEgMiH0.png',
+                  '/images/americanlivescan.webp'
+                ].map((logo, index) => (
+                  <img 
+                    key={index} 
+                    src={logo} 
+                    alt={`Client logo ${index + 1}`} 
+                    className="h-6 sm:h-8 w-auto object-contain brightness-0 invert opacity-45 hover:opacity-85 transition-opacity duration-300"
+                  />
+                ))}
               </div>
             </div>
-
-            {/* Right Column: Interactive Form Card */}
-            <div className="relative w-full max-w-[480px] lg:max-w-none mx-auto">
-              <div className="liquid-glass p-8 rounded-2xl border border-white/10 bg-black/40 backdrop-blur-md shadow-2xl shadow-black/80">
-                {formState !== 'success' ? (
-                  <form onSubmit={handleFormSubmit} className="space-y-6">
-                    <div>
-                      <h3 className="text-xl font-medium text-white mb-2 font-display">How can we help you get found?</h3>
-                      <p className="text-sm text-gray-400">Select services of interest and request a direct audit.</p>
-                    </div>
-
-                    <div className="space-y-3">
-                      {[
-                        { id: 'dev', label: 'Web Development (React & Vite)' },
-                        { id: 'crm', label: 'Native CRM & Lead Pipelines' },
-                        { id: 'seo', label: 'SEO & Discoverability' },
-                        { id: 'web3', label: 'Blockchain & Web3 Dev' }
-                      ].map((service) => {
-                        const isChecked = selectedServices.includes(service.id);
-                        return (
-                          <div 
-                            key={service.id} 
-                            onClick={() => handleServiceToggle(service.id)}
-                            className={`flex items-center justify-between p-3.5 rounded-lg border transition-all duration-300 cursor-pointer ${
-                              isChecked 
-                                ? 'bg-[#F26522]/10 border-[#F26522] text-white' 
-                                : 'bg-white/5 border-white/10 text-gray-300 hover:bg-white/10 hover:border-white/20'
-                            }`}
-                          >
-                            <span className="text-[14px] font-medium">{service.label}</span>
-                            <div className={`w-5 h-5 rounded flex items-center justify-center border transition-all duration-300 ${
-                              isChecked 
-                                ? 'bg-[#F26522] border-[#F26522] text-white' 
-                                : 'border-white/30 text-transparent'
-                            }`}>
-                              <Check className="w-3.5 h-3.5" strokeWidth={3} />
-                            </div>
-                          </div>
-                        );
-                      })}
-                    </div>
-
-                    <div className="space-y-2">
-                      <label className="block text-xs uppercase tracking-wider font-semibold text-gray-400">Your Website Domain</label>
-                      <input 
-                        type="text" 
-                        required
-                        value={domain}
-                        onChange={(e) => setDomain(e.target.value)}
-                        placeholder="e.g. yourcompany.com" 
-                        className="w-full bg-white/5 border border-white/10 focus:border-[#F26522] focus:bg-white/10 text-white rounded-lg p-3.5 text-[14px] outline-none transition-all"
-                      />
-                    </div>
-
-                    <button 
-                      type="submit"
-                      disabled={formState === 'submitting'}
-                      className="w-full flex items-center justify-center bg-[#F26522] hover:bg-[#e05a1a] disabled:bg-gray-700 text-white py-3.5 px-6 font-semibold tracking-wide uppercase transition-colors duration-300 cursor-pointer rounded-lg text-sm"
-                    >
-                      {formState === 'submitting' ? (
-                        <div className="flex items-center gap-2">
-                          <span className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
-                          <span>Analyzing Domain...</span>
-                        </div>
-                      ) : (
-                        <span>Request Build Audit</span>
-                      )}
-                    </button>
-                  </form>
-                ) : (
-                  <div className="text-center py-10 space-y-5 animate-fade-rise">
-                    <div className="w-16 h-16 bg-[#F26522]/10 border border-[#F26522] rounded-full flex items-center justify-center mx-auto">
-                      <Check className="w-8 h-8 text-[#F26522]" strokeWidth={2.5} />
-                    </div>
-                    <div>
-                      <h3 className="text-2xl font-medium text-white mb-2 font-display">Request Received</h3>
-                      <p className="text-gray-400 text-[15px] leading-relaxed max-w-sm mx-auto">
-                        We are running a baseline performance audit of <strong className="text-white">{domain}</strong>. Our team will contact you with custom build recommendations within 24 hours.
-                      </p>
-                    </div>
-                    <button 
-                      onClick={() => {
-                        setFormState('idle');
-                        setDomain('');
-                        setSelectedServices([]);
-                      }}
-                      className="text-[#F26522] hover:text-[#e05a1a] transition-colors text-sm font-semibold underline underline-offset-4 font-body"
-                    >
-                      Audit another website
-                    </button>
-                  </div>
-                )}
-              </div>
-            </div>
-
           </div>
+
         </div>
         <div className="logo-marker absolute left-[50%] bottom-[10%] w-10 h-10 pointer-events-none" />
       </section>
@@ -587,11 +491,110 @@ const AxionLanding = () => {
 
 
 
-      {/* SECTION 8: ROI CALCULATOR */}
-      <div data-logo-dark className="relative">
-        <RoiCalculator />
+      {/* SECTION 8: CONTACT AUDIT FORM */}
+      <section data-logo-dark className="relative py-24 sm:py-32 bg-[#050505] flex justify-center px-5 sm:px-8 lg:px-12 border-t border-white/10 z-20 overflow-hidden">
+        
+        {/* Animated Background Elements */}
+        <div className="absolute inset-0 pointer-events-none overflow-hidden">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#F26522] rounded-full mix-blend-screen opacity-[0.03] blur-[100px]"></div>
+        </div>
+
+        <div className="relative w-full max-w-[600px] mx-auto z-20">
+          <div className="liquid-glass p-8 sm:p-12 rounded-3xl border border-white/10 bg-black/60 backdrop-blur-xl shadow-[0_0_80px_rgba(0,0,0,0.8)] relative overflow-hidden">
+            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#F26522] to-transparent opacity-50"></div>
+            
+            {formState !== 'success' ? (
+              <form onSubmit={handleFormSubmit} className="space-y-8">
+                <div className="text-center mb-8">
+                  <h3 className="text-[clamp(1.8rem,3vw,2.5rem)] font-medium text-white mb-3 font-display leading-tight">How can we help you get found?</h3>
+                  <p className="text-base text-gray-400">Select services of interest and request a direct technical audit.</p>
+                </div>
+
+                <div className="space-y-3">
+                  {[
+                    { id: 'dev', label: 'Web Development (React & Vite)' },
+                    { id: 'crm', label: 'Native CRM & Lead Pipelines' },
+                    { id: 'seo', label: 'SEO & Discoverability' },
+                    { id: 'web3', label: 'Blockchain & Web3 Dev' }
+                  ].map((service) => {
+                    const isChecked = selectedServices.includes(service.id);
+                    return (
+                      <div 
+                        key={service.id} 
+                        onClick={() => handleServiceToggle(service.id)}
+                        className={`flex items-center justify-between p-4 rounded-xl border transition-all duration-300 cursor-pointer ${
+                          isChecked 
+                            ? 'bg-[#F26522]/10 border-[#F26522] text-white shadow-[0_0_20px_rgba(242,101,34,0.15)]' 
+                            : 'bg-white/5 border-white/10 text-gray-300 hover:bg-white/10 hover:border-white/20'
+                        }`}
+                      >
+                        <span className="text-[15px] font-medium">{service.label}</span>
+                        <div className={`w-6 h-6 rounded flex items-center justify-center border transition-all duration-300 ${
+                          isChecked 
+                            ? 'bg-[#F26522] border-[#F26522] text-white' 
+                            : 'border-white/30 text-transparent'
+                        }`}>
+                          <Check className="w-4 h-4" strokeWidth={3} />
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+
+                <div className="space-y-3">
+                  <label className="block text-[13px] uppercase tracking-widest font-semibold text-gray-400">Your Website Domain</label>
+                  <input 
+                    type="text" 
+                    required
+                    value={domain}
+                    onChange={(e) => setDomain(e.target.value)}
+                    placeholder="e.g. yourcompany.com" 
+                    className="w-full bg-white/5 border border-white/10 focus:border-[#F26522] focus:bg-white/10 text-white rounded-xl p-4 text-[16px] outline-none transition-all placeholder:text-gray-600 focus:shadow-[0_0_30px_rgba(242,101,34,0.1)]"
+                  />
+                </div>
+
+                <button 
+                  type="submit"
+                  disabled={formState === 'submitting'}
+                  className="w-full flex items-center justify-center bg-[#F26522] hover:bg-[#e05a1a] disabled:bg-gray-700 text-white py-4 px-6 font-semibold tracking-wider uppercase transition-all duration-300 cursor-pointer rounded-xl text-[15px] hover:shadow-[0_0_40px_rgba(242,101,34,0.3)]"
+                >
+                  {formState === 'submitting' ? (
+                    <div className="flex items-center gap-3">
+                      <span className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
+                      <span>Analyzing Domain...</span>
+                    </div>
+                  ) : (
+                    <span>Request Build Audit</span>
+                  )}
+                </button>
+              </form>
+            ) : (
+              <div className="text-center py-12 space-y-6 animate-fade-rise">
+                <div className="w-20 h-20 bg-[#F26522]/10 border border-[#F26522] rounded-full flex items-center justify-center mx-auto">
+                  <Check className="w-10 h-10 text-[#F26522]" strokeWidth={2.5} />
+                </div>
+                <div>
+                  <h3 className="text-3xl font-medium text-white mb-3 font-display">Request Received</h3>
+                  <p className="text-gray-400 text-[16px] leading-relaxed max-w-sm mx-auto">
+                    We are running a baseline performance audit of <strong className="text-white">{domain}</strong>. Our team will contact you with custom build recommendations within 24 hours.
+                  </p>
+                </div>
+                <button 
+                  onClick={() => {
+                    setFormState('idle');
+                    setDomain('');
+                    setSelectedServices([]);
+                  }}
+                  className="text-[#F26522] hover:text-[#e05a1a] transition-colors text-[15px] font-semibold underline underline-offset-4 font-body mt-4 inline-block"
+                >
+                  Audit another website
+                </button>
+              </div>
+            )}
+          </div>
+        </div>
         <div className="logo-marker absolute left-[10%] top-[50%] w-10 h-10 pointer-events-none" />
-      </div>
+      </section>
 
       {/* SECTION 8.5: FAQ */}
       <section data-logo-dark className="py-24 sm:py-32 px-5 sm:px-8 lg:px-12 bg-[#050505] text-white border-t border-white/10 relative z-20">
