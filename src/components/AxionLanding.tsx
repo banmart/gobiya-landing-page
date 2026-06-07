@@ -174,15 +174,15 @@ const AxionLanding = () => {
         <Header theme="dark" hideLogo={true} />
 
         {/* Hero Content */}
-        <div className="relative z-20 flex-1 max-w-[1440px] w-full mx-auto flex items-center justify-start px-5 sm:px-8 lg:px-12 py-12 lg:py-24">
+        <div className="relative z-20 flex-1 max-w-[1440px] w-full mx-auto flex items-center justify-start px-5 sm:px-8 lg:px-12 py-12 lg:py-16">
           
           {/* Hero Heading and Subtitle */}
           <div className="flex flex-col justify-center items-start text-left w-full">
-            <p className="text-[13px] sm:text-[14px] text-[#F26522] tracking-[0.2em] mb-5 sm:mb-8 uppercase font-bold">Gobiya Web Design & Engineering</p>
-            <h1 className="text-[clamp(3rem,8vw,6.5rem)] font-medium leading-[1.05] tracking-[-0.03em] text-white font-display mb-4 w-full">
+            <p className="text-[13px] sm:text-[14px] text-[#F26522] tracking-[0.2em] mb-4 sm:mb-6 uppercase font-bold">Gobiya Web Design & Engineering</p>
+            <h1 className="text-[clamp(2.5rem,6vw,5.5rem)] font-medium leading-[1.05] tracking-[-0.03em] text-white font-display mb-6 w-full">
               Fast, custom websites engineered to <span className="text-[#F26522] font-semibold">rank</span> — with native CRM and blockchain built in.
             </h1>
-            <p className="text-[clamp(1.75rem,5vw,4.5rem)] font-medium leading-[1.1] tracking-[-0.02em] text-gray-400 w-full mb-12">
+            <p className="text-[16px] sm:text-[18px] lg:text-[20px] font-medium leading-[1.6] tracking-normal text-gray-400 max-w-[800px] mb-10">
               We replace bloated page-builders with sub-second custom React/Vite builds, integrate lightweight customer pipelines directly into your codebase for 100% data ownership, and implement secure smart contracts natively.
             </p>
             
