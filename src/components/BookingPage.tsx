@@ -25,7 +25,7 @@ const SCOPE_OPTIONS = [
   { id: 'geo', label: 'GEO & AI Overview Optimization' },
   { id: 'seo_recovery', label: 'Google Core Update Recovery' },
   { id: 'outbound_pipeline', label: 'Sales & Outbound Automation' },
-  { id: 'react_dev', label: 'Bespoke Custom Frontend / React Dev' }
+  { id: 'react_dev', label: 'Bespoke Custom Frontend / React & Next.js Dev' }
 ];
 
 const TIME_SLOTS = [

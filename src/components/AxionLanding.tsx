@@ -186,7 +186,7 @@ const AxionLanding = () => {
               Fast, custom websites engineered to <span className="text-[#F26522] font-semibold">rank</span> — with native CRM and blockchain built in.
             </h1>
             <p className="text-[16px] sm:text-[18px] lg:text-[20px] font-medium leading-[1.6] tracking-normal text-gray-400 max-w-[800px] mb-10">
-              We replace bloated page-builders with sub-second custom React/Vite builds, integrate lightweight customer pipelines directly into your codebase for 100% data ownership, and implement secure smart contracts natively.
+              We replace bloated page-builders with sub-second custom React/Next.js/Vite builds, integrate lightweight customer pipelines directly into your codebase for 100% data ownership, and implement secure smart contracts natively.
             </p>
             
             <div className="flex flex-wrap justify-start items-center gap-4 sm:gap-5">
@@ -247,7 +247,7 @@ const AxionLanding = () => {
           { value: '5x', label: 'Patient inquiries', text: 'SmileCenter Dentistry — form completions & phone calls.', href: '/case-studies/smile-center-dentistry', client: 'SmileCenter' },
           { value: '3x', label: 'Bookings & calls', text: 'American Livescan — online appointments & inbound calls.', href: '/case-studies/american-livescan', client: 'Livescan' },
           { value: '+30%', label: 'Walk-in traffic', text: 'American Livescan — driven by speed & technical discoverability.', href: '/case-studies/american-livescan', client: 'Livescan' },
-          { value: '100', label: 'Core Web Vitals', text: 'score guaranteed on our custom React/Vite builds.' }
+          { value: '100', label: 'Core Web Vitals', text: 'score guaranteed on our custom React/Next.js/Vite builds.' }
         ].map((stat, idx) => (
           <div key={idx} className={`flex-1 p-8 lg:p-10 ${idx % 2 === 0 ? 'bg-[#F26522]' : 'bg-[#e05a1a]'} text-white ${stat.href ? 'group cursor-pointer hover:brightness-110 transition-[filter] duration-300' : ''}`}
             onClick={stat.href ? () => { window.history.pushState({}, '', stat.href); window.dispatchEvent(new PopStateEvent('popstate')); window.scrollTo(0,0); } : undefined}
@@ -269,7 +269,7 @@ const AxionLanding = () => {
 
       {/* SECTION 2: MARQUEE */}
       <div data-logo-dark className="relative w-full">
-        <Marquee items={['CUSTOM WEB DEV', 'NATIVE CRM', 'BUILT-IN SEO', 'SMART CONTRACTS', 'CORE WEB VITALS', 'REACT & VITE']} />
+        <Marquee items={['CUSTOM WEB DEV', 'NATIVE CRM', 'BUILT-IN SEO', 'SMART CONTRACTS', 'CORE WEB VITALS', 'REACT, NEXT.JS & VITE']} />
         <div className="logo-marker absolute right-[15%] top-[50%] w-10 h-10 -translate-y-1/2 pointer-events-none" />
       </div>
 
@@ -318,8 +318,8 @@ const AxionLanding = () => {
               <div className="space-y-2 border-t border-gray-200 font-body">
                 {[
                   {
-                    title: '01 / Web Development (React & Vite)',
-                    content: 'We build high-performance custom websites in React and Vite, engineered from the ground up for sub-second speeds and flawless crawler readability.'
+                    title: '01 / Web Development (React / Next.js / Vite)',
+                    content: 'We build high-performance custom websites in React, Next.js, and Vite, engineered from the ground up for sub-second speeds and flawless crawler readability.'
                   },
                   {
                     title: '02 / Native CRM Integration',
@@ -557,7 +557,7 @@ const AxionLanding = () => {
 
                 <div className="space-y-3">
                   {[
-                    { id: 'dev', label: 'Web Development (React & Vite)' },
+                    { id: 'dev', label: 'Web Development (React / Next.js / Vite)' },
                     { id: 'crm', label: 'Native CRM & Lead Pipelines' },
                     { id: 'seo', label: 'SEO & Discoverability' },
                     { id: 'web3', label: 'Blockchain & Web3 Dev' }
@@ -654,7 +654,7 @@ const AxionLanding = () => {
             {[
               {
                 q: "Do you build custom websites or use templates like WordPress?",
-                a: "We specialize in custom, high-performance web engineering. We build primarily with React and Vite to ensure blazing-fast load times, seamless animations, and ironclad security—all of which drastically outperform traditional template builders like WordPress."
+                a: "We specialize in custom, high-performance web engineering. We build primarily with React, Next.js, and Vite to ensure blazing-fast load times, seamless animations, and ironclad security—all of which drastically outperform traditional template builders like WordPress."
               },
               {
                 q: "How does Generative Engine Optimization (GEO) differ from traditional SEO?",
@@ -662,7 +662,7 @@ const AxionLanding = () => {
               },
               {
                 q: "How long does it take to design, build, and launch a new website?",
-                a: "A typical custom web application or corporate site takes 4 to 8 weeks from initial strategy to final deployment. This timeline includes UI/UX design, custom React engineering, technical SEO implementation, and native CRM integrations."
+                a: "A typical custom web application or corporate site takes 4 to 8 weeks from initial strategy to final deployment. This timeline includes UI/UX design, custom React and Next.js engineering, technical SEO implementation, and native CRM integrations."
               },
               {
                 q: "Do you handle lead generation and CRM integration?",

@@ -413,16 +413,16 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
           rotatingWords: ['engineer speed.', 'own your CRM.', 'get cited by AI.', 'deploy smart contracts.'],
           outcomeMessage: 'We build fast, modern web applications with native CRM pipelines, search discoverability, and custom Web3 integrations.',
           ctaText: 'Get growth audit',
-          introScrollText: 'We build premium, custom React and Vite sites with native CRM databases, built-in SEO discoverability, and Web3 capabilities.',
+          introScrollText: 'We build premium, custom React, Next.js, and Vite sites with native CRM databases, built-in SEO discoverability, and Web3 capabilities.',
           introHeading: <>Four core pillars. <br className="hidden sm:block" /><span className="sm:hidden"> </span>One powerful custom product.</>,
-          introParagraph: 'At Gobiya, we do not run generic SEO campaigns. We build custom React/Vite platforms, engineer native pipeline integrations, and write secure smart contracts that drive enterprise growth.',
+          introParagraph: 'At Gobiya, we do not run generic SEO campaigns. We build custom React/Next.js/Vite platforms, engineer native pipeline integrations, and write secure smart contracts that drive enterprise growth.',
           introVideo1: "/videos/space-girl.webm",
           introVideo2: "/videos/gobiyaRace.webm",
           bentoHeadline: <>Integrated capabilities.<br/>Measurable returns.</>,
           bentoDescription: 'Every capability is engineered to deliver a fast, indexable web application with complete data ownership and specialized Web3 capabilities. Verify our core pillars below.',
           insightCategory: 'Strategy',
           bentoCards: [
-            { href: '/capabilities/web-development', colSpan: 2, gradient: true, icon: <Code size={40} className="text-white mb-6 sm:mb-10 relative z-10" strokeWidth={1.5} />, title: 'Web Development', description: 'Custom React/Vite sites engineered for sub-second page loads and flawless crawlability.' },
+            { href: '/capabilities/web-development', colSpan: 2, gradient: true, icon: <Code size={40} className="text-white mb-6 sm:mb-10 relative z-10" strokeWidth={1.5} />, title: 'Web Development', description: 'Custom React/Next.js/Vite sites engineered for sub-second page loads and flawless crawlability.' },
             { href: '/capabilities/native-crm', colSpan: 1, icon: <Database size={40} className="text-white mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'Native CRM', description: 'Pipeline and lead databases built directly into your codebase, ensuring 100% data ownership.' },
             { href: '/capabilities/seo-discoverability', colSpan: 2, icon: <Search size={40} className="text-white mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'SEO & Discoverability', description: 'Built-in crawler-readiness, semantic data mapping, and formatting designed for Google and AI citation eligibility.' },
             { href: '/capabilities/blockchain-web3-development', colSpan: 1, icon: <Cpu size={40} className="text-[#F26522] mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'Blockchain & Web3 Dev', description: 'On-chain solutions, custom smart contracts, and decentralized application features integrated natively.' },
@@ -589,7 +589,7 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
           insightCategory: 'Strategy',
           bentoCards: [
             { href: '/about/steve-martin', colSpan: 2, icon: <Briefcase size={40} className="text-[#F26522] mb-6 sm:mb-10" strokeWidth={1.5} />, title: '25+ Years Experience', description: 'Bridging full-stack software engineering and organic search traffic acquisition since 2000.' },
-            { href: '/services/web-design', colSpan: 1, icon: <Code size={40} className="text-white mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'Core Dev Stack', description: 'React, Vite, Tailwind CSS, Supabase, and custom AI chat/automation builds.' },
+            { href: '/services/web-design', colSpan: 1, icon: <Code size={40} className="text-white mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'Core Dev Stack', description: 'React, Next.js, Vite, Tailwind CSS, Supabase, and custom AI chat/automation builds.' },
             { href: '/services/geo-optimization', colSpan: 1, icon: <Search size={40} className="text-white mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'AI-Era SEO', description: 'Schema markup, entity optimization, and structured citations for LLMs.' },
             { href: '/about/steve-martin', colSpan: 2, gradient: true, icon: <TrendingUp size={40} className="text-white mb-6 sm:mb-10 relative z-10" strokeWidth={1.5} />, title: 'Steve Martin Credentials', description: 'View professional experience, client projects, certifications, and background.' }
           ]
@@ -1410,7 +1410,7 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
                   id: 'web-design',
                   icon: <Code className="text-[#F26522] w-8 h-8" />,
                   title: 'Website Design & Development',
-                  description: 'Custom React & Vite landing pages, web applications, and interactive platforms built from scratch with zero bloat, sub-second speed, and conversion architecture.',
+                  description: 'Custom React, Next.js & Vite landing pages, web applications, and interactive platforms built from scratch with zero bloat, sub-second speed, and conversion architecture.',
                   deliverables: ['Custom Apps & Mobile Platforms', 'Native CRMs & API Integrations', 'Crypto, Web3 & Smart Contracts', 'AI Video Systems & Automations']
                 },
                 {
@@ -1545,7 +1545,7 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
                         if (s === 'geo') return 'GEO / AI Overview Citation';
                         if (s === 'seo') return 'Forensic SEO & Traffic Recovery';
                         if (s === 'b2b') return 'B2B Pipeline & Outbound Automation';
-                        if (s === 'dev') return 'Bespoke React Engineering';
+                        if (s === 'dev') return 'Bespoke React/Next.js Engineering';
                         return s;
                       })
                       .join(', ');
@@ -1622,7 +1622,7 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
                       { id: 'geo', label: 'GEO / AI Overview Citation' },
                       { id: 'seo', label: 'Forensic SEO & Traffic Recovery' },
                       { id: 'b2b', label: 'B2B Pipeline & Outbound' },
-                      { id: 'dev', label: 'Bespoke React Engineering' }
+                      { id: 'dev', label: 'Bespoke React/Next.js Engineering' }
                     ].map((service) => {
                       const isChecked = contactServices.includes(service.id);
                       return (

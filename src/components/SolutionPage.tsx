@@ -59,9 +59,9 @@ interface SolutionData {
 
 const SOLUTIONS_DATA: Record<string, SolutionData> = {
   '/capabilities/web-development': {
-    h1: 'Modern websites built in React and Vite — no templates, built to rank',
-    subHeadline: 'We replace slow, bloated CMS page-builders with hand-coded React websites built to convert visitors and get crawled natively.',
-    rotatingWords: ['sub-second speed.', 'custom React.', '100/100 Core Web Vitals.'],
+    h1: 'Modern websites built in React, Next.js, and Vite — no templates, built to rank',
+    subHeadline: 'We replace slow, bloated CMS page-builders with hand-coded React and Next.js websites built to convert visitors and get crawled natively.',
+    rotatingWords: ['sub-second speed.', 'React & Next.js.', '100/100 Core Web Vitals.'],
     insightCategory: 'Development',
     ctaText: 'Start a custom build',
     ctaLink: '/book',
@@ -74,22 +74,22 @@ const SOLUTIONS_DATA: Record<string, SolutionData> = {
     approachTitle: 'Pure engineering. Sub-second performance.',
     approachSubtitle: 'Page-builders and generalist dev shops ship JavaScript-bloated SPAs that crawlers can\'t render, resulting in empty indexation and lost ranks. We build search-ready, high-speed custom codebases.',
     approach: [
-      { icon: Code, title: 'Bespoke Vite & React Stack', desc: 'We hand-code every component in modern React, bundling via Vite for minimal footprint and maximum interface responsiveness.' },
+      { icon: Code, title: 'Bespoke React, Next.js & Vite Stack', desc: 'We hand-code every component in modern React and Next.js, bundling via Vite for minimal footprint and maximum interface responsiveness.' },
       { icon: Zap, title: 'SSR Prerendering Pipelines', desc: 'We deploy server-side rendering (SSR) and static generation strategies so search crawlers and AI bots read complete HTML instantly.' },
       { icon: Target, title: 'Conversion UI Engineering', desc: 'CTA paths, form architecture, and trust signals are coded directly into the core layout for maximum buyer response.' }
     ],
     valueCards: [
-      { title: 'Semantic HTML5 Architecture', text: 'We write clean, semantic markup that maps your information architecture perfectly to search engine bots.', backText: 'Our engineering team uses native HTML5 tags and precise DOM hierarchy so Googlebot can instantly understand your page structure without relying on complex client-side rendering.' },
+      { title: 'Semantic HTML5 Architecture', text: 'We write clean, semantic markup that maps your information architecture perfectly to search engine bots.', backText: 'Our engineering team uses native HTML5 tags and precise DOM hierarchy so Googlebot can instantly understand your page structure without relying on client-side rendering.' },
       { title: 'Core Web Vitals Dominance', text: 'Every build passes Google speed audits out of the box, maximizing search eligibility and lowering PPC costs.', backText: 'By eliminating bulky frameworks and focusing on raw Vite/React performance, we consistently hit 95-100 scores across LCP, FID, and CLS metrics.' },
       { title: 'Dynamic Metadata Integration', text: 'From Open Graph tags to JSON-LD schema, we engineer metadata directly into the codebase for maximum rich snippet eligibility.', backText: 'We dynamically inject schema graphs and meta descriptors at the server level, ensuring rich results for products, articles, and local businesses.' },
       { title: 'Conversion-Driven UX', text: 'We integrate CRO principles and heatmap data to design intuitive, frictionless paths that convert traffic into pipeline.', backText: 'We use scroll-depth analysis and click tracking to continually refine CTA placement, reducing bounce rates and maximizing high-intent lead capture.' }
     ],
-    executionTitle: 'How we engineer your custom React platform.',
+    executionTitle: 'How we engineer your custom React and Next.js platforms.',
     heroImage: '/images/web_hero.png',
     executionImage: '/images/web_exec.webp',
     executionSteps: [
       { title: 'Architecture & Interface Design', content: 'We map your user flow and design custom interface components optimized specifically for your target audience, conversion paths, and device profiles.' },
-      { title: 'Custom React Component Coding', content: 'We build your website from scratch, engineering responsive custom CSS layout structures and modular component trees with zero template code.' },
+      { title: 'Custom React & Next.js Component Coding', content: 'We build your website from scratch, engineering responsive custom CSS layout structures and modular component trees with zero template code.' },
       { title: 'Data Layer & CRM Connection', content: 'We wire up API gateways, database backends, and codebase-level CRM components directly into the application state for database operations.' },
       { title: 'Prerendering & Performance Optimization', content: 'We build the static and SSR pathways to guarantee sub-second loads, compile sitemaps, audit core web vitals, and hand off an optimized product.' }
     ],
@@ -102,7 +102,7 @@ const SOLUTIONS_DATA: Record<string, SolutionData> = {
     },
     faqTitle: 'Web Development & Technical SEO FAQs',
     faqs: [
-      { question: 'Why should I choose a custom React site over a template builder like WordPress?', answer: 'Traditional CMS platforms like WordPress rely on heavy plugins and clunky page builders, leading to bloated code and poor Core Web Vitals. A custom React/Vite build is lightweight, highly secure, infinitely scalable, and engineered to load in under a second, directly impacting your conversion rates and search rankings.' },
+      { question: 'Why should I choose a custom React & Next.js site over a template builder like WordPress?', answer: 'Traditional CMS platforms like WordPress rely on heavy plugins and clunky page builders, leading to bloated code and poor Core Web Vitals. A custom React/Next.js/Vite build is lightweight, highly secure, infinitely scalable, and engineered to load in under a second, directly impacting your conversion rates and search rankings.' },
       { question: 'Can you provide examples of how you handle metadata in your builds?', answer: 'Yes. Unlike standard single-page applications where metadata is often missed by crawlers, we utilize Server-Side Rendering (SSR). This means every page delivers fully formed HTML containing dynamic <title>, <meta name="description">, Open Graph tags, and complex nested JSON-LD schema graphs directly to Googlebot before any JavaScript executes.' },
       { question: 'What is Conversion Rate Optimization (CRO) in web design?', answer: 'CRO is the systematic process of increasing the percentage of website visitors who take a desired action (like booking a call or filling out a form). We design our interfaces using UX best practices, user flow analysis, and clear call-to-actions to eliminate friction and maximize lead generation.' },
       { question: 'Do you integrate existing CRMs into the new website?', answer: 'Absolutely. We build custom API gateways and secure webhooks directly into the application state, allowing your website to seamlessly sync data with platforms like Salesforce, HubSpot, or even bespoke codebase-level databases without relying on fragile third-party plugins.' }
@@ -196,14 +196,14 @@ const SOLUTIONS_DATA: Record<string, SolutionData> = {
   },
 
   '/capabilities/seo-discoverability': {
-    h1: 'We build React sites Google can actually crawl, index, and rank',
+    h1: 'We build React and Next.js sites Google can actually crawl, index, and rank',
     subHeadline: 'We don\'t sell SEO as an afterthought. We build sites that search engines and AI bots can fetch, parse, index, and cite natively by default.',
-    rotatingWords: ['eligible by design.', 'crawler-friendly React.', 'AI overview readiness.'],
+    rotatingWords: ['eligible by design.', 'crawler-friendly React/Next.js.', 'AI overview readiness.'],
     insightCategory: 'SEO & GEO',
     ctaText: 'Build a search-ready site',
     ctaLink: '/book',
     stats: [
-      { value: '100%', label: 'indexation eligibility', text: 'ensuring search crawlers and AI bots receive fully-rendered semantic HTML, resolving blank-page React indexing errors.' },
+      { value: '100%', label: 'indexation eligibility', text: 'ensuring search crawlers and AI bots receive fully-rendered semantic HTML, resolving blank-page React/Next.js indexing errors.' },
       { value: 'Sub-Second', label: 'time-to-first-byte', text: 'enabling Googlebot to crawl more pages per session and increasing your overall crawl budget.' },
       { value: '70-90%', label: 'bias toward structured content', text: 'shown by AI search engines, heavily favoring clear, semantic layouts and schema markup over generic text.' },
       { value: '0', label: 'keyword-stuffing spam', text: 'focusing instead on real information architecture, semantic relationships, and clean code that ranks.' }
@@ -216,7 +216,7 @@ const SOLUTIONS_DATA: Record<string, SolutionData> = {
       { icon: Target, title: 'Information Architecture', desc: 'We structure your navigation and internal link paths to optimize link equity flow, ensuring crawlers find your deep content hubs.' }
     ],
     valueCards: [
-      { title: 'Server-Rendered HTML', text: 'Bots receive fully rendered pages instantly, resolving client-side rendering errors that suppress React apps.', backText: 'We utilize advanced SSR and static generation to serve pre-compiled HTML, completely eliminating the "JavaScript SEO penalty" inherent in standard SPAs.' },
+      { title: 'Server-Rendered HTML', text: 'Bots receive fully rendered pages instantly, resolving client-side rendering errors that suppress React/Next.js apps.', backText: 'We utilize advanced SSR and static generation to serve pre-compiled HTML, completely eliminating the "JavaScript SEO penalty" inherent in standard SPAs.' },
       { title: 'Advanced Schema Graphs', text: 'We link your brand, services, and articles to Wikipedia/Wikidata entity databases to strengthen your entity rank.', backText: 'Our JSON-LD strategies go beyond basic markup. We build nested entity graphs that explicitly define semantic relationships for AI engines like ChatGPT.' },
       { title: 'AI Search Readiness', text: 'We format comparisons, specifications, and FAQ blocks to match LLM extraction habits for ChatGPT and Gemini.', backText: 'By structuring content with clear hierarchical density, we optimize your site for zero-click generative summaries and AI Overview placements.' },
       { title: 'Index Health Monitoring', text: 'Every build is tested against search engine render pipelines to guarantee clean indexation and zero soft-404s.', backText: 'We actively monitor server log files and Google Search Console data to ensure search bots are efficiently crawling and processing your core URLs.' }

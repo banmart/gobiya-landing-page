@@ -46,7 +46,7 @@ const ServicesBento: React.FC<ServicesBentoProps> = ({ headline, description, ca
           {(cards || [
             {
               href: '/capabilities/web-development', colSpan: 2, gradient: true, icon: <Code size={40} className="text-white mb-6 sm:mb-10 relative z-10" strokeWidth={1.5} />,
-              title: 'Web Development', description: 'We build high-performance custom sites in React and Vite, engineered from the ground up for sub-second speeds and flawless crawler readability.'
+              title: 'Web Development', description: 'We build high-performance custom sites in React, Next.js, and Vite, engineered from the ground up for sub-second speeds and flawless crawler readability.'
             },
             {
               href: '/capabilities/native-crm', colSpan: 1, icon: <Database size={40} className="text-white mb-6 sm:mb-10" strokeWidth={1.5} />,
