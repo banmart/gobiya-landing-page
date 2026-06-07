@@ -902,7 +902,7 @@ const ARTICLES: Record<string, ArticleData> = {
     category: 'SEO',
     readTime: '8 min read',
     date: 'May 29, 2026',
-    image: '/images/article-chatgpt-vs-google-for-business-discovery.webp',
+    image: '/images/article-chatgpt-vs-google.png',
     heroAlt: 'Split comparison screen between Google Search blue links and ChatGPT conversational AI business recommendation',
     metaDescription: 'Google processes billions of searches, but 93% in AI Mode end clickless. ChatGPT converts 4.4x better. How to optimize your brand for both.',
     content: (
@@ -1113,7 +1113,7 @@ const ARTICLES: Record<string, ArticleData> = {
     category: 'SEO',
     readTime: '9 min read',
     date: 'May 29, 2026',
-    image: '/images/article-what-is-the-difference-between-a-manual-action-and-an-algorithmic-penalty.webp',
+    image: '/images/article-algorithmic-penalty.png',
     heroAlt: 'Visual contrast between a human-reviewed Google manual action warning and an automated algorithmic calculation',
     metaDescription: 'The single most important distinction in Google traffic recovery: why a human-issued manual action and an automated algorithmic suppression are completely different problems.',
     content: (
@@ -1411,7 +1411,7 @@ const ARTICLES: Record<string, ArticleData> = {
     category: 'SEO',
     readTime: '10 min read',
     date: 'May 30, 2026',
-    image: '/images/article-what-is-generative-engine-optimization-and-how-does-it-work.webp',
+    image: '/images/article-generative-engine-opt.png',
     heroAlt: 'A futuristic digital web visualization depicting AI search agents extracting entity citations from a semantic database',
     metaDescription: 'The definitional guide to GEO: how Retrieval-Augmented Generation (RAG) pipelines cite sources, how it builds on traditional SEO, and what makes content citable.',
     content: (
@@ -1960,7 +1960,7 @@ const ARTICLES: Record<string, ArticleData> = {
     category: 'Strategy',
     readTime: '12 min read',
     date: 'May 25, 2026',
-    image: '/images/article-b2b-pipeline-seo.webp',
+    image: '/images/article-b2b-pipeline-seo.png',
     heroAlt: 'Abstract data-flow visualization representing an automated B2B sales pipeline powered by AI-driven SEO',
     metaDescription: 'How AI-cited content qualifies B2B vendors for buyer shortlists — and what the 2026 shift to AI-driven research means for your pipeline.',
     content: (
@@ -2339,7 +2339,7 @@ const ARTICLES: Record<string, ArticleData> = {
     category: 'Strategy',
     readTime: '13 min read',
     date: 'May 25, 2026',
-    image: '/images/article-lead-gen-seo.webp',
+    image: '/images/article-lead-gen-seo.png',
     heroAlt: 'Glowing geometric funnel with orange data-flow nodes representing AI-driven automated lead generation SEO',
     metaDescription: 'How AI-cited content produces pre-qualified pipeline at conversion rates traditional lead gen cannot match — and what the 2026 shift means for how B2B teams should measure lead quality.',
     content: (
@@ -5681,7 +5681,7 @@ const ARTICLES: Record<string, ArticleData> = {
     category: 'SEO',
     readTime: '12 min read',
     date: 'May 31, 2026',
-    image: '/images/how-we-recovered-320-organic-traffic-after-google-1780266793291.webp',
+    image: '/images/article-seo-case-study-traffic-recovery.png',
     heroAlt: 'Forensic SEO case study showing Google Search Console organic traffic data recovering and climbing to 320 percent after a core algorithm update',
     metaDescription: 'A forensic SEO case study on traffic recovery after Google\'s March 2026 dual-update event. Learn the exact 12-week diagnostic sequence and fix order Gobiya used.',
     content: (
@@ -6240,7 +6240,7 @@ const RELATED_ARTICLES_MAP: Record<string, { href: string; category: string; tit
       href: '/insights/automated-b2b-sales-pipeline-seo',
       category: 'Strategy',
       title: 'Automated B2B Sales Pipeline SEO: How AI Citations Shape Your Shortlist in 2026',
-      image: '/images/article-b2b-pipeline-seo.webp',
+      image: '/images/article-b2b-pipeline-seo.png',
     },
     {
       href: '/insights/b2b-organic-traffic-growth',
@@ -6261,7 +6261,7 @@ const RELATED_ARTICLES_MAP: Record<string, { href: string; category: string; tit
       href: '/insights/automated-lead-generation-seo',
       category: 'Strategy',
       title: 'Automated Lead Generation SEO: How AI Pre-Qualifies Your Pipeline in 2026',
-      image: '/images/article-lead-gen-seo.webp',
+      image: '/images/article-lead-gen-seo.png',
     },
     {
       href: '/insights/outbound-seo-prospecting',
@@ -6281,7 +6281,7 @@ const RELATED_ARTICLES_MAP: Record<string, { href: string; category: string; tit
       href: '/insights/automated-b2b-sales-pipeline-seo',
       category: 'Strategy',
       title: 'Automated B2B Sales Pipeline SEO: How AI Citations Shape Your Shortlist in 2026',
-      image: '/images/article-b2b-pipeline-seo.webp',
+      image: '/images/article-b2b-pipeline-seo.png',
     },
     {
       href: '/insights/outbound-seo-prospecting',
@@ -6307,7 +6307,7 @@ const RELATED_ARTICLES_MAP: Record<string, { href: string; category: string; tit
       href: '/insights/automated-lead-generation-seo',
       category: 'Strategy',
       title: 'Automated Lead Generation SEO: How AI Pre-Qualifies Your Pipeline in 2026',
-      image: '/images/article-lead-gen-seo.webp',
+      image: '/images/article-lead-gen-seo.png',
     },
     {
       href: '/insights/b2b-sales-pipeline-automation',
@@ -6321,7 +6321,7 @@ const RELATED_ARTICLES_MAP: Record<string, { href: string; category: string; tit
       href: '/insights/automated-b2b-sales-pipeline-seo',
       category: 'Strategy',
       title: 'Automated B2B Sales Pipeline SEO: How AI Citations Shape Your Shortlist in 2026',
-      image: '/images/article-b2b-pipeline-seo.webp',
+      image: '/images/article-b2b-pipeline-seo.png',
     },
     {
       href: '/insights/best-seo-agency-for-b2b-brands',
@@ -6342,13 +6342,13 @@ const RELATED_ARTICLES_MAP: Record<string, { href: string; category: string; tit
       href: '/insights/automated-b2b-sales-pipeline-seo',
       category: 'Strategy',
       title: 'Automated B2B Sales Pipeline SEO: How AI Citations Shape Your Shortlist in 2026',
-      image: '/images/article-b2b-pipeline-seo.webp',
+      image: '/images/article-b2b-pipeline-seo.png',
     },
     {
       href: '/insights/automated-lead-generation-seo',
       category: 'Strategy',
       title: 'Automated Lead Generation SEO: How AI Pre-Qualifies Your Pipeline in 2026',
-      image: '/images/article-lead-gen-seo.webp',
+      image: '/images/article-lead-gen-seo.png',
     },
     {
       href: '/insights/b2b-seo-agency',
@@ -6363,7 +6363,7 @@ const RELATED_ARTICLES_MAP: Record<string, { href: string; category: string; tit
       href: '/insights/automated-b2b-sales-pipeline-seo',
       category: 'Strategy',
       title: 'Automated B2B Sales Pipeline SEO: How AI Citations Shape Your Shortlist in 2026',
-      image: '/images/article-b2b-pipeline-seo.webp',
+      image: '/images/article-b2b-pipeline-seo.png',
     },
     {
       href: '/insights/b2b-seo-agency',
@@ -6581,7 +6581,7 @@ const RELATED_ARTICLES_MAP: Record<string, { href: string; category: string; tit
       href: '/insights/what-is-generative-engine-optimization-and-how-does-it-work',
       category: 'GEO',
       title: 'What is Generative Engine Optimization and How Does it Work?',
-      image: '/images/article-what-is-generative-engine-optimization-and-how-does-it-work.webp',
+      image: '/images/article-generative-engine-opt.png',
     },
     {
       href: '/insights/what-is-the-difference-between-google-knowledge-graph-optimization-and-geo',
@@ -6596,7 +6596,7 @@ const RELATED_ARTICLES_MAP: Record<string, { href: string; category: string; tit
       href: '/insights/what-is-generative-engine-optimization-and-how-does-it-work',
       category: 'GEO',
       title: 'What is Generative Engine Optimization and How Does it Work?',
-      image: '/images/article-what-is-generative-engine-optimization-and-how-does-it-work.webp',
+      image: '/images/article-generative-engine-opt.png',
     },
     {
       href: '/insights/what-data-sources-do-llms-crawl-to-verify-b2b-company-information',
@@ -6670,7 +6670,7 @@ const RELATED_ARTICLES_MAP: Record<string, { href: string; category: string; tit
       href: '/insights/what-is-the-difference-between-a-manual-action-and-an-algorithmic-penalty',
       category: 'SEO',
       title: 'What Is the Difference Between a Manual Action and an Algorithmic Penalty?',
-      image: '/images/article-what-is-the-difference-between-a-manual-action-and-an-algorithmic-penalty.webp',
+      image: '/images/article-algorithmic-penalty.png',
     },
   ],
   'are-ai-search-engines-scraping-hidden-api-data-or-public-html-text-blocks': [
@@ -6678,7 +6678,7 @@ const RELATED_ARTICLES_MAP: Record<string, { href: string; category: string; tit
       href: '/insights/what-is-generative-engine-optimization-and-how-does-it-work',
       category: 'GEO',
       title: 'What is Generative Engine Optimization and How Does it Work?',
-      image: '/images/article-what-is-generative-engine-optimization-and-how-does-it-work.webp',
+      image: '/images/article-generative-engine-opt.png',
     },
     {
       href: '/insights/what-data-sources-do-llms-crawl-to-verify-b2b-company-information',
