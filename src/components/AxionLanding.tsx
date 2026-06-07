@@ -182,7 +182,7 @@ const AxionLanding = () => {
             <div className="flex flex-col justify-center text-left">
               <p className="text-[13px] sm:text-[14px] text-gray-400 tracking-wide mb-5 sm:mb-8 uppercase font-medium">Gobiya Web Design & Engineering</p>
               <h1 className="text-[clamp(2.2rem,5vw,3.8rem)] font-medium leading-[1.1] tracking-[-0.03em] text-white font-display mb-6">
-                We don't sell SEO. We build fast, modern websites engineered to <span className="text-[#F26522] font-semibold">rank and convert</span>.
+                Fast, custom websites engineered to <span className="text-[#F26522] font-semibold">rank</span> — with native CRM and blockchain built in.
               </h1>
               <p className="text-[16px] sm:text-[18px] text-gray-400 max-w-[700px] leading-relaxed mb-8">
                 We replace bloated page-builders with sub-second custom React/Vite builds, integrate lightweight customer pipelines directly into your codebase for 100% data ownership, and implement secure smart contracts natively.

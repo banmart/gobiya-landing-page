@@ -58,7 +58,7 @@ interface SolutionData {
 
 const SOLUTIONS_DATA: Record<string, SolutionData> = {
   '/capabilities/web-development': {
-    h1: 'Custom React & Vite Platforms Engineered for Sub-Second Performance.',
+    h1: 'Modern websites built in React and Vite — no templates, built to rank',
     subHeadline: 'We replace slow, bloated CMS page-builders with hand-coded React websites built to convert visitors and get crawled natively.',
     rotatingWords: ['sub-second speed.', 'custom React.', '100/100 Core Web Vitals.'],
     insightCategory: 'Development',
@@ -102,7 +102,7 @@ const SOLUTIONS_DATA: Record<string, SolutionData> = {
   },
 
   '/capabilities/native-crm': {
-    h1: 'Own Your Data: Custom Customer Pipelines Built Into Your Codebase.',
+    h1: 'A CRM that lives inside your site — your data, your pipeline, fully owned',
     subHeadline: 'Stop paying for expensive, complex third-party SaaS integrations. We build custom CRM pipelines directly into your site, putting you in control.',
     rotatingWords: ['own your data.', 'zero subscription fees.', 'custom pipelines.'],
     insightCategory: 'Systems',
@@ -145,7 +145,7 @@ const SOLUTIONS_DATA: Record<string, SolutionData> = {
   },
 
   '/capabilities/seo-discoverability': {
-    h1: 'Built-in SEO: Crawler Readiness Engineered into the Core.',
+    h1: 'We build React sites Google can actually crawl, index, and rank',
     subHeadline: 'We don\'t sell SEO as an afterthought. We build sites that search engines and AI bots can fetch, parse, index, and cite natively by default.',
     rotatingWords: ['eligible by design.', 'crawler-friendly React.', 'AI overview readiness.'],
     insightCategory: 'SEO & GEO',
@@ -189,7 +189,7 @@ const SOLUTIONS_DATA: Record<string, SolutionData> = {
   },
 
   '/capabilities/blockchain-web3-development': {
-    h1: 'Custom Web3 Development: Secure On-Chain Integrations.',
+    h1: 'Smart contracts and dApps, built by a team that ships real products',
     subHeadline: 'We engineer custom smart contracts, decentralized applications (dApps), and on-chain functions directly into your React and Vite applications.',
     rotatingWords: ['smart contracts.', 'dApp interfaces.', 'on-chain security.'],
     insightCategory: 'Web3',
@@ -263,10 +263,10 @@ const SolutionPage: React.FC<{ path: string }> = ({ path }) => {
     window.scrollTo({ top: 0, behavior: 'instant' });
 
     const baseTitles: Record<string, string> = {
-      '/capabilities/web-development': 'Custom React & Vite Web Development | Gobiya',
-      '/capabilities/native-crm': 'Custom Codebase-Level CRM Pipeline Development | Gobiya',
-      '/capabilities/seo-discoverability': 'Built-in SEO & Search Engine Indexing Eligibility | Gobiya',
-      '/capabilities/blockchain-web3-development': 'Custom Blockchain, Smart Contracts & Web3 Dev | Gobiya',
+      '/capabilities/web-development': 'React & Vite Web Development — Fast Custom Sites | gobiya',
+      '/capabilities/native-crm': 'Custom CRM Built Into Your Website | gobiya',
+      '/capabilities/seo-discoverability': 'Technical SEO & Indexing for React Sites | gobiya',
+      '/capabilities/blockchain-web3-development': 'Blockchain & Web3 Development — Smart Contracts, dApps | gobiya',
     };
     if (baseTitles[path]) {
       document.title = baseTitles[path];

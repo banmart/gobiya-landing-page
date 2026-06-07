@@ -7,23 +7,23 @@ interface SEOMetadata {
 
 const metadataMap: Record<string, SEOMetadata> = {
   '/': {
-    title: 'Custom Web Development, Native CRM & Blockchain | Gobiya',
+    title: 'Custom React Websites Built to Rank & Convert | gobiya',
     description: 'We build fast, modern React/Vite websites engineered to rank and convert natively. Complete with codebase-level CRMs and custom Web3 blockchain integrations. Get a free audit.'
   },
   '/capabilities/web-development': {
-    title: 'Custom React & Vite Web Development Services | Gobiya',
+    title: 'React & Vite Web Development — Fast Custom Sites | gobiya',
     description: 'We build fully custom, sub-second React and Vite websites engineered for Core Web Vitals, indexability, and clean user experience. No templates.'
   },
   '/capabilities/native-crm': {
-    title: 'Codebase-Level Custom Native CRM Engineering | Gobiya',
+    title: 'Custom CRM Built Into Your Website | gobiya',
     description: 'Stop paying monthly software fees. We design and compile bespoke customer database and pipeline management systems built directly into your website\'s code.'
   },
   '/capabilities/seo-discoverability': {
-    title: 'Built-in SEO & Search Engine Indexing Eligibility | Gobiya',
+    title: 'Technical SEO & Indexing for React Sites | gobiya',
     description: 'Search engine crawlability, indexation health, and AI citation eligibility are built into our codebase by default. We build sites that get found.'
   },
   '/capabilities/blockchain-web3-development': {
-    title: 'Custom Blockchain, Smart Contracts & Web3 Dev | Gobiya',
+    title: 'Blockchain & Web3 Development — Smart Contracts, dApps | gobiya',
     description: 'We engineer secure smart contracts, decentralized applications (dApps), and on-chain integrations directly into your web applications.'
   },
   '/company/about': {
