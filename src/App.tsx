@@ -140,6 +140,7 @@ function App({ url }: AppProps) {
       '/insights/b2b-seo-agency-los-angeles': '/insights/b2b-seo-agency',
       '/insights/local-seo-los-angeles': '/insights/local-seo',
       '/insights/los-angeles-local-seo-explained': '/insights/local-seo-explained',
+      '/insights/google-my-business-optimization': '/insights/google-business-profile-optimization',
       '/success-stories': '/company/success-stories',
       '/services': '/capabilities',
       '/services/seo': '/capabilities/seo-discoverability',

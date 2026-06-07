@@ -3964,7 +3964,7 @@ const ARTICLES: Record<string, ArticleData> = {
     category: 'Local SEO',
     readTime: '10 min read',
     date: 'May 27, 2026',
-    image: '/images/article-los-angeles-local-seo-explained.webp',
+    image: '/images/article-local-seo-explained.png',
     heroAlt: 'Minimalist digital illustration of a city map grid with glowing orange nodes representing local SEO connections',
     metaDescription: 'The actual operational rhythm of running local SEO — what the weekly cadence looks like, what produces visible ranking movement at 30 / 60 / 90 days, and why most businesses stall.',
     content: (
@@ -6216,7 +6216,7 @@ const ARTICLES: Record<string, ArticleData> = {
     category: 'Local SEO',
     readTime: '11 min read',
     date: 'June 7, 2026',
-    image: '/images/dental-seo-agency-hero.webp',
+    image: '/images/article-dental-seo-agency.png',
     heroAlt: 'A professional, lifelike photo of a modern dental marketing and growth engineering meeting reviewing a glowing organic SEO traffic and patient pipeline dashboard',
     metaDescription: 'Avoid costly hiring mistakes. Use our comprehensive evaluation checklist for dental SEO agencies, covering contract traps, KPIs, and case study audits.',
     content: (
@@ -6772,7 +6772,7 @@ const RELATED_ARTICLES_MAP: Record<string, { href: string; category: string; tit
       href: '/insights/local-seo-explained',
       category: 'Local SEO',
       title: 'Local SEO Explained: The Operational Cadence Required for Search Dominance',
-      image: '/images/article-los-angeles-local-seo-explained.webp',
+      image: '/images/article-local-seo-explained.png',
     },
     {
       href: '/insights/multi-location-seo-website-structure',
@@ -6814,7 +6814,7 @@ const RELATED_ARTICLES_MAP: Record<string, { href: string; category: string; tit
       href: '/insights/local-seo-explained',
       category: 'Local SEO',
       title: 'Local SEO Explained: The Operational Cadence Required for Search Dominance',
-      image: '/images/article-los-angeles-local-seo-explained.webp',
+      image: '/images/article-local-seo-explained.png',
     },
     {
       href: '/insights/best-website-structure-multiple-locations-different-cities',
@@ -6841,7 +6841,7 @@ const RELATED_ARTICLES_MAP: Record<string, { href: string; category: string; tit
       href: '/insights/local-seo-explained',
       category: 'Local SEO',
       title: 'Local SEO Explained: The Operational Cadence Required for Search Dominance',
-      image: '/images/article-los-angeles-local-seo-explained.webp',
+      image: '/images/article-local-seo-explained.png',
     },
   ],
 
@@ -7036,7 +7036,7 @@ const RELATED_ARTICLES_MAP: Record<string, { href: string; category: string; tit
       href: '/insights/local-seo-explained',
       category: 'Local SEO',
       title: 'The 90-Day Cadence: How We Win Local Search',
-      image: '/images/article-los-angeles-local-seo-explained.webp',
+      image: '/images/article-local-seo-explained.png',
     },
     {
       href: '/insights/b2b-seo-agency',
