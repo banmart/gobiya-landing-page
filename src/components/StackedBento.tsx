@@ -193,14 +193,14 @@ const StackedBento: React.FC<StackedBentoProps> = ({ headline, description, card
               >
                 <BorderGlow
                   backgroundColor="#0a0a0c"
-                  glowColor={card.gradient ? "242 101 34" : "255 255 255"}
-                  colors={card.gradient ? ['#F26522', '#ff9a66', '#8c350d'] : ['#333', '#666', '#111']}
+                  glowColor="242 101 34"
+                  colors={['#F26522', '#ff9a66', '#8c350d']}
                   className="w-full rounded-2xl relative overflow-hidden border border-white/10 shadow-2xl"
                   borderRadius={16}
                 >
                   <div className="flex flex-col md:flex-row w-full h-auto min-h-[350px]">
                     {/* Content Side */}
-                    <div className={`p-8 sm:p-12 md:w-1/2 flex flex-col justify-center relative z-10 ${card.gradient ? 'bg-gradient-to-br from-[#F26522]/20 to-transparent' : ''}`}>
+                    <div className="p-8 sm:p-12 md:w-1/2 flex flex-col justify-center relative z-10 bg-gradient-to-br from-[#F26522]/20 to-transparent">
                       {card.icon}
                       <h3 className="text-2xl sm:text-3xl font-display font-medium text-white mb-4 mt-6">{card.title}</h3>
                       <p className="text-gray-400 font-body text-base max-w-md">{card.description}</p>
