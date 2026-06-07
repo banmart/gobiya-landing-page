@@ -93,10 +93,10 @@ const SOLUTIONS_DATA: Record<string, SolutionData> = {
       { title: 'Prerendering & Performance Optimization', content: 'We build the static and SSR pathways to guarantee sub-second loads, compile sitemaps, audit core web vitals, and hand off an optimized product.' }
     ],
     caseStudy: {
-      tag: 'WordPress Migration',
-      headline: 'American Livescan Fingerprinting — 3x Online Appointments & Phone Calls.',
-      description: 'We migrated their legacy site to a custom React/Vite development stack, optimizing Core Web Vitals to 100/100 and growing online bookings threefold without losing historical search authority.',
-      backgroundImage: '/images/livescan-office.webp',
+      tag: 'Web Development & Local SEO',
+      headline: 'SmileCenter Dentistry — 5x Patient Inquiries Across SoCal.',
+      description: 'By developing lightning-fast React subpages and integrating correct LocalBusiness schemas natively into the codebase, we grew patient appointments and phone calls fivefold.',
+      backgroundImage: '/images/smilecenter-office.webp',
       ctaText: 'View the case study'
     },
     faqTitle: 'Web Development & Technical SEO FAQs',
