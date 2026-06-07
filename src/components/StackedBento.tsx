@@ -248,9 +248,9 @@ const StackedBento: React.FC<StackedBentoProps> = ({ headline, description, card
               >
                 <BorderGlow
                   backgroundColor="#0a0a0c"
-                  glowColor="242 101 34"
+                  glowColor="19 89 54"
                   colors={['#F26522', '#ff9a66', '#8c350d']}
-                  className="w-full rounded-2xl relative overflow-hidden border border-white/10 shadow-2xl"
+                  className="w-full rounded-2xl relative overflow-hidden shadow-2xl"
                   borderRadius={16}
                 >
                   <div className="flex flex-col md:flex-row w-full h-auto min-h-[350px]">

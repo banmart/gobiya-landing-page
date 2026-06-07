@@ -14,6 +14,7 @@ interface BorderGlowProps {
   animated?: boolean;
   colors?: string[];
   fillOpacity?: number;
+  borderColor?: string;
 }
 
 function parseHSL(hslStr: string) {
@@ -88,6 +89,7 @@ const BorderGlow: React.FC<BorderGlowProps> = ({
   animated = false,
   colors = ['#c084fc', '#f472b6', '#38bdf8'],
   fillOpacity = 0.5,
+  borderColor,
 }) => {
   const cardRef = useRef<HTMLDivElement>(null);
 
@@ -154,6 +156,7 @@ const BorderGlow: React.FC<BorderGlowProps> = ({
     });
   }, [animated]);
 
+  const { h, s, l } = parseHSL(glowColor);
   const glowVars = buildGlowVars(glowColor, glowIntensity);
 
   return (
@@ -168,6 +171,7 @@ const BorderGlow: React.FC<BorderGlowProps> = ({
         '--glow-padding': `${glowRadius}px`,
         '--cone-spread': coneSpread,
         '--fill-opacity': fillOpacity,
+        '--border-color': borderColor || `hsl(${h}deg ${s}% ${l}% / 35%)`,
         ...glowVars,
         ...buildGradientVars(colors),
       } as React.CSSProperties}

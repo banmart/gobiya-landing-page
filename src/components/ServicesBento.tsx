@@ -69,7 +69,7 @@ const ServicesBento: React.FC<ServicesBentoProps> = ({ headline, description, ca
               >
                 <BorderGlow
                   backgroundColor="#0a0a0c"
-                  glowColor="242 101 34"
+                  glowColor="19 89 54"
                   colors={['#F26522', '#ff9a66', '#8c350d']}
                   className="w-full h-full rounded-xl relative overflow-hidden"
                   borderRadius={12}

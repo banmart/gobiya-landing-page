@@ -137,7 +137,7 @@ const InsightsGrid: React.FC = () => {
                       <CardTag {...cardProps}>
                         <BorderGlow
                           backgroundColor="#000"
-                          glowColor="242 101 34"
+                          glowColor="19 89 54"
                           colors={['#F26522', '#ff9a66', '#8c350d']}
                           className="w-full h-full relative overflow-hidden"
                           borderRadius={0}
