@@ -205,6 +205,29 @@ const AxionLanding = () => {
                   </div>
                 </a>
               </div>
+              {/* Partner Logos */}
+              <div className="mt-12 pt-8 border-t border-white/10 max-w-[640px]">
+                <p className="text-[11px] uppercase tracking-wider text-gray-500 font-semibold mb-5 font-body">Satisfied Clients</p>
+                <div className="flex flex-wrap items-center gap-x-8 gap-y-6">
+                  {[
+                    '/images/remodelmepros.webp',
+                    '/images/smilecenter.webp',
+                    '/images/quickpass-logo.webp',
+                    '/images/mytrustwills.webp',
+                    '/images/tidder-pro-logo.webp',
+                    '/images/totalcapital.webp',
+                    '/images/logo-DeEgMiH0.png',
+                    '/images/americanlivescan.webp'
+                  ].map((logo, index) => (
+                    <img 
+                      key={index} 
+                      src={logo} 
+                      alt={`Client logo ${index + 1}`} 
+                      className="h-6 sm:h-7 w-auto object-contain brightness-0 invert opacity-45 hover:opacity-85 transition-opacity duration-300"
+                    />
+                  ))}
+                </div>
+              </div>
             </div>
 
             {/* Right Column: Interactive Form Card */}
@@ -562,11 +585,7 @@ const AxionLanding = () => {
         <div className="logo-marker absolute right-[12%] top-[50%] w-10 h-10 pointer-events-none" />
       </div>
 
-      {/* SECTION 7.5: SATISFIED CLIENTS */}
-      <div className="relative">
-        <SatisfiedClients />
-        <div className="logo-marker absolute right-[20%] top-[50%] w-10 h-10 pointer-events-none" />
-      </div>
+
 
       {/* SECTION 8: ROI CALCULATOR */}
       <div data-logo-dark className="relative">
