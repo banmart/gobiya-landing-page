@@ -37,7 +37,7 @@ const testimonials: Testimonial[] = [
     company: "SmileCenter",
     author: "Dr. Ebi Donavan Nikjoo",
     role: "Lead Dentist",
-    image_url: "/images/pete-AI.jpeg",
+    image_url: "/images/dr-nikjoo.jpg",
     logo_url: "/images/smilecenter.webp",
     case_study_link: "/case-studies/smile-center-dentistry"
   }
