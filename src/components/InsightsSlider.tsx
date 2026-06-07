@@ -21,15 +21,10 @@ interface InsightsSliderProps {
 }
 
 const InsightsSlider: React.FC<InsightsSliderProps> = ({ filterCategory, limit, currentPath }) => {
-  const trackRef = useRef<HTMLDivElement>(null);
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [maxIndex, setMaxIndex] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
   const [insights, setInsights] = useState<Insight[]>([]);
   const [loading, setLoading] = useState(true);
-  
-  const isDragging = useRef(false);
-  const startX = useRef(0);
-  const currentX = useRef(0);
 
   // Fetch data from Supabase
   useEffect(() => {
@@ -155,105 +150,68 @@ const InsightsSlider: React.FC<InsightsSliderProps> = ({ filterCategory, limit, 
       });
     }
 
-    if (limit) {
-      return list.slice(0, limit);
-    }
-    return list;
+    // Limit the items for the accordion view, as it doesn't scale well past 5-6 items.
+    return list.slice(0, limit || 5);
   }, [insights, filterCategory, limit, currentPath]);
 
+  // Autoplay functionality
   useEffect(() => {
-    const calcMax = () => {
-      if (!trackRef.current || loading || displayInsights.length === 0) return;
-      const track = trackRef.current;
-      const cards = track.children;
-      if (cards.length === 0) return;
-      const card = cards[0] as HTMLElement;
-      const gap = parseFloat(getComputedStyle(track).gap) || 24;
-      const cardWidth = card.offsetWidth + gap;
-      const visibleCards = Math.floor(track.parentElement!.offsetWidth / cardWidth);
-      setMaxIndex(Math.max(0, cards.length - visibleCards));
-    };
+    if (displayInsights.length <= 1 || isHovered) return;
     
-    // Give DOM a tick to render before calculating
-    setTimeout(calcMax, 50);
-    window.addEventListener('resize', calcMax);
-    return () => window.removeEventListener('resize', calcMax);
-  }, [loading, displayInsights.length]);
+    const interval = setInterval(() => {
+      setActiveIndex((prev) => (prev === displayInsights.length - 1 ? 0 : prev + 1));
+    }, 5000); // 5 seconds per slide
+    
+    return () => clearInterval(interval);
+  }, [displayInsights.length, isHovered]);
 
-  const slideTo = (index: number) => {
-    if (!trackRef.current) return;
-    const track = trackRef.current;
-    const cards = track.children;
-    if (cards.length === 0) return;
-    const card = cards[0] as HTMLElement;
-    const gap = parseFloat(getComputedStyle(track).gap) || 24;
-    const cardWidth = card.offsetWidth + gap;
-    const clamped = Math.max(0, Math.min(index, maxIndex));
-    setCurrentIndex(clamped);
-    gsap.to(track, { x: -(clamped * cardWidth), duration: 0.6, ease: 'power3.out' });
+  const handlePrev = () => {
+    setActiveIndex((prev) => (prev === 0 ? displayInsights.length - 1 : prev - 1));
   };
-
-  const handlePrev = () => slideTo(currentIndex - 1);
-  const handleNext = () => slideTo(currentIndex + 1);
-
-  // Touch / drag support
-  const onPointerDown = (e: React.PointerEvent) => {
-    isDragging.current = true;
-    startX.current = e.clientX;
-    currentX.current = e.clientX;
-  };
-  const onPointerMove = (e: React.PointerEvent) => {
-    if (!isDragging.current) return;
-    currentX.current = e.clientX;
-  };
-  const onPointerUp = () => {
-    if (!isDragging.current) return;
-    isDragging.current = false;
-    const diff = startX.current - currentX.current;
-    if (Math.abs(diff) > 50) {
-      if (diff > 0) handleNext();
-      else handlePrev();
-    }
+  
+  const handleNext = () => {
+    setActiveIndex((prev) => (prev === displayInsights.length - 1 ? 0 : prev + 1));
   };
 
   // Render Skeletons during loading
   const renderSkeletons = () => {
-    return Array(4).fill(0).map((_, idx) => (
+    return Array(5).fill(0).map((_, idx) => (
       <div 
         key={`skeleton-${idx}`}
-        className="insight-card relative w-[85vw] sm:w-[45vw] lg:w-[350px] xl:w-[400px] aspect-[4/5] overflow-hidden bg-gray-800/50 animate-pulse rounded-sm"
-      >
-        <div className="absolute inset-0 p-6 sm:p-8 flex flex-col justify-end">
-          <div className="w-16 h-4 bg-gray-700 mb-4 rounded-sm" />
-          <div className="w-full h-6 bg-gray-700 mb-2 rounded-sm" />
-          <div className="w-2/3 h-6 bg-gray-700 mb-4 rounded-sm" />
-          <div className="w-24 h-4 bg-gray-700 rounded-sm" />
-        </div>
-      </div>
+        className={`relative overflow-hidden rounded-2xl bg-gray-800/50 animate-pulse transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] ${idx === 0 ? 'flex-[8]' : 'flex-[1]'}`}
+      />
     ));
   };
 
   return (
-    <section className="bg-[#111] py-20 lg:py-28 overflow-hidden w-full">
-      <div className="w-full relative z-10">
-        <div className="px-5 sm:px-8 lg:px-12 mb-10 sm:mb-14">
-          <div className="flex items-center justify-between max-w-[1440px] mx-auto">
-            <h2 className="text-[clamp(2rem,4vw,3.2rem)] font-medium leading-[1.12] tracking-[-0.02em] text-white">
-              Latest Insights
-            </h2>
+    <section className="bg-[#111] py-20 lg:py-28 overflow-hidden w-full border-t border-white/10">
+      <div className="w-full relative z-10 max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-12">
+        <div className="mb-10 sm:mb-14">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6">
+            <div>
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-6 h-6 sm:w-7 sm:h-7 bg-[#F26522] text-white text-[11px] sm:text-[12px] font-semibold flex items-center justify-center">5</div>
+                <div className="text-[11px] sm:text-[12px] font-bold tracking-[0.2em] uppercase border border-white/20 text-white px-4 py-2 rounded-full shadow-md">
+                  What's happening
+                </div>
+              </div>
+              <h2 className="text-[clamp(2rem,4vw,3.2rem)] font-medium leading-[1.12] tracking-[-0.02em] text-white">
+                See the latest from Gobiya.
+              </h2>
+            </div>
+            
             <div className="flex items-center gap-3">
-              {/* Arrow buttons */}
               <button
                 onClick={handlePrev}
-                disabled={currentIndex === 0 || loading || displayInsights.length === 0}
-                className="w-11 h-11 border border-white/30 flex items-center justify-center text-white hover:bg-white hover:text-black transition-colors duration-300 disabled:opacity-20 disabled:pointer-events-none"
+                disabled={loading || displayInsights.length === 0}
+                className="w-11 h-11 border border-white/30 flex items-center justify-center text-white hover:bg-white hover:text-black transition-colors duration-300 disabled:opacity-20 disabled:pointer-events-none rounded-full"
               >
                 <ArrowLeft className="w-4 h-4" />
               </button>
               <button
                 onClick={handleNext}
-                disabled={currentIndex >= maxIndex || loading || displayInsights.length === 0}
-                className="w-11 h-11 border border-white/30 flex items-center justify-center text-white hover:bg-white hover:text-black transition-colors duration-300 disabled:opacity-20 disabled:pointer-events-none"
+                disabled={loading || displayInsights.length === 0}
+                className="w-11 h-11 border border-white/30 flex items-center justify-center text-white hover:bg-white hover:text-black transition-colors duration-300 disabled:opacity-20 disabled:pointer-events-none rounded-full"
               >
                 <ArrowRight className="w-4 h-4" />
               </button>
@@ -261,56 +219,66 @@ const InsightsSlider: React.FC<InsightsSliderProps> = ({ filterCategory, limit, 
           </div>
         </div>
 
-        <div
-          className="pl-5 sm:pl-8 lg:pl-12 w-full overflow-hidden cursor-grab active:cursor-grabbing"
-          onPointerDown={onPointerDown}
-          onPointerMove={onPointerMove}
-          onPointerUp={onPointerUp}
-          onPointerLeave={onPointerUp}
+        <div 
+          className="w-full h-[500px] sm:h-[600px] flex flex-col sm:flex-row gap-2 sm:gap-4"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
         >
-          <div ref={trackRef} className="flex gap-6 sm:gap-8 w-max pr-5 sm:pr-8 lg:pr-12">
-            {loading ? (
-              renderSkeletons()
-            ) : displayInsights.length === 0 ? (
-              <div className="text-gray-400 text-lg w-full py-10">No insights available at the moment.</div>
-            ) : (
-              displayInsights.map((insight) => {
-                const href = insight.slug
-                  ? `/insights/${insight.slug}`
-                  : undefined;
-                const CardTag = href ? 'a' : 'div';
-                const cardProps: any = {
-                  key: insight.id,
-                  className: 'insight-card relative w-[85vw] sm:w-[45vw] lg:w-[350px] xl:w-[400px] aspect-[4/5] overflow-hidden group select-none ' + (href ? 'cursor-pointer' : ''),
-                  ...(href ? { href } : {}),
-                };
-                return (
-                  <CardTag {...cardProps}>
-                  <div 
-                    className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-                    style={{ backgroundImage: `url(${insight.image_url})` }}
+          {loading ? (
+            renderSkeletons()
+          ) : displayInsights.length === 0 ? (
+            <div className="text-gray-400 text-lg w-full py-10">No insights available at the moment.</div>
+          ) : (
+            displayInsights.map((insight, index) => {
+              const isActive = index === activeIndex;
+              
+              return (
+                <div
+                  key={insight.id}
+                  onClick={() => setActiveIndex(index)}
+                  className={`relative overflow-hidden rounded-xl sm:rounded-2xl transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] cursor-pointer group
+                    ${isActive ? 'flex-[8] sm:flex-[8]' : 'flex-[1] sm:flex-[1]'}
+                  `}
+                >
+                  <img 
+                    src={insight.image_url} 
+                    alt={insight.title}
+                    className={`absolute inset-0 w-full h-full object-cover transition-transform duration-1000 
+                      ${isActive ? 'scale-100' : 'scale-[1.15]'}
+                    `} 
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-300" />
                   
-                  <div className="absolute inset-0 p-6 sm:p-8 flex flex-col justify-end">
-                    <div className="mb-4 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                      <span className="inline-block px-3 py-1 bg-[#F26522] text-white text-[10px] uppercase tracking-wider font-semibold">
-                        {insight.category}
-                      </span>
-                    </div>
-                    <h3 className="text-white text-xl sm:text-2xl font-medium leading-tight mb-4 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">
+                  {/* Overlay */}
+                  <div className={`absolute inset-0 transition-opacity duration-700 
+                    ${isActive ? 'bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-100' : 'bg-black/60 group-hover:bg-black/40'}
+                  `} />
+                  
+                  {/* Active Content */}
+                  <div className={`absolute bottom-0 left-0 right-0 p-6 sm:p-10 flex flex-col justify-end transition-opacity duration-500
+                    ${isActive ? 'opacity-100 delay-300' : 'opacity-0 pointer-events-none'}
+                  `}>
+                    <span className="inline-block px-3 py-1 bg-[#F26522] text-white text-[10px] sm:text-[11px] uppercase tracking-wider font-semibold w-max mb-4">
+                      {insight.category}
+                    </span>
+                    <h3 className="text-white text-2xl sm:text-4xl font-medium leading-[1.15] mb-6 max-w-2xl font-display">
                       {insight.title}
                     </h3>
-                    <div className="flex items-center text-[#F26522] translate-y-8 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 delay-150">
-                      <span className="text-[13px] font-semibold mr-2 uppercase tracking-wide">Read Article</span>
-                      <ArrowRight className="w-4 h-4 transform group-hover:translate-x-2 transition-transform duration-300" />
-                    </div>
+                    {insight.slug && (
+                      <a 
+                        href={`/insights/${insight.slug}`} 
+                        className="inline-flex items-center justify-center text-white bg-white/10 hover:bg-white hover:text-black backdrop-blur-md px-6 py-3 rounded-full text-sm font-semibold transition-colors duration-300 w-max"
+                        onClick={(e) => {
+                          e.stopPropagation(); // Prevent accordion click when clicking the link
+                        }}
+                      >
+                        Read Article <ArrowRight className="w-4 h-4 ml-2" />
+                      </a>
+                    )}
                   </div>
-                  </CardTag>
-                );
-              })
-            )}
-          </div>
+                </div>
+              );
+            })
+          )}
         </div>
       </div>
     </section>
