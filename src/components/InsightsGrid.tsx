@@ -56,10 +56,13 @@ const InsightsGrid: React.FC = () => {
       // Merge static articles from ARTICLES registry (always run even if database call fails)
       const merged = [...processed];
       Object.values(ARTICLES).forEach((art) => {
-        const exists = processed.some(
+        const existingIndex = processed.findIndex(
           (item: any) => item.slug && item.slug.toLowerCase() === art.slug.toLowerCase()
         );
-        if (!exists) {
+        if (existingIndex !== -1) {
+          // If the article is locally defined, override its image with the local one
+          merged[existingIndex].image_url = art.image;
+        } else {
           merged.push({
             id: -Math.floor(Math.random() * 1000000) - 1,
             title: art.title,
