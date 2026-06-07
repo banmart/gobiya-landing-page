@@ -2712,7 +2712,7 @@ const ARTICLES: Record<string, ArticleData> = {
     category: 'Strategy',
     readTime: '12 min read',
     date: 'May 25, 2026',
-    image: '/images/article-outbound-seo-prospecting.webp',
+    image: '/images/article-outbound-seo-prospecting.png',
     heroAlt: 'Abstract network visualization representing signal-anchored outbound SEO prospecting',
     metaDescription: 'How SEO-derived intent signals turn outbound from a volume game into a timing game — and what the 2026 data says about cold vs signal-anchored prospecting.',
     content: (
@@ -3017,7 +3017,7 @@ const ARTICLES: Record<string, ArticleData> = {
     category: 'Strategy',
     readTime: '13 min read',
     date: 'May 25, 2026',
-    image: '/images/article-b2b-sales-pipeline-automation.webp',
+    image: '/images/article-b2b-sales-pipeline-automation.png',
     heroAlt: 'Abstract network visualization representing B2B sales pipeline automation signal flow',
     metaDescription: 'How orchestration between SEO, intent capture, enrichment, and outbound determines whether automation produces revenue — and why most B2B teams are deploying AI agents into broken workflows.',
     content: (
@@ -3279,7 +3279,7 @@ const ARTICLES: Record<string, ArticleData> = {
     category: 'Strategy',
     readTime: '11 min read',
     date: 'May 25, 2026',
-    image: '/images/article-best-seo-agency.webp',
+    image: '/images/article-best-seo-agency.png',
     heroAlt: 'Abstract glowing data-flow nodes representing a premium B2B SEO agency with glassmorphism elements',
     metaDescription: 'The 2026 evaluation framework for picking a B2B SEO partner — what to measure, what to ignore, and why most "best agency" lists are scoring the wrong things.',
     content: (
@@ -3481,7 +3481,7 @@ const ARTICLES: Record<string, ArticleData> = {
     category: 'Strategy',
     readTime: '14 min read',
     date: 'May 25, 2026',
-    image: '/images/article-seo-b2b-lead-generation.webp',
+    image: '/images/article-seo-b2b-lead-generation.png',
     heroAlt: 'Abstract network of interconnected glowing nodes representing B2B buying committee stakeholders with glassmorphism panels',
     metaDescription: 'How content architected for an 11-person buying committee outperforms content built for a single converter — and why B2B lead gen SEO in 2026 looks fundamentally different from every other category.',
     content: (
@@ -3765,7 +3765,7 @@ const ARTICLES: Record<string, ArticleData> = {
     category: 'Local SEO',
     readTime: '13 min read',
     date: 'May 26, 2026',
-    image: '/images/article-local-seo-los-angeles.webp',
+    image: '/images/article-local-seo-los-angeles.png',
     heroAlt: 'Aerial night view of cityscape with glowing orange data network lines connecting business districts',
     metaDescription: 'How Google\'s 2026 local search algorithm — and the AI layer now sitting on top of it — determines whether customers find your business or your competitor\'s, and what operators should actually be doing about it.',
     content: (
@@ -6219,7 +6219,7 @@ const RELATED_ARTICLES_MAP: Record<string, { href: string; category: string; tit
       href: '/insights/best-seo-agency-for-b2b-brands',
       category: 'Strategy',
       title: 'Choose the Right B2B SEO Agency in 2026',
-      image: '/images/article-best-seo-agency.webp',
+      image: '/images/article-best-seo-agency.png',
     },
     {
       href: '/insights/how-do-b2b-companies-use-seo-to-generate-predictable-revenue',
@@ -6252,7 +6252,7 @@ const RELATED_ARTICLES_MAP: Record<string, { href: string; category: string; tit
       href: '/insights/seo-for-b2b-lead-generation',
       category: 'Strategy',
       title: 'SEO for B2B Lead Generation: How Committee-Architecture Content Outperforms Single-Persona Funnels',
-      image: '/images/article-seo-b2b-lead-generation.webp',
+      image: '/images/article-seo-b2b-lead-generation.png',
     },
   ],
 
@@ -6267,13 +6267,13 @@ const RELATED_ARTICLES_MAP: Record<string, { href: string; category: string; tit
       href: '/insights/outbound-seo-prospecting',
       category: 'Strategy',
       title: 'Outbound SEO Prospecting: Timing-Anchored Outreach Powered by Intent Signals in 2026',
-      image: '/images/article-outbound-seo-prospecting.webp',
+      image: '/images/article-outbound-seo-prospecting.png',
     },
     {
       href: '/insights/best-seo-agency-for-b2b-brands',
       category: 'Strategy',
       title: 'How to Choose the Best SEO Agency for B2B Brands in 2026',
-      image: '/images/article-best-seo-agency.webp',
+      image: '/images/article-best-seo-agency.png',
     },
   ],
   'automated-lead-generation-seo': [
@@ -6287,13 +6287,13 @@ const RELATED_ARTICLES_MAP: Record<string, { href: string; category: string; tit
       href: '/insights/outbound-seo-prospecting',
       category: 'Strategy',
       title: 'Outbound SEO Prospecting: Timing-Anchored Outreach Powered by Intent Signals in 2026',
-      image: '/images/article-outbound-seo-prospecting.webp',
+      image: '/images/article-outbound-seo-prospecting.png',
     },
     {
       href: '/insights/seo-for-b2b-lead-generation',
       category: 'Strategy',
       title: 'SEO for B2B Lead Generation: How Committee-Architecture Content Outperforms Single-Persona Funnels',
-      image: '/images/article-seo-b2b-lead-generation.webp',
+      image: '/images/article-seo-b2b-lead-generation.png',
     },
   ],
   'outbound-seo-prospecting': [
@@ -6313,7 +6313,7 @@ const RELATED_ARTICLES_MAP: Record<string, { href: string; category: string; tit
       href: '/insights/b2b-sales-pipeline-automation',
       category: 'Strategy',
       title: 'B2B Sales Pipeline Automation: The Orchestration Layer for AI-Driven Revenue',
-      image: '/images/article-b2b-sales-pipeline-automation.webp',
+      image: '/images/article-b2b-sales-pipeline-automation.png',
     },
   ],
   'b2b-sales-pipeline-automation': [
@@ -6327,13 +6327,13 @@ const RELATED_ARTICLES_MAP: Record<string, { href: string; category: string; tit
       href: '/insights/best-seo-agency-for-b2b-brands',
       category: 'Strategy',
       title: 'How to Choose the Best SEO Agency for B2B Brands in 2026',
-      image: '/images/article-best-seo-agency.webp',
+      image: '/images/article-best-seo-agency.png',
     },
     {
       href: '/insights/outbound-seo-prospecting',
       category: 'Strategy',
       title: 'Outbound SEO Prospecting: Timing-Anchored Outreach Powered by Intent Signals in 2026',
-      image: '/images/article-outbound-seo-prospecting.webp',
+      image: '/images/article-outbound-seo-prospecting.png',
     },
   ],
 
@@ -6375,7 +6375,7 @@ const RELATED_ARTICLES_MAP: Record<string, { href: string; category: string; tit
       href: '/insights/best-seo-agency-for-b2b-brands',
       category: 'Strategy',
       title: 'How to Choose the Best SEO Agency for B2B Brands in 2026',
-      image: '/images/article-best-seo-agency.webp',
+      image: '/images/article-best-seo-agency.png',
     },
   ],
 
@@ -6386,7 +6386,7 @@ const RELATED_ARTICLES_MAP: Record<string, { href: string; category: string; tit
       href: '/insights/seo-for-b2b-lead-generation',
       category: 'Strategy',
       title: 'SEO for B2B Lead Generation: How Committee-Architecture Content Outperforms Single-Persona Funnels',
-      image: '/images/article-seo-b2b-lead-generation.webp',
+      image: '/images/article-seo-b2b-lead-generation.png',
     },
     {
       href: '/insights/b2b-seo-agency',
@@ -6398,7 +6398,7 @@ const RELATED_ARTICLES_MAP: Record<string, { href: string; category: string; tit
       href: '/insights/best-seo-agency-for-b2b-brands',
       category: 'Strategy',
       title: 'How to Choose the Best SEO Agency for B2B Brands in 2026',
-      image: '/images/article-best-seo-agency.webp',
+      image: '/images/article-best-seo-agency.png',
     },
   ],
 
@@ -6407,13 +6407,13 @@ const RELATED_ARTICLES_MAP: Record<string, { href: string; category: string; tit
       href: '/insights/best-seo-agency-for-b2b-brands',
       category: 'Strategy',
       title: 'How to Choose the Best SEO Agency for B2B Brands in 2026',
-      image: '/images/article-best-seo-agency.webp',
+      image: '/images/article-best-seo-agency.png',
     },
     {
       href: '/insights/seo-for-b2b-lead-generation',
       category: 'Strategy',
       title: 'SEO for B2B Lead Generation: How Committee-Architecture Content Outperforms Single-Persona Funnels',
-      image: '/images/article-seo-b2b-lead-generation.webp',
+      image: '/images/article-seo-b2b-lead-generation.png',
     },
     {
       href: '/insights/b2b-organic-traffic-growth',
@@ -6449,7 +6449,7 @@ const RELATED_ARTICLES_MAP: Record<string, { href: string; category: string; tit
       href: '/insights/local-seo',
       category: 'Local SEO',
       title: 'Local SEO: How the 2026 Algorithm and AI Layer Determine Who Gets Found',
-      image: '/images/article-local-seo-los-angeles.webp',
+      image: '/images/article-local-seo-los-angeles.png',
     },
     {
       href: '/insights/b2b-seo-agency',
