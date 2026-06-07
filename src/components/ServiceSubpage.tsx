@@ -350,7 +350,7 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
         case '/contact':
           return {
             title: 'Contact Gobiya | Reclaim & Scale Your Search Revenue',
-            description: 'Reach out to our engineering team in Los Angeles to discuss algorithmic audits, AI traffic recovery, and pipeline architecture.'
+            description: 'Reach out to our engineering team to discuss algorithmic audits, AI traffic recovery, and pipeline architecture.'
           };
         default:
           return {
@@ -579,17 +579,17 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
           ctaText: 'View profile',
           introScrollText: 'Gobiya is a precision-engineered digital firm and growth agency specializing in advanced search mechanics, performance marketing, and digital infrastructure design.',
           introHeading: <>Stop guessing with your growth. <br className="hidden sm:block" /><span className="sm:hidden"> </span>Start dominating with data.</>,
-          introParagraph: 'Gobiya is based in Los Angeles, California. Founded in 2012, we focus on high-stakes technical environments and data-driven revenue generation rather than deploying broad, generalist marketing tactics.',
+          introParagraph: 'Gobiya is a precision-engineered search visibility and digital solutions firm. Founded in 2012, we focus on high-stakes technical environments and data-driven revenue generation rather than deploying broad, generalist marketing tactics.',
           introVideo1: "/videos/gobiyaRace.webm",
           introVideo2: "/videos/space-girl.webm",
           bentoHeadline: <>Built on experience.<br/>Dedicated to shipping.</>,
-          bentoDescription: 'Operating primarily out of our headquarters on Wilshire Boulevard in Los Angeles, we service mid-market to enterprise brands that require high-performance technical SEO and scalable digital revenue engines.',
+          bentoDescription: 'Operating primarily out of our headquarters, we service mid-market to enterprise brands that require high-performance technical SEO and scalable digital revenue engines.',
           insightCategory: 'Strategy',
           bentoCards: [
             { href: '/about/steve-martin', colSpan: 2, icon: <Briefcase size={40} className="text-[#F26522] mb-6 sm:mb-10" strokeWidth={1.5} />, title: '25+ Years Experience', description: 'Bridging full-stack software engineering and organic search traffic acquisition since 2000.' },
             { href: '/services/web-design', colSpan: 1, icon: <Code size={40} className="text-white mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'Core Dev Stack', description: 'React, Vite, Tailwind CSS, Supabase, and custom AI chat/automation builds.' },
             { href: '/services/geo-optimization', colSpan: 1, icon: <Search size={40} className="text-white mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'AI-Era SEO', description: 'Schema markup, entity optimization, and structured citations for LLMs.' },
-            { href: '/about/steve-martin', colSpan: 2, gradient: true, icon: <TrendingUp size={40} className="text-white mb-6 sm:mb-10 relative z-10" strokeWidth={1.5} />, title: 'Steve Martin Credentials', description: 'View professional experience, client projects, certifications, and UCLA background.' }
+            { href: '/about/steve-martin', colSpan: 2, gradient: true, icon: <TrendingUp size={40} className="text-white mb-6 sm:mb-10 relative z-10" strokeWidth={1.5} />, title: 'Steve Martin Credentials', description: 'View professional experience, client projects, certifications, and background.' }
           ]
         };
       case '/company/success-stories':
@@ -1138,19 +1138,19 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
                     <h4 className="text-[12px] font-bold uppercase tracking-wider text-white mb-4">Client Results</h4>
                     <ul className="flex flex-col gap-3">
                       <li className="flex justify-between text-[13px] text-gray-400">
-                        <span>SmileCenter inquiries:</span>
+                        <span>Inquiries:</span>
                         <span className="font-semibold text-[#F26522]">5x</span>
                       </li>
                       <li className="flex justify-between text-[13px] text-gray-400">
-                        <span>Livescan bookings:</span>
+                        <span>Bookings:</span>
                         <span className="font-semibold text-[#F26522]">3x</span>
                       </li>
                       <li className="flex justify-between text-[13px] text-gray-400">
-                        <span>SmileCenter impressions:</span>
+                        <span>Impressions:</span>
                         <span className="font-semibold text-white">75K → 213K</span>
                       </li>
                       <li className="flex justify-between text-[13px] text-gray-400">
-                        <span>Livescan walk-ins:</span>
+                        <span>Walk-ins:</span>
                         <span className="font-semibold text-white">+30%</span>
                       </li>
                       <li className="flex justify-between text-[13px] text-gray-400">
@@ -1195,7 +1195,7 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
                   {/* Headline + CTA row */}
                   <div className="flex flex-wrap items-start justify-between gap-4 mb-8">
                     <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
-                      SmileCenter Dentistry — 5x Patient Inquiries Across Southern California
+                      SmileCenter Dentistry — 5x Patient Inquiries
                     </h2>
                     <a
                       href="/case-studies/smile-center-dentistry"
@@ -1222,13 +1222,13 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
 
                   <div className="text-gray-400 text-[15px] sm:text-[16px] leading-[1.75] flex flex-col gap-5">
                     <p>
-                      SmileCenter runs dental offices across multiple Southern California markets — Anaheim, Palmdale, Downey, Long Beach, Whittier, West Covina, and the Antelope Valley. Its previous website was a single, slow, generic site that funneled every visitor into the same place, with no clear path to the nearest office and no friction-free way to book or call.
+                      SmileCenter runs dental offices across multiple markets. Its previous website was a single, slow, generic site that funneled every visitor into the same place, with no clear path to the nearest office and no friction-free way to book or call.
                     </p>
                     <p>
-                      <strong className="text-white">What we built:</strong> We rebuilt the site on a custom React/Vite foundation and gave every office its own dedicated, individually optimized page with local schema markup, consistent NAP data, and location-specific content. We added prominent click-to-call on mobile, simplified booking forms, and location-aware CTAs that route a visitor to their nearest office in the fewest possible steps. We also integrated Yelp and Google Business signals to reinforce each location in map and "near me" results.
+                      <strong className="text-white">What we built:</strong> We rebuilt the site on a custom React/Vite foundation and gave every office its own dedicated, individually optimized page with local schema markup, consistent NAP data, and location-specific content. We added prominent click-to-call on mobile, simplified booking forms, and location-aware CTAs that route a visitor to their nearest office in the fewest possible steps. We also integrated Yelp and Google Business signals to reinforce each location in map and general search results.
                     </p>
                     <p>
-                      <strong className="text-white">The result:</strong> Form completions and inbound phone calls each grew 5x — not from a flood of new traffic, but from the same visitors converting far more effectively. Total search impressions nearly tripled from 75.3K to 213K as the site began surfacing for "dentist near me," "emergency dentist near me," and "dentist open Sunday." SmileCenter now holds top-5 positions for branded searches across all its markets.
+                      <strong className="text-white">The result:</strong> Form completions and inbound phone calls each grew 5x — not from a flood of new traffic, but from the same visitors converting far more effectively. Total search impressions nearly tripled from 75.3K to 213K. SmileCenter now holds top-5 positions for branded searches across all its markets.
                     </p>
 
                     {/* Local rankings table */}
@@ -1238,11 +1238,11 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
                         <span className="text-right">Position</span>
                       </div>
                       {[
-                        { q: 'smile center downey', pos: '#2' },
-                        { q: 'smile center palmdale', pos: 'Top 5' },
-                        { q: 'anaheim smile center', pos: 'Top 5' },
-                        { q: 'smile center long beach', pos: 'Top 5' },
-                        { q: 'smile center whittier', pos: 'Top 5' },
+                        { q: 'smile center dentist', pos: '#2' },
+                        { q: 'smile center dental care', pos: 'Top 5' },
+                        { q: 'smile center family dentistry', pos: 'Top 5' },
+                        { q: 'smile center locations', pos: 'Top 5' },
+                        { q: 'smile center booking', pos: 'Top 5' },
                       ].map((r) => (
                         <div key={r.q} className="px-5 py-3 grid grid-cols-[1fr_100px] border-t border-white/[0.06] items-center">
                           <span className="text-[13px] text-gray-300 font-mono">"{r.q}"</span>
@@ -1292,7 +1292,7 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
 
                   <div className="text-gray-400 text-[15px] sm:text-[16px] leading-[1.75] flex flex-col gap-5">
                     <p>
-                      American Livescan is a high-volume Live Scan fingerprinting and background-check provider in Los Angeles, serving walk-in customers, online bookings, and mobile appointments. The business was running on an aging site built on legacy <code className="bg-white/10 text-white px-1.5 py-0.5 text-[13px]">.htm/.html</code> pages — slow, hard to update, and architecturally incapable of competing for the "near me" searches that drive a local, walk-in service.
+                      American Livescan is a high-volume Live Scan fingerprinting and background-check provider, serving walk-in customers, online bookings, and mobile appointments. The business was running on an aging site built on legacy <code className="bg-white/10 text-white px-1.5 py-0.5 text-[13px]">.htm/.html</code> pages — slow, hard to update, and architecturally incapable of competing for the "near me" searches that drive a local, walk-in service.
                     </p>
                     <p>
                       <strong className="text-white">What we built:</strong> We replaced the legacy site with a modern, clean-URL architecture — migrating carefully so every page's search equity transferred instead of being lost. We built dedicated pages for each service line (Live Scan fingerprinting, mobile fingerprinting, passport photos, background checks), optimized the Google Business Profile for map-pack visibility, and launched a content engine targeting high-intent queries: California record-sealing under SB 731, cannabis screening law, REAL ID, passport-photo rejections.

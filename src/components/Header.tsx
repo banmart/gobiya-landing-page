@@ -48,7 +48,7 @@ const Header: React.FC<HeaderProps> = ({ theme = 'light', hideLogo = false }) =>
           <div className="hidden md:flex items-center gap-2">
             <Clock className={`w-3.5 h-3.5 ${isDark ? 'text-white' : 'text-gray-900'}`} />
             <span className={`text-[13px] font-medium ${isDark ? 'text-white' : 'text-gray-900'}`}>
-              {time} in Los Angeles
+              {time} PT
             </span>
           </div>
           

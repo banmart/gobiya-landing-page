@@ -999,7 +999,7 @@ const ARTICLES: Record<string, ArticleData> = {
           Google Business Profile is built for proximity-based discovery: local packs, Maps placements, direction requests, and phone clicks from someone nearby. An <a href="/insights/google-business-profile-optimization" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">optimized GBP profile</a> can improve Discovery search visibility, the scenario where a customer searches for a service category rather than a specific business name, though the impact varies by category competitiveness and market. For transactional, location-ready intent, GBP remains one of the strongest local tools available.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          When a customer asks ChatGPT "who's the best commercial HVAC contractor in Los Angeles," the assistant doesn't pull a live map. It synthesizes an answer from whatever structured, machine-readable information it can access about relevant businesses in that category. A complete GBP profile doesn't automatically transfer into that synthesis layer. If you want to explore technical approaches for connecting business listings into conversational models, this guide on <a href="https://windsor.ai/how-to-connect-google-business-profile-to-chatgpt/" target="_blank" rel="noopener noreferrer" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">how to connect Google Business Profile to ChatGPT</a> is a useful starting point. ChatGPT-style prompts for local discovery tend to be longer and more conversational than Google queries, phrased as "recommend a contractor near me for..." rather than "HVAC contractor LA", and the retrieval logic behind each is completely different.
+          When a customer asks ChatGPT "who's the best commercial HVAC contractor in my area," the assistant doesn't pull a live map. It synthesizes an answer from whatever structured, machine-readable information it can access about relevant businesses in that category. A complete GBP profile doesn't automatically transfer into that synthesis layer. If you want to explore technical approaches for connecting business listings into conversational models, this guide on <a href="https://windsor.ai/how-to-connect-google-business-profile-to-chatgpt/" target="_blank" rel="noopener noreferrer" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">how to connect Google Business Profile to ChatGPT</a> is a useful starting point. ChatGPT-style prompts for local discovery tend to be longer and more conversational than Google queries, phrased as "recommend a contractor near me for..." rather than "HVAC contractor near me", and the retrieval logic behind each is completely different.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
           In competitive service categories, a business with weaker GBP signals but stronger entity architecture can dominate AI-generated recommendations while ranking below a competitor on traditional Google Maps. These are two different optimization targets requiring two different technical approaches. Brands that have only optimized for local Google visibility are effectively invisible when customers shift their discovery query to a conversational AI assistant.
@@ -1602,7 +1602,7 @@ const ARTICLES: Record<string, ArticleData> = {
           <strong>Content publishers and media businesses</strong> face GEO as both an opportunity and an existential question — AI synthesis can reduce click-through even when content is cited, but being the cited source preserves authority and some referral traffic, while being uncited removes the business from the conversation entirely. For publishers, GEO is about preserving relevance as the discovery layer shifts.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
-          <strong>Local and service businesses</strong> face an emerging GEO dimension as consumers ask AI tools for local recommendations, and the engines synthesize answers about which local businesses to consider — a surface most local businesses haven't yet optimized for. For these businesses, optimizing local directories is just as important as <a href="/insights/google-business-profile-optimization" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">Google Business Profile optimization</a>. For businesses targeting regional search markets, integrating these strategies with targeted <a href="/on-page-seo-los-angeles" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">on-page SEO in Los Angeles</a> builds the localized entity signals that AI engines seek.
+          <strong>Local and service businesses</strong> face an emerging GEO dimension as consumers ask AI tools for local recommendations, and the engines synthesize answers about which local businesses to consider — a surface most local businesses haven't yet optimized for. For these businesses, optimizing local directories is just as important as <a href="/insights/google-business-profile-optimization" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">Google Business Profile optimization</a>. For businesses targeting regional search markets, integrating these strategies with targeted <a href="/capabilities/seo-discoverability" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">on-page SEO</a> builds the localized entity signals that AI engines seek.
         </p>
 
         {/* ── SECTION 9: What getting started with GEO actually looks like ── */}
@@ -2266,7 +2266,7 @@ const ARTICLES: Record<string, ArticleData> = {
             },
             {
               title: 'Outsourced Services Firms',
-              body: '<a href="/insights/b2b-seo-agency-los-angeles" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">Agencies</a> and consultancies benefit most from earned-media-led citation strategies, because their categories are saturated with self-promotional content that AI engines have learned to deprioritise.',
+              body: '<a href="/insights/b2b-seo-agency" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">Agencies</a> and consultancies benefit most from earned-media-led citation strategies, because their categories are saturated with self-promotional content that AI engines have learned to deprioritise.',
               link: '/services/lead-generation',
               linkLabel: 'Explore lead gen',
             },
@@ -2985,7 +2985,7 @@ const ARTICLES: Record<string, ArticleData> = {
           Why Gobiya is positioned differently for B2B operators
         </h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          As a <a href="/insights/b2b-seo-agency-los-angeles" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">B2B SEO agency in Los Angeles</a>, Gobiya provides complete operational alignment between search acquisition and outbound pipeline engineering. We do not sell third-party intent databases or run generic email spam sequences. We audit your existing traffic, set up real-time reverse-IP enrichment layers, configure direct routing into your CRM, and build custom SEO structures designed specifically to generate high-intent outbound signals.
+          As a <a href="/insights/b2b-seo-agency" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">B2B SEO agency</a>, Gobiya provides complete operational alignment between search acquisition and outbound pipeline engineering. We do not sell third-party intent databases or run generic email spam sequences. We audit your existing traffic, set up real-time reverse-IP enrichment layers, configure direct routing into your CRM, and build custom SEO structures designed specifically to generate high-intent outbound signals.
         </p>
 
         {/* ── FINAL CTA ── */}
@@ -3759,503 +3759,15 @@ const ARTICLES: Record<string, ArticleData> = {
       </>
     ),
   },
-  // ─────────────────────────────────────────────────────────────────────────────
-  'b2b-seo-agency-los-angeles': {
-    slug: 'b2b-seo-agency-los-angeles',
-    title: 'B2B SEO Agency in Los Angeles: Why Local Partnership Outperforms Remote Vendor Relationships in 2026',
-    category: 'Strategy',
-    readTime: '13 min read',
-    date: 'May 25, 2026',
-    image: '/images/article-b2b-seo-agency-los-angeles.webp',
-    heroAlt: 'Abstract aerial visualization of Los Angeles at night with glowing orange data network lines connecting downtown skyscrapers',
-    metaDescription: 'How proximity, time-zone alignment, and LA business culture fluency have become more valuable rather than less in an AI-search era — and what LA-based B2B operators should actually be evaluating.',
-    content: (
-      <>
-        {/* ── TABLE OF CONTENTS ── */}
-        <details className="bg-gray-50 border border-gray-200 rounded-lg p-6 sm:p-8 my-10 sm:my-14 group" open>
-          <summary className="text-[14px] font-semibold uppercase tracking-wider text-gray-500 cursor-pointer list-none flex items-center justify-between">
-            Table of Contents
-            <svg className="w-4 h-4 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" /></svg>
-          </summary>
-          <div className="mt-4 pt-4 border-t border-gray-200">
-            <ol className="list-decimal list-inside flex flex-col gap-2.5">
-            {[
-              { id: 'la-market-2026', label: 'The LA B2B SEO Agency Market — 2026 update' },
-              { id: 'what-la-agency-does', label: 'What a B2B SEO agency in LA actually does in 2026' },
-              { id: 'local-partnership-delivers', label: 'What local partnership actually delivers operationally' },
-              { id: 'cost-national-engagement', label: 'The cost of a national engagement for an LA operator' },
-              { id: 'real-engagement-works', label: 'How a real LA B2B SEO agency engagement should work' },
-              { id: 'legitimate-vs-mailing-address', label: 'What separates a legitimate LA agency from a Santa Monica mailing address' },
-              { id: 'positioned-differently', label: 'Why Gobiya is positioned differently for LA B2B operators' },
-              { id: 'clearest-return', label: 'Which LA B2B operators get the clearest return' },
-              { id: 'getting-started', label: 'What getting started with agency selection looks like' },
-              { id: 'making-right-call', label: 'Making the right call for your LA B2B SEO program' },
-            ].map((item) => (
-              <li key={item.id}>
-                <a href={`#${item.id}`} className="text-[15px] text-gray-700 hover:text-[#F26522] transition-colors">
-                  {item.label}
-                </a>
-              </li>
-            ))}
-            </ol>
-          </div>
-        </details>
-
-        {/* ── LEAD STATS ── */}
-        <div id="la-market-2026" className="scroll-mt-24" />
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 my-10 sm:my-14">
-          {[
-            { stat: '#4', label: 'LA\'s rank among US SaaS hubs, behind only SF, NYC, and Boston', source: 'Ellty, 2026' },
-            { stat: '$3.2B', label: 'Capital raised across 280+ LA SaaS deals in 2025, 35% in vertical SaaS', source: 'Ellty, 2026' },
-            { stat: '40–60%', label: 'Qualified B2B pipeline lost to buying committee non-consensus', source: 'SPOTIO, 2026' },
-          ].map((item, idx) => (
-            <div key={idx} className="bg-gray-50 border border-gray-100 p-6 rounded-sm">
-              <p className="text-3xl font-semibold text-[#F26522] mb-2">{item.stat}</p>
-              <p className="text-[13px] leading-snug text-gray-600">{item.label}</p>
-              <p className="text-[11px] text-gray-400 mt-2">{item.source}</p>
-            </div>
-          ))}
-        </div>
-
-        <h2 className="text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
-          The LA B2B SEO Agency Market — 2026 update
-        </h2>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Hiring a B2B SEO agency in Los Angeles is about finding a local partner, not just a vendor with a flashy deck. B2B operators who want to win in LA need time-zone alignment, face-to-face planning sessions, and real familiarity with Southern California's business ecosystem. Remote agencies simply cannot offer this level of operational integration.
-        </p>
-
-        <div className="border-l-4 border-[#F26522] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
-          <img src="/images/steve-portrait.webp" alt="Steve Martin" className="w-12 h-12 object-cover border border-white/10 shrink-0" />
-          <div>
-            <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-1 font-sans">Steve's Take</p>
-            <p className="text-[15px] italic text-white leading-relaxed font-sans">
-              "LA's tech and SaaS corridor operates differently than Silicon Valley or New York. Working with a local search team means your strategy moves at the speed of local network updates, not delayed monthly reviews."
-            </p>
-          </div>
-        </div>
-
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          The strongest LA-based B2B operators have stopped treating geography as an irrelevant variable in agency selection and started treating it as a primary one — because the operational benefits of working with a local partner compound over a 12-month engagement in ways national agencies can't replicate. Most teams don't realize how much the proximity gap matters until they're 9 months into a national relationship with monthly calls that never quite catch up to where the business actually is, asking why their agency feels like a vendor rather than a partner. The criteria for evaluating this fit overlap significantly with the broader framework of <a href="/insights/best-seo-agency-for-b2b-brands" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">choosing the best SEO agency for B2B brands</a> — but with proximity as a primary variable rather than a tiebreaker.
-        </p>
-
-        {/* ── SECTION: What a B2B SEO agency in LA actually does ── */}
-        <div id="what-la-agency-does" className="scroll-mt-24" />
-        <h2 className="text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
-          What a B2B SEO agency in Los Angeles actually does in 2026
-        </h2>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Traditional agency selection in LA ran on three signals: portfolio, proximity, and price. The buyer reviewed local agencies based on the brands in their case study deck, picked a few they could meet in person, and chose based on chemistry and rate. Proximity was a tiebreaker rather than a primary criterion. That worked when the SEO discipline was generic enough that local-versus-national didn't change the work much.
-        </p>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          A B2B SEO agency in Los Angeles in 2026 operates against a different set of expectations. The local relationship is the unit of value, not a secondary attribute. LA operators expect their agency to be in the room — sometimes literally, often virtually but in the same time zone — for the weekly cadence the modern SEO discipline actually requires. AI search shifts faster than monthly reporting cycles can keep up with. AI engine citation patterns move week to week. New competitor content gets cited and uncited inside 30-day windows. The agency that operates on a 30-day reporting cadence from another time zone is structurally a step behind the work that needs to happen.
-        </p>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          The local relationship also shapes how the work integrates with the operator's broader team. LA's B2B founders are typically operator-founders — coming from inside the verticals they sell into rather than from generalist SaaS pedigrees — which changes what they expect from any vendor relationship. They expect partners, not vendors. They expect strategists who understand the specific tempo of LA B2B operating: the capital-efficiency culture, the founder-led decision-making, the willingness to move quickly on what's working and kill what isn't.
-        </p>
-
-        <h3 className="text-[clamp(1.1rem,2vw,1.5rem)] font-medium leading-[1.3] tracking-[-0.01em] text-gray-900 mt-10 mb-4">
-          Why a national-brand agency isn't automatically the answer for LA buyers
-        </h3>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          National agencies handle the first pass: established reputation, large case study libraries, scale of operation. But for an LA-based B2B operator looking for a local partner, the question isn't "is this agency good in general" — it's "does this agency function as a local partner in the way our operating tempo requires." National agencies are typically structured around their largest national accounts, which skew enterprise, generalist, and high-retainer. The mid-market LA operator is rarely the highest-priority account at a national firm, and the work assigned to that account often reflects the priority — account managers who rotate, time-zone friction on response cycles, and a relationship that feels more like a help desk than a partnership.
-        </p>
-
-        {/* ── SECTION: What local partnership delivers ── */}
-        <div id="local-partnership-delivers" className="scroll-mt-24" />
-        <h2 className="text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
-          What local partnership actually delivers operationally
-        </h2>
-
-        <div className="overflow-x-auto my-10 sm:my-14 border border-gray-200 rounded-lg">
-          <table className="w-full text-left text-[14px]">
-            <thead>
-              <tr className="bg-gray-50 border-b border-gray-200">
-                <th className="px-4 py-3 font-semibold text-gray-700">Operational Benefit</th>
-                <th className="px-4 py-3 font-semibold text-gray-700">Local LA Agency</th>
-                <th className="px-4 py-3 font-semibold text-gray-700">National / Remote Agency</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-gray-100">
-              {[
-                ['In-person availability', 'Standard part of the relationship', 'Flight expense if budget allows'],
-                ['Time-zone alignment', 'Same-day response within LA hours', '3+ hour lag on critical shifts'],
-                ['Culture fluency', 'Operates inside LA tempo natively', 'Reads LA tempo from decks'],
-                ['Network accountability', 'Reputation travels through LA B2B community', 'Bad engagement disappears into firm size'],
-                ['Difficult conversations', 'Shared ground: mutual contacts, in-person history', 'Zoom between strangers'],
-              ].map(([benefit, local, remote], i) => (
-                <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-gray-50/50'}>
-                  <td className="px-4 py-3 font-medium text-gray-800">{benefit}</td>
-                  <td className="px-4 py-3 text-gray-600">{local}</td>
-                  <td className="px-4 py-3 text-gray-500">{remote}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Proximity in agency selection often gets dismissed as a soft preference — a chemistry factor rather than an operational one. For a B2B SEO program in 2026, that dismissal is wrong. Local partnership produces specific operational benefits that are difficult or impossible to replicate from another time zone. In-person availability for quarterly strategy sessions, executive readouts, content workshops with sales and customer success teams, and the difficult conversations that come up in any year-long engagement all work materially better face to face. Time-zone alignment for the daily cadence the modern SEO discipline requires is not optional — AI search citation patterns shift week to week, and the team that needs to respond to a citation drop or a competitor's earned-media placement needs same-day access.
-        </p>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          The aggregate of these operational benefits is what LA operators are actually selecting for when they search "B2B SEO agency Los Angeles" rather than "best B2B SEO agency." The geography is the proxy for a partnership model national firms can't deliver — not because they're less skilled, but because they're not structurally positioned to.
-        </p>
-
-        {/* ── SECTION: The cost of a national engagement ── */}
-        <div id="cost-national-engagement" className="scroll-mt-24" />
-        <h2 className="text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
-          The cost of a national engagement for an LA operator
-        </h2>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          A mid-market LA B2B SaaS company running a $15,000 to $25,000 per month SEO retainer with a national agency is paying $180,000 to $300,000 per year for a relationship that, in most cases, functions as a remote-vendor engagement rather than a partnership. LA's capital-efficiency culture makes that cost particularly visible. Burn rates in LA average 30 percent lower than San Francisco for comparable-stage companies, which means SEO retainers represent a larger proportional share of marketing spend than they would for a Bay Area equivalent.
-        </p>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          The compounding cost is the year of competitive ground given up while the wrong relationship produces flat pipeline. Categories where LA operators compete — proptech, automotive software, home services platforms, creator-economy infrastructure, vertical SaaS broadly — are competitive enough that the company that builds AI search citation presence in 2026 will hold a category-defining advantage that's expensive to dislodge by 2027. The visible cost is the monthly invoice. The invisible cost is the partnership that never quite formed and the competitive position lost during the year the wrong relationship was in place. This is the same pipeline leakage dynamic that <a href="/insights/seo-for-b2b-lead-generation" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">SEO for B2B lead generation</a> programs are designed to close — content that arms every committee stakeholder, not just the champion who filled out the form.
-        </p>
-
-        <div className="bg-amber-50 border-l-4 border-amber-400 p-5 my-8 rounded-r-lg">
-          <p className="text-[14px] leading-relaxed text-amber-900">
-            <strong>Note:</strong> Agency retainer ranges and ROI math vary significantly by company stage, ACV, and vertical. The figures above reflect LA-based mid-market B2B SaaS averages in 2026. Audit your own deal economics and runway constraints against any agency's projected outcomes before committing.
-          </p>
-        </div>
-
-        {/* ── SECTION: How a real engagement should work ── */}
-        <div id="real-engagement-works" className="scroll-mt-24" />
-        <h2 className="text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
-          How a real LA B2B SEO agency engagement should work in 2026
-        </h2>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          A credible engagement starts with a local kickoff — in person where possible — and a working cadence that matches the modern SEO discipline. The agency and the operator agree on the rhythm: weekly working sessions during high-activity periods, biweekly during steadier phases, with a standing in-person check-in each quarter. Reporting cadence aligns with the actual decision speed required, not with a national agency's standardized monthly template.
-        </p>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          The substantive work itself follows. The agency runs an initial AI search audit across ChatGPT, Claude, Perplexity, and Gemini for the operator's category-defining queries, baselines current citation share, and identifies which third-party sources each engine is citing — because more than 85 percent of non-paid AI citations originate from earned media rather than the vendor's own domain. The agency maps the buying committee structure for the specific vertical and builds the content architecture against the actual committee rather than a generic persona template. This is the same <a href="/services/geo-optimization" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">generative engine optimization</a> discipline that determines whether AI assistants cite or ignore a brand during the research phase.
-        </p>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          The ongoing engagement reflects local partnership in operational detail. Content production is balanced against earned-media placement in LA-relevant trade publications — the Hollywood Reporter for entertainment-tech, Aviation Week for aerospace, Endpoints for biotech, AdExchanger for adtech, Inman for proptech. Freshness updates on revenue-tied pages are scheduled at the <a href="/insights/los-angeles-local-seo-explained" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">cadence AI engines actually cite from</a> — monthly to quarterly, not annually. The agency operates as a local extension of the operator's revenue team, not as a content vendor running a generic playbook from another zip code.
-        </p>
-
-        <h3 className="text-[clamp(1.1rem,2vw,1.5rem)] font-medium leading-[1.3] tracking-[-0.01em] text-gray-900 mt-10 mb-4">
-          How the LA SEO agency market differs from the national market
-        </h3>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          LA's agency density skews heavily toward consumer brands, entertainment, lifestyle, and creator-economy work — a legacy of the city's historical industry mix. The B2B SEO specialists in LA are a smaller subset of that ecosystem, and the genuinely B2B-specialist firms with vertical depth in LA's specific industries are smaller still. This creates two related challenges for LA-based B2B operators: the largest agencies by visibility are often the least fit by specialization, and the most-fit specialists may not surface in the operator's initial search. Most LA B2B operators discover the right agency through referral or industry network — which is, in its own way, the most useful tell about the actual selection process.
-        </p>
-
-        {/* ── SECTION: Legitimate vs mailing address ── */}
-        <div id="legitimate-vs-mailing-address" className="scroll-mt-24" />
-        <h2 className="text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
-          What separates a legitimate LA B2B SEO agency from a Santa Monica mailing address
-        </h2>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Not every agency listing itself as an LA B2B SEO specialist is operating as a real local partner. The LA agency market is large enough and oversaturated enough that an LA address alone signals very little. Some firms maintain an LA office for prestige while running the actual account work from another city. Some are nominally LA-based but staff every engagement remotely.
-        </p>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Start with where the account work actually happens. Ask which specific people will work on the account, where they sit physically, and how much of their week is spent on accounts versus other functions. Ask about cadence — how often will the operator have synchronous time with the strategists doing the work, and is that time in LA business hours. Ask about in-person availability — what does it look like to have a quarterly strategy session at the operator's office, and is that included or billed separately. Then check vertical capability as evidence of local fluency. Ask whether the agency has a documented methodology for AI search visibility across ChatGPT, Claude, Perplexity, and Gemini. The same evaluation rigor applies here that operators should bring to any <a href="/insights/automated-lead-generation-seo" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">automated lead generation SEO</a> assessment — specifics over aspirations, demonstrated pipeline attribution over traffic case studies.
-        </p>
-
-        {/* ── SECTION: Why Gobiya ── */}
-        <div id="positioned-differently" className="scroll-mt-24" />
-        <h2 className="text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
-          Why Gobiya is positioned differently for LA B2B operators
-        </h2>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Gobiya is headquartered in Los Angeles — built in LA, staffed in LA, working in LA hours. We don't maintain a Santa Monica mailing address while running delivery from another zip code. Our strategists sit in Los Angeles and operate inside LA's B2B economy. Every engagement includes in-person availability as a standard part of the relationship, not as a line item. We build custom React architectures, design AI search authority frameworks, and implement first-party <a href="/insights/b2b-sales-pipeline-automation" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">B2B sales pipeline automation</a> to convert search behavior into revenue. Our contract structure reflects LA's capital-efficient operator culture: short-commitment terms, attribution clarity from day one, and reporting that connects content directly to pipeline stages and closed-won attribution.
-        </p>
-
-        {/* ── SECTION: Which operators get the clearest return ── */}
-        <div id="clearest-return" className="scroll-mt-24" />
-        <h2 className="text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
-          Which LA B2B operators get the clearest return from the right agency fit
-        </h2>
-        <div className="overflow-x-auto my-10 sm:my-14 border border-gray-200 rounded-lg">
-          <table className="w-full text-left text-[14px]">
-            <thead>
-              <tr className="bg-gray-50 border-b border-gray-200">
-                <th className="px-4 py-3 font-semibold text-gray-700">LA Segment</th>
-                <th className="px-4 py-3 font-semibold text-gray-700">Key Buyer Dynamic</th>
-                <th className="px-4 py-3 font-semibold text-gray-700">Agency Fit Requirement</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-gray-100">
-              {[
-                ['Vertical SaaS (proptech, auto, home services)', 'Category-defining content opportunity, time-sensitive', 'Deep vertical specialization in the specific category'],
-                ['Entertainment-tech / Creator-economy', 'Hybrid B2B + creator-driven self-serve motions', 'Experience with both enterprise and creator buying patterns'],
-                ['Aerospace & Defense tech', 'Regulated, long-cycle technical buyers', 'Regulated-industry experience, enterprise IT buyer fluency'],
-                ['Biotech & Life Sciences platforms', 'Regulatory content constraints', 'Healthcare/life sciences B2B experience specifically'],
-                ['Adtech & Martech', 'Buyers are marketers who smell generic content', 'Credible adtech-specific content production'],
-              ].map(([seg, dynamic, fit], i) => (
-                <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-gray-50/50'}>
-                  <td className="px-4 py-3 font-medium text-gray-800">{seg}</td>
-                  <td className="px-4 py-3 text-gray-600">{dynamic}</td>
-                  <td className="px-4 py-3 text-gray-500">{fit}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-
-        {/* ── SECTION: Getting started ── */}
-        <div id="getting-started" className="scroll-mt-24" />
-        <h2 className="text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
-          What getting started with an LA B2B SEO agency selection process actually looks like
-        </h2>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          A credible selection process starts with the local-partnership question, not a list of LA agencies pulled from a Google search. The operator defines what the engagement is actually accountable for — pipeline contribution, AI citation share, organic-sourced revenue, the working cadence required — and works backward from there. The shortlist gets assembled against local-partnership substance alongside AI search capability, team composition, and contract structure. Reference calls focus on pipeline outcomes and on whether the agency operated as a real partner during the engagement. Teams that pair this evaluation with a clear understanding of <a href="/insights/outbound-seo-prospecting" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">outbound SEO prospecting</a> can assess whether the agency's signal architecture actually feeds the outbound motion or just generates traffic reports.
-        </p>
-
-        {/* ── CTA BLOCK ── */}
-        <div className="bg-gray-900 text-white p-8 sm:p-10 rounded-xl my-12 sm:my-16 relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-[#F26522]/20 to-transparent pointer-events-none" />
-          <div className="relative z-10">
-            <p className="text-[20px] sm:text-[24px] font-medium leading-tight mb-3">
-              Looking for a local LA partner?
-            </p>
-            <p className="text-[14px] sm:text-[16px] text-gray-300 mb-6 max-w-lg">
-              Request a local-partnership conversation. We'll walk through your current SEO program, what's actually being measured, and where local partnership changes the outcome.
-            </p>
-            <a
-              href="/book"
-              className="group inline-flex items-center bg-[#F26522] hover:bg-[#e05a1a] text-white pl-6 pr-2 py-3 transition-colors duration-300"
-            >
-              <span className="text-[14px] font-medium mr-4">Start a local conversation</span>
-              <div className="w-8 h-8 bg-white flex items-center justify-center">
-                <ArrowRight className="w-4 h-4 text-[#F26522] transition-transform duration-500 group-hover:-rotate-45" />
-              </div>
-            </a>
-          </div>
-        </div>
-
-        {/* ── SECTION: Making the right call ── */}
-        <div id="making-right-call" className="scroll-mt-24" />
-        <h2 className="text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
-          Making the right call for your LA B2B SEO program
-        </h2>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          LA B2B operators still picking SEO agencies on national brand recognition or remote-vendor delivery models are paying full retainer cost for relationships that fundamentally operate as help desks rather than partnerships, while their AI-aware competitors quietly work with local agencies that respond in their time zone, sit across the table at quarterly reviews, and operate inside LA's specific B2B tempo. The shift to evaluating LA B2B SEO agencies on local partnership and operational availability isn't about prioritizing geography for its own sake. It's about recognizing that the operational benefits of local partnership are real, measurable, and compounding — and that they're benefits national firms can't structurally deliver.
-        </p>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Two decisions matter most. First: whether the agencies on your shortlist are LA-based in substance — with the actual delivery team in LA, working LA business hours, available in person for the moments that need it — or LA-based in masthead only. Second: whether the contract structure builds in attribution clarity and short-commitment terms aligned with LA's capital-efficient operator culture, or locks the operator into 12 months of work before outcomes are demonstrated.
-        </p>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Gobiya is a logical starting point for LA-based B2B operators looking for a <a href="/services/seo" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">local SEO agency partner</a> — built in LA, staffed in LA, working in LA hours, with the AI search capability the modern market requires and the partnership model national firms can't replicate.
-        </p>
-      </>
-    ),
-  },
-
-  'b2b-organic-traffic-growth': {
-    slug: 'b2b-organic-traffic-growth',
-    title: 'B2B Organic Traffic Growth: Why Traffic and Pipeline Decoupled in 2026 and What to Do About It',
-    category: 'Strategy',
-    readTime: '14 min read',
-    date: 'May 26, 2026',
-    image: '/images/article-b2b-organic-traffic-growth.webp',
-    heroAlt: 'Abstract interconnected glowing nodes and upward trending data streams representing B2B organic traffic composition growth',
-    metaDescription: 'How traffic and pipeline decoupled in B2B during 2025-2026, why the best B2B SEO programs are now growing less traffic on purpose, and what the new organic growth math actually looks like.',
-    content: (
-      <>
-        {/* ── TABLE OF CONTENTS ── */}
-        <details className="bg-gray-50 border border-gray-200 rounded-lg p-6 sm:p-8 my-10 sm:my-14 group" open>
-          <summary className="text-[14px] font-semibold uppercase tracking-wider text-gray-500 cursor-pointer list-none flex items-center justify-between">
-            Table of Contents
-            <svg className="w-4 h-4 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" /></svg>
-          </summary>
-          <div className="mt-4 pt-4 border-t border-gray-200">
-            <ol className="list-decimal list-inside flex flex-col gap-2.5">
-              {[
-                { id: 'decoupled-era', label: 'The Decoupled Era — 2026 update' },
-                { id: 'what-b2b-organic-means', label: 'What B2B organic traffic growth actually means in 2026' },
-                { id: 'how-decoupled', label: 'How traffic and pipeline decoupled in B2B' },
-                { id: 'cost-wrong-half', label: 'The cost of optimizing for the wrong half of the equation' },
-                { id: 'real-program-works', label: 'How real B2B organic traffic growth works in 2026' },
-                { id: 'vanity-engine', label: 'What separates a real program from a traffic-vanity engine' },
-                { id: 'positioned-differently', label: 'Why Gobiya is positioned differently for B2B operators' },
-                { id: 'clearest-return', label: 'Which B2B operators get the clearest return' },
-                { id: 'getting-started', label: 'What getting started actually looks like' },
-                { id: 'making-right-call', label: 'Making the right call for your B2B organic growth program' },
-              ].map((item) => (
-                <li key={item.id}>
-                  <a href={`#${item.id}`} className="text-[15px] text-gray-700 hover:text-[#F26522] transition-colors">
-                    {item.label}
-                  </a>
-                </li>
-              ))}
-            </ol>
-          </div>
-        </details>
-
-        {/* ── LEAD STATS ── */}
-        <div id="decoupled-era" className="scroll-mt-24" />
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 my-10 sm:my-14">
-          {[
-            { stat: '+21.4%', label: 'Organic conversion rate uplift for B2B sites whose traffic declined in 2025-2026', source: 'Factors.ai, 2026 (100+ B2B companies)' },
-            { stat: '88%', label: 'Google AI Mode citations that do not appear in the organic top 10 results', source: 'Moz analysis of 40,000 queries, 2026' },
-            { stat: '2.4%', label: 'Conversion rate of B2B sites with strong SEO programs vs 1.5% cross-industry average', source: 'First Page Sage, 2026' },
-          ].map(({ stat, label, source }) => (
-            <div key={stat} className="border border-[#F26522]/30 bg-[#F26522]/5 p-6">
-              <p className="text-4xl font-bold text-[#F26522] mb-2 font-display">{stat}</p>
-              <p className="text-[14px] text-gray-900 leading-snug mb-1">{label}</p>
-              <p className="text-[11px] uppercase tracking-wider text-gray-500">{source}</p>
-            </div>
-          ))}
-        </div>
-
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          In B2B organic search, traffic and revenue have decoupled. The old goal of maximizing monthly page views is dead. High-performing programs focus on traffic composition—reaching the right buying committee members with specific high-intent queries rather than attracting large numbers of unqualified visitors.
-        </p>
-
-        <div className="border-l-4 border-[#F26522] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
-          <img src="/images/steve-portrait.webp" alt="Steve Martin" className="w-12 h-12 object-cover border border-white/10 shrink-0" />
-          <div>
-            <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-1 font-sans">Steve's Take</p>
-            <p className="text-[15px] italic text-white leading-relaxed font-sans">
-              "We regularly see B2B brands lose 20% of their organic traffic but gain 30% in qualified pipeline because they pruned low-intent blog posts. Stop celebrating vanity traffic metrics."
-            </p>
-          </div>
-        </div>
-
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          This is the problem a modern B2B organic traffic growth strategy solves. The strongest operators have stopped optimizing for traffic volume as the leading indicator and started optimizing for the <em>composition</em> of organic traffic — which channels, which intent, which buyer roles, which signals make it through to pipeline. This directly connects to how <a href="/insights/seo-for-b2b-lead-generation" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">SEO for B2B lead generation</a> has fundamentally changed in the AI search era.
-        </p>
-
-        {/* ── SECTION: What it means ── */}
-        <div id="what-b2b-organic-means" className="scroll-mt-24" />
-        <h2 className="text-[1.6rem] sm:text-[2rem] font-display font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">What B2B organic traffic growth actually means in 2026</h2>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Traditional organic traffic growth targeted a sessions number. The SEO team built content, the rankings improved, traffic rose, and the dashboard showed up-and-to-the-right. The implicit assumption was that traffic growth and pipeline growth were the same problem expressed at different stages of the funnel. In 2026, that assumption no longer holds.
-        </p>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Google's AI Overviews and AI Mode have compressed click-through rates on informational queries. The Moz analysis of 40,000 queries shows 88 percent of AI Mode citations don't appear in the organic top 10, which means a page can rank #1 and be functionally invisible to the AI layer where a growing share of B2B research now happens. B2B organic traffic growth in 2026 is a discipline of growing the <em>composition</em> of traffic, not just the <em>count</em>.
-        </p>
-
-        <div className="bg-gray-50 border-l-4 border-[#F26522] p-6 sm:p-8 my-10">
-          <h3 className="text-[15px] font-semibold uppercase tracking-wider text-[#F26522] mb-3">Why session-count growth alone has stopped predicting pipeline</h3>
-          <p className="text-[15px] sm:text-[16px] leading-[1.7] text-gray-700">
-            Session-count growth handles the first pass: more visitors, more chances to convert. But B2B conversion in 2026 is heavily concentrated in a small share of traffic that arrives with pre-formed intent — from brand search, from AI citations, from comparison-stage discovery. A program that doubles informational top-of-funnel traffic while leaving the high-intent traffic shape unchanged will see traffic numbers double and pipeline numbers stay flat. Volume-only organic growth is not sufficient as a B2B pipeline strategy in 2026.
-          </p>
-        </div>
-
-        {/* ── SECTION: How decoupled ── */}
-        <div id="how-decoupled" className="scroll-mt-24" />
-        <h2 className="text-[1.6rem] sm:text-[2rem] font-display font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">How traffic and pipeline decoupled in B2B</h2>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          The decoupling became impossible to ignore during 2025 and 2026. Three forces converged. First, Google's AI Overviews and AI Mode launched and matured, compressing click-through rates on informational queries. Second, B2B buyers shifted research into ChatGPT, Claude, Perplexity, and Gemini — G2's April 2026 survey placed 51 percent of B2B software buyers starting research in an AI chatbot rather than a search engine. Third, the AI engines began citing pages that weren't necessarily the highest-ranking ones on Google.
-        </p>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          The combined effect is that two B2B sites in the same category can post very different traffic profiles and very similar pipeline numbers. This is precisely why an <a href="/insights/automated-b2b-sales-pipeline-seo" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">AI-driven B2B sales pipeline SEO strategy</a> has to account for citation share across AI platforms — not just Google rankings — to accurately reflect where pipeline actually originates.
-        </p>
-
-        {/* ── SECTION: Cost ── */}
-        <div id="cost-wrong-half" className="scroll-mt-24" />
-        <h2 className="text-[1.6rem] sm:text-[2rem] font-display font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">The cost of optimizing for the wrong half of the equation</h2>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          A mid-market B2B SaaS team paying $15,000 to $25,000 per month for SEO is operating on a $180,000 to $300,000 annual program. If the program is structured around session growth as the primary KPI, the team is paying for an outcome that has stopped predicting revenue. First Page Sage's 2026 data places average organic conversion at 2.4 percent for strong B2B SEO programs and 1.5 percent for unoptimized programs.
-        </p>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Frame it concretely. A B2B site producing 50,000 monthly organic sessions at a 1.5 percent conversion rate produces 750 leads per month. The same site restructured to convert at 2.5 percent produces 1,250 leads — a 67 percent improvement from optimizing composition rather than growing traffic volume. The volume-first program would have to grow traffic from 50,000 to 165,000 monthly sessions to match what the composition-first program produces from the original 50,000.
-        </p>
-        <div className="bg-amber-50 border border-amber-200 rounded-lg p-5 my-8 text-[14px] text-amber-900 leading-relaxed">
-          <strong>Note:</strong> Conversion rate benchmarks vary by ACV, vertical, and sales motion. The figures above reflect U.S. B2B SaaS averages from 2026 industry analyses. Audit your own funnel by traffic source before assuming a benchmark applies to your specific configuration.
-        </div>
-
-        {/* ── SECTION: Real program ── */}
-        <div id="real-program-works" className="scroll-mt-24" />
-        <h2 className="text-[1.6rem] sm:text-[2rem] font-display font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">How real B2B organic traffic growth works in 2026</h2>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          A credible program starts with a traffic-composition audit, not a content calendar. The audit segments existing organic traffic by source (Google search, AI engines individually, direct, referral, branded vs non-branded), by intent type, and by buyer role engagement. The goal is to map the actual revenue topology of the organic channel — not the aggregate session count, but the underlying signal of which content, from which surface, reaching which role, actually produces revenue.
-        </p>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Content production prioritizes the surfaces and intent types the audit identified as revenue-producing. Content for informational top-of-funnel queries gets reduced or eliminated when the audit shows it doesn't connect to pipeline. The same composition-first thinking applies directly to <a href="/insights/automated-lead-generation-seo" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">automated lead generation SEO</a> — the traffic isn't the goal; the shape of the traffic determines whether the lead gen program has anything to work with.
-        </p>
-
-        <div className="bg-gray-50 border-l-4 border-[#F26522] p-6 sm:p-8 my-10">
-          <h3 className="text-[15px] font-semibold uppercase tracking-wider text-[#F26522] mb-3">How the right organic traffic shape powers B2B lead generation</h3>
-          <p className="text-[15px] sm:text-[16px] leading-[1.7] text-gray-700">
-            A program producing 50,000 monthly sessions evenly split across informational and commercial-intent pages converts very differently from a program producing the same sessions but skewed 70/30 toward commercial-intent. The second site produces materially more leads and pipeline despite identical traffic. A site that holds traffic flat but shifts composition toward 60 percent branded and commercial intent will see lead generation rise meaningfully on the same total session count.
-          </p>
-        </div>
-
-        {/* ── SECTION: Vanity engine ── */}
-        <div id="vanity-engine" className="scroll-mt-24" />
-        <h2 className="text-[1.6rem] sm:text-[2rem] font-display font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">What separates a real B2B organic traffic growth program from a traffic-vanity engine</h2>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Start with what's being measured at the report level. If the program owner's top KPI is organic sessions, keyword rankings, or domain authority, the program is operating against the 2019 model. Real B2B organic growth programs in 2026 measure traffic composition, pipeline contribution by content cluster, conversion rate by source segment, and the trajectory of high-intent traffic specifically.
-        </p>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Ask whether the program reports comfortably on declining traffic when conversion and pipeline are rising. Ask how AI search visibility is tracked — citation share across ChatGPT, Claude, Perplexity, and Gemini. Ask whether the program has actively reduced content production in any category in the last 12 months, because an operator's willingness to kill underperforming content is often a stronger signal of program discipline than their willingness to produce new content. Understanding <a href="/insights/outbound-seo-prospecting" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">how intent signals feed outbound SEO prospecting</a> is one mark of a program operating against modern B2B reality rather than legacy dashboards.
-        </p>
-
-        {/* ── SECTION: Gobiya ── */}
-        <div id="positioned-differently" className="scroll-mt-24" />
-        <h2 className="text-[1.6rem] sm:text-[2rem] font-display font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">Why Gobiya is positioned differently for B2B operators</h2>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Gobiya's entire methodology is built around composition-first organic growth rather than session-volume metrics. The team operates from Los Angeles with a focused client roster — which means the composition audit is not a checklist item, it's the strategic foundation the engagement is built on. Every content decision is mapped against a documented hypothesis about which surfaces produce revenue and which don't. Reporting covers traffic by source, conversion by source, and pipeline contribution by content cluster — not a session-count graph.
-        </p>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          For operators evaluating a <a href="/insights/best-seo-agency-for-b2b-brands" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">B2B SEO agency partner</a>, the differentiator isn't claim — it's measurement model. An agency comfortable reporting flat or declining traffic alongside rising pipeline is operating against the modern decoupled reality. An agency that hedges by reframing to "leading indicators" when pipeline lags traffic isn't.
-        </p>
-
-        {/* ── SECTION: Who benefits ── */}
-        <div id="clearest-return" className="scroll-mt-24" />
-        <h2 className="text-[1.6rem] sm:text-[2rem] font-display font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">Which B2B operators get the clearest return from composition-first organic growth</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 my-8">
-          {[
-            { role: 'Mid-market B2B SaaS', detail: 'Most to gain — cost of producing additional traffic at the volume layer has risen sharply while conversion lift from composition optimization remains untapped.' },
-            { role: 'Enterprise B2B', detail: 'Large existing content libraries: opportunity to restructure for AI citation eligibility at lower cost than new production. But the audit is non-negotiable.' },
-            { role: 'B2B Services & Consulting', detail: 'Face decoupling acutely — their categories reward credibility signals (earned media, named-author authority) that never showed up in traditional organic reports.' },
-            { role: 'Vertical SaaS & Niche Leaders', detail: 'Composition-first lets a smaller-traffic site dominate AI citation share in a focused vertical without competing on aggregate volume against horizontal competitors.' },
-          ].map(({ role, detail }) => (
-            <div key={role} className="border border-gray-200 p-5 sm:p-6">
-              <p className="text-[13px] uppercase tracking-wider font-semibold text-[#F26522] mb-2">{role}</p>
-              <p className="text-[14px] text-gray-700 leading-relaxed">{detail}</p>
-            </div>
-          ))}
-        </div>
-
-        {/* ── SECTION: Getting started ── */}
-        <div id="getting-started" className="scroll-mt-24" />
-        <h2 className="text-[1.6rem] sm:text-[2rem] font-display font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">What getting started with B2B organic traffic growth actually looks like</h2>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          A credible engagement starts with a composition audit, not a traffic projection. The audit segments existing organic traffic by source, intent, and pipeline contribution. It maps which traffic shapes correlate with closed-won opportunities and which produce no measurable pipeline impact. It runs the brand through ChatGPT, Claude, Perplexity, and Gemini to baseline current AI citation share. It identifies clusters over-producing traffic relative to pipeline and clusters under-producing traffic relative to their pipeline potential.
-        </p>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          The output is a hypothesis-driven roadmap — not "we will grow traffic by X percent" but "we will shift composition toward Y, accept a Z percent decline in aggregate sessions if necessary, and target a W percent increase in pipeline contribution over the next 12 months." The same rigour that makes a <a href="/insights/b2b-seo-agency-los-angeles" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">local B2B SEO agency partnership in Los Angeles</a> valuable applies here: proximity to the business means the composition audit reflects actual sales cycle intelligence, not templated benchmarks, establishing the same disciplined <a href="/insights/los-angeles-local-seo-explained" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">operational cadence</a> required to compete in saturated local markets.
-        </p>
-
-        {/* ── SECTION: Making the call ── */}
-        <div id="making-right-call" className="scroll-mt-24" />
-        <h2 className="text-[1.6rem] sm:text-[2rem] font-display font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">Making the right call for your B2B organic growth program</h2>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          B2B operators still optimizing for session growth are paying full SEO program cost for an outcome that has stopped predicting pipeline, while their AI-aware competitors quietly shift composition toward AI citations, branded traffic, and commercial-intent surfaces — sometimes at lower total traffic counts than two years ago, with higher pipeline output than they've ever produced.
-        </p>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Two decisions matter most. First: whether your current organic program tracks traffic composition, AI citation share, and pipeline contribution by source, or only aggregate sessions and rankings. Second: whether the team running the program is comfortable reporting declining or flat traffic when conversion and pipeline are rising.
-        </p>
-
-        {/* ── CTA ── */}
-        <div className="bg-gray-900 rounded-xl p-8 sm:p-10 my-14">
-          <p className="text-[11px] uppercase tracking-wider font-semibold text-[#F26522] mb-3">Get A Composition Audit</p>
-          <h3 className="text-white text-[1.4rem] sm:text-[1.7rem] font-display font-medium leading-[1.2] mb-4">Find out what your organic traffic is actually producing for pipeline.</h3>
-          <p className="text-gray-400 text-[15px] leading-relaxed mb-6">Walk through your current organic traffic and the pipeline it's actually producing — before another quarter of growth gets reported on a metric that has stopped predicting the outcome your program is being paid to produce.</p>
-          <a href="/book" className="inline-flex items-center gap-3 bg-[#F26522] hover:bg-[#e05a1a] text-white pl-6 pr-2 py-2.5 transition-colors duration-300 font-medium text-[14px]">
-            Request a composition audit
-            <div className="w-7 h-7 bg-white flex items-center justify-center">
-              <svg className="w-3.5 h-3.5 text-[#F26522]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"/></svg>
-            </div>
-          </a>
-        </div>
-      </>
-    ),
-  },
-
-  'local-seo-los-angeles': {
-    slug: 'local-seo-los-angeles',
-    title: 'Local SEO for Los Angeles Businesses: How the 2026 Algorithm and AI Layer Determine Who Gets Found',
+  'local-seo': {
+    slug: 'local-seo',
+    title: 'Local SEO: How the 2026 Algorithm and AI Layer Determine Who Gets Found',
     category: 'Local SEO',
     readTime: '13 min read',
     date: 'May 26, 2026',
     image: '/images/article-local-seo-los-angeles.webp',
-    heroAlt: 'Aerial night view of Los Angeles cityscape with glowing orange data network lines connecting business districts',
-    metaDescription: 'How Google\'s 2026 local search algorithm — and the AI layer now sitting on top of it — determines whether LA customers find your business or your competitor\'s, and what local LA operators should actually be doing about it.',
+    heroAlt: 'Aerial night view of cityscape with glowing orange data network lines connecting business districts',
+    metaDescription: 'How Google\'s 2026 local search algorithm — and the AI layer now sitting on top of it — determines whether customers find your business or your competitor\'s, and what operators should actually be doing about it.',
     content: (
       <>
         {/* ── TABLE OF CONTENTS ── */}
@@ -4267,16 +3779,16 @@ const ARTICLES: Record<string, ArticleData> = {
           <div className="mt-4 pt-4 border-t border-gray-200">
             <ol className="list-decimal list-inside flex flex-col gap-2.5">
               {[
-                { id: 'la-local-search-2026', label: 'LA Local Search — 2026 update' },
-                { id: 'what-local-seo-does', label: 'What local SEO for LA businesses actually does in 2026' },
-                { id: 'algorithm-updates', label: 'How the 2026 algorithm updates reshaped LA local SEO' },
-                { id: 'cost-of-invisibility', label: 'The cost of being invisible in LA\'s saturated local market' },
-                { id: 'how-it-works', label: 'How local SEO for LA businesses actually works in 2026' },
-                { id: 'real-vs-fake', label: 'What separates a real LA local SEO program from a listing service' },
-                { id: 'positioned-differently', label: 'Why Gobiya is positioned differently for LA local businesses' },
-                { id: 'clearest-return', label: 'Which LA businesses get the clearest return' },
+                { id: 'local-search-2026', label: 'Local Search — 2026 update' },
+                { id: 'what-local-seo-does', label: 'What local SEO actually does in 2026' },
+                { id: 'algorithm-updates', label: 'How the 2026 algorithm updates reshaped local SEO' },
+                { id: 'cost-of-invisibility', label: 'The cost of being invisible in saturated local markets' },
+                { id: 'how-it-works', label: 'How local SEO actually works in 2026' },
+                { id: 'real-vs-fake', label: 'What separates a real local SEO program from a listing service' },
+                { id: 'positioned-differently', label: 'Why Gobiya is positioned differently for local businesses' },
+                { id: 'clearest-return', label: 'Which businesses get the clearest return' },
                 { id: 'getting-started', label: 'What getting started actually looks like' },
-                { id: 'making-right-call', label: 'Making the right call for your LA local search visibility' },
+                { id: 'making-right-call', label: 'Making the right call for your local search visibility' },
               ].map((item) => (
                 <li key={item.id}>
                   <a href={`#${item.id}`} className="text-[15px] text-gray-700 hover:text-[#F26522] transition-colors">
@@ -4289,12 +3801,12 @@ const ARTICLES: Record<string, ArticleData> = {
         </details>
 
         {/* ── LEAD STATS ── */}
-        <div id="la-local-search-2026" className="scroll-mt-24" />
+        <div id="local-search-2026" className="scroll-mt-24" />
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 my-10 sm:my-14">
           {[
             { stat: '46%', label: 'Share of all Google searches that now carry local intent', source: 'Whitespark Local Search Ranking Factors, 2026' },
-            { stat: '32%', label: 'Share of local pack ranking weight assigned to Google Business Profile signals — the single largest factor an LA business can directly control', source: 'Whitespark / BrightLocal, 2026' },
-            { stat: '1.2% vs 35.9%', label: 'Rate at which ChatGPT recommends local business locations vs. their visibility in Google\'s 3-Pack — the AI-local visibility gap most LA businesses haven\'t measured', source: 'SOCi 2026 Local Visibility Index' },
+            { stat: '32%', label: 'Share of local pack ranking weight assigned to Google Business Profile signals — the single largest factor a business can directly control', source: 'Whitespark / BrightLocal, 2026' },
+            { stat: '1.2% vs 35.9%', label: 'Rate at which ChatGPT recommends local business locations vs. their visibility in Google\'s 3-Pack — the AI-local visibility gap most businesses haven\'t measured', source: 'SOCi 2026 Local Visibility Index' },
           ].map(({ stat, label, source }) => (
             <div key={stat} className="border border-[#F26522]/30 bg-[#F26522]/5 p-6">
               <p className="text-4xl font-bold text-[#F26522] mb-2 font-display">{stat}</p>
@@ -4305,7 +3817,7 @@ const ARTICLES: Record<string, ArticleData> = {
         </div>
 
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Winning Los Angeles local SEO requires optimizing across multiple surfaces. With Google's March 2026 core update pushing AI Overviews into over two-thirds of local searches, standard business profile optimization is no longer enough. Your business must establish presence in the new AI-recommendation layer where models query local business entity clusters.
+          Winning local SEO requires optimizing across multiple surfaces. With Google's March 2026 core update pushing AI Overviews into over two-thirds of local searches, standard business profile optimization is no longer enough. Your business must establish presence in the new AI-recommendation layer where models query local business entity clusters.
         </p>
 
         <div className="border-l-4 border-[#F26522] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
@@ -4313,47 +3825,47 @@ const ARTICLES: Record<string, ArticleData> = {
           <div>
             <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-1 font-sans">Steve's Take</p>
             <p className="text-[15px] italic text-white leading-relaxed font-sans">
-              "LA is too competitive to rely on basic Google profile setups. You need localized schema markup, review velocity past the 3-Pack threshold, and geo-targeted service subdirectories to stand out."
+              "Competitive markets are too tough to rely on basic Google profile setups. You need localized schema markup, review velocity past the 3-Pack threshold, and geo-targeted service subdirectories to stand out."
             </p>
           </div>
         </div>
 
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          This multi-surface complexity is exactly why partnering with a <a href="/insights/b2b-seo-agency-los-angeles" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">B2B SEO agency rooted in Los Angeles</a> matters — proximity to the city's specific neighborhood dynamics, publication ecosystem, and customer behavior patterns shapes every tactic in a real local SEO program.
+          This multi-surface complexity is exactly why partnering with a B2B SEO agency matters — understanding the specific neighborhood dynamics, publication ecosystem, and customer behavior patterns shapes every tactic in a real local SEO program.
         </p>
 
         {/* ── SECTION: What local SEO does ── */}
         <div id="what-local-seo-does" className="scroll-mt-24" />
-        <h2 className="text-[1.6rem] sm:text-[2rem] font-display font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">What local SEO for Los Angeles businesses actually does in 2026</h2>
+        <h2 className="text-[1.6rem] sm:text-[2rem] font-display font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">What local SEO actually does in 2026</h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Local SEO for an LA business in 2026 is fundamentally a multi-surface optimization discipline. The system optimizes the Google Business Profile against every field Google uses for ranking — primary category accuracy, profile completeness, photo volume and recency, post activity, attributes, services, products. It builds and maintains review velocity (the single ranking factor that has risen most in importance through 2025-2026). It ensures NAP (Name, Address, Phone) consistency across the GBP, website, and every directory citation. It produces on-page content with proper LocalBusiness schema, neighborhood-specific landing pages, and content that reflects how LA residents actually search.
+          Local SEO in 2026 is fundamentally a multi-surface optimization discipline. The system optimizes the Google Business Profile against every field Google uses for ranking — primary category accuracy, profile completeness, photo volume and recency, post activity, attributes, services, products. It builds and maintains review velocity (the single ranking factor that has risen most in importance through 2025-2026). It ensures NAP (Name, Address, Phone) consistency across the GBP, website, and every directory citation. It produces on-page content with proper LocalBusiness schema, neighborhood-specific landing pages, and content that reflects how local consumers actually search.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          And it engineers the business's presence in the AI-recommendation layer — because Gemini, ChatGPT, and Perplexity are increasingly the first stop for LA residents asking "where should I go" before they ever open Google Maps. This multi-surface architecture is the same methodology applied in <a href="/insights/b2b-organic-traffic-growth" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">B2B organic traffic growth programs</a>: optimizing for composition of visibility across surfaces, not just volume on a single platform.
+          And it engineers the business's presence in the AI-recommendation layer — because Gemini, ChatGPT, and Perplexity are increasingly the first stop for consumers asking "where should I go" before they ever open Google Maps. This multi-surface architecture is the same methodology applied in <a href="/insights/b2b-organic-traffic-growth" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">B2B organic traffic growth programs</a>: optimizing for composition of visibility across surfaces, not just volume on a single platform.
         </p>
 
         <div className="bg-gray-50 border-l-4 border-[#F26522] p-6 sm:p-8 my-10">
           <h3 className="text-[15px] font-semibold uppercase tracking-wider text-[#F26522] mb-3">Why a complete Google Business Profile alone isn't enough anymore</h3>
           <p className="text-[15px] sm:text-[16px] leading-[1.7] text-gray-700">
-            In a saturated LA market, basic GBP completeness is now table stakes — every competitor has the same baseline. The businesses winning the 3-Pack are doing the things that compound on top of completeness: review velocity, photo volume past the 250-image threshold, active GBP posting, neighborhood-level content, geo-tagged service pages, and earned mentions on "Best Of" lists and local publications. Profile completeness alone leaves the business doing the cheapest, most replicable part of local SEO and stopping where every competitor has already stopped.
+            In saturated local markets, basic GBP completeness is now table stakes — every competitor has the same baseline. The businesses winning the 3-Pack are doing the things that compound on top of completeness: review velocity, photo volume past the 250-image threshold, active GBP posting, neighborhood-level content, geo-tagged service pages, and earned mentions on major directories and local publications. Profile completeness alone leaves the business doing the cheapest, most replicable part of local SEO and stopping where every competitor has already stopped.
           </p>
         </div>
 
         {/* ── SECTION: Algorithm updates ── */}
         <div id="algorithm-updates" className="scroll-mt-24" />
-        <h2 className="text-[1.6rem] sm:text-[2rem] font-display font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">How the 2026 algorithm updates reshaped LA local SEO</h2>
+        <h2 className="text-[1.6rem] sm:text-[2rem] font-display font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">How the 2026 algorithm updates reshaped local SEO</h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
           The March 2026 Core Update pushed AI Overviews into 68 percent of local queries, meaning businesses without structured data, photo volume, and E-E-A-T signals are losing visibility on searches they used to win. Review recency has become the single most important individual ranking factor according to Whitespark's 2026 survey, overtaking review count and rating. The relevance pillar has tightened around primary category accuracy and entity recognition. And keyword stuffing in business names now triggers GBP policy enforcement suspensions.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Google has every incentive to push spam out of the organic local pack and reward businesses demonstrating actual local legitimacy. LA businesses that haven't restructured around the 2026 signal hierarchy are competing against a 2024 version of the algorithm that no longer exists. The same shift in AI-driven search behavior documented in <a href="/insights/automated-b2b-sales-pipeline-seo" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">B2B pipeline SEO research</a> applies at the local level: the surfaces producing visibility have multiplied, and the signal sets don't always overlap.
+          Google has every incentive to push spam out of the organic local pack and reward businesses demonstrating actual local legitimacy. Businesses that haven't restructured around the 2026 signal hierarchy are competing against a 2024 version of the algorithm that no longer exists. The same shift in AI-driven search behavior documented in <a href="/insights/automated-b2b-sales-pipeline-seo" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">B2B pipeline SEO research</a> applies at the local level: the surfaces producing visibility have multiplied, and the signal sets don't always overlap.
         </p>
 
         {/* ── SECTION: Cost of invisibility ── */}
         <div id="cost-of-invisibility" className="scroll-mt-24" />
-        <h2 className="text-[1.6rem] sm:text-[2rem] font-display font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">The cost of being invisible in LA's saturated local market</h2>
+        <h2 className="text-[1.6rem] sm:text-[2rem] font-display font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">The cost of being invisible in saturated local markets</h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          LA hosts one of the densest local business markets in the United States. A mid-sized LA service business that captures a top-3 local pack position for its primary category in its specific neighborhood is typically looking at 50 to 200+ additional customer contacts per month from organic local search alone. A dental practice's new patient is worth $1,500–$3,000 in lifetime value. A personal injury attorney's qualified case can be worth $50,000+. The cost of local SEO work to compete for those positions is materially smaller than the revenue value of holding them.
+          Saturated local markets host some of the densest competition. A mid-sized service business that captures a top-3 local pack position for its primary category in its target neighborhoods is typically looking at 50 to 200+ additional customer contacts per month from organic local search alone. A dental practice's new patient is worth $1,500–$3,000 in lifetime value. A personal injury attorney's qualified case can be worth $50,000+. The cost of local SEO work to compete for those positions is materially smaller than the revenue value of holding them.
         </p>
         <div className="bg-amber-50 border border-amber-200 rounded-lg p-5 my-8 text-[14px] text-amber-900 leading-relaxed">
           <strong>Note:</strong> Customer-contact and revenue value estimates vary significantly by category, neighborhood, and business model. Run your own customer-acquisition math against the value of a top-3 local pack position before making local SEO budget decisions.
@@ -4361,44 +3873,44 @@ const ARTICLES: Record<string, ArticleData> = {
 
         {/* ── SECTION: How it works ── */}
         <div id="how-it-works" className="scroll-mt-24" />
-        <h2 className="text-[1.6rem] sm:text-[2rem] font-display font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">How local SEO for LA businesses actually works in 2026</h2>
+        <h2 className="text-[1.6rem] sm:text-[2rem] font-display font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">How local SEO actually works in 2026</h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          A credible program starts with an audit of the actual local search results the business is competing in, not a generic checklist. The audit checks current rank for core service terms across multiple specific LA neighborhoods (rankings vary materially by exact location — a business ranking #2 in Silver Lake may rank #12 in Pasadena for the same query), evaluates competitor 3-Pack incumbents, reviews the GBP against the 2026 signal hierarchy, audits review velocity and rating against direct competitors, checks NAP consistency, and runs the business through Gemini, ChatGPT, and Perplexity to baseline AI-recommendation visibility.
+          A credible program starts with an audit of the actual local search results the business is competing in, not a generic checklist. The audit checks current rank for core service terms across multiple target districts (rankings vary materially by exact location — a business ranking #2 in one district may rank #12 in another for the same query), evaluates competitor 3-Pack incumbents, reviews the GBP against the 2026 signal hierarchy, audits review velocity and rating against direct competitors, checks NAP consistency, and runs the business through Gemini, ChatGPT, and Perplexity to baseline AI-recommendation visibility.
         </p>
 
         <div className="bg-gray-50 border-l-4 border-[#F26522] p-6 sm:p-8 my-10">
-          <h3 className="text-[15px] font-semibold uppercase tracking-wider text-[#F26522] mb-3">How LA business search rankings actually get earned in 2026</h3>
+          <h3 className="text-[15px] font-semibold uppercase tracking-wider text-[#F26522] mb-3">How business search rankings actually get earned in 2026</h3>
           <p className="text-[15px] sm:text-[16px] leading-[1.7] text-gray-700">
-            The proximity pillar (55% of local ranking decisions per Whitespark 2026) is largely outside a business's control. But prominence and relevance are entirely controllable — and they're where the rankings competition actually happens. Prominence is earned through review volume, velocity, response rate, third-party mentions on authoritative LA sources, and branded search volume over time. Relevance is earned through primary category accuracy, services listed, attributes, neighborhood-specific content, and keywords appearing naturally in customer reviews. An LA business systematically earning these signals over 6–12 months will out-rank a business with stronger proximity in many queries.
+            The proximity pillar (55% of local ranking decisions per Whitespark 2026) is largely outside a business's control. But prominence and relevance are entirely controllable — and they're where the rankings competition actually happens. Prominence is earned through review volume, velocity, response rate, third-party mentions on authoritative local sources, and branded search volume over time. Relevance is earned through primary category accuracy, services listed, attributes, neighborhood-specific content, and keywords appearing naturally in customer reviews. A business systematically earning these signals over 6–12 months will out-rank a business with stronger proximity in many queries.
           </p>
         </div>
 
         {/* ── SECTION: Real vs fake ── */}
         <div id="real-vs-fake" className="scroll-mt-24" />
-        <h2 className="text-[1.6rem] sm:text-[2rem] font-display font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">What separates a real LA local SEO program from a "we'll set up your Google listing" service</h2>
+        <h2 className="text-[1.6rem] sm:text-[2rem] font-display font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">What separates a real local SEO program from a "we'll set up your Google listing" service</h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Ask what the recurring monthly work actually consists of. If the answer is "we set up your Google Business Profile and submit you to directories," the provider is selling a one-time service. Real local SEO programs operate on the kind of structured <a href="/insights/los-angeles-local-seo-explained" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">operational cadence</a> that produces ranking movement — review request systems, GBP post production, photo refreshes, review response within 24–48 hours, citation audits, on-page content updates, rank tracking across multiple LA neighborhoods, and AI-layer monitoring.
+          Ask what the recurring monthly work actually consists of. If the answer is "we set up your Google Business Profile and submit you to directories," the provider is selling a one-time service. Real local SEO programs operate on the kind of structured <a href="/insights/local-seo-explained" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">operational cadence</a> that produces ranking movement — review request systems, GBP post production, photo refreshes, review response within 24–48 hours, citation audits, on-page content updates, rank tracking across multiple neighborhoods, and AI-layer monitoring.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Ask whether the provider tracks rankings from multiple specific locations within LA, not just a single citywide rank. Ask whether they have a documented review acquisition system integrated into the business's customer workflow — passive requests produce 1–2% conversion while integrated systems produce 25–40%. Ask whether they have a position on AI-layer visibility. The same questions that distinguish a real <a href="/insights/best-seo-agency-for-b2b-brands" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">B2B SEO agency from a commodity provider</a> apply equally to local SEO: does the program operate against the current algorithm, or a 2019 playbook with refreshed branding?
+          Ask whether the provider tracks rankings from multiple specific locations, not just a single citywide rank. Ask whether they have a documented review acquisition system integrated into the business's customer workflow — passive requests produce 1–2% conversion while integrated systems produce 25–40%. Ask whether they have a position on AI-layer visibility. The same questions that distinguish a real <a href="/insights/best-seo-agency-for-b2b-brands" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">B2B SEO agency from a commodity provider</a> apply equally to local SEO: does the program operate against the current algorithm, or a 2019 playbook with refreshed branding?
         </p>
 
         {/* ── SECTION: Gobiya ── */}
         <div id="positioned-differently" className="scroll-mt-24" />
-        <h2 className="text-[1.6rem] sm:text-[2rem] font-display font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">Why Gobiya is positioned differently for LA local businesses</h2>
+        <h2 className="text-[1.6rem] sm:text-[2rem] font-display font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">Why Gobiya is positioned differently for local businesses</h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Gobiya is built in Los Angeles, staffed in Los Angeles, and works in LA hours. Local SEO programs are built on a neighborhood-by-neighborhood understanding of how LA's specific geography, publication ecosystem, and customer behavior patterns shape rankings. Every engagement starts with a multi-neighborhood rank audit and a competitive GBP analysis — not a generic local SEO template.
+          Gobiya is built for high-performance delivery nationwide. Local SEO programs are built on a neighborhood-by-neighborhood understanding of how local geography, publication ecosystems, and customer behavior patterns shape rankings. Every engagement starts with a multi-neighborhood rank audit and a competitive GBP analysis — not a generic local SEO template.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          The methodology covers all five ranking pillars simultaneously: GBP optimization, review velocity engineering, NAP consistency, neighborhood-specific on-page content, and AI-layer visibility. Reporting includes rank tracking across the specific LA neighborhoods where the client's customers are searching — not a single citywide number that masks the neighborhood-level variation that determines what real customers actually see. The same <a href="/insights/seo-for-b2b-lead-generation" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">pipeline-first SEO methodology</a> applied to B2B lead generation drives local SEO programs: every signal is tracked against actual customer contacts, not abstract ranking positions.
+          The methodology covers all five ranking pillars simultaneously: GBP optimization, review velocity engineering, NAP consistency, neighborhood-specific on-page content, and AI-layer visibility. Reporting includes rank tracking across the specific target districts where the client's customers are searching — not a single citywide number that masks the neighborhood-level variation that determines what real customers actually see. The same <a href="/insights/seo-for-b2b-lead-generation" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">pipeline-first SEO methodology</a> applied to B2B lead generation drives local SEO programs: every signal is tracked against actual customer contacts, not abstract ranking positions.
         </p>
 
         {/* ── SECTION: Who benefits ── */}
         <div id="clearest-return" className="scroll-mt-24" />
-        <h2 className="text-[1.6rem] sm:text-[2rem] font-display font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">Which LA businesses get the clearest return from local SEO</h2>
+        <h2 className="text-[1.6rem] sm:text-[2rem] font-display font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">Which businesses get the clearest return from local SEO</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 my-8">
           {[
-            { role: 'Restaurants, Bars & Hospitality', detail: 'Most competitive local search environment in the city. Review velocity and earned LA-specific food publication coverage (Eater LA, LA Times Food, Infatuation LA) matter most.' },
+            { role: 'Restaurants, Bars & Hospitality', detail: 'Most competitive local search environments. Review velocity and earned local food publication coverage and review platform mentions matter most.' },
             { role: 'Service Businesses', detail: 'Plumbing, HVAC, electrical, auto repair, contractors — strong commercial-intent local search, highest single-customer revenue, most favorable ROI math.' },
             { role: 'Professional Services', detail: 'Dentists, attorneys, doctors, accountants — review quality over volume, E-E-A-T signals, AI Overview eligibility increasingly important for health and legal queries.' },
             { role: 'Retail, Fitness & Wellness', detail: 'Direction-request actions on GBP often correlate more directly with revenue than calls. Neighborhood-level visibility matters more than citywide ranking.' },
@@ -4412,28 +3924,28 @@ const ARTICLES: Record<string, ArticleData> = {
 
         {/* ── SECTION: Getting started ── */}
         <div id="getting-started" className="scroll-mt-24" />
-        <h2 className="text-[1.6rem] sm:text-[2rem] font-display font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">What getting started with local SEO for an LA business actually looks like</h2>
+        <h2 className="text-[1.6rem] sm:text-[2rem] font-display font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">What getting started with local SEO actually looks like</h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          A credible engagement starts with a local visibility audit, not a sales pitch. The audit checks current rankings across multiple specific LA neighborhoods for core service terms, baselines the GBP against the 2026 signal hierarchy, evaluates review velocity and rating against direct competitors in the relevant LA neighborhood, audits NAP consistency across major citation sources, runs the business through Gemini, ChatGPT, and Perplexity to baseline AI-recommendation visibility, and produces a hypothesis-driven roadmap tying gaps to specific customer-contact and revenue projections. For brands operating across multiple regions, this audit includes a full assessment of their <a href="/insights/multi-location-seo-website-structure" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">multi-location SEO website structure</a>.
+          A credible engagement starts with a local visibility audit, not a sales pitch. The audit checks current rankings across multiple specific target neighborhoods for core service terms, baselines the GBP against the 2026 signal hierarchy, evaluates review velocity and rating against direct competitors in the relevant target neighborhood, audits NAP consistency across major citation sources, runs the business through Gemini, ChatGPT, and Perplexity to baseline AI-recommendation visibility, and produces a hypothesis-driven roadmap tying gaps to specific customer-contact and revenue projections. For brands operating across multiple regions, this audit includes a full assessment of their <a href="/insights/multi-location-seo-website-structure" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">multi-location SEO website structure</a>.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          The LA businesses that get the most from local SEO treat it as an ongoing operational discipline — review acquisition built into customer workflow, GBP treated as a real asset, content production focused on neighborhood-specific terms, AI-layer presence monitored as actively as Google rankings. The same composition-first approach that drives <a href="/insights/automated-lead-generation-seo" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">automated lead generation SEO</a> for B2B operators applies: the surface mix that produces visibility has changed, and programs that haven't adapted are paying the cost of the old model.
+          The businesses that get the most from local SEO treat it as an ongoing operational discipline — review acquisition built into customer workflow, GBP treated as a real asset, content production focused on neighborhood-specific terms, AI-layer presence monitored as actively as Google rankings. The same composition-first approach that drives <a href="/insights/automated-lead-generation-seo" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">automated lead generation SEO</a> for B2B operators applies: the surface mix that produces visibility has changed, and programs that haven't adapted are paying the cost of the old model.
         </p>
 
         {/* ── SECTION: Making the call ── */}
         <div id="making-right-call" className="scroll-mt-24" />
-        <h2 className="text-[1.6rem] sm:text-[2rem] font-display font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">Making the right call for your LA local search visibility</h2>
+        <h2 className="text-[1.6rem] sm:text-[2rem] font-display font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">Making the right call for your local search visibility</h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          LA businesses still treating local SEO as a one-time directory submission are paying the cost of invisibility in 46 percent of LA-relevant searches every day, while their competitors quietly compound review velocity, GBP signals, and AI-layer presence into rankings that get harder to dislodge with every passing month.
+          Businesses still treating local SEO as a one-time directory submission are paying the cost of invisibility in 46 percent of local-intent searches every day, while their competitors quietly compound review velocity, GBP signals, and AI-layer presence into rankings that get harder to dislodge with every passing month.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Two decisions matter most. First: whether your current local SEO presence is genuinely competitive in your specific LA neighborhood and category, or whether you're holding rankings you haven't actually earned. Second: whether the person responsible operates against the 2026 signal hierarchy, or a 2019 directory-submission playbook with refreshed branding.
+          Two decisions matter most. First: whether your current local SEO presence is genuinely competitive in your specific neighborhood and category, or whether you're holding rankings you haven't actually earned. Second: whether the person responsible operates against the 2026 signal hierarchy, or a 2019 directory-submission playbook with refreshed branding.
         </p>
 
         {/* ── CTA ── */}
         <div className="bg-gray-900 rounded-xl p-8 sm:p-10 my-14">
           <p className="text-[11px] uppercase tracking-wider font-semibold text-[#F26522] mb-3">Get A Local Visibility Audit</p>
-          <h3 className="text-white text-[1.4rem] sm:text-[1.7rem] font-display font-medium leading-[1.2] mb-4">Find out where your LA business stands across Google's local surfaces and the AI-recommendation layer.</h3>
+          <h3 className="text-white text-[1.4rem] sm:text-[1.7rem] font-display font-medium leading-[1.2] mb-4">Find out where your business stands across Google's local surfaces and the AI-recommendation layer.</h3>
           <p className="text-gray-400 text-[15px] leading-relaxed mb-6">Walk through your current local search presence before the competitive gap widens into something expensive to close.</p>
           <a href="/book" className="inline-flex items-center gap-3 bg-[#F26522] hover:bg-[#e05a1a] text-white pl-6 pr-2 py-2.5 transition-colors duration-300 font-medium text-[14px]">
             Request a local visibility audit
@@ -4446,15 +3958,15 @@ const ARTICLES: Record<string, ArticleData> = {
     ),
   },
 
-  'los-angeles-local-seo-explained': {
-    slug: 'los-angeles-local-seo-explained',
-    title: 'Los Angeles Local SEO Explained: The Operational Cadence Required for Search Dominance',
+  'local-seo-explained': {
+    slug: 'local-seo-explained',
+    title: 'Local SEO Explained: The Operational Cadence Required for Search Dominance',
     category: 'Local SEO',
     readTime: '10 min read',
     date: 'May 27, 2026',
     image: '/images/article-los-angeles-local-seo-explained.webp',
-    heroAlt: 'Minimalist digital illustration of a city map grid with glowing orange nodes representing local SEO connections in Los Angeles',
-    metaDescription: 'The actual operational rhythm of running local SEO in LA — what the weekly cadence looks like, what produces visible ranking movement at 30 / 60 / 90 days, and why most LA businesses stall.',
+    heroAlt: 'Minimalist digital illustration of a city map grid with glowing orange nodes representing local SEO connections',
+    metaDescription: 'The actual operational rhythm of running local SEO — what the weekly cadence looks like, what produces visible ranking movement at 30 / 60 / 90 days, and why most businesses stall.',
     content: (
       <>
         {/* ── LEAD STATS ── */}
@@ -4481,16 +3993,16 @@ const ARTICLES: Record<string, ArticleData> = {
           <ul className="mt-6 space-y-3.5 text-[15px] font-medium text-gray-900 border-t border-gray-200 pt-6">
             {[
               { id: 'operational-cadence', label: 'The Operational Cadence — 2026 update' },
-              { id: 'ongoing-work', label: 'What Los Angeles local SEO actually looks like as ongoing work' },
-              { id: 'saturation', label: 'How LA\'s saturation makes cadence matter more than anywhere else' },
-              { id: 'cost-of-inconsistent', label: 'The cost of inconsistent cadence in LA' },
-              { id: 'operating-rhythm', label: 'What a real LA local SEO operating rhythm looks like' },
+              { id: 'ongoing-work', label: 'What local SEO actually looks like as ongoing work' },
+              { id: 'saturation', label: 'How market saturation makes cadence matter more than anywhere else' },
+              { id: 'cost-of-inconsistent', label: 'The cost of inconsistent cadence' },
+              { id: 'operating-rhythm', label: 'What a real local SEO operating rhythm looks like' },
               { id: 'progress-milestones', label: 'What progress actually looks like at 30 / 60 / 90 days' },
-              { id: 'real-discipline', label: 'What separates a real LA local SEO operating discipline from a "set it and forget it" service' },
-              { id: 'positioned-differently', label: 'Why Gobiya is positioned differently for LA businesses' },
-              { id: 'business-types', label: 'Which LA business types benefit most from disciplined cadence vs occasional bursts' },
-              { id: 'getting-started', label: 'What getting started with an LA local SEO operating cadence actually looks like' },
-              { id: 'making-call', label: 'Making the right call for your LA local SEO operating model' },
+              { id: 'real-discipline', label: 'What separates a real local SEO operating discipline from a "set it and forget it" service' },
+              { id: 'positioned-differently', label: 'Why Gobiya is positioned differently' },
+              { id: 'business-types', label: 'Which business types benefit most from disciplined cadence vs occasional bursts' },
+              { id: 'getting-started', label: 'What getting started with a local SEO operating cadence actually looks like' },
+              { id: 'making-call', label: 'Making the right call for your local SEO operating model' },
             ].map(({ id, label }) => (
               <li key={id} className="flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#F26522] shrink-0" />
@@ -4501,7 +4013,7 @@ const ARTICLES: Record<string, ArticleData> = {
         </details>
 
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          In LA local search, strategy is cheap. Operational consistency is expensive. What separates the businesses dominating Google's local 3-Pack from those that fall behind is not a secret tactic, but a weekly operating cadence that signals constant local relevance.
+          In local search, strategy is cheap. Operational consistency is expensive. What separates the businesses dominating Google's local 3-Pack from those that fall behind is not a secret tactic, but a weekly operating cadence that signals constant local relevance.
         </p>
 
         <div className="border-l-4 border-[#F26522] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
@@ -4515,10 +4027,10 @@ const ARTICLES: Record<string, ArticleData> = {
         </div>
 
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          This is the problem most LA local SEO programs actually fail at. Not strategy. Cadence. The strongest LA operators have built local SEO into the operating rhythm of the business itself — review acquisition baked into customer workflow, GBP optimization handled on a recurring weekly schedule, neighborhood content produced against a content calendar rather than ad-hoc, AI-layer visibility monitored monthly. Most LA businesses don't realize how much consistency-driven their local rankings are until they go quiet for six to eight weeks and watch their 3-Pack position slip to a competitor who didn't.
+          This is the problem most local SEO programs actually fail at. Not strategy. Cadence. The strongest operators have built local SEO into the operating rhythm of the business itself — review acquisition baked into customer workflow, GBP optimization handled on a recurring weekly schedule, neighborhood content produced against a content calendar rather than ad-hoc, AI-layer visibility monitored monthly. Most businesses don't realize how much consistency-driven their local rankings are until they go quiet for six to eight weeks and watch their 3-Pack position slip to a competitor who didn't.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          This article covers what running Los Angeles local SEO operationally in 2026 actually looks like, what the recurring weekly and monthly workflows are, what kind of progress to expect at the 30-, 60-, and 90-day marks, and what separates a real operating cadence from a one-time setup that drifts.
+          This article covers what running local SEO operationally in 2026 actually looks like, what the recurring weekly and monthly workflows are, what kind of progress to expect at the 30-, 60-, and 90-day marks, and what separates a real operating cadence from a one-time setup that drifts.
         </p>
 
         {/* ── SECTION: Operational Cadence ── */}
@@ -4530,53 +4042,53 @@ const ARTICLES: Record<string, ArticleData> = {
 
         {/* ── SECTION: Ongoing Work ── */}
         <div id="ongoing-work" className="scroll-mt-24" />
-        <h2 className="text-[1.6rem] sm:text-[2rem] font-display font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">What Los Angeles local SEO actually looks like as ongoing work</h2>
+        <h2 className="text-[1.6rem] sm:text-[2rem] font-display font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">What local SEO actually looks like as ongoing work</h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Most LA business owners imagine local SEO as a project — something you do once, get set up, and then leave alone while it produces results. That model occasionally works for businesses in low-competition rural categories. It does not work in LA. LA's local search environment is too saturated and too actively contested for any business in a competitive category to set up and leave alone. The businesses that hold 3-Pack positions in LA in 2026 are the ones doing the recurring work that compounds — and the businesses that lose their positions are usually not losing them to a better strategy. They're losing them to a competitor who kept showing up week after week.
+          Most business owners imagine local SEO as a project — something you do once, get set up, and then leave alone while it produces results. That model occasionally works for businesses in low-competition rural categories. It does not work in competitive regions. The local search environment is too saturated and too actively contested for any business in a competitive category to set up and leave alone. The businesses that hold 3-Pack positions in 2026 are the ones doing the recurring work that compounds — and the businesses that lose their positions are usually not losing them to a better strategy. They're losing them to a competitor who kept showing up week after week.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Los Angeles local SEO as ongoing work has a definable shape. At the weekly level: review acquisition prompts going out to recent customers, review responses to anything new that arrived in the last 7 days, Google Business Profile post production (one to two posts per week is the sustainable cadence), photo uploads (consistent uploads over time signal authority better than bulk uploads), and Q&A monitoring on the GBP for new customer questions. At the monthly level: GBP attribute and service review, citation audits across the major LA-relevant directories, on-page content production (typically one to two neighborhood-specific or service-specific pages per month), competitor rank tracking across multiple LA neighborhoods, and AI-layer presence audit (running the business through Gemini, ChatGPT, and Perplexity for category-defining queries to track recommendation visibility). At the quarterly level: deeper competitive analysis, content cluster review, NAP consistency audit across the long tail of citations, and a strategic review of which neighborhoods and queries the business is actually winning versus which it's still climbing.
+          Local SEO as ongoing work has a definable shape. At the weekly level: review acquisition prompts going out to recent customers, review responses to anything new that arrived in the last 7 days, Google Business Profile post production (one to two posts per week is the sustainable cadence), photo uploads (consistent uploads over time signal authority better than bulk uploads), and Q&A monitoring on the GBP for new customer questions. At the monthly level: GBP attribute and service review, citation audits across the major directories, on-page content production (typically one to two neighborhood-specific or service-specific pages per month), competitor rank tracking across multiple neighborhoods, and AI-layer presence audit (running the business through Gemini, ChatGPT, and Perplexity for category-defining queries to track recommendation visibility). At the quarterly level: deeper competitive analysis, content cluster review, NAP consistency audit across the long tail of citations, and a strategic review of which neighborhoods and queries the business is actually winning versus which it's still climbing.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          This operating shape is what the algorithm actually rewards. The 2026 Whitespark data shows that GBPs receiving more than one review per week outrank stable-velocity GBPs by 1.7 positions on average. Businesses that respond to reviews within 24 hours see 18% higher review velocity than slow responders. The compounding effect of weekly work over six to twelve months is what produces durable LA 3-Pack positions. The absence of that work is what produces the 6-to-8-week ranking drops the data documents in competitive markets.
+          This operating shape is what the algorithm actually rewards. The 2026 Whitespark data shows that GBPs receiving more than one review per week outrank stable-velocity GBPs by 1.7 positions on average. Businesses that respond to reviews within 24 hours see 18% higher review velocity than slow responders. The compounding effect of weekly work over six to twelve months is what produces durable 3-Pack positions. The absence of that work is what produces the 6-to-8-week ranking drops the data documents in competitive markets.
         </p>
 
         <div className="bg-gray-50 border-l-4 border-[#F26522] p-6 sm:p-8 my-10">
-          <h3 className="text-[15px] font-semibold uppercase tracking-wider text-[#F26522] mb-3">Why one-time setup followed by silence almost always fails in LA</h3>
+          <h3 className="text-[15px] font-semibold uppercase tracking-wider text-[#F26522] mb-3">Why one-time setup followed by silence almost always fails in competitive markets</h3>
           <p className="text-[15px] sm:text-[16px] leading-[1.7] text-gray-700">
             One-time setup handles the first pass: the business gets claimed, the profile gets filled in, basic citations get submitted. The dashboard looks better immediately. But the algorithm does not maintain rankings on the basis of a profile that was complete six months ago. It maintains rankings on the basis of ongoing signal — fresh reviews, fresh photos, fresh posts, fresh on-page content, sustained behavioral engagement. A business that goes silent after setup is sending the algorithm a signal that the business has gone dormant, and the algorithm responds by reweighting toward more-active competitors.
           </p>
           <p className="text-[15px] sm:text-[16px] leading-[1.7] text-gray-700 mt-4">
-            One-time setup is not sufficient to compete in LA's local market over any meaningful time horizon. Recurring operational cadence is the layer that maintains and compounds the ranking position. Without it, the setup work decays — sometimes within a quarter, often within two — and the business ends up paying for new setup work every twelve to eighteen months instead of paying for ongoing maintenance that compounds. Programs that report a strong initial ranking lift followed by gradual erosion over the following months are usually setup-only programs masquerading as ongoing engagements.
+            One-time setup is not sufficient to compete in a saturated local market over any meaningful time horizon. Recurring operational cadence is the layer that maintains and compounds the ranking position. Without it, the setup work decays — sometimes within a quarter, often within two — and the business ends up paying for new setup work every twelve to eighteen months instead of paying for ongoing maintenance that compounds. Programs that report a strong initial ranking lift followed by gradual erosion over the following months are usually setup-only programs masquerading as ongoing engagements.
           </p>
         </div>
 
         {/* ── SECTION: Saturation ── */}
         <div id="saturation" className="scroll-mt-24" />
-        <h2 className="text-[1.6rem] sm:text-[2rem] font-display font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">How LA's saturation makes cadence matter more than anywhere else</h2>
+        <h2 className="text-[1.6rem] sm:text-[2rem] font-display font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">How market saturation makes cadence matter more than anywhere else</h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          LA is one of the most local-business-saturated metros in the United States, and the saturation is uneven in ways that change the operational requirements. Some neighborhoods (DTLA, Hollywood, Santa Monica) have effectively unlimited competitive density in nearly every consumer category. Other neighborhoods (parts of the Valley, parts of the South Bay, parts of Long Beach) are competitive but less brutal. The operational cadence required to hold a 3-Pack position in DTLA for "Italian restaurant" is materially different from the cadence required for "Italian restaurant" in Mar Vista. Both require ongoing work. The DTLA case requires more of it, on a tighter cadence, against more aggressive competitors.
+          High-density metro areas are among the most local-business-saturated regions in the United States, and the saturation is uneven in ways that change the operational requirements. Some high-density neighborhoods have effectively unlimited competitive density in nearly every consumer category, while others are competitive but less brutal. The operational cadence required to hold a 3-Pack position in a dense commercial center is materially different from the cadence required in a quieter suburban neighborhood. Both require ongoing work, but the high-density case requires more of it, on a tighter cadence, against more aggressive competitors.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          The competitive density also means LA businesses face faster ranking decay when cadence stops. The 6-to-8-week window for ranking drops after review velocity stops is the published industry average; in highly competitive LA categories it can be tighter — sometimes 4 to 6 weeks. Competitors are actively producing the signals the algorithm rewards, and an LA business that pauses is not just stopping its own signal production — it's allowing competitors to compound while it stalls. The relative gap widens faster than the absolute gap. This is why LA local SEO works as a discipline of cadence rather than a discipline of one-time effort: the saturation environment punishes inconsistency more aggressively than less-competitive markets do.
+          The competitive density also means businesses face faster ranking decay when cadence stops. The 6-to-8-week window for ranking drops after review velocity stops is the published industry average; in highly competitive categories it can be tighter — sometimes 4 to 6 weeks. Competitors are actively producing the signals the algorithm rewards, and a business that pauses is not just stopping its own signal production — it's allowing competitors to compound while it stalls. The relative gap widens faster than the absolute gap. This is why local SEO works as a discipline of cadence rather than a discipline of one-time effort: the saturation environment punishes inconsistency more aggressively than less-competitive markets do.
         </p>
 
         {/* ── SECTION: Cost of Inconsistent Cadence ── */}
         <div id="cost-of-inconsistent" className="scroll-mt-24" />
-        <h2 className="text-[1.6rem] sm:text-[2rem] font-display font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">The cost of inconsistent cadence in LA</h2>
+        <h2 className="text-[1.6rem] sm:text-[2rem] font-display font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">The cost of inconsistent cadence</h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          A mid-sized LA business holding a 3-Pack position in a competitive category captures the lion's share of organic local clicks in its area — 47.2% to pin #1, 24.8% to pin #2, 16.4% to pin #3, with the rest distributed across the "View more" expansion that captures the remaining 11.6%. The math is brutal at every position drop. A business moving from #1 to #2 loses roughly half of its local pack click share. A business moving from #3 to #4 loses everything — pin #4 is functionally invisible to the majority of local searchers who never expand past the 3-Pack. In LA's most competitive categories, a single inconsistent quarter can move a business from #2 to #4, and rebuilding to #2 typically takes three to six months of restored cadence.
+          A mid-sized business holding a 3-Pack position in a competitive category captures the lion's share of organic local clicks in its area — 47.2% to pin #1, 24.8% to pin #2, 16.4% to pin #3, with the rest distributed across the "View more" expansion that captures the remaining 11.6%. The math is brutal at every position drop. A business moving from #1 to #2 loses roughly half of its local pack click share. A business moving from #3 to #4 loses everything — pin #4 is functionally invisible to the majority of local searchers who never expand past the 3-Pack. In the most competitive categories, a single inconsistent quarter can move a business from #2 to #4, and rebuilding to #2 typically takes three to six months of restored cadence.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Frame it concretely. An LA service business — say, a dental practice or a plumbing company — holding a #2 position in its neighborhood captures roughly 25% of local pack clicks for its core queries, which might mean 80 to 200 new customer contacts per month depending on category and density. Falling to #4 reduces that to single-digit contacts per month from the 3-Pack. The revenue impact varies by category, but for a dental practice at $2,000 average lifetime value per new patient, losing 60 to 150 new patient contacts per month for two or three quarters compounds to six- or seven-figure ARR impact. The visible cost is the local SEO retainer (or the cost of doing the work in-house). The invisible cost is the patients, plumbing calls, or restaurant covers that went to the competitor who stayed consistent while the business in question paused.
+          Frame it concretely. A service business — say, a dental practice or a plumbing company — holding a #2 position in its neighborhood captures roughly 25% of local pack clicks for its core queries, which might mean 80 to 200 new customer contacts per month depending on category and density. Falling to #4 reduces that to single-digit contacts per month from the 3-Pack. The revenue impact varies by category, but for a dental practice at $2,000 average lifetime value per new patient, losing 60 to 150 new patient contacts per month for two or three quarters compounds to six- or seven-figure ARR impact. The visible cost is the local SEO retainer (or the cost of doing the work in-house). The invisible cost is the patients, plumbing calls, or restaurant covers that went to the competitor who stayed consistent while the business in question paused.
         </p>
         <div className="bg-amber-50 border border-amber-200 rounded-lg p-5 my-8 text-[14px] text-amber-900 leading-relaxed">
-          <strong>Note:</strong> Customer-contact and revenue impact estimates vary significantly by category, neighborhood, and average customer value. The figures above reflect commonly observed ranges in LA service categories in 2026. Run your own math against your own ranking volatility and customer-acquisition value before making cadence investment decisions.
+          <strong>Note:</strong> Customer-contact and revenue impact estimates vary significantly by category, neighborhood, and average customer value. The figures above reflect commonly observed ranges in competitive service categories in 2026. Run your own math against your own ranking volatility and customer-acquisition value before making cadence investment decisions.
         </div>
 
         {/* ── SECTION: Operating Rhythm ── */}
         <div id="operating-rhythm" className="scroll-mt-24" />
-        <h2 className="text-[1.6rem] sm:text-[2rem] font-display font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">What a real LA local SEO operating rhythm looks like</h2>
+        <h2 className="text-[1.6rem] sm:text-[2rem] font-display font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">What a real local SEO operating rhythm looks like</h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
           A credible operating rhythm has specific shape at three levels of frequency.
         </p>
@@ -4584,13 +4096,13 @@ const ARTICLES: Record<string, ArticleData> = {
           <strong>Weekly work</strong> includes review request prompts going out to customers from the prior week (built into the customer workflow rather than handled manually one-by-one), review responses to anything new posted in the last seven days (with the 24-hour response threshold treated as a discipline target), one or two Google Business Profile posts produced and scheduled, two to three photos uploaded (real, current, taken at the business — not stock or repurposed marketing assets), and Q&A monitoring on the GBP. The weekly cadence is what feeds the freshness signal Google rewards. Businesses that report doing local SEO "monthly" or "quarterly" are almost always under-investing at the weekly layer where most of the algorithmic reward actually sits.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          <strong>Monthly work</strong> includes a GBP attribute and service-list review (Google frequently adds new attributes that competitors will adopt before the business does), a citation audit across the 30-50 highest-priority LA-relevant directories (NAP discrepancies suppress rankings, and Yelp, Bing Places, Apple Maps, and the major LA-specific directories all need to match), one or two new on-page content pieces (neighborhood pages, service-specific pages, or FAQ expansions), competitor rank tracking from at least 3-5 specific physical locations across the relevant LA neighborhoods (single citywide ranks hide local pack volatility that varies by exact location), and the AI-layer presence audit across Gemini, ChatGPT, and Perplexity for category-defining queries.
+          <strong>Monthly work</strong> includes a GBP attribute and service-list review (Google frequently adds new attributes that competitors will adopt before the business does), a citation audit across the 30-50 highest-priority directories (NAP discrepancies suppress rankings, and Yelp, Bing Places, Apple Maps, and the major directories all need to match), one or two new on-page content pieces (neighborhood pages, service-specific pages, or FAQ expansions), competitor rank tracking from at least 3-5 specific physical locations across the relevant target neighborhoods (single citywide ranks hide local pack volatility that varies by exact location), and the AI-layer presence audit across Gemini, ChatGPT, and Perplexity for category-defining queries.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          <strong>Quarterly work</strong> includes a deeper competitive analysis (which competitors are gaining, which are losing, why), a content cluster review (which pages are producing traffic and contacts, which are dead weight), a long-tail citation audit (the tail of smaller citations that accumulates errors over time), an earned-mention review (where the business has been mentioned in LA-relevant press, "Best Of" lists, neighborhood blogs, community sites), and a strategic review of which queries and neighborhoods the business is actually competing in and where it's making real progress versus stalling.
+          <strong>Quarterly work</strong> includes a deeper competitive analysis (which competitors are gaining, which are losing, why), a content cluster review (which pages are producing traffic and contacts, which are dead weight), a long-tail citation audit (the tail of smaller citations that accumulates errors over time), an earned-mention review (where the business has been mentioned in local press, "Best Of" lists, neighborhood blogs, community sites), and a strategic review of which queries and neighborhoods the business is actually competing in and where it's making real progress versus stalling.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          The total time investment for a single-location LA business runs roughly 8 to 15 hours per month at the weekly and monthly layer combined, plus 4 to 8 hours per quarter at the quarterly layer. That's a meaningful but defined commitment — and the businesses that hit that number consistently over twelve to twenty-four months are the ones that compound durable 3-Pack positions in LA's competitive categories.
+          The total time investment for a single-location business runs roughly 8 to 15 hours per month at the weekly and monthly layer combined, plus 4 to 8 hours per quarter at the quarterly layer. That's a meaningful but defined commitment — and the businesses that hit that number consistently over twelve to twenty-four months are the ones that compound durable 3-Pack positions in competitive categories.
         </p>
 
         {/* ── SECTION: Progress Milestones ── */}
@@ -4611,73 +4123,73 @@ const ARTICLES: Record<string, ArticleData> = {
 
         {/* ── SECTION: Real Discipline vs Setup ── */}
         <div id="real-discipline" className="scroll-mt-24" />
-        <h2 className="text-[1.6rem] sm:text-[2rem] font-display font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">What separates a real LA local SEO operating discipline from a &quot;set it and forget it&quot; service</h2>
+        <h2 className="text-[1.6rem] sm:text-[2rem] font-display font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">What separates a real local SEO operating discipline from a &quot;set it and forget it&quot; service</h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Not every provider offering Los Angeles local SEO operates against the cadence reality. The category is heavily populated with white-label setup services, one-time GBP optimization vendors, and agencies that bill monthly for work that's actually one-time-only repackaged. Selecting a partner requires the same diligence as choosing the <a href="/insights/best-seo-agency-for-b2b-brands" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">best SEO agency for B2B brands</a>: you need to look past the marketing deck and audit their actual operational rhythm.
+          Not every provider offering local SEO operates against the cadence reality. The category is heavily populated with white-label setup services, one-time GBP optimization vendors, and agencies that bill monthly for work that's actually one-time-only repackaged. Selecting a partner requires the same diligence as choosing the <a href="/insights/best-seo-agency-for-b2b-brands" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">best SEO agency for B2B brands</a>: you need to look past the marketing deck and audit their actual operational rhythm.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
           Start with what the recurring work consists of. Ask the provider — agency, freelancer, or internal team member — to describe what they will actually do in week 1 versus week 5 versus week 9 of the engagement. If the answer is essentially the same activities repeating with different framing, the cadence is real. If the answer is &quot;we did the setup in month one and now we're maintaining,&quot; the cadence is not real and the maintenance is going to look like checking on the profile occasionally rather than doing the recurring work the algorithm rewards.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Ask whether the provider has a documented review acquisition system integrated with the business's customer workflow, since passive review requests produce 1-2% conversion while integrated systems produce 25-40%, and the gap matters enormously over a year of compounding velocity. Ask whether the provider tracks rankings from multiple specific physical locations within LA, since single citywide ranks hide the neighborhood-level volatility that determines what most customers actually see.
+          Ask whether the provider has a documented review acquisition system integrated with the business's customer workflow, since passive review requests produce 1-2% conversion while integrated systems produce 25-40%, and the gap matters enormously over a year of compounding velocity. Ask whether the provider tracks rankings from multiple specific physical locations, since single citywide ranks hide the neighborhood-level volatility that determines what most customers actually see.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Ask what the provider's response time discipline is on review responses — if they don't have a target (24 hours is the algorithmic threshold), they don't have an operating discipline. Ask whether the provider has visibility into AI-layer recommendations (Gemini, ChatGPT, Perplexity) for the business's category, since that surface has emerged faster than most local SEO providers have updated their methodologies. A real LA local SEO operating discipline shows up in the calendar — what gets done every week, what gets done every month, what gets done every quarter — not in the deck. It can't be substituted with a setup project and a maintenance retainer that bills for not much actual work.
+          Ask what the provider's response time discipline is on review responses — if they don't have a target (24 hours is the algorithmic threshold), they don't have an operating discipline. Ask whether the provider has visibility into AI-layer recommendations (Gemini, ChatGPT, Perplexity) for the business's category, since that surface has emerged faster than most local SEO providers have updated their methodologies. A real local SEO operating discipline shows up in the calendar — what gets done every week, what gets done every month, what gets done every quarter — not in the deck. It can't be substituted with a setup project and a maintenance retainer that bills for not much actual work.
         </p>
 
         {/* ── SECTION: Why Gobiya is Positioned Differently ── */}
         <div id="positioned-differently" className="scroll-mt-24" />
-        <h2 className="text-[1.6rem] sm:text-[2rem] font-display font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">Why Gobiya is positioned differently for LA businesses</h2>
+        <h2 className="text-[1.6rem] sm:text-[2rem] font-display font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">Why Gobiya is positioned differently</h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Gobiya is built in Los Angeles, staffed in Los Angeles, and works in LA hours. Local SEO programs are built on a neighborhood-by-neighborhood understanding of how LA's specific geography, publication ecosystem, and customer behavior patterns shape rankings. Every engagement starts with a multi-neighborhood rank audit and a competitive GBP analysis — not a generic local SEO template.
+          Gobiya's programs are built on a neighborhood-by-neighborhood understanding of how specific geography, publication ecosystems, and customer behavior patterns shape rankings. Every engagement starts with a multi-neighborhood rank audit and a competitive GBP analysis — not a generic local SEO template.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          The methodology covers all five ranking pillars simultaneously: GBP optimization, review velocity engineering, NAP consistency, neighborhood-specific on-page content, and AI-layer visibility. Reporting includes rank tracking across the specific LA neighborhoods where the client's customers are searching — not a single citywide number that masks the neighborhood-level variation that determines what real customers actually see. The same <a href="/insights/seo-for-b2b-lead-generation" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">pipeline-first SEO methodology</a> applied to B2B lead generation drives local SEO programs: every signal is tracked against actual customer contacts, not abstract ranking positions.
+          The methodology covers all five ranking pillars simultaneously: GBP optimization, review velocity engineering, NAP consistency, neighborhood-specific on-page content, and AI-layer visibility. Reporting includes rank tracking across the specific neighborhoods where the client's customers are searching — not a single citywide number that masks the neighborhood-level variation that determines what real customers actually see. The same <a href="/insights/seo-for-b2b-lead-generation" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">pipeline-first SEO methodology</a> applied to B2B lead generation drives local SEO programs: every signal is tracked against actual customer contacts, not abstract ranking positions.
         </p>
 
         {/* ── SECTION: Business Types ── */}
         <div id="business-types" className="scroll-mt-24" />
-        <h2 className="text-[1.6rem] sm:text-[2rem] font-display font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">Which LA business types benefit most from disciplined cadence vs occasional bursts</h2>
+        <h2 className="text-[1.6rem] sm:text-[2rem] font-display font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">Which business types benefit most from disciplined cadence vs occasional bursts</h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Different LA business categories tolerate cadence interruption differently. Here's how the fit usually breaks down.
+          Different business categories tolerate cadence interruption differently. Here's how the fit usually breaks down.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          <strong>LA businesses in highly saturated categories</strong> (restaurants and bars in DTLA, Hollywood, Santa Monica; dental practices in Westside neighborhoods; personal injury attorneys; med spas) face the tightest cadence requirements because competitive density means even a 4-6 week pause produces visible ranking decay. These businesses cannot afford a cadence break and need the operating discipline built in from the start.
+          <strong>Businesses in highly saturated categories</strong> (restaurants and bars in dense metro areas; dental practices in competitive neighborhoods; personal injury attorneys; med spas) face the tightest cadence requirements because competitive density means even a 4-6 week pause produces visible ranking decay. These businesses cannot afford a cadence break and need the operating discipline built in from the start.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          <strong>LA businesses in moderately competitive categories</strong> (most home services, professional services in less-saturated neighborhoods, specialty retail) face meaningful but less brutal cadence requirements. A short cadence break — a quarter that gets interrupted by a business priority — is recoverable in these markets, though it costs months of climbing back to where the business was.
+          <strong>Businesses in moderately competitive categories</strong> (most home services, professional services in less-saturated neighborhoods, specialty retail) face meaningful but less brutal cadence requirements. A short cadence break — a quarter that gets interrupted by a business priority — is recoverable in these markets, though it costs months of climbing back to where the business was.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          <strong>LA businesses in geographically limited markets</strong> (single-neighborhood operators who don't compete with the entire city) face cadence requirements driven more by the specific local competitive set than by citywide dynamics. The operational discipline still matters but the volume of work required is lower.
+          <strong>Businesses in geographically limited markets</strong> (single-neighborhood operators who don't compete with the entire city) face cadence requirements driven more by the specific local competitive set than by citywide dynamics. The operational discipline still matters but the volume of work required is lower.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          <strong>LA multi-location businesses</strong> (chains, franchises, and regional operators) face the most operationally complex local SEO challenge in LA, because every location has its own GBP, its own review stream, its own neighborhood-specific content needs, and its own competitive set. The cadence discipline scales linearly with location count, and businesses that try to centralize all of it under one process typically underperform location-level operators who run each location's GBP individually. The specific configuration varies by business model, which is why a proper <a href="/insights/multi-location-seo-website-structure" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">multi-location SEO website structure</a> is required to prevent locations from cannibalizing each other.
+          <strong>Multi-location businesses</strong> (chains, franchises, and regional operators) face the most operationally complex local SEO challenge, because every location has its own GBP, its own review stream, its own neighborhood-specific content needs, and its own competitive set. The cadence discipline scales linearly with location count, and businesses that try to centralize all of it under one process typically underperform location-level operators who run each location's GBP individually. The specific configuration varies by business model, which is why a proper <a href="/insights/multi-location-seo-website-structure" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">multi-location SEO website structure</a> is required to prevent locations from cannibalizing each other.
         </p>
 
         {/* ── SECTION: Getting Started ── */}
         <div id="getting-started" className="scroll-mt-24" />
-        <h2 className="text-[1.6rem] sm:text-[2rem] font-display font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">What getting started with an LA local SEO operating cadence actually looks like</h2>
+        <h2 className="text-[1.6rem] sm:text-[2rem] font-display font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">What getting started with a local SEO operating cadence actually looks like</h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          A credible engagement starts with a cadence audit and a documented operating plan, not a sales pitch. The audit checks what work is currently being done — by whom, on what schedule, against what targets — and identifies the gaps between current practice and the 2026 cadence standard. It maps the customer workflow to identify where review acquisition can be integrated, since passive review requests are the single biggest cadence failure most LA businesses have. It establishes the weekly/monthly/quarterly schedule that will run for the next 90 days, with named responsibilities and concrete deliverables at each cadence layer. It baselines current ranking position from multiple specific LA locations so progress can be measured against the actual starting point rather than vague impressions.
+          A credible engagement starts with a cadence audit and a documented operating plan, not a sales pitch. The audit checks what work is currently being done — by whom, on what schedule, against what targets — and identifies the gaps between current practice and the 2026 cadence standard. It maps the customer workflow to identify where review acquisition can be integrated, since passive review requests are the single biggest cadence failure most businesses have. It establishes the weekly/monthly/quarterly schedule that will run for the next 90 days, with named responsibilities and concrete deliverables at each cadence layer. It baselines current ranking position from multiple specific locations so progress can be measured against the actual starting point rather than vague impressions.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          The LA businesses that get the most from Los Angeles local SEO are the ones that approach it as an operating discipline embedded in the business — review requests baked into customer workflow, GBP work handled on a recurring schedule by a named person or team, content production calendared rather than ad-hoc, AI-layer visibility monitored monthly. The question of "should we do local SEO" is settled. The question of "are we doing it on the cadence the algorithm actually rewards" is the question most LA businesses are quietly answering with no.
+          The businesses that get the most from local SEO are the ones that approach it as an operating discipline embedded in the business — review requests baked into customer workflow, GBP work handled on a recurring schedule by a named person or team, content production calendared rather than ad-hoc, AI-layer visibility monitored monthly. The question of "should we do local SEO" is settled. The question of "are we doing it on the cadence the algorithm actually rewards" is the question most businesses are quietly answering with no.
         </p>
 
         {/* ── SECTION: Making Call ── */}
         <div id="making-call" className="scroll-mt-24" />
-        <h2 className="text-[1.6rem] sm:text-[2rem] font-display font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">Making the right call for your LA local SEO operating model</h2>
+        <h2 className="text-[1.6rem] sm:text-[2rem] font-display font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">Making the right call for your local SEO operating model</h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          LA businesses still running local SEO as a one-time setup followed by silence are paying the cost of 6-8 week ranking decay every time they pause, while competitors with disciplined weekly cadence compound positions that get harder to dislodge every month. The shift to a real operating cadence isn't about doing more work for its own sake. It's about operating local SEO as the recurring discipline the 2026 algorithm — and LA's competitive saturation — actually requires.
+          Businesses still running local SEO as a one-time setup followed by silence are paying the cost of 6-8 week ranking decay every time they pause, while competitors with disciplined weekly cadence compound positions that get harder to dislodge every month. The shift to a real operating cadence isn't about doing more work for its own sake. It's about operating local SEO as the recurring discipline the 2026 algorithm — and local competitive saturation — actually requires.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Two decisions matter most. First: whether your current local SEO work has a real weekly and monthly cadence with named responsibilities and tracked outputs, or whether it operates as a setup project with informal maintenance that drifts whenever business priorities pull attention away. Second: whether the person or provider responsible for the work understands that LA local SEO is a discipline of consistency rather than a discipline of bursts, and operates against that reality with the calendar to prove it.
+          Two decisions matter most. First: whether your current local SEO work has a real weekly and monthly cadence with named responsibilities and tracked outputs, or whether it operates as a setup project with informal maintenance that drifts whenever business priorities pull attention away. Second: whether the person or provider responsible for the work understands that local SEO is a discipline of consistency rather than a discipline of bursts, and operates against that reality with the calendar to prove it.
         </p>
 
         {/* ── CTA ── */}
         <div className="bg-gray-900 rounded-xl p-8 sm:p-10 my-14">
           <p className="text-[11px] uppercase tracking-wider font-semibold text-[#F26522] mb-3">Get A Local Visibility Audit</p>
-          <h3 className="text-white text-[1.4rem] sm:text-[1.7rem] font-display font-medium leading-[1.2] mb-4">Find out where your LA business stands across Google's local surfaces and the AI-recommendation layer.</h3>
+          <h3 className="text-white text-[1.4rem] sm:text-[1.7rem] font-display font-medium leading-[1.2] mb-4">Find out where your business stands across Google's local surfaces and the AI-recommendation layer.</h3>
           <p className="text-gray-400 text-[15px] leading-relaxed mb-6">Walk through your current local search presence before the competitive gap widens into something expensive to close.</p>
           <a href="/book" className="inline-flex items-center gap-3 bg-[#F26522] hover:bg-[#e05a1a] text-white pl-6 pr-2 py-2.5 transition-colors duration-300 font-medium text-[14px]">
             Request an operating-cadence audit
@@ -4775,7 +4287,7 @@ const ARTICLES: Record<string, ArticleData> = {
         <div id="what-it-means" className="scroll-mt-24" />
         <h2 className="text-[1.6rem] sm:text-[2rem] font-display font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">What multi-location SEO website structure actually means</h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Multi-location SEO website structure is fundamentally about giving each physical location enough independent identity in the website's architecture for Google to treat it as a distinct local entity. Single-location websites have one job: rank the business for its core terms in its city. Multi-location websites have a more complex job: rank each location independently for its own terms in its own city, while presenting the brand coherently to the customer who knows the chain by name and to Google as a unified domain. Those two goals — local independence and brand coherence — are the tension every multi-location architecture has to resolve. Finding the right balance is covered in detail in our guide on <a href="/insights/local-seo-los-angeles" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">local SEO for Los Angeles businesses</a>.
+          Multi-location SEO website structure is fundamentally about giving each physical location enough independent identity in the website's architecture for Google to treat it as a distinct local entity. Single-location websites have one job: rank the business for its core terms in its city. Multi-location websites have a more complex job: rank each location independently for its own terms in its own city, while presenting the brand coherently to the customer who knows the chain by name and to Google as a unified domain. Those two goals — local independence and brand coherence — are the tension every multi-location architecture has to resolve. Finding the right balance is covered in detail in our guide on <a href="/insights/local-seo" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">local SEO strategies</a>.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
           The 2026 standard for multi-location SEO website structure has converged around a few specific architectural principles. Each real location gets its own dedicated landing page on the website (typically at /locations/[city-name] or /[city-name]/[service] URL structures). Each location page has a 1:1 relationship with a verified Google Business Profile for that specific location. Each location page contains substantively unique content — not boilerplate with the city name swapped in, but actual content about the actual location, its actual services, its actual hours, its actual team, its actual neighborhood. Each location page is linked from a parent "Locations" hub page that gives both users and crawlers a clean navigation path to every location. The URL structure follows a consistent hierarchical pattern across the entire site. Internal linking flows from the parent hub to individual locations and from related content (service pages, blog posts about regional topics) to the specific locations they pertain to. Breadcrumb navigation follows the structure Home &gt; Locations &gt; [State/Region] &gt; [City] to provide an additional layer of geographic signal to crawlers.
@@ -4798,7 +4310,7 @@ const ARTICLES: Record<string, ArticleData> = {
         <div id="downstream-ceiling" className="scroll-mt-24" />
         <h2 className="text-[1.6rem] sm:text-[2rem] font-display font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">How architectural decisions made at site-build time determine the downstream ceiling</h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          A multi-location operator's website architecture sets the ceiling for every downstream local SEO effort. Get the architecture right and ongoing local SEO work compounds across all locations. Get the architecture wrong and ongoing work runs into a structural wall that no amount of GBP optimization, review acquisition, or content production can overcome — meaning you lose the benefits of a disciplined <a href="/insights/los-angeles-local-seo-explained" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">local SEO operational cadence</a>. The asymmetry matters because architectural fixes are expensive (often requiring a partial site rebuild) while ongoing local SEO work is cheaper and more flexible — meaning operators frequently spend years adding more local SEO work to a fundamentally broken architecture rather than fixing the architecture itself.
+          A multi-location operator's website architecture sets the ceiling for every downstream local SEO effort. Get the architecture right and ongoing local SEO work compounds across all locations. Get the architecture wrong and ongoing work runs into a structural wall that no amount of GBP optimization, review acquisition, or content production can overcome — meaning you lose the benefits of a disciplined <a href="/insights/local-seo-explained" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">local SEO operational cadence</a>. The asymmetry matters because architectural fixes are expensive (often requiring a partial site rebuild) while ongoing local SEO work is cheaper and more flexible — meaning operators frequently spend years adding more local SEO work to a fundamentally broken architecture rather than fixing the architecture itself.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
           The most common architectural failure is the <strong>single-page locations directory</strong>. The operator creates one "Our Locations" page with a list of addresses, phone numbers, and maybe small descriptions of each location, and treats that as their multi-location infrastructure. This produces precisely zero independent location authority. Google has nothing to rank for any specific city other than the brand homepage, which ranks where the brand's overall signal is strongest. Every other location is invisible to local search in its own city. The fix is dedicated location pages — but if the site is built on a CMS that makes adding new pages difficult, or if the directory page is hard-wired into the navigation, the fix becomes a meaningful technical project rather than a content update.
@@ -5126,7 +4638,7 @@ const ARTICLES: Record<string, ArticleData> = {
         <div id="why-cross-city-matters-more" className="scroll-mt-24" />
         <h2 className="text-[1.6rem] sm:text-[2rem] font-display font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">Why the single-domain decision matters more for cross-city businesses specifically</h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          For a business with several locations in one metro — five coffee shops across Los Angeles, say — the authority-consolidation benefit of a single domain is real but less decisive, because the locations share a metro-level market and Google's proximity signals do much of the work of distinguishing them. The full picture of <a href="/insights/local-seo-los-angeles" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">how LA's local algorithm weights proximity, prominence, and relevance</a> makes clear why single-metro operators have some geographic shortcut available to them.
+          For a business with several locations in one metro — five coffee shops across a single metro area, say — the authority-consolidation benefit of a single domain is real but less decisive, because the locations share a metro-level market and Google's proximity signals do much of the work of distinguishing them. The full picture of <a href="/insights/local-seo" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">how the local algorithm weights proximity, prominence, and relevance</a> makes clear why single-metro operators have some geographic shortcut available to them.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
           For a business with locations in genuinely different cities — Chicago, Denver, Seattle, Austin — the single-domain decision is more consequential, because each city is a separate market with a separate competitive set, and the business needs each city's pages to rank independently in that city's local results against that city's competitors. The consolidated authority of a single domain is what gives each city's pages the authority foundation to compete in their respective markets. A business that fragments authority across subdomains or separate domains forces each city to compete in its market with only the authority that city has independently earned — which, for newer cities, is close to none. This is why cross-city businesses pay a steeper price for the wrong structural decision than single-metro businesses do.
@@ -5148,7 +4660,7 @@ const ARTICLES: Record<string, ArticleData> = {
           <strong>State or regional pages</strong> are optional and depend on scale. A business in 4 cities probably doesn't need state-level pages — the hub can link directly to city pages. A business in 40 cities across 12 states benefits from state-level pages that organize the structure, provide a layer of geographic relevance, and create a cleaner crawl path.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          <strong>The one-city-multiple-locations problem</strong> is a specific complication of the hierarchy. When a business has several locations in a single city — three urgent care clinics in Denver, say — the structure needs to distinguish them without cannibalizing. The standard approach is a city-level page that serves as a hub for that city and ranks for city-level queries, with individual location pages beneath it, each mapped 1:1 to its own Google Business Profile. The same <a href="/insights/los-angeles-local-seo-explained" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">1:1 GBP-to-page mapping discipline</a> that defines a properly-architected local presence applies here: each location page contains genuinely location-specific content — the specific address, neighborhood, hours, and staff — that gives Google a distinct local entity to rank.
+          <strong>The one-city-multiple-locations problem</strong> is a specific complication of the hierarchy. When a business has several locations in a single city — three urgent care clinics in Denver, say — the structure needs to distinguish them without cannibalizing. The standard approach is a city-level page that serves as a hub for that city and ranks for city-level queries, with individual location pages beneath it, each mapped 1:1 to its own Google Business Profile. The same <a href="/insights/local-seo-explained" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">1:1 GBP-to-page mapping discipline</a> that defines a properly-architected local presence applies here: each location page contains genuinely location-specific content — the specific address, neighborhood, hours, and staff — that gives Google a distinct local entity to rank.
         </p>
 
         {/* ── SECTION 5 ── */}
@@ -5247,7 +4759,7 @@ const ARTICLES: Record<string, ArticleData> = {
           A credible engagement starts with a structural audit and decision framework, not a redesign mockup. The audit evaluates the current structure (if one exists), models the authority-consolidation implications of the current vs recommended structure, maps the correct state-city-location hierarchy for the business's specific city footprint, identifies where physical-location and service-area cities need different treatment, and produces a build plan (for new sites) or a migration plan (for existing broken structures) with explicit redirect strategy and ranking-volatility expectations.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          For a business getting this right at launch, the work is straightforward — establish the single domain, build the hierarchy, set up the hub, and ensure per-city content differentiation from day one. For a business remediating a broken structure, the work is a careful migration that preserves the authority the business has earned while restructuring how it's organized. The multi-city businesses that get the most from getting their structure right are the ones that treat it as the foundational decision it is — settled before the site is built, or remediated deliberately before more downstream local SEO work is layered on top of a broken foundation. The downstream discipline of an <a href="/insights/los-angeles-local-seo-explained" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">operational local SEO cadence</a> only compounds returns when the structure underneath it is right.
+          For a business getting this right at launch, the work is straightforward — establish the single domain, build the hierarchy, set up the hub, and ensure per-city content differentiation from day one. For a business remediating a broken structure, the work is a careful migration that preserves the authority the business has earned while restructuring how it's organized. The multi-city businesses that get the most from getting their structure right are the ones that treat it as the foundational decision it is — settled before the site is built, or remediated deliberately before more downstream local SEO work is layered on top of a broken foundation. The downstream discipline of an <a href="/insights/local-seo-explained" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">operational local SEO cadence</a> only compounds returns when the structure underneath it is right.
         </p>
 
         {/* ── SECTION 12 ── */}
@@ -5576,7 +5088,7 @@ const ARTICLES: Record<string, ArticleData> = {
           <strong>Sites with fixable quality gaps</strong> have the best recovery odds — legitimate businesses with real expertise whose content simply wasn't demonstrating that expertise well, sites with intent-mismatched content that can be realigned, sites with a mix of strong and thin content where pruning the thin content lifts the whole. These sites can genuinely become the better answer with substantive work, and they recover at the higher end of the range.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          <strong>YMYL sites</strong> (health, finance, legal, anything affecting money or wellbeing) face longer recovery timelines and a higher bar, because Google evaluates these categories more conservatively and demands stronger E-E-A-T and trust signals. Recovery is achievable but slower (6-12 months is common), and the E-E-A-T work has to be substantive and verifiable — real credentials, real expertise, real trust signals, not cosmetic author boxes. For local businesses, this recovery often overlaps with local-pack metrics, requiring a coordinated <a href="/insights/los-angeles-local-seo-explained" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">local search engine optimization</a> approach to maintain regional authority.
+          <strong>YMYL sites</strong> (health, finance, legal, anything affecting money or wellbeing) face longer recovery timelines and a higher bar, because Google evaluates these categories more conservatively and demands stronger E-E-A-T and trust signals. Recovery is achievable but slower (6-12 months is common), and the E-E-A-T work has to be substantive and verifiable — real credentials, real expertise, real trust signals, not cosmetic author boxes. For local businesses, this recovery often overlaps with local-pack metrics, requiring a coordinated <a href="/insights/local-seo-explained" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">local search engine optimization</a> approach to maintain regional authority.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
           <strong>Affiliate and thin-content sites</strong> face the hardest recovery, because recent updates have specifically and aggressively devalued thin affiliate content (71% impact rates in recent updates). For these sites, recovery often isn't a matter of improving the existing model but of fundamentally rebuilding on a different content foundation — adding genuine original value, first-hand testing, and unique insight that the thin-affiliate model lacked. Some of these sites don't fully recover because the thing the update devalued was their entire value proposition.
@@ -5768,7 +5280,7 @@ const ARTICLES: Record<string, ArticleData> = {
           Pouring website SEO effort into a GBP-driven traffic loss is the single most common and most costly misdiagnosis in local traffic recovery. Website optimization — content production, technical SEO, link building, on-page work — affects organic rankings. It has essentially no effect on a suspended or degraded GBP. A business can publish the best content in its category and build a pristine technical SEO foundation, and if its GBP is suspended, it will remain invisible in the local pack and Google Maps regardless. The recovery for a GBP problem is a GBP process: diagnose the suspension type or degradation cause, fix the underlying issue, and either submit a reinstatement appeal (for suspensions) or correct the profile signals (for degradation). None of that work happens on the website.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
-          Website SEO is not a substitute for GBP recovery. The two address different systems. The first step in any <a href="/insights/los-angeles-local-seo-explained" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">local traffic recovery</a> is determining which system the problem actually lives in — and a business that skips that diagnostic step and defaults to website work has a meaningful chance of spending its recovery effort on the wrong system entirely. For instance, when executing a broader organic recovery strategy—such as the one detailed in our <a href="/insights/seo-case-study-traffic-recovery" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">SEO case study traffic recovery</a> playbook—we isolate technical crawl issues from local GBP suspensions to ensure each channel receives the correct remedy.
+          Website SEO is not a substitute for GBP recovery. The two address different systems. The first step in any <a href="/insights/local-seo-explained" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">local traffic recovery</a> is determining which system the problem actually lives in — and a business that skips that diagnostic step and defaults to website work has a meaningful chance of spending its recovery effort on the wrong system entirely. For instance, when executing a broader organic recovery strategy—such as the one detailed in our <a href="/insights/seo-case-study-traffic-recovery" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">SEO case study traffic recovery</a> playbook—we isolate technical crawl issues from local GBP suspensions to ensure each channel receives the correct remedy.
         </p>
 
         {/* ── SECTION 3 ── */}
@@ -5856,7 +5368,7 @@ const ARTICLES: Record<string, ArticleData> = {
           A GBP problem is one of several distinct causes of local and organic traffic loss, and the broader Google traffic recovery discipline involves correctly diagnosing which cause is in play before applying a fix. Organic traffic loss from an algorithm update requires content and quality remediation. Traffic loss from a manual action requires the <a href="/insights/google-manual-action-removal-agency-caused-penalty" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">reconsideration process</a>. Traffic loss from a technical SEO issue requires technical fixes. And local visibility loss from a GBP suspension or degradation requires the GBP recovery process described above.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
-          The diagnostic discipline is the common thread — a business that misdiagnoses the cause applies the wrong fix and extends the recovery. This is the operational link between <a href="/insights/local-seo-los-angeles" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">Google Business Profile optimization</a> and Google traffic recovery: GBP is one of the major recovery levers, it's the one most often missed because it's invisible to website analytics, and it's the one where the wrong panic response can make recovery permanently impossible. A complete traffic recovery practice checks the GBP first precisely because it's the highest-risk, most-commonly-missed cause.
+          The diagnostic discipline is the common thread — a business that misdiagnoses the cause applies the wrong fix and extends the recovery. This is the operational link between <a href="/insights/local-seo" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">Google Business Profile optimization</a> and Google traffic recovery: GBP is one of the major recovery levers, it's the one most often missed because it's invisible to website analytics, and it's the one where the wrong panic response can make recovery permanently impossible. A complete traffic recovery practice checks the GBP first precisely because it's the highest-risk, most-commonly-missed cause.
         </p>
 
         {/* ── SECTION 6 ── */}
@@ -6042,7 +5554,7 @@ const ARTICLES: Record<string, ArticleData> = {
             Most agencies have a B2B services page. The page exists because B2B clients ask whether the agency serves B2B before they sign, and the page provides reassurance. But the existence of a B2B services page is a marketing artifact, not an operational specialization. The agency's underlying methodology, staffing, measurement infrastructure, and case study experience may still be 70-80% B2C, with B2B treated as an addressable adjacent market rather than the operational focus.
           </p>
           <p className="text-[15px] sm:text-[16px] leading-[1.7] text-gray-700 mt-4">
-            A B2B services page is not sufficient evidence of B2B SEO agency specialization. Operating focus across all six structural dimensions is what makes an agency a B2B specialist. Without that operating focus, the agency is applying B2C instincts to B2B problems and producing B2C-shaped outcomes — traffic growth that doesn't connect to pipeline, content that wins single buyers but not committees, measurement that satisfies the marketing dashboard but doesn't survive the CFO's revenue attribution question. Programs with strong B2C-style metrics and weak B2B pipeline contribution are usually generalist agencies producing generalist work for B2B clients who needed specialist work. This divergence is similar to local search programs, where a setup-and-forget approach decays without a continuous <a href="/insights/los-angeles-local-seo-explained" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">local SEO operational cadence</a>.
+            A B2B services page is not sufficient evidence of B2B SEO agency specialization. Operating focus across all six structural dimensions is what makes an agency a B2B specialist. Without that operating focus, the agency is applying B2C instincts to B2B problems and producing B2C-shaped outcomes — traffic growth that doesn't connect to pipeline, content that wins single buyers but not committees, measurement that satisfies the marketing dashboard but doesn't survive the CFO's revenue attribution question. Programs with strong B2C-style metrics and weak B2B pipeline contribution are usually generalist agencies producing generalist work for B2B clients who needed specialist work. This divergence is similar to local search programs, where a setup-and-forget approach decays without a continuous <a href="/insights/local-seo-explained" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">local SEO operational cadence</a>.
           </p>
         </div>
 
@@ -6050,7 +5562,7 @@ const ARTICLES: Record<string, ArticleData> = {
         <div id="category-emergence" className="scroll-mt-24" />
         <h2 className="text-[1.6rem] sm:text-[2rem] font-display font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">How the B2B SEO category emerged and why it matters more in 2026</h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          The B2B SEO agency category emerged because the structural differences between B2B and B2C SEO outgrew the generalist agency model. Through the early 2010s, the differences were real but manageable — a competent generalist agency could serve B2B clients adequately by tuning their B2C methodology slightly. Through the late 2010s, B2B sales cycles lengthened, buying committees grew, and the gap between B2B keywords and B2C keywords widened. By the early 2020s, the structural divergence had become large enough that specialist agencies began outperforming generalists serving B2B clients on every meaningful pipeline metric. By 2026, the gap has compounded further as AI search has added new dimensions where B2B-specialist optimization approaches (entity authority, earned-media placement, AI citation tracking across ChatGPT/Claude/Perplexity/Gemini) operate differently from B2C-specialist approaches (still optimized primarily for Google traditional search and AI Overviews). For businesses requiring geographic visibility, these local factors are detailed in our guide on <a href="/insights/local-seo-los-angeles" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">local SEO for Los Angeles businesses</a>.
+          The B2B SEO agency category emerged because the structural differences between B2B and B2C SEO outgrew the generalist agency model. Through the early 2010s, the differences were real but manageable — a competent generalist agency could serve B2B clients adequately by tuning their B2C methodology slightly. Through the late 2010s, B2B sales cycles lengthened, buying committees grew, and the gap between B2B keywords and B2C keywords widened. By the early 2020s, the structural divergence had become large enough that specialist agencies began outperforming generalists serving B2B clients on every meaningful pipeline metric. By 2026, the gap has compounded further as AI search has added new dimensions where B2B-specialist optimization approaches (entity authority, earned-media placement, AI citation tracking across ChatGPT/Claude/Perplexity/Gemini) operate differently from B2C-specialist approaches (still optimized primarily for Google traditional search and AI Overviews). For businesses requiring geographic visibility, these local factors are detailed in our guide on <a href="/insights/local-seo" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">local SEO strategies</a>.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
           The category matters more in 2026 because the cost of category confusion has increased. AI search has compressed the buyer research timeline — buyers now arrive at vendor sites with their shortlist effectively defined from AI assistants, and the agencies that have built specialist methodologies for AI citation in B2B categories are producing measurable share-of-shortlist outcomes that generalists serving B2B can't match. The 280% increase in demo requests one specialist agency produced for a SaaS client, the 17% improvement in AI search citations another delivered in 12 weeks, the $1B+ in client revenue a third claims to have generated under its "Customer Generation" methodology — these are outcomes that emerge from operating models built specifically around B2B buying dynamics, not from generalist SEO scaled to B2B clients. The market has bifurcated, and the bifurcation is accelerating.
@@ -6786,10 +6298,10 @@ const RELATED_ARTICLES_MAP: Record<string, { href: string; category: string; tit
   ],
   'outbound-seo-prospecting': [
     {
-      href: '/insights/b2b-seo-agency-los-angeles',
+      href: '/insights/b2b-seo-agency',
       category: 'Strategy',
-      title: 'B2B SEO Agency in Los Angeles: Why Local Partnership Outperforms Remote Vendor Relationships in 2026',
-      image: '/images/article-b2b-seo-agency-los-angeles.webp',
+      title: 'B2B SEO Agency Explained: Choosing the Right Revenue Partner',
+      image: '/images/article-b2b-seo-agency.webp',
     },
     {
       href: '/insights/automated-lead-generation-seo',
@@ -6867,26 +6379,7 @@ const RELATED_ARTICLES_MAP: Record<string, { href: string; category: string; tit
     },
   ],
 
-  'b2b-seo-agency-los-angeles': [
-    {
-      href: '/insights/best-seo-agency-for-b2b-brands',
-      category: 'Strategy',
-      title: 'How to Choose the Best SEO Agency for B2B Brands in 2026',
-      image: '/images/article-best-seo-agency.webp',
-    },
-    {
-      href: '/insights/seo-for-b2b-lead-generation',
-      category: 'Strategy',
-      title: 'SEO for B2B Lead Generation: How Committee-Architecture Content Outperforms Single-Persona Funnels',
-      image: '/images/article-seo-b2b-lead-generation.webp',
-    },
-    {
-      href: '/insights/b2b-organic-traffic-growth',
-      category: 'Strategy',
-      title: 'B2B Organic Traffic Growth: Why Traffic and Pipeline Decoupled in 2026',
-      image: '/images/article-b2b-organic-traffic-growth.webp',
-    },
-  ],
+
 
   'b2b-organic-traffic-growth': [
     {
@@ -6930,17 +6423,17 @@ const RELATED_ARTICLES_MAP: Record<string, { href: string; category: string; tit
     },
   ],
 
-  'local-seo-los-angeles': [
+  'local-seo': [
     {
-      href: '/insights/b2b-seo-agency-los-angeles',
+      href: '/insights/b2b-seo-agency',
       category: 'Strategy',
-      title: 'B2B SEO Agency in Los Angeles: Why Local Partnership Outperforms Remote Vendor Relationships in 2026',
-      image: '/images/article-b2b-seo-agency-los-angeles.webp',
+      title: 'B2B SEO Agency Explained: Choosing the Right Revenue Partner',
+      image: '/images/article-b2b-seo-agency.webp',
     },
     {
-      href: '/insights/los-angeles-local-seo-explained',
+      href: '/insights/local-seo-explained',
       category: 'Local SEO',
-      title: 'Los Angeles Local SEO Explained: The Operational Cadence Required for Search Dominance',
+      title: 'Local SEO Explained: The Operational Cadence Required for Search Dominance',
       image: '/images/article-los-angeles-local-seo-explained.webp',
     },
     {
@@ -6951,18 +6444,18 @@ const RELATED_ARTICLES_MAP: Record<string, { href: string; category: string; tit
     },
   ],
 
-  'los-angeles-local-seo-explained': [
+  'local-seo-explained': [
     {
-      href: '/insights/local-seo-los-angeles',
+      href: '/insights/local-seo',
       category: 'Local SEO',
-      title: 'Local SEO for Los Angeles Businesses: How the 2026 Algorithm and AI Layer Determine Who Gets Found',
+      title: 'Local SEO: How the 2026 Algorithm and AI Layer Determine Who Gets Found',
       image: '/images/article-local-seo-los-angeles.webp',
     },
     {
-      href: '/insights/b2b-seo-agency-los-angeles',
+      href: '/insights/b2b-seo-agency',
       category: 'Strategy',
-      title: 'B2B SEO Agency in Los Angeles: Why Local Partnership Outperforms Remote Vendor Relationships in 2026',
-      image: '/images/article-b2b-seo-agency-los-angeles.webp',
+      title: 'B2B SEO Agency Explained: Choosing the Right Revenue Partner',
+      image: '/images/article-b2b-seo-agency.webp',
     },
     {
       href: '/insights/multi-location-seo-website-structure',
@@ -6980,9 +6473,9 @@ const RELATED_ARTICLES_MAP: Record<string, { href: string; category: string; tit
       image: '/images/article-google-business-profile-optimization.webp',
     },
     {
-      href: '/insights/los-angeles-local-seo-explained',
+      href: '/insights/local-seo-explained',
       category: 'Local SEO',
-      title: 'Los Angeles Local SEO Explained: The Operational Cadence Required for Search Dominance',
+      title: 'Local SEO Explained: The Operational Cadence Required for Search Dominance',
       image: '/images/article-los-angeles-local-seo-explained.webp',
     },
     {
@@ -7007,9 +6500,9 @@ const RELATED_ARTICLES_MAP: Record<string, { href: string; category: string; tit
       image: '/images/article-google-business-profile-optimization.webp',
     },
     {
-      href: '/insights/los-angeles-local-seo-explained',
+      href: '/insights/local-seo-explained',
       category: 'Local SEO',
-      title: 'Los Angeles Local SEO Explained: The Operational Cadence Required for Search Dominance',
+      title: 'Local SEO Explained: The Operational Cadence Required for Search Dominance',
       image: '/images/article-los-angeles-local-seo-explained.webp',
     },
   ],
@@ -7721,15 +7214,7 @@ const ArticlePage: React.FC<ArticlePageProps> = ({ slug }) => {
 
             {/* ── MOBILE-ONLY: Share + Audio (above TOC) ── */}
             <div className="lg:hidden mb-8">
-              {slug === 'b2b-seo-agency-los-angeles' && (
-                <div className="border border-white/10 rounded-lg p-5 mb-4 bg-white/5">
-                  <p className="text-[11px] uppercase tracking-wider font-semibold text-gray-400 mb-3">Listen to this article</p>
-                  <audio controls className="w-full">
-                    <source src="/audio/Why_LA_B2B_SEO_must_be_local.m4a" type="audio/mp4" />
-                    Your browser does not support the audio element.
-                  </audio>
-                </div>
-              )}
+
               <div className="border border-white/10 rounded-lg p-5 bg-white/5">
                 <div className="flex items-center gap-3 mb-4">
                   <img src={article.image} alt={article.heroAlt} className="w-14 h-14 object-cover rounded-md flex-shrink-0" />
@@ -7850,15 +7335,7 @@ const ArticlePage: React.FC<ArticlePageProps> = ({ slug }) => {
           <aside className="hidden lg:block">
             <div className="sticky top-24 flex flex-col gap-6">
 
-              {slug === 'b2b-seo-agency-los-angeles' && (
-                <div className="border border-white/10 p-6 bg-white/5">
-                  <p className="text-[11px] uppercase tracking-wider font-semibold text-gray-400 mb-4">Listen to this article</p>
-                  <audio controls className="w-full custom-audio">
-                    <source src="/audio/Why_LA_B2B_SEO_must_be_local.m4a" type="audio/mp4" />
-                    Your browser does not support the audio element.
-                  </audio>
-                </div>
-              )}
+
 
               {/* Table of Contents with Social Share controls */}
               <div className="border border-[#F26522]/30 p-6 bg-white/[0.02]">

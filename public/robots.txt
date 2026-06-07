@@ -1,4 +1,4 @@
-# Gobiya — Los Angeles SEO Agency
+# Gobiya — SEO & Web Engineering
 # https://www.gobiya.com
 
 # Default rules — allow all crawlers, only block private/auth surfaces

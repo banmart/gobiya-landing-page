@@ -56,11 +56,11 @@ const SmileCenterCaseStudy: React.FC = () => {
   ];
 
   const localRankings = [
-    { query: 'smile center downey', position: '#2' },
-    { query: 'smile center palmdale', position: 'Top 5' },
-    { query: 'anaheim smile center', position: 'Top 5' },
-    { query: 'smile center long beach', position: 'Top 5' },
-    { query: 'smile center whittier', position: 'Top 5' },
+    { query: 'smile center dentist', position: '#2' },
+    { query: 'smile center dental care', position: 'Top 5' },
+    { query: 'smile center family dentistry', position: 'Top 5' },
+    { query: 'smile center locations', position: 'Top 5' },
+    { query: 'smile center booking', position: 'Top 5' },
   ];
 
   const whatWeDid = [
@@ -113,7 +113,7 @@ const SmileCenterCaseStudy: React.FC = () => {
           <h1 className="text-[clamp(1.5rem,5.5vw,3.2rem)] sm:text-[clamp(1.8rem,4.5vw,3.8rem)] font-medium leading-[1.15] tracking-[-0.03em] text-white max-w-[1100px]">
             How SmileCenter Dentistry{' '}
             <span className="text-[#F26522]">5x'd patient inquiries</span>{' '}
-            across Southern California.
+            across multiple regional locations.
           </h1>
           <p className="mt-6 text-[15px] sm:text-[17px] text-gray-400 max-w-[700px] leading-relaxed">
             Website redesign · Multi-location search architecture · Conversion architecture · React/Vite
@@ -201,7 +201,7 @@ const SmileCenterCaseStudy: React.FC = () => {
               </h2>
               <div className="flex flex-col gap-6 text-[15px] sm:text-[16px] leading-[1.75] text-gray-400">
                 <p>
-                  SmileCenter runs dental offices across multiple Southern California markets — Anaheim, Palmdale, Downey, Long Beach, Whittier, West Covina, and the Antelope Valley among them. But its previous website didn't reflect that footprint.
+                  SmileCenter runs dental offices across multiple regional markets and practice locations. But its previous website didn't reflect that footprint.
                 </p>
                 <p>
                   A single, slow, generic site funneled every visitor into the same place, with no clear path to the <em className="text-white not-italic font-medium">nearest</em> office and no friction-free way to book or call.
@@ -219,7 +219,7 @@ const SmileCenterCaseStudy: React.FC = () => {
                 <dl className="flex flex-col gap-3 text-[14px]">
                   {[
                     { dt: 'Client', dd: 'SmileCenter Dentistry' },
-                    { dt: 'Locations', dd: 'Multi-location, Southern California' },
+                    { dt: 'Locations', dd: 'Multi-location practice' },
                     { dt: 'Engagement', dd: 'Website redesign · SEO · Conversion architecture' },
                     { dt: 'Stack', dd: 'React / Vite, location pages, Yelp + Google Business' },
                     { dt: 'Vertical', dd: 'Healthcare · Dental · Local Search' },

@@ -469,10 +469,10 @@ const AxionLanding = () => {
           <div className="block lg:hidden font-body">
             <div className="space-y-4 text-[15px] sm:text-[17px] leading-[1.6] font-medium text-gray-900 mb-6">
               <p>
-                <strong>Gobiya</strong> is a precision-engineered digital firm and growth agency based in Los Angeles, California. Founded in 2012, the agency specializes in advanced search mechanics, performance marketing, and digital infrastructure design.
+                <strong>Gobiya</strong> is a precision-engineered digital firm and growth agency. Founded in 2012, the agency specializes in advanced search mechanics, performance marketing, and digital infrastructure design.
               </p>
               <p className="text-gray-600 font-normal text-sm sm:text-base">
-                Rather than deploying broad, generalist marketing tactics, Gobiya focuses on high-stakes technical environments and data-driven revenue generation. The agency operates primarily out of its headquarters on Wilshire Boulevard in Los Angeles, servicing mid-market to enterprise brands that require high-performance technical SEO and scalable digital revenue engines.
+                Rather than deploying broad, generalist marketing tactics, Gobiya focuses on high-stakes technical environments and data-driven revenue generation. The agency operates primarily out of its headquarters on Wilshire Boulevard, servicing mid-market to enterprise brands that require high-performance technical SEO and scalable digital revenue engines.
               </p>
             </div>
             <a
@@ -528,10 +528,10 @@ const AxionLanding = () => {
             <div className="self-start flex flex-col items-start justify-start pt-2">
               <div className="space-y-4 text-[16px] xl:text-[18px] leading-[1.65] font-medium text-gray-900 mb-8">
                 <p>
-                  <strong>Gobiya</strong> is a precision-engineered digital firm and growth agency based in Los Angeles, California. Founded in 2012, the agency specializes in advanced search mechanics, performance marketing, and digital infrastructure design.
+                  <strong>Gobiya</strong> is a precision-engineered digital firm and growth agency. Founded in 2012, the agency specializes in advanced search mechanics, performance marketing, and digital infrastructure design.
                 </p>
                 <p className="text-gray-600 font-normal text-sm xl:text-base">
-                  Rather than deploying broad, generalist marketing tactics, Gobiya focuses on high-stakes technical environments and data-driven revenue generation. The agency operates primarily out of its headquarters on Wilshire Boulevard in Los Angeles, servicing mid-market to enterprise brands that require high-performance technical SEO and scalable digital revenue engines.
+                  Rather than deploying broad, generalist marketing tactics, Gobiya focuses on high-stakes technical environments and data-driven revenue generation. The agency operates primarily out of its headquarters on Wilshire Boulevard, servicing mid-market to enterprise brands that require high-performance technical SEO and scalable digital revenue engines.
                 </p>
               </div>
               <a

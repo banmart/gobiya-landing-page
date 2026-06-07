@@ -28,7 +28,7 @@ const metadataMap: Record<string, SEOMetadata> = {
   },
   '/company/about': {
     title: 'The Gobiya Story: Precision growth engineering since 2012 | Gobiya',
-    description: 'We aren\'t a template-churning agency. Meet the Los Angeles growth engineers rebuilding traffic pipelines, recovering penalties, and solving generative SEO.'
+    description: 'We aren\'t a template-churning agency. Meet the growth engineers rebuilding traffic pipelines, recovering penalties, and solving generative SEO.'
   },
   '/company/success-stories': {
     title: 'Inside Our Wins: Real Case Studies, 300%+ Traffic Growth | Gobiya',
@@ -48,7 +48,7 @@ const metadataMap: Record<string, SEOMetadata> = {
   },
   '/company/careers': {
     title: 'Solve Hard Search & Engineering Problems With Us | Gobiya',
-    description: 'Tired of generic marketing tasks? We\'re looking for elite React developers, SEO forensic specialists, and sales engineers to join our team in LA.'
+    description: 'Tired of generic marketing tasks? We\'re looking for elite React developers, SEO forensic specialists, and sales engineers to join our team.'
   },
   '/contact': {
     title: 'Let\'s Audit Your Site: Request a Free Growth Session | Gobiya',
@@ -99,17 +99,13 @@ const metadataMap: Record<string, SEOMetadata> = {
     title: 'B2B SEO Agency vs. Generalist: The Vital Difference | Gobiya',
     description: 'Generalist SEO tactics will waste your budget. Discover why B2B requires an entirely different playbook focused on pipeline value over raw traffic volume.'
   },
-  '/insights/b2b-seo-agency-los-angeles': {
-    title: 'LA B2B SEO: Why Proximity Matters in the AI Era | Gobiya',
-    description: 'Remote agencies lose context. Learn why local partnership, real-time collaboration, and Los Angeles business fluency are key to winning local organic rankings.'
-  },
-  '/insights/local-seo-los-angeles': {
-    title: 'Local SEO Service Los Angeles: Elite Maps & AI Domination | Gobiya',
+  '/insights/local-seo': {
+    title: 'Local SEO Service: Elite Maps & AI Domination | Gobiya',
     description: 'Stop losing local customers. Our elite local SEO service connects Google Maps, GBP optimization, and AI citations to put your brand at position #1. Free audit.'
   },
-  '/insights/los-angeles-local-seo-explained': {
-    title: 'The 90-Day Cadence: How We Win Local Search in LA | Gobiya',
-    description: 'Local SEO isn\'t a set-it-and-forget-it task. Here is the weekly operational rhythm that actually moves the needle in the competitive LA market.'
+  '/insights/local-seo-explained': {
+    title: 'The 90-Day Cadence: How We Win Local Search | Gobiya',
+    description: 'Local SEO isn\'t a set-it-and-forget-it task. Here is the weekly operational rhythm that actually moves the needle in competitive markets.'
   },
   '/insights/b2b-organic-traffic-growth': {
     title: 'Organic Traffic is Decoupling From Pipeline Revenue | Gobiya',
@@ -256,7 +252,7 @@ const SEO: React.FC<SEOProps> = ({ path }) => {
           "caption": "Gobiya Logo"
         },
         "image": "https://www.gobiya.com/images/gobiya---logo.webp",
-        "description": "Gobiya is a precision-engineered B2B SEO, Generative Engine Optimization (GEO), and sales pipeline agency based in Los Angeles, CA. We recover lost organic traffic, architect AI citation strategies, and engineer automated outbound sales systems for mid-market and enterprise brands.",
+        "description": "Gobiya is a precision-engineered B2B SEO, Generative Engine Optimization (GEO), and sales pipeline agency. We recover lost organic traffic, architect AI citation strategies, and engineer automated outbound sales systems for mid-market and enterprise brands.",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "3580 Wilshire Blvd, Ste 132",
@@ -271,9 +267,6 @@ const SEO: React.FC<SEOProps> = ({ path }) => {
           "longitude": -118.3039
         },
         "areaServed": [
-          { "@type": "City", "name": "Los Angeles", "sameAs": "https://www.wikidata.org/wiki/Q65" },
-          { "@type": "City", "name": "San Diego", "sameAs": "https://www.wikidata.org/wiki/Q16552" },
-          { "@type": "AdministrativeArea", "name": "Southern California", "sameAs": "https://www.wikidata.org/wiki/Q84827" },
           { "@type": "Country", "name": "United States", "sameAs": "https://www.wikidata.org/wiki/Q30" }
         ],
         "hasOfferCatalog": {

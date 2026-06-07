@@ -201,7 +201,7 @@ const CaseStudiesPinned = () => {
               </div>
             </div>
             <h3 className="text-[16px] sm:text-[18px] font-display font-medium text-gray-900 mt-3">American Livescan Fingerprinting</h3>
-            <p className="text-[14px] text-gray-600 mt-1.5 leading-relaxed font-body max-w-[90%]">3x online bookings & calls · +30% walk-ins · Local SEO & site rebuild · Los Angeles.</p>
+            <p className="text-[14px] text-gray-600 mt-1.5 leading-relaxed font-body max-w-[90%]">3x online bookings & calls · +30% walk-ins · Local SEO & site rebuild.</p>
           </a>
 
         </div>

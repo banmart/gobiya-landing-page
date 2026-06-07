@@ -34,7 +34,7 @@ const testimonials: Testimonial[] = [
   },
   {
     id: 4,
-    text: "The best technical SEO partnership we've ever had. Highly recommend their local Los Angeles team.",
+    text: "The best technical SEO partnership we've ever had. Highly recommend their growth engineering team.",
     company: "Total Capital Inc",
     author: "Eli Zilberstein",
     image_url: "/images/eli-portrait.webp"

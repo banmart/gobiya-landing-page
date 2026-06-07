@@ -203,7 +203,7 @@ const AmericanLivescanCaseStudy: React.FC = () => {
               </h2>
               <div className="flex flex-col gap-6 text-[15px] sm:text-[16px] leading-[1.75] text-gray-400">
                 <p>
-                  American Livescan is a high-volume Live Scan fingerprinting and background-check provider in Los Angeles, serving walk-in customers, online bookings, and mobile appointments across the area.
+                  American Livescan is a high-volume Live Scan fingerprinting and background-check provider, serving walk-in customers, online bookings, and mobile appointments across the area.
                 </p>
                 <p>
                   But the business was running on an aging website built on legacy <code className="bg-white/10 text-white px-1.5 py-0.5 text-[13px]">.htm</code> and <code className="bg-white/10 text-white px-1.5 py-0.5 text-[13px]">.html</code> pages — slow, hard to update, and architecturally incapable of competing for the "near me" searches that drive a local, walk-in service.
@@ -221,7 +221,7 @@ const AmericanLivescanCaseStudy: React.FC = () => {
                 <dl className="flex flex-col gap-3 text-[14px]">
                   {[
                     { dt: 'Client', dd: 'American Livescan' },
-                    { dt: 'Location', dd: 'Los Angeles, CA' },
+                    { dt: 'Location', dd: 'California, USA' },
                     { dt: 'Services', dd: 'Live Scan fingerprinting, passport photos, background checks' },
                     { dt: 'Engagement', dd: 'Site rebuild · GMB · Local SEO · Content engine' },
                     { dt: 'Vertical', dd: 'Government services · Local search' },
