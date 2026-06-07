@@ -31,7 +31,7 @@ const ARTICLES: Record<string, ArticleData> = {
     category: 'Strategy',
     readTime: '9 min read',
     date: 'June 3, 2026',
-    image: '/images/article-predictive-analytics.webp',
+    image: '/images/article-gobiya-vs-enterprise.png',
     heroAlt: 'A modern B2B comparison matrix showing performance and cost trade-offs between dynamic boutique agencies and traditional bloated enterprise agencies',
     metaDescription: 'An honest comparison of Gobiya vs traditional enterprise SEO agencies for B2B brands looking for speed, GEO citation, and CRM pipelines.',
     content: (
@@ -111,7 +111,7 @@ const ARTICLES: Record<string, ArticleData> = {
     category: 'Strategy',
     readTime: '10 min read',
     date: 'May 31, 2026',
-    image: '/images/article-how-do-b2b-companies-use-seo-to-generate-predictable-revenue.webp',
+    image: '/images/article-b2b-seo-revenue.png',
     heroAlt: 'Lifelike, sleek, high-tech B2B revenue and SEO dashboard in a dark room setting with glowing vibrant orange highlights showing upward organic search traffic and sales pipeline growth',
     metaDescription: 'Why most B2B SEO programs fail to connect to pipeline, how to map content to the buying committee, target decision-stage clusters, and set up attribution.',
     content: (
@@ -383,7 +383,7 @@ const ARTICLES: Record<string, ArticleData> = {
     category: 'GEO',
     readTime: '8 min read',
     date: 'June 3, 2026',
-    image: '/images/article-what-data-sources-do-llms-crawl-to-verify-b2b-company-information.webp',
+    image: '/images/article-llm-data-sources.png',
     heroAlt: 'Sleek high-tech B2B entity verification dashboard with glowing orange nodes connecting LinkedIn, Wikipedia, Crunchbase, and G2 directories in a dark room setting',
     metaDescription: 'The source hierarchy AI engines use to verify B2B company identity. Learn which platforms ChatGPT, Claude, and Perplexity crawl to confirm credibility and avoid model silence.',
     content: (
@@ -649,7 +649,7 @@ const ARTICLES: Record<string, ArticleData> = {
     category: 'GEO',
     readTime: '8 min read',
     date: 'June 4, 2026',
-    image: '/images/article-what-is-the-difference-between-google-knowledge-graph-optimization-and-geo.webp',
+    image: '/images/article-knowledge-graph-geo.png',
     heroAlt: 'Sleek high-tech dashboard displaying a side-by-side comparison of Google\'s structured Knowledge Graph entity connections on the left and a multi-engine generative RAG retrieval citation graph on the right, under a dark room setting with glowing orange accents',
     metaDescription: 'Knowledge Graph optimization vs Generative Engine Optimization (GEO). Understand the difference in scope, era, target engines, and how entity resolution gates AI citations.',
     content: (
@@ -5959,7 +5959,7 @@ const ARTICLES: Record<string, ArticleData> = {
     category: 'GEO',
     readTime: '10 min read',
     date: 'June 4, 2026',
-    image: '/images/are-ai-search-engines-scraping-hidden-api-data-or-public-html-text-blocks.webp',
+    image: '/images/article-ai-scraping-data.png',
     heroAlt: 'Technical diagram showing AI crawlers like GPTBot and Claude-SearchBot downloading public server-rendered HTML text blocks while bypassing client-side JavaScript API calls',
     metaDescription: 'Discover if AI engines scrape hidden APIs or read public HTML. Learn how AI crawler rendering divides impact your SEO and how to fix JavaScript invisibility.',
     content: (
