@@ -368,7 +368,6 @@ const AxionLanding = () => {
           className="px-5 sm:px-8 lg:px-12 flex flex-col items-center justify-center mb-12 sm:mb-16 lg:mb-24"
         >
           <div className="flex items-center gap-3 mb-6 sm:mb-8">
-            <div className="w-6 h-6 sm:w-7 sm:h-7 bg-black text-white text-[11px] sm:text-[12px] font-semibold flex items-center justify-center">2</div>
             <div className="text-[12px] sm:text-[13px] font-medium text-black border border-black px-3 sm:px-4 py-1 sm:py-1.5 font-body">Introducing Gobiya</div>
           </div>
           
