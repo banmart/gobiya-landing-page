@@ -579,7 +579,7 @@ const SolutionPage: React.FC<{ path: string }> = ({ path }) => {
               Gemini
             </div>
             <div className="text-2xl font-bold font-display text-[#111111]">
-              Profound
+              Lovable
             </div>
           </div>
         </div>
