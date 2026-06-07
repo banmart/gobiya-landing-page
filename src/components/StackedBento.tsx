@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { X, Activity, BarChart2, ShieldCheck, Terminal, Cpu } from 'lucide-react';
+import { X, Activity, BarChart2, ShieldCheck, Terminal, Cpu, Code, Database, Search } from 'lucide-react';
 import BorderGlow from './BorderGlow';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -120,14 +120,15 @@ const StackedBento: React.FC<StackedBentoProps> = ({ headline, description, card
         // Add a slight scale and fade animation when the card stacks
         if (index > 0) {
           gsap.fromTo(card,
-            { y: 100, opacity: 0 },
+            { y: 150, opacity: 0.5, scale: 0.95 },
             {
               y: 0,
               opacity: 1,
+              scale: 1,
               scrollTrigger: {
                 trigger: card,
-                start: "top bottom-=100",
-                end: "top center",
+                start: "top bottom-=10%",
+                end: "top top+=150",
                 scrub: true,
               }
             }
@@ -139,7 +140,24 @@ const StackedBento: React.FC<StackedBentoProps> = ({ headline, description, card
     return () => ctx.revert();
   }, [cards]);
 
-  const defaultCards = cards || [];
+  const defaultCards = cards && cards.length > 0 ? cards : [
+    {
+      href: '/capabilities/web-development', colSpan: 2, gradient: true, icon: <Code size={40} className="text-white mb-6 sm:mb-10 relative z-10" strokeWidth={1.5} />,
+      title: 'Web Development', description: 'We build high-performance custom sites in React and Vite, engineered from the ground up for sub-second speeds and flawless crawler readability.'
+    },
+    {
+      href: '/capabilities/native-crm', colSpan: 1, icon: <Database size={40} className="text-white mb-6 sm:mb-10" strokeWidth={1.5} />,
+      title: 'Native CRM', description: 'Custom customer and pipeline management tools built directly into your application codebase, giving you 100% data ownership.'
+    },
+    {
+      href: '/capabilities/seo-discoverability', colSpan: 2, icon: <Search size={40} className="text-white mb-6 sm:mb-10" strokeWidth={1.5} />,
+      title: 'SEO & Discoverability', description: 'Built-in crawler readiness, flawless XML structures, clean semantic HTML, and formatting designed to capture search rankings and AI citations natively.'
+    },
+    {
+      href: '/capabilities/blockchain-web3-development', colSpan: 1, icon: <Cpu size={40} className="text-[#F26522] mb-6 sm:mb-10" strokeWidth={1.5} />,
+      title: 'Blockchain & Web3 Dev', description: 'Bespoke smart contracts, decentralized applications (dApps), and on-chain integrations engineered directly into your product stack.'
+    }
+  ];
 
   return (
     <section className="w-full bg-[#111] py-24 sm:py-32 px-5 sm:px-8 lg:px-12 relative">
