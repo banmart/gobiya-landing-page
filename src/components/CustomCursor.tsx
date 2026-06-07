@@ -32,11 +32,10 @@ const CustomCursor = () => {
     gsap.set(cursor, { xPercent: -50, yPercent: -50 });
 
     const moveCursor = (e: MouseEvent) => {
-      gsap.to(cursor, {
+      // Use gsap.set instead of gsap.to to completely eliminate sluggish dragging
+      gsap.set(cursor, {
         x: e.clientX,
-        y: e.clientY,
-        duration: 0.15,
-        ease: 'power2.out'
+        y: e.clientY
       });
     };
 
@@ -64,34 +63,32 @@ const CustomCursor = () => {
     };
   }, []);
 
-  let sizeClass = 'w-5 h-5';
-  let bgClass = 'bg-white';
-  let mixBlend = 'mix-blend-difference';
-  let text = '';
-
-  if (hoverState === 'link') {
-    sizeClass = 'w-14 h-14';
-    bgClass = 'bg-white opacity-20 backdrop-blur-sm';
-    mixBlend = 'mix-blend-normal';
-  } else if (hoverState === 'video') {
-    sizeClass = 'w-24 h-24';
-    bgClass = 'bg-[#F26522]';
-    mixBlend = 'mix-blend-normal';
-    text = 'PLAY';
-  }
-
   return (
     <div 
       ref={cursorRef} 
-      className={`fixed top-0 left-0 rounded-full pointer-events-none z-[99999] flex items-center justify-center transition-all duration-300 ease-out hidden md:flex ${sizeClass} ${bgClass} ${mixBlend}`}
+      className="fixed top-0 left-0 pointer-events-none z-[99999] flex items-center justify-center transition-none hidden md:flex"
     >
-      {text && (
-        <span className="text-white font-display font-bold text-sm tracking-widest scale-up-center">
-          {text}
-        </span>
+      {hoverState === 'default' && (
+        <div className="relative w-6 h-6 flex items-center justify-center mix-blend-difference transition-all duration-300">
+          <div className="absolute w-full h-[2px] bg-white"></div>
+          <div className="absolute h-full w-[2px] bg-white"></div>
+        </div>
+      )}
+      
+      {hoverState === 'link' && (
+        <div className="w-14 h-14 rounded-full bg-white opacity-20 backdrop-blur-sm mix-blend-normal transition-all duration-300"></div>
+      )}
+
+      {hoverState === 'video' && (
+        <div className="w-24 h-24 rounded-full bg-[#F26522] flex items-center justify-center mix-blend-normal transition-all duration-300">
+          <span className="text-white font-display font-bold text-sm tracking-widest scale-up-center">
+            PLAY
+          </span>
+        </div>
       )}
     </div>
   );
 };
 
 export default CustomCursor;
+
