@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 
-const START_DATE = new Date('2024-01-01T00:00:00Z').getTime();
-const BASE_REVENUE = 1345231.45;
-const REVENUE_PER_SECOND = 4.12; // Modifiable rate
+const START_DATE = new Date('2026-06-01T00:00:00Z').getTime();
+const BASE_REVENUE = 3014523.45;
+const REVENUE_PER_SECOND = 0.12; // Modifiable rate
 
 const LiveRevenueCounter = () => {
   const [revenue, setRevenue] = useState(BASE_REVENUE);
