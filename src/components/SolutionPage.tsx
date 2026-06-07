@@ -30,7 +30,7 @@ interface SolutionData {
   approach: { icon: any; title: string; desc: string }[];
   
   // Value Cards
-  valueCards: { title: string; text: string; highlight?: boolean }[];
+  valueCards: { title: string; text: string; backText?: string; highlight?: boolean }[];
   
   // Execution Accordion
   executionTitle: string;
@@ -78,10 +78,10 @@ const SOLUTIONS_DATA: Record<string, SolutionData> = {
       { icon: Target, title: 'Conversion UI Engineering', desc: 'CTA paths, form architecture, and trust signals are coded directly into the core layout for maximum buyer response.' }
     ],
     valueCards: [
-      { title: 'Semantic HTML5 Architecture', text: 'We write clean, semantic markup that maps your information architecture perfectly to search engine bots.' },
-      { title: 'Core Web Vitals Dominance', text: 'Every build passes Google speed audits out of the box, maximizing search eligibility and lowering PPC costs.', highlight: true },
-      { title: 'Dynamic Metadata Integration', text: 'From Open Graph tags to JSON-LD schema, we engineer metadata directly into the codebase for maximum rich snippet eligibility.' },
-      { title: 'Conversion-Driven UX', text: 'We integrate CRO principles and heatmap data to design intuitive, frictionless paths that convert traffic into pipeline.' }
+      { title: 'Semantic HTML5 Architecture', text: 'We write clean, semantic markup that maps your information architecture perfectly to search engine bots.', backText: 'Our engineering team uses native HTML5 tags and precise DOM hierarchy so Googlebot can instantly understand your page structure without relying on complex client-side rendering.' },
+      { title: 'Core Web Vitals Dominance', text: 'Every build passes Google speed audits out of the box, maximizing search eligibility and lowering PPC costs.', backText: 'By eliminating bulky frameworks and focusing on raw Vite/React performance, we consistently hit 95-100 scores across LCP, FID, and CLS metrics.' },
+      { title: 'Dynamic Metadata Integration', text: 'From Open Graph tags to JSON-LD schema, we engineer metadata directly into the codebase for maximum rich snippet eligibility.', backText: 'We dynamically inject schema graphs and meta descriptors at the server level, ensuring rich results for products, articles, and local businesses.' },
+      { title: 'Conversion-Driven UX', text: 'We integrate CRO principles and heatmap data to design intuitive, frictionless paths that convert traffic into pipeline.', backText: 'We use scroll-depth analysis and click tracking to continually refine CTA placement, reducing bounce rates and maximizing high-intent lead capture.' }
     ],
     executionTitle: 'How we engineer your custom React platform.',
     heroImage: '/images/web_hero.png',
@@ -129,10 +129,10 @@ const SOLUTIONS_DATA: Record<string, SolutionData> = {
       { icon: Target, title: 'Custom Sales Pipeline Views', desc: 'We design simple, high-speed admin dashboards tailored precisely to your team\'s workflow, allowing you to track leads with ease.' }
     ],
     valueCards: [
-      { title: 'Bespoke Database Schema', text: 'We structure tables and columns around your business, storing only what you need to track and optimize.' },
-      { title: 'Zero Integration Leak', text: 'No API keys exposed on the frontend, no broken webhooks, and no third-party downtime to drop your leads.', highlight: true },
-      { title: 'Self-Hosted Control', text: 'You own the database. If you scale, your CRM scales with you at standard cloud server costs.' },
-      { title: 'Automated Workflows', text: 'Trigger automated email flows, webhooks, or team notifications natively the instant a form is processed.' }
+      { title: 'Bespoke Database Schema', text: 'We structure tables and columns around your business, storing only what you need to track and optimize.', backText: 'Stop forcing your sales process into rigid CRM templates. We define relational models specifically tailored to your unique pipelines and lifecycle stages.' },
+      { title: 'Zero Integration Leak', text: 'No API keys exposed on the frontend, no broken webhooks, and no third-party downtime to drop your leads.', backText: 'Since the CRM is native to your application layer, data moves instantly from form submission to secure database without relying on fragile Zapier connections.' },
+      { title: 'Self-Hosted Control', text: 'You own the database. If you scale, your CRM scales with you at standard cloud server costs.', backText: 'Say goodbye to per-seat licensing fees. You maintain 100% ownership of the data infrastructure, hosted securely in your own scalable environment.' },
+      { title: 'Automated Workflows', text: 'Trigger automated email flows, webhooks, or team notifications natively the instant a form is processed.', backText: 'We program custom event listeners that execute serverless functions instantly upon lead capture, ensuring your sales team is notified in milliseconds.' }
     ],
     executionTitle: 'Building your proprietary data engine.',
     heroImage: '/images/lead_hero.png',
@@ -172,10 +172,10 @@ const SOLUTIONS_DATA: Record<string, SolutionData> = {
       { icon: Target, title: 'Information Architecture', desc: 'We structure your navigation and internal link paths to optimize link equity flow, ensuring crawlers find your deep content hubs.' }
     ],
     valueCards: [
-      { title: 'Server-Rendered HTML', text: 'Bots receive fully rendered pages instantly, resolving client-side rendering errors that suppress React apps.' },
-      { title: 'Advanced Schema Graphs', text: 'We link your brand, services, and articles to Wikipedia/Wikidata entity databases to strengthen your entity rank.', highlight: true },
-      { title: 'AI Search Readiness', text: 'We format comparisons, specifications, and FAQ blocks to match LLM extraction habits for ChatGPT and Gemini.' },
-      { title: 'Index Health Monitoring', text: 'Every build is tested against search engine render pipelines to guarantee clean indexation and zero soft-404s.' }
+      { title: 'Server-Rendered HTML', text: 'Bots receive fully rendered pages instantly, resolving client-side rendering errors that suppress React apps.', backText: 'We utilize advanced SSR and static generation to serve pre-compiled HTML, completely eliminating the "JavaScript SEO penalty" inherent in standard SPAs.' },
+      { title: 'Advanced Schema Graphs', text: 'We link your brand, services, and articles to Wikipedia/Wikidata entity databases to strengthen your entity rank.', backText: 'Our JSON-LD strategies go beyond basic markup. We build nested entity graphs that explicitly define semantic relationships for AI engines like ChatGPT.' },
+      { title: 'AI Search Readiness', text: 'We format comparisons, specifications, and FAQ blocks to match LLM extraction habits for ChatGPT and Gemini.', backText: 'By structuring content with clear hierarchical density, we optimize your site for zero-click generative summaries and AI Overview placements.' },
+      { title: 'Index Health Monitoring', text: 'Every build is tested against search engine render pipelines to guarantee clean indexation and zero soft-404s.', backText: 'We actively monitor server log files and Google Search Console data to ensure search bots are efficiently crawling and processing your core URLs.' }
     ],
     executionTitle: 'Our engineering path to indexing and discovery.',
     heroImage: '/images/seo_hero.png',
@@ -216,10 +216,10 @@ const SOLUTIONS_DATA: Record<string, SolutionData> = {
       { icon: Target, title: 'On-Chain Ledger Integrations', desc: 'We build custom APIs and event listeners to index and render on-chain transactions on your site in real time.' }
     ],
     valueCards: [
-      { title: 'Audited Smart Contracts', text: 'We follow industry-standard security patterns to protect contracts against reentrancy and access exploits.' },
-      { title: 'Frictionless Web3 UX', text: 'Wallet connection, signing, and transaction tracking are designed to feel as fast as a Web2 app.', highlight: true },
-      { title: 'Decentralized Database Sync', text: 'We synchronize blockchain events with standard serverless databases for high-speed indexing and searching.' },
-      { title: 'On-Chain Auth Solutions', text: 'Sign-in with Ethereum/Solana to authenticate users securely without passwords or emails.' }
+      { title: 'Audited Smart Contracts', text: 'We follow industry-standard security patterns to protect contracts against reentrancy and access exploits.', backText: 'Our smart contract developers employ rigorous unit testing, fuzzing, and static analysis to eliminate vulnerabilities before mainnet deployment.' },
+      { title: 'Frictionless Web3 UX', text: 'Wallet connection, signing, and transaction tracking are designed to feel as fast as a Web2 app.', backText: 'We integrate advanced React hooks for seamless multi-wallet support, managing network switching and transaction states natively in the UI.' },
+      { title: 'Decentralized Database Sync', text: 'We synchronize blockchain events with standard serverless databases for high-speed indexing and searching.', backText: 'Using custom subgraphs and event listeners, we mirror on-chain data to off-chain SQL databases, providing instant data retrieval without RPC limits.' },
+      { title: 'On-Chain Auth Solutions', text: 'Sign-in with Ethereum/Solana to authenticate users securely without passwords or emails.', backText: 'We implement SIWE (Sign-In with Ethereum) protocols, verifying wallet signatures cryptographically on the backend to issue secure session tokens.' }
     ],
     executionTitle: 'Our engineering path to Web3 integration.',
     heroImage: '/images/geo_hero.png',
@@ -398,24 +398,36 @@ const SolutionPage: React.FC<{ path: string }> = ({ path }) => {
       {/* ── 3. VALUE CARDS (Light) ── */}
       <section className="pb-24 lg:pb-32 px-5 sm:px-8 lg:px-12 bg-[#F9F9F9]">
         <div className="max-w-[1440px] mx-auto reveal-up">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 bg-white shadow-xl shadow-gray-200/50">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 bg-transparent perspective-1000">
             {data.valueCards.map((card, idx) => (
               <div 
                 key={idx} 
-                className={`p-10 lg:p-12 flex flex-col justify-center min-h-[300px] border-b lg:border-b-0 lg:border-r border-gray-100 last:border-0 transition-colors duration-500
-                  ${card.highlight ? 'bg-[#F26522] text-white' : 'bg-white text-[#111111] hover:bg-gray-50'}`}
+                className="group relative min-h-[300px] border-b lg:border-b-0 lg:border-r border-gray-100 last:border-0 [perspective:1000px]"
               >
-                {card.highlight ? (
-                  <ChevronRight size={32} className="text-white mb-6 opacity-80" strokeWidth={1.5} />
-                ) : (
-                  <ChevronRight size={32} className="text-[#F26522] mb-6" strokeWidth={1.5} />
-                )}
-                <h3 className={`text-2xl font-medium mb-4 ${card.highlight ? 'text-white' : 'text-[#111111]'}`}>
-                  {card.title}
-                </h3>
-                <p className={`leading-relaxed ${card.highlight ? 'text-white/90' : 'text-gray-600'}`}>
-                  {card.text}
-                </p>
+                <div className="relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+                  
+                  {/* FRONT */}
+                  <div className="absolute inset-0 [backface-visibility:hidden] bg-white p-10 lg:p-12 flex flex-col justify-center shadow-xl shadow-gray-200/50">
+                    <ChevronRight size={32} className="text-[#F26522] mb-6" strokeWidth={1.5} />
+                    <h3 className="text-2xl font-medium mb-4 text-[#111111]">
+                      {card.title}
+                    </h3>
+                    <p className="leading-relaxed text-gray-600">
+                      {card.text}
+                    </p>
+                  </div>
+
+                  {/* BACK */}
+                  <div className="absolute inset-0 [backface-visibility:hidden] [transform:rotateY(180deg)] bg-[#F26522] p-10 lg:p-12 flex flex-col justify-center text-white shadow-xl shadow-orange-500/20">
+                    <h3 className="text-xl font-medium mb-4">
+                      {card.title}
+                    </h3>
+                    <p className="leading-relaxed text-white/90 text-[15px]">
+                      {card.backText || card.text}
+                    </p>
+                  </div>
+
+                </div>
               </div>
             ))}
           </div>
