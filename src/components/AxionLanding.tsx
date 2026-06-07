@@ -20,6 +20,7 @@ import CaseStudiesPinned from './CaseStudiesPinned';
 import InsightsSlider from './InsightsSlider';
 import TestimonialsSlider from './TestimonialsSlider';
 import SatisfiedClients from './SatisfiedClients';
+import LiveRevenueCounter from './LiveRevenueCounter';
 
 const AxionLanding = () => {
   const [time, setTime] = useState('');
@@ -178,7 +179,7 @@ const AxionLanding = () => {
           
           {/* Hero Heading and Subtitle */}
           <div className="flex flex-col justify-center items-start text-left w-full">
-            <p className="text-[13px] sm:text-[14px] text-[#F26522] tracking-[0.2em] mb-4 sm:mb-6 uppercase font-bold">Gobiya Web Design & Engineering</p>
+            <LiveRevenueCounter />
             <h1 className="text-[clamp(2.5rem,6vw,5.5rem)] font-medium leading-[1.05] tracking-[-0.03em] text-white font-display mb-6 w-full">
               Fast, custom websites engineered to <span className="text-[#F26522] font-semibold">rank</span> — with native CRM and blockchain built in.
             </h1>
