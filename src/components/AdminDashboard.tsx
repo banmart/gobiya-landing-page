@@ -437,11 +437,24 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout }) => {
                             <span className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] uppercase font-semibold
                               ${lead.status === 'welcome_sent'
                                 ? 'bg-green-500/10 text-green-300 border border-green-500/30'
-                                : 'bg-gray-800/50 text-gray-400 border border-gray-700/50'
+                                : lead.status === 'clicked'
+                                  ? 'bg-blue-500/10 text-blue-300 border border-blue-500/30'
+                                  : lead.status === 'booked'
+                                    ? 'bg-[#F26522]/15 text-[#F26522] border border-[#F26522]/30 font-bold'
+                                    : 'bg-gray-800/50 text-gray-400 border border-gray-700/50'
                               }
                             `}>
-                              <span className={`w-1.5 h-1.5 rounded-full ${lead.status === 'welcome_sent' ? 'bg-green-500' : 'bg-gray-400'}`} />
-                              {lead.status === 'welcome_sent' ? 'Welcome Sent' : 'Queued'}
+                              <span className={`w-1.5 h-1.5 rounded-full 
+                                ${lead.status === 'welcome_sent' ? 'bg-green-500' 
+                                  : lead.status === 'clicked' ? 'bg-blue-500'
+                                    : lead.status === 'booked' ? 'bg-[#F26522]'
+                                      : 'bg-gray-400'
+                                }`} 
+                              />
+                              {lead.status === 'welcome_sent' ? 'Welcome Sent' 
+                                : lead.status === 'clicked' ? 'Clicked Email'
+                                  : lead.status === 'booked' ? 'Call Booked'
+                                    : 'Queued'}
                             </span>
                           </td>
                         </tr>

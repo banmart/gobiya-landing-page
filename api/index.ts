@@ -29,6 +29,213 @@ function getRequestBody(req: IncomingMessage): Promise<string> {
   });
 }
 
+interface OutreachEmail {
+  subject: string;
+  body: string;
+}
+
+async function generateOutreachCopy(lead: any, pKey: string): Promise<OutreachEmail> {
+  const defaultSubject = `Improving your ${lead.category || 'Business'} Search Citations & Security`;
+  const defaultBody = `<p>We noticed your business, <strong>${lead.company_name}</strong>, has a strong presence in ${lead.location}, but is currently missing a few crucial schema markup tags and security integrations for AI search engine discovery.</p>
+<p>We've created a custom pipeline strategy for your firm. Are you available for a quick 10-minute audit next Tuesday?</p>`;
+
+  if (!pKey) {
+    return { subject: defaultSubject, body: defaultBody };
+  }
+
+  try {
+    const prompt = `You are Steve Martin, Founder of Gobiya, a premier technical SEO and custom React web development agency. 
+Write a highly personalized, direct, engineering-focused cold outreach email to ${lead.contact_name || 'Business Owner'} at ${lead.company_name} located in ${lead.location}. 
+Their website is ${lead.website || 'N/A'} and their category is ${lead.category || 'Business'}.
+
+Focus the pitch on evaluating their search overview citation presence (Generative Engine Optimization) and security architecture. 
+The tone must be engineering-first, strictly professional, concise (under 100 words), and zero sales fluff.
+Propose a quick 15-minute forensic pipeline audit. 
+
+Provide your response strictly in JSON format with no markdown tags surrounding it, matching this schema:
+{
+  "subject": "A compelling, concise subject line",
+  "body": "The email body in clean HTML format (only <p> and <strong> tags, no inline styles, no header/footer/greeting/signature wraps, as we wrap those separately)"
+}`;
+
+    const res = await fetch('https://api.perplexity.ai/chat/completions', {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${pKey}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        model: 'sonar',
+        messages: [
+          {
+            role: 'system',
+            content: 'You are a professional outreach copywriting assistant. Return ONLY a valid JSON object matching the requested schema. Do not write markdown wrappers other than maybe standard JSON codeblocks.'
+          },
+          {
+            role: 'user',
+            content: prompt
+          }
+        ],
+        temperature: 0.2
+      })
+    });
+
+    if (res.ok) {
+      const data: any = await res.json();
+      let content = data.choices[0].message.content.trim();
+      
+      if (content.includes('```json')) {
+        content = content.split('```json')[1].split('```')[0].trim();
+      } else if (content.includes('```')) {
+        content = content.split('```')[1].split('```')[0].trim();
+      }
+
+      const parsed = JSON.parse(content);
+      if (parsed.subject && parsed.body) {
+        return {
+          subject: parsed.subject,
+          body: parsed.body
+        };
+      }
+    }
+  } catch (err) {
+    console.error('Error generating AI email copy:', err);
+  }
+
+  return { subject: defaultSubject, body: defaultBody };
+}
+
+function wrapBrandedEmail(leadName: string, bodyHtml: string, bookingUrl: string): string {
+  return `<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Gobiya Outreach</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #050505;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #e5e7eb;
+    }
+    .wrapper {
+      width: 100%;
+      background-color: #050505;
+      padding: 40px 20px;
+      box-sizing: border-box;
+    }
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: #0c0c0c;
+      border: 1px solid #1f2937;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+    }
+    .header {
+      padding: 30px 40px;
+      border-bottom: 1px solid #1f2937;
+      background: linear-gradient(to right, #0c0c0c, #111111);
+    }
+    .logo-text {
+      font-size: 20px;
+      font-weight: 700;
+      color: #ffffff;
+      letter-spacing: -0.02em;
+    }
+    .logo-accent {
+      color: #F26522;
+    }
+    .content {
+      padding: 40px;
+      font-size: 15px;
+      line-height: 1.6;
+      color: #d1d5db;
+    }
+    .content p {
+      margin-top: 0;
+      margin-bottom: 20px;
+    }
+    .content strong {
+      color: #ffffff;
+    }
+    .cta-container {
+      margin: 35px 0;
+      text-align: center;
+    }
+    .cta-button {
+      display: inline-block;
+      background-color: #F26522;
+      color: #ffffff !important;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 14px 28px;
+      border-radius: 6px;
+      transition: background-color 0.2s ease;
+    }
+    .signature {
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid #1f2937;
+      font-size: 14px;
+      color: #9ca3af;
+    }
+    .signature-title {
+      font-size: 12px;
+      color: #F26522;
+      font-weight: 600;
+      margin-top: 2px;
+    }
+    .footer {
+      padding: 20px 40px 30px 40px;
+      background-color: #080808;
+      border-top: 1px solid #1f2937;
+      text-align: center;
+      font-size: 11px;
+      color: #4b5563;
+    }
+    .footer a {
+      color: #9ca3af;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="container">
+      <div class="header">
+        <span class="logo-text">GOBIYA<span class="logo-accent">.</span></span>
+      </div>
+      <div class="content">
+        <p>Hello ${leadName || 'Business Owner'},</p>
+        
+        ${bodyHtml}
+        
+        <div class="cta-container">
+          <a href="${bookingUrl}" target="_blank" class="cta-button">Book Forensic Pipeline Audit</a>
+        </div>
+        
+        <div class="signature">
+          <strong>Steve Martin</strong>
+          <div class="signature-title">CEO &amp; Lead Growth Engineer</div>
+        </div>
+      </div>
+      <div class="footer">
+        <p>Gobiya &copy; 2026. All rights reserved.</p>
+        <p>11601 Wilshire Blvd, Los Angeles, CA 90025</p>
+        <p>If you prefer not to receive these technical audits, you can <a href="#">unsubscribe here</a>.</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>`;
+}
+
 interface SEOMetadata {
   title: string;
   description: string;
@@ -310,6 +517,52 @@ export default async function handler(req: IncomingMessage, res: any) {
         return;
       }
 
+      if (pathname === '/api/prospector/track-click' && req.method === 'POST') {
+        try {
+          const bodyStr = await getRequestBody(req);
+          const { email } = JSON.parse(bodyStr);
+          if (email && supabaseServer) {
+            const { error } = await supabaseServer
+              .from('prospects')
+              .update({ status: 'clicked' })
+              .eq('email', email);
+            if (error) throw error;
+            res.writeHead(200);
+            res.end(JSON.stringify({ success: true, message: 'Click tracked successfully.' }));
+          } else {
+            res.writeHead(200);
+            res.end(JSON.stringify({ success: true, message: 'Click tracking simulated.' }));
+          }
+        } catch (e: any) {
+          res.writeHead(500);
+          res.end(JSON.stringify({ success: false, error: e.message }));
+        }
+        return;
+      }
+
+      if (pathname === '/api/prospector/track-booking' && req.method === 'POST') {
+        try {
+          const bodyStr = await getRequestBody(req);
+          const { email } = JSON.parse(bodyStr);
+          if (email && supabaseServer) {
+            const { error } = await supabaseServer
+              .from('prospects')
+              .update({ status: 'booked' })
+              .eq('email', email);
+            if (error) throw error;
+            res.writeHead(200);
+            res.end(JSON.stringify({ success: true, message: 'Booking tracked successfully.' }));
+          } else {
+            res.writeHead(200);
+            res.end(JSON.stringify({ success: true, message: 'Booking tracking simulated.' }));
+          }
+        } catch (e: any) {
+          res.writeHead(500);
+          res.end(JSON.stringify({ success: false, error: e.message }));
+        }
+        return;
+      }
+
       if (pathname === '/api/prospector/scrape' && req.method === 'POST') {
         try {
           const bodyStr = await getRequestBody(req);
@@ -432,6 +685,16 @@ export default async function handler(req: IncomingMessage, res: any) {
 
             if (rKey) {
               logMessages.push(`Triggering Resend welcome email to ${lead.email}...`);
+              
+              logMessages.push(`Generating AI personalized copy for ${lead.company_name}...`);
+              const emailData = await generateOutreachCopy(lead, pKey);
+              
+              const host = req.headers.host || 'www.gobiya.com';
+              const protocol = req.headers['x-forwarded-proto'] || 'http';
+              const bookingUrl = `${protocol}://${host}/book?email=${encodeURIComponent(lead.email)}&company=${encodeURIComponent(lead.company_name)}&firstName=${encodeURIComponent(lead.contact_name || '')}&utm_source=prospector&utm_medium=email&utm_campaign=outreach`;
+              
+              const htmlEmail = wrapBrandedEmail(lead.contact_name || 'Business Owner', emailData.body, bookingUrl);
+
               const resendRes = await fetch('https://api.resend.com/emails', {
                 method: 'POST',
                 headers: {
@@ -441,11 +704,8 @@ export default async function handler(req: IncomingMessage, res: any) {
                 body: JSON.stringify({
                   from: 'Gobiya AI Onboarding <onboarding@resend.dev>',
                   to: [lead.email],
-                  subject: `Improving your ${category} Search Citations & security`,
-                  html: `<p>Hello ${lead.contact_name || 'Business Owner'},</p>
-                         <p>We noticed your business, <strong>${lead.company_name}</strong>, has a strong presence in ${lead.location || location}, but is currently missing a few crucial schema markup tags and security integrations for AI search engine discovery.</p>
-                         <p>We've created a custom pipeline strategy for your firm. Are you available for a quick 10-minute audit next Tuesday?</p>
-                         <p>Best,<br/>Steve Martin<br/>Founder, Gobiya</p>`
+                  subject: emailData.subject,
+                  html: htmlEmail
                 })
               });
 

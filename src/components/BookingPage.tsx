@@ -82,6 +82,17 @@ const BookingPage: React.FC = () => {
     if (lastParam) setLastName(lastParam);
     if (compParam) setCompany(compParam);
     if (webParam) setWebsite(webParam);
+
+    // Track click if coming from prospector email campaign
+    if (emailParam && (params.get('utm_source') === 'prospector' || params.get('source') === 'email')) {
+      fetch('/api/prospector/track-click', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email: emailParam }),
+      }).catch(err => console.warn('Failed to track click:', err));
+    }
   }, []);
 
   const handleScopeToggle = (id: string) => {
@@ -181,6 +192,19 @@ const BookingPage: React.FC = () => {
       });
 
       if (bookingError) throw bookingError;
+
+      // Track booking conversion in CRM prospector
+      try {
+        await fetch('/api/prospector/track-booking', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ email }),
+        });
+      } catch (err) {
+        console.warn('Failed to update booking status in CRM:', err);
+      }
 
       // 4. Send email notification via edge function
       const dateString = selectedDate.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
