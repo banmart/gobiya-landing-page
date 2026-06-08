@@ -14,14 +14,10 @@ export default defineConfig(({mode}) => {
         configureServer(server) {
           server.middlewares.use((req, res, next) => {
             if (req.url && req.url.startsWith('/api/')) {
-              let body = '';
-              req.on('data', chunk => {
-                body += chunk.toString();
-              });
-              req.on('end', async () => {
+              const runHandler = async (bodyData: string) => {
                 try {
                   // Attach parsed body to request so handler can access it
-                  (req as any).body = body;
+                  (req as any).body = bodyData;
 
                   // Dynamically load the API handler in the SSR context
                   const apiModule = await server.ssrLoadModule('/api/index.ts');
@@ -58,7 +54,20 @@ export default defineConfig(({mode}) => {
                   res.setHeader('Content-Type', 'application/json');
                   res.end(JSON.stringify({ success: false, error: err.message }));
                 }
-              });
+              };
+
+              const hasBody = req.method === 'POST' || req.method === 'PUT' || req.method === 'PATCH';
+              if (!hasBody) {
+                runHandler('');
+              } else {
+                let body = '';
+                req.on('data', chunk => {
+                  body += chunk.toString();
+                });
+                req.on('end', () => {
+                  runHandler(body);
+                });
+              }
             } else {
               next();
             }
