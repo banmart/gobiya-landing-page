@@ -12,44 +12,53 @@ export default defineConfig(({mode}) => {
       {
         name: 'api-dev-server',
         configureServer(server) {
-          server.middlewares.use(async (req, res, next) => {
+          server.middlewares.use((req, res, next) => {
             if (req.url && req.url.startsWith('/api/')) {
-              try {
-                // Dynamically load the API handler in the SSR context
-                const apiModule = await server.ssrLoadModule('/api/index.ts');
-                const handler = apiModule.default || apiModule;
-                
-                // Polyfill Vercel Response helpers
-                const vercelRes = Object.create(res);
-                vercelRes.status = (code: number) => {
-                  res.statusCode = code;
-                  return vercelRes;
-                };
-                vercelRes.json = (body: any) => {
-                  res.setHeader('Content-Type', 'application/json');
-                  res.end(JSON.stringify(body));
-                  return vercelRes;
-                };
-                vercelRes.send = (body: any) => {
-                  res.end(body);
-                  return vercelRes;
-                };
-                vercelRes.setHeader = (name: string, value: string) => {
-                  res.setHeader(name, value);
-                  return vercelRes;
-                };
-                vercelRes.writeHead = (code: number, headers?: any) => {
-                  res.writeHead(code, headers);
-                  return vercelRes;
-                };
+              let body = '';
+              req.on('data', chunk => {
+                body += chunk.toString();
+              });
+              req.on('end', async () => {
+                try {
+                  // Attach parsed body to request so handler can access it
+                  (req as any).body = body;
 
-                await handler(req, vercelRes);
-              } catch (err: any) {
-                console.error('Vite local API execution error:', err);
-                res.statusCode = 500;
-                res.setHeader('Content-Type', 'application/json');
-                res.end(JSON.stringify({ success: false, error: err.message }));
-              }
+                  // Dynamically load the API handler in the SSR context
+                  const apiModule = await server.ssrLoadModule('/api/index.ts');
+                  const handler = apiModule.default || apiModule;
+                  
+                  // Polyfill Vercel Response helpers
+                  const vercelRes = Object.create(res);
+                  vercelRes.status = (code: number) => {
+                    res.statusCode = code;
+                    return vercelRes;
+                  };
+                  vercelRes.json = (bodyObj: any) => {
+                    res.setHeader('Content-Type', 'application/json');
+                    res.end(JSON.stringify(bodyObj));
+                    return vercelRes;
+                  };
+                  vercelRes.send = (bodyText: any) => {
+                    res.end(bodyText);
+                    return vercelRes;
+                  };
+                  vercelRes.setHeader = (name: string, value: string) => {
+                    res.setHeader(name, value);
+                    return vercelRes;
+                  };
+                  vercelRes.writeHead = (code: number, headers?: any) => {
+                    res.writeHead(code, headers);
+                    return vercelRes;
+                  };
+
+                  await handler(req, vercelRes);
+                } catch (err: any) {
+                  console.error('Vite local API execution error:', err);
+                  res.statusCode = 500;
+                  res.setHeader('Content-Type', 'application/json');
+                  res.end(JSON.stringify({ success: false, error: err.message }));
+                }
+              });
             } else {
               next();
             }

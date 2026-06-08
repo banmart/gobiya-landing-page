@@ -121,12 +121,6 @@ const AdminLogin: React.FC<AdminLoginProps> = ({ onLoginSuccess }) => {
               )}
             </button>
           </form>
-          
-          <div className="mt-8 text-center border-t border-white/5 pt-6">
-            <p className="text-[10px] text-gray-600 font-mono">
-              Note: Use credentials <span className="text-gray-400 font-bold">admin</span> / <span className="text-gray-400 font-bold">gobiya2026!</span> to establish authentication.
-            </p>
-          </div>
         </div>
       </div>
 

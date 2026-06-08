@@ -12,6 +12,10 @@ const supabaseServer = (supabaseUrl && supabaseAnonKey) ? createClient(supabaseU
 
 function getRequestBody(req: IncomingMessage): Promise<string> {
   return new Promise((resolve, reject) => {
+    if ((req as any).body !== undefined) {
+      resolve((req as any).body);
+      return;
+    }
     let body = '';
     req.on('data', chunk => {
       body += chunk.toString();
