@@ -237,13 +237,13 @@ const AmericanLivescanCaseStudy: React.FC = () => {
               <div className="aspect-[4/3] overflow-hidden relative">
                 <ParallaxMedia
                   type="image"
-                  src="/images/livescan-office.webp"
-                  alt="American Livescan fingerprinting office"
+                  src="/images/livescan-storefront.webp"
+                  alt="American Livescan storefront"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute bottom-3 left-3 right-3 bg-black/70 text-white px-3 py-1.5 backdrop-blur-sm">
                   <span className="text-gray-400 text-sm font-medium">
-                    American Livescan Office
+                    American Livescan Storefront
                   </span>
                 </div>
               </div>

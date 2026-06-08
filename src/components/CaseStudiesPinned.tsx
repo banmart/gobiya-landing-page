@@ -42,7 +42,7 @@ const caseStudies = [
     id: 5,
     title: "American Livescan Fingerprinting",
     description: "3x online bookings & calls · +30% walk-ins · Local SEO & site rebuild.",
-    imageSrc: "/images/livescan-office.webp",
+    imageSrc: "/images/livescan-storefront.webp",
     link: "/case-studies/american-livescan",
     badge: "3x Bookings",
     ctaText: "View case study",
