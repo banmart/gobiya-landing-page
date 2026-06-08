@@ -9,6 +9,8 @@ import SolutionPage from './components/SolutionPage';
 import RegionalHubPage from './components/RegionalHubPage';
 import SmileCenterCaseStudy from './components/SmileCenterCaseStudy';
 import AmericanLivescanCaseStudy from './components/AmericanLivescanCaseStudy';
+import AdminLogin from './components/AdminLogin';
+import AdminDashboard from './components/AdminDashboard';
 import SEO from './components/SEO';
 import PageTransition, { navigateWithTransition } from './components/PageTransition';
 
@@ -21,6 +23,27 @@ function App({ url }: AppProps) {
   const [currentPath, setCurrentPath] = useState(
     url || (typeof window !== 'undefined' ? window.location.pathname : '/')
   );
+
+  const [token, setToken] = useState<string | null>(() => {
+    if (typeof window !== 'undefined') {
+      return localStorage.getItem('gobiya_admin_token');
+    }
+    return null;
+  });
+
+  const handleLoginSuccess = (newToken: string) => {
+    localStorage.setItem('gobiya_admin_token', newToken);
+    setToken(newToken);
+    window.history.pushState({}, '', '/admin');
+    setCurrentPath('/admin');
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem('gobiya_admin_token');
+    setToken(null);
+    window.history.pushState({}, '', '/admin');
+    setCurrentPath('/admin');
+  };
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
@@ -188,7 +211,13 @@ function App({ url }: AppProps) {
       {/* Global Noise Overlay */}
       <div className="noise-overlay" />
       
-      {normalizedPath === '/' ? (
+      {normalizedPath === '/admin' ? (
+        token ? (
+          <AdminDashboard onLogout={handleLogout} />
+        ) : (
+          <AdminLogin onLoginSuccess={handleLoginSuccess} />
+        )
+      ) : normalizedPath === '/' ? (
         <AxionLanding />
       ) : normalizedPath === '/book' || normalizedPath === '/book-call' ? (
         <BookingPage />

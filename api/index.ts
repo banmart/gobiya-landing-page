@@ -1,9 +1,29 @@
 import { IncomingMessage } from 'http';
 import fs from 'fs';
 import path from 'path';
+import { createClient } from '@supabase/supabase-js';
 
 // Define render function type from server bundle
 type RenderFn = (url: string) => { html: string };
+
+const supabaseUrl = process.env.VITE_SUPABASE_URL || '';
+const supabaseAnonKey = process.env.VITE_SUPABASE_ANON_KEY || '';
+const supabaseServer = (supabaseUrl && supabaseAnonKey) ? createClient(supabaseUrl, supabaseAnonKey) : null;
+
+function getRequestBody(req: IncomingMessage): Promise<string> {
+  return new Promise((resolve, reject) => {
+    let body = '';
+    req.on('data', chunk => {
+      body += chunk.toString();
+    });
+    req.on('end', () => {
+      resolve(body);
+    });
+    req.on('error', err => {
+      reject(err);
+    });
+  });
+}
 
 interface SEOMetadata {
   title: string;
@@ -217,6 +237,246 @@ export default async function handler(req: IncomingMessage, res: any) {
     const url = req.url || '/';
     const parsedUrl = new URL(url, 'https://www.gobiya.com');
     const pathname = parsedUrl.pathname.toLowerCase().replace(/\/$/, '') || '/';
+
+    // ── B2B LEADS PROSPECTOR API ENDPOINTS ──
+    if (pathname.startsWith('/api/prospector')) {
+      res.setHeader('Content-Type', 'application/json');
+      res.setHeader('Access-Control-Allow-Origin', '*');
+      res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, DELETE');
+      res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+
+      if (req.method === 'OPTIONS') {
+        res.writeHead(200);
+        res.end();
+        return;
+      }
+
+      if (pathname === '/api/prospector/login' && req.method === 'POST') {
+        const bodyStr = await getRequestBody(req);
+        const { username, password } = JSON.parse(bodyStr);
+        if (username === 'admin' && password === 'gobiya2026!') {
+          res.writeHead(200);
+          res.end(JSON.stringify({ success: true, token: 'gobiya-jwt-session-token-2026' }));
+        } else {
+          res.writeHead(401);
+          res.end(JSON.stringify({ success: false, error: 'Invalid credentials' }));
+        }
+        return;
+      }
+
+      if (pathname === '/api/prospector/leads' && req.method === 'GET') {
+        try {
+          if (supabaseServer) {
+            const { data, error } = await supabaseServer
+              .from('prospects')
+              .select('*')
+              .order('created_at', { ascending: false });
+            if (error) throw error;
+            res.writeHead(200);
+            res.end(JSON.stringify({ success: true, leads: data || [] }));
+          } else {
+            res.writeHead(200);
+            res.end(JSON.stringify({ success: true, leads: [] }));
+          }
+        } catch (e: any) {
+          res.writeHead(500);
+          res.end(JSON.stringify({ success: false, error: e.message }));
+        }
+        return;
+      }
+
+      if (pathname === '/api/prospector/leads' && req.method === 'DELETE') {
+        try {
+          if (supabaseServer) {
+            const { error } = await supabaseServer
+              .from('prospects')
+              .delete()
+              .neq('id', '00000000-0000-0000-0000-000000000000');
+            if (error) throw error;
+            res.writeHead(200);
+            res.end(JSON.stringify({ success: true, message: 'All leads cleared.' }));
+          } else {
+            res.writeHead(200);
+            res.end(JSON.stringify({ success: true, message: 'Mock clear complete.' }));
+          }
+        } catch (e: any) {
+          res.writeHead(500);
+          res.end(JSON.stringify({ success: false, error: e.message }));
+        }
+        return;
+      }
+
+      if (pathname === '/api/prospector/scrape' && req.method === 'POST') {
+        try {
+          const bodyStr = await getRequestBody(req);
+          const { category, location, numResults, perplexityKey, resendKey } = JSON.parse(bodyStr);
+
+          const limit = numResults || 5;
+          const pKey = perplexityKey || process.env.PERPLEXITY_API_KEY || '';
+          const rKey = resendKey || process.env.RESEND_API_KEY || '';
+
+          let leads: any[] = [];
+          const logMessages: string[] = ['Initiating search query...'];
+
+          if (pKey) {
+            logMessages.push(`Calling Perplexity API for model sonar...`);
+            const prompt = `Find ${limit} ${category} businesses currently active in ${location}. Focus on B2B prospects likely needing security systems (surveillance, access control). Only return real businesses, verify their emails and web presence. Return JSON formatted containing array of objects matching: company_name, contact_name, email, phone, website, category, location. Avoid wrapping with text.`;
+            
+            const perplexityRes = await fetch('https://api.perplexity.ai/chat/completions', {
+              method: 'POST',
+              headers: {
+                'Authorization': `Bearer ${pKey}`,
+                'Content-Type': 'application/json'
+              },
+              body: JSON.stringify({
+                model: 'sonar',
+                messages: [
+                  {
+                    role: 'system',
+                    content: 'You are a professional B2B lead generation assistant. Return ONLY valid JSON format in the response. No markdown wrappers other than maybe standard json blocks.'
+                  },
+                  {
+                    role: 'user',
+                    content: prompt
+                  }
+                ]
+              })
+            });
+
+            if (!perplexityRes.ok) {
+              throw new Error(`Perplexity API returned status ${perplexityRes.status}`);
+            }
+
+            const resData: any = await perplexityRes.json();
+            let text = resData.choices[0].message.content;
+            
+            if (text.includes('```json')) {
+              text = text.split('```json')[1].split('```')[0].trim();
+            } else if (text.includes('```')) {
+              text = text.split('```')[1].split('```')[0].trim();
+            }
+            
+            leads = JSON.parse(text);
+            if (!Array.isArray(leads) && (leads as any).leads) {
+              leads = (leads as any).leads;
+            }
+            logMessages.push(`Successfully gathered ${leads.length} leads from Perplexity.`);
+          } else {
+            logMessages.push(`No Perplexity API Key provided. Generating realistic mock B2B leads in ${location}...`);
+            leads = [
+              {
+                company_name: `${category.charAt(0).toUpperCase() + category.slice(1)} Solutions ${location.split(',')[0]}`,
+                contact_name: 'David Miller',
+                email: `info@${category.toLowerCase().replace(/\s+/g, '')}${location.split(',')[0].toLowerCase().trim()}.com`,
+                phone: '(323) 555-0192',
+                website: `https://www.${category.toLowerCase().replace(/\s+/g, '')}${location.split(',')[0].toLowerCase().trim()}.com`,
+                category: category,
+                location: location
+              },
+              {
+                company_name: `Pacific B2B ${category.charAt(0).toUpperCase() + category.slice(1)}`,
+                contact_name: 'Sarah Jenkins',
+                email: `contact@pacific${category.toLowerCase().replace(/\s+/g, '')}.com`,
+                phone: '(415) 555-0238',
+                website: `https://www.pacific${category.toLowerCase().replace(/\s+/g, '')}.com`,
+                category: category,
+                location: location
+              },
+              {
+                company_name: `Apex Business Group`,
+                contact_name: 'Robert Chen',
+                email: `rchen@apexgroup.com`,
+                phone: '(619) 555-0144',
+                website: `https://www.apexgroup.com`,
+                category: category,
+                location: location
+              }
+            ].slice(0, limit);
+            logMessages.push(`Mock leads generated: ${leads.length} B2B records.`);
+          }
+
+          const savedLeads: any[] = [];
+          for (const lead of leads) {
+            logMessages.push(`Ingesting lead: ${lead.company_name} (${lead.email})...`);
+            
+            const databaseLead = {
+              company_name: lead.company_name,
+              contact_name: lead.contact_name || 'Business Owner',
+              email: lead.email,
+              phone: lead.phone || '',
+              website: lead.website || '',
+              category: lead.category || category,
+              location: lead.location || location,
+              status: 'new'
+            };
+
+            if (supabaseServer) {
+              const { data, error } = await supabaseServer
+                .from('prospects')
+                .upsert([databaseLead], { onConflict: 'email' })
+                .select();
+                
+              if (error) {
+                logMessages.push(`Database warning: ${error.message}. Storing locally.`);
+                savedLeads.push(databaseLead);
+              } else if (data && data[0]) {
+                savedLeads.push(data[0]);
+              }
+            } else {
+              savedLeads.push(databaseLead);
+            }
+
+            if (rKey) {
+              logMessages.push(`Triggering Resend welcome email to ${lead.email}...`);
+              const resendRes = await fetch('https://api.resend.com/emails', {
+                method: 'POST',
+                headers: {
+                  'Authorization': `Bearer ${rKey}`,
+                  'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                  from: 'Gobiya AI Onboarding <onboarding@resend.dev>',
+                  to: [lead.email],
+                  subject: `Improving your ${category} Search Citations & security`,
+                  html: `<p>Hello ${lead.contact_name || 'Business Owner'},</p>
+                         <p>We noticed your business, <strong>${lead.company_name}</strong>, has a strong presence in ${lead.location || location}, but is currently missing a few crucial schema markup tags and security integrations for AI search engine discovery.</p>
+                         <p>We've created a custom pipeline strategy for your firm. Are you available for a quick 10-minute audit next Tuesday?</p>
+                         <p>Best,<br/>Steve Martin<br/>Founder, Gobiya</p>`
+                })
+              });
+
+              if (resendRes.ok) {
+                logMessages.push(`Welcome email sent to ${lead.email} successfully.`);
+                if (supabaseServer) {
+                  await supabaseServer
+                    .from('prospects')
+                    .update({ status: 'welcome_sent' })
+                    .eq('email', lead.email);
+                }
+                databaseLead.status = 'welcome_sent';
+              } else {
+                const errJson = await resendRes.json().catch(() => ({}));
+                logMessages.push(`Resend error for ${lead.email}: ${JSON.stringify(errJson)}`);
+              }
+            } else {
+              logMessages.push(`Resend API Key omitted. Simulating welcome email dispatch to ${lead.email}...`);
+              databaseLead.status = 'welcome_sent';
+            }
+          }
+
+          res.writeHead(200);
+          res.end(JSON.stringify({
+            success: true,
+            leads: savedLeads,
+            logs: logMessages
+          }));
+        } catch (e: any) {
+          res.writeHead(500);
+          res.end(JSON.stringify({ success: false, error: e.message }));
+        }
+        return;
+      }
+    }
 
     if (
       pathname === '/locations' || pathname.startsWith('/locations/') ||
