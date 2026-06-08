@@ -14,8 +14,15 @@ export default defineConfig(({mode}) => {
         configureServer(server) {
           server.middlewares.use((req, res, next) => {
             if (req.url && req.url.startsWith('/api/')) {
+              console.log(`[API DEV] Intercepted ${req.method} ${req.url}`);
+              
+              let handlerExecuted = false;
               const runHandler = async (bodyData: string) => {
+                if (handlerExecuted) return;
+                handlerExecuted = true;
+                
                 try {
+                  console.log(`[API DEV] Executing handler for ${req.url} (body length: ${bodyData.length})`);
                   // Attach parsed body to request so handler can access it
                   (req as any).body = bodyData;
 
@@ -48,8 +55,9 @@ export default defineConfig(({mode}) => {
                   };
 
                   await handler(req, vercelRes);
+                  console.log(`[API DEV] Completed ${req.url} with status ${res.statusCode}`);
                 } catch (err: any) {
-                  console.error('Vite local API execution error:', err);
+                  console.error('[API DEV] Vite local API execution error:', err);
                   res.statusCode = 500;
                   res.setHeader('Content-Type', 'application/json');
                   res.end(JSON.stringify({ success: false, error: err.message }));
@@ -57,8 +65,9 @@ export default defineConfig(({mode}) => {
               };
 
               const hasBody = req.method === 'POST' || req.method === 'PUT' || req.method === 'PATCH';
-              if (!hasBody) {
-                runHandler('');
+              if (!hasBody || req.readableEnded || !req.readable) {
+                const existingBody = (req as any).body || '';
+                runHandler(typeof existingBody === 'string' ? existingBody : JSON.stringify(existingBody));
               } else {
                 let body = '';
                 req.on('data', chunk => {
@@ -67,6 +76,13 @@ export default defineConfig(({mode}) => {
                 req.on('end', () => {
                   runHandler(body);
                 });
+                // Safety timeout fallback
+                setTimeout(() => {
+                  if (!handlerExecuted) {
+                    console.log(`[API DEV] Timeout fallback triggered for ${req.url}`);
+                    runHandler(body);
+                  }
+                }, 2000);
               }
             } else {
               next();
