@@ -59,8 +59,8 @@ interface SolutionData {
 
 const SOLUTIONS_DATA: Record<string, SolutionData> = {
   '/capabilities/web-development': {
-    h1: 'Modern websites built in React, Next.js, and Vite — no templates, built to rank',
-    subHeadline: 'We replace slow, bloated CMS page-builders with hand-coded React and Next.js websites built to convert visitors and get crawled natively.',
+    h1: 'React web development — custom high-performance websites built to rank',
+    subHeadline: 'We specialize in React web development, replacing slow page-builders with custom, hand-coded React and Next.js websites built to convert visitors and rank natively.',
     rotatingWords: ['sub-second speed.', 'React & Next.js.', '100/100 Core Web Vitals.'],
     insightCategory: 'Development',
     ctaText: 'Start a custom build',
@@ -110,8 +110,8 @@ const SOLUTIONS_DATA: Record<string, SolutionData> = {
   },
 
   '/capabilities/native-crm': {
-    h1: 'A CRM that lives inside your site — your data, your pipeline, fully owned',
-    subHeadline: 'Stop paying for expensive, complex third-party SaaS integrations. We build custom CRM pipelines directly into your site, putting you in control.',
+    h1: 'Custom CRM website integration — own your data and sales pipeline',
+    subHeadline: 'Stop paying for expensive CRM subscriptions. We engineer custom CRM website integrations directly into your codebase, giving you complete data control.',
     rotatingWords: ['own your data.', 'zero subscription fees.', 'custom pipelines.'],
     insightCategory: 'Systems',
     ctaText: 'Build your custom CRM',
@@ -153,8 +153,8 @@ const SOLUTIONS_DATA: Record<string, SolutionData> = {
   },
 
   '/capabilities/ai-prospect-scraper': {
-    h1: 'AI-Powered Prospect Scraper & Custom Drip Campaigns',
-    subHeadline: 'Included with our Native CRM, this AI scraper extracts company NAP data and automatically builds hyper-personalized drip email sequences to scale your B2B outreach.',
+    h1: 'AI prospect scraper — automate outreach and scale B2B leads',
+    subHeadline: 'We build a custom AI prospect scraper directly into our native CRM database, extracting target contact details and automating personalized outreach sequences.',
     rotatingWords: ['scrape prospect data.', 'automate drip emails.', 'scale outbound.'],
     insightCategory: 'Systems',
     ctaText: 'Explore AI Prospecting',
@@ -196,8 +196,8 @@ const SOLUTIONS_DATA: Record<string, SolutionData> = {
   },
 
   '/capabilities/seo-discoverability': {
-    h1: 'We build React and Next.js sites Google can actually crawl, index, and rank',
-    subHeadline: 'We don\'t sell SEO as an afterthought. We build sites that search engines and AI bots can fetch, parse, index, and cite natively by default.',
+    h1: 'Technical SEO for React websites — crawl, index, and rank natively',
+    subHeadline: 'We build technical SEO for React websites into the codebase. Ensure search engines and AI crawlers can fetch, index, and cite your pages natively by default.',
     rotatingWords: ['eligible by design.', 'crawler-friendly React/Next.js.', 'AI overview readiness.'],
     insightCategory: 'SEO & GEO',
     ctaText: 'Build a search-ready site',
@@ -216,7 +216,7 @@ const SOLUTIONS_DATA: Record<string, SolutionData> = {
       { icon: Target, title: 'Information Architecture', desc: 'We structure your navigation and internal link paths to optimize link equity flow, ensuring crawlers find your deep content hubs.' }
     ],
     valueCards: [
-      { title: 'Server-Rendered HTML', text: 'Bots receive fully rendered pages instantly, resolving client-side rendering errors that suppress React/Next.js apps.', backText: 'We utilize advanced SSR and static generation to serve pre-compiled HTML, completely eliminating the "JavaScript SEO penalty" inherent in standard SPAs.' },
+      { title: 'Server-Rendered HTML', text: 'Bots receive fully rendered pages instantly, resolving client-side rendering errors that suppress React/Next.js apps.', backText: 'We utilize advanced SSR and static generation to serve pre-compiled HTML, completely eliminating the "JavaScript SEO penalty" inherent in single-page apps.' },
       { title: 'Advanced Schema Graphs', text: 'We link your brand, services, and articles to Wikipedia/Wikidata entity databases to strengthen your entity rank.', backText: 'Our JSON-LD strategies go beyond basic markup. We build nested entity graphs that explicitly define semantic relationships for AI engines like ChatGPT.' },
       { title: 'AI Search Readiness', text: 'We format comparisons, specifications, and FAQ blocks to match LLM extraction habits for ChatGPT and Gemini.', backText: 'By structuring content with clear hierarchical density, we optimize your site for zero-click generative summaries and AI Overview placements.' },
       { title: 'Index Health Monitoring', text: 'Every build is tested against search engine render pipelines to guarantee clean indexation and zero soft-404s.', backText: 'We actively monitor server log files and Google Search Console data to ensure search bots are efficiently crawling and processing your core URLs.' }
@@ -240,8 +240,8 @@ const SOLUTIONS_DATA: Record<string, SolutionData> = {
   },
 
   '/capabilities/blockchain-web3-development': {
-    h1: 'Smart contracts and dApps, built by a team that ships real products',
-    subHeadline: 'We engineer custom smart contracts, decentralized applications (dApps), and on-chain functions directly into your React and Vite applications.',
+    h1: 'Blockchain Web3 development — secure smart contracts and dApps',
+    subHeadline: 'We provide custom blockchain Web3 development, engineering secure smart contracts and dApps directly into your React web applications.',
     rotatingWords: ['smart contracts.', 'dApp interfaces.', 'on-chain security.'],
     insightCategory: 'Web3',
     ctaText: 'Start a Web3 project',

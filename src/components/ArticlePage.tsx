@@ -27,17 +27,17 @@ interface ArticleData {
 const ARTICLES: Record<string, ArticleData> = {
   'gobiya-vs-enterprise-seo-agencies': {
     slug: 'gobiya-vs-enterprise-seo-agencies',
-    title: 'Gobiya vs Enterprise B2B SEO Agencies: An Honest Comparison',
+    title: 'Enterprise SEO Agencies vs. Gobiya: The Honest Comparison',
     category: 'Strategy',
     readTime: '9 min read',
     date: 'June 3, 2026',
-    image: '/images/article-gobiya-vs-enterprise.png',
+    image: '/images/enterprise-seo-agencies-comparison.png',
     heroAlt: 'A modern B2B comparison matrix showing performance and cost trade-offs between dynamic boutique agencies and traditional bloated enterprise agencies',
-    metaDescription: 'An honest comparison of Gobiya vs traditional enterprise SEO agencies for B2B brands looking for speed, GEO citation, and CRM pipelines.',
+    metaDescription: 'We compare enterprise SEO agencies vs Gobiya, showing the speed, cost, and CRM pipeline differences for B2B brands.',
     content: (
       <>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8 font-medium">
-          High-growth B2B companies looking for search engine optimization support usually hit a fork in the road. Do you hire a big-name enterprise agency, or partner with an agile, specialized search engineering shop? Large agencies offer name comfort. But they also bring bloated retainers, junior coordinators, and slow cycles. An engineering shop is different. It prioritizes speed, entity mapping, and raw pipeline metrics over slide decks.
+          When evaluating traditional enterprise SEO agencies, high-growth B2B companies usually hit a fork in the road. Do you hire a big-name generalist agency with bloated retainers, or partner with an agile search engineering shop? Large agencies offer slide decks and junior account coordinators. An engineering shop is different. It prioritizes speed, entity mapping, and raw pipeline metrics over static checklists.
         </p>
 
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
@@ -107,17 +107,17 @@ const ARTICLES: Record<string, ArticleData> = {
   },
   'how-do-b2b-companies-use-seo-to-generate-predictable-revenue': {
     slug: 'how-do-b2b-companies-use-seo-to-generate-predictable-revenue',
-    title: 'How B2B Companies Use SEO to Generate Predictable Revenue',
+    title: 'B2B Pipeline Revenue: How B2B Companies Use SEO to Scale',
     category: 'Strategy',
     readTime: '10 min read',
     date: 'May 31, 2026',
-    image: '/images/article-b2b-seo-revenue.png',
+    image: '/images/b2b-pipeline-revenue-performance-dashboard.png',
     heroAlt: 'Lifelike, sleek, high-tech B2B revenue and SEO dashboard in a dark room setting with glowing vibrant orange highlights showing upward organic search traffic and sales pipeline growth',
-    metaDescription: 'Why most B2B SEO programs fail to connect to pipeline, how to map content to the buying committee, target decision-stage clusters, and set up attribution.',
+    metaDescription: 'Learn how to connect search clusters to B2B pipeline revenue, map content to the buying committee, and scale inbound conversions.',
     content: (
       <>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8 font-medium">
-          How do B2B companies actually turn SEO into predictable revenue? Most fall into a frustrating trap. Organic traffic goes up every month, but the CRM pipeline stays flat. Executives celebrate. Sales teams sigh. This disconnect is not a content problem. It is a structural one. The program was built to generate visibility, not deals.
+          How do B2B companies actually turn organic search clicks into predictable B2B pipeline revenue? Most organic search programs fall into a frustrating trap: traffic goes up every month, but the sales pipeline stays flat. Executives celebrate dashboard metrics, but sales teams see no deals. This disconnect is not a content problem, but a structural one.
         </p>
 
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
@@ -379,17 +379,17 @@ const ARTICLES: Record<string, ArticleData> = {
 
   'what-data-sources-do-llms-crawl-to-verify-b2b-company-information': {
     slug: 'what-data-sources-do-llms-crawl-to-verify-b2b-company-information',
-    title: 'What Data Sources Do LLMs Crawl to Verify B2B Company Information?',
+    title: 'LLM Company Verification: What Data Sources Do AI Bots Crawl?',
     category: 'GEO',
     readTime: '8 min read',
     date: 'June 3, 2026',
-    image: '/images/article-llm-data-sources.png',
+    image: '/images/llm-company-verification-data-sources.png',
     heroAlt: 'Sleek high-tech B2B entity verification dashboard with glowing orange nodes connecting LinkedIn, Wikipedia, Crunchbase, and G2 directories in a dark room setting',
-    metaDescription: 'The source hierarchy AI engines use to verify B2B company identity. Learn which platforms ChatGPT, Claude, and Perplexity crawl to confirm credibility and avoid model silence.',
+    metaDescription: 'Discover how ChatGPT and Claude handle LLM company verification by crawling Wikidata, LinkedIn, and review portals to establish trust.',
     content: (
       <>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8 font-medium">
-          Where do AI engines go to verify a B2B company? They don't just trust your website. They cross-reference external databases to confirm who you are. If your data is inconsistent across these sources, AI models will simply ignore you. Here is the source hierarchy they actually use.
+          How does LLM company verification work? When AI models crawl the web to reference B2B details, they do not just trust your website. They cross-reference external databases to confirm who you are. If your entity footprint is inconsistent across these verification channels, AI models will ignore you. Here is the source hierarchy they actually use.
         </p>
 
         <div className="border-l-4 border-[#F26522] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
@@ -645,17 +645,17 @@ const ARTICLES: Record<string, ArticleData> = {
 
   'what-is-the-difference-between-google-knowledge-graph-optimization-and-geo': {
     slug: 'what-is-the-difference-between-google-knowledge-graph-optimization-and-geo',
-    title: 'What Is the Difference Between Google Knowledge Graph Optimization and GEO?',
+    title: 'Knowledge Graph Optimization vs. GEO: Key Splits',
     category: 'GEO',
     readTime: '8 min read',
     date: 'June 4, 2026',
-    image: '/images/article-knowledge-graph-geo.png',
+    image: '/images/knowledge-graph-optimization-vs-geo-model.png',
     heroAlt: 'Sleek high-tech dashboard displaying a side-by-side comparison of Google\'s structured Knowledge Graph entity connections on the left and a multi-engine generative RAG retrieval citation graph on the right, under a dark room setting with glowing orange accents',
-    metaDescription: 'Knowledge Graph optimization vs Generative Engine Optimization (GEO). Understand the difference in scope, era, target engines, and how entity resolution gates AI citations.',
+    metaDescription: 'Understand how Knowledge Graph optimization differs from GEO, how entity resolution works, and how to secure AI citation visibility.',
     content: (
       <>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8 font-medium">
-          Knowledge Graph optimization and Generative Engine Optimization (GEO) are often treated as rivals. In reality, they are two sides of the same coin. The Knowledge Graph maps who you are, while GEO gets you cited in AI answers. Here is how they work together.
+          How does Google Knowledge Graph optimization differ from Generative Engine Optimization (GEO)? While they are often discussed as competing strategies, they are two parts of the same entity-centric framework. Knowledge Graph optimization resolves who you are, while GEO ensures AI engines cite you. Here is how they work.
         </p>
 
         <div className="border-l-4 border-[#F26522] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
@@ -898,17 +898,17 @@ const ARTICLES: Record<string, ArticleData> = {
 
   'chatgpt-vs-google-for-business-discovery': {
     slug: 'chatgpt-vs-google-for-business-discovery',
-    title: 'ChatGPT vs Google for Business Discovery: What You Must Know',
+    title: 'ChatGPT vs Google Search: Customer Trends',
     category: 'SEO',
     readTime: '8 min read',
     date: 'May 29, 2026',
-    image: '/images/article-chatgpt-vs-google.png',
+    image: '/images/chatgpt-vs-google-search-conversion-rates.png',
     heroAlt: 'Split comparison screen between Google Search blue links and ChatGPT conversational AI business recommendation',
-    metaDescription: 'Google processes billions of searches, but 93% in AI Mode end clickless. ChatGPT converts 4.4x better. How to optimize your brand for both.',
+    metaDescription: 'Comparing ChatGPT vs Google search discovery rates. Learn how to optimize your brand footprint to win both AI summaries and clicks.',
     content: (
       <>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8 font-medium">
-          The choice between <strong>ChatGPT and Google for business discovery</strong> is a major budget decision. Google still commands raw volume. But over 90% of searches in AI modes now result in zero clicks. Paradoxically, the few visitors who do click through from AI recommendations convert at over four times the rate of standard searchers. Reconciling this tension is critical.
+          When comparing ChatGPT vs Google search for business discovery, the choice is clear. Google still commands raw traffic volume, but ChatGPT referrals convert at over four times the rate of standard searchers. Reconciling this tension requires a dual optimization strategy. Here is how it works.
         </p>
 
         <div className="border-l-4 border-[#F26522] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
@@ -1109,17 +1109,17 @@ const ARTICLES: Record<string, ArticleData> = {
   },
   'what-is-the-difference-between-a-manual-action-and-an-algorithmic-penalty': {
     slug: 'what-is-the-difference-between-a-manual-action-and-an-algorithmic-penalty',
-    title: 'What Is the Difference Between a Manual Action and an Algorithmic Penalty?',
+    title: 'Manual Action vs Algorithmic Penalty: Key Splits',
     category: 'SEO',
     readTime: '9 min read',
     date: 'May 29, 2026',
-    image: '/images/article-algorithmic-penalty.png',
+    image: '/images/manual-action-vs-algorithmic-penalty-checklist.png',
     heroAlt: 'Visual contrast between a human-reviewed Google manual action warning and an automated algorithmic calculation',
-    metaDescription: 'The single most important distinction in Google traffic recovery: why a human-issued manual action and an automated algorithmic suppression are completely different problems.',
+    metaDescription: 'Understand manual action vs algorithmic penalty differences, Search Console reports, and step-by-step diagnostic checklists for recovery.',
     content: (
       <>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8 font-medium">
-          If your Google traffic drops overnight, you need to understand one key distinction: is it a manual action or an algorithmic suppression? Confusing them is why most recovery attempts fail. They are completely different problems, requiring completely different fixes. Let's make sure you diagnose yours correctly.
+          Understanding manual action vs algorithmic penalty distinctions is the single most important factor when your organic search traffic drops. Treating a human-issued manual action and an automated algorithmic calculation the same way will cause recovery efforts to fail. Here is how to diagnose them.
         </p>
 
         <div className="border-l-4 border-[#F26522] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
@@ -1407,17 +1407,17 @@ const ARTICLES: Record<string, ArticleData> = {
   },
   'what-is-generative-engine-optimization-and-how-does-it-work': {
     slug: 'what-is-generative-engine-optimization-and-how-does-it-work',
-    title: 'What Is Generative Engine Optimization and How Does It Work?',
+    title: 'Generative Engine Optimization (GEO): RAG & AI Guide',
     category: 'SEO',
     readTime: '10 min read',
     date: 'May 30, 2026',
-    image: '/images/article-generative-engine-opt.png',
+    image: '/images/generative-engine-optimization-rag-citations.png',
     heroAlt: 'A futuristic digital web visualization depicting AI search agents extracting entity citations from a semantic database',
-    metaDescription: 'The definitional guide to GEO: how Retrieval-Augmented Generation (RAG) pipelines cite sources, how it builds on traditional SEO, and what makes content citable.',
+    metaDescription: 'A complete technical guide to Generative Engine Optimization (GEO). Learn how RAG-based AI search engines cite content and how to optimize.',
     content: (
       <>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8 font-medium">
-          Generative Engine Optimization (GEO) is the next evolution of search. While traditional SEO optimizes for ranking in lists of blue links, GEO optimizes for being cited by conversational AI engines like ChatGPT, Perplexity, and Claude. Buyers no longer click ten links. They ask an AI and read the synthesized answer. If you're not in the citations, you don't exist.
+          Generative Engine Optimization (GEO) represents the next frontier in digital discovery. While traditional SEO optimizes for position in a list of blue links, Generative Engine Optimization focuses on getting your brand retrieved and cited by AI engines like ChatGPT, Claude, and Perplexity. Here is the technical playbook to enter the RAG retrieval pool.
         </p>
 
         <div className="border-l-4 border-[#F26522] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
@@ -1684,17 +1684,17 @@ const ARTICLES: Record<string, ArticleData> = {
   },
   'google-manual-action-removal-agency-caused-penalty': {
     slug: 'google-manual-action-removal-agency-caused-penalty',
-    title: 'Google Manual Action Removal When Your Agency Caused the Scaled Content Abuse Penalty',
+    title: 'Google Manual Action Removal: Step-by-Step Penalty Recovery',
     category: 'SEO',
     readTime: '10 min read',
     date: 'May 27, 2026',
-    image: '/images/article-agency-penalty.png',
+    image: '/images/google-manual-action-removal-recovery-checklist.png',
     heroAlt: 'Abstract representation of a Google penalty disrupting a B2B data pipeline',
-    metaDescription: 'What to do when your in-house team is suddenly responsible for recovering a Google manual action your agency triggered.',
+    metaDescription: 'Use our Google manual action removal checklist to audit link profiles, document cleanup, and submit a successful reconsideration appeal.',
     content: (
       <>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
-          Is your in-house team suddenly responsible for recovering a Google manual action your agency triggered? It's a stressful spot. You must diagnose the penalty, manage executive expectations, and launch a recovery path—all while winding down the agency contract. Here is how to handle it.
+          When coordinating a Google manual action removal, your in-house team is suddenly responsible for fixing a penalty your legacy agency triggered. You must audit links or scaled content, document cleanup, and submit a successful reconsideration appeal to restore indexation. Here is how to handle it.
         </p>
 
         <div className="border-l-4 border-[#F26522] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
@@ -1956,13 +1956,13 @@ const ARTICLES: Record<string, ArticleData> = {
   },
   'automated-b2b-sales-pipeline-seo': {
     slug: 'automated-b2b-sales-pipeline-seo',
-    title: 'Automated B2B Sales Pipeline SEO: How AI Citations Shape Your Shortlist in 2026',
+    title: 'B2B Sales Pipeline Automation: AI Citations',
     category: 'Strategy',
     readTime: '12 min read',
     date: 'May 25, 2026',
-    image: '/images/article-b2b-pipeline-seo.png',
+    image: '/images/b2b-sales-pipeline-automation-citation-share.png',
     heroAlt: 'Abstract data-flow visualization representing an automated B2B sales pipeline powered by AI-driven SEO',
-    metaDescription: 'How AI-cited content qualifies B2B vendors for buyer shortlists — and what the 2026 shift to AI-driven research means for your pipeline.',
+    metaDescription: 'Integrate B2B sales pipeline automation with search intent. Learn how AI citation share decides who gets on the buyer shortlist.',
     content: (
       <>
         {/* ── LEAD STATS ── */}
@@ -2005,7 +2005,7 @@ const ARTICLES: Record<string, ArticleData> = {
         </details>
 
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
-          Will your brand appear on the AI-generated shortlist when a buyer researches options? That is the question automated B2B pipeline SEO answers. Most B2B research happens autonomously before a sales rep is ever contacted. If you are optimized only for standard blue links, you will miss the AI evaluation filter entirely.
+          How does B2B sales pipeline automation connect to search visibility? Today, B2B buyers ask ChatGPT for recommendations before visiting a site. If your search footprint is not structured for AI retrieval, your business will miss the shortlist. Let's look at how AI citation share shapes your sales pipeline automation.
         </p>
 
         <div className="border-l-4 border-[#F26522] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
@@ -2335,13 +2335,13 @@ const ARTICLES: Record<string, ArticleData> = {
   // ─────────────────────────────────────────────────────────────────────────────
   'automated-lead-generation-seo': {
     slug: 'automated-lead-generation-seo',
-    title: 'Automated Lead Generation SEO: How AI Pre-Qualifies Your Pipeline in 2026',
+    title: 'Automated Lead Generation: Search Intent Mapping',
     category: 'Strategy',
     readTime: '13 min read',
     date: 'May 25, 2026',
-    image: '/images/article-lead-gen-seo.png',
+    image: '/images/automated-lead-generation-intent-mapping-chart.png',
     heroAlt: 'Glowing geometric funnel with orange data-flow nodes representing AI-driven automated lead generation SEO',
-    metaDescription: 'How AI-cited content produces pre-qualified pipeline at conversion rates traditional lead gen cannot match — and what the 2026 shift means for how B2B teams should measure lead quality.',
+    metaDescription: 'Set up automated lead generation by mapping high-intent search clusters to your B2B pipeline to drive closed sales, not just page views.',
     content: (
       <>
         {/* ── LEAD STATS ── */}
@@ -2385,7 +2385,7 @@ const ARTICLES: Record<string, ArticleData> = {
         </details>
 
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
-          Stop asking your sales team to cold-call users who downloaded an ebook two months ago. They aren't leads. Automated lead gen SEO uses AI engines to pre-qualify buyers before they reach your site. These prospects arrive with high intent, convert faster, and already know your value proposition.
+          How can you deploy automated lead generation that converts without cold outreach? Traditional B2B marketing relies on gating ebooks and cold calling unengaged contacts. Automated lead generation shifts the model by using search intent and AI citation paths to pre-qualify prospects before they fill out a form.
         </p>
 
         <div className="border-l-4 border-[#F26522] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
@@ -2708,13 +2708,13 @@ const ARTICLES: Record<string, ArticleData> = {
 
   'outbound-seo-prospecting': {
     slug: 'outbound-seo-prospecting',
-    title: 'Outbound SEO Prospecting: Timing-Anchored Outreach Powered by Intent Signals in 2026',
+    title: 'Outbound SEO Prospecting: Timing Intent Signals',
     category: 'Strategy',
     readTime: '12 min read',
     date: 'May 25, 2026',
-    image: '/images/article-outbound-seo-prospecting.png',
+    image: '/images/outbound-seo-prospecting-intent-signals.png',
     heroAlt: 'Abstract network visualization representing signal-anchored outbound SEO prospecting',
-    metaDescription: 'How SEO-derived intent signals turn outbound from a volume game into a timing game — and what the 2026 data says about cold vs signal-anchored prospecting.',
+    metaDescription: 'Use outbound SEO prospecting to monitor search intent triggers. Learn how to pitch buyers at the exact moment they search for your service.',
     content: (
       <>
         {/* ── LEAD STATS ── */}
@@ -2758,7 +2758,7 @@ const ARTICLES: Record<string, ArticleData> = {
         </details>
 
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
-          Only about 5% of your target accounts are in-market at any given moment. Traditional outbound campaigns spray the other 95% and pray for timing. Outbound SEO prospecting is different. It captures intent signals from your organic pages to tell you which accounts are researching right now, what they read, and when to reach out.
+          How does outbound SEO prospecting optimize B2B outreach? Only about 5% of your target accounts are actively buying at any given moment. Outbound SEO prospecting tracks intent signals from organic pages to pinpoint which accounts are researching right now, what they are reading, and the exact second to pitch them.
         </p>
 
         <div className="border-l-4 border-[#F26522] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
@@ -3013,13 +3013,13 @@ const ARTICLES: Record<string, ArticleData> = {
 
   'b2b-sales-pipeline-automation': {
     slug: 'b2b-sales-pipeline-automation',
-    title: 'B2B Sales Pipeline Automation: The Orchestration Layer for AI-Driven Revenue',
+    title: 'B2B Sales Pipeline Automation: CRM Pipelines',
     category: 'Strategy',
     readTime: '13 min read',
     date: 'May 25, 2026',
-    image: '/images/article-b2b-sales-pipeline-automation.png',
+    image: '/images/b2b-sales-pipeline-automation-outreach.png',
     heroAlt: 'Abstract network visualization representing B2B sales pipeline automation signal flow',
-    metaDescription: 'How orchestration between SEO, intent capture, enrichment, and outbound determines whether automation produces revenue — and why most B2B teams are deploying AI agents into broken workflows.',
+    metaDescription: 'Configure B2B sales pipeline automation workflows. Learn how to connect search intent, lead data enrichment, and automated email campaigns.',
     content: (
       <>
         {/* ── LEAD STATS ── */}
@@ -3064,7 +3064,7 @@ const ARTICLES: Record<string, ArticleData> = {
         </details>
 
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
-          Stacking up disconnected AI tools won't fix a broken sales process. True B2B pipeline automation requires a unified orchestration layer. When your SEO intent capture, enrichment, and CRM routing are integrated, you compound revenue. When they are fragmented, productivity falls.
+          Deploying B2B sales pipeline automation requires more than just installing scattered AI search tools. True sales acceleration happens at the orchestration layer, where your search intent signals, database enrichment, and CRM routing are synced. Here is how to construct a unified B2B sales pipeline automation strategy.
         </p>
 
         <div className="border-l-4 border-[#F26522] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
@@ -3275,13 +3275,13 @@ const ARTICLES: Record<string, ArticleData> = {
   // ─────────────────────────────────────────────────────────────────────────────
   'best-seo-agency-for-b2b-brands': {
     slug: 'best-seo-agency-for-b2b-brands',
-    title: 'How to Choose the Best SEO Agency for B2B Brands in 2026',
+    title: 'Best SEO Agency for B2B: Evaluation Checklist',
     category: 'Strategy',
     readTime: '11 min read',
     date: 'May 25, 2026',
-    image: '/images/article-best-seo-agency.png',
+    image: '/images/best-seo-agency-for-b2b-checklist.png',
     heroAlt: 'Abstract glowing data-flow nodes representing a premium B2B SEO agency with glassmorphism elements',
-    metaDescription: 'The 2026 evaluation framework for picking a B2B SEO partner — what to measure, what to ignore, and why most "best agency" lists are scoring the wrong things.',
+    metaDescription: 'How to select the best SEO agency for B2B brands. Follow our evaluation checklist to verify technical authority, case studies, and contracts.',
     content: (
       <>
         {/* ── LEAD STATS ── */}
@@ -3324,7 +3324,7 @@ const ARTICLES: Record<string, ArticleData> = {
         </details>
 
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
-          Choosing the best B2B SEO agency is a new challenge. The B2B buyer journey now starts in conversational search—ChatGPT, Claude, and Perplexity—for over half of all research. Traditional keyword agencies are failing to adapt. The agencies that produce real pipeline today are the ones who understand AI citation mechanics.
+          How do you select the best SEO agency for B2B brands in the AI era? Traditional B2B buyers now start their vendor research in conversational engines like ChatGPT, Claude, and Perplexity. Finding the best SEO agency for B2B requires moving beyond old keyword metrics to verify technical crawlability, AI citation rates, and CRM pipeline attribution.
         </p>
 
         <div className="border-l-4 border-[#F26522] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
@@ -3477,13 +3477,13 @@ const ARTICLES: Record<string, ArticleData> = {
   // ─────────────────────────────────────────────────────────────────────────────
   'seo-for-b2b-lead-generation': {
     slug: 'seo-for-b2b-lead-generation',
-    title: 'SEO for B2B Lead Generation: How Committee-Architecture Content Outperforms Single-Persona Funnels in 2026',
+    title: 'SEO for B2B Lead Generation: Committee Mapping',
     category: 'Strategy',
     readTime: '14 min read',
     date: 'May 25, 2026',
-    image: '/images/article-seo-b2b-lead-generation.png',
+    image: '/images/seo-for-b2b-lead-generation-committee-map.png',
     heroAlt: 'Abstract network of interconnected glowing nodes representing B2B buying committee stakeholders with glassmorphism panels',
-    metaDescription: 'How content architected for an 11-person buying committee outperforms content built for a single converter — and why B2B lead gen SEO in 2026 looks fundamentally different from every other category.',
+    metaDescription: 'Optimize SEO for B2B lead generation by mapping content to the buying committee stakeholders to increase deal velocity and close rates.',
     content: (
       <>
         {/* ── TABLE OF CONTENTS ── */}
@@ -3536,7 +3536,7 @@ const ARTICLES: Record<string, ArticleData> = {
           The Buying Committee Era — 2026 update
         </h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          B2B lead generation fails when you optimize for a single persona. Modern buying committees involve over 11 stakeholders. Each researches independently. Each holds veto power. To close pipeline, your SEO must arm every stakeholder with role-specific answers.
+          Why does standard SEO for B2B lead generation fail to drive closed revenue? The issue is that most content programs target a single buyer champion, ignoring the 11+ stakeholders on a B2B buying committee. To scale conversions, your SEO for B2B lead generation must arm every stakeholder with role-specific answers.
         </p>
 
         <div className="border-l-4 border-[#F26522] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
@@ -3761,13 +3761,13 @@ const ARTICLES: Record<string, ArticleData> = {
   },
   'local-seo': {
     slug: 'local-seo',
-    title: 'Local SEO: How the 2026 Algorithm and AI Layer Determine Who Gets Found',
+    title: 'Local SEO Strategy: 2026 Map Pack Playbook',
     category: 'Local SEO',
     readTime: '13 min read',
     date: 'May 26, 2026',
-    image: '/images/article-local-seo-los-angeles.png',
+    image: '/images/local-seo-strategy-map-pack-growth.png',
     heroAlt: 'Aerial night view of cityscape with glowing orange data network lines connecting business districts',
-    metaDescription: 'How Google\'s 2026 local search algorithm — and the AI layer now sitting on top of it — determines whether customers find your business or your competitor\'s, and what operators should actually be doing about it.',
+    metaDescription: 'Deploy an advanced local SEO strategy to dominate the Google 3-Pack, optimize schema markup, and capture geographic searches.',
     content: (
       <>
         {/* ── TABLE OF CONTENTS ── */}
@@ -3817,7 +3817,7 @@ const ARTICLES: Record<string, ArticleData> = {
         </div>
 
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Winning local SEO requires optimizing across multiple surfaces. With Google's March 2026 core update pushing AI Overviews into over two-thirds of local searches, standard business profile optimization is no longer enough. Your business must establish presence in the new AI-recommendation layer where models query local business entity clusters.
+          Building a dominant local SEO strategy requires moving beyond simple directory submissions. With AI Overviews and proximity updates reshaping local search engine result pages, your local SEO strategy must optimize localized schema markup, review velocity, and regional landing pages. Here is our map pack optimization playbook.
         </p>
 
         <div className="border-l-4 border-[#F26522] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
@@ -3960,13 +3960,13 @@ const ARTICLES: Record<string, ArticleData> = {
 
   'local-seo-explained': {
     slug: 'local-seo-explained',
-    title: 'Local SEO Explained: The Operational Cadence Required for Search Dominance',
+    title: 'Local SEO Explained: Operational Consistency Playbook',
     category: 'Local SEO',
     readTime: '10 min read',
     date: 'May 27, 2026',
-    image: '/images/article-local-seo-explained.png',
+    image: '/images/local-seo-explained-dashboard.png',
     heroAlt: 'Minimalist digital illustration of a city map grid with glowing orange nodes representing local SEO connections',
-    metaDescription: 'The actual operational rhythm of running local SEO — what the weekly cadence looks like, what produces visible ranking movement at 30 / 60 / 90 days, and why most businesses stall.',
+    metaDescription: 'Our local SEO explained guide shows how to run weekly optimizations, review acquisitions, and local profile updates to secure Map Pack dominance.',
     content: (
       <>
         {/* ── LEAD STATS ── */}
@@ -4013,7 +4013,7 @@ const ARTICLES: Record<string, ArticleData> = {
         </details>
 
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          In local search, strategy is cheap. Operational consistency is expensive. What separates the businesses dominating Google's local 3-Pack from those that fall behind is not a secret tactic, but a weekly operating cadence that signals constant local relevance.
+          How does local SEO explained work in daily practice? When we have local SEO explained by experts, the focus is never on secret tips, but on operational consistency. Winning Google's local 3-Pack requires a weekly operating cadence that signals constant local relevance.
         </p>
 
         <div className="border-l-4 border-[#F26522] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
@@ -4204,13 +4204,13 @@ const ARTICLES: Record<string, ArticleData> = {
 
   'multi-location-seo-website-structure': {
     slug: 'multi-location-seo-website-structure',
-    title: 'Multi-Location SEO Website Structure Explained: Architecting for Search Dominance',
+    title: 'Multi-Location SEO Website Structure: Hierarchy Playbook',
     category: 'Local SEO',
     readTime: '12 min read',
     date: 'May 27, 2026',
-    image: '/images/article-multi-location-seo-website-structure.webp',
+    image: '/images/multi-location-seo-structure-url-hierarchy.png',
     heroAlt: 'Minimalist digital illustration of a multi-location website hierarchical grid network. Centered brand node branches out into multiple location nodes with glowing orange lines',
-    metaDescription: 'How website architecture — URL hierarchy, page-to-GBP mapping, content uniqueness, and internal linking — determines whether locations rank independently or cannibalize each other.',
+    metaDescription: 'Learn to structure a multi-location SEO website structure that prevents cannibalization, consolidates link equity, and ranks every city page.',
     content: (
       <>
         {/* ── LEAD STATS ── */}
@@ -4218,7 +4218,7 @@ const ARTICLES: Record<string, ArticleData> = {
           {[
             { stat: '46%', label: 'Share of all Google searches that now carry local intent', source: 'Whitespark Local Search Ranking Factors, 2026' },
             { stat: '1:1', label: 'Required relationship between each location page and its corresponding GBP', source: 'SE Ranking 2026' },
-            { stat: '4 of 5', label: 'Markets a multi-location operator becomes invisible in when lacking location pages', source: 'SEO Canonical Architectural Failure Case, 2026' },
+            { stat: '4 of 5', label: 'Markets a multi-location operator becomes invisible in when lacking location pages', source: 'SEO Architectural Failure Case, 2026' },
           ].map(({ stat, label, source }) => (
             <div key={stat} className="border border-[#F26522]/30 bg-[#F26522]/5 p-6">
               <p className="text-4xl font-bold text-[#F26522] mb-2 font-display">{stat}</p>
@@ -4256,7 +4256,7 @@ const ARTICLES: Record<string, ArticleData> = {
         </details>
 
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Site architecture is the single most important technical choice for multi-location brands. Built wrong, your location pages cannibalize each other, leaving one branch visible and the rest hidden. Built right, each location serves as a local authority node with its own crawl path and authority signals.
+          Designing a scalable multi-location SEO website structure is the single most important technical choice for regional brands. Built incorrectly, your city subdirectories will cannibalize each other's rankings. Our multi-location SEO website structure playbook ensures each office functions as a distinct authority node with its own crawl path.
         </p>
 
         <div className="border-l-4 border-[#F26522] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
@@ -4447,13 +4447,13 @@ const ARTICLES: Record<string, ArticleData> = {
 
   'best-website-structure-multiple-locations-different-cities': {
     slug: 'best-website-structure-multiple-locations-different-cities',
-    title: 'What Is the Best Website Structure for a Business With Multiple Locations in Different Cities?',
+    title: 'Best Website Structure Multiple Locations: Silo Setup',
     category: 'Local SEO',
     readTime: '14 min read',
     date: 'May 28, 2026',
-    image: '/images/article-multi-city-website-structure.webp',
+    image: '/images/website-structure-for-multiple-locations-setup.png',
     heroAlt: 'Stylized US map with glowing orange network lines connecting city nodes to a single root domain — illustrating single-domain authority consolidation for multi-city businesses',
-    metaDescription: 'The single-domain subdirectory decision, state-city-location hierarchy, cross-city cannibalization failure, and how geographic market separation changes the structural choices for multi-city businesses.',
+    metaDescription: 'Our guide details the best website structure multiple locations setup. Compare subdirectory vs subdomain hierarchies for localized organic growth.',
     content: (
       <>
         {/* ── JSON-LD FAQ SCHEMA ── */}
@@ -4556,7 +4556,7 @@ const ARTICLES: Record<string, ArticleData> = {
 
         {/* ── INTRO ── */}
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Should you use subdirectories, subdomains, or separate domains for multi-city locations? The consensus is clear: subdirectories pool root domain authority. Splitting cities into separate domains or subdomains dilutes link equity and makes ranking newer locations harder.
+          What is the best website structure multiple locations require to maximize local organic search presence? The consensus is clear: consolidating all cities onto subdirectories of a single root domain is the most effective approach. This best website structure multiple locations configuration pools link equity, enabling new branch locations to rank much faster.
         </p>
 
         <div className="border-l-4 border-[#F26522] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
@@ -4831,13 +4831,13 @@ const ARTICLES: Record<string, ArticleData> = {
 
   'can-a-site-fully-recover-from-a-google-core-update': {
     slug: 'can-a-site-fully-recover-from-a-google-core-update',
-    title: 'Can a Site Fully Recover From a Google Core Update?',
+    title: 'Google Core Update Recovery: Full Traffic Restoration',
     category: 'SEO',
     readTime: '15 min read',
     date: 'May 28, 2026',
-    image: '/images/article-can-a-site-fully-recover-from-a-google-core-update.webp',
+    image: '/images/google-core-update-recovery-traffic-charts.png',
     heroAlt: 'Lifelike view of a dark-themed developer workstation with graphs on screen showing a steep drop and recovery, styled with concrete walls and glowing orange lights in a Gobiya styled workspace',
-    metaDescription: 'The honest answer to core update recovery: whether and how fully sites recover, what genuinely drives recovery, and why ranking recovery no longer guarantees traffic recovery in the AI overview era.',
+    metaDescription: 'Our Google core update recovery guide details the timeline, content pruning strategies, and quality updates needed to restore search traffic.',
     content: (
       <>
         {/* ── JSON-LD FAQ SCHEMA ── */}
@@ -4863,30 +4863,6 @@ const ARTICLES: Record<string, ArticleData> = {
                     "@type": "Answer",
                     "text": "Timelines generally cluster around 3 to 6 months. Substantive content improvements (pruning, consolidating, and enhancing quality) require time to be crawled, and the re-evaluation of site quality signals usually takes effect during the next major core update cycle. YMYL (Your Money or Your Life) sites hold to a higher standard and can take 6 to 12 months to show meaningful recovery."
                   }
-                },
-                {
-                  "@type": "Question",
-                  "name": "What is the difference between a Google core update and a search penalty?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "A core update is not a penalty. Penalties (like manual actions or spam updates) target specific guideline violations like link buying or scaled spam. A core update is a broad re-calibration of Google's search algorithms to assess quality and relevance. When you drop in a core update, it means other sites were deemed to better satisfy user intent; recovery requires earning back your relative authority rather than removing a penalty flag."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "Why did my traffic not return even though my keyword rankings recovered?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "In 2026, ranking recovery no longer guarantees traffic recovery because the SERP layout has changed. Google's integration of AI Overviews, featured snippets, and other zero-click features intercepts click-through traffic. A site can climb back to position #1 but experience a 40-58% decrease in clicks compared to previous years because the AI overview answers the user's query directly on the SERP."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "Should I focus on technical SEO to recover from a core update?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "No, technical SEO fixes alone will not recover a site from a quality-driven core update drop. While technical health is a prerequisite to avoid crawling bottlenecks, core updates evaluate content quality, depth, E-E-A-T signals, and user intent satisfaction. You must focus first on pruning low-value pages, rewriting thin content, and reinforcing real trust signals before fine-tuning technical elements."
-                  }
                 }
               ]
             })
@@ -4896,7 +4872,6 @@ const ARTICLES: Record<string, ArticleData> = {
         {/* ── LEAD STATS ── */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 my-10 sm:my-14">
           {[
-            { stat: 'Not All', label: "Google's own documented position on core update recovery is that not all sites will fully recover, representing the first rule of recovery planning.", source: 'Google Search Documentation, 2026' },
             { stat: '3–6m', label: 'Typical timeline required for substantive content quality adjustments to be crawled and re-evaluated by broad updates.', source: 'Industry Case Data, 2026' },
             { stat: '50–80%', label: 'Traffic recovery range reported for sites executing substantive, non-cosmetic quality improvements.', source: 'NextAISEO 50+ Site Analysis, 2026' },
           ].map(({ stat, label, source }) => (
@@ -4941,7 +4916,7 @@ const ARTICLES: Record<string, ArticleData> = {
           The Recovery Reality — 2026 update
         </h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Can your site fully recover from a Google core update drop? Yes, but it requires patience. True recovery takes three to six months of substantive content pruning and quality consolidation. Earning back organic trust is a slow, relative evaluation process that usually runs on Google's next major update cycle.
+          When executing Google core update recovery, your site needs a systematic quality audit to earn back search engines' trust. A successful Google core update recovery plan requires three to six months of content pruning, entity consolidation, and search intent alignment. Here is how to construct a restoration strategy.
         </p>
 
         <div className="border-l-4 border-[#F26522] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
@@ -5129,13 +5104,13 @@ const ARTICLES: Record<string, ArticleData> = {
 
   'google-business-profile-optimization': {
     slug: 'google-business-profile-optimization',
-    title: 'Google Business Profile Optimization for Traffic Recovery Explained',
+    title: 'Google Business Profile Optimization: Recovery & Audits',
     category: 'Local SEO',
     readTime: '16 min read',
     date: 'May 28, 2026',
-    image: '/images/article-google-business-profile-optimization.webp',
+    image: '/images/google-business-profile-optimization-visibility.png',
     heroAlt: 'Abstract premium illustration of a Google Business Profile card with warning indicators, data overlay grids, and ascending traffic restoration lines in orange and black',
-    metaDescription: 'How to diagnose Google Business Profile suspension or ranking degradation, build an evidence package for reinstatement appeals, and avoid the panic-driven mistakes that lead to permanent bans.',
+    metaDescription: 'Learn our Google Business Profile optimization checklist to recover suspended profiles, appeal algorithmic soft bans, and verify map listings.',
     content: (
       <>
         {/* ── JSON-LD FAQ SCHEMA ── */}
@@ -5239,7 +5214,7 @@ const ARTICLES: Record<string, ArticleData> = {
           The GBP Recovery Era — 2026 update
         </h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          When a local business loses search visibility, they often blame their website. But the real culprit is frequently a suspended or degraded Google Business Profile (GBP). A soft or hard profile suspension will drop your map pack visibility to zero, while your website rankings look perfectly normal.
+          When resolving local traffic drops, a complete Google Business Profile optimization audit is your first line of defense. A suspended, unoptimized, or algorithmic-soft-banned profile will sink Map Pack visibility to zero. Professional Google Business Profile optimization ensures all verification parameters, category tags, and NAP citations align with Google's guidelines.
         </p>
 
         <div className="border-l-4 border-[#F26522] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
@@ -5448,13 +5423,13 @@ const ARTICLES: Record<string, ArticleData> = {
 
   'b2b-seo-agency': {
     slug: 'b2b-seo-agency',
-    title: 'B2B SEO Agency Explained: Choosing the Right Revenue Partner',
+    title: 'B2B SEO Agency: Pipeline Attribution Guide',
     category: 'Strategy',
     readTime: '12 min read',
     date: 'May 27, 2026',
-    image: '/images/article-b2b-seo-agency.webp',
+    image: '/images/b2b-seo-agency-funnel-strategy-session.png',
     heroAlt: 'Minimalist digital illustration of a B2B organic pipeline with a central brand node connecting to multiple buying committee stakeholders represented by clean geometric icons and orange glowing lines',
-    metaDescription: 'What a B2B SEO agency actually is, how it differs structurally from generalists serving B2B clients, and why the distinction matters in the AI search era.',
+    metaDescription: 'Partner with a B2B SEO agency built around pipeline value, not just search volume. Verify our committee mapping and conversion playbooks.',
     content: (
       <>
         {/* ── LEAD STATS ── */}
@@ -5500,7 +5475,7 @@ const ARTICLES: Record<string, ArticleData> = {
         </details>
 
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          B2B search requires a specialist. Generalist agencies target search volume; B2B agencies target pipeline value. From multi-stakeholder buying committees to 180-day sales cycles, the B2B SEO model must connect search directly to your CRM. Here is what separates a specialized partner from a generalist.
+          When selecting a specialized B2B SEO agency, you are choosing a partner built around pipeline value, not just search volume. Because B2B buying cycles involve 11+ stakeholders and 180-day consideration periods, a modern B2B SEO agency must connect search footprint directly to CRM closed revenue.
         </p>
 
         <div className="border-l-4 border-[#F26522] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
@@ -5677,11 +5652,11 @@ const ARTICLES: Record<string, ArticleData> = {
   },
   'seo-case-study-traffic-recovery': {
     slug: 'seo-case-study-traffic-recovery',
-    title: 'SEO Case Study Traffic Recovery: How We Recovered 320% Organic Traffic After Google',
+    title: 'SEO Case Study Traffic Recovery: 320% Growth',
     category: 'SEO',
     readTime: '12 min read',
     date: 'May 31, 2026',
-    image: '/images/article-seo-case-study-traffic-recovery.png',
+    image: '/images/seo-case-study-traffic-recovery-console.png',
     heroAlt: 'Forensic SEO case study showing Google Search Console organic traffic data recovering and climbing to 320 percent after a core algorithm update',
     metaDescription: 'A forensic SEO case study on traffic recovery after Google\'s March 2026 dual-update event. Learn the exact 12-week diagnostic sequence and fix order Gobiya used.',
     content: (
@@ -5732,7 +5707,7 @@ const ARTICLES: Record<string, ArticleData> = {
         />
 
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8 font-medium">
-          How do you recover from a sudden Google core update drop? This forensic case study details how Gobiya diagnosed and reversed a severe organic traffic collapse after Google's March 2026 update, leading to a 320% traffic lift. Here is our replicable step-by-step playbook.
+          How do you restore rankings after a core algorithm drop? This SEO case study traffic recovery breakdown details how we diagnosed and reversed a severe organic traffic collapse after Google's March 2026 update. Read our step-by-step diagnostic sequence to learn how we secured a 320% organic traffic lift.
         </p>
 
         <div className="border-l-4 border-[#F26522] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
@@ -5955,13 +5930,13 @@ const ARTICLES: Record<string, ArticleData> = {
   },
   'are-ai-search-engines-scraping-hidden-api-data-or-public-html-text-blocks': {
     slug: 'are-ai-search-engines-scraping-hidden-api-data-or-public-html-text-blocks',
-    title: 'Are AI Search Engines Scraping Hidden API Data or Public HTML Text Blocks?',
+    title: 'AI Search Scraping: API vs HTML Blocks',
     category: 'GEO',
     readTime: '10 min read',
     date: 'June 4, 2026',
-    image: '/images/article-ai-scraping-data.png',
+    image: '/images/ai-search-scraping-crawlers.png',
     heroAlt: 'Technical diagram showing AI crawlers like GPTBot and Claude-SearchBot downloading public server-rendered HTML text blocks while bypassing client-side JavaScript API calls',
-    metaDescription: 'Discover if AI engines scrape hidden APIs or read public HTML. Learn how AI crawler rendering divides impact your SEO and how to fix JavaScript invisibility.',
+    metaDescription: 'Understand how AI search scraping works. Learn why AI crawlers bypass JavaScript APIs and read raw public HTML blocks instead.',
     content: (
       <>
         {/* ── JSON-LD FAQ SCHEMA ── */}
@@ -6002,7 +5977,7 @@ const ARTICLES: Record<string, ArticleData> = {
         />
 
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8 font-medium">
-          Do AI search engines scrape private APIs or read public HTML text blocks? The answer is simple: they fetch public, server-rendered HTML. Because AI crawlers do not execute JavaScript, any client-side rendered content on your website is completely invisible to their indexers.
+          How does AI search scraping target your web data? When analyzing AI search scraping, we find crawlers fetch raw, server-rendered HTML. Because most AI crawler bots do not execute JavaScript, any client-side rendered pages are completely invisible to their indexers.
         </p>
 
         <div className="border-l-4 border-[#F26522] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
@@ -6291,7 +6266,7 @@ const ARTICLES: Record<string, ArticleData> = {
         />
 
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8 font-medium">
-          Many dental practices that got burned by an SEO agency didn't lack budget. They lacked a framework for evaluation. They signed a lengthy contract based on a polished sales deck, waited months for results that never materialized, and then had to fight to recover their own website files when they tried to leave. If you're currently evaluating a <strong>dental SEO agency</strong>, the process you use before signing matters more than the proposal you receive.
+          Choosing the right dental SEO agency requires a strict framework for evaluation. Many practices sign lengthy contracts based on polished sales decks, only to receive zero transparent deliverables. If you are currently evaluating a dental SEO agency, the metrics and contract safeguards you demand before signing will determine your ultimate search visibility and patient booking volume.
         </p>
 
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
@@ -7873,33 +7848,39 @@ const ArticlePage: React.FC<ArticlePageProps> = ({ slug }) => {
               if (aMatches && !bMatches) return -1;
               if (!aMatches && bMatches) return 1;
               return 0;
-            })).slice(0, 3).map(({ href, category, title, image }) => (
-              <a
-                key={href}
-                href={href}
-                className="group relative w-full aspect-[4/5] overflow-hidden block border border-white/10"
-              >
-                <div
-                  className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-                  style={{ backgroundImage: `url(${image})` }}
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-300" />
-                <div className="absolute inset-0 p-6 sm:p-8 flex flex-col justify-end">
-                  <div className="mb-4 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                    <span className="inline-block px-3 py-1 bg-[#F26522] text-white text-[10px] uppercase tracking-wider font-semibold">
-                      {category}
-                    </span>
+            })).slice(0, 3).map((item) => {
+              const itemSlug = item.href.startsWith('/insights/') ? item.href.substring('/insights/'.length) : '';
+              const matchedArticle = itemSlug ? ARTICLES[itemSlug] : null;
+              const displayTitle = matchedArticle ? matchedArticle.title : item.title;
+              const displayImage = matchedArticle ? matchedArticle.image : item.image;
+              return (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  className="group relative w-full aspect-[4/5] overflow-hidden block border border-white/10"
+                >
+                  <div
+                    className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+                    style={{ backgroundImage: `url(${displayImage})` }}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute inset-0 p-6 sm:p-8 flex flex-col justify-end">
+                    <div className="mb-4 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                      <span className="inline-block px-3 py-1 bg-[#F26522] text-white text-[10px] uppercase tracking-wider font-semibold">
+                        {item.category}
+                      </span>
+                    </div>
+                    <h3 className="text-white text-xl sm:text-2xl font-medium leading-tight mb-4 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">
+                      {displayTitle}
+                    </h3>
+                    <div className="flex items-center text-[#F26522] translate-y-8 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 delay-150">
+                      <span className="text-[13px] font-semibold mr-2 uppercase tracking-wide">Read More</span>
+                      <ArrowRight className="w-4 h-4 transform group-hover:translate-x-2 transition-transform duration-300" />
+                    </div>
                   </div>
-                  <h3 className="text-white text-xl sm:text-2xl font-medium leading-tight mb-4 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">
-                    {title}
-                  </h3>
-                  <div className="flex items-center text-[#F26522] translate-y-8 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 delay-150">
-                    <span className="text-[13px] font-semibold mr-2 uppercase tracking-wide">Read More</span>
-                    <ArrowRight className="w-4 h-4 transform group-hover:translate-x-2 transition-transform duration-300" />
-                  </div>
-                </div>
-              </a>
-            ))}
+                </a>
+              );
+            })}
           </div>
         </div>
       </section>

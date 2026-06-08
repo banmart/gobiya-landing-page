@@ -183,10 +183,10 @@ const AxionLanding = () => {
           <div className="flex flex-col justify-center items-start text-left w-full">
             <LiveRevenueCounter />
             <h1 className="text-[clamp(2.5rem,6vw,5.5rem)] font-medium leading-[1.05] tracking-[-0.03em] text-white font-display mb-6 w-full">
-              Fast, custom websites engineered to <span className="text-[#F26522] font-semibold">rank</span> — with native CRM and blockchain built in.
+              Custom <span className="text-[#F26522] font-semibold">React websites</span> built to rank — with native CRM and blockchain integrations.
             </h1>
             <p className="text-[16px] sm:text-[18px] lg:text-[20px] font-medium leading-[1.6] tracking-normal text-gray-400 max-w-[800px] mb-10">
-              We replace bloated page-builders with sub-second custom React/Next.js/Vite builds, integrate lightweight customer pipelines directly into your codebase for 100% data ownership, and implement secure smart contracts natively.
+              We build custom React websites that load in sub-seconds and rank natively, replacing slow page-builders with optimized Next.js and Vite codebases. We integrate lightweight customer pipelines directly into your code for 100% data ownership and deploy secure smart contracts natively.
             </p>
             
             <div className="flex flex-wrap justify-start items-center gap-4 sm:gap-5">
