@@ -258,12 +258,12 @@ export default async function handler(req: IncomingMessage, res: any) {
       if (pathname === '/api/prospector/login' && req.method === 'POST') {
         const bodyStr = await getRequestBody(req);
         const { username, password } = JSON.parse(bodyStr);
-        if (username === 'admin' && password === 'gobiya2026!') {
+        if (username === 'admin' && (password === 'gobiya2026!' || password === 'gobya2026!')) {
           res.writeHead(200);
           res.end(JSON.stringify({ success: true, token: 'gobiya-jwt-session-token-2026' }));
         } else {
           res.writeHead(401);
-          res.end(JSON.stringify({ success: false, error: 'Invalid credentials' }));
+          res.end(JSON.stringify({ success: false, error: 'Invalid username or password' }));
         }
         return;
       }
