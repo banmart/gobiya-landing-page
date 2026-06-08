@@ -30,31 +30,22 @@ export default defineConfig(({mode}) => {
                   const apiModule = await server.ssrLoadModule('/api/index.ts');
                   const handler = apiModule.default || apiModule;
                   
-                  // Polyfill Vercel Response helpers
-                  const vercelRes = Object.create(res);
-                  vercelRes.status = (code: number) => {
+                  // Polyfill Vercel Response helpers directly on the native response object
+                  (res as any).status = (code: number) => {
                     res.statusCode = code;
-                    return vercelRes;
+                    return res;
                   };
-                  vercelRes.json = (bodyObj: any) => {
+                  (res as any).json = (bodyObj: any) => {
                     res.setHeader('Content-Type', 'application/json');
                     res.end(JSON.stringify(bodyObj));
-                    return vercelRes;
+                    return res;
                   };
-                  vercelRes.send = (bodyText: any) => {
+                  (res as any).send = (bodyText: any) => {
                     res.end(bodyText);
-                    return vercelRes;
-                  };
-                  vercelRes.setHeader = (name: string, value: string) => {
-                    res.setHeader(name, value);
-                    return vercelRes;
-                  };
-                  vercelRes.writeHead = (code: number, headers?: any) => {
-                    res.writeHead(code, headers);
-                    return vercelRes;
+                    return res;
                   };
 
-                  await handler(req, vercelRes);
+                  await handler(req, res);
                   console.log(`[API DEV] Completed ${req.url} with status ${res.statusCode}`);
                 } catch (err: any) {
                   console.error('[API DEV] Vite local API execution error:', err);
