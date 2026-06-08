@@ -29,12 +29,16 @@ const AdminLogin: React.FC<AdminLoginProps> = ({ onLoginSuccess }) => {
       });
 
       const data = await res.json();
+      console.log('[Login API Response]', res.status, data);
       if (res.ok && data.success) {
+        console.log('[Login Success] Token obtained:', data.token);
         onLoginSuccess(data.token);
       } else {
+        console.warn('[Login Failure] Server returned error:', data.error);
         setError(data.error || 'Invalid username or password');
       }
     } catch (err) {
+      console.error('[Login Connection Error]', err);
       setError('Connection failed. Please try again.');
     } finally {
       setLoading(false);

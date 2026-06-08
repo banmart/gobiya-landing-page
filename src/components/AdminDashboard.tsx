@@ -25,6 +25,39 @@ interface AdminDashboardProps {
   onLogout: () => void;
 }
 
+// Safe storage helper to prevent crashes in sandboxed environments/iframes or strict privacy modes
+const safeStorage = {
+  getItem: (key: string): string | null => {
+    try {
+      if (typeof window !== 'undefined') {
+        return localStorage.getItem(key);
+      }
+    } catch (e) {
+      console.warn('Storage read blocked, using memory fallback:', e);
+    }
+    if (typeof window !== 'undefined') {
+      return (window as any).__memStorage?.[key] || null;
+    }
+    return null;
+  },
+  setItem: (key: string, value: string): void => {
+    try {
+      if (typeof window !== 'undefined') {
+        localStorage.setItem(key, value);
+        return;
+      }
+    } catch (e) {
+      console.warn('Storage write blocked, using memory fallback:', e);
+    }
+    if (typeof window !== 'undefined') {
+      if (!(window as any).__memStorage) {
+        (window as any).__memStorage = {};
+      }
+      (window as any).__memStorage[key] = value;
+    }
+  }
+};
+
 const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout }) => {
   const [activeTab, setActiveTab] = useState<'prospector' | 'leads' | 'campaigns' | 'settings'>('prospector');
   
@@ -45,27 +78,27 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout }) => {
   const [error, setError] = useState('');
   const [searchTerm, setSearchTerm] = useState('');
   const terminalEndRef = useRef<HTMLDivElement>(null);
-
+ 
   // Load saved credentials & leads
   useEffect(() => {
-    const savedPKey = localStorage.getItem('gobiya_perplexity_key') || '';
-    const savedRKey = localStorage.getItem('gobiya_resend_key') || '';
+    const savedPKey = safeStorage.getItem('gobiya_perplexity_key') || '';
+    const savedRKey = safeStorage.getItem('gobiya_resend_key') || '';
     setPerplexityKey(savedPKey);
     setResendKey(savedRKey);
     
     fetchLeads();
   }, []);
-
+ 
   // Scroll terminal to bottom
   useEffect(() => {
     if (terminalEndRef.current) {
       terminalEndRef.current.scrollIntoView({ behavior: 'smooth' });
     }
   }, [logs]);
-
+ 
   const saveConfig = () => {
-    localStorage.setItem('gobiya_perplexity_key', perplexityKey);
-    localStorage.setItem('gobiya_resend_key', resendKey);
+    safeStorage.setItem('gobiya_perplexity_key', perplexityKey);
+    safeStorage.setItem('gobiya_resend_key', resendKey);
     addLog('System Configuration updated successfully.');
     alert('API Keys saved locally to your browser session.');
   };

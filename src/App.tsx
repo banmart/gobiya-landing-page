@@ -14,6 +14,52 @@ import AdminDashboard from './components/AdminDashboard';
 import SEO from './components/SEO';
 import PageTransition, { navigateWithTransition } from './components/PageTransition';
 
+// Safe storage helper to prevent crashes in sandboxed environments/iframes or strict privacy modes
+const safeStorage = {
+  getItem: (key: string): string | null => {
+    try {
+      if (typeof window !== 'undefined') {
+        return localStorage.getItem(key);
+      }
+    } catch (e) {
+      console.warn('Storage read blocked, using memory fallback:', e);
+    }
+    if (typeof window !== 'undefined') {
+      return (window as any).__memStorage?.[key] || null;
+    }
+    return null;
+  },
+  setItem: (key: string, value: string): void => {
+    try {
+      if (typeof window !== 'undefined') {
+        localStorage.setItem(key, value);
+        return;
+      }
+    } catch (e) {
+      console.warn('Storage write blocked, using memory fallback:', e);
+    }
+    if (typeof window !== 'undefined') {
+      if (!(window as any).__memStorage) {
+        (window as any).__memStorage = {};
+      }
+      (window as any).__memStorage[key] = value;
+    }
+  },
+  removeItem: (key: string): void => {
+    try {
+      if (typeof window !== 'undefined') {
+        localStorage.removeItem(key);
+        return;
+      }
+    } catch (e) {
+      console.warn('Storage remove blocked, using memory fallback:', e);
+    }
+    if (typeof window !== 'undefined' && (window as any).__memStorage) {
+      delete (window as any).__memStorage[key];
+    }
+  }
+};
+
 interface AppProps {
   url?: string;
 }
@@ -25,21 +71,21 @@ function App({ url }: AppProps) {
   );
 
   const [token, setToken] = useState<string | null>(() => {
-    if (typeof window !== 'undefined') {
-      return localStorage.getItem('gobiya_admin_token');
-    }
-    return null;
+    const t = safeStorage.getItem('gobiya_admin_token');
+    console.log('[App] Initialized token from storage:', t);
+    return t;
   });
 
   const handleLoginSuccess = (newToken: string) => {
-    localStorage.setItem('gobiya_admin_token', newToken);
+    console.log('[App] handleLoginSuccess triggered with token:', newToken);
+    safeStorage.setItem('gobiya_admin_token', newToken);
     setToken(newToken);
     window.history.pushState({}, '', '/admin');
     setCurrentPath('/admin');
   };
 
   const handleLogout = () => {
-    localStorage.removeItem('gobiya_admin_token');
+    safeStorage.removeItem('gobiya_admin_token');
     setToken(null);
     window.history.pushState({}, '', '/admin');
     setCurrentPath('/admin');
