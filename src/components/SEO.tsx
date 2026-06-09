@@ -7,8 +7,8 @@ interface SEOMetadata {
 
 const metadataMap: Record<string, SEOMetadata> = {
   '/': {
-    title: 'Custom React Websites Built to Rank & Convert | gobiya',
-    description: 'We build custom React websites engineered to rank and convert natively. Includes codebase-level CRM pipelines and Web3 integrations. Get a free audit.'
+    title: 'AI Internet Marketing Agency | Gobiya',
+    description: 'AI Internet Marketing Agency | Gobiya'
   },
   '/capabilities/web-development': {
     title: 'React Web Development — Fast Custom Websites | gobiya',
@@ -53,6 +53,10 @@ const metadataMap: Record<string, SEOMetadata> = {
   '/insights/dental-seo-agency': {
     title: 'Dental SEO Agency Checklist: KPIs & Red Flags | Gobiya',
     description: 'How to select the right dental SEO agency. Read our evaluation checklist covering KPIs, contract terms, and local maps pack performance.'
+  },
+  '/insights/do-roofers-need-a-license-in-texas': {
+    title: 'Do Roofers Need a License in Texas? 2026 Licensing Update | Gobiya',
+    description: 'Texas roofing rules changed. Learn about mandatory TDLR licensing under HB 3344, the dual-adjuster ban, and deductible laws in our comprehensive guide.'
   },
   '/company/careers': {
     title: 'Growth Engineering Jobs: Join Gobiya\'s Team | Gobiya',

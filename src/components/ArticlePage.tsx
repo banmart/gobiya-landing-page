@@ -6523,6 +6523,166 @@ const ARTICLES: Record<string, ArticleData> = {
       </>
     )
   },
+  'do-roofers-need-a-license-in-texas': {
+    slug: 'do-roofers-need-a-license-in-texas',
+    title: 'Do Roofers Need a License in Texas?',
+    category: 'Local SEO',
+    readTime: '8 min read',
+    date: 'June 8, 2026',
+    image: '/images/article-do-roofers-need-license-texas.webp',
+    heroAlt: 'A premium, photorealistic, lifelike shot of a professional roofing contractor in Texas reviewing licensing documentation on a tablet screen with a client.',
+    metaDescription: 'Texas roofing rules changed. Learn about mandatory TDLR licensing under HB 3344, the dual-adjuster ban, and deductible laws in our comprehensive guide.',
+    content: (
+      <>
+        {/* ── JSON-LD FAQ SCHEMA ── */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "Do roofers need a license in Texas?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. As of June 1, 2026, House Bill 3344 (the Roofing Contractor Consumer Protection Act) requires reroofing contractors in Texas to hold a mandatory state license issued by the Texas Department of Licensing and Regulation (TDLR)."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Can a roofing contractor negotiate my insurance claim in Texas?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No. Under Texas Insurance Code Chapter 4102 and the Stonewater Supreme Court ruling, roofers are strictly banned from acting as public adjusters or negotiating claims on jobs they are repairing."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Is it legal for a roofer to waive my insurance deductible in Texas?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No. Under Texas Insurance Code Chapter 707, it is a Class B misdemeanor for a contractor to waive, absorb, rebate, or credit a homeowner's insurance deductible."
+                  }
+                }
+              ]
+            })
+          }}
+        />
+
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8 font-medium">
+          The answer changed in 2026. For decades Texas required no state roofing license — but House Bill 3344 ended that era, and the state began issuing mandatory reroofing contractor licenses on June 1, 2026. Here's what the new licensing regime requires, the two insurance-related legal lines roofers can no longer cross, and what it all means for hiring or operating as a roofer in Texas.
+        </p>
+
+        <div className="border-l-4 border-[#F26522] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
+          <img src="/images/steve-portrait.webp" alt="Steve Martin" className="w-12 h-12 object-cover border border-white/10 shrink-0" />
+          <div>
+            <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-1 font-sans">Steve's Take</p>
+            <p className="text-[15px] italic text-white leading-relaxed font-sans">
+              "For years, the lack of licensing made Texas roofing the wild west. While mandatory licensing under HB 3344 protects consumers, roofers must realize this is part of a broader compliance landscape. Standardizing your operational structure and local visibility is now a legal requirement, not just a marketing preference."
+            </p>
+          </div>
+        </div>
+
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          Understanding this landscape is key. Alongside the new licensing requirements, two other legal pillars govern Texas roofing with real teeth: the ban on playing insurance adjuster (Stonewater case), and the strict prohibition on waiving deductibles (Chapter 707). Implementing a clean local footprint is how contractors stay compliant while leveraging <a href="/insights/local-seo-explained" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">structured local SEO rhythms</a> to win their markets.
+        </p>
+
+        {/* ── TABLE OF CONTENTS ── */}
+        <details className="bg-gray-50 border border-gray-200 rounded-lg p-6 sm:p-8 my-10 sm:my-14 group" open>
+          <summary className="text-[14px] font-semibold uppercase tracking-wider text-gray-500 cursor-pointer list-none flex items-center justify-between">
+            Table of Contents
+            <svg className="w-4 h-4 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" /></svg>
+          </summary>
+          <ul className="mt-6 space-y-3.5 text-[15px] font-medium text-gray-900 border-t border-gray-200 pt-6">
+            {[
+              { id: 'mandatory-licensing', label: 'Pillar One: Mandatory Statewide Licensing under HB 3344' },
+              { id: 'adjuster-ban', label: 'Pillar Two: The Dual-Role Adjuster Ban (TDI v. Stonewater Roofing)' },
+              { id: 'deductible-waiving', label: 'Pillar Three: The Anti-Deductible-Waiving Law (Chapter 707)' },
+              { id: 'pillars-fit', label: 'How the Three Pillars Fit Together' },
+              { id: 'hiring-roofer', label: 'What This Means for Hiring a Roofer in Texas' },
+              { id: 'operating-roofer', label: 'What This Means for Operating as a Roofer in Texas' },
+              { id: 'honest-bottom-line', label: 'The Honest Bottom Line on Texas Roofing Licensing' }
+            ].map(({ id, label }) => (
+              <li key={id} className="flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#F26522] shrink-0" />
+                <a href={'#' + id} className="hover:text-[#F26522] transition-colors">{label}</a>
+              </li>
+            ))}
+          </ul>
+        </details>
+
+        <h2 id="mandatory-licensing" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          Pillar One: Mandatory Statewide Licensing under HB 3344
+        </h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          The centerpiece of the change is the licensing requirement itself. HB 3344 amends the Occupations Code to bring reroofing contractors — defined as those who repair, recover, or replace existing roof coverings on residential or commercial structures — under TDLR regulation. To hold a license, contractors must pass a state competency exam, complete background checks for controlling owners (holding 10% or more stake), and show proof of general liability insurance.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          Importantly, TDLR maintains a searchable public database listing every licensed roofer's status, contact information, and disciplinary history. Contractors must display their business name and unique state license number on all commercial vehicles, contracts, and advertisements. For local companies trying to stand out, pairing this verified status with a solid <a href="/insights/google-business-profile-optimization" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">Google Business Profile optimization checklist</a> makes the firm highly searchable and verified.
+        </p>
+
+        <h2 id="adjuster-ban" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          Pillar Two: The Dual-Role Adjuster Ban (TDI v. Stonewater Roofing)
+        </h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          The second pillar predates HB 3344 but was permanently solidified by the Texas Supreme Court. Under Texas Insurance Code Chapter 4102, a contractor is strictly prohibited from acting as a public insurance adjuster on a property where they are also doing the repair work. In <em>TDI v. Stonewater Roofing</em>, the court confirmed this ban is fully constitutional.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          This means roofers cannot negotiate claim settlements, promise to "handle your insurance," or represent your interests to the carrier. They must stick to estimating damage and performing physical repairs. If you operate multiple sites, ensuring you describe your services in full compliance with state rules requires designing a proper <a href="/insights/multi-location-seo-website-structure" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">multi-location SEO hierarchy</a> that reflects localized constraints.
+        </p>
+
+        {/* Secondary Graphic Content */}
+        <div className="my-10">
+          <img 
+            src="/images/article-roofing-license-secondary.webp" 
+            alt="A Texas roofing agency team in modern office setup reviewing compliance guidelines" 
+            className="w-full aspect-[16/9] object-cover rounded-xl border border-gray-200" 
+          />
+          <p className="text-xs text-gray-500 mt-2 text-center">Roofing agencies in Texas must review TDLR licensing compliance across their operational maps.</p>
+        </div>
+
+        <h2 id="deductible-waiving" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          Pillar Three: The Anti-Deductible-Waiving Law (Chapter 707)
+        </h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          The third pillar makes the "free roof" deductible waiver a Class B misdemeanor in Texas under Chapter 707. It is illegal for a roofer to pay, waive, absorb, rebate, or credit a homeowner's insurance deductible. Furthermore, contracts totaling $1,000 or more paid through insurance proceeds must contain a bolded 12-point disclosure notifying the policyholder of their legal duty to pay.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          Carriers routinely withhold depreciation payments until the homeowner provides reasonable proof of payment (like a canceled check). Operating with a clean, fully compliant contract is how roofers survive audits and build trust.
+        </p>
+
+        <h2 id="pillars-fit" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          How the Three Pillars Fit Together
+        </h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          The three regimes work in tandem. Licensing (HB 3344) screens who can operate; the dual-role ban keeps roofers from playing adjuster; and the anti-deductible law regulates how money flows. Together, they eliminate storm-chasing fraud and elevate industry standards. Legitimate builders benefit from this clarity, and you can learn how custom web platforms integrate these metrics into a <a href="/capabilities/seo-discoverability" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">technical search discoverability setup</a> that captures and converts high-fit localized leads.
+        </p>
+
+        <h2 id="hiring-roofer" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          What This Means for Hiring a Roofer in Texas
+        </h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          For homeowners, vetting is simple. Use the TDLR database to verify that a contractor holds an active license and has a clean history. Walk away from any roofer offering a "free roof" or proposing to handle negotiations with your insurer, as these actions violate the law and can complicate your claim.
+        </p>
+
+        <h2 id="operating-roofer" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          What This Means for Operating as a Roofer in Texas
+        </h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          For contractors, compliance requires three fronts: obtain the state license and display it visible on assets; stick purely to estimating and repairing; and collect deductibles cleanly without workarounds. A roofer who builds a clean, licensed, transparent operation will gain a competitive advantage in a professionalized market.
+        </p>
+
+        <h2 id="honest-bottom-line" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          The Honest Bottom Line on Texas Roofing Licensing
+        </h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          Texas roofing licensing rules have fundamentally shifted. To secure your compliance, book a <a href="/book" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">strategy session with Gobiya</a> to audit your online presence, map out clean multi-city directory models, and ensure your local profiles are optimized under the new state regulations.
+        </p>
+      </>
+    )
+  },
 };
 
 // ─── Related Articles per slug ────────────────────────────────────────────────

@@ -2,6 +2,10 @@ import { IncomingMessage } from 'http';
 import fs from 'fs';
 import path from 'path';
 import { createClient } from '@supabase/supabase-js';
+import dotenv from 'dotenv';
+
+dotenv.config({ path: path.resolve(process.cwd(), '.env.local') });
+dotenv.config();
 
 // Define render function type from server bundle
 type RenderFn = (url: string) => { html: string };
@@ -34,75 +38,133 @@ interface OutreachEmail {
   body: string;
 }
 
-async function generateOutreachCopy(lead: any, pKey: string): Promise<OutreachEmail> {
+async function generateOutreachCopy(
+  lead: any, 
+  gKey: string, 
+  systemPrompt?: string, 
+  customPrompt?: string
+): Promise<OutreachEmail> {
   const defaultSubject = `Improving your ${lead.category || 'Business'} Search Citations & Security`;
   const defaultBody = `<p>We noticed your business, <strong>${lead.company_name}</strong>, has a strong presence in ${lead.location}, but is currently missing a few crucial schema markup tags and security integrations for AI search engine discovery.</p>
 <p>We've created a custom pipeline strategy for your firm. Are you available for a quick 10-minute audit next Tuesday?</p>`;
 
-  if (!pKey) {
+  if (!gKey) {
+    console.warn('generateOutreachCopy: GEMINI_API_KEY is not defined.');
     return { subject: defaultSubject, body: defaultBody };
   }
 
   try {
-    const prompt = `You are Steve Martin, Founder of Gobiya, a premier technical SEO and custom React web development agency. 
-Write a highly personalized, direct, engineering-focused cold outreach email to ${lead.contact_name || 'Business Owner'} at ${lead.company_name} located in ${lead.location}. 
+    const finalSystemPrompt = systemPrompt || `You are Steve Martin, Founder of Gobiya, a premier technical SEO and custom React web development agency.`;
+    const defaultCustomPrompt = `Write a highly personalized, direct, engineering-focused cold outreach email to ${lead.contact_name || 'Business Owner'} at ${lead.company_name} located in ${lead.location}. 
 Their website is ${lead.website || 'N/A'} and their category is ${lead.category || 'Business'}.
 
 Focus the pitch on evaluating their search overview citation presence (Generative Engine Optimization) and security architecture. 
 The tone must be engineering-first, strictly professional, concise (under 100 words), and zero sales fluff.
-Propose a quick 15-minute forensic pipeline audit. 
+Propose a quick 15-minute forensic pipeline audit.`;
 
-Provide your response strictly in JSON format with no markdown tags surrounding it, matching this schema:
-{
-  "subject": "A compelling, concise subject line",
-  "body": "The email body in clean HTML format (only <p> and <strong> tags, no inline styles, no header/footer/greeting/signature wraps, as we wrap those separately)"
-}`;
+    const finalCustomPrompt = customPrompt 
+      ? customPrompt
+          .replace(/\{contact_name\}/g, lead.contact_name || 'Business Owner')
+          .replace(/\{company_name\}/g, lead.company_name)
+          .replace(/\{location\}/g, lead.location)
+          .replace(/\{website\}/g, lead.website || 'N/A')
+          .replace(/\{category\}/g, lead.category || 'Business')
+      : defaultCustomPrompt;
 
-    const res = await fetch('https://api.perplexity.ai/chat/completions', {
+    const fullPrompt = `${finalSystemPrompt}\n\n${finalCustomPrompt}\n\nProvide your response strictly in JSON format matching this schema:\n{\n  "subject": "A compelling, concise subject line",\n  "body": "The email body in clean HTML format (only <p> and <strong> tags, no inline styles, no header/footer/greeting/signature wraps, as we wrap those separately)"\n}`;
+
+    const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${gKey}`, {
       method: 'POST',
       headers: {
-        'Authorization': `Bearer ${pKey}`,
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        model: 'sonar',
-        messages: [
+        contents: [
           {
-            role: 'system',
-            content: 'You are a professional outreach copywriting assistant. Return ONLY a valid JSON object matching the requested schema. Do not write markdown wrappers other than maybe standard JSON codeblocks.'
-          },
-          {
-            role: 'user',
-            content: prompt
+            parts: [
+              {
+                text: fullPrompt
+              }
+            ]
           }
         ],
-        temperature: 0.2
+        generationConfig: {
+          responseMimeType: 'application/json',
+          responseSchema: {
+            type: 'OBJECT',
+            properties: {
+              subject: {
+                type: 'STRING',
+                description: 'A compelling, concise subject line'
+              },
+              body: {
+                type: 'STRING',
+                description: 'The email body in clean HTML format (only <p> and <strong> tags, no inline styles, no header/footer/greeting/signature wraps, as we wrap those separately)'
+              }
+            },
+            required: ['subject', 'body']
+          },
+          temperature: 0.2
+        }
       })
     });
 
     if (res.ok) {
       const data: any = await res.json();
-      let content = data.choices[0].message.content.trim();
-      
-      if (content.includes('```json')) {
-        content = content.split('```json')[1].split('```')[0].trim();
-      } else if (content.includes('```')) {
-        content = content.split('```')[1].split('```')[0].trim();
+      const contentText = data.candidates?.[0]?.content?.parts?.[0]?.text;
+      if (contentText) {
+        let content = contentText.trim();
+        if (content.includes('```json')) {
+          content = content.split('```json')[1].split('```')[0].trim();
+        } else if (content.includes('```')) {
+          content = content.split('```')[1].split('```')[0].trim();
+        }
+        const parsed = JSON.parse(content);
+        if (parsed.subject && parsed.body) {
+          return {
+            subject: parsed.subject,
+            body: parsed.body
+          };
+        }
+      } else {
+        console.error('No content returned from Gemini API:', JSON.stringify(data));
       }
-
-      const parsed = JSON.parse(content);
-      if (parsed.subject && parsed.body) {
-        return {
-          subject: parsed.subject,
-          body: parsed.body
-        };
-      }
+    } else {
+      const errText = await res.text();
+      console.error(`Gemini API returned status ${res.status}: ${errText}`);
     }
   } catch (err) {
-    console.error('Error generating AI email copy:', err);
+    console.error('Error generating AI email copy with Gemini:', err);
   }
 
   return { subject: defaultSubject, body: defaultBody };
+}
+
+function getDomainFromUrl(url: string): string {
+  if (!url) return '';
+  try {
+    let cleanUrl = url.trim();
+    if (!cleanUrl.startsWith('http://') && !cleanUrl.startsWith('https://')) {
+      cleanUrl = 'https://' + cleanUrl;
+    }
+    const parsed = new URL(cleanUrl);
+    let hostname = parsed.hostname;
+    if (hostname.startsWith('www.')) {
+      hostname = hostname.substring(4);
+    }
+    return hostname;
+  } catch (e) {
+    return '';
+  }
+}
+
+function getDomainFromCompanyName(name: string): string {
+  if (!name) return '';
+  const cleanName = name
+    .toLowerCase()
+    .replace(/[^a-z0-9]/g, '')
+    .substring(0, 30);
+  return cleanName ? `${cleanName}.com` : '';
 }
 
 function wrapBrandedEmail(leadName: string, bodyHtml: string, bookingUrl: string): string {
@@ -236,6 +298,48 @@ function wrapBrandedEmail(leadName: string, bodyHtml: string, bookingUrl: string
 </html>`;
 }
 
+function parsePerplexityLeads(rawText: string): any {
+  let cleanText = rawText.trim();
+  if (cleanText.includes('```json')) {
+    cleanText = cleanText.split('```json')[1].split('```')[0].trim();
+  } else if (cleanText.includes('```')) {
+    cleanText = cleanText.split('```')[1].split('```')[0].trim();
+  }
+  try {
+    return JSON.parse(cleanText);
+  } catch (e) {
+    const startIdx = cleanText.indexOf('[');
+    const endIdx = cleanText.lastIndexOf(']');
+    if (startIdx !== -1 && endIdx !== -1 && endIdx > startIdx) {
+      const potentialJson = cleanText.substring(startIdx, endIdx + 1);
+      try {
+        return JSON.parse(potentialJson);
+      } catch (err2) {
+        console.error("Failed parsing extracted array: ", err2);
+      }
+    }
+    throw new Error("Could not parse valid JSON array from Perplexity: " + e.message);
+  }
+}
+
+function findFirstArray(obj: any): any[] | null {
+  if (Array.isArray(obj)) {
+    return obj;
+  }
+  if (obj && typeof obj === 'object') {
+    for (const key of Object.keys(obj)) {
+      if (Array.isArray(obj[key])) {
+        return obj[key];
+      }
+    }
+    for (const key of Object.keys(obj)) {
+      const res = findFirstArray(obj[key]);
+      if (res) return res;
+    }
+  }
+  return null;
+}
+
 interface SEOMetadata {
   title: string;
   description: string;
@@ -292,6 +396,11 @@ const metadataMap: Record<string, SEOMetadata> = {
     title: 'Dental SEO Agency Checklist: Red Flags and KPIs to Watch | Gobiya',
     description: 'Avoid costly hiring mistakes. Use our comprehensive evaluation checklist for dental SEO agencies, covering contract traps, KPIs, and case study audits.',
     image: '/images/article-dental-seo-agency.png'
+  },
+  '/insights/do-roofers-need-a-license-in-texas': {
+    title: 'Do Roofers Need a License in Texas? 2026 Licensing Update | Gobiya',
+    description: 'Texas roofing rules changed. Learn about mandatory TDLR licensing under HB 3344, the dual-adjuster ban, and deductible laws in our comprehensive guide.',
+    image: '/images/article-do-roofers-need-license-texas.webp'
   },
   '/company/careers': {
     title: 'Growth Engineering Jobs: Join Gobiya\'s Team | Gobiya',
@@ -475,20 +584,26 @@ export default async function handler(req: IncomingMessage, res: any) {
         return;
       }
 
+      if (pathname === '/api/prospector/config' && req.method === 'GET') {
+        res.writeHead(200);
+        res.end(JSON.stringify({
+          success: true,
+          hasPerplexityKey: !!(process.env.PERPLEXITY_API_KEY),
+          hasResendKey: !!(process.env.RESEND_API_KEY)
+        }));
+        return;
+      }
+
       if (pathname === '/api/prospector/leads' && req.method === 'GET') {
         try {
-          if (supabaseServer) {
-            const { data, error } = await supabaseServer
-              .from('prospects')
-              .select('*')
-              .order('created_at', { ascending: false });
-            if (error) throw error;
-            res.writeHead(200);
-            res.end(JSON.stringify({ success: true, leads: data || [] }));
-          } else {
-            res.writeHead(200);
-            res.end(JSON.stringify({ success: true, leads: [] }));
-          }
+          if (!supabaseServer) throw new Error('Supabase database is not configured. Live mode requires VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY.');
+          const { data, error } = await supabaseServer
+            .from('prospects')
+            .select('*')
+            .order('created_at', { ascending: false });
+          if (error) throw error;
+          res.writeHead(200);
+          res.end(JSON.stringify({ success: true, leads: data || [] }));
         } catch (e: any) {
           res.writeHead(500);
           res.end(JSON.stringify({ success: false, error: e.message }));
@@ -498,18 +613,14 @@ export default async function handler(req: IncomingMessage, res: any) {
 
       if (pathname === '/api/prospector/leads' && req.method === 'DELETE') {
         try {
-          if (supabaseServer) {
-            const { error } = await supabaseServer
-              .from('prospects')
-              .delete()
-              .neq('id', '00000000-0000-0000-0000-000000000000');
-            if (error) throw error;
-            res.writeHead(200);
-            res.end(JSON.stringify({ success: true, message: 'All leads cleared.' }));
-          } else {
-            res.writeHead(200);
-            res.end(JSON.stringify({ success: true, message: 'Mock clear complete.' }));
-          }
+          if (!supabaseServer) throw new Error('Supabase database is not configured. Live mode requires VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY.');
+          const { error } = await supabaseServer
+            .from('prospects')
+            .delete()
+            .neq('id', '00000000-0000-0000-0000-000000000000');
+          if (error) throw error;
+          res.writeHead(200);
+          res.end(JSON.stringify({ success: true, message: 'All leads cleared.' }));
         } catch (e: any) {
           res.writeHead(500);
           res.end(JSON.stringify({ success: false, error: e.message }));
@@ -563,22 +674,278 @@ export default async function handler(req: IncomingMessage, res: any) {
         return;
       }
 
+      if (pathname === '/api/prospector/lead' && req.method === 'POST') {
+        try {
+          const bodyStr = await getRequestBody(req);
+          const lead = JSON.parse(bodyStr);
+          if (!lead.company_name || !lead.email) {
+            res.writeHead(400);
+            res.end(JSON.stringify({ success: false, error: 'company_name and email are required fields.' }));
+            return;
+          }
+          const newLead = {
+            company_name: lead.company_name,
+            contact_name: lead.contact_name || 'Business Owner',
+            email: lead.email,
+            phone: lead.phone || '',
+            website: lead.website || '',
+            category: lead.category || 'general',
+            location: lead.location || 'N/A',
+            status: lead.status || 'new'
+          };
+          if (!supabaseServer) throw new Error('Supabase database is not configured. Live mode requires VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY.');
+          const { data, error } = await supabaseServer
+            .from('prospects')
+            .insert([newLead])
+            .select();
+          if (error) throw error;
+          res.writeHead(200);
+          res.end(JSON.stringify({ success: true, lead: data?.[0] || newLead }));
+        } catch (e: any) {
+          res.writeHead(500);
+          res.end(JSON.stringify({ success: false, error: e.message }));
+        }
+        return;
+      }
+
+      if (pathname === '/api/prospector/lead' && req.method === 'PUT') {
+        try {
+          const bodyStr = await getRequestBody(req);
+          const lead = JSON.parse(bodyStr);
+          if (!lead.email) {
+            res.writeHead(400);
+            res.end(JSON.stringify({ success: false, error: 'email is required to update a lead.' }));
+            return;
+          }
+          const updateData: any = {};
+          if (lead.company_name !== undefined) updateData.company_name = lead.company_name;
+          if (lead.contact_name !== undefined) updateData.contact_name = lead.contact_name;
+          if (lead.phone !== undefined) updateData.phone = lead.phone;
+          if (lead.website !== undefined) updateData.website = lead.website;
+          if (lead.category !== undefined) updateData.category = lead.category;
+          if (lead.location !== undefined) updateData.location = lead.location;
+          if (lead.status !== undefined) updateData.status = lead.status;
+
+          if (!supabaseServer) throw new Error('Supabase database is not configured. Live mode requires VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY.');
+          let query = supabaseServer.from('prospects').update(updateData);
+          if (lead.id) {
+            query = query.eq('id', lead.id);
+          } else {
+            query = query.eq('email', lead.email);
+          }
+          const { data, error } = await query.select();
+          if (error) throw error;
+          res.writeHead(200);
+          res.end(JSON.stringify({ success: true, lead: data?.[0] || lead }));
+        } catch (e: any) {
+          res.writeHead(500);
+          res.end(JSON.stringify({ success: false, error: e.message }));
+        }
+        return;
+      }
+
+      if (pathname === '/api/prospector/lead' && req.method === 'DELETE') {
+        try {
+          const id = parsedUrl.searchParams.get('id');
+          const email = parsedUrl.searchParams.get('email');
+          
+          let targetId = id;
+          let targetEmail = email;
+
+          if (!targetId && !targetEmail) {
+            const bodyStr = await getRequestBody(req).catch(() => '{}');
+            const body = JSON.parse(bodyStr || '{}');
+            targetId = body.id;
+            targetEmail = body.email;
+          }
+
+          if (!targetId && !targetEmail) {
+            res.writeHead(400);
+            res.end(JSON.stringify({ success: false, error: 'id or email is required to delete a lead.' }));
+            return;
+          }
+
+          if (!supabaseServer) throw new Error('Supabase database is not configured. Live mode requires VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY.');
+          let query = supabaseServer.from('prospects').delete();
+          if (targetId) {
+            query = query.eq('id', targetId);
+          } else {
+            query = query.eq('email', targetEmail);
+          }
+          const { error } = await query;
+          if (error) throw error;
+
+          res.writeHead(200);
+          res.end(JSON.stringify({ success: true, message: 'Lead deleted successfully.' }));
+        } catch (e: any) {
+          res.writeHead(500);
+          res.end(JSON.stringify({ success: false, error: e.message }));
+        }
+        return;
+      }
+
+      if (pathname === '/api/prospector/send-email' && req.method === 'POST') {
+        try {
+          const bodyStr = await getRequestBody(req);
+          const { lead, resendKey, systemPrompt, customPrompt } = JSON.parse(bodyStr);
+          if (!lead || !lead.email) {
+            res.writeHead(400);
+            res.end(JSON.stringify({ success: false, error: 'lead email is required.' }));
+            return;
+          }
+          const rKey = resendKey || process.env.RESEND_API_KEY || '';
+          const gKey = process.env.GEMINI_API_KEY || '';
+
+          const emailData = await generateOutreachCopy(lead, gKey, systemPrompt, customPrompt);
+          
+          if (rKey) {
+            const host = req.headers.host || 'www.gobiya.com';
+            const protocol = req.headers['x-forwarded-proto'] || 'http';
+            const bookingUrl = `${protocol}://${host}/book?email=${encodeURIComponent(lead.email)}&company=${encodeURIComponent(lead.company_name)}&firstName=${encodeURIComponent(lead.contact_name || '')}&utm_source=prospector&utm_medium=email&utm_campaign=outreach`;
+            
+            const htmlEmail = wrapBrandedEmail(lead.contact_name || 'Business Owner', emailData.body, bookingUrl);
+
+            const resendRes = await fetch('https://api.resend.com/emails', {
+              method: 'POST',
+              headers: {
+                'Authorization': `Bearer ${rKey}`,
+                'Content-Type': 'application/json'
+              },
+              body: JSON.stringify({
+                from: 'Gobiya AI Onboarding <onboarding@resend.dev>',
+                to: [lead.email],
+                subject: emailData.subject,
+                html: htmlEmail
+              })
+            });
+
+            if (!resendRes.ok) {
+              const errJson = await resendRes.json().catch(() => ({}));
+              throw new Error(`Resend API error: ${JSON.stringify(errJson)}`);
+            }
+          }
+
+          if (supabaseServer) {
+            const { error } = await supabaseServer
+              .from('prospects')
+              .update({ status: 'welcome_sent' })
+              .eq('email', lead.email);
+            if (error) throw error;
+          }
+
+          res.writeHead(200);
+          res.end(JSON.stringify({
+            success: true,
+            message: rKey ? 'Email sent successfully.' : 'Email generation simulated successfully.',
+            subject: emailData.subject,
+            body: emailData.body
+          }));
+        } catch (e: any) {
+          res.writeHead(500);
+          res.end(JSON.stringify({ success: false, error: e.message }));
+        }
+        return;
+      }
+
+      if (pathname === '/api/prospector/test-email' && req.method === 'POST') {
+        try {
+          const bodyStr = await getRequestBody(req);
+          const { testEmail, resendKey, systemPrompt, customPrompt } = JSON.parse(bodyStr);
+          if (!testEmail) {
+            res.writeHead(400);
+            res.end(JSON.stringify({ success: false, error: 'testEmail is required.' }));
+            return;
+          }
+          const rKey = resendKey || process.env.RESEND_API_KEY || '';
+          const gKey = process.env.GEMINI_API_KEY || '';
+
+          const mockLead = {
+            company_name: 'Acme Test Corp',
+            contact_name: 'John Doe',
+            email: testEmail,
+            phone: '(555) 019-2834',
+            website: 'https://example-test-acme.com',
+            category: 'technical testing',
+            location: 'Los Angeles, CA'
+          };
+
+          const emailData = await generateOutreachCopy(mockLead, gKey, systemPrompt, customPrompt);
+          
+          if (rKey) {
+            const host = req.headers.host || 'www.gobiya.com';
+            const protocol = req.headers['x-forwarded-proto'] || 'http';
+            const bookingUrl = `${protocol}://${host}/book?email=${encodeURIComponent(mockLead.email)}&company=${encodeURIComponent(mockLead.company_name)}&firstName=${encodeURIComponent(mockLead.contact_name)}&utm_source=prospector&utm_medium=email&utm_campaign=outreach`;
+            
+            const htmlEmail = wrapBrandedEmail(mockLead.contact_name, emailData.body, bookingUrl);
+
+            const resendRes = await fetch('https://api.resend.com/emails', {
+              method: 'POST',
+              headers: {
+                'Authorization': `Bearer ${rKey}`,
+                'Content-Type': 'application/json'
+              },
+              body: JSON.stringify({
+                from: 'Gobiya AI Onboarding <onboarding@resend.dev>',
+                to: [testEmail],
+                subject: `[TEST] ${emailData.subject}`,
+                html: htmlEmail
+              })
+            });
+
+            if (!resendRes.ok) {
+              const errJson = await resendRes.json().catch(() => ({}));
+              throw new Error(`Resend API error: ${JSON.stringify(errJson)}`);
+            }
+          }
+
+          res.writeHead(200);
+          res.end(JSON.stringify({
+            success: true,
+            message: rKey ? 'Test email dispatched successfully.' : 'Test email generation simulated.',
+            subject: emailData.subject,
+            body: emailData.body
+          }));
+        } catch (e: any) {
+          res.writeHead(500);
+          res.end(JSON.stringify({ success: false, error: e.message }));
+        }
+        return;
+      }
+
       if (pathname === '/api/prospector/scrape' && req.method === 'POST') {
         try {
           const bodyStr = await getRequestBody(req);
-          const { category, location, numResults, perplexityKey, resendKey } = JSON.parse(bodyStr);
+          const { category, location, numResults, perplexityKey, resendKey, systemPrompt, customPrompt, focusPrompt } = JSON.parse(bodyStr);
 
           const limit = numResults || 5;
           const pKey = perplexityKey || process.env.PERPLEXITY_API_KEY || '';
           const rKey = resendKey || process.env.RESEND_API_KEY || '';
+          const gKey = process.env.GEMINI_API_KEY || '';
 
           let leads: any[] = [];
-          const logMessages: string[] = ['Initiating search query...'];
+          const logMessages: string[] = ['[INFO] Initiating search query...'];
 
-          if (pKey) {
-            logMessages.push(`Calling Perplexity API for model sonar...`);
-            const prompt = `Find ${limit} ${category} businesses currently active in ${location}. Focus on B2B prospects likely needing security systems (surveillance, access control). Only return real businesses, verify their emails and web presence. Return JSON formatted containing array of objects matching: company_name, contact_name, email, phone, website, category, location. Avoid wrapping with text.`;
+          if (!pKey) {
+            throw new Error("Perplexity API Key is required to find live leads. Set it in your configuration.");
+          }
+
+          let finalValidLeads: any[] = [];
+          let excludedNames: string[] = [];
+          let attempt = 0;
+          const maxAttempts = 3;
+
+          while (finalValidLeads.length < limit && attempt < maxAttempts) {
+            attempt++;
+            logMessages.push(`[INFO] Calling Perplexity API for model sonar (Attempt ${attempt}/${maxAttempts})...`);
             
+            let currentPrompt = focusPrompt 
+              ? focusPrompt.replace(/\{limit\}/g, String(limit)).replace(/\{category\}/g, category).replace(/\{location\}/g, location)
+              : `Find exactly ${limit} active ${category} businesses in ${location}. You MUST ONLY include businesses that have a publicly verifiable contact email address. If a business does not have a real email address, SKIP it and find another one. Do NOT make up or construct generic emails. Return a JSON array of objects, each containing: company_name, contact_name, email, phone, website, category, location. Avoid wrapping with text other than json.`;
+
+            if (excludedNames.length > 0) {
+              currentPrompt += `\n\nCRITICAL: DO NOT include any of the following businesses because they did not have valid emails in the previous attempt: ${excludedNames.slice(-15).join(', ')}`;
+            }
+
             const perplexityRes = await fetch('https://api.perplexity.ai/chat/completions', {
               method: 'POST',
               headers: {
@@ -594,72 +961,59 @@ export default async function handler(req: IncomingMessage, res: any) {
                   },
                   {
                     role: 'user',
-                    content: prompt
+                    content: currentPrompt
                   }
                 ]
               })
             });
 
             if (!perplexityRes.ok) {
-              throw new Error(`Perplexity API returned status ${perplexityRes.status}`);
+              logMessages.push(`[ERROR] Perplexity API returned status ${perplexityRes.status}`);
+              break;
             }
 
             const resData: any = await perplexityRes.json();
-            let text = resData.choices[0].message.content;
+            const text = resData.choices[0].message.content;
             
-            if (text.includes('```json')) {
-              text = text.split('```json')[1].split('```')[0].trim();
-            } else if (text.includes('```')) {
-              text = text.split('```')[1].split('```')[0].trim();
-            }
+            const parsedObj = parsePerplexityLeads(text);
+            const extractedLeads = findFirstArray(parsedObj);
             
-            leads = JSON.parse(text);
-            if (!Array.isArray(leads) && (leads as any).leads) {
-              leads = (leads as any).leads;
-            }
-            logMessages.push(`Successfully gathered ${leads.length} leads from Perplexity.`);
-          } else {
-            logMessages.push(`No Perplexity API Key provided. Generating realistic mock B2B leads in ${location}...`);
-            leads = [
-              {
-                company_name: `${category.charAt(0).toUpperCase() + category.slice(1)} Solutions ${location.split(',')[0]}`,
-                contact_name: 'David Miller',
-                email: `info@${category.toLowerCase().replace(/\s+/g, '')}${location.split(',')[0].toLowerCase().trim()}.com`,
-                phone: '(323) 555-0192',
-                website: `https://www.${category.toLowerCase().replace(/\s+/g, '')}${location.split(',')[0].toLowerCase().trim()}.com`,
-                category: category,
-                location: location
-              },
-              {
-                company_name: `Pacific B2B ${category.charAt(0).toUpperCase() + category.slice(1)}`,
-                contact_name: 'Sarah Jenkins',
-                email: `contact@pacific${category.toLowerCase().replace(/\s+/g, '')}.com`,
-                phone: '(415) 555-0238',
-                website: `https://www.pacific${category.toLowerCase().replace(/\s+/g, '')}.com`,
-                category: category,
-                location: location
-              },
-              {
-                company_name: `Apex Business Group`,
-                contact_name: 'Robert Chen',
-                email: `rchen@apexgroup.com`,
-                phone: '(619) 555-0144',
-                website: `https://www.apexgroup.com`,
-                category: category,
-                location: location
+            if (Array.isArray(extractedLeads)) {
+              for (const lead of extractedLeads) {
+                const rawEmail = lead.email ? String(lead.email).trim() : '';
+                if (!rawEmail || rawEmail.toLowerCase() === 'null' || rawEmail.toLowerCase() === 'undefined' || !rawEmail.includes('@') || rawEmail.endsWith('.example.com')) {
+                  logMessages.push(`[WARNING] Skipping lead "${lead.company_name || 'Unnamed Company'}" — missing or invalid email address.`);
+                  if (lead.company_name) excludedNames.push(lead.company_name);
+                  continue;
+                }
+                
+                // Avoid duplicates in valid leads
+                if (!finalValidLeads.find(l => l.email === rawEmail)) {
+                  finalValidLeads.push(lead);
+                }
               }
-            ].slice(0, limit);
-            logMessages.push(`Mock leads generated: ${leads.length} B2B records.`);
+            } else {
+              logMessages.push(`[ERROR] Could not parse Perplexity response as a valid JSON array on attempt ${attempt}.`);
+            }
+
+            if (finalValidLeads.length >= limit) {
+              logMessages.push(`[SUCCESS] Found enough valid leads (${finalValidLeads.length}).`);
+              break;
+            } else if (attempt < maxAttempts) {
+              logMessages.push(`[INFO] Only found ${finalValidLeads.length}/${limit} valid leads. Retrying for more...`);
+            }
           }
 
           const savedLeads: any[] = [];
-          for (const lead of leads) {
-            logMessages.push(`Ingesting lead: ${lead.company_name} (${lead.email})...`);
+          for (const lead of finalValidLeads.slice(0, limit)) {
+            const rawEmail = lead.email ? String(lead.email).trim() : '';
+
+            logMessages.push(`[DATABASE] Ingesting lead: ${lead.company_name} (${rawEmail})...`);
             
             const databaseLead = {
               company_name: lead.company_name,
               contact_name: lead.contact_name || 'Business Owner',
-              email: lead.email,
+              email: rawEmail,
               phone: lead.phone || '',
               website: lead.website || '',
               category: lead.category || category,
@@ -667,31 +1021,29 @@ export default async function handler(req: IncomingMessage, res: any) {
               status: 'new'
             };
 
-            if (supabaseServer) {
-              const { data, error } = await supabaseServer
-                .from('prospects')
-                .upsert([databaseLead], { onConflict: 'email' })
-                .select();
-                
-              if (error) {
-                logMessages.push(`Database warning: ${error.message}. Storing locally.`);
-                savedLeads.push(databaseLead);
-              } else if (data && data[0]) {
-                savedLeads.push(data[0]);
-              }
-            } else {
-              savedLeads.push(databaseLead);
+            if (!supabaseServer) throw new Error('Supabase database is not configured. Live mode requires VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY.');
+            
+            const { data, error } = await supabaseServer
+              .from('prospects')
+              .upsert([databaseLead], { onConflict: 'email' })
+              .select();
+              
+            if (error) {
+              logMessages.push(`[ERROR] Database failure for ${rawEmail}: ${error.message}`);
+              continue;
+            } else if (data && data[0]) {
+              savedLeads.push(data[0]);
             }
 
             if (rKey) {
-              logMessages.push(`Triggering Resend welcome email to ${lead.email}...`);
+              logMessages.push(`[RESEND] Triggering Resend welcome email to ${rawEmail}...`);
               
-              logMessages.push(`Generating AI personalized copy for ${lead.company_name}...`);
-              const emailData = await generateOutreachCopy(lead, pKey);
+              logMessages.push(`[GEMINI] Generating AI personalized copy with Gemini for ${lead.company_name}...`);
+              const emailData = await generateOutreachCopy(lead, gKey, systemPrompt, customPrompt);
               
               const host = req.headers.host || 'www.gobiya.com';
               const protocol = req.headers['x-forwarded-proto'] || 'http';
-              const bookingUrl = `${protocol}://${host}/book?email=${encodeURIComponent(lead.email)}&company=${encodeURIComponent(lead.company_name)}&firstName=${encodeURIComponent(lead.contact_name || '')}&utm_source=prospector&utm_medium=email&utm_campaign=outreach`;
+              const bookingUrl = `${protocol}://${host}/book?email=${encodeURIComponent(rawEmail)}&company=${encodeURIComponent(lead.company_name)}&firstName=${encodeURIComponent(lead.contact_name || '')}&utm_source=prospector&utm_medium=email&utm_campaign=outreach`;
               
               const htmlEmail = wrapBrandedEmail(lead.contact_name || 'Business Owner', emailData.body, bookingUrl);
 
@@ -703,27 +1055,27 @@ export default async function handler(req: IncomingMessage, res: any) {
                 },
                 body: JSON.stringify({
                   from: 'Gobiya AI Onboarding <onboarding@resend.dev>',
-                  to: [lead.email],
+                  to: [rawEmail],
                   subject: emailData.subject,
                   html: htmlEmail
                 })
               });
 
               if (resendRes.ok) {
-                logMessages.push(`Welcome email sent to ${lead.email} successfully.`);
+                logMessages.push(`[SUCCESS] Welcome email sent to ${rawEmail} successfully.`);
                 if (supabaseServer) {
                   await supabaseServer
                     .from('prospects')
                     .update({ status: 'welcome_sent' })
-                    .eq('email', lead.email);
+                    .eq('email', rawEmail);
                 }
                 databaseLead.status = 'welcome_sent';
               } else {
                 const errJson = await resendRes.json().catch(() => ({}));
-                logMessages.push(`Resend error for ${lead.email}: ${JSON.stringify(errJson)}`);
+                logMessages.push(`[ERROR] Resend error for ${rawEmail}: ${JSON.stringify(errJson)}`);
               }
             } else {
-              logMessages.push(`Resend API Key omitted. Simulating welcome email dispatch to ${lead.email}...`);
+              logMessages.push(`[RESEND] Resend API Key omitted. Simulating welcome email dispatch to ${rawEmail}...`);
               databaseLead.status = 'welcome_sent';
             }
           }
