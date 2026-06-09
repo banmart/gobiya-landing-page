@@ -194,23 +194,23 @@ const StackedBento: React.FC<StackedBentoProps> = ({ headline, description, card
   const defaultCards = cards && cards.length > 0 ? cards : [
     {
       href: '/capabilities/web-development', colSpan: 2, gradient: true, icon: <Code size={40} className="text-white mb-6 sm:mb-10 relative z-10" strokeWidth={1.5} />,
-      title: 'Web Development', description: 'We build high-performance custom sites in React, Next.js, and Vite, engineered from the ground up for sub-second speeds and flawless crawler readability.'
+      title: 'Eliminate Slow, Invisible Websites', description: 'Stop losing customers to slow load times. We architect blazing-fast platforms that instantly capture user attention and signal absolute authority to AI crawlers.'
     },
     {
       href: '/capabilities/native-crm', colSpan: 1, icon: <Database size={40} className="text-white mb-6 sm:mb-10" strokeWidth={1.5} />,
-      title: 'Native CRM', description: 'Custom customer and pipeline management tools built directly into your application codebase, giving you 100% data ownership.'
+      title: 'Stop Paying Expensive SaaS Fees', description: 'Ditch bloated monthly subscriptions. We integrate custom pipeline tracking directly into your codebase so you own 100% of your sales data.'
     },
     {
       href: '/capabilities/seo-discoverability', colSpan: 2, icon: <Search size={40} className="text-white mb-6 sm:mb-10" strokeWidth={1.5} />,
-      title: 'SEO & Discoverability', description: 'Built-in crawler readiness, flawless XML structures, clean semantic HTML, and formatting designed to capture search rankings and AI citations natively.'
+      title: 'Recover Lost Organic Traffic', description: 'Stop guessing why your rankings dropped. We deploy forensic technical audits to fix crawl errors, recover lost visibility, and secure your place in AI engine citations.'
     },
     {
       href: '/capabilities/blockchain-web3-development', colSpan: 1, icon: <Cpu size={40} className="text-[#F26522] mb-6 sm:mb-10" strokeWidth={1.5} />,
-      title: 'Blockchain & Web3 Dev', description: 'Bespoke smart contracts, decentralized applications (dApps), and on-chain integrations engineered directly into your product stack.'
+      title: 'Automate Your B2B Lead Flow', description: 'Say goodbye to empty pipelines. We build automated outreach systems that map high-intent search behavior directly to your sales team.'
     },
     {
       href: '/capabilities/ai-prospect-scraper', colSpan: 2, gradient: true, icon: <Search size={40} className="text-white mb-6 sm:mb-10 relative z-10" strokeWidth={1.5} />,
-      title: 'AI Prospect Scraper', description: 'Included with our Native CRM, this AI scraper extracts company NAP data and automatically builds hyper-personalized drip email sequences to scale your B2B outreach.'
+      title: 'Never Cold Call Again', description: 'Stop wasting hours hunting for leads. Our AI prospector automatically hunts down verified decision-makers and drops them right into your personalized outreach sequences.'
     }
   ];
 
