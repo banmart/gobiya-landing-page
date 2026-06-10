@@ -6185,6 +6185,421 @@ const ARTICLES: Record<string, ArticleData> = {
       </>
     )
   },
+  'brand-entity-extraction-perception-drift': {
+    slug: 'brand-entity-extraction-perception-drift',
+    title: 'Brand Entity Extraction & Perception Drift: Knowledge Graph Guide',
+    category: 'Knowledge Graph Intelligence',
+    readTime: '12 min read',
+    date: 'June 10, 2026',
+    image: '/images/article-brand-entity-extraction-perception-drift.webp',
+    heroAlt: 'A marketing executive studies a glowing knowledge graph visualization on a large curved monitor inside a modern Los Angeles agency office, with interconnected orange and white nodes representing Google, Bing, Wikidata, ChatGPT, and Claude',
+    metaDescription: 'How brand entity extraction works across Google, Bing, Wikidata, and LLM knowledge graphs — and how to detect and correct perception drift before it costs you AI citations.',
+    content: (
+      <>
+        {/* ── JSON-LD FAQ SCHEMA ── */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "What is brand entity extraction?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Brand entity extraction is the process by which search engines and AI models identify your brand as a distinct, machine-readable entity — a node with stable identity, attributes, and relationships — rather than a loose string of keywords. Extraction quality determines whether you appear in knowledge panels, AI Overviews, and LLM recommendations."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "What is perception drift in a knowledge graph?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Perception drift is the gradual divergence between how your brand actually operates and how the graphs describe it. Stale directories, old press, unclaimed open-data records, and conflicting profiles accumulate until Google, Bing, or an LLM attributes the wrong category, services, locations, or leadership to your entity."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Does schema markup alone fix entity problems?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No. Schema is a declaration, and graphs are built to be skeptical of declarations. Your structured data must be corroborated by consistent third-party signals — directories, press, reviews, Wikidata, verified profiles — before the graph promotes your declared attributes to facts. Markup without corroboration is routinely ignored."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "How long does it take to correct perception drift?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Google and Bing entity records typically reconcile over weeks to a few months as recrawls confirm consistent signals. LLM parametric knowledge updates on model release cycles, which is why the retrieval layer — fresh, extractable pages and current third-party coverage in the 30–90 day citation window — is the fastest lever for changing what AI answers say today."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Which knowledge graphs actually matter for a commercial brand?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Four: Google's Knowledge Graph (Search, AI Overviews, Gemini), Microsoft's Bing entity graph (Bing, Copilot, and ChatGPT's search layer), Wikidata and the open graphs many systems reconcile against, and the internal representations inside the LLMs themselves. They disagree more than most marketers expect, so each needs its own audit."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "How do I check what AI models currently believe about my brand?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Query your brand name and your core commercial topics in ChatGPT, Gemini, Claude, and Perplexity separately — with and without web search enabled — and screenshot the answers and cited sources. Pull your record from Google's Knowledge Graph Search API and review your Wikidata entry. The gaps between those answers are your drift map."
+                  }
+                }
+              ]
+            })
+          }}
+        />
+
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8 font-medium">
+          Search engines and AI models don't rank your brand — they reconstruct it. When that reconstruction goes stale or wrong, you lose citations, knowledge panels, and AI recommendations to competitors whose entity data is cleaner. Here's how extraction actually works, how drift sets in, and how to correct it.
+        </p>
+
+        <div className="border border-gray-200 bg-gray-50 rounded-lg p-6 my-8">
+          <table className="w-full text-left text-gray-800 text-[14px]">
+            <thead>
+              <tr className="border-b border-gray-300">
+                <th className="pb-3 font-semibold pr-6">Stat</th>
+                <th className="pb-3 font-semibold">What it means</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-b border-gray-200">
+                <td className="py-3 pr-6 font-bold text-[#F26522]">58%</td>
+                <td className="py-3">of searches now resolve zero-click — intercepted by AI Overviews and featured snippets built from entity data, not your landing page</td>
+              </tr>
+              <tr className="border-b border-gray-200">
+                <td className="py-3 pr-6 font-bold text-[#F26522]">4+</td>
+                <td className="py-3">distinct knowledge graph ecosystems (Google, Bing/Copilot, Wikidata, LLM-internal) reconstruct your brand independently — and disagree more than you'd expect</td>
+              </tr>
+              <tr>
+                <td className="py-3 pr-6 font-bold text-[#F26522]">30–90 days</td>
+                <td className="py-3">the freshness window in which AI systems disproportionately cite sources, making stale entity signals compound into drift</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <blockquote className="border-l-4 border-[#F26522] pl-6 py-2 my-8 text-gray-700 italic text-[17px] leading-[1.7]">
+          Your brand exists twice: once in reality, and once as an entity node inside the knowledge graphs that power Google, Bing, ChatGPT, Gemini, Claude, and Perplexity. When those two versions diverge — wrong category, stale services, outdated leadership, mixed sentiment — that's perception drift, and it silently reroutes citations, recommendations, and revenue to competitors whose entity data is cleaner.
+        </blockquote>
+
+        {/* ── TABLE OF CONTENTS ── */}
+        <details className="bg-gray-50 border border-gray-200 rounded-lg p-6 sm:p-8 my-10 sm:my-14 group" open>
+          <summary className="text-[14px] font-semibold uppercase tracking-wider text-gray-500 cursor-pointer list-none flex items-center justify-between">
+            Table of Contents
+            <svg className="w-4 h-4 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" /></svg>
+          </summary>
+          <ul className="mt-6 space-y-3.5 text-[15px] font-medium text-gray-900 border-t border-gray-200 pt-6">
+            {[
+              { id: 'what-entity-extraction-does', label: 'What brand entity extraction actually does' },
+              { id: 'schema-not-enough', label: 'Why schema markup alone isn\'t enough' },
+              { id: 'perception-drift', label: 'What perception drift is — and how it compounds' },
+              { id: 'four-ecosystems', label: 'The four knowledge graph ecosystems that matter' },
+              { id: 'extraction-crawl-to-node', label: 'How extraction works, from crawl to graph node' },
+              { id: 'drift-audit', label: 'Auditing your entity: building the drift map' },
+              { id: 'correction-workflow', label: 'The correction workflow: corroboration beats declaration' },
+              { id: 'legitimate-vs-claim', label: 'What separates legitimate entity optimization from a marketing claim' },
+              { id: 'gobiya-approach', label: 'Why Gobiya approaches entity engineering differently' },
+              { id: 'who-benefits', label: 'Which businesses get the clearest return' },
+              { id: 'getting-started', label: 'What getting started actually looks like' },
+              { id: 'faqs', label: 'Frequently Asked Questions' },
+            ].map(({ id, label }) => (
+              <li key={id} className="flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#F26522] shrink-0" />
+                <a href={'#' + id} className="hover:text-[#F26522] transition-colors">{label}</a>
+              </li>
+            ))}
+          </ul>
+        </details>
+
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          Optimizing brand entity extraction across search engine knowledge graphs can mean the difference between being the answer an AI confidently recommends and being a string of words the model isn't sure about. Google's systems process billions of queries against an entity graph, and the LLMs answering a growing share of commercial questions — ChatGPT, Gemini, Claude, Perplexity — each maintain their own reconstruction of who your brand is, what it does, and whether it can be trusted.
+        </p>
+
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          The problem is that these reconstructions go stale. A brand pivots its services, opens a new market, changes leadership, or sheds an old product line — and the graphs keep serving the old version for months or years. Most businesses don't discover their entity has drifted until a prospect says "I asked ChatGPT about you and it described a company you stopped being in 2023." By then, the drift has been quietly filtering them out of AI Overviews, comparison answers, and recommendation queries the whole time.
+        </p>
+
+        {/* ── SECTION 1 ── */}
+        <h2 id="what-entity-extraction-does" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          What brand entity extraction actually does
+        </h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          A traditional crawler reads your pages and indexes keywords. That's it. The index has no durable concept of <em>you</em> — only documents that mention certain strings. Entity extraction adds a layer above the index: named entity recognition identifies that "Gobiya," "the agency on Wilshire," and "gobiya.com" refer to one organization; disambiguation separates that organization from every similarly-named thing on the web; and reconciliation merges signals from your site, directories, press, reviews, and structured databases into a single node with attributes — category, location, services, leadership, founding date, relationships to other entities.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          That node is what answer engines actually consult. When Google assembles an AI Overview or a knowledge panel, when Copilot recommends vendors, when Perplexity builds a comparison table, they are reading entity attributes and relationship edges — not re-reading your homepage in real time. <strong>Extraction quality is the ceiling on your AI visibility.</strong> If the graph's version of your brand is thin, ambiguous, or wrong, no amount of content volume on your own domain compensates — a core principle behind our <a href="/capabilities/generative-engine-optimization" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">Generative Engine Optimization</a> practice.
+        </p>
+
+        {/* ── SECTION 2 ── */}
+        <h2 id="schema-not-enough" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          Why schema markup alone isn't enough
+        </h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          Schema markup is where most teams start — and stop. Publishing Organization schema with <code className="bg-gray-100 px-1.5 py-0.5 rounded text-[14px] font-mono text-gray-700">sameAs</code> links is genuinely necessary. But markup is a <em>declaration</em>, and knowledge graphs are built to be skeptical of declarations. Anyone can claim anything in their own JSON-LD.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          What graphs actually weigh is <strong>corroboration</strong>: does the declared identity match what independent sources say? Your schema asserts a category; do industry directories, press coverage, review platforms, and Wikidata agree? Your site claims a service line; do third parties describe you that way? When declared data and corroborating data align, the graph promotes attributes to facts. When they conflict, the graph either hedges — thin panels, no entity recognition in AI answers — or worse, it trusts the third-party version over yours. This is why <a href="/insights/what-data-sources-do-llms-crawl-to-verify-b2b-company-information" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">understanding which data sources LLMs use for verification</a> is so foundational to entity work.
+        </p>
+        <div className="border-l-4 border-[#F26522] bg-gray-50 p-5 my-8 rounded-r-lg">
+          <p className="text-[15px] font-semibold text-gray-900 mb-1">The operative rule</p>
+          <p className="text-[15px] text-gray-700 leading-relaxed">Knowledge graphs resolve conflicts by source authority and consensus, not by who owns the domain. If five aged directory listings say you're a "web design shop" and your new schema says "AI growth consultancy," the graph sides with the directories until you fix the directories.</p>
+        </div>
+
+        {/* ── SECTION 3 ── */}
+        <h2 id="perception-drift" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          What perception drift is — and how it compounds
+        </h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          Perception drift is the gradual divergence between your brand's current reality and the graph's stored version of it. It isn't caused by one bad signal. It accumulates from ordinary entropy: old directory listings nobody maintains, press coverage describing a previous positioning, an unclaimed or stale Wikidata record, review snippets about a discontinued service, a former executive still listed as current leadership, social profiles with conflicting descriptions.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          Drift compounds for two reasons. First, <strong>graphs are conservative</strong> — they prefer attributes confirmed across many sources over time, so stale consensus beats fresh truth until the fresh truth is also a consensus. Second, <strong>AI systems have a freshness bias at the retrieval layer but inertia at the entity layer</strong>. An LLM with web search will cite recent pages, but its underlying sense of what your brand <em>is</em> updates slowly, on training and reconciliation cycles. The result: a model can quote your newest blog post while still categorizing you as something you stopped being three years ago.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          The commercial cost is invisible until you look for it. Drifted entities get excluded from "best X in Y" answers because the model isn't confident the brand belongs in category X. They lose knowledge panel real estate. They get misdescribed in comparison queries prospects run before ever visiting your site. With a majority of searches now resolving without a click, the graph's version of you <em>is</em> your first impression — a dynamic we analyze further in our <a href="/capabilities/semantic-search-intelligence" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">Semantic Search Intelligence</a> capability overview.
+        </p>
+
+        {/* ── SECTION 4 ── */}
+        <h2 id="four-ecosystems" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          The four knowledge graph ecosystems that matter
+        </h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          "The knowledge graph" is a misnomer. There are at least four ecosystems reconstructing your brand independently, and they overlap far less than most marketers assume.
+        </p>
+        <div className="overflow-x-auto my-8">
+          <table className="w-full text-left border-collapse text-gray-800 text-[14px]">
+            <thead>
+              <tr className="border-b border-gray-300 bg-gray-50">
+                <th className="p-4 font-semibold">Ecosystem</th>
+                <th className="p-4 font-semibold">Feeds</th>
+                <th className="p-4 font-semibold">What it weighs most</th>
+                <th className="p-4 font-semibold">Drift correction speed</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-b border-gray-200">
+                <td className="p-4 font-semibold text-[#F26522]">Google Knowledge Graph</td>
+                <td className="p-4">Search, knowledge panels, AI Overviews, Gemini</td>
+                <td className="p-4">Corroborated structured data, authoritative coverage, GBP, Wikipedia/Wikidata</td>
+                <td className="p-4">Weeks–months, on recrawl and reconciliation</td>
+              </tr>
+              <tr className="border-b border-gray-200">
+                <td className="p-4 font-semibold text-[#F26522]">Microsoft / Bing entity graph</td>
+                <td className="p-4">Bing, Copilot, ChatGPT live search layer</td>
+                <td className="p-4">Bing Webmaster–verified site data, LinkedIn signals, directory consensus</td>
+                <td className="p-4">Weeks–months; often lags Google</td>
+              </tr>
+              <tr className="border-b border-gray-200">
+                <td className="p-4 font-semibold text-[#F26522]">Wikidata / open graphs</td>
+                <td className="p-4">Backbone many systems reconcile against; LLM training corpora</td>
+                <td className="p-4">Sourced, notable, structured claims with references</td>
+                <td className="p-4">Immediate to edit, slow to propagate</td>
+              </tr>
+              <tr>
+                <td className="p-4 font-semibold text-[#F26522]">LLM-internal representations</td>
+                <td className="p-4">ChatGPT, Claude, Perplexity, Gemini base models</td>
+                <td className="p-4">Training-corpus consensus + retrieval-time sources</td>
+                <td className="p-4">Retrieval layer: 30–90 days. Parametric layer: model release cycles</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          The practical implication: your entity must be audited in each ecosystem separately. A brand can hold a clean Google knowledge panel while Copilot — drawing on Bing's graph and LinkedIn — describes it wrong, and Perplexity describes it a third way. Platform fragmentation is the rule, not the exception. Understanding <a href="/insights/what-is-the-difference-between-google-knowledge-graph-optimization-and-geo" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">how Knowledge Graph optimization differs from GEO</a> is essential for building a strategy that covers all four.
+        </p>
+
+        {/* ── SECTION 5 ── */}
+        <h2 id="extraction-crawl-to-node" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          How extraction works, from crawl to graph node
+        </h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          When a crawler or training pipeline ingests a page that mentions your brand, the sequence runs roughly like this. Named entity recognition tags the mention. Disambiguation resolves which entity it refers to, using context, co-occurring entities, and existing graph identifiers. Attribute extraction pulls claims — services, locations, relationships, dates — from the surrounding text and any structured data. Reconciliation then compares those claims against the node's existing attributes: confirming signals strengthen confidence scores, conflicting signals lower them or trigger re-evaluation. The output is not a copy of your page; it's an updated probability distribution over what's true about you.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          This is why <strong>extractability is a content property</strong>. Pages with clear, self-contained claims near the top produce clean attribute extraction. Pages that bury identity in narrative, hedge every claim, or describe the brand differently on every URL produce noisy extraction and weak confidence. The same on-page discipline that wins featured snippets also feeds the graph, which is why entity work and <a href="/on-page-seo-los-angeles" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">on-page SEO</a> are inseparable in practice. For a deeper look at how AI systems decide what's citable, our guide on <a href="/insights/what-is-generative-engine-optimization-and-how-does-it-work" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">what GEO is and how it works</a> covers the retrieval mechanics directly.
+        </p>
+
+        {/* ── SECONDARY IMAGE ── */}
+        <div className="my-10 sm:my-14">
+          <div className="w-full aspect-[16/9] overflow-hidden border border-gray-200 rounded-lg shadow-sm">
+            <img
+              src="/images/article-brand-entity-drift-audit-secondary.webp"
+              alt="Two professionals reviewing a brand entity audit dashboard showing drift between declared and graph-stored values for category, services, location and leadership attributes"
+              className="w-full h-full object-cover"
+              loading="lazy"
+            />
+          </div>
+          <p className="text-[13px] text-gray-500 mt-3 text-center italic">A drift audit surfaces the gap between what your brand declares and what the graphs actually believe — attribute by attribute, ecosystem by ecosystem.</p>
+        </div>
+
+        {/* ── SECTION 6 ── */}
+        <h2 id="drift-audit" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          Auditing your entity: building the drift map
+        </h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          A drift audit answers one question per ecosystem: <em>what does this system currently believe about us, and where does that belief diverge from reality?</em> The credible version of that audit pulls your entity record from Google's Knowledge Graph Search API, captures your knowledge panel state, queries your brand and your core commercial topics in ChatGPT, Gemini, Claude, and Perplexity — with and without browsing — and inventories every third-party surface the graphs reconcile against: Wikidata, Wikipedia where warranted, major directories, LinkedIn, review platforms, and press.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          The output is a drift map: a per-attribute, per-ecosystem table of what's stored versus what's true, with each discrepancy traced back to the sources still asserting the stale version. That last step is the one most audits skip, and it's the only one that makes correction possible. You cannot fix an attribute without fixing the sources the graph trusts for it. This same forensic approach — tracing problems to their root signals — underpins how we handle <a href="/capabilities/forensic-seo-penalty-recovery" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">forensic SEO and penalty recovery</a> engagements, where stale entity signals and trust issues frequently appear in the same picture.
+        </p>
+
+        {/* ── SECTION 7 ── */}
+        <h2 id="correction-workflow" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          The correction workflow: corroboration beats declaration
+        </h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          Correction runs in three passes, in order of leverage.
+        </p>
+        <ul className="space-y-4 mb-8 pl-0">
+          {[
+            { step: '01', label: 'Fix the source of truth', body: 'A canonical "about" entity page stating identity, category, services, locations, and leadership in extractable plain language, backed by complete Organization schema with sameAs links to every legitimate profile.' },
+            { step: '02', label: 'Fix the corroborators', body: 'Update or suppress the stale third-party records your drift map traced — directories, Wikidata claims with proper references, profile descriptions, outdated press where corrections are realistic. The goal is consensus: every authoritative surface describing the brand the same current way.' },
+            { step: '03', label: 'Feed the retrieval layer', body: 'Fresh, well-structured, third-party-validated content in the 30–90 day window AI systems disproportionately cite, so the live answers reinforce the corrected entity rather than resurrecting the old one.' },
+          ].map((item) => (
+            <li key={item.step} className="flex items-start gap-4 border-b border-gray-100 pb-4">
+              <span className="w-8 h-8 bg-[#F26522] text-white text-[12px] font-bold flex items-center justify-center shrink-0 rounded-sm">{item.step}</span>
+              <div>
+                <p className="font-semibold text-gray-900 mb-1 text-[15px]">{item.label}</p>
+                <p className="text-[15px] text-gray-700 leading-relaxed">{item.body}</p>
+              </div>
+            </li>
+          ))}
+        </ul>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          Then you re-measure on a cycle. Entity correction is not a launch; it's an operations cadence — quarterly drift checks against the same query set, the same APIs, the same panels. Graphs move on recrawl and reconciliation schedules you don't control, so the work is to make every signal they encounter agree, and then let their own update cycles do the propagation.
+        </p>
+
+        {/* ── INLINE CTA ── */}
+        <div className="bg-gray-900 text-white p-6 sm:p-8 my-10 sm:my-14 flex flex-col sm:flex-row items-start sm:items-center gap-6">
+          <div className="flex-1">
+            <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-2">Gobiya Entity Engineering</p>
+            <p className="text-[17px] sm:text-[19px] font-medium leading-snug">
+              Find out what the graphs currently believe about your brand. We run entity baselines across all four ecosystems.
+            </p>
+          </div>
+          <a
+            href="/book"
+            className="group flex items-center bg-[#F26522] hover:bg-[#e05a1a] text-white pl-5 pr-2 py-2 transition-colors duration-300 whitespace-nowrap shrink-0"
+          >
+            <span className="text-[13px] font-medium mr-3">Request an Entity Audit</span>
+            <div className="w-6 h-6 bg-white flex items-center justify-center">
+              <svg className="w-3.5 h-3.5 text-[#F26522]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
+            </div>
+          </a>
+        </div>
+
+        {/* ── SECTION 8 ── */}
+        <h2 id="legitimate-vs-claim" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          What separates legitimate entity optimization from a marketing claim
+        </h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          "Entity SEO" is used loosely. Plenty of vendors mean "we installed a schema plugin." The questions that separate a real practice from a claim: Can they show you your current Knowledge Graph API record and explain each attribute's likely sources? Do they audit Bing/Copilot and the LLMs separately, or only Google? Is their correction plan source-by-source — naming the specific directories, databases, and publications that need to change — or is it "publish more content"? Do they measure drift on a recurring cadence with screenshots and API pulls, or report rankings and call it done?
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          The structural tell: legitimate entity work spends most of its effort <em>off</em> your domain, on corroboration. Any proposal where 90 percent of the deliverables are pages on your own site is a content retainer wearing an entity costume. Self-description doesn't build graph confidence. Independent confirmation does. If you're evaluating partners on this criterion, our <a href="/insights/best-seo-agency-for-b2b-brands" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">B2B agency evaluation checklist</a> offers a practical framework for separating real technical practices from polished pitches.
+        </p>
+
+        {/* ── SECTION 9 ── */}
+        <h2 id="gobiya-approach" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          Why Gobiya approaches entity engineering differently
+        </h2>
+        <div className="border-l-4 border-[#F26522] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
+          <img src="/images/steve-portrait.webp" alt="Steve Martin" className="w-12 h-12 object-cover border border-white/10 shrink-0" />
+          <div>
+            <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-1 font-sans">Steve's Take</p>
+            <p className="text-[15px] italic text-white leading-relaxed font-sans">
+              "Most agencies install a schema plugin and call it entity work. Real entity engineering starts with the Knowledge Graph API record and ends with every third-party source the graph trusts telling the same story. That's what moves the needle."
+            </p>
+          </div>
+        </div>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          Gobiya is a Los Angeles digital firm, operating since 2012, that treats entity work as engineering rather than content marketing. Our <a href="/services/geo-optimization" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">GEO practice</a> is built around the full reconciliation loop: Knowledge Graph API baselining, per-platform LLM perception testing, schema graphs that declare a single consistent identity across every URL, and source-by-source corroboration campaigns that bring directories, open databases, and coverage into agreement with the current brand.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          Because we also build the underlying sites — sub-second React/Vite platforms through our <a href="/capabilities/custom-digital-infrastructure" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">Custom Digital Infrastructure</a> practice — entity declarations live in the codebase, not in a plugin that drifts on its own. Clients have seen AI referral growth north of 2,000 percent on optimized, category-defining entity nodes — the mechanism is exactly what this article describes: the graphs stopped hedging and started recommending.
+        </p>
+
+        {/* ── SECTION 10 ── */}
+        <h2 id="who-benefits" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          Which businesses get the clearest return
+        </h2>
+        <ul className="space-y-5 mb-8 pl-0">
+          {[
+            { label: 'Rebranded or pivoted companies', body: 'Get the most immediate return, because their drift is largest: the graphs are actively describing a company that no longer exists, and every AI-mediated first impression is wrong until corrected.' },
+            { label: 'Multi-location and multi-market operators', body: 'Benefit from entity-relationship cleanup — parent brand, locations, and service areas modeled as a coherent graph rather than competing duplicate entities that split confidence.' },
+            { label: 'B2B firms with long sales cycles', body: 'See returns through the diligence layer: buying committees now run vendor names through ChatGPT and Copilot before the first call, and a drifted entity loses deals it never knew it was in.' },
+            { label: 'Brands with name collisions', body: 'Need disambiguation work above all, because the graphs may be merging or confusing entities and attributing someone else\'s reputation to them.' },
+          ].map((item) => (
+            <li key={item.label} className="flex items-start gap-3 border-b border-gray-100 pb-4">
+              <span className="mt-2 w-2 h-2 rounded-full bg-[#F26522] shrink-0" />
+              <div>
+                <span className="font-semibold text-gray-900">{item.label}</span>
+                <span className="text-gray-700 text-[16px] leading-relaxed"> — {item.body}</span>
+              </div>
+            </li>
+          ))}
+        </ul>
+
+        {/* ── SECTION 11 ── */}
+        <h2 id="getting-started" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          What getting started actually looks like
+        </h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          A credible engagement starts with the drift map, not a proposal deck. Baseline the entity in all four ecosystems, trace every discrepancy to its sources, and rank corrections by commercial impact — the attributes that gate inclusion in the AI answers your buyers actually ask for. Then the correction passes run in order: source of truth, corroborators, retrieval layer. Then the cadence: quarterly re-measurement against the same baseline, because the graphs will keep moving whether you watch them or not.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          The businesses that win this are the ones that treat their entity as infrastructure — owned, versioned, monitored — rather than assuming the graphs will eventually figure it out. They won't. Graphs converge on consensus, and consensus is something you build deliberately or inherit accidentally. If you're also working through a <a href="/google-penalty-recovery" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">Google penalty recovery</a> engagement, note the overlap: stale and conflicting entity signals frequently surface in the same forensic picture as trust issues, and fixing one tends to accelerate the other.
+        </p>
+
+        {/* ── FAQ SECTION ── */}
+        <h2 id="faqs" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          Frequently Asked Questions
+        </h2>
+        <div className="space-y-6 my-10 border-t border-gray-200 pt-6">
+          {[
+            {
+              q: "What is brand entity extraction?",
+              a: "Brand entity extraction is the process by which search engines and AI models identify your brand as a distinct, machine-readable entity — a node with stable identity, attributes, and relationships — rather than a loose string of keywords. Extraction quality determines whether you appear in knowledge panels, AI Overviews, and LLM recommendations."
+            },
+            {
+              q: "What is perception drift in a knowledge graph?",
+              a: "The gradual divergence between how your brand actually operates and how the graphs describe it. Stale directories, old press, unclaimed open-data records, and conflicting profiles accumulate until Google, Bing, or an LLM attributes the wrong category, services, locations, or leadership to your entity — and serves that wrong version to prospects."
+            },
+            {
+              q: "Does schema markup alone fix entity problems?",
+              a: "No. Schema is a declaration, and graphs are built to be skeptical of declarations. Your structured data must be corroborated by consistent third-party signals — directories, press, reviews, Wikidata, verified profiles — before the graph promotes your declared attributes to facts. Markup without corroboration is routinely ignored."
+            },
+            {
+              q: "How long does it take to correct perception drift?",
+              a: "Google and Bing entity records typically reconcile over weeks to a few months as recrawls confirm consistent signals. LLM parametric knowledge updates on model release cycles, which is why the retrieval layer — fresh, extractable pages and current third-party coverage in the 30–90 day citation window — is the fastest lever for changing what AI answers say today."
+            },
+            {
+              q: "Which knowledge graphs actually matter for a commercial brand?",
+              a: "Four: Google's Knowledge Graph (Search, AI Overviews, Gemini), Microsoft's Bing entity graph (Bing, Copilot, and ChatGPT's search layer), Wikidata and the open graphs many systems reconcile against, and the internal representations inside the LLMs themselves. They disagree more than most marketers expect, so each needs its own audit."
+            },
+            {
+              q: "How do I check what AI models currently believe about my brand?",
+              a: "Query your brand name and your core commercial topics in ChatGPT, Gemini, Claude, and Perplexity separately — with and without web search enabled — and screenshot the answers and cited sources. Pull your record from Google's Knowledge Graph Search API and review your Wikidata entry. The gaps between those answers are your drift map, and the starting point for correction."
+            },
+          ].map((item, idx) => (
+            <div key={idx} className="border-b border-gray-200 pb-4">
+              <h3 className="text-[18px] font-semibold text-gray-900 mb-2 font-sans">{item.q}</h3>
+              <p className="text-[16px] text-gray-700 leading-[1.6]">{item.a}</p>
+            </div>
+          ))}
+        </div>
+      </>
+    )
+  },
+
   'dental-seo-agency': {
     slug: 'dental-seo-agency',
     title: 'Dental SEO Agency Checklist: Red Flags and KPIs to Watch',
@@ -7006,7 +7421,29 @@ const RELATED_ARTICLES_MAP: Record<string, { href: string; category: string; tit
       image: '/images/article-chatgpt-vs-google-for-business-discovery.webp',
     },
   ],
+  'brand-entity-extraction-perception-drift': [
+    {
+      href: '/insights/what-is-the-difference-between-google-knowledge-graph-optimization-and-geo',
+      category: 'GEO',
+      title: 'Knowledge Graph Optimization vs GEO: Understanding the Difference',
+      image: '/images/article-knowledge-graph-vs-geo.webp',
+    },
+    {
+      href: '/insights/what-data-sources-do-llms-crawl-to-verify-b2b-company-information',
+      category: 'GEO',
+      title: 'LLM Company Verification: What Data Sources Do AI Bots Crawl?',
+      image: '/images/llm-company-verification-data-sources.png',
+    },
+    {
+      href: '/insights/what-is-generative-engine-optimization-and-how-does-it-work',
+      category: 'GEO',
+      title: 'What Is Generative Engine Optimization and How Does It Work?',
+      image: '/images/article-what-is-geo.webp',
+    },
+  ],
+
   'dental-seo-agency': [
+
     {
       href: '/insights/local-seo-explained',
       category: 'Local SEO',
@@ -7259,8 +7696,8 @@ const ArticlePage: React.FC<ArticlePageProps> = ({ slug }) => {
             "@type": "WebPage",
             "@id": `https://www.gobiya.com/insights/${slug}/#webpage`
           },
-          "datePublished": (slug === 'what-is-the-difference-between-google-knowledge-graph-optimization-and-geo') ? "2026-06-04" : (slug === 'what-data-sources-do-llms-crawl-to-verify-b2b-company-information') ? "2026-06-03" : (slug === 'how-do-b2b-companies-use-seo-to-generate-predictable-revenue') ? "2026-05-31" : (slug === 'what-is-generative-engine-optimization-and-how-does-it-work') ? "2026-05-30" : (slug === 'what-is-the-difference-between-a-manual-action-and-an-algorithmic-penalty' || slug === 'chatgpt-vs-google-for-business-discovery') ? "2026-05-29" : "2026-05-25",
-          "dateModified": (slug === 'what-is-the-difference-between-google-knowledge-graph-optimization-and-geo') ? "2026-06-04" : (slug === 'what-data-sources-do-llms-crawl-to-verify-b2b-company-information') ? "2026-06-03" : (slug === 'how-do-b2b-companies-use-seo-to-generate-predictable-revenue') ? "2026-05-31" : (slug === 'what-is-generative-engine-optimization-and-how-does-it-work') ? "2026-05-30" : (slug === 'what-is-the-difference-between-a-manual-action-and-an-algorithmic-penalty' || slug === 'chatgpt-vs-google-for-business-discovery') ? "2026-05-29" : "2026-05-25",
+          "datePublished": (slug === 'brand-entity-extraction-perception-drift') ? "2026-06-10" : (slug === 'what-is-the-difference-between-google-knowledge-graph-optimization-and-geo') ? "2026-06-04" : (slug === 'what-data-sources-do-llms-crawl-to-verify-b2b-company-information') ? "2026-06-03" : (slug === 'how-do-b2b-companies-use-seo-to-generate-predictable-revenue') ? "2026-05-31" : (slug === 'what-is-generative-engine-optimization-and-how-does-it-work') ? "2026-05-30" : (slug === 'what-is-the-difference-between-a-manual-action-and-an-algorithmic-penalty' || slug === 'chatgpt-vs-google-for-business-discovery') ? "2026-05-29" : "2026-05-25",
+          "dateModified": (slug === 'brand-entity-extraction-perception-drift') ? "2026-06-10" : (slug === 'what-is-the-difference-between-google-knowledge-graph-optimization-and-geo') ? "2026-06-04" : (slug === 'what-data-sources-do-llms-crawl-to-verify-b2b-company-information') ? "2026-06-03" : (slug === 'how-do-b2b-companies-use-seo-to-generate-predictable-revenue') ? "2026-05-31" : (slug === 'what-is-generative-engine-optimization-and-how-does-it-work') ? "2026-05-30" : (slug === 'what-is-the-difference-between-a-manual-action-and-an-algorithmic-penalty' || slug === 'chatgpt-vs-google-for-business-discovery') ? "2026-05-29" : "2026-05-25",
           "author": {
             "@type": "Person",
             "name": "Steve Martin",

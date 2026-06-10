@@ -397,6 +397,12 @@ const metadataMap: Record<string, SEOMetadata> = {
     description: 'Avoid costly hiring mistakes. Use our comprehensive evaluation checklist for dental SEO agencies, covering contract traps, KPIs, and case study audits.',
     image: '/images/article-dental-seo-agency.png'
   },
+  '/insights/brand-entity-extraction-perception-drift': {
+    title: 'Brand Entity Extraction & Perception Drift | Gobiya',
+    description: 'How brand entity extraction works across Google, Bing, Wikidata, and LLM knowledge graphs — and how to detect and correct perception drift.',
+    image: '/images/article-brand-entity-extraction-perception-drift.webp'
+  },
+
   '/company/careers': {
     title: 'Growth Engineering Careers: Join Our Dev Team | Gobiya',
     description: 'Explore growth engineering jobs at Gobiya. We are hiring React developers, technical SEO specialists, and sales engineers. Apply now.'
