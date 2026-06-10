@@ -7,187 +7,183 @@ interface SEOMetadata {
 
 const metadataMap: Record<string, SEOMetadata> = {
   '/': {
-    title: 'AI Internet Marketing Agency | Gobiya',
-    description: 'AI Internet Marketing Agency | Gobiya'
+    title: 'Build Custom React Sites that Rank & Convert | Gobiya',
+    description: 'We build custom React websites engineered to rank and convert natively. Includes codebase-level CRM pipelines and Web3 integrations. Get a free audit.'
   },
   '/capabilities/web-development': {
-    title: 'React Web Development — Fast Custom Websites | gobiya',
+    title: 'Build Sub-Second React Sites that Convert | Gobiya',
     description: 'Our React web development agency builds sub-second custom websites engineered for Core Web Vitals, crawlability, and conversions.'
   },
   '/capabilities/native-crm': {
-    title: 'Custom CRM Website Integration — Zero SaaS Fees | gobiya',
+    title: 'Custom CRM Integrations: Own Your Pipeline Data | Gobiya',
     description: 'We build custom CRM website integrations directly into your codebase. Stop paying monthly software fees and own your pipeline data.'
   },
   '/capabilities/seo-discoverability': {
-    title: 'Technical SEO for React Websites & Indexing | gobiya',
+    title: 'Code-Level Technical SEO: Rank & Cite Natively | Gobiya',
     description: 'We build technical SEO for React websites into the codebase, optimizing crawlability, rendering speed, and AI citations.'
   },
   '/capabilities/blockchain-web3-development': {
-    title: 'Blockchain Web3 Development — Smart Contracts | gobiya',
+    title: 'Blockchain Web3: Integrate Smart Contracts | Gobiya',
     description: 'Our blockchain Web3 development services integrate smart contracts, dApps, and secure on-chain token functions into React apps.'
   },
   '/capabilities/ai-prospect-scraper': {
-    title: 'AI Prospect Scraper — Automate Outbound Leads | gobiya',
+    title: 'AI Prospect Scraper: Automate Outbound Leads | Gobiya',
     description: 'Our native CRM features an AI prospect scraper that extracts target contact profiles and coordinates automated outbound email campaigns.'
   },
   '/company/about': {
-    title: 'Custom Web Development Company: Gobiya Story | Gobiya',
+    title: 'Custom Web Dev & Forensic Search Strategy | Gobiya',
     description: 'Gobiya is a custom web development company and search engineering agency rebuilding traffic pipelines and recovering penalties since 2012.'
   },
   '/company/success-stories': {
-    title: 'Technical SEO Case Studies: Real Growth Wins | Gobiya',
+    title: 'Forensic SEO Case Studies: Reversing Penalties | Gobiya',
     description: 'Read our technical SEO case studies detailing over 300% organic growth for B2B brands and local medical clinics. Review real data.'
   },
   '/success-stories': {
-    title: 'Technical SEO Case Studies: Real Growth Wins | Gobiya',
+    title: 'Forensic SEO Case Studies: Reversing Penalties | Gobiya',
     description: 'Read our technical SEO case studies detailing over 300% organic growth for B2B brands and local medical clinics. Review real data.'
   },
   '/company/approach': {
-    title: 'B2B Organic Search Strategy: Gobiya Blueprint | Gobiya',
+    title: 'B2B Organic Search Strategy for Revenue Pipeline | Gobiya',
     description: 'Our proprietary B2B organic search strategy for diagnosing crawl errors, building topical authority, and scaling pipeline acquisitions.'
   },
   '/insights': {
-    title: 'SEO Audits, GEO Tactics & AI Search Insights | Gobiya',
+    title: 'SEO Audits, GEO Tactics & Search Insights | Gobiya',
     description: 'We share technical SEO audits, Generative Engine Optimization (GEO) tactics, and search algorithm insights for B2B engineering teams.'
   },
   '/insights/dental-seo-agency': {
-    title: 'Dental SEO Agency Checklist: KPIs & Red Flags | Gobiya',
+    title: 'Dental SEO Agency Evaluation Checklist & KPIs | Gobiya',
     description: 'How to select the right dental SEO agency. Read our evaluation checklist covering KPIs, contract terms, and local maps pack performance.'
   },
-  '/insights/do-roofers-need-a-license-in-texas': {
-    title: 'Do Roofers Need a License in Texas? 2026 Licensing Update | Gobiya',
-    description: 'Texas roofing rules changed. Learn about mandatory TDLR licensing under HB 3344, the dual-adjuster ban, and deductible laws in our comprehensive guide.'
-  },
   '/company/careers': {
-    title: 'Growth Engineering Jobs: Join Gobiya\'s Team | Gobiya',
+    title: 'Growth Engineering Careers: Join Our Dev Team | Gobiya',
     description: 'Explore growth engineering jobs at Gobiya. We are hiring React developers, technical SEO specialists, and sales engineers. Apply now.'
   },
   '/contact': {
-    title: 'Request Website SEO Audit: Free Strategy Call | Gobiya',
+    title: 'Get a Free Forensic Website SEO Audit & Call | Gobiya',
     description: 'Ready to grow? Request website SEO audit sessions and strategy roadmaps directly from our lead engineers. Secure your free review.'
   },
   '/book': {
-    title: 'Book Pipeline Strategy Call with Steve Martin | Gobiya',
+    title: 'Schedule a 15-Min Forensic Pipeline Audit | Gobiya',
     description: 'Book pipeline strategy call with Steve Martin, CEO & lead engineer. Audit search performance, local map visibility, and CRM setup.'
   },
   '/book-call': {
-    title: 'Book Pipeline Strategy Call with Steve Martin | Gobiya',
+    title: 'Schedule a 15-Min Forensic Pipeline Audit | Gobiya',
     description: 'Book pipeline strategy call with Steve Martin, CEO & lead engineer. Audit search performance, local map visibility, and CRM setup.'
   },
   '/capabilities': {
-    title: 'Custom Web Development Services & Technical SEO | Gobiya',
+    title: 'Custom React Web Development & Technical SEO | Gobiya',
     description: 'We provide custom web development services, native CRM integrations, technical SEO, and blockchain Web3 applications. Explore our capabilities.'
   },
   '/insights/gobiya-vs-enterprise-seo-agencies': {
-    title: 'Enterprise SEO Agencies vs. Gobiya: Comparison | Gobiya',
+    title: 'Enterprise SEO vs Gobiya: Speed & Cost Compare | Gobiya',
     description: 'We compare enterprise SEO agencies vs Gobiya, showing the speed, cost, and CRM pipeline differences for B2B brands.'
   },
   '/insights/automated-b2b-sales-pipeline-seo': {
-    title: 'B2B Sales Pipeline Automation: AI Citations | Gobiya',
+    title: 'Automate B2B Sales Pipelines via AI Citations | Gobiya',
     description: 'Integrate B2B sales pipeline automation with search intent. Learn how AI citation share decides who gets on the buyer shortlist.'
   },
   '/insights/automated-lead-generation-seo': {
-    title: 'Automated Lead Generation: Search Intent Mapping | Gobiya',
+    title: 'Automate Lead Generation: Search Intent Maps | Gobiya',
     description: 'Set up automated lead generation by mapping high-intent search clusters to your B2B pipeline to drive closed sales, not just page views.'
   },
   '/insights/outbound-seo-prospecting': {
-    title: 'Outbound SEO Prospecting: Timing Intent Signals | Gobiya',
+    title: 'Outbound SEO Prospecting: Target Search Intent | Gobiya',
     description: 'Use outbound SEO prospecting to monitor search intent triggers. Learn how to pitch buyers at the exact moment they search for your service.'
   },
   '/insights/b2b-sales-pipeline-automation': {
-    title: 'B2B Sales Pipeline Automation: CRM Pipelines | Gobiya',
+    title: 'Automate B2B Sales: Connect Search to CRM | Gobiya',
     description: 'Configure B2B sales pipeline automation workflows. Learn how to connect search intent, lead data enrichment, and automated email campaigns.'
   },
   '/insights/best-seo-agency-for-b2b-brands': {
-    title: 'Best SEO Agency for B2B: Evaluation Checklist | Gobiya',
+    title: 'Select the Best B2B SEO Agency: 2026 Checklist | Gobiya',
     description: 'How to select the best SEO agency for B2B brands. Follow our evaluation checklist to verify technical authority, case studies, and contracts.'
   },
   '/insights/seo-for-b2b-lead-generation': {
-    title: 'SEO for B2B Lead Gen: Target Buying Committee | Gobiya',
+    title: 'SEO for B2B Lead Gen: Win the Buying Committee | Gobiya',
     description: 'Learn how to deploy SEO for B2B lead generation by mapping landing pages to the full buying committee, satisfying all key decision-makers.'
   },
   '/insights/b2b-seo-agency': {
-    title: 'B2B SEO Agency: Metrics & Pipeline Strategy | Gobiya',
+    title: 'B2B SEO Agency: Focus on Pipeline Attribution | Gobiya',
     description: 'Partner with a B2B SEO agency focused on pipeline value over vanity traffic. Learn about content clusters, buyer committee targeting, and CRM leads.'
   },
   '/insights/local-seo': {
-    title: 'Local SEO Service: Elite Maps & Google Rank | Gobiya',
+    title: 'Local SEO Strategy: Dominate the 3-Pack Maps | Gobiya',
     description: 'Maximize local visibility with our local SEO service. We optimize Google Maps listings, business profiles, and AI search engines. Get a free audit.'
   },
   '/insights/local-seo-explained': {
-    title: 'Local SEO Strategy: The 90-Day Winning Rhythm | Gobiya',
+    title: 'Local SEO Explained: Dominate Search in 90 Days | Gobiya',
     description: 'Deploy our local SEO strategy weekly rhythm to win local search grids and maps. Review our 90-day checklist and tracking cadence.'
   },
   '/insights/b2b-organic-traffic-growth': {
-    title: 'B2B Organic Traffic: Decoupling From CRM Pipeline | Gobiya',
+    title: 'B2B Organic Traffic: Build CRM Pipeline Value | Gobiya',
     description: 'Why B2B organic traffic is decoupling from pipeline revenue—and how to target high-intent search clusters to build pipeline value.'
   },
   '/insights/multi-location-seo-website-structure': {
-    title: 'Multi-Location SEO Structure: URL Hierarchies | Gobiya',
+    title: 'Multi-Location SEO: Design URL Hierarchies | Gobiya',
     description: 'How to build a multi-location SEO structure to prevent cannibalization. Design URL hierarchies and local landing pages that rank.'
   },
   '/insights/best-website-structure-multiple-locations-different-cities': {
-    title: 'Website Structure for Multiple Locations Guide | Gobiya',
+    title: 'Best Website Structure for Multiple Locations | Gobiya',
     description: 'The ultimate guide to website structure for multiple locations. We compare subdirectory vs subdomain setups for local search rankings.'
   },
   '/insights/google-business-profile-optimization': {
-    title: 'Google Business Profile Optimization Details | Gobiya',
+    title: 'Google Business Profile: Suspensions & Audits | Gobiya',
     description: 'Use Google Business Profile optimization to improve local visibility and learn how to resolve GBP listing suspensions and appeals.'
   },
   '/insights/can-a-site-fully-recover-from-a-google-core-update': {
-    title: 'Google Core Update Recovery: Can You Recover? | Gobiya',
+    title: 'Google Core Update Recovery: Restore Full Traffic | Gobiya',
     description: 'Is Google core update recovery possible? The honest truth about algorithm drops, traffic audits, and adapting to AI citation networks.'
   },
   '/insights/google-manual-action-removal-agency-caused-penalty': {
-    title: 'Google Manual Action Removal: Recovery Guide | Gobiya',
+    title: 'Remove Google Manual Actions: Reconsider Guide | Gobiya',
     description: 'Use our Google manual action removal checklist to audit link profiles, document cleanup, and submit a successful reconsideration appeal.'
   },
   '/insights/what-is-the-difference-between-a-manual-action-and-an-algorithmic-penalty': {
-    title: 'Manual Action vs Algorithmic Penalty: Key Splits | Gobiya',
+    title: 'Manual Action vs Algorithmic Penalty: Diagnostic | Gobiya',
     description: 'Understand manual action vs algorithmic penalty differences, Search Console reports, and step-by-step diagnostic checklists for recovery.'
   },
   '/insights/chatgpt-vs-google-for-business-discovery': {
-    title: 'ChatGPT vs Google Search: Customer Trends | Gobiya',
+    title: 'ChatGPT vs Google Search: Customer Discovery | Gobiya',
     description: 'Comparing ChatGPT vs Google search discovery rates. Learn how to optimize your brand footprint to win both AI summaries and clicks.'
   },
   '/insights/how-do-b2b-companies-use-seo-to-generate-predictable-revenue': {
-    title: 'B2B Pipeline Revenue: How B2B Companies Use SEO | Gobiya',
+    title: 'B2B Pipeline Revenue: How SEO Drives B2B Leads | Gobiya',
     description: 'Learn how to connect search clusters to B2B pipeline revenue, map content to the buying committee, and scale inbound conversions.'
   },
   '/insights/what-data-sources-do-llms-crawl-to-verify-b2b-company-information': {
-    title: 'LLM Company Verification: Sources AI Crawlers Use | Gobiya',
+    title: 'LLM Company Verification: Data Sources AI Uses | Gobiya',
     description: 'Discover how ChatGPT and Claude handle LLM company verification by crawling Wikidata, LinkedIn, and review portals to establish trust.'
   },
   '/insights/what-is-the-difference-between-google-knowledge-graph-optimization-and-geo': {
-    title: 'Knowledge Graph Optimization vs. GEO: Key Splits | Gobiya',
+    title: 'Knowledge Graph Optimization vs GEO: AI splits | Gobiya',
     description: 'Understand how Knowledge Graph optimization differs from GEO, how entity resolution works, and how to secure AI citation visibility.'
   },
   '/insights/seo-case-study-traffic-recovery': {
-    title: 'SEO Case Study: Traffic Recovery of 320% | Gobiya',
+    title: 'SEO Case Study: Recover 320% Traffic Growth | Gobiya',
     description: 'Read our SEO case study traffic recovery breakdown. See the exact forensic audit and content pruning steps we deployed to restore organic search clicks.'
   },
   '/insights/what-is-generative-engine-optimization-and-how-does-it-work': {
-    title: 'Generative Engine Optimization (GEO): RAG Guide | Gobiya',
+    title: 'Generative Engine Optimization (GEO): AI Guide | Gobiya',
     description: 'A complete technical guide to Generative Engine Optimization (GEO). Learn how RAG-based AI search engines cite content and how to optimize.'
   },
   '/insights/are-ai-search-engines-scraping-hidden-api-data-or-public-html-text-blocks': {
-    title: 'AI Search Engines Scraping: APIs vs HTML | Gobiya',
+    title: 'AI Search Scraping: API vs Server HTML Blocks | Gobiya',
     description: 'How do AI search engines scraping systems operate? We analyze private APIs vs public server-rendered HTML blocks and AI crawler rendering.'
   },
   '/about/steve-martin': {
-    title: 'Steve Martin | Growth Engineer & Founder of Gobiya | Gobiya',
+    title: 'Steve Martin: Lead Growth Engineer & Founder | Gobiya',
     description: 'Credentials and author profile for Steve Martin. Over 15 years engineering search engine dominance, custom React platforms, and sales pipeline automation.'
   },
   '/author/steve-martin': {
-    title: 'Steve Martin | Growth Engineer & Founder of Gobiya | Gobiya',
+    title: 'Steve Martin: Lead Growth Engineer & Founder | Gobiya',
     description: 'Credentials and author profile for Steve Martin. Over 15 years engineering search engine dominance, custom React platforms, and sales pipeline automation.'
   },
   '/case-studies/smile-center-dentistry': {
-    title: 'SmileCenter Dentistry: 5x Patient Inquiries With Multi-Location SEO | Gobiya',
+    title: 'Dental SEO Case Study: 5x Patient Inquiries | Gobiya',
     description: 'How we rebuilt SmileCenter\'s website on React/Vite, architected individual location pages for Southern California markets, and drove a 5x increase in form completions and phone calls.'
   },
   '/case-studies/american-livescan': {
-    title: 'American Livescan: 3x Bookings & Calls With Site Rebuild + Local SEO | Gobiya',
+    title: 'Local SEO Case Study: Tripled Online Bookings | Gobiya',
     description: 'How we replaced a legacy .htm site with a clean-URL architecture, optimized the Google Business Profile, and tripled online appointments and phone calls for a high-volume LA fingerprinting service.'
   }
 };
