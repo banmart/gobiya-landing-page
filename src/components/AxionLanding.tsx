@@ -30,8 +30,14 @@ const AxionLanding = () => {
   
   // Interactive Hero Form State
   const [domain, setDomain] = useState('');
+  const [email, setEmail] = useState('');
   const [selectedServices, setSelectedServices] = useState<string[]>([]);
   const [formState, setFormState] = useState<'idle' | 'submitting' | 'success'>('idle');
+
+  // Hero Audit Strip State
+  const [heroEmail, setHeroEmail] = useState('');
+  const [heroDomain, setHeroDomain] = useState('');
+  const [heroSubmitted, setHeroSubmitted] = useState(false);
 
   const handleServiceToggle = (service: string) => {
     setSelectedServices(prev =>
@@ -42,12 +48,25 @@ const AxionLanding = () => {
   const handleFormSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!domain) return;
-    trackFormSubmit({ form_name: 'homepage_hero_audit', services: selectedServices.join(','), has_domain: !!domain });
+    trackFormSubmit({ form_name: 'homepage_audit_form', services: selectedServices.join(','), has_domain: !!domain, has_email: !!email });
     const servicesParam = selectedServices.join(',');
-    const targetUrl = `/book?domain=${encodeURIComponent(domain)}&services=${encodeURIComponent(servicesParam)}`;
+    const targetUrl = `/book?domain=${encodeURIComponent(domain)}&email=${encodeURIComponent(email)}&services=${encodeURIComponent(servicesParam)}`;
     window.history.pushState({}, '', targetUrl);
     window.dispatchEvent(new PopStateEvent('popstate'));
     window.scrollTo(0, 0);
+  };
+
+  const handleHeroFormSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!heroEmail || !heroDomain) return;
+    trackFormSubmit({ form_name: 'homepage_hero_strip', has_domain: !!heroDomain, has_email: !!heroEmail });
+    setHeroSubmitted(true);
+    const targetUrl = `/book?domain=${encodeURIComponent(heroDomain)}&email=${encodeURIComponent(heroEmail)}&utm_source=hero_strip`;
+    setTimeout(() => {
+      window.history.pushState({}, '', targetUrl);
+      window.dispatchEvent(new PopStateEvent('popstate'));
+      window.scrollTo(0, 0);
+    }, 800);
   };
 
   useEffect(() => {
@@ -266,6 +285,49 @@ const AxionLanding = () => {
           </div>
         ))}
       </div>
+
+      {/* HERO AUDIT STRIP */}
+      <section className="bg-[#0c0c0c] border-b border-white/10 py-10 px-5 sm:px-8 lg:px-12 relative z-20">
+        <div className="max-w-[1440px] mx-auto">
+          {heroSubmitted ? (
+            <div className="flex items-center justify-center gap-3 text-center py-2">
+              <Check className="w-5 h-5 text-[#F26522]" strokeWidth={2.5} />
+              <p className="text-white font-medium">Audit request received — redirecting you to book your call...</p>
+            </div>
+          ) : (
+            <form onSubmit={handleHeroFormSubmit} className="flex flex-col lg:flex-row items-center justify-between gap-5 lg:gap-8">
+              <div className="text-center lg:text-left flex-shrink-0">
+                <p className="text-[11px] uppercase tracking-widest font-semibold text-[#F26522] mb-1">Free Audit</p>
+                <p className="text-[clamp(1rem,1.8vw,1.3rem)] font-medium text-white leading-tight">Get your free site performance audit</p>
+              </div>
+              <div className="flex flex-col sm:flex-row gap-3 w-full lg:max-w-[640px]">
+                <input
+                  type="email"
+                  required
+                  value={heroEmail}
+                  onChange={(e) => setHeroEmail(e.target.value)}
+                  placeholder="Your email address"
+                  className="flex-1 min-w-0 bg-white/5 border border-white/10 focus:border-[#F26522] focus:outline-none text-white px-4 py-3 text-[15px] placeholder:text-gray-600 transition-colors rounded-lg"
+                />
+                <input
+                  type="text"
+                  required
+                  value={heroDomain}
+                  onChange={(e) => setHeroDomain(e.target.value)}
+                  placeholder="yoursite.com"
+                  className="flex-1 min-w-0 bg-white/5 border border-white/10 focus:border-[#F26522] focus:outline-none text-white px-4 py-3 text-[15px] placeholder:text-gray-600 transition-colors rounded-lg"
+                />
+                <button
+                  type="submit"
+                  className="bg-[#F26522] hover:bg-[#e05a1a] text-white px-6 py-3 font-semibold text-[13px] uppercase tracking-wider transition-colors whitespace-nowrap rounded-lg flex-shrink-0"
+                >
+                  Get Free Audit →
+                </button>
+              </div>
+            </form>
+          )}
+        </div>
+      </section>
 
       {/* SECTION 2: MARQUEE */}
       <div data-logo-dark className="relative w-full">
@@ -587,6 +649,18 @@ const AxionLanding = () => {
                 </div>
 
                 <div className="space-y-3">
+                  <label className="block text-[13px] uppercase tracking-widest font-semibold text-gray-400">Your Email Address</label>
+                  <input 
+                    type="email" 
+                    required
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="e.g. you@company.com" 
+                    className="w-full bg-white/5 border border-white/10 focus:border-[#F26522] focus:bg-white/10 text-white rounded-xl p-4 text-[16px] outline-none transition-all placeholder:text-gray-600 focus:shadow-[0_0_30px_rgba(242,101,34,0.1)]"
+                  />
+                </div>
+
+                <div className="space-y-3">
                   <label className="block text-[13px] uppercase tracking-widest font-semibold text-gray-400">Your Website Domain</label>
                   <input 
                     type="text" 
@@ -628,6 +702,7 @@ const AxionLanding = () => {
                   onClick={() => {
                     setFormState('idle');
                     setDomain('');
+                    setEmail('');
                     setSelectedServices([]);
                   }}
                   className="text-[#F26522] hover:text-[#e05a1a] transition-colors text-[15px] font-semibold underline underline-offset-4 font-body mt-4 inline-block"
