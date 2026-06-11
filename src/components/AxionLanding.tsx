@@ -17,7 +17,6 @@ import HorizontalScrollText from './HorizontalScrollText';
 import ParallaxMedia from './ParallaxMedia';
 import CustomCursor from './CustomCursor';
 import StackedBento from './StackedBento';
-import CaseStudiesPinned from './CaseStudiesPinned';
 import InsightsSlider from './InsightsSlider';
 import TestimonialsSlider from './TestimonialsSlider';
 import SatisfiedClients from './SatisfiedClients';
@@ -544,12 +543,6 @@ const AxionLanding = () => {
       <div data-logo-dark className="relative">
         <InsightsSlider limit={5} />
         <div className="logo-marker absolute right-[15%] top-[50%] w-10 h-10 pointer-events-none" />
-      </div>
-
-      {/* SECTION 7: CASE STUDIES PINNED */}
-      <div className="relative">
-        <CaseStudiesPinned />
-        <div className="logo-marker absolute left-[12%] top-[40%] w-10 h-10 pointer-events-none" />
       </div>
 
       {/* SECTION 7.25: TESTIMONIALS */}
