@@ -7,8 +7,8 @@ interface SEOMetadata {
 
 const metadataMap: Record<string, SEOMetadata> = {
   '/': {
-    title: 'Build Custom React Sites that Rank & Convert | Gobiya',
-    description: 'We build custom React websites engineered to rank and convert natively. Includes codebase-level CRM pipelines and Web3 integrations. Get a free audit.'
+    title: 'AI Internet Marketing Agency - Gobiya',
+    description: 'Gobiya is a national AI internet marketing agency headquartered in Los Angeles. We help businesses get found on Google, generate more leads, and grow revenue through AI-powered SEO, GEO, and automated pipeline systems. Get a free audit.'
   },
   '/capabilities/web-development': {
     title: 'Build Sub-Second React Sites that Convert | Gobiya',
@@ -177,11 +177,11 @@ const metadataMap: Record<string, SEOMetadata> = {
   },
   '/about/steve-martin': {
     title: 'Steve Martin: Lead Growth Engineer & Founder | Gobiya',
-    description: 'Credentials and author profile for Steve Martin. Over 15 years engineering search engine dominance, custom React platforms, and sales pipeline automation.'
+    description: 'Credentials and author profile for Steve Martin. 25+ years engineering search engine dominance, custom React platforms, and sales pipeline automation.'
   },
   '/author/steve-martin': {
     title: 'Steve Martin: Lead Growth Engineer & Founder | Gobiya',
-    description: 'Credentials and author profile for Steve Martin. Over 15 years engineering search engine dominance, custom React platforms, and sales pipeline automation.'
+    description: 'Credentials and author profile for Steve Martin. 25+ years engineering search engine dominance, custom React platforms, and sales pipeline automation.'
   },
   '/case-studies/smile-center-dentistry': {
     title: 'Dental SEO Case Study: 5x Patient Inquiries | Gobiya',
@@ -331,34 +331,34 @@ const SEO: React.FC<SEOProps> = ({ path }) => {
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "How does Generative Engine Optimization (GEO) work?",
+            "name": "Do you offer full-service internet marketing?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "GEO structures your brand's digital footprints—including custom schema graphs, entity connections, and structured tables—so conversational LLMs (such as ChatGPT, Claude, Perplexity, and Gemini) can confidently parse, recommend, and cite your business as a trusted authority."
+              "text": "Yes. We are an end-to-end AI internet marketing agency. We handle everything from advanced technical SEO and Generative Engine Optimization (GEO) to paid performance marketing and fully automated B2B lead generation pipelines."
             }
           },
           {
             "@type": "Question",
-            "name": "How long does it take to recover from a Google Core Update penalty?",
+            "name": "How does Generative Engine Optimization (GEO) differ from traditional SEO?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Reversing algorithmic suppressions typically takes 12 to 24 weeks. The recovery process involves a forensic update audit, consolidation or pruning of thin URLs, and building clear E-E-A-T credentials that Google's quality classifiers recognize during core update cycles."
+              "text": "While traditional SEO focuses on ranking in standard Google searches, GEO structures your digital footprint so conversational AI models (like ChatGPT, Perplexity, and Claude) cite your business as the authoritative answer when users ask complex, industry-specific questions."
             }
           },
           {
             "@type": "Question",
-            "name": "Why do traditional SEO metrics fail B2B companies?",
+            "name": "How quickly can we see results from an AI marketing campaign?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Traditional SEO tracks traffic volume and generic rankings. B2B programs require targeting low-volume, high-intent keyword clusters (like alternatives, comparison pages, and integration tables) that speak to multi-stakeholder buying committees, attributing traffic directly to CRM pipeline value."
+              "text": "While traditional SEO can take months, our AI-focused growth campaigns and pipeline automation often yield measurable lead improvements within the first 30 days. We deploy rapid technical audits and direct outreach sequences to generate immediate pipeline velocity."
             }
           },
           {
             "@type": "Question",
-            "name": "What is the difference between manual actions and algorithmic suppressions?",
+            "name": "Do you handle lead generation and CRM integration?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "A manual action is issued by a Google reviewer and explicitly listed in Search Console's manual actions panel; it is cleared by submitting a reconsideration request. An algorithmic suppression is automated, has no notification, and only recovers when the underlying quality classifiers are satisfied during a core rollout."
+              "text": "Yes. Our web builds aren't just digital brochures — they are lead-generation engines. We natively integrate your site with your CRM of choice to capture pipeline data, track attribution, and automate sales workflows from day one."
             }
           }
         ]
