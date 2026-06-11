@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowRight, BookOpen, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, BookOpen, CheckCircle2, Target } from 'lucide-react';
 import { trackFormSubmit } from '../lib/analytics';
 
 const LeadMagnet = () => {
@@ -11,7 +11,7 @@ const LeadMagnet = () => {
     if (!email) return;
 
     setStatus('loading');
-    trackFormSubmit('lead_magnet_download', { email });
+    trackFormSubmit({ form_name: 'lead_magnet_download', has_domain: false, lead_magnet: 'local_seo_guide' });
 
     // Simulate API call
     setTimeout(() => {

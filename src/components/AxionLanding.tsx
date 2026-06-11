@@ -47,7 +47,7 @@ const AxionLanding = () => {
   const handleFormSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!domain) return;
-    trackFormSubmit({ form_name: 'homepage_audit_form', services: selectedServices.join(','), has_domain: !!domain, has_email: !!email });
+    trackFormSubmit({ form_name: 'homepage_audit_form', services: selectedServices.join(','), has_domain: !!domain });
     const servicesParam = selectedServices.join(',');
     const targetUrl = `/book?domain=${encodeURIComponent(domain)}&email=${encodeURIComponent(email)}&services=${encodeURIComponent(servicesParam)}`;
     window.history.pushState({}, '', targetUrl);
@@ -58,7 +58,7 @@ const AxionLanding = () => {
   const handleHeroFormSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!heroEmail || !heroDomain) return;
-    trackFormSubmit({ form_name: 'homepage_hero_strip', has_domain: !!heroDomain, has_email: !!heroEmail });
+    trackFormSubmit({ form_name: 'homepage_hero_strip', has_domain: !!heroDomain });
     setHeroSubmitted(true);
     const targetUrl = `/book?domain=${encodeURIComponent(heroDomain)}&email=${encodeURIComponent(heroEmail)}&utm_source=hero_strip`;
     setTimeout(() => {
