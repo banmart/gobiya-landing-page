@@ -295,11 +295,7 @@ const AxionLanding = () => {
               <p className="text-white font-medium">Audit request received — redirecting you to book your call...</p>
             </div>
           ) : (
-            <form onSubmit={handleHeroFormSubmit} className="flex flex-col lg:flex-row items-center justify-between gap-5 lg:gap-8">
-              <div className="text-center lg:text-left flex-shrink-0">
-                <p className="text-[11px] uppercase tracking-widest font-semibold text-[#F26522] mb-1">Free Audit</p>
-                <p className="text-[clamp(1rem,1.8vw,1.3rem)] font-medium text-white leading-tight">Get your free site performance audit</p>
-              </div>
+            <form onSubmit={handleHeroFormSubmit} className="flex flex-col lg:flex-row items-center justify-center gap-5 lg:gap-8">
               <div className="flex flex-col sm:flex-row gap-3 w-full lg:max-w-[640px]">
                 <input
                   type="email"
