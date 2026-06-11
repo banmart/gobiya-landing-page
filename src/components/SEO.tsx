@@ -7,8 +7,8 @@ interface SEOMetadata {
 
 const metadataMap: Record<string, SEOMetadata> = {
   '/': {
-    title: 'AI Internet Marketing Agency - Gobiya',
-    description: 'Gobiya is a national AI internet marketing agency headquartered in Los Angeles. We help businesses get found on Google, generate more leads, and grow revenue through AI-powered SEO, GEO, and automated pipeline systems. Get a free audit.'
+    title: 'Local Business Marketing Agency - Get Found on Google | Gobiya',
+    description: 'Gobiya helps local businesses — dentists, law firms, contractors, and service providers — get found on Google, generate consistent leads, and grow without wasting money on ads that don\'t deliver. Book a free audit.'
   },
   '/capabilities/web-development': {
     title: 'Build Sub-Second React Sites that Convert | Gobiya',

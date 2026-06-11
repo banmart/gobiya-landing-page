@@ -200,35 +200,42 @@ const AxionLanding = () => {
           
           {/* Hero Heading and Subtitle */}
           <div className="flex flex-col justify-center items-start text-left w-full">
+            <div className="inline-flex items-center gap-2 bg-white/5 border border-white/10 px-3 py-1.5 rounded-full mb-5">
+              <div className="w-1.5 h-1.5 bg-[#F26522] rounded-full animate-pulse" />
+              <span className="text-[11px] font-semibold text-gray-400 uppercase tracking-wider">Trusted by dentists, law firms &amp; contractors</span>
+            </div>
             <LiveRevenueCounter />
             <h1 className="text-[clamp(2.5rem,6vw,5.5rem)] font-medium leading-[1.05] tracking-[-0.03em] text-white font-display mb-6 w-full">
-              AI-Powered <span className="text-[#F26522] font-semibold">Internet Marketing</span> built to scale — engineered for ROI and revenue growth.
+              Your next customers are already on Google. <span className="text-[#F26522] font-semibold">Is your business showing up?</span>
             </h1>
-            <p className="text-[16px] sm:text-[18px] lg:text-[20px] font-medium leading-[1.6] tracking-normal text-gray-400 max-w-[800px] mb-10">
-              We are an advanced AI internet marketing agency focused on high-stakes technical environments. We leverage modern search mechanics, generative engine optimization (GEO), and data-driven performance marketing to turn visibility into measurable pipeline revenue.
+            <p className="text-[16px] sm:text-[18px] lg:text-[20px] font-medium leading-[1.6] tracking-normal text-gray-400 max-w-[680px] mb-10">
+              Gobiya helps local businesses — dentists, law firms, contractors, and service providers — get found on Google, generate consistent leads, and grow without wasting money on ads that don't deliver.
             </p>
             
             <div className="flex flex-wrap justify-start items-center gap-4 sm:gap-5">
               <a 
                 href="/book" 
                 data-cta-location="homepage_hero_sub"
-                data-cta-text="Book a strategy call"
-                onClick={() => trackCTA({ cta_location: 'homepage_hero_sub', cta_text: 'Book a strategy call', destination: '/book' })}
+                data-cta-text="Book a free audit"
+                onClick={() => trackCTA({ cta_location: 'homepage_hero_sub', cta_text: 'Book a free audit', destination: '/book' })}
                 className="group flex items-center bg-[#F26522] hover:bg-[#e05a1a] text-white pl-6 sm:pl-8 pr-2 py-3 transition-colors duration-300"
               >
                 <div className="flex flex-col overflow-hidden h-[24px] justify-start items-start relative mr-4">
-                  <span className="text-[14px] sm:text-[16px] font-medium leading-[24px] transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-translate-y-full">Book a strategy call</span>
-                  <span className="text-[14px] sm:text-[16px] font-medium leading-[24px] absolute top-full transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-translate-y-full">Book a strategy call</span>
+                  <span className="text-[14px] sm:text-[16px] font-medium leading-[24px] transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-translate-y-full">Book a free audit</span>
+                  <span className="text-[14px] sm:text-[16px] font-medium leading-[24px] absolute top-full transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-translate-y-full">Book a free audit</span>
                 </div>
                 <div className="w-8 h-8 sm:w-10 sm:h-10 bg-white flex items-center justify-center">
                   <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 text-[#F26522] transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-rotate-45" />
                 </div>
               </a>
-              <div className="flex items-center gap-3 bg-white/5 border border-white/10 hover:bg-white/10 transition-shadow duration-300 px-3 py-2 cursor-pointer">
-                <RotatingAILogos />
-                <span className="text-[13px] sm:text-[14px] font-medium text-white">Certified Partner</span>
-                <span className="text-[10px] sm:text-[11px] bg-gray-900 text-white px-1.5 sm:px-2 py-0.5 rounded">Featured</span>
-              </div>
+              <a
+                href="/company/success-stories"
+                onClick={() => trackCTA({ cta_location: 'homepage_hero_results', cta_text: 'See our results', destination: '/company/success-stories' })}
+                className="text-[14px] sm:text-[16px] font-medium text-gray-400 hover:text-white transition-colors duration-300 flex items-center gap-2 group"
+              >
+                See our results
+                <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+              </a>
             </div>
             
             {/* Partner Logos */}
