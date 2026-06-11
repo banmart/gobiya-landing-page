@@ -19,8 +19,9 @@ import CustomCursor from './CustomCursor';
 import StackedBento from './StackedBento';
 import InsightsSlider from './InsightsSlider';
 import TestimonialsSlider from './TestimonialsSlider';
-import SatisfiedClients from './SatisfiedClients';
 import RotatingAILogos from './RotatingAILogos';
+import WhatYouGet from './WhatYouGet';
+import LeadMagnet from './LeadMagnet';
 
 const AxionLanding = () => {
   const [time, setTime] = useState('');
@@ -196,44 +197,95 @@ const AxionLanding = () => {
         {/* Hero Content */}
         <div className="relative z-20 flex-1 max-w-[1440px] w-full mx-auto flex items-center justify-start px-5 sm:px-8 lg:px-12 py-12 lg:py-16">
           
-          {/* Hero Heading and Subtitle */}
-          <div className="flex flex-col justify-center items-start text-left w-full">
-            <div className="inline-flex items-center gap-2 bg-white/5 border border-white/10 px-3 py-1.5 rounded-full mb-5">
-              <div className="w-1.5 h-1.5 bg-[#F26522] rounded-full animate-pulse" />
-              <span className="text-[11px] font-semibold text-gray-400 uppercase tracking-wider">Trusted by dentists, law firms &amp; contractors</span>
-            </div>
-            <h1 className="text-[clamp(2.5rem,6vw,5.5rem)] font-medium leading-[1.05] tracking-[-0.03em] text-white font-display mb-6 w-full">
-              Your next customers are already on Google. <span className="text-[#F26522] font-semibold">Is your business showing up?</span>
-            </h1>
-            <p className="text-[16px] sm:text-[18px] lg:text-[20px] font-medium leading-[1.6] tracking-normal text-gray-400 max-w-[680px] mb-10">
-              Gobiya helps local businesses — dentists, law firms, contractors, and service providers — get found on Google, generate consistent leads, and grow without wasting money on ads that don't deliver.
-            </p>
+          {/* 2-Column Hero Grid */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center w-full">
             
-            <div className="flex flex-wrap justify-start items-center gap-4 sm:gap-5">
-              <a 
-                href="/book" 
-                data-cta-location="homepage_hero_sub"
-                data-cta-text="Book a free audit"
-                onClick={() => trackCTA({ cta_location: 'homepage_hero_sub', cta_text: 'Book a free audit', destination: '/book' })}
-                className="group flex items-center bg-[#F26522] hover:bg-[#e05a1a] text-white pl-6 sm:pl-8 pr-2 py-3 transition-colors duration-300"
-              >
-                <div className="flex flex-col overflow-hidden h-[24px] justify-start items-start relative mr-4">
-                  <span className="text-[14px] sm:text-[16px] font-medium leading-[24px] transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-translate-y-full">Book a free audit</span>
-                  <span className="text-[14px] sm:text-[16px] font-medium leading-[24px] absolute top-full transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-translate-y-full">Book a free audit</span>
+            {/* Left Column (Copy) */}
+            <div className="flex flex-col justify-center items-start text-left w-full">
+              <div className="inline-flex items-center gap-2 bg-white/5 border border-white/10 px-3 py-1.5 rounded-full mb-5">
+                <div className="w-1.5 h-1.5 bg-[#F26522] rounded-full animate-pulse" />
+                <span className="text-[11px] font-semibold text-gray-400 uppercase tracking-wider">Free Strategy Session</span>
+              </div>
+              
+              <h1 className="text-[clamp(2.5rem,5vw,4.5rem)] font-medium leading-[1.05] tracking-[-0.03em] text-white font-display mb-6 w-full">
+                Get A Custom SEO Plan Built For Your <span className="text-[#F26522] font-semibold">Local Business.</span>
+              </h1>
+              
+              <p className="text-[16px] sm:text-[18px] lg:text-[20px] font-medium leading-[1.6] tracking-normal text-gray-400 max-w-[600px] mb-8">
+                Hop on a 15-minute call with Gobiya's expert team. Walk away with a tailored SEO strategy you can use immediately to get found on Google — no obligation, just real answers.
+              </p>
+              
+              {/* Hard Stats */}
+              <div className="flex gap-8 mb-10 pb-8 border-b border-white/10 w-full max-w-[600px]">
+                <div>
+                  <span className="block text-2xl font-bold text-[#F26522] mb-1">15+</span>
+                  <span className="block text-[11px] font-bold text-gray-500 uppercase tracking-wider">Years Exp</span>
                 </div>
-                <div className="w-8 h-8 sm:w-10 sm:h-10 bg-white flex items-center justify-center">
-                  <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 text-[#F26522] transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-rotate-45" />
+                <div>
+                  <span className="block text-2xl font-bold text-[#F26522] mb-1">100+</span>
+                  <span className="block text-[11px] font-bold text-gray-500 uppercase tracking-wider">SMBs Grown</span>
                 </div>
-              </a>
-              <a
-                href="/company/success-stories"
-                onClick={() => trackCTA({ cta_location: 'homepage_hero_results', cta_text: 'See our results', destination: '/company/success-stories' })}
-                className="text-[14px] sm:text-[16px] font-medium text-gray-400 hover:text-white transition-colors duration-300 flex items-center gap-2 group"
-              >
-                See our results
-                <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-              </a>
+                <div>
+                  <span className="block text-2xl font-bold text-[#F26522] mb-1">15 Min</span>
+                  <span className="block text-[11px] font-bold text-gray-500 uppercase tracking-wider">Free Call</span>
+                </div>
+              </div>
+
+              <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6">
+                <a 
+                  href="/book" 
+                  data-cta-location="homepage_hero_sub"
+                  data-cta-text="Book Your Free Session"
+                  onClick={() => trackCTA({ cta_location: 'homepage_hero_sub', cta_text: 'Book Your Free Session', destination: '/book' })}
+                  className="group flex items-center justify-center bg-[#F26522] hover:bg-[#e05a1a] text-white px-8 py-4 rounded-full font-bold text-[16px] sm:text-[18px] transition-all duration-300 shadow-[0_10px_30px_-10px_rgba(242,101,34,0.6)] hover:shadow-[0_15px_40px_-10px_rgba(242,101,34,0.8)] hover:-translate-y-1"
+                >
+                  Book Your Free Session
+                  <ArrowRight className="w-5 h-5 ml-3 transition-transform duration-300 group-hover:translate-x-2" />
+                </a>
+              </div>
+              
+              {/* Trust Indicators */}
+              <div className="flex flex-wrap items-center gap-4 mt-6">
+                <span className="flex items-center text-[13px] font-semibold text-gray-400">
+                  <span className="text-green-500 font-bold mr-2">✓</span> 100% Free
+                </span>
+                <span className="flex items-center text-[13px] font-semibold text-gray-400">
+                  <span className="text-green-500 font-bold mr-2">✓</span> No Obligation
+                </span>
+                <span className="flex items-center text-[13px] font-semibold text-gray-400">
+                  <span className="text-green-500 font-bold mr-2">✓</span> Custom To You
+                </span>
+              </div>
             </div>
+
+            {/* Right Column (VSL & Social Proof) */}
+            <div className="flex flex-col w-full relative">
+              <div className="absolute -inset-10 bg-radial-gradient from-[#F26522]/20 to-transparent blur-3xl rounded-full pointer-events-none opacity-50"></div>
+              <div className="relative rounded-2xl overflow-hidden bg-white/5 border border-white/10 p-2 backdrop-blur-xl">
+                <div className="relative pb-[56.25%] w-full bg-black rounded-xl overflow-hidden border border-white/5">
+                  {/* VSL Placeholder (Replace with iframe when ready) */}
+                  <div className="absolute inset-0 flex flex-col items-center justify-center bg-gray-900 group cursor-pointer">
+                    <img 
+                      src="/images/mytrustwills.webp" 
+                      alt="VSL Thumbnail" 
+                      className="absolute inset-0 w-full h-full object-cover opacity-40 mix-blend-luminosity group-hover:opacity-60 group-hover:scale-105 transition-all duration-700"
+                    />
+                    <div className="relative z-10 w-20 h-20 bg-[#F26522] rounded-full flex items-center justify-center shadow-[0_0_40px_rgba(242,101,34,0.6)] group-hover:scale-110 transition-transform duration-300">
+                      <div className="w-0 h-0 border-t-[12px] border-t-transparent border-l-[20px] border-l-white border-b-[12px] border-b-transparent ml-2"></div>
+                    </div>
+                    <span className="relative z-10 text-white font-bold tracking-wider uppercase text-sm mt-6 group-hover:-translate-y-1 transition-transform duration-300">Play Video</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* VSL Testimonial Snippet */}
+              <div className="mt-6 p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md">
+                <div className="flex text-[#F26522] text-sm tracking-widest mb-3">★★★★★</div>
+                <p className="text-white font-semibold text-base mb-2">"Gobiya completely transformed our local presence. We're seeing 3x the calls from Google within 60 days."</p>
+                <p className="text-gray-400 text-sm font-medium">— Local Contractor Case Study</p>
+              </div>
+            </div>
+          </div>
             
             {/* Partner Logos */}
             <div className="mt-16 pt-8 border-t border-white/10 w-full">
@@ -258,7 +310,6 @@ const AxionLanding = () => {
                 ))}
               </div>
             </div>
-          </div>
 
         </div>
         <div className="logo-marker absolute left-[50%] bottom-[10%] w-10 h-10 pointer-events-none" />
@@ -281,7 +332,7 @@ const AxionLanding = () => {
             <div className="text-[13px] sm:text-[14px] leading-tight font-medium opacity-90 font-body">
               <span className="font-semibold block sm:inline">{stat.label}</span> — <span className="opacity-80 font-normal">{stat.text}</span>
             </div>
-            {stat.href && (
+          {stat.href && (
               <div className="mt-2 text-[11px] font-semibold uppercase tracking-widest opacity-60 group-hover:opacity-100 transition-opacity flex items-center gap-1">
                 View case study →
               </div>
@@ -289,6 +340,14 @@ const AxionLanding = () => {
           </div>
         ))}
       </div>
+
+      {/* WHAT YOU GET SECTION */}
+      <WhatYouGet />
+
+      {/* LEAD MAGNET SECTION */}
+      <LeadMagnet />
+
+
 
       {/* SECTION 2: MARQUEE */}
       <div data-logo-dark className="relative w-full">
