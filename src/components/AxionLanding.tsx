@@ -195,7 +195,7 @@ const AxionLanding = () => {
         <Header theme="dark" hideLogo={true} />
 
         {/* Hero Content */}
-        <div className="relative z-20 flex-1 max-w-[1440px] w-full mx-auto flex items-center justify-start px-5 sm:px-8 lg:px-12 py-12 lg:py-16">
+        <div className="relative z-20 flex-1 max-w-[1440px] w-full mx-auto flex flex-col justify-center px-5 sm:px-8 lg:px-12 py-12 lg:py-16">
           
           {/* 2-Column Hero Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center w-full">
