@@ -21,7 +21,6 @@ import CaseStudiesPinned from './CaseStudiesPinned';
 import InsightsSlider from './InsightsSlider';
 import TestimonialsSlider from './TestimonialsSlider';
 import SatisfiedClients from './SatisfiedClients';
-import LiveRevenueCounter from './LiveRevenueCounter';
 import RotatingAILogos from './RotatingAILogos';
 
 const AxionLanding = () => {
@@ -204,7 +203,6 @@ const AxionLanding = () => {
               <div className="w-1.5 h-1.5 bg-[#F26522] rounded-full animate-pulse" />
               <span className="text-[11px] font-semibold text-gray-400 uppercase tracking-wider">Trusted by dentists, law firms &amp; contractors</span>
             </div>
-            <LiveRevenueCounter />
             <h1 className="text-[clamp(2.5rem,6vw,5.5rem)] font-medium leading-[1.05] tracking-[-0.03em] text-white font-display mb-6 w-full">
               Your next customers are already on Google. <span className="text-[#F26522] font-semibold">Is your business showing up?</span>
             </h1>
