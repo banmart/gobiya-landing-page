@@ -286,45 +286,6 @@ const AxionLanding = () => {
         ))}
       </div>
 
-      {/* HERO AUDIT STRIP */}
-      <section className="bg-[#0c0c0c] border-b border-white/10 py-10 px-5 sm:px-8 lg:px-12 relative z-20">
-        <div className="max-w-[1440px] mx-auto">
-          {heroSubmitted ? (
-            <div className="flex items-center justify-center gap-3 text-center py-2">
-              <Check className="w-5 h-5 text-[#F26522]" strokeWidth={2.5} />
-              <p className="text-white font-medium">Audit request received — redirecting you to book your call...</p>
-            </div>
-          ) : (
-            <form onSubmit={handleHeroFormSubmit} className="flex flex-col lg:flex-row items-center justify-center gap-5 lg:gap-8">
-              <div className="flex flex-col sm:flex-row gap-3 w-full lg:max-w-[640px]">
-                <input
-                  type="email"
-                  required
-                  value={heroEmail}
-                  onChange={(e) => setHeroEmail(e.target.value)}
-                  placeholder="Your email address"
-                  className="flex-1 min-w-0 bg-white/5 border border-white/10 focus:border-[#F26522] focus:outline-none text-white px-4 py-3 text-[15px] placeholder:text-gray-600 transition-colors rounded-lg"
-                />
-                <input
-                  type="text"
-                  required
-                  value={heroDomain}
-                  onChange={(e) => setHeroDomain(e.target.value)}
-                  placeholder="yoursite.com"
-                  className="flex-1 min-w-0 bg-white/5 border border-white/10 focus:border-[#F26522] focus:outline-none text-white px-4 py-3 text-[15px] placeholder:text-gray-600 transition-colors rounded-lg"
-                />
-                <button
-                  type="submit"
-                  className="bg-[#F26522] hover:bg-[#e05a1a] text-white px-6 py-3 font-semibold text-[13px] uppercase tracking-wider transition-colors whitespace-nowrap rounded-lg flex-shrink-0"
-                >
-                  Get Free Audit →
-                </button>
-              </div>
-            </form>
-          )}
-        </div>
-      </section>
-
       {/* SECTION 2: MARQUEE */}
       <div data-logo-dark className="relative w-full">
         <Marquee items={['AI INTERNET MARKETING', 'PERFORMANCE SEO', 'GENERATIVE ENGINE OPTIMIZATION', 'PIPELINE AUTOMATION', 'DATA-DRIVEN GROWTH', 'TECHNICAL SEARCH AUTHORITY']} />
