@@ -145,13 +145,17 @@
   display: flex; align-items: center; justify-content: space-between;
 }
 
+/* ── CENTERED CONTAINER ── */
+.onpage-page .onpage-container {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 var(--pad);
+}
+
 /* ── CAPABILITIES SECTION ── */
 .onpage-page .capabilities-section {
-  padding: 8rem var(--pad);
+  padding: 8rem 0;
   border-bottom: 1px solid var(--line);
-}
-.onpage-page .section-inner {
-  max-width: var(--max-w); margin: 0 auto;
 }
 .onpage-page .section-head {
   max-width: 38rem; margin-bottom: 5rem;
@@ -197,7 +201,7 @@
 
 /* ── CHECKLIST SECTION ── */
 .onpage-page .checklist-section {
-  padding: 8rem var(--pad);
+  padding: 8rem 0;
   border-bottom: 1px solid var(--line);
   background: var(--paper-2);
 }
@@ -279,7 +283,7 @@
 
 /* ── FAQ SECTION ── */
 .onpage-page .faq-section {
-  padding: 8rem var(--pad);
+  padding: 8rem 0;
   border-bottom: 1px solid var(--line);
 }
 .onpage-page .faq-grid {
@@ -299,7 +303,7 @@
 
 /* ── CTA SECTION ── */
 .onpage-page .cta-section {
-  padding: 6rem var(--pad) 8rem;
+  padding: 6rem 0 8rem;
 }
 .onpage-page .cta-card {
   max-width: var(--max-w); margin: 0 auto;

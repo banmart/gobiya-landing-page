@@ -215,7 +215,7 @@ export default function OnPageSeoLosAngelesPage() {
 
       {/* Capabilities / Bento Section */}
       <section className="capabilities-section">
-        <div className="section-inner">
+        <div className="onpage-container">
           <div className="section-head">
             <span className="mono-tag">Engineered Solutions</span>
             <h2>Our On-Page SEO Capabilities</h2>
@@ -252,7 +252,7 @@ export default function OnPageSeoLosAngelesPage() {
 
       {/* Interactive Checklist Section */}
       <section className="checklist-section">
-        <div className="section-inner">
+        <div className="onpage-container">
           <div className="checklist-split">
             <div className="checklist-left">
               <span className="mono-tag">Action Checklist</span>
@@ -301,7 +301,7 @@ export default function OnPageSeoLosAngelesPage() {
 
       {/* FAQ Section */}
       <section className="faq-section">
-        <div className="section-inner">
+        <div className="onpage-container">
           <div className="section-head">
             <span className="mono-tag">FAQ</span>
             <h2>Frequently Asked Questions</h2>
@@ -333,7 +333,7 @@ export default function OnPageSeoLosAngelesPage() {
 
       {/* Call to Action Section */}
       <section className="cta-section">
-        <div className="section-inner">
+        <div className="onpage-container">
           <div className="cta-card">
             <div className="cta-left">
               <h2>Secure your forensic pipeline audit.</h2>
