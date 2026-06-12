@@ -622,7 +622,7 @@ export default async function handler(req: IncomingMessage, res: any) {
             },
             body: JSON.stringify({
               from: 'Gobiya Forms <onboarding@resend.dev>',
-              to: ['hello@gobiya.com'],
+              to: ['steve@gobiya.com'],
               subject: `[Gobiya Lead] New submission from ${name}`,
               html: htmlEmail
             })
