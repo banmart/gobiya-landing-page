@@ -17,7 +17,8 @@ const supabaseServer = (supabaseUrl && supabaseAnonKey) ? createClient(supabaseU
 function getRequestBody(req: IncomingMessage): Promise<string> {
   return new Promise((resolve, reject) => {
     if ((req as any).body !== undefined) {
-      resolve((req as any).body);
+      const b = (req as any).body;
+      resolve(typeof b === 'string' ? b : JSON.stringify(b));
       return;
     }
     let body = '';
@@ -592,7 +593,7 @@ export default async function handler(req: IncomingMessage, res: any) {
         };
 
         if (supabaseServer) {
-          const { error: dbError } = await supabaseServer.from('prospects').insert([lead]);
+          const { error: dbError } = await supabaseServer.from('prospects').upsert([lead], { onConflict: 'email' });
           if (dbError) throw dbError;
         }
 
