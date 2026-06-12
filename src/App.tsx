@@ -1,18 +1,23 @@
 import React, { useState, useEffect } from 'react';
-import AxionLanding from './components/AxionLanding';
+import GobiyaLanding from './components/GobiyaLanding';
+import GobiyaAboutPage from './components/GobiyaAboutPage';
 import ServiceSubpage from './components/ServiceSubpage';
 import ArticlePage from './components/ArticlePage';
 import AuthorPage from './components/AuthorPage';
 import ThankYouPage from './components/ThankYouPage';
 import BookingPage from './components/BookingPage';
 import SolutionPage from './components/SolutionPage';
+import CapabilitiesIndex from './components/CapabilitiesIndex';
+import SuccessStories from './components/SuccessStories';
+import ApproachPage from './components/ApproachPage';
+import InsightsPage from './components/InsightsPage';
 import RegionalHubPage from './components/RegionalHubPage';
 import SmileCenterCaseStudy from './components/SmileCenterCaseStudy';
 import AmericanLivescanCaseStudy from './components/AmericanLivescanCaseStudy';
 import AdminLogin from './components/AdminLogin';
 import AdminDashboard from './components/AdminDashboard';
+import ContactPage from './components/ContactPage';
 import SEO from './components/SEO';
-import PageTransition, { navigateWithTransition } from './components/PageTransition';
 
 // Safe storage helper to prevent crashes in sandboxed environments/iframes or strict privacy modes
 const safeStorage = {
@@ -122,21 +127,19 @@ function App({ url }: AppProps) {
           }
           
           e.preventDefault();
-          navigateWithTransition(() => {
-            window.history.pushState({}, '', urlObj.pathname + urlObj.hash);
-            setCurrentPath(urlObj.pathname);
-            // Scroll to top if no hash, else scroll to hash
-            if (urlObj.hash) {
-              setTimeout(() => {
-                const element = document.querySelector(urlObj.hash);
-                if (element) {
-                  element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-              }, 100);
-            } else {
-              window.scrollTo({ top: 0, behavior: 'instant' });
-            }
-          });
+          window.history.pushState({}, '', urlObj.pathname + urlObj.hash);
+          setCurrentPath(urlObj.pathname);
+          // Scroll to top if no hash, else scroll to hash
+          if (urlObj.hash) {
+            setTimeout(() => {
+              const element = document.querySelector(urlObj.hash);
+              if (element) {
+                element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              }
+            }, 100);
+          } else {
+            window.scrollTo({ top: 0, behavior: 'instant' });
+          }
         }
       }
     };
@@ -225,7 +228,9 @@ function App({ url }: AppProps) {
       '/capabilities/forensic-seo-penalty-recovery': '/capabilities/seo-discoverability',
       '/capabilities/conversion-architecture': '/capabilities/native-crm',
       '/capabilities/semantic-search-intelligence': '/capabilities/seo-discoverability',
-      '/capabilities/custom-digital-infrastructure': '/capabilities/web-development'
+      '/capabilities/custom-digital-infrastructure': '/capabilities/web-development',
+      '/company/careers': '/',
+      '/capabilities/ai-prospect-scraper': '/capabilities'
     };
     
     const target = legacyRedirects[normalized];
@@ -264,15 +269,27 @@ function App({ url }: AppProps) {
           <AdminLogin onLoginSuccess={handleLoginSuccess} />
         )
       ) : normalizedPath === '/' ? (
-        <AxionLanding />
+        <GobiyaLanding />
       ) : normalizedPath === '/book' || normalizedPath === '/book-call' ? (
         <BookingPage />
       ) : normalizedPath === '/about/steve-martin' || normalizedPath === '/author/steve-martin' ? (
         <AuthorPage path={normalizedPath} />
+      ) : normalizedPath === '/company/about' || normalizedPath === '/about' ? (
+        <GobiyaAboutPage />
       ) : articleSlug ? (
         <ArticlePage slug={articleSlug} />
       ) : normalizedPath === '/thank-you' ? (
         <ThankYouPage />
+      ) : normalizedPath === '/capabilities' ? (
+        <CapabilitiesIndex />
+      ) : normalizedPath === '/company/success-stories' ? (
+        <SuccessStories />
+      ) : normalizedPath === '/company/approach' ? (
+        <ApproachPage />
+      ) : normalizedPath === '/insights' ? (
+        <InsightsPage />
+      ) : normalizedPath === '/contact' ? (
+        <ContactPage />
       ) : isSolutionRoute ? (
         <SolutionPage path={normalizedPath} />
       ) : normalizedPath === '/case-studies/smile-center-dentistry' ? (
@@ -282,8 +299,6 @@ function App({ url }: AppProps) {
       ) : (
         <ServiceSubpage path={normalizedPath} />
       )}
-      
-      <PageTransition />
     </>
   );
 }

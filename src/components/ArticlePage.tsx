@@ -1,11 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Clock, ArrowRight, ArrowLeft, ChevronRight, ChevronLeft, Twitter, Linkedin, Facebook, Link, Share2, Check, BookOpen, Wrench } from 'lucide-react';
-import DeferredShader, { Swirl, ChromaFlow, FlutedGlass, FilmGrain } from './DeferredShader';
-import Header from './Header';
-import Footer from './Footer';
-import BlurText from './BlurText';
-import GradualBlur from './GradualBlur';
-import CustomCursor from './CustomCursor';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import SiteHeader from './SiteHeader';
+import SiteFooter from './SiteFooter';
+import './ArticlePage.css';
 import { trackCTA } from '../lib/analytics';
 import LeadMagnetCTA from './LeadMagnetCTA';
 
@@ -7555,121 +7554,13 @@ interface ArticlePageProps {
 }
 
 const ArticlePage: React.FC<ArticlePageProps> = ({ slug }) => {
-  const [time, setTime] = useState('');
-  const [canShare, setCanShare] = useState(false);
-  const [copied, setCopied] = useState(false);
   const article = ARTICLES[slug];
-
   const [toc, setToc] = useState<{ id: string; label: string }[]>([]);
   const [activeId, setActiveId] = useState<string>('');
-  const [activeSlide, setActiveSlide] = useState<number>(0);
+  const barRef = useRef<HTMLElement>(null);
+  const navInnerRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    if (!article) return;
-    
-    // Parse h2 elements inside article body to construct TOC dynamically
-    const timer = setTimeout(() => {
-      const headings = document.querySelectorAll('#article-content h2[id]');
-      const items = Array.from(headings).map((h) => ({
-        id: h.id,
-        label: h.textContent || '',
-      }));
-      setToc(items);
-    }, 150);
-
-    return () => clearTimeout(timer);
-  }, [article, slug]);
-
-  useEffect(() => {
-    if (toc.length === 0) return;
-
-    const headings = document.querySelectorAll('#article-content h2[id]');
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visible = entries.find((e) => e.isIntersecting);
-        if (visible) {
-          setActiveId(visible.target.id);
-        }
-      },
-      { 
-        rootMargin: '-100px 0px -70% 0px', 
-        threshold: 0 
-      }
-    );
-
-    headings.forEach((h) => observer.observe(h));
-    return () => {
-      headings.forEach((h) => observer.unobserve(h));
-    };
-  }, [toc]);
-
-  useEffect(() => {
-    setCanShare(typeof navigator !== 'undefined' && !!navigator.share);
-  }, []);
-
-  const handleShare = async (platform?: string) => {
-    const articleUrl = `https://www.gobiya.com/insights/${slug}`;
-    if (platform === 'copy') {
-      try {
-        await navigator.clipboard.writeText(articleUrl);
-        setCopied(true);
-        setTimeout(() => setCopied(false), 2000);
-      } catch {}
-      return;
-    }
-    if (platform === 'native' && typeof navigator !== 'undefined' && navigator.share) {
-      try {
-        await navigator.share({
-          title: article?.title ?? '',
-          text: article?.metaDescription ?? '',
-          url: articleUrl,
-        });
-      } catch {}
-      return;
-    }
-    const encoded = encodeURIComponent(articleUrl);
-    const title = encodeURIComponent(article?.title ?? '');
-    const urls: Record<string, string> = {
-      twitter: `https://twitter.com/intent/tweet?url=${encoded}&text=${title}`,
-      linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=${encoded}`,
-      facebook: `https://www.facebook.com/sharer/sharer.php?u=${encoded}`,
-    };
-    if (platform && urls[platform]) window.open(urls[platform], '_blank', 'noopener,noreferrer');
-  };
-
-  useEffect(() => {
-    const updateTime = () => {
-      const now = new Date();
-      setTime(now.toLocaleTimeString('en-US', {
-        timeZone: 'America/Los_Angeles',
-        hour: 'numeric',
-        minute: '2-digit',
-        hour12: true,
-      }));
-    };
-    updateTime();
-    const interval = setInterval(updateTime, 1000);
-    return () => clearInterval(interval);
-  }, []);
-
-  // GA4 CTA click tracking — delegated listener covers all /contact links in article body
-  useEffect(() => {
-    if (!article) return;
-    const handleClick = (e: MouseEvent) => {
-      const target = (e.target as HTMLElement).closest('a[href="/book"]');
-      if (!target) return;
-      const linkText = (target as HTMLAnchorElement).textContent?.trim().slice(0, 60) || 'CTA';
-      trackCTA({
-        cta_location: `article_${article.slug}`,
-        cta_text: linkText,
-        destination: '/book',
-      });
-    };
-    document.addEventListener('click', handleClick);
-    return () => document.removeEventListener('click', handleClick);
-  }, [article]);
-
-  // SEO updates
+  // SEO
   useEffect(() => {
     if (!article) return;
     document.title = `${article.title} | Gobiya`;
@@ -7681,640 +7572,323 @@ const ArticlePage: React.FC<ArticlePageProps> = ({ slug }) => {
     if (ogDesc) ogDesc.setAttribute('content', article.metaDescription);
     const ogImage = document.querySelector('meta[property="og:image"]');
     if (ogImage) ogImage.setAttribute('content', `https://www.gobiya.com${article.image}`);
-
-    // Article & FAQ JSON-LD
-    const schema = {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "BlogPosting",
-          "headline": article.title,
-          "description": article.metaDescription,
-          "image": `https://www.gobiya.com${article.image}`,
-          "url": `https://www.gobiya.com/insights/${slug}`,
-          "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": `https://www.gobiya.com/insights/${slug}/#webpage`
-          },
-          "datePublished": (slug === 'brand-entity-extraction-perception-drift') ? "2026-06-10" : (slug === 'what-is-the-difference-between-google-knowledge-graph-optimization-and-geo') ? "2026-06-04" : (slug === 'what-data-sources-do-llms-crawl-to-verify-b2b-company-information') ? "2026-06-03" : (slug === 'how-do-b2b-companies-use-seo-to-generate-predictable-revenue') ? "2026-05-31" : (slug === 'what-is-generative-engine-optimization-and-how-does-it-work') ? "2026-05-30" : (slug === 'what-is-the-difference-between-a-manual-action-and-an-algorithmic-penalty' || slug === 'chatgpt-vs-google-for-business-discovery') ? "2026-05-29" : "2026-05-25",
-          "dateModified": (slug === 'brand-entity-extraction-perception-drift') ? "2026-06-10" : (slug === 'what-is-the-difference-between-google-knowledge-graph-optimization-and-geo') ? "2026-06-04" : (slug === 'what-data-sources-do-llms-crawl-to-verify-b2b-company-information') ? "2026-06-03" : (slug === 'how-do-b2b-companies-use-seo-to-generate-predictable-revenue') ? "2026-05-31" : (slug === 'what-is-generative-engine-optimization-and-how-does-it-work') ? "2026-05-30" : (slug === 'what-is-the-difference-between-a-manual-action-and-an-algorithmic-penalty' || slug === 'chatgpt-vs-google-for-business-discovery') ? "2026-05-29" : "2026-05-25",
-          "author": {
-            "@type": "Person",
-            "name": "Steve Martin",
-            "jobTitle": "CEO, Lead Developer & Marketer",
-            "url": "https://www.gobiya.com/about/steve-martin",
-            "sameAs": [
-              "https://www.linkedin.com/in/stevemartingobiya/"
-            ]
-          },
-          "publisher": {
-            "@type": "Organization",
-            "@id": "https://www.gobiya.com/#organization",
-            "name": "Gobiya",
-            "logo": {
-              "@type": "ImageObject",
-              "url": "https://www.gobiya.com/images/gobiya---logo.webp"
-            }
-          }
-        },
-        
-        ...(slug === 'how-do-b2b-companies-use-seo-to-generate-predictable-revenue' ? [{
-          "@type": "FAQPage",
-          "mainEntity": [
-            {
-              "@type": "Question",
-              "name": "Why does B2B SEO often fail to connect to revenue?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "B2B SEO often fails because it optimizes for high-volume informational keywords at the expense of high-intent, decision-stage keywords. This results in researchers visiting the site and leaving, rather than active evaluators converting into MQLs."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "How does a topic cluster map to B2B buying stages?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "A topic cluster pairs a commercial-intent pillar page (capturing decision-stage buyers) with satellite use-case or integration pages. Mid-funnel searchers are captured by the satellite pages and routed to the pillar page through deliberate internal linking."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Which attribution model is best for long B2B sales cycles?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "U-shaped attribution is ideal for initiating discovery, while W-shaped is better for multi-month sales cycles as it credits first touch, lead creation, and opportunity creation. Algorithmic or data-driven attribution is the most accurate once sufficient clean event history exists in the CRM."
-              }
-            }
-          ]
-        }] : []),
-...(slug === 'what-is-the-difference-between-a-manual-action-and-an-algorithmic-penalty' ? [{
-          "@type": "FAQPage",
-          "mainEntity": [
-            {
-              "@type": "Question",
-              "name": "Can I submit a reconsideration request for an algorithmic update drop?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "No. Reconsideration requests are reviewed by Google employees and apply strictly to manual actions. If Search Console displays 'No issues detected,' your drop is algorithmic, and there is no manual action to appeal."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "How long does it take to recover from a Google manual action vs. an algorithmic suppression?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "A manual action typically clears in 10 to 30 days after a successful reconsideration request. An algorithmic suppression is much slower, usually requiring weeks to months of content quality upgrades, and often won't resolve until the next Google core update cycle runs."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "What is the first step I should take after seeing a traffic drop?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Immediately check the Security & Manual Actions -> Manual Actions report in Google Search Console. If a notification is present, you have a manual action. If it says 'No issues detected,' your drop is algorithmic."
-              }
-            }
-          ]
-        }] : []),
-        ...(slug === 'chatgpt-vs-google-for-business-discovery' ? [{
-          "@type": "FAQPage",
-          "mainEntity": [
-            {
-              "@type": "Question",
-              "name": "How does ChatGPT compare to Google in overall search volume?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Google handles over 100 billion monthly visits, whereas ChatGPT processes around 4 to 5.6 billion monthly visits. While Google maintains a massive raw volume advantage, ChatGPT users have higher engagement metrics and convert better when they navigate to a recommended site."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "What is the difference in conversion rates between AI referrals and Google search traffic?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "AI-referred visitors are observed to convert at up to 4.4 times the rate of traditional search visitors. This intent gap exists because conversational seekers are looking for synthesis and recommendations rather than just browsing multiple options, moving them further down the sales funnel before they reach a site."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "What schema markup should businesses implement for ChatGPT visibility?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "To establish clear machine-readable entity signals, businesses should implement Organization, LocalBusiness, Service, and FAQPage schemas. Writing these in JSON-LD is the best practice for AI retrieval engines."
-              }
-            }
-          ]
-        }] : []),
-        ...(slug === 'what-is-the-difference-between-google-knowledge-graph-optimization-and-geo' ? [{
-          "@type": "FAQPage",
-          "mainEntity": [
-            {
-              "@type": "Question",
-              "name": "What is the primary difference between Google Knowledge Graph optimization and GEO?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Google Knowledge Graph optimization focuses on entity resolution specifically within Google's database to correctly represent your brand (often resulting in a Knowledge Panel), whereas Generative Engine Optimization (GEO) focuses on getting your content cited and recommended across the entire multi-engine AI ecosystem (such as ChatGPT, Claude, Gemini, and Perplexity)."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Why is Knowledge Graph optimization considered a foundation for GEO?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Generative engines utilize RAG (Retrieval-Augmented Generation) pipelines and require high confidence to cite sources without hallucinating. A cleanly resolved entity in Google's Knowledge Graph, supported by structured data like Wikidata and schema markup, provides the verification foundation that these engines rely on to cite a brand."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "How are Google Knowledge Panels and AI answers converging?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Google's Knowledge Panel descriptions, which historically drew from Wikipedia, are increasingly being replaced by Gemini-generated multi-source summaries. This indicates that the entity understanding layer (Knowledge Graph) and the generative answering layer (AI Overviews/AI Mode) are merging into a single system inside Google."
-              }
-            }
-          ]
-        }] : []),
-        ...(slug === 'what-data-sources-do-llms-crawl-to-verify-b2b-company-information' ? [{
-          "@type": "FAQPage",
-          "mainEntity": [
-            {
-              "@type": "Question",
-              "name": "Which B2B data sources do LLMs trust the most for entity verification?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "LLMs rely on a tiered source hierarchy. Structured reference databases like Wikipedia and Wikidata are Tier 1 (the gold standard). Professional databases like LinkedIn and Crunchbase form Tier 2, while business reviews platforms like G2, Capterra, and TrustRadius constitute Tier 3. High-engagement media platforms (like Reddit and YouTube) and the company's own site serve as lower-tier signals."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Why does inconsistent data across B2B directories lead to AI silence?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "LLMs verify entities by triangulating facts across multiple external databases. If they encounter contradictory data—such as differing company categories, leadership names, or locations—the model's confidence scores drop. To avoid hallucinating wrong answers, conversational engines will typically omit the company entirely rather than risk citing incorrect information."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "How can a B2B company technically signal its entity relationships to AI crawlers?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "The most direct method is implementing Organization schema in JSON-LD format on the company website, utilizing the sameAs property. This explicitly declares the machine-readable links between your website and your official profiles on Wikidata, LinkedIn, Crunchbase, and category-specific review platforms."
-              }
-            }
-          ]
-        }] : []),
-        ...(slug === 'what-is-generative-engine-optimization-and-how-does-it-work' ? [{
-          "@type": "FAQPage",
-          "mainEntity": [
-            {
-              "@type": "Question",
-              "name": "How does GEO differ from traditional SEO?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "While traditional SEO focuses on ranking positions in a static list of blue links, GEO focuses on maximizing the probability that content is retrieved, synthesized, and cited in conversational AI responses. SEO is the foundational layer that ensures crawlability and indexation, while GEO optimizes content structure and authority for passage-level extraction by LLMs."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "What are the most effective tactics for improving GEO visibility?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "The most empirically validated tactics include adding specific statistics and direct quotations, structuring content with clear headings (H2/H3) for passage-level extraction, building deep topical authority, maintaining consistent schema markup (LocalBusiness, Organization, FAQPage), and earning third-party mentions to influence the retrieval-augmented generation (RAG) pipeline."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Do AI engines crawl sites differently than Google's traditional search bots?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Yes. AI engines use specialized user agents like GPTBot (OpenAI), PerplexityBot, and ClaudeBot to crawl content. Ensuring that your robots.txt file explicitly permits these crawlers and avoiding CDN blocklists is a critical technical requirement to enter the retrieval pool."
-              }
-            }
-          ]
-        }] : [])
-      ]
-    };
-    let scriptTag = document.getElementById('article-schema') as HTMLScriptElement | null;
-    if (!scriptTag) {
-      scriptTag = document.createElement('script');
-      scriptTag.id = 'article-schema';
-      scriptTag.type = 'application/ld+json';
-      document.head.appendChild(scriptTag);
-    }
-    scriptTag.textContent = JSON.stringify(schema);
   }, [article]);
 
-  // 404 fallback
+  // TOC parsing
+  useEffect(() => {
+    if (!article) return;
+    const timer = setTimeout(() => {
+      const headings = document.querySelectorAll('.art-body h2[id]');
+      const items = Array.from(headings).map((h) => ({
+        id: h.id,
+        label: h.textContent?.replace(/^\d+/, '').trim() || '',
+      }));
+      setToc(items);
+    }, 150);
+    return () => clearTimeout(timer);
+  }, [article, slug]);
+
+  // ScrollSpy
+  useEffect(() => {
+    if (toc.length === 0) return;
+    const headings = document.querySelectorAll('.art-body h2[id]');
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries.filter((e) => e.isIntersecting);
+        if (visible.length) {
+          visible.sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+          setActiveId(visible[0].target.id);
+        }
+      },
+      { rootMargin: '-15% 0px -70% 0px', threshold: 0 }
+    );
+    headings.forEach((h) => observer.observe(h));
+    return () => headings.forEach((h) => observer.unobserve(h));
+  }, [toc]);
+
+  // Progress Bar
+  useEffect(() => {
+    const onScroll = () => {
+      if (navInnerRef.current) {
+        navInnerRef.current.classList.toggle('is-scrolled', window.scrollY > 40);
+      }
+      if (barRef.current) {
+        const max = document.documentElement.scrollHeight - window.innerHeight;
+        barRef.current.style.width = (max > 0 ? (window.scrollY / max) * 100 : 0) + '%';
+      }
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+  // GSAP Animations
+  useEffect(() => {
+    if (!window.gsap) return;
+    const ctx = gsap.context(() => {
+      const ease = 'power3.out';
+      
+      const headTl = gsap.timeline({ delay: 0.15, defaults: { ease, duration: 1.1 } });
+      headTl
+        .from('.breadcrumb', { opacity: 0, y: 12 }, 0)
+        .from('.art-meta-top', { opacity: 0, y: 12 }, 0.08)
+        .from('.art-head h1', { opacity: 0, y: 24 }, 0.15)
+        .from('.art-dek', { opacity: 0, y: 16 }, 0.3)
+        .from('.art-byline', { opacity: 0 }, 0.45)
+        .from('.brief-strip', { opacity: 0 }, 0.55);
+
+      const sc = (el) => ({ trigger: el, start: 'top 87%' });
+      
+      gsap.utils.toArray('[data-anim="up"]').forEach((el) => {
+        gsap.from(el, { scrollTrigger: sc(el), y: 26, opacity: 0, duration: 1.1, ease });
+      });
+      
+      gsap.utils.toArray('[data-anim="fade"]').forEach((el) => {
+        gsap.from(el, { scrollTrigger: sc(el), opacity: 0, duration: 1.1, ease });
+      });
+      
+      gsap.utils.toArray('[data-anim="stagger"]').forEach((parent) => {
+        const kids = parent.querySelectorAll('[data-anim-child]');
+        if (!kids.length) return;
+        gsap.from(kids, { scrollTrigger: sc(parent), y: 22, opacity: 0, duration: 1.05, ease, stagger: 0.1 });
+      });
+
+      document.querySelectorAll('.magnetic').forEach((btn) => {
+        const strength = 10;
+        const move = (e) => {
+          const r = btn.getBoundingClientRect();
+          const x = (e.clientX - r.left - r.width / 2) / (r.width / 2);
+          const y = (e.clientY - r.top - r.height / 2) / (r.height / 2);
+          gsap.to(btn, { x: x * strength, y: y * strength, duration: 0.4, ease: 'power2.out' });
+        };
+        const leave = () => {
+          gsap.to(btn, { x: 0, y: 0, duration: 0.5, ease: 'elastic.out(1, 0.45)' });
+        };
+        btn.addEventListener('mousemove', move);
+        btn.addEventListener('mouseleave', leave);
+      });
+    });
+    return () => ctx.revert();
+  }, []);
+
+  const handleMagnetSubmit = async (e) => {
+    e.preventDefault();
+    const form = e.currentTarget;
+    const first = form.elements.namedItem('m-first').value.trim();
+    const last = form.elements.namedItem('m-last').value.trim();
+    const email = form.elements.namedItem('m-email').value.trim();
+    const company = form.elements.namedItem('m-company').value.trim();
+    const domain = form.elements.namedItem('m-domain').value.trim();
+    const note = document.getElementById('magnet-note');
+
+    if (!email || !email.includes('@')) {
+      form.elements.namedItem('m-email').focus();
+      if (note) note.textContent = '// enter a valid work email to receive the checklist';
+      return;
+    }
+
+    if (note) note.textContent = '// submitting request...';
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: `${first} ${last}`,
+          email,
+          company,
+          phone: '',
+          website: domain,
+          service: 'Lead Magnet: penalty_recovery_checklist',
+          message: `Core Update & Penalty Recovery Checklist requested via Article Inline Form. Page: ${slug}`
+        })
+      });
+      const data = await response.json();
+      if (!data.success) throw new Error(data.error || 'Failed to submit form');
+
+      if (note) note.textContent = '// checklist request received! Check your inbox shortly.';
+      form.reset();
+      window.location.href = '/thank-you';
+    } catch (err) {
+      console.error(err);
+      if (note) note.textContent = '// error submitting request. Please try again or email hello@gobiya.com';
+    }
+  };
+
   if (!article) {
     return (
-      <div className="min-h-screen bg-[#050505] flex items-center justify-center text-white">
+      <div className="min-h-screen bg-white flex items-center justify-center text-black">
         <div className="text-center px-6">
-          <p className="text-[#F26522] text-[12px] uppercase tracking-widest font-semibold mb-4">404</p>
-          <h1 className="text-3xl font-medium text-white mb-4">Article not found</h1>
-          <a href="/insights" className="text-[#F26522] underline">Back to Insights</a>
+          <h1 className="text-3xl font-medium mb-4">Article not found</h1>
+          <a href="/insights" className="text-green-800 underline">Back to Insights</a>
         </div>
       </div>
     );
   }
 
+  const relatedArticles = [...(RELATED_ARTICLES_MAP[slug] || DEFAULT_RELATED_ARTICLES)]
+    .sort((a, b) => {
+      const aMatches = a.category === article.category;
+      const bMatches = b.category === article.category;
+      if (aMatches && !bMatches) return -1;
+      if (!aMatches && bMatches) return 1;
+      return 0;
+    }).slice(0, 3);
+
   return (
-    <div className="min-h-screen bg-[#050505] text-white relative font-sans selection:bg-[#F26522] selection:text-white page-wrapper">
-      <CustomCursor />
+    <div className="article-page">
+      <div className="progress" aria-hidden="true"><i ref={barRef} id="progress-bar"></i></div>
+      
+      <SiteHeader />
 
-      {/* ── HERO ── */}
-      <section className="relative w-full h-[65vh] min-h-[480px] bg-[#050505] overflow-hidden flex flex-col justify-end cursor-default">
-        {/* Shader background */}
-        <div className="absolute inset-0 z-10 pointer-events-none w-full h-full [&>div]:w-full [&>div]:h-full [&_canvas]:w-full [&_canvas]:h-full [&_canvas]:object-cover opacity-85">
-          <DeferredShader>
-            <Swirl colorA="#050505" colorB="#0f0f0f" detail={1.7} />
-            <ChromaFlow baseColor="#050505" downColor="#f26522" leftColor="#f26522" rightColor="#f26522" upColor="#f26522" momentum={13} radius={3.5} />
-            <FlutedGlass aberration={0.61} angle={31} frequency={8} highlight={0.12} highlightSoftness={0} lightAngle={-90} refraction={4} shape="rounded" softness={1} speed={0.15} />
-            <FilmGrain strength={0.05} />
-          </DeferredShader>
-        </div>
-
-        {/* Nav */}
-        <Header theme="dark" />
-
-        {/* Hero text */}
-        <div className="relative z-20 max-w-[1440px] w-full mx-auto px-5 sm:px-8 lg:px-12 pb-10 sm:pb-14 pt-20">
-          {/* Breadcrumb */}
-          <nav className="flex items-center gap-2 text-[12px] text-gray-400 mb-6" aria-label="breadcrumb">
-            <a href="/" className="hover:text-white transition-colors">Home</a>
-            <ChevronRight className="w-3 h-3 text-gray-500" />
-            <a href="/insights" className="hover:text-white transition-colors">Insights</a>
-            <ChevronRight className="w-3 h-3 text-gray-500" />
-            <span className="text-white truncate max-w-[200px]">{article.title}</span>
+      <header className="art-head">
+        <div className="art-head-inner">
+          <nav className="breadcrumb" aria-label="Breadcrumb" data-anim="fade">
+            <a href="/">Gobiya</a><i>/</i>
+            <a href="/insights">Insights</a><i>/</i>
+            <span>{article.title}</span>
           </nav>
 
-          <span className="inline-block px-3 py-1 bg-[#F26522] text-white text-[10px] uppercase tracking-wider font-semibold mb-4">
-            {article.category}
-          </span>
-          <h1 className="text-[clamp(1.4rem,4vw,3rem)] font-medium leading-[1.15] tracking-[-0.03em] text-white max-w-[900px] mb-4">
-            {article.title}
+          <div className="art-meta-top" data-anim="fade">
+            <span className="cat-pill">{article.category}</span>
+            <span className="mono-tag">BRIEF — evaluation framework</span>
+          </div>
+
+          <h1 className="display" data-anim="up">
+            {article.title.split(':').map((part, i, arr) => i === arr.length - 1 ? <React.Fragment key={i}><span className="accent">{part}</span></React.Fragment> : <React.Fragment key={i}>{part}: </React.Fragment>)}
           </h1>
-          <div className="flex items-center gap-4 text-[13px] text-gray-400">
-            <span>{article.date}</span>
-            <span className="w-1 h-1 rounded-full bg-gray-600" />
-            <span>{article.readTime}</span>
-            <span className="w-1 h-1 rounded-full bg-gray-600" />
-            <span>By <a href="/about/steve-martin" className="underline hover:text-[#F26522] transition-colors font-medium">Steve Martin</a></span>
+
+          <p className="art-dek body-l" data-anim="up">
+            {article.metaDescription}
+          </p>
+
+          <div className="art-byline" data-anim="fade">
+            <div className="byline-left">
+              <img src="/images/steve-portrait.webp" alt="Steve Martin" className="author-mark" />
+              <div>
+                <p className="name"><a href="/about/steve-martin">Steve Martin</a></p>
+                <p className="role mono-tag">Founder &amp; principal — GOBIYA</p>
+              </div>
+            </div>
+            <div className="byline-right">
+              <span>Filed: {article.date}</span>
+              <span>{article.readTime}</span>
+              <span>Desk: {article.category}</span>
+            </div>
           </div>
         </div>
-      </section>
 
-      {/* ── HERO IMAGE ── */}
-      <div className="w-full max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-12 -mt-8 relative z-30">
-        <div className="w-full aspect-[16/7] overflow-hidden shadow-2xl border border-white/10">
-          <img
-            src={article.image}
-            alt={article.heroAlt}
-            className="w-full h-full object-cover"
-            loading="eager"
-          />
+        <div className="brief-strip">
+          <div className="brief-strip-inner">
+            <span>Evaluation lens: <em>scope · evidence · pricing · contract</em></span>
+            <span>Rule of record: <em>no deliverable, no accountability</em></span>
+          </div>
         </div>
+      </header>
+
+      <div className="art-layout">
+        <article className="art-body">
+          {article.image && (
+            <div className="article-hero-image-wrap" style={{ width: '100%', maxHeight: '420px', overflow: 'hidden', border: '1px solid var(--line)', marginBottom: '2.5rem' }}>
+              <img 
+                src={article.image} 
+                alt={article.heroAlt || article.title} 
+                style={{ width: '100%', height: 'auto', objectFit: 'cover' }} 
+              />
+            </div>
+          )}
+          {article.content}
+
+          <div className="magnet" id="checklist">
+            <div className="magnet-head">
+              <span>forensic engineering protocol</span>
+              <em>free download</em>
+            </div>
+            <div className="magnet-body">
+              <div>
+                <h3>Google Core Update &amp; Penalty Recovery Checklist</h3>
+                <p>A step-by-step technical guide to isolating algorithmic drops, diagnosing entity devaluation, and preparing reconsideration submissions.</p>
+                <ul>
+                  <li>Isolate query drops from broad Core Update filters</li>
+                  <li>Link-profile triage checklist for manual actions</li>
+                  <li>Reconsideration letter copy-paste template</li>
+                </ul>
+              </div>
+              <form className="magnet-form" id="magnet-form" onSubmit={handleMagnetSubmit}>
+                <div className="magnet-row">
+                  <input className="magnet-input" id="m-first" name="m-first" type="text" placeholder="First name" autoComplete="given-name" />
+                  <input className="magnet-input" id="m-last" name="m-last" type="text" placeholder="Last name" autoComplete="family-name" />
+                </div>
+                <input className="magnet-input" id="m-email" name="m-email" type="email" placeholder="Work email" autoComplete="email" />
+                <div className="magnet-row">
+                  <input className="magnet-input" id="m-company" name="m-company" type="text" placeholder="Company name" autoComplete="organization" />
+                  <input className="magnet-input" id="m-domain" name="m-domain" type="text" placeholder="Website domain" />
+                </div>
+                <button className="btn btn-light" type="submit">
+                  Download recovery checklist
+                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 4v12m0 0 5-5m-5 5-5-5M5 20h14" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                </button>
+                <p className="magnet-note" id="magnet-note">// we respect your inbox — instant delivery after submit</p>
+              </form>
+            </div>
+          </div>
+        </article>
+
+        <aside className="art-side">
+          <div className="side-sticky">
+            <div className="toc" data-anim="fade">
+              <div className="toc-head">
+                <span className="mono-tag">Table of contents</span>
+                <span className="mono-tag" style={{color: 'var(--green)'}}>0{toc.length} sections</span>
+              </div>
+              <nav id="toc-nav" aria-label="Table of contents">
+                {toc.map((item, index) => (
+                  <a key={item.id} href={`#${item.id}`} className={activeId === item.id ? 'active' : ''}>
+                    <span className="n">0{index + 1}</span>{item.label}
+                  </a>
+                ))}
+              </nav>
+            </div>
+
+            <div className="side-cta" data-anim="fade">
+              <span className="mono-tag">Let's grow your business</span>
+              <h4>Scale organic channels. Get cited in conversational search.</h4>
+              <ul>
+                <li>More visibility on Google Search &amp; Maps</li>
+                <li>Get cited on ChatGPT, Claude, and Gemini</li>
+                <li>High-converting paid media campaigns</li>
+                <li>Smarter email flow with stronger retention</li>
+              </ul>
+              <a href="/book" className="btn btn-light magnetic">
+                Book a call
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg>
+              </a>
+            </div>
+          </div>
+        </aside>
       </div>
 
-      {/* ── ARTICLE BODY ── */}
-      <main className="w-full max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-12 py-12 sm:py-20">
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-12 xl:gap-16">
-
-          {/* Main article content */}
-          <article className="max-w-[760px] dark-article" id="article-content">
-
-            {/* ── MOBILE-ONLY: Share + Audio (above TOC) ── */}
-            <div className="lg:hidden mb-8">
-
-              <div className="border border-white/10 rounded-lg p-5 bg-white/5">
-                <div className="flex items-center gap-3 mb-4">
-                  <img src={article.image} alt={article.heroAlt} className="w-14 h-14 object-cover rounded-md flex-shrink-0" />
-                  <div className="min-w-0">
-                    <p className="text-[11px] uppercase tracking-wider font-semibold text-gray-400 mb-1">Share this article</p>
-                    <p className="text-[13px] text-gray-300 font-medium leading-snug line-clamp-2">{article.title}</p>
-                  </div>
-                </div>
-                <div className="flex items-center gap-3">
-                  <button onClick={() => handleShare('linkedin')} className="w-10 h-10 border border-white/10 flex items-center justify-center text-gray-400 hover:text-[#F26522] hover:border-[#F26522] transition-colors rounded-full" aria-label="Share on LinkedIn">
-                    <Linkedin className="w-4 h-4" />
-                  </button>
-                  <button onClick={() => handleShare('twitter')} className="w-10 h-10 border border-white/10 flex items-center justify-center text-gray-400 hover:text-[#F26522] hover:border-[#F26522] transition-colors rounded-full" aria-label="Share on Twitter">
-                    <Twitter className="w-4 h-4" />
-                  </button>
-                  <button onClick={() => handleShare('facebook')} className="w-10 h-10 border border-white/10 flex items-center justify-center text-gray-400 hover:text-[#F26522] hover:border-[#F26522] transition-colors rounded-full" aria-label="Share on Facebook">
-                    <Facebook className="w-4 h-4" />
-                  </button>
-                  <button
-                    onClick={() => handleShare('copy')}
-                    className="w-10 h-10 border border-white/10 flex items-center justify-center text-gray-400 hover:text-[#F26522] hover:border-[#F26522] transition-colors rounded-full relative"
-                    aria-label="Copy Link"
-                  >
-                    {copied ? (
-                      <span className="text-[9px] text-[#F26522] font-semibold">Copied!</span>
-                    ) : (
-                      <Link className="w-4 h-4" />
-                    )}
-                  </button>
-                  {canShare && (
-                    <button onClick={() => handleShare('native')} className="w-10 h-10 border border-white/10 flex items-center justify-center text-gray-400 hover:text-[#F26522] hover:border-[#F26522] transition-colors rounded-full" aria-label="More Sharing Options">
-                      <Share2 className="w-4 h-4" />
-                    </button>
-                  )}
-                </div>
-              </div>
-            </div>
-
-            {article.content}
-
-            {/* Dynamic Contextual Lead Magnet CTA */}
-            <LeadMagnetCTA category={article.category} slug={slug} />
-
-            {/* ── MOBILE-ONLY: Conversion Widgets ── */}
-            <div className="lg:hidden mt-12 pt-12 border-t border-white/10 flex flex-col gap-8">
-              {/* Let's Grow Your Business */}
-              <div className="border border-white/10 bg-white/5 p-6">
-                <h3 className="text-lg font-semibold text-white mb-2">Let's Grow Your Business</h3>
-                <p className="text-gray-400 text-sm mb-4">Partner with Gobiya to scale your organic channels and secure citations in conversational search engines.</p>
-                <ul className="space-y-3.5 mb-6">
-                  {GROWTH_CHECKLIST.map((item, index) => (
-                    <li key={index} className="flex items-start gap-3 text-[14px] text-gray-300 leading-snug">
-                      <Check className="w-4 h-4 text-[#F26522] shrink-0 mt-0.5" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-                <a
-                  href="/book"
-                  className="w-full text-center bg-[#F26522] hover:bg-[#e05a1a] text-white py-3.5 text-xs font-semibold uppercase tracking-wider transition-colors block"
-                >
-                  Book a Call
-                </a>
-              </div>
-
-              {/* Case Studies Carousel */}
-              <div className="border border-white/10 bg-white/5 p-6">
-                <div className="flex justify-between items-center mb-4">
-                  <span className="text-[12px] uppercase font-bold text-gray-400 tracking-wider">Case Studies</span>
-                  <div className="flex items-center gap-1.5">
-                    <button
-                      onClick={() => setActiveSlide((prev) => (prev === 0 ? CASE_STUDIES.length - 1 : prev - 1))}
-                      className="w-6 h-6 border border-white/10 flex items-center justify-center text-gray-400 hover:text-white transition-colors"
-                      aria-label="Previous Case Study"
-                    >
-                      <ChevronLeft className="w-3.5 h-3.5" />
-                    </button>
-                    <button
-                      onClick={() => setActiveSlide((prev) => (prev === CASE_STUDIES.length - 1 ? 0 : prev + 1))}
-                      className="w-6 h-6 border border-white/10 flex items-center justify-center text-gray-400 hover:text-white transition-colors"
-                      aria-label="Next Case Study"
-                    >
-                      <ChevronRight className="w-3.5 h-3.5" />
-                    </button>
-                  </div>
-                </div>
-                <div className="min-h-[170px] flex flex-col justify-between">
-                  <div>
-                    <p className="text-[11px] uppercase tracking-wider font-semibold text-[#F26522] mb-1.5">
-                      {CASE_STUDIES[activeSlide].client}
-                    </p>
-                    <h4 className="text-white text-[16px] font-semibold leading-tight mb-2.5">
-                      {CASE_STUDIES[activeSlide].title}
-                    </h4>
-                    <p className="text-[13px] text-gray-400 leading-relaxed">
-                      {CASE_STUDIES[activeSlide].description}
-                    </p>
-                  </div>
-                  <div className="mt-5 pt-4 border-t border-white/5 flex justify-between items-center">
-                    <div>
-                      <div className="text-[#F26522] text-xl font-bold leading-none">{CASE_STUDIES[activeSlide].metric}</div>
-                      <div className="text-[11px] text-gray-500 mt-1 uppercase font-medium tracking-wider">{CASE_STUDIES[activeSlide].submetric}</div>
-                    </div>
-                    <a
-                      href="/services"
-                      className="text-[11px] font-semibold text-white uppercase tracking-wider hover:text-[#F26522] transition-colors flex items-center gap-1 group"
-                    >
-                      Read case study
-                      <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform animate-bounce-horizontal" />
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          {/* Sidebar */}
-          <aside className="hidden lg:block">
-            <div className="sticky top-24 flex flex-col gap-6">
-
-
-
-              {/* Table of Contents with Social Share controls */}
-              <div className="border border-[#F26522]/30 p-6 bg-white/[0.02]">
-                <div className="flex justify-between items-center mb-5 border-b border-white/10 pb-3">
-                  <span className="text-[12px] uppercase font-bold text-[#F26522] tracking-wider">Table of Contents</span>
-                  <div className="flex items-center gap-2">
-                    <button onClick={() => handleShare('facebook')} className="text-gray-400 hover:text-white transition-colors cursor-pointer" aria-label="Share on Facebook">
-                      <Facebook className="w-3.5 h-3.5" />
-                    </button>
-                    <button onClick={() => handleShare('linkedin')} className="text-gray-400 hover:text-white transition-colors cursor-pointer" aria-label="Share on LinkedIn">
-                      <Linkedin className="w-3.5 h-3.5" />
-                    </button>
-                    <button onClick={() => handleShare('twitter')} className="text-gray-400 hover:text-white transition-colors cursor-pointer" aria-label="Share on Twitter">
-                      <Twitter className="w-3.5 h-3.5" />
-                    </button>
-                    <button onClick={() => handleShare('copy')} className="text-gray-400 hover:text-white transition-colors cursor-pointer relative" aria-label="Copy Link">
-                      {copied ? <span className="text-[9px] text-[#F26522] font-semibold">Copied</span> : <Link className="w-3.5 h-3.5" />}
-                    </button>
-                  </div>
-                </div>
-                {toc.length > 0 ? (
-                  <ul className="space-y-3.5 text-[14px] font-medium">
-                    {toc.map((item) => {
-                      const isActive = activeId === item.id;
-                      return (
-                        <li key={item.id} className="transition-all duration-300">
-                          <a
-                            href={`#${item.id}`}
-                            onClick={(e) => {
-                              e.preventDefault();
-                              document.getElementById(item.id)?.scrollIntoView({ behavior: 'smooth' });
-                              setActiveId(item.id);
-                            }}
-                            className={`block text-[14px] leading-snug transition-all duration-200 ${
-                              isActive
-                                ? 'text-[#F26522] border-l-2 border-[#F26522] pl-3 -ml-3 font-semibold'
-                                : 'text-gray-400 hover:text-white pl-0 border-l-2 border-transparent'
-                            }`}
-                          >
-                            {item.label}
-                          </a>
-                        </li>
-                      );
-                    })}
-                  </ul>
-                ) : (
-                  <p className="text-gray-500 text-xs italic">Parsing article headers...</p>
-                )}
-              </div>
-
-              {/* Let's Grow Your Business Checklist */}
-              <div className="border border-white/10 p-6 bg-white/5">
-                <h3 className="text-lg font-semibold text-white mb-2">Let's Grow Your Business</h3>
-                <p className="text-gray-400 text-sm mb-4">Scale search footprint, organic pipeline, and RAG search citation metrics.</p>
-                <ul className="space-y-3.5 my-5">
-                  {GROWTH_CHECKLIST.map((item, index) => (
-                    <li key={index} className="flex items-start gap-3 text-[13.5px] text-gray-300 leading-snug">
-                      <Check className="w-4 h-4 text-[#F26522] shrink-0 mt-0.5" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-                <a
-                  href="/book"
-                  className="w-full text-center bg-[#F26522] hover:bg-[#e05a1a] text-white py-3.5 text-xs font-semibold uppercase tracking-wider transition-colors block"
-                >
-                  Book a Call
-                </a>
-              </div>
-
-              {/* Case Studies Carousel widget */}
-              <div className="border border-white/10 p-6 bg-white/5">
-                <div className="flex justify-between items-center mb-4">
-                  <span className="text-[12px] uppercase font-bold text-gray-400 tracking-wider">Case Studies</span>
-                  <div className="flex items-center gap-1.5">
-                    <button
-                      onClick={() => setActiveSlide((prev) => (prev === 0 ? CASE_STUDIES.length - 1 : prev - 1))}
-                      className="w-6 h-6 border border-white/10 flex items-center justify-center text-gray-400 hover:text-white transition-colors cursor-pointer"
-                      aria-label="Previous Case Study"
-                    >
-                      <ChevronLeft className="w-3.5 h-3.5" />
-                    </button>
-                    <button
-                      onClick={() => setActiveSlide((prev) => (prev === CASE_STUDIES.length - 1 ? 0 : prev + 1))}
-                      className="w-6 h-6 border border-white/10 flex items-center justify-center text-gray-400 hover:text-white transition-colors cursor-pointer"
-                      aria-label="Next Case Study"
-                    >
-                      <ChevronRight className="w-3.5 h-3.5" />
-                    </button>
-                  </div>
-                </div>
-                <div className="min-h-[170px] flex flex-col justify-between">
-                  <div>
-                    <p className="text-[11px] uppercase tracking-wider font-semibold text-[#F26522] mb-1.5">
-                      {CASE_STUDIES[activeSlide].client}
-                    </p>
-                    <h4 className="text-white text-[15px] font-semibold leading-tight mb-2">
-                      {CASE_STUDIES[activeSlide].title}
-                    </h4>
-                    <p className="text-[13px] text-gray-400 leading-relaxed">
-                      {CASE_STUDIES[activeSlide].description}
-                    </p>
-                  </div>
-                  <div className="mt-5 pt-4 border-t border-white/5 flex justify-between items-center">
-                    <div>
-                      <div className="text-[#F26522] text-xl font-bold leading-none">{CASE_STUDIES[activeSlide].metric}</div>
-                      <div className="text-[11px] text-gray-500 mt-1 uppercase font-medium tracking-wider">{CASE_STUDIES[activeSlide].submetric}</div>
-                    </div>
-                    <a
-                      href="/services"
-                      className="text-[11px] font-semibold text-white uppercase tracking-wider hover:text-[#F26522] transition-colors flex items-center gap-1 group"
-                    >
-                      Read case study
-                      <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
-                    </a>
-                  </div>
-                </div>
-              </div>
-
-              {/* Guides list widget */}
-              <div className="border border-white/10 p-6 bg-white/5">
-                <p className="text-[12px] uppercase font-bold text-gray-400 tracking-wider mb-4 border-b border-white/5 pb-2">Guides</p>
-                <div className="flex flex-col gap-3">
-                  {GUIDE_LINKS.map((link, index) => (
-                    <a
-                      key={index}
-                      href={link.href}
-                      className="flex items-center gap-2 text-[13px] text-gray-300 hover:text-[#F26522] transition-colors group"
-                    >
-                      <BookOpen className="w-3.5 h-3.5 text-[#F26522] group-hover:scale-110 transition-transform shrink-0" />
-                      <span className="truncate">{link.label}</span>
-                    </a>
-                  ))}
-                </div>
-              </div>
-
-              {/* Tools & Tech list widget */}
-              <div className="border border-white/10 p-6 bg-white/5">
-                <p className="text-[12px] uppercase font-bold text-gray-400 tracking-wider mb-4 border-b border-white/5 pb-2">Tools & Tech</p>
-                <div className="flex flex-col gap-3">
-                  {TECH_LINKS.map((link, index) => (
-                    <a
-                      key={index}
-                      href={link.href}
-                      className="flex items-center gap-2 text-[13px] text-gray-300 hover:text-[#F26522] transition-colors group"
-                    >
-                      <Wrench className="w-3.5 h-3.5 text-[#F26522] group-hover:rotate-12 transition-transform shrink-0" />
-                      <span className="truncate">{link.label}</span>
-                    </a>
-                  ))}
-                </div>
-              </div>
-
-            </div>
-          </aside>
-        </div>
-      </main>
-
-      {/* ── RELATED ARTICLES ── */}
-      <section className="bg-[#050505] border-t border-white/10 py-20 lg:py-28 w-full">
-        <div className="max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-12">
-          <div className="flex items-center justify-between mb-10 sm:mb-14">
-            <h2 className="text-[clamp(1.5rem,3vw,2.2rem)] font-medium leading-[1.12] tracking-[-0.02em] text-white">
-              Related Insights
-            </h2>
-            <a
-              href="/insights"
-              className="hidden sm:flex items-center gap-2 text-[13px] text-gray-400 hover:text-white transition-colors font-medium"
-            >
-              All Insights <ArrowRight className="w-4 h-4" />
+      <section className="related">
+        <div className="related-inner">
+          <div className="related-head" data-anim="up">
+            <h2 className="display">Related <span className="accent">briefs.</span></h2>
+            <a href="/insights" className="text-link">
+              All insights
+              <svg viewBox="0 0 24 24" width="13" height="13" fill="none" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg>
             </a>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            {([...(RELATED_ARTICLES_MAP[slug] || DEFAULT_RELATED_ARTICLES)].sort((a, b) => {
-              const aMatches = a.category === article.category;
-              const bMatches = b.category === article.category;
-              if (aMatches && !bMatches) return -1;
-              if (!aMatches && bMatches) return 1;
-              return 0;
-            })).slice(0, 3).map((item) => {
+          <div className="related-grid" data-anim="stagger">
+            {relatedArticles.map((item) => {
               const itemSlug = item.href.startsWith('/insights/') ? item.href.substring('/insights/'.length) : '';
               const matchedArticle = itemSlug ? ARTICLES[itemSlug] : null;
               const displayTitle = matchedArticle ? matchedArticle.title : item.title;
-              const displayImage = matchedArticle ? matchedArticle.image : item.image;
               return (
-                <a
-                  key={item.href}
-                  href={item.href}
-                  className="group relative w-full aspect-[4/5] overflow-hidden block border border-white/10"
-                >
-                  <div
-                    className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-                    style={{ backgroundImage: `url(${displayImage})` }}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-300" />
-                  <div className="absolute inset-0 p-6 sm:p-8 flex flex-col justify-end">
-                    <div className="mb-4 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                      <span className="inline-block px-3 py-1 bg-[#F26522] text-white text-[10px] uppercase tracking-wider font-semibold">
-                        {item.category}
-                      </span>
-                    </div>
-                    <h3 className="text-white text-xl sm:text-2xl font-medium leading-tight mb-4 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">
-                      {displayTitle}
-                    </h3>
-                    <div className="flex items-center text-[#F26522] translate-y-8 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 delay-150">
-                      <span className="text-[13px] font-semibold mr-2 uppercase tracking-wide">Read More</span>
-                      <ArrowRight className="w-4 h-4 transform group-hover:translate-x-2 transition-transform duration-300" />
-                    </div>
-                  </div>
+                <a key={item.href} href={item.href} className="rel-card" data-anim-child="true">
+                  <span className="rel-pill" style={item.category === 'Local SEO' ? { color: 'var(--green)', borderColor: 'rgba(47,93,80,0.45)' } : {}}>{item.category}</span>
+                  <h3>{displayTitle}</h3>
+                  <span className="text-link">Read more
+                    <svg viewBox="0 0 24 24" width="13" height="13" fill="none" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                  </span>
                 </a>
               );
             })}
@@ -8322,9 +7896,7 @@ const ArticlePage: React.FC<ArticlePageProps> = ({ slug }) => {
         </div>
       </section>
 
-      {/* ── FOOTER ── */}
-      <Footer />
-
+      <SiteFooter />
     </div>
   );
 };

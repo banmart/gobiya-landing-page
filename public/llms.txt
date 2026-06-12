@@ -7,11 +7,10 @@
 - **Search & AI Dominance**: Securing high-value search real estate via semantic entity audits, technical schema building, and Generative Engine Optimization (GEO) to dominate modern AI-search models (ChatGPT, Gemini, Claude, Perplexity).
 
 ## Outcome-Oriented Service Paths
-- [Forensic SEO & Penalty Recovery Protocol](/capabilities/forensic-seo-penalty-recovery)
-- [Generative Engine Optimization (GEO) & AI Search Domination](/capabilities/generative-engine-optimization)
-- [B2B Conversion Architecture & Outbound Pipelines](/capabilities/conversion-architecture)
-- [Semantic Search Intelligence & Entity Optimization](/capabilities/semantic-search-intelligence)
-- [Custom Digital Infrastructure & High-Speed React Dev](/capabilities/custom-digital-infrastructure)
+- [Bespoke React/Next.js Web Engineering](/capabilities/web-development)
+- [Native CRM & Outbound Pipelines](/capabilities/native-crm)
+- [Forensic SEO & GEO Discoverability](/capabilities/seo-discoverability)
+- [Blockchain & Web3 Smart Contracts](/capabilities/blockchain-web3-development)
 
 ## Service Areas
 We deliver digital authority and traffic recovery nationwide:

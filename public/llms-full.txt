@@ -34,35 +34,27 @@
 
 ## Outcome-Driven Core Capabilities
 
-### 1. Forensic SEO & Google Update Recovery
-- **URL**: https://www.gobiya.com/capabilities/forensic-seo-penalty-recovery
-- **Core Outcome**: Reversing traffic drops from Google Core and Helpful Content Updates (HCU). We perform signal-to-noise audits, prune thin content, restore index status, and rebuild EEAT.
-- **Process**: Forensic index audit → entity relationship mapping → update recovery strategy → content clean-up & noise reduction → search signals rebuilding.
-- **Results**: Restored positions, organic crawl efficiency, and long-term search engine immunity.
+### 1. Bespoke React/Next.js Web Engineering
+- **URL**: https://www.gobiya.com/capabilities/web-development
+- **Core Outcome**: Replacing slow templates with sub-second, custom React/TypeScript codebases. Built natively for Core Web Vitals compliance, search engine crawl efficiency, and maximum conversions.
+- **Tech Stack**: React, TypeScript, Vite, Tailwind CSS, Supabase, GSAP.
+- **Results**: LCP under 2.5s, Core Web Vitals compliance, higher visitor-to-customer conversion rate, and robust engineering foundations.
 
-### 2. Generative Engine Optimization (GEO)
-- **URL**: https://www.gobiya.com/capabilities/generative-engine-optimization
-- **Core Outcome**: Ensuring your brand is cited and recommended as the top solution by AI search engines, including ChatGPT, Claude, Gemini, Perplexity, and Google AI Overviews.
-- **Process**: Citation mapping → Knowledge Graph insertion → semantic authority building → structured data formatting.
-- **Results**: Dominance in AI-generated answers, high-value citation links, and future-proof search authority.
+### 2. Native CRM & Outbound Pipelines
+- **URL**: https://www.gobiya.com/capabilities/native-crm
+- **Core Outcome**: Building custom CRM website integrations directly into your codebase. Stop paying recurring SaaS fees and own your pipeline data natively with reverse-IP tracking, lead scoring, and automated cold outreach capabilities.
+- **Results**: Predictable outbound pipeline growth, secure proprietary CRM data, and higher B2B deal values.
 
-### 3. Conversion Architecture & B2B Pipelines
-- **URL**: https://www.gobiya.com/capabilities/conversion-architecture
-- **Core Outcome**: Creating automated, reliable outbound systems and paid acquisition funnels that de-anonymize site traffic and convert target accounts.
-- **Process**: Outbound stack setup → reverse-IP tracking → cold email/LinkedIn sequencing → lead scoring → CRM sync.
-- **Results**: Predictable growth, higher deal values, and a consistent flow of high-intent B2B meetings.
+### 3. Forensic SEO & GEO Discoverability
+- **URL**: https://www.gobiya.com/capabilities/seo-discoverability
+- **Core Outcome**: Restoring devalued domains, reversing algorithmic penalties, and securing brand citations on AI search engines (ChatGPT, Perplexity, Gemini, Claude, and Google AI Overviews).
+- **Process**: Signal-to-noise audit, thin-content pruning, nested schema architecture, and Wikidata entity alignment.
+- **Results**: Rebounded search engine visibility, verified indexation, and citation dominance in LLM retrieval spaces.
 
-### 4. Semantic Search Intelligence
-- **URL**: https://www.gobiya.com/capabilities/semantic-search-intelligence
-- **Core Outcome**: Establishing entity authority, nesting JSON-LD schemas, and structuring topical clusters to dominate semantic search vector spaces.
-- **Process**: Semantic audit → Wikidata sync → schema graph injection → topical cluster organization.
-- **Results**: Highly indexable semantic graphs and high authority rankings on modern search engines.
-
-### 5. Custom Digital Infrastructure
-- **URL**: https://www.gobiya.com/capabilities/custom-digital-infrastructure
-- **Core Outcome**: Replacing slow templates with fast, responsive custom-built React/Vite apps and API/database infrastructures that maximize conversion rates.
-- **Tech Stack**: React, TypeScript, Tailwind CSS, Vite, Supabase.
-- **Results**: Core Web Vitals compliance (LCP < 2.5s), enhanced search crawling, and a higher visitor-to-customer conversion rate.
+### 4. Blockchain & Web3 smart contracts
+- **URL**: https://www.gobiya.com/capabilities/blockchain-web3-development
+- **Core Outcome**: Integrating smart contracts, token interactions, dApp features, and secure web3 wallet authentication natively into high-performance web applications.
+- **Results**: High-security decentralized integrations and smooth web3 user experiences.
 
 ## Measurable Outcomes & Results
 

@@ -1550,26 +1550,24 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
                       })
                       .join(', ');
 
-                    const data = {
-                      firstName: formData.get('firstName'),
-                      lastName: formData.get('lastName'),
-                      email: formData.get('email'),
-                      company: formData.get('company'),
-                      website: formData.get('website'),
-                      services: contactServices,
-                      message: `[Selected Services: ${selectedServiceNames || 'None'}] [Website: ${formData.get('website')}] -- ${formData.get('message')}`,
-                    };
-                    
-                    const { error } = await supabase.functions.invoke('contact-form', {
-                      body: data
+                    const response = await fetch('/api/contact', {
+                      method: 'POST',
+                      headers: { 'Content-Type': 'application/json' },
+                      body: JSON.stringify({
+                        name: `${formData.get('firstName')} ${formData.get('lastName')}`,
+                        email: formData.get('email'),
+                        company: formData.get('company'),
+                        phone: '',
+                        website: formData.get('website'),
+                        service: contactServices || 'Service Subpage',
+                        message: `[Selected Services: ${selectedServiceNames || 'None'}] -- ${formData.get('message')}`
+                      })
                     });
-                    
-                    if (error) throw error;
+                    const resData = await response.json();
+                    if (!resData.success) throw new Error(resData.error || 'Failed to submit form');
                     
                     // Route to thank you page
-                    window.history.pushState({}, '', '/thank-you');
-                    window.dispatchEvent(new PopStateEvent('popstate'));
-                    window.scrollTo(0, 0);
+                    window.location.href = '/thank-you';
                   } catch (err) {
                     console.error('Failed to submit form:', err);
                     alert('There was an error sending your message. Please try again or email us directly.');

@@ -103,7 +103,14 @@ const CaseStudiesPinned = () => {
                   Client Success Stories
                 </div>
               </div>
+              <h2 className="text-[clamp(1.75rem,7vw,4.2rem)] sm:text-[clamp(2.5rem,5vw,4.2rem)] font-medium leading-[1.08] tracking-[-0.03em] text-gray-900 mb-2 sm:mb-4">
+                AI Youtube Pre-Roll Ads
+              </h2>
+              <p className="text-gray-600 font-body text-base sm:text-lg lg:text-xl">
+                Free with New Full Website Development
+              </p>
             </div>
+            
             <div className="flex items-center gap-3">
               <button
                 onClick={handlePrev}

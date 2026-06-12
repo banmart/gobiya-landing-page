@@ -289,7 +289,7 @@ function wrapBrandedEmail(leadName: string, bodyHtml: string, bookingUrl: string
       </div>
       <div class="footer">
         <p>Gobiya &copy; 2026. All rights reserved.</p>
-        <p>3580 Wilshire Blvd, Ste 132, Los Angeles, CA 90010</p>
+        <p>11601 Wilshire Blvd, Los Angeles, CA 90025</p>
         <p>If you prefer not to receive these technical audits, you can <a href="#">unsubscribe here</a>.</p>
       </div>
     </div>
@@ -349,12 +349,12 @@ interface SEOMetadata {
 // Outcome-focused metadata lookup map for crawlers and search bots
 const metadataMap: Record<string, SEOMetadata> = {
   '/': {
-    title: 'Local Business Marketing Agency - Get Found on Google | Gobiya',
-    description: 'Gobiya helps local businesses — dentists, law firms, contractors, and service providers — get found on Google, generate consistent leads, and grow without wasting money on ads that don\'t deliver. Book a free audit.'
+    title: 'GOBIYA — Algorithm Recovery & AI-Powered Growth, Los Angeles',
+    description: 'GOBIYA reads Google\\'s algorithm, identifies the penalty vector, and deploys the fix. SEO recovery, GEO, AI-powered growth. Los Angeles, since 2009.'
   },
   '/capabilities/web-development': {
-    title: 'Build Sub-Second React Sites that Convert | Gobiya',
-    description: 'Our React web development agency builds sub-second custom websites engineered for Core Web Vitals, crawlability, and conversions.'
+    title: 'React Web Development — Custom High-Performance Websites Built to Rank | GOBIYA',
+    description: 'GOBIYA replaces slow page-builders with custom, hand-coded React and Next.js websites — 100/100 Core Web Vitals, sub-second loads, zero templates, engineered to convert and rank natively.'
   },
   '/capabilities/native-crm': {
     title: 'Custom CRM Integrations: Own Your Pipeline Data | Gobiya',
@@ -373,24 +373,24 @@ const metadataMap: Record<string, SEOMetadata> = {
     description: 'Our native CRM features an AI prospect scraper that extracts target contact profiles and coordinates automated outbound email campaigns.'
   },
   '/company/about': {
-    title: 'Custom Web Dev & Forensic Search Strategy | Gobiya',
-    description: 'Gobiya is a custom web development company and search engineering agency rebuilding traffic pipelines and recovering penalties since 2012.'
+    title: 'About the Agency — GOBIYA | AI Internet Marketing, Los Angeles',
+    description: 'GOBIYA is a precision-engineered search visibility and digital solutions firm, founded 2012 in Los Angeles and led by Steve Martin — 25+ years bridging full-stack engineering and organic search.'
   },
   '/company/success-stories': {
-    title: 'Forensic SEO Case Studies: Reversing Penalties | Gobiya',
-    description: 'Read our technical SEO case studies detailing over 300% organic growth for B2B brands and local medical clinics. Review real data.'
+    title: 'Success Stories — Search Recovery & Revenue Case Studies | GOBIYA',
+    description: 'Real clients, real numbers. SmileCenter Dentistry: 5x patient inquiries and 213K impressions. American Livescan: 3x bookings after a legacy migration. Data-backed search recovery and pipeline case studies from GOBIYA.'
   },
   '/success-stories': {
-    title: 'Forensic SEO Case Studies: Reversing Penalties | Gobiya',
-    description: 'Read our technical SEO case studies detailing over 300% organic growth for B2B brands and local medical clinics. Review real data.'
+    title: 'Success Stories — Search Recovery & Revenue Case Studies | GOBIYA',
+    description: 'Real clients, real numbers. SmileCenter Dentistry: 5x patient inquiries and 213K impressions. American Livescan: 3x bookings after a legacy migration. Data-backed search recovery and pipeline case studies from GOBIYA.'
   },
   '/company/approach': {
-    title: 'B2B Organic Search Strategy for Revenue Pipeline | Gobiya',
-    description: 'Our proprietary B2B organic search strategy for diagnosing crawl errors, building topical authority, and scaling pipeline acquisitions.'
+    title: 'Our Approach — Search Engine Forensic Methodology | GOBIYA',
+    description: 'GOBIYA\\'s operating model for algorithmic dominance: entity-based indexing, topical authority and schema engineering, Generative Engine Optimization (GEO) for LLM visibility, and pipeline-first conversion architecture.'
   },
   '/insights': {
-    title: 'SEO Audits, GEO Tactics & Search Insights | Gobiya',
-    description: 'We share technical SEO audits, Generative Engine Optimization (GEO) tactics, and search algorithm insights for B2B engineering teams.'
+    title: 'Industry Insights — Algorithmic Intelligence & Tactical Search Updates | GOBIYA',
+    description: 'Advanced tactical intelligence on Google and AI search: algorithm update analysis, GEO and LLM citation tactics, entity SEO, technical recovery briefs, and pipeline engineering field notes from GOBIYA.'
   },
   '/insights/dental-seo-agency': {
     title: 'Dental SEO Agency Evaluation Checklist & KPIs | Gobiya',
@@ -403,6 +403,10 @@ const metadataMap: Record<string, SEOMetadata> = {
     image: '/images/article-brand-entity-extraction-perception-drift.webp'
   },
 
+  '/contact': {
+    title: 'Contact GOBIYA — Los Angeles SEO & Web Development Agency',
+    description: 'Reach GOBIYA in Los Angeles. Call 323-744-1338, email hello@gobiya.com, or fill out our contact form for an SEO audit, web development, or AI growth consultation.'
+  },
   '/company/careers': {
     title: 'Growth Engineering Careers: Join Our Dev Team | Gobiya',
     description: 'Explore growth engineering jobs at Gobiya. We are hiring React developers, technical SEO specialists, and sales engineers. Apply now.'
@@ -420,8 +424,8 @@ const metadataMap: Record<string, SEOMetadata> = {
     description: 'Book pipeline strategy call with Steve Martin, CEO & lead engineer. Audit search performance, local map visibility, and CRM setup.'
   },
   '/capabilities': {
-    title: 'Custom React Web Development & Technical SEO | Gobiya',
-    description: 'We provide custom web development services, native CRM integrations, technical SEO, and blockchain Web3 applications. Explore our capabilities.'
+    title: 'Capabilities — Custom Web Development, Native CRM, SEO & Web3 | GOBIYA',
+    description: 'GOBIYA builds fast, modern web applications with native CRM pipelines, built-in SEO discoverability, AI prospect automation, and custom Web3 integrations — one codebase, complete data ownership.'
   },
   '/insights/gobiya-vs-enterprise-seo-agencies': {
     title: 'Enterprise SEO vs Gobiya: Speed & Cost Compare | Gobiya',
@@ -545,11 +549,11 @@ const metadataMap: Record<string, SEOMetadata> = {
   },
   '/about/steve-martin': {
     title: 'Steve Martin: Lead Growth Engineer & Founder | Gobiya',
-    description: 'Credentials and author profile for Steve Martin. 25+ years engineering search engine dominance, custom React platforms, and sales pipeline automation.'
+    description: 'Credentials and author profile for Steve Martin. Over 15 years engineering search engine dominance, custom React platforms, and sales pipeline automation.'
   },
   '/author/steve-martin': {
     title: 'Steve Martin: Lead Growth Engineer & Founder | Gobiya',
-    description: 'Credentials and author profile for Steve Martin. 25+ years engineering search engine dominance, custom React platforms, and sales pipeline automation.'
+    description: 'Credentials and author profile for Steve Martin. Over 15 years engineering search engine dominance, custom React platforms, and sales pipeline automation.'
   }
 };
 
@@ -558,6 +562,90 @@ export default async function handler(req: IncomingMessage, res: any) {
     const url = req.url || '/';
     const parsedUrl = new URL(url, 'https://www.gobiya.com');
     const pathname = parsedUrl.pathname.toLowerCase().replace(/\/$/, '') || '/';
+
+    // ── CONTACT FORM ENDPOINT ──
+    if (pathname === '/api/contact' && req.method === 'POST') {
+      res.setHeader('Content-Type', 'application/json');
+      res.setHeader('Access-Control-Allow-Origin', '*');
+      res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
+      res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+      if (req.method === 'OPTIONS') { res.writeHead(200); res.end(); return; }
+      try {
+        const bodyStr = await getRequestBody(req);
+        const body = JSON.parse(bodyStr);
+        const { name, email, phone, company, message, service, website } = body;
+        if (!name || !email) {
+          res.writeHead(400);
+          res.end(JSON.stringify({ success: false, error: 'Name and email are required.' }));
+          return;
+        }
+
+        const categoryText = service 
+          ? (message ? `${service}: ${message}` : service)
+          : (message || 'contact-form');
+
+        const lead = {
+          company_name: company || name,
+          contact_name: name,
+          email,
+          phone: phone || '',
+          website: website || '',
+          category: categoryText,
+          location: 'Los Angeles, CA',
+          status: 'new'
+        };
+
+        if (supabaseServer) {
+          const { error: dbError } = await supabaseServer.from('prospects').insert([lead]);
+          if (dbError) throw dbError;
+        }
+
+        const rKey = process.env.RESEND_API_KEY || '';
+        if (rKey) {
+          const htmlEmail = `
+            <div style="font-family: sans-serif; max-width: 600px; padding: 20px; border: 1px solid #eee; border-radius: 8px;">
+              <h2 style="color: #F26522; border-bottom: 2px solid #F26522; padding-bottom: 10px; margin-top: 0;">New Lead Received</h2>
+              <p><strong>Form Source:</strong> ${service || 'Contact Form'}</p>
+              <p><strong>Name:</strong> ${name}</p>
+              <p><strong>Email:</strong> ${email}</p>
+              <p><strong>Phone:</strong> ${phone || 'N/A'}</p>
+              <p><strong>Company:</strong> ${company || 'N/A'}</p>
+              <p><strong>Website/Domain:</strong> ${website || 'N/A'}</p>
+              <div style="margin-top: 20px; padding: 15px; background-color: #f9f9f9; border-left: 4px solid #F26522; border-radius: 4px;">
+                <p style="margin: 0; font-weight: bold;">Message / Details:</p>
+                <p style="margin: 10px 0 0 0; white-space: pre-wrap; color: #333;">${message || 'No message provided.'}</p>
+              </div>
+            </div>
+          `;
+
+          const resendRes = await fetch('https://api.resend.com/emails', {
+            method: 'POST',
+            headers: {
+              'Authorization': `Bearer ${rKey}`,
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+              from: 'Gobiya Forms <onboarding@resend.dev>',
+              to: ['hello@gobiya.com'],
+              subject: `[Gobiya Lead] New submission from ${name}`,
+              html: htmlEmail
+            })
+          });
+
+          if (!resendRes.ok) {
+            const errJson = await resendRes.json().catch(() => ({}));
+            console.error('[RESEND] notification failed:', errJson);
+          }
+        }
+
+        res.writeHead(200);
+        res.end(JSON.stringify({ success: true }));
+      } catch (e: any) {
+        res.writeHead(500);
+        res.end(JSON.stringify({ success: false, error: e.message }));
+      }
+      return;
+    }
 
     // ── B2B LEADS PROSPECTOR API ENDPOINTS ──
     if (pathname.startsWith('/api/prospector')) {
@@ -1104,6 +1192,62 @@ export default async function handler(req: IncomingMessage, res: any) {
       return;
     }
 
+    // ── AI DOMAIN SCANNER ENDPOINT ──
+    if (pathname === '/api/scan' && req.method === 'POST') {
+      res.setHeader('Content-Type', 'application/json');
+      res.setHeader('Access-Control-Allow-Origin', '*');
+      res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+      res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+
+      try {
+        const bodyStr = await getRequestBody(req);
+        const { domain } = JSON.parse(bodyStr);
+        const gKey = process.env.GEMINI_API_KEY || '';
+
+        if (!gKey) {
+          res.writeHead(200);
+          res.end(JSON.stringify({ lines: ['[ERROR] GEMINI_API_KEY is not configured on the server.'] }));
+          return;
+        }
+
+        const prompt = `Perform a technical diagnostic scan evaluating if the domain '${domain}' (and its associated brand/website) is mentioned, indexed, recommended, or cited in AI search engines and LLM training sets (such as ChatGPT, Perplexity, Claude, Gemini, etc.). Return exactly 4 short, highly technical sentences formatted as a JSON string array. The sentences should read like real-time console log outputs from a crawler auditing brand AI citations and LLM visibility. Keep it extremely brief, realistic, and engineering-focused (e.g., "auditing chatgpt/perplexity citation index: verified brand sentiment but missing direct link attribution", "perplexity recommendation visibility check: 38% citation score in primary topic cluster", "gemini training data entity check: indexed in general web crawl, missing structured product graph definition", "claude retrieval-augmented generation (RAG) test: high mention frequency but low context relevance score"). Do NOT hallucinate real private data or specific user accounts; provide plausible, generic technical diagnostic statements about AI engine citation footprint. Do not include timestamps in the strings.`;
+
+        const fetchRes = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${gKey}`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            contents: [{ parts: [{ text: prompt }] }],
+            generationConfig: {
+              responseMimeType: 'application/json',
+              responseSchema: {
+                type: 'ARRAY',
+                items: { type: 'STRING' }
+              },
+              temperature: 0.4
+            }
+          })
+        });
+
+        if (!fetchRes.ok) throw new Error('Failed to fetch from Gemini');
+        const data: any = await fetchRes.json();
+        const contentText = data.candidates?.[0]?.content?.parts?.[0]?.text;
+        
+        let lines = [];
+        try {
+          lines = JSON.parse(contentText);
+        } catch (e) {
+          lines = ['scanning for penalty vectors ... requires full read', 'cross-referencing update timeline ... queued'];
+        }
+
+        res.writeHead(200);
+        res.end(JSON.stringify({ lines }));
+      } catch (err: any) {
+        res.writeHead(500);
+        res.end(JSON.stringify({ lines: [`[ERROR] AI Scan failed: ${err.message}`] }));
+      }
+      return;
+    }
+
     // Server-side legacy redirections (301 Permanent Redirect)
     const legacyRedirects: Record<string, string> = {
       '/company/insights': '/insights',
@@ -1127,7 +1271,9 @@ export default async function handler(req: IncomingMessage, res: any) {
       '/capabilities/forensic-seo-penalty-recovery': '/capabilities/seo-discoverability',
       '/capabilities/conversion-architecture': '/capabilities/native-crm',
       '/capabilities/semantic-search-intelligence': '/capabilities/seo-discoverability',
-      '/capabilities/custom-digital-infrastructure': '/capabilities/web-development'
+      '/capabilities/custom-digital-infrastructure': '/capabilities/web-development',
+      '/company/careers': '/',
+      '/capabilities/ai-prospect-scraper': '/capabilities'
     };
 
     if (legacyRedirects[pathname]) {
@@ -1190,35 +1336,35 @@ export default async function handler(req: IncomingMessage, res: any) {
     }
 
     template = template.replace(
-      '<title>More Traffic, More Leads, Less Guesswork | Gobiya</title>',
+      '<!--ssr-title-->',
       `<title>${seo.title}</title>`
     );
     template = template.replace(
-      '<meta name="description" content="Tired of being invisible online? Gobiya helps you rank higher, get cited by AI, and turn traffic into customers. Free audit, real results." />',
+      '<!--ssr-desc-->',
       `<meta name="description" content="${seo.description}" />`
     );
     template = template.replace(
-      '<meta property="og:title" content="Gobiya | AI SEO & Traffic Recovery Agency" />',
+      '<!--ssr-og-title-->',
       `<meta property="og:title" content="${seo.title}" />`
     );
     template = template.replace(
-      '<meta property="og:description" content="Recover lost organic search traffic, automate your B2B sales pipeline, and command search engine visibility with our outcome-driven AI engineering." />',
+      '<!--ssr-og-desc-->',
       `<meta property="og:description" content="${seo.description}" />`
     );
     template = template.replace(
-      '<meta property="og:image" content="https://www.gobiya.com/images/gobiya---logo.webp" />',
+      '<!--ssr-og-image-->',
       `<meta property="og:image" content="${ogImageUrl}" />`
     );
     template = template.replace(
-      '<meta name="twitter:title" content="Gobiya | AI SEO & Traffic Recovery" />',
+      '<!--ssr-twitter-title-->',
       `<meta name="twitter:title" content="${seo.title}" />`
     );
     template = template.replace(
-      '<meta name="twitter:description" content="Recover organic search traffic, scale revenue, and secure algorithmic dominance." />',
+      '<!--ssr-twitter-desc-->',
       `<meta name="twitter:description" content="${seo.description}" />`
     );
     template = template.replace(
-      '<meta name="twitter:image" content="https://www.gobiya.com/images/gobiya---logo.webp" />',
+      '<!--ssr-twitter-image-->',
       `<meta name="twitter:image" content="${ogImageUrl}" />`
     );
 
@@ -1308,34 +1454,34 @@ export default async function handler(req: IncomingMessage, res: any) {
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "Do you offer full-service internet marketing?",
+            "name": "How does Generative Engine Optimization (GEO) work?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes. We are an end-to-end AI internet marketing agency. We handle everything from advanced technical SEO and Generative Engine Optimization (GEO) to paid performance marketing and fully automated B2B lead generation pipelines."
+              "text": "GEO structures your brand's digital footprints—including custom schema graphs, entity connections, and structured tables—so conversational LLMs (such as ChatGPT, Claude, Perplexity, and Gemini) can confidently parse, recommend, and cite your business as a trusted authority."
             }
           },
           {
             "@type": "Question",
-            "name": "How does Generative Engine Optimization (GEO) differ from traditional SEO?",
+            "name": "How long does it take to recover from a Google Core Update penalty?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "While traditional SEO focuses on ranking in standard Google searches, GEO structures your digital footprint so conversational AI models (like ChatGPT, Perplexity, and Claude) cite your business as the authoritative answer when users ask complex, industry-specific questions."
+              "text": "Reversing algorithmic suppressions typically takes 12 to 24 weeks. The recovery process involves a forensic update audit, consolidation or pruning of thin URLs, and building clear E-E-A-T credentials that Google's quality classifiers recognize during core update cycles."
             }
           },
           {
             "@type": "Question",
-            "name": "How quickly can we see results from an AI marketing campaign?",
+            "name": "Why do traditional SEO metrics fail B2B companies?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "While traditional SEO can take months, our AI-focused growth campaigns and pipeline automation often yield measurable lead improvements within the first 30 days. We deploy rapid technical audits and direct outreach sequences to generate immediate pipeline velocity."
+              "text": "Traditional SEO tracks traffic volume and generic rankings. B2B programs require targeting low-volume, high-intent keyword clusters (like alternatives, comparison pages, and integration tables) that speak to multi-stakeholder buying committees, attributing traffic directly to CRM pipeline value."
             }
           },
           {
             "@type": "Question",
-            "name": "Do you handle lead generation and CRM integration?",
+            "name": "What is the difference between manual actions and algorithmic suppressions?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes. Our web builds aren't just digital brochures — they are lead-generation engines. We natively integrate your site with your CRM of choice to capture pipeline data, track attribution, and automate sales workflows from day one."
+              "text": "A manual action is issued by a Google reviewer and explicitly listed in Search Console's manual actions panel; it is cleared by submitting a reconsideration request. An algorithmic suppression is automated, has no notification, and only recovers when the underlying quality classifiers are satisfied during a core rollout."
             }
           }
         ]

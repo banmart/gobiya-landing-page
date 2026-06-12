@@ -1,0 +1,316 @@
+import React, { useEffect, useRef, useState } from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import './ContactPage.css';
+import SiteHeader from './SiteHeader';
+import SiteFooter from './SiteFooter';
+
+gsap.registerPlugin(ScrollTrigger);
+
+type FormStatus = 'idle' | 'submitting' | 'success' | 'error';
+
+const SERVICES = [
+  'Algorithm Recovery & SEO Audit',
+  'React Web Development',
+  'Native CRM Integration',
+  'SEO & Discoverability',
+  'GEO / AI Search Optimization',
+  'Blockchain & Web3',
+  'General Inquiry',
+];
+
+export default function ContactPage() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [form, setForm] = useState({ name: '', email: '', phone: '', company: '', service: '', message: '' });
+  const [status, setStatus] = useState<FormStatus>('idle');
+  const [errorMsg, setErrorMsg] = useState('');
+
+  useEffect(() => {
+    document.title = 'Contact GOBIYA — Los Angeles SEO & Web Development Agency';
+    const setMeta = (nameOrProperty: string, content: string, isProperty = false) => {
+      const attr = isProperty ? 'property' : 'name';
+      let el = document.querySelector(`meta[${attr}="${nameOrProperty}"]`);
+      if (!el) { el = document.createElement('meta'); el.setAttribute(attr, nameOrProperty); document.head.appendChild(el); }
+      el.setAttribute('content', content);
+    };
+    const desc = 'Reach GOBIYA in Los Angeles. Call 323-744-1338, email hello@gobiya.com, or fill out our contact form for an SEO audit, web development, or AI growth consultation.';
+    setMeta('description', desc);
+    setMeta('og:title', document.title, true);
+    setMeta('og:description', desc, true);
+
+    window.scrollTo({ top: 0, behavior: 'instant' });
+    document.documentElement.classList.add('js');
+
+    const ctx = gsap.context(() => {
+      gsap.to(document.body, { opacity: 1, duration: 0.6, ease: 'power2.out' });
+
+      const ease = 'power3.out';
+      const heroTl = gsap.timeline({ delay: 0.1, defaults: { ease, duration: 1.0 } });
+      heroTl
+        .from('.contact-page .breadcrumb', { opacity: 0, y: 12 })
+        .from('.contact-page .hero h1 .line > span', { yPercent: 108, stagger: 0.06 }, '-=0.7')
+        .from('.contact-page .hero-sub', { opacity: 0, y: 18, duration: 0.8 }, '-=0.5')
+        .from('.contact-page .hero-actions', { opacity: 0, y: 14, duration: 0.7 }, '-=0.4')
+        .from('.contact-page .hero-meta', { opacity: 0, y: 14, duration: 0.7 }, '-=0.3')
+        .from('.contact-page .contact-terminal', { opacity: 0, y: 24, duration: 0.9 }, '-=0.8');
+
+      gsap.from('.contact-page .form-info', { opacity: 0, y: 30, duration: 0.8, ease, scrollTrigger: { trigger: '.contact-page .form-section', start: 'top 80%' } });
+      gsap.from('.contact-page .form-wrap', { opacity: 0, y: 30, duration: 0.8, delay: 0.15, ease, scrollTrigger: { trigger: '.contact-page .form-section', start: 'top 80%' } });
+    }, containerRef);
+
+    return () => ctx.revert();
+  }, []);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    setForm(prev => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!form.name.trim() || !form.email.trim()) return;
+    setStatus('submitting');
+    setErrorMsg('');
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      });
+      const data = await res.json();
+      if (data.success) {
+        setStatus('success');
+        setForm({ name: '', email: '', phone: '', company: '', service: '', message: '' });
+        window.location.href = '/thank-you';
+      } else {
+        throw new Error(data.error || 'Submission failed.');
+      }
+    } catch (err: any) {
+      setStatus('error');
+      setErrorMsg(err.message || 'Something went wrong. Please try again.');
+    }
+  };
+
+  return (
+    <div ref={containerRef} className="contact-page">
+      <SiteHeader />
+
+      {/* ── HERO ── */}
+      <section className="hero">
+        <div className="hero-grid" aria-hidden="true" />
+        <div className="hero-inner">
+
+          {/* LEFT: copy */}
+          <div className="hero-copy">
+            <nav className="breadcrumb" aria-label="Breadcrumb">
+              <a href="/">GOBIYA</a>
+              <i aria-hidden="true">›</i>
+              <span>Contact</span>
+            </nav>
+
+            <h1>
+              <span className="line"><span>Let's talk</span></span>
+              <span className="line"><span>about your</span></span>
+              <span className="line"><span className="accent">growth.</span></span>
+            </h1>
+
+            <p className="hero-sub body-l">
+              We respond within one business day. For urgent matters, call us directly — a real person picks up.
+            </p>
+
+            <div className="hero-actions">
+              <a href="tel:3237441338" className="btn btn-primary">Call 323-744-1338</a>
+              <a href="mailto:hello@gobiya.com" className="btn btn-ghost">hello@gobiya.com</a>
+            </div>
+
+            <div className="hero-meta">
+              <div>
+                <p className="meta-label">Response time</p>
+                <p className="meta-val">&lt; 1 business day</p>
+              </div>
+              <div>
+                <p className="meta-label">Founded</p>
+                <p className="meta-val">2012 · Los Angeles</p>
+              </div>
+              <div>
+                <p className="meta-label">Rating</p>
+                <p className="meta-val">BBB A+</p>
+              </div>
+            </div>
+          </div>
+
+          {/* RIGHT: info terminal */}
+          <div className="hero-exhibit">
+            <div className="contact-terminal">
+              <div className="terminal-head">
+                <span>contact.log</span>
+                <span className="right">
+                  <span className="pulse" aria-hidden="true" />
+                  Office open
+                </span>
+              </div>
+              <div className="terminal-body">
+                <div className="t-row">
+                  <span className="t-key">Address</span>
+                  <span className="t-val">3580 Wilshire Blvd, Ste 132<br />Los Angeles, CA 90010</span>
+                </div>
+                <div className="t-row">
+                  <span className="t-key">Phone</span>
+                  <span className="t-val"><a href="tel:3237441338">323-744-1338</a></span>
+                </div>
+                <div className="t-row">
+                  <span className="t-key">Email</span>
+                  <span className="t-val"><a href="mailto:hello@gobiya.com">hello@gobiya.com</a></span>
+                </div>
+                <div className="t-row">
+                  <span className="t-key">Hours</span>
+                  <span className="t-val">
+                    <div className="t-hours">
+                      <span>Mon – Fri <em>9:00 AM – 5:00 PM</em></span>
+                      <span>Saturday <em>9:00 AM – 3:00 PM</em></span>
+                      <span className="closed">Sunday <em>Closed</em></span>
+                    </div>
+                  </span>
+                </div>
+              </div>
+              <div className="terminal-foot">
+                <span>gobiya.com</span>
+                <span>34.05°N · 118.24°W</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      {/* ── FORM SECTION ── */}
+      <section className="form-section">
+        <div className="form-section-inner">
+
+          {/* LEFT: info */}
+          <div className="form-info">
+            <div className="form-info-head">
+              <span className="eyebrow">Send a message</span>
+              <h2>Start the conversation</h2>
+              <p>
+                No pitch decks, no commitments — just a straight conversation about what's broken
+                and what can be fixed. Every submission goes directly to Steve.
+              </p>
+            </div>
+
+            <div className="form-info-links">
+              <a href="tel:3237441338" className="form-info-link">
+                <svg viewBox="0 0 24 24" fill="none" width="18" height="18"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" fill="currentColor"/></svg>
+                <div>
+                  <strong>Call us directly</strong>
+                  323-744-1338
+                </div>
+              </a>
+              <a href="mailto:hello@gobiya.com" className="form-info-link">
+                <svg viewBox="0 0 24 24" fill="none" width="18" height="18"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" fill="currentColor"/></svg>
+                <div>
+                  <strong>Email us</strong>
+                  hello@gobiya.com
+                </div>
+              </a>
+              <a href="https://www.google.com/maps/search/3580+Wilshire+Blvd+Ste+132+Los+Angeles+CA+90010" target="_blank" rel="noopener noreferrer" className="form-info-link">
+                <svg viewBox="0 0 24 24" fill="none" width="18" height="18"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="currentColor"/></svg>
+                <div>
+                  <strong>Visit us</strong>
+                  3580 Wilshire Blvd, Ste 132, LA 90010
+                </div>
+              </a>
+              <a href="/book" className="form-info-link">
+                <svg viewBox="0 0 24 24" fill="none" width="18" height="18"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11zM7 11h5v5H7z" fill="currentColor"/></svg>
+                <div>
+                  <strong>Book an audit call</strong>
+                  15-minute forensic pipeline review
+                </div>
+              </a>
+            </div>
+          </div>
+
+          {/* RIGHT: form */}
+          <div className="form-wrap">
+            {status === 'success' ? (
+              <div className="form-success">
+                <div className="success-icon">
+                  <svg viewBox="0 0 24 24" fill="none" width="24" height="24"><path d="M5 13l4 4L19 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                </div>
+                <h2>Message received.</h2>
+                <p>
+                  We'll be in touch within one business day. You can also reach us directly at{' '}
+                  <a href="tel:3237441338">323-744-1338</a>.
+                </p>
+                <button className="btn-reset" onClick={() => setStatus('idle')}>Send another message</button>
+              </div>
+            ) : (
+              <form className="contact-form" onSubmit={handleSubmit} noValidate>
+
+                <div className="form-row">
+                  <div className="field">
+                    <label htmlFor="cf-name">Full name <span className="req">*</span></label>
+                    <input id="cf-name" name="name" type="text" placeholder="Jane Smith" value={form.name} onChange={handleChange} required autoComplete="name" />
+                  </div>
+                  <div className="field">
+                    <label htmlFor="cf-email">Email address <span className="req">*</span></label>
+                    <input id="cf-email" name="email" type="email" placeholder="jane@company.com" value={form.email} onChange={handleChange} required autoComplete="email" />
+                  </div>
+                </div>
+
+                <div className="form-row">
+                  <div className="field">
+                    <label htmlFor="cf-phone">Phone number</label>
+                    <input id="cf-phone" name="phone" type="tel" placeholder="323-000-0000" value={form.phone} onChange={handleChange} autoComplete="tel" />
+                  </div>
+                  <div className="field">
+                    <label htmlFor="cf-company">Company / Website</label>
+                    <input id="cf-company" name="company" type="text" placeholder="Acme Corp or acme.com" value={form.company} onChange={handleChange} autoComplete="organization" />
+                  </div>
+                </div>
+
+                <div className="field">
+                  <label htmlFor="cf-service">Service of interest</label>
+                  <select id="cf-service" name="service" value={form.service} onChange={handleChange}>
+                    <option value="">Select a service…</option>
+                    {SERVICES.map(s => <option key={s} value={s}>{s}</option>)}
+                  </select>
+                </div>
+
+                <div className="field">
+                  <label htmlFor="cf-message">Message</label>
+                  <textarea id="cf-message" name="message" rows={5} placeholder="Describe your challenge, goal, or question…" value={form.message} onChange={handleChange} />
+                </div>
+
+                {status === 'error' && (
+                  <div className="form-error">{errorMsg || 'Something went wrong. Please try again.'}</div>
+                )}
+
+                <div className="form-submit">
+                  <button type="submit" className="form-submit-btn" disabled={status === 'submitting'} id="contact-submit-btn">
+                    {status === 'submitting' ? <><span className="spinner" />Sending…</> : <>Send message <svg viewBox="0 0 24 24" fill="none" width="14" height="14"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg></>}
+                  </button>
+                </div>
+
+                <p className="form-note">We respond within 1 business day · Your information is never shared</p>
+              </form>
+            )}
+          </div>
+
+        </div>
+      </section>
+
+      {/* ── BOTTOM CTA ── */}
+      <section className="cta-section">
+        <div className="cta-inner">
+          <div>
+            <h3>Prefer a 15-minute call?</h3>
+            <p>Book directly on our calendar — no back-and-forth.</p>
+          </div>
+          <a href="/book" className="btn btn-primary">Book an audit call</a>
+        </div>
+      </section>
+
+      <SiteFooter />
+    </div>
+  );
+}

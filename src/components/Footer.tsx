@@ -37,7 +37,6 @@ const Footer: React.FC = () => {
               <li><a href="/capabilities/native-crm" className="hover:text-white transition-colors">Native CRM</a></li>
               <li><a href="/capabilities/seo-discoverability" className="hover:text-white transition-colors">SEO & Discoverability</a></li>
               <li><a href="/capabilities/blockchain-web3-development" className="hover:text-white transition-colors">Blockchain & Web3 Dev</a></li>
-              <li><a href="/capabilities/ai-prospect-scraper" className="hover:text-white transition-colors">AI Prospect Scraper</a></li>
               <li><a href="/capabilities" className="hover:text-white transition-colors">All Capabilities Overview</a></li>
             </ul>
           </div>
@@ -50,7 +49,6 @@ const Footer: React.FC = () => {
               <li><a href="/company/success-stories" className="hover:text-white transition-colors">Success Stories</a></li>
               <li><a href="/company/approach" className="hover:text-white transition-colors">Our Approach</a></li>
               <li><a href="/insights" className="hover:text-white transition-colors">Industry Insights</a></li>
-              <li><a href="/company/careers" className="hover:text-white transition-colors">Careers</a></li>
             </ul>
           </div>
 

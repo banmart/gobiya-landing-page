@@ -131,22 +131,27 @@ const LeadMagnetCTA: React.FC<LeadMagnetCTAProps> = ({ category, slug }) => {
         has_domain: !!website
       });
 
-      // 3. Fallback to contact form edge function to trigger an email notification
+      // 3. POST to /api/contact to log as prospect in /admin and trigger email notification
       try {
-        await supabase.functions.invoke('contact-form', {
-          body: {
-            firstName,
-            lastName,
+        await fetch('/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            name: `${firstName} ${lastName}`,
             email,
             company,
+            phone: '',
+            website,
+            service: `Lead Magnet: ${magnet.id}`,
             message: `Lead Magnet Download: [Magnet: ${magnet.title}] [Website: ${website || 'None'}] [Slug: ${slug}]`
-          }
+          })
         });
       } catch (err) {
-        console.warn('Email notification skipped, but lead recorded:', err);
+        console.warn('Backend notification skipped, but lead recorded:', err);
       }
 
       setStatus('success');
+      window.location.href = '/thank-you';
     } catch (err) {
       console.error('Failed to capture lead:', err);
       setStatus('error');
