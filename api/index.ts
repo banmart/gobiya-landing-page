@@ -350,7 +350,7 @@ interface SEOMetadata {
 const metadataMap: Record<string, SEOMetadata> = {
   '/': {
     title: 'GOBIYA — Algorithm Recovery & AI-Powered Growth, Los Angeles',
-    description: 'GOBIYA reads Google\\'s algorithm, identifies the penalty vector, and deploys the fix. SEO recovery, GEO, AI-powered growth. Los Angeles, since 2009.'
+    description: "GOBIYA reads Google's algorithm, identifies the penalty vector, and deploys the fix. SEO recovery, GEO, AI-powered growth. Los Angeles, since 2009."
   },
   '/capabilities/web-development': {
     title: 'React Web Development — Custom High-Performance Websites Built to Rank | GOBIYA',
@@ -386,7 +386,7 @@ const metadataMap: Record<string, SEOMetadata> = {
   },
   '/company/approach': {
     title: 'Our Approach — Search Engine Forensic Methodology | GOBIYA',
-    description: 'GOBIYA\\'s operating model for algorithmic dominance: entity-based indexing, topical authority and schema engineering, Generative Engine Optimization (GEO) for LLM visibility, and pipeline-first conversion architecture.'
+    description: "GOBIYA's operating model for algorithmic dominance: entity-based indexing, topical authority and schema engineering, Generative Engine Optimization (GEO) for LLM visibility, and pipeline-first conversion architecture."
   },
   '/insights': {
     title: 'Industry Insights — Algorithmic Intelligence & Tactical Search Updates | GOBIYA',
@@ -410,10 +410,6 @@ const metadataMap: Record<string, SEOMetadata> = {
   '/company/careers': {
     title: 'Growth Engineering Careers: Join Our Dev Team | Gobiya',
     description: 'Explore growth engineering jobs at Gobiya. We are hiring React developers, technical SEO specialists, and sales engineers. Apply now.'
-  },
-  '/contact': {
-    title: 'Get a Free Forensic Website SEO Audit & Call | Gobiya',
-    description: 'Ready to grow? Request website SEO audit sessions and strategy roadmaps directly from our lead engineers. Secure your free review.'
   },
   '/book': {
     title: 'Schedule a 15-Min Forensic Pipeline Audit | Gobiya',
@@ -564,7 +560,7 @@ export default async function handler(req: IncomingMessage, res: any) {
     const pathname = parsedUrl.pathname.toLowerCase().replace(/\/$/, '') || '/';
 
     // ── CONTACT FORM ENDPOINT ──
-    if (pathname === '/api/contact' && req.method === 'POST') {
+    if (pathname === '/api/contact' && (req.method === 'POST' || req.method === 'OPTIONS')) {
       res.setHeader('Content-Type', 'application/json');
       res.setHeader('Access-Control-Allow-Origin', '*');
       res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
