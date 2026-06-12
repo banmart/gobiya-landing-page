@@ -180,7 +180,7 @@ export default function CapabilitiesIndex() {
             <div className="hero-meta" data-hero="4">
               <div>
                 <p className="mono-tag">Modules</p>
-                <p>Five — integrated, not bolted on</p>
+                <p>Six — integrated, not bolted on</p>
               </div>
               <div>
                 <p className="mono-tag">Data ownership</p>
@@ -201,19 +201,21 @@ export default function CapabilitiesIndex() {
               </div>
 
               <div className="sysmap-body">
-                <svg viewBox="0 0 640 520" role="img" aria-label="System map: five GOBIYA modules — web development, SEO and discoverability, native CRM, AI prospect scraper, and Web3 — all wired into one platform codebase">
+                <svg viewBox="0 0 640 520" role="img" aria-label="System map: six GOBIYA modules — web development, SEO and discoverability, native CRM, AI prospect scraper, Web3, and AI & LLMs for Businesses — all wired into one platform codebase">
                   {/* wires */}
                   <path className="map-wire" d="M320 256 L320 96"/>
                   <path className="map-wire" d="M320 256 L548 176"/>
                   <path className="map-wire" d="M320 256 L516 408"/>
                   <path className="map-wire" d="M320 256 L124 408"/>
                   <path className="map-wire" d="M320 256 L92 176"/>
+                  <path className="map-wire" d="M320 256 L320 420"/>
 
                   <path className="map-wire-active" id="w1" d="M320 256 L320 96"/>
                   <path className="map-wire-active" id="w2" d="M320 256 L548 176"/>
                   <path className="map-wire-active" id="w3" d="M320 256 L516 408"/>
                   <path className="map-wire-active" id="w4" d="M320 256 L124 408"/>
                   <path className="map-wire-active" id="w5" d="M320 256 L92 176"/>
+                  <path className="map-wire-active" id="w6" d="M320 256 L320 420"/>
 
                   {/* hub */}
                   <g className="map-hub">
@@ -255,12 +257,18 @@ export default function CapabilitiesIndex() {
                     <text className="map-label" x="92" y="136" textAnchor="middle">Web3 &amp; Blockchain</text>
                     <text className="map-sublabel" x="92" y="151" textAnchor="middle">WEB3.SYS</text>
                   </g>
+                  <g className="map-node" data-node="6">
+                    <circle className="map-node-ring" cx="320" cy="420" r="22"/>
+                    <circle className="map-node-core" cx="320" cy="420" r="3.4"/>
+                    <text className="map-label" x="320" y="464" textAnchor="middle">AI &amp; LLMs for Business</text>
+                    <text className="map-sublabel" x="320" y="479" textAnchor="middle">AI.SYS</text>
+                  </g>
                 </svg>
               </div>
 
               <div className="sysmap-foot">
                 <span>no plugins · no vendor sprawl · no rented data</span>
-                <span>5/5 modules — native</span>
+                <span>6/6 modules — native</span>
               </div>
             </figure>
 
@@ -281,6 +289,7 @@ export default function CapabilitiesIndex() {
                 <span className="ticker-item">PIPELINE.SYS <em>— online</em></span>
                 <span className="ticker-item">OUTBOUND.SYS <em>— online</em></span>
                 <span className="ticker-item">WEB3.SYS <em>— online</em></span>
+                <span className="ticker-item">AI.SYS <em>— online</em></span>
                 <span className="ticker-item">TRUST_SCORE <em>— 98.4%</em></span>
                 <span className="ticker-item">DATA_OWNERSHIP <em>— 100%</em></span>
                 <span className="ticker-item">CORE_WEB_VITALS <em>— 100/100</em></span>
@@ -295,8 +304,8 @@ export default function CapabilitiesIndex() {
         <div className="stats-grid">
           <div className="stat" data-anim="up">
             <span className="mono-tag">Integrated modules</span>
-            <p className="stat-num"><span data-count="5">0</span></p>
-            <p className="stat-desc">Web dev, SEO &amp; GEO, native CRM, AI prospecting, and Web3 — engineered as one product, not five vendors.</p>
+            <p className="stat-num"><span data-count="6">0</span></p>
+            <p className="stat-desc">Web dev, SEO &amp; GEO, native CRM, AI prospecting, Web3, and AI integrations — engineered as one product, not six vendors.</p>
           </div>
           <div className="stat" data-anim="up">
             <span className="mono-tag">Data ownership</span>
@@ -332,6 +341,7 @@ export default function CapabilitiesIndex() {
                 <a href="/capabilities/native-crm">03 — PIPELINE.SYS</a>
                 <a href="/capabilities/ai-prospect-scraper">04 — OUTBOUND.SYS</a>
                 <a href="/capabilities/blockchain-web3-development">05 — WEB3.SYS</a>
+                <a href="/capabilities/ai-llms-business">06 — AI.SYS</a>
               </div>
             </div>
           </aside>
@@ -339,7 +349,7 @@ export default function CapabilitiesIndex() {
           <div className="section-main">
             <div className="mods-head">
               <h2 className="section-title display" data-anim="up">
-                Five modules. One powerful <span className="accent">custom product.</span>
+                Six modules. One powerful <span className="accent">custom product.</span>
               </h2>
             </div>
 
@@ -453,6 +463,29 @@ export default function CapabilitiesIndex() {
                     <span><span className="dim">&gt;</span> verifySignature() … <span className="ok">SUCCESS</span></span>
                     <span><span className="dim">&gt;</span> gasUsed: <span className="em">21,000 gwei</span></span>
                     <span><span className="dim">&gt;</span> txHash: 0x71c…3a9f</span>
+                  </div>
+                </div>
+                <span className="mod-arrow" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                </span>
+              </a>
+
+              <a href="/capabilities/ai-llms-business" className="mod" data-anim-child>
+                <div className="mod-id">
+                  <span className="mono-tag">Module</span>
+                  <span className="num">06</span>
+                  <span className="mono-tag" style={{color: 'var(--green)'}}>AI.SYS</span>
+                </div>
+                <div className="mod-info">
+                  <h3>AI &amp; LLMs for Businesses</h3>
+                  <p>Secure, custom AI integrations and LLMs directly in your office tasks. We build intelligent parsing agents, custom bots, and automated office workflows to eliminate daily SMB friction.</p>
+                </div>
+                <div className="mod-console" aria-hidden="true">
+                  <div className="mod-console-head"><span>ai_office_agent.sys</span><em>active</em></div>
+                  <div className="mod-console-body">
+                    <span><span className="dim">&gt;</span> task parsing … <span className="ok">0.05s</span></span>
+                    <span><span className="dim">&gt;</span> accuracy rate … <span className="ok">99.9%</span></span>
+                    <span><span className="dim">&gt;</span> operational friction … <span className="em">removed</span></span>
                   </div>
                 </div>
                 <span className="mod-arrow" aria-hidden="true">

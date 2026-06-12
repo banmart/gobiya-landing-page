@@ -547,17 +547,27 @@ export default function GobiyaAboutPage() {
                 <span className="cap-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg></span>
               </a>
 
-              <a href="/capabilities/blockchain-web3-development" className="cap cap-wide" data-anim-child>
-                <div>
-                  <div className="cap-head" style={{marginBottom: '.8rem'}}>
-                    <div>
-                      <span className="mono-tag">Module 05</span>
-                      <h3>Blockchain &amp; Web3 Development</h3>
-                    </div>
+              <a href="/capabilities/blockchain-web3-development" className="cap" data-anim-child>
+                <div className="cap-head">
+                  <div>
+                    <span className="mono-tag">Module 05</span>
+                    <h3>Blockchain &amp; Web3 Development</h3>
                   </div>
-                  <p>Smart contracts and Web3 infrastructure for brands building past the conventional stack — verified, shipped, on-chain.</p>
+                  <span className="cap-sys">WEB3.SYS</span>
                 </div>
-                <span className="cap-sys">WEB3_CONTRACT.SYS · verifySignature() — SUCCESS</span>
+                <p>Smart contracts and Web3 infrastructure for brands building past the conventional stack — verified, shipped, on-chain.</p>
+                <span className="cap-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg></span>
+              </a>
+
+              <a href="/capabilities/ai-llms-business" className="cap" data-anim-child>
+                <div className="cap-head">
+                  <div>
+                    <span className="mono-tag">Module 06</span>
+                    <h3>AI &amp; LLMs for Business</h3>
+                  </div>
+                  <span className="cap-sys">AI.SYS</span>
+                </div>
+                <p>Custom LLM integrations and automated office workflows to eliminate daily SMB friction and manual chores.</p>
                 <span className="cap-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg></span>
               </a>
             </div>

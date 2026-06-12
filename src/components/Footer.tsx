@@ -37,6 +37,7 @@ const Footer: React.FC = () => {
               <li><a href="/capabilities/native-crm" className="hover:text-white transition-colors">Native CRM</a></li>
               <li><a href="/capabilities/seo-discoverability" className="hover:text-white transition-colors">SEO & Discoverability</a></li>
               <li><a href="/capabilities/blockchain-web3-development" className="hover:text-white transition-colors">Blockchain & Web3 Dev</a></li>
+              <li><a href="/capabilities/ai-llms-business" className="hover:text-white transition-colors">AI & LLMs for Business</a></li>
               <li><a href="/capabilities" className="hover:text-white transition-colors">All Capabilities Overview</a></li>
             </ul>
           </div>

@@ -26,6 +26,10 @@ const metadataMap: Record<string, SEOMetadata> = {
     title: 'Blockchain Web3: Integrate Smart Contracts | Gobiya',
     description: 'Our blockchain Web3 development services integrate smart contracts, dApps, and secure on-chain token functions into React apps.'
   },
+  '/capabilities/ai-llms-business': {
+    title: 'AI & LLMs for Businesses: Remove SMB Office Friction | Gobiya',
+    description: 'We integrate custom AI models and secure LLMs directly into your everyday office tasks. Automate document parsing, email replies, and CRM syncing with complete data privacy.'
+  },
   '/company/about': {
     title: 'Custom Web Dev & Forensic Search Strategy | Gobiya',
     description: 'Gobiya is a custom web development company and search engineering agency rebuilding traffic pipelines and recovering penalties since 2012.'
@@ -283,7 +287,9 @@ const SEO: React.FC<SEOProps> = ({ path }) => {
             { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Web Development", "url": "https://www.gobiya.com/capabilities/web-development" } },
             { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Native CRM", "url": "https://www.gobiya.com/capabilities/native-crm" } },
             { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "SEO & Discoverability", "url": "https://www.gobiya.com/capabilities/seo-discoverability" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Blockchain & Web3 Development", "url": "https://www.gobiya.com/capabilities/blockchain-web3-development" } }
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Blockchain & Web3 Development", "url": "https://www.gobiya.com/capabilities/blockchain-web3-development" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "AI Prospect Scraper", "url": "https://www.gobiya.com/capabilities/ai-prospect-scraper" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "AI & LLMs for Businesses", "url": "https://www.gobiya.com/capabilities/ai-llms-business" } }
           ]
         },
         "knowsAbout": [

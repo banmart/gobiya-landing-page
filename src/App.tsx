@@ -253,7 +253,8 @@ function App({ url }: AppProps) {
     '/capabilities/native-crm',
     '/capabilities/seo-discoverability',
     '/capabilities/blockchain-web3-development',
-    '/capabilities/ai-prospect-scraper'
+    '/capabilities/ai-prospect-scraper',
+    '/capabilities/ai-llms-business'
   ].includes(normalizedPath);
 
   return (

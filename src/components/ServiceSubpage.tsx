@@ -426,7 +426,8 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
             { href: '/capabilities/native-crm', colSpan: 1, icon: <Database size={40} className="text-white mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'Native CRM', description: 'Pipeline and lead databases built directly into your codebase, ensuring 100% data ownership.' },
             { href: '/capabilities/seo-discoverability', colSpan: 2, icon: <Search size={40} className="text-white mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'SEO & Discoverability', description: 'Built-in crawler-readiness, semantic data mapping, and formatting designed for Google and AI citation eligibility.' },
             { href: '/capabilities/blockchain-web3-development', colSpan: 1, icon: <Cpu size={40} className="text-[#F26522] mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'Blockchain & Web3 Dev', description: 'On-chain solutions, custom smart contracts, and decentralized application features integrated natively.' },
-            { href: '/capabilities/ai-prospect-scraper', colSpan: 2, gradient: true, icon: <Search size={40} className="text-white mb-6 sm:mb-10 relative z-10" strokeWidth={1.5} />, title: 'AI Prospect Scraper', description: 'AI-powered scraper extracting NAP lead data and creating custom drip campaigns natively.' }
+            { href: '/capabilities/ai-prospect-scraper', colSpan: 2, gradient: true, icon: <Search size={40} className="text-white mb-6 sm:mb-10 relative z-10" strokeWidth={1.5} />, title: 'AI Prospect Scraper', description: 'AI-powered scraper extracting NAP lead data and creating custom drip campaigns natively.' },
+            { href: '/capabilities/ai-llms-business', colSpan: 1, icon: <Cpu size={40} className="text-white mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'AI & LLMs for Businesses', description: 'Secure custom LLM integrations and automated office workflows to eliminate daily SMB friction.' }
           ],
           showCalculator: false
         };

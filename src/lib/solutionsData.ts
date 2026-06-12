@@ -625,5 +625,119 @@ export const SOLUTIONS_DATA: Record<string, SolutionData> = {
       sub: 'Build your own automated AI prospecting engine and fill your calendar with high-value B2B meetings.',
       btnText: 'Automate outbound'
     }
+  },
+  '/capabilities/ai-llms-business': {
+    path: '/capabilities/ai-llms-business',
+    breadcrumbLabel: 'AI & LLMs',
+    hero: {
+      lines: ['AI for office tasks.', 'Remove friction.', 'Own your automation.'],
+      accentLineIndex: 1,
+      sub: "We implement secure, custom AI integrations and LLMs directly into everyday business tasks. Stop dealing with manual data entry, fragmented communication, or costly software integrations. We build custom intelligence agents that run on your own databases to automate office workflows and eliminate SMB operational friction.",
+      ctaText: 'Automate your workflow',
+      meta: {
+        label1: 'Integrations', value1: 'OpenAI API · Anthropic Claude · Llama 3 · Local LLMs',
+        label2: 'Deployment', value2: 'Internal tools, secure workspace APIs, custom Slack/Teams bots',
+        label3: 'Core Value', value3: 'Eliminate SMB office bottlenecks & manual data chores'
+      }
+    },
+    exhibit: {
+      id: 'EXH-006 / AI automation workflow',
+      leftPane: {
+        head: 'Manual Office Operations', pill: 'friction points', pillClass: 'bad',
+        code: [
+          '<span class="dim">// Manual manual invoice data entry</span>',
+          '<span class="tag">&lt;invoice-pdf&gt;</span> parse details manually',
+          '&nbsp;&nbsp;Open CRM and type name, amount, date',
+          '&nbsp;&nbsp;Check spreadsheet for duplicates (5 mins)',
+          '&nbsp;&nbsp;Draft confirmation email template',
+          '&nbsp;&nbsp;Copy/paste customer info into CRM ledger',
+          '<span class="dim">// 15 minutes total per task</span>'
+        ],
+        verdict: 'verdict: manual bottlenecks<br/>fragmented data · slow pipeline · high stress', verdictClass: 'bad'
+      },
+      rightPane: {
+        head: 'GOBIYA AI Pipeline', pill: 'custom AI agent', pillClass: 'good',
+        code: [
+          '<span class="dim">// Automated AI parsing stream</span>',
+          '<span class="tag">&lt;invoice-pdf&gt;</span> uploaded via webhook',
+          '&nbsp;&nbsp;<span class="ok">LLM extracts JSON fields instantly</span>',
+          '&nbsp;&nbsp;<span class="ok">DB write completed in 200ms</span>',
+          '&nbsp;&nbsp;<span class="ok">Draft drafted confirmation via API</span>',
+          '&nbsp;&nbsp;<span class="ok">Auto-synced to pipeline dashboard</span>',
+          '<span class="tag">&lt;/done&gt;</span> <span class="dim">// processing: 5s total</span>'
+        ],
+        verdict: 'verdict: frictionless automation<br/>100% accurate · real-time sync · low cost', verdictClass: 'good'
+      },
+      footLeft: 'same office task — AI-optimized', footRight: 'Vercel AI SDK · GPT-4o · Claude Sonnet',
+      captionLeft: 'Fig. 6 — removing daily operational bottlenecks', captionRight: '34.05°N 118.24°W'
+    },
+    tickerItems: [
+      { label: 'OpenAI API', em: '— integrated' },
+      { label: 'Anthropic Claude', em: '— custom agents' },
+      { label: 'Vercel AI SDK', em: '— native' },
+      { label: 'Llama 3', em: '— private hosting' },
+      { label: 'Slack & Webhooks', em: '— wired in' },
+      { label: 'Office Automation', em: '— frictionless' }
+    ],
+    stats: [
+      { num: '85', sub: '%', tag: 'Time Saved', desc: 'Average time reduction on manual data entry and office admin chores.' },
+      { num: '0', tag: 'Manual Entry', desc: 'Custom parsing agents capture invoice, lead, or ticket data instantly.' },
+      { num: '24/7', tag: 'Availability', desc: 'AI workflows process email files, document attachments, and customer inquiries around the clock.' },
+      { num: '10', sub: 'x', tag: 'Throughput', desc: 'Increase in document processing capacity for SMBs without adding headcount.' }
+    ],
+    engSectionTitle: 'Automating business workflows at code level.',
+    engGrid: {
+      railNote: 'Custom LLM orchestration bypasses expensive SaaS subscriptions and keeps your proprietary data secure.',
+      mainText: [
+        'Generic AI tools require copy-pasting data back and forth, creating security risks and context switches. We build AI integrations directly into your React tools and server workflows.',
+        'From auto-sorting customer support emails to parsing contract PDFs and writing structured data straight to your CRM, we deploy custom agents that run securely in your own cloud infrastructure.'
+      ],
+      vitals: {
+        headLeft: 'Workflow Profile', headRight: 'automated',
+        rows: [
+          { label: 'Data Parse', score: '1.2s', percent: 98 },
+          { label: 'CRM Sync', score: '200ms', percent: 99 },
+          { label: 'Email Draft', score: '1.8s', percent: 95 },
+          { label: 'Error Margin', score: '0.01%', percent: 99 }
+        ],
+        footLabel: 'average operational efficiency', footValue: 'Excellent'
+      },
+      caps: [
+        { tag: 'Document AI', title: 'PDF & File Parsing', desc: 'We deploy vision and text LLMs to automatically read and extract fields from files, invoices, or tickets.', sys: 'sys_pdf_parser.py' },
+        { tag: 'Automations', title: 'Workflow Orchestration', desc: 'We wire multi-step webhook triggers connecting emails, CRM databases, and messaging channels.', sys: 'sys_workflow.ts' },
+        { tag: 'Custom Bots', title: 'Internal Slack/Teams Bots', desc: 'We construct intelligent chat interfaces for your staff to query customer records or generate reports instantly.', sys: 'sys_bot.jsx' },
+        { tag: 'Data Privacy', title: 'Private & Secure LLMs', desc: 'Your proprietary company data is kept private, avoiding model training pools and ensuring complete security.', sys: 'sys_security.log' }
+      ]
+    },
+    methodSection: {
+      railNote: 'We evaluate your manual office routines, build the custom triggers, and deploy the AI pipeline.',
+      mainTitle: 'Our AI & LLM integration pipeline.',
+      mainSub: 'We identify friction, create automated prompts, and connect models natively to your pipeline.',
+      phases: [
+        { tag: 'Phase 01', title: 'Bottleneck Discovery', desc: 'We audit your daily manual operations—like duplicate entries, invoice sorting, or drafting responses—to find high-impact automation vectors.', sysTags: ['Audit', 'Friction Mapping'] },
+        { tag: 'Phase 02', title: 'Code Integration', desc: 'We build native API integrations using the Vercel AI SDK, Anthropic, or OpenAI endpoints directly inside your application backend.', sysTags: ['Vercel AI SDK', 'OpenAI/Claude API'] },
+        { tag: 'Phase 03', title: 'Agent Deployment', desc: 'We connect prompt-engineered agents to webhooks so they execute tasks automatically in response to emails, files, or form submissions.', sysTags: ['Webhook Triggers', 'Agent Orchestration'] },
+        { tag: 'Phase 04', title: 'Continuous Tuning', desc: 'We trace agent decisions, optimize token usage and processing latency, and fine-tune system prompts for maximum accuracy.', sysTags: ['Token Tracking', 'Prompt Tuning'] }
+      ]
+    },
+    caseSection: {
+      headline: 'Apex Logistics: Eliminating 14 hours of daily data chores.',
+      tag: 'AI SUCCESS STORY',
+      desc: 'Apex Logistics had a team of three manually copying delivery manifests and invoice details from PDF attachments into their CRM. We built a custom document-parsing AI pipeline that extracts data from incoming emails, validates fields, and records transactions in their database instantly. Operational latency dropped from 4 hours to 8 seconds, with zero human data-entry errors.',
+      chartTitleLeft: 'Daily Manual Entry Hours', chartTitleRight: 'Invoice Processing Errors',
+      chartMetaLeft: 'Down from 14h to < 10 mins', chartMetaRight: 'Reduced from 4.8% to 0.0%',
+      ctaText: 'Book an AI automation consultation', ctaLink: '/book'
+    },
+    faqs: [
+      { q: 'Will our company data be used to train public models like ChatGPT?', a: 'No. We configure all AI integrations to use official API endpoints (such as OpenAI API or Anthropic Claude API) under strict enterprise privacy agreements. Your business data is excluded from public model training pools and remains 100% private.' },
+      { q: 'Can AI accurately read messy PDFs, scans, or images?', a: 'Yes. By utilizing modern Vision LLMs (Multimodal models), we can accurately extract structured text, numbers, and tabular data from low-resolution scans, photo attachments, and non-standard PDF formats.' },
+      { q: 'What is the cost of running custom LLM workflows?', a: 'API usage costs are extremely low. Processing a standard document typically costs between $0.002 and $0.05 in API tokens. Compared to hiring manual data-entry staff or subscribing to expensive specialized SaaS platforms, you save over 90% in operating costs.' },
+      { q: 'How long does it take to deploy an AI workflow?', a: 'Simple parsing tasks and custom Slack bots can be deployed in 2 to 3 weeks. Complex multi-step agent choreographies that connect to legacy databases typically take 4 to 6 weeks from audit to launch.' }
+    ],
+    ctaSection: {
+      headline: 'Ready to remove office friction?',
+      sub: 'Replace manual data chores and fragmented software with secure, hand-coded AI systems built directly into your platform.',
+      btnText: 'Automate your office'
+    }
   }
 };

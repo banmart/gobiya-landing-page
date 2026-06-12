@@ -8,6 +8,7 @@ const DEFAULT_MENU_ITEMS = [
   { label: 'Native CRM', link: '/capabilities/native-crm' },
   { label: 'SEO & Discoverability', link: '/capabilities/seo-discoverability' },
   { label: 'Blockchain & Web3 Dev', link: '/capabilities/blockchain-web3-development' },
+  { label: 'AI & LLMs for Business', link: '/capabilities/ai-llms-business' },
   { label: 'Company', isHeader: true },
   { label: 'About the Agency', link: '/company/about' },
   { label: 'Success Stories', link: '/company/success-stories' },
