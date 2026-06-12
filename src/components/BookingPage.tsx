@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { gsap } from 'gsap';
 import './BookingPage.css';
 import SiteHeader from './SiteHeader';
 import SiteFooter from './SiteFooter';
@@ -54,6 +55,7 @@ const BookingPage: React.FC = () => {
     document.title = 'Book a Forensic Audit Call — GOBIYA | Los Angeles';
     window.scrollTo({ top: 0, behavior: 'instant' });
     document.documentElement.classList.add('js');
+    gsap.to(document.body, { opacity: 1, duration: 0.6, ease: 'power2.out' });
     if (typeof window === 'undefined') return;
     const params = new URLSearchParams(window.location.search);
     if (params.get('email'))     setEmail(params.get('email')!);

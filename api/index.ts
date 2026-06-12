@@ -1,6 +1,7 @@
 import { IncomingMessage } from 'http';
 import fs from 'fs';
 import path from 'path';
+import { pathToFileURL } from 'url';
 import { createClient } from '@supabase/supabase-js';
 import dotenv from 'dotenv';
 
@@ -1288,7 +1289,7 @@ export default async function handler(req: IncomingMessage, res: any) {
       throw new Error(`SSR build output not found at ${serverModulePath}. Ensure npm run build completes successfully.`);
     }
 
-    const { render } = (await import(serverModulePath)) as { render: RenderFn };
+    const { render } = (await import(pathToFileURL(serverModulePath).href)) as { render: RenderFn };
 
     // Read index.html from built client assets
     const templatePath = path.join(process.cwd(), 'dist', 'client', 'index.html');
