@@ -1,0 +1,346 @@
+/* ============================================================
+   ON-PAGE SEO LOS ANGELES PAGE — Signal Forensics theme
+   ============================================================ */
+
+.onpage-page {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  min-height: 100vh;
+}
+
+/* ── HERO ── */
+.onpage-page .hero {
+  position: relative;
+  border-bottom: 1px solid var(--line);
+  background:
+    radial-gradient(circle at 10% 10%, rgba(47,93,80,0.08), transparent 40%),
+    radial-gradient(circle at 90% 90%, rgba(194,73,47,0.04), transparent 35%),
+    var(--paper);
+  overflow: hidden;
+}
+
+.onpage-page .hero-grid {
+  position: absolute; inset: 0; pointer-events: none; opacity: .5;
+  background-image:
+    linear-gradient(var(--line-soft) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line-soft) 1px, transparent 1px);
+  background-size: 96px 96px;
+  mask-image: radial-gradient(ellipse at 65% 40%, black 0%, transparent 70%);
+  -webkit-mask-image: radial-gradient(ellipse at 65% 40%, black 0%, transparent 70%);
+}
+
+.onpage-page .hero-inner {
+  position: relative;
+  max-width: var(--max-w); margin: 0 auto;
+  display: grid; grid-template-columns: 1.1fr 0.9fr;
+  min-height: 90svh;
+  align-items: stretch;
+}
+
+.onpage-page .hero-copy {
+  display: flex; flex-direction: column; justify-content: center;
+  padding: 9.5rem var(--pad) 5rem;
+  border-right: 1px solid var(--line);
+}
+
+.onpage-page .breadcrumb {
+  display: flex; align-items: center; gap: .6rem; margin-bottom: 2.4rem; flex-wrap: wrap;
+  font-family: var(--font-mono); font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-faint);
+}
+.onpage-page .breadcrumb a { color: var(--ink-faint); text-decoration: none; transition: color 0.2s; }
+.onpage-page .breadcrumb a:hover { color: var(--ink); }
+.onpage-page .breadcrumb i { font-style: normal; color: var(--line); }
+
+.onpage-page .hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  font-weight: 700; letter-spacing: -0.025em; line-height: 1.08;
+  color: var(--ink); margin-bottom: 1.5rem;
+}
+.onpage-page .hero h1 .line { display: block; overflow: hidden; }
+.onpage-page .hero h1 .line > span { display: inline-block; }
+.onpage-page .hero h1 .accent { color: var(--green); }
+
+.onpage-page .hero-sub {
+  max-width: 42rem;
+  font-size: 1rem; line-height: 1.7; color: var(--ink-soft);
+  margin-bottom: 2.5rem;
+}
+
+.onpage-page .hero-actions {
+  display: flex; gap: 1rem; margin-bottom: 3.5rem; flex-wrap: wrap;
+}
+
+.onpage-page .hero-specs {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
+  border-top: 1px solid var(--line); padding-top: 2rem;
+}
+.onpage-page .spec-item { display: flex; flex-direction: column; gap: 0.35rem; }
+.onpage-page .spec-item .label {
+  font-family: var(--font-mono); font-size: 9px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-faint);
+}
+.onpage-page .spec-item .val {
+  font-size: 0.9rem; font-weight: 400; color: var(--ink);
+}
+
+/* ── HERO WIDGET ── */
+.onpage-page .hero-widget {
+  display: flex; flex-direction: column; justify-content: center;
+  padding: 9.5rem var(--pad) 5rem;
+  background: linear-gradient(160deg, rgba(231,228,217,0.5), var(--paper) 70%);
+}
+
+.onpage-page .widget-card {
+  border: 1px solid var(--line);
+  background: var(--dark);
+  color: var(--dark-text);
+  box-shadow: 0 28px 72px rgba(21,19,14,0.12);
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.onpage-page .widget-card::before {
+  content:""; position:absolute; inset:0; pointer-events:none; opacity:.25;
+  background-image:
+    linear-gradient(rgba(239,237,229,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(239,237,229,0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.onpage-page .widget-head {
+  position: relative;
+  display: flex; align-items: center; gap: 0.6rem;
+  padding: .9rem 1.3rem; border-bottom: 1px solid var(--dark-line);
+  font-family: var(--font-mono); font-size: 10px; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--dark-soft);
+}
+.onpage-page .widget-head .dot {
+  width: 8px; height: 8px; border-radius: 50%; background: var(--signal);
+}
+
+.onpage-page .widget-body {
+  position: relative; padding: 1.6rem 1.4rem;
+  display: flex; flex-direction: column; gap: 0.75rem;
+  font-family: var(--font-mono); font-size: 11px; line-height: 1.5;
+  min-height: 280px;
+}
+
+.onpage-page .log-line { color: var(--dark-soft); opacity: 0.85; }
+.onpage-page .log-line.success { color: var(--signal); }
+.onpage-page .log-line.warn { color: var(--penalty); }
+.onpage-page .log-line.info { color: #5aa9e6; }
+.onpage-page .log-line-final {
+  margin-top: auto; padding-top: 1rem; border-top: 1px dashed var(--dark-line);
+  color: var(--dark-text); font-weight: 500;
+}
+
+.onpage-page .widget-foot {
+  position: relative;
+  padding: .85rem 1.3rem; border-top: 1px solid var(--dark-line);
+  font-family: var(--font-mono); font-size: 9px; letter-spacing: .09em;
+  text-transform: uppercase; color: var(--dark-soft);
+  display: flex; align-items: center; justify-content: space-between;
+}
+
+/* ── CAPABILITIES SECTION ── */
+.onpage-page .capabilities-section {
+  padding: 8rem var(--pad);
+  border-bottom: 1px solid var(--line);
+}
+.onpage-page .section-inner {
+  max-width: var(--max-w); margin: 0 auto;
+}
+.onpage-page .section-head {
+  max-width: 38rem; margin-bottom: 5rem;
+}
+.onpage-page .mono-tag {
+  display: inline-block; font-family: var(--font-mono); font-size: 10px;
+  letter-spacing: 0.12em; text-transform: uppercase; color: var(--green);
+  margin-bottom: 1rem; font-weight: 500;
+}
+.onpage-page .section-head h2 {
+  font-family: var(--font-display); font-size: clamp(2rem, 4.5vw, 3.2rem);
+  font-weight: 700; letter-spacing: -0.02em; line-height: 1.1;
+  color: var(--ink); margin-bottom: 1.5rem;
+}
+.onpage-page .section-head p {
+  font-size: 1.05rem; color: var(--ink-soft); line-height: 1.65;
+}
+
+.onpage-page .capabilities-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem;
+}
+.onpage-page .grid-card {
+  border: 1px solid var(--line);
+  background: var(--paper-2);
+  padding: 3rem 2.5rem;
+  display: flex; flex-direction: column; gap: 1.5rem;
+  transition: background 0.3s, border-color 0.3s;
+}
+.onpage-page .grid-card:hover {
+  background: var(--paper-3); border-color: var(--ink-faint);
+}
+.onpage-page .card-num {
+  font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em;
+  color: var(--ink-faint);
+}
+.onpage-page .grid-card h3 {
+  font-family: var(--font-display); font-size: 1.4rem; font-weight: 600;
+  letter-spacing: -0.01em; color: var(--ink);
+}
+.onpage-page .grid-card p {
+  font-size: 0.95rem; color: var(--ink-soft); line-height: 1.65;
+}
+
+/* ── CHECKLIST SECTION ── */
+.onpage-page .checklist-section {
+  padding: 8rem var(--pad);
+  border-bottom: 1px solid var(--line);
+  background: var(--paper-2);
+}
+.onpage-page .checklist-split {
+  max-width: var(--max-w); margin: 0 auto;
+  display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 4rem;
+  align-items: center;
+}
+.onpage-page .checklist-left h2 {
+  font-family: var(--font-display); font-size: clamp(2rem, 4.5vw, 3.2rem);
+  font-weight: 700; letter-spacing: -0.02em; line-height: 1.1;
+  color: var(--ink); margin-bottom: 1.5rem;
+}
+.onpage-page .checklist-left p {
+  font-size: 1.05rem; color: var(--ink-soft); line-height: 1.65; margin-bottom: 3rem;
+  max-width: 32rem;
+}
+
+.onpage-page .checklist-buttons {
+  display: flex; flex-direction: column; gap: 0.6rem;
+}
+.onpage-page .checklist-btn {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1.1rem 1.4rem; border: 1px solid var(--line);
+  background: var(--paper); cursor: pointer; text-align: left;
+  font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.04em;
+  color: var(--ink-soft); transition: all 0.25s;
+}
+.onpage-page .checklist-btn:hover {
+  background: var(--paper-3); color: var(--ink);
+}
+.onpage-page .checklist-btn.active {
+  border-color: var(--green); background: rgba(47,93,80,0.08); color: var(--green);
+}
+.onpage-page .checklist-btn svg {
+  transition: transform 0.25s; opacity: 0.6;
+}
+.onpage-page .checklist-btn.active svg {
+  transform: translateX(4px); opacity: 1;
+}
+
+.onpage-page .checklist-card {
+  border: 1px solid var(--line);
+  background: var(--paper);
+  box-shadow: 0 16px 48px rgba(0,0,0,0.03);
+}
+.onpage-page .checklist-card .card-head {
+  padding: 0.8rem 1.2rem; border-bottom: 1px solid var(--line);
+  font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--ink-faint);
+}
+.onpage-page .checklist-card .card-body {
+  padding: 2.5rem;
+  display: flex; flex-direction: column;
+}
+.onpage-page .checklist-card h4 {
+  font-family: var(--font-display); font-size: 1.3rem; font-weight: 600;
+  color: var(--ink); margin-bottom: 0.6rem;
+}
+.onpage-page .checklist-card .short-desc {
+  font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.05em;
+  color: var(--green); margin-bottom: 1.5rem; font-weight: 500;
+}
+.onpage-page .checklist-card hr {
+  border: none; border-top: 1px solid var(--line); margin-bottom: 1.5rem;
+}
+.onpage-page .checklist-card .long-desc {
+  font-size: 0.95rem; color: var(--ink-soft); line-height: 1.7; margin-bottom: 2.5rem;
+}
+.onpage-page .checklist-card .card-cta {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  color: var(--ink); font-family: var(--font-mono); font-size: 10px;
+  letter-spacing: 0.06em; text-transform: uppercase; font-weight: 600;
+  text-decoration: none; transition: color 0.2s;
+}
+.onpage-page .checklist-card .card-cta:hover {
+  color: var(--green);
+}
+
+/* ── FAQ SECTION ── */
+.onpage-page .faq-section {
+  padding: 8rem var(--pad);
+  border-bottom: 1px solid var(--line);
+}
+.onpage-page .faq-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 3rem 2.5rem;
+  max-width: var(--max-w); margin: 0 auto;
+}
+.onpage-page .faq-item {
+  display: flex; flex-direction: column; gap: 0.8rem;
+}
+.onpage-page .faq-item h4 {
+  font-family: var(--font-display); font-size: 1.1rem; font-weight: 600;
+  color: var(--ink); line-height: 1.4;
+}
+.onpage-page .faq-item p {
+  font-size: 0.95rem; color: var(--ink-soft); line-height: 1.7;
+}
+
+/* ── CTA SECTION ── */
+.onpage-page .cta-section {
+  padding: 6rem var(--pad) 8rem;
+}
+.onpage-page .cta-card {
+  max-width: var(--max-w); margin: 0 auto;
+  border: 1px solid var(--line);
+  background: var(--paper-2);
+  padding: 4rem 3.5rem;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 4rem;
+}
+.onpage-page .cta-left h2 {
+  font-family: var(--font-display); font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+  font-weight: 700; letter-spacing: -0.02em; line-height: 1.15;
+  color: var(--ink); margin-bottom: 1rem;
+}
+.onpage-page .cta-left p {
+  font-size: 1rem; color: var(--ink-soft); line-height: 1.65; max-width: 36rem;
+}
+.onpage-page .cta-right {
+  display: flex; flex-direction: column; gap: 0.8rem; align-items: center;
+  flex-shrink: 0;
+}
+.onpage-page .cta-right .subtext {
+  font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--ink-faint);
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1024px) {
+  .onpage-page .hero-inner { grid-template-columns: 1fr; min-height: 0; }
+  .onpage-page .hero-copy { border-right: none; border-bottom: 1px solid var(--line); padding-top: 8rem; padding-bottom: 4rem; }
+  .onpage-page .hero-widget { padding-top: 4rem; padding-bottom: 5rem; }
+  .onpage-page .capabilities-grid { grid-template-columns: 1fr; }
+  .onpage-page .checklist-split { grid-template-columns: 1fr; gap: 3rem; }
+  .onpage-page .faq-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .onpage-page .cta-card { flex-direction: column; gap: 2.5rem; text-align: center; padding: 3rem 2rem; }
+}
+
+@media (max-width: 640px) {
+  .onpage-page .hero-specs { grid-template-columns: 1fr; gap: 1rem; }
+  .onpage-page .grid-card { padding: 2rem 1.5rem; }
+  .onpage-page .checklist-card .card-body { padding: 1.5rem; }
+  .onpage-page .cta-right { width: 100%; }
+  .onpage-page .cta-right .btn { width: 100%; justify-content: center; }
+}

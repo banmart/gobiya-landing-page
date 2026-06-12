@@ -354,6 +354,10 @@ const metadataMap: Record<string, SEOMetadata> = {
     title: 'GOBIYA — Algorithm Recovery & AI-Powered Growth, Los Angeles',
     description: "GOBIYA reads Google's algorithm, identifies the penalty vector, and deploys the fix. SEO recovery, GEO, AI-powered growth. Los Angeles, since 2009."
   },
+  '/on-page-seo-los-angeles': {
+    title: 'On-Page SEO Los Angeles — GOBIYA | Search Engine Dominance',
+    description: "Struggling with organic drops or low conversions? Our elite on-page SEO services in Los Angeles optimize your site's entity structure, schema, speed, and content mapping for Google and AI engines."
+  },
   '/capabilities/web-development': {
     title: 'React Web Development — Custom High-Performance Websites Built to Rank | GOBIYA',
     description: 'GOBIYA replaces slow page-builders with custom, hand-coded React and Next.js websites — 100/100 Core Web Vitals, sub-second loads, zero templates, engineered to convert and rank natively.'
@@ -1249,7 +1253,6 @@ export default async function handler(req: IncomingMessage, res: any) {
     // Server-side legacy redirections (301 Permanent Redirect)
     const legacyRedirects: Record<string, string> = {
       '/company/insights': '/insights',
-      '/on-page-seo-los-angeles': '/capabilities/seo-discoverability',
       '/insights/b2b-seo-agency-los-angeles': '/insights/b2b-seo-agency',
       '/insights/local-seo-los-angeles': '/insights/local-seo',
       '/insights/los-angeles-local-seo-explained': '/insights/local-seo-explained',

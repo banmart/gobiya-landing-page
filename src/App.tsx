@@ -17,6 +17,7 @@ import AmericanLivescanCaseStudy from './components/AmericanLivescanCaseStudy';
 import AdminLogin from './components/AdminLogin';
 import AdminDashboard from './components/AdminDashboard';
 import ContactPage from './components/ContactPage';
+import OnPageSeoLosAngelesPage from './components/OnPageSeoLosAngelesPage';
 import SEO from './components/SEO';
 
 // Safe storage helper to prevent crashes in sandboxed environments/iframes or strict privacy modes
@@ -208,7 +209,6 @@ function App({ url }: AppProps) {
     
     const legacyRedirects: Record<string, string> = {
       '/company/insights': '/insights',
-      '/on-page-seo-los-angeles': '/capabilities/seo-discoverability',
       '/insights/b2b-seo-agency-los-angeles': '/insights/b2b-seo-agency',
       '/insights/local-seo-los-angeles': '/insights/local-seo',
       '/insights/los-angeles-local-seo-explained': '/insights/local-seo-explained',
@@ -270,6 +270,8 @@ function App({ url }: AppProps) {
         )
       ) : normalizedPath === '/' ? (
         <GobiyaLanding />
+      ) : normalizedPath === '/on-page-seo-los-angeles' ? (
+        <OnPageSeoLosAngelesPage />
       ) : normalizedPath === '/book' || normalizedPath === '/book-call' ? (
         <BookingPage />
       ) : normalizedPath === '/about/steve-martin' || normalizedPath === '/author/steve-martin' ? (
