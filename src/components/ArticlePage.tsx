@@ -8138,6 +8138,58 @@ const ArticlePage: React.FC<ArticlePageProps> = ({ slug }) => {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
+  // Split paragraphs into sentences dynamically
+  useEffect(() => {
+    if (!article) return;
+    
+    const timer = setTimeout(() => {
+      const paragraphs = document.querySelectorAll('.art-body > p');
+      paragraphs.forEach((p: any) => {
+        if (p.querySelector('.art-sentence') || p.dataset.sentenceProcessed) return;
+        
+        const nodes = Array.from(p.childNodes) as any[];
+        p.innerHTML = '';
+        p.dataset.sentenceProcessed = 'true';
+        
+        let currentSentenceSpan = document.createElement('span');
+        currentSentenceSpan.className = 'art-sentence';
+        p.appendChild(currentSentenceSpan);
+        
+        for (const node of nodes) {
+          if (node.nodeType === Node.TEXT_NODE) {
+            const text = node.textContent || '';
+            const parts = text.split(/([.!?]\s+)/);
+            
+            for (let i = 0; i < parts.length; i++) {
+              const part = parts[i];
+              if (!part) continue;
+              
+              if (/^[.!?]\s+$/.test(part)) {
+                currentSentenceSpan.appendChild(document.createTextNode(part.trim()));
+                currentSentenceSpan = document.createElement('span');
+                currentSentenceSpan.className = 'art-sentence';
+                p.appendChild(currentSentenceSpan);
+              } else {
+                currentSentenceSpan.appendChild(document.createTextNode(part));
+              }
+            }
+          } else {
+            currentSentenceSpan.appendChild(node);
+          }
+        }
+        
+        // Clean up empty spans
+        Array.from(p.querySelectorAll('.art-sentence')).forEach((span: any) => {
+          if (!span.textContent.trim()) {
+            span.remove();
+          }
+        });
+      });
+    }, 150);
+    
+    return () => clearTimeout(timer);
+  }, [article, slug]);
+
   // GSAP Animations
   useEffect(() => {
     if (!window.gsap) return;
