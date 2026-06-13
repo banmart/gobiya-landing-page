@@ -1456,18 +1456,7 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
         </section>
       )}
 
-      {/* SECTION: LATEST INSIGHTS */}
-      {path !== '/contact' && path !== '/services' && path !== '/company/approach' && path !== '/company/success-stories' && path !== '/company/about' && path !== '/company/careers' && (
-        path !== '/insights' ? (
-          <div data-logo-dark className="relative">
-            <InsightsSlider filterCategory={config.insightCategory} limit={3} currentPath={path} />
-          </div>
-        ) : (
-          <div data-logo-dark className="relative">
-            <InsightsGrid />
-          </div>
-        )
-      )}
+
 
       {/* SECTION: CASE STUDIES PINNED */}
       {path !== '/insights' && path !== '/contact' && path !== '/services' && (
@@ -1672,6 +1661,13 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
 
           </div>
         </section>
+      )}
+
+      {/* SECTION: LATEST INSIGHTS */}
+      {(isServicesPath || path === '/google-penalty-recovery') && (
+        <div data-logo-dark className="relative">
+          <InsightsSlider filterCategory={config.insightCategory} limit={3} currentPath={path} />
+        </div>
       )}
 
       {/* ── FOOTER ── */}

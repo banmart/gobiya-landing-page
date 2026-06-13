@@ -18,9 +18,10 @@ interface InsightsSliderProps {
   filterCategory?: string;
   limit?: number;
   currentPath?: string;
+  title?: string;
 }
 
-const InsightsSlider: React.FC<InsightsSliderProps> = ({ filterCategory, limit, currentPath }) => {
+const InsightsSlider: React.FC<InsightsSliderProps> = ({ filterCategory, limit, currentPath, title }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
   const [insights, setInsights] = useState<Insight[]>([]);
@@ -101,18 +102,23 @@ const InsightsSlider: React.FC<InsightsSliderProps> = ({ filterCategory, limit, 
       const textToSearch = `${insight.title} ${insight.slug || ''} ${insight.category || ''}`.toLowerCase();
       
       let keywords: string[] = [];
-      if (normPath.includes('geo-optimization') || normPath.includes('/geo')) {
-        keywords = ['geo', 'generative', 'ai', 'chatgpt', 'perplexity', 'claude', 'gemini', 'engine optimization'];
+      if (normPath.startsWith('/insights/')) {
+        const slug = normPath.substring('/insights/'.length);
+        keywords = slug.split('-').filter(w => w.length > 2);
+      } else if (normPath.includes('geo-optimization') || normPath.includes('/geo') || normPath.includes('ai-llms')) {
+        keywords = ['geo', 'generative', 'ai', 'chatgpt', 'perplexity', 'claude', 'gemini', 'engine optimization', 'llm', 'automation', 'agent', 'workflow'];
       } else if (normPath.includes('penalty-recovery') || normPath.includes('penalty')) {
         keywords = ['penalty', 'manual action', 'algorithmic', 'core update', 'helpful content', 'recovery', 'spam'];
-      } else if (normPath.includes('seo')) {
-        keywords = ['seo', 'search engine', 'ranking', 'organic', 'topical', 'local seo', 'penalty', 'manual action', 'core update'];
-      } else if (normPath.includes('lead-generation') || normPath.includes('lead-gen')) {
-        keywords = ['lead', 'pipeline', 'outbound', 'prospecting', 'sales', 'b2b'];
+      } else if (normPath.includes('seo') || normPath.includes('smile-center') || normPath.includes('livescan')) {
+        keywords = ['seo', 'search engine', 'ranking', 'organic', 'topical', 'local seo', 'penalty', 'manual action', 'core update', 'dentist', 'fingerprint', 'livescan'];
+      } else if (normPath.includes('lead-generation') || normPath.includes('lead-gen') || normPath.includes('crm') || normPath.includes('scraper')) {
+        keywords = ['lead', 'pipeline', 'outbound', 'prospecting', 'sales', 'b2b', 'crm', 'scraper', 'prospect'];
       } else if (normPath.includes('web-development') || normPath.includes('web-design')) {
         keywords = ['web', 'react', 'vite', 'performance', 'speed', 'design', 'coding'];
       } else if (normPath.includes('ppc-advertising') || normPath.includes('advertising')) {
         keywords = ['ppc', 'advertising', 'ads', 'google ads', 'meta ads', 'paid', 'roas'];
+      } else if (normPath.includes('blockchain') || normPath.includes('web3')) {
+        keywords = ['blockchain', 'web3', 'crypto', 'smart contract', 'solidity', 'ethereum', 'on-chain'];
       }
 
       if (keywords.length === 0) return 0;
@@ -127,6 +133,13 @@ const InsightsSlider: React.FC<InsightsSliderProps> = ({ filterCategory, limit, 
     };
 
     if (currentPath) {
+      const normPath = currentPath.toLowerCase().replace(/\/$/, '');
+      const currentSlug = normPath.startsWith('/insights/') ? normPath.substring('/insights/'.length) : '';
+      
+      if (currentSlug) {
+        list = list.filter(insight => insight.slug && insight.slug.toLowerCase() !== currentSlug);
+      }
+
       list.sort((a, b) => {
         const scoreA = getRelevanceScore(a, currentPath);
         const scoreB = getRelevanceScore(b, currentPath);
@@ -192,15 +205,32 @@ const InsightsSlider: React.FC<InsightsSliderProps> = ({ filterCategory, limit, 
         <div className="mb-10 sm:mb-14">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6">
             <div>
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-6 h-6 sm:w-7 sm:h-7 bg-[#F26522] text-white text-[11px] sm:text-[12px] font-semibold flex items-center justify-center">5</div>
-                <div className="text-[11px] sm:text-[12px] font-bold tracking-[0.2em] uppercase border border-white/20 text-white px-4 py-2 rounded-full shadow-md">
-                  What's happening
-                </div>
-              </div>
-              <h2 className="text-[clamp(2rem,4vw,3.2rem)] font-medium leading-[1.12] tracking-[-0.02em] text-white">
-                See the latest from Gobiya.
-              </h2>
+              {/* Green theme detection */}
+              {(() => {
+                const norm = currentPath ? currentPath.toLowerCase().replace(/\/$/, '') : '';
+                const isGreenTheme = norm && (
+                  norm.startsWith('/services/') ||
+                  norm.startsWith('/case-studies/') ||
+                  norm.startsWith('/capabilities/') ||
+                  norm.startsWith('/insights/') ||
+                  norm === '/google-penalty-recovery'
+                );
+                const themeBgAccent = isGreenTheme ? 'bg-[#2F5D50]' : 'bg-[#F26522]';
+                
+                return (
+                  <>
+                    <div className="flex items-center gap-3 mb-6">
+                      <div className={`w-6 h-6 sm:w-7 sm:h-7 ${themeBgAccent} text-white text-[11px] sm:text-[12px] font-semibold flex items-center justify-center`}>5</div>
+                      <div className="text-[11px] sm:text-[12px] font-bold tracking-[0.2em] uppercase border border-white/20 text-white px-4 py-2 rounded-full shadow-md">
+                        What's happening
+                      </div>
+                    </div>
+                    <h2 className="text-[clamp(2rem,4vw,3.2rem)] font-medium leading-[1.12] tracking-[-0.02em] text-white">
+                      {title || "See the latest from Gobiya."}
+                    </h2>
+                  </>
+                );
+              })()}
             </div>
             
             <div className="flex items-center gap-3">
@@ -260,9 +290,22 @@ const InsightsSlider: React.FC<InsightsSliderProps> = ({ filterCategory, limit, 
                   <div className={`absolute bottom-0 left-0 right-0 p-6 sm:p-10 flex flex-col justify-end transition-opacity duration-500
                     ${isActive ? 'opacity-100 delay-300' : 'opacity-0 pointer-events-none'}
                   `}>
-                    <span className="inline-block px-3 py-1 bg-[#F26522] text-white text-[10px] sm:text-[11px] uppercase tracking-wider font-semibold w-max mb-4">
-                      {insight.category}
-                    </span>
+                    {(() => {
+                      const norm = currentPath ? currentPath.toLowerCase().replace(/\/$/, '') : '';
+                      const isGreenTheme = norm && (
+                        norm.startsWith('/services/') ||
+                        norm.startsWith('/case-studies/') ||
+                        norm.startsWith('/capabilities/') ||
+                        norm.startsWith('/insights/') ||
+                        norm === '/google-penalty-recovery'
+                      );
+                      const themeBgAccent = isGreenTheme ? 'bg-[#2F5D50]' : 'bg-[#F26522]';
+                      return (
+                        <span className={`inline-block px-3 py-1 ${themeBgAccent} text-white text-[10px] sm:text-[11px] uppercase tracking-wider font-semibold w-max mb-4`}>
+                          {insight.category}
+                        </span>
+                      );
+                    })()}
                     <h3 className="text-white text-2xl sm:text-4xl font-medium leading-[1.15] mb-6 max-w-2xl font-display">
                       {insight.title}
                     </h3>

@@ -1,6 +1,7 @@
 import SiteHeader from "./SiteHeader";
 import HeroWebGLBackground from './HeroWebGLBackground';
 import SiteFooter from "./SiteFooter";
+import InsightsSlider from "./InsightsSlider";
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -573,6 +574,10 @@ export default function CapabilitiesIndex() {
           </div>
         </div>
       </section>
+
+      <div data-logo-dark className="relative">
+        <InsightsSlider currentPath="/capabilities" limit={3} />
+      </div>
 
       <SiteFooter />
     </div>

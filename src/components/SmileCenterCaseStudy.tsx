@@ -5,6 +5,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ArrowRight, TrendingUp, Search, MapPin, Phone, BarChart2, Award } from 'lucide-react';
 import SiteHeader from './SiteHeader';
 import SiteFooter from './SiteFooter';
+import InsightsSlider from './InsightsSlider';
 import CustomCursor from './CustomCursor';
 import ParallaxMedia from './ParallaxMedia';
 import SplitTextReveal from './SplitTextReveal';
@@ -455,6 +456,10 @@ const SmileCenterCaseStudy: React.FC = () => {
           </div>
         </div>
       </section>
+
+      <div data-logo-dark className="relative">
+        <InsightsSlider currentPath="/case-studies/smile-center-dentistry" limit={3} />
+      </div>
 
       <SiteFooter />
     </div>

@@ -8,6 +8,7 @@ import {
 } from 'lucide-react';
 import SiteHeader from './SiteHeader';
 import SiteFooter from './SiteFooter';
+import InsightsSlider from './InsightsSlider';
 import CustomCursor from './CustomCursor';
 import ParallaxMedia from './ParallaxMedia';
 import SplitTextReveal from './SplitTextReveal';
@@ -506,6 +507,10 @@ const AmericanLivescanCaseStudy: React.FC = () => {
           </div>
         </div>
       </section>
+
+      <div data-logo-dark className="relative">
+        <InsightsSlider currentPath="/case-studies/american-livescan" limit={3} />
+      </div>
 
       <SiteFooter />
     </div>

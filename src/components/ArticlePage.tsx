@@ -5,6 +5,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import SiteHeader from './SiteHeader';
 import SiteFooter from './SiteFooter';
 import HeroWebGLBackground from './HeroWebGLBackground';
+import InsightsSlider from './InsightsSlider';
 import './ArticlePage.css';
 import { trackCTA } from '../lib/analytics';
 import LeadMagnetCTA from './LeadMagnetCTA';
@@ -8438,33 +8439,9 @@ const ArticlePage: React.FC<ArticlePageProps> = ({ slug }) => {
         </aside>
       </div>
 
-      <section className="related">
-        <div className="related-inner">
-          <div className="related-head" data-anim="up">
-            <h2 className="display">Related <span className="accent">briefs.</span></h2>
-            <a href="/insights" className="text-link">
-              All insights
-              <svg viewBox="0 0 24 24" width="13" height="13" fill="none" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg>
-            </a>
-          </div>
-          <div className="related-grid" data-anim="stagger">
-            {relatedArticles.map((item) => {
-              const itemSlug = item.href.startsWith('/insights/') ? item.href.substring('/insights/'.length) : '';
-              const matchedArticle = itemSlug ? ARTICLES[itemSlug] : null;
-              const displayTitle = matchedArticle ? matchedArticle.title : item.title;
-              return (
-                <a key={item.href} href={item.href} className="rel-card" data-anim-child="true">
-                  <span className="rel-pill" style={item.category === 'Local SEO' ? { color: 'var(--green)', borderColor: 'rgba(47,93,80,0.45)' } : {}}>{item.category}</span>
-                  <h3>{displayTitle}</h3>
-                  <span className="text-link">Read more
-                    <svg viewBox="0 0 24 24" width="13" height="13" fill="none" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg>
-                  </span>
-                </a>
-              );
-            })}
-          </div>
-        </div>
-      </section>
+      <div data-logo-dark className="relative">
+        <InsightsSlider currentPath={`/insights/${slug}`} limit={3} title="Related briefs." />
+      </div>
 
       <SiteFooter />
     </div>

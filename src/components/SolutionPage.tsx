@@ -1,6 +1,7 @@
 import SiteHeader from "./SiteHeader";
 import HeroWebGLBackground from './HeroWebGLBackground';
 import SiteFooter from "./SiteFooter";
+import InsightsSlider from "./InsightsSlider";
 import React, { useEffect, useState, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -576,6 +577,10 @@ const SolutionPage: React.FC<{ path: string }> = ({ path }) => {
           </div>
         </div>
       </section>
+
+      <div data-logo-dark className="relative">
+        <InsightsSlider currentPath={path} limit={3} />
+      </div>
 
       <SiteFooter />
     </div>
