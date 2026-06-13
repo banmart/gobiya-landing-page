@@ -24,6 +24,270 @@ interface ArticleData {
 // Each article is statically registered here so we can do fast client-side
 // routing without a DB round-trip. Add new articles to this map.
 const ARTICLES: Record<string, ArticleData> = {
+  'multi-location-websites-for-franchises': {
+    slug: 'multi-location-websites-for-franchises',
+    title: 'Multi Location Websites for Franchises: The 2026 Web Architecture Playbook',
+    category: 'Local SEO',
+    readTime: '10 min read',
+    date: 'June 13, 2026',
+    image: '/images/article-multi-location-websites-franchises-thumbnail.webp',
+    heroAlt: 'A professional business and web engineering team reviewing multi-location subdirectory structures on a large studio screen.',
+    metaDescription: 'A technical guide to multi-location websites for franchises. How to configure subdirectory URLs, prevent page cannibalization, and establish secure SEO governance.',
+    content: (
+      <>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "What is the best website structure for a franchise with multiple locations?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "A single corporate domain with location subdirectories (brand.com/locations/city-name) is the consensus best structure for most franchises, especially those under ~100 locations. It consolidates the brand's domain authority so every location page benefits from it."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Why do franchise location pages fail to rank?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Almost always because they're templated, where only the city name, address, and phone are swapped in. Google detects this duplicate pattern and suppresses the pages. Aim for at least 40% unique, hyper-local content."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "How do I stop my franchise location pages from competing with each other?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "This is keyword cannibalization. Fix it with geographic specificity (targeting distinct served areas), differentiated local content, and a central locations hub page that links out to every individual location page."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Why is NAP consistency critical at franchise scale?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Name, Address, and Phone data must be identical everywhere. Variations confuse search engines, erode trust, and depress rankings across Google Search and Maps."
+                  }
+                }
+              ]
+            })
+          }}
+        />
+
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8 font-medium">
+          A multi-location website for a franchise is the architecture that lets one brand rank as many distinct local entities, and the central engineering problem is that those two goals pull against each other. The brand wants consolidated authority, consistent identity, and centralized control; each location needs to be the single best answer for "service + its city" without competing against its sibling locations or tripping Google's duplicate-content detection. Get the architecture right—single corporate domain, location subdirectories, genuinely unique local pages, correct structured data, and disciplined governance—and every new franchise location launches with the brand's accumulated authority behind it. Get it wrong—separate microsites, templated city-swap pages, fragmented ownership—and you fragment your authority across hundreds of weak pages that cannibalize each other and quietly fail to rank.
+        </p>
+
+        {/* ── TABLE OF CONTENTS ── */}
+        <details className="bg-gray-50 border border-gray-200 rounded-lg p-6 sm:p-8 my-10 sm:my-14 group" open>
+          <summary className="text-[14px] font-semibold uppercase tracking-wider text-gray-500 cursor-pointer list-none flex items-center justify-between">
+            Table of Contents
+            <svg className="w-4 h-4 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" /></svg>
+          </summary>
+          <ul className="mt-6 space-y-3.5 text-[15px] font-medium text-gray-900 border-t border-gray-200 pt-6">
+            {[
+              { id: 'snapshot', label: 'Franchise Multi-Location Web Architecture, 2026 update' },
+              { id: 'core-tension', label: 'The core tension: one brand, many local entities' },
+              { id: 'architecture', label: 'The architecture decision: subdirectory, subdomain, or separate domains' },
+              { id: 'location-pages', label: 'The location page: where franchises win or self-sabotage' },
+              { id: 'cannibalization', label: 'Stopping your own pages from competing' },
+              { id: 'technical', label: 'The technical layer: schema, NAP, and crawl at scale' },
+              { id: 'governance', label: 'Governance: the failure point nobody owns' },
+              { id: 'gobiya', label: 'How Gobiya builds franchise web infrastructure' },
+              { id: 'right-call', label: 'Making the right call on your franchise architecture' },
+              { id: 'faq', label: 'Frequently Asked Questions' }
+            ].map((item) => (
+              <li key={item.id}>
+                <a href={`#${item.id}`} className="hover:text-[#F26522] transition-colors flex items-center gap-2">
+                  <span className="text-[#F26522] text-xs">◆</span> {item.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </details>
+
+        <h2 id="snapshot" className="text-xl sm:text-2xl font-bold text-gray-900 mt-12 mb-6 font-display">
+          Franchise Multi-Location Web Architecture, 2026 update
+        </h2>
+        <ul className="list-disc pl-6 mb-8 text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 space-y-3">
+          <li><strong>One domain, subdirectories:</strong> The consensus 2026 architecture for franchise websites: a single corporate domain with location subdirectories (brand.com/locations/city), which consolidates authority so every location inherits the brand's domain strength instead of starting from zero on a separate site.</li>
+          <li><strong>40% unique minimum:</strong> Location pages without at least roughly 40% unique, hyper-local content tend to be suppressed or de-indexed, and templated "swap the city name" pages contribute to franchise SEO failure rates reported as high as 70–80% (industry analysis, 2026).</li>
+          <li><strong>32% of local rankings:</strong> The share of local pack rankings attributed to Google Business Profile signals, the single largest factor, meaning the website architecture and the GBP layer must be engineered together, not separately (2026 Local Search Ranking Factors).</li>
+        </ul>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          This is not a content problem you solve page by page; it's a systems problem you solve once, structurally, and then scale. The franchises that dominate local search in 2026 don't "do more SEO", they build a repeatable architecture, a consistent location-page system, an engineered GBP-and-schema layer, and clear governance over who owns what, then replicate it cleanly for every new market. This article walks the full build: the architecture decision and why subdirectories win for most franchises, what a location page must contain to escape the duplicate-content trap, how to stop your own pages from cannibalizing each other, the technical layer (LocalBusiness schema, NAP consistency, crawl efficiency at scale), and the governance failure that breaks more franchise SEO programs than any technical mistake.
+        </p>
+
+        <h2 id="core-tension" className="text-xl sm:text-2xl font-bold text-gray-900 mt-12 mb-6 font-display">
+          The core tension: one brand, many local entities
+        </h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          Every decision in franchise web architecture flows from one tension: national brand authority versus local relevance. Google's local algorithm ranks on proximity, relevance, and prominence, evaluated <em>separately for each location</em>, which means a franchise isn't running one SEO campaign, it's running one campaign per market, all sharing a brand. The brand side wants everything consolidated: one domain accumulating authority, one consistent identity, one control point. The local side needs the opposite: each location distinct enough that Google understands it as a real, separate entity serving a specific place, with its own proximity signals, its own reviews, and its own local proof.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          The franchises that fail resolve this tension by collapsing one side into the other, either rigid corporate templating that makes every location page identical (killing local relevance and triggering duplicate filters), or unmanaged local autonomy that fragments the brand into inconsistent hours, categories, and NAP data across the web. The franchises that win hold both: a consolidated authority structure with genuinely differentiated local entities inside it.
+        </p>
+
+        <div className="border-l-4 border-[#F26522] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
+          <img src="/images/steve-portrait.webp" alt="Steve Martin" className="w-12 h-12 object-cover border border-white/10 shrink-0" />
+          <div>
+            <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-1 font-sans">Steve's Take</p>
+            <p className="text-[15px] italic text-gray-700 leading-relaxed font-sans">
+              "A franchise isn't one brand competing in one market; it's one brand supporting dozens of distinct local operations. If your architecture doesn't mirror that structure, you will duplicate effort locally and dilute authority nationally."
+            </p>
+          </div>
+        </div>
+
+        <h2 id="architecture" className="text-xl sm:text-2xl font-bold text-gray-900 mt-12 mb-6 font-display">
+          The architecture decision: subdirectory, subdomain, or separate domains
+        </h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          The first and most consequential decision is URL architecture, and for most franchises the answer is settled. Three structures exist, and they are not equal.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          <strong>Subdirectories (brand.com/locations/city-name)</strong> are the consensus recommendation for franchises with fewer than roughly 100 locations, and often well beyond. The reason is authority consolidation: every location page lives under the main domain, so each one inherits the brand's accumulated domain authority and link equity rather than starting from scratch. Search Engine Journal's architecture analysis and essentially every 2026 franchise-SEO source converge here, subdirectories give crawlers the clearest path and give each location a meaningful ranking advantage on day one. For a franchise, where the whole value proposition is a known brand, this is almost always correct. Read our comprehensive analysis of <a href="/insights/multi-location-seo-website-structure" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">multi-location SEO website structure</a> to see how authority maps to these paths.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          <strong>Subdomains (city-name.brand.com)</strong> offer more local customization flexibility but are treated by search engines as more separate from the main domain, diluting the authority-sharing benefit and adding management complexity. They suit very large franchises with extensive, genuinely independent local marketing operations—the exception, not the default.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          <strong>Separate domains per franchisee</strong> are the structure to avoid unless contractually forced into them: they force every location to build authority from zero, fragment link-building, and multiply management cost. The one legitimate case is when independent franchisees are contractually permitted to run their own branded sites—a business-model constraint, not an SEO choice. When that's the reality, the architecture has to manage cross-linking and brand-entity consistency deliberately to recover some of the lost consolidation.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          A structural note that matters for franchises specifically: decide whether <em>location</em> or <em>service</em> is your primary dimension. Retail and most franchises are location-primary (/locations/phoenix), with services nested beneath each location; service businesses operating across cities may invert it (/phoenix/service). Choosing the wrong primary dimension builds cannibalization into the URL structure itself. See our blueprint on the <a href="/insights/best-website-structure-multiple-locations-different-cities" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">best website structure for multiple locations in different cities</a> for step-by-step routing details.
+        </p>
+
+        <h2 id="location-pages" className="text-xl sm:text-2xl font-bold text-gray-900 mt-12 mb-6 font-display">
+          The location page: where franchises win or self-sabotage
+        </h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          The single most common way franchise SEO fails is the templated location page: one master template with the city name, address, and phone swapped in, replicated across every market. From a distance it looks like coverage; to Google it's a pattern of near-duplicate pages with little unique value, detected quickly and suppressed. The data is stark: duplicate location pages contribute to franchise SEO failure rates reported as high as 70–80%, and pages without at least roughly 40% unique, hyper-local content often fail to rank or even index.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          The fix is genuine local differentiation on every page, and it doesn't require length: 300–400 words of real local information outperforms 2,000 words of templated corporate copy. What "genuinely local" means in practice: neighborhood and landmark references specific to that market (a franchise in Atlanta naming Buckhead and Decatur; the same brand in Phoenix naming Scottsdale and Tempe), location-specific services and hours, the local team, customer testimonials and reviews from that area, location-specific FAQs, and genuine community-involvement details. Each of these is both a relevance signal to Google and a trust signal to the human who's checking whether this is a real place near them. The corporate brand elements stay consistent (identity, core messaging, conversion structure); the local substance is unique per page. That combination—consistent shell, differentiated local content—is exactly the resolution of the core tension, expressed at the page level.
+        </p>
+
+        <h2 id="cannibalization" className="text-xl sm:text-2xl font-bold text-gray-900 mt-12 mb-6 font-display">
+          Stopping your own pages from competing
+        </h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          The subtler failure, even with unique content, is keyword cannibalization: two or more location pages targeting the same or nearly identical search terms, forcing Google to choose between your own pages and splitting their ranking strength. It's the predictable result of scale, and it has a structural fix. Start with geographic specificity, each page targets a clearly defined area (a specific city, neighborhood, or district) with no overlap in primary keywords; two locations in the same metro must be carved into distinct served areas rather than both chasing "[service] [metro]". Differentiate the content angle per page beyond geography (local partnerships, community events, location-specific FAQs, nearby landmarks), so even neighboring pages read as genuinely distinct. And build a central <em>locations hub</em> page that links out to every individual location page: this single architectural element helps Google understand the site's structure, distributes authority deliberately across the location pages, and reduces the ranking ambiguity that causes cannibalization. Internal linking, from the hub down and between genuinely related pages, is how authority is routed across a franchise site on purpose rather than left to chance.
+        </p>
+
+        <h2 id="technical" className="text-xl sm:text-2xl font-bold text-gray-900 mt-12 mb-6 font-display">
+          The technical layer: schema, NAP, and crawl at scale
+        </h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          Three technical systems determine whether a well-structured franchise site actually performs, and all three get harder with every location added.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          <strong>LocalBusiness schema</strong> is non-negotiable in 2026, and increasingly so as search shifts toward AI-generated answers. Structured data is how each location's name, address, phone, hours, and geo-coordinates are delivered to search engines and the AI models now constructing direct answers, and it's how the franchise brand entity is connected to each individual location entity. As generative search grows, the goal moves from merely ranking to being the structured, trusted source an AI cites, which makes correct, per-location LocalBusiness schema a foundational requirement rather than a nice-to-have.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          <strong>NAP(W) consistency</strong>—Name, Address, Phone, Website, identical across every page, every Google Business Profile, and every external citation—is repeatedly named the single most critical local-SEO element. Even minor variations (St. vs Street, Suite vs Ste., a national 800 number instead of the local line) confuse search engines, erode trust, and depress rankings. At franchise scale, where data is entered by many hands across many systems, NAP consistency is an active discipline, not a one-time setup, and inconsistency is one of the most common silent killers of franchise local visibility. Learn more about these variables in our guide <a href="/insights/local-seo-explained" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">local SEO explained</a> for a breakdown of GBP citation layers.
+        </p>
+
+        <div className="my-10" data-anim="fade">
+          <img 
+            src="/images/article-multi-location-websites-franchises-secondary.webp" 
+            alt="Google Business Profile and custom analytics workstation showing local search dashboard" 
+            className="w-full h-auto rounded-lg border border-gray-200 object-cover shadow-sm"
+          />
+          <p className="text-[14px] text-gray-500 italic mt-3 text-center font-sans">
+            Figure 1: Perfect alignment between schema, citation data, and the Google Business Profile layer drives local pack prominence.
+          </p>
+        </div>
+
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          <strong>Crawl and performance at scale</strong> round it out: hundreds of location pages must stay fast, mobile-first (local queries are overwhelmingly mobile, and mobile-first is now the baseline for local ranking), and efficiently crawlable, with URL and internal-link structures that distribute authority and avoid location cannibalization at the architecture level. And because GBP signals account for roughly 32% of local pack rankings, the single largest factor, the website and the Google Business Profile layer have to be engineered as one system: the site's location data, schema, and the corresponding GBP must agree perfectly, or the largest ranking lever works against you. Read our playbook on <a href="/insights/google-business-profile-optimization" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">Google Business Profile optimization</a> for verification protocols.
+        </p>
+
+        <h2 id="governance" className="text-xl sm:text-2xl font-bold text-gray-900 mt-12 mb-6 font-display">
+          Governance: the failure point nobody owns
+        </h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          The failure that breaks more franchise SEO programs than any technical mistake is organizational, not technical: fragmentation of ownership. In a typical franchise, one team owns the website, another manages the Google Business Profiles, a third controls analytics, regional staff edit listings directly, and agencies patch issues after the fact, so nobody owns the full system. The result is the same brand presenting different hours, categories, phone numbers, and service descriptions across the web, exactly the NAP and consistency failures that suppress rankings, produced not by ignorance but by structure.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          Sustainable franchise visibility comes from a repeatable system with clear ownership: centralized strategy and standards (architecture, schema, NAP format, page templates, review processes) with disciplined local execution (the genuinely local content and community signals each market needs). It also requires tiered reporting: corporate needs national, cross-location visibility while each local owner needs to track their own calls, direction requests, and local keyword performance. The franchises that scale are the ones that build this system once and govern it consistently; the ones that "do more SEO" without fixing ownership keep paying for effort that fragmentation quietly undoes.
+        </p>
+
+        <h2 id="gobiya" className="text-xl sm:text-2xl font-bold text-gray-900 mt-12 mb-6 font-display">
+          How Gobiya builds franchise web infrastructure
+        </h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          Gobiya approaches franchise and multi-location websites as the systems problem they are—engineered architecture rather than replicated templates. The build starts with the right foundation: a single-domain, subdirectory architecture on <a href="/capabilities/web-development" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">fast, modern web infrastructure</a> that consolidates brand authority while giving every location its own genuinely differentiated, schema-backed page, structured for the location-hub-and-spoke internal linking that prevents cannibalization.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          That architecture is wired into <a href="/capabilities/native-crm" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">native CRM and attribution</a> so corporate gets national, cross-location pipeline visibility while each location's calls, form fills, and direction requests are tracked to source—the tiered reporting franchise governance requires. And it's engineered for <a href="/capabilities/seo-discoverability" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">search and AI-engine discoverability</a>, the LocalBusiness schema, NAP consistency, and entity structure that decide whether each location ranks in the map pack and gets cited in AI answers.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          The multi-location pattern is proven in work like <a href="/case-studies/smile-center-dentistry" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">SmileCenter Dentistry's multi-office build</a> (5x patient inquiries, 2.8x search impressions across locations). If you're scaling a franchise and want the architecture audited or built to rank every location, <a href="/book" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">book a strategy call</a> and request a multi-location technical audit.
+        </p>
+
+        <h2 id="right-call" className="text-xl sm:text-2xl font-bold text-gray-900 mt-12 mb-6 font-display">
+          Making the right call on your franchise architecture
+        </h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          So how do you build a multi-location website for a franchise that ranks every location? Consolidate on one domain with location subdirectories so every page inherits brand authority; make each location page genuinely local (40%+ unique content, neighborhoods, local team, area reviews, location FAQs) so it escapes the duplicate-content trap; enforce geographic specificity and a central locations hub so your pages stop competing with each other; engineer the technical layer (per-location LocalBusiness schema, absolute NAP consistency, mobile-first speed, GBP-website alignment) because it carries a third of your local rankings; and govern the whole thing as one owned system rather than a fragmented set of teams. Build it once, structurally, then replicate cleanly for every new market.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          Two decisions matter most. First: whether you build a consolidated, single-domain architecture with genuinely differentiated local pages, or fragment into microsites and templated city-swap pages that split your authority and trip duplicate filters—this choice is hard to reverse later and largely determines the ceiling on every location's performance. Second: whether one owner governs the full system—architecture, content standards, schema, NAP, GBP, and reporting—as a repeatable whole, or whether ownership stays fragmented across teams that each touch part of it, which is where the same brand ends up with three different phone numbers online and nobody accountable for the rankings it costs. If your business targets local searchers in competitive markets, review our playbook on <a href="/insights/local-seo" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">local SEO</a> to capture geo-targeted search volume.
+        </p>
+
+        {/* ── FAQ ACCORDION SECTION ── */}
+        <h2 id="faq" className="text-xl sm:text-2xl font-bold text-gray-900 mt-12 mb-6 font-display">
+          Frequently asked questions about franchise websites
+        </h2>
+        <div className="space-y-6 my-10 border-t border-gray-200 pt-6">
+          {[
+            {
+              q: "What is the best website structure for a franchise with multiple locations?",
+              a: "A single corporate domain with location subdirectories (brand.com/locations/city-name) is the consensus best structure for most franchises, especially those under ~100 locations. It consolidates the brand's domain authority so every location page benefits from it, gives crawlers a clear path, and is far easier and cheaper to manage than separate sites. Subdomains suit very large franchises with independent local operations; separate domains per franchisee should be avoided unless contractually required."
+            },
+            {
+              q: "Why do franchise location pages fail to rank?",
+              a: "Almost always because they're templated, the same master page with only the city name, address, and phone swapped in. Google detects the near-duplicate pattern and suppresses the pages. Duplicate location pages contribute to franchise SEO failure rates reported as high as 70–80%, and pages without at least ~40% unique, hyper-local content often fail to rank or index. Each page needs genuinely local content to survive."
+            },
+            {
+              q: "How much unique content does each location page need?",
+              a: "Aim for at least roughly 40% unique, hyper-local content per page, but length matters less than authenticity: 300–400 words of real local information (neighborhoods, landmarks, local team, area-specific services, local reviews and FAQs) outperforms 2,000 words of templated corporate copy. The corporate shell stays consistent; the local substance must be unique to each market."
+            },
+            {
+              q: "How do I stop my franchise location pages from competing with each other?",
+              a: "This is keyword cannibalization. Fix it with geographic specificity, each page targets a clearly defined city, neighborhood, or district with no primary-keyword overlap, differentiate each page's content angle beyond geography (local partnerships, events, FAQs, landmarks), and build a central locations hub page that links to every location page. The hub helps Google understand your architecture and routes authority deliberately, reducing ranking ambiguity."
+            },
+            {
+              q: "Should franchises use subdirectories or subdomains?",
+              a: "Subdirectories (brand.com/locations/city) for most franchises, because they keep all location pages under one domain and consolidate authority. Subdomains (city.brand.com) are treated as more separate, dilute the shared authority, and add management complexity, they're justified mainly for very large franchises with genuinely independent local marketing. The default answer for a franchise leveraging a known brand is subdirectories."
+            },
+            {
+              q: "What technical SEO matters most for multi-location franchises?",
+              a: "Three systems: per-location LocalBusiness schema (so each location is a structured entity search engines and AI models can cite), absolute NAP(W) consistency across every page, Google Business Profile, and citation, and mobile-first site speed across all location pages. Because GBP signals drive roughly 32% of local pack rankings, the website's location data and schema must align perfectly with each Google Business Profile, the two are one system, not two."
+            },
+            {
+              q: "Why is NAP consistency so important at franchise scale?",
+              a: "Name, Address, Phone, Website data must be identical everywhere, and it's repeatedly cited as the single most critical local-SEO element. Even minor variations (Street vs St., a national 800 number vs the local line) confuse search engines and depress rankings. At franchise scale, where many people across many systems enter this data, inconsistency creeps in constantly, making NAP an ongoing governance discipline rather than a one-time task."
+            },
+            {
+              q: "Does multi-location architecture affect visibility in AI search?",
+              a: "Increasingly, yes. AI-generated search answers rely heavily on structured data and entity clarity, so correct per-location LocalBusiness schema, consistent NAP, and a clean brand-to-location entity structure are what let an AI model identify and cite a specific location as the trusted answer. The goal is shifting from ranking in a list to being the structured source AI uses to construct its direct answer, which raises the stakes on exactly the technical architecture this guide describes."
+            }
+          ].map((item, idx) => (
+            <div key={idx} className="border-b border-gray-200 pb-4">
+              <h3 className="text-[18px] font-semibold text-gray-900 mb-2 font-sans">{item.q}</h3>
+              <p className="text-[16px] text-gray-700 leading-[1.6]">{item.a}</p>
+            </div>
+          ))}
+        </div>
+      </>
+    )
+  },
   'how-to-apply-behavioral-psychology-principles-to-high-ticket-b2b-landing-page-wireframes-to-decrease-friction': {
     slug: 'how-to-apply-behavioral-psychology-principles-to-high-ticket-b2b-landing-page-wireframes-to-decrease-friction',
     title: 'How to Apply Behavioral Psychology Principles to High Ticket B2B Landing Page Wireframes to Decrease Friction',
@@ -7153,6 +7417,26 @@ const ARTICLES: Record<string, ArticleData> = {
 
 // ─── Related Articles per slug ────────────────────────────────────────────────
 const RELATED_ARTICLES_MAP: Record<string, { href: string; category: string; title: string; image: string }[]> = {
+  'multi-location-websites-for-franchises': [
+    {
+      href: '/insights/multi-location-seo-website-structure',
+      category: 'Local SEO',
+      title: 'Multi-Location SEO Website Structure: SUBDIRECTORY vs SUBDOMAIN vs Multi-Domain',
+      image: '/images/article-multi-location-seo-website-structure.webp',
+    },
+    {
+      href: '/insights/best-website-structure-multiple-locations-different-cities',
+      category: 'Local SEO',
+      title: 'Best Website Structure for Multiple Locations in Different Cities',
+      image: '/images/article-multi-city-website-structure.webp',
+    },
+    {
+      href: '/insights/local-seo-explained',
+      category: 'Local SEO',
+      title: 'Local SEO Explained: How to Optimize Your Google Business Profile',
+      image: '/images/article-local-seo-explained.png',
+    }
+  ],
   'how-to-apply-behavioral-psychology-principles-to-high-ticket-b2b-landing-page-wireframes-to-decrease-friction': [
     {
       href: '/insights/seo-for-b2b-lead-generation',
@@ -7869,25 +8153,25 @@ const ArticlePage: React.FC<ArticlePageProps> = ({ slug }) => {
         .from('.art-byline', { opacity: 0 }, 0.45)
         .from('.brief-strip', { opacity: 0 }, 0.55);
 
-      const sc = (el) => ({ trigger: el, start: 'top 87%' });
+      const sc = (el: any) => ({ trigger: el, start: 'top 87%' });
       
-      gsap.utils.toArray('[data-anim="up"]').forEach((el) => {
+      gsap.utils.toArray('[data-anim="up"]').forEach((el: any) => {
         gsap.from(el, { scrollTrigger: sc(el), y: 26, opacity: 0, duration: 1.1, ease });
       });
       
-      gsap.utils.toArray('[data-anim="fade"]').forEach((el) => {
+      gsap.utils.toArray('[data-anim="fade"]').forEach((el: any) => {
         gsap.from(el, { scrollTrigger: sc(el), opacity: 0, duration: 1.1, ease });
       });
       
-      gsap.utils.toArray('[data-anim="stagger"]').forEach((parent) => {
+      gsap.utils.toArray('[data-anim="stagger"]').forEach((parent: any) => {
         const kids = parent.querySelectorAll('[data-anim-child]');
         if (!kids.length) return;
         gsap.from(kids, { scrollTrigger: sc(parent), y: 22, opacity: 0, duration: 1.05, ease, stagger: 0.1 });
       });
 
-      document.querySelectorAll('.magnetic').forEach((btn) => {
+      document.querySelectorAll('.magnetic').forEach((btn: any) => {
         const strength = 10;
-        const move = (e) => {
+        const move = (e: any) => {
           const r = btn.getBoundingClientRect();
           const x = (e.clientX - r.left - r.width / 2) / (r.width / 2);
           const y = (e.clientY - r.top - r.height / 2) / (r.height / 2);
@@ -7903,7 +8187,7 @@ const ArticlePage: React.FC<ArticlePageProps> = ({ slug }) => {
     return () => ctx.revert();
   }, []);
 
-  const handleMagnetSubmit = async (e) => {
+  const handleMagnetSubmit = async (e: any) => {
     e.preventDefault();
     const form = e.currentTarget;
     const first = form.elements.namedItem('m-first').value.trim();

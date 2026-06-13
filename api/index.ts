@@ -407,6 +407,11 @@ const metadataMap: Record<string, SEOMetadata> = {
     description: 'Learn how to apply behavioral psychology principles like the Fogg Behavior Model and Hick\'s Law to high-ticket B2B landing page wireframes to decrease friction.',
     image: '/images/article-behavioral-psychology-b2b-landing-page-wireframes-thumbnail.webp'
   },
+  '/insights/multi-location-websites-for-franchises': {
+    title: 'Multi Location Websites for Franchises: The 2026 Playbook | Gobiya',
+    description: 'A technical guide to multi-location websites for franchises. Learn subdirectory URL configuration, page cannibalization avoidance, and SEO governance.',
+    image: '/images/article-multi-location-websites-franchises-thumbnail.webp'
+  },
   '/insights/dental-seo-agency': {
     title: 'Dental SEO Agency Evaluation Checklist & KPIs | Gobiya',
     description: 'Avoid costly hiring mistakes. Use our comprehensive evaluation checklist for dental SEO agencies, covering contract traps, KPIs, and case study audits.',
