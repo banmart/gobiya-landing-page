@@ -19,6 +19,7 @@ import AdminDashboard from './components/AdminDashboard';
 import ContactPage from './components/ContactPage';
 import OnPageSeoLosAngelesPage from './components/OnPageSeoLosAngelesPage';
 import SEO from './components/SEO';
+import GlobalWebGLBackground from './components/GlobalWebGLBackground';
 
 // Safe storage helper to prevent crashes in sandboxed environments/iframes or strict privacy modes
 const safeStorage = {
@@ -260,6 +261,7 @@ function App({ url }: AppProps) {
   return (
     <>
       <SEO path={normalizedPath} />
+      <GlobalWebGLBackground />
       {/* Global Noise Overlay */}
       <div className="noise-overlay" />
       
