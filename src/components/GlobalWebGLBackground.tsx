@@ -28,9 +28,8 @@ const GlobalWebGLBackground: React.FC = () => {
     gl.canvas.style.width = '100vw';
     gl.canvas.style.height = '100vh';
     gl.canvas.style.pointerEvents = 'none';
-    gl.canvas.style.zIndex = '99';
-    gl.canvas.style.mixBlendMode = 'difference';
-    gl.canvas.style.opacity = '0.85'; // High visibility for inversion effect
+    gl.canvas.style.zIndex = '-5';
+    gl.canvas.style.opacity = '1.0'; // Use shader alpha directly for better color rendering
     container.appendChild(gl.canvas);
 
     const camera = new Camera(gl, { fov: 45 });
@@ -142,13 +141,12 @@ const GlobalWebGLBackground: React.FC = () => {
         vec2 pc = gl_PointCoord - vec2(0.5);
         if (dot(pc, pc) > 0.25) discard;
         
-        // White base color that inverts the light page background to dark charcoal/navy
-        vec3 colorBase = vec3(0.95, 0.95, 0.95);
-        // Orange highlight on hover (inverts to glowing cyan/sky-blue on light background)
+        // Blend Gobiya green (#2F5D50) and highlighting hover orange (#F26522) near cursor
+        vec3 colorGreen = vec3(0.24, 0.47, 0.38);
         vec3 colorOrange = vec3(0.95, 0.40, 0.13);
-        vec3 finalColor = mix(colorBase, colorOrange, vDistToMouse * 0.75);
+        vec3 finalColor = mix(colorGreen, colorOrange, vDistToMouse * 0.6);
         
-        gl_FragColor = vec4(finalColor, 0.9); 
+        gl_FragColor = vec4(finalColor, 0.35); 
       }
     `;
 
@@ -157,12 +155,12 @@ const GlobalWebGLBackground: React.FC = () => {
       varying float vDistToMouse;
       
       void main() {
-        // White/light-grey lines (invert to dark charcoal lines on light background)
-        vec3 colorBase = vec3(0.9, 0.9, 0.9);
+        // Subtle line color that gets slightly brighter/oranger near cursor
+        vec3 colorGreen = vec3(0.24, 0.47, 0.38);
         vec3 colorOrange = vec3(0.95, 0.40, 0.13);
-        vec3 finalColor = mix(colorBase, colorOrange, vDistToMouse * 0.6);
+        vec3 finalColor = mix(colorGreen, colorOrange, vDistToMouse * 0.5);
         
-        gl_FragColor = vec4(finalColor, 0.28); 
+        gl_FragColor = vec4(finalColor, 0.12); 
       }
     `;
 
@@ -272,7 +270,7 @@ const GlobalWebGLBackground: React.FC = () => {
     };
   }, []);
 
-  return <div ref={containerRef} style={{ position: 'fixed', inset: 0, pointerEvents: 'none', zIndex: 99 }} />;
+  return <div ref={containerRef} style={{ position: 'fixed', inset: 0, pointerEvents: 'none', zIndex: -5 }} />;
 };
 
 export default GlobalWebGLBackground;

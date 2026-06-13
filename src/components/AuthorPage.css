@@ -2,7 +2,7 @@
    GOBIYA — Signal Forensics design system (Author Profile)
    ============================================================ */
 .author-page {
-  background: var(--paper);
+  background: transparent;
   color: var(--ink);
   font-family: var(--font-body);
   font-weight: 300;

@@ -3,7 +3,7 @@
    ============================================================ */
 
 .onpage-page {
-  background: var(--paper);
+  background: transparent;
   color: var(--ink);
   font-family: var(--font-body);
   min-height: 100vh;
