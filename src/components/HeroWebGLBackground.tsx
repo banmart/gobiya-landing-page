@@ -3,7 +3,7 @@ import DeferredShader, { Swirl, ChromaFlow, FlutedGlass, FilmGrain } from './Def
 
 const HeroWebGLBackground: React.FC = () => {
   return (
-    <div className="absolute inset-0 pointer-events-none z-[-1] overflow-hidden opacity-85 [&>div]:w-full [&>div]:h-full [&_canvas]:w-full [&_canvas]:h-full [&_canvas]:object-cover">
+    <div className="absolute inset-0 pointer-events-none z-[1] overflow-hidden opacity-85 [&>div]:w-full [&>div]:h-full [&_canvas]:w-full [&_canvas]:h-full [&_canvas]:object-cover">
       <DeferredShader>
         <Swirl colorA="#EFEDE5" colorB="#E7E4D9" detail={1.5} />
         <ChromaFlow baseColor="#EFEDE5" downColor="#2F5D50" leftColor="#2F5D50" rightColor="#2E8C68" upColor="#2F5D50" momentum={12} radius={3.0} />

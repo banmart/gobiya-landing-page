@@ -245,6 +245,7 @@
   }
   .hero-inner {
     position:relative;
+    z-index: 2;
     max-width:var(--max-w); margin:0 auto;
     display:grid; grid-template-columns:1.02fr .98fr;
     min-height:100svh;
