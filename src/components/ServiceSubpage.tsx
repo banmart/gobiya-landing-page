@@ -14,8 +14,9 @@ import InsightsGrid from './InsightsGrid';
 import CaseStudiesPinned from './CaseStudiesPinned';
 import SatisfiedClients from './SatisfiedClients';
 import RoiCalculator from './RoiCalculator';
-import Header from './Header';
-import Footer from './Footer';
+import SiteHeader from './SiteHeader';
+import SiteFooter from './SiteFooter';
+import HeroWebGLBackground from './HeroWebGLBackground';
 
 gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
 
@@ -719,31 +720,23 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
   const config = getPageConfig(path);
 
   return (
-    <div className="min-h-screen bg-[#050505] text-white relative font-sans selection:bg-[#F26522] selection:text-white page-wrapper">
+    <div className="min-h-screen bg-[#EFEDE5] text-[#15130E] relative font-sans selection:bg-[#F26522] selection:text-white page-wrapper">
       <CustomCursor />
 
       {/* HERO SECTION */}
-      {/* Reduced height (h-[60vh] instead of h-screen) and removed top padding to bring content close to header */}
-      <section className="relative w-full h-[65vh] min-h-[480px] bg-[#050505] overflow-hidden flex flex-col justify-center cursor-default">
+      <section className="hero relative w-full h-[65vh] min-h-[480px] overflow-hidden flex flex-col justify-center cursor-default">
         {/* Shaders Background */}
-        <div className="absolute inset-0 z-10 pointer-events-none w-full h-full [&>div]:w-full [&>div]:h-full [&_canvas]:w-full [&_canvas]:h-full [&_canvas]:object-cover opacity-85">
-          <DeferredShader>
-            <Swirl colorA="#050505" colorB="#0f0f0f" detail={1.7} />
-            <ChromaFlow baseColor="#050505" downColor="#f26522" leftColor="#f26522" rightColor="#f26522" upColor="#f26522" momentum={13} radius={3.5} />
-            <FlutedGlass aberration={0.61} angle={31} frequency={8} highlight={0.12} highlightSoftness={0} lightAngle={-90} refraction={4} shape="rounded" softness={1} speed={0.15} />
-            <FilmGrain strength={0.05} />
-          </DeferredShader>
-        </div>
+        <HeroWebGLBackground />
 
         {/* Navigation */}
-        <Header theme="dark" />
+        <SiteHeader />
 
         {/* Hero Content - Adjusted margins/padding to remove large empty vertical space */}
         <div className="relative z-20 max-w-[1440px] w-full mx-auto flex flex-col justify-center px-5 sm:px-8 lg:px-12 pt-16 pb-0">
-          <p className="text-[13px] sm:text-[14px] text-gray-400 tracking-wide mb-4 uppercase font-medium">
+          <p className="text-[13px] sm:text-[14px] text-[#2F5D50] tracking-wide mb-4 uppercase font-medium">
             {config.subtitle}
           </p>
-          <h1 className="text-[clamp(1.5rem,5.5vw,3.2rem)] sm:text-[clamp(1.8rem,4.5vw,3.8rem)] font-medium leading-[1.15] tracking-[-0.03em] text-white max-w-[1200px]">
+          <h1 className="text-[clamp(1.5rem,5.5vw,3.2rem)] sm:text-[clamp(1.8rem,4.5vw,3.8rem)] font-medium leading-[1.15] tracking-[-0.03em] text-[#15130E] max-w-[1200px]">
             {config.title.substring(0, config.title.lastIndexOf(' ')+1)}
             <RotatingText
               texts={config.rotatingWords}
@@ -758,7 +751,7 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
               rotationInterval={3000}
             />
           </h1>
-          <p className="mt-6 text-[15px] sm:text-[17px] text-gray-400 max-w-[800px] leading-relaxed">
+          <p className="mt-6 text-[15px] sm:text-[17px] text-[#5B564C] max-w-[800px] leading-relaxed">
             {config.outcomeMessage}
           </p>
           <div className="mt-8 flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-5">
@@ -801,19 +794,19 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
 
       {/* SECTION: INTRO CONTENT */}
       {path !== '/insights' && path !== '/contact' && path !== '/services' && path !== '/company/approach' && path !== '/company/success-stories' && (
-        <section className="bg-[#050505] text-white pt-16 sm:pt-20 lg:pt-32 pb-12 sm:pb-16 lg:pb-24 overflow-hidden w-full max-w-[1440px] mx-auto">
+        <section className="bg-[#EFEDE5] text-[#15130E] pt-16 sm:pt-20 lg:pt-32 pb-12 sm:pb-16 lg:pb-24 overflow-hidden w-full max-w-[1440px] mx-auto border-t border-[#D3CEC0]">
           <div className="px-5 sm:px-8 lg:px-12 flex items-center gap-3 mb-6 sm:mb-8">
             <div className="w-6 h-6 sm:w-7 sm:h-7 bg-[#F26522] text-white text-[11px] sm:text-[12px] font-semibold flex items-center justify-center">2</div>
-            <div className="text-[12px] sm:text-[13px] font-medium text-white border border-white/20 px-3 sm:px-4 py-1 sm:py-1.5">Context & Methodology</div>
+            <div className="text-[12px] sm:text-[13px] font-medium text-[#2F5D50] border border-[#D3CEC0] px-3 sm:px-4 py-1 sm:py-1.5">Context & Methodology</div>
           </div>
           
           <div className="px-5 sm:px-8 lg:px-12">
-            <h2 className="text-[clamp(1.5rem,4vw,3.2rem)] font-medium leading-[1.12] tracking-[-0.02em] text-white mb-12 sm:mb-16 lg:mb-28 max-w-4xl">
+            <h2 className="text-[clamp(1.5rem,4vw,3.2rem)] font-medium leading-[1.12] tracking-[-0.02em] text-[#15130E] mb-12 sm:mb-16 lg:mb-28 max-w-4xl font-display">
               {config.introHeading}
             </h2>
 
             <div className="block lg:hidden">
-              <p className="text-[15px] sm:text-[17px] leading-[1.6] font-medium text-gray-300 mb-6">
+              <p className="text-[15px] sm:text-[17px] leading-[1.6] font-medium text-[#5B564C] mb-6">
                 {config.introParagraph}
               </p>
               <a
@@ -832,10 +825,10 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
                   <ArrowRight className="w-4 h-4 text-[#F26522] transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-rotate-45" />
                 </div>
               </a>
-              <div className="mt-4 flex items-center gap-3 bg-white/5 border border-white/10 hover:bg-white/10 transition-shadow duration-300 px-3 py-2 cursor-pointer max-w-fit">
+              <div className="mt-4 flex items-center gap-3 bg-[#E7E4D9]/50 border border-[#D3CEC0] hover:bg-[#E7E4D9] transition-shadow duration-300 px-3 py-2 cursor-pointer max-w-fit mb-6">
                 <RotatingAILogos />
-                <span className="text-[13px] sm:text-[14px] font-medium text-white">Certified Partner</span>
-                <span className="text-[10px] sm:text-[11px] bg-gray-900 text-white px-1.5 sm:px-2 py-0.5 rounded">Featured</span>
+                <span className="text-[13px] sm:text-[14px] font-medium text-[#15130E]">Certified Partner</span>
+                <span className="text-[10px] sm:text-[11px] bg-[#15130E] text-white px-1.5 sm:px-2 py-0.5 rounded">Featured</span>
               </div>
               <div className="flex flex-col sm:flex-row gap-4 sm:gap-5 w-full">
                 <ParallaxMedia type="video" src={config.introVideo1} autoPlay muted loop playsInline className="w-full sm:w-[45%] aspect-[438/346]" />
@@ -848,7 +841,7 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
                 <ParallaxMedia type="video" src={config.introVideo1} autoPlay muted loop playsInline className="w-full aspect-[438/346]" />
               </div>
               <div className="self-start flex flex-col items-start justify-start pt-2">
-                <p className="text-[16px] xl:text-[18px] leading-[1.65] font-medium text-gray-300 mb-8 max-w-[90%]" style={{ contentVisibility: 'auto' }}>
+                <p className="text-[16px] xl:text-[18px] leading-[1.65] font-medium text-[#5B564C] mb-8 max-w-[90%]" style={{ contentVisibility: 'auto' }}>
                   {config.introParagraph}
                 </p>
                 <a
@@ -860,17 +853,17 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
                   className="group flex items-center bg-[#F26522] hover:bg-[#e05a1a] text-white pl-6 pr-2 py-2 transition-colors duration-300"
                 >
                   <div className="flex flex-col overflow-hidden h-[20px] justify-start items-start relative mr-3">
-                    <span className="text-[14px] font-medium leading-[20px] transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-translate-y-full">{config.ctaText}</span>
-                    <span className="text-[14px] font-medium leading-[20px] absolute top-full transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-translate-y-full">{config.ctaText}</span>
+                     <span className="text-[14px] font-medium leading-[20px] transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-translate-y-full">{config.ctaText}</span>
+                     <span className="text-[14px] font-medium leading-[20px] absolute top-full transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-translate-y-full">{config.ctaText}</span>
                   </div>
                   <div className="w-8 h-8 bg-white flex items-center justify-center">
                     <ArrowRight className="w-4 h-4 text-[#F26522] transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-rotate-45" />
                   </div>
                 </a>
-                <div className="mt-4 flex items-center gap-3 bg-white/5 border border-white/10 hover:bg-white/10 transition-shadow duration-300 px-3 py-2 cursor-pointer max-w-fit">
+                <div className="mt-4 flex items-center gap-3 bg-[#E7E4D9]/50 border border-[#D3CEC0] hover:bg-[#E7E4D9] transition-shadow duration-300 px-3 py-2 cursor-pointer max-w-fit">
                   <RotatingAILogos />
-                  <span className="text-[13px] sm:text-[14px] font-medium text-white">Certified Partner</span>
-                  <span className="text-[10px] sm:text-[11px] bg-gray-900 text-white px-1.5 sm:px-2 py-0.5 rounded">Featured</span>
+                  <span className="text-[13px] sm:text-[14px] font-medium text-[#15130E]">Certified Partner</span>
+                  <span className="text-[10px] sm:text-[11px] bg-[#15130E] text-white px-1.5 sm:px-2 py-0.5 rounded">Featured</span>
                 </div>
               </div>
               <div className="self-end">
@@ -1672,7 +1665,7 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
       )}
 
       {/* ── FOOTER ── */}
-      <Footer />
+      <SiteFooter />
 
     </div>
   );
