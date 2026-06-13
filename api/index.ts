@@ -1509,7 +1509,8 @@ export default async function handler(req: IncomingMessage, res: any) {
     let secondarySchemaTag = '';
     if (pathname.startsWith('/insights/')) {
       const slug = pathname.substring('/insights/'.length);
-      const publishDate = (slug === 'are-ai-search-engines-scraping-hidden-api-data-or-public-html-text-blocks' || slug === 'what-is-the-difference-between-google-knowledge-graph-optimization-and-geo') ? "2026-06-04" :
+      const publishDate = (slug === 'how-to-apply-behavioral-psychology-principles-to-high-ticket-b2b-landing-page-wireframes-to-decrease-friction') ? "2026-06-12" :
+                          (slug === 'are-ai-search-engines-scraping-hidden-api-data-or-public-html-text-blocks' || slug === 'what-is-the-difference-between-google-knowledge-graph-optimization-and-geo') ? "2026-06-04" :
                           (slug === 'what-data-sources-do-llms-crawl-to-verify-b2b-company-information') ? "2026-06-03" :
                           (slug === 'what-is-generative-engine-optimization-and-how-does-it-work') ? "2026-05-30" : 
                           (slug === 'what-is-the-difference-between-a-manual-action-and-an-algorithmic-penalty' || slug === 'chatgpt-vs-google-for-business-discovery') ? "2026-05-29" : 
