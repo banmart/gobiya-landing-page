@@ -389,6 +389,8 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
   // Map route path to specific page copy and outcome messages
   const getPageConfig = (currentPath: string): PageConfig => {
     const normalPath = currentPath.toLowerCase().replace(/\/$/, '');
+    const isServicesPath = normalPath.startsWith('/services/');
+    const accentClass = isServicesPath ? 'text-[#2F5D50]' : 'text-[#F26522]';
     
     const defaultPageConfig: PageConfig = {
       subtitle: 'Gobiya Services > Growth Solutions',
@@ -426,7 +428,7 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
             { href: '/capabilities/web-development', colSpan: 2, gradient: true, icon: <Code size={40} className="text-white mb-6 sm:mb-10 relative z-10" strokeWidth={1.5} />, title: 'Web Development', description: 'Custom React/Next.js/Vite sites engineered for sub-second page loads and flawless crawlability.' },
             { href: '/capabilities/native-crm', colSpan: 1, icon: <Database size={40} className="text-white mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'Native CRM', description: 'Pipeline and lead databases built directly into your codebase, ensuring 100% data ownership.' },
             { href: '/capabilities/seo-discoverability', colSpan: 2, icon: <Search size={40} className="text-white mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'SEO & Discoverability', description: 'Built-in crawler-readiness, semantic data mapping, and formatting designed for Google and AI citation eligibility.' },
-            { href: '/capabilities/blockchain-web3-development', colSpan: 1, icon: <Cpu size={40} className="text-[#F26522] mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'Blockchain & Web3 Dev', description: 'On-chain solutions, custom smart contracts, and decentralized application features integrated natively.' },
+            { href: '/capabilities/blockchain-web3-development', colSpan: 1, icon: <Cpu size={40} className={`${accentClass} mb-6 sm:mb-10`} strokeWidth={1.5} />, title: 'Blockchain & Web3 Dev', description: 'On-chain solutions, custom smart contracts, and decentralized application features integrated natively.' },
             { href: '/capabilities/ai-prospect-scraper', colSpan: 2, gradient: true, icon: <Search size={40} className="text-white mb-6 sm:mb-10 relative z-10" strokeWidth={1.5} />, title: 'AI Prospect Scraper', description: 'AI-powered scraper extracting NAP lead data and creating custom drip campaigns natively.' },
             { href: '/capabilities/ai-llms-business', colSpan: 1, icon: <Cpu size={40} className="text-white mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'AI & LLMs for Businesses', description: 'Secure custom LLM integrations and automated office workflows to eliminate daily SMB friction.' }
           ],
@@ -448,7 +450,7 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
           bentoDescription: 'We do not provide generic reports. We architect proprietary organic assets that command sector respect and generate predictable inbound revenue.',
           insightCategory: 'SEO',
           bentoCards: [
-            { href: '/services/seo', colSpan: 2, icon: <Search size={40} className="text-[#F26522] mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'Market Vector SEO', description: 'Hyper-local authority domination and signal optimization to capture high-intent search volumes.' },
+            { href: '/services/seo', colSpan: 2, icon: <Search size={40} className={`${accentClass} mb-6 sm:mb-10`} strokeWidth={1.5} />, title: 'Market Vector SEO', description: 'Hyper-local authority domination and signal optimization to capture high-intent search volumes.' },
             { href: '/services/geo-optimization', colSpan: 1, icon: <TrendingUp size={40} className="text-white mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'Algorithm Alignment', description: 'Data-driven signal processing to ensure your entities meet AI search intent.' },
             { href: '/google-penalty-recovery', colSpan: 1, icon: <ShieldAlert size={40} className="text-white mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'Trust Rebuilding', description: 'Reverse algorithmic drops by rebuilding robust E-E-A-T signals.' },
             { href: '/services/lead-generation', colSpan: 2, gradient: true, icon: <Network size={40} className="text-white mb-6 sm:mb-10 relative z-10" strokeWidth={1.5} />, title: 'Revenue Conversion', description: 'Turn recovered organic traffic directly into qualified inbound revenue pipeline.' }
@@ -472,7 +474,7 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
           bentoDescription: 'Stop relying on referrals. We architect outbound growth engines that consistently land meetings with your ideal customer profiles and drive enterprise conversions.',
           insightCategory: 'Strategy',
           bentoCards: [
-            { href: '/services/lead-generation', colSpan: 2, icon: <Network size={40} className="text-[#F26522] mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'Outbound Architecture', description: 'Cold email protocols and multi-channel prospecting flows built to scale without burning domains.' },
+            { href: '/services/lead-generation', colSpan: 2, icon: <Network size={40} className={`${accentClass} mb-6 sm:mb-10`} strokeWidth={1.5} />, title: 'Outbound Architecture', description: 'Cold email protocols and multi-channel prospecting flows built to scale without burning domains.' },
             { href: '/services/advertising', colSpan: 1, icon: <Target size={40} className="text-white mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'Intent Capture', description: 'Target decision-makers actively searching for enterprise solutions.' },
             { href: '/services/seo', colSpan: 1, icon: <BarChart size={40} className="text-white mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'Conversion Metrics', description: 'End-to-end CRM integration and revenue attribution tracking.' },
             { href: '/company/about', colSpan: 2, gradient: true, icon: <Briefcase size={40} className="text-white mb-6 sm:mb-10 relative z-10" strokeWidth={1.5} />, title: 'Enterprise Sales Engineering', description: 'We do not just generate leads. We engineer systems that book meetings with qualified enterprise buyers.' }
@@ -496,7 +498,7 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
           bentoDescription: 'Secure your place in generative AI responses. We engineer brand signals that force AI models to recognize you as the definitive market leader.',
           insightCategory: 'Strategy',
           bentoCards: [
-            { href: '/services/geo-optimization', colSpan: 2, icon: <TrendingUp size={40} className="text-[#F26522] mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'LLM Brand Surfacing', description: 'Optimize your digital footprint to be the primary recommended entity in ChatGPT and Claude responses.' },
+            { href: '/services/geo-optimization', colSpan: 2, icon: <TrendingUp size={40} className={`${accentClass} mb-6 sm:mb-10`} strokeWidth={1.5} />, title: 'LLM Brand Surfacing', description: 'Optimize your digital footprint to be the primary recommended entity in ChatGPT and Claude responses.' },
             { href: '/services/seo', colSpan: 1, icon: <Search size={40} className="text-white mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'AI Overviews', description: 'Capture top real estate in Google\'s generative AI search results.' },
             { href: '/services/lead-generation', colSpan: 1, icon: <PenTool size={40} className="text-white mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'Semantic PR', description: 'Seed your brand messaging directly into the training data pipelines.' },
             { href: '/insights', colSpan: 2, gradient: true, icon: <Network size={40} className="text-white mb-6 sm:mb-10 relative z-10" strokeWidth={1.5} />, title: 'Generative Search Dominance', description: 'The search paradigm has shifted. We ensure your business is not left behind by the AI transition.' }
@@ -518,7 +520,7 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
           bentoDescription: 'No templates. No bloated code. We build bespoke, high-performance web applications that convert visitors into revenue and pass Core Web Vitals with flying colors.',
           insightCategory: 'Technical',
           bentoCards: [
-            { href: '/services/web-design', colSpan: 2, icon: <PenTool size={40} className="text-[#F26522] mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'React UI/UX Engineering', description: 'Next.js architectures delivering seamless interactions and sub-second page loads.' },
+            { href: '/services/web-design', colSpan: 2, icon: <PenTool size={40} className={`${accentClass} mb-6 sm:mb-10`} strokeWidth={1.5} />, title: 'React UI/UX Engineering', description: 'Next.js architectures delivering seamless interactions and sub-second page loads.' },
             { href: '/services/seo', colSpan: 1, icon: <BarChart size={40} className="text-white mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'Core Web Vitals', description: 'Flawless performance metrics ensuring Google ranking boosts.' },
             { href: '/services/advertising', colSpan: 1, icon: <Target size={40} className="text-white mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'Landing Page CRO', description: 'High-converting funnels explicitly designed to lower acquisition costs.' },
             { href: '/company/success-stories', colSpan: 2, gradient: true, icon: <Briefcase size={40} className="text-white mb-6 sm:mb-10 relative z-10" strokeWidth={1.5} />, title: 'Conversion Architecture', description: 'Your site should be your best salesperson. We engineer platforms that maximize revenue yield from every visitor.' }
@@ -542,7 +544,7 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
           bentoDescription: 'We manage multi-channel ad pipelines that turn clicks into qualified leads. Our data-driven approach ensures every dollar spent drives measurable bottom-line growth.',
           insightCategory: 'Analytics',
           bentoCards: [
-            { href: '/services/advertising', colSpan: 2, icon: <Megaphone size={40} className="text-[#F26522] mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'Paid Search Domination', description: 'Google Ads strategies maximizing intent capture and aggressively lowering CPA.' },
+            { href: '/services/advertising', colSpan: 2, icon: <Megaphone size={40} className={`${accentClass} mb-6 sm:mb-10`} strokeWidth={1.5} />, title: 'Paid Search Domination', description: 'Google Ads strategies maximizing intent capture and aggressively lowering CPA.' },
             { href: '/services/lead-generation', colSpan: 1, icon: <Target size={40} className="text-white mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'LinkedIn B2B', description: 'Precision targeting for enterprise decision-makers.' },
             { href: '/services/web-design', colSpan: 1, icon: <BarChart size={40} className="text-white mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'Funnel Optimization', description: 'A/B testing and attribution modeling for max yield.' },
             { href: '/company/approach', colSpan: 2, gradient: true, icon: <TrendingUp size={40} className="text-white mb-6 sm:mb-10 relative z-10" strokeWidth={1.5} />, title: 'Predictable ROAS Pipeline', description: 'We track every dollar spent to pipeline generated, ensuring your ad budget drives undeniable business growth.' }
@@ -566,7 +568,7 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
           bentoDescription: 'We deploy emergency triage protocols for suppressed domains. From pruning toxic content to rebuilding E-E-A-T signals, we secure your path back to search dominance.',
           insightCategory: 'SEO',
           bentoCards: [
-            { href: '/google-penalty-recovery', colSpan: 2, icon: <ShieldAlert size={40} className="text-[#F26522] mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'Algorithmic Diagnostics', description: 'Deep-dive audits into Core Updates and HCU suppressions to identify the exact toxic vectors.' },
+            { href: '/google-penalty-recovery', colSpan: 2, icon: <ShieldAlert size={40} className={`${accentClass} mb-6 sm:mb-10`} strokeWidth={1.5} />, title: 'Algorithmic Diagnostics', description: 'Deep-dive audits into Core Updates and HCU suppressions to identify the exact toxic vectors.' },
             { href: '/services/seo', colSpan: 1, icon: <Search size={40} className="text-white mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'Manual Actions', description: 'Expert removal of spam penalties and toxic links.' },
             { href: '/services/web-design', colSpan: 1, icon: <PenTool size={40} className="text-white mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'Content Pruning', description: 'Architectural restructuring to purge unhelpful content.' },
             { href: '/company/success-stories', colSpan: 2, gradient: true, icon: <TrendingUp size={40} className="text-white mb-6 sm:mb-10 relative z-10" strokeWidth={1.5} />, title: 'Traffic Resurrection', description: 'We have recovered millions in lost pipeline revenue for brands devastated by Google updates.' }
@@ -590,7 +592,7 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
           bentoDescription: 'Operating primarily out of our headquarters, we service mid-market to enterprise brands that require high-performance technical SEO and scalable digital revenue engines.',
           insightCategory: 'Strategy',
           bentoCards: [
-            { href: '/about/steve-martin', colSpan: 2, icon: <Briefcase size={40} className="text-[#F26522] mb-6 sm:mb-10" strokeWidth={1.5} />, title: '25+ Years Experience', description: 'Bridging full-stack software engineering and organic search traffic acquisition since 2000.' },
+            { href: '/about/steve-martin', colSpan: 2, icon: <Briefcase size={40} className={`${accentClass} mb-6 sm:mb-10`} strokeWidth={1.5} />, title: '25+ Years Experience', description: 'Bridging full-stack software engineering and organic search traffic acquisition since 2000.' },
             { href: '/services/web-design', colSpan: 1, icon: <Code size={40} className="text-white mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'Core Dev Stack', description: 'React, Next.js, Vite, Tailwind CSS, Supabase, and custom AI chat/automation builds.' },
             { href: '/services/geo-optimization', colSpan: 1, icon: <Search size={40} className="text-white mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'AI-Era SEO', description: 'Schema markup, entity optimization, and structured citations for LLMs.' },
             { href: '/about/steve-martin', colSpan: 2, gradient: true, icon: <TrendingUp size={40} className="text-white mb-6 sm:mb-10 relative z-10" strokeWidth={1.5} />, title: 'Steve Martin Credentials', description: 'View professional experience, client projects, certifications, and background.' }
@@ -612,7 +614,7 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
           bentoDescription: 'Every case study details the exact technical failures we diagnosed, the precise architecture we implemented, and the final pipeline revenue generated.',
           insightCategory: 'Analytics',
           bentoCards: [
-            { href: '/google-penalty-recovery', colSpan: 2, icon: <ShieldAlert size={40} className="text-[#F26522] mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'Penalty Reversals', description: 'Complete restoration of index status and traffic following devastating Google Core Updates.' },
+            { href: '/google-penalty-recovery', colSpan: 2, icon: <ShieldAlert size={40} className={`${accentClass} mb-6 sm:mb-10`} strokeWidth={1.5} />, title: 'Penalty Reversals', description: 'Complete restoration of index status and traffic following devastating Google Core Updates.' },
             { href: '/services/seo', colSpan: 1, icon: <Search size={40} className="text-white mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'Traffic Scaling', description: '300%+ increases in high-intent organic search volume.' },
             { href: '/services/lead-generation', colSpan: 1, icon: <Target size={40} className="text-white mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'Pipeline Generation', description: 'Millions generated via automated B2B outbound sequences.' },
             { href: '/book', colSpan: 2, gradient: true, icon: <TrendingUp size={40} className="text-white mb-6 sm:mb-10 relative z-10" strokeWidth={1.5} />, title: 'Become Our Next Success', description: 'Stop losing revenue to competitors. Let us architect your dominance.' }
@@ -634,7 +636,7 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
           bentoDescription: 'From our initial forensic audit to the final deployment of your automated outbound systems, our methodology is ruthlessly optimized for ROI.',
           insightCategory: 'Technical',
           bentoCards: [
-            { href: '/services/seo', colSpan: 2, icon: <PenTool size={40} className="text-[#F26522] mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'Forensic Triage', description: 'We start by tearing down your current digital footprint to identify exactly where you are bleeding revenue.' },
+            { href: '/services/seo', colSpan: 2, icon: <PenTool size={40} className={`${accentClass} mb-6 sm:mb-10`} strokeWidth={1.5} />, title: 'Forensic Triage', description: 'We start by tearing down your current digital footprint to identify exactly where you are bleeding revenue.' },
             { href: '/services/geo-optimization', colSpan: 1, icon: <Network size={40} className="text-white mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'Entity Alignment', description: 'Structuring your brand natively for AI language models.' },
             { href: '/services/lead-generation', colSpan: 1, icon: <Target size={40} className="text-white mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'System Deployment', description: 'Launching customized outbound and inbound pipelines.' },
             { href: '/company/about', colSpan: 2, gradient: true, icon: <TrendingUp size={40} className="text-white mb-6 sm:mb-10 relative z-10" strokeWidth={1.5} />, title: 'Iterative Scaling', description: 'We continuously analyze data sets to widen the gap between you and your competitors.' }
@@ -656,7 +658,7 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
           bentoDescription: 'Consume the exact frameworks and strategies we utilize internally to drive millions in pipeline revenue for our partners.',
           insightCategory: 'SEO',
           bentoCards: [
-            { href: '/insights', colSpan: 2, icon: <BarChart size={40} className="text-[#F26522] mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'Algorithm Teardowns', description: 'Forensic breakdowns of Google updates and exactly what signals are currently being rewarded.' },
+            { href: '/insights', colSpan: 2, icon: <BarChart size={40} className={`${accentClass} mb-6 sm:mb-10`} strokeWidth={1.5} />, title: 'Algorithm Teardowns', description: 'Forensic breakdowns of Google updates and exactly what signals are currently being rewarded.' },
             { href: '/services/geo-optimization', colSpan: 1, icon: <Network size={40} className="text-white mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'AI Overviews', description: 'The evolving landscape of ChatGPT and Gemini search.' },
             { href: '/services/lead-generation', colSpan: 1, icon: <Target size={40} className="text-white mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'Outbound Tactics', description: 'High-converting email copy and sequencing frameworks.' },
             { href: '/book', colSpan: 2, gradient: true, icon: <Briefcase size={40} className="text-white mb-6 sm:mb-10 relative z-10" strokeWidth={1.5} />, title: 'Apply These Insights', description: 'Want these strategies implemented for your brand? Partner with our engineering team today.' }
@@ -678,7 +680,7 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
           bentoDescription: 'We offer remote flexibility, unparalleled technical challenges, and the opportunity to work alongside the sharpest minds in digital architecture.',
           insightCategory: 'Strategy',
           bentoCards: [
-            { href: '/company/careers', colSpan: 2, icon: <Briefcase size={40} className="text-[#F26522] mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'Technical SEO Engineers', description: 'Looking for specialists capable of forensic audits, server-log analysis, and entity architecture.' },
+            { href: '/company/careers', colSpan: 2, icon: <Briefcase size={40} className={`${accentClass} mb-6 sm:mb-10`} strokeWidth={1.5} />, title: 'Technical SEO Engineers', description: 'Looking for specialists capable of forensic audits, server-log analysis, and entity architecture.' },
             { href: '/company/careers', colSpan: 1, icon: <PenTool size={40} className="text-white mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'React Developers', description: 'Build blazing fast, high-converting digital assets.' },
             { href: '/company/careers', colSpan: 1, icon: <Network size={40} className="text-white mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'Sales Architects', description: 'Design automated outbound and CRM pipelines.' },
             { href: '/company/about', colSpan: 2, gradient: true, icon: <TrendingUp size={40} className="text-white mb-6 sm:mb-10 relative z-10" strokeWidth={1.5} />, title: 'Grow With Us', description: 'We invest heavily in the continuous education and algorithmic mastery of every team member.' }
@@ -700,7 +702,7 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
           bentoDescription: 'Whether you are bleeding traffic from a Google penalty or need to scale your B2B enterprise pipeline, we have the technical infrastructure ready to deploy.',
           insightCategory: 'Strategy',
           bentoCards: [
-            { href: '/book', colSpan: 2, icon: <Network size={40} className="text-[#F26522] mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'Strategy Session', description: 'Direct access to our senior engineers to diagnose your current growth bottlenecks.' },
+            { href: '/book', colSpan: 2, icon: <Network size={40} className={`${accentClass} mb-6 sm:mb-10`} strokeWidth={1.5} />, title: 'Strategy Session', description: 'Direct access to our senior engineers to diagnose your current growth bottlenecks.' },
             { href: '/services/seo', colSpan: 1, icon: <Search size={40} className="text-white mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'Forensic Audit', description: 'Comprehensive teardown of your digital signals.' },
             { href: '/services/lead-generation', colSpan: 1, icon: <Target size={40} className="text-white mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'Pipeline Review', description: 'Assessment of your current outbound capabilities.' },
             { href: '/google-penalty-recovery', colSpan: 2, gradient: true, icon: <ShieldAlert size={40} className="text-white mb-6 sm:mb-10 relative z-10" strokeWidth={1.5} />, title: 'Emergency Triage', description: 'Hit by a core update? Contact us immediately for rapid penalty removal protocols.' }
@@ -718,13 +720,22 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
   };
     
   const config = getPageConfig(path);
+  const isServicesPath = path.startsWith('/services/');
+  
+  const themeAccent = isServicesPath ? '#2F5D50' : '#F26522';
+  const themeAccentHover = isServicesPath ? '#234A40' : '#e05a1a';
+  const themeTextAccent = isServicesPath ? 'text-[#2F5D50]' : 'text-[#F26522]';
+  const themeBgAccent = isServicesPath ? 'bg-[#2F5D50]' : 'bg-[#F26522]';
+  const themeBgAccentHover = isServicesPath ? 'hover:bg-[#234A40]' : 'hover:bg-[#e05a1a]';
+  const themeBorderAccent = isServicesPath ? 'border-[#2F5D50]' : 'border-[#F26522]';
+  const themeBorderAccentHover = isServicesPath ? 'hover:border-[#234A40]' : 'hover:border-[#e05a1a]';
 
   return (
-    <div className="min-h-screen bg-[#EFEDE5] text-[#15130E] relative font-sans selection:bg-[#F26522] selection:text-white page-wrapper">
+    <div className={`min-h-screen ${isServicesPath ? 'bg-transparent' : 'bg-[#EFEDE5]'} text-[#15130E] relative font-sans ${isServicesPath ? 'selection:bg-[#2F5D50]' : 'selection:bg-[#F26522]'} selection:text-white page-wrapper`}>
       <CustomCursor />
 
       {/* HERO SECTION */}
-      <section className="hero relative w-full h-[65vh] min-h-[480px] overflow-hidden flex flex-col justify-center cursor-default">
+      <section className={`${isServicesPath ? 'bg-transparent' : 'hero'} relative w-full h-[65vh] min-h-[480px] overflow-hidden flex flex-col justify-center cursor-default`}>
         {/* Shaders Background */}
         <HeroWebGLBackground />
 
@@ -733,14 +744,14 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
 
         {/* Hero Content - Adjusted margins/padding to remove large empty vertical space */}
         <div className="relative z-20 max-w-[1440px] w-full mx-auto flex flex-col justify-center px-5 sm:px-8 lg:px-12 pt-16 pb-0">
-          <p className="text-[13px] sm:text-[14px] text-[#2F5D50] tracking-wide mb-4 uppercase font-medium">
+          <p className={`text-[13px] sm:text-[14px] ${isServicesPath ? 'text-[#5B564C]' : 'text-[#2F5D50]'} tracking-wide mb-4 uppercase font-medium`}>
             {config.subtitle}
           </p>
           <h1 className="text-[clamp(1.5rem,5.5vw,3.2rem)] sm:text-[clamp(1.8rem,4.5vw,3.8rem)] font-medium leading-[1.15] tracking-[-0.03em] text-[#15130E] max-w-[1200px]">
             {config.title.substring(0, config.title.lastIndexOf(' ')+1)}
             <RotatingText
               texts={config.rotatingWords}
-              mainClassName="inline-flex overflow-hidden text-[#F26522] align-text-bottom"
+              mainClassName={`inline-flex overflow-hidden ${themeTextAccent} align-text-bottom`}
               staggerFrom={"last"}
               initial={{ y: "100%" }}
               animate={{ y: 0 }}
@@ -761,7 +772,7 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
               data-cta-location="service_hero"
               data-cta-text={config.ctaText}
               onClick={() => trackCTA({ cta_location: 'service_hero', cta_text: config.ctaText })}
-              className="group flex items-center bg-[#F26522] hover:bg-[#e05a1a] text-white pl-5 sm:pl-6 pr-2 py-2 transition-colors duration-300"
+              className={`group flex items-center ${themeBgAccent} ${themeBgAccentHover} text-white pl-5 sm:pl-6 pr-2 py-2 transition-colors duration-300`}
             >
               <div className="flex flex-col overflow-hidden h-[20px] justify-start items-start relative mr-3">
                 <span className="text-[13px] sm:text-[14px] font-medium leading-[20px] transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-translate-y-full">
@@ -772,7 +783,7 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
                 </span>
               </div>
               <div className="w-7 h-7 sm:w-8 sm:h-8 bg-white flex items-center justify-center">
-                <ArrowRight className="w-4 h-4 text-[#F26522] transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-rotate-45" />
+                <ArrowRight className={`w-4 h-4 ${themeTextAccent} transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-rotate-45`} />
               </div>
             </a>
             <div className="flex items-center gap-3 bg-white/5 border border-white/10 hover:bg-white/10 transition-shadow duration-300 px-3 py-2 cursor-pointer">
@@ -793,10 +804,9 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
       )}
 
       {/* SECTION: INTRO CONTENT */}
-      {path !== '/insights' && path !== '/contact' && path !== '/services' && path !== '/company/approach' && path !== '/company/success-stories' && (
-        <section className="bg-[#EFEDE5] text-[#15130E] pt-16 sm:pt-20 lg:pt-32 pb-12 sm:pb-16 lg:pb-24 overflow-hidden w-full max-w-[1440px] mx-auto border-t border-[#D3CEC0]">
+      {path !== '/insights' && path !== '/contact' && path !== '/services' && path !== '/company/approach' && path !== '/company/success-stories' && (        <section className="bg-[#EFEDE5] text-[#15130E] pt-16 sm:pt-20 lg:pt-32 pb-12 sm:pb-16 lg:pb-24 overflow-hidden w-full max-w-[1440px] mx-auto border-t border-[#D3CEC0]">
           <div className="px-5 sm:px-8 lg:px-12 flex items-center gap-3 mb-6 sm:mb-8">
-            <div className="w-6 h-6 sm:w-7 sm:h-7 bg-[#F26522] text-white text-[11px] sm:text-[12px] font-semibold flex items-center justify-center">2</div>
+            <div className={`w-6 h-6 sm:w-7 sm:h-7 ${themeBgAccent} text-white text-[11px] sm:text-[12px] font-semibold flex items-center justify-center`}>2</div>
             <div className="text-[12px] sm:text-[13px] font-medium text-[#2F5D50] border border-[#D3CEC0] px-3 sm:px-4 py-1 sm:py-1.5">Context & Methodology</div>
           </div>
           
@@ -815,14 +825,14 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
                 data-cta-location="service_intro_mobile"
                 data-cta-text={config.ctaText}
                 onClick={() => trackCTA({ cta_location: 'service_intro_mobile', cta_text: config.ctaText })}
-                className="group flex items-center bg-[#F26522] hover:bg-[#e05a1a] text-white pl-5 pr-2 py-2 transition-colors duration-300 mb-8 inline-flex"
+                className={`group flex items-center ${themeBgAccent} ${themeBgAccentHover} text-white pl-5 pr-2 py-2 transition-colors duration-300 mb-8 inline-flex`}
               >
                 <div className="flex flex-col overflow-hidden h-[20px] justify-start items-start relative mr-3">
                   <span className="text-[13px] font-medium leading-[20px] transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-translate-y-full">{config.ctaText}</span>
                   <span className="text-[13px] font-medium leading-[20px] absolute top-full transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-translate-y-full">{config.ctaText}</span>
                 </div>
                 <div className="w-8 h-8 bg-white flex items-center justify-center">
-                  <ArrowRight className="w-4 h-4 text-[#F26522] transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-rotate-45" />
+                  <ArrowRight className={`w-4 h-4 ${themeTextAccent} transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-rotate-45`} />
                 </div>
               </a>
               <div className="mt-4 flex items-center gap-3 bg-[#E7E4D9]/50 border border-[#D3CEC0] hover:bg-[#E7E4D9] transition-shadow duration-300 px-3 py-2 cursor-pointer max-w-fit mb-6">
@@ -850,14 +860,14 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
                   data-cta-location="service_intro_desktop"
                   data-cta-text={config.ctaText}
                   onClick={() => trackCTA({ cta_location: 'service_intro_desktop', cta_text: config.ctaText })}
-                  className="group flex items-center bg-[#F26522] hover:bg-[#e05a1a] text-white pl-6 pr-2 py-2 transition-colors duration-300"
+                  className={`group flex items-center ${themeBgAccent} ${themeBgAccentHover} text-white pl-6 pr-2 py-2 transition-colors duration-300`}
                 >
                   <div className="flex flex-col overflow-hidden h-[20px] justify-start items-start relative mr-3">
                      <span className="text-[14px] font-medium leading-[20px] transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-translate-y-full">{config.ctaText}</span>
                      <span className="text-[14px] font-medium leading-[20px] absolute top-full transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-translate-y-full">{config.ctaText}</span>
                   </div>
                   <div className="w-8 h-8 bg-white flex items-center justify-center">
-                    <ArrowRight className="w-4 h-4 text-[#F26522] transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-rotate-45" />
+                    <ArrowRight className={`w-4 h-4 ${themeTextAccent} transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-rotate-45`} />
                   </div>
                 </a>
                 <div className="mt-4 flex items-center gap-3 bg-[#E7E4D9]/50 border border-[#D3CEC0] hover:bg-[#E7E4D9] transition-shadow duration-300 px-3 py-2 cursor-pointer max-w-fit">
@@ -1429,13 +1439,13 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
                     <ul className="flex flex-col gap-2 mb-6">
                       {service.deliverables.map((item, idx) => (
                         <li key={idx} className="flex items-center gap-2 text-[13px] text-gray-400">
-                          <span className="w-1.5 h-1.5 rounded-full bg-[#F26522]" />
+                          <span className={`w-1.5 h-1.5 rounded-full ${themeBgAccent}`} />
 
                           {item}
                         </li>
                       ))}
                     </ul>
-                    <a href="/book" className="text-[13px] font-semibold text-[#F26522] hover:text-[#e05a1a] flex items-center gap-1 transition-colors">
+                    <a href="/book" className={`text-[13px] font-semibold ${themeTextAccent} ${themeTextAccentHover} flex items-center gap-1 transition-colors`}>
                       Inquire about this service <ArrowRight className="w-3.5 h-3.5" />
                     </a>
                   </div>
@@ -1654,7 +1664,7 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
                   <textarea name="message" id="message" required rows={4} className="w-full bg-white/5 border border-white/10 focus:border-[#F26522] focus:bg-white/10 text-white rounded p-4 py-3 outline-none transition-all text-[14px] resize-none" placeholder="Tell us about your goals..."></textarea>
                 </div>
 
-                <button type="submit" className="mt-4 bg-[#F26522] hover:bg-[#e05a1a] text-white py-4 px-6 rounded font-semibold tracking-wide uppercase transition-colors duration-300 w-full sm:w-auto self-start disabled:opacity-70 disabled:cursor-not-allowed">
+                <button type="submit" className={`mt-4 ${themeBgAccent} ${themeBgAccentHover} text-white py-4 px-6 rounded font-semibold tracking-wide uppercase transition-colors duration-300 w-full sm:w-auto self-start disabled:opacity-70 disabled:cursor-not-allowed`}>
                   Submit Request
                 </button>
               </form>

@@ -1,9 +1,11 @@
 import React from 'react';
+import HeroWebGLBackground from './HeroWebGLBackground';
 
 const SiteFooter: React.FC = () => {
   return (
-    <footer className="footer">
-      <div className="footer-inner">
+    <footer className="footer relative overflow-hidden">
+      <HeroWebGLBackground />
+      <div className="footer-inner relative z-10">
         <div className="footer-grid">
           <div>
             <a href="/" className="nav-brand" aria-label="GOBIYA home">
