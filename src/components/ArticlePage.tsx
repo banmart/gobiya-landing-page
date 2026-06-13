@@ -159,7 +159,7 @@ const ARTICLES: Record<string, ArticleData> = {
           Cialdini's authority and social-proof principles answer the high-ticket visitor's defensibility question, "who like me has already made this safe?", and placement is the structural decision: above or immediately below the fold, not in the page's basement. Missing above-the-fold social proof is another of the five canonical demo-page defects. For high-ticket specifically, proof must match the stakes: recognizable client logos in the visitor's segment, outcome-specific numbers, named testimonials with titles, and certifications or security badges where procurement will ask anyway. Generic five-star widgets read as noise at this deal size; segment-matched specificity reads as defense material the champion can forward to the committee.
         </p>
 
-        <div className="article-hero-image-wrap my-8" style={{ width: '100%', maxHeight: '400px', overflow: 'hidden', border: '1px solid var(--line)' }}>
+        <div className="article-hero-image-wrap my-8" style={{ width: '100%', maxHeight: '400px', overflow: 'hidden', border: '1px solid var(--line)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
           <img 
             src="/images/article-behavioral-psychology-b2b-landing-page-wireframes-secondary.webp" 
             alt="Landing page wireframe design mapping out Hick's Law and BJ Fogg behavior model zones" 
@@ -8021,7 +8021,7 @@ const ArticlePage: React.FC<ArticlePageProps> = ({ slug }) => {
       <div className="art-layout">
         <article className="art-body">
           {article.image && (
-            <div className="article-hero-image-wrap" style={{ width: '100%', maxHeight: '420px', overflow: 'hidden', border: '1px solid var(--line)', marginBottom: '2.5rem' }}>
+            <div className="article-hero-image-wrap" style={{ width: '100%', maxHeight: '420px', overflow: 'hidden', border: '1px solid var(--line)', marginBottom: '2.5rem', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
               <img 
                 src={article.image} 
                 alt={article.heroAlt || article.title} 
