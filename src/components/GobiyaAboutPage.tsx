@@ -461,7 +461,7 @@ export default function GobiyaAboutPage() {
                   <h3>Every algorithm cycle, survived.</h3>
                 </div>
                 <div className="phase-body">
-                  <p>Penguin, Hummingbird, Medic, BERT, the Helpful Content update — each one re-ranked the web, and each one sharpened the recovery practice that clients now hire GOBIYA for.</p>
+                  <p>Penguin, Hummingbird, Medic, BERT, the <a href="/insights/seo-case-study-traffic-recovery" className="text-[#2F5D50] hover:text-[#F26522] underline underline-offset-4 transition-colors">Helpful Content update</a> — each one re-ranked the web, and each one sharpened the recovery practice that clients now hire GOBIYA for.</p>
                   <div className="phase-tags"><span>Recovery forensics</span><span>1.4M URI scans</span></div>
                 </div>
               </div>
@@ -473,7 +473,7 @@ export default function GobiyaAboutPage() {
                   <h3>Search becomes answers. GOBIYA adapts first.</h3>
                 </div>
                 <div className="phase-body">
-                  <p>Schema markup, entity optimization, and structured citations for LLMs — plus native CRM, Web3 builds, and AI prospect automation. The next update is TBD. The posture is ready.</p>
+                  <p>Schema markup, entity optimization, and structured citations for LLMs — plus <a href="/capabilities/native-crm" className="text-[#2F5D50] hover:text-[#F26522] underline underline-offset-4 transition-colors">native CRM</a>, <a href="/capabilities/blockchain-web3-development" className="text-[#2F5D50] hover:text-[#F26522] underline underline-offset-4 transition-colors">Web3 builds</a>, and AI prospect automation. The next update is TBD. The posture is ready.</p>
                   <div className="phase-tags"><span>GEO / LLM citations</span><span>Native CRM</span><span>AI automation</span></div>
                 </div>
               </div>

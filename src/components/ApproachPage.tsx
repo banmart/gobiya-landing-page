@@ -349,7 +349,7 @@ const ApproachPage: React.FC = () => {
               <div className="doctrine-text" data-anim="stagger">
                 <p data-anim-child>In the early eras of organic search, pages were indexed by direct string matching — rank for "B2B sales pipeline integration tools" by repeating that phrase in titles, headings, and copy at the right density. <strong>Google's Helpful Content System, core quality classifiers, and neural matching now operate on a fundamentally different paradigm:</strong> search engines no longer index strings. They index entities — distinct, well-defined concepts, organizations, and things cataloged in the Knowledge Graph with machine-readable IDs.</p>
                 <p data-anim-child>When a user enters a query, the engine decomposes the prompt into recognized entities, resolves the implicit and explicit intent, and queries its graph database for pages with a <strong>high-salience connection to the requested entity node.</strong> GOBIYA's approach is built around semantic triples — Subject, Predicate, Object — mapping your business entities, service offerings, and target categories into the precise format crawlers expect, minimizing semantic distance to verified authority nodes.</p>
-                <p data-anim-child>This entity methodology is also the absolute foundation of <strong>Generative Engine Optimization.</strong> LLMs like GPT, Claude, and Gemini don't navigate page-authority vectors — they map semantic spaces. To be cited inside conversational answers, your entity connections must be defined explicitly.</p>
+                <p data-anim-child>This entity methodology is also the absolute foundation of <a href="/insights/chatgpt-vs-google-for-business-discovery" className="text-[#2F5D50] hover:text-[#F26522] underline underline-offset-4 transition-colors font-medium">Generative Engine Optimization</a>. LLMs like GPT, Claude, and Gemini don't navigate page-authority vectors — they map semantic spaces. To be cited inside conversational answers, your entity connections must be defined explicitly.</p>
               </div>
 
               <div className="side-panel" data-anim="scale" aria-label="Semantic triple diagram: your brand offers pipeline engineering, which is about a verified Wikipedia entity">
@@ -501,8 +501,8 @@ const ApproachPage: React.FC = () => {
 
             <div className="doctrine-body">
               <div className="doctrine-text" data-anim="stagger">
-                <p data-anim-child>Traditional agency models celebrate traffic growth even when it fails to generate qualified revenue. GOBIYA operates under a <strong>pipeline-first framework</strong> — connecting search traffic to automated sales development systems and turning the website into an active, high-yield pipeline generator. Custom React and Vite architectures deliver the sub-second loads that satisfy Core Web Vitals and capture high-intent users who would otherwise bounce.</p>
-                <p data-anim-child><strong>Visitor de-anonymization is integrated directly into the page layer:</strong> visiting IP addresses are resolved to specific corporate networks in real time, logging which organizations are researching your products and which pages they read. That intent data feeds straight into your CRM — Salesforce or HubSpot — and triggers timing-optimized sequences targeting matching buyers at those accounts.</p>
+                <p data-anim-child>Traditional agency models celebrate traffic growth even when it fails to generate qualified revenue. GOBIYA operates under a <strong>pipeline-first framework</strong> — connecting search traffic to automated sales development systems and turning the website into an active, high-yield pipeline generator. <a href="/capabilities/web-development" className="text-[#2F5D50] hover:text-[#F26522] underline underline-offset-4 transition-colors font-medium">Custom React and Vite architectures</a> deliver the sub-second loads that satisfy Core Web Vitals and capture high-intent users who would otherwise bounce.</p>
+                <p data-anim-child><strong>Visitor de-anonymization is integrated directly into the page layer:</strong> visiting IP addresses are resolved to specific corporate networks in real time, logging which organizations are researching your products and which pages they read. That intent data feeds straight into your <a href="/capabilities/native-crm" className="text-[#2F5D50] hover:text-[#F26522] underline underline-offset-4 transition-colors font-medium">CRM</a> — Salesforce or HubSpot — and triggers timing-optimized sequences targeting matching buyers at those accounts.</p>
                 <p data-anim-child>The loop closes with <strong>multi-touch attribution:</strong> every pipeline opportunity is traced back to the specific content hubs and entity nodes that first captured the buyer — so every investment in the search engineering protocol is justified by measurable closed-won revenue.</p>
               </div>
 
@@ -550,8 +550,8 @@ const ApproachPage: React.FC = () => {
       <section className="clients" aria-label="Clients">
         <div className="clients-inner" data-anim="fade">
           <span className="mono-tag">Doctrine in production for —</span>
-          <span className="client-name">SmileCenter</span>
-          <span className="client-name">American LiveScan</span>
+          <a href="/case-studies/smile-center-dentistry" className="client-name">SmileCenter</a>
+          <a href="/case-studies/american-livescan" className="client-name">American LiveScan</a>
           <span className="client-name">RemodelMe Pros</span>
           <span className="client-name">QuickPass</span>
           <span className="client-name">MyTrustWills</span>

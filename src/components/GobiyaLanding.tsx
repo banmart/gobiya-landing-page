@@ -572,7 +572,7 @@ export default function GobiyaLanding() {
             </div>
 
             <div className="case-list" data-anim="stagger">
-              <a href="#diagnose" className="case" data-anim-child>
+              <a href="/insights/seo-case-study-traffic-recovery" className="case" data-anim-child>
                 <div className="case-id">
                   <span className="mono-tag">File</span>
                   <span className="num">001</span>
@@ -597,7 +597,7 @@ export default function GobiyaLanding() {
                 </span>
               </a>
 
-              <a href="#diagnose" className="case" data-anim-child>
+              <a href="/case-studies/smile-center-dentistry" className="case" data-anim-child>
                 <div className="case-id">
                   <span className="mono-tag">File</span>
                   <span className="num">002</span>
@@ -766,8 +766,12 @@ export default function GobiyaLanding() {
               <div className="quote-block" data-anim="up">
                 <span className="quote-mark" aria-hidden="true">"</span>
                 <blockquote>
-                  Patient inquiries grew <em>5x</em> after launching our new platform. The combination of native CRM integration and blazing fast React builds completely transformed our lead generation.
+                  Patient inquiries grew <em>5x</em> after launching our new platform. The combination of <a href="/capabilities/native-crm" className="text-[#2F5D50] hover:text-[#F26522] underline underline-offset-4 transition-colors">native CRM integration</a> and blazing fast <a href="/capabilities/web-development" className="text-[#2F5D50] hover:text-[#F26522] underline underline-offset-4 transition-colors">React builds</a> completely transformed our lead generation.
                 </blockquote>
+                <a href="/case-studies/smile-center-dentistry" className="text-link mt-2 mb-4 block text-[13.5px] font-semibold text-[#2F5D50] hover:text-[#F26522] transition-colors flex items-center gap-1">
+                  Read the SmileCenter case study
+                  <svg viewBox="0 0 24 24" width="13" height="13" fill="none" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                </a>
                 <div className="quote-attr">
                   <div className="attr-mark" aria-hidden="true" style={{ overflow: 'hidden' }}>
                     <img src="https://www.gobiya.com/images/dr-nikjoo.jpg" alt="Dr. Ebi Donavan Nikjoo" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
