@@ -4,6 +4,7 @@
   width: 100%;
   white-space: nowrap;
   position: relative;
+  z-index: 2;
   /* Fading edges */
   mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
   -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);

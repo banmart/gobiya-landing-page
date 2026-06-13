@@ -28,12 +28,12 @@ const DeferredShader: React.FC<DeferredShaderProps> = ({ children }) => {
   }, []);
 
   if (!shouldRender) {
-    // Solid background placeholder with no visual layout shifts
-    return <div className="absolute inset-0 bg-[#050505] -z-10" />;
+    // Transparent placeholder with no visual layout shifts
+    return <div className="absolute inset-0 pointer-events-none" />;
   }
 
   return (
-    <Suspense fallback={<div className="absolute inset-0 bg-[#050505] -z-10" />}>
+    <Suspense fallback={<div className="absolute inset-0 pointer-events-none" />}>
       <Shader>
         {children}
       </Shader>

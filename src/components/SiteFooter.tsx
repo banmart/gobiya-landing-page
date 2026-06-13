@@ -43,6 +43,7 @@ const SiteFooter: React.FC = () => {
           <div>
             <h5>Connect</h5>
             <ul>
+              <li><a href="tel:3237441338">Call: 323-744-1338</a></li>
               <li><a href="https://www.linkedin.com/in/stevemartingobiya/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
               <li><a href="https://x.com/SteveMarti66556" target="_blank" rel="noopener noreferrer">X (Twitter)</a></li>
               <li><a href="https://www.facebook.com/people/Gobiya/100064043744190/" target="_blank" rel="noopener noreferrer">Facebook</a></li>

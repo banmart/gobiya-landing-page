@@ -370,7 +370,7 @@
   .ticker {
     border-bottom:1px solid var(--line);
     background:var(--ink); color:var(--paper);
-    overflow:hidden; position:relative;
+    overflow:hidden; position:relative; z-index:2;
   }
   .ticker-track {
     display:flex; width:max-content;

@@ -4,6 +4,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import SiteHeader from './SiteHeader';
 import SiteFooter from './SiteFooter';
+import HeroWebGLBackground from './HeroWebGLBackground';
 import './ArticlePage.css';
 import { trackCTA } from '../lib/analytics';
 import LeadMagnetCTA from './LeadMagnetCTA';
@@ -8310,6 +8311,7 @@ const ArticlePage: React.FC<ArticlePageProps> = ({ slug }) => {
       <SiteHeader />
 
       <header className="art-head">
+        <HeroWebGLBackground />
         <div className="art-head-inner">
           <nav className="breadcrumb" aria-label="Breadcrumb" data-anim="fade">
             <a href="/">Gobiya</a><i>/</i>

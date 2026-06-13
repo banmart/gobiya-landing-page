@@ -801,7 +801,15 @@ export default function GobiyaLanding() {
                   Deploy GOBIYA
                   <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg>
                 </a>
+                {/* Mobile Call CTA Button */}
+                <a href="tel:3237441338" className="btn btn-secondary md:hidden text-center">
+                  Call 323-744-1338
+                </a>
                 <a href="#cases" className="btn btn-ghost magnetic">See recovery cases</a>
+              </div>
+              {/* Desktop Call CTA Text */}
+              <div className="hidden md:block mt-4 text-xs uppercase tracking-wider text-gray-500">
+                Or speak to an engineer directly: <a href="tel:3237441338" className="text-[#2F5D50] hover:text-[#F26522] underline underline-offset-4 ml-1 font-mono font-bold transition-colors">323-744-1338</a>
               </div>
             </div>
 

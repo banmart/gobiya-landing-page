@@ -23,9 +23,15 @@ const LOGOS = [
 ];
 
 const TrustCarousel = () => {
+  // Repeat logos to ensure the track is long enough to span wide screens
+  let repeatedLogos = [...LOGOS];
+  while (repeatedLogos.length < 15) {
+    repeatedLogos = [...repeatedLogos, ...LOGOS];
+  }
+
   const content = (
     <div className="trust-carousel-content flex items-center py-6 gap-16 md:gap-24 px-8 md:px-12">
-      {LOGOS.map((Logo, idx) => (
+      {repeatedLogos.map((Logo, idx) => (
         <div key={idx} className="flex items-center gap-3 text-gray-400 opacity-60 hover:opacity-100 hover:text-white transition-all duration-300 cursor-default grayscale hover:grayscale-0">
           <Logo.icon size={28} strokeWidth={1.5} />
           <span className="font-display font-bold text-xl md:text-2xl tracking-widest">{Logo.name}</span>

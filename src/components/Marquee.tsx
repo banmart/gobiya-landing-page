@@ -12,10 +12,15 @@ const Marquee: React.FC<MarqueeProps> = ({
   backgroundColor = '#111111', 
   textColor = '#ffffff' 
 }) => {
-  // We duplicate the items to ensure seamless scrolling
+  // Repeat items to ensure the track is long enough to span wide screens
+  let repeatedItems = [...items];
+  while (repeatedItems.length < 15) {
+    repeatedItems = [...repeatedItems, ...items];
+  }
+
   const content = (
     <div className="marquee-content flex items-center py-4">
-      {items.map((item, idx) => (
+      {repeatedItems.map((item, idx) => (
         <React.Fragment key={idx}>
           <span className="text-[clamp(1.5rem,3vw,2.5rem)] font-bold uppercase tracking-wider mx-8 whitespace-nowrap" style={{ color: textColor }}>
             {item}
@@ -29,6 +34,7 @@ const Marquee: React.FC<MarqueeProps> = ({
 
   return (
     <div className="marquee-container border-y border-gray-200/20" style={{ backgroundColor }}>
+      {content}
       {content}
       {content}
     </div>

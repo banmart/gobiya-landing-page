@@ -62,7 +62,7 @@
     var(--paper);
   padding: 9.5rem 0 0;
 }
-.art-head-inner { max-width: var(--max-w); margin: 0 auto; padding: 0 var(--pad) 3rem; }
+.art-head-inner { position: relative; z-index: 2; max-width: var(--max-w); margin: 0 auto; padding: 0 var(--pad) 3rem; }
 .breadcrumb {
   display: flex; align-items: center; gap: .6rem; margin-bottom: 2rem; flex-wrap: wrap;
   font-family: var(--font-mono); font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-faint);
