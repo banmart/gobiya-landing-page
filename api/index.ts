@@ -382,6 +382,10 @@ const metadataMap: Record<string, SEOMetadata> = {
     title: 'AI & LLMs for Businesses: Remove SMB Office Friction | Gobiya',
     description: 'We integrate custom AI models and secure LLMs directly into your everyday office tasks. Automate document parsing, email replies, and CRM syncing with complete data privacy.'
   },
+  '/capabilities/authority-building': {
+    title: 'Authority Building: High Quality Backlinks & Citations | Gobiya',
+    description: 'Build search engine trust with high-quality, relevant backlink acquisition and structured localized entity citations, engineered for long-term organic authority.'
+  },
   '/company/about': {
     title: 'About the Agency — GOBIYA | AI Internet Marketing, Los Angeles',
     description: 'GOBIYA is a precision-engineered search visibility and digital solutions firm, founded 2012 in Los Angeles and led by Steve Martin — 25+ years bridging full-stack engineering and organic search.'
@@ -1433,7 +1437,8 @@ export default async function handler(req: IncomingMessage, res: any) {
             { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "SEO & Discoverability", "url": "https://www.gobiya.com/capabilities/seo-discoverability" } },
             { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Blockchain & Web3 Development", "url": "https://www.gobiya.com/capabilities/blockchain-web3-development" } },
             { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "AI Prospect Scraper", "url": "https://www.gobiya.com/capabilities/ai-prospect-scraper" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "AI & LLMs for Businesses", "url": "https://www.gobiya.com/capabilities/ai-llms-business" } }
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "AI & LLMs for Businesses", "url": "https://www.gobiya.com/capabilities/ai-llms-business" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Authority Building", "url": "https://www.gobiya.com/capabilities/authority-building" } }
           ]
         },
         "knowsAbout": [

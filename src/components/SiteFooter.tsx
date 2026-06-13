@@ -31,6 +31,7 @@ const SiteFooter: React.FC = () => {
               <li><a href="/capabilities/seo-discoverability">SEO &amp; Discoverability</a></li>
               <li><a href="/capabilities/blockchain-web3-development">Blockchain &amp; Web3</a></li>
               <li><a href="/capabilities/ai-llms-business">AI &amp; LLMs</a></li>
+              <li><a href="/capabilities/authority-building">Authority Building</a></li>
             </ul>
           </div>
           <div>

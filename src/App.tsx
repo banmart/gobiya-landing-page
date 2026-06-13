@@ -254,7 +254,8 @@ function App({ url }: AppProps) {
     '/capabilities/seo-discoverability',
     '/capabilities/blockchain-web3-development',
     '/capabilities/ai-prospect-scraper',
-    '/capabilities/ai-llms-business'
+    '/capabilities/ai-llms-business',
+    '/capabilities/authority-building'
   ].includes(normalizedPath);
 
   const isServiceSubpage = ![

@@ -30,6 +30,10 @@ const metadataMap: Record<string, SEOMetadata> = {
     title: 'AI & LLMs for Businesses: Remove SMB Office Friction | Gobiya',
     description: 'We integrate custom AI models and secure LLMs directly into your everyday office tasks. Automate document parsing, email replies, and CRM syncing with complete data privacy.'
   },
+  '/capabilities/authority-building': {
+    title: 'Authority Building: High Quality Backlinks & Citations | Gobiya',
+    description: 'Build search engine trust with high-quality, relevant backlink acquisition and structured localized entity citations, engineered for long-term organic authority.'
+  },
   '/company/about': {
     title: 'Custom Web Dev & Forensic Search Strategy | Gobiya',
     description: 'Gobiya is a custom web development company and search engineering agency rebuilding traffic pipelines and recovering penalties since 2012.'

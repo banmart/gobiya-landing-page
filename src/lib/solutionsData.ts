@@ -739,5 +739,116 @@ export const SOLUTIONS_DATA: Record<string, SolutionData> = {
       sub: 'Replace manual data chores and fragmented software with secure, hand-coded AI systems built directly into your platform.',
       btnText: 'Automate your office'
     }
+  },
+
+  '/capabilities/authority-building': {
+    path: '/capabilities/authority-building',
+    breadcrumbLabel: 'Authority Building',
+    hero: {
+      lines: ['Acquire authority.', 'Clean trust signals.', 'Sustain page one.'],
+      accentLineIndex: 2,
+      sub: "GOBIYA builds domain trust through white-hat link acquisition, precision local citations, and entity alignment. We secure high-relevance editorial backlinks from real publications that signal clean, bulletproof authority to Google search algorithms and LLM models.",
+      ctaText: 'Build your domain authority',
+      meta: {
+        label1: 'Tactics', value1: 'Editorial Outreach · Citation Auditing · Entity Mapping',
+        label2: 'Compliance', value2: '100% white-hat editorial placements',
+        label3: 'Target Metrics', value3: 'Domain Rating (DR) & Trust Flow growth'
+      }
+    },
+    exhibit: {
+      id: 'EXH-007 / citation backlink audit',
+      leftPane: {
+        head: 'Fiverr / Cheap SEO Links', pill: 'toxic spam profile', pillClass: 'bad',
+        code: [
+          '<span class="dim">// Cheap backlinks purchased in bulk</span>',
+          '<span class="tag">POST</span> /link-networks/pbn-injector <span class="warn">status: flagged</span>',
+          '<span class="warn">Warning: Domain profile contains 95% directory spam</span>',
+          '<span class="tag">GET</span> /google-spambrain/negative-signals',
+          '<span class="dim">Domain rating: Drops due to penalty</span>'
+        ],
+        verdict: 'verdict: algorithmic filter<br/>manual action risk · deindexed · authority loss', verdictClass: 'bad'
+      },
+      rightPane: {
+        head: 'GOBIYA Authority', pill: 'clean trust signals', pillClass: 'good',
+        code: [
+          '<span class="dim">// High-authority editorial outreach</span>',
+          '<span class="ok">await</span> outreach.get(<span class="str">"editorial-placement"</span>)',
+          '<span class="ok">200 OK</span> <span class="dim">anchor: contextually relevant</span>',
+          '<span class="dim">// Google TrustGraph: entity link verified</span>',
+          '<span class="ok">dispatch</span>(BoostCrawlBudget)'
+        ],
+        verdict: 'verdict: verified authority<br/>increased crawl budget · cited by LLMs · ranking', verdictClass: 'good'
+      },
+      footLeft: 'outreach comparison', footRight: 'PBN Spam vs Clean Editorial',
+      captionLeft: 'Fig. 7 — backlink profile quality impact', captionRight: 'sys_logs/authority'
+    },
+    tickerItems: [
+      { label: 'Editorial Links', em: '— real websites' },
+      { label: 'NAP Citations', em: '— local packs' },
+      { label: 'Entity Mapping', em: '— trust graph' },
+      { label: 'Outreach', em: '— custom pitch' },
+      { label: 'Spam Cleanup', em: '— disavow files' },
+      { label: 'Domain Rating', em: '— compounding' }
+    ],
+    stats: [
+      { num: '95', sub: '%', tag: 'Clean Trust', desc: 'Acquisition of editorial links with zero automated PBN spam.' },
+      { num: '+15', tag: 'DR Growth', desc: 'Average domain rating increases within the first 120 days of campaign.' },
+      { num: '0', tag: 'Spam Risks', desc: 'Using 100% white-hat editorial outreach to ensure zero penalty risk.' },
+      { num: '4', sub: 'x', tag: 'Crawl Frequency', desc: 'Higher domain trust signals prompt Googlebot to crawl your codebase more frequently.' }
+    ],
+    engSectionTitle: 'Trust signals coded into the search graph.',
+    engGrid: {
+      railNote: 'Domain authority acts as the multiplier for your content. Strong backlinks make your pages rank faster.',
+      mainText: [
+        'Search engines use backlink profiles and entity citations as votes of confidence. If your site lacks domain authority, even the cleanest React code and best content will struggle to reach page one.',
+        'We do not buy spammy automated link packages. We run custom, manual PR outreach campaigns to secure niche-relevant placements on active, high-traffic publications that pass clean juice to your domain.'
+      ],
+      vitals: {
+        headLeft: 'Authority Health', headRight: 'strong',
+        rows: [
+          { label: 'Editorial Links', score: '100% manual', percent: 98 },
+          { label: 'Spam Score', score: '0.1%', percent: 99 },
+          { label: 'Citation Match', score: '100% consistent', percent: 97 },
+          { label: 'Trust Flow', score: 'Optimal', percent: 95 }
+        ],
+        footLabel: 'authority distribution', footValue: 'Elite'
+      },
+      caps: [
+        { tag: 'Outreach', title: 'Niche-Specific Placements', desc: 'We secure contextual backlinks from authoritative domains in your specific industry.', sys: 'sys_outreach.sh' },
+        { tag: 'Citations', title: 'Consistent Local NAP', desc: 'Flawless business name, address, and phone number syndication across high-trust directories.', sys: 'sys_nap.json' },
+        { tag: 'Disavow', title: 'Toxic Link Cleansing', desc: 'We audit your historical backlink profile and disavow toxic, low-quality spam links.', sys: 'sys_disavow.txt' },
+        { tag: 'Entity SEO', title: 'Knowledge Graph Mapping', desc: 'Aligning your brand with recognized entities to gain prominent placement in LLM knowledge sources.', sys: 'sys_entity.xml' }
+      ]
+    },
+    methodSection: {
+      railNote: 'We systematically audit, clean, and build your domain authority profile.',
+      mainTitle: 'Engineering domain trust.',
+      mainSub: 'Building genuine authority requires consistent outreach and precise data mapping, not short-term shortcuts.',
+      phases: [
+        { tag: 'Phase 01', title: 'Backlink & Citation Audit', desc: 'We scan your existing backlink profile to flag spam risks and audit all existing local citations for consistency errors.', sysTags: ['LINK_AUDIT', 'NAP_SYNC'] },
+        { tag: 'Phase 02', title: 'PR Outreach Strategy', desc: 'We research niche-relevant target publications and craft editorial angles to secure natural, contextual anchor links.', sysTags: ['EDITORIAL_PR', 'OUTREACH'] },
+        { tag: 'Phase 03', title: 'Local NAP Cleansing', desc: 'We claim, update, and lock directory citations to ensure search engines have a single, unified source of truth for your business location.', sysTags: ['DIRECTORY_SYNC', 'MAPS'] },
+        { tag: 'Phase 04', title: 'Compounding Monitoring', desc: 'We monitor link indexing, track authority growth (DR/DA), and continuously protect your site against negative SEO attacks.', sysTags: ['MONITORING', 'COMPILING'] }
+      ]
+    },
+    caseSection: {
+      headline: 'American Livescan — 3x booking growth.',
+      tag: 'Authority Building & Local Citations',
+      desc: 'By building high-authority local citations and cleanup of toxic backlink profiles alongside a custom React rebuild, we drove a massive increase in maps visibility and bookings.',
+      chartTitleLeft: 'Domain Rating', chartTitleRight: 'campaign start',
+      chartMetaLeft: 'pre-campaign', chartMetaRight: 'post-campaign',
+      ctaText: 'View the case study', ctaLink: '/case-studies/american-livescan'
+    },
+    faqs: [
+      { q: 'What is domain rating (DR) and why does it matter?', a: 'Domain Rating is a search metric that measures the strength of a website\'s backlink profile. A higher DR means your site is trusted by search engines, allowing new content to index and rank significantly faster.' },
+      { q: 'How do you acquire backlinks?', a: 'We use manual outreach, building relationships with writers, editors, and publishers in niche-relevant industries. We do not use automated link networks or buy cheap, low-quality spam links.' },
+      { q: 'What are NAP citations and why are they important for local SEO?', a: 'NAP stands for Name, Address, and Phone Number. Consistent NAP citations across major directories like Yelp, Apple Maps, and Google business profiles signal trust and accuracy to Google\'s local map pack algorithms.' },
+      { q: 'Are your link building methods safe from Google penalties?', a: 'Yes. We utilize 100% white-hat editorial link-building methods that comply with Google\'s webmaster guidelines, protecting your site from algorithmic search penalties.' }
+    ],
+    ctaSection: {
+      headline: 'Ready to build domain authority?',
+      sub: 'Stop struggling to rank on page one. Let\'s build a clean, high-authority trust profile for your brand.',
+      btnText: 'Build authority'
+    }
   }
 };

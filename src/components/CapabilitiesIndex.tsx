@@ -345,6 +345,7 @@ export default function CapabilitiesIndex() {
                 <a href="/capabilities/ai-prospect-scraper">04 — OUTBOUND.SYS</a>
                 <a href="/capabilities/blockchain-web3-development">05 — WEB3.SYS</a>
                 <a href="/capabilities/ai-llms-business">06 — AI.SYS</a>
+                <a href="/capabilities/authority-building">07 — AUTHORITY.SYS</a>
               </div>
             </div>
           </aside>
@@ -352,7 +353,7 @@ export default function CapabilitiesIndex() {
           <div className="section-main">
             <div className="mods-head">
               <h2 className="section-title display" data-anim="up">
-                Six modules. One powerful <span className="accent">custom product.</span>
+                Seven modules. One powerful <span className="accent">custom product.</span>
               </h2>
             </div>
 
@@ -489,6 +490,29 @@ export default function CapabilitiesIndex() {
                     <span><span className="dim">&gt;</span> task parsing … <span className="ok">0.05s</span></span>
                     <span><span className="dim">&gt;</span> accuracy rate … <span className="ok">99.9%</span></span>
                     <span><span className="dim">&gt;</span> operational friction … <span className="em">removed</span></span>
+                  </div>
+                </div>
+                <span className="mod-arrow" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                </span>
+              </a>
+
+              <a href="/capabilities/authority-building" className="mod" data-anim-child>
+                <div className="mod-id">
+                  <span className="mono-tag">Module</span>
+                  <span className="num">07</span>
+                  <span className="mono-tag" style={{color: 'var(--green)'}}>AUTHORITY.SYS</span>
+                </div>
+                <div className="mod-info">
+                  <h3>Authority Building</h3>
+                  <p>High-quality backlink acquisition, localized entity citations, and strategic media placements designed to build domain authority and sustain search engine dominance.</p>
+                </div>
+                <div className="mod-console" aria-hidden="true">
+                  <div className="mod-console-head"><span>authority_builder.sys</span><em>boosting</em></div>
+                  <div className="mod-console-body">
+                    <span><span className="dim">&gt;</span> trust signals … <span className="ok">verified</span></span>
+                    <span><span className="dim">&gt;</span> link acquisition … <span className="ok">100% manual</span></span>
+                    <span><span className="dim">&gt;</span> authority target … <span className="em">+15 DR</span></span>
                   </div>
                 </div>
                 <span className="mod-arrow" aria-hidden="true">
