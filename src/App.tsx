@@ -261,7 +261,7 @@ function App({ url }: AppProps) {
   return (
     <>
       <SEO path={normalizedPath} />
-      <GlobalWebGLBackground />
+      {!articleSlug && <GlobalWebGLBackground />}
       {/* Global Noise Overlay */}
       <div className="noise-overlay" />
       
