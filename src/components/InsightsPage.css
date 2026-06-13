@@ -338,3 +338,7 @@
   .insights-page .cta-card { grid-template-columns: 1fr; align-items: start; }
   .insights-page .cta-actions { flex-direction: row; flex-wrap: wrap; }
 }
+@media (max-width: 640px) {
+  .insights-page .cta-actions { flex-direction: column; }
+  .insights-page .cta-actions .btn { width: 100%; }
+}
