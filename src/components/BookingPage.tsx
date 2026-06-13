@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import HeroWebGLBackground from './HeroWebGLBackground';
 import { gsap } from 'gsap';
 import './BookingPage.css';
 import SiteHeader from './SiteHeader';
@@ -176,6 +177,7 @@ const BookingPage: React.FC = () => {
 
       {step !== 3 ? (
         <section className="hero">
+      <HeroWebGLBackground />
           <div className="hero-grid" aria-hidden="true" />
           <div className="hero-inner">
 

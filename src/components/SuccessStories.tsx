@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import HeroWebGLBackground from './HeroWebGLBackground';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './SuccessStories.css';
@@ -134,6 +135,7 @@ const SuccessStories: React.FC = () => {
       <SiteHeader />
 
       <section className="hero" id="top">
+      <HeroWebGLBackground />
         <div className="hero-grid" aria-hidden="true"></div>
         <div className="hero-inner">
           <div className="hero-copy">

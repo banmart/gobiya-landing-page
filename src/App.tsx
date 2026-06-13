@@ -19,7 +19,6 @@ import AdminDashboard from './components/AdminDashboard';
 import ContactPage from './components/ContactPage';
 import OnPageSeoLosAngelesPage from './components/OnPageSeoLosAngelesPage';
 import SEO from './components/SEO';
-import GlobalWebGLBackground from './components/GlobalWebGLBackground';
 
 // Safe storage helper to prevent crashes in sandboxed environments/iframes or strict privacy modes
 const safeStorage = {
@@ -258,10 +257,29 @@ function App({ url }: AppProps) {
     '/capabilities/ai-llms-business'
   ].includes(normalizedPath);
 
+  const isServiceSubpage = ![
+    '/',
+    '/admin',
+    '/on-page-seo-los-angeles',
+    '/book',
+    '/book-call',
+    '/about/steve-martin',
+    '/author/steve-martin',
+    '/company/about',
+    '/about',
+    '/thank-you',
+    '/capabilities',
+    '/company/success-stories',
+    '/company/approach',
+    '/insights',
+    '/contact',
+    '/case-studies/smile-center-dentistry',
+    '/case-studies/american-livescan'
+  ].includes(normalizedPath) && !isSolutionRoute;
+
   return (
     <>
       <SEO path={normalizedPath} />
-      {!articleSlug && <GlobalWebGLBackground />}
       {/* Global Noise Overlay */}
       <div className="noise-overlay" />
       

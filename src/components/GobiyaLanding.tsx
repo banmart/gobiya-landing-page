@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import HeroWebGLBackground from './HeroWebGLBackground';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import SiteHeader from './SiteHeader';
@@ -299,6 +300,7 @@ export default function GobiyaLanding() {
       <SiteHeader />
 
       <section className="hero" id="top">
+      <HeroWebGLBackground />
         <div className="hero-grid" aria-hidden="true"></div>
         <div className="hero-inner">
 

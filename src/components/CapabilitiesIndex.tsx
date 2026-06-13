@@ -1,4 +1,5 @@
 import SiteHeader from "./SiteHeader";
+import HeroWebGLBackground from './HeroWebGLBackground';
 import SiteFooter from "./SiteFooter";
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
@@ -147,6 +148,7 @@ export default function CapabilitiesIndex() {
 
       {/* ================= HERO ================= */}
       <section className="hero" id="top">
+      <HeroWebGLBackground />
         <div className="hero-grid" aria-hidden="true"></div>
         <div className="hero-inner">
 

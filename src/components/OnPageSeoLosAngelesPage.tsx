@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import HeroWebGLBackground from './HeroWebGLBackground';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import SiteHeader from './SiteHeader';
@@ -144,6 +145,7 @@ export default function OnPageSeoLosAngelesPage() {
 
       {/* Hero Section */}
       <section className="hero">
+      <HeroWebGLBackground />
         <div className="hero-grid" aria-hidden="true" />
         <div className="hero-inner">
           

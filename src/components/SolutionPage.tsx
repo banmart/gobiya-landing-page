@@ -1,4 +1,5 @@
 import SiteHeader from "./SiteHeader";
+import HeroWebGLBackground from './HeroWebGLBackground';
 import SiteFooter from "./SiteFooter";
 import React, { useEffect, useState, useRef } from 'react';
 import { gsap } from 'gsap';
@@ -238,6 +239,7 @@ const SolutionPage: React.FC<{ path: string }> = ({ path }) => {
 
       {/* ================= HERO ================= */}
       <section className="hero" id="top">
+      <HeroWebGLBackground />
         <div className="hero-grid" aria-hidden="true"></div>
         <div className="hero-inner">
           <div className="hero-copy">

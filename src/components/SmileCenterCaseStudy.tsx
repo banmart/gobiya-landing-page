@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
+import HeroWebGLBackground from './HeroWebGLBackground';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ArrowRight, TrendingUp, Search, MapPin, Phone, BarChart2, Award } from 'lucide-react';
-import DeferredShader, { Swirl, ChromaFlow, FlutedGlass, FilmGrain } from './DeferredShader';
 import SiteHeader from './SiteHeader';
 import SiteFooter from './SiteFooter';
 import CustomCursor from './CustomCursor';
@@ -87,21 +87,12 @@ const SmileCenterCaseStudy: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-[#EFEDE5] text-[#15130E] relative font-sans selection:bg-[#2F5D50] selection:text-white page-wrapper">
+    <div className="min-h-screen bg-transparent text-[#15130E] relative font-sans selection:bg-[#2F5D50] selection:text-white page-wrapper">
       <CustomCursor />
 
       {/* HERO SECTION */}
-      <section className="relative w-full h-[65vh] min-h-[480px] bg-[#EFEDE5] overflow-hidden flex flex-col justify-center cursor-default">
-        {/* Shader Background */}
-        <div className="absolute inset-0 z-10 pointer-events-none w-full h-full [&>div]:w-full [&>div]:h-full [&_canvas]:w-full [&_canvas]:h-full [&_canvas]:object-cover opacity-85">
-          <DeferredShader>
-            <Swirl colorA="#EFEDE5" colorB="#E7E4D9" detail={1.5} />
-            <ChromaFlow baseColor="#EFEDE5" downColor="#2F5D50" leftColor="#2F5D50" rightColor="#2E8C68" upColor="#2F5D50" momentum={12} radius={3.0} />
-            <FlutedGlass aberration={0.4} angle={30} frequency={6} highlight={0.08} highlightSoftness={0} lightAngle={-90} refraction={3} shape="rounded" softness={1} speed={0.15} />
-            <FilmGrain strength={0.03} />
-          </DeferredShader>
-        </div>
-
+      <section className="relative w-full h-[65vh] min-h-[480px] bg-transparent overflow-hidden flex flex-col justify-center cursor-default">
+      <HeroWebGLBackground />
         {/* Navigation */}
         <SiteHeader />
 

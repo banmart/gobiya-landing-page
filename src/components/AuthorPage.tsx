@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import HeroWebGLBackground from './HeroWebGLBackground';
 import { Linkedin, Award, Code, Compass, ShieldCheck } from 'lucide-react';
 import SiteHeader from './SiteHeader';
 import SiteFooter from './SiteFooter';
@@ -120,6 +121,7 @@ const AuthorPage: React.FC<AuthorPageProps> = ({ path }) => {
 
       {/* ── HERO ── */}
       <section className="hero">
+      <HeroWebGLBackground />
         <div className="hero-grid" aria-hidden="true"></div>
         <div className="hero-inner">
           <nav className="breadcrumb" aria-label="Breadcrumb">
