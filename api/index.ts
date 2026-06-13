@@ -402,6 +402,11 @@ const metadataMap: Record<string, SEOMetadata> = {
     title: 'Industry Insights — Algorithmic Intelligence & Tactical Search Updates | GOBIYA',
     description: 'Advanced tactical intelligence on Google and AI search: algorithm update analysis, GEO and LLM citation tactics, entity SEO, technical recovery briefs, and pipeline engineering field notes from GOBIYA.'
   },
+  '/insights/how-to-apply-behavioral-psychology-principles-to-high-ticket-b2b-landing-page-wireframes-to-decrease-friction': {
+    title: 'How to Apply Behavioral Psychology Principles to High Ticket B2B Landing Page Wireframes to Decrease Friction | Gobiya',
+    description: 'Learn how to apply behavioral psychology principles like the Fogg Behavior Model and Hick\'s Law to high-ticket B2B landing page wireframes to decrease friction.',
+    image: '/images/article-behavioral-psychology-b2b-landing-page-wireframes-thumbnail.webp'
+  },
   '/insights/dental-seo-agency': {
     title: 'Dental SEO Agency Evaluation Checklist & KPIs | Gobiya',
     description: 'Avoid costly hiring mistakes. Use our comprehensive evaluation checklist for dental SEO agencies, covering contract traps, KPIs, and case study audits.',

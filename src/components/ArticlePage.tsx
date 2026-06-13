@@ -24,6 +24,218 @@ interface ArticleData {
 // Each article is statically registered here so we can do fast client-side
 // routing without a DB round-trip. Add new articles to this map.
 const ARTICLES: Record<string, ArticleData> = {
+  'how-to-apply-behavioral-psychology-principles-to-high-ticket-b2b-landing-page-wireframes-to-decrease-friction': {
+    slug: 'how-to-apply-behavioral-psychology-principles-to-high-ticket-b2b-landing-page-wireframes-to-decrease-friction',
+    title: 'How to Apply Behavioral Psychology Principles to High Ticket B2B Landing Page Wireframes to Decrease Friction',
+    category: 'Strategy',
+    readTime: '12 min read',
+    date: 'June 12, 2026',
+    image: '/images/article-behavioral-psychology-b2b-landing-page-wireframes-thumbnail.webp',
+    heroAlt: 'A premium, photorealistic image of professional business consultants reviewing a printed landing page wireframe in a warm, cinematically-lit office.',
+    metaDescription: 'Learn how to apply behavioral psychology principles like the Fogg Behavior Model and Hick\'s Law to high-ticket B2B landing page wireframes to decrease friction.',
+    content: (
+      <>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "What is the Fogg Behavior Model and how does it apply to B2B landing page wireframes?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The Fogg Behavior Model (B = MAP) asserts that behavior occurs when Motivation, Ability, and a Prompt converge at the same moment. In a high-ticket B2B wireframe, each section is arranged to support this sequence: above the fold increases motivation and displays the prompt; middle sections reinforce motivation via authority and proof while increasing ability through clarity; and the form balances ability and qualification requirements before triggering the prompt again."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "How does Hick's Law impact B2B landing page conversions?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Hick's Law states that decision time increases with the number and complexity of choices. For B2B landing pages, removing navigation menus and focusing on a single, repeated Call to Action (CTA) prevents decision paralysis. 2026 benchmarks show that single-CTA demo pages convert at 13.5% compared to 10.5% for multi-CTA pages."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Why is friction treated as a budget on high-ticket B2B landing pages?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Unlike low-ticket sales where all friction is eliminated to maximize sign-ups, high-ticket B2B programs use friction intentionally. By removing unintentional friction (slow speeds, complex layouts) and spending it on intentional filters (7-10 form fields detailing budget or stack), you trade raw volume for highly qualified leads, optimizing the demo-to-opportunity rate."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Where should social proof be placed on high-ticket B2B landing pages?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Social proof must be placed above or immediately below the fold. Since B2B purchases involve multiple stakeholders, decision-makers look for segment-matched logos and outcome-specific metrics early to justify the initial risk of booking a call."
+                  }
+                }
+              ]
+            })
+          }}
+        />
+
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8 font-medium">
+          Applying behavioral psychology to a high-ticket B2B landing page wireframe means treating each zone of the layout as the structural answer to a specific psychological question, and the master key is the Fogg Behavior Model: a behavior occurs when <strong>Motivation, Ability, and a Prompt converge at the same moment (B = MAP)</strong>. Map that onto a wireframe and the page stops being a design exercise and becomes an engineering one.
+        </p>
+
+        {/* ── TABLE OF CONTENTS ── */}
+        <details className="bg-gray-50 border border-gray-200 rounded-lg p-6 sm:p-8 my-10 sm:my-14 group" open>
+          <summary className="text-[14px] font-semibold uppercase tracking-wider text-gray-500 cursor-pointer list-none flex items-center justify-between">
+            Table of Contents
+            <svg className="w-4 h-4 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" /></svg>
+          </summary>
+          <ul className="mt-6 space-y-3.5 text-[15px] font-medium text-gray-900 border-t border-gray-200 pt-6">
+            {[
+              { id: 'high-ticket-different', label: 'Why high-ticket B2B friction is a different problem' },
+              { id: 'fogg-model', label: 'The Fogg Behavior Model as the wireframe\'s operating system' },
+              { id: 'zone-map', label: 'The zone-by-zone wireframe: principle × placement' },
+              { id: 'form-design', label: 'The form: where ability is won or deliberately spent' },
+              { id: 'friction-audit', label: 'The five-point friction audit' },
+              { id: 'ethics', label: 'Psychological design vs. dark patterns: the line that matters' },
+              { id: 'gobiya', label: 'How Gobiya engineers this into conversion infrastructure' },
+              { id: 'right-call', label: 'Making the right call on your wireframe' }
+            ].map(({ id, label }) => (
+              <li key={id} className="flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#F26522] shrink-0" />
+                <a href={'#' + id} className="hover:text-[#F26522] transition-colors">{label}</a>
+              </li>
+            ))}
+          </ul>
+        </details>
+
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          The hero exists to spike motivation and present the prompt. The social proof band exists to borrow motivation from consensus and authority. The risk-reversal block exists to neutralize loss aversion, the dominant emotion in a six-figure purchase. The form exists to maximize ability, or, in high-ticket's one great exception, to deliberately spend ability as a qualification filter. Friction, in this model, is anything that drains motivation or ability before the prompt fires, and decreasing it is a zone-by-zone discipline, not a coat of polish.
+        </p>
+
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          High-ticket B2B raises the stakes on every term in the equation. The visitor isn't deciding to buy, they're deciding whether to risk a meeting, their time, and a sliver of professional credibility on you, usually on behalf of a buying group of six to ten stakeholders they'll have to convince later. That means the psychology that moves a $40 e-commerce checkout is necessary but not sufficient here: the wireframe must also manage perceived career risk, multi-stakeholder defensibility, and the fact that a "conversion" is actually a request for a sales conversation. This article walks the full fusion, principle by principle, zone by zone, with the 2026 benchmark numbers that prove each placement.
+        </p>
+
+        <div className="border-l-4 border-[#F26522] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
+          <img src="/images/steve-portrait.webp" alt="Steve Martin" className="w-12 h-12 object-cover border border-white/10 shrink-0" />
+          <div>
+            <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-1 font-sans">Steve's Take</p>
+            <p className="text-[15px] italic text-white leading-relaxed font-sans">
+              "Most designers build wireframes to look good in internal decks. But the buying committee doesn't see your slides. They feel the friction. Design your page around Motivation and Ability first, then clean up the UI."
+            </p>
+          </div>
+        </div>
+
+        <h2 id="high-ticket-different" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          Why high-ticket B2B friction is a different problem
+        </h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          Before implementing frameworks, calibrate the target, because high-ticket pages that chase generic conversion benchmarks optimize themselves into junk pipeline. Average B2B SaaS demo-request pages convert at roughly 1.5–4%, top performers at 8–15%, but the relationship inverts with deal size: $75K+ enterprise pages appropriately target 1.5–3%, converting fewer visitors at far higher quality, because the demo-to-opportunity rate rises as the form qualifies harder. The lesson is foundational: on a high-ticket page, friction is not a single enemy to be eliminated, it's a budget to be allocated. You remove every unit of <em>unintentional</em> friction (slow loads, cluttered choice, cognitive overload, unexplained next steps) so you can afford to keep the <em>intentional</em> friction that filters for serious buyers. Behavioral psychology tells you which is which.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          The second calibration is emotional. A high-ticket B2B conversion is a professional risk decision made on behalf of a committee. Prospect theory's core finding, losses loom roughly twice as large as equivalent gains, governs the whole page: your visitor's dominant question isn't "what could this gain us?" but "what happens to me if this goes wrong, and how do I defend this choice to nine other people?" Every zone of the wireframe below is, in part, an answer to that question.
+        </p>
+
+        <h2 id="fogg-model" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          The Fogg Behavior Model as the wireframe's operating system
+        </h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          The Fogg Behavior Model, developed at Stanford's Behavior Design Lab, states that a behavior happens when three elements converge: <strong>Motivation</strong> (the visitor wants the outcome), <strong>Ability</strong> (the action is easy enough to take right now), and a <strong>Prompt</strong> (something cues the action at the moment motivation and ability are sufficient). When a prompt fires below the "action line", motivation too low, or action too hard, nothing happens. This is the cleanest diagnostic language a wireframe can have, because every landing page failure is one of exactly three failures: a motivation failure (the value isn't felt), an ability failure (the action costs too much effort, time, or perceived risk), or a prompt failure (the CTA is absent, buried, competing, or mistimed).
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          The wireframe implication: stop arranging sections by convention ("hero, features, testimonials, form") and start arranging them as a motivation-ability-prompt sequence. Above the fold: establish motivation fast and place the prompt in sight. Through the middle: compound motivation (proof, outcomes, risk-reversal) while progressively raising ability (clarity about what happens next). At the form: make the action as easy as the qualification strategy allows, then fire the prompt again.
+        </p>
+
+        <h2 id="zone-map" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          The zone-by-zone wireframe: principle × placement
+        </h2>
+        <h3 className="text-[18px] sm:text-[20px] font-medium text-gray-900 mt-8 mb-4">Above the fold: Hick's Law and the single prompt</h3>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          Hick's Law, decision time grows with the number and complexity of choices, is the governing principle of the first viewport, and the 2026 data quantifies it: single-CTA demo pages convert at 13.5% versus 10.5% for multi-CTA pages, a 29% lift from removing the paradox of choice. Structurally that means: one primary CTA, repeated, not rivaled; navigation removed or radically reduced (visible nav menus are one of the five defects found in 80%+ of underperforming demo pages, every menu item is a competing prompt); and a headline that passes the five-second clarity test, because motivation can't spike on a value proposition the visitor has to decode. Copy at a 5th–7th grade reading level converts at 11.1% versus 5.3% for college-level prose, radical clarity isn't dumbing down, it's respecting that your CFO-titled visitor is scanning on 47 seconds of attention like everyone else.
+        </p>
+
+        <h3 className="text-[18px] sm:text-[20px] font-medium text-gray-900 mt-8 mb-4">The proof band: authority and consensus, placed early</h3>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          Cialdini's authority and social-proof principles answer the high-ticket visitor's defensibility question, "who like me has already made this safe?", and placement is the structural decision: above or immediately below the fold, not in the page's basement. Missing above-the-fold social proof is another of the five canonical demo-page defects. For high-ticket specifically, proof must match the stakes: recognizable client logos in the visitor's segment, outcome-specific numbers, named testimonials with titles, and certifications or security badges where procurement will ask anyway. Generic five-star widgets read as noise at this deal size; segment-matched specificity reads as defense material the champion can forward to the committee.
+        </p>
+
+        <div className="article-hero-image-wrap my-8" style={{ width: '100%', maxHeight: '400px', overflow: 'hidden', border: '1px solid var(--line)' }}>
+          <img 
+            src="/images/article-behavioral-psychology-b2b-landing-page-wireframes-secondary.webp" 
+            alt="Landing page wireframe design mapping out Hick's Law and BJ Fogg behavior model zones" 
+            style={{ width: '100%', height: 'auto', objectFit: 'cover' }} 
+          />
+        </div>
+
+        <h3 className="text-[18px] sm:text-[20px] font-medium text-gray-900 mt-8 mb-4">The risk-reversal block: loss aversion, neutralized in layout</h3>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          This is the zone most low-ticket templates omit and high-ticket pages can't survive without. Because losses weigh roughly double gains, the wireframe needs a dedicated section, typically just before the form, that structurally answers "what happens if I click, and what could go wrong?": a numbered <em>what-happens-next</em> sequence ("30-minute technical audit call &rarr; written findings within 48 hours &rarr; no obligation"), explicit no-commitment language, named-human signals (who they'll actually meet), and where truthful, guarantees or exit terms. The principle of commitment and consistency also argues for asking for the smallest honest commitment, "request the audit," not "transform your business", because small, clearly-bounded asks clear the action line that grand ones don't. Unexplained next steps are pure ability-failure: the visitor isn't unwilling, they're unable to price the cost of the click.
+        </p>
+
+        <h3 className="text-[18px] sm:text-[20px] font-medium text-gray-900 mt-8 mb-4">The middle passage: cognitive load, chunked</h3>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          Cognitive load theory governs everything between proof and form: working memory is small, and every unit spent parsing layout is a unit unavailable for wanting your product. Structurally: one idea per section, generous white space, scannable subheads that carry the argument by themselves, feature claims framed as stakeholder outcomes (what the champion can report upward), and mid-page CTAs for the minority who are ready early, First Page Sage's recommendations explicitly include mid-page calls to action because most visitors never reach the bottom. On mobile, where 58–60% of traffic but a fraction of high-friction conversions live, design for the research visit: scannable, fast, with a low-friction capture path, and let desktop carry the full demo-request weight.
+        </p>
+
+        <h2 id="form-design" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          The form: where ability is won or deliberately spent
+        </h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          The form is the ability axis made visible, and the math is brutal: 3-field forms convert around 25% while 9-field forms drop to 3.6%; pages with 5 or fewer fields convert 120% better; each field beyond 5 costs 20–30%; 81% of users who start forms abandon them and 67% never come back. Two structural tools recover ability without losing data. First, progressive disclosure: multi-step forms outperform single-page forms with identical total fields by 21%, because three screens of three questions <em>feel</em> lighter than one screen of nine, and the commitment-consistency effect carries visitors who've completed step one through step three. Second, deferred qualification: capture name, email, and company on the page, then qualify in the follow-up sequence rather than the form.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          And then the high-ticket exception, the one place this article tells you to add friction on purpose: for genuinely high-ACV offers, a deliberately fuller form (7–10 fields, or step-two questions on budget authority, timeline, and stack) functions as a qualification instrument, trading raw conversion rate for demo-to-opportunity rate, exactly the trade the enterprise benchmarks (1.5–3%, high quality) describe. The discipline is intentionality: every field must be there either because sales genuinely cannot route the lead without it or because it filters in a way you've decided to pay for. A field that's merely habitual is a 20–30% tax with no return.
+        </p>
+
+        <h2 id="friction-audit" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          The five-point friction audit
+        </h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          Analysis of 300 B2B demo pages found the same five defects in over 80% of underperformers, and they map one-to-one onto the framework above, run this as your pre-launch audit:
+        </p>
+        <ul className="list-disc list-inside space-y-2 text-gray-800 mb-8 pl-4">
+          <li><strong>One page for all traffic:</strong> No intent matching between ad, query, and page, a motivation failure: the headline answers a question the visitor didn't ask.</li>
+          <li><strong>Too many form fields</strong> (more than 4 without a qualification rationale), an ability failure, taxed at 20–30% per excess field.</li>
+          <li><strong>No social proof above the fold:</strong> A defensibility failure for the committee-minded high-ticket visitor.</li>
+          <li><strong>Navigation still visible:</strong> A prompt failure: every menu item is a competing CTA, and Hick's Law collects on each one.</li>
+          <li><strong>Poor mobile experience:</strong> An ability failure for the 60% of traffic doing research that decides whether the desktop visit ever happens.</li>
+        </ul>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          Add the two the data flags hardest in 2026: page speed (the first five seconds of load and headline clarity decide more than everything below them) and the absence of testing culture, only 17% of marketers A/B test landing pages, while consistent testers average 37–49% conversion gains. A behavioral wireframe is a hypothesis; the test program is what makes it knowledge.
+        </p>
+
+        <h2 id="ethics" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          Psychological design vs. dark patterns: the line that matters
+        </h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          A necessary boundary, because the same literature that powers this article also powers manipulation, and at high-ticket deal sizes the manipulation always comes due. The line is honest state versus engineered illusion. Real scarcity ("we onboard four clients a quarter") is information; fake countdown timers are fraud with a UI. Real social proof is verifiable; invented logos and unattributable testimonials are discoverable by exactly the procurement teams high-ticket deals must pass. Loss-aversion framing that truthfully names the cost of inaction is persuasion; fabricated risk is fear-mongering that poisons the sales relationship the page exists to start. The practical test: would the wireframe still work if the prospect knew precisely why every element was placed where it is? Behavioral design that survives that question builds trust at scale, and in a six-to-ten-stakeholder sale, trust is the only asset that compounds through the committee.
+        </p>
+
+        <h2 id="gobiya" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          How Gobiya engineers this into conversion infrastructure
+        </h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          Gobiya treats landing pages the way this article does, as engineered behavioral systems, not design deliverables, and builds the infrastructure that makes the psychology measurable. The behavioral wireframe is implemented on <a href="/capabilities/web-development" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">blazing-fast web builds</a> (because the first five seconds are a motivation budget that slow pages spend on nothing), wired into <a href="/capabilities/native-crm" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">native CRM and pipeline tracking</a> so every form variant, field count, and CTA placement is attributed to actual opportunities rather than raw conversion vanity, exactly the rate-versus-quality trade high-ticket pages must manage, and structured for <a href="/capabilities/seo-discoverability" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">search and AI-engine discoverability</a> so the intent-matched traffic the wireframe assumes actually arrives.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          The results pattern is documented in work like <a href="/case-studies/smile-center-dentistry" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">SmileCenter's 5x inquiry growth</a>, and the operating philosophy is the same one on our homepage: no vanity metrics, pipeline ROI built in. If you want your page audited against the exact friction framework above, <a href="/book" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">book a strategy call</a> and request the landing page friction audit.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          For more context on organic search, check our guide on <a href="/insights/b2b-organic-traffic-growth" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">B2B organic traffic growth</a> or read about <a href="/insights/seo-for-b2b-lead-generation" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">demand generation SEO</a>. You can also review how to optimize for new search engines in our analysis of <a href="/insights/chatgpt-vs-google-for-business-discovery" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">ChatGPT vs. Google for Business Discovery</a> and how to handle <a href="/insights/google-manual-action-removal-agency-caused-penalty" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">Google manual actions</a>. If your business targets local searchers, read about <a href="/insights/local-seo" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">local search dominance</a>.
+        </p>
+
+        <h2 id="right-call" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          Making the right call on your wireframe
+        </h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          So how do you apply behavioral psychology to a high-ticket B2B landing page wireframe to decrease friction? Run the page as a Fogg equation: spike motivation and present a single prompt above the fold (Hick's Law, one CTA, no nav), make the decision defensible early (authority and consensus proof, segment-matched, above the fold), neutralize loss aversion before the ask (a what-happens-next block and the smallest honest commitment), protect working memory through the middle (one idea per section, 7th-grade clarity, mid-page CTAs), and spend form friction only on purpose (5-field default, multi-step disclosure, qualification fields priced consciously against the 20–30%-per-field tax).
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          Two decisions matter most. First: whether every unit of friction on your page is intentional, a qualification filter you've chosen and priced, or inherited, the nav bar, the ninth form field, and the unexplained next step that no one ever decided to keep. Second: whether you'll treat the wireframe as a tested behavioral hypothesis, with attribution from click to opportunity so the rate-versus-quality trade is visible, or as a design artifact judged by how it looks in the deck. The committee buying your six-figure offer never sees the deck. They see the page, and they feel the friction you forgot was there.
+        </p>
+      </>
+    )
+  },
   'gobiya-vs-enterprise-seo-agencies': {
     slug: 'gobiya-vs-enterprise-seo-agencies',
     title: 'Enterprise SEO Agencies vs. Gobiya: The Honest Comparison',
@@ -6934,218 +7146,6 @@ const ARTICLES: Record<string, ArticleData> = {
             </div>
           ))}
         </div>
-      </>
-    )
-  },
-  'how-to-apply-behavioral-psychology-principles-to-high-ticket-b2b-landing-page-wireframes-to-decrease-friction': {
-    slug: 'how-to-apply-behavioral-psychology-principles-to-high-ticket-b2b-landing-page-wireframes-to-decrease-friction',
-    title: 'How to Apply Behavioral Psychology Principles to High Ticket B2B Landing Page Wireframes to Decrease Friction',
-    category: 'Strategy',
-    readTime: '12 min read',
-    date: 'June 12, 2026',
-    image: '/images/article-behavioral-psychology-b2b-landing-page-wireframes-thumbnail.webp',
-    heroAlt: 'A premium, photorealistic image of professional business consultants reviewing a printed landing page wireframe in a warm, cinematically-lit office.',
-    metaDescription: 'Learn how to apply behavioral psychology principles like the Fogg Behavior Model and Hick\'s Law to high-ticket B2B landing page wireframes to decrease friction.',
-    content: (
-      <>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "FAQPage",
-              "mainEntity": [
-                {
-                  "@type": "Question",
-                  "name": "What is the Fogg Behavior Model and how does it apply to B2B landing page wireframes?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "The Fogg Behavior Model (B = MAP) asserts that behavior occurs when Motivation, Ability, and a Prompt converge at the same moment. In a high-ticket B2B wireframe, each section is arranged to support this sequence: above the fold increases motivation and displays the prompt; middle sections reinforce motivation via authority and proof while increasing ability through clarity; and the form balances ability and qualification requirements before triggering the prompt again."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "How does Hick's Law impact B2B landing page conversions?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Hick's Law states that decision time increases with the number and complexity of choices. For B2B landing pages, removing navigation menus and focusing on a single, repeated Call to Action (CTA) prevents decision paralysis. 2026 benchmarks show that single-CTA demo pages convert at 13.5% compared to 10.5% for multi-CTA pages."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "Why is friction treated as a budget on high-ticket B2B landing pages?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Unlike low-ticket sales where all friction is eliminated to maximize sign-ups, high-ticket B2B programs use friction intentionally. By removing unintentional friction (slow speeds, complex layouts) and spending it on intentional filters (7-10 form fields detailing budget or stack), you trade raw volume for highly qualified leads, optimizing the demo-to-opportunity rate."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "Where should social proof be placed on high-ticket B2B landing pages?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Social proof must be placed above or immediately below the fold. Since B2B purchases involve multiple stakeholders, decision-makers look for segment-matched logos and outcome-specific metrics early to justify the initial risk of booking a call."
-                  }
-                }
-              ]
-            })
-          }}
-        />
-
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8 font-medium">
-          Applying behavioral psychology to a high-ticket B2B landing page wireframe means treating each zone of the layout as the structural answer to a specific psychological question, and the master key is the Fogg Behavior Model: a behavior occurs when <strong>Motivation, Ability, and a Prompt converge at the same moment (B = MAP)</strong>. Map that onto a wireframe and the page stops being a design exercise and becomes an engineering one.
-        </p>
-
-        {/* ── TABLE OF CONTENTS ── */}
-        <details className="bg-gray-50 border border-gray-200 rounded-lg p-6 sm:p-8 my-10 sm:my-14 group" open>
-          <summary className="text-[14px] font-semibold uppercase tracking-wider text-gray-500 cursor-pointer list-none flex items-center justify-between">
-            Table of Contents
-            <svg className="w-4 h-4 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" /></svg>
-          </summary>
-          <ul className="mt-6 space-y-3.5 text-[15px] font-medium text-gray-900 border-t border-gray-200 pt-6">
-            {[
-              { id: 'high-ticket-different', label: 'Why high-ticket B2B friction is a different problem' },
-              { id: 'fogg-model', label: 'The Fogg Behavior Model as the wireframe\'s operating system' },
-              { id: 'zone-map', label: 'The zone-by-zone wireframe: principle × placement' },
-              { id: 'form-design', label: 'The form: where ability is won or deliberately spent' },
-              { id: 'friction-audit', label: 'The five-point friction audit' },
-              { id: 'ethics', label: 'Psychological design vs. dark patterns: the line that matters' },
-              { id: 'gobiya', label: 'How Gobiya engineers this into conversion infrastructure' },
-              { id: 'right-call', label: 'Making the right call on your wireframe' }
-            ].map(({ id, label }) => (
-              <li key={id} className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#F26522] shrink-0" />
-                <a href={'#' + id} className="hover:text-[#F26522] transition-colors">{label}</a>
-              </li>
-            ))}
-          </ul>
-        </details>
-
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
-          The hero exists to spike motivation and present the prompt. The social proof band exists to borrow motivation from consensus and authority. The risk-reversal block exists to neutralize loss aversion, the dominant emotion in a six-figure purchase. The form exists to maximize ability, or, in high-ticket's one great exception, to deliberately spend ability as a qualification filter. Friction, in this model, is anything that drains motivation or ability before the prompt fires, and decreasing it is a zone-by-zone discipline, not a coat of polish.
-        </p>
-
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
-          High-ticket B2B raises the stakes on every term in the equation. The visitor isn't deciding to buy, they're deciding whether to risk a meeting, their time, and a sliver of professional credibility on you, usually on behalf of a buying group of six to ten stakeholders they'll have to convince later. That means the psychology that moves a $40 e-commerce checkout is necessary but not sufficient here: the wireframe must also manage perceived career risk, multi-stakeholder defensibility, and the fact that a "conversion" is actually a request for a sales conversation. This article walks the full fusion, principle by principle, zone by zone, with the 2026 benchmark numbers that prove each placement.
-        </p>
-
-        <div className="border-l-4 border-[#F26522] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
-          <img src="/images/steve-portrait.webp" alt="Steve Martin" className="w-12 h-12 object-cover border border-white/10 shrink-0" />
-          <div>
-            <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-1 font-sans">Steve's Take</p>
-            <p className="text-[15px] italic text-white leading-relaxed font-sans">
-              "Most designers build wireframes to look good in internal decks. But the buying committee doesn't see your slides. They feel the friction. Design your page around Motivation and Ability first, then clean up the UI."
-            </p>
-          </div>
-        </div>
-
-        <h2 id="high-ticket-different" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
-          Why high-ticket B2B friction is a different problem
-        </h2>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Before implementing frameworks, calibrate the target, because high-ticket pages that chase generic conversion benchmarks optimize themselves into junk pipeline. Average B2B SaaS demo-request pages convert at roughly 1.5–4%, top performers at 8–15%, but the relationship inverts with deal size: $75K+ enterprise pages appropriately target 1.5–3%, converting fewer visitors at far higher quality, because the demo-to-opportunity rate rises as the form qualifies harder. The lesson is foundational: on a high-ticket page, friction is not a single enemy to be eliminated, it's a budget to be allocated. You remove every unit of <em>unintentional</em> friction (slow loads, cluttered choice, cognitive overload, unexplained next steps) so you can afford to keep the <em>intentional</em> friction that filters for serious buyers. Behavioral psychology tells you which is which.
-        </p>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          The second calibration is emotional. A high-ticket B2B conversion is a professional risk decision made on behalf of a committee. Prospect theory's core finding, losses loom roughly twice as large as equivalent gains, governs the whole page: your visitor's dominant question isn't "what could this gain us?" but "what happens to me if this goes wrong, and how do I defend this choice to nine other people?" Every zone of the wireframe below is, in part, an answer to that question.
-        </p>
-
-        <h2 id="fogg-model" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
-          The Fogg Behavior Model as the wireframe's operating system
-        </h2>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          The Fogg Behavior Model, developed at Stanford's Behavior Design Lab, states that a behavior happens when three elements converge: <strong>Motivation</strong> (the visitor wants the outcome), <strong>Ability</strong> (the action is easy enough to take right now), and a <strong>Prompt</strong> (something cues the action at the moment motivation and ability are sufficient). When a prompt fires below the "action line", motivation too low, or action too hard, nothing happens. This is the cleanest diagnostic language a wireframe can have, because every landing page failure is one of exactly three failures: a motivation failure (the value isn't felt), an ability failure (the action costs too much effort, time, or perceived risk), or a prompt failure (the CTA is absent, buried, competing, or mistimed).
-        </p>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          The wireframe implication: stop arranging sections by convention ("hero, features, testimonials, form") and start arranging them as a motivation-ability-prompt sequence. Above the fold: establish motivation fast and place the prompt in sight. Through the middle: compound motivation (proof, outcomes, risk-reversal) while progressively raising ability (clarity about what happens next). At the form: make the action as easy as the qualification strategy allows, then fire the prompt again.
-        </p>
-
-        <h2 id="zone-map" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
-          The zone-by-zone wireframe: principle × placement
-        </h2>
-        <h3 className="text-[18px] sm:text-[20px] font-medium text-gray-900 mt-8 mb-4">Above the fold: Hick's Law and the single prompt</h3>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Hick's Law, decision time grows with the number and complexity of choices, is the governing principle of the first viewport, and the 2026 data quantifies it: single-CTA demo pages convert at 13.5% versus 10.5% for multi-CTA pages, a 29% lift from removing the paradox of choice. Structurally that means: one primary CTA, repeated, not rivaled; navigation removed or radically reduced (visible nav menus are one of the five defects found in 80%+ of underperforming demo pages, every menu item is a competing prompt); and a headline that passes the five-second clarity test, because motivation can't spike on a value proposition the visitor has to decode. Copy at a 5th–7th grade reading level converts at 11.1% versus 5.3% for college-level prose, radical clarity isn't dumbing down, it's respecting that your CFO-titled visitor is scanning on 47 seconds of attention like everyone else.
-        </p>
-
-        <h3 className="text-[18px] sm:text-[20px] font-medium text-gray-900 mt-8 mb-4">The proof band: authority and consensus, placed early</h3>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Cialdini's authority and social-proof principles answer the high-ticket visitor's defensibility question, "who like me has already made this safe?", and placement is the structural decision: above or immediately below the fold, not in the page's basement. Missing above-the-fold social proof is another of the five canonical demo-page defects. For high-ticket specifically, proof must match the stakes: recognizable client logos in the visitor's segment, outcome-specific numbers, named testimonials with titles, and certifications or security badges where procurement will ask anyway. Generic five-star widgets read as noise at this deal size; segment-matched specificity reads as defense material the champion can forward to the committee.
-        </p>
-
-        <div className="article-hero-image-wrap my-8" style={{ width: '100%', maxHeight: '400px', overflow: 'hidden', border: '1px solid var(--line)' }}>
-          <img 
-            src="/images/article-behavioral-psychology-b2b-landing-page-wireframes-secondary.webp" 
-            alt="Landing page wireframe design mapping out Hick's Law and BJ Fogg behavior model zones" 
-            style={{ width: '100%', height: 'auto', objectFit: 'cover' }} 
-          />
-        </div>
-
-        <h3 className="text-[18px] sm:text-[20px] font-medium text-gray-900 mt-8 mb-4">The risk-reversal block: loss aversion, neutralized in layout</h3>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          This is the zone most low-ticket templates omit and high-ticket pages can't survive without. Because losses weigh roughly double gains, the wireframe needs a dedicated section, typically just before the form, that structurally answers "what happens if I click, and what could go wrong?": a numbered <em>what-happens-next</em> sequence ("30-minute technical audit call &rarr; written findings within 48 hours &rarr; no obligation"), explicit no-commitment language, named-human signals (who they'll actually meet), and where truthful, guarantees or exit terms. The principle of commitment and consistency also argues for asking for the smallest honest commitment, "request the audit," not "transform your business", because small, clearly-bounded asks clear the action line that grand ones don't. Unexplained next steps are pure ability-failure: the visitor isn't unwilling, they're unable to price the cost of the click.
-        </p>
-
-        <h3 className="text-[18px] sm:text-[20px] font-medium text-gray-900 mt-8 mb-4">The middle passage: cognitive load, chunked</h3>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Cognitive load theory governs everything between proof and form: working memory is small, and every unit spent parsing layout is a unit unavailable for wanting your product. Structurally: one idea per section, generous white space, scannable subheads that carry the argument by themselves, feature claims framed as stakeholder outcomes (what the champion can report upward), and mid-page CTAs for the minority who are ready early, First Page Sage's recommendations explicitly include mid-page calls to action because most visitors never reach the bottom. On mobile, where 58–60% of traffic but a fraction of high-friction conversions live, design for the research visit: scannable, fast, with a low-friction capture path, and let desktop carry the full demo-request weight.
-        </p>
-
-        <h2 id="form-design" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
-          The form: where ability is won or deliberately spent
-        </h2>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          The form is the ability axis made visible, and the math is brutal: 3-field forms convert around 25% while 9-field forms drop to 3.6%; pages with 5 or fewer fields convert 120% better; each field beyond 5 costs 20–30%; 81% of users who start forms abandon them and 67% never come back. Two structural tools recover ability without losing data. First, progressive disclosure: multi-step forms outperform single-page forms with identical total fields by 21%, because three screens of three questions <em>feel</em> lighter than one screen of nine, and the commitment-consistency effect carries visitors who've completed step one through step three. Second, deferred qualification: capture name, email, and company on the page, then qualify in the follow-up sequence rather than the form.
-        </p>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          And then the high-ticket exception, the one place this article tells you to add friction on purpose: for genuinely high-ACV offers, a deliberately fuller form (7–10 fields, or step-two questions on budget authority, timeline, and stack) functions as a qualification instrument, trading raw conversion rate for demo-to-opportunity rate, exactly the trade the enterprise benchmarks (1.5–3%, high quality) describe. The discipline is intentionality: every field must be there either because sales genuinely cannot route the lead without it or because it filters in a way you've decided to pay for. A field that's merely habitual is a 20–30% tax with no return.
-        </p>
-
-        <h2 id="friction-audit" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
-          The five-point friction audit
-        </h2>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Analysis of 300 B2B demo pages found the same five defects in over 80% of underperformers, and they map one-to-one onto the framework above, run this as your pre-launch audit:
-        </p>
-        <ul className="list-disc list-inside space-y-2 text-gray-800 mb-8 pl-4">
-          <li><strong>One page for all traffic:</strong> No intent matching between ad, query, and page, a motivation failure: the headline answers a question the visitor didn't ask.</li>
-          <li><strong>Too many form fields</strong> (more than 4 without a qualification rationale), an ability failure, taxed at 20–30% per excess field.</li>
-          <li><strong>No social proof above the fold:</strong> A defensibility failure for the committee-minded high-ticket visitor.</li>
-          <li><strong>Navigation still visible:</strong> A prompt failure: every menu item is a competing CTA, and Hick's Law collects on each one.</li>
-          <li><strong>Poor mobile experience:</strong> An ability failure for the 60% of traffic doing research that decides whether the desktop visit ever happens.</li>
-        </ul>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Add the two the data flags hardest in 2026: page speed (the first five seconds of load and headline clarity decide more than everything below them) and the absence of testing culture, only 17% of marketers A/B test landing pages, while consistent testers average 37–49% conversion gains. A behavioral wireframe is a hypothesis; the test program is what makes it knowledge.
-        </p>
-
-        <h2 id="ethics" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
-          Psychological design vs. dark patterns: the line that matters
-        </h2>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          A necessary boundary, because the same literature that powers this article also powers manipulation, and at high-ticket deal sizes the manipulation always comes due. The line is honest state versus engineered illusion. Real scarcity ("we onboard four clients a quarter") is information; fake countdown timers are fraud with a UI. Real social proof is verifiable; invented logos and unattributable testimonials are discoverable by exactly the procurement teams high-ticket deals must pass. Loss-aversion framing that truthfully names the cost of inaction is persuasion; fabricated risk is fear-mongering that poisons the sales relationship the page exists to start. The practical test: would the wireframe still work if the prospect knew precisely why every element was placed where it is? Behavioral design that survives that question builds trust at scale, and in a six-to-ten-stakeholder sale, trust is the only asset that compounds through the committee.
-        </p>
-
-        <h2 id="gobiya" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
-          How Gobiya engineers this into conversion infrastructure
-        </h2>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Gobiya treats landing pages the way this article does, as engineered behavioral systems, not design deliverables, and builds the infrastructure that makes the psychology measurable. The behavioral wireframe is implemented on <a href="/capabilities/web-development" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">blazing-fast web builds</a> (because the first five seconds are a motivation budget that slow pages spend on nothing), wired into <a href="/capabilities/native-crm" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">native CRM and pipeline tracking</a> so every form variant, field count, and CTA placement is attributed to actual opportunities rather than raw conversion vanity, exactly the rate-versus-quality trade high-ticket pages must manage, and structured for <a href="/capabilities/seo-discoverability" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">search and AI-engine discoverability</a> so the intent-matched traffic the wireframe assumes actually arrives.
-        </p>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          The results pattern is documented in work like <a href="/case-studies/smile-center-dentistry" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">SmileCenter's 5x inquiry growth</a>, and the operating philosophy is the same one on our homepage: no vanity metrics, pipeline ROI built in. If you want your page audited against the exact friction framework above, <a href="/book" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">book a strategy call</a> and request the landing page friction audit.
-        </p>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          For more context on organic search, check our guide on <a href="/insights/b2b-organic-traffic-growth" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">B2B organic traffic growth</a> or read about <a href="/insights/seo-for-b2b-lead-generation" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">demand generation SEO</a>. You can also review how to optimize for new search engines in our analysis of <a href="/insights/chatgpt-vs-google-for-business-discovery" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">ChatGPT vs. Google for Business Discovery</a> and how to handle <a href="/insights/google-manual-action-removal-agency-caused-penalty" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">Google manual actions</a>. If your business targets local searchers, read about <a href="/insights/local-seo" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">local search dominance</a>.
-        </p>
-
-        <h2 id="right-call" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
-          Making the right call on your wireframe
-        </h2>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          So how do you apply behavioral psychology to a high-ticket B2B landing page wireframe to decrease friction? Run the page as a Fogg equation: spike motivation and present a single prompt above the fold (Hick's Law, one CTA, no nav), make the decision defensible early (authority and consensus proof, segment-matched, above the fold), neutralize loss aversion before the ask (a what-happens-next block and the smallest honest commitment), protect working memory through the middle (one idea per section, 7th-grade clarity, mid-page CTAs), and spend form friction only on purpose (5-field default, multi-step disclosure, qualification fields priced consciously against the 20–30%-per-field tax).
-        </p>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Two decisions matter most. First: whether every unit of friction on your page is intentional, a qualification filter you've chosen and priced, or inherited, the nav bar, the ninth form field, and the unexplained next step that no one ever decided to keep. Second: whether you'll treat the wireframe as a tested behavioral hypothesis, with attribution from click to opportunity so the rate-versus-quality trade is visible, or as a design artifact judged by how it looks in the deck. The committee buying your six-figure offer never sees the deck. They see the page, and they feel the friction you forgot was there.
-        </p>
       </>
     )
   },
