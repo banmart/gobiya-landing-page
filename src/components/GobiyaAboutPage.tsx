@@ -361,7 +361,11 @@ export default function GobiyaAboutPage() {
 
               <div className="op-card" data-anim="scale">
                 <div className="op-card-head">
-                  <span className="op-mono" aria-hidden="true">SM</span>
+                  <img
+                    src="/images/steve-portrait.webp"
+                    alt="Steve Martin"
+                    className="op-mono object-cover"
+                  />
                   <div>
                     <p className="name">Steve Martin</p>
                     <p className="role mono-tag">Founder &amp; principal — Gobiya, Los Angeles</p>
