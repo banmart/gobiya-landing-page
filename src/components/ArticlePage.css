@@ -13,7 +13,8 @@
 }
 
 .article-page ::selection { background: var(--green); color: var(--paper); }
-.article-page a { color: inherit; text-decoration: none; }
+.article-page a { text-decoration: none; }
+.article-page a:not(.btn) { color: inherit; }
 .article-page :focus-visible { outline: 2px solid var(--green); outline-offset: 3px; border-radius: 2px; }
 .article-page img, .article-page svg { display: block; max-width: 100%; }
 
