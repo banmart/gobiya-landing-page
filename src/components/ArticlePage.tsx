@@ -163,7 +163,7 @@ const ARTICLES: Record<string, ArticleData> = {
           <img 
             src="/images/article-behavioral-psychology-b2b-landing-page-wireframes-secondary.webp" 
             alt="Landing page wireframe design mapping out Hick's Law and BJ Fogg behavior model zones" 
-            style={{ width: '100%', height: 'auto', objectFit: 'cover' }} 
+            style={{ width: '100%', height: 'auto', objectFit: 'cover', objectPosition: 'center center' }} 
           />
         </div>
 
@@ -6644,7 +6644,7 @@ const ARTICLES: Record<string, ArticleData> = {
             <img
               src="/images/article-brand-entity-drift-audit-secondary.webp"
               alt="Two professionals reviewing a brand entity audit dashboard showing drift between declared and graph-stored values for category, services, location and leadership attributes"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover object-center"
               loading="lazy"
             />
           </div>
