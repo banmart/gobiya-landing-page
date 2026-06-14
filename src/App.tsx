@@ -71,9 +71,9 @@ interface AppProps {
 }
 
 function App({ url }: AppProps) {
-  // Use server-provided url pathname if available, otherwise read window location pathname
+  // Use server-provided url if available, otherwise read window location pathname + search params
   const [currentPath, setCurrentPath] = useState(
-    url || (typeof window !== 'undefined' ? window.location.pathname : '/')
+    url || (typeof window !== 'undefined' ? window.location.pathname + window.location.search : '/')
   );
 
   const [token, setToken] = useState<string | null>(() => {
@@ -101,7 +101,7 @@ function App({ url }: AppProps) {
     if (typeof window === 'undefined') return;
     
     const handleLocationChange = () => {
-      setCurrentPath(window.location.pathname);
+      setCurrentPath(window.location.pathname + window.location.search);
     };
 
     // Bind browser navigation popstate
@@ -128,8 +128,8 @@ function App({ url }: AppProps) {
           }
           
           e.preventDefault();
-          window.history.pushState({}, '', urlObj.pathname + urlObj.hash);
-          setCurrentPath(urlObj.pathname);
+          window.history.pushState({}, '', urlObj.pathname + urlObj.search + urlObj.hash);
+          setCurrentPath(urlObj.pathname + urlObj.search);
           // Scroll to top if no hash, else scroll to hash
           if (urlObj.hash) {
             setTimeout(() => {
@@ -241,8 +241,8 @@ function App({ url }: AppProps) {
     }
   }, [currentPath]);
 
-  // Normalize path
-  const normalizedPath = currentPath.toLowerCase().replace(/\/$/, '') || '/';
+  // Normalize path by splitting out search parameters
+  const normalizedPath = currentPath.split('?')[0].toLowerCase().replace(/\/$/, '') || '/';
 
   // Detect article routes: /insights/[slug]
   const articleMatch = normalizedPath.match(/^\/insights\/([a-z0-9-]+)$/);
@@ -311,7 +311,7 @@ function App({ url }: AppProps) {
       ) : normalizedPath === '/company/approach' ? (
         <ApproachPage />
       ) : normalizedPath === '/insights' ? (
-        <InsightsPage />
+        <InsightsPage currentPath={currentPath} />
       ) : normalizedPath === '/contact' ? (
         <ContactPage />
       ) : isSolutionRoute ? (

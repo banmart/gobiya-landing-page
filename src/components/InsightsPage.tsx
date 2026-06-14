@@ -9,16 +9,42 @@ import { ARTICLES } from './ArticlePage';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const InsightsPage: React.FC = () => {
+interface InsightsPageProps {
+  currentPath?: string;
+}
+
+const InsightsPage: React.FC<InsightsPageProps> = ({ currentPath }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [email, setEmail] = useState('');
   const [noteText, setNoteText] = useState('// update-driven cadence · unsubscribe anytime');
-  const [currentPage, setCurrentPage] = useState(1);
+
+  const getPageFromPath = (pathStr?: string) => {
+    if (!pathStr) return 1;
+    try {
+      const search = pathStr.split('?')[1];
+      if (search) {
+        const params = new URLSearchParams(search);
+        const p = parseInt(params.get('page') || '1', 10);
+        return isNaN(p) ? 1 : p;
+      }
+    } catch (e) {
+      console.error(e);
+    }
+    return 1;
+  };
+
+  const initialPage = getPageFromPath(currentPath || (typeof window !== 'undefined' ? window.location.pathname + window.location.search : ''));
+  const [currentPage, setCurrentPage] = useState(initialPage);
   const PAGE_SIZE = 5;
   
   const articlesList = Object.entries(ARTICLES).map(([slug, data]) => ({ slug, ...data }));
   const totalPages = Math.ceil(articlesList.length / PAGE_SIZE);
   const currentArticles = articlesList.slice((currentPage - 1) * PAGE_SIZE, currentPage * PAGE_SIZE);
+
+  useEffect(() => {
+    const p = getPageFromPath(currentPath || (typeof window !== 'undefined' ? window.location.pathname + window.location.search : ''));
+    setCurrentPage(p);
+  }, [currentPath]);
 
   useEffect(() => {
     if (currentPage > 1) {
@@ -395,23 +421,56 @@ const InsightsPage: React.FC = () => {
             
             {totalPages > 1 && (
               <div className="pagination" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '2.5rem', paddingTop: '1.5rem', borderTop: '1px solid var(--line)' }}>
-                <button 
-                  onClick={() => setCurrentPage(p => Math.max(1, p - 1))} 
+                <a 
+                  href={`/insights?page=${Math.max(1, currentPage - 1)}`} 
                   className="btn btn-ghost"
-                  style={{ opacity: currentPage === 1 ? 0.3 : 1, pointerEvents: currentPage === 1 ? 'none' : 'auto' }}
+                  style={{ 
+                    opacity: currentPage === 1 ? 0.3 : 1, 
+                    pointerEvents: currentPage === 1 ? 'none' : 'auto',
+                    display: 'inline-flex',
+                    alignItems: 'center'
+                  }}
                 >
                   <span aria-hidden="true" style={{marginRight: '0.5rem'}}>←</span> Previous
-                </button>
+                </a>
                 <span className="mono-tag" style={{ color: 'var(--ink-soft)' }}>Page {currentPage} of {totalPages}</span>
-                <button 
-                  onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))} 
+                <a 
+                  href={`/insights?page=${Math.min(totalPages, currentPage + 1)}`} 
                   className="btn btn-ghost"
-                  style={{ opacity: currentPage === totalPages ? 0.3 : 1, pointerEvents: currentPage === totalPages ? 'none' : 'auto' }}
+                  style={{ 
+                    opacity: currentPage === totalPages ? 0.3 : 1, 
+                    pointerEvents: currentPage === totalPages ? 'none' : 'auto',
+                    display: 'inline-flex',
+                    alignItems: 'center'
+                  }}
                 >
                   Next <span aria-hidden="true" style={{marginLeft: '0.5rem'}}>→</span>
-                </button>
+                </a>
               </div>
             )}
+
+            {/* Full Archive Index Accordion for Search Engine Discovery & Topic Mapping */}
+            <div className="archive-disclosure" style={{ marginTop: '3rem', borderTop: '1px dashed var(--line)', paddingTop: '2rem' }}>
+              <details style={{ cursor: 'pointer' }}>
+                <summary className="mono-tag" style={{ color: 'var(--ink-soft)', outline: 'none', display: 'inline-flex', alignItems: 'center', gap: '0.5rem', userSelect: 'none' }}>
+                  <span>[+]</span> SYSTEM.INDEX: View All Briefs Archive ({articlesList.length} articles)
+                </summary>
+                <div style={{ marginTop: '1.5rem', display: 'grid', gridTemplateColumns: '1fr', gap: '1rem', paddingLeft: '1.5rem', borderLeft: '1px solid rgba(224,121,95,0.2)' }}>
+                  {articlesList.map((article, i) => {
+                    const num = String(articlesList.length - i).padStart(3, '0');
+                    return (
+                      <div key={`archive-${article.slug}`} style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                        <span className="mono-tag" style={{ color: 'var(--signal)', fontSize: '0.85em' }}>BRIEF-{num}</span>
+                        <a href={`/insights/${article.slug}`} className="text-link" style={{ fontSize: '0.95em', textDecoration: 'none' }}>
+                          {article.title}
+                        </a>
+                        <span className="mono-tag" style={{ fontSize: '0.8em', color: 'var(--ink-soft)', marginLeft: 'auto' }}>{article.category}</span>
+                      </div>
+                    );
+                  })}
+                </div>
+              </details>
+            </div>
           </div>
         </div>
       </section>

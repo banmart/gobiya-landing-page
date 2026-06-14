@@ -2,44 +2,123 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.gobiya.com/</loc>
+    <lastmod>2026-06-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://www.gobiya.com/capabilities/forensic-seo-penalty-recovery</loc>
-    <lastmod>2026-06-03</lastmod>
+    <loc>https://www.gobiya.com/capabilities</loc>
+    <lastmod>2026-06-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.gobiya.com/capabilities/web-development</loc>
+    <lastmod>2026-06-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
   <url>
-    <loc>https://www.gobiya.com/capabilities/generative-engine-optimization</loc>
-    <lastmod>2026-06-03</lastmod>
+    <loc>https://www.gobiya.com/capabilities/native-crm</loc>
+    <lastmod>2026-06-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
   <url>
-    <loc>https://www.gobiya.com/capabilities/conversion-architecture</loc>
-    <lastmod>2026-06-03</lastmod>
+    <loc>https://www.gobiya.com/capabilities/seo-discoverability</loc>
+    <lastmod>2026-06-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
   <url>
-    <loc>https://www.gobiya.com/capabilities/semantic-search-intelligence</loc>
-    <lastmod>2026-06-03</lastmod>
+    <loc>https://www.gobiya.com/capabilities/blockchain-web3-development</loc>
+    <lastmod>2026-06-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
   <url>
-    <loc>https://www.gobiya.com/capabilities/custom-digital-infrastructure</loc>
-    <lastmod>2026-06-03</lastmod>
+    <loc>https://www.gobiya.com/capabilities/ai-prospect-scraper</loc>
+    <lastmod>2026-06-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://www.gobiya.com/capabilities/ai-llms-business</loc>
+    <lastmod>2026-06-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://www.gobiya.com/capabilities/authority-building</loc>
+    <lastmod>2026-06-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
   <url>
     <loc>https://www.gobiya.com/insights</loc>
-    <lastmod>2026-05-24</lastmod>
+    <lastmod>2026-06-14</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://www.gobiya.com/company/about</loc>
+    <lastmod>2026-05-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://www.gobiya.com/company/success-stories</loc>
+    <lastmod>2026-05-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.gobiya.com/company/approach</loc>
+    <lastmod>2026-05-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.gobiya.com/contact</loc>
+    <lastmod>2026-05-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.gobiya.com/book</loc>
+    <lastmod>2026-06-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.gobiya.com/about/steve-martin</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://www.gobiya.com/author/steve-martin</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://www.gobiya.com/case-studies/smile-center-dentistry</loc>
+    <lastmod>2026-05-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.gobiya.com/case-studies/american-livescan</loc>
+    <lastmod>2026-05-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.gobiya.com/insights/multi-location-websites-for-franchises</loc>
+    <lastmod>2026-06-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://www.gobiya.com/insights/how-to-apply-behavioral-psychology-principles-to-high-ticket-b2b-landing-page-wireframes-to-decrease-friction</loc>
@@ -48,8 +127,50 @@
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://www.gobiya.com/insights/multi-location-websites-for-franchises</loc>
-    <lastmod>2026-06-13</lastmod>
+    <loc>https://www.gobiya.com/insights/gobiya-vs-enterprise-seo-agencies</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.gobiya.com/insights/how-do-b2b-companies-use-seo-to-generate-predictable-revenue</loc>
+    <lastmod>2026-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.gobiya.com/insights/what-data-sources-do-llms-crawl-to-verify-b2b-company-information</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.gobiya.com/insights/what-is-the-difference-between-google-knowledge-graph-optimization-and-geo</loc>
+    <lastmod>2026-06-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.gobiya.com/insights/chatgpt-vs-google-for-business-discovery</loc>
+    <lastmod>2026-05-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.gobiya.com/insights/what-is-the-difference-between-a-manual-action-and-an-algorithmic-penalty</loc>
+    <lastmod>2026-05-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.gobiya.com/insights/what-is-generative-engine-optimization-and-how-does-it-work</loc>
+    <lastmod>2026-05-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.gobiya.com/insights/google-manual-action-removal-agency-caused-penalty</loc>
+    <lastmod>2026-05-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
@@ -90,12 +211,6 @@
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://www.gobiya.com/insights/b2b-organic-traffic-growth</loc>
-    <lastmod>2026-05-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.80</priority>
-  </url>
-  <url>
     <loc>https://www.gobiya.com/insights/local-seo</loc>
     <lastmod>2026-05-26</lastmod>
     <changefreq>monthly</changefreq>
@@ -120,13 +235,13 @@
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://www.gobiya.com/insights/google-business-profile-optimization</loc>
+    <loc>https://www.gobiya.com/insights/can-a-site-fully-recover-from-a-google-core-update</loc>
     <lastmod>2026-05-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://www.gobiya.com/insights/can-a-site-fully-recover-from-a-google-core-update</loc>
+    <loc>https://www.gobiya.com/insights/google-business-profile-optimization</loc>
     <lastmod>2026-05-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
@@ -138,86 +253,26 @@
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://www.gobiya.com/insights/google-manual-action-removal-agency-caused-penalty</loc>
-    <lastmod>2026-05-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://www.gobiya.com/insights/what-is-the-difference-between-a-manual-action-and-an-algorithmic-penalty</loc>
-    <lastmod>2026-05-29</lastmod>
+    <loc>https://www.gobiya.com/insights/seo-case-study-traffic-recovery</loc>
+    <lastmod>2026-05-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://www.gobiya.com/insights/chatgpt-vs-google-for-business-discovery</loc>
-    <lastmod>2026-05-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://www.gobiya.com/insights/what-is-generative-engine-optimization-and-how-does-it-work</loc>
-    <lastmod>2026-05-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://www.gobiya.com/about/steve-martin</loc>
-    <lastmod>2026-05-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.70</priority>
-  </url>
-  <url>
-    <loc>https://www.gobiya.com/author/steve-martin</loc>
-    <lastmod>2026-05-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.70</priority>
-  </url>
-  <url>
-    <loc>https://www.gobiya.com/capabilities</loc>
-    <lastmod>2026-06-03</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://www.gobiya.com/company/about</loc>
-    <lastmod>2026-05-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.70</priority>
-  </url>
-  <url>
-    <loc>https://www.gobiya.com/company/success-stories</loc>
-    <lastmod>2026-05-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://www.gobiya.com/company/approach</loc>
-    <lastmod>2026-05-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://www.gobiya.com/contact</loc>
-    <lastmod>2026-05-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://www.gobiya.com/book</loc>
+    <loc>https://www.gobiya.com/insights/are-ai-search-engines-scraping-hidden-api-data-or-public-html-text-blocks</loc>
     <lastmod>2026-06-04</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://www.gobiya.com/insights/what-data-sources-do-llms-crawl-to-verify-b2b-company-information</loc>
-    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://www.gobiya.com/insights/what-is-the-difference-between-google-knowledge-graph-optimization-and-geo</loc>
-    <lastmod>2026-06-04</lastmod>
+    <loc>https://www.gobiya.com/insights/brand-entity-extraction-perception-drift</loc>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.gobiya.com/insights/dental-seo-agency</loc>
+    <lastmod>2026-06-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>

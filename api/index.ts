@@ -1322,7 +1322,7 @@ export default async function handler(req: IncomingMessage, res: any) {
     let template = fs.readFileSync(templatePath, 'utf-8');
 
     // Run React SSR rendering
-    const { html } = render(pathname);
+    const { html } = render(req.url || pathname);
 
     // Replace placeholders with dynamic SSR output
     template = template.replace('<!--ssr-outlet-->', html);

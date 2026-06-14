@@ -21,10 +21,20 @@ interface InsightsSliderProps {
   title?: string;
 }
 
+// Pre-populate stable local articles list for SSR and initial crawl rendering
+const localInsights: Insight[] = Object.values(ARTICLES).map((art, idx) => ({
+  id: -(idx + 1), // stable negative IDs
+  title: art.title,
+  category: art.category,
+  image_path: '',
+  image_url: art.image,
+  slug: art.slug,
+}));
+
 const InsightsSlider: React.FC<InsightsSliderProps> = ({ filterCategory, limit, currentPath, title }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
-  const [insights, setInsights] = useState<Insight[]>([]);
+  const [insights, setInsights] = useState<Insight[]>(localInsights);
   const [loading, setLoading] = useState(true);
 
   // Fetch data from Supabase
@@ -68,7 +78,7 @@ const InsightsSlider: React.FC<InsightsSliderProps> = ({ filterCategory, limit, 
 
       // Merge static articles from ARTICLES registry (always run even if database call fails)
       const merged = [...processed];
-      Object.values(ARTICLES).forEach((art) => {
+      Object.values(ARTICLES).forEach((art, idx) => {
         const existingIndex = processed.findIndex(
           (item: any) => item.slug && item.slug.toLowerCase() === art.slug.toLowerCase()
         );
@@ -77,7 +87,7 @@ const InsightsSlider: React.FC<InsightsSliderProps> = ({ filterCategory, limit, 
           merged[existingIndex].image_url = art.image;
         } else {
           merged.unshift({
-            id: -Math.floor(Math.random() * 1000000) - 1,
+            id: -(idx + 1), // stable negative IDs matching localInsights
             title: art.title,
             category: art.category,
             image_path: '',
@@ -257,7 +267,7 @@ const InsightsSlider: React.FC<InsightsSliderProps> = ({ filterCategory, limit, 
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >
-          {loading ? (
+          {(loading && insights.length === 0) ? (
             renderSkeletons()
           ) : displayInsights.length === 0 ? (
             <div className="text-gray-400 text-lg w-full py-10">No insights available at the moment.</div>
