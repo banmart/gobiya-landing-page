@@ -1292,7 +1292,8 @@ export default async function handler(req: IncomingMessage, res: any) {
       '/capabilities/semantic-search-intelligence': '/capabilities/seo-discoverability',
       '/capabilities/custom-digital-infrastructure': '/capabilities/web-development',
       '/company/careers': '/',
-      '/capabilities/ai-prospect-scraper': '/capabilities'
+      '/capabilities/ai-prospect-scraper': '/capabilities',
+      '/about': '/company/about'
     };
 
     if (legacyRedirects[pathname]) {

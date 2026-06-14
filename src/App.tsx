@@ -230,7 +230,8 @@ function App({ url }: AppProps) {
       '/capabilities/semantic-search-intelligence': '/capabilities/seo-discoverability',
       '/capabilities/custom-digital-infrastructure': '/capabilities/web-development',
       '/company/careers': '/',
-      '/capabilities/ai-prospect-scraper': '/capabilities'
+      '/capabilities/ai-prospect-scraper': '/capabilities',
+      '/about': '/company/about'
     };
     
     const target = legacyRedirects[normalized];
@@ -267,7 +268,6 @@ function App({ url }: AppProps) {
     '/about/steve-martin',
     '/author/steve-martin',
     '/company/about',
-    '/about',
     '/thank-you',
     '/capabilities',
     '/company/success-stories',
@@ -298,7 +298,7 @@ function App({ url }: AppProps) {
         <BookingPage />
       ) : normalizedPath === '/about/steve-martin' || normalizedPath === '/author/steve-martin' ? (
         <AuthorPage path={normalizedPath} />
-      ) : normalizedPath === '/company/about' || normalizedPath === '/about' ? (
+      ) : normalizedPath === '/company/about' ? (
         <GobiyaAboutPage />
       ) : articleSlug ? (
         <ArticlePage slug={articleSlug} />
