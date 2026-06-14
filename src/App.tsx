@@ -301,11 +301,11 @@ function App({ url }: AppProps) {
       ) : normalizedPath === '/book' || normalizedPath === '/book-call' ? (
         <BookingPage />
       ) : normalizedPath === '/about/steve-martin' || normalizedPath === '/author/steve-martin' ? (
-        <AuthorPage path={normalizedPath} />
+        <AuthorPage key={normalizedPath} path={normalizedPath} />
       ) : normalizedPath === '/about' ? (
         <GobiyaAboutPage />
       ) : articleSlug ? (
-        <ArticlePage slug={articleSlug} />
+        <ArticlePage key={articleSlug} slug={articleSlug} />
       ) : normalizedPath === '/thank-you' ? (
         <ThankYouPage />
       ) : normalizedPath === '/capabilities' ? (
@@ -319,13 +319,13 @@ function App({ url }: AppProps) {
       ) : normalizedPath === '/contact' ? (
         <ContactPage />
       ) : isSolutionRoute ? (
-        <SolutionPage path={normalizedPath} />
+        <SolutionPage key={normalizedPath} path={normalizedPath} />
       ) : normalizedPath === '/case-studies/smile-center-dentistry' ? (
         <SmileCenterCaseStudy />
       ) : normalizedPath === '/case-studies/american-livescan' ? (
         <AmericanLivescanCaseStudy />
       ) : (
-        <ServiceSubpage path={normalizedPath} />
+        <ServiceSubpage key={normalizedPath} path={normalizedPath} />
       )}
     </>
   );
