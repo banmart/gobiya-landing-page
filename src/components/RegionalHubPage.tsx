@@ -699,7 +699,7 @@ const RegionalHubPage: React.FC<RegionalHubPageProps> = ({ region }) => {
                 </div>
               </a>
               <a
-                href="/company/success-stories"
+                href="/case-studies"
                 id="regional-hub-cta-secondary"
                 className="flex items-center gap-2 text-white/60 hover:text-white border border-white/15 hover:border-white/40 px-6 py-3 transition-colors text-[14px] font-medium"
               >
@@ -892,7 +892,7 @@ const RegionalHubPage: React.FC<RegionalHubPageProps> = ({ region }) => {
                   </div>
                 </a>
                 <a
-                  href="/company/success-stories"
+                  href="/case-studies"
                   className="flex items-center gap-2 text-white border border-white/30 hover:border-white px-6 py-3 transition-colors text-[14px] font-medium"
                 >
                   View our case studies

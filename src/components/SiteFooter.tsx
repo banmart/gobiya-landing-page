@@ -37,9 +37,9 @@ const SiteFooter: React.FC = () => {
           <div>
             <h5>Company</h5>
             <ul>
-              <li><a href="/company/about">About the Agency</a></li>
-              <li><a href="/company/success-stories">Success Stories</a></li>
-              <li><a href="/company/approach">Our Approach</a></li>
+              <li><a href="/about">About the Agency</a></li>
+              <li><a href="/case-studies">Case Studies</a></li>
+              <li><a href="/approach">Our Approach</a></li>
               <li><a href="/insights">Industry Insights</a></li>
             </ul>
           </div>

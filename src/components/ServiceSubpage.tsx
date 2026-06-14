@@ -60,7 +60,7 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
   const [simulatedVisitors, setSimulatedVisitors] = useState([
     { company: 'Acme Corp', page: '/services/seo', time: '2s ago', intent: 98 },
     { company: 'Enterprise Inc', page: '/services/lead-gen', time: '12s ago', intent: 85 },
-    { company: 'Global Logistics', page: '/company/approach', time: '24s ago', intent: 92 },
+    { company: 'Global Logistics', page: '/approach', time: '24s ago', intent: 92 },
     { company: 'Fintech Solutions', page: '/services/geo', time: '40s ago', intent: 88 }
   ]);
 
@@ -155,7 +155,7 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
   };
 
   useEffect(() => {
-    if (path !== '/company/approach') return;
+    if (path !== '/approach') return;
     
     const handleScroll = () => {
       const scrollPos = window.scrollY + 300;
@@ -177,7 +177,7 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
   }, [path]);
 
   useEffect(() => {
-    if (path !== '/company/success-stories') return;
+    if (path !== '/case-studies') return;
     
     const handleScroll = () => {
       const scrollPos = window.scrollY + 300;
@@ -199,11 +199,11 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
   }, [path]);
 
   useEffect(() => {
-    if (path !== '/company/success-stories') return;
+    if (path !== '/case-studies') return;
     const interval = setInterval(() => {
       setSimulatedVisitors(prev => {
         const companies = ['SpaceX', 'Stripe', 'Airbnb', 'HubSpot', 'Salesforce', 'Figma', 'Slack', 'Chevron'];
-        const pages = ['/services/seo', '/services/lead-gen', '/services/geo', '/company/approach', '/company/success-stories'];
+        const pages = ['/services/seo', '/services/lead-gen', '/services/geo', '/approach', '/case-studies'];
         const randomCompany = companies[Math.floor(Math.random() * companies.length)];
         const randomPage = pages[Math.floor(Math.random() * pages.length)];
         const randomIntent = Math.floor(Math.random() * 25) + 75; // 75-100
@@ -327,107 +327,7 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
     // Add logic if needed
   }, []);
 
-  // Update client-side browser tab title and DOM meta tags on route changes
-  useEffect(() => {
-    const getSeoMetadata = (p: string) => {
-      const norm = p.toLowerCase().replace(/\/$/, '') || '/';
-      switch (norm) {
-        case '/capabilities':
-          return {
-            title: 'Our Core Capabilities: Forensic SEO, GEO & Pipeline Dev | Gobiya',
-            description: 'We consolidate generative engine optimization, forensic traffic recovery, conversion architecture, and high-performance React engineering into a single high-impact engine.'
-          };
-        case '/services/seo':
-          return {
-            title: 'Technical SEO Services & Traffic Recovery | Gobiya',
-            description: 'Get expert technical SEO services to reclaim your search positions. We deliver entity-level SEO, topical authority architectures, and advanced technical audits.'
-          };
-        case '/services/lead-generation':
-          return {
-            title: 'B2B Lead Generation & Predictable Sales Pipelines | Gobiya',
-            description: 'Scale your contract value with our B2B lead generation services. We design and launch automated cold outreach and sales acquisition protocols.'
-          };
-        case '/services/geo-optimization':
-          return {
-            title: 'Generative Engine Optimization (GEO) & AI Visibility | Gobiya',
-            description: 'Get ahead with Generative Engine Optimization. Position your brand to be cited and recommended natively by ChatGPT, Claude, Gemini, and AI Overviews.'
-          };
-        case '/services/web-development':
-          return {
-            title: 'React Web Development & Conversion-Engineered Platforms | Gobiya',
-            description: 'Get custom React web development services built to convert. We replace slow templates with lightning-fast landing pages and high-performance applications.'
-          };
-        case '/services/ppc-advertising':
-          return {
-            title: 'High-Yield PPC Advertising & Paid Search Pipelines | Gobiya',
-            description: 'Scale revenue with our data-driven PPC advertising services. Maximize ROAS and lower acquisition costs across Google, Microsoft, and Meta Ads.'
-          };
-        case '/google-penalty-recovery':
-          return {
-            title: 'Google Penalty Recovery & Core Update Recovery | Gobiya',
-            description: 'Get expert Google penalty recovery services. We diagnose and reverse manual action penalties and organic traffic declines caused by core updates.'
-          };
-        case '/company/about':
-          return {
-            title: 'About Gobiya | Search Recovery & Pipeline Agency',
-            description: 'Learn about our approach to algorithmic dominance, generative search, and revenue-scaling pipelines.'
-          };
-        case '/company/success-stories':
-          return {
-            title: 'Search Recovery & Sales Pipeline Case Studies | Gobiya',
-            description: 'Explore how we recover organic traffic, build predictive B2B pipelines, and secure market dominance.'
-          };
-        case '/company/approach':
-          return {
-            title: 'Our Search Dominance & Pipeline Methodology | Gobiya',
-            description: 'Discover our proprietary methodology for algorithmic audits, penalty recovery, and B2B pipeline acceleration.'
-          };
-        case '/insights':
-          return {
-            title: 'SEO Updates, B2B Outbound & Search Intelligence | Gobiya',
-            description: 'Deep dives into Google algorithm updates, generative search (GEO), and B2B marketing strategies.'
-          };
-        case '/company/careers':
-          return {
-            title: 'Join Our Technical SEO & Software Dev Team | Gobiya',
-            description: 'We are hiring top-tier SEO specialists, React engineers, and growth strategists to dominate the search landscape.'
-          };
-        case '/contact':
-          return {
-            title: 'Contact Gobiya | Reclaim & Scale Your Search Revenue',
-            description: 'Reach out to our engineering team to discuss algorithmic audits, AI traffic recovery, and pipeline architecture.'
-          };
-        default:
-          return {
-            title: 'SEO Traffic Recovery & B2B Pipeline Engineering | Gobiya',
-            description: 'We engineer AI-driven SEO and sales pipelines to recover lost organic traffic, scale predictable revenue, and secure long-term algorithmic dominance for high-stakes brands.'
-          };
-      }
-    };
 
-    const seo = getSeoMetadata(path);
-    document.title = seo.title;
-
-    // Update standard description tag
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', seo.description);
-    }
-
-    // Update Open Graph tags
-    const ogTitle = document.querySelector('meta[property="og:title"]');
-    if (ogTitle) ogTitle.setAttribute('content', seo.title);
-    
-    const ogDescription = document.querySelector('meta[property="og:description"]');
-    if (ogDescription) ogDescription.setAttribute('content', seo.description);
-
-    // Update Twitter tags
-    const twitterTitle = document.querySelector('meta[name="twitter:title"]');
-    if (twitterTitle) twitterTitle.setAttribute('content', seo.title);
-
-    const twitterDescription = document.querySelector('meta[name="twitter:description"]');
-    if (twitterDescription) twitterDescription.setAttribute('content', seo.description);
-  }, [path]);
 
   // Map route path to specific page copy and outcome messages
   const getPageConfig = (currentPath: string): PageConfig => {
@@ -520,7 +420,7 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
             { href: '/services/lead-generation', colSpan: 2, icon: <Network size={40} className={`${accentClass} mb-6 sm:mb-10`} strokeWidth={1.5} />, title: 'Outbound Architecture', description: 'Cold email protocols and multi-channel prospecting flows built to scale without burning domains.' },
             { href: '/services/advertising', colSpan: 1, icon: <Target size={40} className="text-white mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'Intent Capture', description: 'Target decision-makers actively searching for enterprise solutions.' },
             { href: '/services/seo', colSpan: 1, icon: <BarChart size={40} className="text-white mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'Conversion Metrics', description: 'End-to-end CRM integration and revenue attribution tracking.' },
-            { href: '/company/about', colSpan: 2, gradient: true, icon: <Briefcase size={40} className="text-white mb-6 sm:mb-10 relative z-10" strokeWidth={1.5} />, title: 'Enterprise Sales Engineering', description: 'We do not just generate leads. We engineer systems that book meetings with qualified enterprise buyers.' }
+            { href: '/about', colSpan: 2, gradient: true, icon: <Briefcase size={40} className="text-white mb-6 sm:mb-10 relative z-10" strokeWidth={1.5} />, title: 'Enterprise Sales Engineering', description: 'We do not just generate leads. We engineer systems that book meetings with qualified enterprise buyers.' }
           ],
           showCalculator: true,
           calculatorProps: { title: "Calculate Pipeline Value", description: "Input your target monthly qualified meetings to see potential pipeline value generated.", sliderLabel: "Target Meetings / Month", sliderMin: 10, sliderMax: 500, sliderStep: 5, conversionRate: 0.2, ltv: 25000, resultLabel: "Potential Pipeline Value Generated", disclaimer: "*Based on 20% close rate and $25k average contract value." }
@@ -566,7 +466,7 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
             { href: '/services/web-design', colSpan: 2, icon: <PenTool size={40} className={`${accentClass} mb-6 sm:mb-10`} strokeWidth={1.5} />, title: 'React UI/UX Engineering', description: 'Next.js architectures delivering seamless interactions and sub-second page loads.' },
             { href: '/services/seo', colSpan: 1, icon: <BarChart size={40} className="text-white mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'Core Web Vitals', description: 'Flawless performance metrics ensuring Google ranking boosts.' },
             { href: '/services/advertising', colSpan: 1, icon: <Target size={40} className="text-white mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'Landing Page CRO', description: 'High-converting funnels explicitly designed to lower acquisition costs.' },
-            { href: '/company/success-stories', colSpan: 2, gradient: true, icon: <Briefcase size={40} className="text-white mb-6 sm:mb-10 relative z-10" strokeWidth={1.5} />, title: 'Conversion Architecture', description: 'Your site should be your best salesperson. We engineer platforms that maximize revenue yield from every visitor.' }
+            { href: '/case-studies', colSpan: 2, gradient: true, icon: <Briefcase size={40} className="text-white mb-6 sm:mb-10 relative z-10" strokeWidth={1.5} />, title: 'Conversion Architecture', description: 'Your site should be your best salesperson. We engineer platforms that maximize revenue yield from every visitor.' }
           ],
           showCalculator: true,
           calculatorProps: { title: "Calculate CRO Revenue Uplift", description: "Input your monthly traffic to see the revenue impact of improving your conversion rate via high-performance web design.", sliderLabel: "Monthly Site Traffic", sliderMin: 5000, sliderMax: 200000, sliderStep: 5000, conversionRate: 0.015, ltv: 200, resultLabel: "Added Monthly Revenue (1.5% CRO Uplift)", disclaimer: "*Based on a 1.5% conversion rate increase and $200 Average Order Value." }
@@ -590,7 +490,7 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
             { href: '/services/advertising', colSpan: 2, icon: <Megaphone size={40} className={`${accentClass} mb-6 sm:mb-10`} strokeWidth={1.5} />, title: 'Paid Search Domination', description: 'Google Ads strategies maximizing intent capture and aggressively lowering CPA.' },
             { href: '/services/lead-generation', colSpan: 1, icon: <Target size={40} className="text-white mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'LinkedIn B2B', description: 'Precision targeting for enterprise decision-makers.' },
             { href: '/services/web-design', colSpan: 1, icon: <BarChart size={40} className="text-white mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'Funnel Optimization', description: 'A/B testing and attribution modeling for max yield.' },
-            { href: '/company/approach', colSpan: 2, gradient: true, icon: <TrendingUp size={40} className="text-white mb-6 sm:mb-10 relative z-10" strokeWidth={1.5} />, title: 'Predictable ROAS Pipeline', description: 'We track every dollar spent to pipeline generated, ensuring your ad budget drives undeniable business growth.' }
+            { href: '/approach', colSpan: 2, gradient: true, icon: <TrendingUp size={40} className="text-white mb-6 sm:mb-10 relative z-10" strokeWidth={1.5} />, title: 'Predictable ROAS Pipeline', description: 'We track every dollar spent to pipeline generated, ensuring your ad budget drives undeniable business growth.' }
           ],
           showCalculator: true,
           calculatorProps: { title: "Calculate Paid Ad Returns", description: "Input your planned monthly ad spend to see projected pipeline returns.", sliderLabel: "Monthly Ad Spend", sliderMin: 5000, sliderMax: 100000, sliderStep: 5000, conversionRate: 4.5, ltv: 1, resultLabel: "Projected Pipeline (4.5x ROAS)", disclaimer: "*Based on a target 4.5x Return on Ad Spend." }
@@ -614,12 +514,12 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
             { href: '/google-penalty-recovery', colSpan: 2, icon: <ShieldAlert size={40} className={`${accentClass} mb-6 sm:mb-10`} strokeWidth={1.5} />, title: 'Algorithmic Diagnostics', description: 'Deep-dive audits into Core Updates and HCU suppressions to identify the exact toxic vectors.' },
             { href: '/services/seo', colSpan: 1, icon: <Search size={40} className="text-white mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'Manual Actions', description: 'Expert removal of spam penalties and toxic links.' },
             { href: '/services/web-design', colSpan: 1, icon: <PenTool size={40} className="text-white mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'Content Pruning', description: 'Architectural restructuring to purge unhelpful content.' },
-            { href: '/company/success-stories', colSpan: 2, gradient: true, icon: <TrendingUp size={40} className="text-white mb-6 sm:mb-10 relative z-10" strokeWidth={1.5} />, title: 'Traffic Resurrection', description: 'We have recovered millions in lost pipeline revenue for brands devastated by Google updates.' }
+            { href: '/case-studies', colSpan: 2, gradient: true, icon: <TrendingUp size={40} className="text-white mb-6 sm:mb-10 relative z-10" strokeWidth={1.5} />, title: 'Traffic Resurrection', description: 'We have recovered millions in lost pipeline revenue for brands devastated by Google updates.' }
           ],
           showCalculator: true,
           calculatorProps: { title: "Calculate Penalty Revenue Leak", description: "Input the monthly traffic your site lost during the update. See the pipeline revenue leak.", sliderLabel: "Monthly Traffic Lost", sliderMin: 1000, sliderMax: 200000, sliderStep: 1000, conversionRate: 0.02, ltv: 500, resultLabel: "Monthly Revenue Leak", disclaimer: "*Based on 2% conversion rate and $500 LTV." }
         };
-      case '/company/about':
+      case '/about':
         return { ...defaultPageConfig,
           subtitle: 'Gobiya > About the Agency',
           title: 'Steve Martin & Gobiya: Engineering search dominance.',
@@ -641,9 +541,9 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
             { href: '/about/steve-martin', colSpan: 2, gradient: true, icon: <TrendingUp size={40} className="text-white mb-6 sm:mb-10 relative z-10" strokeWidth={1.5} />, title: 'Steve Martin Credentials', description: 'View professional experience, client projects, certifications, and background.' }
           ]
         };
-      case '/company/success-stories':
+      case '/case-studies':
         return { ...defaultPageConfig,
-          subtitle: 'Gobiya > Success Stories',
+          subtitle: 'Gobiya > Case Studies',
           title: 'Proven results. Search recovery and revenue scaling.',
           rotatingWords: ['case studies.', 'growth metrics.', 'revenue wins.'],
           outcomeMessage: 'Data-backed search recovery & pipeline success metrics',
@@ -663,7 +563,7 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
             { href: '/book', colSpan: 2, gradient: true, icon: <TrendingUp size={40} className="text-white mb-6 sm:mb-10 relative z-10" strokeWidth={1.5} />, title: 'Become Our Next Success', description: 'Stop losing revenue to competitors. Let us architect your dominance.' }
           ]
         };
-      case '/company/approach':
+      case '/approach':
         return { ...defaultPageConfig,
           subtitle: 'Gobiya > Our Approach',
           title: 'Data-driven methodologies for search engine dominance.',
@@ -682,7 +582,7 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
             { href: '/services/seo', colSpan: 2, icon: <PenTool size={40} className={`${accentClass} mb-6 sm:mb-10`} strokeWidth={1.5} />, title: 'Forensic Triage', description: 'We start by tearing down your current digital footprint to identify exactly where you are bleeding revenue.' },
             { href: '/services/geo-optimization', colSpan: 1, icon: <Network size={40} className="text-white mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'Entity Alignment', description: 'Structuring your brand natively for AI language models.' },
             { href: '/services/lead-generation', colSpan: 1, icon: <Target size={40} className="text-white mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'System Deployment', description: 'Launching customized outbound and inbound pipelines.' },
-            { href: '/company/about', colSpan: 2, gradient: true, icon: <TrendingUp size={40} className="text-white mb-6 sm:mb-10 relative z-10" strokeWidth={1.5} />, title: 'Iterative Scaling', description: 'We continuously analyze data sets to widen the gap between you and your competitors.' }
+            { href: '/about', colSpan: 2, gradient: true, icon: <TrendingUp size={40} className="text-white mb-6 sm:mb-10 relative z-10" strokeWidth={1.5} />, title: 'Iterative Scaling', description: 'We continuously analyze data sets to widen the gap between you and your competitors.' }
           ]
         };
       case '/insights':
@@ -726,7 +626,7 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
             { href: '/company/careers', colSpan: 2, icon: <Briefcase size={40} className={`${accentClass} mb-6 sm:mb-10`} strokeWidth={1.5} />, title: 'Technical SEO Engineers', description: 'Looking for specialists capable of forensic audits, server-log analysis, and entity architecture.' },
             { href: '/company/careers', colSpan: 1, icon: <PenTool size={40} className="text-white mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'React Developers', description: 'Build blazing fast, high-converting digital assets.' },
             { href: '/company/careers', colSpan: 1, icon: <Network size={40} className="text-white mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'Sales Architects', description: 'Design automated outbound and CRM pipelines.' },
-            { href: '/company/about', colSpan: 2, gradient: true, icon: <TrendingUp size={40} className="text-white mb-6 sm:mb-10 relative z-10" strokeWidth={1.5} />, title: 'Grow With Us', description: 'We invest heavily in the continuous education and algorithmic mastery of every team member.' }
+            { href: '/about', colSpan: 2, gradient: true, icon: <TrendingUp size={40} className="text-white mb-6 sm:mb-10 relative z-10" strokeWidth={1.5} />, title: 'Grow With Us', description: 'We invest heavily in the continuous education and algorithmic mastery of every team member.' }
           ]
         };
       case '/contact':
@@ -840,14 +740,14 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
 
       
       {/* SECTION: SCROLL REVEAL INTRO */}
-      {path !== '/insights' && path !== '/contact' && path !== '/services' && path !== '/company/approach' && path !== '/company/success-stories' && (
+      {path !== '/insights' && path !== '/contact' && path !== '/services' && path !== '/approach' && path !== '/case-studies' && (
         <section className="w-full relative" data-logo-dark>
           <SplitTextReveal text={config.introScrollText} />
         </section>
       )}
 
       {/* SECTION: INTRO CONTENT */}
-      {path !== '/insights' && path !== '/contact' && path !== '/services' && path !== '/company/approach' && path !== '/company/success-stories' && (        <section className="bg-[#EFEDE5] text-[#15130E] pt-16 sm:pt-20 lg:pt-32 pb-12 sm:pb-16 lg:pb-24 overflow-hidden w-full max-w-[1440px] mx-auto border-t border-[#D3CEC0]">
+      {path !== '/insights' && path !== '/contact' && path !== '/services' && path !== '/approach' && path !== '/case-studies' && (        <section className="bg-[#EFEDE5] text-[#15130E] pt-16 sm:pt-20 lg:pt-32 pb-12 sm:pb-16 lg:pb-24 overflow-hidden w-full max-w-[1440px] mx-auto border-t border-[#D3CEC0]">
           <div className="px-5 sm:px-8 lg:px-12 flex items-center gap-3 mb-6 sm:mb-8">
             <div className={`w-6 h-6 sm:w-7 sm:h-7 ${themeBgAccent} text-white text-[11px] sm:text-[12px] font-semibold flex items-center justify-center`}>2</div>
             <div className="text-[12px] sm:text-[13px] font-medium text-[#2F5D50] border border-[#D3CEC0] px-3 sm:px-4 py-1 sm:py-1.5">Context & Methodology</div>
@@ -928,7 +828,7 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
       )}
 
       {/* BENTO CARDS SECTION */}
-      {path !== '/insights' && path !== '/contact' && path !== '/services' && path !== '/company/approach' && path !== '/company/success-stories' && config.bentoHeadline && (
+      {path !== '/insights' && path !== '/contact' && path !== '/services' && path !== '/approach' && path !== '/case-studies' && config.bentoHeadline && (
         <StackedBento 
           headline={config.bentoHeadline} 
           description={config.bentoDescription} 
@@ -937,7 +837,7 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
       )}
 
       {/* DETAILED METHODOLOGY FOR THE APPROACH PATH */}
-      {path === '/company/approach' && (
+      {path === '/approach' && (
         <section className="bg-[#050505] text-white py-20 sm:py-32 border-t border-white/10 relative z-20" data-logo-dark>
           <div className="max-w-[1440px] w-full mx-auto px-5 sm:px-8 lg:px-12">
             <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-16">
@@ -1171,7 +1071,7 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
       )}
 
       {/* REAL CASE STUDIES FOR SUCCESS STORIES PATH */}
-      {path === '/company/success-stories' && (
+      {path === '/case-studies' && (
         <section className="bg-[#050505] text-white py-20 sm:py-32 border-t border-white/10 relative z-20" data-logo-dark>
           <div className="max-w-[1440px] w-full mx-auto px-5 sm:px-8 lg:px-12">
             <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-16">

@@ -19,32 +19,7 @@ const SolutionPage: React.FC<{ path: string }> = ({ path }) => {
   useEffect(() => {
     // 1. Setup global scroll reset and title
     window.scrollTo({ top: 0, behavior: 'instant' });
-    if (path === '/capabilities/web-development') {
-      document.title = "React Web Development — Custom High-Performance Websites Built to Rank | GOBIYA";
-    } else {
-      document.title = `${data.breadcrumbLabel} — Custom Integration | GOBIYA`;
-    }
 
-    const setMeta = (nameOrProperty: string, content: string, isProperty = false) => {
-      const attr = isProperty ? 'property' : 'name';
-      let el = document.querySelector(`meta[${attr}="${nameOrProperty}"]`);
-      if (!el) {
-        el = document.createElement('meta');
-        el.setAttribute(attr, nameOrProperty);
-        document.head.appendChild(el);
-      }
-      el.setAttribute('content', content);
-    };
-
-    const desc = path === '/capabilities/web-development' 
-      ? "GOBIYA replaces slow page-builders with custom, hand-coded React and Next.js websites — 100/100 Core Web Vitals, sub-second loads, zero templates, engineered to convert and rank natively."
-      : "Custom integration and digital solutions from GOBIYA.";
-      
-    setMeta('description', desc);
-    setMeta('og:title', document.title, true);
-    setMeta('og:description', desc, true);
-    setMeta('twitter:title', document.title);
-    setMeta('twitter:description', desc);
 
     // 2. Initial Hero Animations
     const ctx = gsap.context(() => {

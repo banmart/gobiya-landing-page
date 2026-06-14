@@ -10,9 +10,9 @@ const DEFAULT_MENU_ITEMS = [
   { label: 'Blockchain & Web3 Dev', link: '/capabilities/blockchain-web3-development' },
   { label: 'AI & LLMs for Business', link: '/capabilities/ai-llms-business' },
   { label: 'Company', isHeader: true },
-  { label: 'About the Agency', link: '/company/about' },
-  { label: 'Success Stories', link: '/company/success-stories' },
-  { label: 'Our Approach', link: '/company/approach' },
+  { label: 'About the Agency', link: '/about' },
+  { label: 'Case Studies', link: '/case-studies' },
+  { label: 'Our Approach', link: '/approach' },
   { label: 'Industry Insights', link: '/insights' },
 ];
 

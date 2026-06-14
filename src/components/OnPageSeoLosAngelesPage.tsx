@@ -13,26 +13,7 @@ export default function OnPageSeoLosAngelesPage() {
   const [activeChecklist, setActiveChecklist] = useState<number>(0);
 
   useEffect(() => {
-    // Dynamic SEO Metadata for search engines/bots
-    document.title = "On-Page SEO Los Angeles — GOBIYA | Search Engine Dominance";
-    
-    const setMeta = (nameOrProperty: string, content: string, isProperty = false) => {
-      const attr = isProperty ? 'property' : 'name';
-      let el = document.querySelector(`meta[${attr}="${nameOrProperty}"]`);
-      if (!el) {
-        el = document.createElement('meta');
-        el.setAttribute(attr, nameOrProperty);
-        document.head.appendChild(el);
-      }
-      el.setAttribute('content', content);
-    };
 
-    const desc = "Struggling with organic drops or low conversions? Our elite on-page SEO services in Los Angeles optimize your site's entity structure, schema, speed, and content mapping for Google and AI engines.";
-    setMeta('description', desc);
-    setMeta('og:title', document.title, true);
-    setMeta('og:description', desc, true);
-    setMeta('twitter:title', document.title);
-    setMeta('twitter:description', desc);
 
     // Initial GSAP fade-in effect to body
     document.documentElement.classList.add('js');
@@ -169,7 +150,7 @@ export default function OnPageSeoLosAngelesPage() {
 
             <div className="hero-actions">
               <a href="/book" className="btn btn-primary">Book forensic audit</a>
-              <a href="/company/success-stories" className="btn btn-ghost">View case studies</a>
+              <a href="/case-studies" className="btn btn-ghost">View case studies</a>
             </div>
 
             <div className="hero-specs">

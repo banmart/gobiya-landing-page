@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 
 const NAV_LINKS = [
   { href: '/capabilities', label: 'Capabilities' },
-  { href: '/company/about', label: 'About' },
-  { href: '/company/success-stories', label: 'Success stories' },
-  { href: '/company/approach', label: 'Approach' },
+  { href: '/about', label: 'About' },
+  { href: '/case-studies', label: 'Case studies' },
+  { href: '/approach', label: 'Approach' },
   { href: '/insights', label: 'Insights' },
   { href: '/contact', label: 'Contact' },
 ];

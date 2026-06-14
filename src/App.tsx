@@ -213,7 +213,10 @@ function App({ url }: AppProps) {
       '/insights/local-seo-los-angeles': '/insights/local-seo',
       '/insights/los-angeles-local-seo-explained': '/insights/local-seo-explained',
       '/insights/google-my-business-optimization': '/insights/google-business-profile-optimization',
-      '/success-stories': '/company/success-stories',
+      '/company/success-stories': '/case-studies',
+      '/success-stories': '/case-studies',
+      '/success-stories/smile-center-dentistry': '/case-studies/smile-center-dentistry',
+      '/success-stories/american-livescan': '/case-studies/american-livescan',
       '/services': '/capabilities',
       '/services/seo': '/capabilities/seo-discoverability',
       '/services/geo-optimization': '/capabilities/seo-discoverability',
@@ -231,7 +234,8 @@ function App({ url }: AppProps) {
       '/capabilities/custom-digital-infrastructure': '/capabilities/web-development',
       '/company/careers': '/',
       '/capabilities/ai-prospect-scraper': '/capabilities',
-      '/about': '/company/about'
+      '/company/about': '/about',
+      '/company/approach': '/approach'
     };
     
     const target = legacyRedirects[normalized];
@@ -267,11 +271,11 @@ function App({ url }: AppProps) {
     '/book-call',
     '/about/steve-martin',
     '/author/steve-martin',
-    '/company/about',
+    '/about',
     '/thank-you',
     '/capabilities',
-    '/company/success-stories',
-    '/company/approach',
+    '/case-studies',
+    '/approach',
     '/insights',
     '/contact',
     '/case-studies/smile-center-dentistry',
@@ -298,7 +302,7 @@ function App({ url }: AppProps) {
         <BookingPage />
       ) : normalizedPath === '/about/steve-martin' || normalizedPath === '/author/steve-martin' ? (
         <AuthorPage path={normalizedPath} />
-      ) : normalizedPath === '/company/about' ? (
+      ) : normalizedPath === '/about' ? (
         <GobiyaAboutPage />
       ) : articleSlug ? (
         <ArticlePage slug={articleSlug} />
@@ -306,9 +310,9 @@ function App({ url }: AppProps) {
         <ThankYouPage />
       ) : normalizedPath === '/capabilities' ? (
         <CapabilitiesIndex />
-      ) : normalizedPath === '/company/success-stories' ? (
+      ) : normalizedPath === '/case-studies' ? (
         <SuccessStories />
-      ) : normalizedPath === '/company/approach' ? (
+      ) : normalizedPath === '/approach' ? (
         <ApproachPage />
       ) : normalizedPath === '/insights' ? (
         <InsightsPage currentPath={currentPath} />

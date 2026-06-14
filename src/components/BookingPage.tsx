@@ -53,7 +53,7 @@ const BookingPage: React.FC = () => {
   const [challenges, setChallenges]     = useState('');
 
   useEffect(() => {
-    document.title = 'Book a Forensic Audit Call — GOBIYA | Los Angeles';
+
     window.scrollTo({ top: 0, behavior: 'instant' });
     document.documentElement.classList.add('js');
     gsap.to(document.body, { opacity: 1, duration: 0.6, ease: 'power2.out' });

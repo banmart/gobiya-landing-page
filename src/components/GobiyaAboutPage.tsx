@@ -12,26 +12,7 @@ export default function GobiyaAboutPage() {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // Dynamic Meta Tags
-    document.title = "About the Agency — GOBIYA | AI Internet Marketing, Los Angeles";
-    
-    const setMeta = (nameOrProperty: string, content: string, isProperty = false) => {
-      const attr = isProperty ? 'property' : 'name';
-      let el = document.querySelector(`meta[${attr}="${nameOrProperty}"]`);
-      if (!el) {
-        el = document.createElement('meta');
-        el.setAttribute(attr, nameOrProperty);
-        document.head.appendChild(el);
-      }
-      el.setAttribute('content', content);
-    };
 
-    const desc = "GOBIYA is a precision-engineered search visibility and digital solutions firm, founded 2012 in Los Angeles and led by Steve Martin — 25+ years bridging full-stack engineering and organic search.";
-    setMeta('description', desc);
-    setMeta('og:title', document.title, true);
-    setMeta('og:description', desc, true);
-    setMeta('twitter:title', document.title);
-    setMeta('twitter:description', desc);
 
     // Initial GSAP Loading Effect
     document.documentElement.classList.add('js');
@@ -203,7 +184,7 @@ export default function GobiyaAboutPage() {
           <div className="hero-copy">
             <nav className="breadcrumb" aria-label="Breadcrumb" data-hero="1">
               <a href="/">Gobiya</a><i>/</i>
-              <a href="/company/about">Company</a><i>/</i>
+              <a href="/about">Company</a><i>/</i>
               <span>About the agency</span>
             </nav>
 
@@ -225,7 +206,7 @@ export default function GobiyaAboutPage() {
                 Book a strategy call
                 <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg>
               </a>
-              <a href="/company/success-stories" className="btn btn-ghost magnetic">See success stories</a>
+              <a href="/case-studies" className="btn btn-ghost magnetic">See case studies</a>
             </div>
 
             <div className="hero-meta" data-hero="4">
@@ -597,7 +578,7 @@ export default function GobiyaAboutPage() {
                 Book a strategy call
                 <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg>
               </a>
-              <a href="/company/success-stories" className="btn btn-ghost magnetic">See success stories</a>
+              <a href="/case-studies" className="btn btn-ghost magnetic">See case studies</a>
             </div>
           </div>
         </div>

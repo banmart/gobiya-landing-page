@@ -12,25 +12,7 @@ const SuccessStories: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    document.title = "Success Stories — Search Recovery & Revenue Case Studies | GOBIYA";
 
-    const setMeta = (nameOrProperty: string, content: string, isProperty = false) => {
-      const attr = isProperty ? 'property' : 'name';
-      let el = document.querySelector(`meta[${attr}="${nameOrProperty}"]`);
-      if (!el) {
-        el = document.createElement('meta');
-        el.setAttribute(attr, nameOrProperty);
-        document.head.appendChild(el);
-      }
-      el.setAttribute('content', content);
-    };
-
-    const desc = "Real clients, real numbers. SmileCenter Dentistry: 5x patient inquiries and 213K impressions. American Livescan: 3x bookings after a legacy migration. Data-backed search recovery and pipeline case studies from GOBIYA.";
-    setMeta('description', desc);
-    setMeta('og:title', document.title, true);
-    setMeta('og:description', desc, true);
-    setMeta('twitter:title', document.title);
-    setMeta('twitter:description', desc);
 
 
     // Scroll to top on mount
@@ -141,7 +123,7 @@ const SuccessStories: React.FC = () => {
           <div className="hero-copy">
             <nav className="breadcrumb" aria-label="Breadcrumb" data-hero="1">
               <a href="/">Gobiya</a><i>/</i>
-              <a href="/company/about">Company</a><i>/</i>
+              <a href="/about">Company</a><i>/</i>
               <span>Success stories</span>
             </nav>
 

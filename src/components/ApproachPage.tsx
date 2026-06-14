@@ -72,25 +72,7 @@ const ApproachPage: React.FC = () => {
   const [copied, setCopied] = useState<boolean>(false);
 
   useEffect(() => {
-    document.title = "Our Approach — Search Engine Forensic Methodology | GOBIYA";
 
-    const setMeta = (nameOrProperty: string, content: string, isProperty = false) => {
-      const attr = isProperty ? 'property' : 'name';
-      let el = document.querySelector(`meta[${attr}="${nameOrProperty}"]`);
-      if (!el) {
-        el = document.createElement('meta');
-        el.setAttribute(attr, nameOrProperty);
-        document.head.appendChild(el);
-      }
-      el.setAttribute('content', content);
-    };
-
-    const desc = "GOBIYA's operating model for algorithmic dominance: entity-based indexing, topical authority and schema engineering, Generative Engine Optimization (GEO) for LLM visibility, and pipeline-first conversion architecture.";
-    setMeta('description', desc);
-    setMeta('og:title', document.title, true);
-    setMeta('og:description', desc, true);
-    setMeta('twitter:title', document.title);
-    setMeta('twitter:description', desc);
 
 
     // Scroll to top on mount
@@ -214,7 +196,7 @@ const ApproachPage: React.FC = () => {
           <div className="hero-copy">
             <nav className="breadcrumb" aria-label="Breadcrumb" data-hero="1">
               <a href="/">Gobiya</a><i>/</i>
-              <a href="/company/about">Company</a><i>/</i>
+              <a href="/about">Company</a><i>/</i>
               <span>Our approach</span>
             </nav>
 
@@ -576,7 +558,7 @@ const ApproachPage: React.FC = () => {
                 Discover our methods
                 <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg>
               </a>
-              <a href="/company/success-stories" className="btn btn-ghost magnetic">See it on the record</a>
+              <a href="/case-studies" className="btn btn-ghost magnetic">See it on the record</a>
             </div>
           </div>
         </div>

@@ -169,7 +169,7 @@ const SmileCenterCaseStudy: React.FC = () => {
               </svg>
             </a>
             <a
-              href="/company/success-stories"
+              href="/case-studies"
               className="text-link"
             >
               All case studies
@@ -492,7 +492,7 @@ const SmileCenterCaseStudy: React.FC = () => {
                 </svg>
               </a>
               <a
-                href="/company/success-stories"
+                href="/case-studies"
                 className="btn btn-ghost"
               >
                 All case studies

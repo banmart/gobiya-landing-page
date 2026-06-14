@@ -162,7 +162,7 @@ export const SOLUTIONS_DATA: Record<string, SolutionData> = {
       desc: 'By migrating from a bloated WordPress setup to a custom, lightning-fast React application with native LocalBusiness schemas, we grew patient appointments and phone calls fivefold.',
       chartTitleLeft: 'Inbound Inquiries', chartTitleRight: 'migration point',
       chartMetaLeft: 'pre-migration', chartMetaRight: 'post-migration',
-      ctaText: 'View the case study', ctaLink: '/case-studies/smile-center-dentistry'
+      ctaText: 'View the case study', ctaLink: '/success-stories/smile-center-dentistry'
     },
     faqs: [
       { q: 'Why should I choose a custom React site over WordPress?', a: 'Traditional CMS platforms rely on heavy plugins and clunky page builders, leading to bloated code and poor Core Web Vitals. A custom React build is lightweight, highly secure, and engineered to load in under a second.' },
@@ -386,7 +386,7 @@ export const SOLUTIONS_DATA: Record<string, SolutionData> = {
       desc: 'By correcting JavaScript render errors and deploying dedicated fast subpages with correct LocalBusiness schemas, we restored visibility and multiplied phone calls.',
       chartTitleLeft: 'Indexed Pages', chartTitleRight: 'migration point',
       chartMetaLeft: 'soft 404s', chartMetaRight: '100% valid',
-      ctaText: 'View the case study', ctaLink: '/company/success-stories'
+      ctaText: 'View the case study', ctaLink: '/success-stories'
     },
     faqs: [
       { q: 'Why is my React site not ranking?', a: 'React single-page applications often load a blank HTML file and render content via JS. If Googlebot doesn\'t execute the JS in time, it indexes a blank page. We fix this with Server-Side Rendering (SSR).' },
@@ -837,7 +837,7 @@ export const SOLUTIONS_DATA: Record<string, SolutionData> = {
       desc: 'By building high-authority local citations and cleanup of toxic backlink profiles alongside a custom React rebuild, we drove a massive increase in maps visibility and bookings.',
       chartTitleLeft: 'Domain Rating', chartTitleRight: 'campaign start',
       chartMetaLeft: 'pre-campaign', chartMetaRight: 'post-campaign',
-      ctaText: 'View the case study', ctaLink: '/case-studies/american-livescan'
+      ctaText: 'View the case study', ctaLink: '/success-stories/american-livescan'
     },
     faqs: [
       { q: 'What is domain rating (DR) and why does it matter?', a: 'Domain Rating is a search metric that measures the strength of a website\'s backlink profile. A higher DR means your site is trusted by search engines, allowing new content to index and rank significantly faster.' },

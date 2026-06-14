@@ -51,28 +51,7 @@ const InsightsPage: React.FC<InsightsPageProps> = ({ currentPath }) => {
       document.querySelector('.section-title')?.scrollIntoView({ behavior: 'smooth' });
     }
   }, [currentPage]);
-
   useEffect(() => {
-    document.title = "Industry Insights — Algorithmic Intelligence & Tactical Search Updates | GOBIYA";
-
-    const setMeta = (nameOrProperty: string, content: string, isProperty = false) => {
-      const attr = isProperty ? 'property' : 'name';
-      let el = document.querySelector(`meta[${attr}="${nameOrProperty}"]`);
-      if (!el) {
-        el = document.createElement('meta');
-        el.setAttribute(attr, nameOrProperty);
-        document.head.appendChild(el);
-      }
-      el.setAttribute('content', content);
-    };
-
-    const desc = "Advanced tactical intelligence on Google and AI search: algorithm update analysis, GEO and LLM citation tactics, entity SEO, technical recovery briefs, and pipeline engineering field notes from GOBIYA.";
-    setMeta('description', desc);
-    setMeta('og:title', document.title, true);
-    setMeta('og:description', desc, true);
-    setMeta('twitter:title', document.title);
-    setMeta('twitter:description', desc);
-
     // Scroll to top on mount
     window.scrollTo({ top: 0, behavior: 'instant' });
 
@@ -525,7 +504,7 @@ const InsightsPage: React.FC<InsightsPageProps> = ({ currentPath }) => {
                 Get a growth audit
                 <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg>
               </a>
-              <a href="/company/approach" className="btn btn-ghost magnetic">Read the methodology</a>
+              <a href="/approach" className="btn btn-ghost magnetic">Read the methodology</a>
             </div>
           </div>
         </div>

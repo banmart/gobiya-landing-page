@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://www.gobiya.com/</loc>
+    <loc>https://www.gobiya.com</loc>
     <lastmod>2026-06-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -61,19 +61,19 @@
     <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://www.gobiya.com/company/about</loc>
+    <loc>https://www.gobiya.com/about</loc>
     <lastmod>2026-05-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
   </url>
   <url>
-    <loc>https://www.gobiya.com/company/success-stories</loc>
+    <loc>https://www.gobiya.com/case-studies</loc>
     <lastmod>2026-05-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://www.gobiya.com/company/approach</loc>
+    <loc>https://www.gobiya.com/approach</loc>
     <lastmod>2026-05-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>

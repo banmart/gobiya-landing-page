@@ -27,17 +27,7 @@ export default function ContactPage() {
   const [errorMsg, setErrorMsg] = useState('');
 
   useEffect(() => {
-    document.title = 'Contact GOBIYA — Los Angeles SEO & Web Development Agency';
-    const setMeta = (nameOrProperty: string, content: string, isProperty = false) => {
-      const attr = isProperty ? 'property' : 'name';
-      let el = document.querySelector(`meta[${attr}="${nameOrProperty}"]`);
-      if (!el) { el = document.createElement('meta'); el.setAttribute(attr, nameOrProperty); document.head.appendChild(el); }
-      el.setAttribute('content', content);
-    };
-    const desc = 'Reach GOBIYA in Los Angeles. Call 323-744-1338, email hello@gobiya.com, or fill out our contact form for an SEO audit, web development, or AI growth consultation.';
-    setMeta('description', desc);
-    setMeta('og:title', document.title, true);
-    setMeta('og:description', desc, true);
+
 
     window.scrollTo({ top: 0, behavior: 'instant' });
     document.documentElement.classList.add('js');

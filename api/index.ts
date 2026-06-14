@@ -386,21 +386,25 @@ const metadataMap: Record<string, SEOMetadata> = {
     title: 'Authority Building: High Quality Backlinks & Citations | Gobiya',
     description: 'Build search engine trust with high-quality, relevant backlink acquisition and structured localized entity citations, engineered for long-term organic authority.'
   },
-  '/company/about': {
+  '/about': {
     title: 'About the Agency — GOBIYA | AI Internet Marketing, Los Angeles',
     description: 'GOBIYA is a precision-engineered search visibility and digital solutions firm, founded 2012 in Los Angeles and led by Steve Martin — 25+ years bridging full-stack engineering and organic search.'
   },
-  '/company/success-stories': {
-    title: 'Success Stories — Search Recovery & Revenue Case Studies | GOBIYA',
+  '/case-studies': {
+    title: 'Case Studies — Search Recovery & Revenue | GOBIYA',
     description: 'Real clients, real numbers. SmileCenter Dentistry: 5x patient inquiries and 213K impressions. American Livescan: 3x bookings after a legacy migration. Data-backed search recovery and pipeline case studies from GOBIYA.'
   },
-  '/success-stories': {
-    title: 'Success Stories — Search Recovery & Revenue Case Studies | GOBIYA',
-    description: 'Real clients, real numbers. SmileCenter Dentistry: 5x patient inquiries and 213K impressions. American Livescan: 3x bookings after a legacy migration. Data-backed search recovery and pipeline case studies from GOBIYA.'
-  },
-  '/company/approach': {
+  '/approach': {
     title: 'Our Approach — Search Engine Forensic Methodology | GOBIYA',
     description: "GOBIYA's operating model for algorithmic dominance: entity-based indexing, topical authority and schema engineering, Generative Engine Optimization (GEO) for LLM visibility, and pipeline-first conversion architecture."
+  },
+  '/case-studies/smile-center-dentistry': {
+    title: 'Dental SEO Case Study: 5x Patient Inquiries | Gobiya',
+    description: 'How we rebuilt SmileCenter\'s website on React/Vite, architected individual location pages for Southern California markets, and drove a 5x increase in form completions and phone calls.'
+  },
+  '/case-studies/american-livescan': {
+    title: 'Local SEO Case Study: Tripled Online Bookings | Gobiya',
+    description: 'How we replaced a legacy .htm site with a clean-URL architecture, optimized the Google Business Profile, and tripled online appointments and phone calls for a high-volume LA fingerprinting service.'
   },
   '/insights': {
     title: 'Industry Insights — Algorithmic Intelligence & Tactical Search Updates | GOBIYA',
@@ -582,6 +586,28 @@ export default async function handler(req: IncomingMessage, res: any) {
     const url = req.url || '/';
     const parsedUrl = new URL(url, 'https://www.gobiya.com');
     const pathname = parsedUrl.pathname.toLowerCase().replace(/\/$/, '') || '/';
+
+    // ── CANONICAL URL REDIRECTS (Casing & Trailing Slashes) ──
+    if (!pathname.startsWith('/api')) {
+      let targetPath = parsedUrl.pathname;
+      
+      // Enforce lowercase paths
+      if (targetPath !== targetPath.toLowerCase()) {
+        targetPath = targetPath.toLowerCase();
+      }
+      
+      // Enforce no trailing slash (except for '/')
+      if (targetPath !== '/' && targetPath.endsWith('/')) {
+        targetPath = targetPath.replace(/\/$/, '');
+      }
+      
+      if (targetPath !== parsedUrl.pathname) {
+        res.writeHead(301, { Location: targetPath + parsedUrl.search });
+        res.end();
+        return;
+      }
+    }
+
 
     // ── CONTACT FORM ENDPOINT ──
     if (pathname === '/api/contact' && (req.method === 'POST' || req.method === 'OPTIONS')) {
@@ -1275,7 +1301,10 @@ export default async function handler(req: IncomingMessage, res: any) {
       '/insights/local-seo-los-angeles': '/insights/local-seo',
       '/insights/los-angeles-local-seo-explained': '/insights/local-seo-explained',
       '/insights/google-my-business-optimization': '/insights/google-business-profile-optimization',
-      '/success-stories': '/company/success-stories',
+      '/company/success-stories': '/case-studies',
+      '/success-stories': '/case-studies',
+      '/success-stories/smile-center-dentistry': '/case-studies/smile-center-dentistry',
+      '/success-stories/american-livescan': '/case-studies/american-livescan',
       '/services': '/capabilities',
       '/services/seo': '/capabilities/seo-discoverability',
       '/services/geo-optimization': '/capabilities/seo-discoverability',
@@ -1293,7 +1322,8 @@ export default async function handler(req: IncomingMessage, res: any) {
       '/capabilities/custom-digital-infrastructure': '/capabilities/web-development',
       '/company/careers': '/',
       '/capabilities/ai-prospect-scraper': '/capabilities',
-      '/about': '/company/about'
+      '/company/about': '/about',
+      '/company/approach': '/approach'
     };
 
     if (legacyRedirects[pathname]) {

@@ -7,6 +7,8 @@ import SiteFooter from './SiteFooter';
 import HeroWebGLBackground from './HeroWebGLBackground';
 import InsightsSlider from './InsightsSlider';
 import './ArticlePage.css';
+
+gsap.registerPlugin(ScrollTrigger);
 import { trackCTA } from '../lib/analytics';
 import LeadMagnetCTA from './LeadMagnetCTA';
 
@@ -2750,7 +2752,7 @@ const ARTICLES: Record<string, ArticleData> = {
             {
               title: 'B2B Marketplaces & Platform Plays',
               body: 'Need category-defining content that AI engines can use to map the category itself — since the platform\'s value depends on being cited as the answer to "where do I find providers in this space?"',
-              link: '/company/approach',
+              link: '/approach',
               linkLabel: 'Our approach',
             },
           ].map(({ title, body, link, linkLabel }) => (
@@ -3123,7 +3125,7 @@ const ARTICLES: Record<string, ArticleData> = {
             {
               title: 'Vertical SaaS & Niche Category Leaders',
               body: 'AI engines compress categories aggressively — once a small set of vendors is consistently cited, the citation gap widens faster than in broader markets. Defensive citation strategies are essential.',
-              link: '/company/approach',
+              link: '/approach',
               linkLabel: 'Our approach',
             },
           ].map(({ title, body, link, linkLabel }) => (
@@ -3443,7 +3445,7 @@ const ARTICLES: Record<string, ArticleData> = {
             {
               title: 'High-Velocity B2B',
               body: 'Shorter sales cycles require near-zero signal-to-outreach latency. Reaching out within minutes of a pricing page visit captures deals before the window closes.',
-              link: '/company/approach',
+              link: '/approach',
               linkLabel: 'Our Approach',
             },
           ].map(({ title, body, link, linkLabel }) => (
@@ -8043,19 +8045,7 @@ const ArticlePage: React.FC<ArticlePageProps> = ({ slug }) => {
   const barRef = useRef<HTMLElement>(null);
   const navInnerRef = useRef<HTMLDivElement>(null);
 
-  // SEO
-  useEffect(() => {
-    if (!article) return;
-    document.title = `${article.title} | Gobiya`;
-    const desc = document.querySelector('meta[name="description"]');
-    if (desc) desc.setAttribute('content', article.metaDescription);
-    const ogTitle = document.querySelector('meta[property="og:title"]');
-    if (ogTitle) ogTitle.setAttribute('content', `${article.title} | Gobiya`);
-    const ogDesc = document.querySelector('meta[property="og:description"]');
-    if (ogDesc) ogDesc.setAttribute('content', article.metaDescription);
-    const ogImage = document.querySelector('meta[property="og:image"]');
-    if (ogImage) ogImage.setAttribute('content', `https://www.gobiya.com${article.image}`);
-  }, [article]);
+
 
   // TOC parsing
   useEffect(() => {

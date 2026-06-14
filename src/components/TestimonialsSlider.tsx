@@ -39,7 +39,7 @@ const testimonials: Testimonial[] = [
     role: "Lead Dentist",
     image_url: "/images/dr-nikjoo.jpg",
     logo_url: "/images/smilecenter.webp",
-    case_study_link: "/case-studies/smile-center-dentistry"
+    case_study_link: "/success-stories/smile-center-dentistry"
   }
 ];
 

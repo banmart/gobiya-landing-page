@@ -6,7 +6,7 @@ const currentDate = new Date().toISOString().split('T')[0];
 
 // 2. Define static core pages
 const corePages = [
-  { url: 'https://www.gobiya.com/', priority: '1.0', changefreq: 'weekly', lastmod: currentDate },
+  { url: 'https://www.gobiya.com', priority: '1.0', changefreq: 'weekly', lastmod: currentDate },
   { url: 'https://www.gobiya.com/capabilities', priority: '0.85', changefreq: 'weekly', lastmod: '2026-06-13' },
   { url: 'https://www.gobiya.com/capabilities/web-development', priority: '0.90', changefreq: 'weekly', lastmod: '2026-06-13' },
   { url: 'https://www.gobiya.com/capabilities/native-crm', priority: '0.90', changefreq: 'weekly', lastmod: '2026-06-13' },
@@ -16,9 +16,9 @@ const corePages = [
   { url: 'https://www.gobiya.com/capabilities/ai-llms-business', priority: '0.90', changefreq: 'weekly', lastmod: '2026-06-13' },
   { url: 'https://www.gobiya.com/capabilities/authority-building', priority: '0.90', changefreq: 'weekly', lastmod: currentDate },
   { url: 'https://www.gobiya.com/insights', priority: '0.75', changefreq: 'daily', lastmod: currentDate },
-  { url: 'https://www.gobiya.com/company/about', priority: '0.70', changefreq: 'monthly', lastmod: '2026-05-28' },
-  { url: 'https://www.gobiya.com/company/success-stories', priority: '0.80', changefreq: 'weekly', lastmod: '2026-05-28' },
-  { url: 'https://www.gobiya.com/company/approach', priority: '0.80', changefreq: 'weekly', lastmod: '2026-05-28' },
+  { url: 'https://www.gobiya.com/about', priority: '0.70', changefreq: 'monthly', lastmod: '2026-05-28' },
+  { url: 'https://www.gobiya.com/case-studies', priority: '0.80', changefreq: 'weekly', lastmod: '2026-05-28' },
+  { url: 'https://www.gobiya.com/approach', priority: '0.80', changefreq: 'weekly', lastmod: '2026-05-28' },
   { url: 'https://www.gobiya.com/contact', priority: '0.85', changefreq: 'weekly', lastmod: '2026-05-28' },
   { url: 'https://www.gobiya.com/book', priority: '0.80', changefreq: 'weekly', lastmod: '2026-06-04' },
   { url: 'https://www.gobiya.com/about/steve-martin', priority: '0.70', changefreq: 'monthly', lastmod: '2026-05-25' },

@@ -71,71 +71,7 @@ const AuthorPage: React.FC<AuthorPageProps> = ({ path }) => {
     return () => ctx.revert();
   }, []);
 
-  // Update document title and description + schema
-  useEffect(() => {
-    document.title = "Steve Martin | CEO, Lead Developer & Marketer | GOBIYA";
-    
-    const setMeta = (nameOrProperty: string, content: string, isProperty = false) => {
-      const attr = isProperty ? 'property' : 'name';
-      let el = document.querySelector(`meta[${attr}="${nameOrProperty}"]`);
-      if (!el) {
-        el = document.createElement('meta');
-        el.setAttribute(attr, nameOrProperty);
-        document.head.appendChild(el);
-      }
-      el.setAttribute('content', content);
-    };
 
-    const desc = 'Author profile and E-E-A-T credentials for Steve Martin, CEO, Lead Developer & Marketer at GOBIYA. Specialized in SEO, custom React engineering, and pipeline automation.';
-    setMeta('description', desc);
-    setMeta('og:title', document.title, true);
-    setMeta('og:description', desc, true);
-    setMeta('twitter:title', document.title);
-    setMeta('twitter:description', desc);
-
-    // Inject Person JSON-LD Schema
-    const schema = {
-      "@context": "https://schema.org",
-      "@type": "ProfilePage",
-      "mainEntity": {
-        "@type": "Person",
-        "name": "Steve Martin",
-        "jobTitle": "CEO, Lead Developer & Marketer",
-        "worksFor": {
-          "@type": "Organization",
-          "name": "Gobiya",
-          "url": "https://www.gobiya.com"
-        },
-        "image": "https://www.gobiya.com/images/steve-portrait.webp",
-        "description": "Steve Martin is the CEO, Lead Developer, and Marketer at Gobiya, with 25+ years of experience helping contractors, dental practices, real estate, and SaaS startups grow through organic search, paid media, and custom React/Vite development.",
-        "url": "https://www.gobiya.com/about/steve-martin",
-        "sameAs": [
-          "https://www.linkedin.com/in/stevemartingobiya/"
-        ],
-        "knowsAbout": [
-          "Search Engine Optimization (SEO)",
-          "Generative Engine Optimization (GEO)",
-          "React Engineering",
-          "B2B Sales Pipeline Automation",
-          "Paid Media (PPC)",
-          "Digital PR & Link Building"
-        ],
-        "alumniOf": {
-          "@type": "EducationalOrganization",
-          "name": "Glendale Career College"
-        }
-      }
-    };
-
-    let scriptTag = document.getElementById('author-schema') as HTMLScriptElement | null;
-    if (!scriptTag) {
-      scriptTag = document.createElement('script');
-      scriptTag.id = 'author-schema';
-      scriptTag.type = 'application/ld+json';
-      document.head.appendChild(scriptTag);
-    }
-    scriptTag.textContent = JSON.stringify(schema);
-  }, []);
 
   const articles = [
     {
@@ -187,7 +123,7 @@ const AuthorPage: React.FC<AuthorPageProps> = ({ path }) => {
         <div className="hero-inner">
           <nav className="breadcrumb" aria-label="Breadcrumb">
             <a href="/">GOBIYA</a><i>/</i>
-            <a href="/company/about">Company</a><i>/</i>
+            <a href="/about">Company</a><i>/</i>
             <span>Steve Martin Profile</span>
           </nav>
           
