@@ -48,7 +48,7 @@ const AdminLogin: React.FC<AdminLoginProps> = ({ onLoginSuccess }) => {
   return (
     <div className="min-h-screen bg-[#050505] text-white relative font-sans selection:bg-[#2F5D50] selection:text-white flex flex-col justify-between">
       <CustomCursor />
-      <Header theme="dark" />
+      <Header theme="dark" accentColor="#2F5D50" />
 
       <div className="flex-grow flex items-center justify-center px-5 py-20 relative z-20">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(47,93,80,0.08)_0%,transparent_60%)] pointer-events-none" />

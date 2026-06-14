@@ -440,7 +440,7 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout }) => {
       
       
 
-      <Header theme="dark" />
+      <Header theme="dark" accentColor="#2F5D50" />
 
       <main className="flex-grow max-w-[1440px] w-full mx-auto px-5 sm:px-8 lg:px-12 py-24 relative z-20">
         
