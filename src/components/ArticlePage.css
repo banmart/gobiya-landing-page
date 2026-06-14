@@ -141,6 +141,21 @@
   gap: 1.4rem;
 }
 
+/* Mobile Table of Contents */
+.mobile-toc-wrapper {
+  display: none;
+  margin-bottom: 2.5rem;
+}
+
+@media (max-width: 1024px) {
+  .mobile-toc-wrapper {
+    display: block;
+  }
+  .art-side .toc {
+    display: none;
+  }
+}
+
 .toc {
   border: 1px solid var(--line); background: rgba(255,255,255,0.34);
 }

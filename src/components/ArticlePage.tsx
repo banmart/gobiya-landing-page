@@ -8324,6 +8324,25 @@ const ArticlePage: React.FC<ArticlePageProps> = ({ slug }) => {
 
       <div className="art-layout">
         <article className="art-body">
+          {/* Mobile Table of Contents - Only visible on mobile */}
+          {toc.length > 0 && (
+            <div className="mobile-toc-wrapper" data-anim="fade">
+              <div className="toc mobile-toc">
+                <div className="toc-head">
+                  <span className="mono-tag">Table of contents</span>
+                  <span className="mono-tag" style={{color: 'var(--green)'}}>0{toc.length} sections</span>
+                </div>
+                <nav id="mobile-toc-nav" aria-label="Table of contents">
+                  {toc.map((item, index) => (
+                    <a key={item.id} href={`#${item.id}`} className={activeId === item.id ? 'active' : ''}>
+                      <span className="n">0{index + 1}</span>{item.label}
+                    </a>
+                  ))}
+                </nav>
+              </div>
+            </div>
+          )}
+
           {article.image && (
             <div className="article-hero-image-wrap" style={{ width: '100%', maxHeight: '420px', overflow: 'hidden', border: '1px solid var(--line)', marginBottom: '2.5rem', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
               <img 
