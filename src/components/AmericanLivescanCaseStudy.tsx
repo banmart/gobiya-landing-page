@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import HeroWebGLBackground from './HeroWebGLBackground';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -17,6 +17,8 @@ import { trackCTA } from '../lib/analytics';
 gsap.registerPlugin(ScrollTrigger);
 
 const AmericanLivescanCaseStudy: React.FC = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
     let ctx: gsap.Context;
 
@@ -39,7 +41,49 @@ const AmericanLivescanCaseStudy: React.FC = () => {
             });
           });
         }
-      });
+
+        // Hero animations
+        const ease = 'power3.out';
+        const heroTl = gsap.timeline({ delay: 0.15, defaults: { ease, duration: 1.15 } });
+        heroTl
+          .fromTo('.breadcrumb', { opacity: 0, y: 12 }, { opacity: 1, y: 0 }, 0)
+          .fromTo('.hero-title .line > span', { yPercent: 110 }, { yPercent: 0, stagger: 0.1, duration: 1.25 }, 0.08)
+          .fromTo('.hero-sub', { opacity: 0, y: 16 }, { opacity: 1, y: 0 }, 0.3)
+          .fromTo('.hero-actions-wrap > *', { opacity: 0, y: 14 }, { opacity: 1, y: 0, stagger: 0.08 }, 0.45);
+
+        // Scroll reveals
+        const sc = (el: Element) => ({ trigger: el, start: 'top 87%' });
+
+        gsap.utils.toArray('[data-anim="up"]').forEach(el => {
+          gsap.fromTo(el as Element, 
+            { y: 30, opacity: 0 },
+            { scrollTrigger: sc(el as Element), y: 0, opacity: 1, duration: 1.2, ease }
+          );
+        });
+
+        gsap.utils.toArray('[data-anim="fade"]').forEach(el => {
+          gsap.fromTo(el as Element, 
+            { opacity: 0 },
+            { scrollTrigger: sc(el as Element), opacity: 1, duration: 1.2, ease }
+          );
+        });
+
+        gsap.utils.toArray('[data-anim="scale"]').forEach(el => {
+          gsap.fromTo(el as Element, 
+            { scale: 0.97, opacity: 0 },
+            { scrollTrigger: sc(el as Element), scale: 1, opacity: 1, duration: 1.4, ease: 'power2.out' }
+          );
+        });
+
+        gsap.utils.toArray('[data-anim="stagger"]').forEach(parent => {
+          const kids = (parent as Element).querySelectorAll('[data-anim-child]');
+          if (!kids.length) return;
+          gsap.fromTo(kids, 
+            { y: 26, opacity: 0 },
+            { scrollTrigger: sc(parent as Element), y: 0, opacity: 1, duration: 1.15, ease, stagger: 0.12 }
+          );
+        });
+      }, containerRef);
     }
 
     setTimeout(createTimeline, 100);
@@ -91,7 +135,7 @@ const AmericanLivescanCaseStudy: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-transparent text-[#15130E] relative font-sans selection:bg-[#2F5D50] selection:text-white page-wrapper">
+    <div ref={containerRef} className="min-h-screen bg-transparent text-[#15130E] relative font-sans selection:bg-[#2F5D50] selection:text-white page-wrapper">
       <CustomCursor />
 
       {/* ─── HERO ─── */}
@@ -100,25 +144,25 @@ const AmericanLivescanCaseStudy: React.FC = () => {
         <SiteHeader />
 
         <div className="relative z-20 max-w-[1440px] w-full mx-auto flex flex-col justify-center px-5 sm:px-8 lg:px-12 pt-16 pb-0">
-          <p className="text-[13px] sm:text-[14px] text-[#5B564C] tracking-wide mb-4 uppercase font-medium">
+          <p className="breadcrumb text-[13px] sm:text-[14px] text-[#5B564C] tracking-wide mb-4 uppercase font-medium">
             Gobiya Case Studies &gt; Local SEO &amp; Site Rebuild
           </p>
-          <h1 className="text-[clamp(1.5rem,5.5vw,3.2rem)] sm:text-[clamp(1.8rem,4.5vw,3.8rem)] font-medium leading-[1.15] tracking-[-0.03em] text-[#15130E] max-w-[1100px]">
-            How American Livescan{' '}
-            <span className="text-[#2F5D50]">tripled bookings &amp; calls</span>{' '}
-            with a site rebuild and local SEO.
+          <h1 className="hero-title text-[clamp(1.5rem,5.5vw,3.2rem)] sm:text-[clamp(1.8rem,4.5vw,3.8rem)] font-medium leading-[1.15] tracking-[-0.03em] text-[#15130E] max-w-[1100px]">
+            <span className="line"><span>How American Livescan</span></span>
+            <span className="line"><span><span className="text-[#2F5D50]">tripled bookings &amp; calls</span></span></span>
+            <span className="line"><span>with a site rebuild and local SEO.</span></span>
           </h1>
-          <p className="mt-6 text-[15px] sm:text-[17px] text-[#5B564C] max-w-[720px] leading-relaxed">
+          <p className="hero-sub mt-6 text-[15px] sm:text-[17px] text-[#5B564C] max-w-[720px] leading-relaxed">
             Website redesign · Legacy migration · Google Business Profile · Service-specific landing pages · Content engine
           </p>
-          <div className="mt-8 flex flex-col sm:flex-row items-start sm:items-center gap-6">
+          <div className="hero-actions-wrap mt-8 flex flex-col sm:flex-row items-start sm:items-center gap-6">
             <a
               href="/book"
               id="livescan-hero-cta"
               data-cta-location="livescan_hero"
               data-cta-text="Get a similar result"
               onClick={() => trackCTA({ cta_location: 'livescan_hero', cta_text: 'Get a similar result' })}
-              className="btn btn-primary"
+              className="btn btn-primary magnetic"
             >
               Get a similar result
               <svg viewBox="0 0 24 24" width="14" height="14" fill="none" aria-hidden="true">
@@ -151,13 +195,14 @@ const AmericanLivescanCaseStudy: React.FC = () => {
             <div className="w-6 h-6 sm:w-7 sm:h-7 bg-white text-[#2F5D50] text-[11px] sm:text-[12px] font-semibold flex items-center justify-center">1</div>
             <div className="text-[12px] sm:text-[13px] font-medium text-white border border-white/40 px-3 sm:px-4 py-1 sm:py-1.5">Results Snapshot</div>
           </div>
-          <h2 className="text-[clamp(1.5rem,3.5vw,2.8rem)] font-medium leading-[1.1] tracking-[-0.02em] text-white mb-10 max-w-2xl">
+          <h2 data-anim="up" className="text-[clamp(1.5rem,3.5vw,2.8rem)] font-medium leading-[1.1] tracking-[-0.02em] text-white mb-10 max-w-2xl">
             The numbers that run the business.
           </h2>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6" data-anim="stagger">
             {metrics.map((m, i) => (
               <div
                 key={i}
+                data-anim-child
                 className={`p-6 sm:p-8 border border-white/20 bg-white/5 backdrop-blur-sm ${m.highlight
                   ? 'bg-white/10 border-white/40'
                   : 'bg-white/5 border-white/20'
@@ -188,10 +233,10 @@ const AmericanLivescanCaseStudy: React.FC = () => {
 
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_400px] gap-12 lg:gap-20 items-start">
             <div>
-              <h2 className="text-[clamp(1.5rem,4vw,3.2rem)] font-medium leading-[1.12] tracking-[-0.02em] text-[#15130E] mb-8 max-w-3xl">
+              <h2 data-anim="up" className="text-[clamp(1.5rem,4vw,3.2rem)] font-medium leading-[1.12] tracking-[-0.02em] text-[#15130E] mb-8 max-w-3xl">
                 A high-volume local service buried on an aging website.
               </h2>
-              <div className="flex flex-col gap-6 text-[15px] sm:text-[16px] leading-[1.75] text-[#5B564C]">
+              <div data-anim="up" className="flex flex-col gap-6 text-[15px] sm:text-[16px] leading-[1.75] text-[#5B564C]">
                 <p>
                   American Livescan is a high-volume Live Scan fingerprinting and background-check provider, serving walk-in customers, online bookings, and mobile appointments across the area.
                 </p>
@@ -205,7 +250,7 @@ const AmericanLivescanCaseStudy: React.FC = () => {
             </div>
 
             {/* Sidebar */}
-            <div className="flex flex-col gap-5">
+            <div className="flex flex-col gap-5" data-anim="up">
               <div className="border border-[#D3CEC0] p-6 bg-[#E7E4D9]">
                 <p className="text-[10px] font-mono uppercase tracking-widest text-[#8B857A] mb-4 font-semibold">Client Overview</p>
                 <dl className="flex flex-col gap-3 text-[14px]">
@@ -224,7 +269,7 @@ const AmericanLivescanCaseStudy: React.FC = () => {
                 </dl>
               </div>
 
-              <div className="aspect-[4/3] overflow-hidden relative border border-[#D3CEC0]">
+              <div className="aspect-[4/3] overflow-hidden relative border border-[#D3CEC0]" data-anim="scale">
                 <ParallaxMedia
                   type="image"
                   src="/images/livescan-storefront.webp"
@@ -254,9 +299,9 @@ const AmericanLivescanCaseStudy: React.FC = () => {
             Four decisions that turned a legacy site into a booking engine.
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10" data-anim="stagger">
             {whatWeDid.map((item) => (
-              <div key={item.num} className="border-t-2 border-[#2F5D50] pt-8">
+              <div key={item.num} data-anim-child className="border-t-2 border-[#2F5D50] pt-8">
                 <div className="text-[12px] font-mono font-bold text-[#2F5D50] uppercase tracking-widest mb-4">{item.num}</div>
                 <h3 className="text-xl sm:text-2xl font-medium text-[#15130E] mb-4">{item.title}</h3>
                 <p className="text-[#5B564C] text-[15px] sm:text-[16px] leading-[1.7]">{item.body}</p>

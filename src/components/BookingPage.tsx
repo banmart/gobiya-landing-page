@@ -57,7 +57,21 @@ const BookingPage: React.FC = () => {
     window.scrollTo({ top: 0, behavior: 'instant' });
     document.documentElement.classList.add('js');
     gsap.to(document.body, { opacity: 1, duration: 0.6, ease: 'power2.out' });
-    if (typeof window === 'undefined') return;
+    
+    const ease = 'power3.out';
+    const ctx = gsap.context(() => {
+      const heroTl = gsap.timeline({ delay: 0.15, defaults: { ease, duration: 1.15 } });
+      heroTl
+        .from('[data-hero="1"]', { opacity: 0, y: 14 }, 0)
+        .from('.hero h1 .line > span', { yPercent: 110, stagger: 0.1, duration: 1.25 }, 0.08)
+        .from('[data-hero="2"]', { opacity: 0, y: 16 }, 0.5)
+        .from('[data-hero="3"]', { opacity: 0, y: 14 }, 0.6)
+        .from('[data-hero="4"]', { opacity: 0, y: 14 }, 0.7)
+        .from('[data-hero="5"]', { opacity: 0, y: 14 }, 0.8)
+        .from('[data-hero="6"]', { opacity: 0, y: 20 }, 0.4);
+    });
+
+    if (typeof window === 'undefined') return () => ctx.revert();
     const params = new URLSearchParams(window.location.search);
     if (params.get('email'))     setEmail(params.get('email')!);
     if (params.get('firstName')) setFirstName(params.get('firstName')!);
@@ -67,6 +81,8 @@ const BookingPage: React.FC = () => {
     if (params.get('email') && (params.get('utm_source') === 'prospector' || params.get('source') === 'email')) {
       fetch('/api/prospector/track-click', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email: params.get('email') }) }).catch(() => {});
     }
+
+    return () => ctx.revert();
   }, []);
 
   const year  = currentDate.getFullYear();
@@ -183,7 +199,7 @@ const BookingPage: React.FC = () => {
 
             {/* LEFT: copy */}
             <div className="hero-copy">
-              <nav className="breadcrumb">
+              <nav className="breadcrumb" data-hero="1">
                 <a href="/">GOBIYA</a>
                 <i>›</i>
                 <span>Book a call</span>
@@ -195,11 +211,11 @@ const BookingPage: React.FC = () => {
                 <span className="line"><span className="accent">pipeline audit.</span></span>
               </h1>
 
-              <p className="hero-sub">
+              <p className="hero-sub" data-hero="2">
                 A live 1-on-1 strategy call with Steve Martin — CEO & Lead Engineer. We examine your entity mapping, diagnose search drop triggers, and lay out a concrete technical roadmap.
               </p>
 
-              <div className="steve-card">
+              <div className="steve-card" data-hero="3">
                 <img src="/images/steve-portrait.webp" alt="Steve Martin — CEO, GOBIYA" />
                 <div>
                   <h3>Steve Martin</h3>
@@ -208,7 +224,7 @@ const BookingPage: React.FC = () => {
                 </div>
               </div>
 
-              <div className="session-specs">
+              <div className="session-specs" data-hero="4">
                 <div className="spec-row">
                   <svg viewBox="0 0 24 24" fill="none" width="16" height="16"><path d="M15 10l4.553-2.276A1 1 0 0121 8.723v6.554a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/></svg>
                   <div>
@@ -225,14 +241,14 @@ const BookingPage: React.FC = () => {
                 </div>
               </div>
 
-              <div className="availability">
+              <div className="availability" data-hero="5">
                 <span className="dot" aria-hidden="true" />
                 Accepting qualified pipeline opportunities · CA / US
               </div>
             </div>
 
             {/* RIGHT: booking widget */}
-            <div className="hero-widget">
+            <div className="hero-widget" data-hero="6">
               <div className="widget">
                 <div className="widget-head">
                   <span>audit-booking.log</span>

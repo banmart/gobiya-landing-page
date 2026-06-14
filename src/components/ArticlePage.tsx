@@ -8159,7 +8159,6 @@ const ArticlePage: React.FC<ArticlePageProps> = ({ slug }) => {
 
   // GSAP Animations
   useEffect(() => {
-    if (!window.gsap) return;
     const ctx = gsap.context(() => {
       const ease = 'power3.out';
       

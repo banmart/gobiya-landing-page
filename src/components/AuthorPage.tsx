@@ -1,15 +1,76 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import HeroWebGLBackground from './HeroWebGLBackground';
 import { Linkedin, Award, Code, Compass, ShieldCheck } from 'lucide-react';
 import SiteHeader from './SiteHeader';
 import SiteFooter from './SiteFooter';
 import './AuthorPage.css';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 interface AuthorPageProps {
   path: string;
 }
 
 const AuthorPage: React.FC<AuthorPageProps> = ({ path }) => {
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  // GSAP Animations
+  useEffect(() => {
+    const ease = 'power3.out';
+    const ctx = gsap.context(() => {
+      // Nav entrance
+      const navInner = document.getElementById('nav-inner');
+      if (navInner) {
+        gsap.fromTo(navInner, { y: -22, opacity: 0 }, { y: 0, opacity: 1, duration: 1.2, ease, delay: 0.1 });
+      }
+
+      // Hero Timeline
+      const heroTl = gsap.timeline({ delay: 0.15, defaults: { ease, duration: 1.15 } });
+      heroTl
+        .fromTo('.breadcrumb', { opacity: 0, y: 12 }, { opacity: 1, y: 0 }, 0)
+        .fromTo('.hero-cat', { opacity: 0, y: 12 }, { opacity: 1, y: 0 }, 0.08)
+        .fromTo('.hero h1 .line > span', { yPercent: 110 }, { yPercent: 0, stagger: 0.1, duration: 1.25 }, 0.15)
+        .fromTo('.hero-sub', { opacity: 0, y: 16 }, { opacity: 1, y: 0 }, 0.3);
+
+      // Scroll reveals
+      const sc = (el: Element) => ({ trigger: el, start: 'top 87%' });
+
+      gsap.utils.toArray('[data-anim="up"]').forEach(el => {
+        gsap.fromTo(el as Element, 
+          { y: 30, opacity: 0 },
+          { scrollTrigger: sc(el as Element), y: 0, opacity: 1, duration: 1.2, ease }
+        );
+      });
+
+      gsap.utils.toArray('[data-anim="fade"]').forEach(el => {
+        gsap.fromTo(el as Element, 
+          { opacity: 0 },
+          { scrollTrigger: sc(el as Element), opacity: 1, duration: 1.2, ease }
+        );
+      });
+
+      gsap.utils.toArray('[data-anim="scale"]').forEach(el => {
+        gsap.fromTo(el as Element, 
+          { scale: 0.97, opacity: 0 },
+          { scrollTrigger: sc(el as Element), scale: 1, opacity: 1, duration: 1.4, ease: 'power2.out' }
+        );
+      });
+
+      gsap.utils.toArray('[data-anim="stagger"]').forEach(parent => {
+        const kids = (parent as Element).querySelectorAll('[data-anim-child]');
+        if (!kids.length) return;
+        gsap.fromTo(kids, 
+          { y: 26, opacity: 0 },
+          { scrollTrigger: sc(parent as Element), y: 0, opacity: 1, duration: 1.15, ease, stagger: 0.12 }
+        );
+      });
+    }, containerRef);
+
+    return () => ctx.revert();
+  }, []);
+
   // Update document title and description + schema
   useEffect(() => {
     document.title = "Steve Martin | CEO, Lead Developer & Marketer | GOBIYA";
@@ -116,7 +177,7 @@ const AuthorPage: React.FC<AuthorPageProps> = ({ path }) => {
   ];
 
   return (
-    <div className="author-page">
+    <div ref={containerRef} className="author-page">
       <SiteHeader />
 
       {/* ── HERO ── */}
@@ -134,7 +195,7 @@ const AuthorPage: React.FC<AuthorPageProps> = ({ path }) => {
             Leadership & Engineering
           </span>
           <h1 className="display">
-            Steve Martin
+            <span className="line"><span>Steve Martin</span></span>
           </h1>
           <p className="hero-sub">
             Founder, Lead Developer & Marketer at GOBIYA
@@ -148,20 +209,21 @@ const AuthorPage: React.FC<AuthorPageProps> = ({ path }) => {
           
           {/* Left Column: Picture & Meta */}
           <div className="left-col">
-            <div className="avatar-wrap">
+            <div className="avatar-wrap animate-dossier-frame" data-anim="scale">
               <img 
                 src="/images/steve-portrait.webp" 
                 alt="Steve Martin - CEO, Lead Developer & Marketer" 
               />
             </div>
-            <h2 className="left-name">Steve Martin</h2>
-            <p className="left-title">Gobiya Leadership</p>
+            <h2 className="left-name" data-anim="up">Steve Martin</h2>
+            <p className="left-title" data-anim="up">Gobiya Leadership</p>
             
             <a 
               href="https://www.linkedin.com/in/stevemartingobiya/" 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="btn btn-primary w-full max-w-[300px]"
+              className="btn btn-primary w-full max-w-[300px] magnetic"
+              data-anim="up"
             >
               <Linkedin className="w-4 h-4" />
               <span>Connect on LinkedIn</span>
@@ -170,16 +232,16 @@ const AuthorPage: React.FC<AuthorPageProps> = ({ path }) => {
               </svg>
             </a>
 
-            <div className="meta-list">
-              <div className="meta-item">
+            <div className="meta-list" data-anim="stagger">
+              <div className="meta-item" data-anim-child>
                 <Award className="w-4 h-4" />
                 <span>Glendale Career College (1996)</span>
               </div>
-              <div className="meta-item">
+              <div className="meta-item" data-anim-child>
                 <ShieldCheck className="w-4 h-4" />
                 <span>25+ Years Search Engineering</span>
               </div>
-              <div className="meta-item">
+              <div className="meta-item" data-anim-child>
                 <Code className="w-4 h-4" />
                 <span>React, Supabase, & AI Integrations</span>
               </div>
@@ -188,18 +250,18 @@ const AuthorPage: React.FC<AuthorPageProps> = ({ path }) => {
 
           {/* Right Column: Experience and Credentials */}
           <div className="right-col">
-            <h2>About & Credentials</h2>
-            <p className="bio-text">
+            <h2 data-anim="up">About & Credentials</h2>
+            <p className="bio-text" data-anim="up">
               Steve Martin is a hands-on SEO and digital marketing specialist who builds the websites and tools. With over 25 years of experience helping contractors, dental and medical practices, real estate, and SaaS startups grow, he bridges the gap between clean engineering and organic search traffic.
             </p>
-            <p className="bio-text">
+            <p className="bio-text" data-anim="up">
               Currently focused on schema and entity optimization for AI search results (ChatGPT, Perplexity, Google AI Overviews), modern React/Vite builds, and AI-powered lead generation systems. Steve is looking for a full-time in-house role where he can ship.
             </p>
 
-            <h3>
+            <h3 data-anim="up">
               <Compass className="w-5 h-5" /> Core Skills
             </h3>
-            <div className="skills-grid">
+            <div className="skills-grid" data-anim="stagger">
               {[
                 { title: 'SEO for the AI Era', desc: 'Schema markup, entity optimization, structured data for AI Overviews and LLM citation, technical SEO, local SEO, GBP, and update recovery.' },
                 { title: 'Web Development & Design', desc: 'Custom React & Vite engineering, Tailwind CSS, Supabase, WordPress, Webflow, and high-performance layouts.' },
@@ -208,7 +270,7 @@ const AuthorPage: React.FC<AuthorPageProps> = ({ path }) => {
                 { title: 'Digital PR & Link Building', desc: 'HARO, Featured, Qwoted, Reddit, and community-driven authority building link strategies.' },
                 { title: 'Analytics & Search Tools', desc: 'Data audits and traffic resolving via Google Analytics, Search Console, SEMrush, and Ahrefs.' }
               ].map((skill) => (
-                <div key={skill.title} className="skill-card">
+                <div key={skill.title} className="skill-card animate-skill-card" data-anim-child>
                   <h4>{skill.title}</h4>
                   <p>{skill.desc}</p>
                 </div>
@@ -216,7 +278,7 @@ const AuthorPage: React.FC<AuthorPageProps> = ({ path }) => {
             </div>
 
             {/* Podcast Section */}
-            <div className="podcast-section">
+            <div className="podcast-section" data-anim="up">
               <h3>
                 <Award className="w-5 h-5" /> Featured Podcast Episode
               </h3>
@@ -233,10 +295,10 @@ const AuthorPage: React.FC<AuthorPageProps> = ({ path }) => {
             </div>
 
             {/* Written Articles Section */}
-            <h2 style={{ marginTop: '4rem' }}>Articles Written by Steve Martin</h2>
-            <div className="articles-list">
+            <h2 style={{ marginTop: '4rem' }} data-anim="up">Articles Written by Steve Martin</h2>
+            <div className="articles-list" data-anim="stagger">
               {articles.map((article) => (
-                <div key={article.slug} className="article-row">
+                <div key={article.slug} className="article-row" data-anim-child>
                   <div className="article-img-wrap">
                     <img 
                       src={article.image} 

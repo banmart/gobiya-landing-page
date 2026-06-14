@@ -1,6 +1,6 @@
 import { supabase } from '../lib/supabase';
 import { trackCTA } from '../lib/analytics';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import DeferredShader, { Swirl, ChromaFlow, FlutedGlass, FilmGrain } from './DeferredShader';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -51,6 +51,7 @@ interface PageConfig {
 }
 
 const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
+  const containerRef = useRef<HTMLDivElement>(null);
   const [time, setTime] = useState('');
   const [activeSchema, setActiveSchema] = useState<'business' | 'website' | 'article'>('business');
   const [copiedSchema, setCopiedSchema] = useState(false);
@@ -247,7 +248,49 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
             });
           });
         }
-      });
+
+        // Hero entrance animations
+        const ease = 'power3.out';
+        const heroTl = gsap.timeline({ delay: 0.15, defaults: { ease, duration: 1.15 } });
+        heroTl
+          .fromTo('[data-hero="1"]', { opacity: 0, y: 12 }, { opacity: 1, y: 0 }, 0)
+          .fromTo('[data-hero="2"]', { opacity: 0, y: 20 }, { opacity: 1, y: 0 }, 0.08)
+          .fromTo('[data-hero="3"]', { opacity: 0, y: 16 }, { opacity: 1, y: 0 }, 0.18)
+          .fromTo('[data-hero="4"]', { opacity: 0, y: 14 }, { opacity: 1, y: 0 }, 0.28);
+
+        // Scroll reveals
+        const sc = (el: Element) => ({ trigger: el, start: 'top 87%' });
+
+        gsap.utils.toArray('[data-anim="up"]').forEach(el => {
+          gsap.fromTo(el as Element, 
+            { y: 30, opacity: 0 },
+            { scrollTrigger: sc(el as Element), y: 0, opacity: 1, duration: 1.2, ease }
+          );
+        });
+
+        gsap.utils.toArray('[data-anim="fade"]').forEach(el => {
+          gsap.fromTo(el as Element, 
+            { opacity: 0 },
+            { scrollTrigger: sc(el as Element), opacity: 1, duration: 1.2, ease }
+          );
+        });
+
+        gsap.utils.toArray('[data-anim="scale"]').forEach(el => {
+          gsap.fromTo(el as Element, 
+            { scale: 0.97, opacity: 0 },
+            { scrollTrigger: sc(el as Element), scale: 1, opacity: 1, duration: 1.4, ease: 'power2.out' }
+          );
+        });
+
+        gsap.utils.toArray('[data-anim="stagger"]').forEach(parent => {
+          const kids = (parent as Element).querySelectorAll('[data-anim-child]');
+          if (!kids.length) return;
+          gsap.fromTo(kids, 
+            { y: 26, opacity: 0 },
+            { scrollTrigger: sc(parent as Element), y: 0, opacity: 1, duration: 1.15, ease, stagger: 0.12 }
+          );
+        });
+      }, containerRef);
     }
 
     setTimeout(createTimeline, 100);
@@ -731,7 +774,7 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
   const themeBorderAccentHover = isServicesPath ? 'hover:border-[#234A40]' : 'hover:border-[#e05a1a]';
 
   return (
-    <div className={`min-h-screen ${isServicesPath ? 'bg-transparent' : 'bg-[#EFEDE5]'} text-[#15130E] relative font-sans ${isServicesPath ? 'selection:bg-[#2F5D50]' : 'selection:bg-[#F26522]'} selection:text-white page-wrapper`}>
+    <div ref={containerRef} className={`min-h-screen ${isServicesPath ? 'bg-transparent' : 'bg-[#EFEDE5]'} text-[#15130E] relative font-sans ${isServicesPath ? 'selection:bg-[#2F5D50]' : 'selection:bg-[#F26522]'} selection:text-white page-wrapper`}>
       <CustomCursor />
 
       {/* HERO SECTION */}
@@ -744,10 +787,10 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
 
         {/* Hero Content - Adjusted margins/padding to remove large empty vertical space */}
         <div className="relative z-20 max-w-[1440px] w-full mx-auto flex flex-col justify-center px-5 sm:px-8 lg:px-12 pt-16 pb-0">
-          <p className={`text-[13px] sm:text-[14px] ${isServicesPath ? 'text-[#5B564C]' : 'text-[#2F5D50]'} tracking-wide mb-4 uppercase font-medium`}>
+          <p data-hero="1" className={`text-[13px] sm:text-[14px] ${isServicesPath ? 'text-[#5B564C]' : 'text-[#2F5D50]'} tracking-wide mb-4 uppercase font-medium`}>
             {config.subtitle}
           </p>
-          <h1 className="text-[clamp(1.5rem,5.5vw,3.2rem)] sm:text-[clamp(1.8rem,4.5vw,3.8rem)] font-medium leading-[1.15] tracking-[-0.03em] text-[#15130E] max-w-[1200px]">
+          <h1 data-hero="2" className="text-[clamp(1.5rem,5.5vw,3.2rem)] sm:text-[clamp(1.8rem,4.5vw,3.8rem)] font-medium leading-[1.15] tracking-[-0.03em] text-[#15130E] max-w-[1200px]">
             {config.title.substring(0, config.title.lastIndexOf(' ')+1)}
             <RotatingText
               texts={config.rotatingWords}
@@ -762,10 +805,10 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
               rotationInterval={3000}
             />
           </h1>
-          <p className="mt-6 text-[15px] sm:text-[17px] text-[#5B564C] max-w-[800px] leading-relaxed">
+          <p data-hero="3" className="mt-6 text-[15px] sm:text-[17px] text-[#5B564C] max-w-[800px] leading-relaxed">
             {config.outcomeMessage}
           </p>
-          <div className="mt-8 flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-5">
+          <div data-hero="4" className="mt-8 flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-5">
             <a
               href="/book"
               id="service-hero-cta"
@@ -811,7 +854,7 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
           </div>
           
           <div className="px-5 sm:px-8 lg:px-12">
-            <h2 className="text-[clamp(1.5rem,4vw,3.2rem)] font-medium leading-[1.12] tracking-[-0.02em] text-[#15130E] mb-12 sm:mb-16 lg:mb-28 max-w-4xl font-display">
+            <h2 data-anim="up" className="text-[clamp(1.5rem,4vw,3.2rem)] font-medium leading-[1.12] tracking-[-0.02em] text-[#15130E] mb-12 sm:mb-16 lg:mb-28 max-w-4xl font-display">
               {config.introHeading}
             </h2>
 
@@ -846,7 +889,7 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
               </div>
             </div>
 
-            <div className="hidden lg:grid grid-cols-[26%_1fr_48%] items-end gap-6 xl:gap-8">
+            <div className="hidden lg:grid grid-cols-[26%_1fr_48%] items-end gap-6 xl:gap-8" data-anim="up">
               <div className="self-end">
                 <ParallaxMedia type="video" src={config.introVideo1} autoPlay muted loop playsInline className="w-full aspect-[438/346]" />
               </div>
@@ -1379,8 +1422,8 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
       {path === '/services' && (
         <section className="bg-[#050505] text-white py-16 sm:py-24 border-t border-white/10 relative z-20" data-logo-dark>
           <div className="max-w-[1440px] w-full mx-auto px-5 sm:px-8 lg:px-12">
-            <h2 className="text-2xl sm:text-4xl font-semibold tracking-tight text-white mb-12">Our Specialized Capabilities</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <h2 data-anim="up" className="text-2xl sm:text-4xl font-semibold tracking-tight text-white mb-12">Our Specialized Capabilities</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" data-anim="stagger">
               {[
                 {
                   id: 'seo',
@@ -1425,7 +1468,7 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
                   deliverables: ['Intent-Based Search Ads', 'LinkedIn B2B Lead Pipelines', 'A/B Testing & Funnel Management']
                 }
               ].map((service) => (
-                <div key={service.id} id={service.id} className="bg-white/5 border border-white/10 p-8 rounded-2xl flex flex-col justify-between hover:border-white/20 transition-all duration-300 scroll-mt-24">
+                <div key={service.id} id={service.id} data-anim-child className="bg-white/5 border border-white/10 p-8 rounded-2xl flex flex-col justify-between hover:border-white/20 transition-all duration-300 scroll-mt-24">
                   <div>
                     <div className="mb-6 flex items-center justify-between">
                       {service.icon}

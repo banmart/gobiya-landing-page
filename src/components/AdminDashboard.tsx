@@ -347,7 +347,7 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout }) => {
     return [
       { title: 'Email 1: Welcome Audit', desc: 'Custom SEO & secure audit presentation.', status: isWelcomeSent ? 'sent' : 'pending', delay: 'Instant', icon: isWelcomeSent ? <CheckCircle2 className="w-5 h-5 text-green-500" /> : <Clock className="w-5 h-5 text-gray-600" /> },
       { title: 'Email 2: Steve\'s Philosophy', desc: 'B2B SEO vs vanity traffic frameworks.', status: isClicked ? 'sent' : isWelcomeSent ? 'scheduled' : 'pending', delay: '24 Hours Later', icon: isClicked ? <CheckCircle2 className="w-5 h-5 text-green-500" /> : isWelcomeSent ? <Clock className="w-5 h-5 text-yellow-500" /> : <Clock className="w-5 h-5 text-gray-600" /> },
-      { title: 'Email 3: Case Showcase', desc: 'American Livescan & SmileCenter data.', status: isBooked ? 'sent' : isClicked ? 'scheduled' : 'pending', delay: '3 Days Later', icon: isBooked ? <CheckCircle2 className="w-5 h-5 text-[#F26522]" /> : isClicked ? <Clock className="w-5 h-5 text-gray-600" /> : <Clock className="w-5 h-5 text-gray-600" /> },
+      { title: 'Email 3: Case Showcase', desc: 'American Livescan & SmileCenter data.', status: isBooked ? 'sent' : isClicked ? 'scheduled' : 'pending', delay: '3 Days Later', icon: isBooked ? <CheckCircle2 className="w-5 h-5 text-[#2F5D50]" /> : isClicked ? <Clock className="w-5 h-5 text-gray-600" /> : <Clock className="w-5 h-5 text-gray-600" /> },
       { title: 'Email 4: Objection Killer', desc: '"Why cheap SEO is expensive" breakdown.', status: isBooked ? 'completed' : 'pending', delay: '5 Days Later', icon: isBooked ? <CheckCircle2 className="w-5 h-5 text-gray-400" /> : <Clock className="w-5 h-5 text-gray-600" /> },
       { title: 'Email 5: Booking Invite', desc: 'Direct strategy call booking trigger.', status: isBooked ? 'completed' : 'pending', delay: '7 Days Later', icon: isBooked ? <CheckCircle2 className="w-5 h-5 text-gray-400" /> : <Clock className="w-5 h-5 text-gray-600" /> },
     ];
@@ -435,7 +435,7 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout }) => {
   );
 
   return (
-    <div className="min-h-screen bg-[#050505] text-white relative font-sans selection:bg-[#F26522] selection:text-white flex flex-col justify-between">
+    <div className="min-h-screen bg-[#050505] text-white relative font-sans selection:bg-[#2F5D50] selection:text-white flex flex-col justify-between">
       <CustomCursor />
       
       
@@ -448,7 +448,7 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout }) => {
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-12 pb-8 border-b border-white/10">
           <div>
             <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight text-white font-display">
-              B2B Lead Prospector <span className="text-[#F26522]">Engine</span>
+              B2B Lead Prospector <span className="text-[#2F5D50]">Engine</span>
             </h1>
             <p className="text-sm text-gray-400 mt-2">
               Automated cold outreach pipeline &amp; Perplexity AI search dashboard.
@@ -477,7 +477,7 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout }) => {
               onClick={() => setActiveTab(tab.id as any)}
               className={`flex items-center gap-2 px-5 py-3 border-b-2 text-xs font-semibold uppercase tracking-wider transition-colors cursor-pointer whitespace-nowrap
                 ${activeTab === tab.id 
-                  ? 'border-[#F26522] text-white bg-white/[0.02]' 
+                  ? 'border-[#2F5D50] text-white bg-white/[0.02]' 
                   : 'border-transparent text-gray-500 hover:text-gray-300'
                 }
               `}
@@ -497,7 +497,7 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout }) => {
               {/* Form panel */}
               <div className="bg-black/40 border border-white/10 p-8 rounded-2xl relative overflow-hidden backdrop-blur-md">
                 <h2 className="text-xl font-semibold mb-6 flex items-center gap-2">
-                  <Play className="w-5 h-5 text-[#F26522]" /> Search Parameters
+                  <Play className="w-5 h-5 text-[#2F5D50]" /> Search Parameters
                 </h2>
                 
                 <form onSubmit={handleRunProspector} className="space-y-6">
@@ -510,7 +510,7 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout }) => {
                         value={category}
                         onChange={(e) => setCategory(e.target.value)}
                         placeholder="e.g. security systems, access control"
-                        className="w-full bg-white/[0.03] border border-white/10 focus:border-[#F26522] rounded-lg px-4 py-2.5 text-sm focus:outline-none transition-colors"
+                        className="w-full bg-white/[0.03] border border-white/10 focus:border-[#2F5D50] rounded-lg px-4 py-2.5 text-sm focus:outline-none transition-colors"
                       />
                     </div>
                     <div>
@@ -521,7 +521,7 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout }) => {
                         value={location}
                         onChange={(e) => setLocation(e.target.value)}
                         placeholder="e.g. Los Angeles, CA"
-                        className="w-full bg-white/[0.03] border border-white/10 focus:border-[#F26522] rounded-lg px-4 py-2.5 text-sm focus:outline-none transition-colors"
+                        className="w-full bg-white/[0.03] border border-white/10 focus:border-[#2F5D50] rounded-lg px-4 py-2.5 text-sm focus:outline-none transition-colors"
                       />
                     </div>
                   </div>
@@ -531,7 +531,7 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout }) => {
                     <select
                       value={numResults}
                       onChange={(e) => setNumResults(Number(e.target.value))}
-                      className="w-full bg-white/[0.03] border border-white/10 focus:border-[#F26522] rounded-lg px-4 py-2.5 text-sm focus:outline-none transition-colors"
+                      className="w-full bg-white/[0.03] border border-white/10 focus:border-[#2F5D50] rounded-lg px-4 py-2.5 text-sm focus:outline-none transition-colors"
                     >
                       <option value={3} className="bg-[#050505]">3 Results (Fast Audit)</option>
                       <option value={5} className="bg-[#050505]">5 Results (Standard Scan)</option>
@@ -557,7 +557,7 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout }) => {
                           <textarea
                             value={focusPrompt}
                             onChange={(e) => setFocusPrompt(e.target.value)}
-                            className="w-full h-24 bg-black/40 border border-white/10 focus:border-[#F26522] rounded px-3 py-2 text-xs focus:outline-none transition-colors font-mono"
+                            className="w-full h-24 bg-black/40 border border-white/10 focus:border-[#2F5D50] rounded px-3 py-2 text-xs focus:outline-none transition-colors font-mono"
                             placeholder="Use {limit}, {category}, and {location} variables."
                           />
                         </div>
@@ -566,7 +566,7 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout }) => {
                           <textarea
                             value={personaPrompt}
                             onChange={(e) => setPersonaPrompt(e.target.value)}
-                            className="w-full h-20 bg-black/40 border border-white/10 focus:border-[#F26522] rounded px-3 py-2 text-xs focus:outline-none transition-colors font-mono"
+                            className="w-full h-20 bg-black/40 border border-white/10 focus:border-[#2F5D50] rounded px-3 py-2 text-xs focus:outline-none transition-colors font-mono"
                             placeholder="Persona for the cold outreach script."
                           />
                         </div>
@@ -575,7 +575,7 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout }) => {
                           <textarea
                             value={customPrompt}
                             onChange={(e) => setCustomPrompt(e.target.value)}
-                            className="w-full h-28 bg-black/40 border border-white/10 focus:border-[#F26522] rounded px-3 py-2 text-xs focus:outline-none transition-colors font-mono"
+                            className="w-full h-28 bg-black/40 border border-white/10 focus:border-[#2F5D50] rounded px-3 py-2 text-xs focus:outline-none transition-colors font-mono"
                             placeholder="Supports {contact_name}, {company_name}, {location}, {website}, and {category} templates."
                           />
                         </div>
@@ -586,7 +586,7 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout }) => {
                   <button
                     type="submit"
                     disabled={scraping}
-                    className="w-full group bg-[#F26522] hover:bg-[#e05a1a] disabled:bg-gray-800 disabled:text-gray-500 text-white font-semibold py-3.5 px-4 rounded-lg transition-colors flex items-center justify-center gap-2 cursor-pointer text-sm"
+                    className="w-full group bg-[#2F5D50] hover:bg-[#234A40] disabled:bg-gray-800 disabled:text-gray-500 text-white font-semibold py-3.5 px-4 rounded-lg transition-colors flex items-center justify-center gap-2 cursor-pointer text-sm"
                   >
                     {scraping ? (
                       <>
@@ -612,10 +612,10 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout }) => {
                     <span className="w-2.5 h-2.5 rounded-full bg-green-500/40" />
                     <span className="ml-2 font-semibold">terminal@gobiya-prospector</span>
                   </div>
-                  <span className="text-[10px] uppercase tracking-widest text-[#F26522] font-semibold animate-pulse">Live Output</span>
+                  <span className="text-[10px] uppercase tracking-widest text-[#2F5D50] font-semibold animate-pulse">Live Output</span>
                 </div>
                 
-                <div className="flex-grow p-5 overflow-y-auto text-xs space-y-2 select-text selection:bg-[#F26522]/40 max-h-[350px]">
+                <div className="flex-grow p-5 overflow-y-auto text-xs space-y-2 select-text selection:bg-[#2F5D50]/40 max-h-[350px]">
                   {logs.map((log, index) => {
                     let colorClass = 'text-gray-300';
                     let label = '';
@@ -657,7 +657,7 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout }) => {
 
                     return (
                       <div key={index} className="leading-relaxed break-all font-mono">
-                        <span className="text-[#F26522] mr-2">&gt;</span>
+                        <span className="text-[#2F5D50] mr-2">&gt;</span>
                         <span className={colorClass}>
                           {timePrefix && <span className="text-gray-600 mr-1">{timePrefix}</span>}
                           {label && <span className="opacity-80 mr-1.5 font-bold">{label}</span>}
@@ -684,14 +684,14 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout }) => {
                     placeholder="Search company, category, contact..."
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
-                    className="w-full bg-white/[0.03] border border-white/10 focus:border-[#F26522] rounded-lg pl-10 pr-4 py-2 text-xs text-white focus:outline-none transition-colors"
+                    className="w-full bg-white/[0.03] border border-white/10 focus:border-[#2F5D50] rounded-lg pl-10 pr-4 py-2 text-xs text-white focus:outline-none transition-colors"
                   />
                 </div>
 
                 <div className="flex items-center gap-3 w-full sm:w-auto justify-end flex-wrap">
                   <button 
                     onClick={() => { resetForm(); setShowAddModal(true); }}
-                    className="flex items-center gap-1.5 px-4 py-2 bg-[#F26522] hover:bg-[#e05a1a] text-white text-xs font-semibold uppercase tracking-wider transition-colors cursor-pointer"
+                    className="flex items-center gap-1.5 px-4 py-2 bg-[#2F5D50] hover:bg-[#234A40] text-white text-xs font-semibold uppercase tracking-wider transition-colors cursor-pointer"
                   >
                     + Add Lead
                   </button>
@@ -750,7 +750,7 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout }) => {
                                 href={lead.website} 
                                 target="_blank" 
                                 rel="noreferrer"
-                                className="inline-flex items-center gap-1 text-[#F26522] hover:underline"
+                                className="inline-flex items-center gap-1 text-[#2F5D50] hover:underline"
                               >
                                 {lead.website.replace(/^https?:\/\/(www\.)?/, '')}
                                 <ExternalLink className="w-3 h-3" />
@@ -770,14 +770,14 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout }) => {
                                 : lead.status === 'clicked'
                                   ? 'bg-blue-500/10 text-blue-300 border border-blue-500/30'
                                   : lead.status === 'booked'
-                                    ? 'bg-[#F26522]/15 text-[#F26522] border border-[#F26522]/30 font-bold'
+                                    ? 'bg-[#2F5D50]/15 text-[#2F5D50] border border-[#2F5D50]/30 font-bold'
                                     : 'bg-gray-800/50 text-gray-400 border border-gray-700/50'
                               }
                             `}>
                               <span className={`w-1.5 h-1.5 rounded-full 
                                 ${lead.status === 'welcome_sent' ? 'bg-green-500' 
                                   : lead.status === 'clicked' ? 'bg-blue-500'
-                                    : lead.status === 'booked' ? 'bg-[#F26522]'
+                                    : lead.status === 'booked' ? 'bg-[#2F5D50]'
                                       : 'bg-gray-400'
                                 }`} 
                               />
@@ -826,7 +826,7 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout }) => {
           {activeTab === 'campaigns' && (
             <div className="bg-black/40 border border-white/10 p-6 sm:p-8 rounded-2xl backdrop-blur-md relative overflow-hidden">
               <h2 className="text-xl font-semibold mb-6 flex items-center gap-2">
-                <Mail className="w-5 h-5 text-[#F26522]" /> Active Nurture Pipeline Logs
+                <Mail className="w-5 h-5 text-[#2F5D50]" /> Active Nurture Pipeline Logs
               </h2>
               
               {leads.filter(l => l.status !== 'new').length === 0 ? (
@@ -893,7 +893,7 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout }) => {
                               </div>
                               <div>
                                 <h4 className="text-[13px] font-semibold text-white">{step.title}</h4>
-                                <p className="text-[11px] text-[#F26522] font-mono mt-1">{step.delay}</p>
+                                <p className="text-[11px] text-[#2F5D50] font-mono mt-1">{step.delay}</p>
                                 <p className="text-xs text-gray-500 mt-2 leading-relaxed">{step.desc}</p>
                               </div>
                             </div>
@@ -911,7 +911,7 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout }) => {
           {activeTab === 'settings' && (
             <div className="bg-black/40 border border-white/10 p-8 rounded-2xl backdrop-blur-md max-w-2xl mx-auto">
               <h2 className="text-xl font-semibold mb-6 flex items-center gap-2">
-                <Settings className="w-5 h-5 text-[#F26522]" /> API Credentials &amp; Testing
+                <Settings className="w-5 h-5 text-[#2F5D50]" /> API Credentials &amp; Testing
               </h2>
               
               <div className="space-y-6">
@@ -927,7 +927,7 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout }) => {
                     placeholder={hasServerPerplexityKey ? "•••••••• (Using Environment Key)" : "pplx-..."}
                     value={perplexityKey}
                     onChange={(e) => setPerplexityKey(e.target.value)}
-                    className="w-full bg-white/[0.03] border border-white/10 focus:border-[#F26522] rounded-lg px-4 py-2.5 text-sm focus:outline-none transition-colors font-mono"
+                    className="w-full bg-white/[0.03] border border-white/10 focus:border-[#2F5D50] rounded-lg px-4 py-2.5 text-sm focus:outline-none transition-colors font-mono"
                   />
                   <p className="text-[10px] text-gray-600 mt-2 font-mono">Used to fetch real B2B leads dynamically using the Sonar models.</p>
                 </div>
@@ -944,14 +944,14 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout }) => {
                     placeholder={hasServerResendKey ? "•••••••• (Using Environment Key)" : "re_..."}
                     value={resendKey}
                     onChange={(e) => setResendKey(e.target.value)}
-                    className="w-full bg-white/[0.03] border border-white/10 focus:border-[#F26522] rounded-lg px-4 py-2.5 text-sm focus:outline-none transition-colors font-mono"
+                    className="w-full bg-white/[0.03] border border-white/10 focus:border-[#2F5D50] rounded-lg px-4 py-2.5 text-sm focus:outline-none transition-colors font-mono"
                   />
                   <p className="text-[10px] text-gray-600 mt-2 font-mono">Used to coordinate automated outreach welcome emails via Resend's API.</p>
                 </div>
 
                 <button
                   onClick={saveConfig}
-                  className="w-full bg-[#F26522] hover:bg-[#e05a1a] text-white font-semibold py-3 px-4 rounded-lg transition-colors flex items-center justify-center gap-2 cursor-pointer text-sm"
+                  className="w-full bg-[#2F5D50] hover:bg-[#234A40] text-white font-semibold py-3 px-4 rounded-lg transition-colors flex items-center justify-center gap-2 cursor-pointer text-sm"
                 >
                   <ShieldCheck className="w-4 h-4" />
                   Save Settings &amp; AI Templates
@@ -960,7 +960,7 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout }) => {
                 <hr className="border-white/5" />
 
                 <div>
-                  <h3 className="text-sm font-semibold mb-3 flex items-center gap-2 text-[#F26522]">
+                  <h3 className="text-sm font-semibold mb-3 flex items-center gap-2 text-[#2F5D50]">
                     <Mail className="w-4 h-4" /> Send Test Outreach Email
                   </h3>
                   <form onSubmit={handleSendTestEmail} className="space-y-3">
@@ -972,7 +972,7 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout }) => {
                         placeholder="e.g. test@yourdomain.com"
                         value={testEmail}
                         onChange={(e) => setTestEmail(e.target.value)}
-                        className="w-full bg-white/[0.03] border border-white/10 focus:border-[#F26522] rounded-lg px-4 py-2.5 text-sm focus:outline-none transition-colors font-mono"
+                        className="w-full bg-white/[0.03] border border-white/10 focus:border-[#2F5D50] rounded-lg px-4 py-2.5 text-sm focus:outline-none transition-colors font-mono"
                       />
                     </div>
                     <button
@@ -1006,40 +1006,40 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout }) => {
               <div className="grid grid-cols-2 gap-4">
                 <div>
                   <label className="block text-[10px] uppercase tracking-wider text-gray-400 font-semibold mb-1 font-mono">Company Name</label>
-                  <input type="text" required value={formCompany} onChange={(e) => setFormCompany(e.target.value)} className="w-full bg-white/[0.03] border border-white/10 focus:border-[#F26522] rounded px-3 py-2 text-xs text-white focus:outline-none" />
+                  <input type="text" required value={formCompany} onChange={(e) => setFormCompany(e.target.value)} className="w-full bg-white/[0.03] border border-white/10 focus:border-[#2F5D50] rounded px-3 py-2 text-xs text-white focus:outline-none" />
                 </div>
                 <div>
                   <label className="block text-[10px] uppercase tracking-wider text-gray-400 font-semibold mb-1 font-mono">Contact Name</label>
-                  <input type="text" required value={formContact} onChange={(e) => setFormContact(e.target.value)} className="w-full bg-white/[0.03] border border-white/10 focus:border-[#F26522] rounded px-3 py-2 text-xs text-white focus:outline-none" />
+                  <input type="text" required value={formContact} onChange={(e) => setFormContact(e.target.value)} className="w-full bg-white/[0.03] border border-white/10 focus:border-[#2F5D50] rounded px-3 py-2 text-xs text-white focus:outline-none" />
                 </div>
               </div>
               <div className="grid grid-cols-2 gap-4">
                 <div>
                   <label className="block text-[10px] uppercase tracking-wider text-gray-400 font-semibold mb-1 font-mono">Email Address</label>
-                  <input type="email" required value={formEmail} onChange={(e) => setFormEmail(e.target.value)} className="w-full bg-white/[0.03] border border-white/10 focus:border-[#F26522] rounded px-3 py-2 text-xs text-white focus:outline-none" />
+                  <input type="email" required value={formEmail} onChange={(e) => setFormEmail(e.target.value)} className="w-full bg-white/[0.03] border border-white/10 focus:border-[#2F5D50] rounded px-3 py-2 text-xs text-white focus:outline-none" />
                 </div>
                 <div>
                   <label className="block text-[10px] uppercase tracking-wider text-gray-400 font-semibold mb-1 font-mono">Phone Number</label>
-                  <input type="text" value={formPhone} onChange={(e) => setFormPhone(e.target.value)} className="w-full bg-white/[0.03] border border-white/10 focus:border-[#F26522] rounded px-3 py-2 text-xs text-white focus:outline-none" />
+                  <input type="text" value={formPhone} onChange={(e) => setFormPhone(e.target.value)} className="w-full bg-white/[0.03] border border-white/10 focus:border-[#2F5D50] rounded px-3 py-2 text-xs text-white focus:outline-none" />
                 </div>
               </div>
               <div>
                 <label className="block text-[10px] uppercase tracking-wider text-gray-400 font-semibold mb-1 font-mono">Website / Domain</label>
-                <input type="text" value={formWebsite} onChange={(e) => setFormWebsite(e.target.value)} className="w-full bg-white/[0.03] border border-white/10 focus:border-[#F26522] rounded px-3 py-2 text-xs text-white focus:outline-none" />
+                <input type="text" value={formWebsite} onChange={(e) => setFormWebsite(e.target.value)} className="w-full bg-white/[0.03] border border-white/10 focus:border-[#2F5D50] rounded px-3 py-2 text-xs text-white focus:outline-none" />
               </div>
               <div className="grid grid-cols-2 gap-4">
                 <div>
                   <label className="block text-[10px] uppercase tracking-wider text-gray-400 font-semibold mb-1 font-mono">Category / Silo</label>
-                  <input type="text" value={formCategory} onChange={(e) => setFormCategory(e.target.value)} className="w-full bg-white/[0.03] border border-white/10 focus:border-[#F26522] rounded px-3 py-2 text-xs text-white focus:outline-none" />
+                  <input type="text" value={formCategory} onChange={(e) => setFormCategory(e.target.value)} className="w-full bg-white/[0.03] border border-white/10 focus:border-[#2F5D50] rounded px-3 py-2 text-xs text-white focus:outline-none" />
                 </div>
                 <div>
                   <label className="block text-[10px] uppercase tracking-wider text-gray-400 font-semibold mb-1 font-mono">Location</label>
-                  <input type="text" value={formLocation} onChange={(e) => setFormLocation(e.target.value)} className="w-full bg-white/[0.03] border border-white/10 focus:border-[#F26522] rounded px-3 py-2 text-xs text-white focus:outline-none" />
+                  <input type="text" value={formLocation} onChange={(e) => setFormLocation(e.target.value)} className="w-full bg-white/[0.03] border border-white/10 focus:border-[#2F5D50] rounded px-3 py-2 text-xs text-white focus:outline-none" />
                 </div>
               </div>
               <div>
                 <label className="block text-[10px] uppercase tracking-wider text-gray-400 font-semibold mb-1 font-mono">Prospect Pipeline Status</label>
-                <select value={formStatus} onChange={(e) => setFormStatus(e.target.value)} className="w-full bg-white/[0.03] border border-white/10 focus:border-[#F26522] rounded px-3 py-2 text-xs text-white focus:outline-none">
+                <select value={formStatus} onChange={(e) => setFormStatus(e.target.value)} className="w-full bg-white/[0.03] border border-white/10 focus:border-[#2F5D50] rounded px-3 py-2 text-xs text-white focus:outline-none">
                   <option value="new" className="bg-[#0c0c0c]">new (Queued)</option>
                   <option value="welcome_sent" className="bg-[#0c0c0c]">welcome_sent (Welcome Sent)</option>
                   <option value="clicked" className="bg-[#0c0c0c]">clicked (Clicked Email)</option>
@@ -1048,7 +1048,7 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout }) => {
               </div>
               <div className="flex justify-end gap-3 pt-4 border-t border-white/5">
                 <button type="button" onClick={() => setShowAddModal(false)} className="px-4 py-2 border border-white/10 hover:bg-white/[0.02] text-xs font-semibold uppercase tracking-wider cursor-pointer">Cancel</button>
-                <button type="submit" className="px-4 py-2 bg-[#F26522] hover:bg-[#e05a1a] text-white text-xs font-semibold uppercase tracking-wider cursor-pointer">Save Lead</button>
+                <button type="submit" className="px-4 py-2 bg-[#2F5D50] hover:bg-[#234A40] text-white text-xs font-semibold uppercase tracking-wider cursor-pointer">Save Lead</button>
               </div>
             </form>
           </div>
@@ -1067,11 +1067,11 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout }) => {
               <div className="grid grid-cols-2 gap-4">
                 <div>
                   <label className="block text-[10px] uppercase tracking-wider text-gray-400 font-semibold mb-1 font-mono">Company Name</label>
-                  <input type="text" required value={formCompany} onChange={(e) => setFormCompany(e.target.value)} className="w-full bg-white/[0.03] border border-white/10 focus:border-[#F26522] rounded px-3 py-2 text-xs text-white focus:outline-none" />
+                  <input type="text" required value={formCompany} onChange={(e) => setFormCompany(e.target.value)} className="w-full bg-white/[0.03] border border-white/10 focus:border-[#2F5D50] rounded px-3 py-2 text-xs text-white focus:outline-none" />
                 </div>
                 <div>
                   <label className="block text-[10px] uppercase tracking-wider text-gray-400 font-semibold mb-1 font-mono">Contact Name</label>
-                  <input type="text" required value={formContact} onChange={(e) => setFormContact(e.target.value)} className="w-full bg-white/[0.03] border border-white/10 focus:border-[#F26522] rounded px-3 py-2 text-xs text-white focus:outline-none" />
+                  <input type="text" required value={formContact} onChange={(e) => setFormContact(e.target.value)} className="w-full bg-white/[0.03] border border-white/10 focus:border-[#2F5D50] rounded px-3 py-2 text-xs text-white focus:outline-none" />
                 </div>
               </div>
               <div className="grid grid-cols-2 gap-4">
@@ -1081,26 +1081,26 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout }) => {
                 </div>
                 <div>
                   <label className="block text-[10px] uppercase tracking-wider text-gray-400 font-semibold mb-1 font-mono">Phone Number</label>
-                  <input type="text" value={formPhone} onChange={(e) => setFormPhone(e.target.value)} className="w-full bg-white/[0.03] border border-white/10 focus:border-[#F26522] rounded px-3 py-2 text-xs text-white focus:outline-none" />
+                  <input type="text" value={formPhone} onChange={(e) => setFormPhone(e.target.value)} className="w-full bg-white/[0.03] border border-white/10 focus:border-[#2F5D50] rounded px-3 py-2 text-xs text-white focus:outline-none" />
                 </div>
               </div>
               <div>
                 <label className="block text-[10px] uppercase tracking-wider text-gray-400 font-semibold mb-1 font-mono">Website / Domain</label>
-                <input type="text" value={formWebsite} onChange={(e) => setFormWebsite(e.target.value)} className="w-full bg-white/[0.03] border border-white/10 focus:border-[#F26522] rounded px-3 py-2 text-xs text-white focus:outline-none" />
+                <input type="text" value={formWebsite} onChange={(e) => setFormWebsite(e.target.value)} className="w-full bg-white/[0.03] border border-white/10 focus:border-[#2F5D50] rounded px-3 py-2 text-xs text-white focus:outline-none" />
               </div>
               <div className="grid grid-cols-2 gap-4">
                 <div>
                   <label className="block text-[10px] uppercase tracking-wider text-gray-400 font-semibold mb-1 font-mono">Category / Silo</label>
-                  <input type="text" value={formCategory} onChange={(e) => setFormCategory(e.target.value)} className="w-full bg-white/[0.03] border border-white/10 focus:border-[#F26522] rounded px-3 py-2 text-xs text-white focus:outline-none" />
+                  <input type="text" value={formCategory} onChange={(e) => setFormCategory(e.target.value)} className="w-full bg-white/[0.03] border border-white/10 focus:border-[#2F5D50] rounded px-3 py-2 text-xs text-white focus:outline-none" />
                 </div>
                 <div>
                   <label className="block text-[10px] uppercase tracking-wider text-gray-400 font-semibold mb-1 font-mono">Location</label>
-                  <input type="text" value={formLocation} onChange={(e) => setFormLocation(e.target.value)} className="w-full bg-white/[0.03] border border-white/10 focus:border-[#F26522] rounded px-3 py-2 text-xs text-white focus:outline-none" />
+                  <input type="text" value={formLocation} onChange={(e) => setFormLocation(e.target.value)} className="w-full bg-white/[0.03] border border-white/10 focus:border-[#2F5D50] rounded px-3 py-2 text-xs text-white focus:outline-none" />
                 </div>
               </div>
               <div>
                 <label className="block text-[10px] uppercase tracking-wider text-gray-400 font-semibold mb-1 font-mono">Prospect Pipeline Status</label>
-                <select value={formStatus} onChange={(e) => setFormStatus(e.target.value)} className="w-full bg-white/[0.03] border border-white/10 focus:border-[#F26522] rounded px-3 py-2 text-xs text-white focus:outline-none">
+                <select value={formStatus} onChange={(e) => setFormStatus(e.target.value)} className="w-full bg-white/[0.03] border border-white/10 focus:border-[#2F5D50] rounded px-3 py-2 text-xs text-white focus:outline-none">
                   <option value="new" className="bg-[#0c0c0c]">new (Queued)</option>
                   <option value="welcome_sent" className="bg-[#0c0c0c]">welcome_sent (Welcome Sent)</option>
                   <option value="clicked" className="bg-[#0c0c0c]">clicked (Clicked Email)</option>
@@ -1109,7 +1109,7 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout }) => {
               </div>
               <div className="flex justify-end gap-3 pt-4 border-t border-white/5">
                 <button type="button" onClick={() => setShowEditModal(false)} className="px-4 py-2 border border-white/10 hover:bg-white/[0.02] text-xs font-semibold uppercase tracking-wider cursor-pointer">Cancel</button>
-                <button type="submit" className="px-4 py-2 bg-[#F26522] hover:bg-[#e05a1a] text-white text-xs font-semibold uppercase tracking-wider cursor-pointer">Save Changes</button>
+                <button type="submit" className="px-4 py-2 bg-[#2F5D50] hover:bg-[#234A40] text-white text-xs font-semibold uppercase tracking-wider cursor-pointer">Save Changes</button>
               </div>
             </form>
           </div>
@@ -1127,7 +1127,7 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout }) => {
             
             <div className="p-6 overflow-y-auto space-y-4 flex-grow">
               <div className="bg-black/50 border border-white/5 p-4 rounded-lg space-y-2">
-                <p className="text-xs text-gray-500 font-mono"><span className="text-[#F26522] font-semibold">Subject:</span> {previewEmail.subject}</p>
+                <p className="text-xs text-gray-500 font-mono"><span className="text-[#2F5D50] font-semibold">Subject:</span> {previewEmail.subject}</p>
               </div>
               <div 
                 className="bg-black/30 border border-white/5 p-6 rounded-lg text-sm text-gray-300 leading-relaxed space-y-4 font-sans select-text"
@@ -1136,7 +1136,7 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout }) => {
             </div>
             
             <div className="flex justify-end gap-3 p-4 border-t border-white/5 bg-white/[0.01]">
-              <button type="button" onClick={() => setShowPreviewModal(false)} className="px-5 py-2 bg-[#F26522] hover:bg-[#e05a1a] text-white text-xs font-semibold uppercase tracking-wider cursor-pointer">Close Preview</button>
+              <button type="button" onClick={() => setShowPreviewModal(false)} className="px-5 py-2 bg-[#2F5D50] hover:bg-[#234A40] text-white text-xs font-semibold uppercase tracking-wider cursor-pointer">Close Preview</button>
             </div>
           </div>
         </div>
