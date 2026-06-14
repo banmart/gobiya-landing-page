@@ -6416,42 +6416,7 @@ const ARTICLES: Record<string, ArticleData> = {
     metaDescription: 'Understand how AI search scraping works. Learn why AI crawlers bypass JavaScript APIs and read raw public HTML blocks instead.',
     content: (
       <>
-        {/* ── JSON-LD FAQ SCHEMA ── */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "FAQPage",
-              "mainEntity": [
-                {
-                  "@type": "Question",
-                  "name": "Do AI search engines scrape data from private or hidden APIs?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "No, AI engines do not scrape private or authenticated APIs. They make standard HTTP requests to public URLs and parse the raw HTML response. If your content depends on client-side JavaScript to fetch data from APIs after the page loads, AI crawlers will not see it."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "Do ClaudeBot, GPTBot, and PerplexityBot render JavaScript?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "No. Unlike Googlebot, which uses a headless browser to render JavaScript (often with a delay), major AI bots like GPTBot, ClaudeBot, PerplexityBot, Bytespider, and Meta-ExternalAgent only fetch and read raw server-rendered HTML. They do not execute JavaScript at all."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "How can I verify if my website is visible to AI search engines?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "The simplest test is to disable JavaScript in your browser settings and refresh your page. Any text, images, or schema data that disappears when JavaScript is turned off is client-side rendered and completely invisible to AI search engine crawlers."
-                  }
-                }
-              ]
-            })
-          }}
-        />
+
 
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8 font-medium">
           How does AI search scraping target your web data? When analyzing AI search scraping, we find crawlers fetch raw, server-rendered HTML. Because most AI crawler bots do not execute JavaScript, any client-side rendered pages are completely invisible to their indexers.
