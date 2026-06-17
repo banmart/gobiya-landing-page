@@ -189,13 +189,14 @@ export default function GobiyaAboutPage() {
             </nav>
 
             <h1 className="display">
+              <span className="line"><span>Los Angeles SEO Agency:</span></span>
               <span className="line"><span>The agency that treats</span></span>
               <span className="line"><span>search like an</span></span>
               <span className="line"><span className="accent">engineering problem.</span></span>
             </h1>
 
             <p className="hero-sub body-l" data-hero="2">
-              GOBIYA is a precision-engineered search visibility and digital solutions
+              As a leading Los Angeles SEO Agency, GOBIYA is a precision-engineered search visibility and digital solutions
               firm. Founded in 2012 in Los Angeles, it works in high-stakes technical
               environments and data-driven revenue generation — not broad, generalist
               marketing tactics.

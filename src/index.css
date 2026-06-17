@@ -365,6 +365,48 @@
   }
 
   /* ============================================================
+     HERO LOGOS
+     ============================================================ */
+  .hero-logos {
+    border-top: 1px solid var(--line);
+    background: transparent;
+    padding: 1.8rem var(--pad);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+  }
+  .hero-logos-track {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+    max-width: var(--max-w);
+    margin: 0 auto;
+  }
+  .hero-logos-track img {
+    height: 28px;
+    width: auto;
+    object-fit: contain;
+    filter: grayscale(100%) brightness(0%);
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+  }
+  .hero-logos-track img:hover {
+    opacity: 0.9;
+  }
+  @media (max-width: 900px) {
+    .hero-logos-track { gap: 2.5rem; }
+  }
+  @media (max-width: 640px) {
+    .hero-logos-track { gap: 1.8rem; }
+    .hero-logos-track img { height: 22px; }
+  }
+
+  /* ============================================================
      TICKER
      ============================================================ */
   .ticker {

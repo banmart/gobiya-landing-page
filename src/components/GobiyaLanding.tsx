@@ -290,13 +290,14 @@ export default function GobiyaLanding() {
             <div className="hero-eyebrow eyebrow" data-hero="1">SEO recovery &amp; AI growth — Los Angeles</div>
 
             <h1 className="display">
+              <span className="line"><span>B2B SEO Agency:</span></span>
               <span className="line"><span>Your rankings</span></span>
               <span className="line"><span className="accent">didn't slip.</span></span>
               <span className="line"><span>They were taken.</span></span>
             </h1>
 
             <p className="hero-sub body-l" data-hero="2">
-              GOBIYA has been reading Google's algorithm since 2012. It identifies the
+              As a premier B2B SEO Agency, GOBIYA has been reading Google's algorithm since 2012. It identifies the
               penalty vector, builds the fix, and deploys — while other agencies are
               still writing the proposal.
             </p>
@@ -405,6 +406,18 @@ export default function GobiyaLanding() {
               <span className="mono-tag">Fig. 1 — what a GOBIYA engagement looks like on a chart</span>
               <span className="mono-tag">34.05°N&nbsp;118.24°W</span>
             </div>
+          </div>
+        </div>
+
+        <div className="hero-logos" aria-label="Trusted by industry leaders">
+          <div className="hero-logos-track">
+            <img src="/images/remodelmepros.webp" alt="Remodel Me Pros" loading="lazy" />
+            <img src="/images/mytrustwills.webp" alt="My Trust Wills" loading="lazy" />
+            <img src="/images/safetycentric-logo.png" alt="Safety Centric" loading="lazy" />
+            <img src="/images/quickpass-logo.webp" alt="QuickPass" loading="lazy" />
+            <img src="/images/ark-logo---01-dark.webp" alt="Ark" loading="lazy" />
+            <img src="/images/totalcapital.webp" alt="Total Capital" loading="lazy" />
+            <img src="/images/logo-DeEgMiH0.png" alt="Partner Logo" loading="lazy" />
           </div>
         </div>
 

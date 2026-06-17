@@ -16,6 +16,9 @@
 We deliver digital authority and traffic recovery nationwide:
 - [Capabilities Overview](/capabilities)
 
+## Knowledge Base
+- [Gobiya Knowledge Bundle](/okf/index.md): Root index of the OKF (Open Knowledge Framework) bundle for gobiya.com, describing the organization, capabilities, case studies, and approach in a machine-readable format.
+
 ## Executive Philosophy
 Gobiya shifts SEO from a cost-center to a revenue-driver. We bypass vanity metrics to focus strictly on commercial outcomes: restored organic traffic streams, secure search dominance, and predictable business-to-business pipeline growth.
 

@@ -430,6 +430,11 @@ const metadataMap: Record<string, SEOMetadata> = {
     description: 'How brand entity extraction works across Google, Bing, Wikidata, and LLM knowledge graphs — and how to detect and correct perception drift.',
     image: '/images/article-brand-entity-extraction-perception-drift.webp'
   },
+  '/insights/introducing-open-knowledge-format-why-it-matters-for-ai-ready-businesses': {
+    title: 'Introducing the Open Knowledge Format: Why It Matters for AI-Ready Businesses | Gobiya',
+    description: "Google Cloud's new open spec, OKF, formalizes the 'LLM-wiki' pattern into a portable, vendor-neutral standard for the knowledge AI agents actually need.",
+    image: '/images/article-introducing-open-knowledge-format-thumbnail.webp'
+  },
 
   '/contact': {
     title: 'Contact GOBIYA — Los Angeles SEO & Web Development Agency',
@@ -638,7 +643,7 @@ export default async function handler(req: IncomingMessage, res: any) {
           website: website || '',
           category: categoryText,
           location: 'Los Angeles, CA',
-          status: 'new'
+          status: 'New Lead'
         };
 
         if (supabaseServer) {
@@ -826,7 +831,7 @@ export default async function handler(req: IncomingMessage, res: any) {
             website: lead.website || '',
             category: lead.category || 'general',
             location: lead.location || 'N/A',
-            status: lead.status || 'new'
+            status: lead.status || 'New Lead'
           };
           if (!supabaseServer) throw new Error('Supabase database is not configured. Live mode requires VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY.');
           const { data, error } = await supabaseServer
@@ -1212,6 +1217,127 @@ export default async function handler(req: IncomingMessage, res: any) {
             } else {
               logMessages.push(`[RESEND] Resend API Key omitted. Simulating welcome email dispatch to ${rawEmail}...`);
               databaseLead.status = 'welcome_sent';
+            }
+          }
+
+          res.writeHead(200);
+          res.end(JSON.stringify({
+            success: true,
+            leads: savedLeads,
+            logs: logMessages
+          }));
+        } catch (e: any) {
+          res.writeHead(500);
+          res.end(JSON.stringify({ success: false, error: e.message }));
+        }
+        return;
+      }
+
+      if (pathname === '/api/prospector/import' && req.method === 'POST') {
+        try {
+          const bodyStr = await getRequestBody(req);
+          const { leads, assignToDrip, resendKey, systemPrompt, customPrompt } = JSON.parse(bodyStr);
+
+          if (!Array.isArray(leads)) {
+            res.writeHead(400);
+            res.end(JSON.stringify({ success: false, error: 'leads must be an array.' }));
+            return;
+          }
+
+          const rKey = resendKey || process.env.RESEND_API_KEY || '';
+          const gKey = process.env.GEMINI_API_KEY || '';
+          
+          const logMessages: string[] = ['[INFO] Starting bulk leads ingestion pipeline...'];
+          const savedLeads: any[] = [];
+
+          for (const lead of leads) {
+            const rawEmail = lead.email ? String(lead.email).trim() : '';
+            if (!rawEmail || !rawEmail.includes('@')) {
+              logMessages.push(`[WARNING] Skipping invalid lead "${lead.company_name || 'Unnamed'}" - email is invalid: "${rawEmail}"`);
+              continue;
+            }
+
+            logMessages.push(`[DATABASE] Ingesting lead: ${lead.company_name} (${rawEmail})...`);
+            const databaseLead = {
+              company_name: lead.company_name,
+              contact_name: lead.contact_name || 'Business Owner',
+              email: rawEmail,
+              phone: lead.phone || '',
+              website: lead.website || '',
+              category: lead.category || 'imported',
+              location: lead.location || 'N/A',
+              status: 'Imported'
+            };
+
+            if (!supabaseServer) {
+              throw new Error('Supabase database is not configured. Live mode requires VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY.');
+            }
+
+            const { data, error } = await supabaseServer
+              .from('prospects')
+              .upsert([databaseLead], { onConflict: 'email' })
+              .select();
+
+            if (error) {
+              logMessages.push(`[ERROR] Database failure for ${rawEmail}: ${error.message}`);
+              continue;
+            } else if (data && data[0]) {
+              savedLeads.push(data[0]);
+            }
+
+            if (assignToDrip) {
+              if (rKey) {
+                logMessages.push(`[RESEND] Triggering Resend outreach email to ${rawEmail}...`);
+                logMessages.push(`[GEMINI] Generating AI personalized copy with Gemini for ${lead.company_name}...`);
+                
+                try {
+                  const emailData = await generateOutreachCopy(lead, gKey, systemPrompt, customPrompt);
+                  const host = req.headers.host || 'www.gobiya.com';
+                  const protocol = req.headers['x-forwarded-proto'] || 'http';
+                  const bookingUrl = `${protocol}://${host}/book?email=${encodeURIComponent(rawEmail)}&company=${encodeURIComponent(lead.company_name)}&firstName=${encodeURIComponent(lead.contact_name || '')}&utm_source=prospector&utm_medium=email&utm_campaign=outreach`;
+                  
+                  const htmlEmail = wrapBrandedEmail(lead.contact_name || 'Business Owner', emailData.body, bookingUrl);
+
+                  const resendRes = await fetch('https://api.resend.com/emails', {
+                    method: 'POST',
+                    headers: {
+                      'Authorization': `Bearer ${rKey}`,
+                      'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                      from: 'Gobiya AI Onboarding <onboarding@resend.dev>',
+                      to: [rawEmail],
+                      subject: emailData.subject,
+                      html: htmlEmail
+                    })
+                  });
+
+                  if (resendRes.ok) {
+                    logMessages.push(`[SUCCESS] Welcome email sent to ${rawEmail} successfully.`);
+                    await supabaseServer
+                      .from('prospects')
+                      .update({ status: 'welcome_sent' })
+                      .eq('email', rawEmail);
+                    if (savedLeads.length > 0 && savedLeads[savedLeads.length - 1].email === rawEmail) {
+                      savedLeads[savedLeads.length - 1].status = 'welcome_sent';
+                    }
+                  } else {
+                    const errJson = await resendRes.json().catch(() => ({}));
+                    logMessages.push(`[ERROR] Resend error for ${rawEmail}: ${JSON.stringify(errJson)}`);
+                  }
+                } catch (gemErr: any) {
+                  logMessages.push(`[ERROR] Email generation/dispatch failed for ${rawEmail}: ${gemErr.message}`);
+                }
+              } else {
+                logMessages.push(`[RESEND] Resend API Key omitted. Simulating outreach email dispatch to ${rawEmail}...`);
+                await supabaseServer
+                  .from('prospects')
+                  .update({ status: 'welcome_sent' })
+                  .eq('email', rawEmail);
+                if (savedLeads.length > 0 && savedLeads[savedLeads.length - 1].email === rawEmail) {
+                  savedLeads[savedLeads.length - 1].status = 'welcome_sent';
+                }
+              }
             }
           }
 

@@ -128,13 +128,14 @@ const SuccessStories: React.FC = () => {
             </nav>
 
             <h1 className="display">
+              <span className="line"><span>SEO Case Studies:</span></span>
               <span className="line"><span>Real clients.</span></span>
               <span className="line"><span>Real numbers.</span></span>
               <span className="line"><span className="accent">On the record.</span></span>
             </h1>
 
             <p className="hero-sub body-l" data-hero="2">
-              Data-backed search recovery and pipeline results. Here is exactly what
+              In these SEO Case Studies, see data-backed search recovery and pipeline results. Here is exactly what
               GOBIYA built, why it was built, and what moved as a result — query by
               query, position by position.
             </p>

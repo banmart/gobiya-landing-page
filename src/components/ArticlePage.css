@@ -229,10 +229,15 @@
   margin-bottom: 0;
 }
 .art-body a:not(.btn):not(.text-link) {
-  color: var(--green-deep); border-bottom: 1px solid rgba(47,93,80,0.4);
+  color: var(--green-deep); 
+  border-bottom: 1px solid rgba(47,93,80,0.4);
+  font-weight: 500;
   transition: border-color .25s ease, color .25s ease;
 }
-.art-body a:not(.btn):not(.text-link):hover { color: var(--green); border-bottom-color: var(--green); }
+.art-body a:not(.btn):not(.text-link):hover { 
+  color: var(--green); 
+  border-bottom-color: var(--green); 
+}
 
 .art-body h2 {
   font-family: var(--font-display); font-weight: 600;

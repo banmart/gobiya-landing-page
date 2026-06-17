@@ -1,24 +1,27 @@
-import React, { useState, useEffect } from 'react';
-import GobiyaLanding from './components/GobiyaLanding';
-import GobiyaAboutPage from './components/GobiyaAboutPage';
-import ServiceSubpage from './components/ServiceSubpage';
-import ArticlePage from './components/ArticlePage';
-import AuthorPage from './components/AuthorPage';
-import ThankYouPage from './components/ThankYouPage';
-import BookingPage from './components/BookingPage';
-import SolutionPage from './components/SolutionPage';
-import CapabilitiesIndex from './components/CapabilitiesIndex';
-import SuccessStories from './components/SuccessStories';
-import ApproachPage from './components/ApproachPage';
-import InsightsPage from './components/InsightsPage';
-import RegionalHubPage from './components/RegionalHubPage';
-import SmileCenterCaseStudy from './components/SmileCenterCaseStudy';
-import AmericanLivescanCaseStudy from './components/AmericanLivescanCaseStudy';
-import AdminLogin from './components/AdminLogin';
-import AdminDashboard from './components/AdminDashboard';
-import ContactPage from './components/ContactPage';
-import OnPageSeoLosAngelesPage from './components/OnPageSeoLosAngelesPage';
-import SEO from './components/SEO';
+import React, { useState, useEffect, Suspense } from 'react';
+import {
+  GobiyaLanding,
+  GobiyaAboutPage,
+  ServiceSubpage,
+  ArticlePage,
+  AuthorPage,
+  ThankYouPage,
+  BookingPage,
+  SolutionPage,
+  CapabilitiesIndex,
+  SuccessStories,
+  ApproachPage,
+  InsightsPage,
+  RegionalHubPage,
+  SmileCenterCaseStudy,
+  AmericanLivescanCaseStudy,
+  AdminLogin,
+  AdminDashboard,
+  ContactPage,
+  OnPageSeoLosAngelesPage,
+  SEO,
+  NotFound
+} from './components/PageComponents';
 
 // Safe storage helper to prevent crashes in sandboxed environments/iframes or strict privacy modes
 const safeStorage = {
@@ -263,7 +266,17 @@ function App({ url }: AppProps) {
     '/capabilities/authority-building'
   ].includes(normalizedPath);
 
-  const isServiceSubpage = ![
+  const isValidServiceSubpage = [
+    '/services/seo',
+    '/services/lead-generation',
+    '/services/geo-optimization',
+    '/services/web-design',
+    '/services/advertising',
+    '/google-penalty-recovery',
+    '/company/careers'
+  ].includes(normalizedPath);
+
+  const isValidRoute = [
     '/',
     '/admin',
     '/on-page-seo-los-angeles',
@@ -280,15 +293,17 @@ function App({ url }: AppProps) {
     '/contact',
     '/case-studies/smile-center-dentistry',
     '/case-studies/american-livescan'
-  ].includes(normalizedPath) && !isSolutionRoute;
+  ].includes(normalizedPath) || isSolutionRoute || isValidServiceSubpage || !!articleSlug;
 
   return (
-    <>
+    <Suspense fallback={null}>
       <SEO path={normalizedPath} />
       {/* Global Noise Overlay */}
       <div className="noise-overlay" />
       
-      {normalizedPath === '/admin' ? (
+      {!isValidRoute ? (
+        <NotFound />
+      ) : normalizedPath === '/admin' ? (
         token ? (
           <AdminDashboard onLogout={handleLogout} />
         ) : (
@@ -327,7 +342,7 @@ function App({ url }: AppProps) {
       ) : (
         <ServiceSubpage key={normalizedPath} path={normalizedPath} />
       )}
-    </>
+    </Suspense>
   );
 }
 

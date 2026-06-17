@@ -161,7 +161,7 @@ const InsightsPage: React.FC<InsightsPageProps> = ({ currentPath }) => {
     return () => ctx.revert();
   }, []);
 
-  const handleSubscribe = (e: React.FormEvent) => {
+  const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
     const trimmedEmail = email.trim();
     if (!trimmedEmail || !trimmedEmail.includes('@')) {
@@ -170,10 +170,28 @@ const InsightsPage: React.FC<InsightsPageProps> = ({ currentPath }) => {
       setNoteText('// enter a valid email to join the wire');
       return;
     }
-    window.location.href = 'mailto:hello@gobiya.com?subject=' +
-      encodeURIComponent('Subscribe me to the wire') +
-      '&body=' + encodeURIComponent('Please add me to the GOBIYA intelligence briefs.\n\nEmail: ' + trimmedEmail);
-    setNoteText('// opening your mail client to confirm — see you on the wire');
+    setNoteText('// establishing secure connection to the wire...');
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: 'Subscriber',
+          email: trimmedEmail,
+          service: 'Newsletter Subscription',
+          message: 'Subscribed to the wire from Insights page.'
+        })
+      });
+      const data = await res.json();
+      if (data.success) {
+        setNoteText('// subscription established — welcome to the wire');
+        setEmail('');
+      } else {
+        throw new Error(data.error || 'Failed to submit subscription');
+      }
+    } catch (err: any) {
+      setNoteText('// ingestion alert: ' + (err.message || 'connection failed'));
+    }
   };
 
   return (
@@ -197,7 +215,7 @@ const InsightsPage: React.FC<InsightsPageProps> = ({ currentPath }) => {
             </h1>
 
             <p className="hero-sub body-l" data-hero="2">
-              Advanced tactical intelligence on Google and AI search — update
+              Read our SEO Insights for advanced tactical intelligence on Google and AI search — update
               forensics, GEO citation tactics, entity engineering, and pipeline
               field notes. Written from live client signal, not press releases.
             </p>

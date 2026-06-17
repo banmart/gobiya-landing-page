@@ -66,9 +66,9 @@ export const SOLUTIONS_DATA: Record<string, SolutionData> = {
     path: '/capabilities/web-development',
     breadcrumbLabel: 'Web Development',
     hero: {
-      lines: ['Hand-coded React.', 'Sub-second loads.', 'Built to rank.'],
-      accentLineIndex: 2,
-      sub: "GOBIYA replaces slow page-builders with custom, hand-coded React and Next.js websites — engineered to convert visitors and rank natively. Search readiness isn't a marketing add-on. It's a property of correct engineering.",
+      lines: ['React Web Development:', 'Hand-coded React.', 'Sub-second loads.', 'Built to rank.'],
+      accentLineIndex: 3,
+      sub: `As experts in React Web Development, gOBIYA replaces slow page-builders with custom, hand-coded React and Next.js websites — engineered to convert visitors and rank natively. Search readiness isn't a marketing add-on. It's a property of correct engineering.`,
       ctaText: 'Start a custom build',
       meta: {
         label1: 'Stack', value1: 'React · Next.js · Vite · Supabase',
@@ -181,9 +181,9 @@ export const SOLUTIONS_DATA: Record<string, SolutionData> = {
     path: '/capabilities/native-crm',
     breadcrumbLabel: 'Native CRM',
     hero: {
-      lines: ['Own your data.', 'Zero monthly fees.', 'Custom pipelines.'],
-      accentLineIndex: 2,
-      sub: "Stop paying for expensive CRM subscriptions. We engineer custom CRM website integrations directly into your codebase, giving you complete data control and instant routing.",
+      lines: ['Custom CRM Integrations:', 'Own your data.', 'Zero monthly fees.', 'Custom pipelines.'],
+      accentLineIndex: 3,
+      sub: `As experts in Custom CRM Integrations, stop paying for expensive CRM subscriptions. We engineer custom CRM website integrations directly into your codebase, giving you complete data control and instant routing.`,
       ctaText: 'Build your CRM',
       meta: {
         label1: 'Architecture', value1: 'PostgreSQL · Supabase · Server Actions',
@@ -292,9 +292,9 @@ export const SOLUTIONS_DATA: Record<string, SolutionData> = {
     path: '/capabilities/seo-discoverability',
     breadcrumbLabel: 'Technical SEO',
     hero: {
-      lines: ['Eligible by design.', 'Semantic entity graphs.', 'AI-overview ready.'],
-      accentLineIndex: 2,
-      sub: "We build technical SEO into the codebase. Ensure search engines and AI crawlers can fetch, index, and cite your pages natively by default.",
+      lines: ['Technical SEO Services:', 'Eligible by design.', 'Semantic entity graphs.', 'AI-overview ready.'],
+      accentLineIndex: 3,
+      sub: `As experts in Technical SEO Services, we build technical SEO into the codebase. Ensure search engines and AI crawlers can fetch, index, and cite your pages natively by default.`,
       ctaText: 'Build a search-ready site',
       meta: {
         label1: 'Markup', value1: 'Semantic HTML5 · JSON-LD',
@@ -405,9 +405,9 @@ export const SOLUTIONS_DATA: Record<string, SolutionData> = {
     path: '/capabilities/blockchain-web3-development',
     breadcrumbLabel: 'Web3 & Blockchain',
     hero: {
-      lines: ['Smart contracts.', 'dApp interfaces.', 'On-chain security.'],
-      accentLineIndex: 2,
-      sub: "We provide custom blockchain Web3 development, engineering secure smart contracts and seamless dApp interfaces directly into your React web applications.",
+      lines: ['Web3 Development:', 'Smart contracts.', 'dApp interfaces.', 'On-chain security.'],
+      accentLineIndex: 3,
+      sub: `As experts in Web3 Development, we provide custom blockchain Web3 development, engineering secure smart contracts and seamless dApp interfaces directly into your React web applications.`,
       ctaText: 'Start a Web3 project',
       meta: {
         label1: 'Languages', value1: 'Solidity · TypeScript',
@@ -518,9 +518,9 @@ export const SOLUTIONS_DATA: Record<string, SolutionData> = {
     path: '/capabilities/ai-prospect-scraper',
     breadcrumbLabel: 'AI Prospecting',
     hero: {
-      lines: ['Automated outreach.', 'Smart data capture.', 'Scale B2B leads.'],
-      accentLineIndex: 2,
-      sub: "We build a custom AI prospect scraper directly into our native CRM, extracting target contact details and automating highly personalized outbound sequences.",
+      lines: ['AI Prospect Scraper:', 'Automated outreach.', 'Smart data capture.', 'Scale B2B leads.'],
+      accentLineIndex: 3,
+      sub: `As experts in AI Prospect Scraper, we build a custom AI prospect scraper directly into our native CRM, extracting target contact details and automating highly personalized outbound sequences.`,
       ctaText: 'Explore AI Prospecting',
       meta: {
         label1: 'Engine', value1: 'Puppeteer · LLM Parsing',
@@ -630,9 +630,9 @@ export const SOLUTIONS_DATA: Record<string, SolutionData> = {
     path: '/capabilities/ai-llms-business',
     breadcrumbLabel: 'AI & LLMs',
     hero: {
-      lines: ['AI for office tasks.', 'Remove friction.', 'Own your automation.'],
-      accentLineIndex: 1,
-      sub: "We implement secure, custom AI integrations and LLMs directly into everyday business tasks. Stop dealing with manual data entry, fragmented communication, or costly software integrations. We build custom intelligence agents that run on your own databases to automate office workflows and eliminate SMB operational friction.",
+      lines: ['AI for Businesses:', 'AI for office tasks.', 'Remove friction.', 'Own your automation.'],
+      accentLineIndex: 2,
+      sub: `As experts in AI for Businesses, we implement secure, custom AI integrations and LLMs directly into everyday business tasks. Stop dealing with manual data entry, fragmented communication, or costly software integrations. We build custom intelligence agents that run on your own databases to automate office workflows and eliminate SMB operational friction.`,
       ctaText: 'Automate your workflow',
       meta: {
         label1: 'Integrations', value1: 'OpenAI API · Anthropic Claude · Llama 3 · Local LLMs',
@@ -745,9 +745,9 @@ export const SOLUTIONS_DATA: Record<string, SolutionData> = {
     path: '/capabilities/authority-building',
     breadcrumbLabel: 'Authority Building',
     hero: {
-      lines: ['Acquire authority.', 'Clean trust signals.', 'Sustain page one.'],
-      accentLineIndex: 2,
-      sub: "GOBIYA builds domain trust through white-hat link acquisition, precision local citations, and entity alignment. We secure high-relevance editorial backlinks from real publications that signal clean, bulletproof authority to Google search algorithms and LLM models.",
+      lines: ['Authority Building:', 'Acquire authority.', 'Clean trust signals.', 'Sustain page one.'],
+      accentLineIndex: 3,
+      sub: `As experts in Authority Building, gOBIYA builds domain trust through white-hat link acquisition, precision local citations, and entity alignment. We secure high-relevance editorial backlinks from real publications that signal clean, bulletproof authority to Google search algorithms and LLM models.`,
       ctaText: 'Build your domain authority',
       meta: {
         label1: 'Tactics', value1: 'Editorial Outreach · Citation Auditing · Entity Mapping',

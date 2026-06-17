@@ -10,6 +10,18 @@ export default defineConfig(({mode}) => {
       react(), 
       tailwindcss(),
       {
+        name: 'ssr-alias-resolver',
+        enforce: 'pre',
+        resolveId(source, importer, options) {
+          if (source === '@/components/PageComponents' || source === './components/PageComponents') {
+            return options?.ssr
+              ? path.resolve(__dirname, './src/components/PageComponents.ssr.tsx')
+              : path.resolve(__dirname, './src/components/PageComponents.client.tsx');
+          }
+          return null;
+        }
+      },
+      {
         name: 'api-dev-server',
         configureServer(server) {
           server.middlewares.use((req, res, next) => {
@@ -84,6 +96,15 @@ export default defineConfig(({mode}) => {
     ],
     build: {
       chunkSizeWarningLimit: 2000,
+      rollupOptions: {
+        output: {
+          manualChunks(id) {
+            if (id.includes('node_modules')) {
+              return 'vendor';
+            }
+          }
+        }
+      }
     },
     define: {
       'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY),

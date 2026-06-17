@@ -668,6 +668,7 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
   const themeAccent = isServicesPath ? '#2F5D50' : '#F26522';
   const themeAccentHover = isServicesPath ? '#234A40' : '#e05a1a';
   const themeTextAccent = isServicesPath ? 'text-[#2F5D50]' : 'text-[#F26522]';
+  const themeTextAccentHover = isServicesPath ? 'hover:text-[#234A40]' : 'hover:text-[#e05a1a]';
   const themeBgAccent = isServicesPath ? 'bg-[#2F5D50]' : 'bg-[#F26522]';
   const themeBgAccentHover = isServicesPath ? 'hover:bg-[#234A40]' : 'hover:bg-[#e05a1a]';
   const themeBorderAccent = isServicesPath ? 'border-[#2F5D50]' : 'border-[#F26522]';

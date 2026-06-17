@@ -91,6 +91,10 @@ GEO is the process of optimizing your digital footprint so that Large Language M
 - **Crawl Efficiency**: Core Web Vitals optimized, semantic markup, full mobile parity, static asset delivery.
 - **Structured Data**: Nested JSON-LD schemas representing the ProfessionalService entity, localized areas served, and parent company.
 
+## Knowledge Base
+
+- [Gobiya Knowledge Bundle](/okf/index.md): Root index of the Open Knowledge Framework (OKF) bundle for gobiya.com, containing organization profiles, detailed capabilities, case studies, and approach in a structured markdown format.
+
 ## How to Connect
 1. **Request a Growth Audit**: https://www.gobiya.com/onboard
 2. **Website**: https://www.gobiya.com

@@ -142,13 +142,14 @@ export default function CapabilitiesIndex() {
             </nav>
 
             <h1 className="display">
+              <span className="line"><span>SEO & Web Development Services:</span></span>
               <span className="line"><span>One codebase.</span></span>
               <span className="line"><span>Every system</span></span>
               <span className="line"><span className="accent">built in.</span></span>
             </h1>
 
             <p className="hero-sub body-l" data-hero="2">
-              GOBIYA doesn't run generic SEO campaigns. It builds custom
+              As a provider of premier SEO & Web Development Services, GOBIYA doesn't run generic SEO campaigns. It builds custom
               React/Next.js/Vite platforms with native CRM pipelines, built-in
               discoverability, AI prospect automation, and secure Web3 integrations —
               one product, complete data ownership.

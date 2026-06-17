@@ -1,6 +1,11 @@
 # Gobiya — SEO & Web Engineering
 # https://www.gobiya.com
 
+# LLM & AI Agents Indexes
+# LLMs TXT: https://www.gobiya.com/llms.txt
+# LLMs Full TXT: https://www.gobiya.com/llms-full.txt
+# Knowledge Bundle Index: https://www.gobiya.com/okf/index.md
+
 # Default rules — allow all crawlers, only block private/auth surfaces
 User-agent: *
 Allow: /

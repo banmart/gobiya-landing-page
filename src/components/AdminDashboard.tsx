@@ -2,11 +2,10 @@ import React, { useState, useEffect, useRef } from 'react';
 import { 
   Search, Terminal, Database, Send, Settings, LogOut, 
   Trash2, Play, ExternalLink, ShieldCheck, Mail, CheckCircle2,
-  Clock, AlertTriangle, ArrowRight
+  Clock, AlertTriangle, ArrowRight, Upload
 } from 'lucide-react';
-import CustomCursor from './CustomCursor';
-import Header from './Header';
-import Footer from './Footer';
+import SiteHeader from './SiteHeader';
+import SiteFooter from './SiteFooter';
 
 interface Lead {
   id?: string;
@@ -59,7 +58,21 @@ const safeStorage = {
 };
 
 const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout }) => {
-  const [activeTab, setActiveTab] = useState<'prospector' | 'leads' | 'campaigns' | 'settings'>('prospector');
+  const [activeTab, setActiveTab] = useState<'prospector' | 'leads' | 'campaigns' | 'settings'>('leads');
+  
+  // CSV Import States
+  const [csvHeaders, setCsvHeaders] = useState<string[]>([]);
+  const [csvRows, setCsvRows] = useState<any[][]>([]);
+  const [assignToDrip, setAssignToDrip] = useState(false);
+  const [mapping, setMapping] = useState<Record<string, number>>({
+    company_name: -1,
+    contact_name: -1,
+    email: -1,
+    phone: -1,
+    website: -1,
+    category: -1,
+    location: -1
+  });
   
   // Search parameters
   const [category, setCategory] = useState('security systems');
@@ -382,45 +395,173 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout }) => {
     }
   };
 
-  const handleRunProspector = async (e: React.FormEvent) => {
+  // Simple CSV text parser
+  const parseCSV = (text: string): string[][] => {
+    const lines: string[][] = [];
+    let row: string[] = [];
+    let inQuotes = false;
+    let currentValue = '';
+    
+    for (let i = 0; i < text.length; i++) {
+      const char = text[i];
+      const nextChar = text[i+1];
+      
+      if (char === '"') {
+        if (inQuotes && nextChar === '"') {
+          currentValue += '"';
+          i++;
+        } else {
+          inQuotes = !inQuotes;
+        }
+      } else if (char === ',' && !inQuotes) {
+        row.push(currentValue.trim());
+        currentValue = '';
+      } else if ((char === '\r' || char === '\n') && !inQuotes) {
+        if (char === '\r' && nextChar === '\n') {
+          i++;
+        }
+        row.push(currentValue.trim());
+        if (row.length > 1 || row[0] !== '') {
+          lines.push(row);
+        }
+        row = [];
+        currentValue = '';
+      } else {
+        currentValue += char;
+      }
+    }
+    if (row.length > 0 || currentValue !== '') {
+      row.push(currentValue.trim());
+      lines.push(row);
+    }
+    return lines;
+  };
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    
+    setError('');
+    const reader = new FileReader();
+    reader.onload = (event) => {
+      const text = event.target?.result as string;
+      if (!text) return;
+      
+      try {
+        const rows = parseCSV(text);
+        if (rows.length < 2) {
+          setError('CSV file must contain a header row and at least one data row.');
+          return;
+        }
+        
+        const headers = rows[0];
+        setCsvHeaders(headers);
+        setCsvRows(rows.slice(1));
+        
+        // Auto-mapping logic
+        const newMapping: Record<string, number> = {
+          company_name: -1,
+          contact_name: -1,
+          email: -1,
+          phone: -1,
+          website: -1,
+          category: -1,
+          location: -1
+        };
+        
+        headers.forEach((header, index) => {
+          const h = header.toLowerCase().trim();
+          if (h.includes('company') || h.includes('firm') || h.includes('business') || h.includes('organization') || (h === 'name' && newMapping.company_name === -1)) {
+            newMapping.company_name = index;
+          } else if (h.includes('contact') || h.includes('owner') || h.includes('person') || h.includes('first name') || h.includes('last name') || h === 'name') {
+            newMapping.contact_name = index;
+          } else if (h.includes('email') || h.includes('e-mail') || h.includes('mail')) {
+            newMapping.email = index;
+          } else if (h.includes('phone') || h.includes('tel') || h.includes('mobile') || h.includes('cell')) {
+            newMapping.phone = index;
+          } else if (h.includes('website') || h.includes('site') || h.includes('url') || h.includes('domain')) {
+            newMapping.website = index;
+          } else if (h.includes('category') || h.includes('industry') || h.includes('silo') || h.includes('type')) {
+            newMapping.category = index;
+          } else if (h.includes('location') || h.includes('address') || h.includes('city') || h.includes('state') || h.includes('zip')) {
+            newMapping.location = index;
+          }
+        });
+        
+        setMapping(newMapping);
+        addLog(`[INFO] CSV file parsed successfully: ${rows.length - 1} rows detected.`);
+      } catch (err: any) {
+        setError('Error parsing CSV file: ' + err.message);
+      }
+    };
+    reader.readAsText(file);
+  };
+
+  const handleImportLeads = async (e: React.FormEvent) => {
     e.preventDefault();
-    setScraping(true);
+    if (csvRows.length === 0) return;
+    if (mapping.company_name === -1 || mapping.email === -1) {
+      setError('Company Name and Email mapping are required fields.');
+      return;
+    }
+    
+    setScraping(true); // Re-use scraping state for loading spinner
     setError('');
     setLogs([]);
-    addLog(`Establishing scraping task targeting category: "${category}" in location: "${location}"...`);
-
+    addLog(`[INFO] Mapping CSV columns against Gobiya Prospects schema...`);
+    
+    const mappedLeads = csvRows.map(row => {
+      return {
+        company_name: mapping.company_name !== -1 ? row[mapping.company_name] || '' : '',
+        contact_name: mapping.contact_name !== -1 ? row[mapping.contact_name] || '' : '',
+        email: mapping.email !== -1 ? row[mapping.email] || '' : '',
+        phone: mapping.phone !== -1 ? row[mapping.phone] || '' : '',
+        website: mapping.website !== -1 ? row[mapping.website] || '' : '',
+        category: mapping.category !== -1 ? row[mapping.category] || '' : '',
+        location: mapping.location !== -1 ? row[mapping.location] || '' : ''
+      };
+    }).filter(lead => lead.company_name && lead.email);
+    
+    if (mappedLeads.length === 0) {
+      setError('No valid leads found (leads must have both a Company Name and an Email Address).');
+      setScraping(false);
+      return;
+    }
+    
+    addLog(`[INFO] Starting ingestion of ${mappedLeads.length} valid prospects...`);
+    
     try {
-      const res = await fetch('/api/prospector/scrape', {
+      const res = await fetch('/api/prospector/import', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          category,
-          location,
-          numResults,
-          perplexityKey,
+          leads: mappedLeads,
+          assignToDrip,
           resendKey,
-          focusPrompt,
           systemPrompt: personaPrompt,
           customPrompt
         })
       });
-
+      
       const data = await res.json();
       if (res.ok && data.success) {
         if (data.logs) {
           data.logs.forEach((logMsg: string) => addLog(logMsg));
         }
-        addLog(`Leads acquisition finished. Ingested ${data.leads.length} rows.`);
+        addLog(`[SUCCESS] Lead import ingestion pipeline completed. Ingested ${data.leads.length} prospects.`);
+        // Reset file state
+        setCsvHeaders([]);
+        setCsvRows([]);
         fetchLeads();
       } else {
-        setError(data.error || 'Failed to complete leads acquisition.');
-        addLog(`ERROR: ${data.error || 'Scraping process crashed.'}`);
+        setError(data.error || 'Failed to complete leads import.');
+        addLog(`[ERROR] Ingestion crashed: ${data.error || 'Failed to parse server response.'}`);
       }
     } catch (err) {
-      setError('A connection error occurred during scraping.');
-      addLog('FATAL: Lost contact with serverless scraping engine.');
+      setError('A connection error occurred during lead ingestion.');
+      addLog('[ERROR] FATAL: Lost connection to bulk import API endpoint.');
     } finally {
       setScraping(false);
     }
@@ -435,29 +576,25 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout }) => {
   );
 
   return (
-    <div className="min-h-screen bg-[#050505] text-white relative font-sans selection:bg-[#2F5D50] selection:text-white flex flex-col justify-between">
-      <CustomCursor />
-      
-      
-
-      <Header theme="dark" accentColor="#2F5D50" />
+    <div className="min-h-screen bg-[#EFEDE5] text-[#15130E] relative font-sans selection:bg-[#2F5D50] selection:text-[#EFEDE5] flex flex-col justify-between">
+      <SiteHeader />
 
       <main className="flex-grow max-w-[1440px] w-full mx-auto px-5 sm:px-8 lg:px-12 py-24 relative z-20">
         
         {/* Dashboard Title Section */}
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-12 pb-8 border-b border-white/10">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-12 pb-8 border-b border-[#D3CEC0]">
           <div>
-            <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight text-white font-display">
+            <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight text-[#15130E] font-display">
               B2B Lead Prospector <span className="text-[#2F5D50]">Engine</span>
             </h1>
-            <p className="text-sm text-gray-400 mt-2">
+            <p className="text-sm text-[#5B564C] mt-2">
               Automated cold outreach pipeline &amp; Perplexity AI search dashboard.
             </p>
           </div>
           
           <button 
             onClick={onLogout}
-            className="flex items-center gap-2 px-4 py-2 border border-white/10 bg-white/[0.02] hover:bg-red-950/20 hover:border-red-900/50 hover:text-red-200 text-xs font-semibold uppercase tracking-wider transition-colors cursor-pointer"
+            className="flex items-center gap-2 px-4 py-2 border border-[#D3CEC0] bg-white/40 hover:bg-red-50 hover:border-red-200 hover:text-red-800 text-[#15130E] text-xs font-semibold uppercase tracking-wider transition-colors cursor-pointer"
           >
             <LogOut className="w-3.5 h-3.5" />
             Terminate Session
@@ -465,10 +602,10 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout }) => {
         </div>
 
         {/* Tab Selection */}
-        <div className="flex gap-2 sm:gap-4 mb-8 overflow-x-auto pb-2 border-b border-white/5">
+        <div className="flex gap-2 sm:gap-4 mb-8 overflow-x-auto pb-2 border-b border-[#D3CEC0]/50">
           {[
-            { id: 'prospector', label: 'AI Prospector', icon: <Terminal className="w-4 h-4" /> },
             { id: 'leads', label: 'Active Leads Database', icon: <Database className="w-4 h-4" /> },
+            { id: 'prospector', label: 'CSV Importer', icon: <Upload className="w-4 h-4" /> },
             { id: 'campaigns', label: 'Campaign Drip Logs', icon: <Send className="w-4 h-4" /> },
             { id: 'settings', label: 'API Integrations', icon: <Settings className="w-4 h-4" /> },
           ].map((tab) => (
@@ -477,8 +614,8 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout }) => {
               onClick={() => setActiveTab(tab.id as any)}
               className={`flex items-center gap-2 px-5 py-3 border-b-2 text-xs font-semibold uppercase tracking-wider transition-colors cursor-pointer whitespace-nowrap
                 ${activeTab === tab.id 
-                  ? 'border-[#2F5D50] text-white bg-white/[0.02]' 
-                  : 'border-transparent text-gray-500 hover:text-gray-300'
+                  ? 'border-[#2F5D50] text-[#2F5D50] bg-white/40 font-bold' 
+                  : 'border-transparent text-[#5B564C] hover:text-[#15130E]'
                 }
               `}
             >
@@ -495,127 +632,163 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout }) => {
           {activeTab === 'prospector' && (
             <div className="grid grid-cols-1 lg:grid-cols-[1fr_450px] gap-8 items-start">
               {/* Form panel */}
-              <div className="bg-black/40 border border-white/10 p-8 rounded-2xl relative overflow-hidden backdrop-blur-md">
-                <h2 className="text-xl font-semibold mb-6 flex items-center gap-2">
-                  <Play className="w-5 h-5 text-[#2F5D50]" /> Search Parameters
+              <div className="bg-white/60 border border-[#D3CEC0] p-8 rounded-2xl relative overflow-hidden backdrop-blur-md">
+                <h2 className="text-xl font-semibold mb-6 flex items-center gap-2 text-[#15130E]">
+                  <Upload className="w-5 h-5 text-[#2F5D50]" /> CSV Lead Ingestion
                 </h2>
                 
-                <form onSubmit={handleRunProspector} className="space-y-6">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    <div>
-                      <label className="block text-[11px] uppercase tracking-wider text-gray-400 font-semibold mb-2 font-mono">B2B Category</label>
+                {csvHeaders.length === 0 ? (
+                  <div className="space-y-6">
+                    <label className="flex flex-col items-center justify-center border-2 border-dashed border-[#D3CEC0] hover:border-[#2F5D50]/50 rounded-2xl p-12 bg-white/40 hover:bg-[#2F5D50]/5 transition-all cursor-pointer group text-center">
+                      <Upload className="w-10 h-10 text-[#8B857A] group-hover:text-[#2F5D50] mb-4 transition-colors" />
+                      <span className="text-xs uppercase tracking-wider text-[#15130E] font-semibold mb-1 font-mono">Drag &amp; Drop CSV File</span>
+                      <span className="text-[10px] text-[#5B564C] font-mono">or click to browse local folders</span>
                       <input 
-                        type="text" 
-                        required
-                        value={category}
-                        onChange={(e) => setCategory(e.target.value)}
-                        placeholder="e.g. security systems, access control"
-                        className="w-full bg-white/[0.03] border border-white/10 focus:border-[#2F5D50] rounded-lg px-4 py-2.5 text-sm focus:outline-none transition-colors"
+                        type="file" 
+                        accept=".csv" 
+                        onChange={handleFileChange}
+                        className="hidden" 
                       />
-                    </div>
-                    <div>
-                      <label className="block text-[11px] uppercase tracking-wider text-gray-400 font-semibold mb-2 font-mono">Target Location</label>
-                      <input 
-                        type="text" 
-                        required
-                        value={location}
-                        onChange={(e) => setLocation(e.target.value)}
-                        placeholder="e.g. Los Angeles, CA"
-                        className="w-full bg-white/[0.03] border border-white/10 focus:border-[#2F5D50] rounded-lg px-4 py-2.5 text-sm focus:outline-none transition-colors"
-                      />
+                    </label>
+                    
+                    <div className="text-[#5B564C] text-[11px] font-mono leading-relaxed bg-white/20 border border-[#D3CEC0]/60 rounded-lg p-4">
+                      <p className="font-semibold text-[#15130E] mb-1">&gt; SYSTEM COMPATIBILITY NOTE:</p>
+                      <p>CSV files must contain headers and at least two required fields:</p>
+                      <ul className="list-disc pl-5 mt-1 space-y-1">
+                        <li><span className="text-[#15130E] font-bold">Company Name</span> (used to define entity brand)</li>
+                        <li><span className="text-[#15130E] font-bold">Email Address</span> (used as unique index key)</li>
+                      </ul>
                     </div>
                   </div>
+                ) : (
+                  <form onSubmit={handleImportLeads} className="space-y-6">
+                    <div>
+                      <div className="flex justify-between items-center mb-4">
+                        <span className="text-xs font-mono font-semibold uppercase tracking-wider text-[#5B564C]">
+                          Configure Column Mapping
+                        </span>
+                        <button 
+                          type="button" 
+                          onClick={() => { setCsvHeaders([]); setCsvRows([]); }}
+                          className="text-[10px] uppercase font-semibold text-red-600 hover:text-red-800 transition-colors cursor-pointer"
+                        >
+                          Clear File
+                        </button>
+                      </div>
+                      
+                      <div className="space-y-1 border border-[#D3CEC0] rounded-lg bg-white/40 p-4">
+                        {[
+                          { key: 'company_name', label: 'Company Name *', required: true },
+                          { key: 'contact_name', label: 'Contact Name', required: false },
+                          { key: 'email', label: 'Email Address *', required: true },
+                          { key: 'phone', label: 'Phone Number', required: false },
+                          { key: 'website', label: 'Website / Domain', required: false },
+                          { key: 'category', label: 'B2B Category / Silo', required: false },
+                          { key: 'location', label: 'Location', required: false },
+                        ].map((field) => (
+                          <div key={field.key} className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 py-2.5 border-b border-[#D3CEC0]/40 last:border-b-0">
+                            <span className="text-[11px] font-mono font-semibold text-[#15130E]">
+                              {field.label}
+                            </span>
+                            <select
+                              value={mapping[field.key]}
+                              onChange={(e) => setMapping(prev => ({ ...prev, [field.key]: Number(e.target.value) }))}
+                              className="bg-white/60 border border-[#D3CEC0] focus:border-[#2F5D50] focus:ring-1 focus:ring-[#2F5D50] rounded px-3 py-1.5 text-xs text-[#15130E] focus:outline-none w-full sm:w-60 cursor-pointer font-mono"
+                            >
+                              <option value={-1} className="bg-white text-[#8B857A]">[ Skip / Unmapped ]</option>
+                              {csvHeaders.map((header, idx) => (
+                                <option key={idx} value={idx} className="bg-white text-[#15130E]">
+                                  {header}
+                                </option>
+                              ))}
+                            </select>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
 
-                  <div>
-                    <label className="block text-[11px] uppercase tracking-wider text-gray-400 font-semibold mb-2 font-mono">Leads Search Limit</label>
-                    <select
-                      value={numResults}
-                      onChange={(e) => setNumResults(Number(e.target.value))}
-                      className="w-full bg-white/[0.03] border border-white/10 focus:border-[#2F5D50] rounded-lg px-4 py-2.5 text-sm focus:outline-none transition-colors"
-                    >
-                      <option value={3} className="bg-[#050505]">3 Results (Fast Audit)</option>
-                      <option value={5} className="bg-[#050505]">5 Results (Standard Scan)</option>
-                      <option value={10} className="bg-[#050505]">10 Results (Deep Dive)</option>
-                      <option value={20} className="bg-[#050505]">20 Results (Mass Scrape)</option>
-                    </select>
-                  </div>
+                    <div className="flex items-center gap-3 p-4 bg-white/40 border border-[#D3CEC0] rounded-lg">
+                      <input 
+                        type="checkbox" 
+                        id="assign-to-drip"
+                        checked={assignToDrip}
+                        onChange={(e) => setAssignToDrip(e.target.checked)}
+                        className="rounded border-[#D3CEC0] text-[#2F5D50] focus:ring-[#2F5D50] bg-white cursor-pointer w-4 h-4"
+                      />
+                      <label htmlFor="assign-to-drip" className="text-xs text-[#15130E] select-none cursor-pointer">
+                        Assign to outreach drip campaign (trigger Resend welcome email)
+                      </label>
+                    </div>
 
-                  {/* Collapsible Advanced prompts section */}
-                  <div className="border border-white/5 bg-white/[0.01] rounded-lg overflow-hidden">
-                    <button
-                      type="button"
-                      onClick={() => setShowAdvancedPrompts(!showAdvancedPrompts)}
-                      className="w-full flex items-center justify-between px-4 py-3 text-xs uppercase tracking-wider text-gray-400 font-semibold hover:bg-white/[0.02] transition-colors"
-                    >
-                      <span>Advanced AI &amp; Scraper Settings</span>
-                      <span>{showAdvancedPrompts ? '▲' : '▼'}</span>
-                    </button>
-                    {showAdvancedPrompts && (
-                      <div className="p-4 border-t border-white/5 space-y-4">
-                        <div>
-                          <label className="block text-[10px] uppercase tracking-wider text-gray-500 font-semibold mb-1.5 font-mono">Perplexity Target Prompt Focus</label>
-                          <textarea
-                            value={focusPrompt}
-                            onChange={(e) => setFocusPrompt(e.target.value)}
-                            className="w-full h-24 bg-black/40 border border-white/10 focus:border-[#2F5D50] rounded px-3 py-2 text-xs focus:outline-none transition-colors font-mono"
-                            placeholder="Use {limit}, {category}, and {location} variables."
-                          />
-                        </div>
-                        <div>
-                          <label className="block text-[10px] uppercase tracking-wider text-gray-500 font-semibold mb-1.5 font-mono">Outreach Email Persona / Context</label>
-                          <textarea
-                            value={personaPrompt}
-                            onChange={(e) => setPersonaPrompt(e.target.value)}
-                            className="w-full h-20 bg-black/40 border border-white/10 focus:border-[#2F5D50] rounded px-3 py-2 text-xs focus:outline-none transition-colors font-mono"
-                            placeholder="Persona for the cold outreach script."
-                          />
-                        </div>
-                        <div>
-                          <label className="block text-[10px] uppercase tracking-wider text-gray-500 font-semibold mb-1.5 font-mono">Outreach Email Pitch Template</label>
-                          <textarea
-                            value={customPrompt}
-                            onChange={(e) => setCustomPrompt(e.target.value)}
-                            className="w-full h-28 bg-black/40 border border-white/10 focus:border-[#2F5D50] rounded px-3 py-2 text-xs focus:outline-none transition-colors font-mono"
-                            placeholder="Supports {contact_name}, {company_name}, {location}, {website}, and {category} templates."
-                          />
-                        </div>
+                    {assignToDrip && (
+                      <div className="border border-[#D3CEC0] bg-white/30 rounded-lg overflow-hidden">
+                        <button
+                          type="button"
+                          onClick={() => setShowAdvancedPrompts(!showAdvancedPrompts)}
+                          className="w-full flex items-center justify-between px-4 py-3 text-xs uppercase tracking-wider text-[#5B564C] font-semibold hover:bg-white/40 transition-colors cursor-pointer"
+                        >
+                          <span>Outreach Email Templates</span>
+                          <span>{showAdvancedPrompts ? '▲' : '▼'}</span>
+                        </button>
+                        {showAdvancedPrompts && (
+                          <div className="p-4 border-t border-[#D3CEC0] space-y-4">
+                            <div>
+                              <label className="block text-[10px] uppercase tracking-wider text-[#5B564C] font-semibold mb-1.5 font-mono">Outreach Email Persona / Context</label>
+                              <textarea
+                                value={personaPrompt}
+                                onChange={(e) => setPersonaPrompt(e.target.value)}
+                                className="w-full h-20 bg-white/60 border border-[#D3CEC0] focus:border-[#2F5D50] focus:ring-1 focus:ring-[#2F5D50] rounded px-3 py-2 text-xs text-[#15130E] focus:outline-none transition-colors font-mono"
+                                placeholder="Persona for the cold outreach script."
+                              />
+                            </div>
+                            <div>
+                              <label className="block text-[10px] uppercase tracking-wider text-[#5B564C] font-semibold mb-1.5 font-mono">Outreach Email Pitch Template</label>
+                              <textarea
+                                value={customPrompt}
+                                onChange={(e) => setCustomPrompt(e.target.value)}
+                                className="w-full h-28 bg-white/60 border border-[#D3CEC0] focus:border-[#2F5D50] focus:ring-1 focus:ring-[#2F5D50] rounded px-3 py-2 text-xs text-[#15130E] focus:outline-none transition-colors font-mono"
+                                placeholder="Supports {contact_name}, {company_name}, {location}, {website}, and {category} templates."
+                              />
+                            </div>
+                          </div>
+                        )}
                       </div>
                     )}
-                  </div>
 
-                  <button
-                    type="submit"
-                    disabled={scraping}
-                    className="w-full group bg-[#2F5D50] hover:bg-[#234A40] disabled:bg-gray-800 disabled:text-gray-500 text-white font-semibold py-3.5 px-4 rounded-lg transition-colors flex items-center justify-center gap-2 cursor-pointer text-sm"
-                  >
-                    {scraping ? (
-                      <>
-                        <span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                        Scraping Live Search Pack...
-                      </>
-                    ) : (
-                      <>
-                        Run AI Scraper &amp; Ingest Pipeline
-                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                      </>
-                    )}
-                  </button>
-                </form>
+                    <button
+                      type="submit"
+                      disabled={scraping}
+                      className="w-full group bg-[#2F5D50] hover:bg-[#234A40] disabled:bg-gray-800 disabled:text-gray-500 text-white font-semibold py-3.5 px-4 rounded-lg transition-colors flex items-center justify-center gap-2 cursor-pointer text-sm"
+                    >
+                      {scraping ? (
+                        <>
+                          <span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                          Ingesting CSV Leads...
+                        </>
+                      ) : (
+                        <>
+                          Start Import &amp; Ingest Pipeline
+                          <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                        </>
+                      )}
+                    </button>
+                  </form>
+                )}
               </div>
 
               {/* Console logs output */}
-              <div className="flex flex-col h-full min-h-[380px] bg-[#0c0c0c] border border-white/10 rounded-2xl overflow-hidden font-mono shadow-2xl relative">
-                <div className="bg-white/[0.03] border-b border-white/10 px-5 py-3 flex items-center justify-between text-xs text-gray-500">
+              <div className="flex flex-col h-full min-h-[380px] bg-[#0c0c0c] border border-[#D3CEC0] rounded-2xl overflow-hidden font-mono shadow-2xl relative">
+                <div className="bg-black/80 border-b border-[#D3CEC0] px-5 py-3 flex items-center justify-between text-xs text-gray-400">
                   <div className="flex items-center gap-2">
-                    <span className="w-2.5 h-2.5 rounded-full bg-red-500/40" />
-                    <span className="w-2.5 h-2.5 rounded-full bg-yellow-500/40" />
-                    <span className="w-2.5 h-2.5 rounded-full bg-green-500/40" />
-                    <span className="ml-2 font-semibold">terminal@gobiya-prospector</span>
+                    <span className="w-2.5 h-2.5 rounded-full bg-red-500/60" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-yellow-500/60" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-green-500/60" />
+                    <span className="ml-2 font-semibold">terminal@gobiya-importer</span>
                   </div>
                   <span className="text-[10px] uppercase tracking-widest text-[#2F5D50] font-semibold animate-pulse">Live Output</span>
                 </div>
                 
-                <div className="flex-grow p-5 overflow-y-auto text-xs space-y-2 select-text selection:bg-[#2F5D50]/40 max-h-[350px]">
+                <div className="flex-grow p-5 overflow-y-auto text-xs space-y-2 select-text selection:bg-[#2F5D50]/30 max-h-[350px]">
                   {logs.map((log, index) => {
                     let colorClass = 'text-gray-300';
                     let label = '';
@@ -673,10 +846,10 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout }) => {
           )}
           {/* TAB 2: ACTIVE LEADS DATABASE */}
           {activeTab === 'leads' && (
-            <div className="bg-black/40 border border-white/10 p-6 sm:p-8 rounded-2xl backdrop-blur-md relative overflow-hidden">
+            <div className="bg-white/60 border border-[#D3CEC0] p-6 sm:p-8 rounded-2xl backdrop-blur-md relative overflow-hidden">
               <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8">
                 <div className="relative w-full max-w-[350px]">
-                  <span className="absolute inset-y-0 left-3 flex items-center text-gray-500">
+                  <span className="absolute inset-y-0 left-3 flex items-center text-[#8B857A]">
                     <Search className="w-4 h-4" />
                   </span>
                   <input
@@ -684,7 +857,7 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout }) => {
                     placeholder="Search company, category, contact..."
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
-                    className="w-full bg-white/[0.03] border border-white/10 focus:border-[#2F5D50] rounded-lg pl-10 pr-4 py-2 text-xs text-white focus:outline-none transition-colors"
+                    className="w-full bg-white/50 border border-[#D3CEC0] focus:border-[#2F5D50] rounded-lg pl-10 pr-4 py-2 text-xs text-[#15130E] focus:outline-none transition-colors"
                   />
                 </div>
 
@@ -697,13 +870,13 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout }) => {
                   </button>
                   <button 
                     onClick={fetchLeads}
-                    className="px-4 py-2 border border-white/10 hover:border-white/20 bg-white/[0.02] text-xs font-semibold uppercase tracking-wider transition-colors cursor-pointer"
+                    className="px-4 py-2 border border-[#D3CEC0] hover:border-[#15130E] bg-white/40 text-xs font-semibold uppercase tracking-wider transition-colors cursor-pointer text-[#15130E]"
                   >
                     Refresh List
                   </button>
                   <button 
                     onClick={clearLeads}
-                    className="flex items-center gap-1.5 px-4 py-2 border border-red-500/20 hover:border-red-500/50 bg-red-950/10 hover:bg-red-950/20 text-red-300 text-xs font-semibold uppercase tracking-wider transition-colors cursor-pointer"
+                    className="flex items-center gap-1.5 px-4 py-2 border border-red-200 hover:border-red-400 bg-red-50 hover:bg-red-100 text-red-800 text-xs font-semibold uppercase tracking-wider transition-colors cursor-pointer"
                   >
                     <Trash2 className="w-3.5 h-3.5" />
                     Purge Table
@@ -712,20 +885,20 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout }) => {
               </div>
 
               {loadingLeads ? (
-                <div className="text-center py-20 text-gray-500 font-mono text-xs">
-                  <span className="w-5 h-5 border-2 border-white/20 border-t-white rounded-full animate-spin inline-block mr-2" />
+                <div className="text-center py-20 text-[#5B564C] font-mono text-xs">
+                  <span className="w-5 h-5 border-2 border-[#D3CEC0] border-t-[#2F5D50] rounded-full animate-spin inline-block mr-2" />
                   Querying database tables...
                 </div>
               ) : filteredLeads.length === 0 ? (
-                <div className="text-center py-20 text-gray-500 font-mono text-xs">
-                  <AlertTriangle className="w-8 h-8 text-gray-600 mx-auto mb-3" />
-                  No prospects found in database. Ingest leads via the AI Prospector terminal tab.
+                <div className="text-center py-20 text-[#5B564C] font-mono text-xs">
+                  <AlertTriangle className="w-8 h-8 text-[#8B857A] mx-auto mb-3" />
+                  No prospects found in database. Ingest leads via the CSV Importer tab.
                 </div>
               ) : (
                 <div className="overflow-x-auto -mx-6 sm:-mx-8">
                   <table className="w-full border-collapse min-w-[800px] text-left text-xs">
                     <thead>
-                      <tr className="bg-white/[0.03] border-y border-white/10 text-gray-400 font-semibold uppercase tracking-widest text-[10px]">
+                      <tr className="bg-[#E7E4D9]/85 border-y border-[#D3CEC0] text-[#5B564C] font-semibold uppercase tracking-widest text-[10px]">
                         <th className="py-4 px-6">Company &amp; Owner</th>
                         <th className="py-4 px-6">Email Address</th>
                         <th className="py-4 px-6">Phone Number</th>
@@ -735,15 +908,15 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout }) => {
                         <th className="py-4 px-6 text-right">Actions</th>
                       </tr>
                     </thead>
-                    <tbody className="divide-y divide-white/5">
+                    <tbody className="divide-y divide-[#D3CEC0]/60">
                       {filteredLeads.map((lead, idx) => (
-                        <tr key={idx} className="hover:bg-white/[0.01] transition-colors">
+                        <tr key={idx} className="hover:bg-[#E7E4D9]/20 transition-colors">
                           <td className="py-4 px-6">
-                            <div className="font-semibold text-white">{lead.company_name}</div>
-                            <div className="text-gray-500 mt-1">{lead.contact_name}</div>
+                            <div className="font-semibold text-[#15130E]">{lead.company_name}</div>
+                            <div className="text-[#5B564C] mt-1">{lead.contact_name}</div>
                           </td>
-                          <td className="py-4 px-6 font-mono text-gray-300">{lead.email}</td>
-                          <td className="py-4 px-6 font-mono text-gray-400">{lead.phone || 'N/A'}</td>
+                          <td className="py-4 px-6 font-mono text-[#15130E]">{lead.email}</td>
+                          <td className="py-4 px-6 font-mono text-[#5B564C]">{lead.phone || 'N/A'}</td>
                           <td className="py-4 px-6">
                             {lead.website ? (
                               <a 
@@ -756,60 +929,68 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout }) => {
                                 <ExternalLink className="w-3 h-3" />
                               </a>
                             ) : (
-                              <span className="text-gray-600">N/A</span>
+                              <span className="text-gray-400">N/A</span>
                             )}
                           </td>
                           <td className="py-4 px-6">
-                            <div className="text-gray-300 capitalize">{lead.category}</div>
-                            <div className="text-gray-500 mt-0.5">{lead.location}</div>
+                            <div className="text-[#15130E] capitalize">{lead.category}</div>
+                            <div className="text-[#5B564C] mt-0.5">{lead.location}</div>
                           </td>
                           <td className="py-4 px-6 text-center">
-                            <span className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] uppercase font-semibold
+                            <span className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] uppercase font-bold
                               ${lead.status === 'welcome_sent'
-                                ? 'bg-green-500/10 text-green-300 border border-green-500/30'
+                                ? 'bg-green-50 text-green-800 border border-green-200'
                                 : lead.status === 'clicked'
-                                  ? 'bg-blue-500/10 text-blue-300 border border-blue-500/30'
+                                  ? 'bg-blue-50 text-blue-800 border border-blue-200'
                                   : lead.status === 'booked'
-                                    ? 'bg-[#2F5D50]/15 text-[#2F5D50] border border-[#2F5D50]/30 font-bold'
-                                    : 'bg-gray-800/50 text-gray-400 border border-gray-700/50'
+                                    ? 'bg-[#2F5D50]/10 text-[#2F5D50] border border-[#2F5D50]/20'
+                                    : lead.status === 'New Lead'
+                                      ? 'bg-yellow-50 text-yellow-800 border border-yellow-200'
+                                      : lead.status === 'Imported'
+                                        ? 'bg-purple-50 text-purple-800 border border-purple-200'
+                                        : 'bg-gray-100 text-gray-800 border border-gray-200'
                               }
                             `}>
                               <span className={`w-1.5 h-1.5 rounded-full 
-                                ${lead.status === 'welcome_sent' ? 'bg-green-500' 
-                                  : lead.status === 'clicked' ? 'bg-blue-500'
+                                ${lead.status === 'welcome_sent' ? 'bg-green-600' 
+                                  : lead.status === 'clicked' ? 'bg-blue-600'
                                     : lead.status === 'booked' ? 'bg-[#2F5D50]'
-                                      : 'bg-gray-400'
+                                      : lead.status === 'New Lead' ? 'bg-yellow-600'
+                                        : lead.status === 'Imported' ? 'bg-purple-600'
+                                          : 'bg-gray-500'
                                 }`} 
                               />
                               {lead.status === 'welcome_sent' ? 'Welcome Sent' 
                                 : lead.status === 'clicked' ? 'Clicked Email'
                                   : lead.status === 'booked' ? 'Call Booked'
-                                    : 'Queued'}
+                                    : lead.status === 'New Lead' ? 'New Lead'
+                                      : lead.status === 'Imported' ? 'Imported'
+                                        : lead.status}
                             </span>
                           </td>
                           <td className="py-4 px-6 text-right space-x-2 whitespace-nowrap">
                             <button
                               onClick={() => handleSendSingleEmail(lead)}
                               disabled={sendingEmailId === (lead.id || lead.email)}
-                              className="p-1.5 rounded bg-green-500/10 hover:bg-green-500/20 text-green-300 border border-green-500/20 hover:border-green-500/40 transition-colors inline-flex items-center justify-center cursor-pointer"
+                              className="p-1.5 rounded bg-green-50 hover:bg-green-100 text-green-800 border border-green-200 transition-colors inline-flex items-center justify-center cursor-pointer"
                               title="Send personalized AI email outreach"
                             >
                               {sendingEmailId === (lead.id || lead.email) ? (
-                                <span className="w-3.5 h-3.5 border-2 border-green-300/30 border-t-green-300 rounded-full animate-spin" />
+                                <span className="w-3.5 h-3.5 border-2 border-green-800/30 border-t-green-800 rounded-full animate-spin" />
                               ) : (
                                 <Mail className="w-3.5 h-3.5" />
                               )}
                             </button>
                             <button
                               onClick={() => openEditModal(lead)}
-                              className="p-1.5 rounded bg-blue-500/10 hover:bg-blue-500/20 text-blue-300 border border-blue-500/20 hover:border-blue-500/40 transition-colors inline-flex items-center justify-center cursor-pointer"
+                              className="p-1.5 rounded bg-blue-50 hover:bg-blue-100 text-blue-800 border border-blue-200 transition-colors inline-flex items-center justify-center cursor-pointer"
                               title="Edit Lead Details"
                             >
                               <Settings className="w-3.5 h-3.5" />
                             </button>
                             <button
                               onClick={() => handleDeleteLead(lead.id, lead.email)}
-                              className="p-1.5 rounded bg-red-500/10 hover:bg-red-500/20 text-red-300 border border-red-500/20 hover:border-red-500/40 transition-colors inline-flex items-center justify-center cursor-pointer"
+                              className="p-1.5 rounded bg-red-50 hover:bg-red-100 text-red-800 border border-red-200 transition-colors inline-flex items-center justify-center cursor-pointer"
                               title="Delete Lead"
                             >
                               <Trash2 className="w-3.5 h-3.5" />
@@ -824,26 +1005,26 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout }) => {
             </div>
           )}          {/* TAB 3: CAMPAIGNS */}
           {activeTab === 'campaigns' && (
-            <div className="bg-black/40 border border-white/10 p-6 sm:p-8 rounded-2xl backdrop-blur-md relative overflow-hidden">
-              <h2 className="text-xl font-semibold mb-6 flex items-center gap-2">
+            <div className="bg-white/60 border border-[#D3CEC0] p-6 sm:p-8 rounded-2xl backdrop-blur-md relative overflow-hidden">
+              <h2 className="text-xl font-semibold mb-6 flex items-center gap-2 text-[#15130E]">
                 <Mail className="w-5 h-5 text-[#2F5D50]" /> Active Nurture Pipeline Logs
               </h2>
               
               {leads.filter(l => l.status !== 'new').length === 0 ? (
-                <div className="text-center py-20 text-gray-500 font-mono text-xs">
-                  No active drip campaigns. Ingest leads via AI Prospector, or click the "Send Email" action on any lead to trigger outreach drip campaigns.
+                <div className="text-center py-20 text-[#5B564C] font-mono text-xs">
+                  No active drip campaigns. Ingest leads via the CSV Importer tab, or click the "Send Email" action on any lead to trigger outreach drip campaigns.
                 </div>
               ) : (
                 <div className="space-y-10">
                   {leads.filter(l => l.status !== 'new').map((lead, idx) => {
                     const dripSteps = getDripSteps(lead);
                     return (
-                      <div key={idx} className="border border-white/5 bg-white/[0.01] p-6 rounded-xl relative overflow-hidden">
-                        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6 pb-4 border-b border-white/5">
+                      <div key={idx} className="border border-[#D3CEC0]/80 bg-white/40 p-6 rounded-xl relative overflow-hidden">
+                        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6 pb-4 border-b border-[#D3CEC0]/40">
                           <div>
-                            <span className="text-xs text-gray-400 uppercase tracking-widest font-mono">Drip Target Pipeline</span>
-                            <h3 className="text-lg font-bold text-white mt-1">{lead.company_name}</h3>
-                            <p className="text-xs text-gray-500 mt-0.5">Contact: {lead.contact_name} ({lead.email})</p>
+                            <span className="text-xs text-[#8B857A] uppercase tracking-widest font-mono">Drip Target Pipeline</span>
+                            <h3 className="text-lg font-bold text-[#15130E] mt-1">{lead.company_name}</h3>
+                            <p className="text-xs text-[#5B564C] mt-0.5">Contact: {lead.contact_name} ({lead.email})</p>
                           </div>
                           
                           <div className="flex items-center gap-3">
@@ -864,11 +1045,11 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout }) => {
                                   console.error(e);
                                 }
                               }}
-                              className="text-[10px] uppercase font-bold tracking-wider px-2.5 py-1.5 border border-white/10 hover:border-white/20 bg-white/[0.01] hover:bg-white/[0.03] transition-colors cursor-pointer text-gray-400 hover:text-white"
+                              className="text-[10px] uppercase font-bold tracking-wider px-2.5 py-1.5 border border-[#D3CEC0] hover:border-[#15130E] bg-white/40 hover:bg-white/80 transition-colors cursor-pointer text-[#5B564C] hover:text-[#15130E]"
                             >
                               Advance Stage
                             </button>
-                            <span className="bg-green-500/10 text-green-300 border border-green-500/20 px-3 py-1 rounded-full text-[10px] uppercase font-semibold">
+                            <span className="bg-green-100 text-green-800 border border-green-200 px-3 py-1 rounded-full text-[10px] uppercase font-semibold">
                               Active Campaigns
                             </span>
                           </div>
@@ -877,24 +1058,24 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout }) => {
                         {/* Timeline flow */}
                         <div className="grid grid-cols-1 md:grid-cols-5 gap-6 relative">
                           {/* Timeline background bar */}
-                          <div className="absolute top-[28px] left-[15px] right-[15px] h-[2px] bg-white/5 hidden md:block" />
+                          <div className="absolute top-[28px] left-[15px] right-[15px] h-[2px] bg-[#D3CEC0]/60 hidden md:block" />
 
                           {dripSteps.map((step, sIdx) => (
                             <div key={sIdx} className="relative z-10 flex md:flex-col items-start gap-4 md:gap-0">
                               <div className={`w-8 h-8 rounded-full border flex items-center justify-center mb-3
                                 ${step.status === 'sent' 
-                                  ? 'bg-green-500/10 border-green-500/30' 
+                                  ? 'bg-green-100 border-green-200' 
                                   : step.status === 'scheduled'
-                                    ? 'bg-yellow-500/10 border-yellow-500/30 animate-pulse'
-                                    : 'bg-black border-white/10'
+                                    ? 'bg-yellow-100 border-yellow-200 animate-pulse'
+                                    : 'bg-white border-[#D3CEC0]'
                                 }
                               `}>
                                 {step.icon}
                               </div>
                               <div>
-                                <h4 className="text-[13px] font-semibold text-white">{step.title}</h4>
+                                <h4 className="text-[13px] font-semibold text-[#15130E]">{step.title}</h4>
                                 <p className="text-[11px] text-[#2F5D50] font-mono mt-1">{step.delay}</p>
-                                <p className="text-xs text-gray-500 mt-2 leading-relaxed">{step.desc}</p>
+                                <p className="text-xs text-[#5B564C] mt-2 leading-relaxed">{step.desc}</p>
                               </div>
                             </div>
                           ))}
@@ -909,17 +1090,17 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout }) => {
 
           {/* TAB 4: SETTINGS */}
           {activeTab === 'settings' && (
-            <div className="bg-black/40 border border-white/10 p-8 rounded-2xl backdrop-blur-md max-w-2xl mx-auto">
-              <h2 className="text-xl font-semibold mb-6 flex items-center gap-2">
+            <div className="bg-white/60 border border-[#D3CEC0] p-8 rounded-2xl backdrop-blur-md max-w-2xl mx-auto">
+              <h2 className="text-xl font-semibold mb-6 flex items-center gap-2 text-[#15130E]">
                 <Settings className="w-5 h-5 text-[#2F5D50]" /> API Credentials &amp; Testing
               </h2>
               
               <div className="space-y-6">
                 <div>
-                  <label className="block text-[11px] uppercase tracking-wider text-gray-400 font-semibold mb-2 font-mono flex justify-between items-center">
+                  <label className="block text-[11px] uppercase tracking-wider text-[#5B564C] font-semibold mb-2 font-mono flex justify-between items-center">
                     <span>Perplexity AI API Key</span>
                     {hasServerPerplexityKey && (
-                      <span className="text-green-400 text-[9px] uppercase tracking-widest bg-green-500/10 px-2 py-0.5 border border-green-500/30 rounded">Active in Environment</span>
+                      <span className="text-green-800 text-[9px] uppercase tracking-widest bg-green-100 px-2 py-0.5 border border-green-200 rounded">Active in Environment</span>
                     )}
                   </label>
                   <input
@@ -927,16 +1108,16 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout }) => {
                     placeholder={hasServerPerplexityKey ? "•••••••• (Using Environment Key)" : "pplx-..."}
                     value={perplexityKey}
                     onChange={(e) => setPerplexityKey(e.target.value)}
-                    className="w-full bg-white/[0.03] border border-white/10 focus:border-[#2F5D50] rounded-lg px-4 py-2.5 text-sm focus:outline-none transition-colors font-mono"
+                    className="w-full bg-white/50 border border-[#D3CEC0] focus:border-[#2F5D50] focus:ring-1 focus:ring-[#2F5D50] rounded-lg px-4 py-2.5 text-sm text-[#15130E] focus:outline-none transition-colors font-mono"
                   />
-                  <p className="text-[10px] text-gray-600 mt-2 font-mono">Used to fetch real B2B leads dynamically using the Sonar models.</p>
+                  <p className="text-[10px] text-[#5B564C] mt-2 font-mono">Used to fetch real B2B leads dynamically using the Sonar models.</p>
                 </div>
 
                 <div>
-                  <label className="block text-[11px] uppercase tracking-wider text-gray-400 font-semibold mb-2 font-mono flex justify-between items-center">
+                  <label className="block text-[11px] uppercase tracking-wider text-[#5B564C] font-semibold mb-2 font-mono flex justify-between items-center">
                     <span>Resend API Key</span>
                     {hasServerResendKey && (
-                      <span className="text-green-400 text-[9px] uppercase tracking-widest bg-green-500/10 px-2 py-0.5 border border-green-500/30 rounded">Active in Environment</span>
+                      <span className="text-green-800 text-[9px] uppercase tracking-widest bg-green-100 px-2 py-0.5 border border-green-200 rounded">Active in Environment</span>
                     )}
                   </label>
                   <input
@@ -944,9 +1125,9 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout }) => {
                     placeholder={hasServerResendKey ? "•••••••• (Using Environment Key)" : "re_..."}
                     value={resendKey}
                     onChange={(e) => setResendKey(e.target.value)}
-                    className="w-full bg-white/[0.03] border border-white/10 focus:border-[#2F5D50] rounded-lg px-4 py-2.5 text-sm focus:outline-none transition-colors font-mono"
+                    className="w-full bg-white/50 border border-[#D3CEC0] focus:border-[#2F5D50] focus:ring-1 focus:ring-[#2F5D50] rounded-lg px-4 py-2.5 text-sm text-[#15130E] focus:outline-none transition-colors font-mono"
                   />
-                  <p className="text-[10px] text-gray-600 mt-2 font-mono">Used to coordinate automated outreach welcome emails via Resend's API.</p>
+                  <p className="text-[10px] text-[#5B564C] mt-2 font-mono">Used to coordinate automated outreach welcome emails via Resend's API.</p>
                 </div>
 
                 <button
@@ -957,7 +1138,7 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout }) => {
                   Save Settings &amp; AI Templates
                 </button>
 
-                <hr className="border-white/5" />
+                <hr className="border-[#D3CEC0]/40" />
 
                 <div>
                   <h3 className="text-sm font-semibold mb-3 flex items-center gap-2 text-[#2F5D50]">
@@ -965,20 +1146,20 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout }) => {
                   </h3>
                   <form onSubmit={handleSendTestEmail} className="space-y-3">
                     <div>
-                      <label className="block text-[11px] uppercase tracking-wider text-gray-400 font-semibold mb-2 font-mono">Recipient Email Address</label>
+                      <label className="block text-[11px] uppercase tracking-wider text-[#5B564C] font-semibold mb-2 font-mono">Recipient Email Address</label>
                       <input
                         type="email"
                         required
                         placeholder="e.g. test@yourdomain.com"
                         value={testEmail}
                         onChange={(e) => setTestEmail(e.target.value)}
-                        className="w-full bg-white/[0.03] border border-white/10 focus:border-[#2F5D50] rounded-lg px-4 py-2.5 text-sm focus:outline-none transition-colors font-mono"
+                        className="w-full bg-white/50 border border-[#D3CEC0] focus:border-[#2F5D50] focus:ring-1 focus:ring-[#2F5D50] rounded-lg px-4 py-2.5 text-sm text-[#15130E] focus:outline-none transition-colors font-mono"
                       />
                     </div>
                     <button
                       type="submit"
                       disabled={testingEmail || (!resendKey && !hasServerResendKey)}
-                      className="w-full bg-white/[0.02] border border-white/10 hover:bg-white/[0.05] hover:border-white/20 disabled:bg-gray-800 disabled:text-gray-500 text-white font-semibold py-2.5 px-4 rounded-lg transition-colors flex items-center justify-center gap-2 cursor-pointer text-xs uppercase tracking-wider font-mono"
+                      className="w-full bg-white/40 border border-[#D3CEC0] hover:bg-white/80 hover:border-[#15130E] disabled:bg-gray-200 disabled:text-gray-400 text-[#15130E] font-semibold py-2.5 px-4 rounded-lg transition-colors flex items-center justify-center gap-2 cursor-pointer text-xs uppercase tracking-wider font-mono"
                     >
                       {testingEmail ? 'Sending Test...' : 'Send Test Email'}
                     </button>
@@ -996,58 +1177,60 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout }) => {
 
       {/* ADD LEAD MODAL */}
       {showAddModal && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 backdrop-blur-sm p-4">
-          <div className="w-full max-w-lg bg-[#0c0c0c] border border-white/10 rounded-2xl overflow-hidden shadow-2xl">
-            <div className="bg-white/[0.02] border-b border-white/10 px-6 py-4 flex items-center justify-between">
-              <h3 className="text-sm font-semibold uppercase tracking-wider text-white">Create New Lead Profile</h3>
-              <button onClick={() => setShowAddModal(false)} className="text-gray-500 hover:text-white transition-colors cursor-pointer text-xs">✕</button>
+        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
+          <div className="w-full max-w-lg bg-[#EFEDE5] border border-[#D3CEC0] rounded-2xl overflow-hidden shadow-2xl text-[#15130E]">
+            <div className="bg-[#E7E4D9]/60 border-b border-[#D3CEC0] px-6 py-4 flex items-center justify-between">
+              <h3 className="text-sm font-semibold uppercase tracking-wider text-[#15130E] font-display">Create New Lead Profile</h3>
+              <button onClick={() => setShowAddModal(false)} className="text-[#8B857A] hover:text-[#15130E] transition-colors cursor-pointer text-xs">✕</button>
             </div>
             <form onSubmit={handleAddLeadSubmit} className="p-6 space-y-4">
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-[10px] uppercase tracking-wider text-gray-400 font-semibold mb-1 font-mono">Company Name</label>
-                  <input type="text" required value={formCompany} onChange={(e) => setFormCompany(e.target.value)} className="w-full bg-white/[0.03] border border-white/10 focus:border-[#2F5D50] rounded px-3 py-2 text-xs text-white focus:outline-none" />
+                  <label className="block text-[10px] uppercase tracking-wider text-[#5B564C] font-semibold mb-1 font-mono">Company Name</label>
+                  <input type="text" required value={formCompany} onChange={(e) => setFormCompany(e.target.value)} className="w-full bg-white/60 border border-[#D3CEC0] focus:border-[#2F5D50] focus:ring-1 focus:ring-[#2F5D50] rounded px-3 py-2 text-xs text-[#15130E] focus:outline-none transition-all" />
                 </div>
                 <div>
-                  <label className="block text-[10px] uppercase tracking-wider text-gray-400 font-semibold mb-1 font-mono">Contact Name</label>
-                  <input type="text" required value={formContact} onChange={(e) => setFormContact(e.target.value)} className="w-full bg-white/[0.03] border border-white/10 focus:border-[#2F5D50] rounded px-3 py-2 text-xs text-white focus:outline-none" />
+                  <label className="block text-[10px] uppercase tracking-wider text-[#5B564C] font-semibold mb-1 font-mono">Contact Name</label>
+                  <input type="text" required value={formContact} onChange={(e) => setFormContact(e.target.value)} className="w-full bg-white/60 border border-[#D3CEC0] focus:border-[#2F5D50] focus:ring-1 focus:ring-[#2F5D50] rounded px-3 py-2 text-xs text-[#15130E] focus:outline-none transition-all" />
                 </div>
               </div>
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-[10px] uppercase tracking-wider text-gray-400 font-semibold mb-1 font-mono">Email Address</label>
-                  <input type="email" required value={formEmail} onChange={(e) => setFormEmail(e.target.value)} className="w-full bg-white/[0.03] border border-white/10 focus:border-[#2F5D50] rounded px-3 py-2 text-xs text-white focus:outline-none" />
+                  <label className="block text-[10px] uppercase tracking-wider text-[#5B564C] font-semibold mb-1 font-mono">Email Address</label>
+                  <input type="email" required value={formEmail} onChange={(e) => setFormEmail(e.target.value)} className="w-full bg-white/60 border border-[#D3CEC0] focus:border-[#2F5D50] focus:ring-1 focus:ring-[#2F5D50] rounded px-3 py-2 text-xs text-[#15130E] focus:outline-none transition-all" />
                 </div>
                 <div>
-                  <label className="block text-[10px] uppercase tracking-wider text-gray-400 font-semibold mb-1 font-mono">Phone Number</label>
-                  <input type="text" value={formPhone} onChange={(e) => setFormPhone(e.target.value)} className="w-full bg-white/[0.03] border border-white/10 focus:border-[#2F5D50] rounded px-3 py-2 text-xs text-white focus:outline-none" />
+                  <label className="block text-[10px] uppercase tracking-wider text-[#5B564C] font-semibold mb-1 font-mono">Phone Number</label>
+                  <input type="text" value={formPhone} onChange={(e) => setFormPhone(e.target.value)} className="w-full bg-white/60 border border-[#D3CEC0] focus:border-[#2F5D50] focus:ring-1 focus:ring-[#2F5D50] rounded px-3 py-2 text-xs text-[#15130E] focus:outline-none transition-all" />
                 </div>
               </div>
               <div>
-                <label className="block text-[10px] uppercase tracking-wider text-gray-400 font-semibold mb-1 font-mono">Website / Domain</label>
-                <input type="text" value={formWebsite} onChange={(e) => setFormWebsite(e.target.value)} className="w-full bg-white/[0.03] border border-white/10 focus:border-[#2F5D50] rounded px-3 py-2 text-xs text-white focus:outline-none" />
+                <label className="block text-[10px] uppercase tracking-wider text-[#5B564C] font-semibold mb-1 font-mono">Website / Domain</label>
+                <input type="text" value={formWebsite} onChange={(e) => setFormWebsite(e.target.value)} className="w-full bg-white/60 border border-[#D3CEC0] focus:border-[#2F5D50] focus:ring-1 focus:ring-[#2F5D50] rounded px-3 py-2 text-xs text-[#15130E] focus:outline-none transition-all" />
               </div>
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-[10px] uppercase tracking-wider text-gray-400 font-semibold mb-1 font-mono">Category / Silo</label>
-                  <input type="text" value={formCategory} onChange={(e) => setFormCategory(e.target.value)} className="w-full bg-white/[0.03] border border-white/10 focus:border-[#2F5D50] rounded px-3 py-2 text-xs text-white focus:outline-none" />
+                  <label className="block text-[10px] uppercase tracking-wider text-[#5B564C] font-semibold mb-1 font-mono">Category / Silo</label>
+                  <input type="text" value={formCategory} onChange={(e) => setFormCategory(e.target.value)} className="w-full bg-white/60 border border-[#D3CEC0] focus:border-[#2F5D50] focus:ring-1 focus:ring-[#2F5D50] rounded px-3 py-2 text-xs text-[#15130E] focus:outline-none transition-all" />
                 </div>
                 <div>
-                  <label className="block text-[10px] uppercase tracking-wider text-gray-400 font-semibold mb-1 font-mono">Location</label>
-                  <input type="text" value={formLocation} onChange={(e) => setFormLocation(e.target.value)} className="w-full bg-white/[0.03] border border-white/10 focus:border-[#2F5D50] rounded px-3 py-2 text-xs text-white focus:outline-none" />
+                  <label className="block text-[10px] uppercase tracking-wider text-[#5B564C] font-semibold mb-1 font-mono">Location</label>
+                  <input type="text" value={formLocation} onChange={(e) => setFormLocation(e.target.value)} className="w-full bg-white/60 border border-[#D3CEC0] focus:border-[#2F5D50] focus:ring-1 focus:ring-[#2F5D50] rounded px-3 py-2 text-xs text-[#15130E] focus:outline-none transition-all" />
                 </div>
               </div>
               <div>
-                <label className="block text-[10px] uppercase tracking-wider text-gray-400 font-semibold mb-1 font-mono">Prospect Pipeline Status</label>
-                <select value={formStatus} onChange={(e) => setFormStatus(e.target.value)} className="w-full bg-white/[0.03] border border-white/10 focus:border-[#2F5D50] rounded px-3 py-2 text-xs text-white focus:outline-none">
-                  <option value="new" className="bg-[#0c0c0c]">new (Queued)</option>
-                  <option value="welcome_sent" className="bg-[#0c0c0c]">welcome_sent (Welcome Sent)</option>
-                  <option value="clicked" className="bg-[#0c0c0c]">clicked (Clicked Email)</option>
-                  <option value="booked" className="bg-[#0c0c0c]">booked (Call Booked)</option>
+                <label className="block text-[10px] uppercase tracking-wider text-[#5B564C] font-semibold mb-1 font-mono">Prospect Pipeline Status</label>
+                <select value={formStatus} onChange={(e) => setFormStatus(e.target.value)} className="w-full bg-white/60 border border-[#D3CEC0] focus:border-[#2F5D50] rounded px-3 py-2 text-xs text-[#15130E] focus:outline-none cursor-pointer">
+                  <option value="New Lead" className="bg-white text-[#15130E]">New Lead (Form Submission)</option>
+                  <option value="Imported" className="bg-white text-[#15130E]">Imported (CSV Lead)</option>
+                  <option value="welcome_sent" className="bg-white text-[#15130E]">welcome_sent (Welcome Sent)</option>
+                  <option value="clicked" className="bg-white text-[#15130E]">clicked (Clicked Email)</option>
+                  <option value="booked" className="bg-white text-[#15130E]">booked (Call Booked)</option>
+                  <option value="new" className="bg-white text-[#15130E]">new (Queued)</option>
                 </select>
               </div>
-              <div className="flex justify-end gap-3 pt-4 border-t border-white/5">
-                <button type="button" onClick={() => setShowAddModal(false)} className="px-4 py-2 border border-white/10 hover:bg-white/[0.02] text-xs font-semibold uppercase tracking-wider cursor-pointer">Cancel</button>
+              <div className="flex justify-end gap-3 pt-4 border-t border-[#D3CEC0]">
+                <button type="button" onClick={() => setShowAddModal(false)} className="px-4 py-2 border border-[#D3CEC0] hover:bg-white/40 text-[#15130E] text-xs font-semibold uppercase tracking-wider cursor-pointer">Cancel</button>
                 <button type="submit" className="px-4 py-2 bg-[#2F5D50] hover:bg-[#234A40] text-white text-xs font-semibold uppercase tracking-wider cursor-pointer">Save Lead</button>
               </div>
             </form>
@@ -1057,58 +1240,60 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout }) => {
 
       {/* EDIT LEAD MODAL */}
       {showEditModal && selectedLead && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 backdrop-blur-sm p-4">
-          <div className="w-full max-w-lg bg-[#0c0c0c] border border-white/10 rounded-2xl overflow-hidden shadow-2xl">
-            <div className="bg-white/[0.02] border-b border-white/10 px-6 py-4 flex items-center justify-between">
-              <h3 className="text-sm font-semibold uppercase tracking-wider text-white">Edit Lead Profile</h3>
-              <button onClick={() => setShowEditModal(false)} className="text-gray-500 hover:text-white transition-colors cursor-pointer text-xs">✕</button>
+        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
+          <div className="w-full max-w-lg bg-[#EFEDE5] border border-[#D3CEC0] rounded-2xl overflow-hidden shadow-2xl text-[#15130E]">
+            <div className="bg-[#E7E4D9]/60 border-b border-[#D3CEC0] px-6 py-4 flex items-center justify-between">
+              <h3 className="text-sm font-semibold uppercase tracking-wider text-[#15130E] font-display">Edit Lead Profile</h3>
+              <button onClick={() => setShowEditModal(false)} className="text-[#8B857A] hover:text-[#15130E] transition-colors cursor-pointer text-xs">✕</button>
             </div>
             <form onSubmit={handleEditLeadSubmit} className="p-6 space-y-4">
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-[10px] uppercase tracking-wider text-gray-400 font-semibold mb-1 font-mono">Company Name</label>
-                  <input type="text" required value={formCompany} onChange={(e) => setFormCompany(e.target.value)} className="w-full bg-white/[0.03] border border-white/10 focus:border-[#2F5D50] rounded px-3 py-2 text-xs text-white focus:outline-none" />
+                  <label className="block text-[10px] uppercase tracking-wider text-[#5B564C] font-semibold mb-1 font-mono">Company Name</label>
+                  <input type="text" required value={formCompany} onChange={(e) => setFormCompany(e.target.value)} className="w-full bg-white/60 border border-[#D3CEC0] focus:border-[#2F5D50] focus:ring-1 focus:ring-[#2F5D50] rounded px-3 py-2 text-xs text-[#15130E] focus:outline-none transition-all" />
                 </div>
                 <div>
-                  <label className="block text-[10px] uppercase tracking-wider text-gray-400 font-semibold mb-1 font-mono">Contact Name</label>
-                  <input type="text" required value={formContact} onChange={(e) => setFormContact(e.target.value)} className="w-full bg-white/[0.03] border border-white/10 focus:border-[#2F5D50] rounded px-3 py-2 text-xs text-white focus:outline-none" />
+                  <label className="block text-[10px] uppercase tracking-wider text-[#5B564C] font-semibold mb-1 font-mono">Contact Name</label>
+                  <input type="text" required value={formContact} onChange={(e) => setFormContact(e.target.value)} className="w-full bg-white/60 border border-[#D3CEC0] focus:border-[#2F5D50] focus:ring-1 focus:ring-[#2F5D50] rounded px-3 py-2 text-xs text-[#15130E] focus:outline-none transition-all" />
                 </div>
               </div>
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-[10px] uppercase tracking-wider text-gray-400 font-semibold mb-1 font-mono">Email Address</label>
-                  <input type="email" required disabled value={formEmail} className="w-full bg-white/[0.01] border border-white/5 rounded px-3 py-2 text-xs text-gray-500 focus:outline-none cursor-not-allowed" />
+                  <label className="block text-[10px] uppercase tracking-wider text-[#5B564C] font-semibold mb-1 font-mono">Email Address</label>
+                  <input type="email" required disabled value={formEmail} className="w-full bg-white/20 border border-[#D3CEC0] rounded px-3 py-2 text-xs text-[#8B857A] focus:outline-none cursor-not-allowed font-mono" />
                 </div>
                 <div>
-                  <label className="block text-[10px] uppercase tracking-wider text-gray-400 font-semibold mb-1 font-mono">Phone Number</label>
-                  <input type="text" value={formPhone} onChange={(e) => setFormPhone(e.target.value)} className="w-full bg-white/[0.03] border border-white/10 focus:border-[#2F5D50] rounded px-3 py-2 text-xs text-white focus:outline-none" />
+                  <label className="block text-[10px] uppercase tracking-wider text-[#5B564C] font-semibold mb-1 font-mono">Phone Number</label>
+                  <input type="text" value={formPhone} onChange={(e) => setFormPhone(e.target.value)} className="w-full bg-white/60 border border-[#D3CEC0] focus:border-[#2F5D50] focus:ring-1 focus:ring-[#2F5D50] rounded px-3 py-2 text-xs text-[#15130E] focus:outline-none transition-all" />
                 </div>
               </div>
               <div>
-                <label className="block text-[10px] uppercase tracking-wider text-gray-400 font-semibold mb-1 font-mono">Website / Domain</label>
-                <input type="text" value={formWebsite} onChange={(e) => setFormWebsite(e.target.value)} className="w-full bg-white/[0.03] border border-white/10 focus:border-[#2F5D50] rounded px-3 py-2 text-xs text-white focus:outline-none" />
+                <label className="block text-[10px] uppercase tracking-wider text-[#5B564C] font-semibold mb-1 font-mono">Website / Domain</label>
+                <input type="text" value={formWebsite} onChange={(e) => setFormWebsite(e.target.value)} className="w-full bg-white/60 border border-[#D3CEC0] focus:border-[#2F5D50] focus:ring-1 focus:ring-[#2F5D50] rounded px-3 py-2 text-xs text-[#15130E] focus:outline-none transition-all" />
               </div>
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-[10px] uppercase tracking-wider text-gray-400 font-semibold mb-1 font-mono">Category / Silo</label>
-                  <input type="text" value={formCategory} onChange={(e) => setFormCategory(e.target.value)} className="w-full bg-white/[0.03] border border-white/10 focus:border-[#2F5D50] rounded px-3 py-2 text-xs text-white focus:outline-none" />
+                  <label className="block text-[10px] uppercase tracking-wider text-[#5B564C] font-semibold mb-1 font-mono">Category / Silo</label>
+                  <input type="text" value={formCategory} onChange={(e) => setFormCategory(e.target.value)} className="w-full bg-white/60 border border-[#D3CEC0] focus:border-[#2F5D50] focus:ring-1 focus:ring-[#2F5D50] rounded px-3 py-2 text-xs text-[#15130E] focus:outline-none transition-all" />
                 </div>
                 <div>
-                  <label className="block text-[10px] uppercase tracking-wider text-gray-400 font-semibold mb-1 font-mono">Location</label>
-                  <input type="text" value={formLocation} onChange={(e) => setFormLocation(e.target.value)} className="w-full bg-white/[0.03] border border-white/10 focus:border-[#2F5D50] rounded px-3 py-2 text-xs text-white focus:outline-none" />
+                  <label className="block text-[10px] uppercase tracking-wider text-[#5B564C] font-semibold mb-1 font-mono">Location</label>
+                  <input type="text" value={formLocation} onChange={(e) => setFormLocation(e.target.value)} className="w-full bg-white/60 border border-[#D3CEC0] focus:border-[#2F5D50] focus:ring-1 focus:ring-[#2F5D50] rounded px-3 py-2 text-xs text-[#15130E] focus:outline-none transition-all" />
                 </div>
               </div>
               <div>
-                <label className="block text-[10px] uppercase tracking-wider text-gray-400 font-semibold mb-1 font-mono">Prospect Pipeline Status</label>
-                <select value={formStatus} onChange={(e) => setFormStatus(e.target.value)} className="w-full bg-white/[0.03] border border-white/10 focus:border-[#2F5D50] rounded px-3 py-2 text-xs text-white focus:outline-none">
-                  <option value="new" className="bg-[#0c0c0c]">new (Queued)</option>
-                  <option value="welcome_sent" className="bg-[#0c0c0c]">welcome_sent (Welcome Sent)</option>
-                  <option value="clicked" className="bg-[#0c0c0c]">clicked (Clicked Email)</option>
-                  <option value="booked" className="bg-[#0c0c0c]">booked (Call Booked)</option>
+                <label className="block text-[10px] uppercase tracking-wider text-[#5B564C] font-semibold mb-1 font-mono">Prospect Pipeline Status</label>
+                <select value={formStatus} onChange={(e) => setFormStatus(e.target.value)} className="w-full bg-white/60 border border-[#D3CEC0] focus:border-[#2F5D50] rounded px-3 py-2 text-xs text-[#15130E] focus:outline-none cursor-pointer">
+                  <option value="New Lead" className="bg-white text-[#15130E]">New Lead (Form Submission)</option>
+                  <option value="Imported" className="bg-white text-[#15130E]">Imported (CSV Lead)</option>
+                  <option value="welcome_sent" className="bg-white text-[#15130E]">welcome_sent (Welcome Sent)</option>
+                  <option value="clicked" className="bg-white text-[#15130E]">clicked (Clicked Email)</option>
+                  <option value="booked" className="bg-white text-[#15130E]">booked (Call Booked)</option>
+                  <option value="new" className="bg-white text-[#15130E]">new (Queued)</option>
                 </select>
               </div>
-              <div className="flex justify-end gap-3 pt-4 border-t border-white/5">
-                <button type="button" onClick={() => setShowEditModal(false)} className="px-4 py-2 border border-white/10 hover:bg-white/[0.02] text-xs font-semibold uppercase tracking-wider cursor-pointer">Cancel</button>
+              <div className="flex justify-end gap-3 pt-4 border-t border-[#D3CEC0]">
+                <button type="button" onClick={() => setShowEditModal(false)} className="px-4 py-2 border border-[#D3CEC0] hover:bg-white/40 text-[#15130E] text-xs font-semibold uppercase tracking-wider cursor-pointer">Cancel</button>
                 <button type="submit" className="px-4 py-2 bg-[#2F5D50] hover:bg-[#234A40] text-white text-xs font-semibold uppercase tracking-wider cursor-pointer">Save Changes</button>
               </div>
             </form>
@@ -1118,31 +1303,31 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout }) => {
 
       {/* EMAIL PREVIEW MODAL */}
       {showPreviewModal && previewEmail && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 backdrop-blur-sm p-4">
-          <div className="w-full max-w-2xl bg-[#0c0c0c] border border-white/10 rounded-2xl overflow-hidden shadow-2xl flex flex-col max-h-[85vh]">
-            <div className="bg-white/[0.02] border-b border-white/10 px-6 py-4 flex items-center justify-between">
-              <h3 className="text-sm font-semibold uppercase tracking-wider text-white font-mono">Personalized AI Outreach Preview</h3>
-              <button onClick={() => setShowPreviewModal(false)} className="text-gray-500 hover:text-white transition-colors cursor-pointer text-xs">✕</button>
+        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
+          <div className="w-full max-w-2xl bg-[#EFEDE5] border border-[#D3CEC0] rounded-2xl overflow-hidden shadow-2xl flex flex-col max-h-[85vh] text-[#15130E]">
+            <div className="bg-[#E7E4D9]/60 border-b border-[#D3CEC0] px-6 py-4 flex items-center justify-between">
+              <h3 className="text-sm font-semibold uppercase tracking-wider text-[#15130E] font-mono">Personalized AI Outreach Preview</h3>
+              <button onClick={() => setShowPreviewModal(false)} className="text-[#8B857A] hover:text-[#15130E] transition-colors cursor-pointer text-xs">✕</button>
             </div>
             
             <div className="p-6 overflow-y-auto space-y-4 flex-grow">
-              <div className="bg-black/50 border border-white/5 p-4 rounded-lg space-y-2">
-                <p className="text-xs text-gray-500 font-mono"><span className="text-[#2F5D50] font-semibold">Subject:</span> {previewEmail.subject}</p>
+              <div className="bg-white/60 border border-[#D3CEC0] p-4 rounded-lg space-y-2">
+                <p className="text-xs text-[#5B564C] font-mono"><span className="text-[#2F5D50] font-semibold">Subject:</span> {previewEmail.subject}</p>
               </div>
               <div 
-                className="bg-black/30 border border-white/5 p-6 rounded-lg text-sm text-gray-300 leading-relaxed space-y-4 font-sans select-text"
+                className="bg-white border border-[#D3CEC0] p-6 rounded-lg text-sm text-[#15130E] leading-relaxed space-y-4 font-sans select-text"
                 dangerouslySetInnerHTML={{ __html: previewEmail.body }}
               />
             </div>
             
-            <div className="flex justify-end gap-3 p-4 border-t border-white/5 bg-white/[0.01]">
+            <div className="flex justify-end gap-3 p-4 border-t border-[#D3CEC0] bg-[#E7E4D9]/20">
               <button type="button" onClick={() => setShowPreviewModal(false)} className="px-5 py-2 bg-[#2F5D50] hover:bg-[#234A40] text-white text-xs font-semibold uppercase tracking-wider cursor-pointer">Close Preview</button>
             </div>
           </div>
         </div>
       )}
 
-      <Footer />
+      <SiteFooter showWebGL={false} />
     </div>
   );
 };

@@ -1,10 +1,14 @@
 import React from 'react';
 import HeroWebGLBackground from './HeroWebGLBackground';
 
-const SiteFooter: React.FC = () => {
+interface SiteFooterProps {
+  showWebGL?: boolean;
+}
+
+const SiteFooter: React.FC<SiteFooterProps> = ({ showWebGL = true }) => {
   return (
     <footer className="footer relative overflow-hidden">
-      <HeroWebGLBackground />
+      {showWebGL && <HeroWebGLBackground />}
       <div className="footer-inner relative z-10">
         <div className="footer-grid">
           <div>
