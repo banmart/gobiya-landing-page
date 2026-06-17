@@ -28,7 +28,252 @@ interface ArticleData {
 // Each article is statically registered here so we can do fast client-side
 // routing without a DB round-trip. Add new articles to this map.
 const ARTICLES: Record<string, ArticleData> = {
-  'multi-location-websites-for-franchises': {
+'introducing-open-knowledge-format-why-it-matters-for-ai-ready-businesses': {
+    slug: 'introducing-open-knowledge-format-why-it-matters-for-ai-ready-businesses',
+    title: "Introducing the Open Knowledge Format: Why It Matters for AI-Ready Businesses",
+    category: 'Strategy',
+    readTime: '8 min read',
+    date: 'June 17, 2026',
+    image: '/images/article-introducing-open-knowledge-format-thumbnail.webp',
+    heroAlt: 'A professional, lifelike photo of a modern technology growth engineering meeting reviewing structured files and data schema metadata on a dashboard',
+    metaDescription: "Google Cloud's new open spec, OKF, formalizes the 'LLM-wiki' pattern into a portable, vendor-neutral standard for the knowledge AI agents actually need.",
+    content: (
+      <>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "What is the Open Knowledge Format (OKF)?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "OKF is an open specification introduced by Google Cloud for representing the metadata, context, and curated knowledge that AI systems and agents need. It represents knowledge as a directory of markdown files with YAML frontmatter and a small set of shared conventions, so knowledge written by one producer can be consumed by a different agent or tool without any translation layer."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "What problem does OKF solve?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "It solves the fragmentation of internal knowledge. The context AI models need typically lives scattered across incompatible systems: metadata catalogs, wikis, code comments, and people's heads. Every agent builder re-solves the same context-assembly problem. OKF gives them a common, portable format so knowledge stops being locked behind whichever tool created it."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Do I need to use Google Cloud to use OKF?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No. OKF is an open, vendor-neutral standard that works independently of any cloud, database, model provider, or agent framework."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "How does OKF relate to GEO (generative engine optimization)?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "They share the same thesis. GEO is about structuring your public content so AI search engines cite and surface it; OKF is about structuring knowledge, public or internal, so AI agents can consume it. Both rest on the same foundation: machines reward structure, clarity, explicit relationships, and portable formats."
+                  }
+                }
+              ]
+            })
+          }}
+        />
+
+        <p className="lead-text italic text-gray-600 text-lg mb-8">
+          Google Cloud's new open spec, OKF, formalizes the "LLM-wiki" pattern into a portable, vendor-neutral standard for the knowledge AI agents actually need. Here's what it is, why it's a milestone, and what it means for any business that wants to be readable by machines.
+        </p>
+
+        <h2 id="the-short-version" className="text-2xl font-semibold text-gray-900 mt-10 mb-4 font-display">1. The short version</h2>
+        <p className="mb-6">
+          On June 12, 2026, Google Cloud introduced the <a href="https://cloud.google.com/blog/products/data-analytics/how-the-open-knowledge-format-can-improve-data-sharing/" target="_blank" rel="noopener noreferrer" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">Open Knowledge Format (OKF)</a>, an open specification for representing the metadata, context, and curated knowledge that modern AI systems and agents need to do their jobs. The headline idea is deliberately unglamorous, and that's its strength: OKF v0.1 represents knowledge as a directory of markdown files with YAML frontmatter, plus a small set of agreed-upon conventions so that knowledge written by one team or tool can be read by a different team's agents without any translation layer. No new runtime, no required SDK, no proprietary account, just markdown, files, and a little structured frontmatter.
+        </p>
+        <p className="mb-6">
+          If you've used Obsidian, Notion, Hugo, or the wave of <code className="bg-gray-100 px-1.5 py-0.5 rounded text-[0.9em] text-gray-800 font-mono">AGENTS.md</code> / <code className="bg-gray-100 px-1.5 py-0.5 rounded text-[0.9em] text-gray-800 font-mono">CLAUDE.md</code> convention files that emerged over the past year, the shape will feel familiar. What OKF adds is interoperability: a common answer to "what fields should every knowledge document carry, and what do the filenames mean?" so these patterns can finally cooperate instead of each being bespoke. For any business thinking seriously about being usable by AI, this is a meaningful moment, because it points at where machine-readable knowledge is heading, and it's a direction that rewards the businesses already structuring their content for machines to consume.
+        </p>
+
+        <h2 id="the-problem" className="text-2xl font-semibold text-gray-900 mt-10 mb-4 font-display">2. The problem OKF solves: a fragmented context landscape</h2>
+        <p className="mb-6">
+          Foundation models are powerful but context-starved. As Google Cloud's announcement frames it, the lack of relevant context often limits what models can do, especially as they're used to build agentic systems, they can write code, summarize a document, or analyze a dataset, but only if they have the right information in front of them. And in most organizations, the information that matters is internal knowledge: the schema of a table, what a metric actually means to your business, the runbook for an incident, the join paths between two systems, the deprecation notice for an old API.
+        </p>
+        <p className="mb-6">
+          The trouble is where that knowledge lives. Today it's scattered across mutually incompatible surfaces: metadata catalogs with their own APIs, wikis and shared drives, code comments and docstrings and notebook cells, and, candidly, the heads of a few senior people. When an AI agent needs to answer something like "How do I compute weekly active users from our event stream?", it has to assemble the answer from those scattered, incompatible sources. Every agent builder ends up solving the same context-assembly problem from scratch, every catalog vendor reinvents the same data models, and the knowledge itself stays locked behind whatever tool created it. That fragmentation, not a shortage of knowledge, is the bottleneck OKF targets.
+        </p>
+
+        <h2 id="what-okf-is" className="text-2xl font-semibold text-gray-900 mt-10 mb-4 font-display">3. What the Open Knowledge Format actually is</h2>
+        <p className="mb-6">
+          OKF is a way of writing knowledge down so that both humans and machines can read it, and so that it survives moving between systems. It formalizes what the AI researcher Andrej Karpathy crisply described as the <a href="https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f" target="_blank" rel="noopener noreferrer" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">LLM-wiki pattern</a>, the idea that a living library of markdown notes is a natural home for the facts an AI system reasons over. Karpathy's observation is that the bookkeeping humans abandon, keeping a personal wiki updated, cross-references current, files in sync, is exactly what language models are good at: they don't get bored, don't forget to update a cross-reference, and can touch fifteen files in one pass.
+        </p>
+        <p className="mb-6">
+          That pattern kept reappearing under different names, Obsidian vaults wired to coding agents, the <code className="bg-gray-100 px-1.5 py-0.5 rounded text-[0.9em] text-gray-800 font-mono">AGENTS.md</code> / <code className="bg-gray-100 px-1.5 py-0.5 rounded text-[0.9em] text-gray-800 font-mono">CLAUDE.md</code> convention files, repos full of <code className="bg-gray-100 px-1.5 py-0.5 rounded text-[0.9em] text-gray-800 font-mono">index.md</code> and <code className="bg-gray-100 px-1.5 py-0.5 rounded text-[0.9em] text-gray-800 font-mono">log.md</code> artifacts that agents read before doing real work, "metadata as code" inside data teams, but each instance was bespoke and none were designed to cooperate. OKF is the small set of conventions that makes them interoperable. As published, it's described by its authors as three things at once: <strong>just markdown</strong> (readable in any editor, renderable on GitHub, indexable by any search tool), <strong>just files</strong> (shippable as a tarball, hostable in any git repo, mountable on any filesystem), and <strong>just YAML frontmatter</strong> for the handful of structured fields that need to be queryable: type, title, description, resource, tags, and timestamp. That's the entire surface. The full v0.1 spec fits on a single page.
+        </p>
+
+        <h2 id="how-bundles-work" className="text-2xl font-semibold text-gray-900 mt-10 mb-4 font-display">4. How an OKF bundle is structured</h2>
+        <p className="mb-6">
+          An OKF <strong>bundle</strong> is simply a directory of markdown files, where each file represents a <strong>concept</strong>, anything you want to capture: a table, a dataset, a metric, a playbook, a runbook, an API. One concept per file, and the file path <em>is</em> the concept's identity. A sales bundle might hold an <code className="bg-gray-100 px-1.5 py-0.5 rounded text-[0.9em] text-gray-800 font-mono">index.md</code> at the root, then folders like <code className="bg-gray-100 px-1.5 py-0.5 rounded text-[0.9em] text-gray-800 font-mono">datasets/</code>, <code className="bg-gray-100 px-1.5 py-0.5 rounded text-[0.9em] text-gray-800 font-mono">tables/</code>, and <code className="bg-gray-100 px-1.5 py-0.5 rounded text-[0.9em] text-gray-800 font-mono">metrics/</code>, each with its own files (<code className="bg-gray-100 px-1.5 py-0.5 rounded text-[0.9em] text-gray-800 font-mono">orders.md</code>, <code className="bg-gray-100 px-1.5 py-0.5 rounded text-[0.9em] text-gray-800 font-mono">customers.md</code>, <code className="bg-gray-100 px-1.5 py-0.5 rounded text-[0.9em] text-gray-800 font-mono">weekly_active_users.md</code>) and index.
+        </p>
+        <p className="mb-6">
+          Each concept document carries a small block of YAML frontmatter for the structured, queryable fields: type, title, description, resource link, tags, timestamp, followed by a markdown body for everything else: the schema table, the description, the join paths, whatever the concept needs. Concepts link to one another with ordinary markdown links, which turns the directory into a <em>graph</em> of relationships richer than the simple parent/child nesting the folders imply. Bundles can optionally include <code className="bg-gray-100 px-1.5 py-0.5 rounded text-[0.9em] text-gray-800 font-mono">index.md</code> files (so an agent can progressively disclose detail as it navigates the hierarchy) and <code className="bg-gray-100 px-1.5 py-0.5 rounded text-[0.9em] text-gray-800 font-mono">log.md</code> files (a chronological history of changes). The elegance is that none of this requires special tooling to create or read; it's the same files a human edits in a text editor and an agent parses directly.
+        </p>
+
+        <div className="my-8 sm:my-12">
+          <img 
+            src="/images/article-introducing-open-knowledge-format-diagram.webp" 
+            alt="A software engineer explaining the Open Knowledge Format bundle structure on a whiteboard in a modern dark-themed meeting room" 
+            className="w-full rounded-xl border border-white/10 shadow-2xl"
+          />
+          <p className="text-xs text-gray-500 mt-3 text-center font-mono">
+            Standardizing metadata and folder hierarchies: how OKF structures concepts, indices, and logs.
+          </p>
+        </div>
+
+        <h2 id="three-principles" className="text-2xl font-semibold text-gray-900 mt-10 mb-4 font-display">5. The three principles behind the design</h2>
+        <p className="mb-6">
+          Three design choices explain why OKF is built the way it is, and each carries a lesson for anyone structuring knowledge for AI.
+        </p>
+        <ul className="list-disc pl-6 mb-8 space-y-3">
+          <li>
+            <strong>1. Minimally opinionated:</strong> OKF requires exactly one thing of every concept: a <code className="bg-gray-100 px-1.5 py-0.5 rounded text-[0.9em] text-gray-800 font-mono">type</code> field. Everything else—what types exist, what other fields to include, what sections the body contains—is left to the producer. The spec defines the <em>interoperability surface</em>, not your content model.
+          </li>
+          <li>
+            <strong>2. Producer/consumer independence:</strong> OKF cleanly separates who writes the knowledge from who reads it. A bundle hand-authored by a human can be consumed by an AI agent; a bundle generated by an export pipeline can be browsed in a visualizer; a bundle written by one LLM can be queried by another. The format is the contract.
+          </li>
+          <li>
+            <strong>3. Format, not platform:</strong> OKF isn't tied to any cloud, database, model provider, or agent framework, and by design it will never require a proprietary account or SDK to read, write, or serve. Google's stated reasoning is telling: the value of a knowledge format comes from how many parties speak it, not from who owns it.
+          </li>
+        </ul>
+
+        <h2 id="format-not-service" className="text-2xl font-semibold text-gray-900 mt-10 mb-4 font-display">6. Why "a format, not another service" is the whole point</h2>
+        <p className="mb-6">
+          The most important sentence in Google's announcement may be this: the answer to fragmented knowledge isn't another knowledge service, it's a <em>format</em>. The distinction matters enormously. A service locks knowledge behind an API, an account, and a vendor relationship; a format lets knowledge be produced by anyone without an SDK, consumed by anyone without an integration, moved between systems and organizations intact, version-controlled alongside the code it describes, and read by both humans and agents from the same file with no translation step.
+        </p>
+        <p className="mb-6">
+          This is the same insight that made earlier open formats—HTML, Markdown, CSV, JSON—so durable: they won not because they were sophisticated but because they were <em>portable and universal</em>. OKF is a bet that AI knowledge needs the same treatment, and that the winning representation will be the one the most tools and organizations can speak, not the one with the best proprietary features. To make it concrete, Google shipped reference implementations at both ends, an enrichment agent that walks a BigQuery dataset and drafts an OKF document for every table, and a self-contained static HTML visualizer that turns any bundle into an interactive graph with no backend, plus three ready-to-browse sample bundles. But the authors are explicit that the tools are proofs of concept; the <em>format itself is the contribution</em>.
+        </p>
+
+        <h2 id="what-it-signals" className="text-2xl font-semibold text-gray-900 mt-10 mb-4 font-display">7. What this signals for AI-ready businesses</h2>
+        <p className="mb-6">
+          Step back from the data-engineering specifics and OKF is a signal about the direction of the whole AI ecosystem, one every business should read. The signal is this: <strong>the knowledge AI systems rely on is moving toward open, structured, machine-readable, portable representations, and the organizations whose knowledge is already in that shape will be the ones AI agents can actually use.</strong> As AI agents increasingly mediate how customers discover, evaluate, and interact with businesses, being legible to those agents stops being a nicety and becomes table stakes.
+        </p>
+        <p className="mb-6">
+          The practical reading for a business isn't "go implement OKF tomorrow", most companies aren't shipping BigQuery metadata bundles. It's that the <em>principles</em> OKF encodes are exactly the principles that make a business visible and usable in an AI-mediated world: structure your knowledge so machines can parse it, keep it in clean and portable formats rather than locked in proprietary silos, make relationships between concepts explicit, and treat your knowledge like code that's curated and versioned rather than scattered across tools and people's heads. A business whose product information, documentation, and expertise live in clean, structured, linkable form is one an AI agent, or an AI search engine, can read, trust, and surface. By aligning with <a href="/insights/what-data-sources-do-llms-crawl-to-verify-b2b-company-information" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">what data sources LLMs crawl to verify B2B company information</a>, organizations ensure they remain legible to these agents. A business whose knowledge is trapped in PDFs, screenshots, and tribal memory is invisible to exactly the systems that increasingly drive discovery.
+        </p>
+
+        <h2 id="okf-and-geo" className="text-2xl font-semibold text-gray-900 mt-10 mb-4 font-display">8. OKF and GEO: the same thesis, one layer deeper</h2>
+        <p className="mb-6">
+          For anyone following <a href="/insights/what-is-generative-engine-optimization-and-how-does-it-work" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">generative engine optimization (GEO)</a>, the practice of structuring content so AI engines cite and surface it, OKF will feel like a familiar thesis taken one layer deeper. GEO is about making your <em>public</em> content legible and trustworthy to the <a href="/insights/chatgpt-vs-google-for-business-discovery" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">LLMs behind AI search</a>; OKF is about making <em>any</em> knowledge, public or internal, legible to the agents that consume it. Both rest on the same foundation: machines reward structure, clarity, explicit relationships, and portable formats, and they penalize fragmentation and opacity.
+        </p>
+        <p className="mb-6">
+          The connection is direct. The same discipline that gets a brand cited in an AI answer—clean structure, clear <a href="/insights/brand-entity-extraction-perception-drift" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">entities</a>, explicit links between concepts, and machine-parseable evidence—is the discipline OKF formalizes for knowledge bundles. A business that has done the work to be AI-discoverable on its public surfaces has already internalized the mindset OKF encodes; a business that hasn't will find both equally foreign. OKF is, in effect, the data-layer expression of a truth GEO practitioners have been acting on for two years: in an AI-mediated world, <em>how your knowledge is structured determines whether machines can use it</em>, and that increasingly determines whether you're discovered at all.
+        </p>
+
+        <h2 id="how-to-start" className="text-2xl font-semibold text-gray-900 mt-10 mb-4 font-display">9. How to start thinking in OKF terms</h2>
+        <p className="mb-6">
+          You don't need to adopt the specification to benefit from its lessons. A few practical moves any business can make, in rough order of accessibility:
+        </p>
+        <ul className="list-disc pl-6 mb-8 space-y-3">
+          <li>
+            <strong>Get knowledge out of silos:</strong> Favor markdown, structured text, and open formats over PDFs, screenshots, and proprietary tools for the knowledge that describes your business, products, and processes.
+          </li>
+          <li>
+            <strong>Make structure explicit:</strong> Use clear headings, consistent fields (what something is, what it relates to, when it was updated), and explicit links between related concepts.
+          </li>
+          <li>
+            <strong>Treat knowledge like code:</strong> Curate it, version it, keep it current, and store it where it can be maintained deliberately rather than scattered across drives and chat threads.
+          </li>
+          <li>
+            <strong>Add the metadata machines query:</strong> The fields OKF standardizes—type, title, description, source link, tags, timestamp—are exactly the fields that make any knowledge findable and trustworthy to a machine.
+          </li>
+          <li>
+            <strong>For technical teams:</strong> Read the spec and try the reference tools. The <a href="https://github.com/GoogleCloudPlatform/knowledge-catalog/tree/main/okf" target="_blank" rel="noopener noreferrer" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">OKF spec and sample bundles are on GitHub</a>.
+          </li>
+        </ul>
+
+        <h2 id="how-gobiya-helps" className="text-2xl font-semibold text-gray-900 mt-10 mb-4 font-display">10. How Gobiya helps you become machine-readable</h2>
+        <p className="mb-6">
+          OKF validates the core of what Gobiya builds for clients: businesses that are structured to be read, trusted, and surfaced by machines, not just by people. Our <a href="/capabilities/seo-discoverability" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">SEO and AI-engine discoverability work</a> is built on exactly the principles OKF formalizes—clean structure, explicit entities and relationships, machine-parseable metadata, and portable, open formats—applied to the public surfaces where AI search engines discover and cite businesses.
+        </p>
+        <p className="mb-6">
+          We <a href="/capabilities/web-development" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">build sites on fast, clean, crawlable infrastructure</a> so the structure is legible to agents and crawlers rather than buried in heavy, opaque pages, and we wire everything into <a href="/capabilities/native-crm" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">native CRM and pipeline attribution</a> so the visibility gains connect to real inquiries, not vanity metrics. The outcome pattern shows up in work like <a href="/case-studies/smile-center-dentistry" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">SmileCenter Dentistry's growth in search impressions</a>. If you want your business structured to be legible to AI agents and search engines as that shift plays out, <a href="/book" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">book a strategy call</a> and ask about an AI-discoverability assessment.
+        </p>
+
+        <h2 id="right-call" className="text-2xl font-semibold text-gray-900 mt-10 mb-4 font-display">11. The right call on knowledge formats</h2>
+        <p className="mb-6">
+          So what is the Open Knowledge Format, and why does it matter? It's Google Cloud's open, vendor-neutral specification for representing AI-relevant knowledge as a directory of markdown files with a little YAML frontmatter, formalizing the LLM-wiki pattern into something portable and interoperable. It matters because it's a clear signal of where the AI ecosystem is heading: toward open, structured, machine-readable knowledge, and toward rewarding the organizations whose knowledge already lives in that shape.
+        </p>
+        <p className="mb-6">
+          Two takeaways matter most. First: the value is in the <em>format, not the platform</em>, and the same logic applies to your own knowledge: the more it lives in clean, portable, structured form, the more usable it is to every AI system. Second: whether or not you implement the spec, the principles behind it—structure, explicit relationships, machine-readable metadata, knowledge treated like code—are the principles that determine whether your business is legible to the AI agents and search engines. Getting your knowledge into that shape is the move.
+        </p>
+
+        <h2 id="faq" className="text-2xl font-semibold text-gray-900 mt-10 mb-4 font-display">12. Frequently Asked Questions</h2>
+        <div className="space-y-6 mb-10 border-t border-gray-800 pt-6">
+          <div>
+            <h4 className="text-[17px] font-semibold text-gray-900 mb-2 font-display">What is the Open Knowledge Format (OKF)?</h4>
+            <p className="text-gray-700 text-[15px] leading-relaxed">
+              OKF is an open specification introduced by Google Cloud on June 12, 2026, for representing the metadata, context, and curated knowledge that AI systems and agents need. OKF v0.1 represents knowledge as a directory of markdown files with YAML frontmatter and a small set of shared conventions, so knowledge written by one producer can be consumed by a different agent or tool without any translation layer.
+            </p>
+          </div>
+          <div>
+            <h4 className="text-[17px] font-semibold text-gray-900 mb-2 font-display">What problem does OKF solve?</h4>
+            <p className="text-gray-700 text-[15px] leading-relaxed">
+              The fragmentation of internal knowledge. The context AI models need, table schemas, definitions, API notes, typically lives scattered across incompatible systems: metadata catalogs, wikis, code comments, and people's heads. OKF gives them a common, portable format so knowledge stops being locked behind whichever tool created it.
+            </p>
+          </div>
+          <div>
+            <h4 className="text-[17px] font-semibold text-gray-900 mb-2 font-display">Do I need to use Google Cloud to use OKF?</h4>
+            <p className="text-gray-700 text-[15px] leading-relaxed">
+              No. OKF is an open, vendor-neutral standard that works independently of any cloud, database, model provider, or agent framework. The spec and sample bundles are openly available on GitHub.
+            </p>
+          </div>
+          <div>
+            <h4 className="text-[17px] font-semibold text-gray-900 mb-2 font-display">How does OKF relate to GEO (generative engine optimization)?</h4>
+            <p className="text-gray-700 text-[15px] leading-relaxed">
+              They share a thesis. GEO is about structuring your public content so AI search engines cite and surface it; OKF is about structuring knowledge, public or internal, so AI agents can consume it. Both rest on the same foundation: machines reward structure, clarity, explicit relationships, and portable formats.
+            </p>
+          </div>
+        </div>
+
+        <h2 id="sources" className="text-2xl font-semibold text-gray-900 mt-10 mb-4 font-display">13. Sources & further reading</h2>
+        <ul className="list-disc pl-6 mb-8 space-y-2 text-gray-700 text-[15px]">
+          <li>
+            <a href="https://cloud.google.com/blog/products/data-analytics/how-the-open-knowledge-format-can-improve-data-sharing/" target="_blank" rel="noopener noreferrer" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">Introducing the Open Knowledge Format — Google Cloud Blog</a> — official announcement (June 12, 2026).
+          </li>
+          <li>
+            <a href="https://github.com/GoogleCloudPlatform/knowledge-catalog/tree/main/okf" target="_blank" rel="noopener noreferrer" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">OKF specification and reference code — GitHub</a>.
+          </li>
+          <li>
+            <a href="https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f" target="_blank" rel="noopener noreferrer" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">Andrej Karpathy — the LLM Wiki gist</a>.
+          </li>
+        </ul>
+
+        <h2 id="related" className="text-2xl font-semibold text-gray-900 mt-10 mb-4 font-display">14. Related on Gobiya</h2>
+        <ul className="list-disc pl-6 mb-8 space-y-2 text-gray-700 text-[15px]">
+          <li>
+            <a href="/capabilities/seo-discoverability" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">SEO & AI-engine discoverability</a>
+          </li>
+          <li>
+            <a href="/capabilities/web-development" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">Web development for fast, clean, crawlable sites</a>
+          </li>
+          <li>
+            <a href="/capabilities/native-crm" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">Native CRM & pipeline attribution</a>
+          </li>
+          <li>
+            <a href="/case-studies/smile-center-dentistry" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">SmileCenter Dentistry case study</a>
+          </li>
+          <li>
+            <a href="/insights" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">More insights</a>
+          </li>
+          <li>
+            <a href="/book" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">Book a strategy call</a>
+          </li>
+        </ul>
+      </>
+    )
+  },
+    'multi-location-websites-for-franchises': {
     slug: 'multi-location-websites-for-franchises',
     title: 'Multi Location Websites for Franchises: The 2026 Web Architecture Playbook',
     category: 'Local SEO',
@@ -7572,251 +7817,6 @@ const ARTICLES: Record<string, ArticleData> = {
             </div>
           ))}
         </div>
-      </>
-    )
-  },
-  'introducing-open-knowledge-format-why-it-matters-for-ai-ready-businesses': {
-    slug: 'introducing-open-knowledge-format-why-it-matters-for-ai-ready-businesses',
-    title: "Introducing the Open Knowledge Format: Why It Matters for AI-Ready Businesses",
-    category: 'Strategy',
-    readTime: '8 min read',
-    date: 'June 17, 2026',
-    image: '/images/article-introducing-open-knowledge-format-thumbnail.webp',
-    heroAlt: 'A professional, lifelike photo of a modern technology growth engineering meeting reviewing structured files and data schema metadata on a dashboard',
-    metaDescription: "Google Cloud's new open spec, OKF, formalizes the 'LLM-wiki' pattern into a portable, vendor-neutral standard for the knowledge AI agents actually need.",
-    content: (
-      <>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "FAQPage",
-              "mainEntity": [
-                {
-                  "@type": "Question",
-                  "name": "What is the Open Knowledge Format (OKF)?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "OKF is an open specification introduced by Google Cloud for representing the metadata, context, and curated knowledge that AI systems and agents need. It represents knowledge as a directory of markdown files with YAML frontmatter and a small set of shared conventions, so knowledge written by one producer can be consumed by a different agent or tool without any translation layer."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "What problem does OKF solve?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "It solves the fragmentation of internal knowledge. The context AI models need typically lives scattered across incompatible systems: metadata catalogs, wikis, code comments, and people's heads. Every agent builder re-solves the same context-assembly problem. OKF gives them a common, portable format so knowledge stops being locked behind whichever tool created it."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "Do I need to use Google Cloud to use OKF?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "No. OKF is an open, vendor-neutral standard that works independently of any cloud, database, model provider, or agent framework."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "How does OKF relate to GEO (generative engine optimization)?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "They share the same thesis. GEO is about structuring your public content so AI search engines cite and surface it; OKF is about structuring knowledge, public or internal, so AI agents can consume it. Both rest on the same foundation: machines reward structure, clarity, explicit relationships, and portable formats."
-                  }
-                }
-              ]
-            })
-          }}
-        />
-
-        <p className="lead-text italic text-gray-600 text-lg mb-8">
-          Google Cloud's new open spec, OKF, formalizes the "LLM-wiki" pattern into a portable, vendor-neutral standard for the knowledge AI agents actually need. Here's what it is, why it's a milestone, and what it means for any business that wants to be readable by machines.
-        </p>
-
-        <h2 id="the-short-version" className="text-2xl font-semibold text-gray-900 mt-10 mb-4 font-display">1. The short version</h2>
-        <p className="mb-6">
-          On June 12, 2026, Google Cloud introduced the <a href="https://cloud.google.com/blog/products/data-analytics/how-the-open-knowledge-format-can-improve-data-sharing/" target="_blank" rel="noopener noreferrer" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">Open Knowledge Format (OKF)</a>, an open specification for representing the metadata, context, and curated knowledge that modern AI systems and agents need to do their jobs. The headline idea is deliberately unglamorous, and that's its strength: OKF v0.1 represents knowledge as a directory of markdown files with YAML frontmatter, plus a small set of agreed-upon conventions so that knowledge written by one team or tool can be read by a different team's agents without any translation layer. No new runtime, no required SDK, no proprietary account, just markdown, files, and a little structured frontmatter.
-        </p>
-        <p className="mb-6">
-          If you've used Obsidian, Notion, Hugo, or the wave of <code className="bg-gray-100 px-1.5 py-0.5 rounded text-[0.9em] text-gray-800 font-mono">AGENTS.md</code> / <code className="bg-gray-100 px-1.5 py-0.5 rounded text-[0.9em] text-gray-800 font-mono">CLAUDE.md</code> convention files that emerged over the past year, the shape will feel familiar. What OKF adds is interoperability: a common answer to "what fields should every knowledge document carry, and what do the filenames mean?" so these patterns can finally cooperate instead of each being bespoke. For any business thinking seriously about being usable by AI, this is a meaningful moment, because it points at where machine-readable knowledge is heading, and it's a direction that rewards the businesses already structuring their content for machines to consume.
-        </p>
-
-        <h2 id="the-problem" className="text-2xl font-semibold text-gray-900 mt-10 mb-4 font-display">2. The problem OKF solves: a fragmented context landscape</h2>
-        <p className="mb-6">
-          Foundation models are powerful but context-starved. As Google Cloud's announcement frames it, the lack of relevant context often limits what models can do, especially as they're used to build agentic systems, they can write code, summarize a document, or analyze a dataset, but only if they have the right information in front of them. And in most organizations, the information that matters is internal knowledge: the schema of a table, what a metric actually means to your business, the runbook for an incident, the join paths between two systems, the deprecation notice for an old API.
-        </p>
-        <p className="mb-6">
-          The trouble is where that knowledge lives. Today it's scattered across mutually incompatible surfaces: metadata catalogs with their own APIs, wikis and shared drives, code comments and docstrings and notebook cells, and, candidly, the heads of a few senior people. When an AI agent needs to answer something like "How do I compute weekly active users from our event stream?", it has to assemble the answer from those scattered, incompatible sources. Every agent builder ends up solving the same context-assembly problem from scratch, every catalog vendor reinvents the same data models, and the knowledge itself stays locked behind whatever tool created it. That fragmentation, not a shortage of knowledge, is the bottleneck OKF targets.
-        </p>
-
-        <h2 id="what-okf-is" className="text-2xl font-semibold text-gray-900 mt-10 mb-4 font-display">3. What the Open Knowledge Format actually is</h2>
-        <p className="mb-6">
-          OKF is a way of writing knowledge down so that both humans and machines can read it, and so that it survives moving between systems. It formalizes what the AI researcher Andrej Karpathy crisply described as the <a href="https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f" target="_blank" rel="noopener noreferrer" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">LLM-wiki pattern</a>, the idea that a living library of markdown notes is a natural home for the facts an AI system reasons over. Karpathy's observation is that the bookkeeping humans abandon, keeping a personal wiki updated, cross-references current, files in sync, is exactly what language models are good at: they don't get bored, don't forget to update a cross-reference, and can touch fifteen files in one pass.
-        </p>
-        <p className="mb-6">
-          That pattern kept reappearing under different names, Obsidian vaults wired to coding agents, the <code className="bg-gray-100 px-1.5 py-0.5 rounded text-[0.9em] text-gray-800 font-mono">AGENTS.md</code> / <code className="bg-gray-100 px-1.5 py-0.5 rounded text-[0.9em] text-gray-800 font-mono">CLAUDE.md</code> convention files, repos full of <code className="bg-gray-100 px-1.5 py-0.5 rounded text-[0.9em] text-gray-800 font-mono">index.md</code> and <code className="bg-gray-100 px-1.5 py-0.5 rounded text-[0.9em] text-gray-800 font-mono">log.md</code> artifacts that agents read before doing real work, "metadata as code" inside data teams, but each instance was bespoke and none were designed to cooperate. OKF is the small set of conventions that makes them interoperable. As published, it's described by its authors as three things at once: <strong>just markdown</strong> (readable in any editor, renderable on GitHub, indexable by any search tool), <strong>just files</strong> (shippable as a tarball, hostable in any git repo, mountable on any filesystem), and <strong>just YAML frontmatter</strong> for the handful of structured fields that need to be queryable: type, title, description, resource, tags, and timestamp. That's the entire surface. The full v0.1 spec fits on a single page.
-        </p>
-
-        <h2 id="how-bundles-work" className="text-2xl font-semibold text-gray-900 mt-10 mb-4 font-display">4. How an OKF bundle is structured</h2>
-        <p className="mb-6">
-          An OKF <strong>bundle</strong> is simply a directory of markdown files, where each file represents a <strong>concept</strong>, anything you want to capture: a table, a dataset, a metric, a playbook, a runbook, an API. One concept per file, and the file path <em>is</em> the concept's identity. A sales bundle might hold an <code className="bg-gray-100 px-1.5 py-0.5 rounded text-[0.9em] text-gray-800 font-mono">index.md</code> at the root, then folders like <code className="bg-gray-100 px-1.5 py-0.5 rounded text-[0.9em] text-gray-800 font-mono">datasets/</code>, <code className="bg-gray-100 px-1.5 py-0.5 rounded text-[0.9em] text-gray-800 font-mono">tables/</code>, and <code className="bg-gray-100 px-1.5 py-0.5 rounded text-[0.9em] text-gray-800 font-mono">metrics/</code>, each with its own files (<code className="bg-gray-100 px-1.5 py-0.5 rounded text-[0.9em] text-gray-800 font-mono">orders.md</code>, <code className="bg-gray-100 px-1.5 py-0.5 rounded text-[0.9em] text-gray-800 font-mono">customers.md</code>, <code className="bg-gray-100 px-1.5 py-0.5 rounded text-[0.9em] text-gray-800 font-mono">weekly_active_users.md</code>) and index.
-        </p>
-        <p className="mb-6">
-          Each concept document carries a small block of YAML frontmatter for the structured, queryable fields: type, title, description, resource link, tags, timestamp, followed by a markdown body for everything else: the schema table, the description, the join paths, whatever the concept needs. Concepts link to one another with ordinary markdown links, which turns the directory into a <em>graph</em> of relationships richer than the simple parent/child nesting the folders imply. Bundles can optionally include <code className="bg-gray-100 px-1.5 py-0.5 rounded text-[0.9em] text-gray-800 font-mono">index.md</code> files (so an agent can progressively disclose detail as it navigates the hierarchy) and <code className="bg-gray-100 px-1.5 py-0.5 rounded text-[0.9em] text-gray-800 font-mono">log.md</code> files (a chronological history of changes). The elegance is that none of this requires special tooling to create or read; it's the same files a human edits in a text editor and an agent parses directly.
-        </p>
-
-        <div className="my-8 sm:my-12">
-          <img 
-            src="/images/article-introducing-open-knowledge-format-diagram.webp" 
-            alt="A software engineer explaining the Open Knowledge Format bundle structure on a whiteboard in a modern dark-themed meeting room" 
-            className="w-full rounded-xl border border-white/10 shadow-2xl"
-          />
-          <p className="text-xs text-gray-500 mt-3 text-center font-mono">
-            Standardizing metadata and folder hierarchies: how OKF structures concepts, indices, and logs.
-          </p>
-        </div>
-
-        <h2 id="three-principles" className="text-2xl font-semibold text-gray-900 mt-10 mb-4 font-display">5. The three principles behind the design</h2>
-        <p className="mb-6">
-          Three design choices explain why OKF is built the way it is, and each carries a lesson for anyone structuring knowledge for AI.
-        </p>
-        <ul className="list-disc pl-6 mb-8 space-y-3">
-          <li>
-            <strong>1. Minimally opinionated:</strong> OKF requires exactly one thing of every concept: a <code className="bg-gray-100 px-1.5 py-0.5 rounded text-[0.9em] text-gray-800 font-mono">type</code> field. Everything else—what types exist, what other fields to include, what sections the body contains—is left to the producer. The spec defines the <em>interoperability surface</em>, not your content model.
-          </li>
-          <li>
-            <strong>2. Producer/consumer independence:</strong> OKF cleanly separates who writes the knowledge from who reads it. A bundle hand-authored by a human can be consumed by an AI agent; a bundle generated by an export pipeline can be browsed in a visualizer; a bundle written by one LLM can be queried by another. The format is the contract.
-          </li>
-          <li>
-            <strong>3. Format, not platform:</strong> OKF isn't tied to any cloud, database, model provider, or agent framework, and by design it will never require a proprietary account or SDK to read, write, or serve. Google's stated reasoning is telling: the value of a knowledge format comes from how many parties speak it, not from who owns it.
-          </li>
-        </ul>
-
-        <h2 id="format-not-service" className="text-2xl font-semibold text-gray-900 mt-10 mb-4 font-display">6. Why "a format, not another service" is the whole point</h2>
-        <p className="mb-6">
-          The most important sentence in Google's announcement may be this: the answer to fragmented knowledge isn't another knowledge service, it's a <em>format</em>. The distinction matters enormously. A service locks knowledge behind an API, an account, and a vendor relationship; a format lets knowledge be produced by anyone without an SDK, consumed by anyone without an integration, moved between systems and organizations intact, version-controlled alongside the code it describes, and read by both humans and agents from the same file with no translation step.
-        </p>
-        <p className="mb-6">
-          This is the same insight that made earlier open formats—HTML, Markdown, CSV, JSON—so durable: they won not because they were sophisticated but because they were <em>portable and universal</em>. OKF is a bet that AI knowledge needs the same treatment, and that the winning representation will be the one the most tools and organizations can speak, not the one with the best proprietary features. To make it concrete, Google shipped reference implementations at both ends, an enrichment agent that walks a BigQuery dataset and drafts an OKF document for every table, and a self-contained static HTML visualizer that turns any bundle into an interactive graph with no backend, plus three ready-to-browse sample bundles. But the authors are explicit that the tools are proofs of concept; the <em>format itself is the contribution</em>.
-        </p>
-
-        <h2 id="what-it-signals" className="text-2xl font-semibold text-gray-900 mt-10 mb-4 font-display">7. What this signals for AI-ready businesses</h2>
-        <p className="mb-6">
-          Step back from the data-engineering specifics and OKF is a signal about the direction of the whole AI ecosystem, one every business should read. The signal is this: <strong>the knowledge AI systems rely on is moving toward open, structured, machine-readable, portable representations, and the organizations whose knowledge is already in that shape will be the ones AI agents can actually use.</strong> As AI agents increasingly mediate how customers discover, evaluate, and interact with businesses, being legible to those agents stops being a nicety and becomes table stakes.
-        </p>
-        <p className="mb-6">
-          The practical reading for a business isn't "go implement OKF tomorrow", most companies aren't shipping BigQuery metadata bundles. It's that the <em>principles</em> OKF encodes are exactly the principles that make a business visible and usable in an AI-mediated world: structure your knowledge so machines can parse it, keep it in clean and portable formats rather than locked in proprietary silos, make relationships between concepts explicit, and treat your knowledge like code that's curated and versioned rather than scattered across tools and people's heads. A business whose product information, documentation, and expertise live in clean, structured, linkable form is one an AI agent, or an AI search engine, can read, trust, and surface. By aligning with <a href="/insights/what-data-sources-do-llms-crawl-to-verify-b2b-company-information" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">what data sources LLMs crawl to verify B2B company information</a>, organizations ensure they remain legible to these agents. A business whose knowledge is trapped in PDFs, screenshots, and tribal memory is invisible to exactly the systems that increasingly drive discovery.
-        </p>
-
-        <h2 id="okf-and-geo" className="text-2xl font-semibold text-gray-900 mt-10 mb-4 font-display">8. OKF and GEO: the same thesis, one layer deeper</h2>
-        <p className="mb-6">
-          For anyone following <a href="/insights/what-is-generative-engine-optimization-and-how-does-it-work" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">generative engine optimization (GEO)</a>, the practice of structuring content so AI engines cite and surface it, OKF will feel like a familiar thesis taken one layer deeper. GEO is about making your <em>public</em> content legible and trustworthy to the <a href="/insights/chatgpt-vs-google-for-business-discovery" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">LLMs behind AI search</a>; OKF is about making <em>any</em> knowledge, public or internal, legible to the agents that consume it. Both rest on the same foundation: machines reward structure, clarity, explicit relationships, and portable formats, and they penalize fragmentation and opacity.
-        </p>
-        <p className="mb-6">
-          The connection is direct. The same discipline that gets a brand cited in an AI answer—clean structure, clear <a href="/insights/brand-entity-extraction-perception-drift" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">entities</a>, explicit links between concepts, and machine-parseable evidence—is the discipline OKF formalizes for knowledge bundles. A business that has done the work to be AI-discoverable on its public surfaces has already internalized the mindset OKF encodes; a business that hasn't will find both equally foreign. OKF is, in effect, the data-layer expression of a truth GEO practitioners have been acting on for two years: in an AI-mediated world, <em>how your knowledge is structured determines whether machines can use it</em>, and that increasingly determines whether you're discovered at all.
-        </p>
-
-        <h2 id="how-to-start" className="text-2xl font-semibold text-gray-900 mt-10 mb-4 font-display">9. How to start thinking in OKF terms</h2>
-        <p className="mb-6">
-          You don't need to adopt the specification to benefit from its lessons. A few practical moves any business can make, in rough order of accessibility:
-        </p>
-        <ul className="list-disc pl-6 mb-8 space-y-3">
-          <li>
-            <strong>Get knowledge out of silos:</strong> Favor markdown, structured text, and open formats over PDFs, screenshots, and proprietary tools for the knowledge that describes your business, products, and processes.
-          </li>
-          <li>
-            <strong>Make structure explicit:</strong> Use clear headings, consistent fields (what something is, what it relates to, when it was updated), and explicit links between related concepts.
-          </li>
-          <li>
-            <strong>Treat knowledge like code:</strong> Curate it, version it, keep it current, and store it where it can be maintained deliberately rather than scattered across drives and chat threads.
-          </li>
-          <li>
-            <strong>Add the metadata machines query:</strong> The fields OKF standardizes—type, title, description, source link, tags, timestamp—are exactly the fields that make any knowledge findable and trustworthy to a machine.
-          </li>
-          <li>
-            <strong>For technical teams:</strong> Read the spec and try the reference tools. The <a href="https://github.com/GoogleCloudPlatform/knowledge-catalog/tree/main/okf" target="_blank" rel="noopener noreferrer" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">OKF spec and sample bundles are on GitHub</a>.
-          </li>
-        </ul>
-
-        <h2 id="how-gobiya-helps" className="text-2xl font-semibold text-gray-900 mt-10 mb-4 font-display">10. How Gobiya helps you become machine-readable</h2>
-        <p className="mb-6">
-          OKF validates the core of what Gobiya builds for clients: businesses that are structured to be read, trusted, and surfaced by machines, not just by people. Our <a href="/capabilities/seo-discoverability" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">SEO and AI-engine discoverability work</a> is built on exactly the principles OKF formalizes—clean structure, explicit entities and relationships, machine-parseable metadata, and portable, open formats—applied to the public surfaces where AI search engines discover and cite businesses.
-        </p>
-        <p className="mb-6">
-          We <a href="/capabilities/web-development" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">build sites on fast, clean, crawlable infrastructure</a> so the structure is legible to agents and crawlers rather than buried in heavy, opaque pages, and we wire everything into <a href="/capabilities/native-crm" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">native CRM and pipeline attribution</a> so the visibility gains connect to real inquiries, not vanity metrics. The outcome pattern shows up in work like <a href="/case-studies/smile-center-dentistry" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">SmileCenter Dentistry's growth in search impressions</a>. If you want your business structured to be legible to AI agents and search engines as that shift plays out, <a href="/book" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">book a strategy call</a> and ask about an AI-discoverability assessment.
-        </p>
-
-        <h2 id="right-call" className="text-2xl font-semibold text-gray-900 mt-10 mb-4 font-display">11. The right call on knowledge formats</h2>
-        <p className="mb-6">
-          So what is the Open Knowledge Format, and why does it matter? It's Google Cloud's open, vendor-neutral specification for representing AI-relevant knowledge as a directory of markdown files with a little YAML frontmatter, formalizing the LLM-wiki pattern into something portable and interoperable. It matters because it's a clear signal of where the AI ecosystem is heading: toward open, structured, machine-readable knowledge, and toward rewarding the organizations whose knowledge already lives in that shape.
-        </p>
-        <p className="mb-6">
-          Two takeaways matter most. First: the value is in the <em>format, not the platform</em>, and the same logic applies to your own knowledge: the more it lives in clean, portable, structured form, the more usable it is to every AI system. Second: whether or not you implement the spec, the principles behind it—structure, explicit relationships, machine-readable metadata, knowledge treated like code—are the principles that determine whether your business is legible to the AI agents and search engines. Getting your knowledge into that shape is the move.
-        </p>
-
-        <h2 id="faq" className="text-2xl font-semibold text-gray-900 mt-10 mb-4 font-display">12. Frequently Asked Questions</h2>
-        <div className="space-y-6 mb-10 border-t border-gray-800 pt-6">
-          <div>
-            <h4 className="text-[17px] font-semibold text-gray-900 mb-2 font-display">What is the Open Knowledge Format (OKF)?</h4>
-            <p className="text-gray-700 text-[15px] leading-relaxed">
-              OKF is an open specification introduced by Google Cloud on June 12, 2026, for representing the metadata, context, and curated knowledge that AI systems and agents need. OKF v0.1 represents knowledge as a directory of markdown files with YAML frontmatter and a small set of shared conventions, so knowledge written by one producer can be consumed by a different agent or tool without any translation layer.
-            </p>
-          </div>
-          <div>
-            <h4 className="text-[17px] font-semibold text-gray-900 mb-2 font-display">What problem does OKF solve?</h4>
-            <p className="text-gray-700 text-[15px] leading-relaxed">
-              The fragmentation of internal knowledge. The context AI models need, table schemas, definitions, API notes, typically lives scattered across incompatible systems: metadata catalogs, wikis, code comments, and people's heads. OKF gives them a common, portable format so knowledge stops being locked behind whichever tool created it.
-            </p>
-          </div>
-          <div>
-            <h4 className="text-[17px] font-semibold text-gray-900 mb-2 font-display">Do I need to use Google Cloud to use OKF?</h4>
-            <p className="text-gray-700 text-[15px] leading-relaxed">
-              No. OKF is an open, vendor-neutral standard that works independently of any cloud, database, model provider, or agent framework. The spec and sample bundles are openly available on GitHub.
-            </p>
-          </div>
-          <div>
-            <h4 className="text-[17px] font-semibold text-gray-900 mb-2 font-display">How does OKF relate to GEO (generative engine optimization)?</h4>
-            <p className="text-gray-700 text-[15px] leading-relaxed">
-              They share a thesis. GEO is about structuring your public content so AI search engines cite and surface it; OKF is about structuring knowledge, public or internal, so AI agents can consume it. Both rest on the same foundation: machines reward structure, clarity, explicit relationships, and portable formats.
-            </p>
-          </div>
-        </div>
-
-        <h2 id="sources" className="text-2xl font-semibold text-gray-900 mt-10 mb-4 font-display">13. Sources & further reading</h2>
-        <ul className="list-disc pl-6 mb-8 space-y-2 text-gray-700 text-[15px]">
-          <li>
-            <a href="https://cloud.google.com/blog/products/data-analytics/how-the-open-knowledge-format-can-improve-data-sharing/" target="_blank" rel="noopener noreferrer" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">Introducing the Open Knowledge Format — Google Cloud Blog</a> — official announcement (June 12, 2026).
-          </li>
-          <li>
-            <a href="https://github.com/GoogleCloudPlatform/knowledge-catalog/tree/main/okf" target="_blank" rel="noopener noreferrer" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">OKF specification and reference code — GitHub</a>.
-          </li>
-          <li>
-            <a href="https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f" target="_blank" rel="noopener noreferrer" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">Andrej Karpathy — the LLM Wiki gist</a>.
-          </li>
-        </ul>
-
-        <h2 id="related" className="text-2xl font-semibold text-gray-900 mt-10 mb-4 font-display">14. Related on Gobiya</h2>
-        <ul className="list-disc pl-6 mb-8 space-y-2 text-gray-700 text-[15px]">
-          <li>
-            <a href="/capabilities/seo-discoverability" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">SEO & AI-engine discoverability</a>
-          </li>
-          <li>
-            <a href="/capabilities/web-development" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">Web development for fast, clean, crawlable sites</a>
-          </li>
-          <li>
-            <a href="/capabilities/native-crm" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">Native CRM & pipeline attribution</a>
-          </li>
-          <li>
-            <a href="/case-studies/smile-center-dentistry" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">SmileCenter Dentistry case study</a>
-          </li>
-          <li>
-            <a href="/insights" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">More insights</a>
-          </li>
-          <li>
-            <a href="/book" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">Book a strategy call</a>
-          </li>
-        </ul>
       </>
     )
   },

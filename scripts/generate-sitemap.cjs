@@ -37,7 +37,7 @@ const articlePageContent = fs.readFileSync(articlePagePath, 'utf8');
 //   slug: 'multi-location-websites-for-franchises',
 //   ...
 //   date: 'June 13, 2026',
-const articleBlocks = articlePageContent.split(/^\s{2}'[a-z0-9-]+': \{/gm);
+const articleBlocks = articlePageContent.split(/^\s*'[a-z0-9-]+':\s*\{/gm);
 
 const articles = [];
 // Skip first block as it's the file header
