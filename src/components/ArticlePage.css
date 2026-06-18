@@ -347,6 +347,9 @@
   margin: 3.4rem 0 0;
   border: 1px solid var(--line); background: var(--dark); color: var(--dark-text);
   position: relative; overflow: hidden;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
 }
 .magnet::before {
   content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .3;

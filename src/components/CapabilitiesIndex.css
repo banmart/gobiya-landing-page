@@ -88,6 +88,8 @@
   font-family:var(--font-mono); font-size:10.5px; line-height:1.95; letter-spacing:.02em;
   overflow:hidden;
   width: 100%;
+  min-width: 0;
+  max-width: 100%;
 }
 .mod-console-head {
   display:flex; justify-content:space-between; gap:.6rem;
