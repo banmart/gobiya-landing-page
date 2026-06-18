@@ -4,13 +4,18 @@ import path from 'path';
 import { pathToFileURL } from 'url';
 import { createClient } from '@supabase/supabase-js';
 import dotenv from 'dotenv';
-import { getPageMetadata } from '../src/lib/pageMeta';
 
 dotenv.config({ path: path.resolve(process.cwd(), '.env.local') });
 dotenv.config();
 
 // Define render function type from server bundle
 type RenderFn = (url: string) => { html: string };
+type GetPageMetadataFn = (pathname: string) => {
+  title: string;
+  description: string;
+  image?: string;
+  noindex?: boolean;
+};
 
 const supabaseUrl = process.env.VITE_SUPABASE_URL || '';
 const supabaseAnonKey = process.env.VITE_SUPABASE_ANON_KEY || '';
@@ -1226,7 +1231,10 @@ export default async function handler(req: IncomingMessage, res: any) {
       throw new Error(`SSR build output not found at ${serverModulePath}. Ensure npm run build completes successfully.`);
     }
 
-    const { render } = (await import(pathToFileURL(serverModulePath).href)) as { render: RenderFn };
+    const { render, getPageMetadata } = (await import(pathToFileURL(serverModulePath).href)) as {
+      render: RenderFn;
+      getPageMetadata: GetPageMetadataFn;
+    };
 
     // Read index.html from built client assets
     const templatePath = path.join(process.cwd(), 'dist', 'client', 'index.html');
