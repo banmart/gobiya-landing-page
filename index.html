@@ -4,40 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!--canonical-outlet-->
-
-    <!-- Preload the critical body font (latin subset) so it's ready before CSS renders.
-         This eliminates the extra round-trip: HTML → google fonts CSS → woff2.
-         Font is now served from our own domain with no DNS lookup. -->
-    <link rel="preload" href="/fonts/Geist-300-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="/fonts/BricolageGrotesque-400-latin.woff2" as="font" type="font/woff2" crossorigin>
-
-    <!-- Inline critical above-the-fold CSS.
-         Prevents a full-page flash before the main CSS bundle downloads.
-         These are the minimal styles needed to render the nav + hero shell. -->
-    <style>
-      /* Critical: prevents layout shift before app CSS loads */
-      *{margin:0;padding:0;box-sizing:border-box}
-      html{scroll-behavior:smooth}
-      body{
-        background:#EFEDE5;
-        color:#15130E;
-        font-family:'Geist',system-ui,sans-serif;
-        font-weight:300;
-        font-size:16px;
-        line-height:1.7;
-        -webkit-font-smoothing:antialiased;
-        overflow-x:hidden;
-      }
-      #root{min-height:100vh}
-      /* Nav shell — prevents content jump */
-      .site-nav{
-        position:fixed;top:0;left:0;right:0;z-index:100;
-        background:#EFEDE5;
-      }
-      /* Hero minimum height prevents CLS */
-      .hero{min-height:100svh;position:relative;overflow:hidden}
-    </style>
-
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Geist:wght@300;400;500&family=Geist+Mono:wght@400;500&display=swap">
+    
     <!-- Primary SEO Metadata (Outcomes Approach) -->
     <!--ssr-title-->
     <!--ssr-desc-->
@@ -65,39 +36,29 @@
     <!-- Google Site Verification -->
     <meta name="google-site-verification" content="BCJ8-9rzY9X5CjZqM2hY7erF-1vFCZHFKl-Y-nbXv3U" />
 
-    <!-- Google Analytics 4 — loaded after page is interactive to avoid blocking render.
-         gtag.js already has `async` so it doesn't block the parser.
-         The inline init runs as a regular script (fast, just sets up dataLayer array). -->
+    <!-- Google Analytics 4 (G-3R3D5Q9YV6) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-3R3D5Q9YV6"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      // Delay config until after first paint so the inline script doesn't block rendering
-      if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', function() {
-          gtag('config', 'G-3R3D5Q9YV6', { anonymize_ip: true, send_page_view: true });
-        });
-      } else {
-        gtag('config', 'G-3R3D5Q9YV6', { anonymize_ip: true, send_page_view: true });
-      }
+      gtag('config', 'G-3R3D5Q9YV6', {
+        anonymize_ip: true,
+        send_page_view: true
+      });
+    </script>
+
+    <!-- Microsoft Clarity Tracking Pixel -->
+    <script type="text/javascript">
+      (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+      })(window, document, "clarity", "script", "v5j018vnnn");
     </script>
   </head>
   <body>
     <div id="root"><!--ssr-outlet--></div>
     <script type="module" src="/src/main.tsx"></script>
-
-    <!-- Microsoft Clarity — deferred until after load event so it never blocks
-         first paint or interactivity. Heatmap data is captured from user sessions
-         starting after the page is fully loaded. -->
-    <script>
-      window.addEventListener('load', function() {
-        (function(c,l,a,r,i,t,y){
-          c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-          t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-          y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-        })(window, document, "clarity", "script", "v5j018vnnn");
-      });
-    </script>
   </body>
 </html>

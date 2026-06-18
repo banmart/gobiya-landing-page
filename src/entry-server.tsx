@@ -10,5 +10,3 @@ export function render(url: string) {
   );
   return { html };
 }
-
-export { getPageMetadata } from './lib/pageMeta';
