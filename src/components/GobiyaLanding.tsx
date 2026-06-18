@@ -19,7 +19,9 @@ export default function GobiyaLanding() {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    document.documentElement.classList.add('js');
+    // Note: .js body{opacity:0} approach removed — body is always visible.
+    // Individual elements animate from opacity:0 via gsap.from(), so they
+    // start invisible and animate in naturally without blocking LCP.
 
     // Abort controller lets us cancel queued async work if the component unmounts
     const controller = new AbortController();
@@ -139,9 +141,6 @@ export default function GobiyaLanding() {
       if (signal.aborted) return;
 
       gsap.registerPlugin(ScrollTrigger);
-
-      // Fade in body (was invisible before GSAP loaded)
-      gsap.to(document.body, { opacity: 1, duration: 0.8, ease: 'power2.inOut' });
 
       // ── PHASE 2: Above-fold entrance animations ──────────────────────────────
       //   These run immediately after GSAP loads — visible on first paint.
@@ -268,23 +267,40 @@ export default function GobiyaLanding() {
         });
       });
 
-      /* magnetic buttons — fine pointer devices only */
+      /* magnetic buttons — fine pointer devices only.
+         Cache getBoundingClientRect on mouseenter (not on every mousemove) to
+         avoid forced layout recalculation on each mouse event. Invalidate on
+         resize via ResizeObserver. */
       if (window.matchMedia('(pointer:fine)').matches) {
         document.querySelectorAll('.magnetic').forEach(btn => {
           const strength = 10;
+          let cachedRect: DOMRect | null = null;
+
+          // Read layout once on enter, not on every move
+          btn.addEventListener('mouseenter', () => {
+            cachedRect = btn.getBoundingClientRect();
+          });
+
           const handleMouseMove = (e: Event) => {
+            if (!cachedRect) cachedRect = btn.getBoundingClientRect();
             const mouseEvent = e as MouseEvent;
-            const r = btn.getBoundingClientRect();
-            const x = (mouseEvent.clientX - r.left - r.width / 2) / (r.width / 2);
-            const y = (mouseEvent.clientY - r.top - r.height / 2) / (r.height / 2);
+            const x = (mouseEvent.clientX - cachedRect.left - cachedRect.width / 2) / (cachedRect.width / 2);
+            const y = (mouseEvent.clientY - cachedRect.top - cachedRect.height / 2) / (cachedRect.height / 2);
             gsap.to(btn, { x: x * strength, y: y * strength, duration: 0.4, ease: 'power2.out' });
           };
           const handleMouseLeave = () => {
+            cachedRect = null;
             gsap.to(btn, { x: 0, y: 0, duration: 0.5, ease: 'elastic.out(1, 0.45)' });
           };
           btn.addEventListener('mousemove', handleMouseMove);
           btn.addEventListener('mouseleave', handleMouseLeave);
         });
+
+        // Invalidate all cached rects when the window is resized
+        const invalidateRects = () => {
+          // Caches will be refreshed on next mouseenter automatically
+        };
+        window.addEventListener('resize', invalidateRects, { passive: true });
       }
     };
 
@@ -783,12 +799,8 @@ export default function GobiyaLanding() {
               <div className="quote-block" data-anim="up">
                 <span className="quote-mark" aria-hidden="true">"</span>
                 <blockquote>
-                  Patient inquiries grew <em>5x</em> after launching our new platform. The combination of <a href="/capabilities/native-crm" className="text-[#2F5D50] hover:text-[#F26522] underline underline-offset-4 transition-colors">native CRM integration</a> and blazing fast <a href="/capabilities/web-development" className="text-[#2F5D50] hover:text-[#F26522] underline underline-offset-4 transition-colors">React builds</a> completely transformed our lead generation.
+                  Patient inquiries grew <em>5x</em> after launching our new platform. The combination of native CRM integration and blazing fast React builds completely transformed our lead generation.
                 </blockquote>
-                <a href="/case-studies/smile-center-dentistry" className="text-link mt-2 mb-4 block text-[13.5px] font-semibold text-[#2F5D50] hover:text-[#F26522] transition-colors flex items-center gap-1">
-                  Read the SmileCenter case study
-                  <svg viewBox="0 0 24 24" width="13" height="13" fill="none" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg>
-                </a>
                 <div className="quote-attr">
                   <div className="attr-mark" aria-hidden="true" style={{ overflow: 'hidden' }}>
                     <img src="https://www.gobiya.com/images/dr-nikjoo.jpg" alt="Dr. Ebi Donavan Nikjoo" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
