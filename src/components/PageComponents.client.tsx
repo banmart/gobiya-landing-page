@@ -1,8 +1,12 @@
 import { lazy } from 'react';
 
-// Static exports for landing and SEO to prevent any bundle size overhead or loading state on home page
-export { default as GobiyaLanding } from './GobiyaLanding';
+// SEO is statically imported: it does only lightweight DOM/meta writes and must
+// run synchronously during hydration to avoid title/description flashes.
 export { default as SEO } from './SEO';
+
+// GobiyaLanding is now lazy: GSAP, shaders, and WebGL are NOT loaded on routes
+// other than '/'. This is the single biggest TBT win.
+export const GobiyaLanding = lazy(() => import('./GobiyaLanding'));
 
 // Dynamic/lazy exports for other pages
 export const GobiyaAboutPage = lazy(() => import('./GobiyaAboutPage'));

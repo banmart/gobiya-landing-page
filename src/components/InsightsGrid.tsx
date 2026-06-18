@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { supabase } from '../lib/supabase';
-import { ARTICLES } from './ArticlePage';
+import { ARTICLE_META } from '../lib/articlesMeta';
 import BorderGlow from './BorderGlow';
 
 interface Insight {
@@ -53,9 +53,9 @@ const InsightsGrid: React.FC = () => {
         console.error("Failed to fetch insights from database:", err);
       }
 
-      // Merge static articles from ARTICLES registry (always run even if database call fails)
+      // Merge static articles from ARTICLE_META registry (always run even if database call fails)
       const merged = [...processed];
-      Object.values(ARTICLES).forEach((art) => {
+      Object.values(ARTICLE_META).forEach((art) => {
         const existingIndex = processed.findIndex(
           (item: any) => item.slug && item.slug.toLowerCase() === art.slug.toLowerCase()
         );

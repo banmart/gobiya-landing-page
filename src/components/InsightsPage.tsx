@@ -1,13 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react';
 import HeroWebGLBackground from './HeroWebGLBackground';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './InsightsPage.css';
 import SiteHeader from './SiteHeader';
 import SiteFooter from './SiteFooter';
-import { ARTICLES } from './ArticlePage';
-
-gsap.registerPlugin(ScrollTrigger);
+import { ARTICLE_META } from '../lib/articlesMeta';
 
 interface InsightsPageProps {
   currentPath?: string;
@@ -37,7 +33,7 @@ const InsightsPage: React.FC<InsightsPageProps> = ({ currentPath }) => {
   const [currentPage, setCurrentPage] = useState(initialPage);
   const PAGE_SIZE = 5;
   
-  const articlesList = Object.entries(ARTICLES).map(([slug, data]) => ({ slug, ...data }));
+  const articlesList = ARTICLE_META.map(data => ({ ...data }));
   const totalPages = Math.ceil(articlesList.length / PAGE_SIZE);
   const currentArticles = articlesList.slice((currentPage - 1) * PAGE_SIZE, currentPage * PAGE_SIZE);
 

@@ -99,9 +99,21 @@ export default defineConfig(({mode}) => {
       rollupOptions: {
         output: {
           manualChunks(id) {
-            if (id.includes('node_modules')) {
-              return 'vendor';
-            }
+            // Fine-grained chunk splitting to prevent one giant vendor blob.
+            // Each heavy library becomes an async chunk fetched only by the
+            // routes/components that actually need it.
+            if (id.includes('node_modules/gsap'))                   return 'gsap';
+            // 'motion' v12 ships framer-motion as a compat alias — both resolve here
+            if (id.includes('node_modules/motion') ||
+                id.includes('node_modules/framer-motion'))           return 'motion';
+            if (id.includes('node_modules/shaders') ||
+                id.includes('node_modules/ogl'))                     return 'shaders';
+            if (id.includes('node_modules/@supabase'))               return 'supabase';
+            if (id.includes('node_modules/@google'))                 return 'google-genai';
+            // lucide-react ships hundreds of icons; tree-shake into its own chunk
+            if (id.includes('node_modules/lucide-react'))            return 'lucide';
+            // Everything else (React, react-dom, etc.) stays in vendor
+            if (id.includes('node_modules'))                         return 'vendor';
           }
         }
       }

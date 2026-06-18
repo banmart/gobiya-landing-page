@@ -2,7 +2,7 @@ import React, { useRef, useState, useEffect } from 'react';
 import { gsap } from 'gsap';
 import { ArrowRight, ArrowLeft } from 'lucide-react';
 import { supabase } from '../lib/supabase';
-import { ARTICLES } from './ArticlePage';
+import { ARTICLE_META } from '../lib/articlesMeta';
 
 // Define the interface for an Insight item
 interface Insight {
@@ -22,19 +22,21 @@ interface InsightsSliderProps {
 }
 
 // Pre-populate stable local articles list for SSR and initial crawl rendering
-const localInsights: Insight[] = Object.values(ARTICLES).map((art, idx) => ({
-  id: -(idx + 1), // stable negative IDs
-  title: art.title,
-  category: art.category,
-  image_path: '',
-  image_url: art.image,
-  slug: art.slug,
-}));
+const getLocalInsights = (): Insight[] => {
+  return ARTICLE_META.map((art, idx) => ({
+    id: -(idx + 1), // stable negative IDs
+    title: art.title,
+    category: art.category,
+    image_path: '',
+    image_url: art.image,
+    slug: art.slug,
+  }));
+};
 
 const InsightsSlider: React.FC<InsightsSliderProps> = ({ filterCategory, limit, currentPath, title }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
-  const [insights, setInsights] = useState<Insight[]>(localInsights);
+  const [insights, setInsights] = useState<Insight[]>(() => getLocalInsights());
   const [loading, setLoading] = useState(true);
 
   // Fetch data from Supabase
@@ -76,9 +78,9 @@ const InsightsSlider: React.FC<InsightsSliderProps> = ({ filterCategory, limit, 
         console.error("Failed to fetch insights from database:", err);
       }
 
-      // Merge static articles from ARTICLES registry (always run even if database call fails)
+      // Merge static articles from ARTICLE_META (always run even if database call fails)
       const merged = [...processed];
-      Object.values(ARTICLES).forEach((art, idx) => {
+      Object.values(ARTICLE_META).forEach((art, idx) => {
         const existingIndex = processed.findIndex(
           (item: any) => item.slug && item.slug.toLowerCase() === art.slug.toLowerCase()
         );

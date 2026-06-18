@@ -1,98 +1,99 @@
 import React, { useEffect, useRef } from 'react';
 import HeroWebGLBackground from './HeroWebGLBackground';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import SiteHeader from './SiteHeader';
 import SiteFooter from './SiteFooter';
 
-gsap.registerPlugin(ScrollTrigger);
+// Yield control back to the browser between task phases so no single task
+// blocks the main thread for more than ~50ms.
+// Uses the Scheduler API when available, falls back to setTimeout(0).
+// Note: only ever called inside useEffect (browser-only context).
+const yieldToMain = (): Promise<void> => {
+  if (typeof window === 'undefined') return Promise.resolve();
+  if ('scheduler' in window && typeof (window as any).scheduler?.yield === 'function') {
+    return (window as any).scheduler.yield();
+  }
+  return new Promise<void>(resolve => setTimeout(resolve, 0));
+};
 
 export default function GobiyaLanding() {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-
-
-    // Initial GSAP Loading Effect
     document.documentElement.classList.add('js');
-    gsap.to(document.body, { opacity: 1, duration: 0.8, ease: 'power2.inOut' });
 
-    // Small delay to ensure React has fully painted the DOM and SVG paths have lengths
-    const timer = setTimeout(() => {
-      const ctx = gsap.context(() => {
-        /* ---------- nav ---------- */
-        const navInner = document.getElementById('nav-inner');
-        const burger = document.getElementById('burger');
-        const mobileMenu = document.getElementById('mobile-menu');
+    // Abort controller lets us cancel queued async work if the component unmounts
+    const controller = new AbortController();
+    const { signal } = controller;
 
-        const handleBurgerClick = () => {
-          if (!mobileMenu || !burger) return;
-          const open = mobileMenu.classList.toggle('open');
-          burger.classList.toggle('open', open);
-          burger.setAttribute('aria-expanded', String(open));
-        };
+    // ── PHASE 1: Wire up nav + diagnostic console (no GSAP — fast, sync) ────────
+    //   This runs immediately so the UI is interactive the moment React hydrates.
+    const navInner = document.getElementById('nav-inner');
+    const burger = document.getElementById('burger');
+    const mobileMenu = document.getElementById('mobile-menu');
 
+    const handleBurgerClick = () => {
+      if (!mobileMenu || !burger) return;
+      const open = mobileMenu.classList.toggle('open');
+      burger.classList.toggle('open', open);
+      burger.setAttribute('aria-expanded', String(open));
+    };
+    if (burger) burger.addEventListener('click', handleBurgerClick);
+
+    if (mobileMenu) {
+      mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
         if (burger) {
-          burger.addEventListener('click', handleBurgerClick);
+          burger.classList.remove('open');
+          burger.setAttribute('aria-expanded', 'false');
         }
+      }));
+    }
 
-        if (mobileMenu) {
-          mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-            mobileMenu.classList.remove('open');
-            if (burger) {
-              burger.classList.remove('open');
-              burger.setAttribute('aria-expanded', 'false');
-            }
-          }));
-        }
+    const handleScroll = () => {
+      if (navInner) navInner.classList.toggle('is-scrolled', window.scrollY > 40);
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
 
-        const handleScroll = () => {
-          if (navInner) {
-            navInner.classList.toggle('is-scrolled', window.scrollY > 40);
-          }
-        };
-        window.addEventListener('scroll', handleScroll, { passive: true });
+    /* ---------- diagnostic console ---------- */
+    const form = document.getElementById('console-form') as HTMLFormElement;
+    const input = document.getElementById('domain-input') as HTMLInputElement;
+    const out = document.getElementById('console-out');
+    const runBtn = document.getElementById('console-run') as HTMLButtonElement;
+    const cta = document.getElementById('console-cta');
 
-        /* ---------- diagnostic console ---------- */
-        const form = document.getElementById('console-form') as HTMLFormElement;
-        const input = document.getElementById('domain-input') as HTMLInputElement;
-        const out = document.getElementById('console-out');
-        const runBtn = document.getElementById('console-run') as HTMLButtonElement;
-        const cta = document.getElementById('console-cta');
+    const cleanDomain = (raw: string) => raw.trim().toLowerCase()
+      .replace(/^https?:\/\//, '').replace(/^www\./, '').replace(/\/.*$/, '')
+      .replace(/[^a-z0-9.-]/g, '').slice(0, 64);
 
-        const cleanDomain = (raw: string) => raw.trim().toLowerCase()
-          .replace(/^https?:\/\//, '').replace(/^www\./, '').replace(/\/.*$/, '')
-          .replace(/[^a-z0-9.-]/g, '').slice(0, 64);
+    function pushLine(html: string, delay: number) {
+      return new Promise<void>(res => {
+        setTimeout(() => {
+          if (!out) return res();
+          const ln = document.createElement('span');
+          ln.className = 'ln';
+          ln.innerHTML = html;
+          out.appendChild(ln);
+          requestAnimationFrame(() => requestAnimationFrame(() => ln.classList.add('show')));
+          res();
+        }, delay);
+      });
+    }
 
-        function pushLine(html: string, delay: number) {
-          return new Promise<void>(res => {
-            setTimeout(() => {
-              if (!out) return res();
-              const ln = document.createElement('span');
-              ln.className = 'ln';
-              ln.innerHTML = html;
-              out.appendChild(ln);
-              requestAnimationFrame(() => requestAnimationFrame(() => ln.classList.add('show')));
-              res();
-            }, delay);
-          });
-        }
-
-        let running = false;
-        const handleFormSubmit = async (e: Event) => {
-          e.preventDefault();
-          if (running || !input || !runBtn || !cta || !out) return;
-          const domain = cleanDomain(input.value);
-          if (!domain || !domain.includes('.')) {
-            input.value = '';
-            input.placeholder = 'enter a valid domain — e.g. yourdomain.com';
-            input.focus();
-            return;
-          }
-          running = true;
-          runBtn.disabled = true;
-          cta.classList.remove('show');
-          out.innerHTML = '';
+    let running = false;
+    const handleFormSubmit = async (e: Event) => {
+      e.preventDefault();
+      if (running || !input || !runBtn || !cta || !out) return;
+      const domain = cleanDomain(input.value);
+      if (!domain || !domain.includes('.')) {
+        input.value = '';
+        input.placeholder = 'enter a valid domain — e.g. yourdomain.com';
+        input.focus();
+        return;
+      }
+      running = true;
+      runBtn.disabled = true;
+      cta.classList.remove('show');
+      out.innerHTML = '';
 
           const d = `<span class="em">${domain}</span>`;
           await pushLine(`<span class="dim">$</span> gobiya ai-scan ${d}`, 100);
@@ -122,159 +123,180 @@ export default function GobiyaLanding() {
           runBtn.disabled = false;
         };
 
-        if (form) {
-          form.addEventListener('submit', handleFormSubmit);
-        }
+    if (form) form.addEventListener('submit', handleFormSubmit);
 
-        /* ---------- GSAP Animations ---------- */
-        const ease = 'power3.out';
+    // ── PHASES 2-4: All GSAP work — loaded dynamically so it never blocks parsing ─
+    //   Each phase yields to the browser before the next batch, keeping every task
+    //   well under the 50ms long-task threshold.
+    const runAnimations = async () => {
+      if (signal.aborted) return;
 
-        /* nav entrance */
-        if (navInner) {
-          gsap.from(navInner, { y: -22, opacity: 0, duration: 1.2, ease, delay: 0.1 });
-        }
+      // Dynamic import — GSAP chunk only fetched on this route, after first paint
+      const [{ default: gsap }, { ScrollTrigger }] = await Promise.all([
+        import('gsap'),
+        import('gsap/ScrollTrigger'),
+      ]);
+      if (signal.aborted) return;
 
-        /* hero copy */
-        const heroTl = gsap.timeline({ delay: 0.15, defaults: { ease, duration: 1.15 } });
-        heroTl
-          .from('[data-hero="1"]', { opacity: 0, y: 14 }, 0)
-          .from('.hero h1 .line > span', { yPercent: 110, stagger: 0.1, duration: 1.25 }, 0.08)
-          .from('[data-hero="2"]', { opacity: 0, y: 16 }, 0.5)
-          .from('[data-hero="3"] .btn', { opacity: 0, y: 14, stagger: 0.08 }, 0.65)
-          .from('[data-hero="4"] > div', { opacity: 0, y: 12, stagger: 0.08 }, 0.8)
-          .from('[data-hero="5"]', { opacity: 0, y: 26, duration: 1.4 }, 0.3)
-          .from('[data-hero="6"]', { opacity: 0 }, 1.1);
+      gsap.registerPlugin(ScrollTrigger);
 
-        /* hero chart drawing */
-        const drawPath = (sel: string) => {
-          const elements = gsap.utils.toArray(sel) as SVGPathElement[];
-          if (!elements.length) return 0;
-          const p = elements[0];
-          const len = p.getTotalLength() || 1000; // fallback just in case
-          gsap.set(p, { strokeDasharray: len, strokeDashoffset: len });
-          return len;
-        };
-        
-        drawPath('.seg-pre'); 
-        drawPath('.seg-crash'); 
-        drawPath('.seg-recovery');
+      // Fade in body (was invisible before GSAP loaded)
+      gsap.to(document.body, { opacity: 1, duration: 0.8, ease: 'power2.inOut' });
 
-        const chartTl = gsap.timeline({ delay: 0.9, defaults: { ease: 'power2.inOut' } });
-        chartTl
-          .to('#scanline', { opacity: 1, duration: 0.2 }, 0)
-          .fromTo('#scanline', { left: '2%' }, { left: '98%', duration: 2.2, ease: 'power1.inOut' }, 0)
-          .to('#scanline', { opacity: 0, duration: 0.3 }, 2.0)
-          .to('.seg-pre', { strokeDashoffset: 0, duration: 0.8 }, 0.15)
-          .to('.marker.m-crash', { opacity: 1, duration: 0.3 }, 0.95)
-          .fromTo('.lbl-crash', { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.45, ease }, 0.95)
-          .to('.seg-crash', { strokeDashoffset: 0, duration: 0.55 }, 1.0)
-          .to('.marker.m-deploy', { opacity: 1, duration: 0.3 }, 1.55)
-          .fromTo('.lbl-deploy', { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.45, ease }, 1.55)
-          .to('.seg-recovery', { strokeDashoffset: 0, duration: 1.1, ease: 'power2.out' }, 1.65)
-          .to('.area-recovery', { opacity: 1, duration: 0.9 }, 1.9)
-          .to('.marker.m-now', { opacity: 1, duration: 0.3 }, 2.6)
-          .fromTo('.lbl-now', { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.45, ease }, 2.6);
+      // ── PHASE 2: Above-fold entrance animations ──────────────────────────────
+      //   These run immediately after GSAP loads — visible on first paint.
+      const ease = 'power3.out';
 
-        /* gentle float on the exhibit while scrolling */
-        gsap.to('.exhibit-frame', {
-          y: -26, ease: 'none',
-          scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true }
-        });
+      if (navInner) {
+        gsap.from(navInner, { y: -22, opacity: 0, duration: 1.2, ease, delay: 0.1 });
+      }
 
-        /* scroll reveals */
-        const sc = (el: Element) => ({ trigger: el, start: 'top 87%' });
-        
-        gsap.utils.toArray('[data-anim="up"]').forEach(el => {
-          gsap.fromTo(el as Element, 
-            { y: 30, opacity: 0 },
-            { scrollTrigger: sc(el as Element), y: 0, opacity: 1, duration: 1.2, ease }
-          );
-        });
-        
-        gsap.utils.toArray('[data-anim="fade"]').forEach(el => {
-          gsap.fromTo(el as Element, 
-            { opacity: 0 },
-            { scrollTrigger: sc(el as Element), opacity: 1, duration: 1.2, ease }
-          );
-        });
-        
-        gsap.utils.toArray('[data-anim="scale"]').forEach(el => {
-          gsap.fromTo(el as Element, 
-            { scale: 0.97, opacity: 0 },
-            { scrollTrigger: sc(el as Element), scale: 1, opacity: 1, duration: 1.4, ease: 'power2.out' }
-          );
-        });
-        
-        gsap.utils.toArray('[data-anim="stagger"]').forEach(parent => {
-          const kids = (parent as Element).querySelectorAll('[data-anim-child]');
-          if (!kids.length) return;
-          gsap.fromTo(kids, 
-            { y: 26, opacity: 0 },
-            { scrollTrigger: sc(parent as Element), y: 0, opacity: 1, duration: 1.15, ease, stagger: 0.12 }
-          );
-        });
+      const heroTl = gsap.timeline({ delay: 0.15, defaults: { ease, duration: 1.15 } });
+      heroTl
+        .from('[data-hero="1"]', { opacity: 0, y: 14 }, 0)
+        .from('.hero h1 .line > span', { yPercent: 110, stagger: 0.1, duration: 1.25 }, 0.08)
+        .from('[data-hero="2"]', { opacity: 0, y: 16 }, 0.5)
+        .from('[data-hero="3"] .btn', { opacity: 0, y: 14, stagger: 0.08 }, 0.65)
+        .from('[data-hero="4"] > div', { opacity: 0, y: 12, stagger: 0.08 }, 0.8)
+        .from('[data-hero="5"]', { opacity: 0, y: 26, duration: 1.4 }, 0.3)
+        .from('[data-hero="6"]', { opacity: 0 }, 1.1);
 
-        /* counters */
-        gsap.utils.toArray('[data-count]').forEach(el => {
-          const target = parseInt((el as HTMLElement).dataset.count || '0', 10);
-          const obj = { v: 0 };
-          gsap.to(obj, {
-            v: target, duration: 1.8, ease: 'power2.out',
-            scrollTrigger: { trigger: el as Element, start: 'top 90%' },
-            onUpdate: () => { (el as HTMLElement).textContent = String(Math.round(obj.v)); }
-          });
-        });
+      // Yield — give the browser a frame before the chart setup task
+      await yieldToMain();
+      if (signal.aborted) return;
 
-        /* method timeline progress + active dots */
-        gsap.fromTo('#phase-fill', 
-          { scaleY: 0 },
-          { scaleY: 1, ease: 'none', scrollTrigger: { trigger: '#phases', start: 'top 70%', end: 'bottom 55%', scrub: true } }
+      // ── PHASE 3: Hero chart drawing (SVG path animation) ────────────────────
+      const drawPath = (sel: string) => {
+        const elements = gsap.utils.toArray(sel) as SVGPathElement[];
+        if (!elements.length) return;
+        const p = elements[0];
+        const len = p.getTotalLength() || 1000;
+        gsap.set(p, { strokeDasharray: len, strokeDashoffset: len });
+      };
+
+      drawPath('.seg-pre');
+      drawPath('.seg-crash');
+      drawPath('.seg-recovery');
+
+      const chartTl = gsap.timeline({ delay: 0.9, defaults: { ease: 'power2.inOut' } });
+      chartTl
+        .to('#scanline', { opacity: 1, duration: 0.2 }, 0)
+        .fromTo('#scanline', { left: '2%' }, { left: '98%', duration: 2.2, ease: 'power1.inOut' }, 0)
+        .to('#scanline', { opacity: 0, duration: 0.3 }, 2.0)
+        .to('.seg-pre', { strokeDashoffset: 0, duration: 0.8 }, 0.15)
+        .to('.marker.m-crash', { opacity: 1, duration: 0.3 }, 0.95)
+        .fromTo('.lbl-crash', { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.45, ease }, 0.95)
+        .to('.seg-crash', { strokeDashoffset: 0, duration: 0.55 }, 1.0)
+        .to('.marker.m-deploy', { opacity: 1, duration: 0.3 }, 1.55)
+        .fromTo('.lbl-deploy', { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.45, ease }, 1.55)
+        .to('.seg-recovery', { strokeDashoffset: 0, duration: 1.1, ease: 'power2.out' }, 1.65)
+        .to('.area-recovery', { opacity: 1, duration: 0.9 }, 1.9)
+        .to('.marker.m-now', { opacity: 1, duration: 0.3 }, 2.6)
+        .fromTo('.lbl-now', { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.45, ease }, 2.6);
+
+      /* gentle parallax float on the exhibit while scrolling */
+      gsap.to('.exhibit-frame', {
+        y: -26, ease: 'none',
+        scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true }
+      });
+
+      // Yield — give the browser a frame before setting up all scroll triggers
+      await yieldToMain();
+      if (signal.aborted) return;
+
+      // ── PHASE 4: Below-fold scroll reveals, counters, phase fill ────────────
+      //   None of these are visible until the user scrolls, so deferring them
+      //   costs zero perceived performance.
+      const sc = (el: Element) => ({ trigger: el, start: 'top 87%' });
+
+      gsap.utils.toArray('[data-anim="up"]').forEach(el => {
+        gsap.fromTo(el as Element,
+          { y: 30, opacity: 0 },
+          { scrollTrigger: sc(el as Element), y: 0, opacity: 1, duration: 1.2, ease }
         );
-        
-        gsap.utils.toArray('[data-phase]').forEach(ph => {
-          ScrollTrigger.create({
-            trigger: ph as Element, start: 'top 70%',
-            onEnter: () => (ph as Element).classList.add('is-active'),
-            onLeaveBack: () => (ph as Element).classList.remove('is-active')
-          });
+      });
+
+      gsap.utils.toArray('[data-anim="fade"]').forEach(el => {
+        gsap.fromTo(el as Element,
+          { opacity: 0 },
+          { scrollTrigger: sc(el as Element), opacity: 1, duration: 1.2, ease }
+        );
+      });
+
+      gsap.utils.toArray('[data-anim="scale"]').forEach(el => {
+        gsap.fromTo(el as Element,
+          { scale: 0.97, opacity: 0 },
+          { scrollTrigger: sc(el as Element), scale: 1, opacity: 1, duration: 1.4, ease: 'power2.out' }
+        );
+      });
+
+      gsap.utils.toArray('[data-anim="stagger"]').forEach(parent => {
+        const kids = (parent as Element).querySelectorAll('[data-anim-child]');
+        if (!kids.length) return;
+        gsap.fromTo(kids,
+          { y: 26, opacity: 0 },
+          { scrollTrigger: sc(parent as Element), y: 0, opacity: 1, duration: 1.15, ease, stagger: 0.12 }
+        );
+      });
+
+      // Yield before counter + phase-fill setup (also below fold)
+      await yieldToMain();
+      if (signal.aborted) return;
+
+      /* counters */
+      gsap.utils.toArray('[data-count]').forEach(el => {
+        const target = parseInt((el as HTMLElement).dataset.count || '0', 10);
+        const obj = { v: 0 };
+        gsap.to(obj, {
+          v: target, duration: 1.8, ease: 'power2.out',
+          scrollTrigger: { trigger: el as Element, start: 'top 90%' },
+          onUpdate: () => { (el as HTMLElement).textContent = String(Math.round(obj.v)); }
         });
+      });
 
-        /* magnetic buttons */
-        if (window.matchMedia('(pointer:fine)').matches) {
-          document.querySelectorAll('.magnetic').forEach(btn => {
-            const strength = 10;
-            const handleMouseMove = (e: Event) => {
-              const mouseEvent = e as MouseEvent;
-              const r = btn.getBoundingClientRect();
-              const x = (mouseEvent.clientX - r.left - r.width / 2) / (r.width / 2);
-              const y = (mouseEvent.clientY - r.top - r.height / 2) / (r.height / 2);
-              gsap.to(btn, { x: x * strength, y: y * strength, duration: 0.4, ease: 'power2.out' });
-            };
-            const handleMouseLeave = () => {
-              gsap.to(btn, { x: 0, y: 0, duration: 0.5, ease: 'elastic.out(1, 0.45)' });
-            };
-            btn.addEventListener('mousemove', handleMouseMove);
-            btn.addEventListener('mouseleave', handleMouseLeave);
-            
-            return () => {
-              btn.removeEventListener('mousemove', handleMouseMove);
-              btn.removeEventListener('mouseleave', handleMouseLeave);
-            }
-          });
-        }
-        
-        // Return cleanup for custom event listeners
-        return () => {
-          window.removeEventListener('scroll', handleScroll);
-          if (burger) burger.removeEventListener('click', handleBurgerClick);
-          if (form) form.removeEventListener('submit', handleFormSubmit);
-        };
-      }, containerRef); // Scope GSAP to this component
+      /* method timeline progress bar + active dots */
+      gsap.fromTo('#phase-fill',
+        { scaleY: 0 },
+        { scaleY: 1, ease: 'none', scrollTrigger: { trigger: '#phases', start: 'top 70%', end: 'bottom 55%', scrub: true } }
+      );
 
-      return () => ctx.revert();
-    }, 50); // 50ms delay to allow DOM to settle
+      gsap.utils.toArray('[data-phase]').forEach(ph => {
+        ScrollTrigger.create({
+          trigger: ph as Element, start: 'top 70%',
+          onEnter: () => (ph as Element).classList.add('is-active'),
+          onLeaveBack: () => (ph as Element).classList.remove('is-active')
+        });
+      });
 
-    return () => clearTimeout(timer);
+      /* magnetic buttons — fine pointer devices only */
+      if (window.matchMedia('(pointer:fine)').matches) {
+        document.querySelectorAll('.magnetic').forEach(btn => {
+          const strength = 10;
+          const handleMouseMove = (e: Event) => {
+            const mouseEvent = e as MouseEvent;
+            const r = btn.getBoundingClientRect();
+            const x = (mouseEvent.clientX - r.left - r.width / 2) / (r.width / 2);
+            const y = (mouseEvent.clientY - r.top - r.height / 2) / (r.height / 2);
+            gsap.to(btn, { x: x * strength, y: y * strength, duration: 0.4, ease: 'power2.out' });
+          };
+          const handleMouseLeave = () => {
+            gsap.to(btn, { x: 0, y: 0, duration: 0.5, ease: 'elastic.out(1, 0.45)' });
+          };
+          btn.addEventListener('mousemove', handleMouseMove);
+          btn.addEventListener('mouseleave', handleMouseLeave);
+        });
+      }
+    };
+
+    // Kick off the async animation pipeline — does NOT block the current task
+    runAnimations();
+
+    return () => {
+      controller.abort();
+      window.removeEventListener('scroll', handleScroll);
+      if (burger) burger.removeEventListener('click', handleBurgerClick);
+      if (form) form.removeEventListener('submit', handleFormSubmit);
+    };
   }, []);
 
   return (
