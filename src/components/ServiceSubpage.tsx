@@ -157,45 +157,39 @@ const ServiceSubpage: React.FC<ServiceSubpageProps> = ({ path }) => {
   useEffect(() => {
     if (path !== '/approach') return;
     
-    const handleScroll = () => {
-      const scrollPos = window.scrollY + 300;
-      for (const section of sections) {
-        const el = document.getElementById(section.id);
-        if (el) {
-          const top = el.offsetTop;
-          const height = el.offsetHeight;
-          if (scrollPos >= top && scrollPos < top + height) {
-            setActiveSection(section.id);
-            break;
-          }
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id);
         }
-      }
-    };
-    
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+      });
+    }, { rootMargin: '-300px 0px -40% 0px', threshold: 0 });
+
+    sections.forEach(s => {
+      const el = document.getElementById(s.id);
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
   }, [path]);
 
   useEffect(() => {
     if (path !== '/case-studies') return;
     
-    const handleScroll = () => {
-      const scrollPos = window.scrollY + 300;
-      for (const section of successSections) {
-        const el = document.getElementById(section.id);
-        if (el) {
-          const top = el.offsetTop;
-          const height = el.offsetHeight;
-          if (scrollPos >= top && scrollPos < top + height) {
-            setActiveSuccessSection(section.id);
-            break;
-          }
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setActiveSuccessSection(entry.target.id);
         }
-      }
-    };
-    
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+      });
+    }, { rootMargin: '-300px 0px -40% 0px', threshold: 0 });
+
+    successSections.forEach(s => {
+      const el = document.getElementById(s.id);
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
   }, [path]);
 
   useEffect(() => {

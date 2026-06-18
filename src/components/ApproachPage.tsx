@@ -149,8 +149,9 @@ const ApproachPage: React.FC = () => {
         document.querySelectorAll('.magnetic').forEach(btn => {
           const btnEl = btn as HTMLElement;
           const strength = 10;
+          btn.addEventListener('mouseenter', () => { (btn as any)._cachedRect = btn.getBoundingClientRect(); });
           btnEl.addEventListener('mousemove', (e) => {
-            const r = btnEl.getBoundingClientRect();
+            const r = (btnEl as any)._cachedRect || btnEl.getBoundingClientRect();
             const x = (e.clientX - r.left - r.width / 2) / (r.width / 2);
             const y = (e.clientY - r.top - r.height / 2) / (r.height / 2);
             gsap.to(btnEl, { x: x * strength, y: y * strength, duration: 0.4, ease: 'power2.out' });

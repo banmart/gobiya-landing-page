@@ -89,22 +89,6 @@ const TestimonialsSlider: React.FC = () => {
             <span className="font-semibold text-white">{activeTestimonial.author}</span>, {activeTestimonial.role}, {activeTestimonial.company}
           </div>
 
-          {/* Optional Link */}
-          {activeTestimonial.case_study_link && (
-            <a 
-              href={activeTestimonial.case_study_link}
-              className="group flex items-center text-[#F26522] hover:text-[#e05a1a] text-[14px] font-semibold tracking-wide transition-colors"
-              onClick={(e) => {
-                e.preventDefault();
-                window.history.pushState({}, '', activeTestimonial.case_study_link);
-                window.dispatchEvent(new PopStateEvent('popstate'));
-                window.scrollTo(0,0);
-              }}
-            >
-              Read the story
-              <ArrowRight className="w-4 h-4 ml-2 transition-transform duration-300 group-hover:translate-x-1" />
-            </a>
-          )}
         </div>
 
         {/* Tabbed Logos */}

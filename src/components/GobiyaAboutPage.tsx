@@ -139,9 +139,10 @@ export default function GobiyaAboutPage() {
         if (window.matchMedia('(pointer:fine)').matches) {
           document.querySelectorAll('.magnetic').forEach(btn => {
             const strength = 10;
+          btn.addEventListener('mouseenter', () => { (btn as any)._cachedRect = btn.getBoundingClientRect(); });
             const handleMouseMove = (e: Event) => {
               const mouseEvent = e as MouseEvent;
-              const r = btn.getBoundingClientRect();
+              const r = (btn as any)._cachedRect || btn.getBoundingClientRect();
               const x = (mouseEvent.clientX - r.left - r.width / 2) / (r.width / 2);
               const y = (mouseEvent.clientY - r.top - r.height / 2) / (r.height / 2);
               gsap.to(btn, { x: x * strength, y: y * strength, duration: 0.4, ease: 'power2.out' });

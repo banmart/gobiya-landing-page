@@ -8617,6 +8617,7 @@ const ArticlePage: React.FC<ArticlePageProps> = ({ slug }) => {
 
       document.querySelectorAll('.magnetic').forEach((btn: any) => {
         const strength = 10;
+          btn.addEventListener('mouseenter', () => { (btn as any)._cachedRect = btn.getBoundingClientRect(); });
         const move = (e: any) => {
           const r = btn.getBoundingClientRect();
           const x = (e.clientX - r.left - r.width / 2) / (r.width / 2);
