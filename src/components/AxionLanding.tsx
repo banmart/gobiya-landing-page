@@ -167,7 +167,7 @@ const AxionLanding = () => {
         <div className="absolute inset-0 z-10 pointer-events-none w-full h-full [&>div]:w-full [&>div]:h-full [&_canvas]:w-full [&_canvas]:h-full [&_canvas]:object-cover opacity-85">
           <DeferredShader>
             <Swirl colorA="#050505" colorB="#0f0f0f" detail={1.7} />
-            <ChromaFlow baseColor="#050505" downColor="#f26522" leftColor="#f26522" rightColor="#f26522" upColor="#f26522" momentum={13} radius={3.5} />
+
             <FlutedGlass aberration={0.61} angle={31} frequency={8} highlight={0.12} highlightSoftness={0} lightAngle={-90} refraction={4} shape="rounded" softness={1} speed={0.15} />
             <FilmGrain strength={0.05} />
           </DeferredShader>
@@ -217,19 +217,21 @@ const AxionLanding = () => {
               <p className="text-[11px] uppercase tracking-wider text-gray-500 font-semibold mb-6 font-body text-left">Satisfied Clients</p>
               <div className="flex flex-wrap justify-start items-center gap-x-8 gap-y-6 sm:gap-x-12 sm:gap-y-8">
                 {[
-                  '/images/remodelmepros.webp',
-                  '/images/smilecenter.webp',
-                  '/images/quickpass-logo.webp',
-                  '/images/mytrustwills.webp',
-                  '/images/tidder-pro-logo.webp',
-                  '/images/totalcapital.webp',
-                  '/images/logo-DeEgMiH0.png',
-                  '/images/americanlivescan.webp'
+                  { src: '/images/remodelmepros-opt.webp', width: 88, height: 22 },
+                  { src: '/images/smilecenter.webp', width: 66, height: 22 },
+                  { src: '/images/quickpass-logo-opt.webp', width: 108, height: 22 },
+                  { src: '/images/mytrustwills.webp', width: 66, height: 22 },
+                  { src: '/images/tidder-pro-logo.webp', width: 88, height: 22 },
+                  { src: '/images/totalcapital-opt.webp', width: 22, height: 22 },
+                  { src: '/images/logo-DeEgMiH0-opt.png', width: 22, height: 22 },
+                  { src: '/images/americanlivescan.webp', width: 88, height: 22 }
                 ].map((logo, index) => (
                   <img 
                     key={index} 
-                    src={logo} 
+                    src={logo.src} 
                     alt={`Client logo ${index + 1}`} 
+                    width={logo.width}
+                    height={logo.height}
                     className="h-6 sm:h-8 w-auto object-contain brightness-0 invert opacity-45 hover:opacity-85 transition-opacity duration-300"
                   />
                 ))}

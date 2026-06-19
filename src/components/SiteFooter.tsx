@@ -28,7 +28,7 @@ const SiteFooter: React.FC<SiteFooterProps> = ({ showWebGL = true }) => {
             </p>
           </div>
           <div>
-            <h5>Capabilities</h5>
+            <h2>Capabilities</h2>
             <ul>
               <li><a href="/capabilities/web-development">Web Development</a></li>
               <li><a href="/capabilities/native-crm">Native CRM</a></li>
@@ -39,7 +39,7 @@ const SiteFooter: React.FC<SiteFooterProps> = ({ showWebGL = true }) => {
             </ul>
           </div>
           <div>
-            <h5>Company</h5>
+            <h2>Company</h2>
             <ul>
               <li><a href="/about">About the Agency</a></li>
               <li><a href="/case-studies">Case Studies</a></li>
@@ -48,7 +48,7 @@ const SiteFooter: React.FC<SiteFooterProps> = ({ showWebGL = true }) => {
             </ul>
           </div>
           <div>
-            <h5>Connect</h5>
+            <h2>Connect</h2>
             <ul>
               <li><a href="tel:3237441338">Call: 323-744-1338</a></li>
               <li><a href="https://www.linkedin.com/in/stevemartingobiya/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>

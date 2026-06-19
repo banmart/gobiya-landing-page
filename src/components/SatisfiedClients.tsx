@@ -2,13 +2,13 @@ import React from 'react';
 
 const SatisfiedClients = () => {
   const logos = [
-    '/images/remodelmepros.webp',
+    '/images/remodelmepros-opt.webp',
     '/images/smilecenter.webp',
-    '/images/quickpass-logo.webp',
+    '/images/quickpass-logo-opt.webp',
     '/images/mytrustwills.webp',
     '/images/tidder-pro-logo.webp',
-    '/images/totalcapital.webp',
-    '/images/logo-DeEgMiH0.png',
+    '/images/totalcapital-opt.webp',
+    '/images/logo-DeEgMiH0-opt.png',
     '/images/americanlivescan.webp'
   ];
 

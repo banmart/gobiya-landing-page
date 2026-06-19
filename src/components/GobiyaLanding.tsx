@@ -434,13 +434,13 @@ export default function GobiyaLanding() {
 
         <div className="hero-logos" aria-label="Trusted by industry leaders">
           <div className="hero-logos-track">
-            <img src="/images/remodelmepros.webp" alt="Remodel Me Pros" loading="lazy" />
-            <img src="/images/mytrustwills.webp" alt="My Trust Wills" loading="lazy" />
-            <img src="/images/safetycentric-logo.png" alt="Safety Centric" loading="lazy" />
-            <img src="/images/quickpass-logo.webp" alt="QuickPass" loading="lazy" />
-            <img src="/images/ark-logo---01-dark.webp" alt="Ark" loading="lazy" />
-            <img src="/images/totalcapital.webp" alt="Total Capital" loading="lazy" />
-            <img src="/images/logo-DeEgMiH0.png" alt="Partner Logo" loading="lazy" />
+            <img src="/images/remodelmepros-opt.webp" alt="Remodel Me Pros" loading="lazy" width="88" height="22" />
+            <img src="/images/mytrustwills.webp" alt="My Trust Wills" loading="lazy" width="66" height="22" />
+            <img src="/images/safetycentric-logo.png" alt="Safety Centric" loading="lazy" width="40" height="22" />
+            <img src="/images/quickpass-logo-opt.webp" alt="QuickPass" loading="lazy" width="108" height="22" />
+            <img src="/images/ark-logo---01-dark.webp" alt="Ark" loading="lazy" width="22" height="22" />
+            <img src="/images/totalcapital-opt.webp" alt="Total Capital" loading="lazy" width="22" height="22" />
+            <img src="/images/logo-DeEgMiH0-opt.png" alt="Partner Logo" loading="lazy" width="22" height="22" />
           </div>
         </div>
 

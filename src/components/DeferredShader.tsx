@@ -1,45 +1,17 @@
-import React, { useState, useEffect, Suspense } from 'react';
-
-// Lazy-load the Shader modules to remove them from the main initial JavaScript bundle.
-const Shader = React.lazy(() => import('shaders/react').then(mod => ({ default: mod.Shader })));
-const Swirl = React.lazy(() => import('shaders/react').then(mod => ({ default: mod.Swirl })));
-const ChromaFlow = React.lazy(() => import('shaders/react').then(mod => ({ default: mod.ChromaFlow })));
-const FlutedGlass = React.lazy(() => import('shaders/react').then(mod => ({ default: mod.FlutedGlass })));
-const FilmGrain = React.lazy(() => import('shaders/react').then(mod => ({ default: mod.FilmGrain })));
+import React from 'react';
 
 interface DeferredShaderProps {
   children?: React.ReactNode;
 }
 
-const DeferredShader: React.FC<DeferredShaderProps> = ({ children }) => {
-  const [shouldRender, setShouldRender] = useState(false);
-
-  useEffect(() => {
-    // Delay WebGL compilation to prevent main thread blocking during page load
-    const timer = setTimeout(() => {
-      if ('requestIdleCallback' in window) {
-        window.requestIdleCallback(() => setShouldRender(true));
-      } else {
-        setShouldRender(true);
-      }
-    }, 1500);
-
-    return () => clearTimeout(timer);
-  }, []);
-
-  if (!shouldRender) {
-    // Transparent placeholder with no visual layout shifts
-    return <div className="absolute inset-0 pointer-events-none" />;
-  }
-
-  return (
-    <Suspense fallback={<div className="absolute inset-0 pointer-events-none" />}>
-      <Shader>
-        {children}
-      </Shader>
-    </Suspense>
-  );
+const DeferredShader: React.FC<DeferredShaderProps> = () => {
+  return null;
 };
 
-export { Swirl, ChromaFlow, FlutedGlass, FilmGrain };
+export const Swirl = () => null;
+export const ChromaFlow = () => null;
+export const FlutedGlass = () => null;
+export const FilmGrain = () => null;
+
 export default DeferredShader;
+

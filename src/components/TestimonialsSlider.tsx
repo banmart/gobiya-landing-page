@@ -20,7 +20,7 @@ const testimonials: Testimonial[] = [
     author: "Mike Pinkston",
     role: "Founder & CEO",
     image_url: "/images/testimonial-mike.png",
-    logo_url: "/images/remodelmepros.webp",
+    logo_url: "/images/remodelmepros-opt.webp",
   },
   {
     id: 2,
@@ -29,7 +29,7 @@ const testimonials: Testimonial[] = [
     author: "Eli Zilberstein",
     role: "Managing Director",
     image_url: "/images/eli-portrait.webp",
-    logo_url: "/images/totalcapital.webp"
+    logo_url: "/images/totalcapital-opt.webp"
   },
   {
     id: 3,
