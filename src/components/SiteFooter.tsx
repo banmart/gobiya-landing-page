@@ -50,6 +50,7 @@ const SiteFooter: React.FC<SiteFooterProps> = ({ showWebGL = true }) => {
           <div>
             <h2>Connect</h2>
             <ul>
+              <li><a href="https://google.com/preferences/source?q=gobiya.com" target="_blank" rel="noopener noreferrer">Follow on Google AI</a></li>
               <li><a href="tel:3237441338">Call: 323-744-1338</a></li>
               <li><a href="https://www.linkedin.com/in/stevemartingobiya/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
               <li><a href="https://x.com/SteveMarti66556" target="_blank" rel="noopener noreferrer">X (Twitter)</a></li>
