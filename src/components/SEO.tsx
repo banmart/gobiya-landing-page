@@ -10,7 +10,7 @@ interface SEOMetadata {
 const metadataMap: Record<string, SEOMetadata> = {
   '/': {
     title: `B2B SEO Agency | Algorithm Recovery`,
-    description: `B2B SEO Agency solutions: GOBIYA reads Google's algorithm, identifies the penalty vector, and deploys the fix. SEO recovery, GEO, AI-powered growth. Los Angeles, since 2009.`
+    description: `B2B SEO Agency solutions: GOBIYA reads Google's algorithm, identifies the penalty vector, and deploys the fix. SEO recovery, GEO, AI-powered growth. Los Angeles, since 2012.`
   },
   '/on-page-seo-los-angeles': {
     title: `On-Page SEO Los Angeles | Search Dominance`,

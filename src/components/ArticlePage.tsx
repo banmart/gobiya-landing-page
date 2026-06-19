@@ -669,6 +669,7 @@ const ARTICLES: Record<string, ArticleData> = {
         </p>
 
         {/* ── SECTION: Gobiya ── */}
+              <div className="gobiya-cta-block">
         <div id="positioned-differently" className="scroll-mt-24" />
         <h2 className="text-[1.6rem] sm:text-[2rem] font-display font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">Why Gobiya is positioned differently for B2B operators</h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
@@ -678,6 +679,7 @@ const ARTICLES: Record<string, ArticleData> = {
           For operators evaluating a <a href="/insights/best-seo-agency-for-b2b-brands" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">B2B SEO agency partner</a>, the differentiator isn't claim — it's measurement model. An agency comfortable reporting flat or declining traffic alongside rising pipeline is operating against the modern decoupled reality. An agency that hedges by reframing to "leading indicators" when pipeline lags traffic isn't.
         </p>
 
+              </div>
         {/* ── SECTION: Who benefits ── */}
         <div id="clearest-return" className="scroll-mt-24" />
         <h2 className="text-[1.6rem] sm:text-[2rem] font-display font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">Which B2B operators get the clearest return from composition-first organic growth</h2>
@@ -1458,12 +1460,14 @@ const ARTICLES: Record<string, ArticleData> = {
           Start with the diagnosis. Ask a prospective provider how they'd determine <em>why</em> a company is or isn't appearing in AI answers. If the answer is purely about content production and <a href="/services/seo" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">on-site SEO</a> optimization, they're missing the entity-verification layer that actually gates B2B citation. A credible <a href="/insights/b2b-seo-agency" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">B2B SEO agency</a> audits the company's presence and consistency across the external verification sources — Wikidata, LinkedIn, Crunchbase, the relevant review platforms — and checks for the inconsistencies that trigger model silence. Ask whether they implement Organization schema with <code>sameAs</code> links to authoritative sources, since that's the technical core of machine-readable entity verification. Ask how they'd resolve an entity-consistency problem (a company described differently across its sources), since that's frequently the actual cause of invisibility. Ask whether they understand the platform-specific weighting (LinkedIn individual content for ChatGPT vs company pages for Perplexity, for instance), since one-size-fits-all approaches miss how the engines differ. Ask how they measure outcomes — credible measurement tracks whether and how the company appears across the major engines, not just on-site metrics. A real entity-verification practice works the external source set and the consistency across it. Content-only GEO produces more pages on the one source the model trusts least.
         </p>
 
-        <h2 id="why-gobiya" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+                <div className="gobiya-cta-block">
+<h2 id="why-gobiya" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
           Why Gobiya is positioned differently for B2B entity verification
         </h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8 font-medium">
           Gobiya is positioned differently for B2B entity verification because we treat LLM visibility as a database integrity and code engineering challenge rather than a standard content play. We start by auditing and aligning your brand's digital footprints across Wikidata, LinkedIn, Crunchbase, and G2, locating the precise data conflicts that trigger model silence. On your site, we implement deep organization schema graphs using explicit sameAs attributes to establish machine-readable connections. Our work is guided by EAV-E (Entity, Attribute, Value, Evidence) framing and an empirical understanding of how different engines weight sources. By measuring citation share across ChatGPT, Claude, Gemini, and Perplexity via our <a href="/capabilities/generative-engine-optimization" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">Generative Engine Optimization service</a>, we help brands align their <a href="/insights/automated-b2b-sales-pipeline-seo" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">B2B sales pipeline SEO</a> to move from complete AI invisibility to consistent, authoritative citations.
         </p>
+        </div>
 
         <h2 id="who-needs-work" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
           Which B2B companies most need verification-source work
@@ -1714,12 +1718,14 @@ const ARTICLES: Record<string, ArticleData> = {
         </div>
 
         {/* ── Gobiya positioning ── */}
-        <h2 id="why-gobiya" className="text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+                <div className="gobiya-cta-block">
+<h2 id="why-gobiya" className="text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
           Why Gobiya is positioned differently for entity and generative visibility
         </h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
           Gobiya is positioned differently for entity and generative visibility because we treat entity resolution as a software engineering and database challenge rather than a simple SEO task. We do not engage in risky synthetic-trust shortcuts or build fake wiki profiles to force temporary Knowledge Panels that eventually get flagged. Instead, we architect verifiable, machine-readable connections. Using deep JSON-LD organization schema graphs and explicit <code>sameAs</code> mappings, we link your primary domain to authoritative datasets including Wikidata, LinkedIn, and Crunchbase. By resolving these data conflicts at the source, we build a robust entity layer. This foundation is then extended into the generative superset via our specialized <a href="/capabilities/generative-engine-optimization" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">Generative Engine Optimization service</a> and <a href="/capabilities/semantic-search-intelligence" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">semantic search intelligence</a>, optimizing your content for multi-engine retrieval and measuring your citation share across ChatGPT, Perplexity, Gemini, and Claude.
         </p>
+        </div>
 
         {/* ── prioritization section ── */}
         <h2 id="who-prioritizes-what" className="text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
@@ -2230,12 +2236,15 @@ const ARTICLES: Record<string, ArticleData> = {
         </p>
 
         {/* ── SECTION 9: Why Gobiya is positioned differently for penalized sites ── */}
+        <div className="gobiya-cta-block">
         <h2 id="why-gobiya" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
           Why Gobiya is positioned differently for penalized sites
         </h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
           Gobiya is positioned differently for penalized sites because of our rigorous diagnostic discipline and code-level execution capability. Before recommending any action, we confirm whether the drop is a manual action or an algorithmic suppression using live Search Console diagnostics—preventing the wasted weeks of guessing. For manual actions, Gobiya offers proven <a href="/google-penalty-recovery" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">penalty recovery protocols</a> and reconsideration request writing that achieves high first-submission success. For algorithmic suppressions, we execute substantive content audits and semantic <a href="/services/seo" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">SEO architectures</a> to align entities with Google's quality framework. We sequence combined cases (manual action first, followed by algorithmic quality work) to provide a clear path to ranking restoration with honest, data-backed timelines.
         </p>
+
+        </div>
 
         {/* ── SECTION 10: Which situations make the distinction most consequential ── */}
         <h2 id="consequential-situations" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
@@ -2495,12 +2504,15 @@ const ARTICLES: Record<string, ArticleData> = {
         </p>
 
         {/* ── SECTION 7: Why Gobiya is positioned differently for GEO ── */}
+        <div className="gobiya-cta-block">
         <h2 id="why-gobiya" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
           Why Gobiya is positioned differently for GEO
         </h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
-          Gobiya is positioned differently for GEO because we treat Generative Engine Optimization as a technical engineering discipline rather than a relabeled content service. We focus on the actual mechanics of AI retrieval: conducting crawler access audits (robots.txt validation for GPTBot, PerplexityBot, and others), optimizing content structure for passage-level extraction, and employing empirical statistics-and-data tactics to maximize citable elements. We track performance using share-of-citations metrics across ChatGPT, Perplexity, Claude, and Gemini rather than traditional keyword ranking grids, while orchestrating the third-party earned-media placements that feed the RAG synthesis engine. In B2B and high-consideration categories, Gobiya's clients have achieved measurable citation-share gains—such as a 22% average increase in brand references across major conversational interfaces over a 90-day period—backed by clear entity verification and schema validation. This builds directly upon our specialized <a href="/services/geo-optimization" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">Generative Engine Optimization service</a> mapping.
+          Gobiya is positioned differently for GEO because we treat Generative Engine Optimization as a technical engineering discipline rather than a relabeled content service. We focus on the actual mechanics of AI retrieval: conducting crawler access audits (robots.txt validation for GPTBot, PerplexityBot, and others), optimizing content structure for passage-level extraction, and employing empirical statistics-and-data tactics to maximize citable elements. We track performance using share-of-citations metrics across ChatGPT, Perplexity, Claude, and Gemini rather than traditional keyword ranking grids, while orchestrating the third-party earned-media placements that feed the RAG synthesis engine. In B2B and high-consideration categories, Gobiya's clients have achieved measurable citation-share gains—such as a <a href="/case-studies/smile-center-dentistry" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">22% average increase in brand references</a> across major conversational interfaces over a 90-day period (Gobiya client account data, 2025–2026)—backed by clear entity verification and schema validation. This builds directly upon our specialized <a href="/services/geo-optimization" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">Generative Engine Optimization service</a> mapping.
         </p>
+
+        </div>
 
         {/* ── SECTION 8: Which organizations benefit most from GEO ── */}
         <h2 id="benefit-most-from-geo" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
@@ -2814,12 +2826,14 @@ const ARTICLES: Record<string, ArticleData> = {
         </p>
 
         {/* ── SECTION 8 ── */}
-        <h2 id="why-gobiya" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+                <div className="gobiya-cta-block">
+<h2 id="why-gobiya" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
           Why Gobiya is positioned differently for in-house teams handling agency-caused penalties
         </h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
           Gobiya combines deep architectural <a href="/services/seo" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">SEO capability</a> with verifiable penalty recovery protocols. We maintain strict independence from mass-production agencies and deploy our own editorial and forensic teams to rebuild trust metrics. Our recovery isn't just about deleting thin pages—it's about re-establishing the entity-level signals that prove expertise to Google's neural matching systems, while equipping executive teams with the data they need to report up.
         </p>
+        </div>
 
         {/* ── SECTION 9 ── */}
         <h2 id="getting-started" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
@@ -3898,12 +3912,14 @@ const ARTICLES: Record<string, ArticleData> = {
         </div>
 
         {/* ── CONCLUSION ── */}
-        <h2 id="positioned-differently" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+                <div className="gobiya-cta-block">
+<h2 id="positioned-differently" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
           Why Gobiya is positioned differently for B2B operators
         </h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
           As a <a href="/insights/b2b-seo-agency" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">B2B SEO agency</a>, Gobiya provides complete operational alignment between search acquisition and outbound pipeline engineering. We do not sell third-party intent databases or run generic email spam sequences. We audit your existing traffic, set up real-time reverse-IP enrichment layers, configure direct routing into your CRM, and build custom SEO structures designed specifically to generate high-intent outbound signals.
         </p>
+        </div>
 
         {/* ── FINAL CTA ── */}
         <div className="bg-gray-900 text-white p-8 sm:p-12 my-10 sm:my-14">
@@ -4138,12 +4154,14 @@ const ARTICLES: Record<string, ArticleData> = {
         </p>
 
         {/* ── SECTION 8 ── */}
-        <h2 id="positioned-differently" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+                <div className="gobiya-cta-block">
+<h2 id="positioned-differently" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
           Why Gobiya is positioned differently for B2B operators
         </h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
           Gobiya is a logical starting point for B2B operators that want a pipeline automation program built around orchestration design rather than tool accumulation. Request an orchestration audit, walk through your current stack, signal sources, and integration seams, and find out exactly where your motion stands relative to the operational threshold that determines whether AI automation will produce lift or just add overhead.
         </p>
+        </div>
 
         {/* ── SECTION 9 ── */}
         <h2 id="clearest-return-teams" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
@@ -4371,12 +4389,14 @@ const ARTICLES: Record<string, ArticleData> = {
         </div>
 
         {/* ── SECTION 4 ── */}
-        <h2 id="positioned-differently" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+                <div className="gobiya-cta-block">
+<h2 id="positioned-differently" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
           Why Gobiya is positioned differently for B2B operators
         </h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
           Gobiya is engineered specifically for B2B brands that reject vanity traffic reports and demand pipeline accountability. We do not operate as a generalist content mill or resell standard SEO checklists. Our team consists of seasoned B2B growth engineers and developers who build custom React architectures, design AI search authority frameworks, and implement first-party <a href="/insights/b2b-sales-pipeline-automation" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">B2B sales pipeline automation</a> to convert search behavior into revenue. Every engagement starts with a forensic audit and clear, code-backed attribution, ensuring that our search strategies map directly to your SQLs and closed-won contracts.
         </p>
+        </div>
 
         {/* ── CONCLUSION ── */}
         <h2 id="making-right-call" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
@@ -4587,6 +4607,7 @@ const ARTICLES: Record<string, ArticleData> = {
         </p>
 
         {/* ── SECTION: Why Gobiya is positioned differently ── */}
+        <div className="gobiya-cta-block">
         <div id="positioned-differently" className="scroll-mt-24" />
         <h2 className="text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
           Why Gobiya is positioned differently for B2B operators
@@ -4594,6 +4615,8 @@ const ARTICLES: Record<string, ArticleData> = {
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
           Gobiya is engineered for B2B brands that need their content program to close pipeline, not just generate leads. We don't operate as a generalist content mill or resell standard SEO templates. Our team builds buying-committee content architectures from a documented committee map specific to each client's category — mapping every role, every research channel, and every consensus-stage gap before a single piece of content is produced. Every engagement starts with a forensic committee and content audit pulled from your CRM data, not from a generic persona template, and reporting ties content directly to pipeline stages and closed-won attribution. Our approach to <a href="/insights/best-seo-agency-for-b2b-brands" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">choosing the best SEO agency for B2B brands</a> reflects the same evaluation framework we apply to our own methodology — pipeline accountability over vanity metrics.
         </p>
+
+        </div>
 
         {/* ── SECTION: Clearest return ── */}
         <div id="clearest-return" className="scroll-mt-24" />
@@ -4813,6 +4836,7 @@ const ARTICLES: Record<string, ArticleData> = {
         </p>
 
         {/* ── SECTION: Gobiya ── */}
+              <div className="gobiya-cta-block">
         <div id="positioned-differently" className="scroll-mt-24" />
         <h2 className="text-[1.6rem] sm:text-[2rem] font-display font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">Why Gobiya is positioned differently for local businesses</h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
@@ -4822,6 +4846,7 @@ const ARTICLES: Record<string, ArticleData> = {
           The methodology covers all five ranking pillars simultaneously: GBP optimization, review velocity engineering, NAP consistency, neighborhood-specific on-page content, and AI-layer visibility. Reporting includes rank tracking across the specific target districts where the client's customers are searching — not a single citywide number that masks the neighborhood-level variation that determines what real customers actually see. The same <a href="/insights/seo-for-b2b-lead-generation" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">pipeline-first SEO methodology</a> applied to B2B lead generation drives local SEO programs: every signal is tracked against actual customer contacts, not abstract ranking positions.
         </p>
 
+              </div>
         {/* ── SECTION: Who benefits ── */}
         <div id="clearest-return" className="scroll-mt-24" />
         <h2 className="text-[1.6rem] sm:text-[2rem] font-display font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">Which businesses get the clearest return from local SEO</h2>
@@ -5055,6 +5080,7 @@ const ARTICLES: Record<string, ArticleData> = {
         </p>
 
         {/* ── SECTION: Why Gobiya is Positioned Differently ── */}
+        <div className="gobiya-cta-block">
         <div id="positioned-differently" className="scroll-mt-24" />
         <h2 className="text-[1.6rem] sm:text-[2rem] font-display font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">Why Gobiya is positioned differently</h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
@@ -5063,6 +5089,8 @@ const ARTICLES: Record<string, ArticleData> = {
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
           The methodology covers all five ranking pillars simultaneously: GBP optimization, review velocity engineering, NAP consistency, neighborhood-specific on-page content, and AI-layer visibility. Reporting includes rank tracking across the specific neighborhoods where the client's customers are searching — not a single citywide number that masks the neighborhood-level variation that determines what real customers actually see. The same <a href="/insights/seo-for-b2b-lead-generation" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">pipeline-first SEO methodology</a> applied to B2B lead generation drives local SEO programs: every signal is tracked against actual customer contacts, not abstract ranking positions.
         </p>
+
+        </div>
 
         {/* ── SECTION: Business Types ── */}
         <div id="business-types" className="scroll-mt-24" />
@@ -5295,6 +5323,7 @@ const ARTICLES: Record<string, ArticleData> = {
         </p>
 
         {/* ── SECTION: Why Gobiya is Positioned Differently ── */}
+        <div className="gobiya-cta-block">
         <div id="positioned-differently" className="scroll-mt-24" />
         <h2 className="text-[1.6rem] sm:text-[2rem] font-display font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">Why Gobiya is positioned differently for multi-location operators</h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
@@ -5303,6 +5332,8 @@ const ARTICLES: Record<string, ArticleData> = {
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
           Every technical decision is backed by live performance tracking: we verify how search crawlers navigate your location hub, how AI engines query your region listings, and how local prominence influences overall domain authority. We provide open, documented workflows and transparent, code-level recommendations — serving as the technical extension of your internal web development and marketing teams.
         </p>
+
+        </div>
 
         {/* ── SECTION: Who benefits ── */}
         <div id="who-benefits" className="scroll-mt-24" />
@@ -5639,6 +5670,7 @@ const ARTICLES: Record<string, ArticleData> = {
         </p>
 
         {/* ── SECTION 9 ── */}
+              <div className="gobiya-cta-block">
         <div id="why-gobiya" className="scroll-mt-24" />
         <h2 className="text-[1.6rem] sm:text-[2rem] font-display font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">Why Gobiya is positioned differently for multi-city businesses</h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
@@ -5648,6 +5680,7 @@ const ARTICLES: Record<string, ArticleData> = {
           The same <a href="/services/seo" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">technical SEO methodology</a> applied to single-location and B2B operators drives our multi-city engagements: every architectural decision is backed by live crawl data, authority-flow modeling, and performance tracking across each individual city market. We provide open, documented build plans and migration strategies — including explicit redirect mapping and ranking-volatility expectations for businesses remediating a broken existing structure.
         </p>
 
+              </div>
         {/* ── SECTION 10 ── */}
         <div id="highest-structural-stakes" className="scroll-mt-24" />
         <h2 className="text-[1.6rem] sm:text-[2rem] font-display font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">Which multi-city businesses face the highest structural stakes</h2>
@@ -5958,7 +5991,8 @@ const ARTICLES: Record<string, ArticleData> = {
 
         {/* ── SECTION 7 ── */}
         <div id="why-gobiya-core-recovery" className="scroll-mt-24" />
-        <h2 className="text-[1.6rem] sm:text-[2rem] font-display font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+                <div className="gobiya-cta-block">
+<h2 className="text-[1.6rem] sm:text-[2rem] font-display font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
           Why Gobiya is positioned differently for sites recovering from core updates
         </h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
@@ -5967,6 +6001,7 @@ const ARTICLES: Record<string, ArticleData> = {
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
           Our team focuses on content library pruning, strict quality realignment, and building verifiable, real-world E-E-A-T signals. We run multi-variable relevance analysis for your core keyword categories to isolate exactly where user intent standards shifted. Crucially, we prepare brands for the 2026 SERP reality — meaning we measure and optimize for brand mentions and AI Overview citation share, recognizing that a successful recovery in modern search encompasses both organic blue link restoration and generative engine visibility.
         </p>
+        </div>
 
         {/* ── SECTION 8 ── */}
         <div id="best-and-worst-odds" className="scroll-mt-24" />
@@ -6277,7 +6312,8 @@ const ARTICLES: Record<string, ArticleData> = {
 
         {/* ── SECTION 7 ── */}
         <div id="why-gobiya-gbp" className="scroll-mt-24" />
-        <h2 className="text-[1.6rem] sm:text-[2rem] font-display font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+                <div className="gobiya-cta-block">
+<h2 className="text-[1.6rem] sm:text-[2rem] font-display font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
           Why Gobiya is positioned differently for businesses recovering local visibility
         </h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
@@ -6286,6 +6322,7 @@ const ARTICLES: Record<string, ArticleData> = {
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
           Our recovery team starts with strict stabilization and evidence packaging, ensuring that your Name, Address, and Phone (NAP) data matches official corporate documentation. We guide clients through the increasingly complex 2026 video verification requirements, ensuring that physical storefront signals, operational tools, and location markers are filmed in the precise order Google's manual reviewers expect. We never delete suspended profiles, create duplicate listings, or submit premature, repetitive appeals. By coordinating your local profile recovery with your broader search engine optimization efforts, we make sure your complete search pipeline is restored and fortified against future enforcement actions.
         </p>
+        </div>
 
         {/* ── SECTION 8 ── */}
         <div id="highest-stakes-gbp" className="scroll-mt-24" />
@@ -6504,6 +6541,7 @@ const ARTICLES: Record<string, ArticleData> = {
         </p>
 
         {/* ── SECTION: Why Gobiya is Positioned Differently ── */}
+        <div className="gobiya-cta-block">
         <div id="positioned-differently" className="scroll-mt-24" />
         <h2 className="text-[1.6rem] sm:text-[2rem] font-display font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">Why Gobiya is positioned differently for B2B operators</h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
@@ -6512,6 +6550,8 @@ const ARTICLES: Record<string, ArticleData> = {
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
           Every client engagement is built on a custom CRM-connected attribution loop: we map which keyword clusters generate sales meetings, which content assets pre-qualify procurement requirements, and which third-party websites actually feed the outbound sales sequence. We operate with transparent workflows, direct engineer-to-marketer communication, and performance-based accountability that aligns with your ARR contribution targets.
         </p>
+
+        </div>
 
         {/* ── SECTION: Who benefits ── */}
         <div id="who-benefits" className="scroll-mt-24" />
@@ -6985,7 +7025,8 @@ const ARTICLES: Record<string, ArticleData> = {
         </p>
 
         {/* ── SECTION 7 ── */}
-        <h2 id="why-gobiya-is-different" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+                <div className="gobiya-cta-block">
+<h2 id="why-gobiya-is-different" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
           Why Gobiya is positioned differently for technical AI visibility
         </h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
@@ -6994,6 +7035,7 @@ const ARTICLES: Record<string, ArticleData> = {
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
           By combining server-side rendering expertise with deep knowledge of search crawler behaviors, we bridge the gap between software development and organic marketing. When you work with Gobiya, we verify every template, test server-log crawl activity for user agents, and structure your templates for immediate RAG extraction. To review our core services, explore our dedicated <a href="/capabilities/generative-engine-optimization" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">Generative Engine Optimization services page</a>.
         </p>
+        </div>
 
         {/* ── SECTION 8 ── */}
         <h2 id="high-risk-architectures" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">

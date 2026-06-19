@@ -238,7 +238,11 @@ function App({ url }: AppProps) {
       '/company/careers': '/',
       '/capabilities/ai-prospect-scraper': '/capabilities',
       '/company/about': '/about',
-      '/company/approach': '/approach'
+      '/company/approach': '/approach',
+      // Legacy /resources/ URLs from prior CMS — 404ing in search results
+      '/resources/zero-click-is-the-new-billboard-monetize-it-mk82t8ki': '/insights/automated-b2b-sales-pipeline-seo',
+      '/resources/how-to-recover-from-a-google-algorithm-update-2026-guide-ml3c2pbz': '/insights/can-a-site-fully-recover-from-a-google-core-update',
+      '/resources': '/insights'
     };
     
     const target = legacyRedirects[normalized];
@@ -246,6 +250,13 @@ function App({ url }: AppProps) {
       window.history.replaceState({}, '', target);
       const targetPath = target.split('#')[0];
       setCurrentPath(targetPath);
+      return;
+    }
+
+    // Catch-all: redirect any other /resources/ path not in the map
+    if (normalized === '/resources' || normalized.startsWith('/resources/')) {
+      window.history.replaceState({}, '', '/insights');
+      setCurrentPath('/insights');
     }
   }, [currentPath]);
 

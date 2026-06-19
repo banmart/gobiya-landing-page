@@ -441,3 +441,53 @@
 @media (max-width: 860px) { .related-grid { grid-template-columns: 1fr; } }
 
 [data-anim] { will-change: transform, opacity; }
+
+/* ============================================================
+   GOBIYA CTA BLOCK — "Why Gobiya is positioned differently"
+   Visually separates promotional pitch from editorial content.
+   Styled as a distinct module so AI extractors and readers
+   recognize it as a sponsored callout, not neutral body copy.
+   ============================================================ */
+.gobiya-cta-block {
+  position: relative;
+  margin: 3rem 0;
+  padding: 2rem 2rem 2rem 2.5rem;
+  background: rgba(47, 93, 80, 0.04);
+  border: 1px solid rgba(47, 93, 80, 0.18);
+  border-left: 4px solid var(--green);
+  border-radius: 0 8px 8px 0;
+}
+.gobiya-cta-block::before {
+  content: 'GOBIYA — HOW WE APPROACH THIS';
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--green);
+  margin-bottom: 1rem;
+  opacity: 0.85;
+}
+.gobiya-cta-block h2,
+.gobiya-cta-block h3 {
+  font-size: 1.15rem !important;
+  margin-top: 0 !important;
+  margin-bottom: 0.75rem !important;
+  color: var(--ink) !important;
+}
+.gobiya-cta-block p {
+  font-size: 15px !important;
+  line-height: 1.7 !important;
+  color: var(--ink-soft) !important;
+  margin-bottom: 0.9rem !important;
+}
+.gobiya-cta-block p:last-child { margin-bottom: 0 !important; }
+.gobiya-cta-block a {
+  color: var(--green) !important;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.gobiya-cta-block a:hover { opacity: 0.8; }
+@media (max-width: 640px) {
+  .gobiya-cta-block { padding: 1.5rem 1.25rem 1.5rem 1.5rem; }
+}
