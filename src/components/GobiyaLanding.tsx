@@ -285,7 +285,7 @@ export default function GobiyaLanding() {
       </section>
 
       {/* 04. Our Projects Section */}
-      <section style={{ background: '#ffffff', borderBottom: '1px solid #e5e7eb' }} id="projects">
+      <section style={{ background: '#111827', borderBottom: '1px solid #1f2937' }} id="projects">
         <style>{`
           .hp-entry { display: block; text-decoration: none; color: inherit; }
           .hp-frame {
@@ -326,45 +326,71 @@ export default function GobiyaLanding() {
             transition: opacity 0.35s, transform 0.35s;
           }
           .hp-entry:hover .hp-logo { opacity: 1; transform: scale(1.05); }
-          .hp-meta { padding: 1.1rem 1.5rem 1.4rem; }
+          .hp-meta {
+            position: absolute;
+            z-index: 3;
+            bottom: 1.25rem;
+            left: 1.5rem;
+            right: 1.5rem;
+            padding: 0;
+          }
           .hp-meta-name {
             display: block;
-            font-size: 1rem;
-            font-weight: 600;
-            color: #111827;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: rgba(255,255,255,0.9);
             margin-bottom: 0.2rem;
             letter-spacing: -0.01em;
           }
           .hp-meta-cat {
             display: block;
-            font-size: 0.75rem;
-            color: #9ca3af;
+            font-size: 0.65rem;
+            font-family: monospace;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: rgba(255,255,255,0.45);
+          }
+          .hp-read-pill {
+            position: absolute;
+            z-index: 3;
+            top: 1.25rem;
+            right: 1.25rem;
+            font-size: 0.65rem;
+            font-family: monospace;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: rgba(255,255,255,0.6);
+            border: 1px solid rgba(255,255,255,0.25);
+            border-radius: 100px;
+            padding: 0.3rem 0.7rem;
           }
           .hp-row-2 {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            border-top: 1px solid #e5e7eb;
-            border-bottom: 1px solid #e5e7eb;
+            border-top: 1px solid #1f2937;
+            border-bottom: 1px solid #1f2937;
           }
-          .hp-row-2 .hp-entry { border-right: 1px solid #e5e7eb; }
+          .hp-row-2 .hp-entry { border-right: 1px solid #1f2937; }
           .hp-row-2 .hp-entry:last-child { border-right: none; }
           .hp-row-3 {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            border-bottom: 1px solid #e5e7eb;
+            border-bottom: 1px solid #1f2937;
           }
-          .hp-row-3 .hp-entry { border-right: 1px solid #e5e7eb; }
+          .hp-row-3 .hp-entry { border-right: 1px solid #1f2937; }
           .hp-row-3 .hp-entry:last-child { border-right: none; }
           @media (max-width: 900px) {
             .hp-row-2 { grid-template-columns: 1fr; }
-            .hp-row-2 .hp-entry { border-right: none; border-bottom: 1px solid #e5e7eb; }
+            .hp-row-2 .hp-entry { border-right: none; border-bottom: 1px solid #1f2937; }
             .hp-row-2 .hp-entry:last-child { border-bottom: none; }
             .hp-row-3 { grid-template-columns: 1fr 1fr; }
+            .hp-row-3 .hp-entry { border-right: 1px solid #1f2937; border-bottom: 1px solid #1f2937; }
             .hp-row-3 .hp-entry:nth-child(2n) { border-right: none; }
+            .hp-row-3 .hp-entry:nth-last-child(-n+2) { border-bottom: none; }
           }
           @media (max-width: 520px) {
             .hp-row-3 { grid-template-columns: 1fr; }
-            .hp-row-3 .hp-entry { border-right: none; border-bottom: 1px solid #e5e7eb; }
+            .hp-row-3 .hp-entry { border-right: none; border-bottom: 1px solid #1f2937; }
             .hp-row-3 .hp-entry:last-child { border-bottom: none; }
           }
         `}</style>
@@ -373,16 +399,16 @@ export default function GobiyaLanding() {
         <div style={{ padding: '5rem 5vw 2.5rem', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end' }} data-anim="up">
           <div>
             <span style={{ fontFamily: 'monospace', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.18em', color: '#9ca3af', display: 'block', marginBottom: '0.6rem' }}>Our case studies</span>
-            <h2 style={{ fontSize: 'clamp(2rem, 4vw, 3.2rem)', fontWeight: 700, letterSpacing: '-0.03em', color: '#111827' }}>Featured work</h2>
+            <h2 style={{ fontSize: 'clamp(2rem, 4vw, 3.2rem)', fontWeight: 700, letterSpacing: '-0.03em', color: '#ffffff' }}>Featured work</h2>
           </div>
-          <a href="/case-studies" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.875rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.1em', color: '#6b7280', borderBottom: '1px solid #9ca3af', paddingBottom: '2px', textDecoration: 'none' }}>
+          <a href="/case-studies" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.875rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.1em', color: 'rgba(255,255,255,0.6)', borderBottom: '1px solid rgba(255,255,255,0.25)', paddingBottom: '2px', textDecoration: 'none' }}>
             Keep exploring
             <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M1 11L11 1M11 1H3M11 1V9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
           </a>
         </div>
 
-        {/* Card grids */}
-        <div style={{ padding: '0 5vw' }}>
+        {/* Card grids (edge-to-edge layout, no horizontal padding) */}
+        <div>
         {/* Row 1: 2 featured cards */}
         <div className="hp-row-2">
           <a href="/case-studies/smile-center-dentistry" className="hp-entry" data-anim="up">
@@ -390,10 +416,11 @@ export default function GobiyaLanding() {
               <div className="hp-bg hp-bg-photo" style={{ backgroundImage: 'url(/images/smile-center-homepage.webp)' }} />
               <div className="hp-overlay" />
               <img src="/images/smilecenter.webp" alt="Smile Center Dentistry" className="hp-logo" />
-            </div>
-            <div className="hp-meta">
-              <strong className="hp-meta-name">Smile Center Dentistry</strong>
-              <span className="hp-meta-cat">GEO Search &amp; Native CRM</span>
+              <span className="hp-read-pill">Read case study →</span>
+              <div className="hp-meta">
+                <strong className="hp-meta-name">Smile Center Dentistry</strong>
+                <span className="hp-meta-cat">GEO Search &amp; Native CRM</span>
+              </div>
             </div>
           </a>
           <a href="/case-studies" className="hp-entry" data-anim="up">
@@ -401,10 +428,11 @@ export default function GobiyaLanding() {
               <div className="hp-bg hp-bg-photo" style={{ backgroundImage: 'url(/images/caveman-remodel-me-pros.webp)' }} />
               <div className="hp-overlay" />
               <img src="/images/remodelmepros-opt.webp" alt="Remodel Me Pros" className="hp-logo" />
-            </div>
-            <div className="hp-meta">
-              <strong className="hp-meta-name">Remodel Me Pros</strong>
-              <span className="hp-meta-cat">SEO &amp; Lead Generation</span>
+              <span className="hp-read-pill">Read case study →</span>
+              <div className="hp-meta">
+                <strong className="hp-meta-name">Remodel Me Pros</strong>
+                <span className="hp-meta-cat">SEO &amp; Lead Generation</span>
+              </div>
             </div>
           </a>
         </div>
@@ -421,15 +449,15 @@ export default function GobiyaLanding() {
                 <div className="hp-bg hp-bg-photo" style={{ backgroundImage: `url(${c.bg})` }} />
                 <div className="hp-overlay" />
                 <img src={c.logo} alt={c.name} className="hp-logo" />
-              </div>
-              <div className="hp-meta">
-                <strong className="hp-meta-name">{c.name}</strong>
-                <span className="hp-meta-cat">{c.cat}</span>
+                <div className="hp-meta">
+                  <strong className="hp-meta-name">{c.name}</strong>
+                  <span className="hp-meta-cat">{c.cat}</span>
+                </div>
               </div>
             </a>
           ))}
         </div>
-        </div>{/* end padding wrapper */}
+        </div>
       </section>
 
       {/* 05. Three Universes Section */}
