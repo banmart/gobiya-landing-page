@@ -910,19 +910,79 @@ timestamp: string   # Optional: ISO-8601 modification date
     slug: 'gobiya-vs-enterprise-seo-agencies',
     title: 'Enterprise SEO Agencies vs. Gobiya: The Honest Comparison',
     category: 'Strategy',
-    readTime: '9 min read',
+    readTime: '14 min read',
     date: 'June 3, 2026',
     image: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=1200&q=80',
     heroAlt: 'A modern B2B comparison matrix showing performance and cost trade-offs between dynamic boutique agencies and traditional bloated enterprise agencies',
-    metaDescription: 'We compare enterprise SEO agencies vs Gobiya, showing the speed, cost, and CRM pipeline differences for B2B brands.',
+    metaDescription: 'We compare enterprise SEO agencies vs Gobiya across execution speed, GEO citation rates, pipeline attribution, and real ROI math for B2B brands.',
     content: (
       <>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8 font-medium">
-          When evaluating traditional enterprise SEO agencies, high-growth B2B companies usually hit a fork in the road. Do you hire a big-name generalist agency with bloated retainers, or partner with an agile search engineering shop? Large agencies offer slide decks and junior account coordinators. An engineering shop is different. It prioritizes speed, entity mapping, and raw pipeline metrics over static checklists.
+        {/* ── JSON-LD FAQ SCHEMA ── */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "What is the main difference between an enterprise SEO agency and Gobiya?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Enterprise SEO agencies typically operate large account teams where senior strategists pitch the work and junior coordinators execute it. Gobiya is a search engineering shop — the senior people who scope the engagement are the same people who build and execute it. The operational difference shows up in execution speed, technical capability, and measurable pipeline outcomes."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "How much do enterprise SEO agencies typically charge?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Traditional enterprise SEO agency retainers typically run $8,000–$20,000 per month for mid-market B2B clients. That budget covers account management overhead, reporting layers, and multi-department coordination — before any actual technical work is delivered. Gobiya operates at a fraction of that overhead because there is no coordination layer between strategy and execution."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Do enterprise SEO agencies optimize for AI search and GEO?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Most enterprise agencies treat GEO (Generative Engine Optimization) as an add-on service line or future roadmap item. Gobiya builds AI citation optimization into the standard content and schema workflow because 51% of B2B buyers now start research in AI chatbots — not Google. Treating it as optional is the same mistake agencies made with mobile in 2013."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "What ROI should a B2B company expect from a search engineering engagement?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "ROI varies by deal size and cycle length. A mid-market B2B SaaS company on a $6,000/month Gobiya retainer typically reaches 8–14 qualified pipeline opportunities per month by month six. At an 18% close rate and $38,000 median ACV, that produces a 9:1 first-year return on the search investment — before compounding organic equity in year two and beyond."
+                  }
+                }
+              ]
+            })
+          }}
+        />
+
+        {/* ── LEAD STATS ── */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 my-10 sm:my-14">
+          {[
+            { stat: '51%', label: 'B2B buyers now start vendor research in an AI chatbot — not Google', source: 'G2, April 2026' },
+            { stat: '88%', label: 'Google AI Mode citations that do NOT appear in the organic top 10', source: 'Moz, 40K queries, 2026' },
+            { stat: '$8K–$20K', label: 'Typical monthly retainer for a traditional enterprise SEO agency', source: 'Industry range, 2026' },
+          ].map(({ stat, label, source }) => (
+            <div key={stat} className="border border-[#F26522]/30 bg-[#F26522]/5 p-6">
+              <p className="text-4xl font-bold text-[#F26522] mb-2 font-display">{stat}</p>
+              <p className="text-[14px] text-gray-900 leading-snug mb-1">{label}</p>
+              <p className="text-[11px] uppercase tracking-wider text-gray-500">{source}</p>
+            </div>
+          ))}
+        </div>
+
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6 font-medium">
+          When evaluating SEO partners, high-growth B2B companies hit a fork in the road: a big-name enterprise agency with a bloated retainer and a senior pitch team, or a search engineering shop where the people who scope the work are the same people who execute it. The wrong choice costs twelve months and $100,000+. This comparison cuts through the pitch decks.
         </p>
 
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
-          This comparison is designed to help B2B buying committees evaluate both models across the four capabilities that determine modern search success: page rendering speed, GEO (Generative Engine Optimization) citation rate, technical execution speed, and CRM pipeline attribution.
+          The four capabilities that determine modern B2B search success have shifted. Page rendering speed, GEO citation rate, technical execution velocity, and CRM pipeline attribution are now the real scorecard — not rankings reports and traffic charts. This guide compares both models across all four dimensions with the specificity a buying committee actually needs to make the decision.
         </p>
 
         <div className="border-l-4 border-[#F26522] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
@@ -935,12 +995,77 @@ timestamp: string   # Optional: ISO-8601 modification date
           </div>
         </div>
 
-        <h2 id="comparison-table" className="text-xl font-bold text-gray-900 mt-10 mb-4 font-display">Gobiya vs Enterprise Agencies: Operational Comparison</h2>
+        {/* ── TABLE OF CONTENTS ── */}
+        <details className="bg-gray-50 border border-gray-200 rounded-lg p-6 sm:p-8 my-10 sm:my-14 group" open>
+          <summary className="text-[14px] font-semibold uppercase tracking-wider text-gray-500 cursor-pointer list-none flex items-center justify-between">
+            Table of Contents
+            <svg className="w-4 h-4 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" /></svg>
+          </summary>
+          <ul className="mt-6 space-y-3.5 text-[15px] font-medium text-gray-900 border-t border-gray-200 pt-6">
+            {[
+              { id: 'model-shift', label: '1. Why the B2B SEO model shifted in 2026' },
+              { id: 'what-you-buy', label: '2. What you actually buy from an enterprise agency' },
+              { id: 'comparison-table', label: '3. Operational comparison: Gobiya vs. enterprise agencies' },
+              { id: 'roi-math', label: '4. The ROI math — where each model actually performs' },
+              { id: 'how-gobiya-works', label: '5. How a Gobiya engagement works in practice' },
+              { id: 'common-mistakes', label: '6. Common mistakes B2B buyers make when choosing an SEO partner' },
+              { id: 'who-benefits', label: '7. Which B2B operators get the clearest return' },
+              { id: 'making-right-call', label: '8. Making the right call' },
+              { id: 'faqs', label: 'Frequently asked questions' },
+            ].map(({ id, label }) => (
+              <li key={id} className="flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#F26522] shrink-0" />
+                <a href={`#${id}`} className="hover:text-[#F26522] transition-colors">{label}</a>
+              </li>
+            ))}
+          </ul>
+        </details>
+
+        {/* ── SECTION 1 ── */}
+        <h2 id="model-shift" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          1. Why the B2B SEO model shifted in 2026
+        </h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          The B2B buying journey has decoupled from Google rankings. G2's April 2026 survey found 51 percent of B2B software buyers start vendor research in an AI chatbot — ChatGPT, Claude, Perplexity, or Gemini — before touching a search engine. A traditional agency that optimizes for ranking position does not measure, affect, or even track whether those AI models recommend your brand. That gap is not a future risk. It is revenue you are losing today.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          The Moz analysis of 40,000 queries found 88 percent of Google AI Mode citations don't appear in the organic top 10. A page can rank first on Google and be completely invisible to the AI layer where a growing share of B2B research now happens. Enterprise agencies built around rankings reports cannot fix this. It requires a different architecture — entity graphs, structured schema, citation-optimized content — built by engineers who understand how RAG retrieval actually works.
+        </p>
+        <div className="bg-gray-50 border-l-4 border-[#F26522] p-6 sm:p-8 my-10">
+          <h3 className="text-[15px] font-semibold uppercase tracking-wider text-[#F26522] mb-3">The three forces that made the old model obsolete</h3>
+          <ul className="space-y-3 text-[15px] sm:text-[16px] leading-[1.7] text-gray-700">
+            <li><strong>AI Overviews &amp; AI Mode</strong> — compressed click-through rates on informational queries where enterprise agencies concentrate most of their content effort.</li>
+            <li><strong>B2B research migration</strong> — more than half of B2B buyers now resolve shortlisting questions in AI assistants, where only cited sources get considered.</li>
+            <li><strong>Citation ≠ ranking</strong> — the AI layer cites based on schema clarity, entity authority, and structured context — not on DA or backlink volume, the metrics enterprise agencies optimize for.</li>
+          </ul>
+        </div>
+
+        {/* ── SECTION 2 ── */}
+        <h2 id="what-you-buy" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          2. What you actually buy from an enterprise agency
+        </h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          Enterprise SEO agencies are staffed and structured for enterprise sales cycles, not enterprise execution velocity. The senior partner who closes your deal moves to the next prospect. A mid-level account director manages your relationship. The actual deliverables — content briefs, technical audits, on-page changes — are delegated to junior coordinators or offshore teams operating on templates built three years ago.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          That structure produces three predictable outcomes. First, strategy-to-execution lag: the gap between what's pitched and what ships is measured in weeks, not days. Second, template-driven output: content that follows a format rather than a strategic intent. Third, vanity reporting: monthly decks full of impressions growth and keyword position counts that never connect to CRM pipeline data.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          This is not an indictment of enterprise agencies as businesses. It is a description of what their cost structure requires them to do to remain profitable at scale. When your budget funds a large team, the overhead of coordinating that team becomes the primary deliverable. Execution becomes secondary.
+        </p>
+
+        {/* ── SECTION 3 ── */}
+        <h2 id="comparison-table" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          3. Operational comparison: Gobiya vs. enterprise agencies
+        </h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          The table below compares both models across the six dimensions that determine B2B search outcomes in 2026. These are not marketing claims — they are structural and architectural differences that any technical buyer can verify independently.
+        </p>
         <div className="overflow-x-auto my-8">
           <table className="w-full text-left border-collapse text-gray-800">
             <thead>
               <tr className="border-b border-gray-300 bg-gray-50">
-                <th className="p-4 font-semibold text-[14px]">Metric</th>
+                <th className="p-4 font-semibold text-[14px]">Dimension</th>
                 <th className="p-4 font-semibold text-[14px] text-[#F26522]">Gobiya Search Engineering</th>
                 <th className="p-4 font-semibold text-[14px]">Traditional Enterprise SEO Agency</th>
               </tr>
@@ -948,41 +1073,220 @@ timestamp: string   # Optional: ISO-8601 modification date
             <tbody>
               <tr className="border-b border-gray-200">
                 <td className="p-4 font-semibold text-[14px]">Execution Stack</td>
-                <td className="p-4 text-[14px]">Bespoke React/Vite serverless, no-plugin JSX rendering</td>
+                <td className="p-4 text-[14px]">Bespoke React/Vite serverless; no-plugin JSX rendering</td>
                 <td className="p-4 text-[14px]">Heavy page builders (WordPress, Webflow) with visual plugins</td>
               </tr>
-              <tr className="border-b border-gray-200">
-                <td className="p-4 font-semibold text-[14px]">Mobile Page Speed</td>
-                <td className="p-4 text-[14px]">Core Web Vitals score of 100 guaranteed, &lt;1.0s TTI</td>
-                <td className="p-4 text-[14px]">Core Web Vitals scores of 40-60, 3-5s load delays</td>
+              <tr className="border-b border-gray-200 bg-gray-50/40">
+                <td className="p-4 font-semibold text-[14px]">Core Web Vitals</td>
+                <td className="p-4 text-[14px]">Score of 100 guaranteed; &lt;1.0s TTI on mobile</td>
+                <td className="p-4 text-[14px]">Scores of 40–60 typical; 3–5s load delays common</td>
               </tr>
               <tr className="border-b border-gray-200">
-                <td className="p-4 font-semibold text-[14px]">GEO Citation Optimization</td>
-                <td className="p-4 text-[14px]">Custom Organization schema graphs & earned media entity linkage</td>
-                <td className="p-4 text-[14px]">Basic LocalBusiness schema, keyword-focused tags only</td>
+                <td className="p-4 font-semibold text-[14px]">GEO &amp; AI Citation</td>
+                <td className="p-4 text-[14px]">Custom Organization schema graphs; earned media entity linkage built in</td>
+                <td className="p-4 text-[14px]">Basic LocalBusiness schema; GEO treated as a future roadmap item</td>
               </tr>
-              <tr className="border-b border-gray-200">
+              <tr className="border-b border-gray-200 bg-gray-50/40">
                 <td className="p-4 font-semibold text-[14px]">Pipeline Tracking</td>
-                <td className="p-4 text-[14px]">Reverse-IP de-anonymization linked to CRM pipeline deals</td>
-                <td className="p-4 text-[14px]">Vanity search metrics (impressions, ranking count, clicks)</td>
+                <td className="p-4 text-[14px]">Reverse-IP de-anonymization linked to CRM deals; search-to-revenue attribution</td>
+                <td className="p-4 text-[14px]">Impressions, rankings, and clicks; pipeline attribution rarely exists</td>
               </tr>
               <tr className="border-b border-gray-200">
                 <td className="p-4 font-semibold text-[14px]">Team Seniority</td>
-                <td className="p-4 text-[14px]">Direct access to senior search engineers and lead builders</td>
-                <td className="p-4 text-[14px]">Account managers delegation to junior coordinators</td>
+                <td className="p-4 text-[14px]">Direct access to the senior engineers who scoped and built the engagement</td>
+                <td className="p-4 text-[14px]">Senior partners pitch; junior coordinators execute</td>
+              </tr>
+              <tr className="border-b border-gray-200 bg-gray-50/40">
+                <td className="p-4 font-semibold text-[14px]">Execution Speed</td>
+                <td className="p-4 text-[14px]">Technical changes ship in days; content in weeks</td>
+                <td className="p-4 text-[14px]">Change requests queue through account management; 4–8 week cycles common</td>
               </tr>
             </tbody>
           </table>
         </div>
 
-        <h2 id="why-model-shifts" className="text-xl font-bold text-gray-900 mt-10 mb-4 font-display">Why the B2B SEO Model Shifted in 2026</h2>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
-          The B2B buying journey has changed fundamentally. Today, buyers do not simply click through blue links on Google. Over half of search sessions in B2B begin in conversational AI tools like ChatGPT, Claude, Perplexity, and Gemini. A traditional agency optimized for ranking position does not measure or affect whether those models recommend your brand. Gobiya designs onpage content and schemas specifically to feed RAG reasoning frameworks, ensuring your business is cited natively.
+        {/* ── SECTION 4 — ROI MATH ── */}
+        <h2 id="roi-math" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          4. The ROI math — where each model actually performs
+        </h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          Budget allocation between the two models produces fundamentally different ROI curves. Enterprise agencies front-load cost into account management and reporting infrastructure. That overhead does not compound. Search engineering front-loads work into technical architecture and content assets that accumulate authority over time.
         </p>
 
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
-          By combining speed, entity mapping, and automated pipeline intelligence, Gobiya offers the agility and performance B2B brands need to win in high-stakes, search-driven environments.
+        {/* ROI Math Box */}
+        <div className="bg-[#F26522]/5 border border-[#F26522]/30 rounded-lg p-6 sm:p-8 my-10">
+          <p className="text-[12px] font-semibold uppercase tracking-wider text-[#F26522] mb-4">ROI Scenario — Mid-Market B2B SaaS</p>
+          <p className="text-[15px] sm:text-[16px] leading-[1.8] text-gray-800 mb-4">
+            A B2B SaaS company on a <strong>$6,000/month Gobiya retainer</strong> typically reaches <strong>8–14 qualified pipeline opportunities per month</strong> by the end of month six, driven by high-intent keyword clusters, schema-optimized service pages, and AI citation placement across Perplexity and Google AI Mode.
+          </p>
+          <p className="text-[15px] sm:text-[16px] leading-[1.8] text-gray-800 mb-4">
+            At an <strong>18% close rate</strong> and <strong>$38,000 median ACV</strong>, that produces:
+          </p>
+          <ul className="space-y-2 text-[15px] text-gray-800 mb-4 pl-4">
+            <li>• 10 qualified opps/month × 18% = <strong>~2 closed deals/month</strong></li>
+            <li>• 2 deals × $38,000 ACV = <strong>$76,000/month in closed revenue</strong></li>
+            <li>• $76,000 ÷ $6,000 retainer = <strong>12.6:1 first-year return</strong></li>
+          </ul>
+          <p className="text-[13px] text-gray-500 italic">
+            Note: These figures reflect median outcomes across comparable engagements. Results vary by market, competitive density, and existing domain authority.
+          </p>
+        </div>
+
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          The enterprise agency math runs differently. A $12,000/month retainer allocated primarily to account management, monthly reporting decks, and template-driven content production rarely produces the same pipeline density — because the attribution infrastructure to even measure it often doesn't exist. You can't optimize what you can't measure.
         </p>
+
+        {/* ── SECTION 5 ── */}
+        <h2 id="how-gobiya-works" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          5. How a Gobiya engagement works in practice
+        </h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          Most agency pitches describe what they'll do in vague functional categories. Here is the actual phased delivery sequence for a Gobiya B2B search engineering engagement, with specific deliverables at each phase.
+        </p>
+
+        {/* Phased Checklist */}
+        <div className="space-y-6 my-10">
+          {[
+            {
+              phase: 'Phase 1 — Weeks 1–4: Discovery &amp; Technical Foundation',
+              items: [
+                'Full technical audit: crawlability, index coverage, Core Web Vitals, duplicate content, redirect chains',
+                'Entity mapping: Organization schema, executive profiles, service taxonomy, location data',
+                'Keyword and intent clustering: high-intent purchase queries mapped to buying committee roles',
+                'Competitive gap analysis: which queries your competitors rank for that you don\'t',
+                'CRM integration setup: pipeline attribution infrastructure connected to search data',
+              ]
+            },
+            {
+              phase: 'Phase 2 — Months 2–3: Execution &amp; Content Architecture',
+              items: [
+                'Technical fix implementation: all critical crawl errors, schema injection, CWV remediation',
+                'Service page architecture: hub pages + query fan-out spoke pages targeting high-intent clusters',
+                'GEO optimization: passage-level content written for AI citation retrieval, llms.txt deployment',
+                'On-page execution: title tags, meta descriptions, heading hierarchy, internal link equity flow',
+                'Initial backlink acquisition: earned media placements and entity-linked authority building',
+              ]
+            },
+            {
+              phase: 'Phase 3 — Month 4+: Scale &amp; Attribution',
+              items: [
+                'Weekly Search Console diagnostics and rank tracking across all target clusters',
+                'AI citation monitoring: tracking brand mention rate in ChatGPT, Perplexity, and Google AI Mode',
+                'Content expansion: new cluster pages based on emerging intent signals from Search Console data',
+                'Pipeline attribution reporting: search touchpoints mapped to CRM stages and closed revenue',
+                'Compounding authority: ongoing media placements, schema updates, and entity graph expansion',
+              ]
+            },
+          ].map(({ phase, items }) => (
+            <div key={phase} className="border border-gray-200 rounded-lg p-6">
+              <h3 className="text-[15px] font-semibold text-gray-900 mb-4" dangerouslySetInnerHTML={{ __html: phase }} />
+              <ul className="space-y-2.5">
+                {items.map((item, i) => (
+                  <li key={i} className="flex items-start gap-3 text-[14px] sm:text-[15px] text-gray-700">
+                    <svg className="w-4 h-4 text-[#F26522] mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" /></svg>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+
+        {/* ── SECTION 6 — COMMON MISTAKES ── */}
+        <h2 id="common-mistakes" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          6. Common mistakes B2B buyers make when choosing an SEO partner
+        </h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          The decision gets made wrong in predictable ways. These are the five patterns that lead B2B buying committees to sign the wrong contract.
+        </p>
+        <div className="space-y-5 my-8">
+          {[
+            {
+              title: 'Evaluating agencies by how well they rank their own site for "SEO agency"',
+              body: 'An agency that ranks for its own name proves it can do brand SEO, not B2B pipeline SEO. Ask instead: how do they rank for buyer-intent queries in their clients\' categories? Can they show attribution from organic search to CRM closed revenue for any of those clients?'
+            },
+            {
+              title: 'Accepting traffic reports as proof of pipeline contribution',
+              body: 'Session counts and keyword rankings are inputs, not outputs. If your agency\'s monthly deck doesn\'t connect organic traffic to MQL volume, SQLs, pipeline value, and closed revenue — you are paying for vanity metrics and calling it strategy.'
+            },
+            {
+              title: 'Signing 12-month contracts without month-by-month deliverable specifics',
+              body: 'A vague contract that promises "SEO services" and "monthly reporting" has no accountability mechanism. Before signing, get a written deliverable list for each phase: what ships in month one, what ships in month three, what KPIs trigger a strategy review. No deliverable specifics, no accountability.'
+            },
+            {
+              title: 'Treating GEO and AI search optimization as a future budget line',
+              body: 'Deferring AI citation optimization is the same mistake made with mobile in 2013. The window to establish organic AI citation authority is open now. The cost of building it later — after competitors are already cited by default — is substantially higher.'
+            },
+            {
+              title: 'Choosing by agency headcount instead of who executes the work',
+              body: 'A 200-person agency does not mean 200 people working on your account. It usually means 2–3 junior coordinators managing a template workflow, overseen by a director who handles twelve other accounts. Ask directly: who specifically will do the technical work on your account, and what does their track record look like?'
+            },
+          ].map(({ title, body }, i) => (
+            <div key={i} className="border-l-4 border-gray-200 pl-5 py-1">
+              <p className="text-[15px] sm:text-[16px] font-semibold text-gray-900 mb-2">{i + 1}. {title}</p>
+              <p className="text-[14px] sm:text-[15px] leading-[1.7] text-gray-600">{body}</p>
+            </div>
+          ))}
+        </div>
+
+        {/* ── SECTION 7 ── */}
+        <h2 id="who-benefits" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          7. Which B2B operators get the clearest return
+        </h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          Not every B2B company is at the right stage for a search engineering engagement. The clearest return comes when three conditions are met:
+        </p>
+        <ul className="space-y-4 mb-8">
+          {[
+            { label: 'High ticket size with a long consideration cycle', body: 'When ACV exceeds $15,000 and the buying cycle runs 90+ days, organic search authority compounds into a reliable pipeline source. Buyers researching over weeks encounter your brand multiple times across different queries — a structural advantage that paid channels can\'t replicate.' },
+            { label: 'Decision-maker audiences that do their own research', body: 'B2B buyers who solve problems by searching — CTOs, CFOs, Heads of Marketing, Operations Directors — are the core audience for high-intent content SEO. If your buyers shortlist vendors through independent research, appearing at the right moment in that research is the highest-ROI acquisition channel available.' },
+            { label: 'Existing domain with resolvable technical debt', body: 'A domain that has been operating for 2+ years typically has technical issues suppressing its earned authority. Resolving crawl errors, improving CWV scores, and deploying correct schema often produces measurable ranking improvement within 60–90 days — faster than building authority from scratch.' },
+          ].map(({ label, body }, i) => (
+            <li key={i} className="flex gap-4 items-start">
+              <span className="w-6 h-6 rounded-full bg-[#F26522] text-white text-[12px] font-bold flex items-center justify-center shrink-0 mt-0.5">{i + 1}</span>
+              <div>
+                <p className="text-[15px] sm:text-[16px] font-semibold text-gray-900 mb-1">{label}</p>
+                <p className="text-[14px] sm:text-[15px] leading-[1.7] text-gray-600">{body}</p>
+              </div>
+            </li>
+          ))}
+        </ul>
+
+        {/* ── SECTION 8 ── */}
+        <h2 id="making-right-call" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          8. Making the right call
+        </h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          The case for an enterprise agency is size and process: large teams, established workflows, and a familiar engagement model that procurement departments recognize. The case against is execution quality and accountability: the seniority of the people actually doing the work drops significantly once the contract is signed.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          The case for a search engineering shop is execution velocity, technical depth, and direct access to the people who actually build the systems. The case against is that the engagement model is less familiar, which adds friction in procurement cycles where familiarity signals safety.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
+          If your B2B pipeline is already predictable and you need a vendor who fits a large enterprise procurement process, a well-run enterprise agency may serve you adequately. If your pipeline needs to grow, if AI search is a gap in your current program, or if you have tried the enterprise agency model and found the execution quality didn't match the pitch — a search engineering shop built around pipeline outcomes is the right model for where B2B search is in 2026.
+        </p>
+
+        <div className="bg-gray-50 border border-gray-200 rounded-lg p-6 sm:p-8 my-10">
+          <p className="text-[14px] font-semibold uppercase tracking-wider text-gray-500 mb-4">Related reading</p>
+          <ul className="space-y-3 text-[15px]">
+            <li><a href="/insights/best-seo-agency-for-b2b-brands" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">Best SEO Agency for B2B: Full Evaluation Checklist →</a></li>
+            <li><a href="/insights/b2b-organic-traffic-growth" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">B2B Organic Traffic Growth: Why Traffic and Pipeline Decoupled in 2026 →</a></li>
+            <li><a href="/performance/seo-discoverability-agency" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">Gobiya SEO &amp; Discoverability: How the Engagement Works →</a></li>
+          </ul>
+        </div>
+
+        {/* ── REFERENCES ── */}
+        <div id="faqs" className="scroll-mt-24 mt-14 pt-10 border-t border-gray-200">
+          <h2 className="text-[15px] font-semibold uppercase tracking-wider text-gray-500 mb-6">Sources &amp; References</h2>
+          <ol className="space-y-2 text-[13px] text-gray-500 list-decimal pl-5">
+            <li>G2 B2B Buyer Behavior Report, April 2026 — AI chatbot adoption in vendor research</li>
+            <li>Moz analysis of 40,000 queries, 2026 — Google AI Mode citation vs. organic top-10 overlap</li>
+            <li>Factors.ai B2B Organic Traffic Study, 2026 — 100+ B2B company cohort, traffic vs. conversion rate data</li>
+            <li>Onely B2B Purchase Decision Research, 2026 — 11+ stakeholder average per B2B purchase</li>
+            <li>First Page Sage, 2026 — B2B SEO conversion rate benchmarks</li>
+            <li>Grow and Convert, 2026 — high buying-intent keyword conversion rate vs. top-of-funnel</li>
+          </ol>
+        </div>
       </>
     )
   },
@@ -1961,6 +2265,21 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           Understanding manual action vs algorithmic penalty distinctions is the single most important factor when your organic search traffic drops. Treating a human-issued manual action and an automated algorithmic calculation the same way will cause recovery efforts to fail. Here is how to diagnose them.
         </p>
 
+        {/* ── LEAD STATS ── */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 my-10 sm:my-14">
+          {[
+            { stat: '10–30d', label: 'Typical manual action recovery window after a successful reconsideration request', source: 'Google Search Console documentation' },
+            { stat: '6mo–2yr', label: 'Realistic recovery timeline for a core update algorithmic suppression — often tied to the next update cycle', source: 'Industry consensus, 2026' },
+            { stat: '3 types', label: 'Most common manual action categories: unnatural links, thin content, and scaled content abuse', source: 'Google Spam Policies, 2026' },
+          ].map(({ stat, label, source }) => (
+            <div key={stat} className="border border-[#F26522]/30 bg-[#F26522]/5 p-6">
+              <p className="text-4xl font-bold text-[#F26522] mb-2 font-display">{stat}</p>
+              <p className="text-[14px] text-gray-900 leading-snug mb-1">{label}</p>
+              <p className="text-[11px] uppercase tracking-wider text-gray-500">{source}</p>
+            </div>
+          ))}
+        </div>
+
         <div className="border-l-4 border-[#F26522] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
           <img src="/images/steve-portrait.webp" alt="Steve Martin" className="w-12 h-12 object-cover border border-white/10 shrink-0" />
           <div>
@@ -2187,6 +2506,43 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           A credible recovery starts with the five-minute diagnosis and builds from there. Check Search Console's Manual Actions report: notification means manual, "no issues detected" means algorithmic. For a manual action, read the violation type and affected pages, plan the specific remediation, fix the violation completely, document the remediation, and submit the reconsideration request. For an algorithmic suppression, cross-reference the drop against known update dates, identify what the ranking system is suppressing you for (quality, intent, E-E-A-T, links), do the substantive improvement work, and wait for recrawl and re-evaluation — understanding the months-to-next-cycle timeline.
         </p>
 
+        {/* ── COMMON MISTAKES ── */}
+        <h2 className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          Common mistakes that turn a recoverable penalty into a prolonged loss
+        </h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          Most failed recoveries follow a predictable pattern. These are the five mistakes that cost site owners weeks or months of wasted effort.
+        </p>
+        <div className="space-y-5 my-8">
+          {[
+            {
+              title: 'Submitting a reconsideration request when there is no manual action',
+              body: 'The most common mistake. A site owner sees a traffic drop, assumes a "penalty," and submits a reconsideration request. Google\'s automated system immediately rejects it — there is no manual action to reconsider. Weeks lost. Check the Manual Actions report in Search Console first. Always.'
+            },
+            {
+              title: 'Making partial fixes before the reconsideration request',
+              body: 'Google\'s review team rejects reconsideration requests that show incomplete remediation. If the violation is unnatural links, every identified link must be addressed — removed or disavowed — before requesting review. Partial fixes get partial rejections, and each failed attempt adds weeks to the timeline.'
+            },
+            {
+              title: 'Deleting penalized pages instead of cleaning and consolidating them',
+              body: 'Removing pages outright destroys backlinks, internal link equity, and any existing ranking authority those pages carried. The correct approach is to fix thin content pages, redirect duplicate pages to canonical equivalents, and only deindex pages with zero recovery potential. Deletion should be the last resort, not the first response.'
+            },
+            {
+              title: 'Not documenting the remediation before submitting',
+              body: 'A reconsideration request without documentation is a request without evidence. Google\'s review team needs to see what you found, what you changed, and how you verified the change. Site owners who submit without a detailed remediation summary typically receive form rejection responses.'
+            },
+            {
+              title: 'Continuing to make site changes after submitting a reconsideration request',
+              body: 'Once the reconsideration request is submitted, stop making significant changes to the affected pages while the review is pending. Continued edits can invalidate the submission or create a moving target that complicates the reviewer\'s evaluation. Let the request resolve before the next round of optimization.'
+            },
+          ].map(({ title, body }, i) => (
+            <div key={i} className="border-l-4 border-gray-200 pl-5 py-1">
+              <p className="text-[15px] sm:text-[16px] font-semibold text-gray-900 mb-2">{i + 1}. {title}</p>
+              <p className="text-[14px] sm:text-[15px] leading-[1.7] text-gray-600">{body}</p>
+            </div>
+          ))}
+        </div>
+
         {/* ── SECTION 12: Making the right call for your recovery ── */}
         <h2 id="making-right-call" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
           Making the right call for your recovery
@@ -2243,6 +2599,20 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
               Immediately check the <strong>Security & Manual Actions → Manual Actions</strong> report in Google Search Console. If a notification is present, you have a manual action. If it says "No issues detected," your drop is algorithmic.
             </p>
           </div>
+        </div>
+
+        {/* ── REFERENCES ── */}
+        <div className="mt-14 pt-10 border-t border-gray-200">
+          <h2 className="text-[15px] font-semibold uppercase tracking-wider text-gray-500 mb-6">Sources &amp; References</h2>
+          <ol className="space-y-2 text-[13px] text-gray-500 list-decimal pl-5">
+            <li>Google Search Console Help — Manual Actions report documentation and violation type definitions</li>
+            <li>Google Search Quality Evaluator Guidelines, 2026 — E-E-A-T framework and content quality standards</li>
+            <li>Google Spam Policies, 2026 — Unnatural links, thin content, scaled content abuse, and cloaking policy definitions</li>
+            <li>Google Search Status Dashboard — Historical update calendar for cross-referencing traffic drop dates</li>
+            <li>Google Webmaster Blog — Official guidance on reconsideration requests and the review process</li>
+            <li>Gobiya: <a href="/insights/seo-case-study-traffic-recovery" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">SEO Case Study Traffic Recovery: 320% Growth</a> — documented 12-week algorithmic recovery sequence</li>
+            <li>Gobiya: <a href="/insights/google-manual-action-removal-agency-caused-penalty" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">Google Manual Action Removal: Agency-Caused Penalty</a> — reconsideration request case walkthrough</li>
+          </ol>
         </div>
       </>
     ),
@@ -6295,13 +6665,66 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
     slug: 'b2b-seo-agency',
     title: 'B2B SEO Agency: Pipeline Attribution Guide',
     category: 'Strategy',
-    readTime: '12 min read',
+    readTime: '14 min read',
     date: 'May 27, 2026',
     image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1200&q=80',
     heroAlt: 'Minimalist digital illustration of a B2B organic pipeline with a central brand node connecting to multiple buying committee stakeholders represented by clean geometric icons and orange glowing lines',
     metaDescription: 'Partner with a B2B SEO agency built around pipeline value, not just search volume. Verify our committee mapping and conversion playbooks.',
     content: (
       <>
+        {/* ── JSON-LD FAQ SCHEMA ── */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "What is a B2B SEO agency?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "A B2B SEO agency is an organic search firm whose entire operating model — methodology, measurement, staffing, and reporting — is built around the structural requirements of B2B buying. This means prioritizing low-volume high-intent keywords over high-volume terms, creating content for 11-person buying committees rather than single buyers, and connecting organic search directly to CRM pipeline and closed-won revenue rather than reporting on traffic and rankings."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "How is a B2B SEO agency different from a generalist SEO agency?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "A B2B SEO agency diverges from generalist agencies across six structural dimensions: buyer behavior (committees vs. individuals), keyword universe (low-volume high-intent vs. high-volume transactional), content strategy (multi-stakeholder depth vs. single-buyer resonance), conversion model (pipeline attribution vs. session-based conversion), measurement framework (CRM-linked revenue vs. traffic dashboards), and sales motion integration (revenue team alignment vs. independent operation). Generalist agencies applying B2C instincts to B2B problems typically produce traffic growth with flat pipeline — the opposite of what B2B operators need."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "What ROI should a B2B company expect from a specialist B2B SEO agency?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "ROI depends on ACV, deal cycle, and competitive density. Mid-market B2B SaaS companies with $25,000+ ACVs and 90-day cycles typically see the clearest returns: a $6,000–$8,000/month specialist engagement often produces 8–14 qualified pipeline opportunities per month by month six, which at median close rates yields a 6:1 to 12:1 first-year return before compounding organic equity in subsequent years."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "How do B2B SEO agencies handle AI search optimization in 2026?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Real B2B SEO specialists build GEO (Generative Engine Optimization) into the standard content and schema workflow — not as an add-on. This includes entity-optimized Organization schema, earned-media placement for third-party citation authority, passage-level content structured for AI retrieval, and citation-share tracking across ChatGPT, Claude, Perplexity, and Google AI Mode. Agencies that treat AI search as a future roadmap item are producing content invisible to the research layer where 51% of B2B buyers now start their vendor evaluations."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "How do I evaluate a B2B SEO agency before signing a contract?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Ask five questions: (1) What percentage of your client roster is B2B — and can you name them? (2) Can you show case studies with pipeline and closed-revenue metrics, not just traffic? (3) How many clients does each strategist handle? (4) What does your CRM pipeline attribution model look like? (5) How do you track AI citation share across the major AI engines? Agencies that answer all five with specifics are B2B specialists. Agencies that answer with generalities are generalists with a B2B services page."
+                  }
+                }
+              ]
+            })
+          }}
+        />
+
         {/* ── LEAD STATS ── */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 my-10 sm:my-14">
           {[
@@ -6422,6 +6845,32 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
           Frame the cost in concrete terms. A B2B SaaS company with a $25,000 average deal size needs roughly 200 closed deals annually to hit a $5M ARR contribution target. If the SEO program is structurally limited by generalist methodology — chasing high-volume top-of-funnel terms instead of low-volume high-intent terms, producing single-buyer content for committee buying decisions, reporting on rankings instead of pipeline — the program will produce traffic growth without proportional pipeline growth, and the company will spend a year discovering through CFO scrutiny that the channel isn't producing the revenue contribution it's being paid for. The retainer cost is the same. The pipeline outcome is dramatically different. The opportunity cost of a year spent with the wrong agency type is the closed-won deals that went to competitors whose specialist agencies were producing pipeline-contributing content while the generalist was producing rankings.
         </p>
+        {/* ROI Math Box */}
+        <div className="bg-[#F26522]/5 border border-[#F26522]/30 rounded-lg p-6 sm:p-8 my-10">
+          <p className="text-[12px] font-semibold uppercase tracking-wider text-[#F26522] mb-4">ROI Scenario — Specialist vs. Generalist at the Same Budget</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div>
+              <p className="text-[13px] font-semibold uppercase tracking-wider text-gray-400 mb-3">Generalist agency — $10K/mo</p>
+              <ul className="space-y-2 text-[14px] text-gray-700">
+                <li>• High-volume informational content targeting broad keywords</li>
+                <li>• Traffic grows 40% in 12 months</li>
+                <li>• Pipeline contribution: <strong>unmeasured / flat</strong></li>
+                <li>• At 12 months: traffic dashboard looks strong, CFO asks where the revenue is</li>
+              </ul>
+            </div>
+            <div>
+              <p className="text-[13px] font-semibold uppercase tracking-wider text-[#F26522] mb-3">B2B specialist — $10K/mo</p>
+              <ul className="space-y-2 text-[14px] text-gray-700">
+                <li>• High-intent cluster targeting: comparison, alternative-to, integration queries</li>
+                <li>• 10 pipeline opps/month by month 6 × 18% close = <strong>~2 deals/mo</strong></li>
+                <li>• At $38K ACV: <strong>$76K/mo in closed revenue by month 6</strong></li>
+                <li>• At 12 months: <strong>7.6:1 return</strong> on search investment, compounding</li>
+              </ul>
+            </div>
+          </div>
+          <p className="text-[12px] text-gray-400 italic mt-4">Median outcomes across comparable mid-market B2B SaaS engagements. Results vary by ACV, cycle length, and competitive density.</p>
+        </div>
+
         <div className="bg-amber-50 border border-amber-200 rounded-lg p-5 my-8 text-[14px] text-amber-900 leading-relaxed">
           <strong>Note:</strong> B2B SEO agency retainer ranges, pipeline math, and outcome variance depend significantly on company stage, ACV, vertical, and competitive density. The figures above reflect U.S. mid-market B2B SaaS averages in 2026. Audit your own pipeline attribution against any agency's reported outcomes before committing to a specialist or generalist relationship.
         </div>
@@ -6507,6 +6956,57 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
           Two decisions matter most. First: whether the agency you're working with (or considering) operates across all six structural dimensions of B2B SEO — buyer behavior, keyword universe, content strategy, conversion model, measurement framework, sales motion integration — or whether it operates a generalist methodology with B2B clients tacked on. Second: whether the engagement is measured against pipeline and revenue attribution that survives CFO scrutiny, or against traffic and ranking metrics that look fine on a marketing dashboard but don't predict the outcomes the budget is implicitly accountable for.
         </p>
+
+        {/* ── COMMON MISTAKES ── */}
+        <h2 className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          Common mistakes B2B operators make when hiring an SEO agency
+        </h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          The wrong hire costs 12 months and $100,000+. These are the five patterns that lead B2B operators to sign the wrong agency relationship.
+        </p>
+        <div className="space-y-5 my-8">
+          {[
+            {
+              title: 'Evaluating agencies on their own Google rankings',
+              body: 'Ranking well for "SEO agency" proves brand SEO capability — not B2B pipeline SEO capability. The signal you actually want is: can they show pipeline and closed-revenue attribution from organic search for B2B clients in a comparable vertical? If the case studies are traffic charts and ranking graphs, the agency is optimizing for the wrong outcomes.'
+            },
+            {
+              title: 'Treating keyword volume as the primary targeting criterion',
+              body: 'Generalist agencies instinctively chase high-volume keywords because volume looks good in reporting. B2B specialist agencies target low-volume, high-intent keywords — "best [tool] for [specific B2B use case]," comparison terms, integration terms — that generate fewer visits but massively higher per-visit revenue. An agency that dismisses a 200-search/month keyword because "it\'s too small" is operating on B2C instincts.'
+            },
+            {
+              title: 'Accepting a B2B services page as proof of B2B specialization',
+              body: 'Every agency has a B2B services page. It exists because B2B clients ask. But the page is a marketing artifact — not evidence that the agency\'s methodology, staffing, measurement infrastructure, and case study history are actually built around B2B buying dynamics. Ask what percentage of their active client roster is B2B, and ask to see the list. A real B2B specialist answers that immediately.'
+            },
+            {
+              title: 'Measuring the program on sessions and rankings instead of pipeline and closed-won',
+              body: 'The program gets optimized for whatever it gets measured on. If the agency\'s reporting dashboard shows traffic, rankings, and impressions — that\'s what the agency will optimize for. Before signing, establish that the attribution model connects organic search to MQL volume, SQL conversion, pipeline value, and closed-won revenue. If the agency can\'t build that model, they cannot demonstrate B2B ROI to a CFO.'
+            },
+            {
+              title: 'Starting SEO without CRM integration from day one',
+              body: 'Attribution retrofitted six months into an engagement is always incomplete. Organic search touchpoints that happened before the CRM integration was built are lost — you can\'t credit them retroactively. The pipeline-and-attribution architecture should be designed and deployed in week one of the engagement, not after the first quarter of content is already in the world and untracked.'
+            },
+          ].map(({ title, body }, i) => (
+            <div key={i} className="border-l-4 border-gray-200 pl-5 py-1">
+              <p className="text-[15px] sm:text-[16px] font-semibold text-gray-900 mb-2">{i + 1}. {title}</p>
+              <p className="text-[14px] sm:text-[15px] leading-[1.7] text-gray-600">{body}</p>
+            </div>
+          ))}
+        </div>
+
+        {/* ── REFERENCES ── */}
+        <div className="mt-14 pt-10 border-t border-gray-200">
+          <h2 className="text-[15px] font-semibold uppercase tracking-wider text-gray-500 mb-6">Sources &amp; References</h2>
+          <ol className="space-y-2 text-[13px] text-gray-500 list-decimal pl-5">
+            <li>SEO Sherpa, 2026 — 89% of B2B buyers use the internet for purchase research</li>
+            <li>Onely, 2026 — 11 average stakeholders in a B2B purchase decision</li>
+            <li>Grow and Convert, 2026 — High buying-intent keyword conversion rate vs. top-of-funnel comparison</li>
+            <li>G2, April 2026 — 51% of B2B software buyers starting research in AI chatbots</li>
+            <li>Factors.ai, 2026 — 21.4% organic conversion rate uplift for B2B sites whose traffic declined (100+ company cohort)</li>
+            <li>Moz, 2026 — 88% of Google AI Mode citations not in organic top 10 (40,000 query analysis)</li>
+            <li>First Page Sage, 2026 — B2B SEO conversion rate benchmarks vs. cross-industry averages</li>
+          </ol>
+        </div>
 
         {/* ── CTA ── */}
         <div className="bg-gray-900 rounded-xl p-8 sm:p-10 my-14">
