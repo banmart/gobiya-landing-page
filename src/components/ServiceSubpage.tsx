@@ -553,6 +553,131 @@ export default function ServiceSubpage({ path, isFanOut, category, slug }: Servi
         overlayP1: 'We connect your front-of-house forms, chats, and lead sources directly to your CRM.',
         overlayP2: 'We automate outreach loops and optimize tracking.'
       },
+
+      // ── SEO & Web Copywriting fan-out cluster ──────────────────────
+      'landing-page-copywriting-agency': {
+        pageTitle: 'Landing page copywriting',
+        pageSubheading: 'High-conversion landing page copy engineered for the page that decides the sale.',
+        overlaySubtitle: 'Part of the SEO & Web Copywriting cluster',
+        overlayTitle: 'The page that decides whether your ad spend pays off',
+        overlayP1: 'Every paid click and organic visit lands somewhere. That page either converts the intent into a lead or it doesn\'t. We write copy that closes the gap.',
+        overlayP2: 'We apply benefit-first framing, friction-reduction copy, and social proof placement to turn landing pages into conversion machines.',
+        deepDiveHeading: 'Landing page copy engineered around the psychology of the decided buyer',
+        deepDiveParagraphs: [
+          'A visitor who lands on your page has already made a micro-decision — they clicked. Landing page copy works by confirming that decision instantly: matching the language of the ad or organic result, communicating the core benefit in the first five seconds, and removing every reason to leave.',
+          'We write headline hierarchies that orient the reader, benefit copy that answers "what\'s in it for me," objection-handling sections that neutralize hesitation, and CTAs that are specific enough to feel low-risk and compelling enough to click.',
+          'Every word is tested against conversion principles. We\'re not writing to impress — we\'re writing to convert. The metric we optimize for is form fills and phone calls, not page views.'
+        ],
+        concreteStepsHeading: 'How do we write a landing page that converts?',
+        concreteSteps: [
+          'Audit the traffic source and match copy tone and message to the ad or organic query that drives the click',
+          'Define the single conversion goal and eliminate copy or elements that compete with it',
+          'Write the above-fold section: headline, subheadline, and hero copy that confirms the visitor is in the right place',
+          'Develop the benefit and proof sections: value propositions, social proof, and objection handling',
+          'Write a CTA sequence that is specific, low-risk, and matched to the buyer\'s stage of readiness',
+          'Review for keyword density, readability grade, and conversion copywriting principles before publishing'
+        ],
+        advantagesHeading: 'What makes professional landing page copywriting worth the investment?',
+        advantageCards: [
+          { title: 'Conversion', description: 'Copy that speaks directly to buyer intent turns more of your ad and organic spend into pipeline' },
+          { title: 'Quality Score', description: 'Landing pages with message-match copy earn higher Google Ads Quality Scores, lowering CPC' },
+          { title: 'Testing', description: 'Professionally written copy gives A/B tests a meaningful baseline — you\'re testing variations, not fixing fundamentals' },
+          { title: 'Speed', description: 'A high-converting landing page amortizes media spend faster and accelerates the sales cycle' }
+        ]
+      },
+
+      'website-copywriting-services-agency': {
+        pageTitle: 'Website copywriting services',
+        pageSubheading: 'Your entire website, written to rank in search and convert every visitor into a lead.',
+        overlaySubtitle: 'Part of the SEO & Web Copywriting cluster',
+        overlayTitle: 'Every page of your site is a sales conversation with a search engine and a human',
+        overlayP1: 'Your website is the only marketing channel you own outright. We write every page to work as hard as possible — ranking for the right queries and converting the visitors who arrive.',
+        overlayP2: 'Home page, service pages, about page, location pages — each one written to its own intent and conversion goal, consistent in voice, cohesive as a system.',
+        deepDiveHeading: 'Website copy that works as a unified system, not a collection of isolated pages',
+        deepDiveParagraphs: [
+          'Most websites suffer from copy that was written by different people at different times with no shared strategy. Each page competes for attention rather than guiding the visitor on a deliberate path. We write website copy as a system — every page has a role in the buyer journey, a keyword focus, and a handoff to the next step.',
+          'We start with a site-wide content architecture: which pages exist, what query each one targets, how they interlink, and what conversion action each one is designed to prompt. Then we write the copy within that structure.',
+          'The result is a website that ranks more pages, moves visitors more efficiently toward conversion, and communicates a consistent brand voice across every touchpoint from the homepage to the confirmation email.'
+        ],
+        concreteStepsHeading: 'How do we approach a full website copywriting project?',
+        concreteSteps: [
+          'Audit existing copy for keyword coverage gaps, conversion weaknesses, and brand voice inconsistencies',
+          'Define the site architecture: priority pages, keyword assignments, and internal link structure',
+          'Write the home page: primary brand positioning, core benefit statements, and conversion-driving CTAs',
+          'Write service, product, or location pages: intent-matched copy with entity-rich semantic depth',
+          'Write supporting pages (About, FAQ, Contact) with conversion copy and trust-building elements',
+          'Deliver with full on-page SEO: title tags, meta descriptions, schema markup, and image alt text for every page'
+        ],
+        advantagesHeading: 'Why invest in professional website copywriting?',
+        advantageCards: [
+          { title: 'Rankings', description: 'Every page written to a keyword and intent means more of your site appears in search results' },
+          { title: 'Consistency', description: 'A unified brand voice builds recognition and trust across every page a visitor might enter on' },
+          { title: 'Conversion', description: 'Persuasive, structured copy guides visitors through the buyer journey on every page of the site' },
+          { title: 'Scalability', description: 'A documented content architecture makes adding new pages fast, consistent, and SEO-sound' }
+        ]
+      },
+
+      'seo-content-strategy-agency': {
+        pageTitle: 'SEO content strategy',
+        pageSubheading: 'The architecture before the words: keyword mapping, topic clusters, and internal link design.',
+        overlaySubtitle: 'Part of the SEO & Web Copywriting cluster',
+        overlayTitle: 'Strategy first. Every word earns its place in the plan.',
+        overlayP1: 'Content without strategy is output. Content with strategy is a compounding asset. We build the plan before a single word is written — mapping queries, intents, competitors, and gaps into a structure that dominates its topic.',
+        overlayP2: 'We deliver a content architecture document that tells you exactly what to publish, in what order, at what URL, targeting what query — so every piece contributes to a coherent, authoritative cluster.',
+        deepDiveHeading: 'A content strategy built around search intent signals, not editorial instinct',
+        deepDiveParagraphs: [
+          'Most content strategies are built around what the brand wants to say. Ours are built around what buyers are actively searching for. We begin with keyword research that maps the full query landscape: informational, navigational, commercial, and transactional intent across every stage of the buying cycle.',
+          'From that data we build a topic cluster model: a hub page that targets the primary service query, spoke pages that target adjacent intents, and a linking structure that distributes authority from the most credible pages to the ones with the most commercial value.',
+          'We deliver the strategy as a living document — a content roadmap with URL structures, target keywords, word count guidance, and internal link specifications that your team or ours can execute against systematically.'
+        ],
+        concreteStepsHeading: 'How do we build an SEO content strategy?',
+        concreteSteps: [
+          'Keyword universe build: seed keywords, long-tail variations, competitor gap analysis, and intent classification',
+          'Content audit: identify what exists, what ranks, what has untapped potential, and what needs to be retired',
+          'Topic cluster design: group keywords by intent, assign hub and spoke roles, map internal linking',
+          'URL and architecture plan: clean, crawlable, semantically meaningful URL structures for every piece',
+          'Content brief creation: for each planned page — keyword target, intent, outline, word count, and linking spec',
+          'Execution roadmap: prioritized production schedule aligned to business goals and competitive opportunity'
+        ],
+        advantagesHeading: 'Why invest in SEO content strategy before content production?',
+        advantageCards: [
+          { title: 'Authority', description: 'Topic clusters signal comprehensive expertise to search engines, improving rankings across the whole cluster' },
+          { title: 'Efficiency', description: 'A clear strategy eliminates wasted content — every piece produced serves a specific ranking objective' },
+          { title: 'Coverage', description: 'Systematic intent mapping ensures every stage of the buyer journey has a dedicated, optimized page' },
+          { title: 'Compounding', description: 'A well-structured cluster earns authority that grows over time — each new piece strengthens existing ones' }
+        ]
+      },
+
+      'geo-ai-content-writing-agency': {
+        pageTitle: 'GEO & AI content writing',
+        pageSubheading: 'Content engineered to be cited by ChatGPT, Perplexity, and Google AI Overviews — not just indexed.',
+        overlaySubtitle: 'Part of the SEO & Web Copywriting cluster',
+        overlayTitle: 'The next search frontier: getting your brand into AI-generated answers',
+        overlayP1: 'Traditional SEO gets you into the blue links. Generative Engine Optimization (GEO) gets your content cited in the AI answer above those links — where a growing share of search intent is resolved without a click.',
+        overlayP2: 'We write content structured for AI consumption: clear factual claims, entity verification signals, FAQ blocks, and citation-worthy data that large language models extract and attribute.',
+        deepDiveHeading: 'GEO-optimized content: written for both the human reader and the AI model that summarizes it',
+        deepDiveParagraphs: [
+          'AI models like ChatGPT, Perplexity, and Google\'s AI Overviews generate answers by extracting and paraphrasing content from the web. The content they cite shares structural characteristics: clear entity signals, verifiable factual claims, structured question-and-answer formats, and passage-level coherence that makes specific excerpts extractable without losing meaning.',
+          'We write content that satisfies these structural requirements without sacrificing readability or conversion optimization. The techniques — passage clarity, entity disambiguation, structured data, FAQ blocks, and citation-worthy statistics — are also good SEO and good copywriting practice. They\'re not in tension.',
+          'We also implement the technical side of GEO: llms.txt compliance, schema markup that identifies authorship and expertise, and entity verification across Wikidata and Google\'s Knowledge Graph. Content that\'s technically verifiable is more likely to be cited than content that\'s well-written but unverifiable.'
+        ],
+        concreteStepsHeading: 'How do we write content optimized for AI citation?',
+        concreteSteps: [
+          'Entity and knowledge graph audit: verify your brand, people, and products appear correctly in structured data sources',
+          'Query analysis: identify the AI-visible questions in your topic area and the citation patterns in current AI answers',
+          'Content structure design: passage-level outlines, FAQ blocks, and factual claim architecture built for extraction',
+          'GEO copywriting: clear claims, entity-rich language, attribution-ready statistics, and structured answer formats',
+          'Technical implementation: schema markup, llms.txt, hreflang, and on-page signals that identify authority',
+          'Citation monitoring: track brand mentions in AI-generated answers and iterate based on what\'s being cited'
+        ],
+        advantagesHeading: 'Why does GEO-optimized content matter now?',
+        advantageCards: [
+          { title: 'Citations', description: 'AI-cited content reaches buyers at the moment of decision — before they click a single search result' },
+          { title: 'Visibility', description: 'Zero-click AI answers are growing; brands not present in those answers are invisible to a growing audience' },
+          { title: 'Authority', description: 'Being cited by AI models signals credibility that influences buyer perception even before they visit your site' },
+          { title: 'Future-proof', description: 'GEO-optimized content compounds — it ranks in traditional search AND earns AI citations simultaneously' }
+        ]
+      },
       'google-penalty-recovery': {
         pageTitle: 'Google penalty recovery',
         pageSubheading: 'We diagnose algorithmic suppressions and manual actions, then deploy the precise fix.',

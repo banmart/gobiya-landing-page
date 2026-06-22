@@ -268,7 +268,7 @@ const SuccessStories: React.FC = () => {
             { name: 'DG Plumbing',        cat: 'Local SEO · Google Business',      logo: '/images/logo-DeEgMiH0-opt.png',   bg: null },
             { name: 'The ARK Crypto',     cat: 'Web development · Branding',       logo: '/images/ark-logo---01-dark.webp', bg: '/images/the-ark-dark.webp' },
             { name: 'EliZilberstein.com', cat: 'Personal brand · SEO',             logo: '/images/client-5.webp',           bg: null },
-            { name: 'Healing Metta',      cat: 'Healthcare SEO · Content',         logo: '/images/medicine-metta-logo-1.webp', bg: null },
+            { name: 'Healing Metta',      cat: 'Healthcare SEO · Content',         logo: '/images/medicine-metta-logo-1.webp', bg: '/images/healing-metta-home.webp' },
           ].map(c => (
             <div key={c.name} className="cs-card cs-card-regular">
               {c.bg
