@@ -203,88 +203,154 @@ const SuccessStories: React.FC = () => {
             border-radius: 100px;
             padding: 0.3rem 0.7rem;
           }
-          .cs-grid-top {
+          /* Staggered Row Grids on Desktop */
+          .cs-row-2col {
             display: grid;
             grid-template-columns: 1fr 1fr;
             border-bottom: 1px solid #1f2937;
           }
-          .cs-grid-top .cs-card { border-right: 1px solid #1f2937; }
-          .cs-grid-top .cs-card:last-child { border-right: none; }
-          .cs-grid-bottom {
+          .cs-row-2col .cs-card { border-right: 1px solid #1f2937; }
+          .cs-row-2col .cs-card:last-child { border-right: none; }
+
+          .cs-row-3col {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            border-bottom: 1px solid #1f2937;
+          }
+          .cs-row-3col .cs-card { border-right: 1px solid #1f2937; }
+          .cs-row-3col .cs-card:last-child { border-right: none; }
+
+          .cs-row-4col {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
           }
-          .cs-grid-bottom .cs-card {
-            border-right: 1px solid #1f2937;
-            border-bottom: 1px solid #1f2937;
-          }
-          .cs-grid-bottom .cs-card:nth-child(4n) { border-right: none; }
-          .cs-grid-bottom .cs-card:nth-last-child(-n+4) { border-bottom: none; }
+          .cs-row-4col .cs-card { border-right: 1px solid #1f2937; }
+          .cs-row-4col .cs-card:last-child { border-right: none; }
+
           @media (max-width: 900px) {
-            .cs-grid-top { grid-template-columns: 1fr; }
-            .cs-grid-top .cs-card { border-right: none; border-bottom: 1px solid #1f2937; }
-            .cs-grid-top .cs-card:last-child { border-bottom: none; }
-            .cs-grid-bottom { grid-template-columns: repeat(2, 1fr); }
-            .cs-grid-bottom .cs-card:nth-child(2n) { border-right: none; }
-            .cs-grid-bottom .cs-card:nth-last-child(-n+2) { border-bottom: none; }
+            .cs-grid-container {
+              display: grid;
+              grid-template-columns: repeat(2, 1fr);
+              border-top: 1px solid #1f2937;
+            }
+            .cs-row-2col, .cs-row-3col, .cs-row-4col {
+              display: contents;
+            }
+            .cs-card {
+              border-right: 1px solid #1f2937 !important;
+              border-bottom: 1px solid #1f2937 !important;
+            }
+            .cs-card:nth-child(2n) {
+              border-right: none !important;
+            }
+            .cs-card:nth-last-child(-n+2) {
+              border-bottom: none !important;
+            }
           }
           @media (max-width: 520px) {
-            .cs-grid-bottom { grid-template-columns: 1fr; }
-            .cs-grid-bottom .cs-card { border-right: none; }
-            .cs-grid-bottom .cs-card:not(:last-child) { border-bottom: 1px solid #1f2937; }
+            .cs-grid-container {
+              grid-template-columns: 1fr;
+            }
+            .cs-card {
+              border-right: none !important;
+              border-bottom: 1px solid #1f2937 !important;
+            }
+            .cs-card:last-child {
+              border-bottom: none !important;
+            }
           }
         `}</style>
 
-        {/* Featured row — documented cases with full pages */}
-        <div className="cs-grid-top">
-          <a href="/case-studies/smile-center-dentistry" className="cs-card cs-card-featured">
-            <div className="cs-bg cs-bg-photo" style={{ backgroundImage: 'url(/images/smile-center-homepage.webp)' }} />
-            <div className="cs-overlay" />
-            <img src="/images/smilecenter.webp" alt="Smile Center" className="cs-logo" />
-            <div className="cs-badge">
-              <span className="cs-badge-name">Smile Center Dentistry</span>
-              <span className="cs-badge-cat">Multi-location SEO · Conversion architecture · React/Vite</span>
-            </div>
-            <span className="cs-read-pill">Read case study →</span>
-          </a>
-          <a href="/case-studies/american-livescan" className="cs-card cs-card-featured">
-            <div className="cs-bg cs-bg-photo" style={{ backgroundImage: 'url(/images/american-livescan-storefront.webp)' }} />
-            <div className="cs-overlay" />
-            <img src="/images/americanlivescan.webp" alt="American Livescan" className="cs-logo" />
-            <div className="cs-badge">
-              <span className="cs-badge-name">American Livescan</span>
-              <span className="cs-badge-cat">Site rebuild · Local SEO · Google Business Profile</span>
-            </div>
-            <span className="cs-read-pill">Read case study →</span>
-          </a>
-        </div>
-
-        {/* Regular grid — remaining clients */}
-        <div className="cs-grid-bottom">
-          {[
-            { name: 'Remodel Me Pros',   cat: 'SEO · Lead generation',           logo: '/images/remodelmepros-opt.webp',  bg: '/images/caveman-remodel-me-pros.webp' },
-            { name: 'SafetyCentric',      cat: 'SEO · Discoverability',            logo: '/images/safetycentric-logo.png',  bg: '/images/safety-centric-home.webp' },
-            { name: 'Total Capital Inc',  cat: 'Financial SEO · Pipeline',         logo: '/images/totalcapital-opt.webp',   bg: '/images/delano-home.webp' },
-            { name: 'QuickPass AiD',      cat: 'Custom build · Native CRM',        logo: '/images/quickpass-logo-opt.webp', bg: '/images/quickpass-aid.webp' },
-            { name: 'DG Plumbing',        cat: 'Local SEO · Google Business',      logo: '/images/logo-DeEgMiH0-opt.png',   bg: '/images/dgplumbing-front-home.webp' },
-            { name: 'The ARK Crypto',     cat: 'Web development · Branding',       logo: '/images/ark-logo---01-dark.webp', bg: '/images/the-ark-dark.webp' },
-            { name: 'EliZilberstein.com', cat: 'Personal brand · SEO',             logo: '/images/client-5.webp',           bg: '/images/eli-zilberstein-suit-home.webp' },
-            { name: 'Healing Metta',      cat: 'Healthcare SEO · Content',         logo: '/images/medicine-metta-logo-1.webp', bg: '/images/healing-metta-home.webp' },
-            { name: 'Trusted Home Contractors', cat: 'General Contractors · Los Angeles & OC', logo: '/images/trusted-logo-home.webp', bg: '/images/trusted-home-contractors-home.webp' },
-          ].map(c => (
-            <div key={c.name} className="cs-card cs-card-regular">
-              {c.bg
-                ? <div className="cs-bg cs-bg-photo" style={{ backgroundImage: `url(${c.bg})` }} />
-                : <div className="cs-bg cs-bg-dark" />
-              }
+        <div className="cs-grid-container">
+          {/* Row 1 (2 columns - Featured) */}
+          <div className="cs-row-2col">
+            <a href="/case-studies/smile-center-dentistry" className="cs-card cs-card-featured">
+              <div className="cs-bg cs-bg-photo" style={{ backgroundImage: 'url(/images/smile-center-homepage.webp)' }} />
               <div className="cs-overlay" />
-              <img src={c.logo} alt={c.name} className={`cs-logo ${c.name === 'DG Plumbing' ? 'no-filter' : ''}`} />
+              <img src="/images/smilecenter.webp" alt="Smile Center" className="cs-logo" />
               <div className="cs-badge">
-                <span className="cs-badge-name">{c.name}</span>
-                <span className="cs-badge-cat">{c.cat}</span>
+                <span className="cs-badge-name">Smile Center Dentistry</span>
+                <span className="cs-badge-cat">Multi-location SEO · Conversion architecture · React/Vite</span>
               </div>
-            </div>
-          ))}
+              <span className="cs-read-pill">Read case study →</span>
+            </a>
+            <a href="/case-studies/american-livescan" className="cs-card cs-card-featured">
+              <div className="cs-bg cs-bg-photo" style={{ backgroundImage: 'url(/images/american-livescan-storefront.webp)' }} />
+              <div className="cs-overlay" />
+              <img src="/images/americanlivescan.webp" alt="American Livescan" className="cs-logo" />
+              <div className="cs-badge">
+                <span className="cs-badge-name">American Livescan</span>
+                <span className="cs-badge-cat">Site rebuild · Local SEO · Google Business Profile</span>
+              </div>
+              <span className="cs-read-pill">Read case study →</span>
+            </a>
+          </div>
+
+          {/* Row 2 (3 columns - Regular) */}
+          <div className="cs-row-3col">
+            {[
+              { name: 'Remodel Me Pros',   cat: 'SEO · Lead generation',           logo: '/images/remodelmepros-opt.webp',  bg: '/images/caveman-remodel-me-pros.webp' },
+              { name: 'SafetyCentric',      cat: 'SEO · Discoverability',            logo: '/images/safetycentric-logo.png',  bg: '/images/safety-centric-home.webp' },
+              { name: 'Total Capital Inc',  cat: 'Financial SEO · Pipeline',         logo: '/images/totalcapital-opt.webp',   bg: '/images/delano-home.webp' },
+            ].map(c => (
+              <div key={c.name} className="cs-card cs-card-regular">
+                {c.bg
+                  ? <div className="cs-bg cs-bg-photo" style={{ backgroundImage: `url(${c.bg})` }} />
+                  : <div className="cs-bg cs-bg-dark" />
+                }
+                <div className="cs-overlay" />
+                <img src={c.logo} alt={c.name} className={`cs-logo ${c.name === 'DG Plumbing' ? 'no-filter' : ''}`} />
+                <div className="cs-badge">
+                  <span className="cs-badge-name">{c.name}</span>
+                  <span className="cs-badge-cat">{c.cat}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Row 3 (2 columns - Regular) */}
+          <div className="cs-row-2col">
+            {[
+              { name: 'QuickPass AiD',      cat: 'Custom build · Native CRM',        logo: '/images/quickpass-logo-opt.webp', bg: '/images/quickpass-aid.webp' },
+              { name: 'DG Plumbing',        cat: 'Local SEO · Google Business',      logo: '/images/logo-DeEgMiH0-opt.png',   bg: '/images/dgplumbing-front-home.webp' },
+            ].map(c => (
+              <div key={c.name} className="cs-card cs-card-regular" style={{ aspectRatio: '16/9' }}>
+                {c.bg
+                  ? <div className="cs-bg cs-bg-photo" style={{ backgroundImage: `url(${c.bg})` }} />
+                  : <div className="cs-bg cs-bg-dark" />
+                }
+                <div className="cs-overlay" />
+                <img src={c.logo} alt={c.name} className={`cs-logo ${c.name === 'DG Plumbing' ? 'no-filter' : ''}`} />
+                <div className="cs-badge">
+                  <span className="cs-badge-name">{c.name}</span>
+                  <span className="cs-badge-cat">{c.cat}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Row 4 (4 columns - Regular) */}
+          <div className="cs-row-4col">
+            {[
+              { name: 'The ARK Crypto',     cat: 'Web development · Branding',       logo: '/images/ark-logo---01-dark.webp', bg: '/images/the-ark-dark.webp' },
+              { name: 'EliZilberstein.com', cat: 'Personal brand · SEO',             logo: '/images/client-5.webp',           bg: '/images/eli-zilberstein-suit-home.webp' },
+              { name: 'Healing Metta',      cat: 'Healthcare SEO · Content',         logo: '/images/medicine-metta-logo-1.webp', bg: '/images/healing-metta-home.webp' },
+              { name: 'Trusted Home Contractors', cat: 'General Contractors · Los Angeles & OC', logo: '/images/trusted-logo-home.webp', bg: '/images/trusted-home-contractors-home.webp' },
+            ].map(c => (
+              <div key={c.name} className="cs-card cs-card-regular">
+                {c.bg
+                  ? <div className="cs-bg cs-bg-photo" style={{ backgroundImage: `url(${c.bg})` }} />
+                  : <div className="cs-bg cs-bg-dark" />
+                }
+                <div className="cs-overlay" />
+                <img src={c.logo} alt={c.name} className={`cs-logo ${c.name === 'DG Plumbing' ? 'no-filter' : ''}`} />
+                <div className="cs-badge">
+                  <span className="cs-badge-name">{c.name}</span>
+                  <span className="cs-badge-cat">{c.cat}</span>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
