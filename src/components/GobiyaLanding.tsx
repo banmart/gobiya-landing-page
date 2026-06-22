@@ -469,10 +469,41 @@ export default function GobiyaLanding() {
             </h2>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', border: '1px solid #e5e7eb' }} data-anim="up">
+          <style>{`
+            .services-grid {
+              display: grid;
+              grid-template-columns: repeat(3, 1fr);
+              border: 1px solid #e5e7eb;
+            }
+            .services-col {
+              padding: 3.5rem;
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+              border-right: 1px solid #e5e7eb;
+            }
+            .services-col:last-child {
+              border-right: none;
+            }
+            @media (max-width: 900px) {
+              .services-grid {
+                grid-template-columns: 1fr;
+              }
+              .services-col {
+                padding: 2.5rem 1.5rem;
+                border-right: none;
+                border-bottom: 1px solid #e5e7eb;
+              }
+              .services-col:last-child {
+                border-bottom: none;
+              }
+            }
+          `}</style>
+
+          <div className="services-grid" data-anim="up">
 
             {/* Card 1 — Creativity */}
-            <div style={{ padding: '3.5rem', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', borderRight: '1px solid #e5e7eb' }}>
+            <div className="services-col">
               <div>
                 <span style={{ fontFamily: 'monospace', fontSize: '0.8rem', color: '#9ca3af', display: 'block', marginBottom: '1rem' }}>01</span>
                 <h3 style={{ fontSize: '2rem', fontWeight: 500, letterSpacing: '-0.02em', textTransform: 'lowercase', color: '#1f2937', marginBottom: '1.5rem' }}>creativity</h3>
@@ -494,7 +525,7 @@ export default function GobiyaLanding() {
             </div>
 
             {/* Card 2 — Performance */}
-            <div style={{ padding: '3.5rem', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', borderRight: '1px solid #e5e7eb' }}>
+            <div className="services-col">
               <div>
                 <span style={{ fontFamily: 'monospace', fontSize: '0.8rem', color: '#9ca3af', display: 'block', marginBottom: '1rem' }}>02</span>
                 <h3 style={{ fontSize: '2rem', fontWeight: 500, letterSpacing: '-0.02em', textTransform: 'lowercase', color: '#1f2937', marginBottom: '1.5rem' }}>performance</h3>
@@ -516,7 +547,7 @@ export default function GobiyaLanding() {
             </div>
 
             {/* Card 3 — Relations */}
-            <div style={{ padding: '3.5rem', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+            <div className="services-col">
               <div>
                 <span style={{ fontFamily: 'monospace', fontSize: '0.8rem', color: '#9ca3af', display: 'block', marginBottom: '1rem' }}>03</span>
                 <h3 style={{ fontSize: '2rem', fontWeight: 500, letterSpacing: '-0.02em', textTransform: 'lowercase', color: '#1f2937', marginBottom: '1.5rem' }}>relations</h3>
