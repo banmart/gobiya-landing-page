@@ -19,3 +19,5 @@ export { default as ContactPage } from './ContactPage';
 export { default as OnPageSeoLosAngelesPage } from './OnPageSeoLosAngelesPage';
 export { default as SEO } from './SEO';
 export { default as NotFound } from './NotFound';
+export { default as CategoryPage } from './CategoryPage';
+
