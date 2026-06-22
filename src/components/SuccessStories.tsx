@@ -270,6 +270,7 @@ const SuccessStories: React.FC = () => {
             { name: 'The ARK Crypto',     cat: 'Web development · Branding',       logo: '/images/ark-logo---01-dark.webp', bg: '/images/the-ark-dark.webp' },
             { name: 'EliZilberstein.com', cat: 'Personal brand · SEO',             logo: '/images/client-5.webp',           bg: '/images/eli-zilberstein-suit-home.webp' },
             { name: 'Healing Metta',      cat: 'Healthcare SEO · Content',         logo: '/images/medicine-metta-logo-1.webp', bg: '/images/healing-metta-home.webp' },
+            { name: 'Trusted Home Contractors', cat: 'General Contractors · Los Angeles & OC', logo: '/images/trusted-logo-home.webp', bg: '/images/trusted-home-contractors-home.webp' },
           ].map(c => (
             <div key={c.name} className="cs-card cs-card-regular">
               {c.bg
