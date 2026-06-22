@@ -247,7 +247,7 @@ const SuccessStories: React.FC = () => {
             <span className="cs-read-pill">Read case study →</span>
           </a>
           <a href="/case-studies/american-livescan" className="cs-card cs-card-featured">
-            <div className="cs-bg cs-bg-dark" />
+            <div className="cs-bg cs-bg-photo" style={{ backgroundImage: 'url(/images/american-livescan-storefront.webp)' }} />
             <div className="cs-overlay" />
             <img src="/images/americanlivescan.webp" alt="American Livescan" className="cs-logo" />
             <div className="cs-badge">
@@ -265,7 +265,7 @@ const SuccessStories: React.FC = () => {
             { name: 'SafetyCentric',      cat: 'SEO · Discoverability',            logo: '/images/safetycentric-logo.png',  bg: '/images/safety-centric-home.webp' },
             { name: 'Total Capital Inc',  cat: 'Financial SEO · Pipeline',         logo: '/images/totalcapital-opt.webp',   bg: '/images/delano-home.webp' },
             { name: 'QuickPass AiD',      cat: 'Custom build · Native CRM',        logo: '/images/quickpass-logo-opt.webp', bg: '/images/quickpass-aid.webp' },
-            { name: 'DG Plumbing',        cat: 'Local SEO · Google Business',      logo: '/images/logo-DeEgMiH0-opt.png',   bg: null },
+            { name: 'DG Plumbing',        cat: 'Local SEO · Google Business',      logo: '/images/logo-DeEgMiH0-opt.png',   bg: '/images/dgplumbing-front-home.webp' },
             { name: 'The ARK Crypto',     cat: 'Web development · Branding',       logo: '/images/ark-logo---01-dark.webp', bg: '/images/the-ark-dark.webp' },
             { name: 'EliZilberstein.com', cat: 'Personal brand · SEO',             logo: '/images/client-5.webp',           bg: '/images/eli-zilberstein-suit-home.webp' },
             { name: 'Healing Metta',      cat: 'Healthcare SEO · Content',         logo: '/images/medicine-metta-logo-1.webp', bg: '/images/healing-metta-home.webp' },
