@@ -42,7 +42,7 @@ const caseStudies = [
     id: 5,
     title: "American Livescan Fingerprinting",
     description: "3x online bookings & calls · +30% walk-ins · Local SEO & site rebuild.",
-    imageSrc: "/images/livescan-storefront.webp",
+    imageSrc: "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=1200&q=80",
     link: "/case-studies/american-livescan",
     badge: "3x Bookings",
     ctaText: "View case study",
@@ -93,7 +93,7 @@ const CaseStudiesPinned = () => {
 
   return (
     <section className="bg-[#F5F5F5] w-full overflow-hidden relative py-16 sm:py-20 lg:py-28">
-      <div className="w-full relative z-10 max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-12">
+      <div className="w-full relative z-10 max-w-full mx-auto" style={{ paddingLeft: "5vw", paddingRight: "5vw" }}>
         <div className="mb-10 sm:mb-14">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6">
             <div>

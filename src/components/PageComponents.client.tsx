@@ -28,3 +28,4 @@ export const AdminDashboard = lazy(() => import('./AdminDashboard'));
 export const ContactPage = lazy(() => import('./ContactPage'));
 export const OnPageSeoLosAngelesPage = lazy(() => import('./OnPageSeoLosAngelesPage'));
 export const NotFound = lazy(() => import('./NotFound'));
+export const CategoryPage = lazy(() => import('./CategoryPage'));

@@ -19,6 +19,30 @@
       "dest": "/client/videos/$1"
     },
     {
+      "src": "/css/(.*)",
+      "dest": "/client/css/$1"
+    },
+    {
+      "src": "/js/(.*)",
+      "dest": "/client/js/$1"
+    },
+    {
+      "src": "/fonts/(.*)",
+      "dest": "/client/fonts/$1"
+    },
+    {
+      "src": "/audio/(.*)",
+      "dest": "/client/audio/$1"
+    },
+    {
+      "src": "/okf/(.*)",
+      "dest": "/client/okf/$1"
+    },
+    {
+      "src": "/.well-known/(.*)",
+      "dest": "/client/.well-known/$1"
+    },
+    {
       "src": "/(favicon.ico|humans.txt|robots.txt|sitemap.xml|llms.txt|llms-full.txt)",
       "dest": "/client/$1"
     },

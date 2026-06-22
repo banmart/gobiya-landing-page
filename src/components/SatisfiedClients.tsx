@@ -2,14 +2,14 @@ import React from 'react';
 
 const SatisfiedClients = () => {
   const logos = [
-    '/images/remodelmepros-opt.webp',
-    '/images/smilecenter.webp',
-    '/images/quickpass-logo-opt.webp',
-    '/images/mytrustwills.webp',
-    '/images/tidder-pro-logo.webp',
-    '/images/totalcapital-opt.webp',
-    '/images/logo-DeEgMiH0-opt.png',
-    '/images/americanlivescan.webp'
+    'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1200&q=80',
+    'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80',
+    'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1200&q=80',
+    'https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=1200&q=80',
+    'https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=80',
+    'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&q=80',
+    'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&q=80',
+    'https://images.unsplash.com/photo-1531482615713-2afd69097998?w=1200&q=80'
   ];
 
   return (

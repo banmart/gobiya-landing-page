@@ -314,21 +314,7 @@ export default function OnPageSeoLosAngelesPage() {
         </div>
       </section>
 
-      {/* Call to Action Section */}
-      <section className="cta-section">
-        <div className="onpage-container">
-          <div className="cta-card">
-            <div className="cta-left">
-              <h2>Secure your forensic pipeline audit.</h2>
-              <p>Let's map your entity structures, identify Core Web Vitals speed blocks, and review your current local search architecture with a live 1-on-1 strategy session.</p>
-            </div>
-            <div className="cta-right">
-              <a href="/book" className="btn btn-primary">Book strategy call</a>
-              <span className="subtext">CA / US opportunity audit</span>
-            </div>
-          </div>
-        </div>
-      </section>
+
 
       <SiteFooter />
     </div>

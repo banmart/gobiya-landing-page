@@ -447,7 +447,7 @@ const BookingPage: React.FC = () => {
         </section>
       )}
 
-      <SiteFooter />
+      <SiteFooter hideCTA={true} />
     </div>
   );
 };

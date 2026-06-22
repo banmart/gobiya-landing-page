@@ -62,8 +62,8 @@ export interface SolutionData {
 }
 
 export const SOLUTIONS_DATA: Record<string, SolutionData> = {
-  '/capabilities/web-development': {
-    path: '/capabilities/web-development',
+  '/performance/web-development-agency': {
+    path: '/performance/web-development-agency',
     breadcrumbLabel: 'Web Development',
     hero: {
       lines: ['React Web Development:', 'Hand-coded React.', 'Sub-second loads.', 'Built to rank.'],
@@ -177,8 +177,8 @@ export const SOLUTIONS_DATA: Record<string, SolutionData> = {
     }
   },
 
-  '/capabilities/native-crm': {
-    path: '/capabilities/native-crm',
+  '/performance/native-crm-agency': {
+    path: '/performance/native-crm-agency',
     breadcrumbLabel: 'Native CRM',
     hero: {
       lines: ['Custom CRM Integrations:', 'Own your data.', 'Zero monthly fees.', 'Custom pipelines.'],
@@ -288,8 +288,8 @@ export const SOLUTIONS_DATA: Record<string, SolutionData> = {
     }
   },
 
-  '/capabilities/seo-discoverability': {
-    path: '/capabilities/seo-discoverability',
+  '/performance/seo-discoverability-agency': {
+    path: '/performance/seo-discoverability-agency',
     breadcrumbLabel: 'Technical SEO',
     hero: {
       lines: ['Technical SEO Services:', 'Eligible by design.', 'Semantic entity graphs.', 'AI-overview ready.'],
@@ -401,8 +401,8 @@ export const SOLUTIONS_DATA: Record<string, SolutionData> = {
     }
   },
 
-  '/capabilities/blockchain-web3-development': {
-    path: '/capabilities/blockchain-web3-development',
+  '/performance/blockchain-web3-development-agency': {
+    path: '/performance/blockchain-web3-development-agency',
     breadcrumbLabel: 'Web3 & Blockchain',
     hero: {
       lines: ['Web3 Development:', 'Smart contracts.', 'dApp interfaces.', 'On-chain security.'],
@@ -514,8 +514,8 @@ export const SOLUTIONS_DATA: Record<string, SolutionData> = {
     }
   },
 
-  '/capabilities/ai-prospect-scraper': {
-    path: '/capabilities/ai-prospect-scraper',
+  '/performance/ai-prospect-scraper-agency': {
+    path: '/performance/ai-prospect-scraper-agency',
     breadcrumbLabel: 'AI Prospecting',
     hero: {
       lines: ['AI Prospect Scraper:', 'Automated outreach.', 'Smart data capture.', 'Scale B2B leads.'],
@@ -626,8 +626,8 @@ export const SOLUTIONS_DATA: Record<string, SolutionData> = {
       btnText: 'Automate outbound'
     }
   },
-  '/capabilities/ai-llms-business': {
-    path: '/capabilities/ai-llms-business',
+  '/performance/ai-llms-business-agency': {
+    path: '/performance/ai-llms-business-agency',
     breadcrumbLabel: 'AI & LLMs',
     hero: {
       lines: ['AI for Businesses:', 'AI for office tasks.', 'Remove friction.', 'Own your automation.'],
@@ -741,8 +741,8 @@ export const SOLUTIONS_DATA: Record<string, SolutionData> = {
     }
   },
 
-  '/capabilities/authority-building': {
-    path: '/capabilities/authority-building',
+  '/relations/authority-building-agency': {
+    path: '/relations/authority-building-agency',
     breadcrumbLabel: 'Authority Building',
     hero: {
       lines: ['Authority Building:', 'Acquire authority.', 'Clean trust signals.', 'Sustain page one.'],

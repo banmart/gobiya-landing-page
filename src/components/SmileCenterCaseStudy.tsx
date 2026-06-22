@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from 'react';
-import HeroWebGLBackground from './HeroWebGLBackground';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ArrowRight, TrendingUp, Search, MapPin, Phone, BarChart2, Award } from 'lucide-react';
@@ -136,44 +135,44 @@ const SmileCenterCaseStudy: React.FC = () => {
       <CustomCursor />
 
       {/* HERO SECTION */}
-      <section className="relative w-full h-[65vh] min-h-[480px] bg-transparent overflow-hidden flex flex-col justify-center cursor-default">
-      <HeroWebGLBackground />
-        {/* Navigation */}
-        <SiteHeader />
-
-        {/* Hero Content */}
-        <div className="relative z-20 max-w-[1440px] w-full mx-auto flex flex-col justify-center px-5 sm:px-8 lg:px-12 pt-16 pb-0">
-          <p className="breadcrumb text-[13px] sm:text-[14px] text-[#5B564C] tracking-wide mb-4 uppercase font-medium">
-            Gobiya Case Studies &gt; Multi-Location Dental
-          </p>
-          <h1 className="hero-title text-[clamp(1.5rem,5.5vw,3.2rem)] sm:text-[clamp(1.8rem,4.5vw,3.8rem)] font-medium leading-[1.15] tracking-[-0.03em] text-[#15130E] max-w-[1100px]">
-            <span className="line"><span>How SmileCenter Dentistry</span></span>
-            <span className="line"><span><span className="text-[#2F5D50]">5x'd patient inquiries</span></span></span>
-            <span className="line"><span>across multiple regional locations.</span></span>
-          </h1>
-          <p className="hero-sub mt-6 text-[15px] sm:text-[17px] text-[#5B564C] max-w-[700px] leading-relaxed">
-            Website redesign · Multi-location search architecture · Conversion architecture · React/Vite
-          </p>
-          <div className="hero-actions-wrap mt-8 flex flex-col sm:flex-row items-start sm:items-center gap-6">
-            <a
-              href="/book"
-              id="smilecenter-hero-cta"
-              data-cta-location="smilecenter_hero"
-              data-cta-text="Get a similar result"
-              onClick={() => trackCTA({ cta_location: 'smilecenter_hero', cta_text: 'Get a similar result' })}
-              className="btn btn-primary magnetic"
-            >
-              Get a similar result
-              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" aria-hidden="true">
-                <path d="M7 17 17 7M9 7h8v8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </a>
-            <a
-              href="/case-studies"
-              className="text-link"
-            >
-              All case studies
-            </a>
+      <SiteHeader />
+      <section style={{ position: 'relative', minHeight: '72vh', display: 'flex', alignItems: 'flex-end', overflow: 'hidden', borderBottom: '1px solid #1f2937' }}>
+        {/* Background photo */}
+        <div style={{ position: 'absolute', inset: '-8%', backgroundImage: 'url(/images/smile-center-homepage.webp)', backgroundSize: 'cover', backgroundPosition: 'center top', filter: 'brightness(0.42)' }} />
+        {/* Gradient overlay — stronger at bottom so text is legible */}
+        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.2) 60%, rgba(0,0,0,0.1) 100%)' }} />
+        {/* Content */}
+        <div style={{ position: 'relative', zIndex: 1, padding: '9rem 5vw 5rem', width: '100%' }}>
+          <div className="max-w-[1440px] w-full mx-auto flex flex-col justify-end" style={{ minHeight: '30vh' }}>
+            <p className="breadcrumb text-[13px] sm:text-[14px] tracking-wide mb-4 uppercase font-medium" style={{ color: 'rgba(255,255,255,0.55)' }}>
+              Gobiya Case Studies &gt; Multi-Location Dental
+            </p>
+            <h1 className="hero-title text-[clamp(1.5rem,5.5vw,3.2rem)] sm:text-[clamp(1.8rem,4.5vw,3.8rem)] font-medium leading-[1.15] tracking-[-0.03em] max-w-[1100px]" style={{ color: '#ffffff' }}>
+              <span className="line"><span>How SmileCenter Dentistry</span></span>
+              <span className="line"><span><span style={{ color: '#6ee7b7' }}>5x'd patient inquiries</span></span></span>
+              <span className="line"><span>across multiple regional locations.</span></span>
+            </h1>
+            <p className="hero-sub mt-6 text-[15px] sm:text-[17px] max-w-[700px] leading-relaxed" style={{ color: 'rgba(255,255,255,0.65)' }}>
+              Website redesign · Multi-location search architecture · Conversion architecture · React/Vite
+            </p>
+            <div className="hero-actions-wrap mt-8 flex flex-col sm:flex-row items-start sm:items-center gap-6">
+              <a
+                href="/book"
+                id="smilecenter-hero-cta"
+                data-cta-location="smilecenter_hero"
+                data-cta-text="Get a similar result"
+                onClick={() => trackCTA({ cta_location: 'smilecenter_hero', cta_text: 'Get a similar result' })}
+                className="btn btn-primary magnetic"
+              >
+                Get a similar result
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" aria-hidden="true">
+                  <path d="M7 17 17 7M9 7h8v8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </a>
+              <a href="/case-studies" style={{ color: 'rgba(255,255,255,0.65)', textDecoration: 'underline', textUnderlineOffset: '4px', textDecorationColor: 'rgba(255,255,255,0.3)', fontSize: '0.95rem' }}>
+                All case studies
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -272,7 +271,7 @@ const SmileCenterCaseStudy: React.FC = () => {
               <div className="aspect-[4/3] overflow-hidden relative border border-[#D3CEC0]" data-anim="scale">
                 <ParallaxMedia
                   type="image"
-                  src="/images/smilecenter-office.webp"
+                  src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80"
                   alt="SmileCenter dental office"
                   className="w-full h-full object-cover"
                 />
@@ -313,7 +312,7 @@ const SmileCenterCaseStudy: React.FC = () => {
           <div className="mt-14 sm:mt-20 relative aspect-[16/7] overflow-hidden border border-[#D3CEC0]">
             <ParallaxMedia
               type="image"
-              src="/images/smilecenter-results.webp"
+              src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1200&q=80"
               alt="SmileCenter analytics results dashboard"
               className="w-full h-full object-cover"
             />

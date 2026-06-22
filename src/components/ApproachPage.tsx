@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from 'react';
-import HeroWebGLBackground from './HeroWebGLBackground';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './ApproachPage.css';
@@ -85,20 +84,6 @@ const ApproachPage: React.FC = () => {
     const ctx = gsap.context(() => {
       const ease = 'power3.out';
 
-      const heroTl = gsap.timeline({ delay: 0.15, defaults: { ease, duration: 1.15 } });
-      heroTl
-        .from('[data-hero="1"]', { opacity: 0, y: 14 }, 0)
-        .from('.hero h1 .line > span', { yPercent: 110, stagger: 0.1, duration: 1.25 }, 0.08)
-        .from('[data-hero="2"]', { opacity: 0, y: 16 }, 0.5)
-        .from('[data-hero="3"] .btn', { opacity: 0, y: 14, stagger: 0.08 }, 0.65)
-        .from('[data-hero="4"] > div', { opacity: 0, y: 12, stagger: 0.08 }, 0.8)
-        .from('[data-hero="5"]', { opacity: 0, y: 26, duration: 1.4 }, 0.3)
-        .from('[data-hero="6"]', { opacity: 0 }, 1.1);
-
-      gsap.to('.trace', {
-        y: -26, ease: 'none',
-        scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true }
-      });
 
       /* scroll reveals */
       const sc = (el: Element) => ({ trigger: el, start: 'top 87%' });
@@ -187,102 +172,27 @@ const ApproachPage: React.FC = () => {
   };
 
   return (
-    <div ref={containerRef} className="approach-page">
+    <div id="page" ref={containerRef} className="approach-page min-h-screen flex flex-col">
       <SiteHeader />
+      <div id="content" className="site-content flex-grow">
+        <main id="primary" className="site-main">
 
-      <section className="hero" id="top">
-      <HeroWebGLBackground />
-        <div className="hero-grid" aria-hidden="true"></div>
-        <div className="hero-inner">
-          <div className="hero-copy">
-            <nav className="breadcrumb" aria-label="Breadcrumb" data-hero="1">
-              <a href="/">Gobiya</a><i>/</i>
-              <a href="/about">Company</a><i>/</i>
-              <span>Our approach</span>
-            </nav>
-
-            <h1 className="display">
-              <span className="line"><span>Keywords are strings.</span></span>
-              <span className="line"><span>Google indexes</span></span>
-              <span className="line"><span className="accent">things.</span></span>
-            </h1>
-
-            <p className="hero-sub body-l" data-hero="2">
-              Search engine optimization is no longer a marketing checklist — it's a
-              technical engineering discipline. This is GOBIYA's operating model for
-              algorithmic dominance, entity-based indexing, and closed-loop pipeline
-              conversion.
-            </p>
-
-            <div className="hero-actions" data-hero="3">
-              <a href="#ch-01" className="btn btn-primary magnetic">
-                Read the doctrine
-                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg>
-              </a>
-              <a href="/book" className="btn btn-ghost magnetic">Discover our methods</a>
-            </div>
-
-            <div className="hero-meta" data-hero="4">
-              <div>
-                <p className="mono-tag">Blueprint</p>
-                <p>Entities · Topical hubs · GEO · Pipelines</p>
-              </div>
-              <div>
-                <p className="mono-tag">Discipline</p>
-                <p>Search forensics — engineered, not guessed</p>
-              </div>
-              <div>
-                <p className="mono-tag">Loop closure</p>
-                <p>Every node traced to closed-won revenue</p>
-              </div>
-            </div>
-          </div>
-
-          <div className="hero-exhibit">
-            <figure className="trace" data-hero="5">
-              <div className="trace-head">
-                <span>EXH-007 / entity resolution — how Google reads a query</span>
-                <span className="right"><span className="pulse-dot" aria-hidden="true"></span>tracing</span>
-              </div>
-              <div className="trace-body" id="trace-body">
-                <span className="ln"><span className="dim">$</span> resolve <span className="em">"b2b sales pipeline integration tools"</span></span>
-                <span className="ln"><span className="dim">&gt;</span> tokenizing … <span className="warn">strings discarded</span></span>
-                <span className="ln"><span className="dim">&gt;</span> entity: <span className="em">Sales_pipeline</span> · knowledge graph node · salience <span className="ok">0.91</span></span>
-                <span className="ln"><span className="dim">&gt;</span> entity: <span className="em">B2B_marketing</span> · knowledge graph node · salience <span className="ok">0.84</span></span>
-                <span className="ln"><span className="dim">&gt;</span> entity: <span className="em">CRM_software</span> · knowledge graph node · salience <span className="ok">0.77</span></span>
-                <span className="ln"><span className="dim">&gt;</span> intent: <span className="em">transactional — comparison</span></span>
-                <span className="ln"><span className="dim">&gt;</span> match: pages with <span className="ok">high-salience edges</span> to these nodes</span>
-                <span className="ln"><span className="dim">&gt;</span> keyword density consulted: <span className="warn">never</span></span>
-              </div>
-              <div className="trace-foot">
-                <p>Operating conclusion</p>
-                <p>Strings don't rank. Entities do — so GOBIYA engineers the entities.</p>
-              </div>
-            </figure>
-
-            <div className="exhibit-caption" data-hero="6">
-              <span className="mono-tag">Fig. 1 — illustrative trace of neural query matching</span>
-              <span className="mono-tag">34.05°N&nbsp;118.24°W</span>
-            </div>
-          </div>
-        </div>
-
-        <div className="ticker" aria-label="Methodology vocabulary">
-          <div className="ticker-track" id="ticker-track">
-            {[0, 1].map(i => (
-              <div className="ticker-group" key={i} aria-hidden={i === 1 ? 'true' : undefined}>
-                <span className="ticker-item">Semantic triples <em>— S·P·O</em></span>
-                <span className="ticker-item">Entity salience <em>— engineered</em></span>
-                <span className="ticker-item">Knowledge graph <em>— mapped</em></span>
-                <span className="ticker-item">Pillar + cluster <em>— structured</em></span>
-                <span className="ticker-item">JSON-LD graphs <em>— nested</em></span>
-                <span className="ticker-item">GEO citations <em>— placed</em></span>
-                <span className="ticker-item">RAG alignment <em>— formatted</em></span>
-                <span className="ticker-item">Reverse-IP intent <em>— logged</em></span>
-                <span className="ticker-item">Attribution <em>— multi-touch</em></span>
-              </div>
-            ))}
-          </div>
+      <section id="top" style={{ background: '#ffffff', padding: '9rem 5vw 5rem', borderBottom: '1px solid #e5e7eb', position: 'relative' }}>
+        <span style={{ fontFamily: 'monospace', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.2em', color: '#9ca3af', display: 'block', marginBottom: '1.5rem' }}>
+          Gobiya / Our approach
+        </span>
+        <h1 style={{ fontSize: 'clamp(2.5rem, 5.5vw, 4.5rem)', fontWeight: 700, letterSpacing: '-0.03em', lineHeight: 1.05, color: '#111827', maxWidth: '880px', marginBottom: '1.75rem' }}>
+          Keywords are strings. Google indexes things.
+        </h1>
+        <p style={{ fontSize: '1.1rem', color: '#4b5563', lineHeight: 1.75, maxWidth: '640px', marginBottom: '2.5rem' }}>
+          Search engine optimization is no longer a marketing checklist — it's a technical engineering discipline. This is GOBIYA's operating model for algorithmic dominance, entity-based indexing, and closed-loop pipeline conversion.
+        </p>
+        <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+          <a href="#ch-01" className="btn btn-primary magnetic">
+            Read the doctrine
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg>
+          </a>
+          <a href="/book" className="btn btn-ghost magnetic">Discover our methods</a>
         </div>
       </section>
 
@@ -484,8 +394,8 @@ const ApproachPage: React.FC = () => {
 
             <div className="doctrine-body">
               <div className="doctrine-text" data-anim="stagger">
-                <p data-anim-child>Traditional agency models celebrate traffic growth even when it fails to generate qualified revenue. GOBIYA operates under a <strong>pipeline-first framework</strong> — connecting search traffic to automated sales development systems and turning the website into an active, high-yield pipeline generator. <a href="/capabilities/web-development" className="text-[#2F5D50] hover:text-[#F26522] underline underline-offset-4 transition-colors font-medium">Custom React and Vite architectures</a> deliver the sub-second loads that satisfy Core Web Vitals and capture high-intent users who would otherwise bounce.</p>
-                <p data-anim-child><strong>Visitor de-anonymization is integrated directly into the page layer:</strong> visiting IP addresses are resolved to specific corporate networks in real time, logging which organizations are researching your products and which pages they read. That intent data feeds straight into your <a href="/capabilities/native-crm" className="text-[#2F5D50] hover:text-[#F26522] underline underline-offset-4 transition-colors font-medium">CRM</a> — Salesforce or HubSpot — and triggers timing-optimized sequences targeting matching buyers at those accounts.</p>
+                <p data-anim-child>Traditional agency models celebrate traffic growth even when it fails to generate qualified revenue. GOBIYA operates under a <strong>pipeline-first framework</strong> — connecting search traffic to automated sales development systems and turning the website into an active, high-yield pipeline generator. <a href="/capabilities/web-development-agency/" className="text-[#2F5D50] hover:text-[#F26522] underline underline-offset-4 transition-colors font-medium">Custom React and Vite architectures</a> deliver the sub-second loads that satisfy Core Web Vitals and capture high-intent users who would otherwise bounce.</p>
+                <p data-anim-child><strong>Visitor de-anonymization is integrated directly into the page layer:</strong> visiting IP addresses are resolved to specific corporate networks in real time, logging which organizations are researching your products and which pages they read. That intent data feeds straight into your <a href="/capabilities/native-crm-agency/" className="text-[#2F5D50] hover:text-[#F26522] underline underline-offset-4 transition-colors font-medium">CRM</a> — Salesforce or HubSpot — and triggers timing-optimized sequences targeting matching buyers at those accounts.</p>
                 <p data-anim-child>The loop closes with <strong>multi-touch attribution:</strong> every pipeline opportunity is traced back to the specific content hubs and entity nodes that first captured the buyer — so every investment in the search engineering protocol is justified by measurable closed-won revenue.</p>
               </div>
 
@@ -542,28 +452,9 @@ const ApproachPage: React.FC = () => {
         </div>
       </section>
 
-      <section className="section cta-section" id="contact">
-        <div className="wrap" style={{ paddingTop: '5rem', paddingBottom: '5rem' }}>
-          <div className="cta-card" data-anim="up">
-            <div>
-              <div className="eyebrow">Apply the doctrine</div>
-              <h2 className="display">See what this methodology finds in <span className="accent">your market.</span></h2>
-              <p className="body-l">
-                One call. Your entity footprint, your topical gaps, your LLM
-                visibility — and the specific sequence GOBIYA would run to close
-                them, traced all the way to pipeline.
-              </p>
-            </div>
-            <div className="cta-actions">
-              <a href="/book" className="btn btn-primary magnetic">
-                Discover our methods
-                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg>
-              </a>
-              <a href="/case-studies" className="btn btn-ghost magnetic">See it on the record</a>
-            </div>
-          </div>
-        </div>
-      </section>
+
+        </main>
+      </div>
 
       <SiteFooter />
     </div>

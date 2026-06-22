@@ -4,11 +4,11 @@ import './StaggeredMenu.css';
 
 const DEFAULT_MENU_ITEMS = [
   { label: 'Capabilities', isHeader: true },
-  { label: 'Web Development', link: '/capabilities/web-development' },
-  { label: 'Native CRM', link: '/capabilities/native-crm' },
-  { label: 'SEO & Discoverability', link: '/capabilities/seo-discoverability' },
-  { label: 'Blockchain & Web3 Dev', link: '/capabilities/blockchain-web3-development' },
-  { label: 'AI & LLMs for Business', link: '/capabilities/ai-llms-business' },
+  { label: 'Web Development', link: '/capabilities/web-development-agency/' },
+  { label: 'Native CRM', link: '/capabilities/native-crm-agency/' },
+  { label: 'SEO & Discoverability', link: '/capabilities/seo-discoverability-agency/' },
+  { label: 'Blockchain & Web3 Dev', link: '/capabilities/blockchain-web3-development-agency/' },
+  { label: 'AI & LLMs for Business', link: '/capabilities/ai-llms-business-agency/' },
   { label: 'Company', isHeader: true },
   { label: 'About the Agency', link: '/about' },
   { label: 'Case Studies', link: '/case-studies' },

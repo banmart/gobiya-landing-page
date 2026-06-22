@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from 'react';
-import HeroWebGLBackground from './HeroWebGLBackground';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './ContactPage.css';
@@ -36,14 +35,6 @@ export default function ContactPage() {
       gsap.to(document.body, { opacity: 1, duration: 0.6, ease: 'power2.out' });
 
       const ease = 'power3.out';
-      const heroTl = gsap.timeline({ delay: 0.1, defaults: { ease, duration: 1.0 } });
-      heroTl
-        .from('.contact-page .breadcrumb', { opacity: 0, y: 12 })
-        .from('.contact-page .hero h1 .line > span', { yPercent: 108, stagger: 0.06 }, '-=0.7')
-        .from('.contact-page .hero-sub', { opacity: 0, y: 18, duration: 0.8 }, '-=0.5')
-        .from('.contact-page .hero-actions', { opacity: 0, y: 14, duration: 0.7 }, '-=0.4')
-        .from('.contact-page .hero-meta', { opacity: 0, y: 14, duration: 0.7 }, '-=0.3')
-        .from('.contact-page .contact-terminal', { opacity: 0, y: 24, duration: 0.9 }, '-=0.8');
 
       gsap.from('.contact-page .form-info', { opacity: 0, y: 30, duration: 0.8, ease, scrollTrigger: { trigger: '.contact-page .form-section', start: 'top 80%' } });
       gsap.from('.contact-page .form-wrap', { opacity: 0, y: 30, duration: 0.8, delay: 0.15, ease, scrollTrigger: { trigger: '.contact-page .form-section', start: 'top 80%' } });
@@ -82,95 +73,43 @@ export default function ContactPage() {
   };
 
   return (
-    <div ref={containerRef} className="contact-page">
+    <div id="page" ref={containerRef} className="contact-page min-h-screen flex flex-col">
       <SiteHeader />
+      <div id="content" className="site-content" style={{ flexGrow: 0 }}>
+        <main id="primary" className="site-main">
 
       {/* ── HERO ── */}
-      <section className="hero">
-      <HeroWebGLBackground />
-        <div className="hero-grid" aria-hidden="true" />
-        <div className="hero-inner">
-
-          {/* LEFT: copy */}
-          <div className="hero-copy">
-            <nav className="breadcrumb" aria-label="Breadcrumb">
-              <a href="/">GOBIYA</a>
-              <i aria-hidden="true">›</i>
-              <span>Contact</span>
-            </nav>
-
-            <h1>
-              <span className="line"><span>Let's talk</span></span>
-              <span className="line"><span>about your</span></span>
-              <span className="line"><span className="accent">growth.</span></span>
+      <section id="top" style={{ background: '#ffffff', padding: '9rem 5vw 5rem', borderBottom: '1px solid #e5e7eb', position: 'relative' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '5rem', alignItems: 'end' }}>
+          <div>
+            <span style={{ fontFamily: 'monospace', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.2em', color: '#9ca3af', display: 'block', marginBottom: '1.5rem' }}>
+              Gobiya / Contact
+            </span>
+            <h1 style={{ fontSize: 'clamp(2.5rem, 5.5vw, 4.5rem)', fontWeight: 700, letterSpacing: '-0.03em', lineHeight: 1.05, color: '#111827', maxWidth: '600px', marginBottom: '1.75rem' }}>
+              Let's talk about your growth.
             </h1>
-
-            <p className="hero-sub body-l">
+            <p style={{ fontSize: '1.05rem', color: '#4b5563', lineHeight: 1.75, marginBottom: '2.5rem' }}>
               We respond within one business day. For urgent matters, call us directly — a real person picks up.
             </p>
-
-            <div className="hero-actions">
+            <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
               <a href="tel:3237441338" className="btn btn-primary">Call 323-744-1338</a>
               <a href="mailto:hello@gobiya.com" className="btn btn-ghost">hello@gobiya.com</a>
             </div>
-
-            <div className="hero-meta">
-              <div>
-                <p className="meta-label">Response time</p>
-                <p className="meta-val">&lt; 1 business day</p>
-              </div>
-              <div>
-                <p className="meta-label">Founded</p>
-                <p className="meta-val">2012 · Los Angeles</p>
-              </div>
-              <div>
-                <p className="meta-label">Rating</p>
-                <p className="meta-val">BBB A+</p>
-              </div>
-            </div>
           </div>
-
-          {/* RIGHT: info terminal */}
-          <div className="hero-exhibit">
-            <div className="contact-terminal">
-              <div className="terminal-head">
-                <span>contact.log</span>
-                <span className="right">
-                  <span className="pulse" aria-hidden="true" />
-                  Office open
-                </span>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', borderLeft: '1px solid #e5e7eb', paddingLeft: '5rem' }}>
+            {[
+              { label: 'Address', val: '3580 Wilshire Blvd, Ste 132\nLos Angeles, CA 90010' },
+              { label: 'Phone', val: '323-744-1338' },
+              { label: 'Email', val: 'hello@gobiya.com' },
+              { label: 'Hours', val: 'Mon – Fri  9:00 AM – 5:00 PM\nSaturday  9:00 AM – 3:00 PM\nSunday  Closed' },
+              { label: 'Response', val: '< 1 business day' },
+            ].map(item => (
+              <div key={item.label}>
+                <span style={{ fontFamily: 'monospace', fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.15em', color: '#9ca3af', display: 'block', marginBottom: '0.25rem' }}>{item.label}</span>
+                <p style={{ fontSize: '0.95rem', color: '#374151', whiteSpace: 'pre-line', lineHeight: 1.6 }}>{item.val}</p>
               </div>
-              <div className="terminal-body">
-                <div className="t-row">
-                  <span className="t-key">Address</span>
-                  <span className="t-val">3580 Wilshire Blvd, Ste 132<br />Los Angeles, CA 90010</span>
-                </div>
-                <div className="t-row">
-                  <span className="t-key">Phone</span>
-                  <span className="t-val"><a href="tel:3237441338">323-744-1338</a></span>
-                </div>
-                <div className="t-row">
-                  <span className="t-key">Email</span>
-                  <span className="t-val"><a href="mailto:hello@gobiya.com">hello@gobiya.com</a></span>
-                </div>
-                <div className="t-row">
-                  <span className="t-key">Hours</span>
-                  <span className="t-val">
-                    <div className="t-hours">
-                      <span>Mon – Fri <em>9:00 AM – 5:00 PM</em></span>
-                      <span>Saturday <em>9:00 AM – 3:00 PM</em></span>
-                      <span className="closed">Sunday <em>Closed</em></span>
-                    </div>
-                  </span>
-                </div>
-              </div>
-              <div className="terminal-foot">
-                <span>gobiya.com</span>
-                <span>34.05°N · 118.24°W</span>
-              </div>
-            </div>
+            ))}
           </div>
-
         </div>
       </section>
 
@@ -302,7 +241,28 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <SiteFooter />
+      {/* ── MAP ── */}
+      <section style={{ borderTop: '1px solid #e5e7eb' }}>
+        <div style={{ padding: '3rem 5vw 1.5rem' }}>
+          <span style={{ fontFamily: 'monospace', fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.18em', color: '#9ca3af' }}>
+            Find us — 3580 Wilshire Blvd, Ste 132, Los Angeles CA 90010
+          </span>
+        </div>
+        <iframe
+          src="https://maps.google.com/maps?q=3580+Wilshire+Blvd+Ste+132+Los+Angeles+CA+90010&output=embed&z=15"
+          width="100%"
+          height="520"
+          style={{ border: 0, display: 'block' }}
+          allowFullScreen
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+          title="GOBIYA office — 3580 Wilshire Blvd, Ste 132, Los Angeles CA 90010"
+        />
+      </section>
+        </main>
+      </div>
+
+      <SiteFooter hideCTA={true} />
     </div>
   );
 }

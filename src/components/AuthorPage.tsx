@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from 'react';
-import HeroWebGLBackground from './HeroWebGLBackground';
 import { Linkedin, Award, Code, Compass, ShieldCheck } from 'lucide-react';
 import SiteHeader from './SiteHeader';
 import SiteFooter from './SiteFooter';
@@ -26,13 +25,6 @@ const AuthorPage: React.FC<AuthorPageProps> = ({ path }) => {
         gsap.fromTo(navInner, { y: -22, opacity: 0 }, { y: 0, opacity: 1, duration: 1.2, ease, delay: 0.1 });
       }
 
-      // Hero Timeline
-      const heroTl = gsap.timeline({ delay: 0.15, defaults: { ease, duration: 1.15 } });
-      heroTl
-        .fromTo('.breadcrumb', { opacity: 0, y: 12 }, { opacity: 1, y: 0 }, 0)
-        .fromTo('.hero-cat', { opacity: 0, y: 12 }, { opacity: 1, y: 0 }, 0.08)
-        .fromTo('.hero h1 .line > span', { yPercent: 110 }, { yPercent: 0, stagger: 0.1, duration: 1.25 }, 0.15)
-        .fromTo('.hero-sub', { opacity: 0, y: 16 }, { opacity: 1, y: 0 }, 0.3);
 
       // Scroll reveals
       const sc = (el: Element) => ({ trigger: el, start: 'top 87%' });
@@ -80,7 +72,7 @@ const AuthorPage: React.FC<AuthorPageProps> = ({ path }) => {
       category: 'GEO',
       readTime: '10 min read',
       date: 'June 4, 2026',
-      image: '/images/are-ai-search-engines-scraping-hidden-api-data-or-public-html-text-blocks.webp',
+      image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1200&q=80',
       description: 'The technical mechanisms of content acquisition by AI engines, the Googlebot rendering divide, and how to fix JavaScript invisibility.'
     },
     {
@@ -89,7 +81,7 @@ const AuthorPage: React.FC<AuthorPageProps> = ({ path }) => {
       category: 'Strategy',
       readTime: '12 min read',
       date: 'May 25, 2026',
-      image: '/images/article-b2b-pipeline-seo.webp',
+      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80',
       description: 'How AI-cited content qualifies B2B vendors for buyer shortlists — and what the 2026 shift to AI-driven research means for your pipeline.'
     },
     {
@@ -98,7 +90,7 @@ const AuthorPage: React.FC<AuthorPageProps> = ({ path }) => {
       category: 'Strategy',
       readTime: '13 min read',
       date: 'May 25, 2026',
-      image: '/images/article-lead-gen-seo.webp',
+      image: 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1200&q=80',
       description: 'How AI-cited content produces pre-qualified pipeline at conversion rates traditional lead gen cannot match — and what the 2026 shift means for B2B teams.'
     },
     {
@@ -107,7 +99,7 @@ const AuthorPage: React.FC<AuthorPageProps> = ({ path }) => {
       category: 'Strategy',
       readTime: '12 min read',
       date: 'May 25, 2026',
-      image: '/images/article-outbound-seo-prospecting.webp',
+      image: 'https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=1200&q=80',
       description: 'How SEO-derived intent signals turn outbound from a volume game into a timing game — and what the 2026 data says about cold vs signal-anchored prospecting.'
     }
   ];
@@ -117,26 +109,16 @@ const AuthorPage: React.FC<AuthorPageProps> = ({ path }) => {
       <SiteHeader />
 
       {/* ── HERO ── */}
-      <section className="hero">
-      <HeroWebGLBackground />
-        <div className="hero-grid" aria-hidden="true"></div>
-        <div className="hero-inner">
-          <nav className="breadcrumb" aria-label="Breadcrumb">
-            <a href="/">GOBIYA</a><i>/</i>
-            <a href="/about">Company</a><i>/</i>
-            <span>Steve Martin Profile</span>
-          </nav>
-          
-          <span className="hero-cat">
-            Leadership & Engineering
-          </span>
-          <h1 className="display">
-            <span className="line"><span>Steve Martin</span></span>
-          </h1>
-          <p className="hero-sub">
-            Founder, Lead Developer & Marketer at GOBIYA
-          </p>
-        </div>
+      <section style={{ background: '#ffffff', padding: '9rem 5vw 5rem', borderBottom: '1px solid #e5e7eb', position: 'relative' }}>
+        <span style={{ fontFamily: 'monospace', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.2em', color: '#9ca3af', display: 'block', marginBottom: '0.75rem' }}>
+          Gobiya / Leadership &amp; Engineering
+        </span>
+        <h1 style={{ fontSize: 'clamp(2.5rem, 5.5vw, 4.5rem)', fontWeight: 700, letterSpacing: '-0.03em', lineHeight: 1.05, color: '#111827', marginBottom: '1rem' }}>
+          Steve Martin
+        </h1>
+        <p style={{ fontSize: '1.1rem', color: '#4b5563' }}>
+          Founder, Lead Developer &amp; Marketer at GOBIYA
+        </p>
       </section>
 
       {/* ── PROFILE & BIO ── */}

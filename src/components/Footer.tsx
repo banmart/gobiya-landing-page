@@ -33,12 +33,12 @@ const Footer: React.FC = () => {
           <div className="flex flex-col">
             <h4 className="text-[12px] font-semibold uppercase tracking-wider mb-6">Capabilities</h4>
             <ul className="flex flex-col gap-4 text-[14px] text-gray-400">
-              <li><a href="/capabilities/web-development" className="hover:text-white transition-colors">Web Development</a></li>
-              <li><a href="/capabilities/native-crm" className="hover:text-white transition-colors">Native CRM</a></li>
-              <li><a href="/capabilities/seo-discoverability" className="hover:text-white transition-colors">SEO & Discoverability</a></li>
-              <li><a href="/capabilities/blockchain-web3-development" className="hover:text-white transition-colors">Blockchain & Web3 Dev</a></li>
-              <li><a href="/capabilities/ai-llms-business" className="hover:text-white transition-colors">AI & LLMs for Business</a></li>
-              <li><a href="/capabilities/authority-building" className="hover:text-white transition-colors">Authority Building</a></li>
+              <li><a href="/performance/web-development-agency" className="hover:text-white transition-colors">Web Development</a></li>
+              <li><a href="/performance/native-crm-agency" className="hover:text-white transition-colors">Native CRM</a></li>
+              <li><a href="/performance/seo-discoverability-agency" className="hover:text-white transition-colors">SEO & Discoverability</a></li>
+              <li><a href="/performance/blockchain-web3-development-agency" className="hover:text-white transition-colors">Blockchain & Web3 Dev</a></li>
+              <li><a href="/performance/ai-llms-business-agency" className="hover:text-white transition-colors">AI & LLMs for Business</a></li>
+              <li><a href="/relations/authority-building-agency" className="hover:text-white transition-colors">Authority Building</a></li>
               <li><a href="/capabilities" className="hover:text-white transition-colors">All Capabilities Overview</a></li>
             </ul>
           </div>

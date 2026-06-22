@@ -1,0 +1,500 @@
+﻿diff --git a/src/components/SiteHeader.tsx b/src/components/SiteHeader.tsx
+index f105420..c5682d2 100644
+--- a/src/components/SiteHeader.tsx
++++ b/src/components/SiteHeader.tsx
+@@ -1,66 +1,447 @@
+ import React, { useState, useEffect } from 'react';
+ 
+-const NAV_LINKS = [
+-  { href: '/capabilities', label: 'Capabilities' },
+-  { href: '/about', label: 'About' },
+-  { href: '/case-studies', label: 'Case studies' },
+-  { href: '/approach', label: 'Approach' },
+-  { href: '/insights', label: 'Insights' },
+-  { href: '/contact', label: 'Contact' },
+-];
+-
+ const SiteHeader: React.FC = () => {
+-  const [path, setPath] = useState('/');
++  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
++  const [openCategory, setOpenCategory] = useState<string | null>(null);
++  const [isScrolled, setIsScrolled] = useState(false);
++  const [isMenuHovered, setIsMenuHovered] = useState(false);
++  const [isHomepage, setIsHomepage] = useState(() => {
++    if (typeof window !== 'undefined') {
++      return window.location.pathname === '/' || window.location.pathname === '';
++    }
++    return true;
++  });
+ 
+   useEffect(() => {
+-    setPath(window.location.pathname.toLowerCase().replace(/\/$/, '') || '/');
++    if (typeof window !== 'undefined') {
++      setIsHomepage(window.location.pathname === '/' || window.location.pathname === '');
++    }
++  }, []);
++
++  const [showHeader, setShowHeader] = useState(true);
++  const [lastScrollY, setLastScrollY] = useState(0);
++
++  useEffect(() => {
++    const handleScroll = () => {
++      const currentScrollY = window.scrollY;
++      setIsScrolled(currentScrollY > 50);
++
++      // Scroll direction tracking:
++      // Hide header if scrolling down and scrolled past 120px
++      // Show header if scrolling up
++      setLastScrollY(prev => {
++        if (currentScrollY > prev && currentScrollY > 120) {
++          setShowHeader(false);
++        } else {
++          setShowHeader(true);
++        }
++        return currentScrollY;
++      });
++    };
++
++    window.addEventListener('scroll', handleScroll, { passive: true });
++    handleScroll();
++    return () => window.removeEventListener('scroll', handleScroll);
+   }, []);
+ 
+-  const isActive = (href: string) => {
+-    if (href === '/') return path === '/';
+-    return path === href || path.startsWith(href + '/');
++  // prevent scroll when mobile menu is open
++  useEffect(() => {
++    if (isMobileMenuOpen) {
++      document.body.style.overflow = 'hidden';
++    } else {
++      document.body.style.overflow = '';
++    }
++    return () => { document.body.style.overflow = ''; };
++  }, [isMobileMenuOpen]);
++
++  const toggleCategory = (category: string) => {
++    setOpenCategory(openCategory === category ? null : category);
+   };
+ 
++  const isHeaderActive = isScrolled || isMobileMenuOpen || isMenuHovered;
++  const shouldShowHeader = showHeader || isMobileMenuOpen || isMenuHovered;
++
+   return (
+-    <header className="site-nav">
+-      <div className="nav-inner" id="nav-inner">
+-        <a href="/" className="nav-brand" aria-label="GOBIYA home">
+-          <span className="brand-mark" aria-hidden="true">
+-            <img src="/images/gobiya---logo.webp" alt="GOBIYA logo" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+-          </span>
+-          <span className="brand-name">
+-            <span className="mono-tag">AI Internet Marketing ΓÇö LA</span>
+-            <strong>GOBIYA</strong>
+-          </span>
+-        </a>
+-
+-        <nav className="nav-links" aria-label="Primary">
+-          {NAV_LINKS.map(({ href, label }) => (
+-            <a key={href} href={href} className={isActive(href) ? 'nav-active' : ''}>{label}</a>
+-          ))}
+-        </nav>
+-
+-        <div className="nav-right">
+-          <span className="nav-status">BBB A+ ┬╖ since 2012</span>
+-          <a href="tel:3237441338" className="hidden lg:inline-block text-[13px] font-mono tracking-wider text-[#2F5D50] hover:text-[#F26522] mr-2 transition-colors font-bold">
+-            323-744-1338
+-          </a>
+-          <a href="tel:3237441338" className="btn btn-primary flex items-center justify-center p-2 rounded-full lg:hidden w-8 h-8 shrink-0 text-white" aria-label="Call GOBIYA">
+-            <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
++    <header 
++      id="page-header" 
++      className="page-header w-full z-[100] transition-transform duration-300 ease-in-out" 
++      style={{ 
++        position: "fixed", 
++        top: 0, 
++        left: 0,
++        transform: shouldShowHeader ? "translateY(0)" : "translateY(-100%)"
++      }}
++      onMouseEnter={() => setIsMenuHovered(true)}
++      onMouseLeave={() => setIsMenuHovered(false)}
++    >
++      {/* Top Menu Layer */}
++      <div 
++        className="top-menu transition-all duration-300" 
++        style={{ 
++          backgroundColor: isHeaderActive 
++            ? "#1C201D" 
++            : "transparent",
++          borderBottom: isHeaderActive 
++            ? "1px solid #2d332f" 
++            : "1px solid rgba(255,255,255,0.1)" 
++        }}
++      >
++        <div className="container top-menu__inner">
++          <div className="menu-top-en-container">
++            <ul 
++              id="menu-top-en" 
++              className="menu transition-colors duration-300" 
++              style={{ 
++                color: isHeaderActive 
++                  ? "#A1A8A3" 
++                  : "#ffffff" 
++              }}
++            >
++              <li className="menu-item menu-item-has-children">
++                <a href="/about">
++                  About us{" "}
++                  <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
++                    <path fillRule="evenodd" clipRule="evenodd" d="M5.58564 3.52858C5.84599 3.26823 6.2681 3.26823 6.52845 3.52858L10.5285 7.52858C10.7888 7.78892 10.7888 8.21103 10.5285 8.47138L6.52845 12.4714C6.2681 12.7317 5.84599 12.7317 5.58564 12.4714C5.32529 12.211 5.32529 11.7889 5.58564 11.5286L9.11424 7.99998L5.58564 4.47138C5.32529 4.21103 5.32529 3.78892 5.58564 3.52858Z" fill="currentColor"/>
++                  </svg>
++                </a>
++                <ul className="sub-menu">
++                  <li className="menu-item"><a href="/about">About Agency</a></li>
++                  <li className="menu-item"><a href="/about/steve-martin">Steve Martin</a></li>
++                  <li className="menu-item"><a href="/approach">Our Approach</a></li>
++                </ul>
++              </li>
++              <li className="menu-item menu-item-has-children">
++                <a href="/contact">
++                  Offices{" "}
++                  <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
++                    <path fillRule="evenodd" clipRule="evenodd" d="M5.58564 3.52858C5.84599 3.26823 6.2681 3.26823 6.52845 3.52858L10.5285 7.52858C10.7888 7.78892 10.7888 8.21103 10.5285 8.47138L6.52845 12.4714C6.2681 12.7317 5.84599 12.7317 5.58564 12.4714C5.32529 12.211 5.32529 11.7889 5.58564 11.5286L9.11424 7.99998L5.58564 4.47138C5.32529 4.21103 5.32529 3.78892 5.58564 3.52858Z" fill="currentColor"/>
++                  </svg>
++                </a>
++                <ul className="sub-menu">
++                  <li className="menu-item"><a href="/contact">Los Angeles</a></li>
++                </ul>
++              </li>
++              <li className="menu-item"><a href="/insights">News &amp; Insights</a></li>
++              <li className="menu-item"><a href="/contact">Careers</a></li>
++              <li className="menu-item"><a href="/contact">Contact us</a></li>
++            </ul>
++          </div>
++        </div>
++      </div>
++
++      {/* Main Menu Layer */}
++      <div className={`page-header__inner w-full mx-auto flex items-center justify-between static transition-all duration-300 ${isHeaderActive ? "bg-white shadow-md border-b border-line" : "bg-transparent"}`} style={{ paddingLeft: '5vw', paddingRight: '5vw', position: 'static' }}>
++        <div className="logos-wrapper flex items-center shrink-0 relative z-50">
++          <a className="flex items-center gap-3 py-3" href="/" title="GOBIYA - Back to home">
++            <span className="flex items-center w-[120px] md:w-[160px] lg:w-[180px]">
++              <img src="/images/logo-new.webp" alt="GOBIYA logo" className="w-full h-auto object-contain transition-all duration-300" style={{ filter: isHeaderActive ? "none" : "invert(1) brightness(2)" }} />
++            </span>
+           </a>
+-          <a href="/book" className="btn btn-primary btn-nav">Book a call</a>
+-          <button className="nav-burger" id="burger" aria-label="Open menu" aria-expanded="false">
+-            <span></span><span></span><span></span>
++        </div>
++
++        <div className="main-menu-wrapper flex-1 flex justify-end lg:pr-8 static" style={{ position: 'static' }}>
++          <div className="menu-main-en-container flex w-full justify-end static" style={{ position: 'static' }}>
++            <ul id="menu-main-en" className="menu flex items-center gap-10 h-full static" style={{ position: 'static' }}>
++              {/* Creativity Dropdown */}
++              <li className="menu-item group cursor-pointer relative lg:static h-full flex items-center" style={{ position: 'static' }}>
++                <a href="/creativity" className="flex items-center gap-1 py-4 font-medium hover:text-gray-400 transition-colors" style={{ color: isHeaderActive ? "#111827" : "#ffffff" }}>
++                  Creativity
++                  <svg width="12" height="12" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg" className="transform group-hover:rotate-180 transition-transform duration-300">
++                    <path fillRule="evenodd" clipRule="evenodd" d="M5.58564 3.52858C5.84599 3.26823 6.2681 3.26823 6.52845 3.52858L10.5285 7.52858C10.7888 7.78892 10.7888 8.21103 10.5285 8.47138L6.52845 12.4714C6.2681 12.7317 5.84599 12.7317 5.58564 12.4714C5.32529 12.211 5.32529 11.7889 5.58564 11.5286L9.11424 7.99998L5.58564 4.47138C5.32529 4.21103 5.32529 3.78892 5.58564 3.52858Z" fill="currentColor"/>
++                  </svg>
++                </a>
++                <div className="absolute top-full left-0 w-full bg-white opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 shadow-2xl border-t border-line">
++                  <div className="w-full mx-auto flex" style={{ paddingLeft: '5vw', paddingRight: '5vw' }}>
++                    <div className="w-full lg:w-1/3 py-12 pr-8 border-r border-line">
++                      <ul className="flex flex-col gap-3 text-left">
++                        <li><a href="/creativity" className="text-gray-900 font-bold text-lg hover:text-gray-500 transition-colors block border-b border-line pb-4 mb-2">Overview &rarr;</a></li>
++                        <li>
++                          <a href="/creativity/brand-identity-strategy-agency" className="group/link text-gray-500 hover:text-gray-900 transition-all duration-200 flex items-center justify-between text-base py-2 border-b border-gray-100/30">
++                            <span>Brand Identity Strategy</span>
++                            <span className="opacity-0 -translate-x-2 group-hover/link:opacity-100 group-hover/link:translate-x-0 transition-all duration-200 text-gray-900 font-bold">&rarr;</span>
++                          </a>
++                        </li>
++                        <li>
++                          <a href="/creativity/communication-concepts-agency" className="group/link text-gray-500 hover:text-gray-900 transition-all duration-200 flex items-center justify-between text-base py-2 border-b border-gray-100/30">
++                            <span>Communication Concepts</span>
++                            <span className="opacity-0 -translate-x-2 group-hover/link:opacity-100 group-hover/link:translate-x-0 transition-all duration-200 text-gray-900 font-bold">&rarr;</span>
++                          </a>
++                        </li>
++                        <li>
++                          <a href="/creativity/seo-web-copywriting-agency" className="group/link text-gray-500 hover:text-gray-900 transition-all duration-200 flex items-center justify-between text-base py-2 border-b border-gray-100/30">
++                            <span>SEO &amp; Web Copywriting</span>
++                            <span className="opacity-0 -translate-x-2 group-hover/link:opacity-100 group-hover/link:translate-x-0 transition-all duration-200 text-gray-900 font-bold">&rarr;</span>
++                          </a>
++                        </li>
++                        <li>
++                          <a href="/creativity/creative-art-direction-agency" className="group/link text-gray-500 hover:text-gray-900 transition-all duration-200 flex items-center justify-between text-base py-2 border-b border-gray-100/30">
++                            <span>Creative Art Direction</span>
++                            <span className="opacity-0 -translate-x-2 group-hover/link:opacity-100 group-hover/link:translate-x-0 transition-all duration-200 text-gray-900 font-bold">&rarr;</span>
++                          </a>
++                        </li>
++                        <li>
++                          <a href="/creativity/social-media-management-agency" className="group/link text-gray-500 hover:text-gray-900 transition-all duration-200 flex items-center justify-between text-base py-2 border-b border-gray-100/30">
++                            <span>Social Media Management</span>
++                            <span className="opacity-0 -translate-x-2 group-hover/link:opacity-100 group-hover/link:translate-x-0 transition-all duration-200 text-gray-900 font-bold">&rarr;</span>
++                          </a>
++                        </li>
++                      </ul>
++                    </div>
++                    <div className="hidden lg:block lg:w-2/3 bg-gray-50/50"></div>
++                  </div>
++                </div>
++              </li>
++              
++              {/* Performance Dropdown */}
++              <li className="menu-item group cursor-pointer relative lg:static h-full flex items-center" style={{ position: 'static' }}>
++                <a href="/performance" className="flex items-center gap-1 py-4 font-medium hover:text-gray-400 transition-colors" style={{ color: isHeaderActive ? "#111827" : "#ffffff" }}>
++                  Performance
++                  <svg width="12" height="12" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg" className="transform group-hover:rotate-180 transition-transform duration-300">
++                    <path fillRule="evenodd" clipRule="evenodd" d="M5.58564 3.52858C5.84599 3.26823 6.2681 3.26823 6.52845 3.52858L10.5285 7.52858C10.7888 7.78892 10.7888 8.21103 10.5285 8.47138L6.52845 12.4714C6.2681 12.7317 5.84599 12.7317 5.58564 12.4714C5.32529 12.211 5.32529 11.7889 5.58564 11.5286L9.11424 7.99998L5.58564 4.47138C5.32529 4.21103 5.32529 3.78892 5.58564 3.52858Z" fill="currentColor"/>
++                  </svg>
++                </a>
++                <div className="absolute top-full left-0 w-full bg-white opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 shadow-2xl border-t border-line">
++                  <div className="w-full mx-auto flex" style={{ paddingLeft: '5vw', paddingRight: '5vw' }}>
++                    <div className="w-full lg:w-1/3 py-12 pr-8 border-r border-line">
++                      <ul className="flex flex-col gap-3 text-left">
++                        <li><a href="/performance" className="text-gray-900 font-bold text-lg hover:text-gray-500 transition-colors block border-b border-line pb-4 mb-2">Overview &rarr;</a></li>
++                        <li>
++                          <a href="/performance/seo-discoverability-agency" className="group/link text-gray-500 hover:text-gray-900 transition-all duration-200 flex items-center justify-between text-base py-2 border-b border-gray-100/30">
++                            <span>SEO &amp; Discoverability</span>
++                            <span className="opacity-0 -translate-x-2 group-hover/link:opacity-100 group-hover/link:translate-x-0 transition-all duration-200 text-gray-900 font-bold">&rarr;</span>
++                          </a>
++                        </li>
++                        <li>
++                          <a href="/performance/web-development-agency" className="group/link text-gray-500 hover:text-gray-900 transition-all duration-200 flex items-center justify-between text-base py-2 border-b border-gray-100/30">
++                            <span>Web &amp; IT App Development</span>
++                            <span className="opacity-0 -translate-x-2 group-hover/link:opacity-100 group-hover/link:translate-x-0 transition-all duration-200 text-gray-900 font-bold">&rarr;</span>
++                          </a>
++                        </li>
++                        <li>
++                          <a href="/performance/google-ads-ppc-strategy-agency" className="group/link text-gray-500 hover:text-gray-900 transition-all duration-200 flex items-center justify-between text-base py-2 border-b border-gray-100/30">
++                            <span>Google Ads &amp; PPC Strategy</span>
++                            <span className="opacity-0 -translate-x-2 group-hover/link:opacity-100 group-hover/link:translate-x-0 transition-all duration-200 text-gray-900 font-bold">&rarr;</span>
++                          </a>
++                        </li>
++                        <li>
++                          <a href="/performance/cro-ux-analysis-agency" className="group/link text-gray-500 hover:text-gray-900 transition-all duration-200 flex items-center justify-between text-base py-2 border-b border-gray-100/30">
++                            <span>CRO &amp; UX Analysis</span>
++                            <span className="opacity-0 -translate-x-2 group-hover/link:opacity-100 group-hover/link:translate-x-0 transition-all duration-200 text-gray-900 font-bold">&rarr;</span>
++                          </a>
++                        </li>
++                        <li>
++                          <a href="/performance/ai-llms-business-agency" className="group/link text-gray-500 hover:text-gray-900 transition-all duration-200 flex items-center justify-between text-base py-2 border-b border-gray-100/30">
++                            <span>AI &amp; LLM Systems Consulting</span>
++                            <span className="opacity-0 -translate-x-2 group-hover/link:opacity-100 group-hover/link:translate-x-0 transition-all duration-200 text-gray-900 font-bold">&rarr;</span>
++                          </a>
++                        </li>
++                      </ul>
++                    </div>
++                    <div className="hidden lg:block lg:w-2/3 bg-gray-50/50"></div>
++                  </div>
++                </div>
++              </li>
++              
++              {/* Relations Dropdown */}
++              <li className="menu-item group cursor-pointer relative lg:static h-full flex items-center" style={{ position: 'static' }}>
++                <a href="/relations" className="flex items-center gap-1 py-4 font-medium hover:text-gray-400 transition-colors" style={{ color: isHeaderActive ? "#111827" : "#ffffff" }}>
++                  Relations
++                  <svg width="12" height="12" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg" className="transform group-hover:rotate-180 transition-transform duration-300">
++                    <path fillRule="evenodd" clipRule="evenodd" d="M5.58564 3.52858C5.84599 3.26823 6.2681 3.26823 6.52845 3.52858L10.5285 7.52858C10.7888 7.78892 10.7888 8.21103 10.5285 8.47138L6.52845 12.4714C6.2681 12.7317 5.84599 12.7317 5.58564 12.4714C5.32529 12.211 5.32529 11.7889 5.58564 11.5286L9.11424 7.99998L5.58564 4.47138C5.32529 4.21103 5.32529 3.78892 5.58564 3.52858Z" fill="currentColor"/>
++                  </svg>
++                </a>
++                <div className="absolute top-full left-0 w-full bg-white opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 shadow-2xl border-t border-line">
++                  <div className="w-full mx-auto flex" style={{ paddingLeft: '5vw', paddingRight: '5vw' }}>
++                    <div className="w-full lg:w-1/3 py-12 pr-8 border-r border-line">
++                      <ul className="flex flex-col gap-3 text-left">
++                        <li><a href="/relations" className="text-gray-900 font-bold text-lg hover:text-gray-500 transition-colors block border-b border-line pb-4 mb-2">Overview &rarr;</a></li>
++                        <li>
++                          <a href="/relations/authority-building-agency" className="group/link text-gray-500 hover:text-gray-900 transition-all duration-200 flex items-center justify-between text-base py-2 border-b border-gray-100/30">
++                            <span>Authority &amp; Link Building</span>
++                            <span className="opacity-0 -translate-x-2 group-hover/link:opacity-100 group-hover/link:translate-x-0 transition-all duration-200 text-gray-900 font-bold">&rarr;</span>
++                          </a>
++                        </li>
++                        <li>
++                          <a href="/relations/digital-pr-media-outreach-agency" className="group/link text-gray-500 hover:text-gray-900 transition-all duration-200 flex items-center justify-between text-base py-2 border-b border-gray-100/30">
++                            <span>Digital PR &amp; Media Outreach</span>
++                            <span className="opacity-0 -translate-x-2 group-hover/link:opacity-100 group-hover/link:translate-x-0 transition-all duration-200 text-gray-900 font-bold">&rarr;</span>
++                          </a>
++                        </li>
++                        <li>
++                          <a href="/relations/google-ads-ppc-strategy-agency" className="group/link text-gray-500 hover:text-gray-900 transition-all duration-200 flex items-center justify-between text-base py-2 border-b border-gray-100/30">
++                            <span>Google Ads &amp; PPC Strategy</span>
++                            <span className="opacity-0 -translate-x-2 group-hover/link:opacity-100 group-hover/link:translate-x-0 transition-all duration-200 text-gray-900 font-bold">&rarr;</span>
++                          </a>
++                        </li>
++                        <li>
++                          <a href="/relations/content-marketing-syndication-agency" className="group/link text-gray-500 hover:text-gray-900 transition-all duration-200 flex items-center justify-between text-base py-2 border-b border-gray-100/30">
++                            <span>Content Marketing Syndication</span>
++                            <span className="opacity-0 -translate-x-2 group-hover/link:opacity-100 group-hover/link:translate-x-0 transition-all duration-200 text-gray-900 font-bold">&rarr;</span>
++                          </a>
++                        </li>
++                        <li>
++                          <a href="/relations/influencer-marketing-agency" className="group/link text-gray-500 hover:text-gray-900 transition-all duration-200 flex items-center justify-between text-base py-2 border-b border-gray-100/30">
++                            <span>Influencer Marketing</span>
++                            <span className="opacity-0 -translate-x-2 group-hover/link:opacity-100 group-hover/link:translate-x-0 transition-all duration-200 text-gray-900 font-bold">&rarr;</span>
++                          </a>
++                        </li>
++                        <li>
++                          <a href="/relations/local-community-relations-agency" className="group/link text-gray-500 hover:text-gray-900 transition-all duration-200 flex items-center justify-between text-base py-2 border-b border-gray-100/30">
++                            <span>Local Community Relations</span>
++                            <span className="opacity-0 -translate-x-2 group-hover/link:opacity-100 group-hover/link:translate-x-0 transition-all duration-200 text-gray-900 font-bold">&rarr;</span>
++                          </a>
++                        </li>
++                      </ul>
++                    </div>
++                    <div className="hidden lg:block lg:w-2/3 bg-gray-50/50"></div>
++                  </div>
++                </div>
++              </li>
++
++              {/* Recovery Link */}
++              <li className="menu-item group cursor-pointer relative h-full flex items-center">
++                <a href="/google-penalty-recovery" className="flex items-center gap-1 py-4 font-medium hover:text-gray-400 transition-colors" style={{ color: isHeaderActive ? "#111827" : "#ffffff" }}>
++                  Recovery
++                </a>
++              </li>
++
++              {/* Case Studies Dropdown */}
++              <li className="menu-item group cursor-pointer relative lg:static h-full flex items-center" style={{ position: 'static' }}>
++                <a href="/case-studies" className="flex items-center gap-1 py-4 font-medium hover:text-gray-400 transition-colors" style={{ color: isHeaderActive ? "#111827" : "#ffffff" }}>
++                  Case Studies
++                  <svg width="12" height="12" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg" className="transform group-hover:rotate-180 transition-transform duration-300">
++                    <path fillRule="evenodd" clipRule="evenodd" d="M5.58564 3.52858C5.84599 3.26823 6.2681 3.26823 6.52845 3.52858L10.5285 7.52858C10.7888 7.78892 10.7888 8.21103 10.5285 8.47138L6.52845 12.4714C6.2681 12.7317 5.84599 12.7317 5.58564 12.4714C5.32529 12.211 5.32529 11.7889 5.58564 11.5286L9.11424 7.99998L5.58564 4.47138C5.32529 4.21103 5.32529 3.78892 5.58564 3.52858Z" fill="currentColor"/>
++                  </svg>
++                </a>
++                <div className="absolute top-full left-0 w-full bg-white opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 shadow-2xl border-t border-line">
++                  <div className="w-full mx-auto flex" style={{ paddingLeft: '5vw', paddingRight: '5vw' }}>
++                    <div className="w-full lg:w-1/3 py-12 pr-8 border-r border-line">
++                      <ul className="flex flex-col gap-3 text-left">
++                        <li><a href="/case-studies" className="text-gray-900 font-bold text-lg hover:text-gray-500 transition-colors block border-b border-line pb-4 mb-2">Overview &rarr;</a></li>
++                        <li>
++                          <a href="/case-studies/smile-center-dentistry" className="group/link text-gray-500 hover:text-gray-900 transition-all duration-200 flex items-center justify-between text-base py-2 border-b border-gray-100/30">
++                            <span>Smile Center Dentistry</span>
++                            <span className="opacity-0 -translate-x-2 group-hover/link:opacity-100 group-hover/link:translate-x-0 transition-all duration-200 text-gray-900 font-bold">&rarr;</span>
++                          </a>
++                        </li>
++                        <li>
++                          <a href="/case-studies/american-livescan" className="group/link text-gray-500 hover:text-gray-900 transition-all duration-200 flex items-center justify-between text-base py-2 border-b border-gray-100/30">
++                            <span>American Livescan</span>
++                            <span className="opacity-0 -translate-x-2 group-hover/link:opacity-100 group-hover/link:translate-x-0 transition-all duration-200 text-gray-900 font-bold">&rarr;</span>
++                          </a>
++                        </li>
++                      </ul>
++                    </div>
++                    <div className="hidden lg:block lg:w-2/3 bg-gray-50/50"></div>
++                  </div>
++                </div>
++              </li>
++            </ul>
++          </div>
++        </div>
++
++        <div className="nav-right flex items-center gap-4 relative z-50">
++          <button 
++            className="nav-burger lg:hidden w-10 h-10 flex flex-col justify-center items-center gap-1.5 focus:outline-none" 
++            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
++            aria-label="Open menu" 
++            aria-expanded={isMobileMenuOpen}
++          >
++            <span className="w-8 transition-all duration-300" style={{ height: '2px', transform: isMobileMenuOpen ? 'translateY(8px) rotate(45deg)' : 'none', backgroundColor: isHeaderActive ? '#111827' : '#ffffff' }}></span>
++            <span className="w-8 transition-all duration-300" style={{ height: '2px', opacity: isMobileMenuOpen ? 0 : 1, backgroundColor: isHeaderActive ? '#111827' : '#ffffff' }}></span>
++            <span className="w-8 transition-all duration-300" style={{ height: '2px', transform: isMobileMenuOpen ? 'translateY(-8px) rotate(-45deg)' : 'none', backgroundColor: isHeaderActive ? '#111827' : '#ffffff' }}></span>
+           </button>
+         </div>
+       </div>
+ 
+-      <div className="mobile-menu" id="mobile-menu">
+-        {NAV_LINKS.map(({ href, label }) => (
+-          <a key={href} href={href} className={isActive(href) ? 'nav-active' : ''}>{label}</a>
+-        ))}
+-        <a href="tel:3237441338" className="btn btn-secondary w-full text-center mt-4 mb-2">Call 323-744-1338</a>
+-        <a href="/book" className="btn btn-primary">Book a call</a>
++      {/* Premium Mobile Menu Fullscreen Overlay */}
++      <div 
++        className={`fixed inset-0 bg-white z-[40] lg:hidden transition-all duration-500`}
++        style={{ 
++          paddingTop: '100px',
++          opacity: isMobileMenuOpen ? 1 : 0,
++          transform: isMobileMenuOpen ? 'translateY(0)' : 'translateY(-100%)',
++          pointerEvents: isMobileMenuOpen ? 'auto' : 'none'
++        }}
++      >
++        <div className="h-full w-full overflow-y-auto pb-24" style={{ paddingLeft: '6vw', paddingRight: '6vw' }}>
++          <div className="flex flex-col gap-6 mt-8">
++            
++            {/* Creativity Accordion */}
++            <div className="border-b border-gray-200 pb-8">
++              <div className="w-full text-gray-900" style={{ fontSize: '2.5rem', fontWeight: 800, letterSpacing: '-0.02em', fontFamily: 'inherit' }}>
++    Creativity
++  </div>
++              <div style={{ overflow: 'hidden', marginTop: '1.5rem' }}>
++                <div className="flex flex-col gap-5 pl-4" style={{ borderLeft: '2px solid #F3F4F6' }}>
++                  <a href="/creativity" style={{ fontSize: '1.25rem', fontWeight: 600, color: '#111827' }}>Overview &rarr;</a>
++                  <a href="/creativity/brand-identity-strategy-agency" style={{ fontSize: '1.125rem', color: '#6B7280' }}>Brand Identity Strategy</a>
++                  <a href="/creativity/communication-concepts-agency" style={{ fontSize: '1.125rem', color: '#6B7280' }}>Communication Concepts</a>
++                  <a href="/creativity/seo-web-copywriting-agency" style={{ fontSize: '1.125rem', color: '#6B7280' }}>SEO &amp; Web Copywriting</a>
++                  <a href="/creativity/creative-art-direction-agency" style={{ fontSize: '1.125rem', color: '#6B7280' }}>Creative Art Direction</a>
++                  <a href="/creativity/social-media-management-agency" style={{ fontSize: '1.125rem', color: '#6B7280' }}>Social Media Management</a>
++                </div>
++              </div>
++            </div>
++
++            {/* Performance Accordion */}
++            <div className="border-b border-gray-200 pb-8">
++              <div className="w-full text-gray-900" style={{ fontSize: '2.5rem', fontWeight: 800, letterSpacing: '-0.02em', fontFamily: 'inherit' }}>
++    Performance
++  </div>
++              <div style={{ overflow: 'hidden', marginTop: '1.5rem' }}>
++                <div className="flex flex-col gap-5 pl-4" style={{ borderLeft: '2px solid #F3F4F6' }}>
++                  <a href="/performance" style={{ fontSize: '1.25rem', fontWeight: 600, color: '#111827' }}>Overview &rarr;</a>
++                  <a href="/performance/seo-discoverability-agency" style={{ fontSize: '1.125rem', color: '#6B7280' }}>SEO &amp; Discoverability</a>
++                  <a href="/performance/web-development-agency" style={{ fontSize: '1.125rem', color: '#6B7280' }}>Web &amp; IT App Development</a>
++                  <a href="/performance/google-ads-ppc-strategy-agency" style={{ fontSize: '1.125rem', color: '#6B7280' }}>Google Ads &amp; PPC Strategy</a>
++                  <a href="/performance/cro-ux-analysis-agency" style={{ fontSize: '1.125rem', color: '#6B7280' }}>CRO &amp; UX Analysis</a>
++                  <a href="/performance/ai-llms-business-agency" style={{ fontSize: '1.125rem', color: '#6B7280' }}>AI &amp; LLM Systems Consulting</a>
++                </div>
++              </div>
++            </div>
++
++            {/* Relations Accordion */}
++            <div className="border-b border-gray-200 pb-8">
++              <div className="w-full text-gray-900" style={{ fontSize: '2.5rem', fontWeight: 800, letterSpacing: '-0.02em', fontFamily: 'inherit' }}>
++    Relations
++  </div>
++              <div style={{ overflow: 'hidden', marginTop: '1.5rem' }}>
++                <div className="flex flex-col gap-5 pl-4" style={{ borderLeft: '2px solid #F3F4F6' }}>
++                  <a href="/relations" style={{ fontSize: '1.25rem', fontWeight: 600, color: '#111827' }}>Overview &rarr;</a>
++                  <a href="/relations/authority-building-agency" style={{ fontSize: '1.125rem', color: '#6B7280' }}>Authority &amp; Link Building</a>
++                  <a href="/relations/digital-pr-media-outreach-agency" style={{ fontSize: '1.125rem', color: '#6B7280' }}>Digital PR &amp; Media Outreach</a>
++                  <a href="/relations/google-ads-ppc-strategy-agency" style={{ fontSize: '1.125rem', color: '#6B7280' }}>Google Ads &amp; PPC Strategy</a>
++                  <a href="/relations/content-marketing-syndication-agency" style={{ fontSize: '1.125rem', color: '#6B7280' }}>Content Marketing Syndication</a>
++                  <a href="/relations/influencer-marketing-agency" style={{ fontSize: '1.125rem', color: '#6B7280' }}>Influencer Marketing</a>
++                  <a href="/relations/local-community-relations-agency" style={{ fontSize: '1.125rem', color: '#6B7280' }}>Local Community Relations</a>
++                </div>
++              </div>
++            </div>
++
++            {/* Recovery Link */}
++            <div className="border-b border-gray-200 pb-8">
++              <a href="/google-penalty-recovery" className="w-full text-gray-900 block" style={{ fontSize: '2.5rem', fontWeight: 800, letterSpacing: '-0.02em', fontFamily: 'inherit' }}>
++                Recovery
++              </a>
++            </div>
++
++            {/* Case Studies Accordion */}
++            <div className="border-b border-gray-200 pb-8">
++              <div className="w-full text-gray-900" style={{ fontSize: '2.5rem', fontWeight: 800, letterSpacing: '-0.02em', fontFamily: 'inherit' }}>
++                Case Studies
++              </div>
++              <div style={{ overflow: 'hidden', marginTop: '1.5rem' }}>
++                <div className="flex flex-col gap-5 pl-4" style={{ borderLeft: '2px solid #F3F4F6' }}>
++                  <a href="/case-studies" style={{ fontSize: '1.25rem', fontWeight: 600, color: '#111827' }}>Overview &rarr;</a>
++                  <a href="/case-studies/smile-center-dentistry" style={{ fontSize: '1.125rem', color: '#6B7280' }}>Smile Center Dentistry</a>
++                  <a href="/case-studies/american-livescan" style={{ fontSize: '1.125rem', color: '#6B7280' }}>American Livescan</a>
++                </div>
++              </div>
++            </div>
++
++          </div>
++        </div>
+       </div>
+     </header>
+   );

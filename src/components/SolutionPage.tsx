@@ -11,7 +11,7 @@ import './SolutionPage.css';
 gsap.registerPlugin(ScrollTrigger);
 
 const SolutionPage: React.FC<{ path: string }> = ({ path }) => {
-  const data = SOLUTIONS_DATA[path] || SOLUTIONS_DATA['/capabilities/web-development'];
+  const data = SOLUTIONS_DATA[path] || SOLUTIONS_DATA['/performance/web-development-agency'];
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
   
   const tickerRef = useRef<HTMLDivElement>(null);
@@ -210,8 +210,10 @@ const SolutionPage: React.FC<{ path: string }> = ({ path }) => {
   if (!data) return <div className="text-center py-40">Solution not found.</div>;
 
   return (
-    <div className="bg-white min-h-screen font-sans">
+    <div id="page" className="bg-white min-h-screen font-sans flex flex-col">
       <SiteHeader />
+      <div id="content" className="site-content flex-grow">
+        <main id="primary" className="site-main">
 
       {/* ================= HERO ================= */}
       <section className="hero" id="top">
@@ -536,25 +538,12 @@ const SolutionPage: React.FC<{ path: string }> = ({ path }) => {
         </div>
       </section>
 
-      {/* ================= CTA ================= */}
-      <section className="cta-section">
-        <div className="wrap">
-          <div className="cta-card">
-            <div data-anim="reveal">
-              <span className="mono-tag">Next Steps</span>
-              <h2 className="display">{data.ctaSection.headline}</h2>
-              <p className="body-l">{data.ctaSection.sub}</p>
-            </div>
-            <div className="cta-actions" data-anim="reveal">
-              <a href="/book" className="btn btn-primary magnetic">{data.ctaSection.btnText}</a>
-              <a href="mailto:steve@gobiya.com" className="btn btn-ghost magnetic">Email Steve</a>
-            </div>
-          </div>
-        </div>
-      </section>
+
 
       <div data-logo-dark className="relative">
         <InsightsSlider currentPath={path} limit={3} />
+      </div>
+        </main>
       </div>
 
       <SiteFooter />

@@ -624,7 +624,7 @@ const RegionalHubPage: React.FC<RegionalHubPageProps> = ({ region }) => {
           {/* Background Image Hero */}
           <div className="absolute inset-0 z-0 pointer-events-none opacity-25">
             <img 
-              src="/images/markets_hero_background.png" 
+              src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?q=80&w=2000" 
               alt="Markets Hero Background" 
               className="w-full h-full object-cover mix-blend-overlay"
             />

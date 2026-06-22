@@ -66,21 +66,22 @@ const CustomCursor = () => {
   return (
     <div 
       ref={cursorRef} 
-      className="fixed top-0 left-0 pointer-events-none z-[99999] flex items-center justify-center transition-none hidden md:flex"
+      className="fixed top-0 left-0 pointer-events-none z-[99999] flex items-center justify-center transition-none"
+      style={{ display: typeof window !== 'undefined' && window.innerWidth > 768 ? 'flex' : 'none' }}
     >
       {hoverState === 'default' && (
-        <div className="relative w-6 h-6 flex items-center justify-center mix-blend-difference transition-all duration-300">
-          <div className="absolute w-full h-[2px] bg-white"></div>
-          <div className="absolute h-full w-[2px] bg-white"></div>
+        <div className="relative w-6 h-6 flex items-center justify-center transition-all duration-300" style={{ mixBlendMode: 'difference' }}>
+          <div className="absolute w-full bg-white" style={{ height: '2px' }}></div>
+          <div className="absolute h-full bg-white" style={{ width: '2px' }}></div>
         </div>
       )}
       
       {hoverState === 'link' && (
-        <div className="w-14 h-14 rounded-full bg-white opacity-20 backdrop-blur-sm mix-blend-normal transition-all duration-300"></div>
+        <div className="w-14 h-14 rounded-full bg-white opacity-20 backdrop-blur-sm transition-all duration-300" style={{ mixBlendMode: 'normal' }}></div>
       )}
 
       {hoverState === 'video' && (
-        <div className="w-24 h-24 rounded-full bg-[#F26522] flex items-center justify-center mix-blend-normal transition-all duration-300">
+        <div className="w-24 h-24 rounded-full bg-[#F26522] flex items-center justify-center transition-all duration-300" style={{ mixBlendMode: 'normal' }}>
           <span className="text-white font-display font-bold text-sm tracking-widest scale-up-center">
             PLAY
           </span>

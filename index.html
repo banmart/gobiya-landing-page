@@ -5,12 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!--canonical-outlet-->
     
-    <link rel="preload" href="/fonts/font-3.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    
+    <!-- SAY Agency Stylesheets -->
+    <link rel="stylesheet" href="https://sayagency.com/wp-includes/css/dist/block-library/style.min.css?ver=1982246e4f425447be111e9d31b4a610" />
+    <link rel="stylesheet" href="https://sayagency.com/wp-content/themes/say/css/swiper/swiper.min.css" />
+    <link rel="stylesheet" href="https://sayagency.com/wp-content/themes/say/css/swiper/effect-fade.min.css" />
+    <link rel="stylesheet" href="https://sayagency.com/wp-content/themes/say/css/swiper/free-mode.min.css" />
+    <link rel="stylesheet" href="/css/tailwind.css" />
+    <link rel="stylesheet" href="/css/theme.css" />
+
+    <!-- SAY Agency Scripts (Deferred/Async) -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="https://player.vimeo.com/api/player.js"></script>
+    <script src="https://sayagency.com/wp-content/themes/say/js/swiper/swiper-bundle.min.js"></script>
+    <script src="/js/animations.js" defer></script>
+    <script src="/js/theme.js" defer></script>
+
     <style>
       :root {
-        --paper: #EFEDE5;
-        --ink: #15130E;
-        --font-body: 'Bricolage Grotesque', sans-serif;
+        --paper: #FFFFFF;
+        --ink: #111827;
+        --font-body: 'Inter', sans-serif;
       }
       body {
         background-color: var(--paper);
@@ -25,7 +43,8 @@
     <!-- Primary SEO Metadata (Outcomes Approach) -->
     <!--ssr-title-->
     <!--ssr-desc-->
-    <link rel="icon" type="image/jpeg" href="/images/gobiya---favicon.jpg" />
+    <link rel="icon" type="image/webp" href="/images/logo-favicon-gobiya-blastoff-400.webp" />
+    <link rel="apple-touch-icon" href="/images/logo-favicon-gobiya-blastoff-large.webp" />
 
     <!-- Open Graph / Social Bot Metadata -->
     <meta property="og:type" content="website" />
@@ -80,7 +99,7 @@
       setTimeout(loadTrackingScripts, 3500);
     </script>
   </head>
-  <body>
+  <body class="say bg-white text-gray-900 antialiased">
     <div id="root"><!--ssr-outlet--></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

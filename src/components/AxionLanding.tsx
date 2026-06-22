@@ -217,14 +217,14 @@ const AxionLanding = () => {
               <p className="text-[11px] uppercase tracking-wider text-gray-500 font-semibold mb-6 font-body text-left">Satisfied Clients</p>
               <div className="flex flex-wrap justify-start items-center gap-x-8 gap-y-6 sm:gap-x-12 sm:gap-y-8">
                 {[
-                  { src: '/images/remodelmepros-opt.webp', width: 88, height: 22 },
-                  { src: '/images/smilecenter.webp', width: 66, height: 22 },
-                  { src: '/images/quickpass-logo-opt.webp', width: 108, height: 22 },
-                  { src: '/images/mytrustwills.webp', width: 66, height: 22 },
-                  { src: '/images/tidder-pro-logo.webp', width: 88, height: 22 },
-                  { src: '/images/totalcapital-opt.webp', width: 22, height: 22 },
-                  { src: '/images/logo-DeEgMiH0-opt.png', width: 22, height: 22 },
-                  { src: '/images/americanlivescan.webp', width: 88, height: 22 }
+                  { src: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=80', width: 88, height: 22 },
+                  { src: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&q=80', width: 66, height: 22 },
+                  { src: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&q=80', width: 108, height: 22 },
+                  { src: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?w=1200&q=80', width: 66, height: 22 },
+                  { src: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80', width: 88, height: 22 },
+                  { src: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200&q=80', width: 22, height: 22 },
+                  { src: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=1200&q=80', width: 22, height: 22 },
+                  { src: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1200&q=80', width: 88, height: 22 }
                 ].map((logo, index) => (
                   <img 
                     key={index} 
@@ -300,7 +300,7 @@ const AxionLanding = () => {
               <div className="absolute inset-0 bg-gradient-to-tr from-[#F26522]/20 to-transparent transform -translate-x-4 translate-y-4 rounded-xl -z-10" />
               <ParallaxMedia 
                 type="image"
-                src="/images/seo_exec.webp" 
+                src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&q=80" 
                 alt="Forensic Audits Platform" 
                 className="w-full rounded-xl shadow-2xl shadow-gray-200 aspect-[4/3]"
               />

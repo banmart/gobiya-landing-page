@@ -7,7 +7,6 @@ import {
   AuthorPage,
   ThankYouPage,
   BookingPage,
-  SolutionPage,
   CapabilitiesIndex,
   SuccessStories,
   ApproachPage,
@@ -20,7 +19,8 @@ import {
   ContactPage,
   OnPageSeoLosAngelesPage,
   SEO,
-  NotFound
+  NotFound,
+  CategoryPage
 } from './components/PageComponents';
 
 // Safe storage helper to prevent crashes in sandboxed environments/iframes or strict privacy modes
@@ -221,22 +221,35 @@ function App({ url }: AppProps) {
       '/success-stories/smile-center-dentistry': '/case-studies/smile-center-dentistry',
       '/success-stories/american-livescan': '/case-studies/american-livescan',
       '/services': '/capabilities',
-      '/services/seo': '/capabilities/seo-discoverability',
-      '/services/geo-optimization': '/capabilities/seo-discoverability',
-      '/services/lead-generation': '/capabilities/native-crm',
-      '/services/web-development': '/capabilities/web-development',
-      '/services/web-design': '/capabilities/web-development',
-      '/services/ppc-advertising': '/capabilities/native-crm',
-      '/services/advertising': '/capabilities/native-crm',
-      '/google-penalty-recovery': '/capabilities/seo-discoverability',
-      '/what-we-do.html': '/capabilities/seo-discoverability',
-      '/capabilities/generative-engine-optimization': '/capabilities/seo-discoverability',
-      '/capabilities/forensic-seo-penalty-recovery': '/capabilities/seo-discoverability',
-      '/capabilities/conversion-architecture': '/capabilities/native-crm',
-      '/capabilities/semantic-search-intelligence': '/capabilities/seo-discoverability',
-      '/capabilities/custom-digital-infrastructure': '/capabilities/web-development',
+      '/services/seo': '/performance/seo-discoverability-agency/',
+      '/services/lead-generation': '/performance/native-crm-agency/',
+      '/services/web-development': '/performance/web-development-agency/',
+      '/services/web-design': '/performance/web-development-agency/',
+      '/services/ppc-advertising': '/performance/native-crm-agency/',
+      '/services/advertising': '/performance/native-crm-agency/',
+      '/recovery': '/google-penalty-recovery',
+      '/what-we-do.html': '/performance/seo-discoverability-agency/',
+      '/capabilities/generative-engine-optimization': '/performance/seo-discoverability-agency/',
+      '/capabilities/forensic-seo-penalty-recovery': '/performance/seo-discoverability-agency/',
+      '/capabilities/conversion-architecture': '/performance/native-crm-agency/',
+      '/capabilities/semantic-search-intelligence': '/performance/seo-discoverability-agency/',
+      '/capabilities/custom-digital-infrastructure': '/performance/web-development-agency/',
       '/company/careers': '/',
-      '/capabilities/ai-prospect-scraper': '/capabilities',
+      '/capabilities/web-development': '/performance/web-development-agency/',
+      '/capabilities/native-crm': '/performance/native-crm-agency/',
+      '/capabilities/seo-discoverability': '/performance/seo-discoverability-agency/',
+      '/capabilities/blockchain-web3-development': '/performance/blockchain-web3-development-agency/',
+      '/capabilities/ai-prospect-scraper': '/performance/ai-prospect-scraper-agency/',
+      '/capabilities/ai-llms-business': '/performance/ai-llms-business-agency/',
+      '/capabilities/authority-building': '/relations/authority-building-agency/',
+      // Suffix -agency redirects
+      '/capabilities/web-development-agency': '/performance/web-development-agency/',
+      '/capabilities/native-crm-agency': '/performance/native-crm-agency/',
+      '/capabilities/seo-discoverability-agency': '/performance/seo-discoverability-agency/',
+      '/capabilities/blockchain-web3-development-agency': '/performance/blockchain-web3-development-agency/',
+      '/capabilities/ai-prospect-scraper-agency': '/performance/ai-prospect-scraper-agency/',
+      '/capabilities/ai-llms-business-agency': '/performance/ai-llms-business-agency/',
+      '/capabilities/authority-building-agency': '/relations/authority-building-agency/',
       '/company/about': '/about',
       '/company/approach': '/approach',
       // Legacy /resources/ URLs from prior CMS — 404ing in search results
@@ -267,23 +280,19 @@ function App({ url }: AppProps) {
   const articleMatch = normalizedPath.match(/^\/insights\/([a-z0-9-]+)$/);
   const articleSlug = articleMatch ? articleMatch[1] : null;
 
-  const isSolutionRoute = [
-    '/capabilities/web-development',
-    '/capabilities/native-crm',
-    '/capabilities/seo-discoverability',
-    '/capabilities/blockchain-web3-development',
-    '/capabilities/ai-prospect-scraper',
-    '/capabilities/ai-llms-business',
-    '/capabilities/authority-building'
-  ].includes(normalizedPath);
+  const fanOutMatch = normalizedPath.match(/^\/(creativity|performance|relations)\/([a-z0-9-]+-agency)$/);
+  const fanOutCategory = fanOutMatch ? fanOutMatch[1] : null;
+  const fanOutSlug = fanOutMatch ? fanOutMatch[2] : null;
 
   const isValidServiceSubpage = [
+    '/creativity',
+    '/performance',
+    '/relations',
     '/services/seo',
     '/services/lead-generation',
     '/services/geo-optimization',
     '/services/web-design',
     '/services/advertising',
-    '/google-penalty-recovery',
     '/company/careers'
   ].includes(normalizedPath);
 
@@ -304,7 +313,7 @@ function App({ url }: AppProps) {
     '/contact',
     '/case-studies/smile-center-dentistry',
     '/case-studies/american-livescan'
-  ].includes(normalizedPath) || isSolutionRoute || isValidServiceSubpage || !!articleSlug;
+  ].includes(normalizedPath) || normalizedPath === '/google-penalty-recovery' || isValidServiceSubpage || !!articleSlug || !!fanOutMatch;
 
   return (
     <Suspense fallback={null}>
@@ -344,8 +353,16 @@ function App({ url }: AppProps) {
         <InsightsPage currentPath={currentPath} />
       ) : normalizedPath === '/contact' ? (
         <ContactPage />
-      ) : isSolutionRoute ? (
-        <SolutionPage key={normalizedPath} path={normalizedPath} />
+      ) : normalizedPath === '/creativity' ? (
+        <CategoryPage category="creativity" />
+      ) : normalizedPath === '/performance' ? (
+        <CategoryPage category="performance" />
+      ) : normalizedPath === '/relations' ? (
+        <CategoryPage category="relations" />
+      ) : normalizedPath === '/google-penalty-recovery' ? (
+        <ServiceSubpage key={normalizedPath} path={normalizedPath} isFanOut={true} category="recovery" slug="google-penalty-recovery" />
+      ) : fanOutMatch ? (
+        <ServiceSubpage key={normalizedPath} path={normalizedPath} isFanOut={true} category={fanOutCategory} slug={fanOutSlug} />
       ) : normalizedPath === '/case-studies/smile-center-dentistry' ? (
         <SmileCenterCaseStudy />
       ) : normalizedPath === '/case-studies/american-livescan' ? (

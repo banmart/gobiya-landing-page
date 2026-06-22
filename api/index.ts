@@ -351,51 +351,91 @@ interface SEOMetadata {
 // Outcome-focused metadata lookup map for crawlers and search bots
 const metadataMap: Record<string, SEOMetadata> = {
   '/': {
-    title: 'GOBIYA — Algorithm Recovery & AI-Powered Growth, Los Angeles',
+    title: 'Marketing/growth agency in Koreatown: SEO expert, recovery, PR - Gobiya',
     description: "GOBIYA reads Google's algorithm, identifies the penalty vector, and deploys the fix. SEO recovery, GEO, AI-powered growth. Los Angeles, since 2009."
   },
   '/on-page-seo-los-angeles': {
-    title: 'On-Page SEO Los Angeles — GOBIYA | Search Engine Dominance',
+    title: 'On-page SEO agency in LA: schema, entity structure, speed - Gobiya',
     description: "Struggling with organic drops or low conversions? Our elite on-page SEO services in Los Angeles optimize your site's entity structure, schema, speed, and content mapping for Google and AI engines."
   },
-  '/capabilities/web-development': {
-    title: 'React Web Development — Custom High-Performance Websites Built to Rank | GOBIYA',
+  '/creativity': {
+    title: 'Creative brand & identity design agency in LA: styling, voice, copy - Gobiya',
+    description: 'Express your brand identity and capture market attention with Gobiya. We design custom brand identity systems, write compelling copy, and direct creative concepts.'
+  },
+  '/performance': {
+    title: 'High-performance digital growth & IT dev agency in LA: React, SEO, CRO - Gobiya',
+    description: 'Engineer high-speed digital pipelines to scale conversions. Sub-second React/Next.js/Vite development, technical SEO, and conversion optimization.'
+  },
+  '/relations': {
+    title: 'PR & authority building agency in LA: link acquisition, media outreach - Gobiya',
+    description: 'Construct sector authority and earn absolute market trust. Manually verified PR, content syndication, and high-quality contextual link building.'
+  },
+  '/performance/web-development-agency': {
+    title: 'Web & IT development agency in LA: React, custom sites, speed - Gobiya',
     description: 'GOBIYA replaces slow page-builders with custom, hand-coded React and Next.js websites — 100/100 Core Web Vitals, sub-second loads, zero templates, engineered to convert and rank natively.'
   },
-  '/capabilities/native-crm': {
-    title: 'Custom CRM Integrations: Own Your Pipeline Data | Gobiya',
+  '/performance/native-crm-agency': {
+    title: 'PPC & Lead generation agency in LA: CRM integrations, pipeline, ads - Gobiya',
     description: 'We build custom CRM website integrations directly into your codebase. Stop paying monthly software fees and own your pipeline data.'
   },
-  '/capabilities/seo-discoverability': {
-    title: 'Code-Level Technical SEO: Rank & Cite Natively | Gobiya',
+  '/performance/seo-discoverability-agency': {
+    title: 'SEO & Discoverability agency in LA: SEO expert, recovery, audit - Gobiya',
     description: 'We build technical SEO for React websites into the codebase, optimizing crawlability, rendering speed, and AI citations.'
   },
-  '/capabilities/blockchain-web3-development': {
-    title: 'Blockchain Web3: Integrate Smart Contracts | Gobiya',
+  '/performance/blockchain-web3-development-agency': {
+    title: 'Blockchain & Web3 agency in LA: smart contracts, dApps, tokens - Gobiya',
     description: 'Our blockchain Web3 development services integrate smart contracts, dApps, and secure on-chain token functions into React apps.'
   },
-  '/capabilities/ai-prospect-scraper': {
-    title: 'AI Prospect Scraper: Automate Outbound Leads | Gobiya',
+  '/performance/ai-prospect-scraper-agency': {
+    title: 'AI Prospect Scraper agency in LA: lead scraping, automation, data - Gobiya',
     description: 'Our native CRM features an AI prospect scraper that extracts target contact profiles and coordinates automated outbound email campaigns.'
   },
-  '/capabilities/ai-llms-business': {
-    title: 'AI & LLMs for Businesses: Remove SMB Office Friction | Gobiya',
+  '/performance/ai-llms-business-agency': {
+    title: 'AI & LLM systems agency in LA: office automation, custom models, workflows - Gobiya',
     description: 'We integrate custom AI models and secure LLMs directly into your everyday office tasks. Automate document parsing, email replies, and CRM syncing with complete data privacy.'
   },
-  '/capabilities/authority-building': {
-    title: 'Authority Building: High Quality Backlinks & Citations | Gobiya',
+  '/performance/google-ads-ppc-strategy-agency': {
+    title: 'Google Ads & PPC strategy agency in LA: paid acquisition, ROAS, targeting - Gobiya',
+    description: 'Stop burning cash on generic ad campaigns. We build precision-targeted paid pipelines that capture high-intent buyers, aggressively lower customer acquisition costs, and maximize ROAS.'
+  },
+  '/performance/cro-ux-analysis-agency': {
+    title: 'CRO & UX analysis agency in LA: funnel optimization, conversion lift - Gobiya',
+    description: 'We isolate funnel friction and redesign user flows to lift conversions. Data-backed CRO analysis across landing pages, checkout flows, and lead capture forms.'
+  },
+  '/relations/authority-building-agency': {
+    title: 'Authority & PR agency in LA: backlink acquisition, citations, outreach - Gobiya',
     description: 'Build search engine trust with high-quality, relevant backlink acquisition and structured localized entity citations, engineered for long-term organic authority.'
   },
+  '/creativity/brand-identity-strategy-agency': {
+    title: 'Brand identity strategy agency in LA: brand design, voice, positioning - Gobiya',
+    description: 'We define the unique essence, voice, and visual character of your business. Custom brand identity systems that command attention and drive conversion.'
+  },
+  '/creativity/communication-concepts-agency': {
+    title: 'Communication concepts agency in LA: campaigns, storytelling, messaging - Gobiya',
+    description: 'Tell your story through dynamic visual and textual concepts. We develop integrated communication campaigns that turn attention into pipeline.'
+  },
+  '/creativity/seo-web-copywriting-agency': {
+    title: 'SEO & web copywriting agency in LA: landing pages, blog, conversion copy - Gobiya',
+    description: 'We write content that engages human hearts and ranks in algorithms. SEO-optimized copywriting for websites, landing pages, and campaigns that turns readers into buyers.'
+  },
+  '/creativity/creative-art-direction-agency': {
+    title: 'Creative art direction agency in LA: styling, imagery, layout, motion - Gobiya',
+    description: 'We coordinate styling, imagery, layout, and motion for your creative assets. End-to-end art direction for brand campaigns, digital ads, and content production.'
+  },
+  '/creativity/social-media-management-agency': {
+    title: 'Social media management agency in LA: content, community, growth - Gobiya',
+    description: 'We grow active community loops around your core brand message. Strategic social content planning, production, and analytics for sustained audience growth.'
+  },
   '/about': {
-    title: 'About the Agency — GOBIYA | AI Internet Marketing, Los Angeles',
+    title: 'SEO & Marketing agency in LA: Gobiya team, Steve Martin, experience - Gobiya',
     description: 'GOBIYA is a precision-engineered search visibility and digital solutions firm, founded 2012 in Los Angeles and led by Steve Martin — 25+ years bridging full-stack engineering and organic search.'
   },
   '/case-studies': {
-    title: 'Case Studies — Search Recovery & Revenue | GOBIYA',
+    title: 'SEO & growth case studies in LA: Smile Center, Livescan, results - Gobiya',
     description: 'Real clients, real numbers. SmileCenter Dentistry: 5x patient inquiries and 213K impressions. American Livescan: 3x bookings after a legacy migration. Data-backed search recovery and pipeline case studies from GOBIYA.'
   },
   '/approach': {
-    title: 'Our Approach — Search Engine Forensic Methodology | GOBIYA',
+    title: 'Forensic SEO & growth approach in LA: entity structure, GEO, HCU recovery - Gobiya',
     description: "GOBIYA's operating model for algorithmic dominance: entity-based indexing, topical authority and schema engineering, Generative Engine Optimization (GEO) for LLM visibility, and pipeline-first conversion architecture."
   },
   '/case-studies/smile-center-dentistry': {
@@ -407,7 +447,7 @@ const metadataMap: Record<string, SEOMetadata> = {
     description: 'How we replaced a legacy .htm site with a clean-URL architecture, optimized the Google Business Profile, and tripled online appointments and phone calls for a high-volume LA fingerprinting service.'
   },
   '/insights': {
-    title: 'Industry Insights — Algorithmic Intelligence & Tactical Search Updates | GOBIYA',
+    title: 'SEO & Algorithmic Intelligence in LA: insights, core updates, briefs - Gobiya',
     description: 'Advanced tactical intelligence on Google and AI search: algorithm update analysis, GEO and LLM citation tactics, entity SEO, technical recovery briefs, and pipeline engineering field notes from GOBIYA.'
   },
   '/insights/how-to-apply-behavioral-psychology-principles-to-high-ticket-b2b-landing-page-wireframes-to-decrease-friction': {
@@ -435,9 +475,8 @@ const metadataMap: Record<string, SEOMetadata> = {
     description: "Google Cloud's new open spec, OKF, formalizes the 'LLM-wiki' pattern into a portable, vendor-neutral standard for the knowledge AI agents actually need.",
     image: '/images/article-introducing-open-knowledge-format-thumbnail.webp'
   },
-
   '/contact': {
-    title: 'Contact GOBIYA — Los Angeles SEO & Web Development Agency',
+    title: 'Contact SEO & growth agency in LA: book call, free audit, locations - Gobiya',
     description: 'Reach GOBIYA in Los Angeles. Call 323-744-1338, email hello@gobiya.com, or fill out our contact form for an SEO audit, web development, or AI growth consultation.'
   },
   '/company/careers': {
@@ -445,15 +484,15 @@ const metadataMap: Record<string, SEOMetadata> = {
     description: 'Explore growth engineering jobs at Gobiya. We are hiring React developers, technical SEO specialists, and sales engineers. Apply now.'
   },
   '/book': {
-    title: 'Schedule a 15-Min Forensic Pipeline Audit | Gobiya',
+    title: 'Book forensic SEO audit in LA: 15-min review, search recovery, CRM audit - Gobiya',
     description: 'Book pipeline strategy call with Steve Martin, CEO & lead engineer. Audit search performance, local map visibility, and CRM setup.'
   },
   '/book-call': {
-    title: 'Schedule a 15-Min Forensic Pipeline Audit | Gobiya',
+    title: 'Book forensic SEO audit in LA: 15-min review, search recovery, CRM audit - Gobiya',
     description: 'Book pipeline strategy call with Steve Martin, CEO & lead engineer. Audit search performance, local map visibility, and CRM setup.'
   },
   '/capabilities': {
-    title: 'Capabilities — Custom Web Development, Native CRM, SEO & Web3 | GOBIYA',
+    title: 'SEO & Web development capabilities in LA: custom CRM, React, authority - Gobiya',
     description: 'GOBIYA builds fast, modern web applications with native CRM pipelines, built-in SEO discoverability, AI prospect automation, and custom Web3 integrations — one codebase, complete data ownership.'
   },
   '/insights/gobiya-vs-enterprise-seo-agencies': {
@@ -1432,22 +1471,36 @@ export default async function handler(req: IncomingMessage, res: any) {
       '/success-stories/smile-center-dentistry': '/case-studies/smile-center-dentistry',
       '/success-stories/american-livescan': '/case-studies/american-livescan',
       '/services': '/capabilities',
-      '/services/seo': '/capabilities/seo-discoverability',
-      '/services/geo-optimization': '/capabilities/seo-discoverability',
-      '/services/lead-generation': '/capabilities/native-crm',
-      '/services/web-development': '/capabilities/web-development',
-      '/services/web-design': '/capabilities/web-development',
-      '/services/ppc-advertising': '/capabilities/native-crm',
-      '/services/advertising': '/capabilities/native-crm',
-      '/google-penalty-recovery': '/capabilities/seo-discoverability',
-      '/what-we-do.html': '/capabilities/seo-discoverability',
-      '/capabilities/generative-engine-optimization': '/capabilities/seo-discoverability',
-      '/capabilities/forensic-seo-penalty-recovery': '/capabilities/seo-discoverability',
-      '/capabilities/conversion-architecture': '/capabilities/native-crm',
-      '/capabilities/semantic-search-intelligence': '/capabilities/seo-discoverability',
-      '/capabilities/custom-digital-infrastructure': '/capabilities/web-development',
+      '/services/seo': '/performance/seo-discoverability-agency/',
+      '/services/lead-generation': '/performance/native-crm-agency/',
+      '/services/web-development': '/performance/web-development-agency/',
+      '/services/web-design': '/performance/web-development-agency/',
+      '/services/ppc-advertising': '/performance/native-crm-agency/',
+      '/services/advertising': '/performance/native-crm-agency/',
+      '/google-penalty-recovery': '/performance/seo-discoverability-agency/',
+      '/what-we-do.html': '/performance/seo-discoverability-agency/',
+      '/capabilities/generative-engine-optimization': '/performance/seo-discoverability-agency/',
+      '/capabilities/forensic-seo-penalty-recovery': '/performance/seo-discoverability-agency/',
+      '/capabilities/conversion-architecture': '/performance/native-crm-agency/',
+      '/capabilities/semantic-search-intelligence': '/performance/seo-discoverability-agency/',
+      '/capabilities/custom-digital-infrastructure': '/performance/web-development-agency/',
       '/company/careers': '/',
-      '/capabilities/ai-prospect-scraper': '/capabilities',
+      '/capabilities/web-development': '/performance/web-development-agency/',
+      '/capabilities/native-crm': '/performance/native-crm-agency/',
+      '/capabilities/seo-discoverability': '/performance/seo-discoverability-agency/',
+      '/capabilities/blockchain-web3-development': '/performance/blockchain-web3-development-agency/',
+      '/capabilities/ai-prospect-scraper': '/performance/ai-prospect-scraper-agency/',
+      '/capabilities/ai-llms-business': '/performance/ai-llms-business-agency/',
+      '/capabilities/authority-building': '/relations/authority-building-agency/',
+      
+      // Suffix -agency redirects
+      '/capabilities/web-development-agency': '/performance/web-development-agency/',
+      '/capabilities/native-crm-agency': '/performance/native-crm-agency/',
+      '/capabilities/seo-discoverability-agency': '/performance/seo-discoverability-agency/',
+      '/capabilities/blockchain-web3-development-agency': '/performance/blockchain-web3-development-agency/',
+      '/capabilities/ai-prospect-scraper-agency': '/performance/ai-prospect-scraper-agency/',
+      '/capabilities/ai-llms-business-agency': '/performance/ai-llms-business-agency/',
+      '/capabilities/authority-building-agency': '/relations/authority-building-agency/',
       '/company/about': '/about',
       '/company/approach': '/approach'
     };
@@ -1491,10 +1544,20 @@ export default async function handler(req: IncomingMessage, res: any) {
     template = template.replace('<!--canonical-outlet-->', canonicalTag);
 
     // Dynamically inject outcome-focused meta tags for the requested path
-    const seo = metadataMap[pathname] || (pathname.startsWith('/insights/') ? {
-      title: 'Industry Insights | Gobiya',
-      description: 'Deep dives into Google algorithm updates, generative search (GEO), and B2B marketing strategies from the Gobiya team.'
-    } : metadataMap['/']);
+    let seo = metadataMap[pathname];
+    if (!seo) {
+      if (pathname.startsWith('/insights/')) {
+        seo = { title: 'Industry Insights | Gobiya', description: 'Deep dives into Google algorithm updates, generative search (GEO), and B2B marketing strategies from the Gobiya team.' };
+      } else if (pathname.startsWith('/performance/') || pathname.startsWith('/relations/') || pathname.startsWith('/creativity/') || pathname.startsWith('/capabilities/')) {
+        const segments = pathname.split('/').filter(Boolean);
+        const category = segments[0].charAt(0).toUpperCase() + segments[0].slice(1);
+        const lastSegment = segments[segments.length - 1];
+        const formattedTitle = lastSegment.replace(/-agency$/, '').replace(/-/g, ' ').replace(/\b\w/g, (l: string) => l.toUpperCase());
+        seo = { title: `${formattedTitle} agency in LA - Gobiya`, description: `${category} solutions: ${formattedTitle} services from Gobiya. Hyper-targeted strategy and execution for measurable discoverability and conversion.` };
+      } else {
+        seo = metadataMap['/'];
+      }
+    }
 
     // Build ogImageUrl
     let ogImageUrl = 'https://www.gobiya.com/images/gobiya---logo.webp';

@@ -125,9 +125,11 @@ export default function CapabilitiesIndex() {
   }, []);
 
   return (
-    <div ref={containerRef} className="bg-white min-h-screen font-sans">
+    <div id="page" ref={containerRef} className="bg-white min-h-screen font-sans flex flex-col">
       {/* ================= NAV ================= */}
       <SiteHeader />
+      <div id="content" className="site-content flex-grow">
+        <main id="primary" className="site-main">
 
       {/* ================= HERO ================= */}
       <section className="hero" id="top">
@@ -322,13 +324,13 @@ export default function CapabilitiesIndex() {
                 application with complete data ownership. Inspect each module below.
               </p>
               <div className="rail-index" data-anim-child>
-                <a href="/capabilities/web-development">01 — BUILD.SYS</a>
-                <a href="/capabilities/seo-discoverability">02 — TRAFFIC.SYS</a>
-                <a href="/capabilities/native-crm">03 — PIPELINE.SYS</a>
-                <a href="/capabilities/ai-prospect-scraper">04 — OUTBOUND.SYS</a>
-                <a href="/capabilities/blockchain-web3-development">05 — WEB3.SYS</a>
-                <a href="/capabilities/ai-llms-business">06 — AI.SYS</a>
-                <a href="/capabilities/authority-building">07 — AUTHORITY.SYS</a>
+                <a href="/capabilities/web-development-agency/">01 — BUILD.SYS</a>
+                <a href="/capabilities/seo-discoverability-agency/">02 — TRAFFIC.SYS</a>
+                <a href="/capabilities/native-crm-agency/">03 — PIPELINE.SYS</a>
+                <a href="/capabilities/ai-prospect-scraper-agency/">04 — OUTBOUND.SYS</a>
+                <a href="/capabilities/blockchain-web3-development-agency/">05 — WEB3.SYS</a>
+                <a href="/capabilities/ai-llms-business-agency/">06 — AI.SYS</a>
+                <a href="/capabilities/authority-building-agency/">07 — AUTHORITY.SYS</a>
               </div>
             </div>
           </aside>
@@ -342,7 +344,7 @@ export default function CapabilitiesIndex() {
 
             <div className="mod-list" data-anim="stagger">
 
-              <a href="/capabilities/web-development" className="mod" data-anim-child>
+              <a href="/capabilities/web-development-agency/" className="mod" data-anim-child>
                 <div className="mod-id">
                   <span className="mono-tag">Module</span>
                   <span className="num">01</span>
@@ -365,7 +367,7 @@ export default function CapabilitiesIndex() {
                 </span>
               </a>
 
-              <a href="/capabilities/seo-discoverability" className="mod" data-anim-child>
+              <a href="/capabilities/seo-discoverability-agency/" className="mod" data-anim-child>
                 <div className="mod-id">
                   <span className="mono-tag">Module</span>
                   <span className="num">02</span>
@@ -388,7 +390,7 @@ export default function CapabilitiesIndex() {
                 </span>
               </a>
 
-              <a href="/capabilities/native-crm" className="mod" data-anim-child>
+              <a href="/capabilities/native-crm-agency/" className="mod" data-anim-child>
                 <div className="mod-id">
                   <span className="mono-tag">Module</span>
                   <span className="num">03</span>
@@ -411,7 +413,7 @@ export default function CapabilitiesIndex() {
                 </span>
               </a>
 
-              <a href="/capabilities/ai-prospect-scraper" className="mod" data-anim-child>
+              <a href="/capabilities/ai-prospect-scraper-agency/" className="mod" data-anim-child>
                 <div className="mod-id">
                   <span className="mono-tag">Module</span>
                   <span className="num">04</span>
@@ -434,7 +436,7 @@ export default function CapabilitiesIndex() {
                 </span>
               </a>
 
-              <a href="/capabilities/blockchain-web3-development" className="mod" data-anim-child>
+              <a href="/capabilities/blockchain-web3-development-agency/" className="mod" data-anim-child>
                 <div className="mod-id">
                   <span className="mono-tag">Module</span>
                   <span className="num">05</span>
@@ -457,7 +459,7 @@ export default function CapabilitiesIndex() {
                 </span>
               </a>
 
-              <a href="/capabilities/ai-llms-business" className="mod" data-anim-child>
+              <a href="/capabilities/ai-llms-business-agency/" className="mod" data-anim-child>
                 <div className="mod-id">
                   <span className="mono-tag">Module</span>
                   <span className="num">06</span>
@@ -480,7 +482,7 @@ export default function CapabilitiesIndex() {
                 </span>
               </a>
 
-              <a href="/capabilities/authority-building" className="mod" data-anim-child>
+              <a href="/capabilities/authority-building-agency/" className="mod" data-anim-child>
                 <div className="mod-id">
                   <span className="mono-tag">Module</span>
                   <span className="num">07</span>
@@ -559,31 +561,12 @@ export default function CapabilitiesIndex() {
         </div>
       </section>
 
-      {/* ================= CTA + FOOTER ================= */}
-      <section className="cta-section">
-        <div className="wrap">
-          <div className="cta-card">
-            <div data-anim="up">
-              <span className="mono-tag">Stop guessing</span>
-              <h2 className="display">Ready to integrate your growth?</h2>
-              <p className="body-l">
-                Drop the bloated templates and fragmented vendors. Move your entire
-                digital pipeline into a single, lightning-fast codebase built to dominate search.
-              </p>
-            </div>
-            <div className="cta-actions" data-anim="up">
-              <a href="/book" className="btn btn-primary magnetic">
-                Get a growth audit
-                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg>
-              </a>
-              <a href="mailto:hello@gobiya.com" className="btn btn-ghost magnetic">Email GOBIYA</a>
-            </div>
-          </div>
-        </div>
-      </section>
+
 
       <div data-logo-dark className="relative">
         <InsightsSlider currentPath="/capabilities" limit={3} />
+      </div>
+        </main>
       </div>
 
       <SiteFooter />

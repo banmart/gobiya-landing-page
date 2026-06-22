@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from 'react';
-import HeroWebGLBackground from './HeroWebGLBackground';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './SuccessStories.css';
@@ -25,20 +24,6 @@ const SuccessStories: React.FC = () => {
     const ctx = gsap.context(() => {
       const ease = 'power3.out';
 
-      const heroTl = gsap.timeline({ delay: 0.15, defaults: { ease, duration: 1.15 } });
-      heroTl
-        .from('[data-hero="1"]', { opacity: 0, y: 14 }, 0)
-        .from('.hero h1 .line > span', { yPercent: 110, stagger: 0.1, duration: 1.25 }, 0.08)
-        .from('[data-hero="2"]', { opacity: 0, y: 16 }, 0.5)
-        .from('[data-hero="3"] .btn', { opacity: 0, y: 14, stagger: 0.08 }, 0.65)
-        .from('[data-hero="4"] > div', { opacity: 0, y: 12, stagger: 0.08 }, 0.8)
-        .from('[data-hero="5"]', { opacity: 0, y: 26, duration: 1.4 }, 0.3)
-        .from('[data-hero="6"]', { opacity: 0 }, 1.1);
-
-      gsap.to('.ledger', {
-        y: -26, ease: 'none',
-        scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true }
-      });
 
       /* scroll reveals */
       const sc = (el: Element) => ({ trigger: el, start: 'top 87%' });
@@ -114,118 +99,190 @@ const SuccessStories: React.FC = () => {
   }, []);
 
   return (
-    <div ref={containerRef} className="success-stories-page">
+    <div id="page" ref={containerRef} className="success-stories-page min-h-screen flex flex-col">
       <SiteHeader />
+      <div id="content" className="site-content flex-grow">
+        <main id="primary" className="site-main">
 
-      <section className="hero" id="top">
-      <HeroWebGLBackground />
-        <div className="hero-grid" aria-hidden="true"></div>
-        <div className="hero-inner">
-          <div className="hero-copy">
-            <nav className="breadcrumb" aria-label="Breadcrumb" data-hero="1">
-              <a href="/">Gobiya</a><i>/</i>
-              <a href="/about">Company</a><i>/</i>
-              <span>Success stories</span>
-            </nav>
+      <section id="top" style={{ background: '#ffffff', padding: '9rem 5vw 5rem', borderBottom: '1px solid #e5e7eb', position: 'relative' }}>
+        <span style={{ fontFamily: 'monospace', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.2em', color: '#9ca3af', display: 'block', marginBottom: '1.5rem' }}>
+          Gobiya / Case studies
+        </span>
+        <h1 style={{ fontSize: 'clamp(2.5rem, 5.5vw, 4.5rem)', fontWeight: 700, letterSpacing: '-0.03em', lineHeight: 1.05, color: '#111827', maxWidth: '880px', marginBottom: '1.75rem' }}>
+          SEO Case Studies: Real clients. Real numbers. On the record.
+        </h1>
+        <p style={{ fontSize: '1.1rem', color: '#4b5563', lineHeight: 1.75, maxWidth: '640px', marginBottom: '2.5rem' }}>
+          Data-backed search recovery and pipeline results — exactly what GOBIYA built, why it was built, and what moved as a result. Query by query, position by position.
+        </p>
+        <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+          <a href="#case-001" className="btn btn-primary magnetic">
+            Open the case files
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg>
+          </a>
+          <a href="/book" className="btn btn-ghost magnetic">Start your audit</a>
+        </div>
+      </section>
 
-            <h1 className="display">
-              <span className="line"><span>SEO Case Studies:</span></span>
-              <span className="line"><span>Real clients.</span></span>
-              <span className="line"><span>Real numbers.</span></span>
-              <span className="line"><span className="accent">On the record.</span></span>
-            </h1>
+      {/* ── CLIENT CARDS GRID ── */}
+      <section id="case-001" style={{ background: '#111827' }}>
+        <style>{`
+          .cs-card {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            text-decoration: none;
+            background: #0a0a0a;
+          }
+          .cs-card-featured { aspect-ratio: 16/9; }
+          .cs-card-regular  { aspect-ratio: 4/3; }
+          .cs-bg {
+            position: absolute;
+            inset: -8%;
+            background-size: cover;
+            background-position: center;
+            transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+          }
+          .cs-bg-photo { filter: brightness(0.38); }
+          .cs-bg-dark  { background: #111827; inset: 0; filter: none; }
+          .cs-card:hover .cs-bg { transform: scale(1.07); }
+          .cs-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0,0,0,0.18);
+            transition: background 0.3s;
+            z-index: 1;
+          }
+          .cs-card:hover .cs-overlay { background: rgba(0,0,0,0.06); }
+          .cs-logo {
+            position: relative;
+            z-index: 2;
+            width: 44%;
+            max-width: 200px;
+            object-fit: contain;
+            filter: invert(1) brightness(10);
+            opacity: 0.82;
+            transition: opacity 0.35s, transform 0.35s;
+          }
+          .cs-card:hover .cs-logo { opacity: 1; transform: scale(1.05); }
+          .cs-badge {
+            position: absolute;
+            z-index: 3;
+            bottom: 1.25rem;
+            left: 1.5rem;
+            right: 1.5rem;
+          }
+          .cs-badge-name {
+            display: block;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 0.2rem;
+          }
+          .cs-badge-cat {
+            display: block;
+            font-size: 0.65rem;
+            font-family: monospace;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: rgba(255,255,255,0.45);
+          }
+          .cs-read-pill {
+            position: absolute;
+            z-index: 3;
+            top: 1.25rem;
+            right: 1.25rem;
+            font-size: 0.65rem;
+            font-family: monospace;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: rgba(255,255,255,0.6);
+            border: 1px solid rgba(255,255,255,0.25);
+            border-radius: 100px;
+            padding: 0.3rem 0.7rem;
+          }
+          .cs-grid-top {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            border-bottom: 1px solid #1f2937;
+          }
+          .cs-grid-top .cs-card { border-right: 1px solid #1f2937; }
+          .cs-grid-top .cs-card:last-child { border-right: none; }
+          .cs-grid-bottom {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+          }
+          .cs-grid-bottom .cs-card {
+            border-right: 1px solid #1f2937;
+            border-bottom: 1px solid #1f2937;
+          }
+          .cs-grid-bottom .cs-card:nth-child(4n) { border-right: none; }
+          .cs-grid-bottom .cs-card:nth-last-child(-n+4) { border-bottom: none; }
+          @media (max-width: 900px) {
+            .cs-grid-top { grid-template-columns: 1fr; }
+            .cs-grid-top .cs-card { border-right: none; border-bottom: 1px solid #1f2937; }
+            .cs-grid-top .cs-card:last-child { border-bottom: none; }
+            .cs-grid-bottom { grid-template-columns: repeat(2, 1fr); }
+            .cs-grid-bottom .cs-card:nth-child(2n) { border-right: none; }
+            .cs-grid-bottom .cs-card:nth-last-child(-n+2) { border-bottom: none; }
+          }
+          @media (max-width: 520px) {
+            .cs-grid-bottom { grid-template-columns: 1fr; }
+            .cs-grid-bottom .cs-card { border-right: none; }
+            .cs-grid-bottom .cs-card:not(:last-child) { border-bottom: 1px solid #1f2937; }
+          }
+        `}</style>
 
-            <p className="hero-sub body-l" data-hero="2">
-              In these SEO Case Studies, see data-backed search recovery and pipeline results. Here is exactly what
-              GOBIYA built, why it was built, and what moved as a result — query by
-              query, position by position.
-            </p>
-
-            <div className="hero-actions" data-hero="3">
-              <a href="#case-001" className="btn btn-primary magnetic">
-                Open the case files
-                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg>
-              </a>
-              <a href="/book" className="btn btn-ghost magnetic">Start your audit</a>
+        {/* Featured row — documented cases with full pages */}
+        <div className="cs-grid-top">
+          <a href="/case-studies/smile-center-dentistry" className="cs-card cs-card-featured">
+            <div className="cs-bg cs-bg-photo" style={{ backgroundImage: 'url(/images/smile-center-homepage.webp)' }} />
+            <div className="cs-overlay" />
+            <img src="/images/smilecenter.webp" alt="Smile Center" className="cs-logo" />
+            <div className="cs-badge">
+              <span className="cs-badge-name">Smile Center Dentistry</span>
+              <span className="cs-badge-cat">Multi-location SEO · Conversion architecture · React/Vite</span>
             </div>
-
-            <div className="hero-meta" data-hero="4">
-              <div>
-                <p className="mono-tag">Documentation standard</p>
-                <p>Periods, queries, and positions cited</p>
-              </div>
-              <div>
-                <p className="mono-tag">Verticals on file</p>
-                <p>Dental · Live Scan · Legal · Finance</p>
-              </div>
-              <div>
-                <p className="mono-tag">Vanity metrics</p>
-                <p>None — conversions and revenue only</p>
-              </div>
+            <span className="cs-read-pill">Read case study →</span>
+          </a>
+          <a href="/case-studies/american-livescan" className="cs-card cs-card-featured">
+            <div className="cs-bg cs-bg-dark" />
+            <div className="cs-overlay" />
+            <img src="/images/americanlivescan.webp" alt="American Livescan" className="cs-logo" />
+            <div className="cs-badge">
+              <span className="cs-badge-name">American Livescan</span>
+              <span className="cs-badge-cat">Site rebuild · Local SEO · Google Business Profile</span>
             </div>
-          </div>
-
-          <div className="hero-exhibit">
-            <figure className="ledger" data-hero="5">
-              <div className="ledger-head">
-                <span>EXH-006 / case ledger — engagements on record</span>
-                <span className="right"><span className="pulse-dot" aria-hidden="true"></span>verified</span>
-              </div>
-              <div className="ledger-body" id="ledger-body">
-                <div className="ledger-row">
-                  <span className="id">CASE-001</span>
-                  <span className="who">SmileCenter Dentistry<small>Multi-location SEO &amp; conversion architecture</small></span>
-                  <span className="status">closed — 5× inquiries</span>
-                </div>
-                <div className="ledger-row">
-                  <span className="id">CASE-002</span>
-                  <span className="who">American Livescan<small>Legacy migration · local SEO · GBP</small></span>
-                  <span className="status">closed — 3× bookings</span>
-                </div>
-                <div className="ledger-row">
-                  <span className="id">CASE-003</span>
-                  <span className="who">QuickPass<small>Custom build · native CRM</small></span>
-                  <span className="status">live — compounding</span>
-                </div>
-                <div className="ledger-row">
-                  <span className="id">CASE-004</span>
-                  <span className="who">MyTrustWills<small>SEO &amp; discoverability</small></span>
-                  <span className="status">live — ranking</span>
-                </div>
-                <div className="ledger-row open-case">
-                  <span className="id">CASE-005</span>
-                  <span className="who">Your brand<small>Scope: to be determined</small></span>
-                  <span className="status">open — reserved</span>
-                </div>
-              </div>
-              <div className="ledger-foot">
-                <p>Filing principle</p>
-                <p>If it can't be shown on a chart, it doesn't go in the file.</p>
-              </div>
-            </figure>
-
-            <div className="exhibit-caption" data-hero="6">
-              <span className="mono-tag">Fig. 1 — the ledger only counts what moved</span>
-              <span className="mono-tag">34.05°N&nbsp;118.24°W</span>
-            </div>
-          </div>
+            <span className="cs-read-pill">Read case study →</span>
+          </a>
         </div>
 
-        <div className="ticker" aria-label="Results on record">
-          <div className="ticker-track" id="ticker-track">
-            {[0, 1].map(i => (
-              <div className="ticker-group" key={i} aria-hidden={i === 1 ? 'true' : undefined}>
-                <span className="ticker-item">Patient inquiries <em>— 5×</em></span>
-                <span className="ticker-item">Phone calls <em>— 5×</em></span>
-                <span className="ticker-item">Impressions <em>— 75K → 213K</em></span>
-                <span className="ticker-item">Online bookings <em>— 3×</em></span>
-                <span className="ticker-item">Walk-ins <em>— +30%</em></span>
-                <span className="ticker-item">Passport photos <em>— pos 55.8 → 10</em></span>
-                <span className="ticker-item">Organic clicks <em>— +47%</em></span>
-                <span className="ticker-item">Core Web Vitals <em>— 100/100</em></span>
+        {/* Regular grid — remaining clients */}
+        <div className="cs-grid-bottom">
+          {[
+            { name: 'Remodel Me Pros',   cat: 'SEO · Lead generation',           logo: '/images/remodelmepros-opt.webp',  bg: '/images/caveman-remodel-me-pros.webp' },
+            { name: 'SafetyCentric',      cat: 'SEO · Discoverability',            logo: '/images/safetycentric-logo.png',  bg: '/images/safety-centric-home.webp' },
+            { name: 'Total Capital Inc',  cat: 'Financial SEO · Pipeline',         logo: '/images/totalcapital-opt.webp',   bg: null },
+            { name: 'QuickPass AiD',      cat: 'Custom build · Native CRM',        logo: '/images/quickpass-logo-opt.webp', bg: '/images/quickpass-aid.webp' },
+            { name: 'DG Plumbing',        cat: 'Local SEO · Google Business',      logo: '/images/logo-DeEgMiH0-opt.png',   bg: null },
+            { name: 'The ARK Crypto',     cat: 'Web development · Branding',       logo: '/images/ark-logo---01-dark.webp', bg: '/images/the-ark-dark.webp' },
+            { name: 'EliZilberstein.com', cat: 'Personal brand · SEO',             logo: '/images/client-5.webp',           bg: null },
+            { name: 'Healing Metta',      cat: 'Healthcare SEO · Content',         logo: '/images/medicine-metta-logo-1.webp', bg: null },
+          ].map(c => (
+            <div key={c.name} className="cs-card cs-card-regular">
+              {c.bg
+                ? <div className="cs-bg cs-bg-photo" style={{ backgroundImage: `url(${c.bg})` }} />
+                : <div className="cs-bg cs-bg-dark" />
+              }
+              <div className="cs-overlay" />
+              <img src={c.logo} alt={c.name} className="cs-logo" />
+              <div className="cs-badge">
+                <span className="cs-badge-name">{c.name}</span>
+                <span className="cs-badge-cat">{c.cat}</span>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </section>
 
@@ -254,7 +311,7 @@ const SuccessStories: React.FC = () => {
         </div>
       </section>
 
-      <section className="section" id="case-001">
+      <section className="section" id="case-detail-001">
         <div className="section-inner">
           <aside className="section-rail">
             <div className="rail-sticky" data-anim="stagger">
@@ -513,28 +570,9 @@ const SuccessStories: React.FC = () => {
         </div>
       </section>
 
-      <section className="section cta-section" id="contact">
-        <div className="wrap" style={{ paddingTop: '5rem', paddingBottom: '5rem' }}>
-          <div className="cta-card" data-anim="up">
-            <div>
-              <div className="eyebrow">Case-005 — reserved</div>
-              <h2 className="display">Ready to be next? Let's build <span className="accent">your case study.</span></h2>
-              <p className="body-l">
-                One audit. Your current numbers, the gaps GOBIYA sees, and the
-                engagement that would close them — documented the same way these
-                files were: periods, queries, positions, conversions.
-              </p>
-            </div>
-            <div className="cta-actions">
-              <a href="/book" className="btn btn-primary magnetic">
-                Start your audit
-                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg>
-              </a>
-              <a href="/capabilities" className="btn btn-ghost magnetic">See the capabilities</a>
-            </div>
-          </div>
-        </div>
-      </section>
+
+        </main>
+      </div>
 
       <SiteFooter />
     </div>

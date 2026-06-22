@@ -45,19 +45,19 @@ const ServicesBento: React.FC<ServicesBentoProps> = ({ headline, description, ca
           
           {(cards || [
             {
-              href: '/capabilities/web-development', colSpan: 2, gradient: true, icon: <Code size={40} className="text-white mb-6 sm:mb-10 relative z-10" strokeWidth={1.5} />,
+              href: '/capabilities/web-development-agency/', colSpan: 2, gradient: true, icon: <Code size={40} className="text-white mb-6 sm:mb-10 relative z-10" strokeWidth={1.5} />,
               title: 'Web Development', description: 'We build high-performance custom sites in React, Next.js, and Vite, engineered from the ground up for sub-second speeds and flawless crawler readability.'
             },
             {
-              href: '/capabilities/native-crm', colSpan: 1, icon: <Database size={40} className="text-white mb-6 sm:mb-10" strokeWidth={1.5} />,
+              href: '/capabilities/native-crm-agency/', colSpan: 1, icon: <Database size={40} className="text-white mb-6 sm:mb-10" strokeWidth={1.5} />,
               title: 'Native CRM', description: 'Custom customer and pipeline management tools built directly into your application codebase, giving you 100% data ownership.'
             },
             {
-              href: '/capabilities/seo-discoverability', colSpan: 2, icon: <Search size={40} className="text-white mb-6 sm:mb-10" strokeWidth={1.5} />,
+              href: '/capabilities/seo-discoverability-agency/', colSpan: 2, icon: <Search size={40} className="text-white mb-6 sm:mb-10" strokeWidth={1.5} />,
               title: 'SEO & Discoverability', description: 'Built-in crawler readiness, flawless XML structures, clean semantic HTML, and formatting designed to capture search rankings and AI citations natively.'
             },
             {
-              href: '/capabilities/blockchain-web3-development', colSpan: 1, icon: <Cpu size={40} className="text-[#F26522] mb-6 sm:mb-10" strokeWidth={1.5} />,
+              href: '/capabilities/blockchain-web3-development-agency/', colSpan: 1, icon: <Cpu size={40} className="text-[#F26522] mb-6 sm:mb-10" strokeWidth={1.5} />,
               title: 'Blockchain & Web3 Dev', description: 'Bespoke smart contracts, decentralized applications (dApps), and on-chain integrations engineered directly into your product stack.'
             }
           ]).map((card, index) => (

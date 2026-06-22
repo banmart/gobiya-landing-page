@@ -27,6 +27,8 @@
     "supabase",
     "*.cjs",
     "*.js",
-    "scratch"
+    "scratch",
+    "public",
+    "dist"
   ]
 }

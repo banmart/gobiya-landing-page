@@ -4,7 +4,6 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import SiteHeader from './SiteHeader';
 import SiteFooter from './SiteFooter';
-import HeroWebGLBackground from './HeroWebGLBackground';
 import InsightsSlider from './InsightsSlider';
 import './ArticlePage.css';
 
@@ -32,11 +31,11 @@ const ARTICLES: Record<string, ArticleData> = {
     slug: 'introducing-open-knowledge-format-why-it-matters-for-ai-ready-businesses',
     title: "Introducing the Open Knowledge Format: Why It Matters for AI-Ready Businesses",
     category: 'Strategy',
-    readTime: '8 min read',
+    readTime: '5 min read',
     date: 'June 17, 2026',
-    image: '/images/article-introducing-open-knowledge-format-thumbnail.webp',
+    image: 'https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=1200&q=80',
     heroAlt: 'A professional, lifelike photo of a modern technology growth engineering meeting reviewing structured files and data schema metadata on a dashboard',
-    metaDescription: "Google Cloud's new open spec, OKF, formalizes the 'LLM-wiki' pattern into a portable, vendor-neutral standard for the knowledge AI agents actually need.",
+    metaDescription: "Google Cloud's new open spec, OKF, for representing knowledge as a portable file-system hierarchy of markdown and YAML.",
     content: (
       <>
         <script
@@ -51,31 +50,23 @@ const ARTICLES: Record<string, ArticleData> = {
                   "name": "What is the Open Knowledge Format (OKF)?",
                   "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "OKF is an open specification introduced by Google Cloud for representing the metadata, context, and curated knowledge that AI systems and agents need. It represents knowledge as a directory of markdown files with YAML frontmatter and a small set of shared conventions, so knowledge written by one producer can be consumed by a different agent or tool without any translation layer."
+                    "text": "OKF is an open, vendor-neutral specification for representing metadata, context, and domain knowledge in a standardized file system hierarchy of markdown files with YAML frontmatter. It allows different AI tools and agents to consume knowledge without custom translation layers."
                   }
                 },
                 {
                   "@type": "Question",
-                  "name": "What problem does OKF solve?",
+                  "name": "What technical problem does OKF solve?",
                   "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "It solves the fragmentation of internal knowledge. The context AI models need typically lives scattered across incompatible systems: metadata catalogs, wikis, code comments, and people's heads. Every agent builder re-solves the same context-assembly problem. OKF gives them a common, portable format so knowledge stops being locked behind whichever tool created it."
+                    "text": "It resolves the Context Assembly Gap. By standardizing folder structures, YAML frontmatter schemas, index files, and chronological change logs, OKF enables agents to ingest, traverse, and query knowledge programmatically using simple file-system tools and generic markdown parsers."
                   }
                 },
                 {
                   "@type": "Question",
-                  "name": "Do I need to use Google Cloud to use OKF?",
+                  "name": "How does OKF connect with Generative Engine Optimization (GEO)?",
                   "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "No. OKF is an open, vendor-neutral standard that works independently of any cloud, database, model provider, or agent framework."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "How does OKF relate to GEO (generative engine optimization)?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "They share the same thesis. GEO is about structuring your public content so AI search engines cite and surface it; OKF is about structuring knowledge, public or internal, so AI agents can consume it. Both rest on the same foundation: machines reward structure, clarity, explicit relationships, and portable formats."
+                    "text": "GEO optimizes public web content for search crawler retrieval, while OKF optimizes internal knowledge bases for agentic context-retrieval. Both rely on standardized entity schemas and explicit relationship graphs to make domain concepts readable to LLMs."
                   }
                 }
               ]
@@ -84,181 +75,152 @@ const ARTICLES: Record<string, ArticleData> = {
         />
 
         <p className="lead-text italic text-gray-600 text-lg mb-8">
-          Google Cloud's new open spec, OKF, formalizes the "LLM-wiki" pattern into a portable, vendor-neutral standard for the knowledge AI agents actually need. Here's what it is, why it's a milestone, and what it means for any business that wants to be readable by machines.
+          An architectural deep dive into Google Cloud's Open Knowledge Format (OKF) specification (released June 12, 2026). This article details the context assembly problem, the specification's file schema, and how to implement a machine-readable knowledge pipeline.
         </p>
 
-        <h2 id="the-short-version" className="text-2xl font-semibold text-gray-900 mt-10 mb-4 font-display">1. The short version</h2>
+        <h2 id="context-assembly-gap" className="text-2xl font-semibold text-gray-900 mt-10 mb-4 font-display">1. The Context Assembly Problem</h2>
         <p className="mb-6">
-          On June 12, 2026, Google Cloud introduced the <a href="https://cloud.google.com/blog/products/data-analytics/how-the-open-knowledge-format-can-improve-data-sharing/" target="_blank" rel="noopener noreferrer" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">Open Knowledge Format (OKF)</a>, an open specification for representing the metadata, context, and curated knowledge that modern AI systems and agents need to do their jobs. The headline idea is deliberately unglamorous, and that's its strength: OKF v0.1 represents knowledge as a directory of markdown files with YAML frontmatter, plus a small set of agreed-upon conventions so that knowledge written by one team or tool can be read by a different team's agents without any translation layer. No new runtime, no required SDK, no proprietary account, just markdown, files, and a little structured frontmatter.
+          LLMs require context to execute tasks, but organizational knowledge is highly fragmented. Schema definitions, metric calculations, runbooks, and API documentation are scattered across data catalogs, wikis, git repositories, and databases. 
         </p>
         <p className="mb-6">
-          If you've used Obsidian, Notion, Hugo, or the wave of <code className="bg-gray-100 px-1.5 py-0.5 rounded text-[0.9em] text-gray-800 font-mono">AGENTS.md</code> / <code className="bg-gray-100 px-1.5 py-0.5 rounded text-[0.9em] text-gray-800 font-mono">CLAUDE.md</code> convention files that emerged over the past year, the shape will feel familiar. What OKF adds is interoperability: a common answer to "what fields should every knowledge document carry, and what do the filenames mean?" so these patterns can finally cooperate instead of each being bespoke. For any business thinking seriously about being usable by AI, this is a meaningful moment, because it points at where machine-readable knowledge is heading, and it's a direction that rewards the businesses already structuring their content for machines to consume.
-        </p>
-
-        <h2 id="the-problem" className="text-2xl font-semibold text-gray-900 mt-10 mb-4 font-display">2. The problem OKF solves: a fragmented context landscape</h2>
-        <p className="mb-6">
-          Foundation models are powerful but context-starved. As Google Cloud's announcement frames it, the lack of relevant context often limits what models can do, especially as they're used to build agentic systems, they can write code, summarize a document, or analyze a dataset, but only if they have the right information in front of them. And in most organizations, the information that matters is internal knowledge: the schema of a table, what a metric actually means to your business, the runbook for an incident, the join paths between two systems, the deprecation notice for an old API.
-        </p>
-        <p className="mb-6">
-          The trouble is where that knowledge lives. Today it's scattered across mutually incompatible surfaces: metadata catalogs with their own APIs, wikis and shared drives, code comments and docstrings and notebook cells, and, candidly, the heads of a few senior people. When an AI agent needs to answer something like "How do I compute weekly active users from our event stream?", it has to assemble the answer from those scattered, incompatible sources. Every agent builder ends up solving the same context-assembly problem from scratch, every catalog vendor reinvents the same data models, and the knowledge itself stays locked behind whatever tool created it. That fragmentation, not a shortage of knowledge, is the bottleneck OKF targets.
+          When engineering agentic workflows, developers waste up to 80% of development cycles building bespoke extractors, translators, and ingestion pipelines to query these systems. OKF solves this **Context Assembly Gap** by defining a standardized, portable, and machine-readable filesystem layout.
         </p>
 
-        <h2 id="what-okf-is" className="text-2xl font-semibold text-gray-900 mt-10 mb-4 font-display">3. What the Open Knowledge Format actually is</h2>
+        <h2 id="okf-spec" className="text-2xl font-semibold text-gray-900 mt-10 mb-4 font-display">2. OKF v0.1 Specification & Schema</h2>
         <p className="mb-6">
-          OKF is a way of writing knowledge down so that both humans and machines can read it, and so that it survives moving between systems. It formalizes what the AI researcher Andrej Karpathy crisply described as the <a href="https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f" target="_blank" rel="noopener noreferrer" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">LLM-wiki pattern</a>, the idea that a living library of markdown notes is a natural home for the facts an AI system reasons over. Karpathy's observation is that the bookkeeping humans abandon, keeping a personal wiki updated, cross-references current, files in sync, is exactly what language models are good at: they don't get bored, don't forget to update a cross-reference, and can touch fifteen files in one pass.
+          OKF represents knowledge using standard directories, markdown files, and YAML frontmatter. The specification enforces zero proprietary formats, runtimes, or client libraries. The layout is structured as follows:
         </p>
+        
+        <h3 className="text-xl font-bold text-gray-900 mt-6 mb-3">YAML Frontmatter Schema</h3>
+        <p className="mb-4">
+          Every concept file MUST contain YAML frontmatter defining basic metadata attributes.
+        </p>
+        <pre className="bg-gray-50 border border-gray-200 rounded p-4 mb-6 text-sm font-mono overflow-x-auto text-gray-800">
+{`---
+type: string        # Required: category of concept (e.g., table, metric, incident, api)
+title: string       # Optional: human-readable name
+description: string # Optional: high-level description for vector index embedding
+resource: string    # Optional: URI/link to physical system (e.g., BigQuery, GitHub)
+tags: [string]      # Optional: list of taxonomy tags for filtering
+timestamp: string   # Optional: ISO-8601 modification date
+---`}
+        </pre>
+
+        <h3 className="text-xl font-bold text-gray-900 mt-6 mb-3">The Markdown Body</h3>
         <p className="mb-6">
-          That pattern kept reappearing under different names, Obsidian vaults wired to coding agents, the <code className="bg-gray-100 px-1.5 py-0.5 rounded text-[0.9em] text-gray-800 font-mono">AGENTS.md</code> / <code className="bg-gray-100 px-1.5 py-0.5 rounded text-[0.9em] text-gray-800 font-mono">CLAUDE.md</code> convention files, repos full of <code className="bg-gray-100 px-1.5 py-0.5 rounded text-[0.9em] text-gray-800 font-mono">index.md</code> and <code className="bg-gray-100 px-1.5 py-0.5 rounded text-[0.9em] text-gray-800 font-mono">log.md</code> artifacts that agents read before doing real work, "metadata as code" inside data teams, but each instance was bespoke and none were designed to cooperate. OKF is the small set of conventions that makes them interoperable. As published, it's described by its authors as three things at once: <strong>just markdown</strong> (readable in any editor, renderable on GitHub, indexable by any search tool), <strong>just files</strong> (shippable as a tarball, hostable in any git repo, mountable on any filesystem), and <strong>just YAML frontmatter</strong> for the handful of structured fields that need to be queryable: type, title, description, resource, tags, and timestamp. That's the entire surface. The full v0.1 spec fits on a single page.
+          The frontmatter is followed by a standard markdown body. This body holds unstructured context—such as tabular schema representations, incident checklists, or integration examples—which the agent parses as plaintext or passes directly to the LLM's context window.
         </p>
 
-        <h2 id="how-bundles-work" className="text-2xl font-semibold text-gray-900 mt-10 mb-4 font-display">4. How an OKF bundle is structured</h2>
+        <h2 id="bundle-structure" className="text-2xl font-semibold text-gray-900 mt-10 mb-4 font-display">3. Directory Hierarchy & Navigation</h2>
         <p className="mb-6">
-          An OKF <strong>bundle</strong> is simply a directory of markdown files, where each file represents a <strong>concept</strong>, anything you want to capture: a table, a dataset, a metric, a playbook, a runbook, an API. One concept per file, and the file path <em>is</em> the concept's identity. A sales bundle might hold an <code className="bg-gray-100 px-1.5 py-0.5 rounded text-[0.9em] text-gray-800 font-mono">index.md</code> at the root, then folders like <code className="bg-gray-100 px-1.5 py-0.5 rounded text-[0.9em] text-gray-800 font-mono">datasets/</code>, <code className="bg-gray-100 px-1.5 py-0.5 rounded text-[0.9em] text-gray-800 font-mono">tables/</code>, and <code className="bg-gray-100 px-1.5 py-0.5 rounded text-[0.9em] text-gray-800 font-mono">metrics/</code>, each with its own files (<code className="bg-gray-100 px-1.5 py-0.5 rounded text-[0.9em] text-gray-800 font-mono">orders.md</code>, <code className="bg-gray-100 px-1.5 py-0.5 rounded text-[0.9em] text-gray-800 font-mono">customers.md</code>, <code className="bg-gray-100 px-1.5 py-0.5 rounded text-[0.9em] text-gray-800 font-mono">weekly_active_users.md</code>) and index.
+          Concepts are organized into folder structures called **bundles**. Links between concepts are represented using standard relative markdown links, turning a flat folder structure into an explicit graph database.
         </p>
+
+        <h3 className="text-lg font-bold text-gray-900 mb-3">Example OKF Directory Structure</h3>
+        <pre className="bg-gray-50 border border-gray-200 rounded p-4 mb-6 text-sm font-mono overflow-x-auto text-gray-800">
+{`my-data-bundle/
+├── index.md           # Root index: High-level overview of the bundle
+├── log.md             # Change history: Chronological list of updates
+├── datasets/
+│   ├── index.md       # Index of datasets
+│   └── sales_data.md  # Sales data concept file
+└── metrics/
+    ├── index.md       # Index of metrics
+    └── dau_churn.md   # Daily Active Users & churn calculation formula`}
+        </pre>
+
         <p className="mb-6">
-          Each concept document carries a small block of YAML frontmatter for the structured, queryable fields: type, title, description, resource link, tags, timestamp, followed by a markdown body for everything else: the schema table, the description, the join paths, whatever the concept needs. Concepts link to one another with ordinary markdown links, which turns the directory into a <em>graph</em> of relationships richer than the simple parent/child nesting the folders imply. Bundles can optionally include <code className="bg-gray-100 px-1.5 py-0.5 rounded text-[0.9em] text-gray-800 font-mono">index.md</code> files (so an agent can progressively disclose detail as it navigates the hierarchy) and <code className="bg-gray-100 px-1.5 py-0.5 rounded text-[0.9em] text-gray-800 font-mono">log.md</code> files (a chronological history of changes). The elegance is that none of this requires special tooling to create or read; it's the same files a human edits in a text editor and an agent parses directly.
+          This system uses two special helper files:
         </p>
+        <ul className="list-disc pl-6 mb-8 space-y-2 text-gray-700">
+          <li><strong>index.md</strong>: Provides progressive disclosure, allowing the agent to fetch a high-level summary of a directory before deciding to crawl deeper.</li>
+          <li><strong>log.md</strong>: Lists updates sequentially. Ingestion scripts can tail this log to perform incremental index updates instead of re-indexing the entire bundle.</li>
+        </ul>
 
         <div className="my-8 sm:my-12">
           <img 
-            src="/images/article-introducing-open-knowledge-format-diagram.webp" 
-            alt="A software engineer explaining the Open Knowledge Format bundle structure on a whiteboard in a modern dark-themed meeting room" 
-            className="w-full rounded-xl border border-white/10 shadow-2xl"
+            src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=80" 
+            alt="Standardizing metadata and folder hierarchies: how OKF structures concepts, indices, and logs" 
+            className="w-full rounded-xl border border-gray-200 shadow-xl"
           />
-          <p className="text-xs text-gray-500 mt-3 text-center font-mono">
-            Standardizing metadata and folder hierarchies: how OKF structures concepts, indices, and logs.
-          </p>
         </div>
 
-        <h2 id="three-principles" className="text-2xl font-semibold text-gray-900 mt-10 mb-4 font-display">5. The three principles behind the design</h2>
+        <h2 id="geo-convergence" className="text-2xl font-semibold text-gray-900 mt-10 mb-4 font-display">4. GEO vs. OKF Mechanics</h2>
         <p className="mb-6">
-          Three design choices explain why OKF is built the way it is, and each carries a lesson for anyone structuring knowledge for AI.
+          Generative Engine Optimization (GEO) and OKF represent the same architectural thesis applied to different visibility domains. 
         </p>
-        <ul className="list-disc pl-6 mb-8 space-y-3">
+        <table className="w-full text-left border-collapse border border-gray-200 mb-8">
+          <thead>
+            <tr className="bg-gray-50">
+              <th className="p-3 border border-gray-200 font-semibold text-gray-900">Dimension</th>
+              <th className="p-3 border border-gray-200 font-semibold text-gray-900">GEO (Generative Engine Optimization)</th>
+              <th className="p-3 border border-gray-200 font-semibold text-gray-900">OKF (Open Knowledge Format)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td className="p-3 border border-gray-200 font-medium">Domain</td>
+              <td className="p-3 border border-gray-200">Public web search results.</td>
+              <td className="p-3 border border-gray-200">Internal, enterprise, and agent workflows.</td>
+            </tr>
+            <tr className="bg-gray-50/50">
+              <td className="p-3 border border-gray-200 font-medium">Primary Consumer</td>
+              <td className="p-3 border border-gray-200">Search crawlers (Google Cloud, OpenAI, Perplexity).</td>
+              <td className="p-3 border border-gray-200">Agentic codebases and local vector pipelines.</td>
+            </tr>
+            <tr>
+              <td className="p-3 border border-gray-200 font-medium">Format Standard</td>
+              <td className="p-3 border border-gray-200">HTML tags, Schema.org JSON-LD scripts.</td>
+              <td className="p-3 border border-gray-200">Markdown file directories, YAML schemas.</td>
+            </tr>
+          </tbody>
+        </table>
+        <p className="mb-6">
+          Both formats rely on **explicit typing** and **structured relationships**. In the public space, search engines use Schema.org to extract entities. In the agentic space, systems crawl OKF links to build context graphs. Standardizing both layouts ensures that your business data is machine-readable by both external search engines and internal agents.
+        </p>
+
+        <h2 id="implementation-pipeline" className="text-2xl font-semibold text-gray-900 mt-10 mb-4 font-display">5. Enterprise Pipeline Setup</h2>
+        <p className="mb-6">
+          To transition your metadata to OKF, implement an automated export pipeline rather than writing files manually. Follow this sequence:
+        </p>
+        <ol className="list-decimal pl-6 mb-8 space-y-3 text-gray-700">
           <li>
-            <strong>1. Minimally opinionated:</strong> OKF requires exactly one thing of every concept: a <code className="bg-gray-100 px-1.5 py-0.5 rounded text-[0.9em] text-gray-800 font-mono">type</code> field. Everything else—what types exist, what other fields to include, what sections the body contains—is left to the producer. The spec defines the <em>interoperability surface</em>, not your content model.
+            <strong>Extract</strong>: Query database catalogs (e.g., BigQuery INFORMATION_SCHEMA, PostgreSQL system catalogs) and API registries (Swagger/OpenAPI definitions).
           </li>
           <li>
-            <strong>2. Producer/consumer independence:</strong> OKF cleanly separates who writes the knowledge from who reads it. A bundle hand-authored by a human can be consumed by an AI agent; a bundle generated by an export pipeline can be browsed in a visualizer; a bundle written by one LLM can be queried by another. The format is the contract.
+            <strong>Schema Map</strong>: Transform metadata entries into YAML frontmatter block properties.
           </li>
           <li>
-            <strong>3. Format, not platform:</strong> OKF isn't tied to any cloud, database, model provider, or agent framework, and by design it will never require a proprietary account or SDK to read, write, or serve. Google's stated reasoning is telling: the value of a knowledge format comes from how many parties speak it, not from who owns it.
+            <strong>Format Body</strong>: Format tables, primary/foreign key relationships, and data lineages as markdown columns and lists.
+          </li>
+          <li>
+            <strong>Generate Indexes</strong>: Programmatically construct <code className="bg-gray-100 px-1 py-0.5 rounded font-mono text-[0.9em]">index.md</code> maps and append modification records to the bundle's root <code className="bg-gray-100 px-1 py-0.5 rounded font-mono text-[0.9em]">log.md</code>.
+          </li>
+        </ol>
+
+        <h2 id="sources" className="text-2xl font-semibold text-gray-900 mt-10 mb-4 font-display">6. Reference Materials & Specifications</h2>
+        <ul className="list-disc pl-6 mb-8 space-y-2 text-gray-700">
+          <li>
+            <a href="https://cloud.google.com/blog/products/data-analytics/how-the-open-knowledge-format-can-improve-data-sharing/" target="_blank" rel="noopener noreferrer" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">Open Knowledge Format Google Cloud Announcement</a>
+          </li>
+          <li>
+            <a href="https://github.com/GoogleCloudPlatform/knowledge-catalog/tree/main/okf" target="_blank" rel="noopener noreferrer" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">Google Cloud OKF Spec Repository on GitHub</a>
+          </li>
+          <li>
+            <a href="https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f" target="_blank" rel="noopener noreferrer" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">Andrej Karpathy — The LLM Wiki Gist</a>
           </li>
         </ul>
 
-        <h2 id="format-not-service" className="text-2xl font-semibold text-gray-900 mt-10 mb-4 font-display">6. Why "a format, not another service" is the whole point</h2>
-        <p className="mb-6">
-          The most important sentence in Google's announcement may be this: the answer to fragmented knowledge isn't another knowledge service, it's a <em>format</em>. The distinction matters enormously. A service locks knowledge behind an API, an account, and a vendor relationship; a format lets knowledge be produced by anyone without an SDK, consumed by anyone without an integration, moved between systems and organizations intact, version-controlled alongside the code it describes, and read by both humans and agents from the same file with no translation step.
-        </p>
-        <p className="mb-6">
-          This is the same insight that made earlier open formats—HTML, Markdown, CSV, JSON—so durable: they won not because they were sophisticated but because they were <em>portable and universal</em>. OKF is a bet that AI knowledge needs the same treatment, and that the winning representation will be the one the most tools and organizations can speak, not the one with the best proprietary features. To make it concrete, Google shipped reference implementations at both ends, an enrichment agent that walks a BigQuery dataset and drafts an OKF document for every table, and a self-contained static HTML visualizer that turns any bundle into an interactive graph with no backend, plus three ready-to-browse sample bundles. But the authors are explicit that the tools are proofs of concept; the <em>format itself is the contribution</em>.
-        </p>
-
-        <h2 id="what-it-signals" className="text-2xl font-semibold text-gray-900 mt-10 mb-4 font-display">7. What this signals for AI-ready businesses</h2>
-        <p className="mb-6">
-          Step back from the data-engineering specifics and OKF is a signal about the direction of the whole AI ecosystem, one every business should read. The signal is this: <strong>the knowledge AI systems rely on is moving toward open, structured, machine-readable, portable representations, and the organizations whose knowledge is already in that shape will be the ones AI agents can actually use.</strong> As AI agents increasingly mediate how customers discover, evaluate, and interact with businesses, being legible to those agents stops being a nicety and becomes table stakes.
-        </p>
-        <p className="mb-6">
-          The practical reading for a business isn't "go implement OKF tomorrow", most companies aren't shipping BigQuery metadata bundles. It's that the <em>principles</em> OKF encodes are exactly the principles that make a business visible and usable in an AI-mediated world: structure your knowledge so machines can parse it, keep it in clean and portable formats rather than locked in proprietary silos, make relationships between concepts explicit, and treat your knowledge like code that's curated and versioned rather than scattered across tools and people's heads. A business whose product information, documentation, and expertise live in clean, structured, linkable form is one an AI agent, or an AI search engine, can read, trust, and surface. By aligning with <a href="/insights/what-data-sources-do-llms-crawl-to-verify-b2b-company-information" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">what data sources LLMs crawl to verify B2B company information</a>, organizations ensure they remain legible to these agents. A business whose knowledge is trapped in PDFs, screenshots, and tribal memory is invisible to exactly the systems that increasingly drive discovery.
-        </p>
-
-        <h2 id="okf-and-geo" className="text-2xl font-semibold text-gray-900 mt-10 mb-4 font-display">8. OKF and GEO: the same thesis, one layer deeper</h2>
-        <p className="mb-6">
-          For anyone following <a href="/insights/what-is-generative-engine-optimization-and-how-does-it-work" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">generative engine optimization (GEO)</a>, the practice of structuring content so AI engines cite and surface it, OKF will feel like a familiar thesis taken one layer deeper. GEO is about making your <em>public</em> content legible and trustworthy to the <a href="/insights/chatgpt-vs-google-for-business-discovery" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">LLMs behind AI search</a>; OKF is about making <em>any</em> knowledge, public or internal, legible to the agents that consume it. Both rest on the same foundation: machines reward structure, clarity, explicit relationships, and portable formats, and they penalize fragmentation and opacity.
-        </p>
-        <p className="mb-6">
-          The connection is direct. The same discipline that gets a brand cited in an AI answer—clean structure, clear <a href="/insights/brand-entity-extraction-perception-drift" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">entities</a>, explicit links between concepts, and machine-parseable evidence—is the discipline OKF formalizes for knowledge bundles. A business that has done the work to be AI-discoverable on its public surfaces has already internalized the mindset OKF encodes; a business that hasn't will find both equally foreign. OKF is, in effect, the data-layer expression of a truth GEO practitioners have been acting on for two years: in an AI-mediated world, <em>how your knowledge is structured determines whether machines can use it</em>, and that increasingly determines whether you're discovered at all.
-        </p>
-
-        <h2 id="how-to-start" className="text-2xl font-semibold text-gray-900 mt-10 mb-4 font-display">9. How to start thinking in OKF terms</h2>
-        <p className="mb-6">
-          You don't need to adopt the specification to benefit from its lessons. A few practical moves any business can make, in rough order of accessibility:
-        </p>
-        <ul className="list-disc pl-6 mb-8 space-y-3">
+        <h2 id="related" className="text-2xl font-semibold text-gray-900 mt-10 mb-4 font-display">7. Related on Gobiya</h2>
+        <ul className="list-disc pl-6 mb-8 space-y-2 text-gray-700">
           <li>
-            <strong>Get knowledge out of silos:</strong> Favor markdown, structured text, and open formats over PDFs, screenshots, and proprietary tools for the knowledge that describes your business, products, and processes.
+            <a href="/capabilities/seo-discoverability-agency/" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">SEO &amp; AI-engine discoverability</a>
           </li>
           <li>
-            <strong>Make structure explicit:</strong> Use clear headings, consistent fields (what something is, what it relates to, when it was updated), and explicit links between related concepts.
+            <a href="/capabilities/web-development-agency/" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">Web development for fast, clean, crawlable sites</a>
           </li>
           <li>
-            <strong>Treat knowledge like code:</strong> Curate it, version it, keep it current, and store it where it can be maintained deliberately rather than scattered across drives and chat threads.
-          </li>
-          <li>
-            <strong>Add the metadata machines query:</strong> The fields OKF standardizes—type, title, description, source link, tags, timestamp—are exactly the fields that make any knowledge findable and trustworthy to a machine.
-          </li>
-          <li>
-            <strong>For technical teams:</strong> Read the spec and try the reference tools. The <a href="https://github.com/GoogleCloudPlatform/knowledge-catalog/tree/main/okf" target="_blank" rel="noopener noreferrer" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">OKF spec and sample bundles are on GitHub</a>.
-          </li>
-        </ul>
-
-        <h2 id="how-gobiya-helps" className="text-2xl font-semibold text-gray-900 mt-10 mb-4 font-display">10. How Gobiya helps you become machine-readable</h2>
-        <p className="mb-6">
-          OKF validates the core of what Gobiya builds for clients: businesses that are structured to be read, trusted, and surfaced by machines, not just by people. Our <a href="/capabilities/seo-discoverability" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">SEO and AI-engine discoverability work</a> is built on exactly the principles OKF formalizes—clean structure, explicit entities and relationships, machine-parseable metadata, and portable, open formats—applied to the public surfaces where AI search engines discover and cite businesses.
-        </p>
-        <p className="mb-6">
-          We <a href="/capabilities/web-development" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">build sites on fast, clean, crawlable infrastructure</a> so the structure is legible to agents and crawlers rather than buried in heavy, opaque pages, and we wire everything into <a href="/capabilities/native-crm" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">native CRM and pipeline attribution</a> so the visibility gains connect to real inquiries, not vanity metrics. The outcome pattern shows up in work like <a href="/case-studies/smile-center-dentistry" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">SmileCenter Dentistry's growth in search impressions</a>. If you want your business structured to be legible to AI agents and search engines as that shift plays out, <a href="/book" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">book a strategy call</a> and ask about an AI-discoverability assessment.
-        </p>
-
-        <h2 id="right-call" className="text-2xl font-semibold text-gray-900 mt-10 mb-4 font-display">11. The right call on knowledge formats</h2>
-        <p className="mb-6">
-          So what is the Open Knowledge Format, and why does it matter? It's Google Cloud's open, vendor-neutral specification for representing AI-relevant knowledge as a directory of markdown files with a little YAML frontmatter, formalizing the LLM-wiki pattern into something portable and interoperable. It matters because it's a clear signal of where the AI ecosystem is heading: toward open, structured, machine-readable knowledge, and toward rewarding the organizations whose knowledge already lives in that shape.
-        </p>
-        <p className="mb-6">
-          Two takeaways matter most. First: the value is in the <em>format, not the platform</em>, and the same logic applies to your own knowledge: the more it lives in clean, portable, structured form, the more usable it is to every AI system. Second: whether or not you implement the spec, the principles behind it—structure, explicit relationships, machine-readable metadata, knowledge treated like code—are the principles that determine whether your business is legible to the AI agents and search engines. Getting your knowledge into that shape is the move.
-        </p>
-
-        <h2 id="faq" className="text-2xl font-semibold text-gray-900 mt-10 mb-4 font-display">12. Frequently Asked Questions</h2>
-        <div className="space-y-6 mb-10 border-t border-gray-800 pt-6">
-          <div>
-            <h4 className="text-[17px] font-semibold text-gray-900 mb-2 font-display">What is the Open Knowledge Format (OKF)?</h4>
-            <p className="text-gray-700 text-[15px] leading-relaxed">
-              OKF is an open specification introduced by Google Cloud on June 12, 2026, for representing the metadata, context, and curated knowledge that AI systems and agents need. OKF v0.1 represents knowledge as a directory of markdown files with YAML frontmatter and a small set of shared conventions, so knowledge written by one producer can be consumed by a different agent or tool without any translation layer.
-            </p>
-          </div>
-          <div>
-            <h4 className="text-[17px] font-semibold text-gray-900 mb-2 font-display">What problem does OKF solve?</h4>
-            <p className="text-gray-700 text-[15px] leading-relaxed">
-              The fragmentation of internal knowledge. The context AI models need, table schemas, definitions, API notes, typically lives scattered across incompatible systems: metadata catalogs, wikis, code comments, and people's heads. OKF gives them a common, portable format so knowledge stops being locked behind whichever tool created it.
-            </p>
-          </div>
-          <div>
-            <h4 className="text-[17px] font-semibold text-gray-900 mb-2 font-display">Do I need to use Google Cloud to use OKF?</h4>
-            <p className="text-gray-700 text-[15px] leading-relaxed">
-              No. OKF is an open, vendor-neutral standard that works independently of any cloud, database, model provider, or agent framework. The spec and sample bundles are openly available on GitHub.
-            </p>
-          </div>
-          <div>
-            <h4 className="text-[17px] font-semibold text-gray-900 mb-2 font-display">How does OKF relate to GEO (generative engine optimization)?</h4>
-            <p className="text-gray-700 text-[15px] leading-relaxed">
-              They share a thesis. GEO is about structuring your public content so AI search engines cite and surface it; OKF is about structuring knowledge, public or internal, so AI agents can consume it. Both rest on the same foundation: machines reward structure, clarity, explicit relationships, and portable formats.
-            </p>
-          </div>
-        </div>
-
-        <h2 id="sources" className="text-2xl font-semibold text-gray-900 mt-10 mb-4 font-display">13. Sources & further reading</h2>
-        <ul className="list-disc pl-6 mb-8 space-y-2 text-gray-700 text-[15px]">
-          <li>
-            <a href="https://cloud.google.com/blog/products/data-analytics/how-the-open-knowledge-format-can-improve-data-sharing/" target="_blank" rel="noopener noreferrer" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">Introducing the Open Knowledge Format — Google Cloud Blog</a> — official announcement (June 12, 2026).
-          </li>
-          <li>
-            <a href="https://github.com/GoogleCloudPlatform/knowledge-catalog/tree/main/okf" target="_blank" rel="noopener noreferrer" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">OKF specification and reference code — GitHub</a>.
-          </li>
-          <li>
-            <a href="https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f" target="_blank" rel="noopener noreferrer" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">Andrej Karpathy — the LLM Wiki gist</a>.
-          </li>
-        </ul>
-
-        <h2 id="related" className="text-2xl font-semibold text-gray-900 mt-10 mb-4 font-display">14. Related on Gobiya</h2>
-        <ul className="list-disc pl-6 mb-8 space-y-2 text-gray-700 text-[15px]">
-          <li>
-            <a href="/capabilities/seo-discoverability" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">SEO & AI-engine discoverability</a>
-          </li>
-          <li>
-            <a href="/capabilities/web-development" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">Web development for fast, clean, crawlable sites</a>
-          </li>
-          <li>
-            <a href="/capabilities/native-crm" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">Native CRM & pipeline attribution</a>
+            <a href="/capabilities/native-crm-agency/" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">Native CRM &amp; pipeline attribution</a>
           </li>
           <li>
             <a href="/case-studies/smile-center-dentistry" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">SmileCenter Dentistry case study</a>
@@ -279,7 +241,7 @@ const ARTICLES: Record<string, ArticleData> = {
     category: 'Local SEO',
     readTime: '10 min read',
     date: 'June 13, 2026',
-    image: '/images/article-multi-location-websites-franchises-thumbnail.webp',
+    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&q=80',
     heroAlt: 'A professional business and web engineering team reviewing multi-location subdirectory structures on a large studio screen.',
     metaDescription: 'A technical guide to multi-location websites for franchises. How to configure subdirectory URLs, prevent page cannibalization, and establish secure SEO governance.',
     content: (
@@ -443,7 +405,7 @@ const ARTICLES: Record<string, ArticleData> = {
 
         <div className="my-10" data-anim="fade">
           <img 
-            src="/images/article-multi-location-websites-franchises-secondary.webp" 
+            src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&q=80" 
             alt="Google Business Profile and custom analytics workstation showing local search dashboard" 
             className="w-full h-auto rounded-lg border border-gray-200 object-cover shadow-sm"
           />
@@ -470,10 +432,10 @@ const ARTICLES: Record<string, ArticleData> = {
           How Gobiya builds franchise web infrastructure
         </h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
-          Gobiya approaches franchise and multi-location websites as the systems problem they are—engineered architecture rather than replicated templates. The build starts with the right foundation: a single-domain, subdirectory architecture on <a href="/capabilities/web-development" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">fast, modern web infrastructure</a> that consolidates brand authority while giving every location its own genuinely differentiated, schema-backed page, structured for the location-hub-and-spoke internal linking that prevents cannibalization.
+          Gobiya approaches franchise and multi-location websites as the systems problem they are—engineered architecture rather than replicated templates. The build starts with the right foundation: a single-domain, subdirectory architecture on <a href="/capabilities/web-development-agency/" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">fast, modern web infrastructure</a> that consolidates brand authority while giving every location its own genuinely differentiated, schema-backed page, structured for the location-hub-and-spoke internal linking that prevents cannibalization.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
-          That architecture is wired into <a href="/capabilities/native-crm" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">native CRM and attribution</a> so corporate gets national, cross-location pipeline visibility while each location's calls, form fills, and direction requests are tracked to source—the tiered reporting franchise governance requires. And it's engineered for <a href="/capabilities/seo-discoverability" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">search and AI-engine discoverability</a>, the LocalBusiness schema, NAP consistency, and entity structure that decide whether each location ranks in the map pack and gets cited in AI answers.
+          That architecture is wired into <a href="/capabilities/native-crm-agency/" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">native CRM and attribution</a> so corporate gets national, cross-location pipeline visibility while each location's calls, form fills, and direction requests are tracked to source—the tiered reporting franchise governance requires. And it's engineered for <a href="/capabilities/seo-discoverability-agency/" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">search and AI-engine discoverability</a>, the LocalBusiness schema, NAP consistency, and entity structure that decide whether each location ranks in the map pack and gets cited in AI answers.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
           The multi-location pattern is proven in work like <a href="/case-studies/smile-center-dentistry" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">SmileCenter Dentistry's multi-office build</a> (5x patient inquiries, 2.8x search impressions across locations). If you're scaling a franchise and want the architecture audited or built to rank every location, <a href="/book" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">book a strategy call</a> and request a multi-location technical audit.
@@ -543,7 +505,7 @@ const ARTICLES: Record<string, ArticleData> = {
     category: 'Strategy',
     readTime: '14 min read',
     date: 'May 26, 2026',
-    image: '/images/article-b2b-organic-traffic-growth.webp',
+    image: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?w=1200&q=80',
     heroAlt: 'Abstract interconnected glowing nodes and upward trending data streams representing B2B organic traffic composition growth',
     metaDescription: 'How traffic and pipeline decoupled in B2B during 2025-2026, why the best B2B SEO programs are now growing less traffic on purpose, and what the new organic growth math actually looks like.',
     content: (
@@ -738,7 +700,7 @@ const ARTICLES: Record<string, ArticleData> = {
     category: 'Strategy',
     readTime: '12 min read',
     date: 'June 12, 2026',
-    image: '/images/article-behavioral-psychology-b2b-landing-page-wireframes-thumbnail.webp',
+    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80',
     heroAlt: 'A premium, photorealistic image of professional business consultants reviewing a printed landing page wireframe in a warm, cinematically-lit office.',
     metaDescription: 'Learn how to apply behavioral psychology principles like the Fogg Behavior Model and Hick\'s Law to high-ticket B2B landing page wireframes to decrease friction.',
     content: (
@@ -869,7 +831,7 @@ const ARTICLES: Record<string, ArticleData> = {
 
         <div className="article-hero-image-wrap my-8" style={{ width: '100%', maxHeight: '400px', overflow: 'hidden', border: '1px solid var(--line)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
           <img 
-            src="/images/article-behavioral-psychology-b2b-landing-page-wireframes-secondary.webp" 
+            src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200&q=80" 
             alt="Landing page wireframe design mapping out Hick's Law and BJ Fogg behavior model zones" 
             style={{ width: '100%', height: 'auto', objectFit: 'cover', objectPosition: 'center center' }} 
           />
@@ -923,7 +885,7 @@ const ARTICLES: Record<string, ArticleData> = {
           How Gobiya engineers this into conversion infrastructure
         </h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Gobiya treats landing pages the way this article does, as engineered behavioral systems, not design deliverables, and builds the infrastructure that makes the psychology measurable. The behavioral wireframe is implemented on <a href="/capabilities/web-development" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">blazing-fast web builds</a> (because the first five seconds are a motivation budget that slow pages spend on nothing), wired into <a href="/capabilities/native-crm" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">native CRM and pipeline tracking</a> so every form variant, field count, and CTA placement is attributed to actual opportunities rather than raw conversion vanity, exactly the rate-versus-quality trade high-ticket pages must manage, and structured for <a href="/capabilities/seo-discoverability" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">search and AI-engine discoverability</a> so the intent-matched traffic the wireframe assumes actually arrives.
+          Gobiya treats landing pages the way this article does, as engineered behavioral systems, not design deliverables, and builds the infrastructure that makes the psychology measurable. The behavioral wireframe is implemented on <a href="/capabilities/web-development-agency/" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">blazing-fast web builds</a> (because the first five seconds are a motivation budget that slow pages spend on nothing), wired into <a href="/capabilities/native-crm-agency/" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">native CRM and pipeline tracking</a> so every form variant, field count, and CTA placement is attributed to actual opportunities rather than raw conversion vanity, exactly the rate-versus-quality trade high-ticket pages must manage, and structured for <a href="/capabilities/seo-discoverability-agency/" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">search and AI-engine discoverability</a> so the intent-matched traffic the wireframe assumes actually arrives.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
           The results pattern is documented in work like <a href="/case-studies/smile-center-dentistry" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">SmileCenter's 5x inquiry growth</a>, and the operating philosophy is the same one on our homepage: no vanity metrics, pipeline ROI built in. If you want your page audited against the exact friction framework above, <a href="/book" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">book a strategy call</a> and request the landing page friction audit.
@@ -950,7 +912,7 @@ const ARTICLES: Record<string, ArticleData> = {
     category: 'Strategy',
     readTime: '9 min read',
     date: 'June 3, 2026',
-    image: '/images/enterprise-seo-agencies-comparison.png',
+    image: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=1200&q=80',
     heroAlt: 'A modern B2B comparison matrix showing performance and cost trade-offs between dynamic boutique agencies and traditional bloated enterprise agencies',
     metaDescription: 'We compare enterprise SEO agencies vs Gobiya, showing the speed, cost, and CRM pipeline differences for B2B brands.',
     content: (
@@ -1028,267 +990,221 @@ const ARTICLES: Record<string, ArticleData> = {
     slug: 'how-do-b2b-companies-use-seo-to-generate-predictable-revenue',
     title: 'B2B Pipeline Revenue: How B2B Companies Use SEO to Scale',
     category: 'Strategy',
-    readTime: '10 min read',
+    readTime: '6 min read',
     date: 'May 31, 2026',
-    image: '/images/b2b-pipeline-revenue-performance-dashboard.png',
+    image: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1200&q=80',
     heroAlt: 'Lifelike, sleek, high-tech B2B revenue and SEO dashboard in a dark room setting with glowing vibrant orange highlights showing upward organic search traffic and sales pipeline growth',
     metaDescription: 'Learn how to connect search clusters to B2B pipeline revenue, map content to the buying committee, and scale inbound conversions.',
     content: (
       <>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8 font-medium">
-          How do B2B companies actually turn organic search clicks into predictable B2B pipeline revenue? Most organic search programs fall into a frustrating trap: traffic goes up every month, but the sales pipeline stays flat. Executives celebrate dashboard metrics, but sales teams see no deals. This disconnect is not a content problem, but a structural one.
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "Why does B2B SEO often fail to generate sales pipeline?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "B2B SEO projects fail due to a session-to-pipeline misalignment. Teams optimize for high-volume informational queries instead of low-volume, high-intent commercial modifiers that target active evaluators and decision-makers."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "What is the optimal attribution model for B2B search channels?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "W-shaped multi-touch attribution is optimal. It assigns 30% credit each to first touch, lead creation, and opportunity creation, with the remaining 10% distributed across intermediate interactions."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "How do you align content with the B2B buying committee?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Map search clusters to specific roles: technical evaluations (integrations, security specs) for the CTO/SysOps, economic valuations (ROI, pricing calculators) for the CFO, and functional execution guides for operational leads."
+                  }
+                }
+              ]
+            })
+          }}
+        />
+
+        <p className="lead-text italic text-gray-600 text-lg mb-8">
+          A high-density analysis of B2B organic search pipeline architecture. This guide details how to structure content for multi-stakeholder buying committees, build high-intent keyword clusters, configure CRM attribution, and track revenue-linked KPIs.
         </p>
 
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
-          For B2B companies that want predictable, attributable revenue, organic search is more than a traffic channel, it is a <a href="/services/lead-generation" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">B2B pipeline architecture</a> problem. That distinction changes everything: which keywords you target, how you build content, what you measure, and how you connect search activity to closed deals inside your CRM. Gobiya approaches B2B organic search exactly this way, combining forensic keyword targeting with automated sales infrastructure to close the gap between impressions and closed revenue.
+        <h2 id="pipeline-math" className="text-2xl font-semibold text-gray-900 mt-10 mb-4 font-display">1. The Session-to-Pipeline Disconnect</h2>
+        <p className="mb-6">
+          B2B organic search programs fail when they optimize for traffic volume instead of pipeline velocity. High-volume informational queries (e.g., "what is data compliance") drive sessions but do not yield sales pipeline. Predictable pipeline generation requires targeting commercial-intent queries linked directly to business outcomes.
         </p>
-
-        <div className="border-l-4 border-[#F26522] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
-          <img src="/images/steve-portrait.webp" alt="Steve Martin" className="w-12 h-12 object-cover border border-white/10 shrink-0" />
-          <div>
-            <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-1 font-sans">Steve's Take</p>
-            <p className="text-[15px] italic text-white leading-relaxed font-sans">
-              "If you are measuring organic search sessions instead of inbound demo requests, you are reporting on vanity. Fix your CRM attribution first. Then build content clusters around buying stages, not high-volume search queries."
-            </p>
-          </div>
+        <p className="mb-6">
+          Pipeline generation is governed by the following funnel equation:
+        </p>
+        <div className="bg-gray-50 border border-gray-200 rounded p-6 mb-8 text-center font-mono text-gray-900 text-[15px] sm:text-base">
+          Pipeline ARR = Sessions × Conv % × MQL-to-SQL % × SQL-to-Close % × ACV
         </div>
-
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
-          What follows is a repeatable framework covering the five structural decisions that separate B2B SEO strategies that produce qualified pipeline from the ones that produce quarterly traffic reports nobody acts on.
+        <p className="mb-6">
+          Focusing on high-volume keywords inflates the denominator (Sessions) while dropping Conversion and Opportunity conversion rates to near-zero. Conversely, targeting bottom-of-funnel (BOFU) terms ensures high conversion metrics, translating organic search into CRM opportunity pipeline.
         </p>
 
-        {/* ── TABLE OF CONTENTS ── */}
-        <details className="bg-gray-50 border border-gray-200 rounded-lg p-6 sm:p-8 my-10 sm:my-14 group" open>
-          <summary className="text-[14px] font-semibold uppercase tracking-wider text-gray-500 cursor-pointer list-none flex items-center justify-between">
-            Table of Contents
-            <svg className="w-4 h-4 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" /></svg>
-          </summary>
-          <ul className="mt-6 space-y-3.5 text-[15px] font-medium text-gray-900 border-t border-gray-200 pt-6">
-            {[
-              { id: 'why-fails', label: 'Why B2B SEO so rarely connects to pipeline' },
-              { id: 'buying-committee', label: 'How B2B companies use SEO to generate predictable revenue: map content to the full buying committee' },
-              { id: 'keyword-clusters', label: 'Build high-intent keyword clusters that capture decision-stage buyers' },
-              { id: 'attribution-infra', label: 'Set up attribution infrastructure before publishing' },
-              { id: 'timeline-expectations', label: 'What your first 90 to 365 days should actually look like' },
-              { id: 'pipeline-automation', label: 'Pair SEO with pipeline automation to compound lead flow' },
-              { id: 'five-decisions', label: 'The five decisions that separate traffic from revenue' },
-              { id: 'faqs', label: 'Frequently Asked Questions (FAQ)' }
-            ].map(({ id, label }) => (
-              <li key={id} className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#F26522] shrink-0" />
-                <a href={'#' + id} className="hover:text-[#F26522] transition-colors">{label}</a>
-              </li>
-            ))}
-          </ul>
-        </details>
-
-        {/* ── SECTION 1 ── */}
-        <h2 id="why-fails" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
-          Why B2B SEO so rarely connects to pipeline
-        </h2>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Before you can fix the structure, you need to understand why it breaks. The most common failure mode is targeting the wrong intent at the wrong stage. Most B2B SEO programs are built around high-volume informational keywords because the search volume is attractive and the content is easy to produce. The result is a steady stream of researchers who read, learn, and leave. Organic sessions rise; demo requests stay flat. This decoupling of search metrics from business outcomes is analyzed in detail in our guide to <a href="/insights/b2b-organic-traffic-growth" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">B2B organic traffic growth</a>.
+        <h2 id="committee-mapping" className="text-2xl font-semibold text-gray-900 mt-10 mb-4 font-display">2. Intent Mapping & Content Graph Architecture</h2>
+        <p className="mb-6">
+          B2B purchasing involves multiple stakeholders. Content must be structured to answer the distinct questions of each buying committee persona across the decision cycle:
         </p>
 
-        <h3 className="text-[18px] sm:text-[20px] font-medium text-gray-900 mt-8 mb-4">The gap between organic sessions and qualified leads</h3>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          The buyer who searches "what is data privacy compliance" is not the same buyer who searches "data privacy compliance software for SaaS companies." The first query represents a problem-aware researcher; the second represents an active evaluator. B2B SEO programs that optimize for the first category at the expense of the second are building an audience, not a pipeline. Furthermore, in the era of AI search, brands must optimize for how AI models retrieve citations, which is where <a href="/services/geo-optimization" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">Generative Engine Optimization</a> (GEO) plays a critical role.
-        </p>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          The most credible documented cases of SEO-driven revenue, including Panto AI's 3.5x organic MQL growth and emma's 40% of inbound demo requests from organic content, succeeded because they optimized for conversions and qualified leads, not raw sessions. This is <a href="/insights/seo-for-b2b-lead-generation" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">demand generation SEO</a> in practice: intent-led, outcome-measured, and structurally different from traffic-first programs.
+        <table className="w-full text-left border-collapse border border-gray-200 mb-8 text-sm sm:text-base">
+          <thead>
+            <tr className="bg-gray-50">
+              <th className="p-3 border border-gray-200 font-semibold text-gray-900">Persona</th>
+              <th className="p-3 border border-gray-200 font-semibold text-gray-900">Intent Stage</th>
+              <th className="p-3 border border-gray-200 font-semibold text-gray-900">Query Modifiers</th>
+              <th className="p-3 border border-gray-200 font-semibold text-gray-900">Page Type & Schema</th>
+              <th className="p-3 border border-gray-200 font-semibold text-gray-900">CTA Trigger</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td className="p-3 border border-gray-200 font-medium">CFO / Economic Buyer</td>
+              <td className="p-3 border border-gray-200">Vendor Selection</td>
+              <td className="p-3 border border-gray-200">"pricing", "ROI", "cost comparison"</td>
+              <td className="p-3 border border-gray-200">Interactive Calculator (Product)</td>
+              <td className="p-3 border border-gray-200">Request Custom Quote</td>
+            </tr>
+            <tr className="bg-gray-50/50">
+              <td className="p-3 border border-gray-200 font-medium">CTO / Tech Evaluator</td>
+              <td className="p-3 border border-gray-200">Solution Evaluation</td>
+              <td className="p-3 border border-gray-200">"API", "security", "integration spec"</td>
+              <td className="p-3 border border-gray-200">Documentation (TechArticle)</td>
+              <td className="p-3 border border-gray-200">Access Sandbox API</td>
+            </tr>
+            <tr>
+              <td className="p-3 border border-gray-200 font-medium">VP / Operational Lead</td>
+              <td className="p-3 border border-gray-200">Problem Diagnosis</td>
+              <td className="p-3 border border-gray-200">"how to automate", "checklist"</td>
+              <td className="p-3 border border-gray-200">Methodology Guide (HowTo)</td>
+              <td className="p-3 border border-gray-200">Download Template</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2 id="clustering-topology" className="text-2xl font-semibold text-gray-900 mt-10 mb-4 font-display">3. Keyword Clustering & Internal Linking Topology</h2>
+        <p className="mb-6">
+          To build authority and guide user navigation, B2B sites must organize pages into programmatic hub-and-spoke topologies. This passes PageRank efficiently and signals topic depth to search crawlers.
         </p>
 
-        <h3 className="text-[18px] sm:text-[20px] font-medium text-gray-900 mt-8 mb-4">The multi-stakeholder problem generic SEO ignores</h3>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          According to Gartner, B2B purchases involve an average of six or more stakeholders across procurement, operations, finance, and the end user. A single landing page targeting a single search query does not serve a buying committee. It serves one person, once.
-        </p>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
-          Generic SEO misses the economic buyer, the operational evaluator, and the procurement gatekeeper entirely. Effective B2B SEO must address decision-influencer intent and economic-buyer intent simultaneously, which requires a different content architecture than what most programs use.
-        </p>
-
-        {/* ── SECTION 2 ── */}
-        <h2 id="buying-committee" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
-          How B2B companies use SEO to generate predictable revenue: map content to the full buying committee
-        </h2>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          The most reliable way to close the sessions-to-pipeline gap is to build content that serves the actual buying journey, not just the search engine. That means mapping content types to the specific intent layers that move a buying committee from problem awareness to vendor selection, what practitioners now call a content-led pipeline approach.
+        <h3 className="text-xl font-bold text-gray-900 mt-6 mb-3">Topology Map</h3>
+        <pre className="bg-gray-50 border border-gray-200 rounded p-4 mb-6 text-xs sm:text-sm font-mono overflow-x-auto text-gray-800">
+{`/solutions/enterprise-compliance (Pillar Hub: Category Term)
+  ├── ──> /solutions/enterprise-compliance/postgres (Spoke: Integrations)
+  ├── ──> /solutions/enterprise-compliance/gdpr-audit (Spoke: Regulatory Use Case)
+  └── ──> /solutions/enterprise-compliance/vs-competitor (Spoke: Comparison)`}
+        </pre>
+        <p className="mb-6">
+          Every satellite spoke page must link back to the parent pillar page using exact-match anchor text (e.g., "enterprise compliance software"). On the technical side, annotate the relationship graph in your JSON-LD schemas using the <code>about</code> and <code>mentions</code> properties, pointing directly to the canonical URLs of the pillar pages.
         </p>
 
-        <h3 className="text-[18px] sm:text-[20px] font-medium text-gray-900 mt-8 mb-4">The three intent layers that matter in B2B</h3>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Buyer-education intent covers awareness and problem framing: stakeholders who are diagnosing a challenge but have not yet defined a solution category. Use-case intent covers operational fit and stakeholder alignment: evaluators who understand the category and are asking whether your solution works in their context. Comparison and decision intent covers vendor shortlisting: buyers who have defined the problem, explored the category, and are now choosing between options.
-        </p>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Most B2B content programs over-invest in buyer education and under-invest in use-case and comparison content, the formats closest to pipeline creation. According to a Demand Gen Report study, 78% of B2B buyers request white papers during the evaluation stage, making structured educational assets a strong alignment tool for multi-stakeholder groups.
+        <h2 id="crm-attribution" className="text-2xl font-semibold text-gray-900 mt-10 mb-4 font-display">4. CRM Ingestion & Multi-Touch Attribution</h2>
+        <p className="mb-6">
+          B2B sales cycles typically last 30 to 180 days. Measuring performance based solely on final-session conversions hides the true value of early-stage discovery clicks. Organic search campaigns require client-side session tracking coupled to CRM attribution pipelines.
         </p>
 
-        <h3 className="text-[18px] sm:text-[20px] font-medium text-gray-900 mt-8 mb-4">Content types that produce the highest pipeline value</h3>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          White papers and thought leadership serve problem-aware stakeholders who are building internal consensus. Use-case pages and ROI calculators serve mid-funnel evaluators who need to see operational fit. Comparison and alternative pages serve decision-stage buyers who are shortlisting vendors.
+        <h3 className="text-xl font-bold text-gray-900 mt-6 mb-3">Client-Side Session Capture</h3>
+        <p className="mb-4">
+          Deploy a listener script to parse UTM parameters, Google Click Identifiers (gclid), and referral headers. Save these variables to <code>localStorage</code> to maintain tracking history across multiple domain visits:
         </p>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
-          Emma generated 40% of inbound demo requests from comparison and funnel-aligned content within nine months. Panto AI achieved 3.5x organic MQLs through topic clusters mapped deliberately to intent stages, demonstrating the value of <a href="/insights/automated-lead-generation-seo" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">automated lead generation SEO</a>. The lesson is consistent: content architecture must serve the buying journey. Content that only serves the search engine generates sessions that never become opportunities.
-        </p>
+        <pre className="bg-gray-50 border border-gray-200 rounded p-4 mb-6 text-xs sm:text-sm font-mono overflow-x-auto text-gray-800">
+{`function trackFirstTouch() {
+  const params = new URLSearchParams(window.location.search);
+  const data = {
+    utm_source: params.get('utm_source') || '',
+    utm_medium: params.get('utm_medium') || '',
+    utm_campaign: params.get('utm_campaign') || '',
+    gclid: params.get('gclid') || '',
+    first_url: window.location.href,
+    referrer: document.referrer || 'direct',
+    timestamp: new Date().toISOString()
+  };
+  
+  if (!localStorage.getItem('b2b_first_touch')) {
+    localStorage.setItem('b2b_first_touch', JSON.stringify(data));
+  }
+}
+window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
+        </pre>
 
-        {/* ── SECTION 3 ── */}
-        <h2 id="keyword-clusters" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
-          Build high-intent keyword clusters that capture decision-stage buyers
-        </h2>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Once you have the content architecture mapped to intent layers, keyword selection becomes precise. You are not looking for the highest search volume. You are looking for the highest pipeline signal, which lives in a specific set of keyword categories that most programs underweight. This is the foundation of organic pipeline generation: traffic that is pre-qualified by intent before it ever lands on your site.
+        <h3 className="text-xl font-bold text-gray-900 mt-6 mb-3">W-Shaped CRM Attribution</h3>
+        <p className="mb-6">
+          To accurately attribute closed-won opportunities, configure your CRM (Salesforce/HubSpot) to run a W-shaped attribution model:
         </p>
-
-        <h3 className="text-[18px] sm:text-[20px] font-medium text-gray-900 mt-8 mb-4">Keyword categories that accelerate B2B pipeline</h3>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Four keyword categories carry the strongest pipeline signal for B2B:
-        </p>
-        <ul className="space-y-3 mb-6 pl-0">
-          {[
-            'Comparison keywords such as "best [software category]" capture buyers who have defined the problem and are evaluating solutions.',
-            'Alternative keywords such as "[competitor] alternatives" capture buyers who have already tried a competing solution and are actively looking to switch.',
-            'Integration keywords such as "[software] integration with [platform]" capture buyers evaluating technical fit.',
-            'Use-case keywords such as "[outcome] software for [industry]" capture buyers who have mapped the solution to a specific business context.'
-          ].map((item, idx) => (
-            <li key={idx} className="flex items-start gap-3 text-[16px] sm:text-[17px] leading-[1.6] text-gray-800">
-              <span className="mt-1.5 w-2 h-2 rounded-full bg-[#F26522] shrink-0" />
-              {item}
-            </li>
-          ))}
+        <ul className="list-disc pl-6 mb-8 space-y-2 text-gray-700">
+          <li><strong>First Touch (30%)</strong>: Identifies the initial organic search query that introduced the user to the website.</li>
+          <li><strong>Lead Creation (30%)</strong>: Attributes the session where the visitor converted into a known contact.</li>
+          <li><strong>Opportunity Creation (30%)</strong>: Attributes the organic discovery touchpoint that immediately preceded sales pipeline entry.</li>
+          <li><strong>Middle Touches (10%)</strong>: Distributes the remaining weight equally among intermediate nurture touches.</li>
         </ul>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          BlueTally built this approach systematically: high-intent blog content and industry landing pages drove organic traffic from 52 to 7,663 monthly visitors, with 80 pages reaching top-3 positions. The traffic behind those results was not volume traffic. It was intent-qualified traffic.
+
+        <h2 id="kpi-dashboard" className="text-2xl font-semibold text-gray-900 mt-10 mb-4 font-display">5. Revenue-Linked KPI Dashboard</h2>
+        <p className="mb-6">
+          De-emphasize vanity metrics like organic impressions and raw traffic in favor of pipeline metrics matched directly to CRM records:
         </p>
 
-        <h3 className="text-[18px] sm:text-[20px] font-medium text-gray-900 mt-8 mb-4">How to build a keyword cluster around buying stages</h3>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
-          The cluster model pairs one commercial-intent pillar page with use-case and integration satellite pages linked to it. For a technical breakdown of this architecture, see our guide on <a href="/insights/automated-b2b-sales-pipeline-seo" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">automated B2B sales pipeline SEO</a>. The pillar page, typically a comparison or category page, captures decision-stage buyers directly. The satellite pages capture mid-funnel researchers and route them toward the commercial page through deliberate internal linking. <strong>The cluster must be built for conversion, not just rankings.</strong> CTAs on documentation pages, gated ROI frameworks, and clear paths to demo requests are what turn ranked pages into qualified pipeline. A cluster that ranks and converts nothing is infrastructure with no return.
-        </p>
+        <table className="w-full text-left border-collapse border border-gray-200 mb-8 text-sm sm:text-base">
+          <thead>
+            <tr className="bg-gray-50">
+              <th className="p-3 border border-gray-200 font-semibold text-gray-900">Vanity Metric</th>
+              <th className="p-3 border border-gray-200 font-semibold text-gray-900">Revenue Metric</th>
+              <th className="p-3 border border-gray-200 font-semibold text-gray-900">Measurement Method</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td className="p-3 border border-gray-200">Keyword Rankings</td>
+              <td className="p-3 border border-gray-200">Share of Voice (SOV)</td>
+              <td className="p-3 border border-gray-200">CTR-weighted organic search visibility index</td>
+            </tr>
+            <tr className="bg-gray-50/50">
+              <td className="p-3 border border-gray-200">Pageviews / Sessions</td>
+              <td className="p-3 border border-gray-200">Account Engagement (ABM)</td>
+              <td className="p-3 border border-gray-200">Reverse-IP lookup (Clearbit/6sense) mapping target domains</td>
+            </tr>
+            <tr>
+              <td className="p-3 border border-gray-200">Form Submissions</td>
+              <td className="p-3 border border-gray-200">Pipeline Velocity ($ value/day)</td>
+              <td className="p-3 border border-gray-200">CRM integration tracing lead source to opportunity value</td>
+            </tr>
+          </tbody>
+        </table>
 
-        {/* ── SECTION 4 ── */}
-        <h2 id="attribution-infra" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
-          Set up attribution infrastructure before publishing
-        </h2>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Many B2B teams skip attribution setup, publish content, and then cannot prove SEO's contribution to pipeline six months later when someone asks. Attribution is not a reporting task you complete after the fact. It is infrastructure you build before the first page goes live, and it is the mechanism that makes SEO-to-revenue attribution legible to leadership.
-        </p>
-
-        <h3 className="text-[18px] sm:text-[20px] font-medium text-gray-900 mt-8 mb-4">Which attribution model fits long B2B sales cycles</h3>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Last-click attribution systematically undercounts SEO's contribution in long-cycle B2B because organic search is almost always the discovery channel, not the conversion channel. U-shaped attribution credits first touch and lead conversion most heavily, a reasonable starting point when SEO initiates the buyer journey. For practical guidance on implementing multi-touch approaches, see HubSpot's overview of <a href="https://www.hubspot.com/startups/tech-stacks/sales-csx/multi-touch-attribution" target="_blank" rel="noopener noreferrer" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">multi-touch attribution</a> for B2B teams.
-        </p>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          W-shaped attribution credits first touch, lead creation, and opportunity creation, making it more representative when SEO assists multiple handoffs across a multi-month sales cycle. Once you have enough clean event history in your CRM, <strong>data-driven or algorithmic attribution becomes the most accurate option</strong> because it distributes credit based on observed behavior rather than fixed percentage rules. For a deeper look at implementing marketing attribution that distributes credit across touchpoints, read this primer on <a href="https://improvado.io/blog/b2b-marketing-attribution" target="_blank" rel="noopener noreferrer" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">b2b marketing attribution</a>.
-        </p>
-
-        <h3 className="text-[18px] sm:text-[20px] font-medium text-gray-900 mt-8 mb-4">The tracking stack that connects search to closed revenue</h3>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          GA4 provides solid web behavior data but has limited native visibility into closed revenue. CRM integration is non-negotiable: the CRM is where leads become opportunities and opportunities become revenue. Server-side tracking improves data quality when ad blockers or browser restrictions degrade cookie-based attribution. For B2B specifically, <strong>account-level tracking matters more than session-level tracking.</strong> One organic session rarely represents the full buying committee, so platforms that connect multiple contacts from the same account to a single opportunity produce significantly more accurate attribution than session-only web analytics. If you're evaluating attribution approaches for SaaS, this discussion of <a href="https://mouseflow.com/blog/b2b-saas-revenue-attribution-models/" target="_blank" rel="noopener noreferrer" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">B2B SaaS revenue attribution models</a> is a useful reference.
-        </p>
-
-        <h3 className="text-[18px] sm:text-[20px] font-medium text-gray-900 mt-8 mb-4">The revenue-linked KPIs to track from day one</h3>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
-          The metrics that signal SEO is producing predictable organic growth are specific: organic MQLs, organic demo requests and demo conversion rate, pipeline contribution from organic-sourced or organic-influenced opportunities, CAC reduction from organic substitution, and organic-influenced ARR. Keyword positions and organic sessions are leading indicators, not outcomes. They should move before MQLs and pipeline do, which makes them useful for diagnosing program health early, not for reporting revenue contribution to leadership. Use published <a href="https://firstpagesage.com/seo-blog/b2b-landing-page-conversion-rates/" target="_blank" rel="noopener noreferrer" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">B2B landing page conversion rate benchmarks</a> to set realistic conversion expectations for your commercial pages.
-        </p>
-
-        {/* ── SECTION 5 ── */}
-        <h2 id="timeline-expectations" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
-          What your first 90 to 365 days should actually look like
-        </h2>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Unrealistic expectations destroy B2B SEO programs faster than poor execution. Teams abandon the program at month four because revenue has not appeared, without understanding that month four is infrastructure, not harvest. Setting accurate stage-by-stage expectations prevents this failure.
-        </p>
-
-        <h3 className="text-[18px] sm:text-[20px] font-medium text-gray-900 mt-8 mb-4">90-day foundation: what to build, not what to expect</h3>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          The first 90 days are infrastructure work. The four priorities are: technical cleanup (crawlability, Core Web Vitals, and indexation); revenue-critical page optimization; buying-stage content mapping; and initial cluster publication. Do not expect MQLs yet. The milestones that matter in this window are pages indexed within 72 hours, technical issues resolved, priority pages within two clicks of the homepage, and early ranking movement on target keywords. The foundation built here determines whether pipeline lift appears at month six or month twelve.
-        </p>
-
-        <h3 className="text-[18px] sm:text-[20px] font-medium text-gray-900 mt-8 mb-4">180-day qualified lead lift and 365-day pipeline contribution</h3>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          At 180 days, the leading indicator shifts to conversion behavior: growing organic conversions, first consistent MQLs from search, and improving demo or contact-form conversion rates from commercial-intent pages. At 365 days, organic should be contributing to pipeline in a measurable, attributable way.
-        </p>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
-          Decentriq recorded a 34% increase in demo conversions alongside 106% organic traffic growth. <strong>These results followed the same structure: intent-mapped content, technical foundations, and pipeline-linked measurement.</strong> Track business outcomes, not rankings. MQLs and pipeline move after impressions and click-through rates do, not before.
-        </p>
-
-        {/* ── SECTION 6 ── */}
-        <h2 id="pipeline-automation" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
-          Pair SEO with pipeline automation to compound lead flow
-        </h2>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Organic search is a precision instrument, but pairing it with <a href="/insights/b2b-sales-pipeline-automation" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">B2B sales pipeline automation</a> compounds its impact by capturing ICP accounts that match your buyer profile before they actively search. The two channels compound each other directly.
-        </p>
-
-        <h3 className="text-[18px] sm:text-[20px] font-medium text-gray-900 mt-8 mb-4">Why organic search alone leaves pipeline on the table</h3>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Automated outbound pipeline architecture targets high-fit accounts through <a href="/insights/outbound-seo-prospecting" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">outbound SEO prospecting</a> — using intent signals to trigger personalized outreach while organic content builds trust. When prospects have already encountered your brand through organic content, outbound sequences tend to see stronger engagement, because familiarity shortens the trust gap. Outbound sequences also surface intent signals that feed back into content priorities. Neither channel is as efficient alone as it is when both are running from the same playbook.
-        </p>
-
-        <h3 className="text-[18px] sm:text-[20px] font-medium text-gray-900 mt-8 mb-4">How Gobiya builds SEO and pipeline architecture together</h3>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
-          Gobiya treats organic search as a revenue asset, not a reporting service. On the SEO side, our <a href="/services/seo" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">B2B SEO services</a> focus on forensic keyword targeting, conversion-focused content architecture, and CRM-integrated attribution. On the sales side, it includes automated outbound prospecting and pipeline infrastructure built for scale. Search traffic does not produce ranked pages in isolation, it feeds a predictable, measurable B2B revenue engine. For B2B companies that need lead flow without depending entirely on paid advertising or manual outreach, this integrated model is the architecture behind sustainable organic pipeline growth.
-        </p>
-
-        {/* ── SECTION 7 ── */}
-        <h2 id="five-decisions" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
-          The five decisions that separate traffic from revenue
-        </h2>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          The B2B companies that generate predictable revenue from organic search are not the ones with the most content or the highest domain authority. They are the ones that treat SEO as an engineered system aligned to their pipeline architecture, not a visibility program that runs parallel to sales.
-        </p>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          The framework is five decisions made in sequence: diagnose the traffic-to-pipeline gap before building anything; map content to multi-stakeholder buying intent across all three intent layers; target decision-stage keyword clusters that carry pipeline signal; build attribution infrastructure before the first page publishes; and execute a 90-to-365-day roadmap benchmarked against revenue-linked KPIs. These five decisions are structural priorities, every other element of B2B SEO strategy is contextual around them.
-        </p>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
-          Understanding how B2B companies use SEO to generate predictable revenue ultimately comes down to treating organic search as pipeline architecture from day one. If you want to implement this framework with a team that has built it across multiple B2B verticals, partnering with a specialized <a href="/insights/b2b-seo-agency" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">B2B SEO agency</a> like Gobiya ensures both sides of the system are engineered correctly: the organic pipeline engine and the outbound infrastructure that compounds it. The starting point is a forensic audit of where your current program breaks down and what the clearest path to pipeline looks like from there.
-        </p>
-
-        {/* ── INLINE CTA ── */}
-        <div className="bg-gray-900 text-white p-6 sm:p-8 my-10 sm:my-14 flex flex-col sm:flex-row items-start sm:items-center gap-6">
-          <div className="flex-1">
-            <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-2">Gobiya Service</p>
-            <p className="text-[17px] sm:text-[19px] font-medium leading-snug">
-              Establish a predictable organic revenue engine. Work with our B2B growth engineers.
-            </p>
-          </div>
-          <a
-            href="/services/lead-generation"
-            className="group flex items-center bg-[#F26522] hover:bg-[#e05a1a] text-white pl-5 pr-2 py-2 transition-colors duration-300 whitespace-nowrap shrink-0"
-          >
-            <span className="text-[13px] font-medium mr-3">Explore B2B Pipeline Services</span>
-            <div className="w-6 h-6 bg-white flex items-center justify-center">
-              <ArrowRight className="w-3.5 h-3.5 text-[#F26522] transition-transform duration-300 group-hover:-rotate-45" />
-            </div>
-          </a>
-        </div>
+        <h2 id="execution-protocol" className="text-2xl font-semibold text-gray-900 mt-10 mb-4 font-display">6. Technical Execution Protocol</h2>
+        <ul className="list-disc pl-6 mb-8 space-y-3 text-gray-700">
+          <li><strong>Days 1–90 (Technical Foundation)</strong>: Deploy first-touch listener scripts, set up reverse-IP account identifiers, configure custom dimensions in analytics engines, and build schema templates.</li>
+          <li><strong>Days 90–180 (Content Cluster Launch)</strong>: Map keywords to user roles, publish pillar and spoke groupings, verify sitemap coverage, and test hidden UTM inputs on landing page forms.</li>
+          <li><strong>Days 180–365 (Revenue Attribution)</strong>: Integrate CRM pipeline records with GA4 measurement protocols, optimize high-pipeline-yield page nodes, and tune conversion assets.</li>
+        </ul>
 
         {/* ── FAQ SECTION ── */}
-        <h2 id="faqs" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
-          Frequently Asked Questions (FAQ)
-        </h2>
-        <div className="space-y-6 mb-12">
-          <div className="border-b border-gray-200 pb-4">
-            <h3 className="text-[18px] font-semibold text-gray-900 mb-2 font-sans">
-              Why does B2B SEO often fail to connect to revenue?
-            </h3>
-            <p className="text-[16px] text-gray-700 leading-[1.6]">
-              B2B SEO often fails because it optimizes for high-volume informational keywords at the expense of high-intent, decision-stage keywords. This results in researchers visiting the site and leaving, rather than active evaluators converting into MQLs.
+        <h2 id="faqs" className="text-2xl font-semibold text-gray-900 mt-10 mb-4 font-display">7. Frequently Asked Questions</h2>
+        <div className="space-y-6 mb-12 border-t border-gray-200 pt-6">
+          <div>
+            <h4 className="text-[17px] font-semibold text-gray-900 mb-2 font-display">Why does B2B SEO often fail to generate sales pipeline?</h4>
+            <p className="text-gray-700 text-[15px] leading-relaxed">
+              B2B SEO fails because it prioritizes high-volume informational queries (problem diagnosis) rather than low-volume, high-intent commercial modifiers (decision-stage buying).
             </p>
           </div>
-          <div className="border-b border-gray-200 pb-4">
-            <h3 className="text-[18px] font-semibold text-gray-900 mb-2 font-sans">
-              How does a topic cluster map to B2B buying stages?
-            </h3>
-            <p className="text-[16px] text-gray-700 leading-[1.6]">
-              A topic cluster pairs a commercial-intent pillar page (capturing decision-stage buyers) with satellite use-case or integration pages. Mid-funnel searchers are captured by the satellite pages and routed to the pillar page through deliberate internal linking.
+          <div>
+            <h4 className="text-[17px] font-semibold text-gray-900 mb-2 font-display">What is the recommended attribution model for B2B SEO?</h4>
+            <p className="text-gray-700 text-[15px] leading-relaxed">
+              U-shaped attribution is suited for tracking initial discovery, while W-shaped attribution is optimal for multi-month sales cycles as it tracks first touch, lead creation, and opportunity creation within the CRM.
             </p>
           </div>
-          <div className="border-b border-gray-200 pb-4">
-            <h3 className="text-[18px] font-semibold text-gray-900 mb-2 font-sans">
-              Which attribution model is best for long B2B sales cycles?
-            </h3>
-            <p className="text-[16px] text-gray-700 leading-[1.6]">
-              U-shaped attribution is ideal for initiating discovery, while W-shaped is better for multi-month sales cycles as it credits first touch, lead creation, and opportunity creation. Algorithmic or data-driven attribution is the most accurate once sufficient clean event history exists in the CRM.
+          <div>
+            <h4 className="text-[17px] font-semibold text-gray-900 mb-2 font-display">How should keywords be grouped for pipeline value?</h4>
+            <p className="text-gray-700 text-[15px] leading-relaxed">
+              Keywords must be clustered around buying committee stages: comparison/alternative search terms for decision-makers, integrations/use-cases for technical evaluators, and checklists/guides for problem-aware researchers.
             </p>
           </div>
         </div>
@@ -1302,7 +1218,7 @@ const ARTICLES: Record<string, ArticleData> = {
     category: 'GEO',
     readTime: '8 min read',
     date: 'June 3, 2026',
-    image: '/images/llm-company-verification-data-sources.png',
+    image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&q=80',
     heroAlt: 'Sleek high-tech B2B entity verification dashboard with glowing orange nodes connecting LinkedIn, Wikipedia, Crunchbase, and G2 directories in a dark room setting',
     metaDescription: 'Discover how ChatGPT and Claude handle LLM company verification by crawling Wikidata, LinkedIn, and review portals to establish trust.',
     content: (
@@ -1570,7 +1486,7 @@ const ARTICLES: Record<string, ArticleData> = {
     category: 'GEO',
     readTime: '8 min read',
     date: 'June 4, 2026',
-    image: '/images/knowledge-graph-optimization-vs-geo-model.png',
+    image: 'https://images.unsplash.com/photo-1553877522-43269d4ea984?w=1200&q=80',
     heroAlt: 'Sleek high-tech dashboard displaying a side-by-side comparison of Google\'s structured Knowledge Graph entity connections on the left and a multi-engine generative RAG retrieval citation graph on the right, under a dark room setting with glowing orange accents',
     metaDescription: 'Understand how Knowledge Graph optimization differs from GEO, how entity resolution works, and how to secure AI citation visibility.',
     content: (
@@ -1825,7 +1741,7 @@ const ARTICLES: Record<string, ArticleData> = {
     category: 'SEO',
     readTime: '8 min read',
     date: 'May 29, 2026',
-    image: '/images/chatgpt-vs-google-search-conversion-rates.png',
+    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&q=80',
     heroAlt: 'Split comparison screen between Google Search blue links and ChatGPT conversational AI business recommendation',
     metaDescription: 'Comparing ChatGPT vs Google search discovery rates. Learn how to optimize your brand footprint to win both AI summaries and clicks.',
     content: (
@@ -2036,7 +1952,7 @@ const ARTICLES: Record<string, ArticleData> = {
     category: 'SEO',
     readTime: '9 min read',
     date: 'May 29, 2026',
-    image: '/images/manual-action-vs-algorithmic-penalty-checklist.png',
+    image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1200&q=80',
     heroAlt: 'Visual contrast between a human-reviewed Google manual action warning and an automated algorithmic calculation',
     metaDescription: 'Understand manual action vs algorithmic penalty differences, Search Console reports, and step-by-step diagnostic checklists for recovery.',
     content: (
@@ -2337,7 +2253,7 @@ const ARTICLES: Record<string, ArticleData> = {
     category: 'SEO',
     readTime: '10 min read',
     date: 'May 30, 2026',
-    image: '/images/generative-engine-optimization-rag-citations.png',
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80',
     heroAlt: 'A futuristic digital web visualization depicting AI search agents extracting entity citations from a semantic database',
     metaDescription: 'A complete technical guide to Generative Engine Optimization (GEO). Learn how RAG-based AI search engines cite content and how to optimize.',
     content: (
@@ -2531,7 +2447,7 @@ const ARTICLES: Record<string, ArticleData> = {
           <strong>Content publishers and media businesses</strong> face GEO as both an opportunity and an existential question — AI synthesis can reduce click-through even when content is cited, but being the cited source preserves authority and some referral traffic, while being uncited removes the business from the conversation entirely. For publishers, GEO is about preserving relevance as the discovery layer shifts.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
-          <strong>Local and service businesses</strong> face an emerging GEO dimension as consumers ask AI tools for local recommendations, and the engines synthesize answers about which local businesses to consider — a surface most local businesses haven't yet optimized for. For these businesses, optimizing local directories is just as important as <a href="/insights/google-business-profile-optimization" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">Google Business Profile optimization</a>. For businesses targeting regional search markets, integrating these strategies with targeted <a href="/capabilities/seo-discoverability" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">on-page SEO</a> builds the localized entity signals that AI engines seek.
+          <strong>Local and service businesses</strong> face an emerging GEO dimension as consumers ask AI tools for local recommendations, and the engines synthesize answers about which local businesses to consider — a surface most local businesses haven't yet optimized for. For these businesses, optimizing local directories is just as important as <a href="/insights/google-business-profile-optimization" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">Google Business Profile optimization</a>. For businesses targeting regional search markets, integrating these strategies with targeted <a href="/capabilities/seo-discoverability-agency/" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">on-page SEO</a> builds the localized entity signals that AI engines seek.
         </p>
 
         {/* ── SECTION 9: What getting started with GEO actually looks like ── */}
@@ -2617,7 +2533,7 @@ const ARTICLES: Record<string, ArticleData> = {
     category: 'SEO',
     readTime: '10 min read',
     date: 'May 27, 2026',
-    image: '/images/google-manual-action-removal-recovery-checklist.png',
+    image: 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1200&q=80',
     heroAlt: 'Abstract representation of a Google penalty disrupting a B2B data pipeline',
     metaDescription: 'Use our Google manual action removal checklist to audit link profiles, document cleanup, and submit a successful reconsideration appeal.',
     content: (
@@ -2891,7 +2807,7 @@ const ARTICLES: Record<string, ArticleData> = {
     category: 'Strategy',
     readTime: '12 min read',
     date: 'May 25, 2026',
-    image: '/images/b2b-sales-pipeline-automation-citation-share.png',
+    image: 'https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=1200&q=80',
     heroAlt: 'Abstract data-flow visualization representing an automated B2B sales pipeline powered by AI-driven SEO',
     metaDescription: 'Integrate B2B sales pipeline automation with search intent. Learn how AI citation share decides who gets on the buyer shortlist.',
     content: (
@@ -3270,7 +3186,7 @@ const ARTICLES: Record<string, ArticleData> = {
     category: 'Strategy',
     readTime: '13 min read',
     date: 'May 25, 2026',
-    image: '/images/automated-lead-generation-intent-mapping-chart.png',
+    image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=80',
     heroAlt: 'Glowing geometric funnel with orange data-flow nodes representing AI-driven automated lead generation SEO',
     metaDescription: 'Set up automated lead generation by mapping high-intent search clusters to your B2B pipeline to drive closed sales, not just page views.',
     content: (
@@ -3643,7 +3559,7 @@ const ARTICLES: Record<string, ArticleData> = {
     category: 'Strategy',
     readTime: '12 min read',
     date: 'May 25, 2026',
-    image: '/images/outbound-seo-prospecting-intent-signals.png',
+    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&q=80',
     heroAlt: 'Abstract network visualization representing signal-anchored outbound SEO prospecting',
     metaDescription: 'Use outbound SEO prospecting to monitor search intent triggers. Learn how to pitch buyers at the exact moment they search for your service.',
     content: (
@@ -3950,7 +3866,7 @@ const ARTICLES: Record<string, ArticleData> = {
     category: 'Strategy',
     readTime: '13 min read',
     date: 'May 25, 2026',
-    image: '/images/b2b-sales-pipeline-automation-outreach.png',
+    image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&q=80',
     heroAlt: 'Abstract network visualization representing B2B sales pipeline automation signal flow',
     metaDescription: 'Configure B2B sales pipeline automation workflows. Learn how to connect search intent, lead data enrichment, and automated email campaigns.',
     content: (
@@ -4214,7 +4130,7 @@ const ARTICLES: Record<string, ArticleData> = {
     category: 'Strategy',
     readTime: '11 min read',
     date: 'May 25, 2026',
-    image: '/images/best-seo-agency-for-b2b-checklist.png',
+    image: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?w=1200&q=80',
     heroAlt: 'Abstract glowing data-flow nodes representing a premium B2B SEO agency with glassmorphism elements',
     metaDescription: 'How to select the best SEO agency for B2B brands. Follow our evaluation checklist to verify technical authority, case studies, and contracts.',
     content: (
@@ -4418,7 +4334,7 @@ const ARTICLES: Record<string, ArticleData> = {
     category: 'Strategy',
     readTime: '14 min read',
     date: 'May 25, 2026',
-    image: '/images/seo-for-b2b-lead-generation-committee-structure.png',
+    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80',
     heroAlt: 'Abstract network of interconnected glowing nodes representing B2B buying committee stakeholders with glassmorphism panels',
     metaDescription: 'Optimize SEO for B2B lead generation by mapping content to the buying committee stakeholders to increase deal velocity and close rates.',
     content: (
@@ -4705,7 +4621,7 @@ const ARTICLES: Record<string, ArticleData> = {
     category: 'Local SEO',
     readTime: '13 min read',
     date: 'May 26, 2026',
-    image: '/images/local-seo-service-maps-performance.png',
+    image: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200&q=80',
     heroAlt: 'Aerial night view of cityscape with glowing orange data network lines connecting business districts',
     metaDescription: 'Deploy an advanced local SEO strategy to dominate the Google 3-Pack, optimize schema markup, and capture geographic searches.',
     content: (
@@ -4906,7 +4822,7 @@ const ARTICLES: Record<string, ArticleData> = {
     category: 'Local SEO',
     readTime: '10 min read',
     date: 'May 27, 2026',
-    image: '/images/article-local-seo-explained.png',
+    image: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=1200&q=80',
     heroAlt: 'Minimalist digital illustration of a city map grid with glowing orange nodes representing local SEO connections',
     metaDescription: 'Our local SEO explained guide shows how to run weekly optimizations, review acquisitions, and local profile updates to secure Map Pack dominance.',
     content: (
@@ -5153,7 +5069,7 @@ const ARTICLES: Record<string, ArticleData> = {
     category: 'Local SEO',
     readTime: '12 min read',
     date: 'May 27, 2026',
-    image: '/images/multi-location-seo-structure-url-hierarchy.png',
+    image: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1200&q=80',
     heroAlt: 'Minimalist digital illustration of a multi-location website hierarchical grid network. Centered brand node branches out into multiple location nodes with glowing orange lines',
     metaDescription: 'Learn to structure a multi-location SEO website structure that prevents cannibalization, consolidates link equity, and ranks every city page.',
     content: (
@@ -5399,7 +5315,7 @@ const ARTICLES: Record<string, ArticleData> = {
     category: 'Local SEO',
     readTime: '14 min read',
     date: 'May 28, 2026',
-    image: '/images/website-structure-for-multiple-locations-setup.png',
+    image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&q=80',
     heroAlt: 'Stylized US map with glowing orange network lines connecting city nodes to a single root domain — illustrating single-domain authority consolidation for multi-city businesses',
     metaDescription: 'Our guide details the best website structure multiple locations setup. Compare subdirectory vs subdomain hierarchies for localized organic growth.',
     content: (
@@ -5785,7 +5701,7 @@ const ARTICLES: Record<string, ArticleData> = {
     category: 'SEO',
     readTime: '15 min read',
     date: 'May 28, 2026',
-    image: '/images/google-core-update-recovery-traffic-charts.png',
+    image: 'https://images.unsplash.com/photo-1553877522-43269d4ea984?w=1200&q=80',
     heroAlt: 'Lifelike view of a dark-themed developer workstation with graphs on screen showing a steep drop and recovery, styled with concrete walls and glowing orange lights in a Gobiya styled workspace',
     metaDescription: 'Our Google core update recovery guide details the timeline, content pruning strategies, and quality updates needed to restore search traffic.',
     content: (
@@ -6060,7 +5976,7 @@ const ARTICLES: Record<string, ArticleData> = {
     category: 'Local SEO',
     readTime: '16 min read',
     date: 'May 28, 2026',
-    image: '/images/google-business-profile-optimization-visibility.png',
+    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&q=80',
     heroAlt: 'Abstract premium illustration of a Google Business Profile card with warning indicators, data overlay grids, and ascending traffic restoration lines in orange and black',
     metaDescription: 'Learn our Google Business Profile optimization checklist to recover suspended profiles, appeal algorithmic soft bans, and verify map listings.',
     content: (
@@ -6381,7 +6297,7 @@ const ARTICLES: Record<string, ArticleData> = {
     category: 'Strategy',
     readTime: '12 min read',
     date: 'May 27, 2026',
-    image: '/images/b2b-seo-agency-funnel-strategy-session.png',
+    image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1200&q=80',
     heroAlt: 'Minimalist digital illustration of a B2B organic pipeline with a central brand node connecting to multiple buying committee stakeholders represented by clean geometric icons and orange glowing lines',
     metaDescription: 'Partner with a B2B SEO agency built around pipeline value, not just search volume. Verify our committee mapping and conversion playbooks.',
     content: (
@@ -6613,7 +6529,7 @@ const ARTICLES: Record<string, ArticleData> = {
     category: 'SEO',
     readTime: '12 min read',
     date: 'May 31, 2026',
-    image: '/images/seo-case-study-traffic-recovery-growth.png',
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80',
     heroAlt: 'Forensic SEO case study showing Google Search Console organic traffic data recovering and climbing to 320 percent after a core algorithm update',
     metaDescription: 'A forensic SEO case study on traffic recovery after Google\'s March 2026 dual-update event. Learn the exact 12-week diagnostic sequence and fix order Gobiya used.',
     content: (
@@ -6891,7 +6807,7 @@ const ARTICLES: Record<string, ArticleData> = {
     category: 'GEO',
     readTime: '10 min read',
     date: 'June 4, 2026',
-    image: '/images/ai-search-engines-scraping-html-data-comparison.png',
+    image: 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1200&q=80',
     heroAlt: 'Technical diagram showing AI crawlers like GPTBot and Claude-SearchBot downloading public server-rendered HTML text blocks while bypassing client-side JavaScript API calls',
     metaDescription: 'Understand how AI search scraping works. Learn why AI crawlers bypass JavaScript APIs and read raw public HTML blocks instead.',
     content: (
@@ -7115,7 +7031,7 @@ const ARTICLES: Record<string, ArticleData> = {
     category: 'Knowledge Graph Intelligence',
     readTime: '12 min read',
     date: 'June 10, 2026',
-    image: '/images/article-brand-entity-extraction-perception-drift.webp',
+    image: 'https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=1200&q=80',
     heroAlt: 'A marketing executive studies a glowing knowledge graph visualization on a large curved monitor inside a modern Los Angeles agency office, with interconnected orange and white nodes representing Google, Bing, Wikidata, ChatGPT, and Claude',
     metaDescription: 'How brand entity extraction works across Google, Bing, Wikidata, and LLM knowledge graphs — and how to detect and correct perception drift before it costs you AI citations.',
     content: (
@@ -7355,7 +7271,7 @@ const ARTICLES: Record<string, ArticleData> = {
         <div className="my-10 sm:my-14">
           <div className="w-full aspect-[16/9] overflow-hidden border border-gray-200 rounded-lg shadow-sm">
             <img
-              src="/images/article-brand-entity-drift-audit-secondary.webp"
+              src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=80"
               alt="Two professionals reviewing a brand entity audit dashboard showing drift between declared and graph-stored values for category, services, location and leadership attributes"
               className="w-full h-full object-cover object-center"
               loading="lazy"
@@ -7530,7 +7446,7 @@ const ARTICLES: Record<string, ArticleData> = {
     category: 'Local SEO',
     readTime: '11 min read',
     date: 'June 7, 2026',
-    image: '/images/article-dental-seo-agency.png',
+    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&q=80',
     heroAlt: 'A professional, lifelike photo of a modern dental marketing and growth engineering meeting reviewing a glowing organic SEO traffic and patient pipeline dashboard',
     metaDescription: 'Avoid costly hiring mistakes. Use our comprehensive evaluation checklist for dental SEO agencies, covering contract traps, KPIs, and case study audits.',
     content: (
@@ -7871,19 +7787,19 @@ const RELATED_ARTICLES_MAP: Record<string, { href: string; category: string; tit
       href: '/insights/multi-location-seo-website-structure',
       category: 'Local SEO',
       title: 'Multi-Location SEO Website Structure: SUBDIRECTORY vs SUBDOMAIN vs Multi-Domain',
-      image: '/images/article-multi-location-seo-website-structure.webp',
+      image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&q=80',
     },
     {
       href: '/insights/best-website-structure-multiple-locations-different-cities',
       category: 'Local SEO',
       title: 'Best Website Structure for Multiple Locations in Different Cities',
-      image: '/images/article-multi-city-website-structure.webp',
+      image: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?w=1200&q=80',
     },
     {
       href: '/insights/local-seo-explained',
       category: 'Local SEO',
       title: 'Local SEO Explained: How to Optimize Your Google Business Profile',
-      image: '/images/article-local-seo-explained.png',
+      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80',
     }
   ],
   'how-to-apply-behavioral-psychology-principles-to-high-ticket-b2b-landing-page-wireframes-to-decrease-friction': [
@@ -7891,19 +7807,19 @@ const RELATED_ARTICLES_MAP: Record<string, { href: string; category: string; tit
       href: '/insights/seo-for-b2b-lead-generation',
       category: 'Strategy',
       title: 'SEO for B2B Lead Generation: Complete Strategy',
-      image: '/images/article-seo-b2b-lead-generation.webp',
+      image: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200&q=80',
     },
     {
       href: '/insights/b2b-sales-pipeline-automation',
       category: 'Strategy',
       title: 'B2B Sales Pipeline Automation Guide',
-      image: '/images/article-b2b-sales-pipeline-automation.webp',
+      image: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=1200&q=80',
     },
     {
       href: '/insights/best-seo-agency-for-b2b-brands',
       category: 'Strategy',
       title: 'How to Choose the Best B2B SEO Agency',
-      image: '/images/article-best-seo-agency.webp',
+      image: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1200&q=80',
     }
   ],
   'gobiya-vs-enterprise-seo-agencies': [
@@ -7911,19 +7827,19 @@ const RELATED_ARTICLES_MAP: Record<string, { href: string; category: string; tit
       href: '/insights/best-seo-agency-for-b2b-brands',
       category: 'Strategy',
       title: 'Choose the Right B2B SEO Agency in 2026',
-      image: '/images/article-best-seo-agency.png',
+      image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&q=80',
     },
     {
       href: '/insights/how-do-b2b-companies-use-seo-to-generate-predictable-revenue',
       category: 'Strategy',
       title: 'How B2B Companies Use SEO to Generate Predictable Revenue',
-      image: '/images/article-how-do-b2b-companies-use-seo-to-generate-predictable-revenue.webp',
+      image: 'https://images.unsplash.com/photo-1553877522-43269d4ea984?w=1200&q=80',
     },
     {
       href: '/services/geo-optimization',
       category: 'GEO',
       title: 'Generative Engine Optimization: Be Cited by AI',
-      image: '/images/article-ai-seo-2024.webp',
+      image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&q=80',
     },
   ],
 
@@ -7932,19 +7848,19 @@ const RELATED_ARTICLES_MAP: Record<string, { href: string; category: string; tit
       href: '/insights/automated-b2b-sales-pipeline-seo',
       category: 'Strategy',
       title: 'Automated B2B Sales Pipeline SEO: How AI Citations Shape Your Shortlist in 2026',
-      image: '/images/article-b2b-pipeline-seo.png',
+      image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1200&q=80',
     },
     {
       href: '/insights/b2b-organic-traffic-growth',
       category: 'Strategy',
       title: 'B2B Organic Traffic Growth: Why Traffic and Pipeline Decoupled in 2026',
-      image: '/images/article-b2b-organic-traffic-growth.webp',
+      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80',
     },
     {
       href: '/insights/seo-for-b2b-lead-generation',
       category: 'Strategy',
       title: 'SEO for B2B Lead Generation: How Committee-Architecture Content Outperforms Single-Persona Funnels',
-      image: '/images/article-seo-b2b-lead-generation.png',
+      image: 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1200&q=80',
     },
   ],
 
@@ -7953,19 +7869,19 @@ const RELATED_ARTICLES_MAP: Record<string, { href: string; category: string; tit
       href: '/insights/automated-lead-generation-seo',
       category: 'Strategy',
       title: 'Automated Lead Generation SEO: How AI Pre-Qualifies Your Pipeline in 2026',
-      image: '/images/article-lead-gen-seo.png',
+      image: 'https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=1200&q=80',
     },
     {
       href: '/insights/outbound-seo-prospecting',
       category: 'Strategy',
       title: 'Outbound SEO Prospecting: Timing-Anchored Outreach Powered by Intent Signals in 2026',
-      image: '/images/article-outbound-seo-prospecting.png',
+      image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=80',
     },
     {
       href: '/insights/best-seo-agency-for-b2b-brands',
       category: 'Strategy',
       title: 'How to Choose the Best SEO Agency for B2B Brands in 2026',
-      image: '/images/article-best-seo-agency.png',
+      image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&q=80',
     },
   ],
   'automated-lead-generation-seo': [
@@ -7973,19 +7889,19 @@ const RELATED_ARTICLES_MAP: Record<string, { href: string; category: string; tit
       href: '/insights/automated-b2b-sales-pipeline-seo',
       category: 'Strategy',
       title: 'Automated B2B Sales Pipeline SEO: How AI Citations Shape Your Shortlist in 2026',
-      image: '/images/article-b2b-pipeline-seo.png',
+      image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&q=80',
     },
     {
       href: '/insights/outbound-seo-prospecting',
       category: 'Strategy',
       title: 'Outbound SEO Prospecting: Timing-Anchored Outreach Powered by Intent Signals in 2026',
-      image: '/images/article-outbound-seo-prospecting.png',
+      image: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?w=1200&q=80',
     },
     {
       href: '/insights/seo-for-b2b-lead-generation',
       category: 'Strategy',
       title: 'SEO for B2B Lead Generation: How Committee-Architecture Content Outperforms Single-Persona Funnels',
-      image: '/images/article-seo-b2b-lead-generation.png',
+      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80',
     },
   ],
   'outbound-seo-prospecting': [
@@ -7993,19 +7909,19 @@ const RELATED_ARTICLES_MAP: Record<string, { href: string; category: string; tit
       href: '/insights/b2b-seo-agency',
       category: 'Strategy',
       title: 'B2B SEO Agency Explained: Choosing the Right Revenue Partner',
-      image: '/images/article-b2b-seo-agency.webp',
+      image: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200&q=80',
     },
     {
       href: '/insights/automated-lead-generation-seo',
       category: 'Strategy',
       title: 'Automated Lead Generation SEO: How AI Pre-Qualifies Your Pipeline in 2026',
-      image: '/images/article-lead-gen-seo.png',
+      image: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=1200&q=80',
     },
     {
       href: '/insights/b2b-sales-pipeline-automation',
       category: 'Strategy',
       title: 'B2B Sales Pipeline Automation: The Orchestration Layer for AI-Driven Revenue',
-      image: '/images/article-b2b-sales-pipeline-automation.png',
+      image: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1200&q=80',
     },
   ],
   'b2b-sales-pipeline-automation': [
@@ -8013,19 +7929,19 @@ const RELATED_ARTICLES_MAP: Record<string, { href: string; category: string; tit
       href: '/insights/automated-b2b-sales-pipeline-seo',
       category: 'Strategy',
       title: 'Automated B2B Sales Pipeline SEO: How AI Citations Shape Your Shortlist in 2026',
-      image: '/images/article-b2b-pipeline-seo.png',
+      image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&q=80',
     },
     {
       href: '/insights/best-seo-agency-for-b2b-brands',
       category: 'Strategy',
       title: 'How to Choose the Best SEO Agency for B2B Brands in 2026',
-      image: '/images/article-best-seo-agency.png',
+      image: 'https://images.unsplash.com/photo-1553877522-43269d4ea984?w=1200&q=80',
     },
     {
       href: '/insights/outbound-seo-prospecting',
       category: 'Strategy',
       title: 'Outbound SEO Prospecting: Timing-Anchored Outreach Powered by Intent Signals in 2026',
-      image: '/images/article-outbound-seo-prospecting.png',
+      image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&q=80',
     },
   ],
 
@@ -8034,19 +7950,19 @@ const RELATED_ARTICLES_MAP: Record<string, { href: string; category: string; tit
       href: '/insights/automated-b2b-sales-pipeline-seo',
       category: 'Strategy',
       title: 'Automated B2B Sales Pipeline SEO: How AI Citations Shape Your Shortlist in 2026',
-      image: '/images/article-b2b-pipeline-seo.png',
+      image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1200&q=80',
     },
     {
       href: '/insights/automated-lead-generation-seo',
       category: 'Strategy',
       title: 'Automated Lead Generation SEO: How AI Pre-Qualifies Your Pipeline in 2026',
-      image: '/images/article-lead-gen-seo.png',
+      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80',
     },
     {
       href: '/insights/b2b-seo-agency',
       category: 'Strategy',
       title: 'B2B SEO Agency Explained: Choosing the Right Revenue Partner',
-      image: '/images/article-b2b-seo-agency.webp',
+      image: 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1200&q=80',
     },
   ],
 
@@ -8055,19 +7971,19 @@ const RELATED_ARTICLES_MAP: Record<string, { href: string; category: string; tit
       href: '/insights/automated-b2b-sales-pipeline-seo',
       category: 'Strategy',
       title: 'Automated B2B Sales Pipeline SEO: How AI Citations Shape Your Shortlist in 2026',
-      image: '/images/article-b2b-pipeline-seo.png',
+      image: 'https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=1200&q=80',
     },
     {
       href: '/insights/b2b-seo-agency',
       category: 'Strategy',
       title: 'B2B SEO Agency Explained: Choosing the Right Revenue Partner',
-      image: '/images/article-b2b-seo-agency.webp',
+      image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=80',
     },
     {
       href: '/insights/best-seo-agency-for-b2b-brands',
       category: 'Strategy',
       title: 'How to Choose the Best SEO Agency for B2B Brands in 2026',
-      image: '/images/article-best-seo-agency.png',
+      image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&q=80',
     },
   ],
 
@@ -8078,19 +7994,19 @@ const RELATED_ARTICLES_MAP: Record<string, { href: string; category: string; tit
       href: '/insights/seo-for-b2b-lead-generation',
       category: 'Strategy',
       title: 'SEO for B2B Lead Generation: How Committee-Architecture Content Outperforms Single-Persona Funnels',
-      image: '/images/article-seo-b2b-lead-generation.png',
+      image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&q=80',
     },
     {
       href: '/insights/b2b-seo-agency',
       category: 'Strategy',
       title: 'B2B SEO Agency Explained: Choosing the Right Revenue Partner',
-      image: '/images/article-b2b-seo-agency.webp',
+      image: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?w=1200&q=80',
     },
     {
       href: '/insights/best-seo-agency-for-b2b-brands',
       category: 'Strategy',
       title: 'How to Choose the Best SEO Agency for B2B Brands in 2026',
-      image: '/images/article-best-seo-agency.png',
+      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80',
     },
   ],
 
@@ -8099,19 +8015,19 @@ const RELATED_ARTICLES_MAP: Record<string, { href: string; category: string; tit
       href: '/insights/best-seo-agency-for-b2b-brands',
       category: 'Strategy',
       title: 'How to Choose the Best SEO Agency for B2B Brands in 2026',
-      image: '/images/article-best-seo-agency.png',
+      image: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200&q=80',
     },
     {
       href: '/insights/seo-for-b2b-lead-generation',
       category: 'Strategy',
       title: 'SEO for B2B Lead Generation: How Committee-Architecture Content Outperforms Single-Persona Funnels',
-      image: '/images/article-seo-b2b-lead-generation.png',
+      image: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=1200&q=80',
     },
     {
       href: '/insights/b2b-organic-traffic-growth',
       category: 'Strategy',
       title: 'B2B Organic Traffic Growth: Why Traffic and Pipeline Decoupled in 2026',
-      image: '/images/article-b2b-organic-traffic-growth.webp',
+      image: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1200&q=80',
     },
   ],
 
@@ -8120,19 +8036,19 @@ const RELATED_ARTICLES_MAP: Record<string, { href: string; category: string; tit
       href: '/insights/b2b-seo-agency',
       category: 'Strategy',
       title: 'B2B SEO Agency Explained: Choosing the Right Revenue Partner',
-      image: '/images/article-b2b-seo-agency.webp',
+      image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&q=80',
     },
     {
       href: '/insights/local-seo-explained',
       category: 'Local SEO',
       title: 'Local SEO Explained: The Operational Cadence Required for Search Dominance',
-      image: '/images/article-local-seo-explained.png',
+      image: 'https://images.unsplash.com/photo-1553877522-43269d4ea984?w=1200&q=80',
     },
     {
       href: '/insights/multi-location-seo-website-structure',
       category: 'Local SEO',
       title: 'Multi-Location SEO Website Structure Explained: Architecting for Search Dominance',
-      image: '/images/article-multi-location-seo-website-structure.webp',
+      image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&q=80',
     },
   ],
 
@@ -8141,19 +8057,19 @@ const RELATED_ARTICLES_MAP: Record<string, { href: string; category: string; tit
       href: '/insights/local-seo',
       category: 'Local SEO',
       title: 'Local SEO: How the 2026 Algorithm and AI Layer Determine Who Gets Found',
-      image: '/images/article-local-seo-los-angeles.png',
+      image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1200&q=80',
     },
     {
       href: '/insights/b2b-seo-agency',
       category: 'Strategy',
       title: 'B2B SEO Agency Explained: Choosing the Right Revenue Partner',
-      image: '/images/article-b2b-seo-agency.webp',
+      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80',
     },
     {
       href: '/insights/multi-location-seo-website-structure',
       category: 'Local SEO',
       title: 'Multi-Location SEO Website Structure Explained: Architecting for Search Dominance',
-      image: '/images/article-multi-location-seo-website-structure.webp',
+      image: 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1200&q=80',
     },
   ],
 
@@ -8162,19 +8078,19 @@ const RELATED_ARTICLES_MAP: Record<string, { href: string; category: string; tit
       href: '/insights/google-business-profile-optimization',
       category: 'Local SEO',
       title: 'Google Business Profile Optimization for Traffic Recovery Explained',
-      image: '/images/article-google-business-profile-optimization.webp',
+      image: 'https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=1200&q=80',
     },
     {
       href: '/insights/local-seo-explained',
       category: 'Local SEO',
       title: 'Local SEO Explained: The Operational Cadence Required for Search Dominance',
-      image: '/images/article-local-seo-explained.png',
+      image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=80',
     },
     {
       href: '/insights/best-website-structure-multiple-locations-different-cities',
       category: 'Local SEO',
       title: 'What Is the Best Website Structure for a Business With Multiple Locations in Different Cities?',
-      image: '/images/article-multi-city-website-structure.webp',
+      image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&q=80',
     },
   ],
 
@@ -8183,19 +8099,19 @@ const RELATED_ARTICLES_MAP: Record<string, { href: string; category: string; tit
       href: '/insights/multi-location-seo-website-structure',
       category: 'Local SEO',
       title: 'Multi-Location SEO Website Structure Explained: Architecting for Search Dominance',
-      image: '/images/article-multi-location-seo-website-structure.webp',
+      image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&q=80',
     },
     {
       href: '/insights/google-business-profile-optimization',
       category: 'Local SEO',
       title: 'Google Business Profile Optimization for Traffic Recovery Explained',
-      image: '/images/article-google-business-profile-optimization.webp',
+      image: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?w=1200&q=80',
     },
     {
       href: '/insights/local-seo-explained',
       category: 'Local SEO',
       title: 'Local SEO Explained: The Operational Cadence Required for Search Dominance',
-      image: '/images/article-local-seo-explained.png',
+      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80',
     },
   ],
 
@@ -8204,19 +8120,19 @@ const RELATED_ARTICLES_MAP: Record<string, { href: string; category: string; tit
       href: '/insights/can-a-site-fully-recover-from-a-google-core-update',
       category: 'SEO',
       title: 'Can a Site Fully Recover From a Google Core Update?',
-      image: '/images/article-can-a-site-fully-recover-from-a-google-core-update.webp',
+      image: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200&q=80',
     },
     {
       href: '/insights/multi-location-seo-website-structure',
       category: 'Local SEO',
       title: 'Multi-Location SEO Website Structure Explained: Architecting for Search Dominance',
-      image: '/images/article-multi-location-seo-website-structure.webp',
+      image: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=1200&q=80',
     },
     {
       href: '/insights/best-website-structure-multiple-locations-different-cities',
       category: 'Local SEO',
       title: 'What Is the Best Website Structure for a Business With Multiple Locations in Different Cities?',
-      image: '/images/article-multi-city-website-structure.webp',
+      image: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1200&q=80',
     },
   ],
 
@@ -8225,19 +8141,19 @@ const RELATED_ARTICLES_MAP: Record<string, { href: string; category: string; tit
       href: '/insights/google-manual-action-removal-agency-caused-penalty',
       category: 'SEO',
       title: 'Google Manual Action Removal When Your Agency Caused the Scaled Content Abuse Penalty',
-      image: '/images/article-agency-penalty.png',
+      image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&q=80',
     },
     {
       href: '/insights/can-a-site-fully-recover-from-a-google-core-update',
       category: 'SEO',
       title: 'Can a Site Fully Recover From a Google Core Update?',
-      image: '/images/article-can-a-site-fully-recover-from-a-google-core-update.webp',
+      image: 'https://images.unsplash.com/photo-1553877522-43269d4ea984?w=1200&q=80',
     },
     {
       href: '/insights/google-business-profile-optimization',
       category: 'Local SEO',
       title: 'Google Business Profile Optimization for Traffic Recovery Explained',
-      image: '/images/article-google-business-profile-optimization.webp',
+      image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&q=80',
     },
   ],
 
@@ -8246,19 +8162,19 @@ const RELATED_ARTICLES_MAP: Record<string, { href: string; category: string; tit
       href: '/insights/chatgpt-vs-google-for-business-discovery',
       category: 'SEO',
       title: 'ChatGPT vs Google for Business Discovery: What You Must Know',
-      image: '/images/article-chatgpt-vs-google-for-business-discovery.webp',
+      image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1200&q=80',
     },
     {
       href: '/insights/what-data-sources-do-llms-crawl-to-verify-b2b-company-information',
       category: 'GEO',
       title: 'What Data Sources Do LLMs Crawl to Verify B2B Company Information?',
-      image: '/images/article-what-data-sources-do-llms-crawl-to-verify-b2b-company-information.webp',
+      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80',
     },
     {
       href: '/insights/what-is-the-difference-between-google-knowledge-graph-optimization-and-geo',
       category: 'GEO',
       title: 'What Is the Difference Between Google Knowledge Graph Optimization and GEO?',
-      image: '/images/article-what-is-the-difference-between-google-knowledge-graph-optimization-and-geo.webp',
+      image: 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1200&q=80',
     },
   ],
 
@@ -8267,19 +8183,19 @@ const RELATED_ARTICLES_MAP: Record<string, { href: string; category: string; tit
       href: '/insights/chatgpt-vs-google-for-business-discovery',
       category: 'SEO',
       title: 'ChatGPT vs Google for Business Discovery: What You Must Know',
-      image: '/images/article-chatgpt-vs-google-for-business-discovery.webp',
+      image: 'https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=1200&q=80',
     },
     {
       href: '/insights/what-is-generative-engine-optimization-and-how-does-it-work',
       category: 'GEO',
       title: 'What is Generative Engine Optimization and How Does it Work?',
-      image: '/images/article-generative-engine-opt.png',
+      image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=80',
     },
     {
       href: '/insights/what-is-the-difference-between-google-knowledge-graph-optimization-and-geo',
       category: 'GEO',
       title: 'What Is the Difference Between Google Knowledge Graph Optimization and GEO?',
-      image: '/images/article-what-is-the-difference-between-google-knowledge-graph-optimization-and-geo.webp',
+      image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&q=80',
     },
   ],
 
@@ -8288,19 +8204,19 @@ const RELATED_ARTICLES_MAP: Record<string, { href: string; category: string; tit
       href: '/insights/what-is-generative-engine-optimization-and-how-does-it-work',
       category: 'GEO',
       title: 'What is Generative Engine Optimization and How Does it Work?',
-      image: '/images/article-generative-engine-opt.png',
+      image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&q=80',
     },
     {
       href: '/insights/what-data-sources-do-llms-crawl-to-verify-b2b-company-information',
       category: 'GEO',
       title: 'What Data Sources Do LLMs Crawl to Verify B2B Company Information?',
-      image: '/images/article-what-data-sources-do-llms-crawl-to-verify-b2b-company-information.webp',
+      image: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?w=1200&q=80',
     },
     {
       href: '/insights/chatgpt-vs-google-for-business-discovery',
       category: 'SEO',
       title: 'ChatGPT vs Google for Business Discovery: What You Must Know',
-      image: '/images/article-chatgpt-vs-google-for-business-discovery.webp',
+      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80',
     },
   ],
 
@@ -8309,19 +8225,19 @@ const RELATED_ARTICLES_MAP: Record<string, { href: string; category: string; tit
       href: '/insights/google-manual-action-removal-agency-caused-penalty',
       category: 'SEO',
       title: 'Google Manual Action Removal When Your Agency Caused the Scaled Content Abuse Penalty',
-      image: '/images/article-agency-penalty.png',
+      image: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200&q=80',
     },
     {
       href: '/insights/google-business-profile-optimization',
       category: 'Local SEO',
       title: 'Google Business Profile Optimization for Traffic Recovery Explained',
-      image: '/images/article-google-business-profile-optimization.webp',
+      image: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=1200&q=80',
     },
     {
       href: '/insights/b2b-organic-traffic-growth',
       category: 'Strategy',
       title: 'B2B Organic Traffic Growth: Why Traffic and Pipeline Decoupled in 2026',
-      image: '/images/article-b2b-organic-traffic-growth.webp',
+      image: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1200&q=80',
     },
   ],
 
@@ -8330,19 +8246,19 @@ const RELATED_ARTICLES_MAP: Record<string, { href: string; category: string; tit
       href: '/insights/what-data-sources-do-llms-crawl-to-verify-b2b-company-information',
       category: 'GEO',
       title: 'What Data Sources Do LLMs Crawl to Verify B2B Company Information?',
-      image: '/images/article-what-data-sources-do-llms-crawl-to-verify-b2b-company-information.webp',
+      image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&q=80',
     },
     {
       href: '/insights/can-a-site-fully-recover-from-a-google-core-update',
       category: 'SEO',
       title: 'Can a Site Fully Recover From a Google Core Update?',
-      image: '/images/article-can-a-site-fully-recover-from-a-google-core-update.webp',
+      image: 'https://images.unsplash.com/photo-1553877522-43269d4ea984?w=1200&q=80',
     },
     {
       href: '/insights/b2b-organic-traffic-growth',
       category: 'Strategy',
       title: 'B2B Organic Traffic Growth: Why Traffic and Pipeline Decoupled in 2026',
-      image: '/images/article-b2b-organic-traffic-growth.webp',
+      image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&q=80',
     },
   ],
   'seo-case-study-traffic-recovery': [
@@ -8350,19 +8266,19 @@ const RELATED_ARTICLES_MAP: Record<string, { href: string; category: string; tit
       href: '/insights/can-a-site-fully-recover-from-a-google-core-update',
       category: 'SEO',
       title: 'Can a Site Fully Recover From a Google Core Update?',
-      image: '/images/article-can-a-site-fully-recover-from-a-google-core-update.webp',
+      image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1200&q=80',
     },
     {
       href: '/insights/google-business-profile-optimization',
       category: 'SEO',
       title: 'Google Business Profile Optimization for Traffic Recovery Explained',
-      image: '/images/article-google-business-profile-optimization.webp',
+      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80',
     },
     {
       href: '/insights/what-is-the-difference-between-a-manual-action-and-an-algorithmic-penalty',
       category: 'SEO',
       title: 'What Is the Difference Between a Manual Action and an Algorithmic Penalty?',
-      image: '/images/article-algorithmic-penalty.png',
+      image: 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1200&q=80',
     },
   ],
   'are-ai-search-engines-scraping-hidden-api-data-or-public-html-text-blocks': [
@@ -8370,19 +8286,19 @@ const RELATED_ARTICLES_MAP: Record<string, { href: string; category: string; tit
       href: '/insights/what-is-generative-engine-optimization-and-how-does-it-work',
       category: 'GEO',
       title: 'What is Generative Engine Optimization and How Does it Work?',
-      image: '/images/article-generative-engine-opt.png',
+      image: 'https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=1200&q=80',
     },
     {
       href: '/insights/what-data-sources-do-llms-crawl-to-verify-b2b-company-information',
       category: 'GEO',
       title: 'What Data Sources Do LLMs Crawl to Verify B2B Company Information?',
-      image: '/images/article-what-data-sources-do-llms-crawl-to-verify-b2b-company-information.webp',
+      image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=80',
     },
     {
       href: '/insights/chatgpt-vs-google-for-business-discovery',
       category: 'SEO',
       title: 'ChatGPT vs Google for Business Discovery: What You Must Know',
-      image: '/images/article-chatgpt-vs-google-for-business-discovery.webp',
+      image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&q=80',
     },
   ],
   'brand-entity-extraction-perception-drift': [
@@ -8390,19 +8306,19 @@ const RELATED_ARTICLES_MAP: Record<string, { href: string; category: string; tit
       href: '/insights/what-is-the-difference-between-google-knowledge-graph-optimization-and-geo',
       category: 'GEO',
       title: 'Knowledge Graph Optimization vs GEO: Understanding the Difference',
-      image: '/images/article-knowledge-graph-vs-geo.webp',
+      image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&q=80',
     },
     {
       href: '/insights/what-data-sources-do-llms-crawl-to-verify-b2b-company-information',
       category: 'GEO',
       title: 'LLM Company Verification: What Data Sources Do AI Bots Crawl?',
-      image: '/images/llm-company-verification-data-sources.png',
+      image: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?w=1200&q=80',
     },
     {
       href: '/insights/what-is-generative-engine-optimization-and-how-does-it-work',
       category: 'GEO',
       title: 'What Is Generative Engine Optimization and How Does It Work?',
-      image: '/images/article-what-is-geo.webp',
+      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80',
     },
   ],
 
@@ -8412,19 +8328,19 @@ const RELATED_ARTICLES_MAP: Record<string, { href: string; category: string; tit
       href: '/insights/local-seo-explained',
       category: 'Local SEO',
       title: 'The 90-Day Cadence: How We Win Local Search',
-      image: '/images/article-local-seo-explained.png',
+      image: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200&q=80',
     },
     {
       href: '/insights/b2b-seo-agency',
       category: 'Strategy',
       title: 'B2B SEO Agency vs. Generalist: The Vital Difference',
-      image: '/images/article-b2b-seo-agency.webp',
+      image: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=1200&q=80',
     },
     {
       href: '/insights/best-seo-agency-for-b2b-brands',
       category: 'Strategy',
       title: 'Evaluation Checklist: Don\'t Hire the Wrong B2B SEO Partner',
-      image: '/images/article-best-seo-agency.png',
+      image: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1200&q=80',
     },
   ],
 };
@@ -8435,19 +8351,19 @@ const DEFAULT_RELATED_ARTICLES = [
     href: '/services/geo-optimization',
     category: 'GEO',
     title: 'Generative Engine Optimization: Be Cited by AI',
-    image: '/images/article-ai-seo-2024.webp',
+    image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&q=80',
   },
   {
     href: '/services/lead-generation',
     category: 'Strategy',
     title: 'B2B Pipeline Architecture for Predictable Revenue',
-    image: '/images/article-predictive-analytics.webp',
+    image: 'https://images.unsplash.com/photo-1553877522-43269d4ea984?w=1200&q=80',
   },
   {
     href: '/services/seo',
     category: 'SEO',
     title: 'Technical SEO & Algorithmic Dominance',
-    image: '/images/article-technical-seo.webp',
+    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&q=80',
   },
 ];
 
@@ -8741,13 +8657,14 @@ const ArticlePage: React.FC<ArticlePageProps> = ({ slug }) => {
     }).slice(0, 3);
 
   return (
-    <div className="article-page">
+    <div id="page" className="article-page min-h-screen flex flex-col">
       <div className="progress" aria-hidden="true"><i ref={barRef} id="progress-bar"></i></div>
       
       <SiteHeader />
+      <div id="content" className="site-content flex-grow">
+        <main id="primary" className="site-main">
 
-      <header className="art-head">
-        <HeroWebGLBackground />
+      <header className="art-head" style={{ background: '#ffffff' }}>
         <div className="art-head-inner">
           <nav className="breadcrumb" aria-label="Breadcrumb" data-anim="fade">
             <a href="/">Gobiya</a><i>/</i>
@@ -8892,9 +8809,7 @@ const ArticlePage: React.FC<ArticlePageProps> = ({ slug }) => {
           </div>
         </aside>
       </div>
-
-      <div data-logo-dark className="relative">
-        <InsightsSlider currentPath={`/insights/${slug}`} limit={3} title="Related briefs." />
+        </main>
       </div>
 
       <SiteFooter />

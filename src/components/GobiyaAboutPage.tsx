@@ -1,5 +1,4 @@
 import SiteHeader from "./SiteHeader";
-import HeroWebGLBackground from './HeroWebGLBackground';
 import SiteFooter from "./SiteFooter";
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
@@ -61,21 +60,6 @@ export default function GobiyaAboutPage() {
           gsap.fromTo(navInner, { y: -22, opacity: 0 }, { y: 0, opacity: 1, duration: 1.2, ease, delay: 0.1 });
         }
 
-        const heroTl = gsap.timeline({ delay: 0.15, defaults: { ease, duration: 1.15 } });
-        heroTl
-          .fromTo('[data-hero="1"]', { opacity: 0, y: 14 }, { opacity: 1, y: 0 }, 0)
-          .fromTo('.hero h1 .line > span', { yPercent: 110 }, { yPercent: 0, stagger: 0.1, duration: 1.25 }, 0.08)
-          .fromTo('[data-hero="2"]', { opacity: 0, y: 16 }, { opacity: 1, y: 0 }, 0.5)
-          .fromTo('[data-hero="3"] .btn', { opacity: 0, y: 14 }, { opacity: 1, y: 0, stagger: 0.08 }, 0.65)
-          .fromTo('[data-hero="4"] > div', { opacity: 0, y: 12 }, { opacity: 1, y: 0, stagger: 0.08 }, 0.8)
-          .fromTo('[data-hero="5"]', { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 1.4 }, 0.3)
-          .fromTo('[data-hero="6"]', { opacity: 0 }, { opacity: 1 }, 1.1);
-
-        /* gentle float on the dossier while scrolling */
-        gsap.to('.dossier', {
-          y: -26, ease: 'none',
-          scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true }
-        });
 
         /* scroll reveals */
         const sc = (el: Element) => ({ trigger: el, start: 'top 87%' });
@@ -174,104 +158,27 @@ export default function GobiyaAboutPage() {
   }, []);
 
   return (
-    <div ref={containerRef}>
+    <div id="page" ref={containerRef} className="min-h-screen flex flex-col">
       <SiteHeader />
+      <div id="content" className="site-content flex-grow">
+        <main id="primary" className="site-main">
 
-      <section className="hero" id="top">
-      <HeroWebGLBackground />
-        <div className="hero-grid" aria-hidden="true"></div>
-        <div className="hero-inner">
-
-          <div className="hero-copy">
-            <nav className="breadcrumb" aria-label="Breadcrumb" data-hero="1">
-              <a href="/">Gobiya</a><i>/</i>
-              <a href="/about">Company</a><i>/</i>
-              <span>About the agency</span>
-            </nav>
-
-            <h1 className="display">
-              <span className="line"><span>Los Angeles SEO Agency:</span></span>
-              <span className="line"><span>The agency that treats</span></span>
-              <span className="line"><span>search like an</span></span>
-              <span className="line"><span className="accent">engineering problem.</span></span>
-            </h1>
-
-            <p className="hero-sub body-l" data-hero="2">
-              As a leading Los Angeles SEO Agency, GOBIYA is a precision-engineered search visibility and digital solutions
-              firm. Founded in 2012 in Los Angeles, it works in high-stakes technical
-              environments and data-driven revenue generation — not broad, generalist
-              marketing tactics.
-            </p>
-
-            <div className="hero-actions" data-hero="3">
-              <a href="/book" className="btn btn-primary magnetic">
-                Book a strategy call
-                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg>
-              </a>
-              <a href="/case-studies" className="btn btn-ghost magnetic">See case studies</a>
-            </div>
-
-            <div className="hero-meta" data-hero="4">
-              <div>
-                <p className="mono-tag">Headquarters</p>
-                <p>Los Angeles — serving nationally</p>
-              </div>
-              <div>
-                <p className="mono-tag">Clients served</p>
-                <p>Mid-market to enterprise</p>
-              </div>
-              <div>
-                <p className="mono-tag">Standing</p>
-                <p>BBB A+ rated · Certified Partner</p>
-              </div>
-            </div>
-          </div>
-
-          <div className="hero-exhibit">
-            <figure className="dossier" data-hero="5">
-              <div className="dossier-head">
-                <span>EXH-002 / operator file</span>
-                <span className="right"><span className="pulse-dot" aria-hidden="true"></span>verified</span>
-              </div>
-              <div className="dossier-body" id="dossier-body">
-                <span className="row"><span className="k">principal</span><span className="v">Steve Martin</span></span>
-                <span className="row"><span className="k">field_time</span><span className="v">25+ yrs — digital marketing × full-stack dev</span></span>
-                <span className="row"><span className="k">eng_since</span><span className="v">2000 — software engineering + organic search</span></span>
-                <span className="row"><span className="k">founded</span><span className="v">2012 — Gobiya, Los Angeles</span></span>
-                <span className="row"><span className="k">discipline</span><span className="v">advanced search mechanics / perf. marketing</span></span>
-                <span className="row"><span className="k">stack</span><span className="v">React · Next.js · Vite · Tailwind · Supabase · AI</span></span>
-                <span className="row"><span className="k">ai_era</span><span className="v">schema · entity optimization · LLM citations</span></span>
-                <span className="row"><span className="k">rating</span><span className="v"><span className="ok">BBB A+</span> · trust_score 98.4%</span></span>
-                <span className="row"><span className="k">status</span><span className="v"><span className="ok">active</span> — monitoring client signals</span></span>
-              </div>
-              <div className="dossier-foot">
-                <p>Operating principle</p>
-                <p>Stop guessing with your growth. Start dominating with data.</p>
-              </div>
-            </figure>
-
-            <div className="exhibit-caption" data-hero="6">
-              <span className="mono-tag">Fig. 1 — who's behind the read</span>
-              <span className="mono-tag">34.05°N&nbsp;118.24°W</span>
-            </div>
-          </div>
-        </div>
-
-        <div className="ticker" aria-label="Clients GOBIYA has served">
-          <div className="ticker-track" id="ticker-track">
-            {[0, 1].map(i => (
-              <div className="ticker-group" key={i} aria-hidden={i === 1 ? 'true' : undefined}>
-                <span className="ticker-item">RemodelMe Pros <em>— ranking</em></span>
-                <span className="ticker-item">Smile Center <em>— ranking</em></span>
-                <span className="ticker-item">QuickPass <em>— shipped</em></span>
-                <span className="ticker-item">MyTrustWills <em>— ranking</em></span>
-                <span className="ticker-item">Tidder Pro <em>— shipped</em></span>
-                <span className="ticker-item">Total Capital <em>— ranking</em></span>
-                <span className="ticker-item">American LiveScan <em>— ranking</em></span>
-                <span className="ticker-item">Your brand <em>— next</em></span>
-              </div>
-            ))}
-          </div>
+      <section id="top" style={{ background: '#ffffff', padding: '9rem 5vw 5rem', borderBottom: '1px solid #e5e7eb', position: 'relative' }}>
+        <span style={{ fontFamily: 'monospace', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.2em', color: '#9ca3af', display: 'block', marginBottom: '1.5rem' }}>
+          Gobiya / About the agency
+        </span>
+        <h1 style={{ fontSize: 'clamp(2.5rem, 5.5vw, 4.5rem)', fontWeight: 700, letterSpacing: '-0.03em', lineHeight: 1.05, color: '#111827', maxWidth: '880px', marginBottom: '1.75rem' }}>
+          Los Angeles SEO Agency: The agency that treats search like an engineering problem.
+        </h1>
+        <p style={{ fontSize: '1.1rem', color: '#4b5563', lineHeight: 1.75, maxWidth: '640px', marginBottom: '2.5rem' }}>
+          As a leading Los Angeles SEO Agency, GOBIYA is a precision-engineered search visibility and digital solutions firm. Founded in 2012 in Los Angeles, working in high-stakes technical environments and data-driven revenue generation.
+        </p>
+        <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+          <a href="/book" className="btn btn-primary magnetic">
+            Book a strategy call
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg>
+          </a>
+          <a href="/case-studies" className="btn btn-ghost magnetic">See case studies</a>
         </div>
       </section>
 
@@ -456,7 +363,7 @@ export default function GobiyaAboutPage() {
                   <h3>Search becomes answers. GOBIYA adapts first.</h3>
                 </div>
                 <div className="phase-body">
-                  <p>Schema markup, entity optimization, and structured citations for LLMs — plus <a href="/capabilities/native-crm" className="text-[#2F5D50] hover:text-[#F26522] underline underline-offset-4 transition-colors">native CRM</a>, <a href="/capabilities/blockchain-web3-development" className="text-[#2F5D50] hover:text-[#F26522] underline underline-offset-4 transition-colors">Web3 builds</a>, and AI prospect automation. The next update is TBD. The posture is ready.</p>
+                  <p>Schema markup, entity optimization, and structured citations for LLMs — plus <a href="/capabilities/native-crm-agency/" className="text-[#2F5D50] hover:text-[#F26522] underline underline-offset-4 transition-colors">native CRM</a>, <a href="/capabilities/blockchain-web3-development-agency/" className="text-[#2F5D50] hover:text-[#F26522] underline underline-offset-4 transition-colors">Web3 builds</a>, and AI prospect automation. The next update is TBD. The posture is ready.</p>
                   <div className="phase-tags"><span>GEO / LLM citations</span><span>Native CRM</span><span>AI automation</span></div>
                 </div>
               </div>
@@ -488,7 +395,7 @@ export default function GobiyaAboutPage() {
             </div>
 
             <div className="caps-grid" data-anim="stagger">
-              <a href="/capabilities/web-development" className="cap" data-anim-child>
+              <a href="/capabilities/web-development-agency/" className="cap" data-anim-child>
                 <div className="cap-head">
                   <div>
                     <span className="mono-tag">Module 01</span>
@@ -500,7 +407,7 @@ export default function GobiyaAboutPage() {
                 <span className="cap-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg></span>
               </a>
 
-              <a href="/capabilities/seo-discoverability" className="cap" data-anim-child>
+              <a href="/capabilities/seo-discoverability-agency/" className="cap" data-anim-child>
                 <div className="cap-head">
                   <div>
                     <span className="mono-tag">Module 02</span>
@@ -512,7 +419,7 @@ export default function GobiyaAboutPage() {
                 <span className="cap-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg></span>
               </a>
 
-              <a href="/capabilities/native-crm" className="cap" data-anim-child>
+              <a href="/capabilities/native-crm-agency/" className="cap" data-anim-child>
                 <div className="cap-head">
                   <div>
                     <span className="mono-tag">Module 03</span>
@@ -524,7 +431,7 @@ export default function GobiyaAboutPage() {
                 <span className="cap-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg></span>
               </a>
 
-              <a href="/capabilities/ai-prospect-scraper" className="cap" data-anim-child>
+              <a href="/capabilities/ai-prospect-scraper-agency/" className="cap" data-anim-child>
                 <div className="cap-head">
                   <div>
                     <span className="mono-tag">Module 04</span>
@@ -536,7 +443,7 @@ export default function GobiyaAboutPage() {
                 <span className="cap-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg></span>
               </a>
 
-              <a href="/capabilities/blockchain-web3-development" className="cap" data-anim-child>
+              <a href="/capabilities/blockchain-web3-development-agency/" className="cap" data-anim-child>
                 <div className="cap-head">
                   <div>
                     <span className="mono-tag">Module 05</span>
@@ -548,7 +455,7 @@ export default function GobiyaAboutPage() {
                 <span className="cap-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg></span>
               </a>
 
-              <a href="/capabilities/ai-llms-business" className="cap" data-anim-child>
+              <a href="/capabilities/ai-llms-business-agency/" className="cap" data-anim-child>
                 <div className="cap-head">
                   <div>
                     <span className="mono-tag">Module 06</span>
@@ -564,27 +471,9 @@ export default function GobiyaAboutPage() {
         </div>
       </section>
 
-      <section className="section cta-section" id="contact">
-        <div className="wrap" style={{paddingTop: '5rem', paddingBottom: '5rem'}}>
-          <div className="cta-card" data-anim="up">
-            <div>
-              <div className="eyebrow">Work with the operator</div>
-              <h2 className="display">Stop guessing with your growth. Start <span className="accent">dominating with data.</span></h2>
-              <p className="body-l">
-                One call. Your domain, your numbers, and a straight read on what
-                GOBIYA sees — no generalist pitch, no junior hand-off.
-              </p>
-            </div>
-            <div className="cta-actions">
-              <a href="/book" className="btn btn-primary magnetic">
-                Book a strategy call
-                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg>
-              </a>
-              <a href="/case-studies" className="btn btn-ghost magnetic">See case studies</a>
-            </div>
-          </div>
-        </div>
-      </section>
+
+        </main>
+      </div>
 
       <SiteFooter />
     </div>

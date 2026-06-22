@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from 'react';
-import HeroWebGLBackground from './HeroWebGLBackground';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import {
@@ -139,42 +138,44 @@ const AmericanLivescanCaseStudy: React.FC = () => {
       <CustomCursor />
 
       {/* ─── HERO ─── */}
-      <section className="relative w-full h-[65vh] min-h-[480px] bg-transparent overflow-hidden flex flex-col justify-center cursor-default">
-      <HeroWebGLBackground />
-        <SiteHeader />
-
-        <div className="relative z-20 max-w-[1440px] w-full mx-auto flex flex-col justify-center px-5 sm:px-8 lg:px-12 pt-16 pb-0">
-          <p className="breadcrumb text-[13px] sm:text-[14px] text-[#5B564C] tracking-wide mb-4 uppercase font-medium">
-            Gobiya Case Studies &gt; Local SEO &amp; Site Rebuild
-          </p>
-          <h1 className="hero-title text-[clamp(1.5rem,5.5vw,3.2rem)] sm:text-[clamp(1.8rem,4.5vw,3.8rem)] font-medium leading-[1.15] tracking-[-0.03em] text-[#15130E] max-w-[1100px]">
-            <span className="line"><span>How American Livescan</span></span>
-            <span className="line"><span><span className="text-[#2F5D50]">tripled bookings &amp; calls</span></span></span>
-            <span className="line"><span>with a site rebuild and local SEO.</span></span>
-          </h1>
-          <p className="hero-sub mt-6 text-[15px] sm:text-[17px] text-[#5B564C] max-w-[720px] leading-relaxed">
-            Website redesign · Legacy migration · Google Business Profile · Service-specific landing pages · Content engine
-          </p>
-          <div className="hero-actions-wrap mt-8 flex flex-col sm:flex-row items-start sm:items-center gap-6">
-            <a
-              href="/book"
-              id="livescan-hero-cta"
-              data-cta-location="livescan_hero"
-              data-cta-text="Get a similar result"
-              onClick={() => trackCTA({ cta_location: 'livescan_hero', cta_text: 'Get a similar result' })}
-              className="btn btn-primary magnetic"
-            >
-              Get a similar result
-              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" aria-hidden="true">
-                <path d="M7 17 17 7M9 7h8v8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </a>
-            <a
-              href="/case-studies"
-              className="text-link"
-            >
-              All case studies
-            </a>
+      <SiteHeader />
+      <section style={{ position: 'relative', minHeight: '72vh', display: 'flex', alignItems: 'flex-end', overflow: 'hidden', borderBottom: '1px solid #1f2937', background: '#0a0f1a' }}>
+        {/* Blurred logo as ambient background texture */}
+        <div style={{ position: 'absolute', inset: '-10%', backgroundImage: 'url(/images/americanlivescan.webp)', backgroundSize: '55%', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', filter: 'blur(60px) brightness(0.18)', opacity: 0.9 }} />
+        {/* Gradient overlay */}
+        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(5,10,20,0.9) 0%, rgba(5,10,20,0.45) 60%, rgba(5,10,20,0.2) 100%)' }} />
+        {/* Content */}
+        <div style={{ position: 'relative', zIndex: 1, padding: '9rem 5vw 5rem', width: '100%' }}>
+          <div className="max-w-[1440px] w-full mx-auto flex flex-col justify-end" style={{ minHeight: '30vh' }}>
+            <p className="breadcrumb text-[13px] sm:text-[14px] tracking-wide mb-4 uppercase font-medium" style={{ color: 'rgba(255,255,255,0.5)' }}>
+              Gobiya Case Studies &gt; Local SEO &amp; Site Rebuild
+            </p>
+            <h1 className="hero-title text-[clamp(1.5rem,5.5vw,3.2rem)] sm:text-[clamp(1.8rem,4.5vw,3.8rem)] font-medium leading-[1.15] tracking-[-0.03em] max-w-[1100px]" style={{ color: '#ffffff' }}>
+              <span className="line"><span>How American Livescan</span></span>
+              <span className="line"><span><span style={{ color: '#6ee7b7' }}>tripled bookings &amp; calls</span></span></span>
+              <span className="line"><span>with a site rebuild and local SEO.</span></span>
+            </h1>
+            <p className="hero-sub mt-6 text-[15px] sm:text-[17px] max-w-[720px] leading-relaxed" style={{ color: 'rgba(255,255,255,0.6)' }}>
+              Website redesign · Legacy migration · Google Business Profile · Service-specific landing pages · Content engine
+            </p>
+            <div className="hero-actions-wrap mt-8 flex flex-col sm:flex-row items-start sm:items-center gap-6">
+              <a
+                href="/book"
+                id="livescan-hero-cta"
+                data-cta-location="livescan_hero"
+                data-cta-text="Get a similar result"
+                onClick={() => trackCTA({ cta_location: 'livescan_hero', cta_text: 'Get a similar result' })}
+                className="btn btn-primary magnetic"
+              >
+                Get a similar result
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" aria-hidden="true">
+                  <path d="M7 17 17 7M9 7h8v8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </a>
+              <a href="/case-studies" style={{ color: 'rgba(255,255,255,0.6)', textDecoration: 'underline', textUnderlineOffset: '4px', textDecorationColor: 'rgba(255,255,255,0.25)', fontSize: '0.95rem' }}>
+                All case studies
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -272,7 +273,7 @@ const AmericanLivescanCaseStudy: React.FC = () => {
               <div className="aspect-[4/3] overflow-hidden relative border border-[#D3CEC0]" data-anim="scale">
                 <ParallaxMedia
                   type="image"
-                  src="/images/livescan-storefront.webp"
+                  src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80"
                   alt="American Livescan storefront"
                   className="w-full h-full object-cover"
                 />
@@ -313,7 +314,7 @@ const AmericanLivescanCaseStudy: React.FC = () => {
           <div className="mt-14 sm:mt-20 relative aspect-[16/7] overflow-hidden border border-[#D3CEC0]">
             <ParallaxMedia
               type="image"
-              src="/images/livescan-results.webp"
+              src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1200&q=80"
               alt="American Livescan analytics"
               className="w-full h-full object-cover"
             />

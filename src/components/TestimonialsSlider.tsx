@@ -19,8 +19,8 @@ const testimonials: Testimonial[] = [
     company: "RemodelMe Pros",
     author: "Mike Pinkston",
     role: "Founder & CEO",
-    image_url: "/images/testimonial-mike.png",
-    logo_url: "/images/remodelmepros-opt.webp",
+    image_url: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=1200&q=80",
+    logo_url: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=80",
   },
   {
     id: 2,
@@ -28,8 +28,8 @@ const testimonials: Testimonial[] = [
     company: "Total Capital Inc",
     author: "Eli Zilberstein",
     role: "Managing Director",
-    image_url: "/images/eli-portrait.webp",
-    logo_url: "/images/totalcapital-opt.webp"
+    image_url: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&q=80",
+    logo_url: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&q=80"
   },
   {
     id: 3,
@@ -37,8 +37,8 @@ const testimonials: Testimonial[] = [
     company: "SmileCenter",
     author: "Dr. Ebi Donavan Nikjoo",
     role: "Lead Dentist",
-    image_url: "/images/dr-nikjoo.jpg",
-    logo_url: "/images/smilecenter.webp",
+    image_url: "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=1200&q=80",
+    logo_url: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80",
     case_study_link: "/success-stories/smile-center-dentistry"
   }
 ];

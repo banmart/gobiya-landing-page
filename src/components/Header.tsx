@@ -38,7 +38,7 @@ const Header: React.FC<HeaderProps> = ({ theme = 'light', hideLogo = false, acce
         <div className={`flex items-center gap-6 relative z-50 transition-opacity duration-300 ${hideLogo ? 'opacity-0 pointer-events-none' : ''}`}>
           <a href="/">
             <img 
-              src="/images/gobiya---logo.webp" 
+              src="/images/logo-gobiya-blastoff-small.webp" 
               alt="Gobiya Logo" 
               className={`h-8 sm:h-9 w-auto object-contain ${isDark ? 'filter brightness-0 invert' : ''}`}
             />
