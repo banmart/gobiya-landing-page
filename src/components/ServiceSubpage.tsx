@@ -1037,14 +1037,14 @@ export default function ServiceSubpage({ path, isFanOut, category, slug }: Servi
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <a href="/case-studies/smile-center-dentistry" className="group block">
                   <div className="overflow-hidden mb-4" style={{ height: '320px' }}>
-                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&q=80" alt="Smile Center Dentistry case study" width={720} height={320} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                    <img src="/images/smile-center-homepage.webp" alt="Smile Center Dentistry case study" width={720} height={320} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                   </div>
                   <h3 className="text-lg font-bold text-gray-900 mb-1">Smile Center Dentistry</h3>
                   <p className="text-sm text-gray-400">SEO & Web Development</p>
                 </a>
                 <a href="/case-studies/american-livescan" className="group block">
                   <div className="overflow-hidden mb-4" style={{ height: '320px' }}>
-                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1200&q=80" alt="American Livescan case study" width={720} height={320} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                    <img src="/images/american-livescan-storefront.webp" alt="American Livescan case study" width={720} height={320} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                   </div>
                   <h3 className="text-lg font-bold text-gray-900 mb-1">American Livescan</h3>
                   <p className="text-sm text-gray-400">Local SEO & Google Business Profile</p>
