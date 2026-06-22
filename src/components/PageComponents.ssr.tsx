@@ -20,4 +20,6 @@ export { default as OnPageSeoLosAngelesPage } from './OnPageSeoLosAngelesPage';
 export { default as SEO } from './SEO';
 export { default as NotFound } from './NotFound';
 export { default as CategoryPage } from './CategoryPage';
+export { default as SeoWebCopywritingPage } from './SeoWebCopywritingPage';
+export { default as SeoDiscoverabilityPage } from './SeoDiscoverabilityPage';
 

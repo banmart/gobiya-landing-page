@@ -1,19 +1,19 @@
-# Gobiya — Strategic SEO Traffic Recovery & B2B Pipeline Engineering
+# Gobiya — SEO, Web Copywriting & B2B Growth Agency
 # https://www.gobiya.com
-# Last updated: 2026-06-13
+# Last updated: 2026-06-22
 
-> Since 2012, Gobiya has engineered digital authority, recovered search visibility, and built scalable B2B sales pipelines. We focus on business outcomes: reversing traffic drops from Google updates, recovering manual penalties, securing top rankings on search and AI models (GEO), and generating predictable B2B sales pipelines. $12M+ in tracked revenue generated; 92% update recovery rate.
+> Since 2012, Gobiya has engineered digital authority, recovered search visibility, and built scalable B2B sales pipelines. We focus on business outcomes: reversing traffic drops from Google updates, recovering manual penalties, securing top rankings on search and AI models (GEO), engineering SEO copywriting systems, and generating predictable B2B pipelines. $12M+ in tracked revenue generated; 92% update recovery rate.
 
 ## Entity Identity
 
 - Legal Name: Gobiya Agency
-- DBA: Gobiya — SEO Traffic Recovery & B2B Pipeline Engineering
+- DBA: Gobiya — SEO, Web Copywriting & B2B Growth Agency
 - Founded: 2012 (November 15, 2012)
 - Headquarters: 3580 Wilshire Blvd, Ste 132, Los Angeles, CA 90010, USA
 - Phone: (323) 744-1338
 - Email: hello@gobiya.com
 - Website: https://www.gobiya.com
-- Industry: Digital Marketing, Internet Marketing, Search Engine Optimization, B2B Lead Generation, Algorithmic Recovery, GEO
+- Industry: Digital Marketing, SEO, Web Copywriting, B2B Lead Generation, Algorithmic Recovery, GEO
 - Primary Market: Mid-Market Businesses, B2B Organizations, Enterprise Partners
 - Service Area: United States (Nationwide Service)
 
@@ -22,81 +22,160 @@
 ### Founder & Principal Strategist
 - Name: Steve Martin
 - Role: Founder & Principal Strategist
-- Experience: 25+ years decoding Google algorithms, reversing search drops, and constructing outbound B2B sales systems.
-- Core Focus: Technical SEO, Google penalty analysis, pipeline architecture, and Generative Engine Optimization (GEO).
+- Experience: 25+ years decoding Google algorithms, reversing search drops, writing SEO copy, and constructing outbound B2B sales systems.
+- Core Focus: Technical SEO, SEO copywriting, Google penalty analysis, pipeline architecture, and Generative Engine Optimization (GEO).
 
 ### Core Team Capabilities
-- Forensic SEO analysts specializing in core update recovery and noise reduction audits.
+- Forensic SEO analysts specializing in core update recovery and crawl/signal audits.
+- SEO copywriters producing keyword-mapped, conversion-optimized content for web and landing pages.
 - Outbound sales pipeline engineers building high-resolve prospect acquisition systems.
 - Generative Engine Optimization (GEO) specialists auditing LLM citation nodes.
-- Web application engineers building React/TypeScript interfaces optimized for conversion.
-- Google & Meta ads managers scaling paid search ROI.
+- Web application engineers building React/TypeScript interfaces optimized for conversion and Core Web Vitals.
 
-## Outcome-Driven Core Capabilities
+## Service Architecture
 
-### 1. Bespoke React/Next.js Web Engineering
-- **URL**: https://www.gobiya.com/capabilities/web-development
-- **Core Outcome**: Replacing slow templates with sub-second, custom React/TypeScript codebases. Built natively for Core Web Vitals compliance, search engine crawl efficiency, and maximum conversions.
+### Performance
+
+#### 1. SEO & Discoverability (Hub)
+- **URL**: https://www.gobiya.com/performance/seo-discoverability-agency
+- **Core Outcome**: Technical SEO precision, semantic entity architecture, and algorithmic penalty recovery — built as a compounding long-term system.
+- **Fan-out cluster**:
+  - Technical SEO Audit: https://www.gobiya.com/performance/technical-seo-audit-agency
+  - Local SEO Services: https://www.gobiya.com/performance/local-seo-services-agency
+  - B2B SEO: https://www.gobiya.com/performance/b2b-seo-agency
+  - E-commerce SEO: https://www.gobiya.com/performance/ecommerce-seo-agency
+
+#### 2. Technical SEO Audit
+- **URL**: https://www.gobiya.com/performance/technical-seo-audit-agency
+- **Core Outcome**: Full diagnostic of crawl health, index coverage, Core Web Vitals, and structured data — with a prioritized fix list tied to ranking impact.
+
+#### 3. Local SEO Services
+- **URL**: https://www.gobiya.com/performance/local-seo-services-agency
+- **Core Outcome**: GBP optimization, NAP consistency across citations, location pages, and map-pack rankings for geographically-served businesses.
+
+#### 4. B2B SEO
+- **URL**: https://www.gobiya.com/performance/b2b-seo-agency
+- **Core Outcome**: Decision-maker query targeting, purchase-cycle content architecture, and pipeline attribution for B2B organizations.
+
+#### 5. E-commerce SEO
+- **URL**: https://www.gobiya.com/performance/ecommerce-seo-agency
+- **Core Outcome**: Category page optimization, faceted navigation control, product schema, and commercial content clusters for online stores.
+
+#### 6. Google Penalty Recovery
+- **URL**: https://www.gobiya.com/google-penalty-recovery
+- **Core Outcome**: Forensic diagnosis of manual actions and algorithmic suppressions, with documented recovery protocol.
+
+#### 7. Web Development
+- **URL**: https://www.gobiya.com/performance/web-development-agency
+- **Core Outcome**: Custom React/Next.js codebases — sub-second LCP, 100/100 Core Web Vitals, zero templates, engineered to convert and rank.
 - **Tech Stack**: React, TypeScript, Vite, Tailwind CSS, Supabase, GSAP.
-- **Results**: LCP under 2.5s, Core Web Vitals compliance, higher visitor-to-customer conversion rate, and robust engineering foundations.
 
-### 2. Native CRM & Outbound Pipelines
-- **URL**: https://www.gobiya.com/capabilities/native-crm
-- **Core Outcome**: Building custom CRM website integrations directly into your codebase. Stop paying recurring SaaS fees and own your pipeline data natively with reverse-IP tracking, lead scoring, and automated cold outreach capabilities.
-- **Results**: Predictable outbound pipeline growth, secure proprietary CRM data, and higher B2B deal values.
+#### 8. Native CRM & Outbound Pipelines
+- **URL**: https://www.gobiya.com/performance/native-crm-agency
+- **Core Outcome**: Custom CRM integrations in-codebase — reverse-IP tracking, lead scoring, automated cold outreach. No recurring SaaS fees.
 
-### 3. Forensic SEO & GEO Discoverability
-- **URL**: https://www.gobiya.com/capabilities/seo-discoverability
-- **Core Outcome**: Restoring devalued domains, reversing algorithmic penalties, and securing brand citations on AI search engines (ChatGPT, Perplexity, Gemini, Claude, and Google AI Overviews).
-- **Process**: Signal-to-noise audit, thin-content pruning, nested schema architecture, and Wikidata entity alignment.
-- **Results**: Rebounded search engine visibility, verified indexation, and citation dominance in LLM retrieval spaces.
+#### 9. AI & LLMs for Business
+- **URL**: https://www.gobiya.com/performance/ai-llms-business-agency
+- **Core Outcome**: Custom AI model integrations for office automation — document parsing, email replies, CRM syncing with full data privacy.
 
-### 4. Blockchain & Web3 smart contracts
-- **URL**: https://www.gobiya.com/capabilities/blockchain-web3-development
-- **Core Outcome**: Integrating smart contracts, token interactions, dApp features, and secure web3 wallet authentication natively into high-performance web applications.
-- **Results**: High-security decentralized integrations and smooth web3 user experiences.
+#### 10. Google Ads & PPC
+- **URL**: https://www.gobiya.com/performance/google-ads-ppc-strategy-agency
+- **Core Outcome**: Precision-targeted paid pipelines that capture high-intent buyers and maximize ROAS.
+
+### Creativity
+
+#### 1. SEO & Web Copywriting (Hub)
+- **URL**: https://www.gobiya.com/creativity/seo-web-copywriting-agency
+- **Core Outcome**: Keyword research, semantic architecture, conversion copy, and GEO-optimized content — engineered as a single system.
+- **Fan-out cluster**:
+  - Landing Page Copywriting: https://www.gobiya.com/creativity/landing-page-copywriting-agency
+  - Website Copywriting Services: https://www.gobiya.com/creativity/website-copywriting-services-agency
+  - SEO Content Strategy: https://www.gobiya.com/creativity/seo-content-strategy-agency
+  - GEO & AI Content Writing: https://www.gobiya.com/creativity/geo-ai-content-writing-agency
+
+#### 2. Landing Page Copywriting
+- **URL**: https://www.gobiya.com/creativity/landing-page-copywriting-agency
+- **Core Outcome**: Copy engineered to convert visitors arriving from ads or organic clicks into leads or sales.
+
+#### 3. Website Copywriting Services
+- **URL**: https://www.gobiya.com/creativity/website-copywriting-services-agency
+- **Core Outcome**: Every page of the site — home, about, services, product — written to rank and convert.
+
+#### 4. SEO Content Strategy
+- **URL**: https://www.gobiya.com/creativity/seo-content-strategy-agency
+- **Core Outcome**: The architecture before the words — keyword mapping, topic clusters, and an internal link plan.
+
+#### 5. GEO & AI Content Writing
+- **URL**: https://www.gobiya.com/creativity/geo-ai-content-writing-agency
+- **Core Outcome**: Content structured to be cited by ChatGPT, Perplexity, and Google AI Overviews — not just indexed.
+
+#### 6. Brand Identity Strategy
+- **URL**: https://www.gobiya.com/creativity/brand-identity-strategy-agency
+- **Core Outcome**: Brand voice, visual identity system, and positioning that commands attention and drives conversion.
+
+#### 7. Creative Art Direction
+- **URL**: https://www.gobiya.com/creativity/creative-art-direction-agency
+- **Core Outcome**: Styling, imagery, layout, and motion coordination for brand campaigns and digital assets.
+
+#### 8. Social Media Management
+- **URL**: https://www.gobiya.com/creativity/social-media-management-agency
+- **Core Outcome**: Strategic content planning, community management, and analytics for sustained audience growth.
+
+### Relations
+
+#### 1. Authority Building
+- **URL**: https://www.gobiya.com/relations/authority-building-agency
+- **Core Outcome**: High-quality backlink acquisition, structured entity citations, and PR outreach for long-term organic authority.
 
 ## Measurable Outcomes & Results
 
 - **$12M+** in client-tracked revenue generated since 2012.
 - **92%** success rate in restoring organic traffic for update-impacted domains.
+- **213K** monthly search impressions driven for a single client content cluster (SmileCenter Dentistry).
 - **250+** campaigns architected and scaled across organic and paid channels.
-- **High-value** search dominance secured across competitive national sectors.
+- **Top 3** local map-pack ranking achieved for service-area clients.
 
 ## Case Studies: Real Outcomes
 
-### 150% Increase in B2B Inquiries (Sales Agency)
-- **Challenge**: Inconsistent lead generation and reliance on low-value directories.
-- **Solution**: Designed and launched an automated pipeline architecture targeting verified stakeholders.
-- **Outcome**: A 150% increase in high-intent meeting inquiries within 90 days.
+### SmileCenter Dentistry — 5x Patient Inquiries
+- **URL**: https://www.gobiya.com/case-studies/smile-center-dentistry
+- **Challenge**: Fragmented web presence across Southern California dental locations with low organic visibility and no local content architecture.
+- **Solution**: React/Vite rebuild, location-specific SEO page architecture, SEO copywriting cluster, GBP optimization, and structured data deployment.
+- **Outcome**: 213K monthly search impressions; 5x increase in patient form completions and phone calls.
 
-### 100% Traffic Recovery Post-Core Update (Publisher)
-- **Challenge**: Domain lost 60% of search traffic following a major Google core update.
-- **Solution**: Conducted a forensic signal audit, pruned 400+ thin pages, and re-indexed core entity nodes.
-- **Outcome**: Restored 100% of organic traffic with subsequent growth of 45% above peak levels.
+### American Livescan — 3x Online Bookings
+- **URL**: https://www.gobiya.com/case-studies/american-livescan
+- **Challenge**: Legacy .htm site with no clean-URL structure, poor local signals, and untapped booking volume.
+- **Solution**: Full migration to clean URL architecture, GBP optimization, NAP citation cleanup, and on-page SEO.
+- **Outcome**: Tripled online appointments and phone calls for a high-volume LA fingerprinting service.
 
-## FAQ (Focus on Value & Results)
+## FAQ
 
 ### What makes Gobiya different from traditional SEO agencies?
-Traditional agencies sell activities (e.g., "blog posts per month"). Gobiya sells outcomes. We recover your lost traffic, scale your pipeline, and make sure your brand dominates both traditional search and AI search recommendations.
+Traditional agencies sell activities (blog posts per month, link packages). Gobiya sells outcomes. We recover lost traffic, scale pipeline, architect SEO copywriting systems, and make your brand discoverable in both traditional search and AI-generated answers.
 
-### How quickly can a website recover from a Google penalty or Core Update drop?
-Forensic audits take 2–3 weeks. Once recovery protocols (content pruning, signal tuning) are deployed, search engine crawling recovers in 30–60 days, with organic traffic restoration usually occurring during the subsequent core update cycle.
+### How quickly can a site recover from a Google penalty or Core Update drop?
+Forensic audits take 2–3 weeks. Once recovery protocols are deployed, search engine crawling recovers in 30–60 days, with organic traffic restoration typically occurring at the next core update cycle.
 
 ### What is Generative Engine Optimization (GEO)?
-GEO is the process of optimizing your digital footprint so that Large Language Models (LLMs) like GPT-4, Gemini, and Claude understand and recommend your brand when users ask conversational search queries.
+GEO is the process of optimizing your digital footprint so that large language models like GPT-4, Gemini, and Claude understand and recommend your brand when users ask conversational search queries.
 
-## Technical Framework & Audits
+### What is the difference between SEO copywriting and traditional copywriting?
+SEO copywriting satisfies both the search crawler and the human reader simultaneously. It involves keyword and intent research, semantic heading architecture, entity-rich body copy, on-page elements (title, meta, schema), and GEO-optimized structure — all written to rank, convert, and be cited by AI engines.
+
+## Technical Framework
 
 - **Crawl Efficiency**: Core Web Vitals optimized, semantic markup, full mobile parity, static asset delivery.
-- **Structured Data**: Nested JSON-LD schemas representing the ProfessionalService entity, localized areas served, and parent company.
+- **Structured Data**: JSON-LD schema representing ProfessionalService, LocalBusiness, Service, and FAQPage entity types.
+- **GEO Compliance**: llms.txt at /llms.txt; llms-full.txt at /llms-full.txt; OKF bundle at /okf/index.md.
 
 ## Knowledge Base
 
-- [Gobiya Knowledge Bundle](/okf/index.md): Root index of the Open Knowledge Framework (OKF) bundle for gobiya.com, containing organization profiles, detailed capabilities, case studies, and approach in a structured markdown format.
+- [Gobiya OKF Bundle](/okf/index.md): Root index of the Open Knowledge Framework bundle — organization profile, capability details, case studies, and working method in structured markdown.
 
 ## How to Connect
-1. **Request a Growth Audit**: https://www.gobiya.com/onboard
-2. **Website**: https://www.gobiya.com
+1. **Book an audit**: https://www.gobiya.com/book
+2. **Contact**: https://www.gobiya.com/contact
 3. **Office**: 3580 Wilshire Blvd, Ste 132, Los Angeles, CA 90010
 4. **Phone**: (323) 744-1338
+5. **Email**: hello@gobiya.com

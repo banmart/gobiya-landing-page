@@ -41,8 +41,24 @@ const metadataMap: Record<string, SEOMetadata> = {
     description: `We build custom CRM website integrations directly into your codebase. Stop paying monthly software fees and own your pipeline data.`
   },
   '/performance/seo-discoverability-agency': {
-    title: `SEO & Discoverability agency in LA: SEO expert, recovery, audit - Gobiya`,
-    description: `We build technical SEO for React websites into the codebase, optimizing crawlability, rendering speed, and AI citations.`
+    title: `SEO & Discoverability agency in LA: technical SEO, audit, recovery - Gobiya`,
+    description: `Technical SEO precision, semantic entity architecture, and algorithmic recovery — built as a compounding system. Crawl audits, Core Web Vitals, on-page optimization, and rank monitoring.`
+  },
+  '/performance/technical-seo-audit-agency': {
+    title: `Technical SEO audit agency in LA: crawl health, CWV, structured data - Gobiya`,
+    description: `Full diagnostic of your crawl health, index coverage, Core Web Vitals, and structured data — with a prioritized fix list tied directly to ranking impact, not just a checklist.`
+  },
+  '/performance/local-seo-services-agency': {
+    title: `Local SEO services agency in LA: GBP, citations, map-pack rankings - Gobiya`,
+    description: `GBP optimization, NAP consistency across citations, location pages, and map-pack rankings for businesses that serve a geographic area. Los Angeles-based, nationwide service.`
+  },
+  '/performance/b2b-seo-agency': {
+    title: `B2B SEO agency in LA: decision-maker queries, pipeline attribution - Gobiya`,
+    description: `Long-cycle, high-value buyer journey optimization targeting decision-makers and procurement queries — not just traffic volume. B2B SEO measured in pipeline value, not impressions.`
+  },
+  '/performance/ecommerce-seo-agency': {
+    title: `E-commerce SEO agency in LA: category pages, product schema, faceted nav - Gobiya`,
+    description: `Category and product page architecture, faceted navigation control, schema deployment, and commercial-intent content clusters for online stores. Rankings that drive revenue.`
   },
   '/performance/blockchain-web3-development-agency': {
     title: `Blockchain & Web3 agency in LA: smart contracts, dApps, tokens - Gobiya`,
@@ -81,8 +97,24 @@ const metadataMap: Record<string, SEOMetadata> = {
     description: `Tell your story through dynamic visual and textual concepts. We develop integrated communication campaigns that turn attention into pipeline.`
   },
   '/creativity/seo-web-copywriting-agency': {
-    title: `SEO & web copywriting agency in LA: landing pages, blog, conversion copy - Gobiya`,
-    description: `We write content that engages human hearts and ranks in algorithms. SEO-optimized copywriting for websites, landing pages, and campaigns that turns readers into buyers.`
+    title: `SEO & web copywriting agency in LA: landing pages, content strategy, GEO - Gobiya`,
+    description: `Words that satisfy search crawlers and move buyers. Keyword research, semantic architecture, conversion copy, and GEO-optimized content — engineered as a single system.`
+  },
+  '/creativity/landing-page-copywriting-agency': {
+    title: `Landing page copywriting agency in LA: conversion copy, CRO, ads - Gobiya`,
+    description: `Copy engineered to convert the visitor who arrives from an ad or organic click into a lead or sale. Benefit framing, friction reduction, and social proof — built to perform.`
+  },
+  '/creativity/website-copywriting-services-agency': {
+    title: `Website copywriting services agency in LA: home, about, services pages - Gobiya`,
+    description: `Every page of your site — home, about, services, product — written to rank and convert. SEO-structured, conversion-optimized, brand-voice aligned.`
+  },
+  '/creativity/seo-content-strategy-agency': {
+    title: `SEO content strategy agency in LA: keyword mapping, topic clusters - Gobiya`,
+    description: `The architecture before the words: keyword mapping, topic clusters, internal link plan, and content gap analysis — before a single word is written.`
+  },
+  '/creativity/geo-ai-content-writing-agency': {
+    title: `GEO & AI content writing agency in LA: ChatGPT, Perplexity citations - Gobiya`,
+    description: `Content built to be cited by ChatGPT, Perplexity, and Google AI Overviews — not just indexed. Structured for AI extraction, passage-level coherence, and entity verification.`
   },
   '/creativity/creative-art-direction-agency': {
     title: `Creative art direction agency in LA: styling, imagery, layout, motion - Gobiya`,
@@ -465,13 +497,21 @@ const SEO: React.FC<SEOProps> = ({ path }) => {
           "@type": "OfferCatalog",
           "name": "Gobiya Services",
           "itemListElement": [
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Web Development", "url": "https://www.gobiya.com/capabilities/web-development-agency/" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Native CRM", "url": "https://www.gobiya.com/capabilities/native-crm-agency/" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "SEO & Discoverability", "url": "https://www.gobiya.com/capabilities/seo-discoverability-agency/" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Blockchain & Web3 Development", "url": "https://www.gobiya.com/capabilities/blockchain-web3-development-agency/" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "AI Prospect Scraper", "url": "https://www.gobiya.com/capabilities/ai-prospect-scraper-agency/" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "AI & LLMs for Businesses", "url": "https://www.gobiya.com/capabilities/ai-llms-business-agency/" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Authority Building", "url": "https://www.gobiya.com/capabilities/authority-building-agency/" } }
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "SEO & Discoverability", "url": "https://www.gobiya.com/performance/seo-discoverability-agency" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Technical SEO Audit", "url": "https://www.gobiya.com/performance/technical-seo-audit-agency" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Local SEO Services", "url": "https://www.gobiya.com/performance/local-seo-services-agency" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "B2B SEO", "url": "https://www.gobiya.com/performance/b2b-seo-agency" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "E-commerce SEO", "url": "https://www.gobiya.com/performance/ecommerce-seo-agency" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Google Penalty Recovery", "url": "https://www.gobiya.com/google-penalty-recovery" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "SEO & Web Copywriting", "url": "https://www.gobiya.com/creativity/seo-web-copywriting-agency" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Landing Page Copywriting", "url": "https://www.gobiya.com/creativity/landing-page-copywriting-agency" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "GEO & AI Content Writing", "url": "https://www.gobiya.com/creativity/geo-ai-content-writing-agency" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Web Development", "url": "https://www.gobiya.com/performance/web-development-agency" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Native CRM & Outbound Pipelines", "url": "https://www.gobiya.com/performance/native-crm-agency" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "AI & LLMs for Businesses", "url": "https://www.gobiya.com/performance/ai-llms-business-agency" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Blockchain & Web3 Development", "url": "https://www.gobiya.com/performance/blockchain-web3-development-agency" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Authority Building", "url": "https://www.gobiya.com/relations/authority-building-agency" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Brand Identity Strategy", "url": "https://www.gobiya.com/creativity/brand-identity-strategy-agency" } }
           ]
         },
         "knowsAbout": [

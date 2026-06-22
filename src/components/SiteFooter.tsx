@@ -61,10 +61,10 @@ const SiteFooter: React.FC<SiteFooterProps> = ({ showWebGL = false, hideCTA = fa
             <div>
               <h4 className="text-xs font-mono uppercase tracking-[0.15em] text-[#ffffff] font-bold mb-4">LOS ANGELES</h4>
               <div className="text-sm leading-relaxed flex flex-col gap-1.5" style={{ color: 'rgba(255,255,255,0.85)' }}>
-                <p>3580 Wilshire Blvd, Ste 132</p>
-                <p>Los Angeles, CA 90010</p>
-                <p className="mt-2">T 323-744-1338</p>
-                <p>E hello@gobiya.com</p>
+                <p style={{ color: 'rgba(255,255,255,0.85)' }}>3580 Wilshire Blvd, Ste 132</p>
+                <p style={{ color: 'rgba(255,255,255,0.85)' }}>Los Angeles, CA 90010</p>
+                <p className="mt-2" style={{ color: 'rgba(255,255,255,0.85)' }}>T 323-744-1338</p>
+                <p style={{ color: 'rgba(255,255,255,0.85)' }}>E hello@gobiya.com</p>
               </div>
             </div>
           </div>
@@ -86,7 +86,8 @@ const SiteFooter: React.FC<SiteFooterProps> = ({ showWebGL = false, hideCTA = fa
               />
               <button 
                 type="submit" 
-                className="bg-white text-[#1C201D] px-6 py-3 rounded-md font-semibold text-xs uppercase tracking-wider hover:bg-gray-100 transition-colors whitespace-nowrap"
+                className="bg-white px-6 py-3 rounded-md font-semibold text-xs uppercase tracking-wider hover:bg-gray-100 transition-colors whitespace-nowrap"
+                style={{ color: '#1C201D' }}
               >
                 Subscribe
               </button>
@@ -100,19 +101,19 @@ const SiteFooter: React.FC<SiteFooterProps> = ({ showWebGL = false, hideCTA = fa
             <a 
               href="#top" 
               onClick={scrollToTop} 
-              className="text-[#FFFFFF] hover:text-white transition-colors font-medium flex items-center gap-1 text-sm mb-2"
-              style={{ textDecoration: 'none' }}
+              className="hover:text-white transition-colors font-medium flex items-center gap-1 text-sm mb-2"
+              style={{ textDecoration: 'none', color: '#FFFFFF' }}
             >
               Back to top ↑
             </a>
-            <p>© 2026 Gobiya LLC. Operating since 2012. BBB A+ Rated. Omnichannel Solutions.</p>
+            <p style={{ color: 'rgba(255,255,255,0.65)' }}>© 2026 Gobiya LLC. Operating since 2012. BBB A+ Rated. Omnichannel Solutions.</p>
           </div>
           
-          <div className="flex flex-wrap gap-x-8 gap-y-3 text-sm" style={{ color: 'rgba(255,255,255,0.7)' }}>
-            <a href="#" className="hover:text-white transition-colors" style={{ textDecoration: 'none' }}>Privacy policy</a>
-            <a href="#" className="hover:text-white transition-colors" style={{ textDecoration: 'none' }}>Cookie policy</a>
-            <a href="#" className="hover:text-white transition-colors" style={{ textDecoration: 'none' }}>Cookie preferences</a>
-            <a href="/contact" className="hover:text-white transition-colors" style={{ textDecoration: 'none' }}>Contact us</a>
+          <div className="flex flex-wrap gap-x-8 gap-y-3 text-sm">
+            <a href="#" className="hover:text-white transition-colors" style={{ textDecoration: 'none', color: 'rgba(255,255,255,0.7)' }}>Privacy policy</a>
+            <a href="#" className="hover:text-white transition-colors" style={{ textDecoration: 'none', color: 'rgba(255,255,255,0.7)' }}>Cookie policy</a>
+            <a href="#" className="hover:text-white transition-colors" style={{ textDecoration: 'none', color: 'rgba(255,255,255,0.7)' }}>Cookie preferences</a>
+            <a href="/contact" className="hover:text-white transition-colors" style={{ textDecoration: 'none', color: 'rgba(255,255,255,0.7)' }}>Contact us</a>
           </div>
         </div>
       </div>

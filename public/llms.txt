@@ -1,26 +1,42 @@
-# Gobiya: Strategic Organic Traffic Recovery & B2B Revenue Domination
-> High-performance search and pipeline engineering agency specialized in reversing Google core update penalties, restoring organic search traffic, and constructing high-yielding B2B lead generation assets that scale revenue.
+# Gobiya: SEO, Web Copywriting & B2B Growth Agency — Los Angeles
+> Gobiya is a Los Angeles digital marketing agency that engineers organic search dominance, recovers traffic lost to Google updates, and builds B2B revenue pipelines. Specialties: technical SEO, GEO/AI search optimization, SEO copywriting, web development, and automated outbound systems. Operating since 2012.
 
 ## Core Outcomes & Objectives
-- **Organic Traffic Recovery**: Reversing manual actions and HCU/Core Update drops to restore search visibility, recover lost traffic, and safeguard organic traffic revenue.
-- **B2B Revenue Generation**: Engineering automated sales pipeline systems and B2B lead generation engines that deliver predictable customer acquisition and contract volume.
-- **Search & AI Dominance**: Securing high-value search real estate via semantic entity audits, technical schema building, and Generative Engine Optimization (GEO) to dominate modern AI-search models (ChatGPT, Gemini, Claude, Perplexity).
+- **Organic Traffic Recovery**: Reversing manual actions and HCU/Core Update drops to restore search visibility and safeguard organic revenue.
+- **B2B Revenue Generation**: Engineering automated sales pipeline systems and B2B lead generation assets that deliver predictable customer acquisition.
+- **Search & AI Dominance**: Securing high-value search real estate via semantic entity audits, technical schema, and Generative Engine Optimization (GEO) to surface in ChatGPT, Gemini, Claude, and Perplexity.
+- **SEO Copywriting**: Writing content that ranks in algorithms and converts human readers — keyword research, semantic architecture, and GEO-optimized copy as one system.
 
-## Outcome-Oriented Service Paths
-- [Bespoke React/Next.js Web Engineering](/capabilities/web-development)
-- [Native CRM & Outbound Pipelines](/capabilities/native-crm)
-- [Forensic SEO & GEO Discoverability](/capabilities/seo-discoverability)
-- [Blockchain & Web3 Smart Contracts](/capabilities/blockchain-web3-development)
+## Service Paths — Performance
+- [SEO & Discoverability hub](/performance/seo-discoverability-agency) — technical SEO, entity optimization, and algorithmic recovery.
+- [Technical SEO Audit](/performance/technical-seo-audit-agency) — crawl health, Core Web Vitals, structured data, prioritized fix list.
+- [Local SEO Services](/performance/local-seo-services-agency) — GBP optimization, NAP citations, map-pack rankings.
+- [B2B SEO](/performance/b2b-seo-agency) — decision-maker query targeting, purchase-cycle content, pipeline attribution.
+- [E-commerce SEO](/performance/ecommerce-seo-agency) — category pages, faceted navigation, product schema, commercial content.
+- [Web Development](/performance/web-development-agency) — custom React/Next.js, sub-second loads, Core Web Vitals compliance.
+- [Native CRM & Outbound Pipelines](/performance/native-crm-agency) — CRM integrations, lead scoring, automated outreach.
+- [AI & LLMs for Business](/performance/ai-llms-business-agency) — custom AI models, office automation, document workflows.
+- [Google Ads & PPC](/performance/google-ads-ppc-strategy-agency) — precision paid acquisition, ROAS optimization.
+- [Google Penalty Recovery](/google-penalty-recovery) — forensic diagnosis of manual actions and algorithmic suppressions.
 
-## Service Areas
-We deliver digital authority and traffic recovery nationwide:
-- [Capabilities Overview](/capabilities)
+## Service Paths — Creativity
+- [SEO & Web Copywriting hub](/creativity/seo-web-copywriting-agency) — keyword research, semantic copy architecture, GEO-optimized content.
+- [Landing Page Copywriting](/creativity/landing-page-copywriting-agency) — conversion-engineered copy for paid and organic traffic.
+- [Website Copywriting Services](/creativity/website-copywriting-services-agency) — full-site copy that ranks and converts.
+- [SEO Content Strategy](/creativity/seo-content-strategy-agency) — keyword mapping, topic clusters, internal link architecture.
+- [GEO & AI Content Writing](/creativity/geo-ai-content-writing-agency) — content built to be cited by ChatGPT, Perplexity, and Google AI Overviews.
+- [Brand Identity Strategy](/creativity/brand-identity-strategy-agency) — brand voice, visual systems, positioning.
+- [Creative Art Direction](/creativity/creative-art-direction-agency) — styling, imagery, layout, and motion for brand campaigns.
+- [Social Media Management](/creativity/social-media-management-agency) — content planning, community management, growth analytics.
+
+## Service Paths — Relations
+- [Authority Building](/relations/authority-building-agency) — backlink acquisition, PR outreach, entity citations.
 
 ## Knowledge Base
-- [Gobiya Knowledge Bundle](/okf/index.md): Root index of the OKF (Open Knowledge Framework) bundle for gobiya.com, describing the organization, capabilities, case studies, and approach in a machine-readable format.
+- [Gobiya Knowledge Bundle](/okf/index.md): Open Knowledge Framework bundle — organization, capabilities, case studies, and approach in structured machine-readable format.
 
 ## Executive Philosophy
-Gobiya shifts SEO from a cost-center to a revenue-driver. We bypass vanity metrics to focus strictly on commercial outcomes: restored organic traffic streams, secure search dominance, and predictable business-to-business pipeline growth.
+Gobiya shifts SEO from a cost-center to a revenue-driver. We bypass vanity metrics to focus strictly on commercial outcomes: restored organic traffic, AI citation dominance, and predictable B2B pipeline growth.
 
 ## Strategic Direction
-Led by a veteran principal strategist with 25+ years of forensic search analysis and B2B pipeline engineering experience.
+Led by Steve Martin, founder and principal strategist with 25+ years of forensic search analysis and B2B pipeline engineering.

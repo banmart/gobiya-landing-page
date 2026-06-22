@@ -678,6 +678,129 @@ export default function ServiceSubpage({ path, isFanOut, category, slug }: Servi
           { title: 'Future-proof', description: 'GEO-optimized content compounds — it ranks in traditional search AND earns AI citations simultaneously' }
         ]
       },
+
+      // ── SEO & Discoverability fan-out cluster ──────────────────────────────
+      'technical-seo-audit-agency': {
+        pageTitle: 'Technical SEO audit',
+        pageSubheading: 'A full diagnostic of your crawl health, index coverage, Core Web Vitals, and structured data — with a prioritized fix list.',
+        overlaySubtitle: 'Part of the SEO & Discoverability cluster',
+        overlayTitle: 'Technical SEO is the foundation every other optimization builds on',
+        overlayP1: 'You cannot rank content that Googlebot cannot crawl, cannot index pages blocked by accidental noindex tags, and cannot earn E-E-A-T signals without a clean technical foundation beneath your content.',
+        overlayP2: 'Our technical SEO audit exposes every issue suppressing your rankings — and delivers a prioritized fix list tied directly to ranking impact, not just a checklist.',
+        deepDiveHeading: 'What a technical SEO audit actually covers',
+        deepDiveParagraphs: [
+          'A real technical audit goes far beyond running a tool and exporting a CSV. We crawl your site the way Googlebot does — analyzing crawl depth, internal link equity distribution, redirect chains, duplicate content clusters, and canonical conflicts. We cross-reference crawl data with Search Console coverage reports to identify the gap between what\'s submitted and what\'s actually indexed.',
+          'Core Web Vitals failures are analyzed at the field data level, not just lab data. We identify LCP, CLS, and INP issues by page type and prioritize fixes based on the pages that drive the most organic traffic or have the highest conversion value.',
+          'Structured data is audited for validity, completeness, and strategic deployment. Most sites implement schema reactively — a single Organization markup and nothing else. We map the full structured data opportunity across your page types and implement the entity signals that help Google and AI engines categorize your content accurately.'
+        ],
+        concreteStepsHeading: 'How we run a technical SEO audit, concretely',
+        concreteSteps: [
+          'Full site crawl using multiple user agents — desktop, mobile, and Googlebot-matching configuration',
+          'Search Console coverage and performance audit: index gaps, excluded URLs, and click-loss anomalies',
+          'Core Web Vitals field data analysis: LCP, CLS, INP prioritized by page traffic impact',
+          'Structured data review: existing schema validity, missing schema types, and entity coverage gaps',
+          'Duplicate content and canonical audit: parameter URLs, pagination, and faceted navigation issues',
+          'Prioritized fix list: every finding ranked by estimated ranking impact and implementation complexity'
+        ],
+        advantagesHeading: 'Why does a technical SEO audit matter before anything else?',
+        advantageCards: [
+          { title: 'Foundation', description: 'Content, links, and copy improvements compound faster when built on a technically clean site' },
+          { title: 'Index health', description: 'Wasted crawl budget and accidental noindex tags silently suppress rankings — most sites have both' },
+          { title: 'CWV rankings', description: 'Core Web Vitals are a confirmed ranking signal — field-data failures are costing you positions right now' },
+          { title: 'Clarity', description: 'A prioritized fix list eliminates guesswork — you know exactly where to invest development time' }
+        ]
+      },
+      'local-seo-services-agency': {
+        pageTitle: 'Local SEO services',
+        pageSubheading: 'GBP optimization, NAP consistency, local citation building, and map-pack rankings for businesses that serve a geographic area.',
+        overlaySubtitle: 'Part of the SEO & Discoverability cluster',
+        overlayTitle: 'Local search is a different algorithm — and most agencies treat it like regular SEO',
+        overlayP1: 'Map-pack rankings, GBP prominence, and "near me" query dominance are governed by proximity, relevance, and prominence signals that are entirely separate from organic ranking factors.',
+        overlayP2: 'We optimize all three — your Google Business Profile, your NAP consistency across citation sources, and your on-site local signals — as a single integrated system.',
+        deepDiveHeading: 'Local SEO: proximity, relevance, and prominence as a unified system',
+        deepDiveParagraphs: [
+          'Google\'s local algorithm evaluates three factors: proximity to the searcher, relevance of your business to the query, and prominence — a composite of review signals, citation consistency, and on-site local authority. Most agencies focus on GBP optimization and ignore the prominence signals that differentiate businesses at identical proximity and relevance levels.',
+          'NAP (Name, Address, Phone) consistency across citations is a foundational trust signal. A single inconsistent address format across Yelp, YellowPages, Foursquare, and industry-specific directories can suppress map-pack rankings for months. We audit, correct, and build citations systematically — prioritizing authoritative sources over high-volume low-quality directories.',
+          'Location pages are the most underoptimized asset in local SEO. A single "Contact Us" page with an embedded map is not a location page — it\'s a placeholder. We build location pages with entity-specific content: neighborhood references, local schema, service-area copy, and internal linking structures that concentrate local authority on the pages that compete for map-pack placement.'
+        ],
+        concreteStepsHeading: 'How we build local SEO dominance, concretely',
+        concreteSteps: [
+          'GBP audit and optimization: category selection, service areas, photos, Q&A, posts, and attribute completeness',
+          'NAP consistency audit across the top 50 citation sources — corrections and new citation submissions',
+          'Local keyword and intent mapping: "near me" queries, neighborhood-specific terms, and service-area searches',
+          'Location page creation or rewrite: entity-rich content, local schema, and service-area specificity',
+          'Review velocity strategy: systematic process for generating consistent, authentic review volume',
+          'Monthly GBP monitoring: ranking positions, engagement metrics, and search query performance'
+        ],
+        advantagesHeading: 'What does local SEO investment return?',
+        advantageCards: [
+          { title: 'Map-pack visibility', description: 'Three-pack rankings are above organic results — position 1 local is worth more than position 1 organic for local intent queries' },
+          { title: 'Intent matching', description: '"Near me" and location-specific searches have the highest purchase intent of any search query category' },
+          { title: 'Review authority', description: 'Higher review velocity and rating scores influence both rankings and click-through rates simultaneously' },
+          { title: 'Compounding', description: 'Citation consistency and GBP authority build over time — early investment yields disproportionate long-term returns' }
+        ]
+      },
+      'b2b-seo-agency': {
+        pageTitle: 'B2B SEO',
+        pageSubheading: 'Long-cycle, high-value buyer journey optimization targeting decision-makers and procurement queries — not just traffic volume.',
+        overlaySubtitle: 'Part of the SEO & Discoverability cluster',
+        overlayTitle: 'B2B SEO is not about impressions — it\'s about reaching the right buyer at the right stage',
+        overlayP1: 'B2B purchase decisions involve multiple stakeholders, research cycles measured in weeks, and queries that look nothing like B2C search patterns. Ranking for high-volume keywords is irrelevant if none of those visitors have budget authority.',
+        overlayP2: 'We build B2B SEO strategies around decision-maker queries, procurement language, and the specific content types that move buyers from awareness to vendor shortlist.',
+        deepDiveHeading: 'B2B SEO strategy: built around how enterprise buyers actually search',
+        deepDiveParagraphs: [
+          'B2B buyers search differently at each stage of the purchase cycle. Awareness-stage queries are broad and educational — "how to improve B2B pipeline conversion." Mid-funnel queries are comparative — "best CRM for B2B sales teams." Bottom-funnel queries are vendor-specific and high-intent — "Salesforce alternative for mid-market." Each stage requires different content types, different SERP features to target, and different conversion architectures.',
+          'Decision-maker SEO targets titles and roles, not just topics. The queries a CFO uses to research a financial SaaS product differ from the queries a VP of Operations uses for the same product. We map buyer personas to search behavior and build content architectures that place the right message in front of the right decision-maker at the right stage.',
+          'B2B SEO ROI is measured differently too. A single converted lead from organic search may represent $50,000 in contract value. This changes the keyword prioritization calculus entirely — a low-volume, high-commercial-intent query is worth more than a high-volume informational query that attracts readers, not buyers. We build strategies optimized for pipeline value, not impressions.'
+        ],
+        concreteStepsHeading: 'How we build a B2B SEO program, concretely',
+        concreteSteps: [
+          'Buyer persona mapping: identify all stakeholder roles involved in the purchase decision and their specific search behaviors',
+          'Purchase-cycle keyword architecture: awareness, consideration, and decision-stage queries mapped to specific URLs',
+          'Competitive gap analysis: which decision-stage queries are your competitors ranking for that you are not',
+          'Content architecture: pillar pages, topic clusters, and comparison pages targeting vendor-evaluation queries',
+          'Technical foundation: Core Web Vitals, structured data, and crawl efficiency for authoritative domain signaling',
+          'Pipeline attribution: connect organic rankings to CRM pipeline data so SEO investment is measured in revenue, not traffic'
+        ],
+        advantagesHeading: 'Why B2B-specific SEO strategy matters',
+        advantageCards: [
+          { title: 'Quality over volume', description: 'One high-intent B2B visitor is worth more than 1,000 informational readers — strategy reflects that distinction' },
+          { title: 'Longer runway', description: 'B2B purchase cycles mean SEO-sourced leads have longer sales windows — content needs to support every stage' },
+          { title: 'Decision-maker reach', description: 'Targeting procurement and evaluation queries puts your brand in front of budget holders, not just researchers' },
+          { title: 'Pipeline ROI', description: 'SEO measured against contract value, not sessions — every ranking investment is tied to revenue potential' }
+        ]
+      },
+      'ecommerce-seo-agency': {
+        pageTitle: 'E-commerce SEO',
+        pageSubheading: 'Category and product page architecture, faceted navigation, schema, and commercial-intent content clusters for online stores.',
+        overlaySubtitle: 'Part of the SEO & Discoverability cluster',
+        overlayTitle: 'E-commerce SEO has unique technical challenges that generic agencies miss entirely',
+        overlayP1: 'Faceted navigation, duplicate product pages, thin category content, and crawl budget misallocation are e-commerce-specific problems that standard SEO audits don\'t fully address.',
+        overlayP2: 'We specialize in the structural and content challenges unique to product catalogs — building architectures that rank category and product pages for commercial-intent queries at scale.',
+        deepDiveHeading: 'E-commerce SEO: architecture, product data, and commercial content at scale',
+        deepDiveParagraphs: [
+          'The largest technical challenge in e-commerce SEO is faceted navigation — the filter systems that generate thousands of URL combinations (color, size, price, brand) that duplicate content and dilute crawl budget. Handling faceted navigation correctly requires a combination of canonical tags, parameter handling in Search Console, noindex directives for low-value filter combinations, and strategic allowlisting of high-value filter pages that have real ranking potential.',
+          'Category pages are the highest-value ranking assets in most e-commerce sites and the most underoptimized. Most category pages contain only a product grid and a heading — no unique content, no internal linking strategy, no structured data. We transform category pages into authoritative hub pages: buyer guides above the fold, comparison tables, internal links to top products, and Category schema that captures rich results.',
+          'Product page SEO at scale requires systematic content and schema — not page-by-page manual work. We build templated optimization systems: structured data templates for Product, Offer, and AggregateRating schema; title tag formulas that incorporate commercial-intent modifiers; and automated internal linking patterns that distribute link equity from category pages to high-margin product pages.'
+        ],
+        concreteStepsHeading: 'How we optimize e-commerce SEO, concretely',
+        concreteSteps: [
+          'Faceted navigation audit: identify URL permutations wasting crawl budget and implement canonical/noindex strategy',
+          'Category page optimization: unique content, internal linking, structured data, and commercial-intent keyword targeting',
+          'Product page audit: title tag formulas, schema templates, and systematic on-page optimization at scale',
+          'Crawl budget analysis: index coverage versus product catalog size — identify and resolve index bloat',
+          'Commercial content strategy: buying guides, comparison content, and "best [category]" pages targeting bottom-funnel queries',
+          'Schema deployment: Product, Offer, AggregateRating, and BreadcrumbList structured data for rich results eligibility'
+        ],
+        advantagesHeading: 'What e-commerce SEO delivers',
+        advantageCards: [
+          { title: 'Category rankings', description: 'Category pages dominate high-volume commercial queries — systematic optimization unlocks disproportionate traffic' },
+          { title: 'Rich results', description: 'Product schema enables star ratings, price, and availability in SERPs — significantly higher CTR than standard results' },
+          { title: 'Crawl efficiency', description: 'Fixing faceted navigation frees crawl budget for product pages that actually deserve to rank' },
+          { title: 'Revenue per click', description: 'Commercial-intent organic traffic converts at higher rates than informational traffic — quality over volume' }
+        ]
+      },
+
       'google-penalty-recovery': {
         pageTitle: 'Google penalty recovery',
         pageSubheading: 'We diagnose algorithmic suppressions and manual actions, then deploy the precise fix.',
@@ -901,14 +1024,14 @@ export default function ServiceSubpage({ path, isFanOut, category, slug }: Servi
             <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent" />
             <div className="relative z-10 w-full container mx-auto px-6 sm:px-10 max-w-6xl pb-16 pt-32 grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-end">
               <div>
-                <p className="text-xs font-medium text-white/50 uppercase tracking-[0.2em] mb-5">{overlaySubtitle}</p>
+                <p className="text-xs font-medium uppercase tracking-[0.2em] mb-5" style={{ color: 'rgba(255, 255, 255, 0.75)' }}>{overlaySubtitle}</p>
                 <h2 className="text-[clamp(2rem,4vw,3.5rem)] font-bold tracking-tight text-white leading-[1.05]">
                   {overlayTitle}
                 </h2>
               </div>
               <div className="flex flex-col gap-5">
-                <p className="text-base text-white/65 leading-[1.8]">{overlayP1}</p>
-                <p className="text-base text-white/65 leading-[1.8]">{overlayP2}</p>
+                <p className="text-base leading-[1.8]" style={{ color: 'rgba(255, 255, 255, 0.85)' }}>{overlayP1}</p>
+                <p className="text-base leading-[1.8]" style={{ color: 'rgba(255, 255, 255, 0.85)' }}>{overlayP2}</p>
                 <div className="pt-2">
                   <a
                     href="/book"

@@ -1,10 +1,10 @@
 ---
 type: Index
 title: GOBIYA — Knowledge Bundle
-description: Root index of the OKF bundle for gobiya.com, a Los Angeles digital marketing agency focused on SEO algorithm/penalty recovery, generative engine optimization (GEO), and AI-powered growth.
+description: Root index of the OKF bundle for gobiya.com, a Los Angeles digital marketing agency specializing in SEO, SEO copywriting, GEO/AI search optimization, B2B pipeline engineering, and web development.
 resource: https://www.gobiya.com
-tags: [gobiya, agency, seo, geo, ai, los-angeles]
-timestamp: 2026-06-17T00:00:00Z
+tags: [gobiya, agency, seo, seo-copywriting, geo, ai, b2b, los-angeles]
+timestamp: 2026-06-22T00:00:00Z
 ---
 
 # GOBIYA

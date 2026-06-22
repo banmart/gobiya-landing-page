@@ -20,7 +20,9 @@ import {
   OnPageSeoLosAngelesPage,
   SEO,
   NotFound,
-  CategoryPage
+  CategoryPage,
+  SeoWebCopywritingPage,
+  SeoDiscoverabilityPage
 } from './components/PageComponents';
 
 // Safe storage helper to prevent crashes in sandboxed environments/iframes or strict privacy modes
@@ -361,6 +363,10 @@ function App({ url }: AppProps) {
         <CategoryPage category="relations" />
       ) : normalizedPath === '/google-penalty-recovery' ? (
         <ServiceSubpage key={normalizedPath} path={normalizedPath} isFanOut={true} category="recovery" slug="google-penalty-recovery" />
+      ) : normalizedPath === '/creativity/seo-web-copywriting-agency' ? (
+        <SeoWebCopywritingPage />
+      ) : normalizedPath === '/performance/seo-discoverability-agency' ? (
+        <SeoDiscoverabilityPage />
       ) : fanOutMatch ? (
         <ServiceSubpage key={normalizedPath} path={normalizedPath} isFanOut={true} category={fanOutCategory} slug={fanOutSlug} />
       ) : normalizedPath === '/case-studies/smile-center-dentistry' ? (
