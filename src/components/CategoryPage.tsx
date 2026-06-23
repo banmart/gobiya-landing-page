@@ -36,7 +36,7 @@ const CATEGORIES: Record<string, CategoryConfig> = {
     stat1: { value: '5+', label: 'Brand systems delivered' },
     stat2: { value: '100%', label: 'Custom — no templates' },
     stat3: { value: '3×', label: 'Avg. engagement lift' },
-    video: '/videos/space-girl.webm',
+    video: '/videos/rollb.webm',
     services: [
       { href: '/creativity/brand-identity-strategy-agency', label: 'Brand Identity Strategy' },
       { href: '/creativity/communication-concepts-agency', label: 'Communication Concepts' },
@@ -111,7 +111,7 @@ const CATEGORIES: Record<string, CategoryConfig> = {
     stat1: { value: '100/100', label: 'Core Web Vitals target' },
     stat2: { value: '61%', label: 'Avg. CPL reduction' },
     stat3: { value: '5×', label: 'Pipeline growth achieved' },
-    video: '/videos/sc-hero-background-compressed.webm',
+    video: '/videos/rollb.webm',
     services: [
       { href: '/performance/seo-discoverability-agency', label: 'SEO & Discoverability' },
       { href: '/performance/web-development-agency', label: 'Web & IT App Development' },
@@ -186,7 +186,7 @@ const CATEGORIES: Record<string, CategoryConfig> = {
     stat1: { value: '300+', label: 'Placements secured' },
     stat2: { value: 'DR 50+', label: 'Avg. domain rating of links' },
     stat3: { value: '12mo', label: 'Avg. authority build cycle' },
-    video: '/videos/gobiyaRace.webm',
+    video: '/videos/rollb.webm',
     services: [
       { href: '/relations/authority-building-agency', label: 'Authority & Link Building' },
       { href: '/relations/digital-pr-media-outreach-agency', label: 'Digital PR & Media Outreach' },

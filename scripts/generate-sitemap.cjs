@@ -25,7 +25,36 @@ const corePages = [
   { url: 'https://www.gobiya.com/author/steve-martin', priority: '0.70', changefreq: 'monthly', lastmod: '2026-05-25' },
   { url: 'https://www.gobiya.com/case-studies/smile-center-dentistry', priority: '0.80', changefreq: 'monthly', lastmod: '2026-05-28' },
   { url: 'https://www.gobiya.com/case-studies/american-livescan', priority: '0.80', changefreq: 'monthly', lastmod: '2026-05-28' },
-  { url: 'https://www.gobiya.com/google-penalty-recovery', priority: '0.85', changefreq: 'weekly', lastmod: currentDate }
+  { url: 'https://www.gobiya.com/google-penalty-recovery', priority: '0.85', changefreq: 'weekly', lastmod: currentDate },
+  
+  // Category Pages
+  { url: 'https://www.gobiya.com/creativity', priority: '0.90', changefreq: 'weekly', lastmod: currentDate },
+  { url: 'https://www.gobiya.com/performance', priority: '0.90', changefreq: 'weekly', lastmod: currentDate },
+  { url: 'https://www.gobiya.com/relations', priority: '0.90', changefreq: 'weekly', lastmod: currentDate },
+
+  // Creativity Fan-Outs
+  { url: 'https://www.gobiya.com/creativity/brand-identity-strategy-agency', priority: '0.85', changefreq: 'weekly', lastmod: currentDate },
+  { url: 'https://www.gobiya.com/creativity/communication-concepts-agency', priority: '0.85', changefreq: 'weekly', lastmod: currentDate },
+  { url: 'https://www.gobiya.com/creativity/seo-web-copywriting-agency', priority: '0.85', changefreq: 'weekly', lastmod: currentDate },
+  { url: 'https://www.gobiya.com/creativity/creative-art-direction-agency', priority: '0.85', changefreq: 'weekly', lastmod: currentDate },
+  { url: 'https://www.gobiya.com/creativity/social-media-management-agency', priority: '0.85', changefreq: 'weekly', lastmod: currentDate },
+
+  // Performance Fan-Outs
+  { url: 'https://www.gobiya.com/performance/seo-discoverability-agency', priority: '0.85', changefreq: 'weekly', lastmod: currentDate },
+  { url: 'https://www.gobiya.com/performance/web-development-agency', priority: '0.85', changefreq: 'weekly', lastmod: currentDate },
+  { url: 'https://www.gobiya.com/performance/google-ads-ppc-strategy-agency', priority: '0.85', changefreq: 'weekly', lastmod: currentDate },
+  { url: 'https://www.gobiya.com/performance/cro-ux-analysis-agency', priority: '0.85', changefreq: 'weekly', lastmod: currentDate },
+  { url: 'https://www.gobiya.com/performance/ai-llms-business-agency', priority: '0.85', changefreq: 'weekly', lastmod: currentDate },
+  { url: 'https://www.gobiya.com/performance/native-crm-agency', priority: '0.85', changefreq: 'weekly', lastmod: currentDate },
+  { url: 'https://www.gobiya.com/performance/blockchain-web3-development-agency', priority: '0.85', changefreq: 'weekly', lastmod: currentDate },
+  { url: 'https://www.gobiya.com/performance/ai-prospect-scraper-agency', priority: '0.85', changefreq: 'weekly', lastmod: currentDate },
+
+  // Relations Fan-Outs
+  { url: 'https://www.gobiya.com/relations/authority-building-agency', priority: '0.85', changefreq: 'weekly', lastmod: currentDate },
+  { url: 'https://www.gobiya.com/relations/digital-pr-media-outreach-agency', priority: '0.85', changefreq: 'weekly', lastmod: currentDate },
+  { url: 'https://www.gobiya.com/relations/content-marketing-syndication-agency', priority: '0.85', changefreq: 'weekly', lastmod: currentDate },
+  { url: 'https://www.gobiya.com/relations/influencer-marketing-agency', priority: '0.85', changefreq: 'weekly', lastmod: currentDate },
+  { url: 'https://www.gobiya.com/relations/local-community-relations-agency', priority: '0.85', changefreq: 'weekly', lastmod: currentDate }
 ];
 
 // 3. Read ArticlePage.tsx content to extract article slugs and dates
