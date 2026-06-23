@@ -640,7 +640,7 @@
   }
   .hero-copy {
     display:flex; flex-direction:column; justify-content:flex-end;
-    padding:13.5rem var(--pad) 3.5rem;
+    padding:17.5rem var(--pad) 3.5rem;
     border-right:1px solid var(--line);
   }
   .hero-eyebrow { margin-bottom:2.6rem; }
@@ -743,7 +743,7 @@
 
   @media (max-width: 1024px) {
     .hero-inner { grid-template-columns:1fr; min-height:0; }
-    .hero-copy { border-right:none; border-bottom:1px solid var(--line); padding-top:13rem; }
+    .hero-copy { border-right:none; border-bottom:1px solid var(--line); padding-top:16.5rem; }
     .hero-exhibit { padding-top:3rem; padding-bottom:3.5rem; }
   }
   @media (max-width: 640px) {

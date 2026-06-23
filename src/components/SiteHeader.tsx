@@ -52,7 +52,7 @@ const RotatingWord: React.FC = () => {
 
   return (
     <span className={`rotating-word ${fade ? 'fade-in' : 'fade-out'}`}>
-      {words[index]}
+      ({words[index]})
     </span>
   );
 };

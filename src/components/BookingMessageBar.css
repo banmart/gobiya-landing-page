@@ -40,8 +40,6 @@
   align-items: center;
   gap: 1rem;
   flex-grow: 1;
-  max-width: var(--max-w);
-  margin: 0 auto;
 }
 
 /* Container for grouping content elements inside the bar wrapper */
@@ -55,26 +53,37 @@
 .booking-message-avatar-wrapper {
   position: relative;
   flex-shrink: 0;
+  padding: 2px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--line), var(--line-soft));
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
 }
 
 .booking-message-avatar {
-  width: 42px;
-  height: 42px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
   object-fit: cover;
-  border: 1.5px solid var(--green);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border: 2px solid #ffffff;
 }
 
 .booking-message-avatar-pulse {
   position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 10px;
-  height: 10px;
-  background-color: var(--signal);
+  bottom: 2px;
+  right: 2px;
+  width: 12px;
+  height: 12px;
+  background-color: var(--green);
   border: 2px solid #ffffff;
   border-radius: 50%;
+  box-shadow: 0 0 0 rgba(62, 77, 76, 0.4);
+  animation: pulse-ring 2s infinite;
+}
+
+@keyframes pulse-ring {
+  0% { box-shadow: 0 0 0 0 rgba(62, 77, 76, 0.4); }
+  70% { box-shadow: 0 0 0 6px rgba(62, 77, 76, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(62, 77, 76, 0); }
 }
 
 .booking-message-text-group {

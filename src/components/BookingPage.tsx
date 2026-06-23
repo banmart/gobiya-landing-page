@@ -202,53 +202,56 @@ const BookingPage: React.FC = () => {
   };
 
   return (
-    <div className="booking-page bg-[#0d0f12] text-white">
+    <div className="booking-page bg-[#0d0f12]">
       <SiteHeader />
 
       {step !== 3 ? (
         <>
           {/* HERO SECTION WITH CAPTURE FORM */}
-          <section 
-            className="relative w-full overflow-hidden bg-[#0d0f12] border-b border-[#2d332f]"
+          <section
             style={{
+              position: 'relative',
+              width: '100%',
+              overflow: 'hidden',
+              background: '#EFEDE5',
               backgroundImage: "url('/images/article-ai-marketing-trends.webp')",
               backgroundSize: 'cover',
               backgroundPosition: 'center',
-              paddingTop: '230px',
-              paddingBottom: '100px'
+              padding: '13rem 5vw 5rem',
+              borderBottom: '1px solid #D3CEC0',
             }}
           >
-            {/* Glowing accents and dark overlay */}
-            <div className="absolute inset-0 bg-[#0d0f12]/75 z-0" />
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,#2F5D50/0.18,transparent_55%)] z-0" />
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_80%,#F26522/0.09,transparent_55%)] z-0" />
-            <div className="absolute inset-0 opacity-10 z-0" style={{
-              backgroundImage: 'linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)',
+            {/* Glowing accents and light overlay */}
+            <div className="absolute inset-0 bg-[#EFEDE5]/85 z-0" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,#2F5D50/0.05,transparent_55%)] z-0" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_80%,#15130E/0.03,transparent_55%)] z-0" />
+            <div className="absolute inset-0 opacity-15 z-0" style={{
+              backgroundImage: 'linear-gradient(rgba(21,19,14,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(21,19,14,0.05) 1px, transparent 1px)',
               backgroundSize: '96px 96px'
             }} />
 
-            <div className="relative z-10 max-w-[1440px] mx-auto px-[5vw] grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+            <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
               
               {/* LEFT COLUMN: Strategic Value Propositions */}
               <div className="lg:col-span-7 flex flex-col justify-center text-left">
-                <div data-hero="1" className="inline-flex items-center gap-2 mb-6 text-xs font-mono uppercase tracking-[0.2em] text-[#F26522] font-semibold">
-                  <span className="w-2.5 h-2.5 rounded-full bg-[#F26522] animate-pulse" />
+                <div data-hero="1" className="inline-flex items-center gap-2 mb-6 text-[11px] font-mono uppercase tracking-[0.2em] text-[#2F5D50] font-bold">
+                  <span className="w-2 h-2 rounded-full bg-[#2F5D50] animate-pulse" />
                   LIVE ON-DEMAND | STRATEGY SESSIONS
                 </div>
-                <h1 data-hero="1" className="text-[clamp(2.4rem,5.2vw,4.2rem)] font-bold tracking-tight text-white leading-[1.08] mb-6 font-display">
-                  Forecasting B2B Growth: How to Project SEO and Pipeline 90 to 180 Days From Now
+                <h1 data-hero="1" className="text-[clamp(2.4rem,5.2vw,4.2rem)] font-medium tracking-tight text-[#15130E] leading-[1.08] mb-6 font-display">
+                  Forecasting B2B Growth
                 </h1>
-                <p data-hero="2" className="text-lg font-semibold text-[#F26522] mb-6 leading-snug">
+                <p data-hero="2" className="text-lg font-semibold text-[#2F5D50] mb-6 leading-snug">
                   Marketing forecasting has become significantly more complex.
                 </p>
-                <div data-hero="3" className="text-gray-300 text-[15px] sm:text-[17px] leading-relaxed space-y-6 max-w-[700px] font-light">
+                <div data-hero="3" className="text-[#5B564C] text-[15px] sm:text-[17px] leading-relaxed space-y-6 max-w-[700px] font-medium">
                   <p>
                     AI Overviews are changing click behavior, paid media auctions are becoming less predictable, attribution gaps continue to widen, and B2B conversion patterns no longer behave the way they did just a few years ago. Yet most organizations still rely on outdated forecasting models built around static traffic assumptions, stable CPCs, and linear growth expectations.
                   </p>
                   <p>
                     In this private strategy session, Steve Martin and the Gobiya engineering team will break down how modern B2B teams should forecast SEO, conversion architecture, and paid growth in today's environment. You'll learn how to move beyond generic traffic projections and build forecasting systems that account for visibility shifts, AI-driven search behavior, conversion volatility, pipeline quality, and revenue efficiency.
                   </p>
-                  <p className="font-semibold text-white pt-2">
+                  <p className="font-semibold text-[#15130E] pt-2">
                     You'll walk away with practical B2B forecasting frameworks, pipeline contribution maps, and a step-by-step action plan to operationalize organic growth projections across your organization.
                   </p>
                 </div>
@@ -256,7 +259,7 @@ const BookingPage: React.FC = () => {
 
               {/* RIGHT COLUMN: The Form / Booking Widget */}
               <div className="lg:col-span-5 flex justify-center w-full" data-hero="4">
-                <div className="w-full max-w-md bg-white text-gray-900 rounded-xl shadow-2xl p-6 sm:p-8 border border-gray-100 relative overflow-hidden">
+                <div className="w-full max-w-md bg-white text-gray-900 rounded shadow-[0_24px_60px_rgba(21,19,14,0.1)] p-8 sm:p-10 border border-[#D3CEC0] relative overflow-hidden">
                   
                   {errorMsg && (
                     <div className="bg-red-50 border border-red-200 text-red-700 text-xs rounded p-3 mb-4 flex items-center gap-2">
@@ -283,7 +286,7 @@ const BookingPage: React.FC = () => {
                             value={firstName} 
                             onChange={e => setFirstName(e.target.value)} 
                             placeholder="First Name" 
-                            className="bg-gray-50 border border-gray-200 py-2.5 px-3 rounded text-sm text-gray-900 focus:border-[#F26522] focus:bg-white outline-none transition-all w-full"
+                            className="bg-gray-50 border border-gray-200 py-2.5 px-3 rounded text-sm text-gray-900 focus:border-[#2F5D50] focus:bg-white outline-none transition-all w-full"
                           />
                         </div>
                         <div className="flex flex-col gap-1 book-field">
@@ -295,7 +298,7 @@ const BookingPage: React.FC = () => {
                             value={lastName} 
                             onChange={e => setLastName(e.target.value)} 
                             placeholder="Last Name" 
-                            className="bg-gray-50 border border-gray-200 py-2.5 px-3 rounded text-sm text-gray-900 focus:border-[#F26522] focus:bg-white outline-none transition-all w-full"
+                            className="bg-gray-50 border border-gray-200 py-2.5 px-3 rounded text-sm text-gray-900 focus:border-[#2F5D50] focus:bg-white outline-none transition-all w-full"
                           />
                         </div>
                       </div>
@@ -309,7 +312,7 @@ const BookingPage: React.FC = () => {
                           value={email} 
                           onChange={e => setEmail(e.target.value)} 
                           placeholder="Email address" 
-                          className="bg-gray-50 border border-gray-200 py-2.5 px-3 rounded text-sm text-gray-900 focus:border-[#F26522] focus:bg-white outline-none transition-all w-full"
+                          className="bg-gray-50 border border-gray-200 py-2.5 px-3 rounded text-sm text-gray-900 focus:border-[#2F5D50] focus:bg-white outline-none transition-all w-full"
                         />
                       </div>
 
@@ -322,7 +325,7 @@ const BookingPage: React.FC = () => {
                           value={website} 
                           onChange={e => setWebsite(e.target.value)} 
                           placeholder="e.g. company.com" 
-                          className="bg-gray-50 border border-gray-200 py-2.5 px-3 rounded text-sm text-gray-900 focus:border-[#F26522] focus:bg-white outline-none transition-all w-full"
+                          className="bg-gray-50 border border-gray-200 py-2.5 px-3 rounded text-sm text-gray-900 focus:border-[#2F5D50] focus:bg-white outline-none transition-all w-full"
                         />
                       </div>
 
@@ -334,7 +337,7 @@ const BookingPage: React.FC = () => {
                             required 
                             value={budget} 
                             onChange={e => setBudget(e.target.value)}
-                            className="bg-gray-50 border border-gray-200 py-2.5 px-2 rounded text-sm text-gray-900 focus:border-[#F26522] focus:bg-white outline-none transition-all w-full select-field"
+                            className="bg-gray-50 border border-gray-200 py-2.5 px-2 rounded text-sm text-gray-900 focus:border-[#2F5D50] focus:bg-white outline-none transition-all w-full select-field"
                           >
                             <option value="">Select budget...</option>
                             {BUDGET_OPTIONS.map(o => (
@@ -351,7 +354,7 @@ const BookingPage: React.FC = () => {
                             value={phone} 
                             onChange={e => setPhone(e.target.value)} 
                             placeholder="+1 (555) 000-0000" 
-                            className="bg-gray-50 border border-gray-200 py-2.5 px-3 rounded text-sm text-gray-900 focus:border-[#F26522] focus:bg-white outline-none transition-all w-full"
+                            className="bg-gray-50 border border-gray-200 py-2.5 px-3 rounded text-sm text-gray-900 focus:border-[#2F5D50] focus:bg-white outline-none transition-all w-full"
                           />
                         </div>
                       </div>
@@ -364,13 +367,13 @@ const BookingPage: React.FC = () => {
                           value={challenges} 
                           onChange={e => setChallenges(e.target.value)} 
                           placeholder="E.g., Hit by Google updates, lost 40% pipeline, need audit." 
-                          className="bg-gray-50 border border-gray-200 py-2 px-3 rounded text-sm text-gray-900 focus:border-[#F26522] focus:bg-white outline-none transition-all w-full resize-none"
+                          className="bg-gray-50 border border-gray-200 py-2 px-3 rounded text-sm text-gray-900 focus:border-[#2F5D50] focus:bg-white outline-none transition-all w-full resize-none"
                         />
                       </div>
 
                       <button 
                         type="button" 
-                        className="w-full mt-4 bg-[#F26522] hover:bg-[#e05a1a] text-white py-3.5 rounded font-bold uppercase tracking-wider text-xs transition-colors duration-200 outline-none"
+                        className="w-full mt-4 bg-[#2F5D50] hover:bg-[#254A40] text-white py-3.5 rounded font-bold uppercase tracking-wider text-[11px] transition-colors duration-200 outline-none"
                         onClick={() => {
                           if (!firstName || !lastName || !email || !website || !budget || !phone) {
                             setErrorMsg('Please fill out all required fields marked with *');
@@ -383,20 +386,49 @@ const BookingPage: React.FC = () => {
                         CONTINUE TO CALENDAR →
                       </button>
 
-                      {/* Greyscale trust logos inside the form card */}
-                      <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 mt-6 pt-5 border-t border-gray-100 opacity-40 grayscale">
-                        <span className="font-bold tracking-tight text-gray-900 text-[10px]">TOTAL CAPITAL</span>
-                        <span className="font-serif italic font-semibold text-gray-900 text-[10px]">Smile Center</span>
-                        <span className="font-mono uppercase tracking-widest text-gray-900 text-[9px]">Livescan</span>
-                        <span className="font-sans font-black text-gray-900 text-[10px]">DG PLUMBING</span>
+                      {/* Case study logo marquee */}
+                      <div className="mt-6 pt-5 border-t border-gray-100 overflow-hidden">
+                        <style>{`
+                          @keyframes bk-marquee {
+                            0%   { transform: translateX(0); }
+                            100% { transform: translateX(-50%); }
+                          }
+                          .bk-marquee-track {
+                            display: flex;
+                            width: max-content;
+                            animation: bk-marquee 18s linear infinite;
+                          }
+                          .bk-marquee-track:hover { animation-play-state: paused; }
+                        `}</style>
+                        <div className="bk-marquee-track items-center gap-8" style={{ alignItems: 'center' }}>
+                          {[
+                            '/images/quickpass-logo-opt.webp',
+                            '/images/ark-logo-final.webp',
+                            '/images/tidder-logo.webp',
+                            '/images/safetycentric-logo.png',
+                            '/images/medicine-metta-logo-1.webp',
+                            '/images/quickpass-logo-opt.webp',
+                            '/images/ark-logo-final.webp',
+                            '/images/tidder-logo.webp',
+                            '/images/safetycentric-logo.png',
+                            '/images/medicine-metta-logo-1.webp',
+                          ].map((src, i) => (
+                            <img
+                              key={i}
+                              src={src}
+                              alt=""
+                              style={{ height: '22px', width: 'auto', opacity: 0.35, filter: 'grayscale(1)', flexShrink: 0, marginRight: '2rem' }}
+                            />
+                          ))}
+                        </div>
                       </div>
                     </div>
                   ) : (
                     /* STEP 2: Calendar scheduling */
                     <div className="flex flex-col text-left">
-                      <div className="flex items-center justify-between mb-4 pb-2 border-b border-gray-100">
-                        <span className="text-xs font-mono uppercase tracking-wider text-gray-400 font-bold">Step 2: Choose session slot</span>
-                        <button type="button" onClick={() => setStep(1)} className="text-xs text-[#F26522] hover:underline font-medium">Go Back</button>
+                      <div className="flex items-center justify-between mb-4 pb-2 border-b border-[#D3CEC0]">
+                        <span className="text-[11px] font-mono uppercase tracking-wider text-gray-400 font-bold">Step 2: Choose session slot</span>
+                        <button type="button" onClick={() => setStep(1)} className="text-[11px] text-[#2F5D50] hover:underline font-medium uppercase tracking-wider font-mono">Go Back</button>
                       </div>
 
                       <div className="cal-nav">
@@ -427,13 +459,13 @@ const BookingPage: React.FC = () => {
                         </div>
                       )}
 
-                      <div className="flex gap-3 mt-6 pt-4 border-t border-gray-100">
-                        <button type="button" className="py-2.5 px-4 border border-gray-200 rounded text-xs font-mono uppercase tracking-wider text-gray-500 hover:border-gray-400 hover:text-gray-900 transition-colors" onClick={() => setStep(1)}>
+                      <div className="flex gap-3 mt-6 pt-4 border-t border-[#D3CEC0]">
+                        <button type="button" className="py-2.5 px-4 border border-gray-200 rounded text-[11px] font-mono uppercase tracking-wider text-gray-500 hover:border-gray-400 hover:text-gray-900 transition-colors" onClick={() => setStep(1)}>
                           Back
                         </button>
                         <button 
                           type="button" 
-                          className="flex-1 bg-[#F26522] hover:bg-[#e05a1a] text-white py-2.5 rounded font-bold uppercase tracking-wider text-xs transition-colors duration-200 disabled:opacity-40 disabled:cursor-not-allowed outline-none"
+                          className="flex-1 bg-[#2F5D50] hover:bg-[#254A40] text-white py-2.5 rounded font-bold uppercase tracking-wider text-[11px] transition-colors duration-200 disabled:opacity-40 disabled:cursor-not-allowed outline-none"
                           disabled={!selectedDate || !selectedTimeSlot || submitting}
                           onClick={() => handleBookingSubmit()}
                         >
@@ -450,14 +482,13 @@ const BookingPage: React.FC = () => {
           </section>
 
           {/* WHAT YOU'LL LEARN & STRATEGIST SECTION */}
-          <section className="bg-white text-gray-900 py-24 sm:py-32 border-t border-gray-100">
-            <div className="max-w-[1440px] mx-auto px-[5vw]">
-              <h2 className="text-4xl sm:text-5xl font-bold tracking-tight text-center mb-20 text-gray-900 font-display">
+          <section style={{ background: '#ffffff', padding: '5rem 5vw', borderTop: '1px solid #e5e7eb' }}>
+              <h2 style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 700, letterSpacing: '-0.03em', color: '#111827', marginBottom: '3rem' }}>
                 What You'll Learn
               </h2>
 
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
-                
+
                 {/* LEFT SIDE: The 10 Points Grid */}
                 <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-10 text-left">
                   {[
@@ -472,8 +503,8 @@ const BookingPage: React.FC = () => {
                     { title: "Executive-ready reporting templates", desc: "Design forecasting dashboards and templates that B2B executive leadership teams actually trust." },
                     { title: "90-day execution roadmap", desc: "Map out a step-by-step action plan to align search attribution with pipeline CRM performance from day one." }
                   ].map((item, idx) => (
-                    <div key={idx} className="flex gap-4 items-start">
-                      <div className="w-8 h-8 rounded-full bg-[#F26522]/10 flex items-center justify-center shrink-0 text-[#F26522] mt-0.5">
+                    <div key={idx} className="flex gap-4 items-start border-b border-[#D3CEC0] pb-8 pt-4">
+                      <div className="w-8 h-8 rounded-full bg-[#2F5D50]/10 flex items-center justify-center shrink-0 text-[#2F5D50] mt-0.5">
                         <svg viewBox="0 0 24 24" fill="none" width="16" height="16" stroke="currentColor" strokeWidth="2.5"><path d="M5 13l4 4L19 7" strokeLinecap="round" strokeLinejoin="round"/></svg>
                       </div>
                       <div>
@@ -485,17 +516,17 @@ const BookingPage: React.FC = () => {
                 </div>
 
                 {/* RIGHT SIDE: The Instructor Profile */}
-                <div className="lg:col-span-4 bg-gray-50 border border-gray-100 rounded-2xl p-6 sm:p-8 text-left">
+                <div className="lg:col-span-4 text-left" style={{ background: '#f9fafb', border: '1px solid #e5e7eb', padding: '2.5rem' }}>
                   <p className="text-[10px] font-mono uppercase tracking-[0.2em] text-gray-400 font-semibold mb-4">Your Strategist</p>
                   <div className="flex items-center gap-4 mb-6">
                     <img 
                       src="/images/steve-portrait.webp" 
                       alt="Steve Martin" 
-                      className="w-16 h-16 rounded-full object-cover border-2 border-[#F26522]" 
+                      className="w-16 h-16 rounded-full object-cover border border-[#D3CEC0] shadow-sm" 
                     />
                     <div>
-                      <h3 className="font-bold text-lg text-gray-900 leading-tight">Steve Martin</h3>
-                      <p className="text-xs font-mono uppercase tracking-wider text-[#F26522] mt-0.5">CEO &amp; Lead Growth Engineer</p>
+                      <h3 className="font-bold text-lg text-[#15130E] leading-tight">Steve Martin</h3>
+                      <p className="text-[10px] font-mono uppercase tracking-wider text-[#2F5D50] mt-1 font-semibold">CEO &amp; Lead Growth Engineer</p>
                     </div>
                   </div>
                   <div className="text-gray-600 text-sm leading-relaxed space-y-4 font-light">
@@ -517,19 +548,18 @@ const BookingPage: React.FC = () => {
                 </div>
 
               </div>
-            </div>
           </section>
         </>
       ) : (
         /* STEP 3: Success Screen (though booking handles redirect, fallback success layout) */
-        <section className="bg-white text-gray-900 border-b border-gray-100 py-24 sm:py-32">
-          <div className="success-screen max-w-[1440px] mx-auto px-[5vw] grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <section className="bg-white text-gray-900 border-b border-gray-100" style={{ padding: '5rem 5vw' }}>
+          <div className="success-screen grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="success-copy flex flex-col gap-6 text-left">
-              <div className="w-16 h-16 rounded-full border border-[#F26522] flex items-center justify-center text-[#F26522]">
+              <div className="w-16 h-16 rounded-full border border-[#2F5D50] flex items-center justify-center text-[#2F5D50]">
                 <svg viewBox="0 0 24 24" fill="none" width="28" height="28" stroke="currentColor" strokeWidth="2"><path d="M5 13l4 4L19 7" strokeLinecap="round" strokeLinejoin="round"/></svg>
               </div>
               <div>
-                <p className="font-mono text-xs uppercase tracking-wider text-[#F26522] font-semibold mb-2">Booking Confirmed</p>
+                <p className="font-mono text-xs uppercase tracking-wider text-[#2F5D50] font-semibold mb-2">Booking Confirmed</p>
                 <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-gray-900 leading-tight">Your session is locked in.</h1>
               </div>
               <p className="text-gray-600 text-sm sm:text-base leading-relaxed">

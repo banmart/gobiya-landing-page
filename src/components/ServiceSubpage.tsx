@@ -1154,20 +1154,23 @@ export default function ServiceSubpage({ path, isFanOut, category, slug }: Servi
     );
 
     // Determine dynamic texts based on category
-    let coreText1 = "";
-    let coreText2 = "";
+    let coreParagraphs: string[] = [];
     let methodHeading = "";
-    let methodP2 = "";
-    let methodP3 = "";
+    let methodParagraphs: string[] = [];
     let addedValueTitle = "";
     let addedValueItems: string[] = [];
     
     if (catLower === 'creativity') {
-      coreText1 = `The artistic and creative management of a project works together with selected production teams and partners to deliver high-fidelity outputs.`;
-      coreText2 = `From the creation of the idea, functional to the brand in relation to target, sector, language, and positioning, we move on to the creative approach to be given to all assets - mood, style, tone, look, and feel.`;
+      coreParagraphs = [
+        `The artistic and creative management of a project works together with selected production teams and partners to deliver high-fidelity outputs.`,
+        `From the creation of the idea, functional to the brand in relation to target, sector, language, and positioning, we move on to the creative approach to be given to all assets - mood, style, tone, look, and feel.`
+      ];
       methodHeading = `How do we arrive at the realization of a creative project?`;
-      methodP2 = `To structure a creative project we always start by meeting and sharing with the client, colleagues, and partners, including professional designers, writers, and directors. From there, we build a strategic and well-coordinated project, defined down to the smallest detail: the aim is to transfer concepts, mood, style, and tone of the brand.`;
-      methodP3 = `To do this, we draw up detailed storyboards and style boards, invest time in brainstorming and comparisons with your team in order to transfer concepts and develop solutions that comply with the idea behind the project.`;
+      methodParagraphs = [
+        `We follow a precise method, which starts with listening and ends with the concrete realization of the project.`,
+        `To structure a creative project we always start by meeting and sharing with the client, colleagues, and partners, including professional designers, writers, and directors. From there, we build a strategic and well-coordinated project, defined down to the smallest detail: the aim is to transfer concepts, mood, style, and tone of the brand.`,
+        `To do this, we draw up detailed storyboards and style boards, invest time in brainstorming and comparisons with your team in order to transfer concepts and develop solutions that comply with the idea behind the project.`
+      ];
       addedValueTitle = `${pageData.pageTitle} management, why is it an added value?`;
       addedValueItems = [
         "Because every communication tool you use needs visuals that tell your brand story at its best",
@@ -1176,11 +1179,16 @@ export default function ServiceSubpage({ path, isFanOut, category, slug }: Servi
         "Because having a clear artistic direction to follow optimises production and turnaround time"
       ];
     } else if (catLower === 'performance') {
-      coreText1 = `Technical excellence is the bedrock of digital authority. We optimize every layer of your platform to ensure maximum discoverability by modern search crawlers and AI answer engines.`;
-      coreText2 = `From entity alignment to semantic schema injection, we align your digital assets to rank natively and reliably where your target customers look for answers.`;
+      coreParagraphs = [
+        `Technical excellence is the bedrock of digital authority. We optimize every layer of your platform to ensure maximum discoverability by modern search crawlers and AI answer engines.`,
+        `From entity alignment to semantic schema injection, we align your digital assets to rank natively and reliably where your target customers look for answers.`
+      ];
       methodHeading = `How do we arrive at the realization of a performance optimization cycle?`;
-      methodP2 = `To structure an optimization cycle we always start by auditing your existing signals and search performance graphs. From there, we build a technical roadmap that targets indexing gaps, server-side issues, and entity structure definition.`;
-      methodP3 = `To do this, we write custom JSON-LD schema, design custom page-speed optimizations, and continuously monitor search console logs to resolve issues before they affect conversions or rankings.`;
+      methodParagraphs = [
+        `We follow a precise method, which starts with listening and ends with the concrete realization of the project.`,
+        `To structure an optimization cycle we always start by auditing your existing signals and search performance graphs. From there, we build a technical roadmap that targets indexing gaps, server-side issues, and entity structure definition.`,
+        `To do this, we write custom JSON-LD schema, design custom page-speed optimizations, and continuously monitor search console logs to resolve issues before they affect conversions or rankings.`
+      ];
       addedValueTitle = `${pageData.pageTitle} integration, why is it an added value?`;
       addedValueItems = [
         "Because optimized codebase architectures ensure sub-second loads and zero crawler friction",
@@ -1189,11 +1197,16 @@ export default function ServiceSubpage({ path, isFanOut, category, slug }: Servi
         "Because proactive error auditing secures stable visibility through core algorithm updates"
       ];
     } else if (catLower === 'recovery') {
-      coreText1 = `Recovering from a Google penalty is a structured engineering process, not a content volume exercise. We read Search Console logs, cross-reference core update timelines, and identify the exact quality signal that triggered suppression.`;
-      coreText2 = `From the manual action report to algorithmic classifier audits, we map the full diagnostic sequence before touching a single page — ensuring every fix is purposeful and permanent.`;
+      coreParagraphs = [
+        `Recovering from a Google penalty is a structured engineering process, not a content volume exercise. We read Search Console logs, cross-reference core update timelines, and identify the exact quality signal that triggered suppression.`,
+        `From the manual action report to algorithmic classifier audits, we map the full diagnostic sequence before touching a single page — ensuring every fix is purposeful and permanent.`
+      ];
       methodHeading = `How do we diagnose and recover from a Google penalty?`;
-      methodP2 = `We start with a forensic Search Console review and cross-reference the suppression date against known Google core update rollout timelines. From there we categorize the penalty type and build a prioritized fix order: crawl errors, thin content, unnatural links, E-E-A-T gaps.`;
-      methodP3 = `To execute recovery, we submit disavow files, write reconsideration requests, restructure entity schema, prune or consolidate underperforming URLs, and monitor index coverage weekly until traffic signals confirm restoration.`;
+      methodParagraphs = [
+        `We follow a precise method, which starts with listening and ends with the concrete realization of the project.`,
+        `We start with a forensic Search Console review and cross-reference the suppression date against known Google core update rollout timelines. From there we categorize the penalty type and build a prioritized fix order: crawl errors, thin content, unnatural links, E-E-A-T gaps.`,
+        `To execute recovery, we submit disavow files, write reconsideration requests, restructure entity schema, prune or consolidate underperforming URLs, and monitor index coverage weekly until traffic signals confirm restoration.`
+      ];
       addedValueTitle = `Google penalty recovery, why does the approach matter?`;
       addedValueItems = [
         "Because misdiagnosing a manual action as algorithmic means you'll never submit the right reconsideration request",
@@ -1202,11 +1215,16 @@ export default function ServiceSubpage({ path, isFanOut, category, slug }: Servi
         "Because recovery without root-cause analysis guarantees the same penalty returns at the next core update"
       ];
     } else { // relations or other
-      coreText1 = `Building digital authority is an active process of earning trust. We connect your brand with high-authority publications and community hubs that matter.`;
-      coreText2 = `Through data-driven PR campaigns and strategic media outreach, we translate brand values into verified external signals that search algorithms and target audiences value.`;
+      coreParagraphs = [
+        `Building digital authority is an active process of earning trust. We connect your brand with high-authority publications and community hubs that matter.`,
+        `Through data-driven PR campaigns and strategic media outreach, we translate brand values into verified external signals that search algorithms and target audiences value.`
+      ];
       methodHeading = `How do we arrive at the realization of an outreach campaign?`;
-      methodP2 = `To structure an outreach campaign we always start by auditing your backlink profile and market visibility benchmarks. From there, we identify target publications and create editorial content that earns natural citation share.`;
-      methodP3 = `To do this, we coordinate with journalists, write research-focused whitepapers, and run active link audits to ensure clean, high-quality reference signals.`;
+      methodParagraphs = [
+        `We follow a precise method, which starts with listening and ends with the concrete realization of the project.`,
+        `To structure an outreach campaign we always start by auditing your backlink profile and market visibility benchmarks. From there, we identify target publications and create editorial content that earns natural citation share.`,
+        `To do this, we coordinate with journalists, write research-focused whitepapers, and run active link audits to ensure clean, high-quality reference signals.`
+      ];
       addedValueTitle = `${pageData.pageTitle} distribution, why is it an added value?`;
       addedValueItems = [
         "Because clean external backlinks build core algorithmic domain authority",
@@ -1262,8 +1280,7 @@ export default function ServiceSubpage({ path, isFanOut, category, slug }: Servi
         <main id="primary" className="site-main w-full">
 
           {/* ── White section: breadcrumbs + H1 ── */}
-          <div className="bg-white" style={{ paddingTop: '208px', paddingBottom: '80px' }}>
-            <div className="container mx-auto px-6 sm:px-10 max-w-6xl">
+          <div className="bg-white" style={{ paddingTop: '17rem', paddingBottom: '5rem', paddingLeft: '5vw', paddingRight: '5vw' }}>
               <nav className="text-[13px] font-medium text-gray-400 mb-12 flex items-center gap-2 tracking-wide">
                 <a href="/" className="hover:text-gray-700 transition-colors">Home</a>
                 <span className="text-gray-200">/</span>
@@ -1271,13 +1288,12 @@ export default function ServiceSubpage({ path, isFanOut, category, slug }: Servi
                 <span className="text-gray-200">/</span>
                 <span className="text-gray-900 font-semibold">{pageData.pageTitle}</span>
               </nav>
-              <h1 className="text-[clamp(3rem,7vw,6.5rem)] font-bold tracking-tight text-gray-900 leading-[1.03] max-w-5xl mb-7">
+              <h1 className="text-[clamp(3rem,7vw,6.5rem)] font-bold tracking-tight text-gray-900 leading-[1.03] mb-7">
                 {pageData.pageTitle}
               </h1>
-              <p className="text-xl sm:text-2xl text-gray-400 font-light max-w-2xl leading-relaxed">
+              <p className="text-xl sm:text-2xl text-gray-400 font-light leading-relaxed" style={{ maxWidth: '640px' }}>
                 {pageData.pageSubheading}
               </p>
-            </div>
           </div>
 
           {/* ── Full-bleed hero image with bottom-aligned marketing copy ── */}
@@ -1295,7 +1311,7 @@ export default function ServiceSubpage({ path, isFanOut, category, slug }: Servi
               }}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent" />
-            <div className="relative z-10 w-full container mx-auto px-6 sm:px-10 max-w-6xl pb-16 pt-32 grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-end">
+            <div className="relative z-10 w-full grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-end" style={{ padding: '8rem 5vw 4rem' }}>
               <div>
                 <p className="text-xs font-medium uppercase tracking-[0.2em] mb-5" style={{ color: 'rgba(255, 255, 255, 0.75)' }}>{overlaySubtitle}</p>
                 <h2 className="text-[clamp(2rem,4vw,3.5rem)] font-bold tracking-tight text-white leading-[1.05]">
@@ -1318,40 +1334,43 @@ export default function ServiceSubpage({ path, isFanOut, category, slug }: Servi
           </div>
 
           {/* ── Core text ── */}
-          <div className="bg-white border-b border-gray-100">
-            <div className="container mx-auto px-6 sm:px-10 max-w-4xl py-24 sm:py-32 text-center">
-              <p className="text-[clamp(1.1rem,2vw,1.5rem)] text-gray-600 leading-[1.8] mb-10">
-                {coreText1}
-              </p>
-              <p className="text-[clamp(1.1rem,2vw,1.5rem)] text-gray-600 leading-[1.8]">
-                {coreText2}
-              </p>
+          <div className="bg-white border-b border-gray-100" style={{ padding: '5rem 5vw' }}>
+            <div className="grid grid-cols-1 md:grid-cols-[40%_1fr] gap-16 md:gap-28 items-start">
+              <div className="md:sticky md:top-32">
+                <h2 className="text-[clamp(1.75rem,3.5vw,2.75rem)] font-bold tracking-tight text-gray-900 leading-[1.1]">
+                  Strategic Overview
+                </h2>
+              </div>
+              <div className="flex flex-col gap-8">
+                {coreParagraphs.map((p, i) => (
+                  <p key={i} className="text-[clamp(1.1rem,2vw,1.3rem)] text-gray-600 leading-[1.8]">{p}</p>
+                ))}
+              </div>
             </div>
           </div>
 
           {/* ── Step-by-step ── */}
-          <div className="bg-white border-b border-gray-100">
-            <div className="container mx-auto px-6 sm:px-10 max-w-6xl py-24 sm:py-32 grid grid-cols-1 md:grid-cols-[36%_1fr] gap-16 md:gap-28 items-start">
+          <div className="bg-white border-b border-gray-100" style={{ padding: '5rem 5vw' }}>
+            <div className="grid grid-cols-1 md:grid-cols-[40%_1fr] gap-16 md:gap-28 items-start">
               <div className="md:sticky md:top-32">
-                <h2 className="text-[clamp(2rem,4vw,3.25rem)] font-bold tracking-tight text-gray-900 leading-[1.1]">
+                <h2 className="text-[clamp(1.75rem,3.5vw,2.75rem)] font-bold tracking-tight text-gray-900 leading-[1.1]">
                   Step-by-step<br />{formattedSlug.replace(/-agency$/i, '').toLowerCase()} realization
                 </h2>
               </div>
               <div>
                 <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-8 leading-snug">{methodHeading}</h3>
-                <p className="text-lg text-gray-500 leading-[1.8] mb-7">
-                  We follow a precise method, which starts with listening and ends with the concrete realization of the project.
-                </p>
-                <p className="text-lg text-gray-500 leading-[1.8] mb-7">{methodP2}</p>
-                <p className="text-lg text-gray-500 leading-[1.8]">{methodP3}</p>
+                <div className="flex flex-col gap-8">
+                  {methodParagraphs.map((p, i) => (
+                    <p key={i} className="text-lg text-gray-500 leading-[1.85]">{p}</p>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
 
           {/* ── Added value numbered list ── */}
-          <div className="bg-white border-b border-gray-100">
-            <div className="container mx-auto px-6 sm:px-10 max-w-6xl py-24 sm:py-32">
-              <h2 className="text-[clamp(1.75rem,3.5vw,2.75rem)] font-bold text-gray-900 mb-20 max-w-3xl leading-tight">
+          <div className="bg-white border-b border-gray-100" style={{ padding: '5rem 5vw' }}>
+              <h2 className="text-[clamp(1.75rem,3.5vw,2.75rem)] font-bold text-gray-900 mb-20 leading-tight">
                 {addedValueTitle}
               </h2>
               <div className="border-t border-gray-200">
@@ -1362,12 +1381,11 @@ export default function ServiceSubpage({ path, isFanOut, category, slug }: Servi
                   </div>
                 ))}
               </div>
-            </div>
           </div>
 
           {/* ── Deep dive: sticky left heading + right paragraphs ── */}
-          <div className="bg-[#f8f8f7] border-b border-gray-100">
-            <div className="container mx-auto px-6 sm:px-10 max-w-6xl py-24 sm:py-32 grid grid-cols-1 md:grid-cols-[40%_1fr] gap-16 md:gap-28 items-start">
+          <div className="bg-[#f8f8f7] border-b border-gray-100" style={{ padding: '5rem 5vw' }}>
+            <div className="grid grid-cols-1 md:grid-cols-[40%_1fr] gap-16 md:gap-28 items-start">
               <div className="md:sticky md:top-32">
                 <h2 className="text-[clamp(1.75rem,3.5vw,2.75rem)] font-bold tracking-tight text-gray-900 leading-[1.1]">
                   {deepDiveHeading}
@@ -1382,9 +1400,8 @@ export default function ServiceSubpage({ path, isFanOut, category, slug }: Servi
           </div>
 
           {/* ── Concrete numbered steps ── */}
-          <div className="bg-white border-b border-gray-100">
-            <div className="container mx-auto px-6 sm:px-10 max-w-6xl py-24 sm:py-32">
-              <h2 className="text-[clamp(1.75rem,3.5vw,2.75rem)] font-bold text-gray-900 mb-16 max-w-3xl leading-tight">
+          <div className="bg-white border-b border-gray-100" style={{ padding: '5rem 5vw' }}>
+              <h2 className="text-[clamp(1.75rem,3.5vw,2.75rem)] font-bold text-gray-900 mb-16 leading-tight">
                 {concreteStepsHeading}
               </h2>
               <div className="border-t border-gray-200">
@@ -1395,32 +1412,28 @@ export default function ServiceSubpage({ path, isFanOut, category, slug }: Servi
                   </div>
                 ))}
               </div>
-            </div>
           </div>
 
           {/* ── Advantage cards ── */}
-          <div className="bg-[#f8f8f7] border-b border-gray-100">
-            <div className="container mx-auto px-6 sm:px-10 max-w-6xl py-24 sm:py-32">
-              <h2 className="text-[clamp(1.75rem,3.5vw,2.75rem)] font-bold text-gray-900 mb-16 max-w-3xl leading-tight">
+          <div className="bg-[#f8f8f7] border-b border-gray-100" style={{ padding: '5rem 5vw' }}>
+              <h2 className="text-[clamp(1.75rem,3.5vw,2.75rem)] font-bold text-gray-900 mb-16 leading-tight">
                 {advantagesHeading}
               </h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px" style={{ background: '#e5e7eb' }}>
                 {advantageCards.map((card, idx) => (
-                  <div key={idx} className="bg-white border border-gray-100 p-8 flex flex-col justify-between min-h-[260px]">
+                  <div key={idx} className="bg-white flex flex-col justify-between" style={{ padding: '2.5rem', minHeight: '320px' }}>
                     <div>
-                      <span className="text-xs font-mono text-gray-300 block mb-6">0{idx + 1}.</span>
-                      <h3 className="text-xl font-bold text-gray-900 mb-6">{card.title}</h3>
+                      <span className="text-xs font-mono text-gray-300 block mb-8">0{idx + 1}.</span>
+                      <h3 className="text-xl font-bold text-gray-900 mb-6 leading-snug">{card.title}</h3>
                     </div>
                     <p className="text-sm text-gray-500 leading-relaxed">{card.description}</p>
                   </div>
                 ))}
               </div>
-            </div>
           </div>
 
           {/* ── Case studies ── */}
-          <div className="bg-white border-b border-gray-100">
-            <div className="container mx-auto px-6 sm:px-10 max-w-6xl py-24 sm:py-32">
+          <div className="bg-white border-b border-gray-100" style={{ padding: '5rem 5vw' }}>
               <div className="grid grid-cols-1 md:grid-cols-[30%_1fr] gap-12 md:gap-24 mb-16">
                 <h2 className="text-[clamp(1.75rem,3.5vw,2.5rem)] font-bold text-gray-900 leading-tight">Case Studies</h2>
                 <div>
@@ -1446,7 +1459,6 @@ export default function ServiceSubpage({ path, isFanOut, category, slug }: Servi
                   <p className="text-sm text-gray-400">Local SEO & Google Business Profile</p>
                 </a>
               </div>
-            </div>
           </div>
 
         </main>
