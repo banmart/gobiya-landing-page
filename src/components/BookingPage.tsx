@@ -245,13 +245,13 @@ const BookingPage: React.FC = () => {
                   Marketing forecasting has become significantly more complex.
                 </p>
                 <div data-hero="3" className="text-[15px] sm:text-[17px] leading-relaxed space-y-6 max-w-[700px] font-medium">
-                  <p className="text-white">
+                  <p style={{ color: '#ffffff' }}>
                     AI Overviews are changing click behavior, paid media auctions are becoming less predictable, attribution gaps continue to widen, and B2B conversion patterns no longer behave the way they did just a few years ago. Yet most organizations still rely on outdated forecasting models built around static traffic assumptions, stable CPCs, and linear growth expectations.
                   </p>
-                  <p className="text-white">
+                  <p style={{ color: '#ffffff' }}>
                     In this private strategy session, Steve Martin and the Gobiya engineering team will break down how modern B2B teams should forecast SEO, conversion architecture, and paid growth in today's environment. You'll learn how to move beyond generic traffic projections and build forecasting systems that account for visibility shifts, AI-driven search behavior, conversion volatility, pipeline quality, and revenue efficiency.
                   </p>
-                  <p className="font-semibold text-white pt-2">
+                  <p className="font-semibold pt-2" style={{ color: '#ffffff' }}>
                     You'll walk away with practical B2B forecasting frameworks, pipeline contribution maps, and a step-by-step action plan to operationalize organic growth projections across your organization.
                   </p>
                 </div>
@@ -376,7 +376,8 @@ const BookingPage: React.FC = () => {
 
                       <button 
                         type="button" 
-                        className="w-full mt-4 bg-[#2F5D50] hover:bg-[#254A40] text-white py-3.5 rounded font-bold uppercase tracking-wider text-[11px] transition-colors duration-200 outline-none"
+                        className="w-full mt-4 py-3.5 rounded font-bold uppercase tracking-wider text-[11px] transition-colors duration-200 outline-none"
+                        style={{ backgroundColor: '#2F5D50', color: '#ffffff' }}
                         onClick={() => {
                           if (!firstName || !lastName || !email || !website || !budget || !phone) {
                             setErrorMsg('Please fill out all required fields marked with *');
@@ -405,16 +406,28 @@ const BookingPage: React.FC = () => {
                         `}</style>
                         <div className="bk-marquee-track items-center gap-8" style={{ alignItems: 'center' }}>
                           {[
-                            '/images/quickpass-logo-opt.webp',
-                            '/images/ark-logo-final.webp',
-                            '/images/tidder-logo.webp',
+                            '/images/smilecenter.webp',
+                            '/images/americanlivescan.webp',
+                            '/images/remodelmepros-opt.webp',
                             '/images/safetycentric-logo.png',
-                            '/images/medicine-metta-logo-1.webp',
+                            '/images/totalcapital-opt.webp',
                             '/images/quickpass-logo-opt.webp',
-                            '/images/ark-logo-final.webp',
-                            '/images/tidder-logo.webp',
-                            '/images/safetycentric-logo.png',
+                            '/images/logo-DeEgMiH0-opt.png',
+                            '/images/ark-logo---01-dark.webp',
+                            '/images/client-5.webp',
                             '/images/medicine-metta-logo-1.webp',
+                            '/images/trusted-logo-home.webp',
+                            '/images/smilecenter.webp',
+                            '/images/americanlivescan.webp',
+                            '/images/remodelmepros-opt.webp',
+                            '/images/safetycentric-logo.png',
+                            '/images/totalcapital-opt.webp',
+                            '/images/quickpass-logo-opt.webp',
+                            '/images/logo-DeEgMiH0-opt.png',
+                            '/images/ark-logo---01-dark.webp',
+                            '/images/client-5.webp',
+                            '/images/medicine-metta-logo-1.webp',
+                            '/images/trusted-logo-home.webp',
                           ].map((src, i) => (
                             <img
                               key={i}
