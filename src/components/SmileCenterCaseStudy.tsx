@@ -142,20 +142,20 @@ const SmileCenterCaseStudy: React.FC = () => {
         {/* Gradient overlay — stronger at bottom so text is legible */}
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.2) 60%, rgba(0,0,0,0.1) 100%)' }} />
         {/* Content */}
-        <div style={{ position: 'relative', zIndex: 1, padding: '13rem 5vw 5rem', width: '100%' }}>
+        <div style={{ position: 'relative', zIndex: 1, padding: '17rem 5vw 5rem', width: '100%' }}>
           <div className="max-w-[1440px] w-full mx-auto flex flex-col justify-end" style={{ minHeight: '30vh' }}>
             <p className="breadcrumb text-[13px] sm:text-[14px] tracking-wide mb-4 uppercase font-medium" style={{ color: 'rgba(255,255,255,0.55)' }}>
               Gobiya Case Studies &gt; Multi-Location Dental
             </p>
             <h1 className="hero-title text-[clamp(1.5rem,5.5vw,3.2rem)] sm:text-[clamp(1.8rem,4.5vw,3.8rem)] font-medium leading-[1.15] tracking-[-0.03em] max-w-[1100px]" style={{ color: '#ffffff' }}>
-              <span className="line"><span>How SmileCenter Dentistry</span></span>
+              <span className="line"><span>How SmileCenter Dentistry </span></span>
               <span className="line"><span><span style={{ color: '#6ee7b7' }}>5x'd patient inquiries</span></span></span>
               <span className="line"><span>across multiple regional locations.</span></span>
             </h1>
             <p className="hero-sub mt-6 text-[15px] sm:text-[17px] max-w-[700px] leading-relaxed" style={{ color: 'rgba(255,255,255,0.65)' }}>
               Website redesign · Multi-location search architecture · Conversion architecture · React/Vite
             </p>
-            <div className="hero-actions-wrap mt-8 flex flex-col sm:flex-row items-start sm:items-center gap-6">
+            <div className="hero-actions mt-8 flex flex-col sm:flex-row items-start sm:items-center gap-6">
               <a
                 href="/book"
                 id="smilecenter-hero-cta"
@@ -205,11 +205,11 @@ const SmileCenterCaseStudy: React.FC = () => {
                   i === 0 || i === 1 ? 'bg-white/10 border-white/30' : ''
                 }`}
               >
-                <div className="flex items-center gap-2 text-white/70 mb-3">
+                <div className="flex items-center gap-2 text-white/80 mb-4">
                   {m.icon}
-                  <span className="text-[10px] font-mono uppercase tracking-wider font-semibold">{m.label}</span>
+                  <span className="text-[11px] font-sans uppercase tracking-[0.15em] font-semibold">{m.label}</span>
                 </div>
-                <div className="text-[clamp(2rem,4vw,3rem)] font-bold tracking-tight leading-none text-white font-display">
+                <div className="text-[clamp(2.5rem,5vw,3.5rem)] font-bold tracking-tight leading-none text-white font-display pb-2">
                   {m.value}
                 </div>
               </div>
@@ -249,9 +249,9 @@ const SmileCenterCaseStudy: React.FC = () => {
 
             {/* Sidebar: Client info */}
             <div className="flex flex-col gap-5" data-anim="up">
-              <div className="border border-[#D3CEC0] p-6 bg-[#E7E4D9]">
-                <p className="text-[10px] font-mono uppercase tracking-widest text-[#8B857A] mb-4 font-semibold">Client Overview</p>
-                <dl className="flex flex-col gap-3 text-[14px]">
+              <div className="rounded-xl border border-[#D3CEC0]/50 p-8 bg-white shadow-sm">
+                <p className="text-[11px] font-sans uppercase tracking-[0.15em] text-[#8B857A] mb-6 font-bold">Client Overview</p>
+                <dl className="flex flex-col gap-4 text-[15px]">
                   {[
                     { dt: 'Client', dd: 'SmileCenter Dentistry' },
                     { dt: 'Locations', dd: 'Multi-location practice' },
@@ -259,9 +259,9 @@ const SmileCenterCaseStudy: React.FC = () => {
                     { dt: 'Stack', dd: 'React / Vite, location pages, Yelp + Google Business' },
                     { dt: 'Vertical', dd: 'Healthcare · Dental · Local Search' },
                   ].map((item) => (
-                    <div key={item.dt} className="grid grid-cols-[100px_1fr] gap-2">
-                      <dt className="text-[#8B857A]">{item.dt}</dt>
-                      <dd className="text-[#15130E] font-medium">{item.dd}</dd>
+                    <div key={item.dt} className="flex flex-col sm:grid sm:grid-cols-[110px_1fr] gap-1 sm:gap-4 border-b border-[#D3CEC0]/30 pb-3 last:border-0 last:pb-0">
+                      <dt className="text-[#8B857A] font-medium">{item.dt}</dt>
+                      <dd className="text-[#15130E] font-semibold leading-relaxed">{item.dd}</dd>
                     </div>
                   ))}
                 </dl>
@@ -407,9 +407,9 @@ const SmileCenterCaseStudy: React.FC = () => {
 
             {/* Sidebar: Why it worked */}
             <div className="flex flex-col gap-6">
-              <div className="bg-[#2F5D50] p-7">
-                <h3 className="text-xl font-bold text-white mb-4 leading-tight">Why it worked</h3>
-                <div className="text-white/80 text-[14px] leading-[1.7] flex flex-col gap-4">
+              <div className="bg-[#2F5D50] p-8 rounded-xl shadow-lg border border-[#2E8C68]/30">
+                <h3 className="text-2xl font-bold text-white mb-5 leading-tight" style={{ color: '#ffffff' }}>Why it worked</h3>
+                <div className="text-white text-[15px] leading-[1.75] flex flex-col gap-5 font-medium" style={{ color: 'rgba(255,255,255,0.95)' }}>
                   <p>
                     We didn't optimize for traffic. We optimized for booked patients.
                   </p>

@@ -145,20 +145,20 @@ const AmericanLivescanCaseStudy: React.FC = () => {
         {/* Gradient overlay */}
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(5,10,20,0.9) 0%, rgba(5,10,20,0.45) 60%, rgba(5,10,20,0.2) 100%)' }} />
         {/* Content */}
-        <div style={{ position: 'relative', zIndex: 1, padding: '13rem 5vw 5rem', width: '100%' }}>
+        <div style={{ position: 'relative', zIndex: 1, padding: '17rem 5vw 5rem', width: '100%' }}>
           <div className="max-w-[1440px] w-full mx-auto flex flex-col justify-end" style={{ minHeight: '30vh' }}>
             <p className="breadcrumb text-[13px] sm:text-[14px] tracking-wide mb-4 uppercase font-medium" style={{ color: 'rgba(255,255,255,0.5)' }}>
               Gobiya Case Studies &gt; Local SEO &amp; Site Rebuild
             </p>
             <h1 className="hero-title text-[clamp(1.5rem,5.5vw,3.2rem)] sm:text-[clamp(1.8rem,4.5vw,3.8rem)] font-medium leading-[1.15] tracking-[-0.03em] max-w-[1100px]" style={{ color: '#ffffff' }}>
-              <span className="line"><span>How American Livescan</span></span>
+              <span className="line"><span>How American Livescan </span></span>
               <span className="line"><span><span style={{ color: '#6ee7b7' }}>tripled bookings &amp; calls</span></span></span>
               <span className="line"><span>with a site rebuild and local SEO.</span></span>
             </h1>
             <p className="hero-sub mt-6 text-[15px] sm:text-[17px] max-w-[720px] leading-relaxed" style={{ color: 'rgba(255,255,255,0.6)' }}>
               Website redesign · Legacy migration · Google Business Profile · Service-specific landing pages · Content engine
             </p>
-            <div className="hero-actions-wrap mt-8 flex flex-col sm:flex-row items-start sm:items-center gap-6">
+            <div className="hero-actions mt-8 flex flex-col sm:flex-row items-start sm:items-center gap-6">
               <a
                 href="/book"
                 id="livescan-hero-cta"
@@ -209,14 +209,14 @@ const AmericanLivescanCaseStudy: React.FC = () => {
                   : 'bg-white/5 border-white/20'
                 }`}
               >
-                <div className="flex items-center gap-2 text-white/70 mb-3">
+                <div className="flex items-center gap-2 text-white/80 mb-4">
                   {m.icon}
-                  <span className="text-[10px] font-mono uppercase tracking-wider font-semibold">{m.label}</span>
+                  <span className="text-[11px] font-sans uppercase tracking-[0.15em] font-semibold">{m.label}</span>
                 </div>
-                <div className="text-[clamp(2rem,4vw,3rem)] font-bold tracking-tight leading-none text-white font-display mb-1">
+                <div className="text-[clamp(2.5rem,5vw,3.5rem)] font-bold tracking-tight leading-none text-white font-display mb-2">
                   {m.value}
                 </div>
-                <div className="text-[11px] text-white/50 font-mono font-medium">{m.sub}</div>
+                <div className="text-[12px] text-white/70 font-sans font-medium">{m.sub}</div>
               </div>
             ))}
           </div>
@@ -252,9 +252,9 @@ const AmericanLivescanCaseStudy: React.FC = () => {
 
             {/* Sidebar */}
             <div className="flex flex-col gap-5" data-anim="up">
-              <div className="border border-[#D3CEC0] p-6 bg-[#E7E4D9]">
-                <p className="text-[10px] font-mono uppercase tracking-widest text-[#8B857A] mb-4 font-semibold">Client Overview</p>
-                <dl className="flex flex-col gap-3 text-[14px]">
+              <div className="rounded-xl border border-[#D3CEC0]/50 p-8 bg-white shadow-sm">
+                <p className="text-[11px] font-sans uppercase tracking-[0.15em] text-[#8B857A] mb-6 font-bold">Client Overview</p>
+                <dl className="flex flex-col gap-4 text-[15px]">
                   {[
                     { dt: 'Client', dd: 'American Livescan' },
                     { dt: 'Location', dd: 'California, USA' },
@@ -262,9 +262,9 @@ const AmericanLivescanCaseStudy: React.FC = () => {
                     { dt: 'Engagement', dd: 'Site rebuild · GMB · Local SEO · Content engine' },
                     { dt: 'Vertical', dd: 'Government services · Local search' },
                   ].map((item) => (
-                    <div key={item.dt} className="grid grid-cols-[100px_1fr] gap-2">
-                      <dt className="text-[#8B857A]">{item.dt}</dt>
-                      <dd className="text-[#15130E] font-medium">{item.dd}</dd>
+                    <div key={item.dt} className="flex flex-col sm:grid sm:grid-cols-[110px_1fr] gap-1 sm:gap-4 border-b border-[#D3CEC0]/30 pb-3 last:border-0 last:pb-0">
+                      <dt className="text-[#8B857A] font-medium">{item.dt}</dt>
+                      <dd className="text-[#15130E] font-semibold leading-relaxed">{item.dd}</dd>
                     </div>
                   ))}
                 </dl>
@@ -413,9 +413,9 @@ const AmericanLivescanCaseStudy: React.FC = () => {
 
             {/* Sidebar */}
             <div className="flex flex-col gap-6">
-              <div className="bg-[#2F5D50] p-7">
-                <h3 className="text-xl font-bold text-white mb-4 leading-tight">Why it worked</h3>
-                <div className="text-white/85 text-[14px] leading-[1.7] flex flex-col gap-4">
+              <div className="bg-[#2F5D50] p-8 rounded-xl shadow-lg border border-[#2E8C68]/30">
+                <h3 className="text-2xl font-bold text-white mb-5 leading-tight" style={{ color: '#ffffff' }}>Why it worked</h3>
+                <div className="text-white text-[15px] leading-[1.75] flex flex-col gap-5 font-medium" style={{ color: 'rgba(255,255,255,0.95)' }}>
                   <p>
                     We rebuilt for speed and for booking, not just for traffic.
                   </p>
