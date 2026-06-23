@@ -293,10 +293,10 @@ export default function CategoryPage({ category }: CategoryPageProps) {
       <section className="relative w-full h-screen min-h-[600px] overflow-hidden bg-black">
         <video
           autoPlay muted loop playsInline
-          className="absolute inset-0 w-full h-full object-cover opacity-55"
+          className="absolute inset-0 w-full h-full object-cover"
           src={cfg.video}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-black/30 z-10" />
+        <div className="absolute inset-0 z-10 bg-black/40" />
         <div className="absolute bottom-10 z-20" style={{ left: '5vw' }}>
           <span className="text-white/60 text-xs font-mono uppercase tracking-[0.2em] block">{cfg.label}</span>
         </div>
