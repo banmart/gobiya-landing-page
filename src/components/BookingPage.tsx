@@ -213,20 +213,20 @@ const BookingPage: React.FC = () => {
               position: 'relative',
               width: '100%',
               overflow: 'hidden',
-              background: '#EFEDE5',
+              background: '#0d0f12',
               backgroundImage: "url('/images/article-ai-marketing-trends.webp')",
               backgroundSize: 'cover',
               backgroundPosition: 'center',
               padding: '13rem 5vw 5rem',
-              borderBottom: '1px solid #D3CEC0',
+              borderBottom: '1px solid rgba(255,255,255,0.05)',
             }}
           >
             {/* Glowing accents and light overlay */}
-            <div className="absolute inset-0 bg-[#EFEDE5]/85 z-0" />
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,#2F5D50/0.05,transparent_55%)] z-0" />
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_80%,#15130E/0.03,transparent_55%)] z-0" />
-            <div className="absolute inset-0 opacity-15 z-0" style={{
-              backgroundImage: 'linear-gradient(rgba(21,19,14,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(21,19,14,0.05) 1px, transparent 1px)',
+            <div className="absolute inset-0 bg-[#0d0f12]/85 z-0" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(110,231,183,0.08),transparent_55%)] z-0" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_80%,rgba(255,255,255,0.03),transparent_55%)] z-0" />
+            <div className="absolute inset-0 opacity-10 z-0" style={{
+              backgroundImage: 'linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)',
               backgroundSize: '96px 96px'
             }} />
 
@@ -234,24 +234,24 @@ const BookingPage: React.FC = () => {
               
               {/* LEFT COLUMN: Strategic Value Propositions */}
               <div className="lg:col-span-7 flex flex-col justify-center text-left">
-                <div data-hero="1" className="inline-flex items-center gap-2 mb-6 text-[11px] font-mono uppercase tracking-[0.2em] text-[#2F5D50] font-bold">
-                  <span className="w-2 h-2 rounded-full bg-[#2F5D50] animate-pulse" />
+                <div data-hero="1" className="inline-flex items-center gap-2 mb-6 text-[11px] font-mono uppercase tracking-[0.2em] text-[#6ee7b7] font-bold">
+                  <span className="w-2 h-2 rounded-full bg-[#6ee7b7] animate-pulse" />
                   LIVE ON-DEMAND | STRATEGY SESSIONS
                 </div>
-                <h1 data-hero="1" className="text-[clamp(2.4rem,5.2vw,4.2rem)] font-medium tracking-tight text-[#15130E] leading-[1.08] mb-6 font-display">
+                <h1 data-hero="1" className="text-[clamp(2.4rem,5.2vw,4.2rem)] font-medium tracking-tight text-white leading-[1.08] mb-6 font-display">
                   Forecasting B2B Growth
                 </h1>
-                <p data-hero="2" className="text-lg font-semibold text-[#2F5D50] mb-6 leading-snug">
+                <p data-hero="2" className="text-lg font-semibold text-[#6ee7b7] mb-6 leading-snug">
                   Marketing forecasting has become significantly more complex.
                 </p>
-                <div data-hero="3" className="text-[#5B564C] text-[15px] sm:text-[17px] leading-relaxed space-y-6 max-w-[700px] font-medium">
+                <div data-hero="3" className="text-white text-[15px] sm:text-[17px] leading-relaxed space-y-6 max-w-[700px] font-medium">
                   <p>
                     AI Overviews are changing click behavior, paid media auctions are becoming less predictable, attribution gaps continue to widen, and B2B conversion patterns no longer behave the way they did just a few years ago. Yet most organizations still rely on outdated forecasting models built around static traffic assumptions, stable CPCs, and linear growth expectations.
                   </p>
                   <p>
                     In this private strategy session, Steve Martin and the Gobiya engineering team will break down how modern B2B teams should forecast SEO, conversion architecture, and paid growth in today's environment. You'll learn how to move beyond generic traffic projections and build forecasting systems that account for visibility shifts, AI-driven search behavior, conversion volatility, pipeline quality, and revenue efficiency.
                   </p>
-                  <p className="font-semibold text-[#15130E] pt-2">
+                  <p className="font-semibold text-white pt-2">
                     You'll walk away with practical B2B forecasting frameworks, pipeline contribution maps, and a step-by-step action plan to operationalize organic growth projections across your organization.
                   </p>
                 </div>
@@ -259,7 +259,7 @@ const BookingPage: React.FC = () => {
 
               {/* RIGHT COLUMN: The Form / Booking Widget */}
               <div className="lg:col-span-5 flex justify-center w-full" data-hero="4">
-                <div className="w-full max-w-md bg-white text-gray-900 rounded shadow-[0_24px_60px_rgba(21,19,14,0.1)] p-8 sm:p-10 border border-[#D3CEC0] relative overflow-hidden">
+                <div className="w-full max-w-[500px] bg-white text-gray-900 rounded shadow-[0_24px_60px_rgba(0,0,0,0.3)] p-10 sm:p-14 border border-gray-200 relative overflow-hidden">
                   
                   {errorMsg && (
                     <div className="bg-red-50 border border-red-200 text-red-700 text-xs rounded p-3 mb-4 flex items-center gap-2">
@@ -270,13 +270,13 @@ const BookingPage: React.FC = () => {
 
                   {step === 1 ? (
                     /* STEP 1: Qualification Form */
-                    <div className="flex flex-col gap-4 text-left">
-                      <div className="mb-4 text-center">
-                        <h3 className="font-bold text-lg text-gray-900">Request your growth session</h3>
-                        <p className="text-xs text-gray-500 mt-1">Fill out the form below to register &amp; lock your date:</p>
+                    <div className="flex flex-col gap-6 text-left">
+                      <div className="mb-2 text-center">
+                        <h3 className="font-bold text-xl text-gray-900">Request your growth session</h3>
+                        <p className="text-sm text-gray-500 mt-2">Fill out the form below to register &amp; lock your date:</p>
                       </div>
 
-                      <div className="grid grid-cols-2 gap-3">
+                      <div className="grid grid-cols-2 gap-4">
                         <div className="flex flex-col gap-1 book-field">
                           <label className="text-[10px] font-mono uppercase tracking-wider text-gray-400 font-bold" htmlFor="f-name">First Name *</label>
                           <input 
@@ -329,7 +329,7 @@ const BookingPage: React.FC = () => {
                         />
                       </div>
 
-                      <div className="grid grid-cols-2 gap-3">
+                      <div className="grid grid-cols-2 gap-4">
                         <div className="flex flex-col gap-1 book-field">
                           <label className="text-[10px] font-mono uppercase tracking-wider text-gray-400 font-bold" htmlFor="sel-budget">Monthly Budget *</label>
                           <select 
@@ -387,7 +387,7 @@ const BookingPage: React.FC = () => {
                       </button>
 
                       {/* Case study logo marquee */}
-                      <div className="mt-6 pt-5 border-t border-gray-100 overflow-hidden">
+                      <div className="mt-8 pt-6 border-t border-gray-100 overflow-hidden">
                         <style>{`
                           @keyframes bk-marquee {
                             0%   { transform: translateX(0); }
@@ -417,7 +417,7 @@ const BookingPage: React.FC = () => {
                               key={i}
                               src={src}
                               alt=""
-                              style={{ height: '22px', width: 'auto', opacity: 0.35, filter: 'grayscale(1)', flexShrink: 0, marginRight: '2rem' }}
+                              style={{ height: '48px', width: 'auto', opacity: 0.5, filter: 'grayscale(1)', flexShrink: 0, marginRight: '3.5rem' }}
                             />
                           ))}
                         </div>
