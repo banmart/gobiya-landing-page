@@ -208,16 +208,26 @@ const BookingPage: React.FC = () => {
       {step !== 3 ? (
         <>
           {/* HERO SECTION WITH CAPTURE FORM */}
-          <section className="relative w-full pt-32 pb-24 sm:pt-36 sm:pb-32 overflow-hidden bg-[#0d0f12] border-b border-[#2d332f]">
-            {/* Glowing accents */}
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,#2F5D50/0.18,transparent_55%)]" />
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_80%,#F26522/0.09,transparent_55%)]" />
-            <div className="absolute inset-0 opacity-10" style={{
+          <section 
+            className="relative w-full overflow-hidden bg-[#0d0f12] border-b border-[#2d332f]"
+            style={{
+              backgroundImage: "url('/images/article-ai-marketing-trends.webp')",
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              paddingTop: '230px',
+              paddingBottom: '100px'
+            }}
+          >
+            {/* Glowing accents and dark overlay */}
+            <div className="absolute inset-0 bg-[#0d0f12]/75 z-0" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,#2F5D50/0.18,transparent_55%)] z-0" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_80%,#F26522/0.09,transparent_55%)] z-0" />
+            <div className="absolute inset-0 opacity-10 z-0" style={{
               backgroundImage: 'linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)',
               backgroundSize: '96px 96px'
             }} />
 
-            <div className="relative z-10 max-w-6xl mx-auto px-6 sm:px-10 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+            <div className="relative z-10 max-w-[1440px] mx-auto px-[5vw] grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
               
               {/* LEFT COLUMN: Strategic Value Propositions */}
               <div className="lg:col-span-7 flex flex-col justify-center text-left">
@@ -225,13 +235,13 @@ const BookingPage: React.FC = () => {
                   <span className="w-2.5 h-2.5 rounded-full bg-[#F26522] animate-pulse" />
                   LIVE ON-DEMAND | STRATEGY SESSIONS
                 </div>
-                <h1 data-hero="1" className="text-[clamp(2.2rem,5vw,3.6rem)] font-bold tracking-tight text-white leading-[1.08] mb-6 font-display">
+                <h1 data-hero="1" className="text-[clamp(2.4rem,5.2vw,4.2rem)] font-bold tracking-tight text-white leading-[1.08] mb-6 font-display">
                   Forecasting B2B Growth: How to Project SEO and Pipeline 90 to 180 Days From Now
                 </h1>
                 <p data-hero="2" className="text-lg font-semibold text-[#F26522] mb-6 leading-snug">
                   Marketing forecasting has become significantly more complex.
                 </p>
-                <div data-hero="3" className="text-gray-300 text-sm sm:text-base leading-relaxed space-y-5 max-w-2xl font-light">
+                <div data-hero="3" className="text-gray-300 text-[15px] sm:text-[17px] leading-relaxed space-y-6 max-w-[700px] font-light">
                   <p>
                     AI Overviews are changing click behavior, paid media auctions are becoming less predictable, attribution gaps continue to widen, and B2B conversion patterns no longer behave the way they did just a few years ago. Yet most organizations still rely on outdated forecasting models built around static traffic assumptions, stable CPCs, and linear growth expectations.
                   </p>
@@ -264,7 +274,7 @@ const BookingPage: React.FC = () => {
                       </div>
 
                       <div className="grid grid-cols-2 gap-3">
-                        <div className="flex flex-col gap-1">
+                        <div className="flex flex-col gap-1 book-field">
                           <label className="text-[10px] font-mono uppercase tracking-wider text-gray-400 font-bold" htmlFor="f-name">First Name *</label>
                           <input 
                             id="f-name" 
@@ -276,7 +286,7 @@ const BookingPage: React.FC = () => {
                             className="bg-gray-50 border border-gray-200 py-2.5 px-3 rounded text-sm text-gray-900 focus:border-[#F26522] focus:bg-white outline-none transition-all w-full"
                           />
                         </div>
-                        <div className="flex flex-col gap-1">
+                        <div className="flex flex-col gap-1 book-field">
                           <label className="text-[10px] font-mono uppercase tracking-wider text-gray-400 font-bold" htmlFor="l-name">Last Name *</label>
                           <input 
                             id="l-name" 
@@ -290,7 +300,7 @@ const BookingPage: React.FC = () => {
                         </div>
                       </div>
 
-                      <div className="flex flex-col gap-1">
+                      <div className="flex flex-col gap-1 book-field">
                         <label className="text-[10px] font-mono uppercase tracking-wider text-gray-400 font-bold" htmlFor="work-email">Work Email *</label>
                         <input 
                           id="work-email" 
@@ -303,7 +313,7 @@ const BookingPage: React.FC = () => {
                         />
                       </div>
 
-                      <div className="flex flex-col gap-1">
+                      <div className="flex flex-col gap-1 book-field">
                         <label className="text-[10px] font-mono uppercase tracking-wider text-gray-400 font-bold" htmlFor="web-domain">Website URL *</label>
                         <input 
                           id="web-domain" 
@@ -317,7 +327,7 @@ const BookingPage: React.FC = () => {
                       </div>
 
                       <div className="grid grid-cols-2 gap-3">
-                        <div className="flex flex-col gap-1">
+                        <div className="flex flex-col gap-1 book-field">
                           <label className="text-[10px] font-mono uppercase tracking-wider text-gray-400 font-bold" htmlFor="sel-budget">Monthly Budget *</label>
                           <select 
                             id="sel-budget" 
@@ -332,7 +342,7 @@ const BookingPage: React.FC = () => {
                             ))}
                           </select>
                         </div>
-                        <div className="flex flex-col gap-1">
+                        <div className="flex flex-col gap-1 book-field">
                           <label className="text-[10px] font-mono uppercase tracking-wider text-gray-400 font-bold" htmlFor="tel-phone">Phone Number *</label>
                           <input 
                             id="tel-phone" 
@@ -346,7 +356,7 @@ const BookingPage: React.FC = () => {
                         </div>
                       </div>
 
-                      <div className="flex flex-col gap-1">
+                      <div className="flex flex-col gap-1 book-field">
                         <label className="text-[10px] font-mono uppercase tracking-wider text-gray-400 font-bold" htmlFor="ta-challenges">Core bottleneck or objective</label>
                         <textarea 
                           id="ta-challenges" 
@@ -440,16 +450,16 @@ const BookingPage: React.FC = () => {
           </section>
 
           {/* WHAT YOU'LL LEARN & STRATEGIST SECTION */}
-          <section className="bg-white text-gray-900 py-20 sm:py-28 border-t border-gray-100">
-            <div className="max-w-6xl mx-auto px-6 sm:px-10">
-              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-center mb-16 sm:mb-20 text-gray-900 font-display">
+          <section className="bg-white text-gray-900 py-24 sm:py-32 border-t border-gray-100">
+            <div className="max-w-[1440px] mx-auto px-[5vw]">
+              <h2 className="text-4xl sm:text-5xl font-bold tracking-tight text-center mb-20 text-gray-900 font-display">
                 What You'll Learn
               </h2>
 
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
                 
                 {/* LEFT SIDE: The 10 Points Grid */}
-                <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-8 text-left">
+                <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-10 text-left">
                   {[
                     { title: "Why traditional marketing forecasts fail", desc: "Understand why standard static models fail in AI-driven search environments and highly volatile B2B scenarios." },
                     { title: "AI Overviews & zero-click search modeling", desc: "Learn how ChatGPT, Claude, and Gemini citations are changing forecasting assumptions and click CTR models." },
@@ -500,7 +510,8 @@ const BookingPage: React.FC = () => {
                     <img 
                       src="/images/logo-favicon-gobiya-blastoff-large.webp" 
                       alt="Gobiya Logo" 
-                      className="h-6 w-auto opacity-30 object-contain"
+                      className="opacity-30 object-contain"
+                      style={{ height: '24px', width: 'auto' }}
                     />
                   </div>
                 </div>
@@ -511,8 +522,8 @@ const BookingPage: React.FC = () => {
         </>
       ) : (
         /* STEP 3: Success Screen (though booking handles redirect, fallback success layout) */
-        <section className="bg-white text-gray-900 border-b border-gray-100">
-          <div className="success-screen max-w-6xl mx-auto px-6 py-24 sm:py-32 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <section className="bg-white text-gray-900 border-b border-gray-100 py-24 sm:py-32">
+          <div className="success-screen max-w-[1440px] mx-auto px-[5vw] grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="success-copy flex flex-col gap-6 text-left">
               <div className="w-16 h-16 rounded-full border border-[#F26522] flex items-center justify-center text-[#F26522]">
                 <svg viewBox="0 0 24 24" fill="none" width="28" height="28" stroke="currentColor" strokeWidth="2"><path d="M5 13l4 4L19 7" strokeLinecap="round" strokeLinejoin="round"/></svg>

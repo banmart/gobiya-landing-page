@@ -135,14 +135,37 @@
 
 /* Form details */
 .booking-page label {
-  margin-bottom: 0.25rem;
+  display: block;
+  margin-bottom: 0.35rem;
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #6b7280;
 }
 
 .booking-page input,
 .booking-page select,
 .booking-page textarea {
-  border-radius: 4px;
+  background-color: #f9fafb !important;
+  border: 1px solid #d1d5db !important;
+  border-radius: 6px !important;
+  color: #111827 !important;
+  padding: 0.65rem 0.85rem !important;
+  font-family: var(--font-body);
+  font-size: 0.875rem;
   font-weight: 400;
+  outline: none;
+  transition: all 0.2s ease-in-out;
+  width: 100%;
+}
+
+.booking-page input:focus,
+.booking-page select:focus,
+.booking-page textarea:focus {
+  border-color: #F26522 !important;
+  background-color: #ffffff !important;
+  box-shadow: 0 0 0 2px rgba(242, 101, 34, 0.15) !important;
 }
 
 .booking-page input::placeholder,
@@ -151,11 +174,12 @@
 }
 
 .booking-page select.select-field {
-  appearance: none;
-  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none'%3E%3Cpath d='M7 9l3 3 3-3' stroke='%236b7280' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-  background-position: right 0.75rem center;
-  background-repeat: no-repeat;
-  background-size: 1.25rem;
+  appearance: none !important;
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none'%3E%3Cpath d='M7 9l3 3 3-3' stroke='%236b7280' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") !important;
+  background-position: right 0.75rem center !important;
+  background-repeat: no-repeat !important;
+  background-size: 1.15rem !important;
+  padding-right: 2rem !important;
 }
 
 /* Success details list */
