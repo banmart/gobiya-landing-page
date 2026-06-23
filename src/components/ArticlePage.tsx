@@ -2043,16 +2043,84 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
     slug: 'chatgpt-vs-google-for-business-discovery',
     title: 'ChatGPT vs Google Search: Customer Trends',
     category: 'SEO',
-    readTime: '8 min read',
+    readTime: '12 min read',
     date: 'May 29, 2026',
     image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&q=80',
     heroAlt: 'Split comparison screen between Google Search blue links and ChatGPT conversational AI business recommendation',
     metaDescription: 'Comparing ChatGPT vs Google search discovery rates. Learn how to optimize your brand footprint to win both AI summaries and clicks.',
     content: (
       <>
+        {/* ── JSON-LD FAQ SCHEMA ── */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "Does ChatGPT get more traffic than Google?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No. Google processes roughly 99–136 billion monthly visits versus ChatGPT's 4–5.6 billion. Google holds a massive raw volume advantage, but ChatGPT users click an average of 1.4 external links per session compared to 0.6 from Google — and AI-referred visitors convert at up to 4.4x the rate of standard search traffic."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Why do AI-referred visitors convert at higher rates than Google searchers?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Conversational AI seekers ask for a recommendation and accept an answer rather than filtering multiple options. By the time they reach a website via an AI referral, they have already moved through much of the consideration phase inside the conversation — they arrive closer to a purchase decision than a typical SERP click."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "How do you optimize for ChatGPT business discovery?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "AI assistants reward entity clarity, structured signals, and corroborated authority — not keyword density. Key tactics: implement Organization and Service schema in JSON-LD, ensure your brand is corroborated by consistent third-party signals (directories, press, reviews), and create structured FAQ and comparison content that AI systems can cite directly."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Is Google search traffic declining because of AI?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Click traffic is declining, not search volume. When Google shows an AI Overview, organic CTR drops from a ~15% baseline to ~8%. A Seer Interactive study found CTR falls from 1.76% to 0.61% for queries with AI Overviews — a 61% decline. By Q2 2026, 93% of searches in Google's full AI Mode ended without an external click."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Should I optimize for Google or AI search?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Both — but with different playbooks. Google still owns the volume base and requires keyword relevance, link authority, and technical performance. AI search requires entity clarity, schema markup, structured authority signals, and extractable content. A dual optimization strategy captures both the volume base and the high-converting AI referral channel."
+                  }
+                }
+              ]
+            })
+          }}
+        />
+
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8 font-medium">
           When comparing ChatGPT vs Google search for business discovery, the choice is clear. Google still commands raw traffic volume, but ChatGPT referrals convert at over four times the rate of standard searchers. Reconciling this tension requires a dual optimization strategy. Here is how it works.
         </p>
+
+        {/* ── LEAD STATS GRID ── */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 my-10">
+          {[
+            { stat: '4.4x', label: 'Higher conversion rate of AI-referred visitors vs. standard Google search traffic', source: 'Bain & Company, 2026' },
+            { stat: '61%', label: 'Drop in organic CTR for queries where Google shows an AI Overview', source: 'Seer Interactive, 2026' },
+            { stat: '93%', label: 'Google AI Mode searches that end without an external click', source: 'Semrush tracking, Q2 2026' },
+          ].map(({ stat, label, source }, i) => (
+            <div key={i} className="bg-gray-50 border border-gray-200 rounded-lg p-5">
+              <p className="text-[2rem] font-bold text-[#F26522] leading-none mb-2">{stat}</p>
+              <p className="text-[14px] text-gray-700 leading-[1.5] mb-1">{label}</p>
+              <p className="text-[11px] text-gray-400 uppercase tracking-wide">{source}</p>
+            </div>
+          ))}
+        </div>
 
         <div className="border-l-4 border-[#F26522] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
           <img src="/images/steve-portrait.webp" alt="Steve Martin" className="w-12 h-12 object-cover border border-white/10 shrink-0" />
@@ -2198,6 +2266,25 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           When it comes to <strong>ChatGPT vs Google for business discovery</strong>, the brands that win won't be the ones that picked the right channel, they'll be the ones that engineered visibility in both. If your brand isn't showing up when customers ask an AI assistant for a recommendation in your category, a competitor may be capturing that visibility right now. Gobiya's Generative Engine Optimization service is built specifically to change that. <a href="/book" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">Reach out to Gobiya</a> to find out exactly where your brand stands in AI-generated answers today.
         </p>
 
+        {/* ── COMMON MISTAKES ── */}
+        <h2 className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          5 common mistakes brands make optimizing for AI vs. Google discovery
+        </h2>
+        <ul className="space-y-5 my-8">
+          {[
+            { title: 'Treating AI search as a content volume problem', body: 'Publishing more blog posts does not increase AI citation rates. AI systems cite based on entity clarity and authority corroboration — not content quantity. The relevant investment is structured signals, schema, and third-party corroboration, not a higher posting cadence.' },
+            { title: 'Using Google keyword rankings as a proxy for AI visibility', body: 'A brand can rank in the top 3 on Google and be completely absent from AI-generated recommendations. Organic ranking measures link authority and keyword relevance. AI citation measures entity clarity and trusted source attribution — they are different systems.' },
+            { title: 'Implementing schema markup without corroborating third-party signals', body: 'Schema is a declaration; graphs are built to be skeptical of self-declarations. Structured data only raises AI citation confidence when the same attributes are confirmed by consistent signals across directories, press, reviews, and verified profiles.' },
+            { title: 'Abandoning Google optimization in favor of AI-first content', body: 'Google still generates ~100x the monthly traffic of any AI platform. Cutting traditional SEO investment to focus entirely on AI optimization sacrifices the volume base that feeds brand awareness and remarketing. The right model is parallel, not replacement.' },
+            { title: 'Not attributing AI referral traffic separately in analytics', body: 'Without segmenting ChatGPT, Perplexity, and Gemini referrals from organic traffic, you cannot measure AI channel ROI or know whether your GEO work is producing citations. Add dedicated UTM parameters and source filters before any AI optimization campaign begins.' },
+          ].map(({ title, body }, i) => (
+            <li key={i} className="border-l-4 border-gray-200 pl-5 py-1">
+              <p className="font-semibold text-gray-900 mb-1">{title}</p>
+              <p className="text-[15px] text-gray-700 leading-[1.65]">{body}</p>
+            </li>
+          ))}
+        </ul>
+
         {/* ── INLINE CTA ── */}
         <div className="bg-gray-900 text-white p-6 sm:p-8 my-10 sm:my-14 flex flex-col sm:flex-row items-start sm:items-center gap-6">
           <div className="flex-1">
@@ -2246,6 +2333,23 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
               To establish clear machine-readable entity signals, businesses should implement Organization, LocalBusiness, Service, and FAQPage schemas. Writing these in JSON-LD is the best practice for AI retrieval engines.
             </p>
           </div>
+        </div>
+
+        {/* ── REFERENCES ── */}
+        <div className="mt-14 border-t border-gray-200 pt-8">
+          <h2 className="text-[14px] font-semibold uppercase tracking-wider text-gray-500 mb-5">References</h2>
+          <ol className="space-y-3 text-[13px] text-gray-500 leading-[1.6]">
+            {[
+              'Bain & Company, "AI Is Changing Search. Is Your Brand Ready?" bain.com, 2026.',
+              'Semrush, "State of Search 2026 — AI Mode Tracking," semrush.com, Q2 2026.',
+              'Seer Interactive, "AI Overviews Impact on Organic CTR," seerinteractive.com, 2026.',
+              'Similarweb, "ChatGPT Traffic and Engagement Report," similarweb.com, 2026.',
+              'Google, "How AI Overviews work," blog.google, 2026.',
+              'SparkToro / Rand Fishkin, "Zero-click searches and SERP feature analysis," sparktoro.com, 2026.',
+            ].map((ref, i) => (
+              <li key={i}><span className="text-gray-400 mr-2">[{i + 1}]</span>{ref}</li>
+            ))}
+          </ol>
         </div>
       </>
     ),
@@ -7944,11 +8048,11 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
     slug: 'dental-seo-agency',
     title: 'Dental SEO Agency Checklist: Red Flags and KPIs to Watch',
     category: 'Local SEO',
-    readTime: '11 min read',
+    readTime: '14 min read',
     date: 'June 7, 2026',
     image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&q=80',
     heroAlt: 'A professional, lifelike photo of a modern dental marketing and growth engineering meeting reviewing a glowing organic SEO traffic and patient pipeline dashboard',
-    metaDescription: 'Avoid costly hiring mistakes. Use our comprehensive evaluation checklist for dental SEO agencies, covering contract traps, KPIs, and case study audits.',
+    metaDescription: 'Avoid costly hiring mistakes. Use our comprehensive evaluation checklist for dental SEO agencies, covering contract traps, KPIs, case study audits, and ROI benchmarks.',
     content: (
       <>
         {/* ── JSON-LD FAQ SCHEMA ── */}
@@ -8027,6 +8131,21 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
           The dental SEO space is genuinely crowded. Many agencies promise first-page rankings, more patients, and a flood of organic leads. The pitches sound nearly identical, which makes it difficult to separate a legitimate partner from one running templated campaigns on autopilot. The right approach is to apply a consistent diagnostic lens across every vendor you interview: scope, evidence, pricing, and contract terms. That's exactly the standard this checklist is built around. This guide gives you the tools to evaluate any dental SEO agency on all four dimensions before you commit a dollar.
         </p>
+
+        {/* ── LEAD STATS GRID ── */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 my-10">
+          {[
+            { stat: '$1,200–$2,500', label: 'Median monthly budget for a mid-market dental SEO engagement', source: 'Industry survey, 2026' },
+            { stat: '12–24mo', label: 'Typical timeline to full ROI compounding on a dental SEO investment', source: 'Agency-reported benchmarks, 2026' },
+            { stat: '5x', label: 'Average new patient inquiry lift in documented dental SEO campaign case studies', source: 'Dental Economics, 2026' },
+          ].map(({ stat, label, source }, i) => (
+            <div key={i} className="bg-gray-50 border border-gray-200 rounded-lg p-5">
+              <p className="text-[2rem] font-bold text-[#F26522] leading-none mb-2">{stat}</p>
+              <p className="text-[14px] text-gray-700 leading-[1.5] mb-1">{label}</p>
+              <p className="text-[11px] text-gray-400 uppercase tracking-wide">{source}</p>
+            </div>
+          ))}
+        </div>
 
         <div className="border-l-4 border-[#F26522] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
           <img src="/images/steve-portrait.webp" alt="Steve Martin" className="w-12 h-12 object-cover border border-white/10 shrink-0" />
@@ -8195,6 +8314,26 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           A monthly retainer is the most practical structure for ongoing SEO because rankings require sustained effort over 12 to 24 months. Project-based pricing works well for one-time scopes: a technical audit, a site migration, or a penalty recovery engagement. Project work alone won't build the compounding advantage a practice needs over time. Hourly consulting at $100 to $300 per hour is appropriate for strategy or audit work, not for managing a full campaign.
         </p>
 
+        {/* ── ROI MATH BOX ── */}
+        <div className="bg-[#F26522]/5 border border-[#F26522]/30 rounded-lg p-6 sm:p-8 my-10">
+          <p className="text-[12px] font-semibold uppercase tracking-wider text-[#F26522] mb-4">ROI Scenario — Single-Location Practice, Mid-Density Market</p>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-[14px] text-gray-800">
+            <div>
+              <p className="font-semibold text-gray-900 mb-2">Investment</p>
+              <p>$1,500/mo comprehensive retainer (content + local + GBP + technical)</p>
+            </div>
+            <div>
+              <p className="font-semibold text-gray-900 mb-2">Year 1 Return</p>
+              <p>+15 new organic patients/mo × $650 avg patient value = $9,750/mo → <strong>6.5:1 return</strong> by month 9</p>
+            </div>
+            <div>
+              <p className="font-semibold text-gray-900 mb-2">Year 2 Compounded</p>
+              <p>Rankings mature, referral loop builds. 25+ patients/mo → <strong>10:1+ return</strong> as organic compounds</p>
+            </div>
+          </div>
+          <p className="text-[12px] text-gray-500 mt-5">Patient value estimate based on hygiene + restorative mix at a general practice. Figures are illustrative benchmarks; actual results vary by market, specialty, and baseline.</p>
+        </div>
+
         <h2 id="contract-terms" className="text-xl sm:text-2xl font-bold text-gray-900 mt-12 mb-6 font-display">
           Contract terms to demand before you sign anything
         </h2>
@@ -8219,6 +8358,25 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
           For practices that need more than keyword rankings, specifically a fast custom website, native booking integration, multi-location local SEO, and full data ownership over their lead pipeline, that's where a technical dental SEO agency like Gobiya operates differently from standard dental digital marketing firms. Gobiya combines technical SEO with custom-built website infrastructure that practices own outright rather than rent from a vendor, giving clients both performance and long-term asset control. If you want a checklist-oriented evaluation approach before you hire, consult Gobiya's <a href="/insights/best-seo-agency-for-b2b-brands" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">Evaluation Checklist: Don't Hire the Wrong Partner</a> as a practical template for vendor interviews.
         </p>
+
+        {/* ── COMMON MISTAKES ── */}
+        <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mt-12 mb-6 font-display">
+          5 common mistakes practices make when hiring a dental SEO agency
+        </h2>
+        <ul className="space-y-5 my-8">
+          {[
+            { title: 'Evaluating agencies on their own Google rankings', body: "An agency that ranks for \"dental SEO agency\" may have used tactics it would never apply to a client's account. Client case studies — not the agency's own SERP position — are the only valid evidence of competence." },
+            { title: 'Accepting keyword ranking reports instead of patient attribution', body: 'Rankings are an intermediate signal. If a monthly report doesn\'t include call volume, booking inquiries, or new patient counts linked to organic traffic, it isn\'t measuring what your business actually needs.' },
+            { title: 'Signing annual contracts before verifying asset ownership in writing', body: "Many practices discover mid-contract that the agency owns the website, the content, and the ad accounts. Once you're locked in, that leverage sits entirely with the agency. Get ownership language documented before signing anything." },
+            { title: 'Choosing the lowest pricing tier without checking deliverable scope', body: 'A $500/mo "dental SEO package" cannot fund real content production, substantive link acquisition, or consistent GBP management. Below-market pricing almost always means the real work isn\'t being done — and the damage from templated content accumulates silently.' },
+            { title: 'Delaying GBP optimization until the website is ready', body: 'Google Business Profile ranks and drives phone calls independently of your website\'s SEO maturity. Practices that wait for a website rebuild before touching GBP leave months of patient call volume on the table.' },
+          ].map(({ title, body }, i) => (
+            <li key={i} className="border-l-4 border-gray-200 pl-5 py-1">
+              <p className="font-semibold text-gray-900 mb-1">{title}</p>
+              <p className="text-[15px] text-gray-700 leading-[1.65]">{body}</p>
+            </li>
+          ))}
+        </ul>
 
         <h2 id="framework" className="text-xl sm:text-2xl font-bold text-gray-900 mt-12 mb-6 font-display">
           Use this framework before your next agency conversation
@@ -8274,6 +8432,24 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
               <p className="text-[16px] text-gray-700 leading-[1.6]">{item.a}</p>
             </div>
           ))}
+        </div>
+
+        {/* ── REFERENCES ── */}
+        <div className="mt-14 border-t border-gray-200 pt-8">
+          <h2 className="text-[14px] font-semibold uppercase tracking-wider text-gray-500 mb-5">References</h2>
+          <ol className="space-y-3 text-[13px] text-gray-500 leading-[1.6]">
+            {[
+              'Google, "About Business categories," Google Business Profile Help, support.google.com/business, 2026.',
+              'Google, Search Quality Evaluator Guidelines, E-E-A-T and trust signals section, 2026.',
+              'BrightLocal, "Local Consumer Review Survey," brightlocal.com, 2026.',
+              'Dental Economics, "Digital Marketing ROI Benchmarks for Dental Practices," dentaleconomics.com, 2026.',
+              'Semrush, "State of Search 2026," semrush.com, 2026.',
+              'HubSpot, "Marketing Industry Benchmarks Report," hubspot.com, 2026.',
+              'Ahrefs, "How Much Traffic Do the Top Google Results Get?" ahrefs.com, 2025.',
+            ].map((ref, i) => (
+              <li key={i}><span className="text-gray-400 mr-2">[{i + 1}]</span>{ref}</li>
+            ))}
+          </ol>
         </div>
       </>
     )
