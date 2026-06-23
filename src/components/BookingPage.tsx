@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import HeroWebGLBackground from './HeroWebGLBackground';
 import { gsap } from 'gsap';
 import './BookingPage.css';
 import SiteHeader from './SiteHeader';
@@ -38,6 +37,7 @@ const BookingPage: React.FC = () => {
   const [email, setEmail]         = useState('');
   const [company, setCompany]     = useState('');
   const [website, setWebsite]     = useState('');
+  const [phone, setPhone]         = useState('');
 
   const [step, setStep]         = useState<1 | 2 | 3>(1);
   const [submitting, setSubmitting] = useState(false);
@@ -53,7 +53,6 @@ const BookingPage: React.FC = () => {
   const [challenges, setChallenges]     = useState('');
 
   useEffect(() => {
-
     window.scrollTo({ top: 0, behavior: 'instant' });
     document.documentElement.classList.add('js');
     gsap.to(document.body, { opacity: 1, duration: 0.6, ease: 'power2.out' });
@@ -63,12 +62,9 @@ const BookingPage: React.FC = () => {
       const heroTl = gsap.timeline({ delay: 0.15, defaults: { ease, duration: 1.15 } });
       heroTl
         .from('[data-hero="1"]', { opacity: 0, y: 14 }, 0)
-        .from('.hero h1 .line > span', { yPercent: 110, stagger: 0.1, duration: 1.25 }, 0.08)
-        .from('[data-hero="2"]', { opacity: 0, y: 16 }, 0.5)
-        .from('[data-hero="3"]', { opacity: 0, y: 14 }, 0.6)
-        .from('[data-hero="4"]', { opacity: 0, y: 14 }, 0.7)
-        .from('[data-hero="5"]', { opacity: 0, y: 14 }, 0.8)
-        .from('[data-hero="6"]', { opacity: 0, y: 20 }, 0.4);
+        .from('[data-hero="2"]', { opacity: 0, y: 16 }, 0.3)
+        .from('[data-hero="3"]', { opacity: 0, y: 14 }, 0.5)
+        .from('[data-hero="4"]', { opacity: 0, y: 20 }, 0.4);
     });
 
     if (typeof window === 'undefined') return () => ctx.revert();
@@ -105,18 +101,30 @@ const BookingPage: React.FC = () => {
     return dateObj >= today && dateObj.getDay() !== 0 && dateObj.getDay() !== 6;
   };
 
-  const handleDateSelect = (d: number) => { setSelectedDate(new Date(year, month, d)); setSelectedTimeSlot(null); };
+  const handleDateSelect = (d: number) => { 
+    setSelectedDate(new Date(year, month, d)); 
+    setSelectedTimeSlot(null); 
+  };
 
   const handleScopeToggle = (id: string) => setSelectedScopes(prev => prev.includes(id) ? prev.filter(s => s !== id) : [...prev, id]);
 
-  const handleBookingSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!selectedDate || !selectedTimeSlot || !email || !firstName || !lastName) {
-      setErrorMsg('Please complete all required fields.'); return;
+  const handleBookingSubmit = async (e?: React.FormEvent) => {
+    if (e) e.preventDefault();
+    if (!selectedDate || !selectedTimeSlot || !email || !firstName || !lastName || !website || !budget) {
+      setErrorMsg('Please complete all required fields.'); 
+      return;
     }
-    setSubmitting(true); setErrorMsg('');
+    setSubmitting(true); 
+    setErrorMsg('');
     try {
-      const { data: leadData, error: leadError } = await supabase.from('leads').insert({ first_name: firstName, last_name: lastName, email, company, website, source_page: 'booking_flow' }).select();
+      const { data: leadData, error: leadError } = await supabase.from('leads').insert({ 
+        first_name: firstName, 
+        last_name: lastName, 
+        email, 
+        company, 
+        website, 
+        source_page: 'booking_flow' 
+      }).select();
       if (leadError) throw leadError;
       const leadId = leadData?.[0]?.id || null;
 
@@ -135,7 +143,7 @@ const BookingPage: React.FC = () => {
         date_time: bookingDateTime.toISOString(),
         budget: BUDGET_OPTIONS.find(o => o.id === budget)?.label || budget || 'Not specified',
         timeline: TIMELINE_OPTIONS.find(o => o.id === timeline)?.label || timeline || 'Not specified',
-        challenges: `[Capabilities: ${scopesParam || 'None'}] -- ${challenges || 'None'}`,
+        challenges: `[Phone: ${phone}] [Capabilities: ${scopesParam || 'None'}] -- ${challenges || 'None'}`,
         status: 'Call booked'
       });
       if (bookingError) throw bookingError;
@@ -148,17 +156,24 @@ const BookingPage: React.FC = () => {
             name: `${firstName} ${lastName}`,
             email,
             company,
-            phone: '',
+            phone: phone,
             website,
             service: 'Booking Request',
-            message: `[Call Scheduled: ${selectedDate.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })} @ ${selectedTimeSlot} PT] Budget: ${BUDGET_OPTIONS.find(o => o.id === budget)?.label || budget}, Timeline: ${TIMELINE_OPTIONS.find(o => o.id === timeline)?.label || timeline}, Scopes: ${scopesParam}. Challenges: ${challenges || 'None'}`
+            message: `[Call Scheduled: ${selectedDate.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })} @ ${selectedTimeSlot} PT] Budget: ${BUDGET_OPTIONS.find(o => o.id === budget)?.label || budget}, Phone: ${phone}, Timeline: ${TIMELINE_OPTIONS.find(o => o.id === timeline)?.label || timeline}, Scopes: ${scopesParam}. Challenges: ${challenges || 'None'}`
           })
         });
       } catch (err) {
         console.error('Failed to notify backend of booking:', err);
       }
 
-      trackFormSubmit({ form_name: 'discovery_call_booking', has_domain: !!website, booking_date: bookingDateTime.toISOString(), budget, timeline, scopes: scopesParam });
+      trackFormSubmit({ 
+        form_name: 'discovery_call_booking', 
+        has_domain: !!website, 
+        booking_date: bookingDateTime.toISOString(), 
+        budget, 
+        timeline, 
+        scopes: scopesParam 
+      });
       window.location.href = '/thank-you';
     } catch (err: any) {
       setErrorMsg(err.message || 'There was an issue saving your booking. Please try again.');
@@ -167,7 +182,6 @@ const BookingPage: React.FC = () => {
     }
   };
 
-  // Build calendar day elements
   const getDayElements = () => {
     const days = [];
     for (let i = firstDayIndex - 1; i >= 0; i--) {
@@ -188,258 +202,356 @@ const BookingPage: React.FC = () => {
   };
 
   return (
-    <div className="booking-page">
+    <div className="booking-page bg-[#0d0f12] text-white">
       <SiteHeader />
 
       {step !== 3 ? (
-        <section className="hero">
-      <HeroWebGLBackground />
-          <div className="hero-grid" aria-hidden="true" />
-          <div className="hero-inner">
+        <>
+          {/* HERO SECTION WITH CAPTURE FORM */}
+          <section className="relative w-full pt-32 pb-24 sm:pt-36 sm:pb-32 overflow-hidden bg-[#0d0f12] border-b border-[#2d332f]">
+            {/* Glowing accents */}
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,#2F5D50/0.18,transparent_55%)]" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_80%,#F26522/0.09,transparent_55%)]" />
+            <div className="absolute inset-0 opacity-10" style={{
+              backgroundImage: 'linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)',
+              backgroundSize: '96px 96px'
+            }} />
 
-            {/* LEFT: copy */}
-            <div className="hero-copy">
-              <nav className="breadcrumb" data-hero="1">
-                <a href="/">GOBIYA</a>
-                <i>›</i>
-                <span>Book a call</span>
-              </nav>
-
-              <h1>
-                <span className="line"><span>Schedule your</span></span>
-                <span className="line"><span>forensic</span></span>
-                <span className="line"><span className="accent">pipeline audit.</span></span>
-              </h1>
-
-              <p className="hero-sub" data-hero="2">
-                A live 1-on-1 strategy call with Steve Martin — CEO & Lead Engineer. We examine your entity mapping, diagnose search drop triggers, and lay out a concrete technical roadmap.
-              </p>
-
-              <div className="steve-card" data-hero="3">
-                <img src="/images/steve-portrait.webp" alt="Steve Martin — CEO, GOBIYA" />
-                <div>
-                  <h3>Steve Martin</h3>
-                  <p className="role">CEO & Lead Growth Engineer</p>
-                  <p>25+ years bridging full-stack development and high-stakes organic search recovery.</p>
+            <div className="relative z-10 max-w-6xl mx-auto px-6 sm:px-10 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+              
+              {/* LEFT COLUMN: Strategic Value Propositions */}
+              <div className="lg:col-span-7 flex flex-col justify-center text-left">
+                <div data-hero="1" className="inline-flex items-center gap-2 mb-6 text-xs font-mono uppercase tracking-[0.2em] text-[#F26522] font-semibold">
+                  <span className="w-2.5 h-2.5 rounded-full bg-[#F26522] animate-pulse" />
+                  LIVE ON-DEMAND | STRATEGY SESSIONS
+                </div>
+                <h1 data-hero="1" className="text-[clamp(2.2rem,5vw,3.6rem)] font-bold tracking-tight text-white leading-[1.08] mb-6 font-display">
+                  Forecasting B2B Growth: How to Project SEO and Pipeline 90 to 180 Days From Now
+                </h1>
+                <p data-hero="2" className="text-lg font-semibold text-[#F26522] mb-6 leading-snug">
+                  Marketing forecasting has become significantly more complex.
+                </p>
+                <div data-hero="3" className="text-gray-300 text-sm sm:text-base leading-relaxed space-y-5 max-w-2xl font-light">
+                  <p>
+                    AI Overviews are changing click behavior, paid media auctions are becoming less predictable, attribution gaps continue to widen, and B2B conversion patterns no longer behave the way they did just a few years ago. Yet most organizations still rely on outdated forecasting models built around static traffic assumptions, stable CPCs, and linear growth expectations.
+                  </p>
+                  <p>
+                    In this private strategy session, Steve Martin and the Gobiya engineering team will break down how modern B2B teams should forecast SEO, conversion architecture, and paid growth in today's environment. You'll learn how to move beyond generic traffic projections and build forecasting systems that account for visibility shifts, AI-driven search behavior, conversion volatility, pipeline quality, and revenue efficiency.
+                  </p>
+                  <p className="font-semibold text-white pt-2">
+                    You'll walk away with practical B2B forecasting frameworks, pipeline contribution maps, and a step-by-step action plan to operationalize organic growth projections across your organization.
+                  </p>
                 </div>
               </div>
 
-              <div className="session-specs" data-hero="4">
-                <div className="spec-row">
-                  <svg viewBox="0 0 24 24" fill="none" width="16" height="16"><path d="M15 10l4.553-2.276A1 1 0 0121 8.723v6.554a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/></svg>
-                  <div>
-                    <strong>Screen-share video meeting</strong>
-                    Google Meet — link sent in calendar invite
-                  </div>
-                </div>
-                <div className="spec-row">
-                  <svg viewBox="0 0 24 24" fill="none" width="16" height="16"><circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="1.6"/><path d="M12 6v6l4 2" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"/></svg>
-                  <div>
-                    <strong>15–30 minute strategy session</strong>
-                    Actionable takeaways — no sales deck, just engineering insights
-                  </div>
-                </div>
-              </div>
-
-              <div className="availability" data-hero="5">
-                <span className="dot" aria-hidden="true" />
-                Accepting qualified pipeline opportunities · CA / US
-              </div>
-            </div>
-
-            {/* RIGHT: booking widget */}
-            <div className="hero-widget" data-hero="6">
-              <div className="widget">
-                <div className="widget-head">
-                  <span>audit-booking.log</span>
-                  <span className="step-tag">Step {step} of 2</span>
-                </div>
-
-                <div className="widget-body">
+              {/* RIGHT COLUMN: The Form / Booking Widget */}
+              <div className="lg:col-span-5 flex justify-center w-full" data-hero="4">
+                <div className="w-full max-w-md bg-white text-gray-900 rounded-xl shadow-2xl p-6 sm:p-8 border border-gray-100 relative overflow-hidden">
+                  
                   {errorMsg && (
-                    <div className="error-banner">
-                      <svg viewBox="0 0 24 24" fill="none" width="14" height="14"><circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="1.5"/><path d="M12 8v4M12 16h.01" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/></svg>
+                    <div className="bg-red-50 border border-red-200 text-red-700 text-xs rounded p-3 mb-4 flex items-center gap-2">
+                      <svg viewBox="0 0 24 24" fill="none" width="14" height="14" className="shrink-0"><circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2"/><path d="M12 8v4M12 16h.01" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/></svg>
                       {errorMsg}
                     </div>
                   )}
 
                   {step === 1 ? (
-                    /* ── STEP 1: Calendar ── */
-                    <div>
+                    /* STEP 1: Qualification Form */
+                    <div className="flex flex-col gap-4 text-left">
+                      <div className="mb-4 text-center">
+                        <h3 className="font-bold text-lg text-gray-900">Request your growth session</h3>
+                        <p className="text-xs text-gray-500 mt-1">Fill out the form below to register &amp; lock your date:</p>
+                      </div>
+
+                      <div className="grid grid-cols-2 gap-3">
+                        <div className="flex flex-col gap-1">
+                          <label className="text-[10px] font-mono uppercase tracking-wider text-gray-400 font-bold" htmlFor="f-name">First Name *</label>
+                          <input 
+                            id="f-name" 
+                            type="text" 
+                            required 
+                            value={firstName} 
+                            onChange={e => setFirstName(e.target.value)} 
+                            placeholder="First Name" 
+                            className="bg-gray-50 border border-gray-200 py-2.5 px-3 rounded text-sm text-gray-900 focus:border-[#F26522] focus:bg-white outline-none transition-all w-full"
+                          />
+                        </div>
+                        <div className="flex flex-col gap-1">
+                          <label className="text-[10px] font-mono uppercase tracking-wider text-gray-400 font-bold" htmlFor="l-name">Last Name *</label>
+                          <input 
+                            id="l-name" 
+                            type="text" 
+                            required 
+                            value={lastName} 
+                            onChange={e => setLastName(e.target.value)} 
+                            placeholder="Last Name" 
+                            className="bg-gray-50 border border-gray-200 py-2.5 px-3 rounded text-sm text-gray-900 focus:border-[#F26522] focus:bg-white outline-none transition-all w-full"
+                          />
+                        </div>
+                      </div>
+
+                      <div className="flex flex-col gap-1">
+                        <label className="text-[10px] font-mono uppercase tracking-wider text-gray-400 font-bold" htmlFor="work-email">Work Email *</label>
+                        <input 
+                          id="work-email" 
+                          type="email" 
+                          required 
+                          value={email} 
+                          onChange={e => setEmail(e.target.value)} 
+                          placeholder="Email address" 
+                          className="bg-gray-50 border border-gray-200 py-2.5 px-3 rounded text-sm text-gray-900 focus:border-[#F26522] focus:bg-white outline-none transition-all w-full"
+                        />
+                      </div>
+
+                      <div className="flex flex-col gap-1">
+                        <label className="text-[10px] font-mono uppercase tracking-wider text-gray-400 font-bold" htmlFor="web-domain">Website URL *</label>
+                        <input 
+                          id="web-domain" 
+                          type="text" 
+                          required 
+                          value={website} 
+                          onChange={e => setWebsite(e.target.value)} 
+                          placeholder="e.g. company.com" 
+                          className="bg-gray-50 border border-gray-200 py-2.5 px-3 rounded text-sm text-gray-900 focus:border-[#F26522] focus:bg-white outline-none transition-all w-full"
+                        />
+                      </div>
+
+                      <div className="grid grid-cols-2 gap-3">
+                        <div className="flex flex-col gap-1">
+                          <label className="text-[10px] font-mono uppercase tracking-wider text-gray-400 font-bold" htmlFor="sel-budget">Monthly Budget *</label>
+                          <select 
+                            id="sel-budget" 
+                            required 
+                            value={budget} 
+                            onChange={e => setBudget(e.target.value)}
+                            className="bg-gray-50 border border-gray-200 py-2.5 px-2 rounded text-sm text-gray-900 focus:border-[#F26522] focus:bg-white outline-none transition-all w-full select-field"
+                          >
+                            <option value="">Select budget...</option>
+                            {BUDGET_OPTIONS.map(o => (
+                              <option key={o.id} value={o.id}>{o.label}</option>
+                            ))}
+                          </select>
+                        </div>
+                        <div className="flex flex-col gap-1">
+                          <label className="text-[10px] font-mono uppercase tracking-wider text-gray-400 font-bold" htmlFor="tel-phone">Phone Number *</label>
+                          <input 
+                            id="tel-phone" 
+                            type="tel" 
+                            required 
+                            value={phone} 
+                            onChange={e => setPhone(e.target.value)} 
+                            placeholder="+1 (555) 000-0000" 
+                            className="bg-gray-50 border border-gray-200 py-2.5 px-3 rounded text-sm text-gray-900 focus:border-[#F26522] focus:bg-white outline-none transition-all w-full"
+                          />
+                        </div>
+                      </div>
+
+                      <div className="flex flex-col gap-1">
+                        <label className="text-[10px] font-mono uppercase tracking-wider text-gray-400 font-bold" htmlFor="ta-challenges">Core bottleneck or objective</label>
+                        <textarea 
+                          id="ta-challenges" 
+                          rows={2} 
+                          value={challenges} 
+                          onChange={e => setChallenges(e.target.value)} 
+                          placeholder="E.g., Hit by Google updates, lost 40% pipeline, need audit." 
+                          className="bg-gray-50 border border-gray-200 py-2 px-3 rounded text-sm text-gray-900 focus:border-[#F26522] focus:bg-white outline-none transition-all w-full resize-none"
+                        />
+                      </div>
+
+                      <button 
+                        type="button" 
+                        className="w-full mt-4 bg-[#F26522] hover:bg-[#e05a1a] text-white py-3.5 rounded font-bold uppercase tracking-wider text-xs transition-colors duration-200 outline-none"
+                        onClick={() => {
+                          if (!firstName || !lastName || !email || !website || !budget || !phone) {
+                            setErrorMsg('Please fill out all required fields marked with *');
+                          } else {
+                            setErrorMsg('');
+                            setStep(2);
+                          }
+                        }}
+                      >
+                        CONTINUE TO CALENDAR →
+                      </button>
+
+                      {/* Greyscale trust logos inside the form card */}
+                      <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 mt-6 pt-5 border-t border-gray-100 opacity-40 grayscale">
+                        <span className="font-bold tracking-tight text-gray-900 text-[10px]">TOTAL CAPITAL</span>
+                        <span className="font-serif italic font-semibold text-gray-900 text-[10px]">Smile Center</span>
+                        <span className="font-mono uppercase tracking-widest text-gray-900 text-[9px]">Livescan</span>
+                        <span className="font-sans font-black text-gray-900 text-[10px]">DG PLUMBING</span>
+                      </div>
+                    </div>
+                  ) : (
+                    /* STEP 2: Calendar scheduling */
+                    <div className="flex flex-col text-left">
+                      <div className="flex items-center justify-between mb-4 pb-2 border-b border-gray-100">
+                        <span className="text-xs font-mono uppercase tracking-wider text-gray-400 font-bold">Step 2: Choose session slot</span>
+                        <button type="button" onClick={() => setStep(1)} className="text-xs text-[#F26522] hover:underline font-medium">Go Back</button>
+                      </div>
+
                       <div className="cal-nav">
-                        <span className="cal-month">{MONTHS[month]} {year}</span>
+                        <span className="cal-month text-gray-900">{MONTHS[month]} {year}</span>
                         <div className="cal-nav-btns">
-                          <button type="button" className="cal-btn" onClick={handlePrevMonth} aria-label="Previous month">
-                            <svg viewBox="0 0 24 24" fill="none"><path d="M15 18l-6-6 6-6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                          <button type="button" className="cal-btn border-gray-200 text-gray-400 hover:border-gray-400 hover:text-gray-900" onClick={handlePrevMonth} aria-label="Previous month">
+                            <svg viewBox="0 0 24 24" fill="none" className="w-3 h-3"><path d="M15 18l-6-6 6-6" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
                           </button>
-                          <button type="button" className="cal-btn" onClick={handleNextMonth} aria-label="Next month">
-                            <svg viewBox="0 0 24 24" fill="none"><path d="M9 18l6-6-6-6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                          <button type="button" className="cal-btn border-gray-200 text-gray-400 hover:border-gray-400 hover:text-gray-900" onClick={handleNextMonth} aria-label="Next month">
+                            <svg viewBox="0 0 24 24" fill="none" className="w-3 h-3"><path d="M9 18l6-6-6-6" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
                           </button>
                         </div>
                       </div>
 
                       <div className="cal-weekdays">
-                        {WEEKDAYS.map(w => <span key={w}>{w}</span>)}
+                        {WEEKDAYS.map(w => <span key={w} className="text-gray-400 font-bold">{w}</span>)}
                       </div>
-                      <div className="cal-grid">{getDayElements()}</div>
+                      <div className="cal-grid cal-grid-light">{getDayElements()}</div>
 
                       {selectedDate && (
-                        <div className="time-section">
-                          <p className="time-label">Available slots — {selectedDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}</p>
-                          <div className="time-grid">
+                        <div className="time-section border-gray-100 mt-5 pt-4">
+                          <p className="time-label text-gray-400 font-bold">Available slots — {selectedDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}</p>
+                          <div className="time-grid mt-2">
                             {TIME_SLOTS.map(t => (
-                              <button key={t} type="button" className={`time-slot ${selectedTimeSlot === t ? 'selected' : ''}`} onClick={() => setSelectedTimeSlot(t)}>{t}</button>
+                              <button key={t} type="button" className={`time-slot border-gray-200 text-gray-600 hover:border-gray-400 hover:text-gray-900 rounded ${selectedTimeSlot === t ? 'time-slot-selected' : ''}`} onClick={() => setSelectedTimeSlot(t)}>{t}</button>
                             ))}
                           </div>
                         </div>
                       )}
 
-                      <div className="book-actions" style={{ marginTop: '1.4rem' }}>
-                        <button type="button" className="btn-continue" disabled={!selectedDate || !selectedTimeSlot} onClick={() => setStep(2)} style={{ flex: 1 }}>
-                          Continue
-                          <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                      <div className="flex gap-3 mt-6 pt-4 border-t border-gray-100">
+                        <button type="button" className="py-2.5 px-4 border border-gray-200 rounded text-xs font-mono uppercase tracking-wider text-gray-500 hover:border-gray-400 hover:text-gray-900 transition-colors" onClick={() => setStep(1)}>
+                          Back
+                        </button>
+                        <button 
+                          type="button" 
+                          className="flex-1 bg-[#F26522] hover:bg-[#e05a1a] text-white py-2.5 rounded font-bold uppercase tracking-wider text-xs transition-colors duration-200 disabled:opacity-40 disabled:cursor-not-allowed outline-none"
+                          disabled={!selectedDate || !selectedTimeSlot || submitting}
+                          onClick={() => handleBookingSubmit()}
+                        >
+                          {submitting ? 'Confirming...' : 'Confirm Session →'}
                         </button>
                       </div>
                     </div>
-                  ) : (
-                    /* ── STEP 2: Qualification form ── */
-                    <form onSubmit={handleBookingSubmit} className="book-form">
-                      <div className="slot-summary">
-                        <span className="slot-val">
-                          {selectedDate?.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })} · {selectedTimeSlot} PT
-                        </span>
-                        <button type="button" onClick={() => { setStep(1); setSelectedTimeSlot(null); }}>Change</button>
-                      </div>
-
-                      <div className="book-row">
-                        <div className="book-field">
-                          <label htmlFor="bk-first">First name *</label>
-                          <input id="bk-first" type="text" required value={firstName} onChange={e => setFirstName(e.target.value)} placeholder="Jane" />
-                        </div>
-                        <div className="book-field">
-                          <label htmlFor="bk-last">Last name *</label>
-                          <input id="bk-last" type="text" required value={lastName} onChange={e => setLastName(e.target.value)} placeholder="Smith" />
-                        </div>
-                      </div>
-
-                      <div className="book-field">
-                        <label htmlFor="bk-email">Work email *</label>
-                        <input id="bk-email" type="email" required value={email} onChange={e => setEmail(e.target.value)} placeholder="jane@company.com" />
-                      </div>
-
-                      <div className="book-row">
-                        <div className="book-field">
-                          <label htmlFor="bk-company">Company</label>
-                          <input id="bk-company" type="text" value={company} onChange={e => setCompany(e.target.value)} placeholder="Acme Corp" />
-                        </div>
-                        <div className="book-field">
-                          <label htmlFor="bk-website">Website domain</label>
-                          <input id="bk-website" type="text" value={website} onChange={e => setWebsite(e.target.value)} placeholder="acme.com" />
-                        </div>
-                      </div>
-
-                      <div>
-                        <p className="opt-label">Monthly marketing budget</p>
-                        <div className="opt-grid-2">
-                          {BUDGET_OPTIONS.map(o => (
-                            <button key={o.id} type="button" className={`opt-chip ${budget === o.id ? 'active' : ''}`} onClick={() => setBudget(o.id)}>{o.label}</button>
-                          ))}
-                        </div>
-                      </div>
-
-                      <div>
-                        <p className="opt-label">Engagement timeline</p>
-                        <div className="opt-grid-2">
-                          {TIMELINE_OPTIONS.map(o => (
-                            <button key={o.id} type="button" className={`opt-chip ${timeline === o.id ? 'active' : ''}`} onClick={() => setTimeline(o.id)}>{o.label}</button>
-                          ))}
-                        </div>
-                      </div>
-
-                      <div>
-                        <p className="opt-label">Focus areas</p>
-                        <div className="opt-grid-1">
-                          {SCOPE_OPTIONS.map(o => (
-                            <button key={o.id} type="button" className={`scope-chip ${selectedScopes.includes(o.id) ? 'active' : ''}`} onClick={() => handleScopeToggle(o.id)}>
-                              <span>{o.label}</span>
-                              <span className="scope-check">
-                                {selectedScopes.includes(o.id) && <svg viewBox="0 0 24 24" fill="none" width="9" height="9"><path d="M5 13l4 4L19 7" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/></svg>}
-                              </span>
-                            </button>
-                          ))}
-                        </div>
-                      </div>
-
-                      <div className="book-field">
-                        <label htmlFor="bk-challenges">Core bottlenecks / objectives</label>
-                        <textarea id="bk-challenges" rows={3} value={challenges} onChange={e => setChallenges(e.target.value)} placeholder="E.g., Hit by Google March update, lost 40% organic reach, need forensic recovery audit." />
-                      </div>
-
-                      <div className="book-actions">
-                        <button type="button" className="btn-back" onClick={() => setStep(1)}>
-                          <svg viewBox="0 0 24 24" fill="none" width="13" height="13"><path d="M19 12H5M12 19l-7-7 7-7" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg>
-                          Back
-                        </button>
-                        <button type="submit" className="btn-submit" disabled={submitting}>
-                          {submitting ? <><span className="bk-spinner" />Scheduling…</> : <>Book strategy call<svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg></>}
-                        </button>
-                      </div>
-                    </form>
                   )}
-                </div>
 
-                <div className="widget-foot">
-                  <span>gobiya.com · Los Angeles</span>
-                  <span>Pacific Time · Mon–Fri</span>
                 </div>
               </div>
-            </div>
 
-          </div>
-        </section>
+            </div>
+          </section>
+
+          {/* WHAT YOU'LL LEARN & STRATEGIST SECTION */}
+          <section className="bg-white text-gray-900 py-20 sm:py-28 border-t border-gray-100">
+            <div className="max-w-6xl mx-auto px-6 sm:px-10">
+              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-center mb-16 sm:mb-20 text-gray-900 font-display">
+                What You'll Learn
+              </h2>
+
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
+                
+                {/* LEFT SIDE: The 10 Points Grid */}
+                <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-8 text-left">
+                  {[
+                    { title: "Why traditional marketing forecasts fail", desc: "Understand why standard static models fail in AI-driven search environments and highly volatile B2B scenarios." },
+                    { title: "AI Overviews & zero-click search modeling", desc: "Learn how ChatGPT, Claude, and Gemini citations are changing forecasting assumptions and click CTR models." },
+                    { title: "The modern B2B growth framework", desc: "Deploy frameworks that forecast visibility, pipeline conversion, SQL volumes, and revenue outcomes." },
+                    { title: "Building multi-scenario projections", desc: "Formulate conservative, expected, and aggressive growth models ready for B2B board and CFO review." },
+                    { title: "The core metrics to track", desc: "Isolate the highest-value inputs needed to project B2B SEO and paid acquisition ROI with audit-level accuracy." },
+                    { title: "Measuring true business impact", desc: "Move beyond impressions and traffic rankings to forecast pipeline value and pipeline contribution." },
+                    { title: "AI-impacted industry projections", desc: "Project organic search growth and citation share in verticals heavily disrupted by generative answers." },
+                    { title: "Paid search inflation modeling", desc: "Model CPC inflation, ad auction volatility, and audience saturation patterns across channels." },
+                    { title: "Executive-ready reporting templates", desc: "Design forecasting dashboards and templates that B2B executive leadership teams actually trust." },
+                    { title: "90-day execution roadmap", desc: "Map out a step-by-step action plan to align search attribution with pipeline CRM performance from day one." }
+                  ].map((item, idx) => (
+                    <div key={idx} className="flex gap-4 items-start">
+                      <div className="w-8 h-8 rounded-full bg-[#F26522]/10 flex items-center justify-center shrink-0 text-[#F26522] mt-0.5">
+                        <svg viewBox="0 0 24 24" fill="none" width="16" height="16" stroke="currentColor" strokeWidth="2.5"><path d="M5 13l4 4L19 7" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                      </div>
+                      <div>
+                        <h4 className="font-bold text-base text-gray-900 mb-1">{item.title}</h4>
+                        <p className="text-gray-600 text-sm leading-relaxed font-light">{item.desc}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                {/* RIGHT SIDE: The Instructor Profile */}
+                <div className="lg:col-span-4 bg-gray-50 border border-gray-100 rounded-2xl p-6 sm:p-8 text-left">
+                  <p className="text-[10px] font-mono uppercase tracking-[0.2em] text-gray-400 font-semibold mb-4">Your Strategist</p>
+                  <div className="flex items-center gap-4 mb-6">
+                    <img 
+                      src="/images/steve-portrait.webp" 
+                      alt="Steve Martin" 
+                      className="w-16 h-16 rounded-full object-cover border-2 border-[#F26522]" 
+                    />
+                    <div>
+                      <h3 className="font-bold text-lg text-gray-900 leading-tight">Steve Martin</h3>
+                      <p className="text-xs font-mono uppercase tracking-wider text-[#F26522] mt-0.5">CEO &amp; Lead Growth Engineer</p>
+                    </div>
+                  </div>
+                  <div className="text-gray-600 text-sm leading-relaxed space-y-4 font-light">
+                    <p>
+                      After building full-stack digital architectures and engineering B2B search pipelines for 25+ years, Steve works with B2B operators to grow organic pipeline and recover from search updates.
+                    </p>
+                    <p>
+                      Steve combines deep full-stack technical engineering with high-stakes SEO forensics to audit visibility and build pipeline engines that survive CFO scrutiny.
+                    </p>
+                  </div>
+                  <div className="mt-8 pt-6 border-t border-gray-200">
+                    <img 
+                      src="/images/logo-favicon-gobiya-blastoff-large.webp" 
+                      alt="Gobiya Logo" 
+                      className="h-6 w-auto opacity-30 object-contain"
+                    />
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </section>
+        </>
       ) : (
-        /* ── STEP 3: Success ── */
-        <section style={{ background: 'var(--paper)', borderBottom: '1px solid var(--line)' }}>
-          <div className="success-screen">
-            <div className="success-copy">
-              <div className="success-icon">
-                <svg viewBox="0 0 24 24" fill="none" width="26" height="26"><path d="M5 13l4 4L19 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+        /* STEP 3: Success Screen (though booking handles redirect, fallback success layout) */
+        <section className="bg-white text-gray-900 border-b border-gray-100">
+          <div className="success-screen max-w-6xl mx-auto px-6 py-24 sm:py-32 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="success-copy flex flex-col gap-6 text-left">
+              <div className="w-16 h-16 rounded-full border border-[#F26522] flex items-center justify-center text-[#F26522]">
+                <svg viewBox="0 0 24 24" fill="none" width="28" height="28" stroke="currentColor" strokeWidth="2"><path d="M5 13l4 4L19 7" strokeLinecap="round" strokeLinejoin="round"/></svg>
               </div>
               <div>
-                <p style={{ fontFamily: 'var(--font-mono)', fontSize: '10px', letterSpacing: '.12em', textTransform: 'uppercase', color: 'var(--green)', marginBottom: '.8rem' }}>Booking confirmed</p>
-                <h1>Your session is locked in.</h1>
+                <p className="font-mono text-xs uppercase tracking-wider text-[#F26522] font-semibold mb-2">Booking Confirmed</p>
+                <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-gray-900 leading-tight">Your session is locked in.</h1>
               </div>
-              <p>
+              <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
                 A Google Calendar invitation with video meeting details has been sent to <strong>{email}</strong>. Steve will join you to review your audit scope.
               </p>
-              <div className="success-actions">
-                <a href="/" className="btn btn-primary">Return to homepage</a>
-                <a href="/insights" className="btn btn-ghost">Read latest insights</a>
+              <div className="flex gap-4">
+                <a href="/" className="bg-gray-900 hover:bg-black text-white text-xs font-mono uppercase tracking-wider py-3.5 px-6 rounded transition-colors duration-200">Return to homepage</a>
+                <a href="/insights" className="border border-gray-200 hover:border-gray-400 text-gray-700 text-xs font-mono uppercase tracking-wider py-3.5 px-6 rounded transition-colors duration-200">Read latest insights</a>
               </div>
             </div>
 
-            <div className="success-detail">
-              <div className="success-detail-head">booking-confirmation.log</div>
-              <div className="success-detail-body">
-                <div className="detail-row">
-                  <span className="detail-key">Date</span>
-                  <span className="detail-val">{selectedDate?.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' })}</span>
+            <div className="success-detail bg-gray-50 border border-gray-100 rounded-xl p-6 sm:p-8 text-left">
+              <div className="success-detail-head text-xs font-mono uppercase tracking-wider text-gray-400 pb-3 border-b border-gray-200">booking-confirmation.log</div>
+              <div className="success-detail-body mt-4 space-y-4">
+                <div className="flex justify-between text-sm py-1 border-b border-gray-100">
+                  <span className="font-mono text-xs uppercase tracking-wider text-gray-400">Date</span>
+                  <span className="text-gray-900 font-medium">{selectedDate?.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' })}</span>
                 </div>
-                <div className="detail-row">
-                  <span className="detail-key">Time</span>
-                  <span className="detail-val">{selectedTimeSlot} Pacific Time</span>
+                <div className="flex justify-between text-sm py-1 border-b border-gray-100">
+                  <span className="font-mono text-xs uppercase tracking-wider text-gray-400">Time</span>
+                  <span className="text-gray-900 font-medium">{selectedTimeSlot} Pacific Time</span>
                 </div>
-                <div className="detail-row">
-                  <span className="detail-key">Format</span>
-                  <span className="detail-val">Google Meet — screen-share video</span>
+                <div className="flex justify-between text-sm py-1 border-b border-gray-100">
+                  <span className="font-mono text-xs uppercase tracking-wider text-gray-400">Format</span>
+                  <span className="text-gray-900 font-medium">Google Meet — screen-share</span>
                 </div>
-                <div className="detail-row">
-                  <span className="detail-key">Duration</span>
-                  <span className="detail-val">15 – 30 minutes</span>
+                <div className="flex justify-between text-sm py-1 border-b border-gray-100">
+                  <span className="font-mono text-xs uppercase tracking-wider text-gray-400">Duration</span>
+                  <span className="text-gray-900 font-medium">15 – 30 minutes</span>
                 </div>
-                <div className="detail-row">
-                  <span className="detail-key">Invite sent</span>
-                  <span className="detail-val">{email}</span>
+                <div className="flex justify-between text-sm py-1">
+                  <span className="font-mono text-xs uppercase tracking-wider text-gray-400">Invite Sent</span>
+                  <span className="text-gray-900 font-medium">{email}</span>
                 </div>
               </div>
             </div>
