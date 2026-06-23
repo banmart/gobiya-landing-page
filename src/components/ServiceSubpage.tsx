@@ -289,6 +289,126 @@ export default function ServiceSubpage({ path, isFanOut, category, slug }: Servi
           { title: 'Ownership', description: 'Custom-built infrastructure eliminates dependency on third-party platforms and their unpredictable pricing changes' }
         ]
       },
+      'custom-web-app-development-agency': {
+        pageTitle: 'Custom web app development',
+        pageSubheading: 'We build bespoke applications engineered for speed, clean architecture, and scale.',
+        overlaySubtitle: 'We engineer systems for measurable outcomes',
+        overlayTitle: 'A custom application is an asset — a generic one is a liability',
+        overlayP1: 'Off-the-shelf platforms trade flexibility for vendor dependency. We build custom React, Next.js, and Vite applications that your team owns, controls, and can evolve without permission from a SaaS provider.',
+        overlayP2: 'Every custom web application we ship is designed for sub-second performance, clean API architecture, and long-term maintainability.',
+        deepDiveHeading: 'Custom architecture that eliminates platform dependency and performance ceilings',
+        deepDiveParagraphs: [
+          'Generic website builders and SaaS platforms impose invisible ceilings on your business. You hit performance limits, design constraints, integration restrictions, and pricing cliffs that compound as your organization grows. Custom web applications eliminate these ceilings by design.',
+          'We build using React, Next.js, and Vite — frameworks selected for your specific performance, SEO, and interactivity requirements. Server-side rendering for content-heavy pages, client-side for real-time interfaces, hybrid where both matter. The architecture decision is driven by the use case, not by what we happen to know.',
+          'Every application we ship comes with full code ownership transferred to the client, documented component architecture, and a deployment setup your team can manage independently. The dependency is on good code, not on us.'
+        ],
+        concreteStepsHeading: 'How do we build a custom web application, concretely?',
+        concreteSteps: [
+          'We start with a requirements brief: user stories, integration endpoints, performance targets, and SEO architecture decisions',
+          'We design the component architecture and data flow before writing production code — preventing structural debt',
+          'We build a component library and design system that gives every screen visual and functional consistency',
+          'We develop with performance budgets: explicit Lighthouse score, load time, and Core Web Vitals targets per page type',
+          'We run cross-device, cross-browser, and network-condition QA before any staging release',
+          'We hand off with full code documentation, deployment scripts, and an optional ongoing optimization retainer'
+        ],
+        advantagesHeading: 'What are the advantages of a custom web application?',
+        advantageCards: [
+          { title: 'Speed', description: 'Sub-second load times — no third-party script bloat, no platform overhead, no shared hosting constraints' },
+          { title: 'Ownership', description: 'Full code and data ownership from day one — no vendor lock-in, no platform pricing risk' },
+          { title: 'Scalability', description: 'Architecture designed for your growth path, not retrofitted when you outgrow a template' },
+          { title: 'SEO', description: 'Crawler-clean builds with correct rendering, schema, and Core Web Vitals from the first deploy' }
+        ]
+      },
+      'mobile-app-development-agency': {
+        pageTitle: 'Mobile app development',
+        pageSubheading: 'We build cross-platform mobile applications that perform natively on iOS and Android.',
+        overlaySubtitle: 'We engineer systems for measurable outcomes',
+        overlayTitle: 'One codebase. Two platforms. No performance compromise.',
+        overlayP1: 'React Native and Expo give us access to native device APIs, hardware, and platform-specific UI patterns without maintaining two separate codebases.',
+        overlayP2: 'Every mobile application we ship is optimized for app store performance, offline capability, and the UX expectations of mobile-first users.',
+        deepDiveHeading: 'Cross-platform mobile development without the typical cross-platform compromises',
+        deepDiveParagraphs: [
+          'The historic trade-off in cross-platform mobile development — one codebase but sluggish, non-native feel — has been solved by React Native\'s architecture improvements and Expo\'s managed build pipeline. We build apps that users cannot distinguish from native applications by look or feel.',
+          'We access native device features — camera, GPS, push notifications, biometric authentication, local storage — through stable, well-maintained libraries. Every integration is tested on real devices across iOS and Android before any release.',
+          'App store optimization, review guidelines compliance, and release management are included in our mobile development process. We handle the full lifecycle from first build through production deployment and post-launch iteration.'
+        ],
+        concreteStepsHeading: 'How do we build a mobile application, concretely?',
+        concreteSteps: [
+          'We define the feature scope, user flows, and native device integrations required for your use case',
+          'We prototype key screens in Figma or code to validate UX assumptions before full development begins',
+          'We build using React Native and Expo with native modules where performance demands it',
+          'We implement push notifications, offline mode, authentication, and API integrations per spec',
+          'We test on physical iOS and Android devices across multiple OS versions and screen sizes',
+          'We manage app store submission, review compliance, and post-launch monitoring for crashes and performance'
+        ],
+        advantagesHeading: 'What are the advantages of cross-platform mobile development?',
+        advantageCards: [
+          { title: 'Efficiency', description: 'One codebase covers both platforms — 40–60% of the cost of two native apps without sacrificing quality' },
+          { title: 'Native feel', description: 'React Native renders actual native UI components — not web views — for platform-authentic interactions' },
+          { title: 'Speed to market', description: 'Shared business logic and component architecture means faster iteration and faster initial release' },
+          { title: 'Maintenance', description: 'A single codebase is dramatically easier to maintain, update, and hand off to an internal team' }
+        ]
+      },
+      'it-consulting-services-agency': {
+        pageTitle: 'IT consulting & strategy',
+        pageSubheading: 'We align your technology stack to business outcomes through architecture and advisory.',
+        overlaySubtitle: 'We engineer systems for measurable outcomes',
+        overlayTitle: 'Technology decisions made from outcomes backward — not tools forward',
+        overlayP1: 'Bad technology choices compound. The wrong stack choice in year one creates years of migration debt, performance drag, and team friction.',
+        overlayP2: 'We bring an engineering-first perspective to technology selection, architecture review, and digital transformation planning.',
+        deepDiveHeading: 'Architecture advisory and digital transformation: technology decisions that age well',
+        deepDiveParagraphs: [
+          'Most IT consulting engagements start with a solution and work backward to justify it. We start with your business problems — revenue leakage, operational bottlenecks, scaling failures — and identify the specific technology decisions that are causing or sustaining them.',
+          'We conduct architecture reviews of existing systems: database design, API layer structure, frontend rendering strategy, hosting configuration, and vendor dependencies. Every finding is prioritized by business impact, not technical elegance.',
+          'The output of our consulting engagements is a technology roadmap your team can execute: phased, prioritized, and tied to specific business outcomes. No 300-page reports, no vendor kickbacks, no recommended platforms we happen to resell.'
+        ],
+        concreteStepsHeading: 'How do we run an IT consulting engagement, concretely?',
+        concreteSteps: [
+          'We conduct a technology audit: current stack, vendor dependencies, performance bottlenecks, security gaps, and scaling constraints',
+          'We interview key stakeholders — engineering, operations, and leadership — to map business pain to technical root cause',
+          'We produce a gap analysis: where your current technology is holding revenue, reliability, or team velocity hostage',
+          'We develop a phased technology roadmap: what to fix now, what to migrate over 6–12 months, and what to defer',
+          'We prioritize recommendations by ROI — cost of the change versus cost of the status quo — not by technical preference',
+          'We support implementation as an embedded advisor or hand off to your internal team with a documented execution plan'
+        ],
+        advantagesHeading: 'What are the advantages of independent IT consulting?',
+        advantageCards: [
+          { title: 'Clarity', description: 'An independent assessment surfaces the technology constraints your internal team is too close to see' },
+          { title: 'Alignment', description: 'Technology decisions mapped to business outcomes reduce wasted spend on tools that don\'t move the needle' },
+          { title: 'Risk reduction', description: 'Architecture decisions reviewed before implementation prevent years of migration and refactoring debt' },
+          { title: 'Velocity', description: 'A clear technology roadmap eliminates decision paralysis and lets engineering teams ship with confidence' }
+        ]
+      },
+      'ecommerce-web-development-agency': {
+        pageTitle: 'E-commerce development',
+        pageSubheading: 'We build high-performance online stores engineered to convert at scale.',
+        overlaySubtitle: 'We engineer systems for measurable outcomes',
+        overlayTitle: 'E-commerce performance is a revenue equation, not a design choice',
+        overlayP1: 'Page speed, checkout friction, and product page architecture each have a measurable, documented impact on e-commerce conversion rates.',
+        overlayP2: 'We build storefronts that treat every millisecond and every UX decision as a revenue variable.',
+        deepDiveHeading: 'Conversion-first e-commerce architecture for brands that take revenue seriously',
+        deepDiveParagraphs: [
+          'E-commerce platforms are not neutral. Shopify, WooCommerce, BigCommerce, and headless solutions each impose different performance ceilings, SEO constraints, and integration limits. We select and configure the platform that fits your product catalog, team, and growth path — then engineer it to perform.',
+          'We build product pages with conversion architecture: above-the-fold hero structure, trust signals, social proof placement, and CTA hierarchy informed by behavioral data. Every design decision has a conversion rationale behind it.',
+          'Checkout flow optimization is where most e-commerce revenue is lost and recovered. We audit and redesign checkout sequences to minimize abandonment — removing unnecessary steps, adding trust signals at decision points, and ensuring payment gateway integrations never introduce friction.'
+        ],
+        concreteStepsHeading: 'How do we build an e-commerce platform, concretely?',
+        concreteSteps: [
+          'We audit your current store or define the technical requirements for a new build: catalog size, payment gateways, inventory system, and SEO architecture',
+          'We evaluate platform options — Shopify, headless, WooCommerce, or custom — based on your specific product, team, and scalability requirements',
+          'We design and build product page templates optimized for Core Web Vitals, conversion, and organic search indexing',
+          'We configure the checkout flow for minimum friction: accelerated payments, address autocomplete, and trust signals at the right moments',
+          'We implement product schema, category page SEO, and site architecture to support commercial search intent at scale',
+          'We run post-launch conversion tracking, heatmap analysis, and A/B testing to continuously improve revenue per visitor'
+        ],
+        advantagesHeading: 'What are the advantages of professional e-commerce development?',
+        advantageCards: [
+          { title: 'Conversion', description: 'Conversion-first product and checkout architecture directly increases revenue from the same traffic volume' },
+          { title: 'Performance', description: 'Sub-second page loads reduce abandonment and improve Google Shopping and organic ranking positions' },
+          { title: 'SEO', description: 'Correct product schema, category architecture, and faceted navigation unlock organic commercial search visibility' },
+          { title: 'Scale', description: 'Architecture built for your catalog and traffic projections prevents expensive platform migrations as you grow' }
+        ]
+      },
       'google-ads-ppc-strategy-agency': {
         pageTitle: 'Google Ads & PPC strategy',
         pageSubheading: 'We execute hyper-targeted paid acquisition campaigns that return ROI.',

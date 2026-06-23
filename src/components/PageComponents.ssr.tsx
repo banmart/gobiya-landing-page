@@ -22,4 +22,4 @@ export { default as NotFound } from './NotFound';
 export { default as CategoryPage } from './CategoryPage';
 export { default as SeoWebCopywritingPage } from './SeoWebCopywritingPage';
 export { default as SeoDiscoverabilityPage } from './SeoDiscoverabilityPage';
-
+export { default as WebDevelopmentPage } from './WebDevelopmentPage';

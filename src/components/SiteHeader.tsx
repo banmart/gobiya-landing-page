@@ -17,6 +17,12 @@ const PERFORMANCE_SPOKES: Record<string, { title: string; href: string; query: s
     { title: 'B2B SEO', href: '/performance/b2b-seo-agency', query: 'b2b seo agency' },
     { title: 'E-commerce SEO', href: '/performance/ecommerce-seo-agency', query: 'ecommerce seo' },
   ],
+  'web-development': [
+    { title: 'Custom Web App Development', href: '/performance/custom-web-app-development-agency', query: 'custom web app dev' },
+    { title: 'Mobile App Development', href: '/performance/mobile-app-development-agency', query: 'mobile app dev' },
+    { title: 'IT Consulting & Strategy', href: '/performance/it-consulting-services-agency', query: 'it consulting' },
+    { title: 'E-commerce Development', href: '/performance/ecommerce-web-development-agency', query: 'ecommerce dev' },
+  ],
 };
 
 const SiteHeader: React.FC = () => {
@@ -286,11 +292,37 @@ const SiteHeader: React.FC = () => {
                             ))}
                           </ul>
                         </li>
-                        <li onMouseEnter={() => setFlyoutItem(null)}>
-                          <a href="/performance/web-development-agency" className="group/link text-gray-500 hover:text-gray-900 transition-all duration-200 flex items-center justify-between text-base py-2 border-b border-gray-100/30">
-                            <span>Web &amp; IT App Development</span>
-                            <span className="opacity-0 -translate-x-2 group-hover/link:opacity-100 group-hover/link:translate-x-0 transition-all duration-200 text-gray-900 font-bold">&rarr;</span>
+                        {/* Hub item — inline spoke sub-nav */}
+                        <li onMouseEnter={() => setFlyoutItem('web-development')}>
+                          <a href="/performance/web-development-agency" className="group/link transition-all duration-200 flex items-center justify-between text-base py-2 border-b border-gray-100/30" style={{ color: flyoutItem === 'web-development' ? '#111827' : '#6b7280' }}>
+                            <span style={{ fontWeight: flyoutItem === 'web-development' ? 600 : 400 }}>Web &amp; IT App Development</span>
+                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style={{ color: flyoutItem === 'web-development' ? '#111827' : '#9ca3af', transition: 'color 0.2s, transform 0.2s', transform: flyoutItem === 'web-development' ? 'rotate(90deg)' : 'none' }}>
+                              <path d="M5 3l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                            </svg>
                           </a>
+                          {/* Inline spoke sub-list */}
+                          <ul style={{
+                            overflow: 'hidden',
+                            maxHeight: flyoutItem === 'web-development' ? '200px' : '0',
+                            opacity: flyoutItem === 'web-development' ? 1 : 0,
+                            transition: 'max-height 0.25s ease, opacity 0.2s ease',
+                            paddingLeft: '0.75rem',
+                            borderLeft: '2px solid #e5e7eb',
+                            marginTop: flyoutItem === 'web-development' ? '4px' : '0',
+                            marginBottom: flyoutItem === 'web-development' ? '4px' : '0',
+                          }}>
+                            {PERFORMANCE_SPOKES['web-development'].map((spoke, i) => (
+                              <li key={i}>
+                                <a href={spoke.href} className="group/spoke flex items-center justify-between transition-colors duration-150" style={{ color: '#6b7280', textDecoration: 'none', padding: '5px 0', fontSize: '0.875rem' }}
+                                  onMouseEnter={e => (e.currentTarget.style.color = '#111827')}
+                                  onMouseLeave={e => (e.currentTarget.style.color = '#6b7280')}
+                                >
+                                  {spoke.title}
+                                  <span className="opacity-0 group-hover/spoke:opacity-100 transition-opacity" style={{ fontWeight: 700 }}>&rarr;</span>
+                                </a>
+                              </li>
+                            ))}
+                          </ul>
                         </li>
                         <li onMouseEnter={() => setFlyoutItem(null)}>
                           <a href="/performance/google-ads-ppc-strategy-agency" className="group/link text-gray-500 hover:text-gray-900 transition-all duration-200 flex items-center justify-between text-base py-2 border-b border-gray-100/30">
@@ -502,7 +534,24 @@ const SiteHeader: React.FC = () => {
                       </div>
                     )}
                   </div>
-                  <a href="/performance/web-development-agency" style={{ fontSize: '1.125rem', color: '#6B7280' }}>Web &amp; IT App Development</a>
+                  {/* Hub item with tap-to-expand spokes */}
+                  <div>
+                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                      <a href="/performance/web-development-agency" style={{ fontSize: '1.125rem', color: '#111827', fontWeight: 600 }}>Web &amp; IT App Development</a>
+                      <button onClick={() => setMobileExpanded(mobileExpanded === 'web-development' ? null : 'web-development')} style={{ background: 'none', border: '1px solid #e5e7eb', borderRadius: '4px', padding: '4px 8px', cursor: 'pointer', display: 'flex', alignItems: 'center' }} aria-label="Expand spoke pages">
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style={{ color: '#6B7280', transition: 'transform 0.2s', transform: mobileExpanded === 'web-development' ? 'rotate(90deg)' : 'none' }}>
+                          <path d="M5 3l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
+                      </button>
+                    </div>
+                    {mobileExpanded === 'web-development' && (
+                      <div style={{ marginTop: '0.75rem', paddingLeft: '1rem', borderLeft: '2px solid #e5e7eb', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+                        {PERFORMANCE_SPOKES['web-development'].map((spoke, i) => (
+                          <a key={i} href={spoke.href} style={{ fontSize: '1rem', color: '#6B7280' }}>{spoke.title}</a>
+                        ))}
+                      </div>
+                    )}
+                  </div>
                   <a href="/performance/google-ads-ppc-strategy-agency" style={{ fontSize: '1.125rem', color: '#6B7280' }}>Google Ads &amp; PPC Strategy</a>
                   <a href="/performance/cro-ux-analysis-agency" style={{ fontSize: '1.125rem', color: '#6B7280' }}>CRO &amp; UX Analysis</a>
                   <a href="/performance/ai-llms-business-agency" style={{ fontSize: '1.125rem', color: '#6B7280' }}>AI &amp; LLM Systems Consulting</a>

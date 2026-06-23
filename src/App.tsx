@@ -22,7 +22,8 @@ import {
   NotFound,
   CategoryPage,
   SeoWebCopywritingPage,
-  SeoDiscoverabilityPage
+  SeoDiscoverabilityPage,
+  WebDevelopmentPage
 } from './components/PageComponents';
 
 // Safe storage helper to prevent crashes in sandboxed environments/iframes or strict privacy modes
@@ -367,6 +368,8 @@ function App({ url }: AppProps) {
         <SeoWebCopywritingPage />
       ) : normalizedPath === '/performance/seo-discoverability-agency' ? (
         <SeoDiscoverabilityPage />
+      ) : normalizedPath === '/performance/web-development-agency' ? (
+        <WebDevelopmentPage />
       ) : fanOutMatch ? (
         <ServiceSubpage key={normalizedPath} path={normalizedPath} isFanOut={true} category={fanOutCategory} slug={fanOutSlug} />
       ) : normalizedPath === '/case-studies/smile-center-dentistry' ? (

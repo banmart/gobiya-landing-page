@@ -31,3 +31,4 @@ export const NotFound = lazy(() => import('./NotFound'));
 export const CategoryPage = lazy(() => import('./CategoryPage'));
 export const SeoWebCopywritingPage = lazy(() => import('./SeoWebCopywritingPage'));
 export const SeoDiscoverabilityPage = lazy(() => import('./SeoDiscoverabilityPage'));
+export const WebDevelopmentPage = lazy(() => import('./WebDevelopmentPage'));

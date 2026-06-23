@@ -3,152 +3,116 @@ import SiteFooter from "./SiteFooter";
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import './GobiyaAboutPage.css';
 
 gsap.registerPlugin(ScrollTrigger);
+
+const STATS = [
+  { label: 'Experience', val: '25+', unit: 'yrs', desc: 'Bridging full-stack software engineering and organic search traffic acquisition since 2000.' },
+  { label: 'Founded', val: '2012', unit: '', desc: 'Headquartered in Los Angeles, serving mid-market to enterprise brands nationally.' },
+  { label: 'Trust score', val: '98.4', unit: '%', desc: 'BBB A+ rated and a certified partner — accountability is part of the architecture.' },
+  { label: 'URI paths analyzed', val: '1.4M', unit: '', desc: 'In a single forensic scan — the scale a recovery read actually runs at.' },
+];
+
+const TIMELINE = [
+  {
+    year: '2000',
+    label: 'The foundation',
+    title: 'Engineering meets search.',
+    body: 'Full-stack software engineering and organic search traffic acquisition, practiced side by side from the start. Most marketers learned to talk to Google; this practice learned to read it.',
+    tags: ['Full-stack dev', 'Organic search'],
+  },
+  {
+    year: '2012',
+    label: 'The agency',
+    title: 'Gobiya is founded in Los Angeles.',
+    body: 'A precision-engineered search visibility and digital solutions firm — built for high-stakes technical environments and data-driven revenue, not broad generalist tactics.',
+    tags: ['Technical SEO', 'Performance marketing'],
+  },
+  {
+    year: '2012–2023',
+    label: 'The updates',
+    title: 'Every algorithm cycle, survived.',
+    body: 'Penguin, Hummingbird, Medic, BERT, the Helpful Content update — each one re-ranked the web, and each one sharpened the recovery practice that clients now hire Gobiya for.',
+    tags: ['Recovery forensics', '1.4M URI scans'],
+  },
+  {
+    year: '2024 → now',
+    label: 'The AI era',
+    title: 'Search becomes answers. Gobiya adapts first.',
+    body: 'Schema markup, entity optimization, and structured citations for LLMs — plus native CRM, Web3 builds, and AI prospect automation. The next update is TBD. The posture is ready.',
+    tags: ['GEO / LLM citations', 'Native CRM', 'AI automation'],
+  },
+];
+
+const CAPABILITIES = [
+  { n: '01', sys: 'BUILD.SYS', href: '/capabilities/web-development-agency/', title: 'Web Development', body: 'Fast, modern websites engineered to rank and convert — React, Next.js, Vite, Tailwind, Supabase, and custom AI builds.' },
+  { n: '02', sys: 'TRAFFIC_RECOVERY.SYS', href: '/capabilities/seo-discoverability-agency/', title: 'SEO & Discoverability', body: 'Advanced search mechanics, technical SEO, and forensic recovery — plus AI-era schema, entity optimization, and LLM citations.' },
+  { n: '03', sys: 'PIPELINE.SYS', href: '/capabilities/native-crm-agency/', title: 'Native CRM', body: 'Lead capture, pipeline, and follow-up built directly into your site — so traffic becomes revenue without a tool stack in between.' },
+  { n: '04', sys: 'OUTBOUND.SYS', href: '/capabilities/ai-prospect-scraper-agency/', title: 'AI Prospect Scraper', body: 'Automated prospect discovery and enrichment that keeps the top of your pipeline full while the organic engine compounds.' },
+  { n: '05', sys: 'WEB3.SYS', href: '/capabilities/blockchain-web3-development-agency/', title: 'Blockchain & Web3', body: 'Smart contracts and Web3 infrastructure for brands building past the conventional stack — verified, shipped, on-chain.' },
+  { n: '06', sys: 'AI.SYS', href: '/capabilities/ai-llms-business-agency/', title: 'AI & LLMs for Business', body: 'Custom LLM integrations and automated office workflows to eliminate daily SMB friction and manual chores.' },
+];
+
+const OP_ROWS = [
+  { k: 'Background', v: 'Full-stack engineering × organic search, since 2000' },
+  { k: 'Specialty', v: 'Advanced search mechanics, performance marketing, digital infrastructure design' },
+  { k: 'Dev stack', v: 'React, Next.js, Vite, Tailwind CSS, Supabase, custom AI chat & automation builds' },
+  { k: 'AI-era SEO', v: 'Schema markup, entity optimization, structured citations for LLMs' },
+  { k: 'Credentials', v: 'Certified partner · BBB A+ rated · professional certifications on file' },
+];
 
 export default function GobiyaAboutPage() {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-
-
-    // Initial GSAP Loading Effect
+    window.scrollTo({ top: 0, behavior: 'instant' });
     document.documentElement.classList.add('js');
     gsap.to(document.body, { opacity: 1, duration: 0.8, ease: 'power2.inOut', delay: 0.1 });
 
     const timer = setTimeout(() => {
       const ctx = gsap.context(() => {
-        /* ---------- nav ---------- */
-        const navInner = document.getElementById('nav-inner');
-        const burger = document.getElementById('burger');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        const handleBurgerClick = () => {
-          if (!mobileMenu || !burger) return;
-          const open = mobileMenu.classList.toggle('open');
-          burger.classList.toggle('open', open);
-          burger.setAttribute('aria-expanded', String(open));
-        };
-
-        if (burger) burger.addEventListener('click', handleBurgerClick);
-
-        const handleScroll = () => {
-          if (navInner) {
-            navInner.classList.toggle('is-scrolled', window.scrollY > 40);
-          }
-        };
-        window.addEventListener('scroll', handleScroll, { passive: true });
-
-        /* ---------- dossier line reveal ---------- */
-        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-        const rows = document.querySelectorAll('#dossier-body .row');
-        const rowTimeouts: number[] = [];
-        if (reduceMotion) {
-          rows.forEach(r => r.classList.add('show'));
-        } else {
-          rows.forEach((r, i) => {
-            const timeout = window.setTimeout(() => r.classList.add('show'), 900 + i * 220);
-            rowTimeouts.push(timeout);
-          });
-        }
-
-        /* ---------- GSAP Animations ---------- */
         const ease = 'power3.out';
-
-        if (navInner) {
-          gsap.fromTo(navInner, { y: -22, opacity: 0 }, { y: 0, opacity: 1, duration: 1.2, ease, delay: 0.1 });
-        }
-
-
-        /* scroll reveals */
         const sc = (el: Element) => ({ trigger: el, start: 'top 87%' });
-        
+
         gsap.utils.toArray('[data-anim="up"]').forEach(el => {
-          gsap.fromTo(el as Element, 
+          gsap.fromTo(el as Element,
             { y: 30, opacity: 0 },
             { scrollTrigger: sc(el as Element), y: 0, opacity: 1, duration: 1.2, ease }
           );
         });
-        
+
         gsap.utils.toArray('[data-anim="fade"]').forEach(el => {
-          gsap.fromTo(el as Element, 
+          gsap.fromTo(el as Element,
             { opacity: 0 },
             { scrollTrigger: sc(el as Element), opacity: 1, duration: 1.2, ease }
           );
         });
-        
-        gsap.utils.toArray('[data-anim="scale"]').forEach(el => {
-          gsap.fromTo(el as Element, 
-            { scale: 0.97, opacity: 0 },
-            { scrollTrigger: sc(el as Element), scale: 1, opacity: 1, duration: 1.4, ease: 'power2.out' }
-          );
-        });
-        
+
         gsap.utils.toArray('[data-anim="stagger"]').forEach(parent => {
           const kids = (parent as Element).querySelectorAll('[data-anim-child]');
           if (!kids.length) return;
-          gsap.fromTo(kids, 
+          gsap.fromTo(kids,
             { y: 26, opacity: 0 },
             { scrollTrigger: sc(parent as Element), y: 0, opacity: 1, duration: 1.15, ease, stagger: 0.12 }
           );
         });
 
-        /* counters */
-        gsap.utils.toArray('[data-count]').forEach(el => {
-          const target = parseInt((el as HTMLElement).dataset.count || '0', 10);
-          const obj = { v: 0 };
-          gsap.to(obj, {
-            v: target, duration: 1.8, ease: 'power2.out',
-            scrollTrigger: { trigger: el as Element, start: 'top 90%' },
-            onUpdate: () => { (el as HTMLElement).textContent = String(Math.round(obj.v)); }
-          });
-        });
-
-        /* timeline progress + active dots */
-        gsap.fromTo('#phase-fill', 
-          { scaleY: 0 },
-          { scaleY: 1, ease: 'none', scrollTrigger: { trigger: '#phases', start: 'top 70%', end: 'bottom 55%', scrub: true } }
-        );
-        
-        gsap.utils.toArray('[data-phase]').forEach(ph => {
-          ScrollTrigger.create({
-            trigger: ph as Element, start: 'top 70%',
-            onEnter: () => (ph as Element).classList.add('is-active'),
-            onLeaveBack: () => (ph as Element).classList.remove('is-active')
-          });
-        });
-
-        /* magnetic buttons */
         if (window.matchMedia('(pointer:fine)').matches) {
           document.querySelectorAll('.magnetic').forEach(btn => {
             const strength = 10;
-          btn.addEventListener('mouseenter', () => { (btn as any)._cachedRect = btn.getBoundingClientRect(); });
-            const handleMouseMove = (e: Event) => {
-              const mouseEvent = e as MouseEvent;
+            btn.addEventListener('mouseenter', () => { (btn as any)._cachedRect = btn.getBoundingClientRect(); });
+            const onMove = (e: Event) => {
+              const me = e as MouseEvent;
               const r = (btn as any)._cachedRect || btn.getBoundingClientRect();
-              const x = (mouseEvent.clientX - r.left - r.width / 2) / (r.width / 2);
-              const y = (mouseEvent.clientY - r.top - r.height / 2) / (r.height / 2);
+              const x = (me.clientX - r.left - r.width / 2) / (r.width / 2);
+              const y = (me.clientY - r.top - r.height / 2) / (r.height / 2);
               gsap.to(btn, { x: x * strength, y: y * strength, duration: 0.4, ease: 'power2.out' });
             };
-            const handleMouseLeave = () => {
-              gsap.to(btn, { x: 0, y: 0, duration: 0.5, ease: 'elastic.out(1, 0.45)' });
-            };
-            btn.addEventListener('mousemove', handleMouseMove);
-            btn.addEventListener('mouseleave', handleMouseLeave);
-            
-            return () => {
-              btn.removeEventListener('mousemove', handleMouseMove);
-              btn.removeEventListener('mouseleave', handleMouseLeave);
-            };
+            const onLeave = () => gsap.to(btn, { x: 0, y: 0, duration: 0.5, ease: 'elastic.out(1, 0.45)' });
+            btn.addEventListener('mousemove', onMove);
+            btn.addEventListener('mouseleave', onLeave);
           });
         }
-
-        return () => {
-          window.removeEventListener('scroll', handleScroll);
-          if (burger) burger.removeEventListener('click', handleBurgerClick);
-          rowTimeouts.forEach(clearTimeout);
-        };
       }, containerRef);
 
       return () => ctx.revert();
@@ -158,322 +122,254 @@ export default function GobiyaAboutPage() {
   }, []);
 
   return (
-    <div id="page" ref={containerRef} className="min-h-screen flex flex-col">
+    <div id="page" ref={containerRef} className="min-h-screen flex flex-col bg-white font-sans">
       <SiteHeader />
-      <div id="content" className="site-content flex-grow">
-        <main id="primary" className="site-main">
 
-      <section id="top" style={{ background: '#ffffff', padding: '9rem 5vw 5rem', borderBottom: '1px solid #e5e7eb', position: 'relative' }}>
-        <span style={{ fontFamily: 'monospace', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.2em', color: '#9ca3af', display: 'block', marginBottom: '1.5rem' }}>
-          Gobiya / About the agency
-        </span>
+      {/* ── HERO ── */}
+      <section style={{ background: '#ffffff', padding: '9rem 5vw 5rem', borderBottom: '1px solid #e5e7eb' }}>
+        <nav style={{ fontFamily: 'monospace', fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.18em', color: '#9ca3af', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+          <a href="/" style={{ color: '#9ca3af', textDecoration: 'none' }}>Home</a>
+          <span>/</span>
+          <span style={{ color: '#374151' }}>About the agency</span>
+        </nav>
         <h1 style={{ fontSize: 'clamp(2.5rem, 5.5vw, 4.5rem)', fontWeight: 700, letterSpacing: '-0.03em', lineHeight: 1.05, color: '#111827', maxWidth: '880px', marginBottom: '1.75rem' }}>
-          Los Angeles SEO Agency: The agency that treats search like an engineering problem.
+          The Los Angeles SEO agency that treats search like an engineering problem.
         </h1>
         <p style={{ fontSize: '1.1rem', color: '#4b5563', lineHeight: 1.75, maxWidth: '640px', marginBottom: '2.5rem' }}>
-          As a leading Los Angeles SEO Agency, GOBIYA is a precision-engineered search visibility and digital solutions firm. Founded in 2012 in Los Angeles, working in high-stakes technical environments and data-driven revenue generation.
+          Gobiya is a precision-engineered search visibility and digital solutions firm. Founded in 2012 in Los Angeles — built for high-stakes technical environments and data-driven revenue generation.
         </p>
         <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
           <a href="/book" className="btn btn-primary magnetic">
             Book a strategy call
-            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" /></svg>
           </a>
           <a href="/case-studies" className="btn btn-ghost magnetic">See case studies</a>
         </div>
       </section>
 
-      <section className="stats" aria-label="Agency record">
-        <div className="stats-grid">
-          <div className="stat" data-anim="up">
-            <span className="mono-tag">Experience</span>
-            <p className="stat-num"><span data-count="25">0</span><sub>+ yrs</sub></p>
-            <p className="stat-desc">Bridging full-stack software engineering and organic search traffic acquisition since 2000.</p>
-          </div>
-          <div className="stat" data-anim="up">
-            <span className="mono-tag">Founded</span>
-            <p className="stat-num"><span data-count="2012">0</span></p>
-            <p className="stat-desc">Headquartered in Los Angeles, serving mid-market to enterprise brands nationally.</p>
-          </div>
-          <div className="stat" data-anim="up">
-            <span className="mono-tag">Trust score</span>
-            <p className="stat-num"><span data-count="98">0</span><sub>.4%</sub></p>
-            <p className="stat-desc">BBB A+ rated and a certified partner — accountability is part of the architecture.</p>
-          </div>
-          <div className="stat" data-anim="up">
-            <span className="mono-tag">URI paths analyzed</span>
-            <p className="stat-num"><span data-count="14">0</span><sub>× 100k</sub></p>
-            <p className="stat-desc">1.4M paths in a single forensic scan — the scale a recovery read actually runs at.</p>
-          </div>
+      {/* ── STATS BAR ── */}
+      <section style={{ borderBottom: '1px solid #e5e7eb', background: '#f9fafb' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', padding: '0 5vw' }}>
+          {STATS.map((s, i) => (
+            <div
+              key={i}
+              data-anim="up"
+              style={{
+                padding: '2.25rem 0',
+                borderRight: i < 3 ? '1px solid #e5e7eb' : 'none',
+                paddingLeft: i > 0 ? '2.5rem' : 0,
+              }}
+            >
+              <span style={{ fontFamily: 'monospace', fontSize: '0.65rem', textTransform: 'uppercase', letterSpacing: '0.14em', color: '#9ca3af', display: 'block', marginBottom: '0.5rem' }}>
+                {s.label}
+              </span>
+              <span style={{ display: 'block', fontSize: 'clamp(1.8rem, 3.5vw, 2.75rem)', fontWeight: 700, letterSpacing: '-0.04em', color: '#111827', lineHeight: 1 }}>
+                {s.val}
+                {s.unit && <span style={{ fontSize: '0.55em', letterSpacing: 0 }}>{s.unit}</span>}
+              </span>
+              <p style={{ fontSize: '0.8rem', color: '#6b7280', lineHeight: 1.65, marginTop: '0.6rem', maxWidth: '200px' }}>{s.desc}</p>
+            </div>
+          ))}
         </div>
       </section>
 
-      <section className="section" id="operator">
-        <div className="section-inner">
-          <aside className="section-rail">
-            <div className="rail-sticky" data-anim="stagger">
-              <div className="eyebrow" data-anim-child>The operator</div>
-              <p className="rail-note" data-anim-child>
-                GOBIYA isn't a roster of account managers. It's an engineering
-                practice with one name on the work.
+      {/* ── THE OPERATOR ── */}
+      <section style={{ padding: '5rem 5vw', borderBottom: '1px solid #e5e7eb', background: '#ffffff' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 2fr', gap: '5rem', alignItems: 'start' }}>
+
+          {/* sticky left rail */}
+          <div style={{ position: 'sticky', top: '6rem' }}>
+            <span style={{ fontFamily: 'monospace', fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.18em', color: '#9ca3af', display: 'block', marginBottom: '0.5rem' }}>The operator</span>
+            <h2 style={{ fontSize: 'clamp(1.6rem, 3vw, 2.4rem)', fontWeight: 700, letterSpacing: '-0.03em', color: '#111827', lineHeight: 1.15, marginBottom: '1rem' }}>
+              Built on experience.<br />Dedicated to shipping.
+            </h2>
+            <p style={{ fontSize: '0.875rem', color: '#6b7280', lineHeight: 1.75 }}>
+              Gobiya isn't a roster of account managers. It's an engineering practice with one name on the work.
+            </p>
+          </div>
+
+          {/* right content */}
+          <div>
+            <div data-anim="stagger" style={{ marginBottom: '2.5rem' }}>
+              <p style={{ fontSize: '1.05rem', color: '#374151', lineHeight: 1.8, marginBottom: '1.25rem' }} data-anim-child>
+                Gobiya is led by Steve Martin — 25+ years of digital marketing and full-stack development experience. That dual background is the whole point: the person reading your traffic curve is the same kind of person who can read your codebase.
+              </p>
+              <p style={{ fontSize: '1.05rem', color: '#374151', lineHeight: 1.8, marginBottom: '1.25rem' }} data-anim-child>
+                Since 2000, that has meant bridging software engineering and organic search acquisition — and since 2012, running Gobiya as a precision-engineered growth practice for brands that require high-performance technical SEO and scalable digital revenue engines.
+              </p>
+              <p style={{ fontSize: '1.05rem', color: '#374151', lineHeight: 1.8 }} data-anim-child>
+                No layers between you and the work. No strategy deck handed to a junior team. The diagnosis, the build, and the deployment come from the same desk.
               </p>
             </div>
-          </aside>
 
-          <div className="section-main">
-            <h2 className="section-title display" data-anim="up">
-              Built on experience. Dedicated to <span className="accent">shipping.</span>
-            </h2>
-
-            <div className="operator-grid">
-              <div className="operator-text" data-anim="stagger">
-                <p className="body-l" data-anim-child>
-                  Gobiya is led by Steve Martin — 25+ years of digital marketing and
-                  full-stack development experience. That dual background is the whole
-                  point: the person reading your traffic curve is the same kind of
-                  person who can read your codebase.
-                </p>
-                <p className="body-l" data-anim-child>
-                  Since 2000, that has meant bridging software engineering and organic
-                  search acquisition — and since 2012, running Gobiya as a
-                  precision-engineered growth practice for brands that require
-                  high-performance technical SEO and scalable digital revenue engines.
-                </p>
-                <p className="body-l" data-anim-child>
-                  No layers between you and the work. No strategy deck handed to a
-                  junior team. The diagnosis, the build, and the deployment come from
-                  the same desk.
-                </p>
-                <a href="/about/steve-martin" className="text-link" data-anim-child>
-                  View full profile &amp; credentials
-                  <svg viewBox="0 0 24 24" width="13" height="13" fill="none" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg>
+            {/* Steve dossier card */}
+            <div data-anim="fade" style={{ border: '1px solid #111827', background: '#111827', color: '#f9fafb', padding: '1.75rem 2rem' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.5rem', paddingBottom: '1rem', borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
+                <img
+                  src="/images/steve-portrait.webp"
+                  alt="Steve Martin"
+                  style={{ width: '48px', height: '48px', objectFit: 'cover', flexShrink: 0 }}
+                />
+                <div>
+                  <p style={{ fontSize: '0.95rem', fontWeight: 600, color: '#f9fafb', margin: 0 }}>Steve Martin</p>
+                  <p style={{ fontFamily: 'monospace', fontSize: '0.62rem', textTransform: 'uppercase', letterSpacing: '0.1em', color: '#9ca3af', margin: 0 }}>
+                    Founder &amp; principal — Gobiya, Los Angeles
+                  </p>
+                </div>
+              </div>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem', marginBottom: '1.5rem' }}>
+                {OP_ROWS.map((row, i) => (
+                  <div
+                    key={i}
+                    style={{
+                      display: 'flex',
+                      justifyContent: 'space-between',
+                      alignItems: 'baseline',
+                      gap: '1.5rem',
+                      fontFamily: 'monospace',
+                      fontSize: '0.7rem',
+                      borderBottom: i < OP_ROWS.length - 1 ? '1px dashed rgba(255,255,255,0.08)' : 'none',
+                      paddingBottom: '0.4rem',
+                    }}
+                  >
+                    <span style={{ color: '#9ca3af', flexShrink: 0 }}>{row.k}</span>
+                    <span style={{ color: '#d1d5db', textAlign: 'right' }}>{row.v}</span>
+                  </div>
+                ))}
+              </div>
+              <div style={{ borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '1rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <span style={{ fontFamily: 'monospace', fontSize: '0.62rem', color: '#6b7280' }}>linkedin.com/in/stevemartingobiya</span>
+                <a
+                  href="https://www.linkedin.com/in/stevemartingobiya/"
+                  rel="noopener noreferrer"
+                  style={{ display: 'inline-flex', alignItems: 'center', gap: '0.3rem', fontSize: '0.68rem', fontFamily: 'monospace', textTransform: 'uppercase', letterSpacing: '0.1em', color: '#f9fafb', textDecoration: 'none', borderBottom: '1px solid rgba(255,255,255,0.25)', paddingBottom: '2px' }}
+                >
+                  Connect
+                  <svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M1 11L11 1M11 1H3M11 1V9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
                 </a>
               </div>
-
-              <div className="op-card" data-anim="scale">
-                <div className="op-card-head">
-                  <img
-                    src="/images/steve-portrait.webp"
-                    alt="Steve Martin"
-                    className="op-mono object-cover"
-                  />
-                  <div>
-                    <p className="name">Steve Martin</p>
-                    <p className="role mono-tag">Founder &amp; principal — Gobiya, Los Angeles</p>
-                  </div>
-                </div>
-                <div className="op-rows">
-                  <div className="op-row">
-                    <span className="k">Background</span>
-                    <span className="v">Full-stack engineering × organic search, since 2000</span>
-                  </div>
-                  <div className="op-row">
-                    <span className="k">Specialty</span>
-                    <span className="v">Advanced search mechanics, performance marketing, digital infrastructure design</span>
-                  </div>
-                  <div className="op-row">
-                    <span className="k">Dev stack</span>
-                    <span className="v">React, Next.js, Vite, Tailwind CSS, Supabase, custom AI chat &amp; automation builds</span>
-                  </div>
-                  <div className="op-row">
-                    <span className="k">AI-era SEO</span>
-                    <span className="v">Schema markup, entity optimization, structured citations for LLMs</span>
-                  </div>
-                  <div className="op-row">
-                    <span className="k">Credentials</span>
-                    <span className="v">Certified partner · BBB A+ rated · professional certifications on file</span>
-                  </div>
-                </div>
-                <div className="op-card-foot">
-                  <span className="mono-tag">linkedin.com/in/stevemartingobiya</span>
-                  <a href="https://www.linkedin.com/in/stevemartingobiya/" className="text-link" rel="noopener noreferrer">
-                    Connect
-                    <svg viewBox="0 0 24 24" width="13" height="13" fill="none" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg>
-                  </a>
-                </div>
-              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="section method" id="timeline">
-        <div className="section-inner">
-          <aside className="section-rail">
-            <div className="rail-sticky" data-anim="stagger">
-              <div className="eyebrow" data-anim-child>The record</div>
-              <p className="rail-note" data-anim-child>
-                A quarter century in the work, in the order it happened.
-              </p>
-            </div>
-          </aside>
+      {/* ── TIMELINE ── */}
+      <section style={{ padding: '5rem 5vw', borderBottom: '1px solid #e5e7eb', background: '#f9fafb' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 2fr', gap: '5rem', alignItems: 'start' }}>
 
-          <div className="section-main">
-            <h2 className="section-title display" data-anim="up">
-              25 years of search, engineering, and <span className="accent">staying ahead</span> of the curve.
+          {/* sticky left rail */}
+          <div style={{ position: 'sticky', top: '6rem' }}>
+            <span style={{ fontFamily: 'monospace', fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.18em', color: '#9ca3af', display: 'block', marginBottom: '0.5rem' }}>The record</span>
+            <h2 style={{ fontSize: 'clamp(1.6rem, 3vw, 2.4rem)', fontWeight: 700, letterSpacing: '-0.03em', color: '#111827', lineHeight: 1.15 }}>
+              25 years of search, engineering, and staying ahead of the curve.
             </h2>
-            <p className="method-sub body-l" data-anim="up">
-              Every era of Google has rewarded a different discipline. GOBIYA has been
-              on the right side of each one.
-            </p>
+          </div>
 
-            <div className="phases" id="phases">
-              <div className="phase-line" aria-hidden="true"></div>
-              <div className="phase-line-fill" id="phase-fill" aria-hidden="true"></div>
-
-              <div className="phase" data-phase="true">
-                <span className="phase-dot" aria-hidden="true"><i></i></span>
-                <div className="phase-head">
-                  <span className="mono-tag">2000 — The foundation</span>
-                  <h3>Engineering meets search.</h3>
-                </div>
-                <div className="phase-body">
-                  <p>Full-stack software engineering and organic search traffic acquisition, practiced side by side from the start. Most marketers learned to talk to Google; this practice learned to read it.</p>
-                  <div className="phase-tags"><span>Full-stack dev</span><span>Organic search</span></div>
+          {/* timeline steps */}
+          <div style={{ borderTop: '1px solid #e5e7eb' }}>
+            {TIMELINE.map((phase, i) => (
+              <div
+                key={i}
+                data-anim="up"
+                style={{ display: 'grid', gridTemplateColumns: '80px 1fr', padding: '2rem 0', borderBottom: '1px solid #e5e7eb', alignItems: 'start', gap: '1rem' }}
+              >
+                <span style={{ fontFamily: 'monospace', fontSize: '0.62rem', textTransform: 'uppercase', letterSpacing: '0.1em', color: '#9ca3af', paddingTop: '4px' }}>
+                  {phase.year}
+                </span>
+                <div>
+                  <span style={{ fontFamily: 'monospace', fontSize: '0.6rem', textTransform: 'uppercase', letterSpacing: '0.14em', color: '#F26522', display: 'block', marginBottom: '0.4rem' }}>
+                    {phase.label}
+                  </span>
+                  <h3 style={{ fontSize: '1.05rem', fontWeight: 600, color: '#111827', letterSpacing: '-0.01em', marginBottom: '0.75rem', lineHeight: 1.3 }}>
+                    {phase.title}
+                  </h3>
+                  <p style={{ fontSize: '0.9rem', color: '#6b7280', lineHeight: 1.75, marginBottom: '1rem' }}>
+                    {phase.body}
+                  </p>
+                  <div style={{ display: 'flex', gap: '0.4rem', flexWrap: 'wrap' }}>
+                    {phase.tags.map((tag, j) => (
+                      <span
+                        key={j}
+                        style={{ fontFamily: 'monospace', fontSize: '0.6rem', textTransform: 'uppercase', letterSpacing: '0.1em', color: '#374151', border: '1px solid #d1d5db', padding: '0.2rem 0.6rem' }}
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
-
-              <div className="phase" data-phase="true">
-                <span className="phase-dot" aria-hidden="true"><i></i></span>
-                <div className="phase-head">
-                  <span className="mono-tag">2012 — The agency</span>
-                  <h3>Gobiya is founded in Los Angeles.</h3>
-                </div>
-                <div className="phase-body">
-                  <p>A precision-engineered search visibility and digital solutions firm — built for high-stakes technical environments and data-driven revenue, not broad generalist tactics.</p>
-                  <div className="phase-tags"><span>Technical SEO</span><span>Performance marketing</span></div>
-                </div>
-              </div>
-
-              <div className="phase" data-phase="true">
-                <span className="phase-dot" aria-hidden="true"><i></i></span>
-                <div className="phase-head">
-                  <span className="mono-tag">2012–2023 — The updates</span>
-                  <h3>Every algorithm cycle, survived.</h3>
-                </div>
-                <div className="phase-body">
-                  <p>Penguin, Hummingbird, Medic, BERT, the <a href="/insights/seo-case-study-traffic-recovery" className="text-[#2F5D50] hover:text-[#F26522] underline underline-offset-4 transition-colors">Helpful Content update</a> — each one re-ranked the web, and each one sharpened the recovery practice that clients now hire GOBIYA for.</p>
-                  <div className="phase-tags"><span>Recovery forensics</span><span>1.4M URI scans</span></div>
-                </div>
-              </div>
-
-              <div className="phase" data-phase="true">
-                <span className="phase-dot" aria-hidden="true"><i></i></span>
-                <div className="phase-head">
-                  <span className="mono-tag">2024 → now — The AI era</span>
-                  <h3>Search becomes answers. GOBIYA adapts first.</h3>
-                </div>
-                <div className="phase-body">
-                  <p>Schema markup, entity optimization, and structured citations for LLMs — plus <a href="/capabilities/native-crm-agency/" className="text-[#2F5D50] hover:text-[#F26522] underline underline-offset-4 transition-colors">native CRM</a>, <a href="/capabilities/blockchain-web3-development-agency/" className="text-[#2F5D50] hover:text-[#F26522] underline underline-offset-4 transition-colors">Web3 builds</a>, and AI prospect automation. The next update is TBD. The posture is ready.</p>
-                  <div className="phase-tags"><span>GEO / LLM citations</span><span>Native CRM</span><span>AI automation</span></div>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
-      <section className="section" id="capabilities" style={{background: 'var(--paper-2)'}}>
-        <div className="section-inner">
-          <aside className="section-rail">
-            <div className="rail-sticky" data-anim="stagger">
-              <div className="eyebrow" data-anim-child>Core capabilities</div>
-              <p className="rail-note" data-anim-child>
-                Five disciplines, one system. Each module is built to feed the others.
-              </p>
-            </div>
-          </aside>
-
-          <div className="section-main">
-            <div className="caps-head">
-              <h2 className="section-title display" data-anim="up">
-                What the machine is <span className="accent">made of.</span>
-              </h2>
-              <a href="/capabilities" className="text-link" data-anim="fade">
-                All capabilities
-                <svg viewBox="0 0 24 24" width="13" height="13" fill="none" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg>
-              </a>
-            </div>
-
-            <div className="caps-grid" data-anim="stagger">
-              <a href="/capabilities/web-development-agency/" className="cap" data-anim-child>
-                <div className="cap-head">
-                  <div>
-                    <span className="mono-tag">Module 01</span>
-                    <h3>Web Development</h3>
-                  </div>
-                  <span className="cap-sys">BUILD.SYS</span>
-                </div>
-                <p>Fast, modern websites engineered to rank and convert — React, Next.js, Vite, Tailwind, Supabase, and custom AI builds.</p>
-                <span className="cap-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg></span>
-              </a>
-
-              <a href="/capabilities/seo-discoverability-agency/" className="cap" data-anim-child>
-                <div className="cap-head">
-                  <div>
-                    <span className="mono-tag">Module 02</span>
-                    <h3>SEO &amp; Discoverability</h3>
-                  </div>
-                  <span className="cap-sys">TRAFFIC_RECOVERY.SYS</span>
-                </div>
-                <p>Advanced search mechanics, technical SEO, and forensic recovery — plus AI-era schema, entity optimization, and LLM citations.</p>
-                <span className="cap-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg></span>
-              </a>
-
-              <a href="/capabilities/native-crm-agency/" className="cap" data-anim-child>
-                <div className="cap-head">
-                  <div>
-                    <span className="mono-tag">Module 03</span>
-                    <h3>Native CRM</h3>
-                  </div>
-                  <span className="cap-sys">PIPELINE.SYS</span>
-                </div>
-                <p>Lead capture, pipeline, and follow-up built directly into your site — so traffic becomes revenue without a tool stack in between.</p>
-                <span className="cap-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg></span>
-              </a>
-
-              <a href="/capabilities/ai-prospect-scraper-agency/" className="cap" data-anim-child>
-                <div className="cap-head">
-                  <div>
-                    <span className="mono-tag">Module 04</span>
-                    <h3>AI Prospect Scraper</h3>
-                  </div>
-                  <span className="cap-sys">OUTBOUND.SYS</span>
-                </div>
-                <p>Automated prospect discovery and enrichment that keeps the top of your pipeline full while the organic engine compounds.</p>
-                <span className="cap-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg></span>
-              </a>
-
-              <a href="/capabilities/blockchain-web3-development-agency/" className="cap" data-anim-child>
-                <div className="cap-head">
-                  <div>
-                    <span className="mono-tag">Module 05</span>
-                    <h3>Blockchain &amp; Web3 Development</h3>
-                  </div>
-                  <span className="cap-sys">WEB3.SYS</span>
-                </div>
-                <p>Smart contracts and Web3 infrastructure for brands building past the conventional stack — verified, shipped, on-chain.</p>
-                <span className="cap-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg></span>
-              </a>
-
-              <a href="/capabilities/ai-llms-business-agency/" className="cap" data-anim-child>
-                <div className="cap-head">
-                  <div>
-                    <span className="mono-tag">Module 06</span>
-                    <h3>AI &amp; LLMs for Business</h3>
-                  </div>
-                  <span className="cap-sys">AI.SYS</span>
-                </div>
-                <p>Custom LLM integrations and automated office workflows to eliminate daily SMB friction and manual chores.</p>
-                <span className="cap-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg></span>
-              </a>
-            </div>
+      {/* ── CAPABILITIES ── */}
+      <section style={{ padding: '5rem 5vw', borderBottom: '1px solid #e5e7eb', background: '#ffffff' }}>
+        <div style={{ marginBottom: '3rem' }}>
+          <span style={{ fontFamily: 'monospace', fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.18em', color: '#9ca3af', display: 'block', marginBottom: '0.5rem' }}>Core capabilities</span>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', gap: '2rem', flexWrap: 'wrap' }}>
+            <h2 style={{ fontSize: 'clamp(1.6rem, 3vw, 2.4rem)', fontWeight: 700, letterSpacing: '-0.03em', color: '#111827' }}>
+              Five disciplines, one system.
+            </h2>
+            <a
+              href="/capabilities"
+              style={{ display: 'inline-flex', alignItems: 'center', gap: '0.3rem', fontSize: '0.72rem', fontFamily: 'monospace', textTransform: 'uppercase', letterSpacing: '0.1em', color: '#374151', textDecoration: 'none', borderBottom: '1px solid #d1d5db', paddingBottom: '2px' }}
+            >
+              All capabilities
+              <svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M1 11L11 1M11 1H3M11 1V9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
+            </a>
           </div>
+        </div>
+
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', border: '1px solid #e5e7eb', background: '#e5e7eb', gap: '1px' }}>
+          {CAPABILITIES.map((cap) => (
+            <a
+              key={cap.n}
+              href={cap.href}
+              style={{ display: 'block', background: '#ffffff', padding: '2.5rem', textDecoration: 'none', transition: 'background 0.2s' }}
+              onMouseEnter={e => (e.currentTarget.style.background = '#f9fafb')}
+              onMouseLeave={e => (e.currentTarget.style.background = '#ffffff')}
+            >
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '1rem' }}>
+                <span style={{ fontFamily: 'monospace', fontSize: '0.65rem', color: '#9ca3af' }}>Module {cap.n}</span>
+                <span style={{ fontFamily: 'monospace', fontSize: '0.58rem', textTransform: 'uppercase', letterSpacing: '0.08em', color: '#d1d5db' }}>{cap.sys}</span>
+              </div>
+              <h3 style={{ fontSize: '1.05rem', fontWeight: 600, color: '#111827', marginBottom: '0.75rem', letterSpacing: '-0.01em' }}>{cap.title}</h3>
+              <p style={{ fontSize: '0.875rem', color: '#6b7280', lineHeight: 1.75, marginBottom: '1.25rem' }}>{cap.body}</p>
+              <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.3rem', fontSize: '0.68rem', fontFamily: 'monospace', textTransform: 'uppercase', letterSpacing: '0.1em', color: '#374151', borderBottom: '1px solid #d1d5db', paddingBottom: '2px' }}>
+                View capability
+                <svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M1 11L11 1M11 1H3M11 1V9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
+              </span>
+            </a>
+          ))}
         </div>
       </section>
 
-
-        </main>
-      </div>
+      {/* ── CTA ── */}
+      <section style={{ padding: '5rem 5vw', background: '#111827', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center' }}>
+        <div>
+          <span style={{ fontFamily: 'monospace', fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.18em', color: '#F26522', display: 'block', marginBottom: '0.5rem' }}>Ready to start</span>
+          <h2 style={{ fontSize: 'clamp(1.6rem, 3vw, 2.4rem)', fontWeight: 700, letterSpacing: '-0.03em', color: '#f9fafb', lineHeight: 1.2, marginBottom: '1rem' }}>
+            The diagnosis, the build, and the deployment — from one desk.
+          </h2>
+          <p style={{ fontSize: '0.95rem', color: '#9ca3af', lineHeight: 1.75 }}>
+            No sales teams, no account managers, no strategy decks handed to juniors. Book directly with Steve.
+          </p>
+        </div>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', alignItems: 'flex-start' }}>
+          <a href="/book" className="btn btn-primary magnetic">
+            Book a strategy call
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" /></svg>
+          </a>
+          <a
+            href="/case-studies"
+            style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.75rem', fontFamily: 'monospace', textTransform: 'uppercase', letterSpacing: '0.1em', color: '#9ca3af', textDecoration: 'none', borderBottom: '1px solid rgba(255,255,255,0.15)', paddingBottom: '2px' }}
+          >
+            View case studies
+            <svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M1 11L11 1M11 1H3M11 1V9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
+          </a>
+        </div>
+      </section>
 
       <SiteFooter />
     </div>
