@@ -439,6 +439,126 @@ export default function ServiceSubpage({ path, isFanOut, category, slug }: Servi
           { title: 'Control', description: 'Precision audience targeting ensures your budget reaches exactly the right buyers at the right moment' }
         ]
       },
+      'google-search-ads-agency': {
+        pageTitle: 'Google Search Ads management',
+        pageSubheading: 'Keyword-level campaign management built around intent, not impression share.',
+        overlaySubtitle: 'Paid search done right',
+        overlayTitle: 'Intent-matched search campaigns that convert, not just click',
+        overlayP1: 'Google Search Ads work when campaigns are structured around buyer intent — not keyword volume. We build campaigns around what a ready-to-buy searcher actually types.',
+        overlayP2: 'Every campaign we launch has message-matched ad copy, a dedicated landing page, and conversion tracking verified before a single dollar runs.',
+        deepDiveHeading: 'Search campaign architecture: from keyword intent to conversion in one aligned system',
+        deepDiveParagraphs: [
+          'Search campaigns fail most often for the same reason: the ad copy and landing page are mismatched to the searcher\'s intent. We build from the query backward — mapping intent stages to campaign types, match types, and landing experiences before writing a single headline.',
+          'Quality Score is the lever most advertisers ignore. A high Quality Score means lower CPCs, better ad position, and more conversions per dollar. It\'s earned through intent alignment — when the query, ad copy, and landing page all speak to the same need, Google rewards the campaign.',
+          'We manage search campaigns with a weekly optimization cadence: search term analysis, negative keyword expansion, bid adjustments by device and location, and creative rotation based on conversion data — not just click-through rate.'
+        ],
+        concreteStepsHeading: 'How do we build and manage a Google Search Ads campaign?',
+        concreteSteps: [
+          'Intent mapping — buyer journey stages and query intent clusters identified and matched to campaign and ad group structure',
+          'Keyword research and match type strategy — broad, phrase, and exact match assigned by funnel stage with initial negative keyword lists built in',
+          'Ad copy development — headline and description variants written for each intent cluster, with A/B testing queued from launch',
+          'Landing page audit and alignment — message-match between ad copy and destination page verified before spend goes live',
+          'Conversion tracking verification — Google Ads and GA4 goal tracking confirmed across all conversion types before campaign launch',
+          'Weekly optimization — search term reviews, negative keyword additions, bid adjustments, and creative performance analysis'
+        ],
+        advantagesHeading: 'Why does intent-based search campaign architecture outperform standard builds?',
+        advantageCards: [
+          { title: 'Quality Score', description: 'Intent-aligned campaigns earn higher Quality Scores, lowering CPCs and improving ad position without higher bids' },
+          { title: 'Conversion rate', description: 'Message-matched landing pages convert at higher rates because the visitor arrives with confirmed expectations' },
+          { title: 'Wasted spend', description: 'Intent-mapped match types and proactive negative keyword management eliminate spend on irrelevant queries early' },
+          { title: 'Attribution', description: 'Correct conversion tracking from day one means optimization decisions are based on real ROI, not clicks' }
+        ]
+      },
+      'google-shopping-ads-agency': {
+        pageTitle: 'Google Shopping Ads management',
+        pageSubheading: 'Product feed optimization and Shopping campaign management that drives purchase-intent traffic.',
+        overlaySubtitle: 'E-commerce paid acquisition',
+        overlayTitle: 'Shopping Ads that win on product relevance, not bid alone',
+        overlayP1: 'Google Shopping performance is determined 70% by product feed quality and 30% by bid strategy. Most agencies focus on bids. We start with the feed.',
+        overlayP2: 'Optimized titles, descriptions, and attributes improve product listing relevance — increasing impression share and conversion rate before a bid is touched.',
+        deepDiveHeading: 'Product feed optimization and Shopping campaign structure: the two levers that move e-commerce ROI',
+        deepDiveParagraphs: [
+          'Google Shopping Ads surface based on product feed relevance, not keyword bids the way search ads do. This means the product title, description, category taxonomy, GTINs, and custom labels in your Merchant Center feed directly determine which searches your products appear for — and at what cost.',
+          'Campaign structure is the second lever. Standard Shopping, Performance Max, and brand vs. non-brand segmentation each serve different purposes. We build campaign architecture that protects branded margins, captures non-brand commercial intent, and allocates budget based on product profitability — not just conversion volume.',
+          'We manage ongoing feed optimization, bid strategy tuning, and negative keyword management to continually improve return on ad spend across your catalog.'
+        ],
+        concreteStepsHeading: 'How do we manage a Google Shopping Ads program?',
+        concreteSteps: [
+          'Merchant Center audit — feed errors, disapprovals, title quality, and attribute completeness assessed before any campaign runs',
+          'Product feed optimization — titles, descriptions, GTINs, product types, and custom labels updated for search relevance and category accuracy',
+          'Campaign architecture — Standard Shopping, Performance Max, and brand/non-brand segmentation structured around profitability goals',
+          'Bid strategy configuration — Target ROAS or manual CPCs set based on product margin and catalog velocity data',
+          'Negative keyword management — irrelevant query exclusions added at campaign and account level to protect ROAS from the start',
+          'Feed and campaign optimization — weekly ROAS reviews, feed attribute updates, bid adjustments, and Performance Max signal tuning'
+        ],
+        advantagesHeading: 'What drives Google Shopping performance beyond just higher bids?',
+        advantageCards: [
+          { title: 'Feed quality', description: 'Optimized product titles and attributes improve listing relevance, increasing impression share without bid increases' },
+          { title: 'ROAS', description: 'Profitability-based campaign structure allocates budget to high-margin products — not just high-volume ones' },
+          { title: 'Coverage', description: 'Correct category taxonomy and GTINs unlock additional placement eligibility across Shopping surfaces' },
+          { title: 'Margins', description: 'Brand/non-brand segmentation protects branded conversion margins from cannibalizing non-brand budget' }
+        ]
+      },
+      'remarketing-display-ads-agency': {
+        pageTitle: 'Remarketing & Display Ads management',
+        pageSubheading: 'Audience-based retargeting and display campaigns that recapture high-intent visitors.',
+        overlaySubtitle: 'Retargeting & display',
+        overlayTitle: 'Recapture the audience that already showed intent',
+        overlayP1: 'Remarketing converts visitors who already know you. We build audience segments based on behavior — what pages were viewed, how far visitors got in the funnel, and how recently they visited.',
+        overlayP2: 'Every remarketing campaign we build has audience exclusions, frequency caps, and conversion-specific creative — so we spend on buyers, not browsers.',
+        deepDiveHeading: 'Audience segmentation and creative alignment: why remarketing ROI depends on list quality, not just spend',
+        deepDiveParagraphs: [
+          'Remarketing works because it targets people who already have intent signals — they visited your site, viewed a product, started a checkout, or read a key page. The challenge is building audience lists that reflect meaningful intent rather than any site visit.',
+          'We segment remarketing audiences by behavior: cart abandoners, product page viewers, high-engagement visitors, and prior converters for upsell. Each segment gets its own creative, landing page, and bid modifier — because a cart abandoner and a blog reader are not the same prospect.',
+          'Display advertising on the Google Display Network broadens reach beyond search — but requires strong audience targeting and creative to avoid waste. We run display campaigns with in-market and affinity audience targeting layered over placement exclusions to keep impressions relevant.'
+        ],
+        concreteStepsHeading: 'How do we build a remarketing and display advertising program?',
+        concreteSteps: [
+          'Audience audit — Google Ads tag and GA4 audiences verified, existing list sizes assessed, and behavioral segments identified',
+          'Audience architecture — cart abandoners, product viewers, high-engagement visitors, and prior converters segmented with distinct bid modifiers',
+          'Creative development — display and remarketing ad creative developed for each audience segment with message-matched calls to action',
+          'Frequency and exclusion rules — frequency caps set per segment and exclusions added for recent converters and irrelevant placements',
+          'Display campaign targeting — in-market, affinity, and custom intent audiences layered over placement exclusions to maximize relevance',
+          'Ongoing optimization — audience performance reviews, creative rotation, bid modifier updates, and placement analysis on a weekly cadence'
+        ],
+        advantagesHeading: 'What makes remarketing and display more efficient than broad awareness spend?',
+        advantageCards: [
+          { title: 'Intent targeting', description: 'Remarketing audiences are defined by prior behavior — not demographics — so ads reach people with demonstrated interest' },
+          { title: 'Conversion window', description: 'Consistent remarketing exposure compresses the consideration window for high-intent visitors who haven\'t yet converted' },
+          { title: 'Creative efficiency', description: 'Segment-specific creative outperforms generic display ads because the message matches the audience\'s exact stage in the funnel' },
+          { title: 'Budget protection', description: 'Frequency caps and converter exclusions prevent wasted spend on already-won customers and saturation-fatigued audiences' }
+        ]
+      },
+      'youtube-advertising-agency': {
+        pageTitle: 'YouTube Advertising management',
+        pageSubheading: 'Video ad campaigns across YouTube engineered for awareness, consideration, and direct response.',
+        overlaySubtitle: 'YouTube ad campaigns',
+        overlayTitle: 'YouTube advertising built for the full buyer journey, not just views',
+        overlayP1: 'YouTube reaches buyers at every stage — in-stream ads for awareness, discovery ads for consideration, and skippable ads with direct response calls to action for conversion.',
+        overlayP2: 'We build YouTube campaigns structured by buyer stage, with creative briefs, audience targeting, and measurement frameworks that connect view data to real business outcomes.',
+        deepDiveHeading: 'YouTube ad format strategy and audience targeting: converting video reach into measurable ROI',
+        deepDiveParagraphs: [
+          'YouTube advertising fails most often because the campaign objective and ad format are misaligned. Brand awareness campaigns need non-skippable bumper ads. Consideration campaigns need in-stream or discovery formats. Direct response needs skippable in-stream with strong hooks and visible CTAs. Using the wrong format for the wrong objective wastes budget with no visibility into why.',
+          'Audience targeting on YouTube extends beyond demographics. We layer in-market audiences, custom intent audiences built from search queries, affinity audiences, and remarketing lists from Google Ads and GA4 — so every view is served to someone with relevant signals, not just anyone on the platform.',
+          'We measure YouTube campaigns beyond views and CPV. Connected TV reach, search lift studies, and brand lift measurement tie video performance to downstream conversions — allowing the campaign to be optimized against revenue outcomes, not just media metrics.'
+        ],
+        concreteStepsHeading: 'How do we build and manage a YouTube advertising campaign?',
+        concreteSteps: [
+          'Campaign objective mapping — buyer stage goals defined and matched to correct YouTube ad formats (bumper, in-stream, discovery) before creative is developed',
+          'Creative brief and video production guidance — hook structure, CTA placement, and skippability guidelines developed for each format and objective',
+          'Audience targeting architecture — in-market, affinity, custom intent, and remarketing audiences layered and bid-adjusted by conversion probability',
+          'Brand safety and placement exclusions — category exclusions and channel-level exclusions set to protect brand reputation from day one',
+          'Conversion and view-through attribution — GA4 and Google Ads linked, view-through conversion windows calibrated to realistic consideration timelines',
+          'Performance optimization — weekly CPV, view rate, and conversion data reviewed with audience adjustments, creative rotation, and placement exclusion updates'
+        ],
+        advantagesHeading: 'Why use YouTube advertising alongside search and shopping campaigns?',
+        advantageCards: [
+          { title: 'Reach', description: 'YouTube extends brand presence to audiences actively consuming content — reaching buyers before they search' },
+          { title: 'Consideration', description: 'Video storytelling builds purchase confidence and shortens the decision cycle for high-consideration purchases' },
+          { title: 'Remarketing', description: 'YouTube remarketing re-engages known website visitors with video — the highest-recall ad format available in digital' },
+          { title: 'Attribution', description: 'View-through and search lift measurement connect video spend to downstream conversions beyond last-click models' }
+        ]
+      },
       'cro-ux-analysis-agency': {
         pageTitle: 'CRO & UX analysis',
         pageSubheading: 'We analyze user behavior and redesign paths to eliminate friction.',
@@ -1096,11 +1216,44 @@ export default function ServiceSubpage({ path, isFanOut, category, slug }: Servi
       ];
     }
 
-    const heroBg =
-      catLower === 'performance' ? 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2000' :
-      catLower === 'relations'   ? 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=2000' :
-      catLower === 'recovery'    ? 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2000' :
-      'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2000';
+    const getHeroBg = (slugVal: string, catLowerVal: string): string => {
+      const s = slugVal.toLowerCase();
+      // Performance subpages
+      if (s.includes('seo-discoverability')) return '/images/seo_hero.webp';
+      if (s.includes('web-development')) return '/images/web_hero.webp';
+      if (s.includes('native-crm')) return '/images/lead_hero.webp';
+      if (s.includes('blockchain-web3')) return '/images/geo_hero.webp';
+      if (s.includes('ai-prospect-scraper')) return '/images/b2b-sales-pipeline-automation-outreach.png';
+      if (s.includes('ai-llms-business')) return '/images/llm-company-verification-data-sources.png';
+      if (s.includes('google-ads-ppc') || s.includes('cro-ux-analysis')) return '/images/ppc_hero.webp';
+
+      // Creativity subpages
+      if (s.includes('brand-identity-strategy')) return '/images/branding_strategy_hero.png';
+      if (s.includes('seo-web-copywriting')) return '/images/copywriting_hero.png';
+      if (s.includes('social-media-management')) return '/images/social_media_hero.png';
+      if (s.includes('creative-art-direction')) return '/images/branding_strategy_hero.png';
+      if (s.includes('communication-concepts')) return '/images/relations_outreach_hero.png';
+
+      // Relations subpages
+      if (s.includes('authority-building')) return '/images/seo_hero.webp';
+      if (s.includes('digital-pr-media-outreach')) return '/images/relations_outreach_hero.png';
+      if (s.includes('content-marketing-syndication')) return '/images/b2b-pipeline-revenue-performance-dashboard.png';
+      if (s.includes('influencer-marketing')) return '/images/social_media_hero.png';
+      if (s.includes('local-community-relations')) return '/images/local-seo-service-maps-performance.png';
+
+      // Recovery subpages
+      if (s.includes('recovery') || s.includes('penalty')) return '/images/penalty_hero.webp';
+
+      // Fallbacks by category
+      if (catLowerVal === 'performance') return '/images/seo_hero.webp';
+      if (catLowerVal === 'relations') return '/images/relations_outreach_hero.png';
+      if (catLowerVal === 'recovery') return '/images/penalty_hero.webp';
+      if (catLowerVal === 'creativity') return '/images/branding_strategy_hero.png';
+
+      return '/images/case_study_bg.webp';
+    };
+
+    const heroBg = getHeroBg(slug, catLower);
 
     return (
       <div className="bg-white text-gray-900 min-h-screen font-sans selection:bg-black selection:text-white">
