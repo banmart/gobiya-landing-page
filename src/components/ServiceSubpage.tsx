@@ -2217,26 +2217,17 @@ export default function ServiceSubpage({ path, isFanOut, category, slug }: Servi
             <p data-hero="3" className="mt-6 text-[15px] sm:text-[17px] text-[#5B564C] max-w-[800px] leading-relaxed">
               {config.outcomeMessage}
             </p>
-            <div data-hero="4" className="mt-8 flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-5">
+            <div data-hero="4" className="hero-actions mt-8 flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-5">
               <a
                 href="/book"
                 id="service-hero-cta"
                 data-cta-location="service_hero"
                 data-cta-text={config.ctaText}
                 onClick={() => trackCTA({ cta_location: 'service_hero', cta_text: config.ctaText })}
-                className={`group flex items-center ${themeBgAccent} ${themeBgAccentHover} text-gray-900 pl-5 sm:pl-6 pr-2 py-2 transition-colors duration-300`}
+                className={`btn text-white ${isServicesPath ? 'bg-[#2F5D50] border-[#2F5D50] hover:bg-[#1a3830] hover:border-[#1a3830]' : 'bg-[#F26522] border-[#F26522] hover:bg-[#d15015] hover:border-[#d15015]'}`}
               >
-                <div className="flex flex-col overflow-hidden h-[20px] justify-start items-start relative mr-3">
-                  <span className="text-[13px] sm:text-[14px] font-medium leading-[20px] transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-translate-y-full">
-                    {config.ctaText}
-                  </span>
-                  <span className="text-[13px] sm:text-[14px] font-medium leading-[20px] absolute top-full transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-translate-y-full">
-                    {config.ctaText}
-                  </span>
-                </div>
-                <div className="w-7 h-7 sm:w-8 sm:h-8 bg-white flex items-center justify-center">
-                  <ArrowRight className={`w-4 h-4 ${themeTextAccent} transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-rotate-45`} />
-                </div>
+                {config.ctaText}
+                <ArrowRight />
               </a>
               <div className="flex items-center gap-3 bg-black/5 border border-black/10 hover:bg-black/10 transition-shadow duration-300 px-3 py-2 cursor-pointer">
                 <RotatingAILogos />
