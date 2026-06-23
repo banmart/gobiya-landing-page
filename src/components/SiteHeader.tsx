@@ -25,6 +25,29 @@ const PERFORMANCE_SPOKES: Record<string, { title: string; href: string; query: s
   ],
 };
 
+const RotatingWord: React.FC = () => {
+  const words = ['ChatGPT', 'Claude', 'Gemini'];
+  const [index, setIndex] = useState(0);
+  const [fade, setFade] = useState(true);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setFade(false);
+      setTimeout(() => {
+        setIndex(prev => (prev + 1) % words.length);
+        setFade(true);
+      }, 300);
+    }, 2800);
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <span className={`rotating-word ${fade ? 'fade-in' : 'fade-out'}`}>
+      {words[index]}
+    </span>
+  );
+};
+
 const SiteHeader: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [openCategory, setOpenCategory] = useState<string | null>(null);
@@ -33,6 +56,17 @@ const SiteHeader: React.FC = () => {
   const [isHomepage, setIsHomepage] = useState(true);
   const [flyoutItem, setFlyoutItem] = useState<string | null>(null);
   const [mobileExpanded, setMobileExpanded] = useState<string | null>(null);
+  
+  const [showAnnounce, setShowAnnounce] = useState(false);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const dismissed = localStorage.getItem('gobiya_announcement_dismissed');
+      if (!dismissed) {
+        setShowAnnounce(true);
+      }
+    }
+  }, []);
 
   const transparentHeroPages = ['/', '', '/creativity', '/performance', '/relations'];
   useEffect(() => {
@@ -100,6 +134,32 @@ const SiteHeader: React.FC = () => {
       onMouseEnter={() => setIsMenuHovered(true)}
       onMouseLeave={() => setIsMenuHovered(false)}
     >
+      {showAnnounce && (
+        <div className="top-announcement-bar" onClick={() => window.location.href = '/book'}>
+          <div className="top-announcement-link">
+            Get found on all of the major AI platforms like&nbsp;
+            <span className="rotating-word-wrapper">
+              <RotatingWord />
+            </span>
+          </div>
+          <button 
+            type="button" 
+            className="top-announcement-close" 
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              localStorage.setItem('gobiya_announcement_dismissed', 'true');
+              setShowAnnounce(false);
+            }}
+            aria-label="Close announcement"
+          >
+            <svg viewBox="0 0 24 24" fill="none" width="14" height="14" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+      )}
       {/* Top Menu Layer */}
       <div 
         className="top-menu transition-all duration-300" 
