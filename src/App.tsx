@@ -25,6 +25,7 @@ import {
   SeoDiscoverabilityPage,
   WebDevelopmentPage
 } from './components/PageComponents';
+import BookingMessageBar from './components/BookingMessageBar';
 
 // Safe storage helper to prevent crashes in sandboxed environments/iframes or strict privacy modes
 const safeStorage = {
@@ -379,6 +380,9 @@ function App({ url }: AppProps) {
       ) : (
         <ServiceSubpage key={normalizedPath} path={normalizedPath} />
       )}
+
+      {/* Floating strategy session booking message bar */}
+      <BookingMessageBar currentPath={normalizedPath} />
     </Suspense>
   );
 }
