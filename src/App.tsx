@@ -23,7 +23,8 @@ import {
   CategoryPage,
   SeoWebCopywritingPage,
   SeoDiscoverabilityPage,
-  WebDevelopmentPage
+  WebDevelopmentPage,
+  GoogleAdsPpcPage
 } from './components/PageComponents';
 import BookingMessageBar from './components/BookingMessageBar';
 
@@ -371,6 +372,8 @@ function App({ url }: AppProps) {
         <SeoDiscoverabilityPage />
       ) : normalizedPath === '/performance/web-development-agency' ? (
         <WebDevelopmentPage />
+      ) : normalizedPath === '/relations/google-ads-ppc-strategy-agency' ? (
+        <GoogleAdsPpcPage />
       ) : fanOutMatch ? (
         <ServiceSubpage key={normalizedPath} path={normalizedPath} isFanOut={true} category={fanOutCategory} slug={fanOutSlug} />
       ) : normalizedPath === '/case-studies/smile-center-dentistry' ? (
