@@ -63,7 +63,7 @@ export default function GoogleAdsPpcPage() {
       <SiteHeader />
 
       {/* ── HERO ── */}
-      <section style={{ background: '#ffffff', padding: '9rem 5vw 5rem', borderBottom: '1px solid #e5e7eb' }}>
+      <section style={{ background: '#ffffff', padding: '13rem 5vw 5rem', borderBottom: '1px solid #e5e7eb' }}>
         <nav style={{ fontFamily: 'monospace', fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.18em', color: '#9ca3af', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
           <a href="/" style={{ color: '#9ca3af', textDecoration: 'none' }}>Home</a>
           <span>/</span>

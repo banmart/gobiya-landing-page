@@ -145,7 +145,7 @@ const AmericanLivescanCaseStudy: React.FC = () => {
         {/* Gradient overlay */}
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(5,10,20,0.9) 0%, rgba(5,10,20,0.45) 60%, rgba(5,10,20,0.2) 100%)' }} />
         {/* Content */}
-        <div style={{ position: 'relative', zIndex: 1, padding: '9rem 5vw 5rem', width: '100%' }}>
+        <div style={{ position: 'relative', zIndex: 1, padding: '13rem 5vw 5rem', width: '100%' }}>
           <div className="max-w-[1440px] w-full mx-auto flex flex-col justify-end" style={{ minHeight: '30vh' }}>
             <p className="breadcrumb text-[13px] sm:text-[14px] tracking-wide mb-4 uppercase font-medium" style={{ color: 'rgba(255,255,255,0.5)' }}>
               Gobiya Case Studies &gt; Local SEO &amp; Site Rebuild

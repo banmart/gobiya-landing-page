@@ -1262,7 +1262,7 @@ export default function ServiceSubpage({ path, isFanOut, category, slug }: Servi
         <main id="primary" className="site-main w-full">
 
           {/* ── White section: breadcrumbs + H1 ── */}
-          <div className="bg-white" style={{ paddingTop: '160px', paddingBottom: '80px' }}>
+          <div className="bg-white" style={{ paddingTop: '208px', paddingBottom: '80px' }}>
             <div className="container mx-auto px-6 sm:px-10 max-w-6xl">
               <nav className="text-[13px] font-medium text-gray-400 mb-12 flex items-center gap-2 tracking-wide">
                 <a href="/" className="hover:text-gray-700 transition-colors">Home</a>
@@ -2183,7 +2183,7 @@ export default function ServiceSubpage({ path, isFanOut, category, slug }: Servi
           <HeroWebGLBackground />
 
           {/* Hero Content */}
-          <div className="relative z-20 max-w-[1440px] w-full mx-auto flex flex-col justify-center px-5 sm:px-8 lg:px-12 pt-16 pb-0">
+          <div className="relative z-20 max-w-[1440px] w-full mx-auto flex flex-col justify-center px-5 sm:px-8 lg:px-12 pt-52 pb-0">
             <p data-hero="1" className={`text-[13px] sm:text-[14px] ${isServicesPath ? 'text-[#5B564C]' : 'text-[#2F5D50]'} tracking-wide mb-4 uppercase font-medium`}>
               {config.subtitle}
             </p>

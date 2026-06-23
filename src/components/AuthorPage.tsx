@@ -109,7 +109,7 @@ const AuthorPage: React.FC<AuthorPageProps> = ({ path }) => {
       <SiteHeader />
 
       {/* ── HERO ── */}
-      <section style={{ background: '#ffffff', padding: '9rem 5vw 5rem', borderBottom: '1px solid #e5e7eb', position: 'relative' }}>
+      <section style={{ background: '#ffffff', padding: '13rem 5vw 5rem', borderBottom: '1px solid #e5e7eb', position: 'relative' }}>
         <span style={{ fontFamily: 'monospace', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.2em', color: '#9ca3af', display: 'block', marginBottom: '0.75rem' }}>
           Gobiya / Leadership &amp; Engineering
         </span>

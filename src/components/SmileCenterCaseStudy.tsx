@@ -142,7 +142,7 @@ const SmileCenterCaseStudy: React.FC = () => {
         {/* Gradient overlay — stronger at bottom so text is legible */}
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.2) 60%, rgba(0,0,0,0.1) 100%)' }} />
         {/* Content */}
-        <div style={{ position: 'relative', zIndex: 1, padding: '9rem 5vw 5rem', width: '100%' }}>
+        <div style={{ position: 'relative', zIndex: 1, padding: '13rem 5vw 5rem', width: '100%' }}>
           <div className="max-w-[1440px] w-full mx-auto flex flex-col justify-end" style={{ minHeight: '30vh' }}>
             <p className="breadcrumb text-[13px] sm:text-[14px] tracking-wide mb-4 uppercase font-medium" style={{ color: 'rgba(255,255,255,0.55)' }}>
               Gobiya Case Studies &gt; Multi-Location Dental
