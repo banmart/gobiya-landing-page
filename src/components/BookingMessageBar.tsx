@@ -53,9 +53,6 @@ const BookingMessageBar: React.FC<BookingMessageBarProps> = ({ currentPath }) =>
               <span className="booking-message-avatar-pulse" />
             </div>
             <div className="booking-message-text-group">
-              <div className="booking-message-tag-row">
-                <span className="booking-message-tag">Growth Session</span>
-              </div>
               <p className="booking-message-text">
                 First time here? Book a private B2B SEO &amp; pipeline forecasting strategy session with Steve Martin.
               </p>
