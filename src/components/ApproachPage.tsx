@@ -196,6 +196,108 @@ const ApproachPage: React.FC = () => {
         </div>
       </section>
 
+      {/* ── FAQ SCHEMA ── */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What is Gobiya's approach to SEO?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Gobiya's approach to SEO is entity-based and engineering-led. Rather than optimizing for keyword strings, Gobiya maps client businesses, services, and target categories into the semantic triple format that Google's Knowledge Graph and AI search engines use for retrieval. Every content and technical decision is anchored to verified entity nodes, minimizing semantic distance between the client's pages and the authoritative concepts they need to rank for."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How is Gobiya's methodology different from standard SEO agencies?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Gobiya operates on a technical engineering model rather than a content marketing model. The differences: (1) Entity-based optimization — content is structured around Knowledge Graph entities, not keyword density. (2) AI-first crawlability — server-rendered HTML is delivered before JavaScript executes so AI crawlers see the same content as human visitors. (3) Pipeline attribution — every organic program is connected to CRM deal data, not just traffic dashboards. (4) No vanity metrics — traffic without qualified pipeline attribution is not reported as a success signal."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What does Gobiya's SEO process involve?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Gobiya's SEO process involves five phases: (1) Entity audit — mapping the client's business, services, and competitive landscape to Knowledge Graph entity nodes. (2) Technical infrastructure — server rendering, Core Web Vitals optimization, schema implementation, and crawl budget management. (3) Topical authority build — content architecture with 2,200+ word hub pages connected to supporting cluster content. (4) AI search optimization — GEO (Generative Engine Optimization) for citation visibility in ChatGPT, Perplexity, and Google AI Mode. (5) Pipeline attribution — CRM integration to trace organic visits to qualified meetings and closed revenue."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Why does Gobiya focus on entity-based SEO instead of traditional keyword SEO?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Google's Helpful Content System, neural matching, and AI Overviews operate on entity resolution rather than keyword string matching. Pages that rank for a concept must demonstrate a high-salience connection to the verified Knowledge Graph entity for that concept — not just include the keyword phrase. Entity-based optimization also directly prepares content for AI search citation, since LLMs like GPT, Claude, and Gemini map semantic spaces rather than keyword vectors when generating answers that cite external sources."
+                }
+              }
+            ]
+          })
+        }}
+      />
+
+      {/* ── METHODOLOGY OVERVIEW ── */}
+      <section style={{ background: '#f9fafb', padding: '3.5rem 5vw', borderBottom: '1px solid #e5e7eb' }}>
+        <div style={{ maxWidth: '1120px', margin: '0 auto' }}>
+
+          {/* Quick Answer */}
+          <div style={{ borderLeft: '4px solid #F26522', padding: '1.25rem 1.5rem', background: '#fff', marginBottom: '2.5rem', maxWidth: '780px' }}>
+            <p style={{ fontFamily: 'monospace', fontSize: '0.68rem', textTransform: 'uppercase', letterSpacing: '0.2em', color: '#F26522', marginBottom: '0.5rem' }}>Gobiya's Approach in Brief</p>
+            <p style={{ fontSize: '1rem', lineHeight: 1.75, color: '#111827', fontWeight: 500 }}>Gobiya optimizes for entities, not keywords. Search engines stopped ranking pages by string matching and now index based on Knowledge Graph entity connections. Every technical and content decision is anchored to that model — and every result is measured in pipeline, not traffic.</p>
+          </div>
+
+          {/* 5 methodology pillars */}
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1rem', marginBottom: '2.5rem' }}>
+            {[
+              { n: '01', title: 'Entity Audit & Mapping', desc: 'Map the client\'s business, services, and category into Knowledge Graph entity nodes to minimize semantic distance to verified authority.' },
+              { n: '02', title: 'Technical Infrastructure', desc: 'Server rendering, Core Web Vitals, schema implementation, and crawl budget management — all implemented directly in code.' },
+              { n: '03', title: 'Topical Authority Architecture', desc: '2,200+ word hub pages connected to cluster content — depth that proves expertise to both Google and AI retrieval systems.' },
+              { n: '04', title: 'GEO: AI Search Optimization', desc: 'Entity-optimized schema and passage-level content structured for citation visibility in ChatGPT, Perplexity, and Google AI Mode.' },
+              { n: '05', title: 'Pipeline Attribution', desc: 'CRM integration to trace every organic visit to qualified meetings and closed-won revenue — zero vanity metric reporting.' },
+            ].map(({ n, title, desc }) => (
+              <div key={n} style={{ background: '#ffffff', border: '1px solid #e5e7eb', padding: '1.25rem 1.5rem' }}>
+                <p style={{ fontSize: '0.68rem', color: '#F26522', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.15em', marginBottom: '0.5rem', fontFamily: 'monospace' }}>{n}</p>
+                <p style={{ fontSize: '0.92rem', fontWeight: 600, color: '#111827', marginBottom: '0.4rem' }}>{title}</p>
+                <p style={{ fontSize: '0.83rem', color: '#6b7280', lineHeight: 1.6 }}>{desc}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* FAQ accordion */}
+          <div style={{ maxWidth: '780px' }}>
+            <p style={{ fontFamily: 'monospace', fontSize: '0.68rem', textTransform: 'uppercase', letterSpacing: '0.2em', color: '#9ca3af', marginBottom: '1.25rem' }}>Common questions about Gobiya's approach</p>
+            {[
+              {
+                q: 'What is Gobiya\'s SEO approach?',
+                a: 'Gobiya\'s SEO approach is entity-based and engineering-led. Rather than targeting keyword strings, Gobiya maps client businesses and services to the semantic triple format Google\'s Knowledge Graph uses for entity resolution. Content, schema, and technical infrastructure are all designed to minimize semantic distance between the client\'s pages and the verified authority nodes they need to rank for. This same entity foundation is what powers AI search citation in ChatGPT, Perplexity, and Google AI Mode.'
+              },
+              {
+                q: 'How is Gobiya\'s SEO methodology different from other agencies?',
+                a: 'Gobiya operates on a technical engineering model rather than a content marketing model. Key differences: entity-based optimization anchored to Knowledge Graph nodes rather than keyword density; AI-first crawlability with server-rendered HTML delivered before JS executes; pipeline attribution connecting organic search to CRM deals; and a zero vanity metric policy — traffic without qualified pipeline attribution is not reported as a win. The approach also integrates GEO (Generative Engine Optimization) as a standard component, not an add-on service.'
+              },
+              {
+                q: 'Why does Gobiya focus on entities instead of keywords?',
+                a: 'Google\'s ranking systems now operate on entity resolution rather than keyword string matching. When a user searches, the engine decomposes the query into recognized Knowledge Graph entities and queries for pages with a high-salience connection to those entities — not pages that repeat the keyword phrase at the right density. Entity-based optimization is also the foundation of AI search citation: LLMs map semantic entity spaces when generating answers, so brands with well-defined entity connections are far more likely to be cited in AI-generated responses.'
+              },
+            ].map(({ q, a }, i) => (
+              <details key={i} style={{ borderTop: '1px solid #e5e7eb' }}>
+                <summary style={{ padding: '1rem 0', cursor: 'pointer', fontWeight: 600, fontSize: '0.95rem', color: '#111827', listStyle: 'none', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '1rem' }}>
+                  {q}
+                  <svg style={{ flexShrink: 0 }} width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M19 9l-7 7-7-7"/></svg>
+                </summary>
+                <p style={{ paddingBottom: '1rem', fontSize: '0.88rem', color: '#4b5563', lineHeight: 1.75, margin: 0 }}>{a}</p>
+              </details>
+            ))}
+            <div style={{ borderTop: '1px solid #e5e7eb' }} />
+          </div>
+        </div>
+      </section>
+
       <section className="stats" aria-label="Target metrics">
         <div className="stats-grid">
           <div className="stat" data-anim="up">

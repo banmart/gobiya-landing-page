@@ -4353,6 +4353,123 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
     metaDescription: 'Configure B2B sales pipeline automation workflows. Learn how to connect search intent, lead data enrichment, and automated email campaigns.',
     content: (
       <>
+        {/* ── FAQ SCHEMA ── */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "What is B2B sales pipeline automation?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "B2B sales pipeline automation is an orchestration system that connects search intent signals, lead enrichment, CRM routing, and outreach sequencing into one integrated workflow — eliminating the manual data-copying that stalls revenue teams even when they own a full software stack."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "How does B2B sales pipeline automation work?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "B2B sales pipeline automation works in five stages: (1) Signal capture — monitoring SEO traffic, AI-citation referrals, content downloads, and third-party intent data. (2) Enrichment — appending firmographic and contact data to each signal. (3) Routing — delivering enriched signals to the correct rep or AI workflow within a response window. (4) Sequencing — multi-step outreach anchored to the original signal source. (5) CRM logging — writing every interaction back as a clean pipeline record for attribution and forecasting."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "What tools are needed for B2B sales pipeline automation?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "A complete B2B pipeline automation stack requires an intent data layer (6sense, Bombora, or G2 Buyer Intent), a data enrichment service (Clay, Apollo, or Clearbit), a CRM platform (Salesforce or HubSpot), a sales engagement tool (Outreach or Salesloft), and an orchestration middleware that connects all systems without manual intervention."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "What ROI does B2B sales pipeline automation deliver?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Teams with a fully integrated orchestration layer report 3–5x pipeline lift at 70% lower cost-per-meeting versus manual SDR operations. Disconnected point solutions with no orchestration layer rarely produce positive pipeline ROI despite average software spend of $200,000+ per year."
+                  }
+                }
+              ]
+            })
+          }}
+        />
+
+        {/* ── QUICK ANSWER ── */}
+        <div className="bg-[#F26522]/5 border-l-4 border-[#F26522] p-5 sm:p-6 my-8 rounded-r-sm">
+          <p className="text-[11px] uppercase tracking-wider text-[#F26522] font-semibold mb-2">Quick Answer</p>
+          <p className="text-[15px] sm:text-[16px] leading-[1.7] text-gray-900 font-medium">B2B sales pipeline automation connects intent signals, lead enrichment, CRM routing, and outreach sequencing into one orchestrated system — replacing the manual data-copying between disconnected tools that kills productivity even when your team owns a full AI software stack.</p>
+        </div>
+
+        {/* ── KEY TAKEAWAYS ── */}
+        <div className="bg-gray-50 border border-gray-200 p-5 sm:p-6 my-8">
+          <p className="text-[11px] uppercase tracking-wider text-gray-500 font-semibold mb-4">Key Takeaways</p>
+          <ul className="space-y-3">
+            {[
+              'Pipeline automation is an orchestration problem, not a tooling problem — the signal-to-CRM connection matters more than any individual tool.',
+              'Teams with a unified orchestration layer see 3–5x pipeline lift at 70% lower cost versus manual SDR operations.',
+              'Most B2B stacks have 12+ tools and $200K in annual software spend but still require reps to copy data manually between systems.',
+              'AI SDRs only deliver ROI when they receive enriched, routed signals — not raw form fills from unqualified web visitors.',
+              'Every automated interaction must be logged back to the CRM automatically to enable clean attribution and accurate pipeline forecasting.',
+            ].map((point, i) => (
+              <li key={i} className="flex items-start gap-3 text-[14px] sm:text-[15px] text-gray-800 leading-snug">
+                <span className="w-5 h-5 rounded-full bg-[#F26522] text-white text-[10px] font-bold flex items-center justify-center shrink-0 mt-0.5">{i + 1}</span>
+                {point}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* ── INLINE FAQ ── */}
+        <div className="my-10 space-y-3">
+          <h2 className="text-[clamp(1.2rem,2vw,1.6rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mb-5">Common questions about B2B sales pipeline automation</h2>
+          {[
+            {
+              q: 'What is B2B sales pipeline automation?',
+              a: 'B2B sales pipeline automation is the orchestration layer that captures buyer intent signals across SEO, AI search, and intent platforms, enriches them with firmographic data, routes them to the right rep or AI workflow, and logs every action to the CRM without manual steps. It is not a single tool — it is the connective architecture between all the tools your team already owns but hasn\'t integrated.'
+            },
+            {
+              q: 'How quickly can a team implement pipeline automation?',
+              a: 'Most teams reach a functional orchestration layer within 60–90 days: the first 30 days clean CRM data and map signal sources; days 30–60 deploy enrichment and routing; by day 90, automated sequences are running and a closed-loop attribution report is tracking results. Teams with fragmented CRM data typically add 30–45 days to the timeline.'
+            },
+            {
+              q: 'What separates real pipeline automation from just buying AI tools?',
+              a: 'Real B2B sales pipeline automation connects every tool through an orchestration layer that shares data bidirectionally. Buying AI tools without an orchestration layer produces 12 disconnected systems that each report their own activity metrics but don\'t share data — leaving reps to manually reconcile between them, which is exactly the problem the tools were supposed to solve.'
+            },
+          ].map(({ q, a }, i) => (
+            <details key={i} className="border border-gray-200 group">
+              <summary className="flex items-center justify-between p-4 sm:p-5 cursor-pointer font-medium text-[15px] text-gray-900 list-none">
+                {q}
+                <svg className="w-4 h-4 shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" /></svg>
+              </summary>
+              <p className="px-4 sm:px-5 pb-4 sm:pb-5 text-[15px] text-gray-700 leading-relaxed">{a}</p>
+            </details>
+          ))}
+        </div>
+
+        {/* ── 5-STAGE WORKFLOW ── */}
+        <div className="my-8 sm:my-10">
+          <p className="text-[11px] uppercase tracking-wider text-gray-500 font-semibold mb-4">The 5-Stage Pipeline Automation Workflow</p>
+          <div className="grid grid-cols-1 sm:grid-cols-5 border border-gray-200">
+            {[
+              { n: '01', title: 'Signal Capture', desc: 'SEO traffic, AI referrals, intent data, content downloads' },
+              { n: '02', title: 'Enrichment', desc: 'Firmographic, technographic & contact data appended' },
+              { n: '03', title: 'Routing', desc: 'Signals delivered to the right rep or AI workflow' },
+              { n: '04', title: 'Sequencing', desc: 'Multi-step outreach anchored to signal source' },
+              { n: '05', title: 'CRM Logging', desc: 'Every interaction written back as a clean record' },
+            ].map(({ n, title, desc }, i) => (
+              <div key={i} className="p-4 sm:p-5 border-b sm:border-b-0 sm:border-r border-gray-200 last:border-0">
+                <p className="text-[11px] text-[#F26522] font-semibold mb-1">{n}</p>
+                <p className="text-[13px] font-semibold text-gray-900 mb-1">{title}</p>
+                <p className="text-[12px] text-gray-500 leading-snug">{desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
         {/* ── LEAD STATS ── */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 my-10 sm:my-14">
           {[
@@ -4617,6 +4734,128 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
     metaDescription: 'How to select the best SEO agency for B2B brands. Follow our evaluation checklist to verify technical authority, case studies, and contracts.',
     content: (
       <>
+        {/* ── FAQ SCHEMA ── */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "What makes an SEO agency the best choice for B2B brands?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The best SEO agency for B2B brands measures success in qualified pipeline and closed revenue — not just traffic and keyword rankings. Key differentiators include a documented methodology for multi-stakeholder content, proven CRM pipeline attribution capability, a clear point of view on AI search and GEO (Generative Engine Optimization), and case studies that disclose revenue outcomes, not just ranking lifts."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "How do I evaluate a B2B SEO agency before signing?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Ask five questions: (1) What percentage of your roster is B2B? (2) Can you show case studies with pipeline and revenue metrics? (3) How many clients does each strategist manage? (4) What does your CRM pipeline attribution model look like? (5) How do you track AI citation share across ChatGPT, Perplexity, and Google AI Mode? Agencies that answer all five with specifics are specialists. Those that answer with generalities are generalist agencies with a B2B services page."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "How is a B2B SEO agency different from a general SEO agency?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "A B2B SEO agency is structured around the unique requirements of B2B buying: low-volume high-intent keywords instead of high-volume transactional terms, multi-stakeholder content for 11-person buying committees instead of single-buyer pages, and CRM pipeline attribution instead of session-based conversion metrics. Generalist agencies applying B2C instincts to B2B typically produce traffic growth with flat pipeline."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "What red flags should I watch for when hiring a B2B SEO agency?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Key red flags: ranking guarantees (search rankings cannot be guaranteed), traffic-only reporting with no pipeline attribution, vague methodology with no disclosed content or technical framework, case studies that only show organic sessions with no revenue data, and no demonstrated understanding of AI search and citation optimization. Any agency that ranks itself for 'best SEO agency' but can't explain how it connects organic content to CRM data should be disqualified."
+                  }
+                }
+              ]
+            })
+          }}
+        />
+
+        {/* ── QUICK ANSWER ── */}
+        <div className="bg-[#F26522]/5 border-l-4 border-[#F26522] p-5 sm:p-6 my-8 rounded-r-sm">
+          <p className="text-[11px] uppercase tracking-wider text-[#F26522] font-semibold mb-2">Quick Answer</p>
+          <p className="text-[15px] sm:text-[16px] leading-[1.7] text-gray-900 font-medium">The best SEO agency for B2B brands measures success in qualified pipeline and closed revenue — not just traffic. Verify pipeline attribution capability, multi-stakeholder content methodology, and demonstrated AI search expertise before signing any contract.</p>
+        </div>
+
+        {/* ── EVALUATION CHECKLIST ── */}
+        <div className="bg-gray-50 border border-gray-200 p-5 sm:p-6 my-8">
+          <p className="text-[11px] uppercase tracking-wider text-gray-500 font-semibold mb-4">B2B SEO Agency Evaluation Checklist</p>
+          <ul className="space-y-3">
+            {[
+              'Pipeline attribution — does the agency connect organic content to CRM deals and closed-won revenue?',
+              'B2B-majority roster — what percentage of their clients are B2B, and can they name them?',
+              'Multi-stakeholder content model — do they build content for the full buying committee, not just the champion?',
+              'AI search expertise — can they track citation share across ChatGPT, Perplexity, and Google AI Mode?',
+              'Disclosed methodology — is their technical and content framework specific enough to verify before signing?',
+            ].map((point, i) => (
+              <li key={i} className="flex items-start gap-3 text-[14px] sm:text-[15px] text-gray-800 leading-snug">
+                <span className="w-5 h-5 rounded-full bg-[#F26522] text-white text-[10px] font-bold flex items-center justify-center shrink-0 mt-0.5">{i + 1}</span>
+                {point}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* ── INLINE FAQ ── */}
+        <div className="my-10 space-y-3">
+          <h2 className="text-[clamp(1.2rem,2vw,1.6rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mb-5">Common questions when searching for the best B2B SEO agency</h2>
+          {[
+            {
+              q: 'How is a B2B SEO agency different from a generalist agency?',
+              a: 'A specialist B2B SEO agency structures its entire methodology around B2B buying behavior: prioritizing low-volume high-intent keywords, creating content for 11-person buying committees, and connecting organic search to CRM pipeline. Generalist agencies applying B2C logic to B2B produce traffic growth with flat pipeline — the opposite of what B2B operators need.'
+            },
+            {
+              q: 'What should I look for in a B2B SEO agency\'s case studies?',
+              a: 'Look for case studies that disclose pipeline and revenue metrics alongside traffic data. The best evidence is a case study showing: starting baseline organic traffic and pipeline volume, the specific actions the agency took, and the resulting change in both organic sessions AND qualified pipeline opportunities or revenue. Case studies that only show keyword rankings or traffic growth without pipeline data cannot demonstrate B2B SEO effectiveness.'
+            },
+            {
+              q: 'What red flags should disqualify a B2B SEO agency?',
+              a: 'Disqualify any agency that: guarantees specific rankings (rankings cannot be guaranteed), reports only on traffic with no CRM integration, cannot name a disclosed methodology, has case studies with only traffic data and no revenue outcomes, or has no point of view on AI search. Also disqualify agencies where each strategist manages more than 8–10 clients — at that scale, strategy becomes templated and account-specific work becomes impossible.'
+            },
+          ].map(({ q, a }, i) => (
+            <details key={i} className="border border-gray-200 group">
+              <summary className="flex items-center justify-between p-4 sm:p-5 cursor-pointer font-medium text-[15px] text-gray-900 list-none">
+                {q}
+                <svg className="w-4 h-4 shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" /></svg>
+              </summary>
+              <p className="px-4 sm:px-5 pb-4 sm:pb-5 text-[15px] text-gray-700 leading-relaxed">{a}</p>
+            </details>
+          ))}
+        </div>
+
+        {/* ── B2B VS GENERALIST ── */}
+        <div className="my-8 sm:my-10">
+          <p className="text-[11px] uppercase tracking-wider text-gray-500 font-semibold mb-4">B2B SEO Agency vs. Generalist Agency</p>
+          <div className="border border-gray-200 overflow-hidden">
+            <div className="grid grid-cols-3 bg-gray-900 text-white text-[12px] font-semibold uppercase tracking-wider">
+              <div className="p-3 sm:p-4">Dimension</div>
+              <div className="p-3 sm:p-4 border-l border-gray-700">B2B Specialist</div>
+              <div className="p-3 sm:p-4 border-l border-gray-700">Generalist Agency</div>
+            </div>
+            {[
+              ['Keywords', 'Low-volume, high-intent', 'High-volume, broad'],
+              ['Content', 'Multi-stakeholder committee', 'Single buyer persona'],
+              ['Measurement', 'CRM pipeline & revenue', 'Traffic & sessions'],
+              ['AI Search', 'Citation tracking included', 'Future roadmap item'],
+              ['Sales Motion', 'Integrated with rev team', 'Independent operation'],
+            ].map(([dim, b2b, gen], i) => (
+              <div key={i} className={`grid grid-cols-3 text-[13px] border-t border-gray-200 ${i % 2 === 0 ? 'bg-white' : 'bg-gray-50'}`}>
+                <div className="p-3 sm:p-4 font-medium text-gray-900">{dim}</div>
+                <div className="p-3 sm:p-4 border-l border-gray-200 text-gray-700">{b2b}</div>
+                <div className="p-3 sm:p-4 border-l border-gray-200 text-gray-500">{gen}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+
         {/* ── LEAD STATS ── */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 my-10 sm:my-14">
           {[
@@ -4821,6 +5060,128 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
     metaDescription: 'Optimize SEO for B2B lead generation by mapping content to the buying committee stakeholders to increase deal velocity and close rates.',
     content: (
       <>
+        {/* ── FAQ SCHEMA ── */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "How does SEO help B2B lead generation?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "SEO helps B2B lead generation by placing content in front of every stakeholder on a buying committee at each stage of their independent research process. Unlike B2C, B2B deals involve 11+ decision-makers who each research separately — the economic buyer, technical evaluator, end user, and procurement lead each search different queries on different platforms. An effective B2B SEO program maps content to every role's specific questions so that when the champion advances the deal internally, every other stakeholder has already formed a positive impression of the brand."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "What SEO strategies drive B2B leads?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The most effective SEO strategies for B2B lead generation include: buying committee content mapping (content for each stakeholder role at each buying stage), high-intent keyword targeting (low-volume queries from buyers who are actively evaluating vendors), GEO optimization (ensuring brand content is cited by ChatGPT, Perplexity, and Google AI Mode), comparison and alternatives pages (capturing bottom-of-funnel evaluation queries), and technical SEO that ensures content is crawlable and indexable across both standard search and AI crawler bots."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Why does B2B SEO lead generation produce MQLs that don't convert?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "B2B SEO produces orphaned MQLs when content targets only the champion (the person who fills out the form) and ignores the other 10+ stakeholders who must approve the deal. The champion downloads the ebook, gets scored as an MQL, enters the sales process — and then the deal stalls because the technical evaluator, CFO, and procurement lead have never heard of the vendor and block internal consensus. Multi-role content coverage is the layer that prevents this outcome."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "How long does it take for SEO to generate B2B leads?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "B2B SEO lead generation typically produces the first high-intent organic leads within 90–180 days for competitive categories, and faster for long-tail buying-committee queries that have lower competition. Initial technical SEO and content architecture takes 30–60 days to implement. Content then needs to be crawled, indexed, and accumulate authority signals over the following 60–120 days before ranking for target queries. The full compounding effect of a mature B2B SEO program typically shows at the 12-month mark."
+                  }
+                }
+              ]
+            })
+          }}
+        />
+
+        {/* ── QUICK ANSWER ── */}
+        <div className="bg-[#F26522]/5 border-l-4 border-[#F26522] p-5 sm:p-6 my-8 rounded-r-sm">
+          <p className="text-[11px] uppercase tracking-wider text-[#F26522] font-semibold mb-2">Quick Answer</p>
+          <p className="text-[15px] sm:text-[16px] leading-[1.7] text-gray-900 font-medium">SEO for B2B lead generation requires mapping content to every stakeholder on the buying committee — not just the champion who fills out a form. B2B deals involve 11+ decision-makers who each research independently, and any one of them can stall a deal their champion already won.</p>
+        </div>
+
+        {/* ── KEY TAKEAWAYS ── */}
+        <div className="bg-gray-50 border border-gray-200 p-5 sm:p-6 my-8">
+          <p className="text-[11px] uppercase tracking-wider text-gray-500 font-semibold mb-4">Key Takeaways</p>
+          <ul className="space-y-3">
+            {[
+              'B2B buying committees average 11+ stakeholders — each researches independently, and content must reach all of them.',
+              '80–90% of B2B research is completed before any sales contact, making organic search the primary revenue channel.',
+              'Champion-only content produces MQLs that get added to "committee can\'t agree" deals — the largest bucket of lost B2B pipeline.',
+              'High-intent, low-volume keywords convert at up to 20x the rate of top-of-funnel terms, making keyword selection critical.',
+              'GEO (Generative Engine Optimization) ensures brand content is cited by AI assistants where 51% of B2B buyers now start research.',
+            ].map((point, i) => (
+              <li key={i} className="flex items-start gap-3 text-[14px] sm:text-[15px] text-gray-800 leading-snug">
+                <span className="w-5 h-5 rounded-full bg-[#F26522] text-white text-[10px] font-bold flex items-center justify-center shrink-0 mt-0.5">{i + 1}</span>
+                {point}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* ── INLINE FAQ ── */}
+        <div className="my-10 space-y-3">
+          <h2 className="text-[clamp(1.2rem,2vw,1.6rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mb-5">Common questions about SEO for B2B lead generation</h2>
+          {[
+            {
+              q: 'How does SEO actually generate B2B leads?',
+              a: 'SEO generates B2B leads by placing your content in front of buyers who are actively researching solutions in your category. Unlike paid ads which intercept attention, SEO captures intent — buyers who have already decided they have a problem and are now evaluating vendors. The most valuable B2B SEO leads come from high-intent queries like "best [category] software for [use case]" and "[competitor] alternative" because these represent buyers who are deep in evaluation, not just curious.'
+            },
+            {
+              q: 'Why does standard SEO fail to drive B2B pipeline?',
+              a: 'Standard SEO fails B2B pipeline because it optimizes for traffic metrics (sessions, impressions, click-through rate) rather than pipeline metrics (qualified opportunities, deal velocity, closed-won). A blog post ranking for a high-volume term can generate thousands of sessions from people who are not buyers — inflating traffic numbers while producing zero pipeline. B2B SEO requires a different keyword strategy, content architecture, and measurement model than B2C SEO.'
+            },
+            {
+              q: 'What content types perform best for B2B lead generation SEO?',
+              a: 'The highest-converting content types for B2B SEO lead generation are: comparison pages ("[vendor A] vs [vendor B]"), alternatives pages ("alternatives to [competitor]"), use-case pages ("SEO for [specific industry]"), and ROI/case study pages that answer the economic buyer\'s question. These bottom-of-funnel content types attract buyers who are actively evaluating vendors and produce leads that convert to pipeline at much higher rates than top-of-funnel awareness content.'
+            },
+          ].map(({ q, a }, i) => (
+            <details key={i} className="border border-gray-200 group">
+              <summary className="flex items-center justify-between p-4 sm:p-5 cursor-pointer font-medium text-[15px] text-gray-900 list-none">
+                {q}
+                <svg className="w-4 h-4 shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" /></svg>
+              </summary>
+              <p className="px-4 sm:px-5 pb-4 sm:pb-5 text-[15px] text-gray-700 leading-relaxed">{a}</p>
+            </details>
+          ))}
+        </div>
+
+        {/* ── BUYING COMMITTEE MAP ── */}
+        <div className="my-8 sm:my-10">
+          <p className="text-[11px] uppercase tracking-wider text-gray-500 font-semibold mb-4">Buying Committee Content Map</p>
+          <div className="border border-gray-200 overflow-hidden">
+            <div className="grid grid-cols-3 bg-gray-900 text-white text-[11px] font-semibold uppercase tracking-wider">
+              <div className="p-3 sm:p-4">Stakeholder</div>
+              <div className="p-3 sm:p-4 border-l border-gray-700">Research Channel</div>
+              <div className="p-3 sm:p-4 border-l border-gray-700">Content Type Needed</div>
+            </div>
+            {[
+              ['Champion', 'Google organic, LinkedIn', 'Use-case pages, how-to guides'],
+              ['Economic Buyer', 'AI assistants, analyst reports', 'ROI calculators, case studies'],
+              ['Technical Evaluator', 'Docs, Stack Overflow, Reddit', 'Integration docs, security pages'],
+              ['End User', 'G2, Capterra, Peer reviews', 'Feature comparisons, tutorials'],
+              ['Procurement', 'Vendor sites, compliance docs', 'Security, pricing, SLA pages'],
+            ].map(([role, channel, content], i) => (
+              <div key={i} className={`grid grid-cols-3 text-[13px] border-t border-gray-200 ${i % 2 === 0 ? 'bg-white' : 'bg-gray-50'}`}>
+                <div className="p-3 sm:p-4 font-medium text-gray-900">{role}</div>
+                <div className="p-3 sm:p-4 border-l border-gray-200 text-gray-600">{channel}</div>
+                <div className="p-3 sm:p-4 border-l border-gray-200 text-gray-600">{content}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+
         {/* ── TABLE OF CONTENTS ── */}
         <details className="bg-gray-50 border border-gray-200 rounded-lg p-6 sm:p-8 my-10 sm:my-14 group" open>
           <summary className="text-[14px] font-semibold uppercase tracking-wider text-gray-500 cursor-pointer list-none flex items-center justify-between">
@@ -5108,6 +5469,128 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
     metaDescription: 'Deploy an advanced local SEO strategy to dominate the Google 3-Pack, optimize schema markup, and capture geographic searches.',
     content: (
       <>
+        {/* ── FAQ SCHEMA ── */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "What is local SEO?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Local SEO is the practice of optimizing a business's online presence to appear in geographically relevant search results — primarily Google's 3-Pack (the map listing shown above organic results) and location-based organic pages. It involves optimizing the Google Business Profile, building NAP (Name, Address, Phone) consistency across directories, generating review velocity, producing localized on-page content, and implementing LocalBusiness schema markup."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "What are the most important local SEO ranking factors?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The top local SEO ranking factors in 2026 are: (1) Google Business Profile signals — primary category accuracy, profile completeness, photo volume, and post activity (32% of local pack ranking weight). (2) Review velocity — the rate and recency of new Google reviews, which is the single fastest-rising ranking signal. (3) On-page content — localized pages with city-specific content and proper LocalBusiness schema. (4) Citations — NAP consistency across key directories. (5) Behavioral signals — click-through rates from the map pack and website engagement from local visitors."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "How long does local SEO take to show results?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Local SEO results typically become measurable within 30–90 days for Google Business Profile optimizations and citation corrections, and 60–180 days for on-page content and new local landing pages to rank. Review velocity improvements can produce map pack position lifts within 4–8 weeks when a consistent weekly acquisition cadence is maintained. Highly competitive local markets (e.g. multiple-location categories in dense metro areas) may take 6–12 months for full 3-Pack penetration."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "What is the difference between local SEO and regular SEO?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Local SEO focuses on geographic relevance signals — Google Business Profile optimization, review acquisition, proximity signals, and localized landing pages — in addition to standard on-page and technical SEO. Regular (national) SEO focuses on domain authority, keyword targeting, and content depth without location specificity. Local SEO also optimizes for the map pack (a separate ranking system from the organic blue links) which requires an entirely different signal set than standard organic rankings."
+                  }
+                }
+              ]
+            })
+          }}
+        />
+
+        {/* ── QUICK ANSWER ── */}
+        <div className="bg-[#F26522]/5 border-l-4 border-[#F26522] p-5 sm:p-6 my-8 rounded-r-sm">
+          <p className="text-[11px] uppercase tracking-wider text-[#F26522] font-semibold mb-2">Quick Answer</p>
+          <p className="text-[15px] sm:text-[16px] leading-[1.7] text-gray-900 font-medium">Local SEO is the practice of optimizing a business's online presence to appear in Google's 3-Pack and local organic results. The most important ranking factors are Google Business Profile signals, review velocity, on-page localized content, and NAP consistency across directories.</p>
+        </div>
+
+        {/* ── TOP RANKING FACTORS ── */}
+        <div className="bg-gray-50 border border-gray-200 p-5 sm:p-6 my-8">
+          <p className="text-[11px] uppercase tracking-wider text-gray-500 font-semibold mb-4">Top Local SEO Ranking Factors (2026)</p>
+          <ul className="space-y-3">
+            {[
+              'Google Business Profile signals — primary category accuracy, completeness, photos, posts (32% of local pack weight)',
+              'Review velocity — rate and recency of new Google reviews, the fastest-rising ranking signal in 2025–2026',
+              'Localized on-page content — city-specific landing pages with proper LocalBusiness schema markup',
+              'NAP consistency — exact Name, Address, Phone match across GBP, website, and all directory citations',
+              'Behavioral signals — map pack click-through rate and website engagement from local visitors',
+            ].map((point, i) => (
+              <li key={i} className="flex items-start gap-3 text-[14px] sm:text-[15px] text-gray-800 leading-snug">
+                <span className="w-5 h-5 rounded-full bg-[#F26522] text-white text-[10px] font-bold flex items-center justify-center shrink-0 mt-0.5">{i + 1}</span>
+                {point}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* ── INLINE FAQ ── */}
+        <div className="my-10 space-y-3">
+          <h2 className="text-[clamp(1.2rem,2vw,1.6rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mb-5">Common questions about local SEO strategy</h2>
+          {[
+            {
+              q: 'What is local SEO and why does it matter?',
+              a: 'Local SEO is the discipline of optimizing a business\'s digital presence to appear in geographically targeted search results — primarily Google\'s map pack and location-specific organic listings. It matters because 46% of all Google searches carry local intent, and the 3-Pack (the top 3 map listings) captures the majority of clicks for those searches. A business that doesn\'t appear in the 3-Pack for its core category is effectively invisible to the largest segment of active local buyers.'
+            },
+            {
+              q: 'How is local SEO different from standard (national) SEO?',
+              a: 'Local SEO optimizes for the map pack — a separate ranking system from organic blue links — in addition to standard organic results. The map pack uses its own signal set: Google Business Profile completeness, review velocity, proximity to searcher, and citation consistency. Standard SEO optimizes domain authority, content depth, and backlinks. A strong domain can rank well nationally while being invisible in the local 3-Pack if the GBP and review signals are weak.'
+            },
+            {
+              q: 'What is the fastest way to improve local SEO rankings?',
+              a: 'The fastest local SEO wins come from Google Business Profile optimization: correcting the primary category, completing all profile fields, adding recent photos (profiles with 30+ photos get 2.7x more clicks), and launching a consistent review acquisition cadence. GBP improvements can produce measurable rank changes within 4–8 weeks. On-page and citation work delivers results in 60–120 days. There are no shortcuts to competitive 3-Pack positions — but a consistent operating cadence produces compounding improvements.'
+            },
+          ].map(({ q, a }, i) => (
+            <details key={i} className="border border-gray-200 group">
+              <summary className="flex items-center justify-between p-4 sm:p-5 cursor-pointer font-medium text-[15px] text-gray-900 list-none">
+                {q}
+                <svg className="w-4 h-4 shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" /></svg>
+              </summary>
+              <p className="px-4 sm:px-5 pb-4 sm:pb-5 text-[15px] text-gray-700 leading-relaxed">{a}</p>
+            </details>
+          ))}
+        </div>
+
+        {/* ── LOCAL vs AI VISIBILITY ── */}
+        <div className="my-8 sm:my-10">
+          <p className="text-[11px] uppercase tracking-wider text-gray-500 font-semibold mb-4">Local Search vs. AI Visibility Gap</p>
+          <div className="border border-gray-200 overflow-hidden">
+            <div className="grid grid-cols-3 bg-gray-900 text-white text-[11px] font-semibold uppercase tracking-wider">
+              <div className="p-3 sm:p-4">Signal</div>
+              <div className="p-3 sm:p-4 border-l border-gray-700">Google 3-Pack</div>
+              <div className="p-3 sm:p-4 border-l border-gray-700">AI Assistants</div>
+            </div>
+            {[
+              ['Primary factor', 'GBP signals & proximity', 'Web citations & schema'],
+              ['Review weight', 'Very high', 'Moderate (via reviews)'],
+              ['Update speed', '4–8 weeks', '90–180 days'],
+              ['Current visibility', '35.9% avg click rate', '1.2% avg recommendation rate'],
+              ['Optimization lever', 'GBP + citations', 'Entity schema + earned media'],
+            ].map(([signal, google, ai], i) => (
+              <div key={i} className={`grid grid-cols-3 text-[13px] border-t border-gray-200 ${i % 2 === 0 ? 'bg-white' : 'bg-gray-50'}`}>
+                <div className="p-3 sm:p-4 font-medium text-gray-900">{signal}</div>
+                <div className="p-3 sm:p-4 border-l border-gray-200 text-gray-600">{google}</div>
+                <div className="p-3 sm:p-4 border-l border-gray-200 text-gray-600">{ai}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+
         {/* ── TABLE OF CONTENTS ── */}
         <details className="bg-gray-50 border border-gray-200 rounded-lg p-6 sm:p-8 my-10 sm:my-14 group" open>
           <summary className="text-[14px] font-semibold uppercase tracking-wider text-gray-500 cursor-pointer list-none flex items-center justify-between">
@@ -5309,6 +5792,136 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
     metaDescription: 'Our local SEO explained guide shows how to run weekly optimizations, review acquisitions, and local profile updates to secure Map Pack dominance.',
     content: (
       <>
+        {/* ── FAQ SCHEMA ── */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "What is local SEO explained simply?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Local SEO is the ongoing practice of optimizing a business's online presence to appear prominently in geographically targeted search results — specifically Google's 3-Pack map listings and local organic results. It involves a weekly and monthly operating cadence of Google Business Profile updates, review acquisition, citation maintenance, and localized content publishing. Unlike a one-time setup, local SEO requires consistent operation to maintain and improve rankings."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "What does local SEO include?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Local SEO includes: Google Business Profile (GBP) optimization and weekly maintenance, review acquisition and response management, NAP (Name, Address, Phone) citation building and monitoring, local landing page creation and optimization, LocalBusiness schema markup implementation, and local link acquisition from neighborhood publications and community organizations. Advanced local SEO also includes AI search optimization to capture the growing segment of buyers using ChatGPT and Perplexity for local business discovery."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "How often should local SEO tasks be performed?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Local SEO tasks should follow a weekly and monthly cadence: weekly tasks include posting on GBP, responding to new reviews, and checking for and correcting any listing changes. Monthly tasks include publishing new localized content, auditing citation accuracy, analyzing rank position trends, and planning the next month's review acquisition campaigns. Businesses that stop active maintenance for 6–8 weeks typically see ranking drops to competitors who maintained their cadence."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Why do local SEO rankings drop when you stop optimizing?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Local SEO rankings drop when you stop optimizing because Google's algorithm continuously measures fresh activity signals — review velocity, GBP post recency, photo updates, and on-page content freshness. When a business goes quiet, these signals decay relative to competitors who continue their cadence. SE Ranking's 2026 research shows ranking drops typically begin 6–8 weeks after review velocity stops, and continued inactivity compounds the loss over subsequent months."
+                  }
+                }
+              ]
+            })
+          }}
+        />
+
+        {/* ── QUICK ANSWER ── */}
+        <div className="bg-[#F26522]/5 border-l-4 border-[#F26522] p-5 sm:p-6 my-8 rounded-r-sm">
+          <p className="text-[11px] uppercase tracking-wider text-[#F26522] font-semibold mb-2">Quick Answer</p>
+          <p className="text-[15px] sm:text-[16px] leading-[1.7] text-gray-900 font-medium">Local SEO explained simply: it is the ongoing weekly and monthly practice of keeping your Google Business Profile active, acquiring reviews consistently, maintaining citation accuracy, and publishing localized content. Rankings reward businesses that maintain consistent activity — and drop businesses that go quiet for even 6–8 weeks.</p>
+        </div>
+
+        {/* ── WEEKLY CADENCE ── */}
+        <div className="bg-gray-50 border border-gray-200 p-5 sm:p-6 my-8">
+          <p className="text-[11px] uppercase tracking-wider text-gray-500 font-semibold mb-4">Local SEO Operating Cadence</p>
+          <ul className="space-y-3">
+            {[
+              'Weekly: Post on Google Business Profile, respond to all new reviews within 24 hours, check for unauthorized listing edits',
+              'Weekly: Run review acquisition campaign (SMS or email to recent customers), add new photos to GBP',
+              'Monthly: Publish one new localized content piece or neighborhood landing page',
+              'Monthly: Audit citation accuracy across top 15–20 directories and correct any NAP discrepancies',
+              'Monthly: Track map pack rank position for top 5–10 local keywords and diagnose any movement',
+            ].map((point, i) => (
+              <li key={i} className="flex items-start gap-3 text-[14px] sm:text-[15px] text-gray-800 leading-snug">
+                <span className="w-5 h-5 rounded-full bg-[#F26522] text-white text-[10px] font-bold flex items-center justify-center shrink-0 mt-0.5">{i + 1}</span>
+                {point}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* ── INLINE FAQ ── */}
+        <div className="my-10 space-y-3">
+          <h2 className="text-[clamp(1.2rem,2vw,1.6rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mb-5">Local SEO explained: the most common questions</h2>
+          {[
+            {
+              q: 'What does local SEO actually include?',
+              a: 'Local SEO includes Google Business Profile optimization and weekly maintenance, review acquisition and response management, citation building and monitoring, local landing page creation with LocalBusiness schema, and local link acquisition. Advanced programs also add AI search optimization — ensuring the business is cited by ChatGPT and Perplexity when users ask for local recommendations, since the 2026 SOCi Local Visibility Index shows AI platforms recommend local businesses at only 1.2% the rate they appear in Google\'s 3-Pack.'
+            },
+            {
+              q: 'Why do local SEO rankings keep dropping?',
+              a: 'Local SEO rankings drop when a business reduces or stops its active optimization cadence. Google measures fresh activity signals continuously — review velocity, GBP post recency, photo freshness, and content updates. When a business goes quiet, these signals decay relative to competitors who maintain activity. SE Ranking data shows ranking drops typically start within 6–8 weeks of a cessation in review acquisition, and the losses compound each subsequent month the business stays inactive.'
+            },
+            {
+              q: 'How many reviews does a business need to rank in the local 3-Pack?',
+              a: 'There is no fixed review count that guarantees 3-Pack placement — review velocity (the rate of new reviews arriving per week) matters more than total count. Businesses receiving more than one new review per week outrank stable-velocity competitors by an average of 1.7 map pack positions. In competitive categories, the top 3-Pack businesses typically maintain 50+ reviews and a steady weekly acquisition cadence. A business that had 200 reviews but stopped acquiring new ones 6 months ago will lose ground to a competitor with 50 reviews and a fresh weekly stream.'
+            },
+          ].map(({ q, a }, i) => (
+            <details key={i} className="border border-gray-200 group">
+              <summary className="flex items-center justify-between p-4 sm:p-5 cursor-pointer font-medium text-[15px] text-gray-900 list-none">
+                {q}
+                <svg className="w-4 h-4 shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" /></svg>
+              </summary>
+              <p className="px-4 sm:px-5 pb-4 sm:pb-5 text-[15px] text-gray-700 leading-relaxed">{a}</p>
+            </details>
+          ))}
+        </div>
+
+        {/* ── 30/60/90 TIMELINE ── */}
+        <div className="my-8 sm:my-10">
+          <p className="text-[11px] uppercase tracking-wider text-gray-500 font-semibold mb-4">What to Expect: Local SEO at 30 / 60 / 90 Days</p>
+          <div className="grid grid-cols-1 sm:grid-cols-3 border border-gray-200">
+            {[
+              {
+                period: '30 Days',
+                items: ['GBP fully optimized and verified', 'Citation audit complete, corrections submitted', 'Review acquisition cadence launched', 'On-page schema markup implemented'],
+              },
+              {
+                period: '60 Days',
+                items: ['First measurable rank changes visible', 'Review velocity sustained at 1+ per week', 'First localized content pages published', 'Citation corrections propagating across directories'],
+              },
+              {
+                period: '90 Days',
+                items: ['Map pack position improvement measurable for primary keywords', 'Review velocity reinforcing rank improvements', 'Behavioral signals (clicks, calls) trending up', 'Monthly reporting cadence established'],
+              },
+            ].map(({ period, items }, i) => (
+              <div key={i} className={`p-4 sm:p-5 border-b sm:border-b-0 sm:border-r border-gray-200 last:border-0 ${i === 0 ? 'bg-white' : i === 1 ? 'bg-gray-50' : 'bg-white'}`}>
+                <p className="text-[13px] font-bold text-[#F26522] mb-3">{period}</p>
+                <ul className="space-y-2">
+                  {items.map((item, j) => (
+                    <li key={j} className="flex items-start gap-2 text-[13px] text-gray-700 leading-snug">
+                      <span className="text-[#F26522] mt-0.5">✓</span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+
         {/* ── LEAD STATS ── */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 my-10 sm:my-14">
           {[
@@ -6833,6 +7446,78 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
             })
           }}
         />
+
+        {/* ── QUICK ANSWER ── */}
+        <div className="bg-[#F26522]/5 border-l-4 border-[#F26522] p-5 sm:p-6 my-8 rounded-r-sm">
+          <p className="text-[11px] uppercase tracking-wider text-[#F26522] font-semibold mb-2">Quick Answer</p>
+          <p className="text-[15px] sm:text-[16px] leading-[1.7] text-gray-900 font-medium">A B2B SEO agency specializes in connecting organic search to pipeline and closed revenue — not just traffic. The core difference from a generalist agency: multi-stakeholder content, high-intent keyword targeting, CRM attribution, and AI citation tracking built into the standard methodology.</p>
+        </div>
+
+        {/* ── KEY TAKEAWAYS ── */}
+        <div className="bg-gray-50 border border-gray-200 p-5 sm:p-6 my-8">
+          <p className="text-[11px] uppercase tracking-wider text-gray-500 font-semibold mb-4">Key Takeaways</p>
+          <ul className="space-y-3">
+            {[
+              'A B2B SEO agency\'s entire operating model — methodology, measurement, and reporting — is built around the structure of B2B buying, not B2C.',
+              '89% of B2B buyers use the internet for purchase research, but the journey involves 11+ stakeholders who each research independently.',
+              'High buying-intent B2B keywords convert at 20x the rate of top-of-funnel terms — keyword selection drives pipeline, not traffic.',
+              'Agencies that cannot track CRM pipeline attribution cannot demonstrate B2B SEO value — ask for a specific attribution model before signing.',
+              'AI search (ChatGPT, Perplexity, Google AI Mode) now influences 51% of B2B buyer research; GEO must be part of the standard methodology, not an add-on.',
+            ].map((point, i) => (
+              <li key={i} className="flex items-start gap-3 text-[14px] sm:text-[15px] text-gray-800 leading-snug">
+                <span className="w-5 h-5 rounded-full bg-[#F26522] text-white text-[10px] font-bold flex items-center justify-center shrink-0 mt-0.5">{i + 1}</span>
+                {point}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* ── INLINE FAQ ── */}
+        <div className="my-10 space-y-3">
+          <h2 className="text-[clamp(1.2rem,2vw,1.6rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mb-5">Common questions about B2B SEO agencies</h2>
+          {[
+            {
+              q: 'What is a B2B SEO agency?',
+              a: 'A B2B SEO agency is an organic search firm whose entire operating model is structured around the requirements of B2B buying: low-volume high-intent keywords over high-volume terms, multi-stakeholder content for buying committees rather than single-buyer pages, and CRM pipeline attribution rather than traffic dashboards. A generalist agency with a B2B services page is not the same thing — the distinction is in the methodology, measurement model, and client roster, not the services menu.'
+            },
+            {
+              q: 'How is a B2B SEO agency different from a generalist SEO agency?',
+              a: 'B2B SEO agencies differ structurally across six dimensions: buyer behavior (committees vs. individuals), keyword universe (low-volume high-intent vs. high-volume transactional), content strategy (multi-stakeholder depth vs. single-buyer resonance), conversion model (pipeline attribution vs. session-based conversion), measurement framework (CRM-linked revenue vs. traffic dashboards), and sales motion integration (revenue team alignment vs. independent operation). Generalist agencies applying B2C instincts to B2B typically produce traffic growth with flat pipeline.'
+            },
+            {
+              q: 'What ROI should I expect from a B2B SEO agency?',
+              a: 'Mid-market B2B SaaS companies with $25,000+ ACV and 90-day cycles typically see the clearest returns. A $6,000–$8,000/month specialist engagement often produces 8–14 qualified pipeline opportunities per month by month six, which at median close rates yields a 6:1 to 12:1 first-year return before compounding organic equity. Exact ROI depends on ACV, deal cycle length, competitive density, and how tightly the agency integrates with your CRM for attribution.'
+            },
+          ].map(({ q, a }, i) => (
+            <details key={i} className="border border-gray-200 group">
+              <summary className="flex items-center justify-between p-4 sm:p-5 cursor-pointer font-medium text-[15px] text-gray-900 list-none">
+                {q}
+                <svg className="w-4 h-4 shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" /></svg>
+              </summary>
+              <p className="px-4 sm:px-5 pb-4 sm:pb-5 text-[15px] text-gray-700 leading-relaxed">{a}</p>
+            </details>
+          ))}
+        </div>
+
+        {/* ── SIGNS YOU NEED B2B SEO ── */}
+        <div className="my-8 sm:my-10">
+          <p className="text-[11px] uppercase tracking-wider text-gray-500 font-semibold mb-4">Signs Your Company Needs a B2B SEO Agency</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            {[
+              'Traffic is growing but qualified pipeline is flat — a signal that you\'re ranking for the wrong keywords',
+              'Your content targets the champion buyer but deals keep stalling when other stakeholders get involved',
+              'You have no visibility in AI search tools like ChatGPT, Perplexity, or Google AI Mode',
+              'Your SEO agency reports on sessions and keywords but has never mentioned CRM pipeline attribution',
+              'Competitors are appearing in AI-generated vendor shortlists and you are not',
+              'You can\'t trace which organic content led to specific closed deals',
+            ].map((sign, i) => (
+              <div key={i} className="flex items-start gap-3 p-4 border border-gray-200 bg-gray-50">
+                <span className="text-[#F26522] font-bold text-[13px] shrink-0">✕</span>
+                <p className="text-[13px] sm:text-[14px] text-gray-800 leading-snug">{sign}</p>
+              </div>
+            ))}
+          </div>
+        </div>
 
         {/* ── LEAD STATS ── */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 my-10 sm:my-14">

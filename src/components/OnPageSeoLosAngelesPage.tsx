@@ -196,6 +196,108 @@ export default function OnPageSeoLosAngelesPage() {
         </div>
       </section>
 
+      {/* ── FAQ SCHEMA ── */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What is on-page SEO?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "On-page SEO is the practice of optimizing the elements within a web page itself — including HTML structure, title tags, meta descriptions, heading hierarchy, internal links, schema markup, content depth, page speed, and Core Web Vitals — to make pages more understandable and rankable by both search engines and AI crawlers. Unlike off-page SEO (backlinks), on-page SEO is entirely within a business's direct control."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What does on-page SEO include for Los Angeles businesses?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "For Los Angeles businesses, on-page SEO includes: crawl budget optimization and redirect chain cleanup, JSON-LD schema markup for LocalBusiness, services, and founder authority, Core Web Vitals optimization (LCP, INP, CLS), localized content architecture with neighborhood and city-specific landing pages, entity-based heading and content structure aligned to Google's Knowledge Graph, and conversion architecture that connects search traffic to pipeline inquiries."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How long does on-page SEO take to show results?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "On-page SEO improvements typically produce measurable ranking changes within 30–90 days. Technical fixes (redirect cleanup, canonical corrections, schema implementation) can show results within 2–4 weeks as Google recrawls updated pages. Content depth improvements and entity optimization take 60–90 days to accumulate authority signals. Core Web Vitals improvements can produce ranking changes within 1–3 crawl cycles after implementation."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What makes Gobiya's on-page SEO different for Los Angeles companies?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Gobiya's on-page SEO is engineering-led — changes are implemented directly in code, not through plugins or page builders. This means faster rendering, cleaner semantic structure, and precise schema implementation that consumer-grade plugins cannot produce. Every on-page fix is also validated against AI crawler requirements, not just Google's traditional Googlebot, ensuring content is discoverable in both standard search and AI Overviews."
+                }
+              }
+            ]
+          })
+        }}
+      />
+
+      {/* ── QUERY ANSWER + KEY INFO ── */}
+      <section style={{ background: '#f9fafb', padding: '3.5rem 5vw', borderBottom: '1px solid #e5e7eb' }}>
+        <div style={{ maxWidth: '1120px', margin: '0 auto' }}>
+
+          {/* Quick Answer */}
+          <div style={{ borderLeft: '4px solid #F26522', padding: '1.25rem 1.5rem', background: '#fff', marginBottom: '2.5rem', maxWidth: '780px' }}>
+            <p style={{ fontFamily: 'monospace', fontSize: '0.68rem', textTransform: 'uppercase', letterSpacing: '0.2em', color: '#F26522', marginBottom: '0.5rem' }}>Quick Answer</p>
+            <p style={{ fontSize: '1rem', lineHeight: 1.75, color: '#111827', fontWeight: 500 }}>On-page SEO for Los Angeles businesses requires engineering-level fixes — not just content tweaks. Redirect cleanup, entity schema, Core Web Vitals, and AI crawler compatibility are the four pillars that separate ranking pages from invisible ones.</p>
+          </div>
+
+          {/* Key deliverables */}
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1rem', marginBottom: '2.5rem' }}>
+            {[
+              { n: '01', title: 'Crawl & Redirect Audit', desc: 'Trace server logs, eliminate redirect chains, fix canonical conflicts, and restore crawl budget to revenue-critical pages.' },
+              { n: '02', title: 'Schema & Entity Markup', desc: 'Custom JSON-LD for LocalBusiness, services, founders, and case studies — structured for Knowledge Graph and AI retrieval.' },
+              { n: '03', title: 'Core Web Vitals', desc: 'LCP, INP, and CLS optimization via image format upgrades, render-blocking script elimination, and template rewrites.' },
+              { n: '04', title: 'Content Architecture', desc: 'Entity-based heading structure, topical depth, and internal link architecture aligned to Google\'s semantic ranking model.' },
+              { n: '05', title: 'AI Crawler Compatibility', desc: 'Server-rendered HTML delivered before JS executes — ensuring content is visible to GPTBot, ClaudeBot, and Perplexity crawlers.' },
+            ].map(({ n, title, desc }) => (
+              <div key={n} style={{ background: '#ffffff', border: '1px solid #e5e7eb', padding: '1.25rem 1.5rem' }}>
+                <p style={{ fontSize: '0.68rem', color: '#F26522', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.15em', marginBottom: '0.5rem', fontFamily: 'monospace' }}>{n}</p>
+                <p style={{ fontSize: '0.92rem', fontWeight: 600, color: '#111827', marginBottom: '0.4rem' }}>{title}</p>
+                <p style={{ fontSize: '0.83rem', color: '#6b7280', lineHeight: 1.6 }}>{desc}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* FAQ accordion */}
+          <div style={{ maxWidth: '780px' }}>
+            <p style={{ fontFamily: 'monospace', fontSize: '0.68rem', textTransform: 'uppercase', letterSpacing: '0.2em', color: '#9ca3af', marginBottom: '1.25rem' }}>Common questions about on-page SEO in Los Angeles</p>
+            {[
+              {
+                q: 'What is on-page SEO and why does it matter?',
+                a: 'On-page SEO is the optimization of everything within a page itself: HTML structure, title and meta tags, heading hierarchy, schema markup, content depth, internal links, page speed, and Core Web Vitals. Unlike off-page SEO (backlinks), every on-page factor is entirely within your control. In 2026, on-page quality is also the primary determinant of whether your content is cited by AI search tools like Google AI Mode, ChatGPT, and Perplexity.'
+              },
+              {
+                q: 'How is Gobiya\'s on-page SEO different from standard SEO agencies?',
+                a: 'Gobiya implements on-page SEO directly in code rather than through plugins or bulk page-builders. This produces cleaner semantic structure, faster rendering, and more precise schema implementation than consumer-grade tools can achieve. Every fix is also validated against AI crawler requirements — not just traditional Googlebot — ensuring visibility in both standard search results and AI Overviews.'
+              },
+              {
+                q: 'How long does on-page SEO take to show results in Los Angeles?',
+                a: 'Technical on-page fixes (redirect cleanup, canonical corrections, schema) typically produce measurable rank changes within 2–4 weeks as Google recrawls updated pages. Content depth and entity optimization take 60–90 days. Core Web Vitals improvements show ranking impact within 1–3 crawl cycles after implementation. The exact timeline depends on how frequently Google crawls the site, which is itself influenced by how active and authoritative the domain is.'
+              },
+            ].map(({ q, a }, i) => (
+              <details key={i} style={{ borderTop: '1px solid #e5e7eb' }}>
+                <summary style={{ padding: '1rem 0', cursor: 'pointer', fontWeight: 600, fontSize: '0.95rem', color: '#111827', listStyle: 'none', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '1rem' }}>
+                  {q}
+                  <svg style={{ flexShrink: 0 }} width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M19 9l-7 7-7-7"/></svg>
+                </summary>
+                <p style={{ paddingBottom: '1rem', fontSize: '0.88rem', color: '#4b5563', lineHeight: 1.75, margin: 0 }}>{a}</p>
+              </details>
+            ))}
+            <div style={{ borderTop: '1px solid #e5e7eb' }} />
+          </div>
+        </div>
+      </section>
+
       {/* Capabilities / Bento Section */}
       <section className="capabilities-section">
         <div className="onpage-container">

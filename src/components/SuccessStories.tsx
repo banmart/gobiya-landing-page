@@ -123,6 +123,108 @@ const SuccessStories: React.FC = () => {
         </div>
       </section>
 
+      {/* ── FAQ SCHEMA ── */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What kind of SEO results does Gobiya produce?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Gobiya's case studies show measurable outcomes including traffic recovery after Google algorithm updates, local 3-Pack rankings for competitive service categories, and pipeline growth from organic search. Results are reported at the query and position level — not just aggregate traffic numbers. Every case study discloses what was built, why it was built, and what ranking or pipeline movement resulted."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What industries does Gobiya have SEO case studies for?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Gobiya has documented case studies across industries including dental and medical practices, professional services, B2B SaaS, local service businesses, and e-commerce. Case studies cover both local SEO (map pack visibility and Google Business Profile recovery) and B2B organic search (pipeline attribution and buying committee content programs)."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How does Gobiya measure SEO success?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Gobiya measures success in pipeline and closed revenue — not just traffic and keyword rankings. Every organic search program is connected to CRM data so results can be traced to qualified meetings and closed-won deals. Traffic without pipeline attribution is treated as a vanity metric, not a success signal."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How long did it take Gobiya to produce SEO results for clients?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Timeline varies by starting point and competitive category. Technical fixes (redirect cleanup, schema implementation, Core Web Vitals) typically produce measurable ranking changes within 30–60 days. Content programs and authority building take 90–180 days for significant organic traffic growth. Local SEO map pack improvements are often visible within 30–90 days when review velocity and GBP optimization are addressed together."
+                }
+              }
+            ]
+          })
+        }}
+      />
+
+      {/* ── RESULTS OVERVIEW ── */}
+      <section style={{ background: '#f9fafb', padding: '3.5rem 5vw', borderBottom: '1px solid #e5e7eb' }}>
+        <div style={{ maxWidth: '1120px', margin: '0 auto' }}>
+
+          {/* Quick Answer */}
+          <div style={{ borderLeft: '4px solid #F26522', padding: '1.25rem 1.5rem', background: '#fff', marginBottom: '2.5rem', maxWidth: '780px' }}>
+            <p style={{ fontFamily: 'monospace', fontSize: '0.68rem', textTransform: 'uppercase', letterSpacing: '0.2em', color: '#F26522', marginBottom: '0.5rem' }}>What to Expect</p>
+            <p style={{ fontSize: '1rem', lineHeight: 1.75, color: '#111827', fontWeight: 500 }}>Every Gobiya case study discloses what was built, why it was built, and what moved — query by query, position by position. Results are measured in pipeline and closed revenue, not just organic sessions.</p>
+          </div>
+
+          {/* Key outcomes grid */}
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1rem', marginBottom: '2.5rem' }}>
+            {[
+              { n: '01', title: 'Traffic Recovery', desc: 'Search traffic restored after Google algorithm updates through content quality improvements, E-E-A-T signals, and technical remediation.' },
+              { n: '02', title: 'Local Map Pack Rankings', desc: 'Google 3-Pack visibility for competitive local service categories via GBP optimization and review velocity programs.' },
+              { n: '03', title: 'Pipeline Attribution', desc: 'Organic search connected directly to CRM qualified meetings and closed-won revenue — not just session volume.' },
+              { n: '04', title: 'AI Search Visibility', desc: 'Brand entity established in Google AI Overviews, ChatGPT, and Perplexity for category-relevant queries.' },
+              { n: '05', title: 'Technical SEO Fixes', desc: 'Crawl budget restored, redirect chains cleaned, schema implemented, and Core Web Vitals optimized to eliminate indexation barriers.' },
+            ].map(({ n, title, desc }) => (
+              <div key={n} style={{ background: '#ffffff', border: '1px solid #e5e7eb', padding: '1.25rem 1.5rem' }}>
+                <p style={{ fontSize: '0.68rem', color: '#F26522', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.15em', marginBottom: '0.5rem', fontFamily: 'monospace' }}>{n}</p>
+                <p style={{ fontSize: '0.92rem', fontWeight: 600, color: '#111827', marginBottom: '0.4rem' }}>{title}</p>
+                <p style={{ fontSize: '0.83rem', color: '#6b7280', lineHeight: 1.6 }}>{desc}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* FAQ accordion */}
+          <div style={{ maxWidth: '780px' }}>
+            <p style={{ fontFamily: 'monospace', fontSize: '0.68rem', textTransform: 'uppercase', letterSpacing: '0.2em', color: '#9ca3af', marginBottom: '1.25rem' }}>Common questions about Gobiya's results</p>
+            {[
+              {
+                q: 'What results does Gobiya produce for SEO clients?',
+                a: 'Gobiya case studies show traffic recovery after algorithm updates, local 3-Pack rankings for competitive service categories, pipeline growth from organic search, and AI search visibility across Google AI Mode, ChatGPT, and Perplexity. Results are reported at the position and pipeline level — not just aggregate traffic dashboards. Every case study discloses the specific actions taken and the resulting rank and revenue changes.'
+              },
+              {
+                q: 'How does Gobiya measure SEO success?',
+                a: 'Gobiya measures success in qualified pipeline and closed-won revenue, not just traffic. Every organic program is connected to CRM data so results trace to specific deals. Traffic without pipeline attribution is treated as a vanity metric. The core measurement framework tracks: search impressions and clicks by keyword cluster, organic sessions from high-intent queries, form submissions and phone calls from organic visitors, pipeline opportunities attributed to organic, and closed-won revenue from organic-attributed deals.'
+              },
+              {
+                q: 'What industries does Gobiya have SEO results in?',
+                a: 'Gobiya has documented results across dental and medical practices, professional services firms, B2B SaaS companies, local service businesses, and e-commerce. Case studies cover both local SEO (map pack visibility, GBP recovery) and B2B organic search (pipeline attribution, buying committee content, AI search visibility). Industry-specific case studies are available on request for prospective clients in similar categories.'
+              },
+            ].map(({ q, a }, i) => (
+              <details key={i} style={{ borderTop: '1px solid #e5e7eb' }}>
+                <summary style={{ padding: '1rem 0', cursor: 'pointer', fontWeight: 600, fontSize: '0.95rem', color: '#111827', listStyle: 'none', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '1rem' }}>
+                  {q}
+                  <svg style={{ flexShrink: 0 }} width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M19 9l-7 7-7-7"/></svg>
+                </summary>
+                <p style={{ paddingBottom: '1rem', fontSize: '0.88rem', color: '#4b5563', lineHeight: 1.75, margin: 0 }}>{a}</p>
+              </details>
+            ))}
+            <div style={{ borderTop: '1px solid #e5e7eb' }} />
+          </div>
+        </div>
+      </section>
+
       {/* ── CLIENT CARDS GRID ── */}
       <section id="case-001" style={{ background: '#111827' }}>
         <style>{`
