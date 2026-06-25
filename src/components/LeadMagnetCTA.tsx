@@ -279,16 +279,17 @@ const LeadMagnetCTA: React.FC<LeadMagnetCTAProps> = ({ category, slug }) => {
               <button
                 type="submit"
                 disabled={status === 'submitting'}
-                className="w-full flex items-center justify-center bg-[#F26522] hover:bg-[#e05a1a] text-white py-3.5 px-6 font-semibold tracking-wide uppercase transition-colors duration-300 cursor-pointer rounded-lg text-xs disabled:opacity-75"
+                className="w-full flex items-center justify-center bg-[#111827] hover:bg-[#3E4D4C] text-white border border-[#111827] hover:border-[#3E4D4C] py-3 px-5 font-medium uppercase tracking-[0.06em] rounded transition-all duration-200 cursor-pointer disabled:opacity-50"
+                style={{ fontSize: '13px' }}
               >
                 {status === 'submitting' ? (
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-2 whitespace-nowrap">
                     <span className="w-3.5 h-3.5 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
-                    <span>Securing Asset...</span>
+                    <span>Securing…</span>
                   </div>
                 ) : (
-                  <span className="flex items-center gap-2">
-                    {magnet.ctaLabel} <ArrowRight className="w-3.5 h-3.5" />
+                  <span className="flex items-center gap-1.5 whitespace-nowrap">
+                    {magnet.ctaLabel} <ArrowRight className="w-3 h-3 shrink-0" />
                   </span>
                 )}
               </button>
@@ -323,9 +324,10 @@ const LeadMagnetCTA: React.FC<LeadMagnetCTAProps> = ({ category, slug }) => {
             </p>
             <button
               onClick={handleBookRedirect}
-              className="w-full flex items-center justify-center gap-2 bg-[#F26522] hover:bg-[#e05a1a] text-white py-3 px-6 rounded-lg font-semibold text-xs tracking-wider uppercase transition-all duration-300 shadow-lg shadow-[#F26522]/10"
+              className="w-full flex items-center justify-center gap-1.5 bg-[#111827] hover:bg-[#3E4D4C] text-white border border-[#111827] hover:border-[#3E4D4C] py-3 px-5 rounded font-medium uppercase tracking-[0.06em] transition-all duration-200 cursor-pointer"
+              style={{ fontSize: '13px' }}
             >
-              Book 1-on-1 Review Session <ArrowRight className="w-4 h-4" />
+              Book 1-on-1 Review Session <ArrowRight className="w-3 h-3 shrink-0" />
             </button>
           </div>
         </div>

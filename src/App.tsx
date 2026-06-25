@@ -18,6 +18,9 @@ import {
   AdminDashboard,
   ContactPage,
   OnPageSeoLosAngelesPage,
+  AiSeoBeverlyHillsPage,
+  LocalSeoGlendalePage,
+  SeoCompanyEncinoPage,
   SEO,
   NotFound,
   CategoryPage,
@@ -305,6 +308,9 @@ function App({ url }: AppProps) {
     '/',
     '/admin',
     '/on-page-seo-los-angeles',
+    '/ai-seo-beverly-hills',
+    '/local-seo-glendale',
+    '/seo-company-encino',
     '/book',
     '/book-call',
     '/about/steve-martin',
@@ -338,6 +344,12 @@ function App({ url }: AppProps) {
         <GobiyaLanding />
       ) : normalizedPath === '/on-page-seo-los-angeles' ? (
         <OnPageSeoLosAngelesPage />
+      ) : normalizedPath === '/ai-seo-beverly-hills' ? (
+        <AiSeoBeverlyHillsPage />
+      ) : normalizedPath === '/local-seo-glendale' ? (
+        <LocalSeoGlendalePage />
+      ) : normalizedPath === '/seo-company-encino' ? (
+        <SeoCompanyEncinoPage />
       ) : normalizedPath === '/book' || normalizedPath === '/book-call' ? (
         <BookingPage />
       ) : normalizedPath === '/about/steve-martin' || normalizedPath === '/author/steve-martin' ? (

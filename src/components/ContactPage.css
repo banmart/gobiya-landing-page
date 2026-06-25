@@ -238,14 +238,15 @@
   font-size: .875rem;
 }
 .contact-page .form-submit-btn {
-  display: inline-flex; align-items: center; gap: .6rem;
+  display: inline-flex; align-items: center; gap: .4rem;
   background: var(--ink); color: var(--paper);
   border: 1px solid var(--ink);
-  padding: .95rem 2rem;
-  font-family: var(--font-mono); font-size: 10.5px; letter-spacing: .1em; text-transform: uppercase;
-  cursor: pointer; transition: background .2s, color .2s;
+  padding: .6rem 1.2rem;
+  font-family: var(--font-body); font-size: 0.8rem; font-weight: 500; letter-spacing: .06em; text-transform: uppercase;
+  border-radius: 4px;
+  cursor: pointer; transition: all .2s ease-in-out;
 }
-.contact-page .form-submit-btn:hover { background: var(--green); border-color: var(--green); }
+.contact-page .form-submit-btn:hover { background: var(--green); border-color: var(--green); transform: translateY(-1px); }
 .contact-page .form-submit-btn:disabled { opacity: .55; cursor: not-allowed; }
 
 /* Success */

@@ -16,6 +16,18 @@ const metadataMap: Record<string, SEOMetadata> = {
     title: `On-page SEO agency in LA: schema, entity structure, speed - Gobiya`,
     description: `Struggling with organic drops or low conversions? Our elite on-page SEO services in Los Angeles optimize your site's entity structure, schema, speed, and content mapping for Google and AI engines.`
   },
+  '/ai-seo-beverly-hills': {
+    title: `AI SEO Beverly Hills: Google + ChatGPT Citations - Gobiya`,
+    description: `AI SEO Beverly Hills — we engineer Google organic visibility and AI platform citations (ChatGPT, Claude, Gemini) for Beverly Hills businesses in the 90210 market. Entity graphs, GEO, and local Map Pack engineering.`
+  },
+  '/local-seo-glendale': {
+    title: `Local SEO Glendale: Map Pack & Google Business Profile - Gobiya`,
+    description: `Local SEO Glendale — we engineer Google Map Pack dominance, GBP optimization, citation consistency, and review velocity for businesses on Brand Boulevard and throughout the Glendale, CA market.`
+  },
+  '/seo-company-encino': {
+    title: `SEO Company Encino: Technical SEO & Pipeline Engineering - Gobiya`,
+    description: `Looking for an SEO company in Encino? We engineer Google visibility, AI citations, and organic pipeline growth for businesses on Ventura Boulevard and throughout the San Fernando Valley.`
+  },
 
   // ── Category pages ──
   '/creativity': {
