@@ -22,6 +22,7 @@ import {
   LocalSeoGlendalePage,
   LocalSeoBurbankPage,
   SeoCompanyEncinoPage,
+  LosAngelesSeoProf,
   SEO,
   NotFound,
   CategoryPage,
@@ -313,6 +314,7 @@ function App({ url }: AppProps) {
     '/local-seo-glendale',
     '/local-seo-company-burbank',
     '/seo-company-encino',
+    '/los-angeles-seo-professional',
     '/book',
     '/book-call',
     '/about/steve-martin',
@@ -354,6 +356,8 @@ function App({ url }: AppProps) {
         <LocalSeoBurbankPage />
       ) : normalizedPath === '/seo-company-encino' ? (
         <SeoCompanyEncinoPage />
+      ) : normalizedPath === '/los-angeles-seo-professional' ? (
+        <LosAngelesSeoProf />
       ) : normalizedPath === '/book' || normalizedPath === '/book-call' ? (
         <BookingPage />
       ) : normalizedPath === '/about/steve-martin' || normalizedPath === '/author/steve-martin' ? (

@@ -181,9 +181,9 @@ export const SOLUTIONS_DATA: Record<string, SolutionData> = {
     path: '/performance/native-crm-agency',
     breadcrumbLabel: 'Native CRM',
     hero: {
-      lines: ['Custom CRM Integrations:', 'Own your data.', 'Zero monthly fees.', 'Custom pipelines.'],
+      lines: ['Native CRM Agency:', 'Own your data.', 'Zero monthly fees.', 'Custom pipelines.'],
       accentLineIndex: 3,
-      sub: `As experts in Custom CRM Integrations, stop paying for expensive CRM subscriptions. We engineer custom CRM website integrations directly into your codebase, giving you complete data control and instant routing.`,
+      sub: `As a native CRM agency, we build custom CRM integrations directly into your codebase. Stop paying for expensive SaaS subscriptions — own your pipeline data with complete control and instant lead routing.`,
       ctaText: 'Build your CRM',
       meta: {
         label1: 'Architecture', value1: 'PostgreSQL · Supabase · Server Actions',
@@ -405,7 +405,7 @@ export const SOLUTIONS_DATA: Record<string, SolutionData> = {
     path: '/performance/blockchain-web3-development-agency',
     breadcrumbLabel: 'Web3 & Blockchain',
     hero: {
-      lines: ['Web3 Development:', 'Smart contracts.', 'dApp interfaces.', 'On-chain security.'],
+      lines: ['Blockchain & Web3 Development:', 'Smart contracts.', 'dApp interfaces.', 'On-chain security.'],
       accentLineIndex: 3,
       sub: `As experts in Web3 Development, we provide custom blockchain Web3 development, engineering secure smart contracts and seamless dApp interfaces directly into your React web applications.`,
       ctaText: 'Start a Web3 project',
@@ -747,7 +747,7 @@ export const SOLUTIONS_DATA: Record<string, SolutionData> = {
     hero: {
       lines: ['Authority Building:', 'Acquire authority.', 'Clean trust signals.', 'Sustain page one.'],
       accentLineIndex: 3,
-      sub: `As experts in Authority Building, gOBIYA builds domain trust through white-hat link acquisition, precision local citations, and entity alignment. We secure high-relevance editorial backlinks from real publications that signal clean, bulletproof authority to Google search algorithms and LLM models.`,
+      sub: `As an authority building agency, GOBIYA builds domain trust through white-hat link acquisition, precision local citations, and entity alignment. We secure high-relevance editorial backlinks from real publications that signal clean, bulletproof authority to Google search algorithms and LLM models.`,
       ctaText: 'Build your domain authority',
       meta: {
         label1: 'Tactics', value1: 'Editorial Outreach · Citation Auditing · Entity Mapping',

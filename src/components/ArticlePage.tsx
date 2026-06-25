@@ -27,6 +27,474 @@ interface ArticleData {
 // Each article is statically registered here so we can do fast client-side
 // routing without a DB round-trip. Add new articles to this map.
 const ARTICLES: Record<string, ArticleData> = {
+'what-are-ai-seo-services': {
+    slug: 'what-are-ai-seo-services',
+    title: 'What Are AI SEO Services? The 2026 Guide to Getting Cited by AI',
+    category: 'AI SEO',
+    readTime: '13 min read',
+    date: 'June 25, 2026',
+    image: '/images/article-what-are-ai-seo-services.webp',
+    heroAlt: 'A digital marketing strategist in a modern Los Angeles agency office reviewing AI citation dashboards on multiple monitors displaying ChatGPT, Gemini, and Perplexity brand visibility metrics',
+    metaDescription: 'What are AI SEO services? AI SEO services optimize your brand to be cited in ChatGPT, Gemini, Perplexity & Google AI Overviews. See types, costs & ROI — book a free AI visibility audit.',
+    content: (
+      <>
+        {/* ── JSON-LD FAQ SCHEMA ── */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "What does AI SEO do?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "AI SEO makes your brand the answer AI engines give, not just a link users dig for. It earns citations in AI-generated answers (ChatGPT, Perplexity, Gemini, Google AI Overviews), builds brand entity clarity across the web, improves content extractability with clear structure and evidence, tracks your visibility across AI platforms, and reinforces traditional rankings — since AI answers still pull from authoritative, top-ranking content. In short, it optimizes for how AI models select, summarize, and cite sources."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "What are the 4 types of SEO?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The four classic types are on-page SEO (content, keywords, and structure on your own pages), off-page SEO (backlinks, brand mentions, and authority signals from other sites), technical SEO (crawlability, speed, indexing, structured data), and local SEO (Google Business Profile and map-pack visibility for location searches). AI SEO adds a fifth dimension that runs across all four: optimizing how AI engines interpret, trust, and cite your content in generated answers."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Can ChatGPT do SEO?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Partially. ChatGPT is genuinely useful for SEO tasks — drafting content, brainstorming keywords, generating FAQ schema, outlining, and research — and can save significant time. But it can't audit or fix your live site, build real authority, earn genuine citations, or establish the cross-web entity consistency AI visibility requires, and its raw output needs human expertise to fact-check and refine. The best results are AI-assisted but human-led; ChatGPT is a powerful assistant, not a replacement for an SEO strategy."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "What is the best SEO AI?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "There's no single best — it depends on the task, and strong setups combine tools with human strategy. AI assistants (ChatGPT, Claude, Gemini) help with drafting and ideation; AI-integrated platforms (Semrush, Ahrefs and similar) handle keyword, content, and AI-citation tracking; dedicated AI-visibility trackers monitor your presence across AI engines; and Google's free Search Console and AI-optimization documentation are authoritative starting points. Tools are levers — the best outcome comes from pairing them with expertise that builds the authority AI engines cite."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "What is AI SEO called?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "AI SEO goes by several overlapping names with no single agreed definition as of 2026: GEO (Generative Engine Optimization), AEO (Answer Engine Optimization), AIO (Artificial Intelligence Optimization), and LLMO (LLM Optimization). GEO emphasizes getting cited by generative engines like ChatGPT and Gemini; AEO focuses on extractable on-page answers for features like AI Overviews. Google's view is that all of it is still fundamentally SEO — optimizing for the search experience as it evolves toward AI answers."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Will AI replace SEO?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No. AI is being absorbed into SEO, not replacing it. AI engines depend entirely on human-made, indexed, authoritative content to generate answers — without SEO foundations, they have nothing reliable to cite. What's changing is the surface (answers instead of links) and the metrics (citations and brand mentions alongside rankings), not the need to be discoverable, authoritative, and trustworthy. SEO is evolving into AI search optimization, not disappearing."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "How much should I pay for SEO services?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "AI SEO services in 2026 typically run $1,500–$3,000/month entry-level, $3,000–$6,000 for most mid-market businesses, $6,000–$15,000 for specialist full-stack work, and $15,000–$25,000+ for enterprise, with project work $5,000–$50,000 by scope. Pay enough for sustained work (AI search evolves; one-time sprints fade in 60–90 days), budget 9–12 months for compounding returns, and evaluate on cost per outcome rather than the retainer alone."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Are AI SEO services worth it?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "For most businesses whose customers use AI to research and decide, yes — when matched to genuine quality and a realistic 9–12 month timeline. They're worth it if your buyers use ChatGPT, Perplexity, or AI Overviews, you have or will build real authority for AI to cite, and you commit to sustained work. They're not worth it for 30-day-miracle expectations, the cheapest relabeled packages, or sites too weak to surface — fix the foundation first."
+                  }
+                }
+              ]
+            })
+          }}
+        />
+
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8 font-medium">
+          AI SEO services optimize your brand for the AI-driven search era — so ChatGPT, Gemini, Perplexity, and Google's AI Overviews cite, quote, and recommend you, not just rank you. Here's what they include, what they cost, and whether they're worth it.
+        </p>
+
+        {/* ── INLINE TABLE OF CONTENTS ── */}
+        <details className="bg-gray-50 border border-gray-200 rounded-lg p-6 sm:p-8 my-10 sm:my-14 group" open>
+          <summary className="text-[14px] font-semibold uppercase tracking-wider text-gray-500 cursor-pointer list-none flex items-center justify-between">
+            Table of Contents
+            <svg className="w-4 h-4 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" /></svg>
+          </summary>
+          <ul className="mt-6 space-y-3.5 text-[15px] font-medium text-gray-900 border-t border-gray-200 pt-6">
+            {[
+              { id: 'short-answer', label: 'What are AI SEO services? (The short answer)' },
+              { id: 'what-does-ai-seo-do', label: 'What does AI SEO do?' },
+              { id: 'using-ai-vs-ai-seo', label: 'Using AI in SEO vs. AI SEO services: the difference' },
+              { id: 'types-of-seo', label: 'What are SEO services and types — the 4 types of SEO' },
+              { id: 'what-ai-seo-is-called', label: 'What is AI SEO called? GEO, AEO, AIO & LLMO' },
+              { id: 'what-services-include', label: 'What AI SEO services include and what\'s available' },
+              { id: 'can-chatgpt-do-seo', label: 'Can ChatGPT do SEO? Where AI tools help — and don\'t' },
+              { id: 'best-seo-ai', label: 'What is the best SEO AI? Free and paid AI services' },
+              { id: 'cost', label: 'How much should I pay for SEO services?' },
+              { id: 'will-ai-replace-seo', label: 'Will AI replace SEO? Does Google offer SEO services?' },
+              { id: 'worth-it', label: 'Are AI SEO services worth it?' },
+              { id: 'how-gobiya', label: 'How Gobiya delivers AI SEO services' },
+              { id: 'faq', label: 'Frequently Asked Questions' },
+            ].map(({ id, label }) => (
+              <li key={id} className="flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#F26522] shrink-0" />
+                <a href={'#' + id} className="hover:text-[#F26522] transition-colors">{label}</a>
+              </li>
+            ))}
+          </ul>
+        </details>
+
+        {/* ── SECTION 1: SHORT ANSWER ── */}
+        <h2 id="short-answer" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          What are AI SEO services? (The short answer)
+        </h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          <strong>AI SEO services are optimization services that make your brand visible in AI-powered search</strong> — getting your content cited, quoted, and recommended inside answers from ChatGPT, Google's AI Overviews, Gemini, Perplexity, and Claude, not just ranked in traditional blue links. Where traditional SEO targets keyword rankings and backlinks, AI SEO services add layers built for how AI models select and cite sources: <a href="/insights/what-is-generative-engine-optimization-and-how-does-it-work" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">Generative Engine Optimization (GEO)</a>, Answer Engine Optimization (AEO), entity and structured-data optimization, AI citation tracking, and multi-platform visibility monitoring.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          As Google itself states, optimizing for generative AI search is still fundamentally SEO. AI SEO services apply that foundation to the AI answer layer, where discovery is increasingly happening.
+        </p>
+
+        {/* ── SECTION 2: WHAT DOES AI SEO DO ── */}
+        <h2 id="what-does-ai-seo-do" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          What does AI SEO do?
+        </h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          AI SEO does one core thing: it makes your brand the answer AI engines give, rather than a link a user has to dig for. Traditional search returns a list of ranked links; AI search synthesizes a single answer from multiple sources and cites a few of them. AI SEO is the work of becoming one of those cited, recommended sources.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-4">
+          Concretely, AI SEO does the following:
+        </p>
+        <ul className="space-y-4 mb-8 text-[16px] sm:text-[17px] text-gray-800 leading-[1.75]">
+          <li className="flex gap-3"><span className="text-[#F26522] font-bold shrink-0">→</span><span><strong>Earns citations in AI answers</strong> — structuring content so large language models extract and attribute it when answering user questions in ChatGPT, Perplexity, Gemini, and Google AI Overviews.</span></li>
+          <li className="flex gap-3"><span className="text-[#F26522] font-bold shrink-0">→</span><span><strong>Builds brand entity clarity</strong> — making your brand consistently understood across the web (your site, Wikipedia, Reddit, reviews, press) so AI models associate you with your topics with confidence. This is closely related to <a href="/insights/brand-entity-extraction-perception-drift" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">how brand entity extraction works</a>.</span></li>
+          <li className="flex gap-3"><span className="text-[#F26522] font-bold shrink-0">→</span><span><strong>Improves extractability</strong> — clear structure, direct answers, FAQs, and evidence (statistics, named sources, expert quotes) that AI systems can lift cleanly. The first peer-reviewed GEO study found these elements raised AI citation rates by 30–40%.</span></li>
+          <li className="flex gap-3"><span className="text-[#F26522] font-bold shrink-0">→</span><span><strong>Tracks AI visibility</strong> — monitoring how and where your brand appears (or doesn't) across AI platforms, the AI-era equivalent of rank tracking.</span></li>
+          <li className="flex gap-3"><span className="text-[#F26522] font-bold shrink-0">→</span><span><strong>Protects traditional rankings too</strong> — because AI answers still pull heavily from top-ranking, authoritative content, so AI SEO reinforces classic SEO rather than abandoning it.</span></li>
+        </ul>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          The shift driving all of this: AI Overviews and chat-based search are reducing clicks to traditional results, so visibility increasingly means being <em>inside the answer</em> — which is exactly what AI SEO does.
+        </p>
+
+        {/* ── SECTION 3: USING AI VS AI SEO ── */}
+        <h2 id="using-ai-vs-ai-seo" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          Using AI in SEO vs. AI SEO services: what's the difference
+        </h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          These two phrases sound identical but mean different things, and the distinction matters when you're buying.
+        </p>
+        <div className="border border-gray-200 bg-gray-50 rounded-lg p-6 my-8">
+          <table className="w-full text-left text-gray-800 text-[14px]">
+            <thead>
+              <tr className="border-b border-gray-300">
+                <th className="pb-3 font-semibold pr-6 w-1/2">Approach</th>
+                <th className="pb-3 font-semibold">What it means</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-b border-gray-200">
+                <td className="py-3 pr-6 font-bold text-[#F26522]">Using AI in SEO</td>
+                <td className="py-3">Using AI <em>tools</em> to do SEO work faster — generating content drafts, clustering keywords, automating audits. AI as a productivity assistant for traditional SEO tasks.</td>
+              </tr>
+              <tr>
+                <td className="py-3 pr-6 font-bold text-[#F26522]">AI SEO services</td>
+                <td className="py-3">Optimizing <em>for</em> AI search engines as the destination — making your brand visible inside AI-generated answers. The "AI" describes the target (AI search), not just the tooling.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          A quality provider does both: uses AI to execute efficiently <em>and</em> optimizes for AI search engines as the goal. The warning sign is an agency that's simply rebranded traditional SEO as "AI SEO" with buzzwords while changing nothing about the methodology — ask whether they actually optimize for <a href="/insights/chatgpt-vs-google-for-business-discovery" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">AI citation visibility</a>, or just use AI to write the same old content.
+        </p>
+
+        {/* ── SECTION 4: TYPES OF SEO ── */}
+        <h2 id="types-of-seo" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          What are SEO services and types — including the 4 types of SEO
+        </h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          To place AI SEO in context, it helps to know what SEO services are and the four types of SEO. <strong>SEO services</strong> are the work of improving a site's visibility in search, traditionally measured by where it ranks for relevant queries. The classic <strong>4 types of SEO</strong> are:
+        </p>
+        <div className="border border-gray-200 bg-gray-50 rounded-lg p-6 my-8">
+          <table className="w-full text-left text-gray-800 text-[14px]">
+            <thead>
+              <tr className="border-b border-gray-300">
+                <th className="pb-3 font-semibold pr-6">Type of SEO</th>
+                <th className="pb-3 font-semibold">What it covers</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-b border-gray-200">
+                <td className="py-3 pr-6 font-bold">On-page SEO</td>
+                <td className="py-3">Content, keywords, titles, headings, internal structure on your own pages</td>
+              </tr>
+              <tr className="border-b border-gray-200">
+                <td className="py-3 pr-6 font-bold">Off-page SEO</td>
+                <td className="py-3">Backlinks, brand mentions, and authority signals from other sites</td>
+              </tr>
+              <tr className="border-b border-gray-200">
+                <td className="py-3 pr-6 font-bold">Technical SEO</td>
+                <td className="py-3">Crawlability, site speed, indexing, structured data, mobile-friendliness</td>
+              </tr>
+              <tr>
+                <td className="py-3 pr-6 font-bold">Local SEO</td>
+                <td className="py-3">Google Business Profile, local citations, map-pack visibility for location-based searches</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          AI SEO doesn't replace these four — it adds a fifth dimension that runs across all of them: optimizing for how AI engines interpret, trust, and cite your content. On-page becomes "extractable answer blocks," off-page becomes "entity consistency and co-citations across trusted sources," technical adds "AI-crawler access and schema for LLM comprehension," and local feeds the AI answers that recommend businesses. In other words, AI SEO is the four types of SEO, re-pointed at the AI answer layer.
+        </p>
+
+        {/* ── SECTION 5: WHAT AI SEO IS CALLED ── */}
+        <h2 id="what-ai-seo-is-called" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          What Is AI SEO Called? GEO, AEO, AIO & LLMO Explained
+        </h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          If you're wondering what AI SEO is called, you'll encounter several overlapping names — and as of early 2026 there's no single agreed definition separating them; they're often used interchangeably. The main terms:
+        </p>
+        <ul className="space-y-4 mb-8 text-[16px] sm:text-[17px] text-gray-800 leading-[1.75]">
+          <li className="flex gap-3"><span className="text-[#F26522] font-bold shrink-0">→</span><span><strong>AI SEO</strong> — the umbrella consumer term for optimizing for AI search.</span></li>
+          <li className="flex gap-3"><span className="text-[#F26522] font-bold shrink-0">→</span><span><strong>GEO (Generative Engine Optimization)</strong> — optimizing to be cited by generative engines like ChatGPT, Gemini, and Claude; emphasizes brand entity consistency and authority across many sources. Our guide on <a href="/insights/what-is-the-difference-between-google-knowledge-graph-optimization-and-geo" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">how Knowledge Graph optimization relates to GEO</a> explains the distinction in full.</span></li>
+          <li className="flex gap-3"><span className="text-[#F26522] font-bold shrink-0">→</span><span><strong>AEO (Answer Engine Optimization)</strong> — optimizing on-page content (direct answer blocks, FAQ schema) so AI extracts factual answers and attributes them to you; targets features like Google's AI Overviews.</span></li>
+          <li className="flex gap-3"><span className="text-[#F26522] font-bold shrink-0">→</span><span><strong>AIO / LLMO</strong> — broader and alternate labels for the same goal of AI visibility.</span></li>
+        </ul>
+        <blockquote className="border-l-4 border-[#F26522] pl-6 py-2 my-8 text-gray-700 italic text-[17px] leading-[1.7]">
+          Google's own position is that "optimizing for generative AI search is optimizing for the search experience, and thus still SEO." The labels differ, but the underlying work — clear, authoritative, well-structured, trustworthy content — is continuous with good SEO.
+        </blockquote>
+
+        {/* ── SECONDARY IMAGE ── */}
+        <div className="my-12">
+          <img
+            src="/images/article-what-are-ai-seo-services-secondary.webp"
+            alt="A team of marketing professionals reviewing AI SEO service pricing tiers and citation tracking reports in a modern agency meeting room"
+            className="w-full rounded-lg"
+            style={{ maxHeight: '480px', objectFit: 'cover' }}
+          />
+          <p className="text-[13px] text-gray-500 mt-3 text-center">
+            AI SEO services are priced as ongoing retainers — not one-time sprints — because AI search evolves continuously.
+          </p>
+        </div>
+
+        {/* ── SECTION 6: WHAT SERVICES INCLUDE ── */}
+        <h2 id="what-services-include" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          What AI SEO Services Include and What's Available
+        </h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          So what AI services are there for SEO, and what does a real provider actually deliver? A full AI SEO engagement typically includes some or all of the following:
+        </p>
+        <ul className="space-y-4 mb-8 text-[16px] sm:text-[17px] text-gray-800 leading-[1.75]">
+          <li className="flex gap-3"><span className="text-[#F26522] font-bold shrink-0">→</span><span><strong>AI visibility audit</strong> — baseline of how often (and how) your brand currently appears across ChatGPT, Gemini, Perplexity, and AI Overviews.</span></li>
+          <li className="flex gap-3"><span className="text-[#F26522] font-bold shrink-0">→</span><span><strong>Generative Engine Optimization (GEO)</strong> — building brand entity consistency and authoritative presence across the sources AI engines trust. Understanding <a href="/insights/what-data-sources-do-llms-crawl-to-verify-b2b-company-information" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">which data sources LLMs crawl to verify your brand</a> is foundational to this work.</span></li>
+          <li className="flex gap-3"><span className="text-[#F26522] font-bold shrink-0">→</span><span><strong>Answer Engine Optimization (AEO)</strong> — restructuring content into extractable answer blocks, FAQs, and schema so AI can cite it.</span></li>
+          <li className="flex gap-3"><span className="text-[#F26522] font-bold shrink-0">→</span><span><strong>Entity & structured-data optimization</strong> — clarifying who you are and what you're an authority on, so AI models map your brand to the right topics.</span></li>
+          <li className="flex gap-3"><span className="text-[#F26522] font-bold shrink-0">→</span><span><strong>Technical readiness for AI crawlers</strong> — ensuring AI bots can access, parse, and interpret your content.</span></li>
+          <li className="flex gap-3"><span className="text-[#F26522] font-bold shrink-0">→</span><span><strong>AI citation tracking & monitoring</strong> — ongoing measurement of mentions, share of voice, and sentiment across AI platforms.</span></li>
+          <li className="flex gap-3"><span className="text-[#F26522] font-bold shrink-0">→</span><span><strong>Content strategy</strong> — evidence-rich, decision-useful content (data, expert quotes, comparisons) that performs in both AI and traditional search.</span></li>
+        </ul>
+        <div className="border-l-4 border-[#F26522] bg-gray-50 p-5 my-8 rounded-r-lg">
+          <p className="text-[15px] font-semibold text-gray-900 mb-1">What separates genuine AI SEO from traditional SEO with new labels</p>
+          <p className="text-[15px] text-gray-700 leading-relaxed">A credible provider can show you a citation report from a current client and a roadmap with measurable milestones — not just promises. Ask for both before signing.</p>
+        </div>
+
+        {/* ── SECTION 7: CAN CHATGPT DO SEO ── */}
+        <h2 id="can-chatgpt-do-seo" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          Can ChatGPT do SEO? Where AI tools help — and where they don't
+        </h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          <strong>Can ChatGPT do SEO? Partially.</strong> ChatGPT and similar AI tools are genuinely useful for SEO tasks — drafting content, brainstorming keywords and topics, generating FAQ schema, outlining articles, summarizing competitor pages, and speeding up research. Used well, they save substantial time. But ChatGPT cannot, on its own, <em>do</em> your SEO:
+        </p>
+        <ul className="space-y-4 mb-8 text-[16px] sm:text-[17px] text-gray-800 leading-[1.75]">
+          <li className="flex gap-3"><span className="text-[#F26522] font-bold shrink-0">✗</span><span>It can't audit your live site's technical health, crawl your pages, or implement fixes.</span></li>
+          <li className="flex gap-3"><span className="text-[#F26522] font-bold shrink-0">✗</span><span>It can't build genuine authority, earn real citations, or establish the cross-web entity consistency GEO requires.</span></li>
+          <li className="flex gap-3"><span className="text-[#F26522] font-bold shrink-0">✗</span><span>It produces generic output that needs human expertise to fact-check, add original insight, and align to your brand — Google rewards quality and trustworthiness regardless of who or what wrote it, but mass unedited AI content is a real risk to both SEO and brand.</span></li>
+        </ul>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          The consensus in 2026: the strongest results are <strong>AI-assisted but human-led</strong>. ChatGPT is a powerful assistant for SEO execution; it is not a replacement for an SEO strategy, a technical implementation, or the authority-building that AI SEO services provide.
+        </p>
+
+        {/* ── SECTION 8: BEST SEO AI ── */}
+        <h2 id="best-seo-ai" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          What is the best SEO AI? Free and paid AI services
+        </h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          <strong>What is the best SEO AI?</strong> There's no single "best" — it depends on the job, and the strongest setups combine several tools with human strategy. Categories of AI services for SEO, including what AI services are free to start:
+        </p>
+        <ul className="space-y-4 mb-8 text-[16px] sm:text-[17px] text-gray-800 leading-[1.75]">
+          <li className="flex gap-3"><span className="text-[#F26522] font-bold shrink-0">→</span><span><strong>AI writing/assistant tools</strong> (ChatGPT, Claude, Gemini) — drafting and ideation; free tiers available.</span></li>
+          <li className="flex gap-3"><span className="text-[#F26522] font-bold shrink-0">→</span><span><strong>AI-integrated SEO platforms</strong> (Semrush, Ahrefs and similar, with AI-visibility features) — keyword, content, and increasingly AI-citation tracking; mostly paid, some free trials.</span></li>
+          <li className="flex gap-3"><span className="text-[#F26522] font-bold shrink-0">→</span><span><strong>AI visibility / citation trackers</strong> — monitor how your brand appears across AI platforms; emerging category, mix of free and paid.</span></li>
+          <li className="flex gap-3"><span className="text-[#F26522] font-bold shrink-0">→</span><span><strong>Google's own free tools</strong> — Search Console and Google's published AI-optimization guidance are free and authoritative starting points.</span></li>
+        </ul>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          The AI assistants' free tiers, Google Search Console, and Google's documentation cost nothing and are a legitimate starting point. But tools are only levers — the best SEO AI outcome comes from pairing them with expertise, because no tool by itself builds the authority and entity signals that get you cited. The "best AI" is the one integrated into a sound, human-led strategy.
+        </p>
+
+        {/* ── SECTION 9: COST ── */}
+        <h2 id="cost" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          How Much Should I Pay for SEO Services? Average Cost for SEO Services
+        </h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          AI SEO is priced as a service (a retainer or project), not a software subscription. The 2026 market:
+        </p>
+        <div className="border border-gray-200 bg-gray-50 rounded-lg p-6 my-8">
+          <table className="w-full text-left text-gray-800 text-[14px]">
+            <thead>
+              <tr className="border-b border-gray-300">
+                <th className="pb-3 font-semibold pr-4">Tier</th>
+                <th className="pb-3 font-semibold pr-4">Typical monthly cost</th>
+                <th className="pb-3 font-semibold">What it covers</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-b border-gray-200">
+                <td className="py-3 pr-4 font-bold">Entry-level</td>
+                <td className="py-3 pr-4 text-[#F26522] font-semibold">~$1,500–$3,000/mo</td>
+                <td className="py-3">Basic content optimization, foundational AEO, limited tracking</td>
+              </tr>
+              <tr className="border-b border-gray-200">
+                <td className="py-3 pr-4 font-bold">Mid-market</td>
+                <td className="py-3 pr-4 text-[#F26522] font-semibold">~$3,000–$6,000/mo</td>
+                <td className="py-3">Technical + content + entity building; the common range for most businesses</td>
+              </tr>
+              <tr className="border-b border-gray-200">
+                <td className="py-3 pr-4 font-bold">Specialist/full-stack</td>
+                <td className="py-3 pr-4 text-[#F26522] font-semibold">~$6,000–$15,000/mo</td>
+                <td className="py-3">Full GEO + AEO + LLM citation strategy, prompt audits, multi-platform</td>
+              </tr>
+              <tr>
+                <td className="py-3 pr-4 font-bold">Enterprise</td>
+                <td className="py-3 pr-4 text-[#F26522] font-semibold">~$15,000–$25,000+/mo</td>
+                <td className="py-3">Multi-market, many pages, deep reporting across business units</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          Project-based work (an audit, schema overhaul, or content-cluster build) commonly runs $5,000–$50,000 depending on scope. Budget for <strong>9–12 months</strong> to reach the compounding-returns phase — AI search evolves continuously, and a one-time sprint loses impact within 60–90 days. Evaluate on <em>cost per outcome</em> (AI appearances, content produced, queries tracked) rather than the retainer alone, and be wary of the cheapest option, which often rebrands thin traditional SEO as "AI SEO."
+        </p>
+
+        {/* ── SECTION 10: WILL AI REPLACE SEO ── */}
+        <h2 id="will-ai-replace-seo" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          Will AI Replace SEO? Does Google Offer SEO Services?
+        </h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          <strong>Will AI replace SEO? No.</strong> AI is being absorbed <em>into</em> SEO, not replacing it. AI engines rely entirely on human-made web content, authority signals, and SEO foundations — without indexed, trustworthy, well-structured content, AI has nothing reliable to summarize. What's changing is the <em>surface</em> (answers instead of links) and the <em>metrics</em> (citations and brand mentions alongside rankings and clicks), not the underlying need to be discoverable, authoritative, and trustworthy. SEO is evolving into AI search optimization, not disappearing. For the mechanics of why, our guide on <a href="/insights/what-is-generative-engine-optimization-and-how-does-it-work" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">how GEO and AI retrieval actually work</a> is the right place to start.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          <strong>Does Google offer SEO services?</strong> No — Google does not sell SEO services, and it warns against anyone promising guaranteed rankings. What Google <em>does</em> offer is free guidance: Search Console, Search Central documentation, and, in 2026, official documentation on optimizing for generative AI features. Google's stance is that good AI-search optimization is good SEO; it provides the rules, not the service. The service — the actual implementation and authority-building — is what an AI SEO provider does.
+        </p>
+
+        {/* ── SECTION 11: WORTH IT ── */}
+        <h2 id="worth-it" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          Are SEO Services Worth It? Are AI SEO Services Worth It?
+        </h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          <strong>Are AI SEO services worth it?</strong> For most businesses whose customers are increasingly using AI to research and decide, yes — with two honest caveats. They're worth it when: your buyers use ChatGPT, Perplexity, or Google AI Overviews to find solutions like yours; you have (or will build) genuine quality and authority for AI to cite; and you commit to the 9–12 month horizon where compounding returns appear. Gartner has reported companies using generative-optimization services seeing meaningfully higher brand visibility in AI answers than those relying on traditional SEO alone — and with AI Overviews reducing clicks to classic results, being <em>in the answer</em> is increasingly where visibility lives.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          They're <strong>not</strong> worth it if you expect 30-day miracles (a red flag), if you buy the cheapest "AI SEO" that's just relabeled traditional work, or if your underlying site and content are too weak for any optimization to surface — in which case fix the foundation first. The honest framing: AI SEO is a real, increasingly necessary investment for businesses competing for AI-era visibility, but only when matched to genuine quality and a realistic timeline, not a quick-fix purchase.
+        </p>
+
+        {/* ── SECTION 12: HOW GOBIYA ── */}
+        <h2 id="how-gobiya" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
+          How Gobiya Delivers AI SEO Services
+        </h2>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          Gobiya treats AI search visibility as an engineering problem with measurable inputs, not a buzzword. Our <a href="/performance/seo-discoverability-agency" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">SEO and AI-discoverability practice</a> covers the full AI SEO stack: an AI visibility audit to baseline where your brand appears across ChatGPT, Gemini, Perplexity, and AI Overviews; GEO and AEO work to make your content extractable and your brand entity consistent across the sources AI engines trust; structured data and technical readiness for AI crawlers; and ongoing citation tracking so visibility gains are measured, not assumed.
+        </p>
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
+          Because we <a href="/performance/web-development-agency" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">build on fast, clean, crawlable infrastructure</a>, the technical foundations AI systems reward are built in rather than bolted on — and because everything is wired into <a href="/performance/native-crm-agency" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">native CRM and pipeline attribution</a>, we connect AI visibility to actual inquiries and revenue, not vanity mentions. If you want to know where you stand, <a href="/book" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors font-semibold">book a strategy call</a> and request an AI visibility audit.
+        </p>
+
+        {/* ── RIGHT CALL SUMMARY ── */}
+        <div className="bg-gray-900 text-white rounded-xl p-8 my-12">
+          <h3 className="text-[1.35rem] font-semibold mb-4 text-white">The right call on AI SEO services</h3>
+          <p className="text-gray-300 leading-[1.8] mb-4">
+            AI SEO services are the work of making your brand visible — cited, quoted, recommended — inside AI-generated answers across ChatGPT, Gemini, Perplexity, and Google's AI Overviews, layered on top of the traditional SEO foundations that AI engines still depend on. They go by several names (GEO, AEO, AIO, LLMO), they're priced as ongoing services ($1,500–$25,000+/month by scope), and they're increasingly essential as search shifts from ranked links to synthesized answers.
+          </p>
+          <p className="text-gray-300 leading-[1.8]">
+            Two decisions matter most. First: whether a provider genuinely optimizes for AI search — GEO, AEO, citation tracking, entity work — or just rebrands traditional SEO with AI buzzwords; ask for a citation report and a measurable roadmap. Second: whether you commit to the realistic 9–12 month horizon and pair the service with genuine quality, because AI SEO surfaces real authority, it can't manufacture it.
+          </p>
+          <a href="/book" className="inline-flex items-center gap-2 mt-6 btn btn-light magnetic text-sm font-semibold">
+            Book a free AI visibility audit
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" style={{width:'16px',height:'16px'}}><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg>
+          </a>
+        </div>
+
+        {/* ── FAQ SECTION ── */}
+        <h2 id="faq" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-8">
+          Frequently Asked Questions
+        </h2>
+
+        <div className="space-y-6 mb-12">
+          {[
+            {
+              q: 'What does AI SEO do?',
+              a: 'AI SEO makes your brand the answer AI engines give, not just a link users dig for. It earns citations in AI-generated answers (ChatGPT, Perplexity, Gemini, Google AI Overviews), builds brand entity clarity across the web, improves content extractability with clear structure and evidence, tracks your visibility across AI platforms, and reinforces traditional rankings — since AI answers still pull from authoritative, top-ranking content.'
+            },
+            {
+              q: 'What are the 4 types of SEO?',
+              a: 'The four classic types are on-page SEO (content, keywords, and structure on your own pages), off-page SEO (backlinks, brand mentions, and authority signals from other sites), technical SEO (crawlability, speed, indexing, structured data), and local SEO (Google Business Profile and map-pack visibility for location searches). AI SEO adds a fifth dimension across all four: optimizing how AI engines interpret, trust, and cite your content in generated answers.'
+            },
+            {
+              q: 'Can ChatGPT do SEO?',
+              a: "Partially. ChatGPT is genuinely useful for SEO tasks — drafting content, brainstorming keywords, generating FAQ schema, outlining, and research — and can save significant time. But it can't audit or fix your live site, build real authority, earn genuine citations, or establish the cross-web entity consistency AI visibility requires. The best results are AI-assisted but human-led."
+            },
+            {
+              q: 'What is the best SEO AI?',
+              a: "There's no single best — it depends on the task, and strong setups combine tools with human strategy. AI assistants (ChatGPT, Claude, Gemini) help with drafting and ideation; AI-integrated platforms (Semrush, Ahrefs and similar) handle keyword, content, and AI-citation tracking; and Google's free Search Console and AI-optimization documentation are authoritative starting points. Tools are levers — the best outcome comes from pairing them with expertise."
+            },
+            {
+              q: 'What is AI SEO called?',
+              a: 'AI SEO goes by several overlapping names with no single agreed definition as of 2026: GEO (Generative Engine Optimization), AEO (Answer Engine Optimization), AIO (Artificial Intelligence Optimization), and LLMO (LLM Optimization). GEO emphasizes getting cited by generative engines like ChatGPT and Gemini; AEO focuses on extractable on-page answers for AI Overviews. Google\'s view is that all of it is still fundamentally SEO.'
+            },
+            {
+              q: 'Will AI replace SEO?',
+              a: 'No. AI is being absorbed into SEO, not replacing it. AI engines depend entirely on human-made, indexed, authoritative content to generate answers — without SEO foundations, they have nothing reliable to cite. What\'s changing is the surface (answers instead of links) and the metrics (citations and brand mentions alongside rankings), not the need to be discoverable, authoritative, and trustworthy.'
+            },
+            {
+              q: 'Does Google offer SEO services?',
+              a: "No. Google doesn't sell SEO services and warns against anyone guaranteeing rankings. It offers free guidance instead — Search Console, Search Central documentation, and official 2026 documentation on optimizing for generative AI features. Google provides the rules (and says good AI-search optimization is good SEO); the actual implementation and authority-building is what an AI SEO provider delivers."
+            },
+            {
+              q: 'How much should I pay for SEO services?',
+              a: 'AI SEO services in 2026 typically run $1,500–$3,000/month entry-level, $3,000–$6,000 for most mid-market businesses, $6,000–$15,000 for specialist full-stack work, and $15,000–$25,000+ for enterprise, with project work $5,000–$50,000 by scope. Pay enough for sustained work, budget 9–12 months for compounding returns, and evaluate on cost per outcome rather than the retainer alone.'
+            },
+            {
+              q: 'Are AI SEO services worth it?',
+              a: "For most businesses whose customers use AI to research and decide, yes — when matched to genuine quality and a realistic 9–12 month timeline. They're worth it if your buyers use ChatGPT, Perplexity, or AI Overviews, you have or will build real authority for AI to cite, and you commit to sustained work. They're not worth it for 30-day-miracle expectations, the cheapest relabeled packages, or sites too weak to surface."
+            }
+          ].map(({ q, a }) => (
+            <details key={q} className="group border border-gray-200 rounded-lg overflow-hidden">
+              <summary className="flex items-center justify-between gap-4 p-5 cursor-pointer font-semibold text-gray-900 text-[15px] list-none hover:bg-gray-50 transition-colors">
+                {q}
+                <svg className="w-4 h-4 shrink-0 text-[#F26522] transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" /></svg>
+              </summary>
+              <div className="px-5 pb-5 text-gray-700 text-[15px] leading-[1.75] border-t border-gray-100 pt-4">
+                {a}
+              </div>
+            </details>
+          ))}
+        </div>
+
+        {/* ── SOURCES ── */}
+        <div className="border border-gray-200 rounded-lg p-6 my-10 bg-gray-50">
+          <h3 className="text-[15px] font-semibold text-gray-900 mb-4 uppercase tracking-wider">Sources & further reading</h3>
+          <ul className="space-y-2 text-[14px] text-gray-700">
+            <li>→ <a href="https://developers.google.com/search/docs/fundamentals/ai-optimization-guide" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors" target="_blank" rel="noopener noreferrer">Google Search Central — Optimizing for generative AI features on Google Search</a> — Google's official position that optimizing for AI search is still SEO.</li>
+            <li>→ <a href="https://arxiv.org/abs/2311.09735" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors" target="_blank" rel="noopener noreferrer">Generative Engine Optimization (Princeton, Georgia Tech, IIT Delhi)</a> — the peer-reviewed study finding statistics, sources, and quotes raise AI citation rates 30–40%.</li>
+            <li>→ <a href="https://developers.google.com/search/docs/fundamentals/seo-starter-guide" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors" target="_blank" rel="noopener noreferrer">Google Search Central — SEO Starter Guide</a> — the foundational SEO practices AI search still depends on.</li>
+          </ul>
+        </div>
+      </>
+    ),
+  },
 'introducing-open-knowledge-format-why-it-matters-for-ai-ready-businesses': {
     slug: 'introducing-open-knowledge-format-why-it-matters-for-ai-ready-businesses',
     title: "Introducing the Open Knowledge Format: Why It Matters for AI-Ready Businesses",
@@ -9520,6 +9988,27 @@ const RELATED_ARTICLES_MAP: Record<string, { href: string; category: string; tit
       category: 'Local SEO',
       title: 'Google Business Profile Optimization for Traffic Recovery Explained',
       image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&q=80',
+    },
+  ],
+
+  'what-are-ai-seo-services': [
+    {
+      href: '/insights/what-is-generative-engine-optimization-and-how-does-it-work',
+      category: 'GEO',
+      title: 'Generative Engine Optimization (GEO): RAG & AI Guide',
+      image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&q=80',
+    },
+    {
+      href: '/insights/brand-entity-extraction-perception-drift',
+      category: 'Knowledge Graph',
+      title: 'Brand Entity Extraction & Perception Drift: Knowledge Graph Guide',
+      image: 'https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=1200&q=80',
+    },
+    {
+      href: '/insights/what-data-sources-do-llms-crawl-to-verify-b2b-company-information',
+      category: 'GEO',
+      title: 'What Data Sources Do LLMs Crawl to Verify B2B Company Information?',
+      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80',
     },
   ],
 

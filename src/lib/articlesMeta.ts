@@ -15,6 +15,15 @@ export interface ArticleMeta {
 /** All articles — newest first. */
 export const ARTICLE_META: ArticleMeta[] = [
   {
+    slug: "what-are-ai-seo-services",
+    title: "What Are AI SEO Services? The 2026 Guide to Getting Cited by AI",
+    category: "AI SEO",
+    readTime: "13 min read",
+    date: "June 25, 2026",
+    image: "/images/article-what-are-ai-seo-services.webp",
+    metaDescription: "What are AI SEO services? AI SEO services optimize your brand to be cited in ChatGPT, Gemini, Perplexity & Google AI Overviews. See types, costs & ROI — book a free AI visibility audit.",
+  },
+  {
     slug: "introducing-open-knowledge-format-why-it-matters-for-ai-ready-businesses",
     title: "Introducing the Open Knowledge Format: Why It Matters for AI-Ready Businesses",
     category: "Strategy",

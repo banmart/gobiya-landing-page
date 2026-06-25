@@ -79,7 +79,7 @@ export default function WebDevelopmentPage() {
         </p>
         <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
           <a href="/book" className="btn btn-primary magnetic">
-            Start a project
+            Start your web development project
             <svg viewBox="0 0 24 24" width="14" height="14" fill="none" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" /></svg>
           </a>
           <a href="/performance" className="btn btn-ghost magnetic">All performance services</a>

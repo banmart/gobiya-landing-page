@@ -32,6 +32,10 @@ const metadataMap: Record<string, SEOMetadata> = {
     title: `Local SEO Company Burbank: Map Pack & Google Business Profile - Gobiya`,
     description: `Local SEO company Burbank — we engineer Google Map Pack dominance, GBP optimization, citation consistency, and review velocity for businesses on San Fernando Boulevard and throughout the Burbank, CA 91501–91510 market.`
   },
+  '/los-angeles-seo-professional': {
+    title: `Los Angeles SEO Professional: B2B & Enterprise SEO Engineering - Gobiya`,
+    description: `Los Angeles SEO professional practice. Gobiya engineers technical SEO, commercial-intent content architecture, entity schema, and AI citation visibility for B2B brands and professional services firms across Greater Los Angeles.`
+  },
 
   // ── Category pages ──
   '/creativity': {
@@ -53,8 +57,8 @@ const metadataMap: Record<string, SEOMetadata> = {
     description: `GOBIYA replaces slow page-builders with custom, hand-coded React and Next.js websites — 100/100 Core Web Vitals, sub-second loads, zero templates, engineered to convert and rank natively.`
   },
   '/performance/native-crm-agency': {
-    title: `PPC & Lead generation agency in LA: CRM integrations, pipeline, ads - Gobiya`,
-    description: `We build custom CRM website integrations directly into your codebase. Stop paying monthly software fees and own your pipeline data.`
+    title: `Native CRM agency in LA: custom pipeline, zero SaaS fees, data ownership - Gobiya`,
+    description: `As a native CRM agency, we build custom CRM integrations directly into your codebase. Stop paying monthly software fees and own your pipeline data with full control.`
   },
   '/performance/seo-discoverability-agency': {
     title: `SEO & Discoverability agency in LA: technical SEO, audit, recovery - Gobiya`,
@@ -99,8 +103,19 @@ const metadataMap: Record<string, SEOMetadata> = {
 
   // ── Relations subpages ──
   '/relations/authority-building-agency': {
-    title: `Authority & PR agency in LA: backlink acquisition, citations, outreach - Gobiya`,
-    description: `Build search engine trust with high-quality, relevant backlink acquisition and structured localized entity citations, engineered for long-term organic authority.`
+    title: `Authority building agency in LA: backlink acquisition, citations, PR outreach - Gobiya`,
+    description: `Authority building agency for B2B and professional services brands. High-quality editorial backlinks, structured local citations, and entity alignment — engineered for long-term organic authority.`
+  },
+
+  '/relations/google-ads-ppc-strategy-agency': {
+    title: `Google Ads & PPC strategy agency in LA: paid acquisition, ROAS, targeting - Gobiya`,
+    description: `Google Ads & PPC strategy agency in Los Angeles. We build precision-targeted paid pipelines that capture high-intent buyers, aggressively lower customer acquisition costs, and maximize ROAS.`
+  },
+
+  // ── Recovery ──
+  '/google-penalty-recovery': {
+    title: `Google penalty recovery agency in LA: manual action removal, core update fix - Gobiya`,
+    description: `Google penalty recovery specialists in Los Angeles. We diagnose manual actions and algorithmic suppressions, then execute the precise fix sequence — forensic audit, content consolidation, E-E-A-T rebuilding, and Search Console reconsideration.`
   },
 
   // ── Creativity subpages ──
@@ -237,6 +252,11 @@ const metadataMap: Record<string, SEOMetadata> = {
     title: `Brand Entity Extraction & Perception Drift | Gobiya`,
     description: `How brand entity extraction works across Google, Bing, Wikidata, and LLM knowledge graphs — and how to detect and correct perception drift.`,
     image: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1200&q=80'
+  },
+  '/insights/what-are-ai-seo-services': {
+    title: `AI SEO Services: Get Cited by ChatGPT & Google AI | Gobiya`,
+    description: `What are AI SEO services? AI SEO services optimize your brand to be cited in ChatGPT, Gemini, Perplexity & Google AI Overviews. See types, costs & ROI — book a free AI visibility audit.`,
+    image: '/images/article-what-are-ai-seo-services.webp'
   },
   '/insights/introducing-open-knowledge-format-why-it-matters-for-ai-ready-businesses': {
     title: `Introducing the Open Knowledge Format: Why It Matters for AI-Ready Businesses | Gobiya`,
