@@ -74,8 +74,8 @@ const ARTICLES: Record<string, ArticleData> = {
           }}
         />
 
-        <p className="lead-text italic text-gray-600 text-lg mb-8">
-          An architectural deep dive into Google Cloud's Open Knowledge Format (OKF) specification (released June 12, 2026). This article details the context assembly problem, the specification's file schema, and how to implement a machine-readable knowledge pipeline.
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8 font-medium">
+          Google Cloud's Open Knowledge Format (OKF) solves a specific problem: engineers rebuilding custom extractors every time they connect an AI agent to fragmented internal knowledge. OKF replaces that with a portable, vendor-neutral filesystem hierarchy — markdown files with YAML frontmatter — that any agent can traverse with standard tools, no proprietary runtime required. Here is how the spec works.
         </p>
 
         <h2 id="context-assembly-gap" className="text-2xl font-semibold text-gray-900 mt-10 mb-4 font-display">1. The Context Assembly Problem</h2>
@@ -292,6 +292,10 @@ timestamp: string   # Optional: ISO-8601 modification date
 
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8 font-medium">
           A multi-location website for a franchise is the architecture that lets one brand rank as many distinct local entities, and the central engineering problem is that those two goals pull against each other. The brand wants consolidated authority, consistent identity, and centralized control; each location needs to be the single best answer for "service + its city" without competing against its sibling locations or tripping Google's duplicate-content detection. Get the architecture right—single corporate domain, location subdirectories, genuinely unique local pages, correct structured data, and disciplined governance—and every new franchise location launches with the brand's accumulated authority behind it. Get it wrong—separate microsites, templated city-swap pages, fragmented ownership—and you fragment your authority across hundreds of weak pages that cannibalize each other and quietly fail to rank.
+        </p>
+
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8 font-medium">
+          The best website structure for a franchise with multiple locations is a single corporate domain with subdirectory paths for each market — brand.com/locations/city-name. This concentrates domain authority in one place so every new location page inherits it, rather than starting from zero. Subdomains and separate domains are slower to rank and harder to maintain at scale. The complication is that a shared domain architecture requires each location to be a genuinely distinct entity, not a duplicated template — and that's where most franchises fail.
         </p>
 
         {/* ── TABLE OF CONTENTS ── */}
@@ -751,6 +755,10 @@ timestamp: string   # Optional: ISO-8601 modification date
 
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8 font-medium">
           Applying behavioral psychology to a high-ticket B2B landing page wireframe means treating each zone of the layout as the structural answer to a specific psychological question, and the master key is the Fogg Behavior Model: a behavior occurs when <strong>Motivation, Ability, and a Prompt converge at the same moment (B = MAP)</strong>. Map that onto a wireframe and the page stops being a design exercise and becomes an engineering one.
+        </p>
+
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8 font-medium">
+          High-ticket B2B landing pages reduce friction differently from e-commerce: on a $75K+ deal, some friction is intentional. The Fogg Behavior Model explains the structure — behavior occurs when Motivation, Ability, and a Prompt converge. Every zone of a high-ticket wireframe is engineered to support one of those variables. The job isn't to eliminate friction; it's to remove the unintentional kind so you can keep the qualification filters that protect pipeline quality.
         </p>
 
         {/* ── TABLE OF CONTENTS ── */}
@@ -1337,8 +1345,8 @@ timestamp: string   # Optional: ISO-8601 modification date
           }}
         />
 
-        <p className="lead-text italic text-gray-600 text-lg mb-8">
-          A high-density analysis of B2B organic search pipeline architecture. This guide details how to structure content for multi-stakeholder buying committees, build high-intent keyword clusters, configure CRM attribution, and track revenue-linked KPIs.
+        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8 font-medium">
+          B2B companies generate predictable pipeline from SEO by mapping content to buying committee roles, not traffic volume. Decision-makers, economic buyers, and technical evaluators each search with distinct queries at distinct stages. The program that targets those low-volume, high-intent queries — and connects search behavior to CRM stages — is the one that generates actual revenue.
         </p>
 
         <h2 id="pipeline-math" className="text-2xl font-semibold text-gray-900 mt-10 mb-4 font-display">1. The Session-to-Pipeline Disconnect</h2>
@@ -2733,7 +2741,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
     content: (
       <>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8 font-medium">
-          Generative Engine Optimization (GEO) represents the next frontier in digital discovery. While traditional SEO optimizes for position in a list of blue links, Generative Engine Optimization focuses on getting your brand retrieved and cited by AI engines like ChatGPT, Claude, and Perplexity. Here is the technical playbook to enter the RAG retrieval pool.
+          Generative Engine Optimization (GEO) is how brands get cited by AI engines — ChatGPT, Claude, Perplexity, Google AI Overviews — when a buyer asks a question your company should be answering. Unlike traditional SEO, which targets ranked positions in a list of blue links, GEO targets passage-level extraction inside retrieval-augmented generation (RAG) pipelines. Here is the technical playbook.
         </p>
 
         <div className="border-l-4 border-[#F26522] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
@@ -6270,10 +6278,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
         </div>
 
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          This is the reality a business needs to understand before investing months of effort into core update recovery. The strongest operators approach it with accurate expectations: recovery is achievable but not certain, slow rather than fast, cyclical rather than continuous, and measured against a moving target because the SERP itself keeps changing. Most businesses approach it with the opposite assumptions — that recovery is guaranteed if they do the right things, that it should happen quickly, and that getting their rankings back means getting their traffic back. Those assumptions lead to panic, to chasing tactical fixes that don't work, and to abandoning correct recovery work right before it would have paid off.
-        </p>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
-          This article covers what a core update actually is (which determines what recovery requires), whether and how fully sites recover, what genuinely drives recovery versus what doesn't, and why "full recovery" is a more complicated target in 2026 than it used to be.
+          Recovery is achievable — but not guaranteed, not fast, and not measured against a fixed target, because the SERP a site is recovering toward keeps shifting between update cycles. Operators who hold the right work through the full cycle recover. Those who chase quick tactical fixes, or abandon correct work before it pays off, don't. Understanding that distinction is what separates effective recovery from months of wasted effort.
         </p>
 
         {/* ── SECTION 2 ── */}

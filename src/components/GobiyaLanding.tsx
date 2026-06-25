@@ -275,7 +275,7 @@ export default function GobiyaLanding() {
           </div>
           <div className="number-block" data-anim="up">
             <div className="number"><span data-count="13">0</span></div>
-            <div className="label">Industry certifications</div>
+            <div className="label">Technical specializations</div>
           </div>
           <div className="number-block" data-anim="up">
             <div className="number"><span data-count="300">0</span>+</div>

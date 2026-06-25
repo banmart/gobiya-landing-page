@@ -1321,12 +1321,13 @@ export default function ServiceSubpage({ path, isFanOut, category, slug }: Servi
               <div className="flex flex-col gap-5">
                 <p className="text-base leading-[1.8]" style={{ color: 'rgba(255, 255, 255, 0.85)' }}>{overlayP1}</p>
                 <p className="text-base leading-[1.8]" style={{ color: 'rgba(255, 255, 255, 0.85)' }}>{overlayP2}</p>
-                <div className="pt-2">
+                <div className="pt-2 hero-actions">
                   <a
                     href="/book"
-                    className="inline-flex items-center gap-2 bg-white text-gray-900 font-semibold px-7 py-4 rounded-full text-sm hover:bg-gray-100 transition-colors"
+                    className="btn bg-white text-gray-900 border-white hover:bg-gray-200 hover:border-gray-200 transition-colors"
                   >
-                    Tell us about you →
+                    Tell us about you
+                    <ArrowRight />
                   </a>
                 </div>
               </div>
