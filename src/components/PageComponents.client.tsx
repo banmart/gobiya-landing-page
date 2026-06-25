@@ -29,6 +29,7 @@ export const ContactPage = lazy(() => import('./ContactPage'));
 export const OnPageSeoLosAngelesPage = lazy(() => import('./OnPageSeoLosAngelesPage'));
 export const AiSeoBeverlyHillsPage = lazy(() => import('./AiSeoBeverlyHillsPage'));
 export const LocalSeoGlendalePage = lazy(() => import('./LocalSeoGlendalePage'));
+export const LocalSeoBurbankPage = lazy(() => import('./LocalSeoBurbankPage'));
 export const SeoCompanyEncinoPage = lazy(() => import('./SeoCompanyEncinoPage'));
 export const NotFound = lazy(() => import('./NotFound'));
 export const CategoryPage = lazy(() => import('./CategoryPage'));

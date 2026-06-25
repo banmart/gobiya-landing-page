@@ -20,6 +20,7 @@ import {
   OnPageSeoLosAngelesPage,
   AiSeoBeverlyHillsPage,
   LocalSeoGlendalePage,
+  LocalSeoBurbankPage,
   SeoCompanyEncinoPage,
   SEO,
   NotFound,
@@ -310,6 +311,7 @@ function App({ url }: AppProps) {
     '/on-page-seo-los-angeles',
     '/ai-seo-beverly-hills',
     '/local-seo-glendale',
+    '/local-seo-company-burbank',
     '/seo-company-encino',
     '/book',
     '/book-call',
@@ -348,6 +350,8 @@ function App({ url }: AppProps) {
         <AiSeoBeverlyHillsPage />
       ) : normalizedPath === '/local-seo-glendale' ? (
         <LocalSeoGlendalePage />
+      ) : normalizedPath === '/local-seo-company-burbank' ? (
+        <LocalSeoBurbankPage />
       ) : normalizedPath === '/seo-company-encino' ? (
         <SeoCompanyEncinoPage />
       ) : normalizedPath === '/book' || normalizedPath === '/book-call' ? (

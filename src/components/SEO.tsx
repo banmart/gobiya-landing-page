@@ -28,6 +28,10 @@ const metadataMap: Record<string, SEOMetadata> = {
     title: `SEO Company Encino: Technical SEO & Pipeline Engineering - Gobiya`,
     description: `Looking for an SEO company in Encino? We engineer Google visibility, AI citations, and organic pipeline growth for businesses on Ventura Boulevard and throughout the San Fernando Valley.`
   },
+  '/local-seo-company-burbank': {
+    title: `Local SEO Company Burbank: Map Pack & Google Business Profile - Gobiya`,
+    description: `Local SEO company Burbank — we engineer Google Map Pack dominance, GBP optimization, citation consistency, and review velocity for businesses on San Fernando Boulevard and throughout the Burbank, CA 91501–91510 market.`
+  },
 
   // ── Category pages ──
   '/creativity': {

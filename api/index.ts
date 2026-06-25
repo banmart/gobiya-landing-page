@@ -358,6 +358,10 @@ const metadataMap: Record<string, SEOMetadata> = {
     title: 'On-page SEO agency in LA: schema, entity structure, speed - Gobiya',
     description: "Struggling with organic drops or low conversions? Our elite on-page SEO services in Los Angeles optimize your site's entity structure, schema, speed, and content mapping for Google and AI engines."
   },
+  '/local-seo-company-burbank': {
+    title: 'Local SEO Company Burbank: Map Pack & Google Business Profile - Gobiya',
+    description: 'Local SEO company Burbank — we engineer Google Map Pack dominance, GBP optimization, citation consistency, and review velocity for businesses on San Fernando Boulevard and throughout the Burbank, CA 91501–91510 market.'
+  },
   '/creativity': {
     title: 'Creative brand & identity design agency in LA: styling, voice, copy - Gobiya',
     description: 'Express your brand identity and capture market attention with Gobiya. We design custom brand identity systems, write compelling copy, and direct creative concepts.'
