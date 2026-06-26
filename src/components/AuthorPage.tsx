@@ -117,7 +117,7 @@ const AuthorPage: React.FC<AuthorPageProps> = ({ path }) => {
           Steve Martin
         </h1>
         <p style={{ fontSize: '1.1rem', color: '#4b5563' }}>
-          Founder, Lead Developer &amp; Marketer at GOBIYA
+          Founder, Lead Developer &amp; Marketer at Gobiya
         </p>
       </section>
 

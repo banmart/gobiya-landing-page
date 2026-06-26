@@ -132,7 +132,7 @@ export default function OnPageSeoLosAngelesPage() {
           
           <div className="hero-copy">
             <nav className="breadcrumb">
-              <a href="/">GOBIYA</a>
+              <a href="/">Gobiya</a>
               <i>›</i>
               <span>Capabilities</span>
               <i>›</i>
@@ -145,7 +145,7 @@ export default function OnPageSeoLosAngelesPage() {
             </h1>
 
             <p className="hero-sub">
-              When competing for visibility, generic SEO is no longer enough. GOBIYA delivers elite <strong>on page seo los angeles</strong> services engineered to optimize your website’s structural integrity, crawl budget, and entity relevance. By aligning on-page architecture directly with Google’s core updates and the retrieval layers of modern AI engines, we ensure your Los Angeles business commands search results. We clean up toxic redirect loops, resolve indexation conflicts, build structured JSON-LD schemas, and implement conversion architecture that turns raw search volume into predictable pipeline revenue.
+              When competing for visibility, generic SEO is no longer enough. Gobiya delivers elite <strong>on page seo los angeles</strong> services engineered to optimize your website’s structural integrity, crawl budget, and entity relevance. By aligning on-page architecture directly with Google’s core updates and the retrieval layers of modern AI engines, we ensure your Los Angeles business commands search results. We clean up toxic redirect loops, resolve indexation conflicts, build structured JSON-LD schemas, and implement conversion architecture that turns raw search volume into predictable pipeline revenue.
             </p>
 
             <div className="hero-actions">

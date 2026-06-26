@@ -10545,7 +10545,7 @@ const ArticlePage: React.FC<ArticlePageProps> = ({ slug }) => {
               <img src="/images/steve-portrait.webp" alt="Steve Martin" className="author-mark" />
               <div>
                 <p className="name"><a href="/about/steve-martin">Steve Martin</a></p>
-                <p className="role mono-tag">Founder &amp; principal — GOBIYA</p>
+                <p className="role mono-tag">Founder &amp; principal — Gobiya</p>
               </div>
             </div>
             <div className="byline-right">

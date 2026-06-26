@@ -203,7 +203,7 @@ export default function LosAngelesSeoProf() {
 
           <div className="hero-copy">
             <nav className="breadcrumb">
-              <a href="/">GOBIYA</a>
+              <a href="/">Gobiya</a>
               <i>›</i>
               <a href="/performance/seo-discoverability-agency">SEO &amp; Discoverability</a>
               <i>›</i>

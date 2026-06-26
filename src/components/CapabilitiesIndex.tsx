@@ -151,7 +151,7 @@ export default function CapabilitiesIndex() {
             </h1>
 
             <p className="hero-sub body-l" data-hero="2">
-              As a provider of premier SEO & Web Development Services, GOBIYA doesn't run generic SEO campaigns. It builds custom
+              As a provider of premier SEO & Web Development Services, Gobiya doesn't run generic SEO campaigns. It builds custom
               React/Next.js/Vite platforms with native CRM pipelines, built-in
               discoverability, AI prospect automation, and secure Web3 integrations —
               one product, complete data ownership.
@@ -516,7 +516,7 @@ export default function CapabilitiesIndex() {
             <div className="rail-sticky" data-anim="stagger">
               <div className="eyebrow" data-anim-child>Why integrated</div>
               <p className="rail-note" data-anim-child>
-                Most growth stacks are an accident of vendors. GOBIYA's is a
+                Most growth stacks are an accident of vendors. Gobiya's is a
                 decision made in the codebase.
               </p>
             </div>
@@ -528,7 +528,7 @@ export default function CapabilitiesIndex() {
             </h2>
             <p className="method-sub body-l" data-anim="up">
               Compare what a typical agency stack actually runs on with what a
-              GOBIYA engagement hands you.
+              Gobiya engagement hands you.
             </p>
 
             <div className="compare" data-anim="up">
@@ -543,7 +543,7 @@ export default function CapabilitiesIndex() {
                 </ul>
               </div>
               <div className="compare-col good">
-                <h3><i>●</i>The GOBIYA build</h3>
+                <h3><i>●</i>The Gobiya build</h3>
                 <ul>
                   <li><i>●</i><span><strong>Hand-coded React/Next.js</strong> — sub-second, 100/100 vitals, no plugins</span></li>
                   <li><i>●</i><span><strong>Native CRM</strong> in your own database — 100% data ownership</span></li>

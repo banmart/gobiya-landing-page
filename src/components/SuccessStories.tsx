@@ -112,7 +112,7 @@ const SuccessStories: React.FC = () => {
           SEO Case Studies
         </h1>
         <p style={{ fontSize: '1.1rem', color: '#4b5563', lineHeight: 1.75, maxWidth: '640px', marginBottom: '2.5rem' }}>
-          Data-backed search recovery and pipeline results — exactly what GOBIYA built, why it was built, and what moved as a result. Query by query, position by position.
+          Data-backed search recovery and pipeline results — exactly what Gobiya built, why it was built, and what moved as a result. Query by query, position by position.
         </p>
         <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
           <a href="#case-001" className="btn btn-primary magnetic">

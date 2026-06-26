@@ -10,7 +10,7 @@ interface SEOMetadata {
 const metadataMap: Record<string, SEOMetadata> = {
   '/': {
     title: `Marketing/growth agency in Koreatown: SEO expert, recovery, PR - Gobiya`,
-    description: `GOBIYA reads Google's algorithm, identifies the penalty vector, and deploys the fix. SEO recovery, GEO, AI-powered growth. Los Angeles, since 2012.`
+    description: `Gobiya reads Google's algorithm, identifies the penalty vector, and deploys the fix. SEO recovery, GEO, AI-powered growth. Los Angeles, since 2012.`
   },
   '/on-page-seo-los-angeles': {
     title: `On-page SEO agency in LA: schema, entity structure, speed - Gobiya`,
@@ -54,7 +54,7 @@ const metadataMap: Record<string, SEOMetadata> = {
   // ── Performance subpages ──
   '/performance/web-development-agency': {
     title: `Web & IT development agency in LA: React, custom sites, speed - Gobiya`,
-    description: `GOBIYA replaces slow page-builders with custom, hand-coded React and Next.js websites — 100/100 Core Web Vitals, sub-second loads, zero templates, engineered to convert and rank natively.`
+    description: `Gobiya replaces slow page-builders with custom, hand-coded React and Next.js websites — 100/100 Core Web Vitals, sub-second loads, zero templates, engineered to convert and rank natively.`
   },
   '/performance/native-crm-agency': {
     title: `Native CRM agency in LA: custom pipeline, zero SaaS fees, data ownership - Gobiya`,
@@ -159,11 +159,11 @@ const metadataMap: Record<string, SEOMetadata> = {
   // ── Legacy capabilities URLs (kept for backward compatibility with existing indexed pages) ──
   '/capabilities': {
     title: `SEO & Web development capabilities in LA: custom CRM, React, authority - Gobiya`,
-    description: `GOBIYA builds fast, modern web applications with native CRM pipelines, built-in SEO discoverability, AI prospect automation, and custom Web3 integrations — one codebase, complete data ownership.`
+    description: `Gobiya builds fast, modern web applications with native CRM pipelines, built-in SEO discoverability, AI prospect automation, and custom Web3 integrations — one codebase, complete data ownership.`
   },
   '/capabilities/web-development-agency': {
     title: `Web & IT development agency in LA: React, custom sites, speed - Gobiya`,
-    description: `GOBIYA replaces slow page-builders with custom, hand-coded React and Next.js websites — 100/100 Core Web Vitals, sub-second loads, zero templates, engineered to convert and rank natively.`
+    description: `Gobiya replaces slow page-builders with custom, hand-coded React and Next.js websites — 100/100 Core Web Vitals, sub-second loads, zero templates, engineered to convert and rank natively.`
   },
   '/capabilities/native-crm-agency': {
     title: `PPC & Lead generation agency in LA: CRM integrations, pipeline, ads - Gobiya`,
@@ -193,15 +193,15 @@ const metadataMap: Record<string, SEOMetadata> = {
   // ── Core pages ──
   '/about': {
     title: `SEO & Marketing agency in LA: Gobiya team, Steve Martin, experience - Gobiya`,
-    description: `GOBIYA is a precision-engineered search visibility and digital solutions firm, founded 2012 in Los Angeles and led by Steve Martin — 25+ years bridging full-stack engineering and organic search.`
+    description: `Gobiya is a precision-engineered search visibility and digital solutions firm, founded 2012 in Los Angeles and led by Steve Martin — 25+ years bridging full-stack engineering and organic search.`
   },
   '/case-studies': {
     title: `SEO & growth case studies in LA: Smile Center, Livescan, results - Gobiya`,
-    description: `Real clients, real numbers. SmileCenter Dentistry: 5x patient inquiries and 213K impressions. American Livescan: 3x bookings after a legacy migration. Data-backed search recovery and pipeline case studies from GOBIYA.`
+    description: `Real clients, real numbers. SmileCenter Dentistry: 5x patient inquiries and 213K impressions. American Livescan: 3x bookings after a legacy migration. Data-backed search recovery and pipeline case studies from Gobiya.`
   },
   '/approach': {
     title: `Forensic SEO & growth approach in LA: entity structure, GEO, HCU recovery - Gobiya`,
-    description: `GOBIYA's operating model for algorithmic dominance: entity-based indexing, topical authority and schema engineering, Generative Engine Optimization (GEO) for LLM visibility, and pipeline-first conversion architecture.`
+    description: `Gobiya's operating model for algorithmic dominance: entity-based indexing, topical authority and schema engineering, Generative Engine Optimization (GEO) for LLM visibility, and pipeline-first conversion architecture.`
   },
   '/case-studies/smile-center-dentistry': {
     title: `Dental SEO Case Study: 5x Patient Inquiries | Gobiya`,
@@ -213,7 +213,7 @@ const metadataMap: Record<string, SEOMetadata> = {
   },
   '/contact': {
     title: `Contact SEO & growth agency in LA: book call, free audit, locations - Gobiya`,
-    description: `Reach GOBIYA in Los Angeles. Call 323-744-1338, email hello@gobiya.com, or fill out our contact form for an SEO audit, web development, or AI growth consultation.`
+    description: `Reach Gobiya in Los Angeles. Call 323-744-1338, email hello@gobiya.com, or fill out our contact form for an SEO audit, web development, or AI growth consultation.`
   },
   '/company/careers': {
     title: `Growth Engineering Careers: Join Our Dev Team | Gobiya`,
@@ -229,7 +229,7 @@ const metadataMap: Record<string, SEOMetadata> = {
   },
   '/insights': {
     title: `SEO & Algorithmic Intelligence in LA: insights, core updates, briefs - Gobiya`,
-    description: `Advanced tactical intelligence on Google and AI search: algorithm update analysis, GEO and LLM citation tactics, entity SEO, technical recovery briefs, and pipeline engineering field notes from GOBIYA.`
+    description: `Advanced tactical intelligence on Google and AI search: algorithm update analysis, GEO and LLM citation tactics, entity SEO, technical recovery briefs, and pipeline engineering field notes from Gobiya.`
   },
 
   // ── Insights articles ──
@@ -502,7 +502,7 @@ const SEO: React.FC<SEOProps> = ({ path }) => {
           "https://m.yelp.com/biz/gobiya-los-angeles-5"
         ],
         "telephone": "(323) 744-1338",
-        "foundingDate": "2012-11-15",
+        "foundingDate": "2012",
         "priceRange": "$$$$",
         "numberOfEmployees": { "@type": "QuantitativeValue", "value": 5 },
         "logo": {

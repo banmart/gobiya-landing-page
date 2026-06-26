@@ -256,7 +256,7 @@ export default function ContactPage() {
           allowFullScreen
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
-          title="GOBIYA office — 3580 Wilshire Blvd, Ste 132, Los Angeles CA 90010"
+          title="Gobiya office — 3580 Wilshire Blvd, Ste 132, Los Angeles CA 90010"
         />
       </section>
         </main>

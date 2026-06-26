@@ -252,10 +252,10 @@ export default function GobiyaLanding() {
           <div className="flex flex-col justify-between" data-anim="up">
             <div className="text-gray-600 text-lg sm:text-xl leading-relaxed">
               <p className="mb-6">
-                GOBIYA is a team of communication and technology professionals based in Los Angeles. We engage in an ongoing dialogue with our clients to deliver effective, omnichannel strategies, both online and offline.
+                Gobiya is the Los Angeles agency that builds AI-ready websites and earns them citations in ChatGPT, Perplexity, Gemini, and Google AI Overviews — strategy and implementation under one roof, no handoff.
               </p>
               <p>
-                Since 2012, we have guided clients through the increasingly complex and evolving worlds of search engines, digital advertising, web design, and branding. We explore every aspect of a project, from strategic positioning to custom software integrations.
+                Reading Google's algorithm since 2012. Now reading the LLMs' too. We diagnose exactly why your organic traffic isn't generating pipeline, fix the root cause at the code level, and build the structured entity signals that make your brand visible on every surface where buyers search.
               </p>
             </div>
             <div className="mt-8">
