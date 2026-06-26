@@ -210,7 +210,7 @@ export default function GobiyaLanding() {
                 className="w-full h-full"
                 style={{ objectFit: 'cover', width: '100%', height: '100%', position: 'absolute', top: 0, left: 0 }}
               >
-                <source src="/videos/hero-index-background.webm" type="video/webm" />
+                <source src="/videos/home-hero-background.webm" type="video/webm" />
               </video>
             </div>
             <div className="cover-overlay absolute inset-0 z-10 bg-black/40"></div>

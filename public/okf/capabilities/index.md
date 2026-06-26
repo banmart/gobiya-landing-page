@@ -1,7 +1,7 @@
 ---
 type: Index
 title: Capabilities
-description: GOBIYA's service lines across Performance, Creativity, and Relations — SEO, web copywriting, authority building, web development, CRM, and more.
+description: Gobiya's service lines across Performance, Creativity, and Relations — SEO, web copywriting, authority building, web development, CRM, and more.
 resource: https://www.gobiya.com/performance
 tags: [capabilities, services, seo, copywriting, performance, creativity, relations]
 timestamp: 2026-06-22T00:00:00Z
@@ -9,7 +9,7 @@ timestamp: 2026-06-22T00:00:00Z
 
 # Capabilities
 
-GOBIYA's services are organized into three pillars. Performance is the core — discoverability and pipeline. Creativity supports it with copy and brand. Relations amplifies it with authority.
+Gobiya's services are organized into three pillars. Performance is the core — discoverability and pipeline. Creativity supports it with copy and brand. Relations amplifies it with authority.
 
 ## Performance
 

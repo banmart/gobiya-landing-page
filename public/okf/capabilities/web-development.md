@@ -4,12 +4,12 @@ title: Web Development
 description: Fast, modern React websites engineered to rank and convert, with native CRM and blockchain capabilities available as part of the build.
 resource: https://www.gobiya.com/capabilities/web-development
 tags: [web-development, react, performance, conversion]
-timestamp: 2026-06-17T00:00:00Z
+timestamp: 2026-06-26T00:00:00Z
 ---
 
 # Web Development
 
-GOBIYA builds fast, modern websites — described as blazing-fast React builds — engineered for both search ranking and conversion. The builds can ship with native CRM and blockchain integration rather than bolted-on third-party tools.
+Gobiya builds fast, modern websites — described as blazing-fast React builds — engineered for both search ranking and conversion. The builds can ship with native CRM and blockchain integration rather than bolted-on third-party tools.
 
 ## What it covers
 

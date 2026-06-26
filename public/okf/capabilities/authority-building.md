@@ -2,9 +2,9 @@
 type: Service
 title: Authority Building
 description: Strengthening the on-site and off-site signals that establish topical authority and trust, which underpin both classical search recovery and AI citation.
-resource: https://www.gobiya.com/capabilities/authority-building
+resource: https://www.gobiya.com/relations/authority-building-agency
 tags: [authority, trust, entity, signals]
-timestamp: 2026-06-17T00:00:00Z
+timestamp: 2026-06-26T00:00:00Z
 ---
 
 # Authority Building

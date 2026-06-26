@@ -1,7 +1,7 @@
 ---
 type: Service
 title: SEO & Discoverability
-description: Technical SEO, algorithmic penalty recovery, and organic visibility engineering. GOBIYA diagnoses the exact Google update behind a traffic loss, builds the corrective fix, and deploys a compounding long-term system.
+description: Technical SEO, algorithmic penalty recovery, and organic visibility engineering. Gobiya diagnoses the exact Google update behind a traffic loss, builds the corrective fix, and deploys a compounding long-term system.
 resource: https://www.gobiya.com/performance/seo-discoverability-agency
 tags: [seo, recovery, penalty, technical-seo, local-seo, b2b-seo, ecommerce-seo, organic-search]
 timestamp: 2026-06-22T00:00:00Z
@@ -9,7 +9,7 @@ timestamp: 2026-06-22T00:00:00Z
 
 # SEO & Discoverability
 
-This is GOBIYA's core service: engineering organic search visibility — and recovering it when lost. The work starts with a forensic read of a site's signal history — traffic curves, the update timeline, and content patterns — to pinpoint the cause before anything is changed.
+This is Gobiya's core service: engineering organic search visibility — and recovering it when lost. The work starts with a forensic read of a site's signal history — traffic curves, the update timeline, and content patterns — to pinpoint the cause before anything is changed.
 
 ## Hub page
 

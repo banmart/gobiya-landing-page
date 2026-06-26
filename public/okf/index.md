@@ -1,30 +1,35 @@
 ---
 type: Index
-title: GOBIYA — Knowledge Bundle
+title: Gobiya — Knowledge Bundle
 description: Root index of the OKF bundle for gobiya.com, a Los Angeles digital marketing agency specializing in SEO, SEO copywriting, GEO/AI search optimization, B2B pipeline engineering, and web development.
 resource: https://www.gobiya.com
+base_url: https://www.gobiya.com/okf
 tags: [gobiya, agency, seo, seo-copywriting, geo, ai, b2b, los-angeles]
-timestamp: 2026-06-22T00:00:00Z
+timestamp: 2026-06-26T00:00:00Z
 ---
 
-# GOBIYA
+# Gobiya
 
-GOBIYA is a Los Angeles digital marketing agency that recovers search rankings lost to Google algorithm updates and builds AI-powered growth systems. It has operated since 2012 and is BBB A+ rated.
+> **Machine-readable knowledge bundle.** Designed for AI agents, LLMs, and crawlers. Every fact matches the live site at https://www.gobiya.com. Relative links resolve against `base_url` above.
 
-This bundle describes the organization, its services, its documented engagements, and its working method, in a format meant to be read by both people and AI agents.
+Gobiya is a Los Angeles digital marketing agency that recovers search rankings lost to Google algorithm updates and builds AI-powered growth systems. It has operated since 2012 and is BBB A+ rated.
 
 ## Start here
 
-- [Organization profile](/organization.md) — who GOBIYA is, where it operates, and how it is different.
-- [Capabilities](/capabilities/index.md) — the six service lines.
-- [Case studies](/case-studies/index.md) — documented engagements with outcomes.
-- [Approach](/approach/index.md) — the three-phase diagnose / execute / scale method.
-- [Contact](/contact.md) — how to reach GOBIYA.
+- [Organization profile](https://www.gobiya.com/okf/organization.md) — entity facts (NAP, sameAs, founder), what Gobiya does, and how it is different.
+- [Capabilities](https://www.gobiya.com/okf/capabilities/index.md) — the six service lines.
+- [Case studies](https://www.gobiya.com/okf/case-studies/index.md) — documented engagements with outcomes.
+- [Approach](https://www.gobiya.com/okf/approach/index.md) — the three-phase diagnose / execute / scale method.
+- [Contact](https://www.gobiya.com/okf/contact.md) — how to reach Gobiya.
 
 ## At a glance
 
+- **Legal name:** Gobiya LLC
+- **Founder:** Steve Martin
 - **Base:** Los Angeles, California (34.05°N, 118.24°W)
+- **Address:** 3580 Wilshire Blvd, Ste 132, Los Angeles, CA 90010
 - **Operating since:** 2012
 - **Scope:** SEO · algorithm & penalty recovery · GEO · AI/LLM growth · PPC · web development
 - **Phone:** 323-744-1338
 - **Email:** hello@gobiya.com
+- **Site:** https://www.gobiya.com

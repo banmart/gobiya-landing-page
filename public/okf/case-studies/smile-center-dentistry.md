@@ -1,10 +1,10 @@
 ---
 type: Case Study
 title: SmileCenter Dentistry — GEO dominance
-description: GOBIYA deployed GEO-optimized content across 12 service areas for a dental practice; the brand now surfaces in AI search results ahead of the first organic click, and patient inquiries grew 5x after a new platform launch.
+description: Gobiya deployed GEO-optimized content across 12 service areas for a dental practice; the brand now surfaces in AI search results ahead of the first organic click, and patient inquiries grew 5x after a new platform launch.
 resource: https://www.gobiya.com/case-studies/smile-center-dentistry
 tags: [case-study, geo, local-service, dental, ai-search]
-timestamp: 2026-06-17T00:00:00Z
+timestamp: 2026-06-26T00:00:00Z
 ---
 
 # SmileCenter Dentistry — GEO dominance
@@ -13,7 +13,7 @@ timestamp: 2026-06-17T00:00:00Z
 
 ## The work
 
-GOBIYA deployed GEO-optimized content architecture across 12 service areas for a local dental practice. The brand now appears in AI search results before the first organic click is even available.
+Gobiya deployed GEO-optimized content architecture across 12 service areas for a local dental practice. The brand now appears in AI search results before the first organic click is even available.
 
 Alongside the GEO work, a new platform combined [native CRM integration](/capabilities/native-crm.md) with fast [React builds](/capabilities/web-development.md).
 

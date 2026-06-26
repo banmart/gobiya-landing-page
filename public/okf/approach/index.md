@@ -1,15 +1,15 @@
 ---
 type: Index
 title: Approach
-description: GOBIYA's three-phase method — Diagnose, Execute, Scale — built to compress time-to-impact.
+description: Gobiya's three-phase method — Diagnose, Execute, Scale — built to compress time-to-impact.
 resource: https://www.gobiya.com/approach
 tags: [approach, process, method]
-timestamp: 2026-06-17T00:00:00Z
+timestamp: 2026-06-26T00:00:00Z
 ---
 
 # Approach
 
-GOBIYA runs every engagement through three phases designed to shorten the time between diagnosis and measurable impact.
+Gobiya runs every engagement through three phases designed to shorten the time between diagnosis and measurable impact.
 
 1. [Diagnose — read the signal](/approach/diagnose.md)
 2. [Execute — fix it, deploy it](/approach/execute.md)

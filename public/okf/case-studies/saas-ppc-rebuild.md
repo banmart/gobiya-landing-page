@@ -1,10 +1,10 @@
 ---
 type: Case Study
 title: B2B SaaS — PPC rebuild
-description: GOBIYA inherited a broken Google Ads account burning $40k a month with no attribution, rebuilt it from zero, and cut cost per lead by 61% in 90 days.
+description: Gobiya inherited a broken Google Ads account burning $40k a month with no attribution, rebuilt it from zero, and cut cost per lead by 61% in 90 days.
 resource: https://www.gobiya.com/case-studies
 tags: [case-study, ppc, google-ads, saas, attribution]
-timestamp: 2026-06-17T00:00:00Z
+timestamp: 2026-06-26T00:00:00Z
 ---
 
 # B2B SaaS — PPC rebuild
@@ -17,7 +17,7 @@ A B2B SaaS company was running a broken Google Ads account that burned about $40
 
 ## The fix
 
-GOBIYA rebuilt the account from zero, restoring attribution and restructuring the campaigns.
+Gobiya rebuilt the account from zero, restoring attribution and restructuring the campaigns.
 
 ## The curve
 

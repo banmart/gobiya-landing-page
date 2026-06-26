@@ -1,10 +1,10 @@
 ---
 type: Index
 title: Case Studies
-description: Documented GOBIYA engagements — the hit, the fix, and the resulting traffic or lead curve.
+description: Documented Gobiya engagements — the hit, the fix, and the resulting traffic or lead curve.
 resource: https://www.gobiya.com/case-studies
 tags: [case-studies, results, recovery]
-timestamp: 2026-06-17T00:00:00Z
+timestamp: 2026-06-26T00:00:00Z
 ---
 
 # Case Studies
