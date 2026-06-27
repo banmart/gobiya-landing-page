@@ -243,16 +243,16 @@ export default function GobiyaLanding() {
         <div className="intro-grid w-full mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24" style={{ paddingLeft: "5vw", paddingRight: "5vw" }}>
           <div className="flex flex-col justify-start" data-anim="up">
             <span className="text-sm font-mono uppercase tracking-widest text-gray-500 mb-4">
-              Omnichannel digital agency in Los Angeles
+              Full service digital marketing agency · Los Angeles
             </span>
             <h1 className="text-4xl sm:text-6xl font-bold tracking-tight text-gray-900 leading-tight">
-              For a better and more effective digital dominance.
+              The full service digital marketing agency built for measurable growth.
             </h1>
           </div>
           <div className="flex flex-col justify-between" data-anim="up">
             <div className="text-gray-600 text-lg sm:text-xl leading-relaxed">
               <p className="mb-6">
-                Gobiya is the Los Angeles agency that builds AI-ready websites and earns them citations in ChatGPT, Perplexity, Gemini, and Google AI Overviews — strategy and implementation under one roof, no handoff.
+                Gobiya is a full service digital marketing agency in Los Angeles — covering SEO, AI search visibility, web development, CRM pipeline automation, and paid media under one roof. No handoffs. Every channel engineered to produce pipeline, not just traffic.
               </p>
               <p>
                 Reading Google's algorithm since 2012. Now reading the LLMs' too. We diagnose exactly why your organic traffic isn't generating pipeline, fix the root cause at the code level, and build the structured entity signals that make your brand visible on every surface where buyers search.
