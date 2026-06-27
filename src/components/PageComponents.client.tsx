@@ -38,3 +38,4 @@ export const SeoWebCopywritingPage = lazy(() => import('./SeoWebCopywritingPage'
 export const SeoDiscoverabilityPage = lazy(() => import('./SeoDiscoverabilityPage'));
 export const WebDevelopmentPage = lazy(() => import('./WebDevelopmentPage'));
 export const GoogleAdsPpcPage = lazy(() => import('./GoogleAdsPpcPage'));
+export const SeoTrafficRecoveryPage = lazy(() => import('./SeoTrafficRecoveryPage'));

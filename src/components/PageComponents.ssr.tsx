@@ -29,3 +29,4 @@ export { default as SeoWebCopywritingPage } from './SeoWebCopywritingPage';
 export { default as SeoDiscoverabilityPage } from './SeoDiscoverabilityPage';
 export { default as WebDevelopmentPage } from './WebDevelopmentPage';
 export { default as GoogleAdsPpcPage } from './GoogleAdsPpcPage';
+export { default as SeoTrafficRecoveryPage } from './SeoTrafficRecoveryPage';

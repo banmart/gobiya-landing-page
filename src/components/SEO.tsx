@@ -9,7 +9,7 @@ interface SEOMetadata {
 // Outcome-focused metadata lookup map for crawlers and search bots (must match api/index.ts exactly)
 const metadataMap: Record<string, SEOMetadata> = {
   '/': {
-    title: `AI SEO & GEO Agency in Los Angeles | Gobiya`,
+    title: `Marketing/growth agency in Koreatown: SEO expert, recovery, PR - Gobiya`,
     description: `Gobiya reads Google's algorithm, identifies the penalty vector, and deploys the fix. SEO recovery, GEO, AI-powered growth. Los Angeles, since 2012.`
   },
   '/on-page-seo-los-angeles': {
@@ -63,6 +63,10 @@ const metadataMap: Record<string, SEOMetadata> = {
   '/performance/seo-discoverability-agency': {
     title: `SEO & Discoverability agency in LA: technical SEO, audit, recovery - Gobiya`,
     description: `Technical SEO precision, semantic entity architecture, and algorithmic recovery — built as a compounding system. Crawl audits, Core Web Vitals, on-page optimization, and rank monitoring.`
+  },
+  '/performance/seo-traffic-recovery': {
+    title: `SEO traffic recovery agency in LA: algorithm diagnosis, ranking restoration - Gobiya`,
+    description: `SEO traffic recovery specialists in Los Angeles. We diagnose the exact Google update or penalty behind an organic traffic drop, execute the precise fix sequence, and restore rankings — forensic read first, targeted fix second.`
   },
   '/performance/technical-seo-audit-agency': {
     title: `Technical SEO audit agency in LA: crawl health, CWV, structured data - Gobiya`,

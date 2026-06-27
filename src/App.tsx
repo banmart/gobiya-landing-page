@@ -29,7 +29,8 @@ import {
   SeoWebCopywritingPage,
   SeoDiscoverabilityPage,
   WebDevelopmentPage,
-  GoogleAdsPpcPage
+  GoogleAdsPpcPage,
+  SeoTrafficRecoveryPage
 } from './components/PageComponents';
 import BookingMessageBar from './components/BookingMessageBar';
 
@@ -327,7 +328,8 @@ function App({ url }: AppProps) {
     '/insights',
     '/contact',
     '/case-studies/smile-center-dentistry',
-    '/case-studies/american-livescan'
+    '/case-studies/american-livescan',
+    '/performance/seo-traffic-recovery'
   ].includes(normalizedPath) || normalizedPath === '/google-penalty-recovery' || isValidServiceSubpage || !!articleSlug || !!fanOutMatch;
 
   return (
@@ -394,6 +396,8 @@ function App({ url }: AppProps) {
         <WebDevelopmentPage />
       ) : normalizedPath === '/relations/google-ads-ppc-strategy-agency' ? (
         <GoogleAdsPpcPage />
+      ) : normalizedPath === '/performance/seo-traffic-recovery' ? (
+        <SeoTrafficRecoveryPage />
       ) : fanOutMatch ? (
         <ServiceSubpage key={normalizedPath} path={normalizedPath} isFanOut={true} category={fanOutCategory} slug={fanOutSlug} />
       ) : normalizedPath === '/case-studies/smile-center-dentistry' ? (
