@@ -40,6 +40,10 @@ const metadataMap: Record<string, SEOMetadata> = {
     title: `Glendale SEO: top rated, open now, online appointments - Gobiya`,
     description: `Glendale SEO agency — technical SEO, local Map Pack optimization, content architecture, and authority building for businesses in the 91201–91210 market. Top rated, BBB A+, online appointments available. Book a pre-read today.`
   },
+  '/plastic-surgery-internet-marketing': {
+    title: `Plastic surgery internet marketing: SEO, Ads & patient acquisition - Gobiya`,
+    description: `Plastic surgery internet marketing agency — procedure-specific SEO, compliant Google Ads, content architecture for 3–6 month consideration cycles, review velocity management, and AI citation visibility. Best plastic surgery marketing company for LA practices.`
+  },
   '/los-angeles-seo-professional': {
     title: `Los Angeles SEO Professional: B2B & Enterprise SEO Engineering - Gobiya`,
     description: `Los Angeles SEO professional practice. Gobiya engineers technical SEO, commercial-intent content architecture, entity schema, and AI citation visibility for B2B brands and professional services firms across Greater Los Angeles.`

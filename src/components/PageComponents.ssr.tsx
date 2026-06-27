@@ -32,3 +32,4 @@ export { default as GoogleAdsPpcPage } from './GoogleAdsPpcPage';
 export { default as SeoTrafficRecoveryPage } from './SeoTrafficRecoveryPage';
 export { default as LocalSeoServicesBurbankPage } from './LocalSeoServicesBurbankPage';
 export { default as GlendaleSeoPage } from './GlendaleSeoPage';
+export { default as PlasticSurgeryMarketingPage } from './PlasticSurgeryMarketingPage';

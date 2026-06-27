@@ -41,3 +41,4 @@ export const GoogleAdsPpcPage = lazy(() => import('./GoogleAdsPpcPage'));
 export const SeoTrafficRecoveryPage = lazy(() => import('./SeoTrafficRecoveryPage'));
 export const LocalSeoServicesBurbankPage = lazy(() => import('./LocalSeoServicesBurbankPage'));
 export const GlendaleSeoPage = lazy(() => import('./GlendaleSeoPage'));
+export const PlasticSurgeryMarketingPage = lazy(() => import('./PlasticSurgeryMarketingPage'));
