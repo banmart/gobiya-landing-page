@@ -36,6 +36,10 @@ const metadataMap: Record<string, SEOMetadata> = {
     title: `Local SEO services Burbank: GBP, citations, Map Pack rankings - Gobiya`,
     description: `Local SEO services in Burbank, CA — top rated, online appointments available. We optimize Google Business Profile, NAP citations, review velocity, and local schema for businesses in the 91501–91510 corridor. Open Mon–Fri, book online.`
   },
+  '/glendale-seo': {
+    title: `Glendale SEO: top rated, open now, online appointments - Gobiya`,
+    description: `Glendale SEO agency — technical SEO, local Map Pack optimization, content architecture, and authority building for businesses in the 91201–91210 market. Top rated, BBB A+, online appointments available. Book a pre-read today.`
+  },
   '/los-angeles-seo-professional': {
     title: `Los Angeles SEO Professional: B2B & Enterprise SEO Engineering - Gobiya`,
     description: `Los Angeles SEO professional practice. Gobiya engineers technical SEO, commercial-intent content architecture, entity schema, and AI citation visibility for B2B brands and professional services firms across Greater Los Angeles.`

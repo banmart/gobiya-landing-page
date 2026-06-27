@@ -31,7 +31,8 @@ import {
   WebDevelopmentPage,
   GoogleAdsPpcPage,
   SeoTrafficRecoveryPage,
-  LocalSeoServicesBurbankPage
+  LocalSeoServicesBurbankPage,
+  GlendaleSeoPage
 } from './components/PageComponents';
 import BookingMessageBar from './components/BookingMessageBar';
 
@@ -331,7 +332,8 @@ function App({ url }: AppProps) {
     '/case-studies/smile-center-dentistry',
     '/case-studies/american-livescan',
     '/performance/seo-traffic-recovery',
-    '/local-seo-services-burbank'
+    '/local-seo-services-burbank',
+    '/glendale-seo'
   ].includes(normalizedPath) || normalizedPath === '/google-penalty-recovery' || isValidServiceSubpage || !!articleSlug || !!fanOutMatch;
 
   return (
@@ -402,6 +404,8 @@ function App({ url }: AppProps) {
         <SeoTrafficRecoveryPage />
       ) : normalizedPath === '/local-seo-services-burbank' ? (
         <LocalSeoServicesBurbankPage />
+      ) : normalizedPath === '/glendale-seo' ? (
+        <GlendaleSeoPage />
       ) : fanOutMatch ? (
         <ServiceSubpage key={normalizedPath} path={normalizedPath} isFanOut={true} category={fanOutCategory} slug={fanOutSlug} />
       ) : normalizedPath === '/case-studies/smile-center-dentistry' ? (
