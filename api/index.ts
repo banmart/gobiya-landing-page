@@ -366,6 +366,10 @@ const metadataMap: Record<string, SEOMetadata> = {
     title: 'Internet Marketing Services Los Angeles | Gobiya',
     description: 'Gobiya provides top rated internet marketing services in Los Angeles. We are a digital marketing agency focusing on SEO, CRM pipeline automation, web development, and AI-driven online visibility for businesses across California.'
   },
+  '/ai-search-marketing-santa-clarita': {
+    title: 'AI Search Marketing Santa Clarita | Google & AI Visibility - Gobiya',
+    description: 'AI search marketing agency in Santa Clarita. We optimize your business for Google Search, Map Pack, ChatGPT, Perplexity, and Gemini. Convert AI traffic into leads.'
+  },
   '/local-seo-services-burbank': {
     title: 'Local SEO services Burbank: GBP, citations, Map Pack rankings - Gobiya',
     description: 'Local SEO services in Burbank, CA — top rated, online appointments available. We optimize Google Business Profile, NAP citations, review velocity, and local schema for businesses in the 91501–91510 corridor. Open Mon–Fri, book online.'
