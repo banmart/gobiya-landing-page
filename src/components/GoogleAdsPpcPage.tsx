@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import SiteHeader from './SiteHeader';
 import SiteFooter from './SiteFooter';
 
@@ -47,11 +47,39 @@ const STEPS = [
   'Optimization cadence — weekly search term reviews, creative rotation, bid adjustments, and monthly performance reporting',
 ];
 
+const FAQS = [
+  { q: 'We are spending money on Google Ads every month and cannot tell if it is working. What should we be tracking?', a: 'At minimum you need to know cost per lead (or cost per sale), which campaigns and keywords are generating those leads, and what the lead quality looks like downstream. If your reporting shows clicks and impressions but not conversions with dollar values attached, you are flying blind on the metric that actually matters. The most common setup problem we find on audits is conversion tracking that is either missing entirely or counting the wrong things — thank-you page views instead of form submissions, for example.' },
+  { q: 'We tried Google Ads before and burned through budget with nothing to show for it. What went wrong?', a: 'The most common cause is a mismatch between campaign structure and search intent. Running broad match keywords on a small budget sends your ads to queries that have nothing to do with what you sell. The second most common cause is landing page misalignment — the ad promises one thing and the page delivers something different, so the visitor bounces. We audit the account and the landing pages together, because both need to be right for the campaign to convert.' },
+  { q: 'How much should we be spending on Google Ads to see real results?', a: 'It depends entirely on your cost per click and your target cost per acquisition. In competitive markets in Los Angeles, service-business keywords often cost fifteen to sixty dollars per click. At a realistic conversion rate of three to five percent, you need two thousand to four thousand dollars per month in spend just to generate enough data to optimize. Below that threshold, most campaigns never accumulate enough conversion data for the algorithm to optimize effectively. We scope the right budget for your specific market and margin in the first week of an engagement.' },
+  { q: 'Our Google Ads agency sends reports every month but we do not understand what they mean. Is that normal?', a: 'It should not be. A useful paid search report tells you three things clearly: how much did we spend, how many qualified leads did we generate, and what did each lead cost. Everything else — impressions, CTR, Quality Score, average position — is supporting data. If your report leads with those metrics instead of leads and cost per lead, the agency may be obscuring underperformance with volume numbers. Ask specifically: how many phone calls and form fills came from paid search last month, and what did each one cost us?' },
+];
+
 const STATS = [
   { val: '3.5×', label: 'Average ROAS lift when campaigns are rebuilt around intent architecture' },
   { val: '47%', label: 'Typical wasted spend found in Google Ads accounts we audit on day one' },
   { val: '6 wks', label: 'Median time to stable, optimized performance after a full account rebuild' },
 ];
+
+function FaqItem({ q, a }: { q: string; a: string }) {
+  const [open, setOpen] = useState(false);
+  return (
+    <div style={{ borderTop: '1px solid #e5e7eb' }}>
+      <button onClick={() => setOpen(o => !o)} style={{ width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '1.5rem 0', background: 'none', border: 'none', cursor: 'pointer', textAlign: 'left', gap: '1.5rem' }} aria-expanded={open}>
+        <span style={{ fontSize: '1.05rem', fontWeight: 600, color: '#111827', lineHeight: 1.4 }}>{q}</span>
+        <span style={{ flexShrink: 0, color: '#6b7280', fontSize: '1.2rem', lineHeight: 1 }}>{open ? '−' : '+'}</span>
+      </button>
+      {open && <p style={{ color: '#4b5563', fontSize: '0.95rem', lineHeight: 1.75, paddingBottom: '1.5rem', maxWidth: '72ch' }}>{a}</p>}
+    </div>
+  );
+}
+function FaqList({ items }: { items: { q: string; a: string }[] }) {
+  return (
+    <div>
+      {items.map((item, i) => <React.Fragment key={i}><FaqItem q={item.q} a={item.a} /></React.Fragment>)}
+      <div style={{ borderTop: '1px solid #e5e7eb' }} />
+    </div>
+  );
+}
 
 export default function GoogleAdsPpcPage() {
   useEffect(() => {
@@ -207,6 +235,15 @@ export default function GoogleAdsPpcPage() {
             onMouseLeave={e => ((e.target as HTMLImageElement).style.transform = 'scale(1)')}
           />
         </a>
+      </section>
+
+      {/* ── FAQs ── */}
+      <section style={{ padding: '5rem 5vw', borderBottom: '1px solid #e5e7eb', background: '#ffffff' }}>
+        <div style={{ maxWidth: '860px' }}>
+          <span style={{ fontFamily: 'monospace', fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.18em', color: '#9ca3af', display: 'block', marginBottom: '0.5rem' }}>Common questions</span>
+          <h2 style={{ fontSize: 'clamp(1.6rem, 3vw, 2.4rem)', fontWeight: 700, letterSpacing: '-0.03em', color: '#111827', marginBottom: '3rem' }}>Things clients ask before they start</h2>
+          <FaqList items={FAQS} />
+        </div>
       </section>
 
       <SiteFooter />

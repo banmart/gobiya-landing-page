@@ -54,26 +54,34 @@ const SCHEMA = {
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "Can I make an online appointment with a local SEO company in Burbank?",
+          "name": "We show up in Google Search for our business name but we are barely visible on Google Maps for any category search. Why would those two perform so differently?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes. Gobiya offers online appointments for Burbank business owners through our booking page at gobiya.com/book. We run a 15-minute live local SEO audit session — no pitch deck, no slides. In that session we pull your Google Business Profile data, audit your NAP consistency, benchmark your review velocity against your top three Burbank competitors, and identify the specific Map Pack gaps keeping you out of position one. You can book online at any time and schedule a session within 48–72 hours. Because we work with a focused number of Burbank clients at any time, slots can fill quickly — early booking is recommended."
+            "text": "Branded search and Map Pack visibility are driven by completely different signals. Branded rankings come from your website's link authority for your business name. Map Pack visibility is driven by GBP category accuracy, proximity and service area configuration, and entity authority (NAP consistency, review velocity, local link signals). A business can rank number one for its own name and be completely absent from the Map Pack for category searches because those ranking systems are independent."
           }
         },
         {
           "@type": "Question",
-          "name": "Is the local SEO company in Burbank open now?",
+          "name": "Our Google Business Profile was suspended with no warning. What is the first thing we should do and how long does reinstatement take?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Gobiya's office hours are Monday through Friday, 9 AM to 6 PM Pacific Time. Our team is based in Los Angeles and works across all Burbank time zones without adjustment. Outside of business hours, our booking page at gobiya.com/book is available 24/7 to schedule your first audit session. If you have an urgent need — a suspended Google Business Profile, a sudden ranking drop, or a citation emergency ahead of a key business period — use the contact form at gobiya.com/contact and we will respond within one business day."
+            "text": "Do not create a new listing — that almost always makes reinstatement harder. Diagnose the suspension type: soft suspensions (profile visible but unverifiable) often resolve with re-verification. Hard suspensions (listing completely removed) require a Business Reinstatement Request with supporting documentation. Policy violations require correcting the violation first. Timeline: soft suspensions resolve in 3 to 7 business days; hard suspensions typically take 2 to 4 weeks."
           }
         },
         {
           "@type": "Question",
-          "name": "What makes a top-rated local SEO company in Burbank?",
+          "name": "We have more five-star reviews than every competitor in our Burbank category, but we still rank below them in Google Maps. How is that possible?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "A top-rated local SEO company in Burbank works at the technical layer of Google's local algorithm, not just the cosmetic layer. The distinguishing factors are: (1) Google Business Profile precision — correct primary and secondary categories, complete services section, accurate service area configuration, and active GBP posts; (2) citation authority — verified NAP consistency across 40+ directory sources so Google's entity confidence is high; (3) review velocity systems — a repeatable process generating 4–6 authentic reviews per month from real customers; (4) local schema deployment — server-rendered LocalBusiness JSON-LD tying your website entity to your GBP listing; and (5) transparent reporting tied to Map Pack position, not vanity metrics. Size of the agency matters far less than the engineering depth of the team running your campaign."
+            "text": "Review count is one signal among many in the Map Pack algorithm — and often not the most decisive one. The businesses outranking you with fewer reviews are almost certainly winning on GBP category accuracy, service area configuration, NAP citation consistency, or local link authority. Review velocity also matters: 200 total reviews with none in 90 days loses to 40 reviews with 6 in the last 30 days."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "We hired a local SEO agency in Burbank eight months ago and our Map Pack position has not moved. How do we tell if the work is actually happening?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ask for GBP data. A legitimate local SEO campaign produces measurable GBP signal movement: GBP profile actions (calls, direction requests, website clicks) should increase month over month. Your agency should also show a before-and-after citation audit and demonstrate review velocity improvement. If none of those three things have moved in eight months, the engagement is not producing results."
           }
         }
       ]
@@ -441,37 +449,37 @@ export default function LocalSeoBurbankPage() {
       <section className="faq-section">
         <div className="onpage-container">
           <div className="section-head">
-            <span className="mono-tag">People Also Ask</span>
+            <span className="mono-tag">Common questions</span>
             <h2>Local SEO Company Burbank: Common Questions Answered</h2>
             <p>The questions Burbank business owners ask before starting a local SEO engagement — answered directly, without the agency spin.</p>
           </div>
 
           <div className="faq-grid">
             <div className="faq-item">
-              <h2 style={{fontSize:'1.1rem', fontWeight:600, fontFamily:'var(--font-display)', lineHeight:1.4, color:'var(--ink)', marginBottom:0}}>Can I make an online appointment with a local SEO company in Burbank?</h2>
+              <h2 style={{fontSize:'1.1rem', fontWeight:600, fontFamily:'var(--font-display)', lineHeight:1.4, color:'var(--ink)', marginBottom:0}}>We show up in Google Search for our business name but we are barely visible on Google Maps for any category search. Why would those two perform so differently?</h2>
               <p>
-                Yes — and it is the best way to start. Our booking page at <a href="/book" style={{color:'var(--green)'}}>gobiya.com/book</a> is available 24 hours a day to schedule your first session. We run a 15-minute live local SEO audit for Burbank businesses — no pitch, no slides. In that window we pull your actual Google Business Profile data, audit your NAP consistency across directories, benchmark your review velocity against your top three Burbank competitors, and identify the Map Pack gaps costing you qualified leads every month. Sessions typically schedule within 48–72 hours of booking. Because we work with a focused number of Burbank clients at any given time, availability can be limited — early booking is the right move. Read more about <a href="/approach" style={{color:'var(--green)'}}>how our client engagements work</a> before you book if you want the full picture first.
+                Branded search and Map Pack visibility are driven by completely different signals. Branded rankings come from your website's relevance and link authority for your business name — once someone knows you exist and searches directly, that is easy to win. Map Pack visibility is driven by three signals: Google Business Profile signals (category accuracy, completeness, posting activity), proximity and service area configuration, and entity authority (NAP consistency across directories, review velocity, local link signals). A business can rank number one for its own name and be completely absent from the Map Pack for "dentist near me" or "attorney Burbank" because those ranking systems are independent. The Map Pack fix requires GBP engineering, not website SEO.
               </p>
             </div>
 
             <div className="faq-item">
-              <h2 style={{fontSize:'1.1rem', fontWeight:600, fontFamily:'var(--font-display)', lineHeight:1.4, color:'var(--ink)', marginBottom:0}}>Is the local SEO company in Burbank open now?</h2>
+              <h2 style={{fontSize:'1.1rem', fontWeight:600, fontFamily:'var(--font-display)', lineHeight:1.4, color:'var(--ink)', marginBottom:0}}>Our Google Business Profile was suspended with no warning. What is the first thing we should do and how long does reinstatement take?</h2>
               <p>
-                Gobiya operates Monday through Friday, 9 AM to 6 PM Pacific Time. We are a Los Angeles-based practice — no time zone adjustment needed for Burbank businesses. Outside of business hours, our <a href="/book" style={{color:'var(--green)'}}>online booking page</a> is available at any time to schedule a session, and our <a href="/contact" style={{color:'var(--green)'}}>contact form</a> accepts inquiries 24/7 with a response within one business day. If you are dealing with an urgent local SEO issue — a suspended Google Business Profile, a sudden Map Pack ranking drop, or a NAP discrepancy ahead of a seasonal business peak — submit your details through the contact form and we will prioritize your response. Our team handles GBP suspension and emergency citation corrections within 24–48 hours for existing clients.
+                Do not create a new listing — that almost always makes reinstatement harder. The first step is diagnosing the suspension type: if it is a soft suspension (profile still visible but unverifiable), a re-verification often resolves it. If it is a hard suspension (listing completely removed), you need to file a Business Reinstatement Request with supporting documentation — government-issued business license, utility bill confirming address, physical photos of the business location matching the listed address. Suspensions caused by policy violations (keyword stuffing in business name, wrong category, virtual office address for a service-area business) require correcting the violation before submitting reinstatement. Timeline: soft suspensions resolve in 3 to 7 business days; hard suspensions typically take 2 to 4 weeks. For existing clients we handle the complete reinstatement process.
               </p>
             </div>
 
             <div className="faq-item">
-              <h2 style={{fontSize:'1.1rem', fontWeight:600, fontFamily:'var(--font-display)', lineHeight:1.4, color:'var(--ink)', marginBottom:0}}>What makes a top rated local SEO company in Burbank?</h2>
+              <h2 style={{fontSize:'1.1rem', fontWeight:600, fontFamily:'var(--font-display)', lineHeight:1.4, color:'var(--ink)', marginBottom:0}}>We have more five-star reviews than every competitor in our Burbank category, but we still rank below them in Google Maps. How is that possible?</h2>
               <p>
-                The honest answer is engineering depth, not marketing claims. A genuinely top-rated local SEO company in Burbank will be doing work at the technical layer of Google's local algorithm: correcting GBP category data, aligning NAP across 40+ directory sources, building review velocity systems that generate authentic reviews at the right cadence, and deploying LocalBusiness schema directly in your site's server-rendered HTML. They will report on Map Pack position and GBP call volume — not impressions and domain authority. They will have Burbank market knowledge specific enough to configure your service area correctly for Toluca Lake, Studio City, and North Hollywood overlap. And they will be transparent about what moves in 30, 60, and 90 days, without locking you into a long contract before any work has been done. Read our full overview of <a href="/insights/local-seo-explained" style={{color:'var(--green)'}}>how local SEO works</a> if you want to evaluate any agency's claims with confidence.
+                Review count is one signal among many in the Map Pack algorithm — and often not the most decisive one. The businesses outranking you with fewer reviews are almost certainly winning on GBP category accuracy (the right primary category creates a massive relevance advantage), service area configuration (if your area excludes Toluca Lake, Studio City, or North Hollywood, you are invisible to nearby searchers), NAP citation consistency (if your business name or address appears differently across Yelp, Apple Maps, and Bing Places, Google entity confidence drops), or local link authority. Review velocity also matters — 200 total reviews with none in the last 90 days loses to 40 reviews with 6 in the last 30 days. A competitive audit usually surfaces the specific gap within the first session.
               </p>
             </div>
 
             <div className="faq-item">
-              <h2 style={{fontSize:'1.1rem', fontWeight:600, fontFamily:'var(--font-display)', lineHeight:1.4, color:'var(--ink)', marginBottom:0}}>How much does local SEO cost in Burbank?</h2>
+              <h2 style={{fontSize:'1.1rem', fontWeight:600, fontFamily:'var(--font-display)', lineHeight:1.4, color:'var(--ink)', marginBottom:0}}>We hired a local SEO agency in Burbank eight months ago and our Map Pack position has not moved. How do we tell if the work is actually happening?</h2>
               <p>
-                Local SEO pricing in Burbank ranges from $500/month for basic freelance GBP management to $6,000+/month for technical entity-level engineering in the most competitive categories. For most Burbank professional services businesses — dental, legal, medical, financial advisory — a results-producing program realistically runs $2,500–$5,000/month. That range covers a full GBP audit and correction, NAP alignment across 40+ sources, review velocity system build, and schema deployment. Programs priced below $1,500/month for competitive Burbank categories almost universally lack the technical depth to move Map Pack positions against the businesses already investing at a higher level. The ROI frame is more useful than the cost number: if the program generates two additional qualified patient or client inquiries per month in a service category with a $3,000+ average case value, it pays for itself before month three. See the full <a href="/performance/seo-discoverability-agency" style={{color:'var(--green)'}}>SEO &amp; Discoverability practice overview</a> for what a complete engagement includes.
+                Ask for GBP data. A legitimate local SEO campaign produces measurable GBP signal movement: the number of GBP profile actions (calls, direction requests, website clicks) should increase month over month. If your agency cannot show you that data, they are not working at the GBP layer. The second indicator is citation changes — your agency should be able to show you a before-and-after citation audit documenting what was corrected across which directories. Third, review velocity: if your review count has not increased since the engagement started, the reputation system either was not built or is not working. If none of those three things have moved in eight months, the engagement is not producing results and you should ask for a detailed accounting of what work was done. See the <a href="/performance/seo-discoverability-agency" style={{color:'var(--green)'}}>SEO &amp; Discoverability practice overview</a> for what a complete engagement should deliver.
               </p>
             </div>
           </div>

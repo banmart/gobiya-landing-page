@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import SiteHeader from './SiteHeader';
 import SiteFooter from './SiteFooter';
 
@@ -47,11 +47,39 @@ const STEPS = [
   'Deployment with monitoring, analytics, and optimization protocols — the site becomes a compounding asset, not a maintenance burden',
 ];
 
+const FAQS = [
+  { q: 'Our current site is slow and we keep losing leads before they submit the form. Do we need a full rebuild?', a: 'Not necessarily. The first step is a performance audit to identify the specific bottlenecks — unoptimized images, render-blocking scripts, poor server response times, and third-party tag bloat account for most slow sites. Sometimes a targeted optimization pass solves the problem without a rebuild. If the underlying architecture is structurally constrained (a page builder CMS that cannot be significantly improved without replacement), a rebuild is usually the right call. We tell you which it is before any work starts.' },
+  { q: 'We are not developers. How involved do we need to be in the build process?', a: 'You need to be involved in the decisions that are yours to make: what the site should do, who it is for, and what a successful outcome looks like. The technical implementation is ours to handle. Most clients describe the process as similar to working with an architect — you choose what you need and approve the outcomes, we handle the structure. We do not require you to review pull requests or understand the codebase.' },
+  { q: 'We had a developer build our last site and it was outdated within two years. How do we avoid that?', a: 'Outdated sites are usually the result of framework choices that were not designed for longevity, or of coupling content too tightly to the codebase so that updates require developer involvement. We build on React with a clean separation between content and code, target standard web APIs rather than proprietary platforms, and hand over a codebase that any competent developer can maintain or extend. The architecture is chosen for a five-to-seven year lifespan, not a two-year cycle.' },
+  { q: 'We want a website that actually generates leads, not just one that looks good. What does that take?', a: 'Three things that most sites get wrong: clear hierarchy of action (each page should have one primary thing you want the visitor to do), message-match between what the ad or search result promised and what the page delivers, and page speed (slow pages have measurably lower conversion rates even when the design is good). We audit your current conversion funnel before designing the new site so the information architecture is built around how your buyers actually behave, not how we think they should.' },
+];
+
 const STATS = [
   { val: '<1s', label: 'Target page load time on every build we ship' },
   { val: '90+', label: 'Lighthouse performance score target across all new builds' },
   { val: '100%', label: 'Client code and data ownership — no platform lock-in, ever' },
 ];
+
+function FaqItem({ q, a }: { q: string; a: string }) {
+  const [open, setOpen] = useState(false);
+  return (
+    <div style={{ borderTop: '1px solid #e5e7eb' }}>
+      <button onClick={() => setOpen(o => !o)} style={{ width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '1.5rem 0', background: 'none', border: 'none', cursor: 'pointer', textAlign: 'left', gap: '1.5rem' }} aria-expanded={open}>
+        <span style={{ fontSize: '1.05rem', fontWeight: 600, color: '#111827', lineHeight: 1.4 }}>{q}</span>
+        <span style={{ flexShrink: 0, color: '#6b7280', fontSize: '1.2rem', lineHeight: 1 }}>{open ? '−' : '+'}</span>
+      </button>
+      {open && <p style={{ color: '#4b5563', fontSize: '0.95rem', lineHeight: 1.75, paddingBottom: '1.5rem', maxWidth: '72ch' }}>{a}</p>}
+    </div>
+  );
+}
+function FaqList({ items }: { items: { q: string; a: string }[] }) {
+  return (
+    <div>
+      {items.map((item, i) => <React.Fragment key={i}><FaqItem q={item.q} a={item.a} /></React.Fragment>)}
+      <div style={{ borderTop: '1px solid #e5e7eb' }} />
+    </div>
+  );
+}
 
 export default function WebDevelopmentPage() {
   useEffect(() => {
@@ -207,6 +235,15 @@ export default function WebDevelopmentPage() {
             onMouseLeave={e => ((e.target as HTMLImageElement).style.transform = 'scale(1)')}
           />
         </a>
+      </section>
+
+      {/* ── FAQs ── */}
+      <section style={{ padding: '5rem 5vw', borderBottom: '1px solid #e5e7eb', background: '#ffffff' }}>
+        <div style={{ maxWidth: '860px' }}>
+          <span style={{ fontFamily: 'monospace', fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.18em', color: '#9ca3af', display: 'block', marginBottom: '0.5rem' }}>Common questions</span>
+          <h2 style={{ fontSize: 'clamp(1.6rem, 3vw, 2.4rem)', fontWeight: 700, letterSpacing: '-0.03em', color: '#111827', marginBottom: '3rem' }}>Things clients ask before they start</h2>
+          <FaqList items={FAQS} />
+        </div>
       </section>
 
       <SiteFooter />

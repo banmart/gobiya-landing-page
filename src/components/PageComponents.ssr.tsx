@@ -34,3 +34,4 @@ export { default as LocalSeoServicesBurbankPage } from './LocalSeoServicesBurban
 export { default as GlendaleSeoPage } from './GlendaleSeoPage';
 export { default as PlasticSurgeryMarketingPage } from './PlasticSurgeryMarketingPage';
 export { default as InternetMarketingServicesLosAngelesPage } from './InternetMarketingServicesLosAngelesPage';
+export { default as AiSearchMarketingSantaClaritaPage } from './AiSearchMarketingSantaClaritaPage';

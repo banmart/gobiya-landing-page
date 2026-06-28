@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import SiteHeader from './SiteHeader';
 import SiteFooter from './SiteFooter';
 
@@ -47,11 +47,39 @@ const STEPS = [
   'Rank monitoring setup: weekly reporting, anomaly detection, and continuous iteration',
 ];
 
+const FAQS = [
+  { q: 'We have been doing SEO for a year and our rankings have not moved. What is usually wrong?', a: 'The most common cause is a disconnect between the work being done and the actual ranking constraint. Most stalled SEO engagements involve ongoing content or link work while a technical problem — crawl errors, duplicate content, incorrect canonical tags, or poor Core Web Vitals — is silently suppressing the entire site. The first step is always a full technical audit to rule out structural blockers before adding more content or links. One technical fix on a site-wide issue often moves more than six months of content publication.' },
+  { q: 'Our competitor outranks us on every keyword and their site looks worse than ours. How?', a: 'Design has no direct relationship to rankings. What Google evaluates is the strength of the signal: how well the page answers the query, how clearly the content communicates topical expertise, how strong the backlink profile is, and how cleanly the technical foundation is set up. A poorly designed site with strong authority signals, correct schema, and well-structured content will outrank a polished site with weak signals every time. The audit almost always reveals a specific gap in one of those areas that explains the competitive disadvantage.' },
+  { q: 'We hired an SEO agency and they send us a monthly report but we have no idea if any of it is working.', a: 'A useful SEO report shows three things: which keywords moved, in which direction, and what specific action correlates with that movement. If your report shows tasks completed (articles published, links acquired, audits done) but no data on ranking position changes for your actual target queries, you cannot evaluate whether the work is producing results. Ask your agency to show you ranking position history for a defined keyword set over the last 90 days. If they cannot produce that, the reporting is covering activity, not outcomes.' },
+  { q: 'We want to rank for specific high-value queries but keep getting traffic from unrelated searches instead.', a: 'This is a keyword and architecture problem. If your site is attracting unrelated traffic, it means the pages Google is indexing are targeting vague or broad signals rather than the specific queries you want to own. The fix is a keyword mapping exercise: define the exact query for each page, write the title tag and H1 around that specific query, and make sure the on-page content answers that query better than the current top-ranking pages do. Unrelated traffic is a symptom of unclear page-level intent signals.' },
+];
+
 const STATS = [
   { val: '213K', label: 'Monthly impressions for a single client content cluster' },
   { val: 'Top 3', label: 'Local map-pack ranking achieved for service-area clients' },
   { val: '6 mo', label: 'Median time to measurable organic traffic growth' },
 ];
+
+function FaqItem({ q, a }: { q: string; a: string }) {
+  const [open, setOpen] = useState(false);
+  return (
+    <div style={{ borderTop: '1px solid #e5e7eb' }}>
+      <button onClick={() => setOpen(o => !o)} style={{ width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '1.5rem 0', background: 'none', border: 'none', cursor: 'pointer', textAlign: 'left', gap: '1.5rem' }} aria-expanded={open}>
+        <span style={{ fontSize: '1.05rem', fontWeight: 600, color: '#111827', lineHeight: 1.4 }}>{q}</span>
+        <span style={{ flexShrink: 0, color: '#6b7280', fontSize: '1.2rem', lineHeight: 1 }}>{open ? '−' : '+'}</span>
+      </button>
+      {open && <p style={{ color: '#4b5563', fontSize: '0.95rem', lineHeight: 1.75, paddingBottom: '1.5rem', maxWidth: '72ch' }}>{a}</p>}
+    </div>
+  );
+}
+function FaqList({ items }: { items: { q: string; a: string }[] }) {
+  return (
+    <div>
+      {items.map((item, i) => <React.Fragment key={i}><FaqItem q={item.q} a={item.a} /></React.Fragment>)}
+      <div style={{ borderTop: '1px solid #e5e7eb' }} />
+    </div>
+  );
+}
 
 export default function SeoDiscoverabilityPage() {
   useEffect(() => {
@@ -213,6 +241,15 @@ export default function SeoDiscoverabilityPage() {
             onMouseLeave={e => ((e.target as HTMLImageElement).style.transform = 'scale(1)')}
           />
         </a>
+      </section>
+
+      {/* ── FAQs ── */}
+      <section style={{ padding: '5rem 5vw', borderBottom: '1px solid #e5e7eb', background: '#ffffff' }}>
+        <div style={{ maxWidth: '860px' }}>
+          <span style={{ fontFamily: 'monospace', fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.18em', color: '#9ca3af', display: 'block', marginBottom: '0.5rem' }}>Common questions</span>
+          <h2 style={{ fontSize: 'clamp(1.6rem, 3vw, 2.4rem)', fontWeight: 700, letterSpacing: '-0.03em', color: '#111827', marginBottom: '3rem' }}>Things clients ask before they start</h2>
+          <FaqList items={FAQS} />
+        </div>
       </section>
 
       <SiteFooter />

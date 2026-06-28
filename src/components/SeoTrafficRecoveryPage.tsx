@@ -46,20 +46,20 @@ const STEPS = [
 
 const FAQ_ITEMS = [
   {
-    q: 'Is SEO dead or evolving in 2026?',
-    a: 'SEO is evolving faster than at any point since Penguin — it is not dead. What changed is the surface where results appear. Google AI Overviews now answer queries above the first organic result for a growing share of searches. Perplexity, ChatGPT, and Claude answer questions directly. Traffic declines are not proof that search demand fell; they reflect that visibility now spans more surfaces than ten blue links. Recovery in 2026 means restoring Google rankings and building AI citation architecture at the same time.',
+    q: 'Our traffic dropped 40% last month and we have no idea why. What is the first thing we should do?',
+    a: 'The first step is matching the timing of the drop to the Google update calendar. Pull your Search Console data and overlay it against Google\'s confirmed update dates — most drops have a clear correlation to a specific rollout. If the timing aligns with a core update, content quality or authority signals are likely the cause. If it aligns with a technical update, look at crawl coverage and index status first. If there is no update correlation, check for site changes made around the same time. Diagnosis before any action is the rule — making changes before you know the cause is the most common reason recoveries drag on for months.',
   },
   {
-    q: 'What is the 80/20 rule of SEO?',
-    a: 'In most sites we audit, roughly 20% of pages drive 80% or more of organic traffic. The rest rank for low-volume queries, have never earned a click-generating position, or have dropped out of index coverage. When a Google update hits, it rarely suppresses an entire site equally — there is usually a content type, a URL cluster, or a topic group where the signal deteriorated. Identifying and restoring that 20% first is what produces a visible recovery curve fastest.',
+    q: 'We have been ranking on page one for years. Now we are gone. Was it a penalty or an algorithm update?',
+    a: 'A manual penalty leaves a notification in Google Search Console under Security & Manual Actions. If there is nothing there, it is almost certainly algorithmic. The distinction matters because the fixes are completely different. A manual action requires documenting the specific violation, correcting it, and filing a formal reconsideration request. An algorithmic suppression requires identifying the content or technical pattern that triggered the update and fixing the underlying signal. Treating an algorithmic drop like a manual penalty — or vice versa — is one of the main reasons recoveries fail.',
   },
   {
-    q: 'Is SEO traffic declining?',
-    a: 'Aggregate organic traffic is declining for many sites, but the cause is not that users stopped searching. Zero-click searches, AI Overviews, and the Local Pack intercept queries that used to produce organic clicks. The right metric is total visibility — impressions, AI citations, and organic share across a defined query set — not clicks alone. A site can hold all its rankings and still see a traffic decline because Google is now answering the query before anyone clicks.',
+    q: 'We hired an SEO agency that made changes right before our traffic dropped. How do we know if they caused it?',
+    a: 'Look at what changed and when. The most common agency-caused drops come from a few patterns: aggressive anchor text optimization that triggers a link quality evaluation, title tag rewrites that break SERP click-through and send negative engagement signals, bulk content publication on thin topics, or technical changes that created crawl errors or canonical conflicts. Pull Search Console\'s coverage report and compare the date of any coverage drops against the dates changes were deployed. If the timing aligns, that is your starting hypothesis. We run this forensic read as the first stage of every recovery engagement.',
   },
   {
-    q: 'What is the recovery of an SEO crisis?',
-    a: 'SEO crisis recovery is a surgical, forensic process: identify the cause precisely, build the targeted fix, deploy it cleanly, and let Google reprocess the site. Cause categories are algorithmic suppression, manual penalty, technical regression, link devaluation, or content quality signal — each requires a different fix sequence. The common mistake is responding to a traffic drop with more content. More content is a scale tactic. Recovery starts with reading the correct cause and fixing that specific thing.',
+    q: 'How long will it take to recover? We are losing real revenue every week.',
+    a: 'Honest answer: it depends on the cause. Technical recoveries — crawl errors, index exclusions, redirect failures — can show results in two to four weeks once fixed, because the issue is structural rather than a signal evaluation. Algorithmic suppressions tied to content quality typically take one to two Google update cycles to reverse after the fix is deployed — that is three to six months at current update frequency. Manual action recoveries vary based on how long the reconsideration process takes, which Google controls. What we can compress is the time from diagnosis to first fix deployed. One documented engagement went from forensic read to deployed fix in nine days.',
   },
 ];
 

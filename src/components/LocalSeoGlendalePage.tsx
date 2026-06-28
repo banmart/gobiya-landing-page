@@ -45,34 +45,34 @@ const SCHEMA = {
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "What is local SEO?",
+          "name": "We have been trying to improve our Google Maps ranking for almost two years. We have done GBP updates, added reviews, and our position has barely moved. What are we actually missing?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Local SEO is the practice of optimizing a business's online presence to appear in geographically targeted search results — primarily the Google Map Pack (the three business listings above organic results) and the local organic results below it. For a Glendale business, local SEO means ranking when someone searches 'dentist in Glendale,' 'attorney Brand Boulevard,' or 'marketing agency near me.' The core ranking signals are Google Business Profile completeness, NAP consistency across directories, review volume and velocity, and local link authority."
+            "text": "At two years with no meaningful movement, the issue is almost always a GBP category configuration error, NAP inconsistency at the aggregator layer (Data Axle, Neustar Localeze, and Foursquare still have your old data overriding your corrections), or a competitive authority gap (your competitors have local link signals from Glendale Chamber of Commerce and city citations that you have not built). Adding more reviews without fixing the underlying category or entity problem produces minimal ranking movement."
           }
         },
         {
           "@type": "Question",
-          "name": "Does local SEO still work?",
+          "name": "We are opening a second location in Glendale. How do we build visibility for it without hurting our existing location's rankings?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Local SEO is more valuable in 2026 than five years ago. 46% of all Google searches carry local intent. 76% of people who run a local search on mobile visit a business within 24 hours. The Google Map Pack captures a larger share of clicks than the #1 organic result for local intent queries. What has changed is competition — in markets like Glendale where Brand Boulevard hosts hundreds of competing businesses, only the brands that invest in entity authority, review velocity, and structured schema consistently win."
+            "text": "Treat each location as a distinct entity: its own GBP listing, its own dedicated website page with unique content, its own citation profile, and its own local phone number. The mistake that causes cannibalization is sharing a phone number, address range, or website landing page between locations. Each listing's service area should also be distinct enough that the two listings are not competing for the same geographic queries."
           }
         },
         {
           "@type": "Question",
-          "name": "How much does local SEO cost?",
+          "name": "We get leads from our website but almost nothing comes through Google Maps even for searches right in our neighborhood. Why would those two perform so differently?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Local SEO pricing ranges from $500/month for basic freelance management to $5,000+/month for technical entity-level engineering in competitive markets. For Glendale businesses in dental, legal, medical, or professional services, the ROI calculus is direct: if a local SEO campaign generates two additional qualified leads per month in a category with $3,000+ average customer value, the program pays for itself before month three."
+            "text": "Website leads and Map Pack calls are driven by completely different systems. Your website gets leads because people know your name or click a paid ad. Map Pack visibility requires a separate set of signals: GBP category accuracy, proximity weighting, NAP citation consistency, and review recency. Your website SEO does not automatically improve your Maps ranking — the local signal layer requires its own dedicated work."
           }
         },
         {
           "@type": "Question",
-          "name": "How to create a local SEO strategy?",
+          "name": "We are a service-area business with no physical storefront. Can we still rank in Google Maps for Glendale searches?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "A local SEO strategy for a Glendale business starts with four layers: (1) GBP optimization — complete your Google Business Profile with accurate categories, services, and photos; (2) NAP consistency — ensure your name, address, and phone are identical across every directory; (3) review velocity — generate 4–6 authentic reviews per month; (4) local content and schema — create location-specific pages structured with LocalBusiness JSON-LD. Competitive Glendale markets also require entity graph engineering and local link building from Glendale Chamber of Commerce and city-level directories."
+            "text": "Yes, but with a specific configuration. Service-area businesses without a public-facing address can rank in the Map Pack if their GBP is configured correctly as an SAB, with the address hidden and the service area defined by city or ZIP. Hiding your address actually improves Map Pack eligibility for SABs rather than hurting it. Google does not penalize the absence of a physical address for SABs as long as the listing is correctly configured as one."
           }
         }
       ]
@@ -392,37 +392,37 @@ export default function LocalSeoGlendalePage() {
       <section className="faq-section">
         <div className="onpage-container">
           <div className="section-head">
-            <span className="mono-tag">People Also Ask</span>
+            <span className="mono-tag">Common questions</span>
             <h2>Local SEO Questions, Answered Directly</h2>
             <p>The questions Glendale business owners ask before starting a local SEO engagement — answered without the agency spin.</p>
           </div>
 
           <div className="faq-grid">
             <div className="faq-item">
-              <h2 style={{fontSize:'1.1rem', fontWeight:600, fontFamily:'var(--font-display)', lineHeight:1.4, color:'var(--ink)', marginBottom:0}}>What is local SEO?</h2>
+              <h2 style={{fontSize:'1.1rem', fontWeight:600, fontFamily:'var(--font-display)', lineHeight:1.4, color:'var(--ink)', marginBottom:0}}>We have been trying to improve our Google Maps ranking for almost two years. We have done GBP updates, added reviews, and our position has barely moved. What are we actually missing?</h2>
               <p>
-                Local SEO is the practice of optimizing a business's online presence to appear in geographically targeted results — primarily Google's Map Pack (the three business listings that appear above organic results for local intent queries) and the local organic results directly below it. For a Glendale business, local SEO means ranking when someone in Glendale, Burbank, or La Crescenta searches "dentist near me," "lawyer Brand Boulevard," or "best restaurant Americana at Brand." The core ranking signals Google uses are Google Business Profile completeness and category accuracy, NAP consistency across directory sources, review volume and recency, and the strength of your local entity graph. See our full guide to <a href="/insights/local-seo" style={{color:'var(--green)'}}>local SEO strategy in 2026</a>.
+                At two years with no meaningful movement, the issue is almost always one of three things: GBP category configuration error (wrong primary category prevents you from ever ranking for the main commercial queries regardless of other signals), NAP inconsistency at the aggregator layer (Data Axle, Neustar Localeze, and Foursquare still have your old data and keep overriding your corrections), or competitive authority gap (your competitors have local link signals from Glendale Chamber of Commerce, city citations, and neighborhood business associations that you have not built). Adding more reviews without fixing the underlying category or entity problem produces minimal ranking movement.
               </p>
             </div>
 
             <div className="faq-item">
-              <h2 style={{fontSize:'1.1rem', fontWeight:600, fontFamily:'var(--font-display)', lineHeight:1.4, color:'var(--ink)', marginBottom:0}}>Does local SEO still work?</h2>
+              <h2 style={{fontSize:'1.1rem', fontWeight:600, fontFamily:'var(--font-display)', lineHeight:1.4, color:'var(--ink)', marginBottom:0}}>We are opening a second location in Glendale. How do we build visibility for it without hurting our existing location's rankings?</h2>
               <p>
-                Local SEO is more valuable in 2026 than it was five years ago — not less. 46% of all Google searches carry local intent. 76% of people who perform a local mobile search visit a business within 24 hours. And the Map Pack now captures a larger share of clicks than the organic #1 result for local intent queries. What has changed is the competitive bar. In Glendale, where Brand Boulevard alone hosts hundreds of competing businesses in the same categories, the companies investing in entity authority, review velocity, and structured schema consistently dominate the top three positions. The ones that stop at a basic GBP setup fall out of the pack entirely. The fundamentals of <a href="/insights/local-seo-explained" style={{color:'var(--green)'}}>how local SEO works</a> have not changed — the precision required to win has.
+                The key is treating each location as a distinct entity with its own GBP listing, its own dedicated website page, and its own citation profile. Each location needs its own local phone number, its own GBP listing verified to that address, its own website page with unique content about that specific location, and its own LocalBusiness schema with the correct coordinates. Service area configuration is the other critical piece — make sure each listing's service area is distinct enough that the two listings are not competing for the same geographic queries. Done correctly, a second location adds a second Map Pack opportunity rather than splitting the authority of the first.
               </p>
             </div>
 
             <div className="faq-item">
-              <h2 style={{fontSize:'1.1rem', fontWeight:600, fontFamily:'var(--font-display)', lineHeight:1.4, color:'var(--ink)', marginBottom:0}}>How much does local SEO cost?</h2>
+              <h2 style={{fontSize:'1.1rem', fontWeight:600, fontFamily:'var(--font-display)', lineHeight:1.4, color:'var(--ink)', marginBottom:0}}>We get leads from our website but almost nothing comes through Google Maps even for searches right in our neighborhood. Why would those two perform so differently?</h2>
               <p>
-                Local SEO cost depends on market competitiveness and the depth of engineering required. DIY tools like BrightLocal or Whitespark run $50–$150/month but require significant hands-on time. Freelancers typically charge $500–$1,500/month for managed campaigns but rarely work at the technical entity and schema level. Mid-tier agencies charge $1,000–$3,000/month. Engineering-focused practices — the kind that correct entity graphs, inject structured schema, and work at the GBP data layer — typically run $2,500–$6,000/month for competitive Glendale categories. The ROI calculus is not complicated: if the program generates two additional qualified leads per month in a service category with $3,000+ average customer value, it pays for itself before month three. For context on what a full local engagement includes, see the <a href="/performance/seo-discoverability-agency" style={{color:'var(--green)'}}>SEO &amp; Discoverability practice overview</a>.
+                Website leads and Map Pack calls are driven by completely different systems. Your website gets leads because people know your name, find an article you published, or click a paid ad. Map Pack visibility requires a separate set of signals: GBP category accuracy and completeness, proximity weighting against the searcher's location, NAP citation consistency across directories, and review recency. It is common for a business to have a well-functioning website with steady organic traffic and essentially zero Map Pack presence because the two systems are independent. Your website SEO does not automatically improve your Maps ranking — the local signal layer requires its own dedicated work.
               </p>
             </div>
 
             <div className="faq-item">
-              <h2 style={{fontSize:'1.1rem', fontWeight:600, fontFamily:'var(--font-display)', lineHeight:1.4, color:'var(--ink)', marginBottom:0}}>How to create a local SEO strategy?</h2>
+              <h2 style={{fontSize:'1.1rem', fontWeight:600, fontFamily:'var(--font-display)', lineHeight:1.4, color:'var(--ink)', marginBottom:0}}>We are a service-area business with no physical storefront. Can we still rank in Google Maps for Glendale searches?</h2>
               <p>
-                A local SEO strategy for a Glendale business starts with four foundational layers. First, GBP optimization — claim and verify your listing, correct your primary and secondary categories, add all services, upload current photos, and set accurate service areas covering Glendale, Burbank, and adjacent communities. Second, NAP consistency — audit your business name, address, and phone across every directory source and correct all divergences. Third, review velocity — build a repeatable process for generating 4–6 authentic reviews per month, targeting recent recency alongside total volume. Fourth, local schema — deploy <a href="/insights/google-business-profile-optimization" style={{color:'var(--green)'}}>LocalBusiness JSON-LD</a> with Glendale coordinates, service hours, and service area data on every relevant page. Beyond the foundation, businesses in competitive Glendale categories need local link acquisition, multilingual GBP content, and ongoing GBP post activity to hold top-three Map Pack position. Our <a href="/insights/local-seo" style={{color:'var(--green)'}}>full local SEO playbook</a> details each layer.
+                Yes, but with a specific configuration. Service-area businesses without a public-facing address can rank in the Map Pack if they configure their GBP correctly as an SAB, hide their address from the listing (this actually improves Map Pack eligibility for SABs rather than hurting it), define their service area by city or ZIP, and meet the other local ranking factors — NAP consistency, review velocity, and GBP completeness. The Map Pack ranking radius for SABs is generally tighter than for brick-and-mortar locations, so service area configuration is critical. Google does not penalize the absence of a physical address for SABs as long as the listing is configured correctly as one.
               </p>
             </div>
           </div>

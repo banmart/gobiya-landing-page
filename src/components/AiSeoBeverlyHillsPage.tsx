@@ -44,34 +44,34 @@ const SCHEMA = {
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "Can SEO be done by AI?",
+          "name": "We rank well on Google for our main keywords, but when potential clients ask ChatGPT or Perplexity about firms in our category in Beverly Hills, we do not appear. How do we fix that?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "AI can assist with SEO tasks — keyword clustering, schema generation, content briefs, technical audits — but cannot execute SEO autonomously. Google's E-E-A-T framework evaluates expertise and authoritativeness signals that require genuine human authority. The execution layer — entity verification, link building, technical crawl engineering — demands a human engineering team. For Beverly Hills businesses, the question is not whether AI can do your SEO, but whether your agency deploys AI tools without sacrificing the human authority signals that rank you in a high-competition local market."
+            "text": "Google rankings and AI citation are driven by different mechanisms. AI engines like ChatGPT and Perplexity retrieve answers based on entity confidence — how well your brand is represented in structured, verifiable knowledge sources. To appear in AI-generated responses, your brand entity needs verified schema on your website, presence in directories that AI training pipelines crawl, and content structured with claim-evidence-citation triplets that AI retrieval can extract. Strong Google rankings help but do not transfer directly to AI citation."
           }
         },
         {
           "@type": "Question",
-          "name": "Is SEO dead or evolving in 2026?",
+          "name": "We have strong traditional SEO. What specifically changes when optimizing for AI search engines versus Google?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "SEO has bifurcated in 2026. Roughly 40% of commercial queries now begin on AI platforms — ChatGPT, Gemini, Perplexity — rather than Google. Traditional blue-link rankings alone are no longer enough for Beverly Hills businesses competing for luxury and professional service buyers. The correct frame is not 'SEO vs. AI' but dual-surface strategy: Technical SEO for Google + Generative Engine Optimization for AI platforms. Both require precision engineering, not mass-production content."
+            "text": "Traditional SEO optimizes for a ranking algorithm that evaluates pages. GEO optimizes for a retrieval model that extracts passages. For Google, you optimize title tags, heading structure, and page authority. For AI engines, you optimize content at the sentence and paragraph level so retrieval models can lift complete, citable answers. The specific techniques are claim-evidence-citation formatting, FAQ schema with specific question phrasing that matches how buyers ask questions of AI assistants, and entity markup connecting your business name to services, location, and credentials."
           }
         },
         {
           "@type": "Question",
-          "name": "Can ChatGPT do SEO?",
+          "name": "We are a high-end practice in Beverly Hills and we are concerned about how AI tools describe us. How do we control our AI presence?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "ChatGPT can accelerate research tasks — drafting content outlines, rewriting meta descriptions, suggesting keyword clusters, explaining schema syntax — but it cannot submit your sitemap, build links, or directly change Google rankings. What ChatGPT does affect is GEO visibility: when it cites a Beverly Hills business in a buyer query response, that citation is driven by entity strength, content quality, and knowledge graph verification. The correct use of ChatGPT in SEO is as a research and writing accelerant, not as a technical search engineering replacement."
+            "text": "AI language models derive their descriptions of businesses from patterns in their training data — which includes your website content, press coverage, directory listings, and third-party reviews. The most effective way to control your AI representation is to engineer the primary signal sources: publish authoritative, precise content about your practice that matches exactly how you want to be described, and ensure your structured schema and Google Knowledge Panel are accurate and complete. When authoritative sources consistently describe your practice a specific way, that is the description AI models extract and reproduce."
           }
         },
         {
           "@type": "Question",
-          "name": "What does SEO mean in AI?",
+          "name": "We have been reading that AI is replacing traditional search. Should we be moving marketing budget away from Google SEO toward AI optimization?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "In the context of AI search, SEO now carries two meanings. The first is traditional: search engine optimization for Google's organic ranking algorithm. The second is Generative Engine Optimization (GEO) — making your content readable, extractable, and citable by AI language models like ChatGPT, Claude, and Gemini when they generate answers to buyer queries. For Beverly Hills businesses, both surfaces matter. Google still drives the majority of commercial traffic, but AI platforms are capturing a growing share of high-intent discovery — especially in luxury services, legal, medical, and B2B consulting markets."
+            "text": "Not away from — alongside. Google still processes the majority of commercial purchase intent traffic. The businesses that have shifted entirely away from Google SEO toward AI platform optimization have generally seen revenue impact, not growth. The right frame is dual-surface: maintain your Google organic presence and expand into AI citation simultaneously. The GEO work required for AI citations also improves your E-E-A-T signals for Google, so it is largely additive rather than a trade-off."
           }
         }
       ]
@@ -388,7 +388,7 @@ export default function AiSeoBeverlyHillsPage() {
       <section className="faq-section">
         <div className="onpage-container">
           <div className="section-head">
-            <span className="mono-tag">People Also Ask</span>
+            <span className="mono-tag">Common questions</span>
             <h2>Frequently Asked Questions About AI SEO</h2>
             <p>
               The questions buyers in Beverly Hills ask before engaging an AI SEO firm — answered directly, without the fluff.
@@ -397,30 +397,30 @@ export default function AiSeoBeverlyHillsPage() {
 
           <div className="faq-grid">
             <div className="faq-item">
-              <h2 style={{fontSize:'1.1rem', fontWeight:600, fontFamily:'var(--font-display)', lineHeight:1.4, color:'var(--ink)', marginBottom:0}}>Can SEO be done by AI?</h2>
+              <h2 style={{fontSize:'1.1rem', fontWeight:600, fontFamily:'var(--font-display)', lineHeight:1.4, color:'var(--ink)', marginBottom:0}}>We rank well on Google for our main keywords, but when potential clients ask ChatGPT or Perplexity about firms in our category in Beverly Hills, we do not appear. How do we fix that?</h2>
               <p>
-                AI can assist with SEO tasks — keyword clustering, schema generation, content briefs, technical audits — but it cannot execute SEO autonomously. Google's E-E-A-T framework evaluates expertise, authoritativeness, and trustworthiness signals that require genuine human judgment and earned authority. The execution layer — entity verification, link building, technical crawl engineering — demands a human team. For Beverly Hills businesses, the right question is not whether AI can do your SEO, but whether your agency deploys AI tools without sacrificing the human authority signals that rank you in a high-competition market. Learn more about how we use AI-assisted research in our <a href="/performance/seo-discoverability-agency" style={{color:'var(--green)'}}>SEO &amp; Discoverability practice</a>.
+                Google rankings and AI citation are driven by different mechanisms. AI engines like ChatGPT and Perplexity retrieve answers based on entity confidence — how well your brand is represented in structured, verifiable knowledge sources. To appear in AI-generated responses for Beverly Hills service queries, your brand entity needs verified schema on your website, presence in directories and data sources that AI training pipelines crawl, and content structured with claim-evidence-citation triplets that AI retrieval can extract at the passage level. Strong Google rankings help but do not transfer directly to AI citation — the GEO layer requires its own work.
               </p>
             </div>
 
             <div className="faq-item">
-              <h2 style={{fontSize:'1.1rem', fontWeight:600, fontFamily:'var(--font-display)', lineHeight:1.4, color:'var(--ink)', marginBottom:0}}>Is SEO dead or evolving in 2026?</h2>
+              <h2 style={{fontSize:'1.1rem', fontWeight:600, fontFamily:'var(--font-display)', lineHeight:1.4, color:'var(--ink)', marginBottom:0}}>We have strong traditional SEO. What specifically changes when optimizing for AI search engines versus Google?</h2>
               <p>
-                SEO is not dead — it has bifurcated. Roughly 40% of commercial queries now start on AI platforms (ChatGPT, Gemini, Perplexity) rather than Google. For Beverly Hills businesses competing for luxury and professional service buyers, traditional blue-link rankings alone are not enough. The operators winning in 2026 run a dual-surface strategy: Technical SEO for Google + <a href="/insights/what-is-generative-engine-optimization-and-how-does-it-work" style={{color:'var(--green)'}}>Generative Engine Optimization (GEO)</a> for AI platforms. Both require precision engineering. The operators who declared SEO dead in 2024 were the ones who stopped at keyword stuffing and never built entity authority.
+                Traditional SEO optimizes for a ranking algorithm that evaluates pages. GEO optimizes for a retrieval model that extracts passages. For Google, you optimize title tags, heading structure, and page authority. For AI engines, you optimize content at the sentence and paragraph level so retrieval models can lift complete, citable answers directly from your pages. The specific techniques are claim-evidence-citation formatting (state the claim, support it with data, cite the source — all in two to three sentences), FAQ schema with specific question phrasing that matches how buyers ask questions of AI assistants, and entity markup that connects your business name to the services, location, and credentials that should appear in an AI-generated response.
               </p>
             </div>
 
             <div className="faq-item">
-              <h2 style={{fontSize:'1.1rem', fontWeight:600, fontFamily:'var(--font-display)', lineHeight:1.4, color:'var(--ink)', marginBottom:0}}>Can ChatGPT do SEO?</h2>
+              <h2 style={{fontSize:'1.1rem', fontWeight:600, fontFamily:'var(--font-display)', lineHeight:1.4, color:'var(--ink)', marginBottom:0}}>We are a high-end practice in Beverly Hills and we are concerned about how AI tools describe us. We do not want to be grouped with lower-tier competitors. How do we control our AI presence?</h2>
               <p>
-                ChatGPT can accelerate specific SEO research tasks — drafting content outlines, rewriting meta descriptions, suggesting keyword clusters, explaining schema markup syntax. It cannot submit your sitemap, build links, or directly influence your Google rankings. What ChatGPT does affect is GEO visibility: when it cites a Beverly Hills business in a buyer's query response, that citation is driven by entity strength, content quality, and knowledge graph verification — all of which you can engineer. The correct model is ChatGPT as a research accelerant, not as a replacement for technical search engineering. See our analysis of <a href="/insights/chatgpt-vs-google-for-business-discovery" style={{color:'var(--green)'}}>ChatGPT vs. Google for business discovery</a>.
+                AI language models derive their descriptions of businesses from patterns in their training data — which includes your website content, press coverage, directory listings, and third-party reviews or mentions. The most effective way to control your AI representation is to engineer the primary signal sources: publish authoritative, precise content about your practice that matches exactly how you want to be described, and ensure your structured schema, Google Knowledge Panel, and entity graph are accurate and complete. When the authoritative sources consistently describe your practice a specific way, that is the description AI models extract and reproduce.
               </p>
             </div>
 
             <div className="faq-item">
-              <h2 style={{fontSize:'1.1rem', fontWeight:600, fontFamily:'var(--font-display)', lineHeight:1.4, color:'var(--ink)', marginBottom:0}}>What does SEO mean in AI?</h2>
+              <h2 style={{fontSize:'1.1rem', fontWeight:600, fontFamily:'var(--font-display)', lineHeight:1.4, color:'var(--ink)', marginBottom:0}}>We have been reading that AI is replacing traditional search. Should we be moving marketing budget away from Google SEO toward AI optimization?</h2>
               <p>
-                In the context of AI search, SEO carries two distinct meanings. The first is traditional: search engine optimization for Google's organic ranking algorithm — the practice of improving crawlability, relevance, and authority. The second is <a href="/insights/what-is-generative-engine-optimization-and-how-does-it-work" style={{color:'var(--green)'}}>Generative Engine Optimization (GEO)</a> — making your content readable, extractable, and citable by language models like ChatGPT, Claude, and Gemini when they generate answers to buyer queries. For Beverly Hills businesses, both matter. Google drives the majority of commercial traffic, but AI platforms are capturing a growing share of high-intent discovery — especially in luxury services, legal, medical, and professional consulting markets where buyers research in conversation rather than clicking blue links.
+                Not away from — alongside. Google still processes the majority of commercial purchase intent traffic. The businesses that have shifted entirely away from Google SEO toward AI platform optimization have generally seen revenue impact, not growth. The right frame is dual-surface: maintain your Google organic presence and expand into AI citation simultaneously. The GEO work required for AI citations also improves your E-E-A-T signals for Google, so it is largely additive rather than a trade-off. The budget reallocation question to ask is not "Google vs. AI" but "what are we doing that produces neither Google rankings nor AI citations" — that is where the reallocation opportunity is.
               </p>
             </div>
           </div>

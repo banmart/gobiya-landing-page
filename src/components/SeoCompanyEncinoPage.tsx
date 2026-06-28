@@ -46,34 +46,34 @@ const SCHEMA = {
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "What is an SEO company?",
+          "name": "We have worked with two different SEO agencies over the past two years and neither one moved our rankings. What are the signs an agency is actually doing real work?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "An SEO company improves a business's visibility in Google and other search engines through technical optimization, content architecture, and authority building. The work covers three distinct layers: technical (crawl efficiency, site speed, structured data, canonical structure), on-page (keyword targeting, content architecture, entity mapping), and off-page (link acquisition, citation building, brand entity verification). A legitimate SEO company for an Encino business has one purpose: generating qualified organic traffic that converts into revenue — not impressions, not rankings for irrelevant terms, pipeline."
+            "text": "The most reliable signal is whether they can show you what they changed and where. A legitimate SEO engagement produces visible deliverables: a technical audit with specific issues documented and a changelog showing which ones were fixed, content pieces live on your site targeting specific queries, and link or citation acquisitions you can verify independently. If your agency sends monthly reports showing rankings and traffic graphs without being able to show you what changed in the site to produce those changes, the work is either not happening or happening at a cosmetic level."
           }
         },
         {
           "@type": "Question",
-          "name": "Who are the biggest SEO companies?",
+          "name": "We are a professional services firm in Encino. We are not sure whether to focus on local SEO for Encino specifically or on broader national content SEO. Which comes first?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "The largest SEO companies by headcount include Conductor, BrightEdge, Ignite Visibility, and Searchmetrics. Enterprise agency networks like WPP and Publicis have large embedded SEO practices. However, size and SEO performance have a weak correlation. The firms that produce the strongest technical results for regional businesses like those in Encino are typically boutique engineering-focused practices — not large nationals running accounts through junior coordinators. Enterprise agencies allocate most of their billing to account management, not execution."
+            "text": "Start with where your revenue actually comes from. If your clients are primarily within the San Fernando Valley, local SEO targeting Map Pack and local organic results for Encino, Tarzana, Sherman Oaks, and Woodland Hills queries has a much faster path to new client acquisition than national content SEO. Local buyers searching for an attorney or financial advisor in Encino have high purchase intent. National content SEO builds domain authority over time but rarely produces near-term client acquisition for a regional professional services firm."
           }
         },
         {
           "@type": "Question",
-          "name": "How much do SEO services cost?",
+          "name": "We need organic traffic but we also need leads right now. How do we run Google Ads and SEO at the same time without wasting money?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "SEO services range from $500/month for basic local management to $15,000+/month for technical enterprise programs. For Encino businesses in competitive categories — legal, financial services, medical, real estate — a results-producing program realistically runs $2,500–$6,000/month covering technical audits, content development, schema and entity work, and ongoing optimization. Programs below $1,500/month for competitive Ventura Boulevard categories almost universally lack the engineering depth to move rankings. The ROI frame is more useful: a program generating two additional qualified leads per month in a $5,000+ service category pays for itself before month two."
+            "text": "Run them as complementary channels, not competing ones. Google Ads should target your highest-intent queries right now — where a buyer is actively looking and ready to contact someone today. SEO should target the broader research and comparison queries where the buyer is not yet ready to pay for a click. The waste happens when both channels target the exact same queries — you end up paying for clicks on branded terms that your organic ranking would have captured for free."
           }
         },
         {
           "@type": "Question",
-          "name": "Do I need an SEO company?",
+          "name": "Our last SEO agency promised first-page results in 90 days and nothing happened by day 180. What is a realistic timeline for SEO to actually start working?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "You need an SEO company if organic search is a viable customer acquisition channel that you are not currently capturing. For most Encino businesses on Ventura Boulevard — dental, legal, financial advisory, medical, real estate, professional services — organic search is the highest-intent, lowest-cost-per-acquisition channel available. Buyers who find you via Google are already looking for what you offer. The question is whether they find you or a competitor. If your revenue targets require consistent new customer acquisition and you are not currently capturing significant organic search traffic in Encino, a systematic SEO program is not optional."
+            "text": "Ninety days is not a realistic timeline for first-page results in any competitive Encino professional services category. The honest timeline is 6 to 12 months for sustained organic rankings in categories like legal, financial advisory, medical, or real estate. In that period, the first 90 days are foundational: technical fixes, keyword architecture, and on-page optimization. Rankings typically start moving meaningfully at months 4 to 6 for lower-competition queries and at months 8 to 12 for the highest-value terms. Ask any agency to show you actual historical client ranking timelines, not projections."
           }
         }
       ]
@@ -393,37 +393,37 @@ export default function SeoCompanyEncinoPage() {
       <section className="faq-section">
         <div className="onpage-container">
           <div className="section-head">
-            <span className="mono-tag">People Also Ask</span>
+            <span className="mono-tag">Common questions</span>
             <h2>SEO Company Questions, Answered Directly</h2>
             <p>The questions Encino business owners ask before engaging an SEO company — answered without the agency spin.</p>
           </div>
 
           <div className="faq-grid">
             <div className="faq-item">
-              <h2 style={{fontSize:'1.1rem', fontWeight:600, fontFamily:'var(--font-display)', lineHeight:1.4, color:'var(--ink)', marginBottom:0}}>What is an SEO company?</h2>
+              <h2 style={{fontSize:'1.1rem', fontWeight:600, fontFamily:'var(--font-display)', lineHeight:1.4, color:'var(--ink)', marginBottom:0}}>We have worked with two different SEO agencies over two years and neither one moved our rankings. What are the signs an agency is actually doing real work?</h2>
               <p>
-                An SEO company improves a business's visibility in Google and other search engines through technical optimization, content architecture, and authority building. The work covers three distinct layers: technical (crawl efficiency, site speed, structured data, canonical structure), on-page (keyword targeting, content architecture, entity mapping), and off-page (link acquisition, citation building, brand entity verification). A legitimate SEO company for an Encino business has one purpose: generating qualified organic traffic that converts into revenue — not impressions, not rankings for irrelevant terms, not vanity metric reports. The best way to evaluate any SEO company is to ask them to show revenue or lead attribution from past client work, not just keyword ranking charts. Our <a href="/insights/best-seo-agency-for-b2b-brands" style={{color:'var(--green)'}}>SEO agency evaluation checklist</a> covers exactly what to verify before signing a contract.
+                The most reliable signal is whether they can show you what they changed and where. A legitimate SEO engagement produces visible deliverables: a technical audit with specific issues documented and a changelog showing which ones were fixed, content pieces live on your site targeting specific queries, and citation or link acquisitions you can verify independently. If your agency sends monthly reports showing rankings and traffic graphs without being able to show you what changed in the site to produce those changes, the work is either not happening or happening at a cosmetic level that does not move competitive rankings. Ask to see the last three months of actual deliverables, not reporting decks.
               </p>
             </div>
 
             <div className="faq-item">
-              <h2 style={{fontSize:'1.1rem', fontWeight:600, fontFamily:'var(--font-display)', lineHeight:1.4, color:'var(--ink)', marginBottom:0}}>Who are the biggest SEO companies?</h2>
+              <h2 style={{fontSize:'1.1rem', fontWeight:600, fontFamily:'var(--font-display)', lineHeight:1.4, color:'var(--ink)', marginBottom:0}}>We are a professional services firm in Encino. We are not sure whether to focus on local SEO for Encino specifically or on broader national content SEO. Which comes first?</h2>
               <p>
-                The largest SEO companies by revenue and headcount include Conductor, BrightEdge, Ignite Visibility, Victorious, and WebFX. Enterprise agency networks like Publicis and WPP operate large embedded SEO practices. However, size and SEO performance have a weak correlation for regional and mid-market businesses. The firms producing the strongest technical results for Encino-scale clients tend to be boutique engineering practices, not national brands. The reason is structural: large agencies allocate the majority of their billing to account management, onboarding administration, and sales infrastructure — not to the technical engineering that actually moves rankings. Our <a href="/insights/gobiya-vs-enterprise-seo-agencies" style={{color:'var(--green)'}}>direct comparison with enterprise SEO agencies</a> covers this in detail, including where the budget actually goes in a typical agency retainer versus an engineering-focused engagement.
+                Start with where your revenue actually comes from. If your clients are primarily within the San Fernando Valley — the typical profile for an Encino professional services firm — local SEO targeting Map Pack and local organic results for Encino, Tarzana, Sherman Oaks, and Woodland Hills queries has a much faster path to new client acquisition than national content SEO. Local buyers searching for an attorney, financial advisor, or accountant in Encino have high purchase intent and are often ready to book. National content SEO builds domain authority over time but rarely produces near-term client acquisition for a regional firm. The exception is if your practice has a specialty that attracts clients from outside the Valley — then national content around that specialty makes sense alongside local SEO, not instead of it.
               </p>
             </div>
 
             <div className="faq-item">
-              <h2 style={{fontSize:'1.1rem', fontWeight:600, fontFamily:'var(--font-display)', lineHeight:1.4, color:'var(--ink)', marginBottom:0}}>How much do SEO services cost?</h2>
+              <h2 style={{fontSize:'1.1rem', fontWeight:600, fontFamily:'var(--font-display)', lineHeight:1.4, color:'var(--ink)', marginBottom:0}}>We need organic traffic but we also need leads right now. How do we run Google Ads and SEO at the same time without wasting money?</h2>
               <p>
-                SEO services range from $500/month for basic local management to $15,000+/month for enterprise technical programs. For Encino businesses in competitive categories — legal, financial advisory, medical, dental, real estate — a program that actually moves rankings realistically runs $2,500–$6,000/month. That covers technical audits and fixes, content development, schema and entity work, and ongoing optimization. Programs below $1,500/month for competitive Ventura Boulevard categories almost universally lack the engineering depth to outperform established local competitors. The ROI frame matters more than the cost number: if your average customer lifetime value is $5,000 and the program generates two additional qualified leads per month, the program pays for itself in month one. Our <a href="/insights/b2b-seo-agency" style={{color:'var(--green)'}}>B2B SEO agency pipeline attribution guide</a> walks through the exact ROI model.
+                Run them as complementary channels, not competing ones. Google Ads should target your highest-intent, highest-value queries right now — where a buyer is actively looking and ready to contact someone today. SEO should target the broader research and comparison queries where the buyer is not yet ready to pay for a click. The waste happens when both channels target the exact same queries — you end up paying for clicks on branded or navigational terms that your organic ranking would have captured for free. A simple rule: if you are already in organic positions one through three for a query, pause the paid campaign on that term and redirect the budget to queries you do not yet rank for. See our <a href="/insights/b2b-seo-agency" style={{color:'var(--green)'}}>B2B SEO pipeline attribution guide</a> for the full channel sequencing model.
               </p>
             </div>
 
             <div className="faq-item">
-              <h2 style={{fontSize:'1.1rem', fontWeight:600, fontFamily:'var(--font-display)', lineHeight:1.4, color:'var(--ink)', marginBottom:0}}>Do I need an SEO company?</h2>
+              <h2 style={{fontSize:'1.1rem', fontWeight:600, fontFamily:'var(--font-display)', lineHeight:1.4, color:'var(--ink)', marginBottom:0}}>Our last SEO agency promised first-page results in 90 days and nothing happened by day 180. What is a realistic timeline for SEO to actually start working?</h2>
               <p>
-                You need an SEO company if organic search is a viable customer acquisition channel that you are not currently capturing. For most Encino businesses on Ventura Boulevard — dental, legal, financial advisory, medical, real estate, professional services — organic search is the highest-intent, lowest-cost-per-acquisition channel available. Buyers who find you through Google search are already looking for your category of service. The only question is whether they find you or a competitor. If your revenue targets require consistent new customer acquisition and your site currently generates minimal organic traffic or leads, a systematic SEO program is not optional — it is a revenue infrastructure decision. The businesses on Ventura Boulevard holding positions one through three in their category have already made that decision. The businesses considering whether they need SEO are competing with them blind.
+                Ninety days is not a realistic timeline for first-page results in any competitive Encino professional services category. The honest timeline is 6 to 12 months for sustained organic rankings in categories like legal, financial advisory, medical, or real estate — where established competitors have years of authority built up. In that period, the first 90 days are foundational: technical fixes, keyword architecture, and on-page optimization. Rankings typically start moving meaningfully at months 4 to 6 for lower-competition queries and at months 8 to 12 for the highest-value terms. An agency that promises 90-day results is either targeting low-competition queries that will not drive meaningful traffic, or setting an expectation they know is unrealistic to close the contract. Ask to see actual historical client ranking timelines, not projections.
               </p>
             </div>
           </div>

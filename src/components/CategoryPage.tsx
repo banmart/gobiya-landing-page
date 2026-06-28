@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import SiteHeader from './SiteHeader';
 import SiteFooter from './SiteFooter';
 import LatestInsights from './LatestInsights';
@@ -25,6 +25,7 @@ interface CategoryConfig {
     links: ServiceLink[];
     href: string;
   }[];
+  faqs: { q: string; a: string }[];
 }
 
 const CATEGORIES: Record<string, CategoryConfig> = {
@@ -43,6 +44,28 @@ const CATEGORIES: Record<string, CategoryConfig> = {
       { href: '/creativity/seo-web-copywriting-agency', label: 'SEO & Web Copywriting' },
       { href: '/creativity/creative-art-direction-agency', label: 'Creative Art Direction' },
       { href: '/creativity/social-media-management-agency', label: 'Social Media Management' },
+    ],
+    faqs: [
+      {
+        q: 'Do we really need a brand strategy if we already have a logo?',
+        a: 'A logo is a mark — a brand strategy is what that mark means. Without a defined voice, visual system, and positioning, every piece of content your business produces pulls in a slightly different direction. Over time that inconsistency erodes trust, especially with buyers who research across multiple channels before making a decision. A strategy gives your team a shared language so that your website, your ads, your emails, and your social posts feel like they came from the same place.'
+      },
+      {
+        q: 'We need a website rewrite and better SEO. Does the copy actually move the needle?',
+        a: 'It is usually the biggest lever. Technical SEO can fix crawlability and site speed, but Google ranks pages based on what they say and how well they answer the query. Thin, generic copy is the most common reason technically healthy sites stall in the 10–20 position range. Copy written around specific search intent, with natural semantic variation and a clear answer in the first paragraph, is what closes the gap from page two to the top three.'
+      },
+      {
+        q: 'How do we keep our brand consistent when different people are writing for us?',
+        a: 'The practical fix is a brand guidelines document — not a 60-page PDF nobody reads, but a concise reference that covers voice, tone, what the company does and does not say, and a handful of before/after examples. Once that exists, it becomes the brief for every writer, designer, and social manager you work with. We build that as part of brand identity work, and the difference in output consistency is immediate.'
+      },
+      {
+        q: "We're rebranding. How disruptive is that going to be to our search rankings?",
+        a: 'It depends on what changes. A visual rebrand — new logo, new colour palette, updated imagery — has almost no SEO impact. A URL change or domain migration is a different situation: without proper 301 redirect mapping and Search Console management, you can lose a significant portion of your organic traffic in the weeks after launch. We plan the technical migration alongside the creative rebrand so both happen cleanly at the same time.'
+      },
+      {
+        q: 'What does a content strategy actually deliver that a one-off article push does not?',
+        a: 'A single article builds one signal. A content strategy builds a topic cluster — a hub page supported by spokes that cover every related question your buyer asks during the research phase. That architecture concentrates authority on a single topic and gives search engines a clear signal about what your site is the authority on. One-off articles scatter that signal. The compounding effect of a structured cluster shows up in organic traffic within three to six months and continues building after that.'
+      },
     ],
     cards: [
       {
@@ -119,6 +142,28 @@ const CATEGORIES: Record<string, CategoryConfig> = {
       { href: '/performance/cro-ux-analysis-agency', label: 'CRO & UX Analysis' },
       { href: '/performance/ai-llms-business-agency', label: 'AI & LLM Systems Consulting' },
     ],
+    faqs: [
+      {
+        q: 'Our traffic dropped after a Google update. Where do we even start?',
+        a: 'The first step is matching the drop to the specific update that caused it — not every update, just the one whose timing aligns with your traffic curve. Each update targets a different pattern: thin content, low authority, over-optimized anchor text, helpful content signals. Once you know which pattern triggered the drop, the fix is targeted. Making broad changes without that forensic read is the most common reason sites take 12 to 18 months to recover instead of six weeks.'
+      },
+      {
+        q: 'We tried SEO before and it did not work. What is different here?',
+        a: 'Most SEO engagements stall because the work is scattered across too many signals without a clear hypothesis about what is actually holding rankings back. We run a forensic audit before touching anything — looking at the exact update timeline, the content patterns that got suppressed, and the technical gaps in the crawl. From that read we build one targeted fix, not a 50-item checklist. If we cannot identify a clear, high-probability lever in the first two weeks, we say so.'
+      },
+      {
+        q: 'Should we run Google Ads while we wait for SEO to kick in?',
+        a: 'For most businesses, yes — but with one important caveat. Paid search buys you time-to-market in the short term and gives you real conversion data (which queries actually close) that makes your SEO targeting sharper. The caveat is attribution: if your tracking is not set up to distinguish paid and organic conversions, you end up paying for clicks you were going to earn anyway. We set up clean attribution before scaling any paid budget.'
+      },
+      {
+        q: 'What is the difference between SEO and PPC — which should we start with?',
+        a: 'SEO is a compounding asset: slow to build, expensive to dislodge once established, zero marginal cost per click at scale. PPC is a linear cost: fast to launch, immediate data, but stops the moment you stop paying. The right answer depends on your timeline and your margin. If you need pipeline in the next 90 days, start with paid and use the data to inform your organic content. If you are playing a 12-month game and have content capacity, SEO compounds faster than most clients expect once the technical foundation is right.'
+      },
+      {
+        q: 'How do we know if our website speed is actually hurting our rankings?',
+        a: 'Check your Core Web Vitals data in Google Search Console under the Experience tab. If you are seeing pages flagged as Poor or Needs Improvement on LCP, INP, or CLS, those are confirmed signals — not hypothetical ones. The CrUX data Google uses for ranking is field data from real users on your site, not a lab test. The fix list varies by site: oversized images, render-blocking scripts, and third-party tag bloat are the three most common culprits we find on audits.'
+      },
+    ],
     cards: [
       {
         number: '01',
@@ -194,6 +239,28 @@ const CATEGORIES: Record<string, CategoryConfig> = {
       { href: '/relations/influencer-marketing-agency', label: 'Influencer Marketing' },
       { href: '/relations/local-community-relations-agency', label: 'Local Community Relations' },
     ],
+    faqs: [
+      {
+        q: 'Can we just buy backlinks to speed this up?',
+        a: "You can, and it will appear to work for a few months. Then a link spam update will wipe the gains and leave your domain in a worse position than when you started. Google's link spam detection has improved substantially — it uses pattern analysis across anchor text, domain diversity, and link velocity that catches most paid link schemes within one or two update cycles. The sites we have seen recover fastest from link penalties are the ones that switched to earned editorial links before the next update window."
+      },
+      {
+        q: 'We got mentioned in a local news article. Does that actually help our rankings?',
+        a: 'It depends on whether the mention includes a link. A citation without a link (a bare brand mention) contributes to entity recognition and can appear in AI search results, but it does not pass the domain authority signal that a hyperlink does. A followed link from a local news domain with real traffic is a strong signal — especially for local SEO. If you have unlinked brand mentions from press coverage, outreach to convert them to links is one of the highest-ROI link building moves available to you.'
+      },
+      {
+        q: 'How long does link building take to show up in rankings?',
+        a: 'Typically six to twelve weeks for new links to be indexed and weighted, and three to six months before you can draw a clean line from a link building campaign to a ranking movement. The timeline is shorter when the links come from domains Google already crawls frequently and longer when they come from lower-traffic or newer domains. We track this at the page level rather than waiting for a domain authority number to move — page-level rank data shows the signal faster.'
+      },
+      {
+        q: 'What is the difference between a paid placement and earned media coverage?',
+        a: 'A paid placement is marked as sponsored and carries no editorial weight — Google treats it as advertising, not a vote of confidence. Earned coverage is when a journalist or editor decides your story is worth writing about independent of payment. That independence is exactly what makes it valuable as an authority signal. The practical difference for your SEO: editorial links pass full link equity; paid placements and sponsored posts typically use nofollow or sponsored attributes, which do not.'
+      },
+      {
+        q: 'How do we measure whether authority building is actually working?',
+        a: 'Three things we track on a rolling 90-day basis: new referring domains (the count and quality of sites linking to you for the first time), domain rating or domain authority trend, and organic impressions for the pages the links are pointing to. The clearest signal is when a target page that has been stuck on page two starts moving to positions four through six — that movement usually correlates with new high-authority links indexing. We report on all three in monthly updates.'
+      },
+    ],
     cards: [
       {
         number: '01',
@@ -259,6 +326,33 @@ const ArrowIcon = () => (
     <path fillRule="evenodd" clipRule="evenodd" d="M7 7C7 6.44772 7.44772 6 8 6H17C17.5523 6 18 6.44772 18 7V16C18 16.5523 17.5523 17 17 17C16.4477 17 16 16.5523 16 16V9.41421L7.70711 17.7071C7.31658 18.0976 6.68342 18.0976 6.29289 17.7071C5.90237 17.3166 5.90237 16.6834 6.29289 16.2929L14.5858 8H8C7.44772 8 7 7.55228 7 7Z" fill="currentColor"/>
   </svg>
 );
+
+function FaqItem({ q, a }: { q: string; a: string }) {
+  const [open, setOpen] = useState(false);
+  return (
+    <div style={{ borderTop: '1px solid #e5e7eb' }}>
+      <button
+        onClick={() => setOpen(o => !o)}
+        style={{
+          width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'center',
+          padding: '1.5rem 0', background: 'none', border: 'none', cursor: 'pointer', textAlign: 'left', gap: '1.5rem',
+        }}
+        aria-expanded={open}
+      >
+        <span style={{ fontSize: '1.05rem', fontWeight: 600, color: '#111827', lineHeight: 1.4 }}>{q}</span>
+        <span style={{ flexShrink: 0, width: 24, height: 24, display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#6b7280' }}>
+          {open
+            ? <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/></svg>
+            : <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/></svg>
+          }
+        </span>
+      </button>
+      {open && (
+        <p style={{ color: '#4b5563', fontSize: '0.95rem', lineHeight: 1.75, paddingBottom: '1.5rem', maxWidth: '72ch' }}>{a}</p>
+      )}
+    </div>
+  );
+}
 
 interface CategoryPageProps {
   category: 'creativity' | 'performance' | 'relations';
@@ -381,6 +475,22 @@ export default function CategoryPage({ category }: CategoryPageProps) {
               </a>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* FAQs */}
+      <section className="border-b border-gray-200 bg-white" style={{ padding: '6rem 5vw' }}>
+        <div style={{ maxWidth: '860px' }}>
+          <span className="text-sm font-mono uppercase tracking-widest text-gray-400 block mb-3">Common questions</span>
+          <h2 style={{ fontSize: 'clamp(2rem, 3.5vw, 3rem)', fontWeight: 700, letterSpacing: '-0.03em', color: '#111827', marginBottom: '3rem' }}>
+            Things clients ask before they start
+          </h2>
+          <div>
+            {cfg.faqs.map((item, i) => (
+              <React.Fragment key={i}><FaqItem q={item.q} a={item.a} /></React.Fragment>
+            ))}
+            <div style={{ borderTop: '1px solid #e5e7eb' }} />
+          </div>
         </div>
       </section>
 

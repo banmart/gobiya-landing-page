@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import SiteHeader from './SiteHeader';
 import SiteFooter from './SiteFooter';
 
@@ -47,11 +47,39 @@ const STEPS = [
   'Publish with full on-page SEO: title, meta, schema, alt text',
 ];
 
+const FAQS = [
+  { q: 'We write our own content and post regularly but nothing ranks. What are we missing?', a: 'Volume without architecture is the most common content marketing mistake. Posting regularly produces a lot of indexed URLs but rarely produces rankings because each article is competing on its own without a supporting signal structure. What produces rankings is a topic cluster: a primary page optimized for the core query you want to own, supported by content that answers the research questions your buyers ask before they are ready to convert. That cluster structure concentrates authority on one topic and gives search engines a clear, coherent signal about what your site is expert on.' },
+  { q: 'We have a writer on staff. Why would we need external SEO copywriting help?', a: 'The gap is usually keyword research and intent architecture, not writing ability. A strong writer who does not know how to identify the exact query a page should target, how to structure headings for semantic clarity, or how to build internal link equity between pages will produce content that reads well and ranks for nothing. SEO copywriting is not about writing differently — it is about writing with a search strategy built in from before the first word is written.' },
+  { q: 'Our website has been live for three years and none of the pages rank for anything except our brand name. Can that be fixed?', a: 'Yes, and existing sites often have a faster path to rankings than new ones because the domain has some authority accumulated. The most effective fix is usually a page-level audit: identify which existing pages have the best chance of ranking with improvements (they might already be on page two or three for good queries), rewrite them with correct keyword targeting and heading structure, and fix technical issues like title tags and canonical tags. That is a faster path to results than starting fresh with new content.' },
+  { q: 'We need to rewrite all our website copy. How long does a full site take and what do we need to provide?', a: 'A typical B2B service site — home, about, five to eight service pages, contact — takes four to six weeks from briefing to delivery. What we need from you: a clear description of each service and who it is for, any data or proof points you want highlighted (case study numbers, years in business, certifications), the tone you are going for, and two or three competitors whose content you respect. The keyword research, heading architecture, and draft copy are all on us.' },
+];
+
 const STATS = [
   { val: '213K', label: 'Monthly impressions driven for a single client cluster' },
   { val: '6 steps', label: 'Repeatable process, every engagement' },
   { val: 'Top 5', label: 'Branded rankings achieved for Smile Center' },
 ];
+
+function FaqItem({ q, a }: { q: string; a: string }) {
+  const [open, setOpen] = useState(false);
+  return (
+    <div style={{ borderTop: '1px solid #e5e7eb' }}>
+      <button onClick={() => setOpen(o => !o)} style={{ width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '1.5rem 0', background: 'none', border: 'none', cursor: 'pointer', textAlign: 'left', gap: '1.5rem' }} aria-expanded={open}>
+        <span style={{ fontSize: '1.05rem', fontWeight: 600, color: '#111827', lineHeight: 1.4 }}>{q}</span>
+        <span style={{ flexShrink: 0, color: '#6b7280', fontSize: '1.2rem', lineHeight: 1 }}>{open ? '−' : '+'}</span>
+      </button>
+      {open && <p style={{ color: '#4b5563', fontSize: '0.95rem', lineHeight: 1.75, paddingBottom: '1.5rem', maxWidth: '72ch' }}>{a}</p>}
+    </div>
+  );
+}
+function FaqList({ items }: { items: { q: string; a: string }[] }) {
+  return (
+    <div>
+      {items.map((item, i) => <React.Fragment key={i}><FaqItem q={item.q} a={item.a} /></React.Fragment>)}
+      <div style={{ borderTop: '1px solid #e5e7eb' }} />
+    </div>
+  );
+}
 
 export default function SeoWebCopywritingPage() {
   useEffect(() => {
@@ -213,6 +241,15 @@ export default function SeoWebCopywritingPage() {
             onMouseLeave={e => ((e.target as HTMLImageElement).style.transform = 'scale(1)')}
           />
         </a>
+      </section>
+
+      {/* ── FAQs ── */}
+      <section style={{ padding: '5rem 5vw', borderBottom: '1px solid #e5e7eb', background: '#ffffff' }}>
+        <div style={{ maxWidth: '860px' }}>
+          <span style={{ fontFamily: 'monospace', fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.18em', color: '#9ca3af', display: 'block', marginBottom: '0.5rem' }}>Common questions</span>
+          <h2 style={{ fontSize: 'clamp(1.6rem, 3vw, 2.4rem)', fontWeight: 700, letterSpacing: '-0.03em', color: '#111827', marginBottom: '3rem' }}>Things clients ask before they start</h2>
+          <FaqList items={FAQS} />
+        </div>
       </section>
 
       <SiteFooter />

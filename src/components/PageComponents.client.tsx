@@ -43,3 +43,4 @@ export const LocalSeoServicesBurbankPage = lazy(() => import('./LocalSeoServices
 export const GlendaleSeoPage = lazy(() => import('./GlendaleSeoPage'));
 export const PlasticSurgeryMarketingPage = lazy(() => import('./PlasticSurgeryMarketingPage'));
 export const InternetMarketingServicesLosAngelesPage = lazy(() => import('./InternetMarketingServicesLosAngelesPage'));
+export const AiSearchMarketingSantaClaritaPage = lazy(() => import('./AiSearchMarketingSantaClaritaPage'));
