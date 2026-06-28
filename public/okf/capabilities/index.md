@@ -4,7 +4,7 @@ title: Capabilities
 description: Gobiya's service lines across Performance, Creativity, and Relations — SEO, web copywriting, authority building, web development, CRM, and more.
 resource: https://www.gobiya.com/performance
 tags: [capabilities, services, seo, copywriting, performance, creativity, relations]
-timestamp: 2026-06-22T00:00:00Z
+timestamp: 2026-06-28T00:00:00Z
 ---
 
 # Capabilities
@@ -15,6 +15,7 @@ Gobiya's services are organized into three pillars. Performance is the core — 
 
 - [SEO & Discoverability](/capabilities/seo-discoverability.md) — algorithm/penalty recovery, technical SEO, and organic visibility. Hub: /performance/seo-discoverability-agency
   - [Technical SEO Audit](/performance/technical-seo-audit-agency) — crawl health, CWV, structured data, prioritized fix list.
+  - [SEO Traffic Recovery](/capabilities/seo-traffic-recovery.md) — forensic diagnosis of algorithm hits and ranking restoration. /performance/seo-traffic-recovery
   - [Local SEO Services](/performance/local-seo-services-agency) — GBP, NAP citations, map-pack rankings.
   - [B2B SEO](/performance/b2b-seo-agency) — decision-maker queries, purchase-cycle content, pipeline attribution.
   - [E-commerce SEO](/performance/ecommerce-seo-agency) — category pages, faceted navigation, product schema.
@@ -23,6 +24,7 @@ Gobiya's services are organized into three pillars. Performance is the core — 
 - [AI & LLMs for Business](/capabilities/ai-llms-business.md) — office automation, custom AI models. /performance/ai-llms-business-agency
 - [Blockchain & Web3](/capabilities/blockchain-web3-development.md) — smart contracts, dApps. /performance/blockchain-web3-development-agency
 - [Google Penalty Recovery](/google-penalty-recovery) — forensic diagnosis and recovery for manual actions and algorithmic suppressions.
+- [Google Ads & PPC](/relations/google-ads-ppc-strategy-agency) — paid search campaigns, RLSA remarketing, cost-per-lead attribution.
 
 ## Creativity
 
@@ -38,3 +40,16 @@ Gobiya's services are organized into three pillars. Performance is the core — 
 ## Relations
 
 - [Authority Building](/capabilities/authority-building.md) — topical authority, backlink acquisition, and trust signals. /relations/authority-building-agency
+
+## Verticals
+
+Industry-specific practice areas with documented client history and compliance/signal expertise.
+
+- [Plastic Surgery & Aesthetic Medicine](/verticals/plastic-surgery.md) — patient acquisition SEO, compliant Google Ads, 3–6 month consideration-cycle content. /plastic-surgery-internet-marketing
+
+## Markets
+
+Sub-market expertise beyond the broad LA metro — where local search dynamics differ enough to require market-specific strategy.
+
+- [Burbank](/markets/burbank.md) — entertainment/media corridor, 91501–91510. /local-seo-company-burbank · /local-seo-services-burbank
+- [Glendale](/markets/glendale.md) — Americana corridor, 91201–91210. /glendale-seo · /local-seo-glendale

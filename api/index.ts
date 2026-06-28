@@ -362,6 +362,26 @@ const metadataMap: Record<string, SEOMetadata> = {
     title: 'Local SEO Company Burbank: Map Pack & Google Business Profile - Gobiya',
     description: 'Local SEO company Burbank — we engineer Google Map Pack dominance, GBP optimization, citation consistency, and review velocity for businesses on San Fernando Boulevard and throughout the Burbank, CA 91501–91510 market.'
   },
+  '/internet-marketing-services-los-angeles': {
+    title: 'Internet Marketing Services Los Angeles | Gobiya',
+    description: 'Gobiya provides top rated internet marketing services in Los Angeles. We are a digital marketing agency focusing on SEO, CRM pipeline automation, web development, and AI-driven online visibility for businesses across California.'
+  },
+  '/local-seo-services-burbank': {
+    title: 'Local SEO services Burbank: GBP, citations, Map Pack rankings - Gobiya',
+    description: 'Local SEO services in Burbank, CA — top rated, online appointments available. We optimize Google Business Profile, NAP citations, review velocity, and local schema for businesses in the 91501–91510 corridor. Open Mon–Fri, book online.'
+  },
+  '/glendale-seo': {
+    title: 'Glendale SEO: top rated, open now, online appointments - Gobiya',
+    description: 'Glendale SEO agency — technical SEO, local Map Pack optimization, content architecture, and authority building for businesses in the 91201–91210 market. Top rated, BBB A+, online appointments available. Book a pre-read today.'
+  },
+  '/plastic-surgery-internet-marketing': {
+    title: 'Plastic surgery internet marketing: SEO, Ads & patient acquisition - Gobiya',
+    description: 'Plastic surgery internet marketing agency — procedure-specific SEO, compliant Google Ads, content architecture for 3–6 month consideration cycles, review velocity management, and AI citation visibility. Best plastic surgery marketing company for LA practices.'
+  },
+  '/performance/seo-traffic-recovery': {
+    title: 'SEO traffic recovery agency in LA: algorithm diagnosis, ranking restoration - Gobiya',
+    description: 'SEO traffic recovery specialists in Los Angeles. We diagnose the exact Google update or penalty behind an organic traffic drop, execute the precise fix sequence, and restore rankings — forensic read first, targeted fix second.'
+  },
   '/creativity': {
     title: 'Creative brand & identity design agency in LA: styling, voice, copy - Gobiya',
     description: 'Express your brand identity and capture market attention with Gobiya. We design custom brand identity systems, write compelling copy, and direct creative concepts.'

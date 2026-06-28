@@ -4,7 +4,7 @@ title: SEO & Discoverability
 description: Technical SEO, algorithmic penalty recovery, and organic visibility engineering. Gobiya diagnoses the exact Google update behind a traffic loss, builds the corrective fix, and deploys a compounding long-term system.
 resource: https://www.gobiya.com/performance/seo-discoverability-agency
 tags: [seo, recovery, penalty, technical-seo, local-seo, b2b-seo, ecommerce-seo, organic-search]
-timestamp: 2026-06-22T00:00:00Z
+timestamp: 2026-06-28T00:00:00Z
 ---
 
 # SEO & Discoverability
@@ -32,6 +32,10 @@ https://www.gobiya.com/performance/seo-discoverability-agency
 | Local SEO Services | "local seo services agency" | /performance/local-seo-services-agency |
 | B2B SEO | "b2b seo agency" | /performance/b2b-seo-agency |
 | E-commerce SEO | "ecommerce seo agency" | /performance/ecommerce-seo-agency |
+| SEO Traffic Recovery | "seo traffic recovery" | /performance/seo-traffic-recovery |
+| Local SEO Services Burbank | "local seo services burbank" | /local-seo-services-burbank |
+| Glendale SEO | "glendale seo" | /glendale-seo |
+| Plastic Surgery Internet Marketing | "plastic surgery internet marketing" | /plastic-surgery-internet-marketing |
 
 ## Typical outcome
 

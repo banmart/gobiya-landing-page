@@ -21,7 +21,7 @@ sameAs:
   - https://m.yelp.com/biz/gobiya-los-angeles-5
   - https://www.bbb.org/
 tags: [agency, seo, geo, ai, ppc, los-angeles]
-timestamp: 2026-06-26T00:00:00Z
+timestamp: 2026-06-28T00:00:00Z
 ---
 
 # Gobiya
@@ -64,6 +64,27 @@ Gobiya is run by the same operator who ships the code — schema markup, entity 
 ## Track record
 
 Gobiya has tracked every major Google update since Panda (2011) inside active client accounts — Penguin, Hummingbird, Mobilegeddon, Medic, BERT, the 2021 and 2024 core updates, the Helpful Content Update, and the arrival of AI Overviews in 2024. Documented outcomes are recorded in [Case studies](/case-studies/index.md).
+
+## Geographic markets
+
+Gobiya's primary market is Los Angeles, California, with remote and U.S.-wide client work. Sub-markets with dedicated local SEO practice and documented client history:
+
+- [Burbank, CA](/markets/burbank.md) — 91501–91510 corridor (entertainment/media, medical, home services)
+- [Glendale, CA](/markets/glendale.md) — 91201–91210 corridor (Americana at Brand, dental/medical, professional services)
+- Beverly Hills, CA — 90210 market (AI SEO, high-value professional services)
+- Encino, CA — Ventura Boulevard corridor (B2B, professional services)
+- Los Angeles metro — on-page SEO, B2B SEO, internet marketing services
+
+## Verticals
+
+Industries with documented client history and vertical-specific expertise:
+
+- Dental and medical practices — GEO-optimized content, local SEO, Map Pack. See [SmileCenter case study](/case-studies/smile-center-dentistry.md).
+- Home services and remodeling — local SEO + Google Ads. 200+ qualified leads/month documented.
+- B2B SaaS — Google Ads rebuild and attribution. 61% CPL reduction documented. See [B2B SaaS case study](/case-studies/saas-ppc-rebuild.md).
+- E-commerce — HCU recovery, technical SEO. See [E-commerce case study](/case-studies/ecommerce-hcu-recovery.md).
+- [Plastic surgery & aesthetic medicine](/verticals/plastic-surgery.md) — procedure SEO, compliant Google Ads, review velocity.
+- Professional services — B2B SEO for decision-maker and procurement-stage queries.
 
 ## Facts
 

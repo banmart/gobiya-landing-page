@@ -44,6 +44,10 @@ const metadataMap: Record<string, SEOMetadata> = {
     title: `Plastic surgery internet marketing: SEO, Ads & patient acquisition - Gobiya`,
     description: `Plastic surgery internet marketing agency — procedure-specific SEO, compliant Google Ads, content architecture for 3–6 month consideration cycles, review velocity management, and AI citation visibility. Best plastic surgery marketing company for LA practices.`
   },
+  '/internet-marketing-services-los-angeles': {
+    title: `Internet Marketing Services Los Angeles | Gobiya`,
+    description: `Gobiya provides top rated internet marketing services in Los Angeles. We are a digital marketing agency focusing on SEO, CRM pipeline automation, web development, and AI-driven online visibility for businesses across California.`
+  },
   '/los-angeles-seo-professional': {
     title: `Los Angeles SEO Professional: B2B & Enterprise SEO Engineering - Gobiya`,
     description: `Los Angeles SEO professional practice. Gobiya engineers technical SEO, commercial-intent content architecture, entity schema, and AI citation visibility for B2B brands and professional services firms across Greater Los Angeles.`

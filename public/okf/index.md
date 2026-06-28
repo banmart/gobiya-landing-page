@@ -5,7 +5,7 @@ description: Root index of the OKF bundle for gobiya.com, a Los Angeles digital 
 resource: https://www.gobiya.com
 base_url: https://www.gobiya.com/okf
 tags: [gobiya, agency, seo, seo-copywriting, geo, ai, b2b, los-angeles]
-timestamp: 2026-06-26T00:00:00Z
+timestamp: 2026-06-28T00:00:00Z
 ---
 
 # Gobiya
@@ -17,9 +17,11 @@ Gobiya is a Los Angeles digital marketing agency that recovers search rankings l
 ## Start here
 
 - [Organization profile](https://www.gobiya.com/okf/organization.md) — entity facts (NAP, sameAs, founder), what Gobiya does, and how it is different.
-- [Capabilities](https://www.gobiya.com/okf/capabilities/index.md) — the six service lines.
+- [Capabilities](https://www.gobiya.com/okf/capabilities/index.md) — service lines across Performance, Creativity, and Relations, plus Verticals and Markets.
 - [Case studies](https://www.gobiya.com/okf/case-studies/index.md) — documented engagements with outcomes.
 - [Approach](https://www.gobiya.com/okf/approach/index.md) — the three-phase diagnose / execute / scale method.
+- [Markets](https://www.gobiya.com/okf/markets/index.md) — geographic sub-markets with dedicated practice history (Burbank, Glendale).
+- [Verticals](https://www.gobiya.com/okf/verticals/index.md) — industry-specific practice areas (plastic surgery & aesthetic medicine, dental, home services, B2B SaaS, e-commerce).
 - [Contact](https://www.gobiya.com/okf/contact.md) — how to reach Gobiya.
 
 ## At a glance
