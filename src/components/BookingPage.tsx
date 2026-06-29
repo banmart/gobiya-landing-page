@@ -246,13 +246,13 @@ const BookingPage: React.FC = () => {
                 </p>
                 <div data-hero="3" className="text-[15px] sm:text-[17px] leading-relaxed space-y-6 max-w-[700px] font-medium">
                   <p style={{ color: '#ffffff' }}>
-                    AI Overviews are changing click behavior, paid media auctions are becoming less predictable, attribution gaps continue to widen, and B2B conversion patterns no longer behave the way they did just a few years ago. Yet most organizations still rely on outdated forecasting models built around static traffic assumptions, stable CPCs, and linear growth expectations.
+                    AI Overviews are changing click behavior, paid media auctions are becoming less predictable, and B2B conversion patterns no longer behave the way they did just a few years ago.
                   </p>
                   <p style={{ color: '#ffffff' }}>
-                    In this private strategy session, Steve Martin and the Gobiya engineering team will break down how modern B2B teams should forecast SEO, conversion architecture, and paid growth in today's environment. You'll learn how to move beyond generic traffic projections and build forecasting systems that account for visibility shifts, AI-driven search behavior, conversion volatility, pipeline quality, and revenue efficiency.
+                    In this private strategy session, Steve Martin and the Gobiya engineering team will break down how modern B2B teams should forecast SEO, conversion architecture, and paid growth. You'll learn how to move beyond generic traffic projections and build forecasting systems that account for AI-driven search behavior and pipeline quality.
                   </p>
                   <p className="font-semibold pt-2" style={{ color: '#ffffff' }}>
-                    You'll walk away with practical B2B forecasting frameworks, pipeline contribution maps, and a step-by-step action plan to operationalize organic growth projections across your organization.
+                    Walk away with practical forecasting frameworks, pipeline maps, and a step-by-step action plan to operationalize your growth projections.
                   </p>
                 </div>
               </div>
