@@ -244,11 +244,11 @@ const BookingPage: React.FC = () => {
                 <p data-hero="2" className="text-lg font-semibold mb-6 leading-snug" style={{ color: '#ffffff' }}>
                   Marketing forecasting has become significantly more complex.
                 </p>
-                <div data-hero="3" className="text-[15px] sm:text-[17px] leading-relaxed space-y-6 max-w-[700px] font-medium">
-                  <p style={{ color: '#ffffff' }}>
+                <div data-hero="3" className="text-[15px] sm:text-[17px] leading-relaxed max-w-[700px] font-medium">
+                  <p className="mb-6" style={{ color: '#ffffff' }}>
                     AI Overviews are changing click behavior, paid media auctions are becoming less predictable, and B2B conversion patterns no longer behave the way they did just a few years ago.
                   </p>
-                  <p style={{ color: '#ffffff' }}>
+                  <p className="mb-6" style={{ color: '#ffffff' }}>
                     In this private strategy session, Steve Martin and the Gobiya engineering team will break down how modern B2B teams should forecast SEO, conversion architecture, and paid growth. You'll learn how to move beyond generic traffic projections and build forecasting systems that account for AI-driven search behavior and pipeline quality.
                   </p>
                   <p className="font-semibold pt-2" style={{ color: '#ffffff' }}>
@@ -376,8 +376,8 @@ const BookingPage: React.FC = () => {
 
                       <button 
                         type="button" 
-                        className="w-full mt-4 bg-[#F26522] hover:bg-[#e05a1a] text-white border border-[#F26522] hover:border-[#e05a1a] py-3 rounded font-medium uppercase tracking-[0.06em] transition-all duration-200 outline-none cursor-pointer"
-                        style={{ fontSize: '13px' }}
+                        className="w-full mt-4 py-3 rounded font-bold uppercase tracking-[0.06em] transition-all duration-200 outline-none cursor-pointer"
+                        style={{ backgroundColor: '#F26522', color: '#ffffff', border: '1px solid #F26522', fontSize: '13px' }}
                         onClick={() => {
                           if (!firstName || !lastName || !email || !website || !budget || !phone) {
                             setErrorMsg('Please fill out all required fields marked with *');
@@ -481,8 +481,8 @@ const BookingPage: React.FC = () => {
                         </button>
                         <button 
                           type="button" 
-                          className="flex-1 bg-[#F26522] hover:bg-[#e05a1a] text-white border border-[#F26522] hover:border-[#e05a1a] py-2.5 rounded font-medium uppercase tracking-[0.06em] transition-all duration-200 disabled:opacity-40 disabled:cursor-not-allowed outline-none cursor-pointer"
-                          style={{ fontSize: '13px' }}
+                          className="flex-1 py-2.5 rounded font-bold uppercase tracking-[0.06em] transition-all duration-200 disabled:opacity-40 disabled:cursor-not-allowed outline-none cursor-pointer"
+                          style={{ backgroundColor: '#F26522', color: '#ffffff', border: '1px solid #F26522', fontSize: '13px' }}
                           disabled={!selectedDate || !selectedTimeSlot || submitting}
                           onClick={() => handleBookingSubmit()}
                         >
