@@ -376,8 +376,8 @@ const BookingPage: React.FC = () => {
 
                       <button 
                         type="button" 
-                        className="w-full mt-4 py-3 rounded font-bold uppercase tracking-[0.06em] transition-all duration-200 outline-none cursor-pointer"
-                        style={{ backgroundColor: '#F26522', color: '#ffffff', border: '1px solid #F26522', fontSize: '13px' }}
+                        className="w-full mt-4 rounded font-bold uppercase tracking-[0.06em] transition-all duration-200 outline-none cursor-pointer hover:opacity-90"
+                        style={{ backgroundColor: '#F26522', color: '#ffffff', border: '1px solid #F26522', fontSize: '14px', padding: '14px 24px' }}
                         onClick={() => {
                           if (!firstName || !lastName || !email || !website || !budget || !phone) {
                             setErrorMsg('Please fill out all required fields marked with *');
@@ -481,8 +481,8 @@ const BookingPage: React.FC = () => {
                         </button>
                         <button 
                           type="button" 
-                          className="flex-1 py-2.5 rounded font-bold uppercase tracking-[0.06em] transition-all duration-200 disabled:opacity-40 disabled:cursor-not-allowed outline-none cursor-pointer"
-                          style={{ backgroundColor: '#F26522', color: '#ffffff', border: '1px solid #F26522', fontSize: '13px' }}
+                          className="flex-1 rounded font-bold uppercase tracking-[0.06em] transition-all duration-200 disabled:opacity-40 disabled:cursor-not-allowed outline-none cursor-pointer hover:opacity-90"
+                          style={{ backgroundColor: '#F26522', color: '#ffffff', border: '1px solid #F26522', fontSize: '14px', padding: '14px 24px' }}
                           disabled={!selectedDate || !selectedTimeSlot || submitting}
                           onClick={() => handleBookingSubmit()}
                         >
