@@ -214,16 +214,16 @@ const BookingPage: React.FC = () => {
               width: '100%',
               overflow: 'hidden',
               background: '#0d0f12',
-              backgroundImage: "url('/images/article-ai-marketing-trends.webp')",
+              backgroundImage: "url('/images/hero-racecar.png')",
               backgroundSize: 'cover',
               backgroundPosition: 'center',
-              padding: '13rem 5vw 5rem',
+              padding: 'clamp(7rem,15vw,13rem) 5vw 5rem',
               borderBottom: '1px solid rgba(255,255,255,0.05)',
             }}
           >
-            {/* Glowing accents and light overlay */}
-            <div className="absolute inset-0 bg-[#0d0f12]/85 z-0" />
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(110,231,183,0.08),transparent_55%)] z-0" />
+            {/* Glowing accents and cinematic vignette overlay */}
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(13,15,18,0.5)_0%,rgba(13,15,18,0.95)_100%)] z-0" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(255,255,255,0.08),transparent_60%)] z-0" />
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_80%,rgba(255,255,255,0.03),transparent_55%)] z-0" />
             <div className="absolute inset-0 opacity-10 z-0" style={{
               backgroundImage: 'linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)',
@@ -241,7 +241,7 @@ const BookingPage: React.FC = () => {
                 <h1 data-hero="1" className="text-[clamp(2.4rem,5.2vw,4.2rem)] font-medium tracking-tight text-white leading-[1.08] mb-6 font-display">
                   Forecasting B2B Growth
                 </h1>
-                <p data-hero="2" className="text-lg font-semibold text-[#6ee7b7] mb-6 leading-snug">
+                <p data-hero="2" className="text-lg font-semibold mb-6 leading-snug" style={{ color: '#ffffff' }}>
                   Marketing forecasting has become significantly more complex.
                 </p>
                 <div data-hero="3" className="text-[15px] sm:text-[17px] leading-relaxed space-y-6 max-w-[700px] font-medium">
