@@ -239,20 +239,20 @@ const BookingPage: React.FC = () => {
                   LIVE ON-DEMAND | STRATEGY SESSIONS
                 </div>
                 <h1 data-hero="1" className="text-[clamp(2.4rem,5.2vw,4.2rem)] font-medium tracking-tight text-white leading-[1.08] mb-6 font-display">
-                  Forecasting B2B Growth
+                  Website & SEO Analysis
                 </h1>
                 <p data-hero="2" className="text-lg font-semibold mb-6 leading-snug" style={{ color: '#ffffff' }}>
-                  Marketing forecasting has become significantly more complex.
+                  Search algorithms are constantly evolving, and basic traffic metrics no longer tell the whole story.
                 </p>
                 <div data-hero="3" className="text-[15px] sm:text-[17px] leading-relaxed max-w-[700px] font-medium">
                   <p className="mb-6" style={{ color: '#ffffff' }}>
-                    AI Overviews are changing click behavior, paid media auctions are becoming less predictable, and B2B conversion patterns no longer behave the way they did just a few years ago.
+                    AI Overviews, changing SERP layouts, and unpredictable Google core updates are causing massive shifts in online visibility. If your rankings have plateaued or your organic traffic is failing to convert, your current SEO architecture may be misaligned with how modern algorithms actually index your brand.
                   </p>
                   <p className="mb-6" style={{ color: '#ffffff' }}>
-                    In this private strategy session, Steve Martin and the Gobiya engineering team will break down how modern B2B teams should forecast SEO, conversion architecture, and paid growth. You'll learn how to move beyond generic traffic projections and build forecasting systems that account for AI-driven search behavior and pipeline quality.
+                    In this private strategy session, our engineering team will conduct a deep-dive analysis into your website's technical health, keyword footprint, and competitive gap. We'll diagnose the real bottlenecks holding back your visibility and uncover hidden opportunities for optimization.
                   </p>
                   <p className="font-semibold pt-2" style={{ color: '#ffffff' }}>
-                    Walk away with practical forecasting frameworks, pipeline maps, and a step-by-step action plan to operationalize your growth projections.
+                    Walk away with a comprehensive technical audit, a clear roadmap for algorithmic recovery, and a step-by-step action plan to dominate organic search.
                   </p>
                 </div>
               </div>
@@ -275,7 +275,7 @@ const BookingPage: React.FC = () => {
                     /* STEP 1: Qualification Form */
                     <div className="flex flex-col gap-6 text-left">
                       <div className="mb-2 text-center">
-                        <h3 className="font-bold text-xl text-gray-900">Request your growth session</h3>
+                        <h3 className="font-bold text-xl text-gray-900">Request your strategy session</h3>
                         <p className="text-sm text-gray-500 mt-2">Fill out the form below to register &amp; lock your date:</p>
                       </div>
 
