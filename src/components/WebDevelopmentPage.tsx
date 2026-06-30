@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import SiteHeader from './SiteHeader';
 import SiteFooter from './SiteFooter';
+import HeroQuickForm from './HeroQuickForm';
+import ContentCta from './ContentCta';
 
 const SPOKES = [
   {
@@ -13,7 +15,7 @@ const SPOKES = [
     title: 'Mobile App Development',
     query: '"mobile app development agency"',
     href: '/performance/mobile-app-development-agency',
-    desc: 'Cross-platform mobile applications built on modern frameworks — designed to perform natively across iOS and Android.',
+    desc: 'Cross-platform mobile applications built on modern frameworks � designed to perform natively across iOS and Android.',
   },
   {
     title: 'IT Consulting & Strategy',
@@ -30,26 +32,26 @@ const SPOKES = [
 ];
 
 const SERVICES = [
-  { n: '01', title: 'React / Next.js / Vite builds', body: 'Modern frontend frameworks chosen for your specific use case — server-rendered for SEO, single-page for interactivity, or hybrid for both. Every build targets sub-second load times and Lighthouse 90+ scores.' },
-  { n: '02', title: 'Custom API & backend integration', body: 'REST and GraphQL integrations with Supabase, custom databases, third-party SaaS platforms, and payment processors — designed so the backend never blocks the frontend.' },
-  { n: '03', title: 'Mobile & cross-platform apps', body: 'Native-quality mobile applications using React Native and Expo — a single codebase that ships to iOS and Android without sacrificing performance or device access.' },
-  { n: '04', title: 'IT architecture & consulting', body: 'Technology stack reviews, cloud infrastructure recommendations, vendor selection, and digital transformation roadmapping — engineering decisions made from business outcomes backward.' },
-  { n: '05', title: 'E-commerce & checkout engineering', body: 'Headless and traditional storefronts with conversion-optimized product pages, cart flows, and payment gateway integrations — built to scale without platform lock-in.' },
-  { n: '06', title: 'Performance & Core Web Vitals', body: 'Ongoing Lighthouse audits, image optimization, code splitting, caching strategy, and render performance tuning — so performance compounds as your content and features grow.' },
+  { n: '01', title: 'React / Next.js / Vite builds', body: 'Modern frontend frameworks chosen for your specific use case � server-rendered for SEO, single-page for interactivity, or hybrid for both. Every build targets sub-second load times and Lighthouse 90+ scores.' },
+  { n: '02', title: 'Custom API & backend integration', body: 'REST and GraphQL integrations with Supabase, custom databases, third-party SaaS platforms, and payment processors � designed so the backend never blocks the frontend.' },
+  { n: '03', title: 'Mobile & cross-platform apps', body: 'Native-quality mobile applications using React Native and Expo � a single codebase that ships to iOS and Android without sacrificing performance or device access.' },
+  { n: '04', title: 'IT architecture & consulting', body: 'Technology stack reviews, cloud infrastructure recommendations, vendor selection, and digital transformation roadmapping � engineering decisions made from business outcomes backward.' },
+  { n: '05', title: 'E-commerce & checkout engineering', body: 'Headless and traditional storefronts with conversion-optimized product pages, cart flows, and payment gateway integrations � built to scale without platform lock-in.' },
+  { n: '06', title: 'Performance & Core Web Vitals', body: 'Ongoing Lighthouse audits, image optimization, code splitting, caching strategy, and render performance tuning � so performance compounds as your content and features grow.' },
 ];
 
 const STEPS = [
-  'Technical brief and scope definition — goals, integrations, performance benchmarks, and SEO architecture established upfront',
-  'Information architecture and user journey mapping — designed before a single line of code is written',
-  'Component library and design system build — visual and functional consistency locked in at scale',
-  'Frontend and backend development with explicit performance budgets — load time, Lighthouse score, and Core Web Vitals targets written into the brief',
-  'Quality assurance across devices, browsers, and network conditions — signed off before staging goes live',
-  'Deployment with monitoring, analytics, and optimization protocols — the site becomes a compounding asset, not a maintenance burden',
+  'Technical brief and scope definition � goals, integrations, performance benchmarks, and SEO architecture established upfront',
+  'Information architecture and user journey mapping � designed before a single line of code is written',
+  'Component library and design system build � visual and functional consistency locked in at scale',
+  'Frontend and backend development with explicit performance budgets � load time, Lighthouse score, and Core Web Vitals targets written into the brief',
+  'Quality assurance across devices, browsers, and network conditions � signed off before staging goes live',
+  'Deployment with monitoring, analytics, and optimization protocols � the site becomes a compounding asset, not a maintenance burden',
 ];
 
 const FAQS = [
-  { q: 'Our current site is slow and we keep losing leads before they submit the form. Do we need a full rebuild?', a: 'Not necessarily. The first step is a performance audit to identify the specific bottlenecks — unoptimized images, render-blocking scripts, poor server response times, and third-party tag bloat account for most slow sites. Sometimes a targeted optimization pass solves the problem without a rebuild. If the underlying architecture is structurally constrained (a page builder CMS that cannot be significantly improved without replacement), a rebuild is usually the right call. We tell you which it is before any work starts.' },
-  { q: 'We are not developers. How involved do we need to be in the build process?', a: 'You need to be involved in the decisions that are yours to make: what the site should do, who it is for, and what a successful outcome looks like. The technical implementation is ours to handle. Most clients describe the process as similar to working with an architect — you choose what you need and approve the outcomes, we handle the structure. We do not require you to review pull requests or understand the codebase.' },
+  { q: 'Our current site is slow and we keep losing leads before they submit the form. Do we need a full rebuild?', a: 'Not necessarily. The first step is a performance audit to identify the specific bottlenecks � unoptimized images, render-blocking scripts, poor server response times, and third-party tag bloat account for most slow sites. Sometimes a targeted optimization pass solves the problem without a rebuild. If the underlying architecture is structurally constrained (a page builder CMS that cannot be significantly improved without replacement), a rebuild is usually the right call. We tell you which it is before any work starts.' },
+  { q: 'We are not developers. How involved do we need to be in the build process?', a: 'You need to be involved in the decisions that are yours to make: what the site should do, who it is for, and what a successful outcome looks like. The technical implementation is ours to handle. Most clients describe the process as similar to working with an architect � you choose what you need and approve the outcomes, we handle the structure. We do not require you to review pull requests or understand the codebase.' },
   { q: 'We had a developer build our last site and it was outdated within two years. How do we avoid that?', a: 'Outdated sites are usually the result of framework choices that were not designed for longevity, or of coupling content too tightly to the codebase so that updates require developer involvement. We build on React with a clean separation between content and code, target standard web APIs rather than proprietary platforms, and hand over a codebase that any competent developer can maintain or extend. The architecture is chosen for a five-to-seven year lifespan, not a two-year cycle.' },
   { q: 'We want a website that actually generates leads, not just one that looks good. What does that take?', a: 'Three things that most sites get wrong: clear hierarchy of action (each page should have one primary thing you want the visitor to do), message-match between what the ad or search result promised and what the page delivers, and page speed (slow pages have measurably lower conversion rates even when the design is good). We audit your current conversion funnel before designing the new site so the information architecture is built around how your buyers actually behave, not how we think they should.' },
 ];
@@ -57,7 +59,7 @@ const FAQS = [
 const STATS = [
   { val: '<1s', label: 'Target page load time on every build we ship' },
   { val: '90+', label: 'Lighthouse performance score target across all new builds' },
-  { val: '100%', label: 'Client code and data ownership — no platform lock-in, ever' },
+  { val: '100%', label: 'Client code and data ownership � no platform lock-in, ever' },
 ];
 
 function FaqItem({ q, a }: { q: string; a: string }) {
@@ -66,7 +68,7 @@ function FaqItem({ q, a }: { q: string; a: string }) {
     <div style={{ borderTop: '1px solid #e5e7eb' }}>
       <button onClick={() => setOpen(o => !o)} style={{ width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '1.5rem 0', background: 'none', border: 'none', cursor: 'pointer', textAlign: 'left', gap: '1.5rem' }} aria-expanded={open}>
         <span style={{ fontSize: '1.05rem', fontWeight: 600, color: '#111827', lineHeight: 1.4 }}>{q}</span>
-        <span style={{ flexShrink: 0, color: '#6b7280', fontSize: '1.2rem', lineHeight: 1 }}>{open ? '−' : '+'}</span>
+        <span style={{ flexShrink: 0, color: '#6b7280', fontSize: '1.2rem', lineHeight: 1 }}>{open ? '-' : '+'}</span>
       </button>
       {open && <p style={{ color: '#4b5563', fontSize: '0.95rem', lineHeight: 1.75, paddingBottom: '1.5rem', maxWidth: '72ch' }}>{a}</p>}
     </div>
@@ -90,8 +92,10 @@ export default function WebDevelopmentPage() {
     <div className="min-h-screen bg-white font-sans">
       <SiteHeader />
 
-      {/* ── HERO ── */}
-      <section style={{ background: '#ffffff', padding: '13rem 5vw 5rem', borderBottom: '1px solid #e5e7eb' }}>
+      {/* -- HERO -- */}
+      <section style={{ background: '#ffffff', padding: 'clamp(7rem,15vw,13rem) 5vw 5rem', borderBottom: '1px solid #e5e7eb' }}>
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '3rem', alignItems: 'flex-start', justifyContent: 'space-between' }}>
+          <div style={{ flex: '1 1 480px', minWidth: 0 }}>
         <nav style={{ fontFamily: 'monospace', fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.18em', color: '#9ca3af', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
           <a href="/" style={{ color: '#9ca3af', textDecoration: 'none' }}>Home</a>
           <span>/</span>
@@ -103,18 +107,16 @@ export default function WebDevelopmentPage() {
           Web &amp; IT App Development engineered for speed, ownership, and revenue.
         </h1>
         <p style={{ fontSize: '1.1rem', color: '#4b5563', lineHeight: 1.75, maxWidth: '640px', marginBottom: '2.5rem' }}>
-          Custom React, Next.js, and Vite applications — plus mobile, e-commerce, and IT consulting — built from business outcomes backward, not technology forward.
+          Custom React, Next.js, and Vite applications � plus mobile, e-commerce, and IT consulting � built from business outcomes backward, not technology forward.
         </p>
-        <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-          <a href="/book" className="btn btn-primary magnetic">
-            Start your web development project
-            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" /></svg>
-          </a>
-          <a href="/performance" className="btn btn-ghost magnetic">All performance services</a>
+          </div>
+          <div style={{ flex: '1 1 460px', maxWidth: '560px' }}>
+            <HeroQuickForm source="Web & IT App Development" variant="light" heading="Start a development project" subheading="Tell us about your project and we�ll respond quickly." />
+          </div>
         </div>
       </section>
 
-      {/* ── STATS BAR ── */}
+      {/* -- STATS BAR -- */}
       <section style={{ borderBottom: '1px solid #e5e7eb', background: '#f9fafb' }}>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', padding: '0 5vw' }}>
           {STATS.map((s, i) => (
@@ -126,7 +128,7 @@ export default function WebDevelopmentPage() {
         </div>
       </section>
 
-      {/* ── QUERY CLUSTER MAP ── */}
+      {/* -- QUERY CLUSTER MAP -- */}
       <section style={{ padding: '5rem 5vw', borderBottom: '1px solid #e5e7eb', background: '#ffffff' }}>
         <div style={{ marginBottom: '2.5rem' }}>
           <span style={{ fontFamily: 'monospace', fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.18em', color: '#9ca3af', display: 'block', marginBottom: '0.5rem' }}>Query fan-out cluster</span>
@@ -138,7 +140,7 @@ export default function WebDevelopmentPage() {
         {/* Hub card */}
         <div style={{ border: '2px solid #111827', padding: '1.75rem 2rem', marginBottom: '1px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '1rem' }}>
           <div>
-            <span style={{ fontFamily: 'monospace', fontSize: '0.65rem', textTransform: 'uppercase', letterSpacing: '0.14em', color: '#6b7280', display: 'block', marginBottom: '0.4rem' }}>Hub — you are here</span>
+            <span style={{ fontFamily: 'monospace', fontSize: '0.65rem', textTransform: 'uppercase', letterSpacing: '0.14em', color: '#6b7280', display: 'block', marginBottom: '0.4rem' }}>Hub � you are here</span>
             <strong style={{ fontSize: '1.05rem', color: '#111827' }}>Web &amp; IT App Development</strong>
             <span style={{ display: 'block', fontSize: '0.8rem', color: '#6b7280', marginTop: '0.2rem', fontFamily: 'monospace' }}>"web app development agency"</span>
           </div>
@@ -172,7 +174,10 @@ export default function WebDevelopmentPage() {
         </div>
       </section>
 
-      {/* ── SERVICES GRID ── */}
+
+      <ContentCta headline="Ready to build a pipeline that scales?" sub="Our team responds within one business day." accent="#111827" background="#f9fafb" />
+
+      {/* -- SERVICES GRID -- */}
       <section style={{ padding: '5rem 5vw', borderBottom: '1px solid #e5e7eb', background: '#f9fafb' }}>
         <div style={{ marginBottom: '3rem' }}>
           <span style={{ fontFamily: 'monospace', fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.18em', color: '#9ca3af', display: 'block', marginBottom: '0.5rem' }}>What we build</span>
@@ -191,7 +196,7 @@ export default function WebDevelopmentPage() {
         </div>
       </section>
 
-      {/* ── PROCESS ── */}
+      {/* -- PROCESS -- */}
       <section style={{ padding: '5rem 5vw', borderBottom: '1px solid #e5e7eb', background: '#ffffff' }}>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 2fr', gap: '5rem', alignItems: 'start' }}>
           <div style={{ position: 'sticky', top: '6rem' }}>
@@ -211,15 +216,15 @@ export default function WebDevelopmentPage() {
         </div>
       </section>
 
-      {/* ── CASE STUDIES CTA ── */}
+      {/* -- CASE STUDIES CTA -- */}
       <section style={{ padding: '5rem 5vw', borderBottom: '1px solid #e5e7eb', background: '#f9fafb', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center' }}>
         <div>
           <span style={{ fontFamily: 'monospace', fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.18em', color: '#9ca3af', display: 'block', marginBottom: '0.5rem' }}>In the field</span>
           <h2 style={{ fontSize: 'clamp(1.4rem, 2.5vw, 2rem)', fontWeight: 700, letterSpacing: '-0.03em', color: '#111827', lineHeight: 1.2, marginBottom: '1rem' }}>
-            Web development that shipped, ranked, and converted — not theory.
+            Web development that shipped, ranked, and converted � not theory.
           </h2>
           <p style={{ fontSize: '0.95rem', color: '#6b7280', lineHeight: 1.75, marginBottom: '2rem' }}>
-            SmileCenter Dentistry: a full custom React build that delivered 5x patient inquiry volume — driven by technical architecture changes, correct schema graphs, and sub-second page performance.
+            SmileCenter Dentistry: a full custom React build that delivered 5x patient inquiry volume � driven by technical architecture changes, correct schema graphs, and sub-second page performance.
           </p>
           <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
             <a href="/case-studies/smile-center-dentistry" className="btn btn-primary magnetic">Read the case study</a>
@@ -229,7 +234,7 @@ export default function WebDevelopmentPage() {
         <a href="/case-studies/smile-center-dentistry" style={{ display: 'block', overflow: 'hidden', aspectRatio: '16/9' }}>
           <img
             src="/images/smile-center-homepage.webp"
-            alt="SmileCenter Dentistry — custom React build results"
+            alt="SmileCenter Dentistry � custom React build results"
             style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.6s ease', display: 'block' }}
             onMouseEnter={e => ((e.target as HTMLImageElement).style.transform = 'scale(1.04)')}
             onMouseLeave={e => ((e.target as HTMLImageElement).style.transform = 'scale(1)')}
@@ -237,7 +242,10 @@ export default function WebDevelopmentPage() {
         </a>
       </section>
 
-      {/* ── FAQs ── */}
+
+      <ContentCta headline="See how Gobiya-managed campaigns perform." sub="Start with a free audit � no commitment, 24-hour turnaround." accent="#111827" background="#f9fafb" />
+
+      {/* -- FAQs -- */}
       <section style={{ padding: '5rem 5vw', borderBottom: '1px solid #e5e7eb', background: '#ffffff' }}>
         <div style={{ maxWidth: '860px' }}>
           <span style={{ fontFamily: 'monospace', fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.18em', color: '#9ca3af', display: 'block', marginBottom: '0.5rem' }}>Common questions</span>

@@ -1,4 +1,4 @@
-import { supabase } from '../lib/supabase';
+﻿import { supabase } from '../lib/supabase';
 import { trackCTA } from '../lib/analytics';
 import React, { useState, useEffect, useRef } from 'react';
 import DeferredShader, { Swirl, ChromaFlow, FlutedGlass, FilmGrain } from './DeferredShader';
@@ -26,6 +26,8 @@ import BlurText from './BlurText';
 import GradualBlur from './GradualBlur';
 import CustomCursor from './CustomCursor';
 import RotatingAILogos from './RotatingAILogos';
+import HeroQuickForm from './HeroQuickForm';
+import ContentCta from './ContentCta';
 
 interface ServiceSubpageProps {
   path: string;
@@ -1415,6 +1417,13 @@ export default function ServiceSubpage({ path, isFanOut, category, slug }: Servi
               </div>
           </div>
 
+          <ContentCta
+            headline="Ready to talk through your project?"
+            sub="Our team responds within one business day."
+            accent={catLower === 'creativity' ? '#F26522' : '#2F5D50'}
+            background="#f9fafb"
+          />
+
           {/* ── Advantage cards ── */}
           <div className="bg-[#f8f8f7] border-b border-gray-100" style={{ padding: '5rem 5vw' }}>
               <h2 className="text-[clamp(1.75rem,3.5vw,2.75rem)] font-bold text-gray-900 mb-16 leading-tight">
@@ -1464,6 +1473,12 @@ export default function ServiceSubpage({ path, isFanOut, category, slug }: Servi
 
         </main>
 
+        <ContentCta
+          headline="Let's scope your project — no commitment."
+          sub="Start with a free audit. We respond within 24 hours."
+          accent={catLower === 'creativity' ? '#F26522' : '#2F5D50'}
+          background="#ffffff"
+        />
         <SiteFooter />
       </div>
     );
@@ -2191,12 +2206,14 @@ export default function ServiceSubpage({ path, isFanOut, category, slug }: Servi
           </div>
         </section>
       ) : (
-        <section className={`${isServicesPath ? 'bg-transparent' : 'hero'} relative w-full h-[65vh] min-h-[480px] overflow-hidden flex flex-col justify-center cursor-default`}>
+        <section className={`${isServicesPath ? 'bg-transparent' : 'hero'} relative w-full h-auto sm:h-[65vh] min-h-[480px] overflow-visible sm:overflow-hidden flex flex-col justify-center cursor-default`}>
           {/* Shaders Background */}
           <HeroWebGLBackground />
 
           {/* Hero Content */}
-          <div className="relative z-20 max-w-[1440px] w-full mx-auto flex flex-col justify-center px-5 sm:px-8 lg:px-12 pt-52 pb-0">
+          <div className="relative z-20 max-w-[1440px] w-full mx-auto flex justify-center px-5 sm:px-8 lg:px-12 pt-28 sm:pt-40 lg:pt-52 pb-8 sm:pb-0">
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '3rem', alignItems: 'flex-start', width: '100%' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', flex: '1 1 480px', minWidth: 0 }}>
             <p data-hero="1" className={`text-[13px] sm:text-[14px] ${isServicesPath ? 'text-[#5B564C]' : 'text-[#2F5D50]'} tracking-wide mb-4 uppercase font-medium`}>
               {config.subtitle}
             </p>
@@ -2219,21 +2236,21 @@ export default function ServiceSubpage({ path, isFanOut, category, slug }: Servi
               {config.outcomeMessage}
             </p>
             <div data-hero="4" className="hero-actions mt-8 flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-5">
-              <a
-                href="/book"
-                id="service-hero-cta"
-                data-cta-location="service_hero"
-                data-cta-text={config.ctaText}
-                onClick={() => trackCTA({ cta_location: 'service_hero', cta_text: config.ctaText })}
-                className={`btn text-white ${isServicesPath ? 'bg-[#2F5D50] border-[#2F5D50] hover:bg-[#1a3830] hover:border-[#1a3830]' : 'bg-[#F26522] border-[#F26522] hover:bg-[#d15015] hover:border-[#d15015]'}`}
-              >
-                {config.ctaText}
-                <ArrowRight />
-              </a>
               <div className="flex items-center gap-3 bg-black/5 border border-black/10 hover:bg-black/10 transition-shadow duration-300 px-3 py-2 cursor-pointer">
                 <RotatingAILogos />
                 <span className="text-[13px] sm:text-[14px] font-medium text-gray-900">Certified Partner</span>
                 <span className="text-[10px] sm:text-[11px] bg-gray-900 text-gray-900 px-1.5 sm:px-2 py-0.5 rounded">Featured</span>
+              </div>
+            </div>
+              </div>
+              <div style={{ flex: '1 1 460px', maxWidth: '560px' }}>
+                <HeroQuickForm
+                  source={config.title || path}
+                  variant="light"
+                  accent={isServicesPath ? '#2F5D50' : '#F26522'}
+                  heading="Get a fast response"
+                  subheading="Send a few details and we’ll get back to you shortly."
+                />
               </div>
             </div>
           </div>
@@ -2329,12 +2346,30 @@ export default function ServiceSubpage({ path, isFanOut, category, slug }: Servi
         </section>
       )}
 
+      {path !== '/insights' && path !== '/contact' && path !== '/services' && path !== '/approach' && path !== '/case-studies' && (
+        <ContentCta
+          headline="Ready to build a pipeline that scales?"
+          sub="Our team responds within one business day."
+          accent={isServicesPath ? '#2F5D50' : '#F26522'}
+          background="#f9fafb"
+        />
+      )}
+
       {/* BENTO CARDS SECTION */}
       {path !== '/insights' && path !== '/contact' && path !== '/services' && path !== '/approach' && path !== '/case-studies' && config.bentoHeadline && (
-        <StackedBento 
-          headline={config.bentoHeadline} 
-          description={config.bentoDescription} 
-          cards={config.bentoCards} 
+        <StackedBento
+          headline={config.bentoHeadline}
+          description={config.bentoDescription}
+          cards={config.bentoCards}
+        />
+      )}
+
+      {path !== '/insights' && path !== '/contact' && path !== '/services' && path !== '/approach' && path !== '/case-studies' && config.bentoHeadline && (
+        <ContentCta
+          headline="Let's scope your project — no commitment."
+          sub="Start with a free audit. We respond within 24 hours."
+          accent={isServicesPath ? '#2F5D50' : '#F26522'}
+          background="#ffffff"
         />
       )}
 

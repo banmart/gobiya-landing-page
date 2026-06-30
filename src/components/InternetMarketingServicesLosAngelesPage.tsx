@@ -1,6 +1,8 @@
-import React, { useEffect } from 'react';
+﻿import React, { useEffect } from 'react';
 import SiteHeader from './SiteHeader';
 import SiteFooter from './SiteFooter';
+import HeroQuickForm from './HeroQuickForm';
+import ContentCta from './ContentCta';
 
 const SCHEMA = {
   '@context': 'https://schema.org',
@@ -88,8 +90,8 @@ export default function InternetMarketingServicesLosAngelesPage() {
         {/* HERO SECTION */}
         <section className="relative pt-32 pb-24 lg:pt-48 lg:pb-32 overflow-hidden border-b border-gray-200">
           <div className="absolute inset-0 bg-gray-50 z-0" />
-          <div className="w-full mx-auto px-6 lg:px-12 relative z-10" style={{ maxWidth: '1400px' }}>
-            <div className="max-w-4xl">
+          <div className="w-full mx-auto px-6 lg:px-12 relative z-10" style={{ maxWidth: '1400px', display: 'flex', flexWrap: 'wrap', gap: '3rem', alignItems: 'flex-start', justifyContent: 'space-between' }}>
+            <div className="max-w-3xl" style={{ flex: '1 1 480px', minWidth: 0 }}>
               <span className="text-sm font-mono uppercase tracking-widest text-[#F26522] mb-6 block">
                 Los Angeles, CA
               </span>
@@ -99,12 +101,9 @@ export default function InternetMarketingServicesLosAngelesPage() {
               <p className="text-xl sm:text-2xl text-gray-700 leading-relaxed max-w-3xl mb-10">
                 If you are looking for internet marketing services Los Angeles, the reality is you don't just need more traffic—you need a system that predictably turns visibility into revenue. We are a full-service digital agency bridging the gap between search discovery, website conversion, and CRM pipeline automation.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <a href="/book" className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#F26522] text-white text-sm font-bold uppercase tracking-wider hover:bg-[#e05a1a] transition-colors rounded-sm">
-                  Book Strategy Call
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round"/></svg>
-                </a>
-              </div>
+            </div>
+            <div style={{ flex: '1 1 460px', maxWidth: '560px' }}>
+              <HeroQuickForm source="Internet Marketing Services Los Angeles" variant="light" heading="Get a fast marketing quote" subheading="Tell us about your goals and we’ll respond quickly." />
             </div>
           </div>
         </section>
@@ -122,6 +121,8 @@ export default function InternetMarketingServicesLosAngelesPage() {
             </div>
           </div>
         </section>
+
+        <ContentCta headline="Ready to grow your LA pipeline?" sub="Our team responds within one business day." accent="#111827" background="#f9fafb" />
 
         {/* CONTENT & SIDEBAR */}
         <section className="py-24 bg-white">
@@ -244,6 +245,7 @@ export default function InternetMarketingServicesLosAngelesPage() {
           </div>
         </section>
       </main>
+      <ContentCta headline="Let's build your internet marketing system." sub="Start with a free audit — no commitment, 24-hour turnaround." accent="#111827" background="#f9fafb" />
       <SiteFooter />
     </div>
   );

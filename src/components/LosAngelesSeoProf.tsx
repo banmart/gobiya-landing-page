@@ -1,9 +1,11 @@
-import React, { useEffect, useRef, useState } from 'react';
+﻿import React, { useEffect, useRef, useState } from 'react';
 import HeroWebGLBackground from './HeroWebGLBackground';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import SiteHeader from './SiteHeader';
 import SiteFooter from './SiteFooter';
+import HeroQuickForm from './HeroQuickForm';
+import ContentCta from './ContentCta';
 import './OnPageSeoLosAngelesPage.css';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -219,11 +221,6 @@ export default function LosAngelesSeoProf() {
               A <strong>Los Angeles SEO professional</strong> does something most agencies will not admit they can't do: trace exactly why your organic traffic isn't generating pipeline, fix the root cause at the code level, and build the structured entity signals that make your brand visible not just on Google but in every AI-generated answer your buyers are reading. Gobiya has worked as a Los Angeles SEO professional since 2012, serving B2B brands, professional services firms, and enterprise clients across the Greater LA market. Our <a href="/performance/seo-discoverability-agency" style={{color:'var(--green)'}}>SEO &amp; Discoverability practice</a> is engineering-led — every fix is implemented directly in code, validated against both traditional Googlebot and AI crawler requirements, and tied to pipeline outcomes rather than traffic volume.
             </p>
 
-            <div className="hero-actions">
-              <a href="/book" className="btn btn-primary" id="la-seo-prof-hero-book-cta">Book SEO strategy session</a>
-              <a href="/case-studies" className="btn btn-ghost" id="la-seo-prof-hero-results-link">View client results</a>
-            </div>
-
             <div className="hero-specs">
               <div className="spec-item">
                 <span className="label">Market</span>
@@ -240,30 +237,8 @@ export default function LosAngelesSeoProf() {
             </div>
           </div>
 
-          <div className="hero-widget">
-            <div className="widget-card">
-              <div className="widget-head">
-                <span className="dot" />
-                <span>la-seo-professional-audit.log</span>
-              </div>
-              <div className="widget-body">
-                <div className="log-line success">[OK] Initializing Gobiya Professional SEO Engine — Los Angeles v4.0...</div>
-                <div className="log-line">[SCANNING] Client domain: [los-angeles-b2b-client].com</div>
-                <div className="log-line">[SCANNING] Organic traffic composition analysis...</div>
-                <div className="log-line warn">[WARNING] 68% of organic sessions from non-commercial queries — zero pipeline attribution</div>
-                <div className="log-line warn">[WARNING] 4 redirect chains suppressing link equity to revenue pages</div>
-                <div className="log-line warn">[WARNING] Schema missing: Organization sameAs, Service, and LocalBusiness JSON-LD</div>
-                <div className="log-line info">[INFO] 22 commercial-intent keyword gaps vs. top-3 LA competitors identified</div>
-                <div className="log-line info">[INFO] AI crawler (GPTBot/ClaudeBot) accessibility: 34% of key pages blocked by JS rendering</div>
-                <div className="log-line success">[FIXED] Redirect chains collapsed — link equity restored to /services/ cluster</div>
-                <div className="log-line success">[FIXED] Schema graph injected — entity verified across Google, ChatGPT, and Perplexity</div>
-                <div className="log-line-final">Pipeline composition target: 14 commercial pages re-indexed within 30 days.</div>
-              </div>
-              <div className="widget-foot">
-                <span>Los Angeles, CA 90010</span>
-                <span>SEO · Entity · AI Visibility</span>
-              </div>
-            </div>
+          <div className="hero-widget" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+            <HeroQuickForm source="Los Angeles SEO Professional" variant="light" accent="#2F5D50" heading="Request an LA SEO quote" subheading="Tell us about your business and we’ll send a quick read." style={{ maxWidth: '100%' }} />
           </div>
 
         </div>
@@ -435,6 +410,8 @@ export default function LosAngelesSeoProf() {
         </div>
       </section>
 
+      <ContentCta headline="Ready to dominate local search?" sub="Our team responds within one business day." accent="#2F5D50" background="var(--paper)" />
+
       {/* ── INTERACTIVE CHECKLIST ── */}
       <section className="checklist-section">
         <div className="onpage-container">
@@ -486,6 +463,8 @@ export default function LosAngelesSeoProf() {
           </div>
         </div>
       </section>
+
+      <ContentCta headline="Let's map out your local rankings." sub="Start with a free site audit — no commitment, 24-hour response." accent="#2F5D50" background="var(--paper-2)" />
 
       {/* ── FAQ SECTION (PAA-driven) ── */}
       <section className="faq-section">

@@ -1,9 +1,11 @@
-import React, { useEffect, useRef, useState } from 'react';
+﻿import React, { useEffect, useRef, useState } from 'react';
 import HeroWebGLBackground from './HeroWebGLBackground';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import SiteHeader from './SiteHeader';
 import SiteFooter from './SiteFooter';
+import HeroQuickForm from './HeroQuickForm';
+import ContentCta from './ContentCta';
 import './OnPageSeoLosAngelesPage.css';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -196,11 +198,6 @@ export default function AiSearchMarketingSantaClaritaPage() {
               AI search marketing in Santa Clarita means engineering your brand to be found and cited on ChatGPT, Perplexity, and Google AI Overviews — not just ranking in traditional search results. For businesses in the Valencia corridor, Newhall, and the broader Santa Clarita Valley, the buyer research shift is already happening: a substantial share of B2B purchasing decisions and high-consideration consumer choices now begin with a question asked directly to an AI assistant, before the buyer ever visits a website. If your brand does not appear in those AI-generated answers, you are invisible to that segment of the market no matter how well you rank on Google. <a href="/performance/seo-discoverability-agency" style={{color:'var(--green)'}}>Our SEO &amp; Discoverability practice</a> builds AI search visibility alongside Google authority for Santa Clarita businesses that need both.
             </p>
 
-            <div className="hero-actions">
-              <a href="/book" className="btn btn-primary">Book Santa Clarita audit</a>
-              <a href="/case-studies" className="btn btn-ghost">View case studies</a>
-            </div>
-
             <div className="hero-specs">
               <div className="spec-item">
                 <span className="label">Market</span>
@@ -217,31 +214,8 @@ export default function AiSearchMarketingSantaClaritaPage() {
             </div>
           </div>
 
-          <div className="hero-widget">
-            <div className="widget-card">
-              <div className="widget-head">
-                <span className="dot" />
-                <span className="dot" />
-                <span className="dot" />
-                <span>scv-ai-search-audit.log</span>
-              </div>
-              <div className="widget-body">
-                <div className="log-line success">[OK] Initializing Gobiya AI Search Engine — Santa Clarita v3.1...</div>
-                <div className="log-line">[SCANNING] Target market: Santa Clarita Valley, CA 91355</div>
-                <div className="log-line">[SCANNING] AI citation gap analysis: ChatGPT, Gemini, Perplexity...</div>
-                <div className="log-line warn">[WARNING] Brand entity absent from AI knowledge sources</div>
-                <div className="log-line warn">[WARNING] 0 AI citations found for target queries in Santa Clarita</div>
-                <div className="log-line info">[INFO] 24 open commercial queries with no competitor AI citations</div>
-                <div className="log-line info">[INFO] AI search gap index: SCV market underpenetrated</div>
-                <div className="log-line success">[FIXED] Entity graph injected: schema, GBP, data aggregators aligned</div>
-                <div className="log-line success">[FIXED] GEO architecture deployed — 3 AI platforms targeted</div>
-                <div className="log-line-final">Pipeline active — first AI citations estimated: 21–30 days.</div>
-              </div>
-              <div className="widget-foot">
-                <span>Santa Clarita, CA 91355</span>
-                <span>AI Search · GEO · Local</span>
-              </div>
-            </div>
+          <div className="hero-widget" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+            <HeroQuickForm source="AI Search Marketing Santa Clarita" variant="light" accent="#2F5D50" heading="Request a Santa Clarita audit" subheading="Tell us about your business and we’ll send a quick read." style={{ maxWidth: '100%' }} />
           </div>
 
         </div>
@@ -341,6 +315,8 @@ export default function AiSearchMarketingSantaClaritaPage() {
         </div>
       </section>
 
+      <ContentCta headline="Ready to get found on AI search in Santa Clarita?" sub="Our team responds within one business day." accent="#2F5D50" background="var(--paper-2)" />
+
       {/* ── INTERACTIVE CHECKLIST ── */}
       <section className="checklist-section">
         <div className="onpage-container">
@@ -389,6 +365,8 @@ export default function AiSearchMarketingSantaClaritaPage() {
           </div>
         </div>
       </section>
+
+      <ContentCta headline="Let's get your Santa Clarita business into AI answers." sub="Start with a free audit — 24-hour response." accent="#2F5D50" background="var(--paper)" />
 
       {/* ── FAQ ── */}
       <section className="faq-section">

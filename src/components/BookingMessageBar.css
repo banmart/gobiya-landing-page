@@ -191,37 +191,64 @@
   .booking-message-inner {
     flex-direction: column;
     align-items: stretch;
-    gap: 0.75rem;
-    padding: 1rem;
+    gap: 0.6rem;
+    padding: 0.85rem 1rem;
   }
-  
+
   .booking-message-content {
     width: 100%;
   }
-  
+
   .booking-message-content-inner {
-    gap: 0.75rem;
+    gap: 0.65rem;
+    align-items: flex-start;
   }
-  
+
   .booking-message-avatar {
     width: 36px;
     height: 36px;
   }
-  
+
   .booking-message-text {
-    font-size: 0.8rem;
+    font-size: 0.78rem;
+    line-height: 1.4;
   }
-  
+
   .booking-message-actions {
-    justify-content: space-between;
+    justify-content: flex-end;
     width: 100%;
     gap: 0.5rem;
   }
-  
+
   .booking-message-cta {
     flex-grow: 1;
     justify-content: center;
-    padding: 0.6rem;
+    padding: 0.55rem 0.75rem;
     font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .booking-message-inner {
+    padding: 0.75rem 0.9rem;
+    gap: 0.5rem;
+  }
+
+  .booking-message-avatar-wrapper {
+    display: none;
+  }
+
+  .booking-message-text {
+    font-size: 0.76rem;
+  }
+
+  .booking-message-actions {
+    gap: 0.4rem;
+  }
+
+  .booking-message-cta {
+    font-size: 0.72rem;
+    padding: 0.5rem 0.7rem;
+    letter-spacing: 0.04em;
   }
 }

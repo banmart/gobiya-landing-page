@@ -1,9 +1,11 @@
-import React, { useEffect, useRef, useState } from 'react';
+﻿import React, { useEffect, useRef, useState } from 'react';
 import HeroWebGLBackground from './HeroWebGLBackground';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import SiteHeader from './SiteHeader';
 import SiteFooter from './SiteFooter';
+import HeroQuickForm from './HeroQuickForm';
+import ContentCta from './ContentCta';
 import './OnPageSeoLosAngelesPage.css';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -202,11 +204,6 @@ export default function LocalSeoBurbankPage() {
               If you are searching for a local SEO company in Burbank, you are looking for a team that can put your business in Google's Map Pack — the three listings that capture the overwhelming share of local search clicks — and keep you there. Burbank is one of the most media-dense, commercially active markets in the San Fernando Valley, and the businesses at the top of local search results did not get there by accident. We engineer the four signals that determine local rank: <a href="/insights/google-business-profile-optimization" style={{color:'var(--green)'}}>Google Business Profile</a> authority, NAP citation consistency, review velocity, and local schema. Our <a href="/performance/seo-discoverability-agency" style={{color:'var(--green)'}}>SEO &amp; Discoverability practice</a> has served the greater Los Angeles market since 2012, with deep experience in the Burbank 91501–91510 corridor.
             </p>
 
-            <div className="hero-actions">
-              <a href="/book" className="btn btn-primary" id="burbank-hero-book-cta">Book Burbank SEO audit</a>
-              <a href="/case-studies" className="btn btn-ghost" id="burbank-hero-results-link">View results</a>
-            </div>
-
             <div className="hero-specs">
               <div className="spec-item">
                 <span className="label">Market</span>
@@ -223,30 +220,8 @@ export default function LocalSeoBurbankPage() {
             </div>
           </div>
 
-          <div className="hero-widget">
-            <div className="widget-card">
-              <div className="widget-head">
-                <span className="dot" />
-                <span>burbank-local-seo-audit.log</span>
-              </div>
-              <div className="widget-body">
-                <div className="log-line success">[OK] Initializing Gobiya Local SEO Engine — Burbank v3.1...</div>
-                <div className="log-line">[SCANNING] Target market: Burbank, CA 91505</div>
-                <div className="log-line">[SCANNING] Google Business Profile signal check...</div>
-                <div className="log-line warn">[WARNING] GBP primary category mismatch — ranking suppressed</div>
-                <div className="log-line warn">[WARNING] NAP divergence: Yelp vs Google vs Apple Maps inconsistent</div>
-                <div className="log-line warn">[WARNING] Review velocity: 0.8/month (competitive threshold is 4.5/month)</div>
-                <div className="log-line info">[INFO] 19 high-intent Burbank queries with Map Pack visibility gaps</div>
-                <div className="log-line info">[INFO] 3 Media District competitors averaging 90+ reviews</div>
-                <div className="log-line success">[FIXED] GBP categories, service areas, and hours corrected</div>
-                <div className="log-line success">[FIXED] NAP aligned across 40 directory sources</div>
-                <div className="log-line-final">Map Pack pipeline active — estimated entry: 45–60 days.</div>
-              </div>
-              <div className="widget-foot">
-                <span>Burbank, CA 91505</span>
-                <span>Local SEO · GBP · Map Pack</span>
-              </div>
-            </div>
+          <div className="hero-widget" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+            <HeroQuickForm source="Local SEO Company Burbank" variant="light" accent="#2F5D50" heading="Request a Burbank local SEO quote" subheading="Tell us about your business and we’ll send a quick read." style={{ maxWidth: '100%' }} />
           </div>
 
         </div>
@@ -346,6 +321,8 @@ export default function LocalSeoBurbankPage() {
         </div>
       </section>
 
+      <ContentCta headline="Ready to dominate local search?" sub="Our team responds within one business day." accent="#2F5D50" background="var(--paper)" />
+
       {/* ── INTERACTIVE CHECKLIST ── */}
       <section className="checklist-section">
         <div className="onpage-container">
@@ -398,6 +375,8 @@ export default function LocalSeoBurbankPage() {
         </div>
       </section>
 
+      <ContentCta headline="Ready to dominate local search?" sub="Our team responds within one business day." accent="#2F5D50" background="var(--paper)" />
+
       {/* ── TOP RATED SECTION ── */}
       <section className="capabilities-section" style={{ background: 'var(--paper-2)' }}>
         <div className="onpage-container">
@@ -444,6 +423,8 @@ export default function LocalSeoBurbankPage() {
           </div>
         </div>
       </section>
+
+      <ContentCta headline="Let's map out your local rankings." sub="Start with a free site audit — no commitment, 24-hour response." accent="#2F5D50" background="var(--paper-2)" />
 
       {/* ── FAQ ── */}
       <section className="faq-section">

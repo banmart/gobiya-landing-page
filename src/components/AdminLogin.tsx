@@ -51,12 +51,12 @@ const AdminLogin: React.FC<AdminLoginProps> = ({ onLoginSuccess }) => {
       <div className="flex-grow flex items-center justify-center px-5 py-20 relative z-20">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(47,93,80,0.04)_0%,transparent_60%)] pointer-events-none" />
         
-        <div className="w-full max-w-[450px] bg-white/60 border border-[#D3CEC0] backdrop-blur-xl p-8 rounded-2xl relative overflow-hidden shadow-2xl">
+        <div className="w-full max-w-[450px] bg-white border border-[#D3CEC0] p-8 relative overflow-hidden shadow-xl">
           {/* Decorative neon top bar */}
           <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#2F5D50] to-transparent" />
           
           <div className="text-center mb-8">
-            <div className="w-12 h-12 rounded-xl bg-[#2F5D50]/5 border border-[#2F5D50]/15 flex items-center justify-center mx-auto mb-4">
+            <div className="w-12 h-12 bg-[#2F5D50]/5 border border-[#2F5D50]/15 flex items-center justify-center mx-auto mb-4">
               <Terminal className="w-6 h-6 text-[#2F5D50]" />
             </div>
             <h1 className="text-2xl font-bold tracking-tight text-[#15130E] font-display">Gobiya Administrator</h1>
@@ -64,7 +64,7 @@ const AdminLogin: React.FC<AdminLoginProps> = ({ onLoginSuccess }) => {
           </div>
 
           {error && (
-            <div className="mb-6 bg-red-50 border border-red-200 text-red-800 text-xs px-4 py-3 rounded-lg flex items-center gap-2 font-mono">
+            <div className="mb-6 bg-red-50 border border-red-200 text-red-800 text-xs px-4 py-3 flex items-center gap-2 font-mono">
               <span className="w-1.5 h-1.5 rounded-full bg-red-600 animate-ping" />
               {error}
             </div>
@@ -83,7 +83,7 @@ const AdminLogin: React.FC<AdminLoginProps> = ({ onLoginSuccess }) => {
                   placeholder="admin"
                   value={username}
                   onChange={(e) => setUsername(e.target.value)}
-                  className="w-full bg-white/50 border border-[#D3CEC0] rounded-lg pl-10 pr-4 py-2.5 text-sm text-[#15130E] placeholder-gray-400 focus:outline-none focus:border-[#2F5D50] focus:ring-1 focus:ring-[#2F5D50] transition-all font-mono"
+                  className="w-full bg-white/50 border border-[#D3CEC0] rounded pl-10 pr-4 py-2.5 text-sm text-[#15130E] placeholder-gray-400 focus:outline-none focus:border-[#2F5D50] focus:ring-1 focus:ring-[#2F5D50] transition-all font-mono"
                 />
               </div>
             </div>
@@ -100,7 +100,7 @@ const AdminLogin: React.FC<AdminLoginProps> = ({ onLoginSuccess }) => {
                   placeholder="••••••••"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="w-full bg-white/50 border border-[#D3CEC0] rounded-lg pl-10 pr-4 py-2.5 text-sm text-[#15130E] placeholder-gray-400 focus:outline-none focus:border-[#2F5D50] focus:ring-1 focus:ring-[#2F5D50] transition-all font-mono"
+                  className="w-full bg-white/50 border border-[#D3CEC0] rounded pl-10 pr-4 py-2.5 text-sm text-[#15130E] placeholder-gray-400 focus:outline-none focus:border-[#2F5D50] focus:ring-1 focus:ring-[#2F5D50] transition-all font-mono"
                 />
               </div>
             </div>
@@ -108,7 +108,7 @@ const AdminLogin: React.FC<AdminLoginProps> = ({ onLoginSuccess }) => {
             <button
               type="submit"
               disabled={loading}
-              className="w-full group bg-[#2F5D50] hover:bg-[#234A40] disabled:bg-gray-200 disabled:text-gray-400 text-white font-semibold py-3 px-4 rounded-lg transition-colors flex items-center justify-center gap-2 cursor-pointer text-sm font-sans mt-8"
+              className="w-full group bg-[#2F5D50] hover:bg-[#234A40] disabled:bg-gray-200 disabled:text-gray-400 text-white font-semibold py-3 px-4 transition-colors flex items-center justify-center gap-2 cursor-pointer text-sm font-sans mt-8"
             >
               {loading ? (
                 <>

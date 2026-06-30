@@ -639,7 +639,7 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout }) => {
                 
                 {csvHeaders.length === 0 ? (
                   <div className="space-y-6">
-                    <label className="flex flex-col items-center justify-center border-2 border-dashed border-[#D3CEC0] hover:border-[#2F5D50]/50 rounded-2xl p-12 bg-white/40 hover:bg-[#2F5D50]/5 transition-all cursor-pointer group text-center">
+                    <label className="flex flex-col items-center justify-center border-2 border-dashed border-[#D3CEC0] hover:border-[#2F5D50]/50 p-12 bg-white/40 hover:bg-[#2F5D50]/5 transition-all cursor-pointer group text-center">
                       <Upload className="w-10 h-10 text-[#8B857A] group-hover:text-[#2F5D50] mb-4 transition-colors" />
                       <span className="text-xs uppercase tracking-wider text-[#15130E] font-semibold mb-1 font-mono">Drag &amp; Drop CSV File</span>
                       <span className="text-[10px] text-[#5B564C] font-mono">or click to browse local folders</span>
@@ -777,7 +777,7 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout }) => {
               </div>
 
               {/* Console logs output */}
-              <div className="flex flex-col h-full min-h-[380px] bg-[#0c0c0c] border border-[#D3CEC0] rounded-2xl overflow-hidden font-mono shadow-2xl relative">
+              <div className="flex flex-col h-full min-h-[380px] bg-[#0c0c0c] border border-[#D3CEC0] overflow-hidden font-mono shadow-2xl relative">
                 <div className="bg-black/80 border-b border-[#D3CEC0] px-5 py-3 flex items-center justify-between text-xs text-gray-400">
                   <div className="flex items-center gap-2">
                     <span className="w-2.5 h-2.5 rounded-full bg-red-500/60" />
@@ -846,7 +846,7 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout }) => {
           )}
           {/* TAB 2: ACTIVE LEADS DATABASE */}
           {activeTab === 'leads' && (
-            <div className="bg-white/60 border border-[#D3CEC0] p-6 sm:p-8 rounded-2xl backdrop-blur-md relative overflow-hidden">
+            <div className="bg-white border border-[#D3CEC0] p-6 sm:p-8 relative overflow-hidden">
               <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8">
                 <div className="relative w-full max-w-[350px]">
                   <span className="absolute inset-y-0 left-3 flex items-center text-[#8B857A]">
@@ -1005,7 +1005,7 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout }) => {
             </div>
           )}          {/* TAB 3: CAMPAIGNS */}
           {activeTab === 'campaigns' && (
-            <div className="bg-white/60 border border-[#D3CEC0] p-6 sm:p-8 rounded-2xl backdrop-blur-md relative overflow-hidden">
+            <div className="bg-white border border-[#D3CEC0] p-6 sm:p-8 relative overflow-hidden">
               <h2 className="text-xl font-semibold mb-6 flex items-center gap-2 text-[#15130E]">
                 <Mail className="w-5 h-5 text-[#2F5D50]" /> Active Nurture Pipeline Logs
               </h2>
@@ -1019,7 +1019,7 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout }) => {
                   {leads.filter(l => l.status !== 'new').map((lead, idx) => {
                     const dripSteps = getDripSteps(lead);
                     return (
-                      <div key={idx} className="border border-[#D3CEC0]/80 bg-white/40 p-6 rounded-xl relative overflow-hidden">
+                      <div key={idx} className="border border-[#D3CEC0]/80 bg-white/40 p-6 relative overflow-hidden">
                         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6 pb-4 border-b border-[#D3CEC0]/40">
                           <div>
                             <span className="text-xs text-[#8B857A] uppercase tracking-widest font-mono">Drip Target Pipeline</span>
@@ -1090,7 +1090,7 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout }) => {
 
           {/* TAB 4: SETTINGS */}
           {activeTab === 'settings' && (
-            <div className="bg-white/60 border border-[#D3CEC0] p-8 rounded-2xl backdrop-blur-md max-w-2xl mx-auto">
+            <div className="bg-white border border-[#D3CEC0] p-8 max-w-2xl mx-auto">
               <h2 className="text-xl font-semibold mb-6 flex items-center gap-2 text-[#15130E]">
                 <Settings className="w-5 h-5 text-[#2F5D50]" /> API Credentials &amp; Testing
               </h2>
@@ -1108,7 +1108,7 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout }) => {
                     placeholder={hasServerPerplexityKey ? "•••••••• (Using Environment Key)" : "pplx-..."}
                     value={perplexityKey}
                     onChange={(e) => setPerplexityKey(e.target.value)}
-                    className="w-full bg-white/50 border border-[#D3CEC0] focus:border-[#2F5D50] focus:ring-1 focus:ring-[#2F5D50] rounded-lg px-4 py-2.5 text-sm text-[#15130E] focus:outline-none transition-colors font-mono"
+                    className="w-full bg-white/50 border border-[#D3CEC0] focus:border-[#2F5D50] focus:ring-1 focus:ring-[#2F5D50] rounded px-4 py-2.5 text-sm text-[#15130E] focus:outline-none transition-colors font-mono"
                   />
                   <p className="text-[10px] text-[#5B564C] mt-2 font-mono">Used to fetch real B2B leads dynamically using the Sonar models.</p>
                 </div>
@@ -1125,14 +1125,14 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout }) => {
                     placeholder={hasServerResendKey ? "•••••••• (Using Environment Key)" : "re_..."}
                     value={resendKey}
                     onChange={(e) => setResendKey(e.target.value)}
-                    className="w-full bg-white/50 border border-[#D3CEC0] focus:border-[#2F5D50] focus:ring-1 focus:ring-[#2F5D50] rounded-lg px-4 py-2.5 text-sm text-[#15130E] focus:outline-none transition-colors font-mono"
+                    className="w-full bg-white/50 border border-[#D3CEC0] focus:border-[#2F5D50] focus:ring-1 focus:ring-[#2F5D50] rounded px-4 py-2.5 text-sm text-[#15130E] focus:outline-none transition-colors font-mono"
                   />
                   <p className="text-[10px] text-[#5B564C] mt-2 font-mono">Used to coordinate automated outreach welcome emails via Resend's API.</p>
                 </div>
 
                 <button
                   onClick={saveConfig}
-                  className="w-full bg-[#2F5D50] hover:bg-[#234A40] text-white font-semibold py-3 px-4 rounded-lg transition-colors flex items-center justify-center gap-2 cursor-pointer text-sm"
+                  className="w-full bg-[#2F5D50] hover:bg-[#234A40] text-white font-semibold py-3 px-4 transition-colors flex items-center justify-center gap-2 cursor-pointer text-sm"
                 >
                   <ShieldCheck className="w-4 h-4" />
                   Save Settings &amp; AI Templates
@@ -1153,13 +1153,13 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout }) => {
                         placeholder="e.g. test@yourdomain.com"
                         value={testEmail}
                         onChange={(e) => setTestEmail(e.target.value)}
-                        className="w-full bg-white/50 border border-[#D3CEC0] focus:border-[#2F5D50] focus:ring-1 focus:ring-[#2F5D50] rounded-lg px-4 py-2.5 text-sm text-[#15130E] focus:outline-none transition-colors font-mono"
+                        className="w-full bg-white/50 border border-[#D3CEC0] focus:border-[#2F5D50] focus:ring-1 focus:ring-[#2F5D50] rounded px-4 py-2.5 text-sm text-[#15130E] focus:outline-none transition-colors font-mono"
                       />
                     </div>
                     <button
                       type="submit"
                       disabled={testingEmail || (!resendKey && !hasServerResendKey)}
-                      className="w-full bg-white/40 border border-[#D3CEC0] hover:bg-white/80 hover:border-[#15130E] disabled:bg-gray-200 disabled:text-gray-400 text-[#15130E] font-semibold py-2.5 px-4 rounded-lg transition-colors flex items-center justify-center gap-2 cursor-pointer text-xs uppercase tracking-wider font-mono"
+                      className="w-full bg-white/40 border border-[#D3CEC0] hover:bg-white/80 hover:border-[#15130E] disabled:bg-gray-200 disabled:text-gray-400 text-[#15130E] font-semibold py-2.5 px-4 transition-colors flex items-center justify-center gap-2 cursor-pointer text-xs uppercase tracking-wider font-mono"
                     >
                       {testingEmail ? 'Sending Test...' : 'Send Test Email'}
                     </button>
@@ -1178,7 +1178,7 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout }) => {
       {/* ADD LEAD MODAL */}
       {showAddModal && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
-          <div className="w-full max-w-lg bg-[#EFEDE5] border border-[#D3CEC0] rounded-2xl overflow-hidden shadow-2xl text-[#15130E]">
+          <div className="w-full max-w-lg bg-[#EFEDE5] border border-[#D3CEC0] overflow-hidden shadow-xl text-[#15130E]">
             <div className="bg-[#E7E4D9]/60 border-b border-[#D3CEC0] px-6 py-4 flex items-center justify-between">
               <h3 className="text-sm font-semibold uppercase tracking-wider text-[#15130E] font-display">Create New Lead Profile</h3>
               <button onClick={() => setShowAddModal(false)} className="text-[#8B857A] hover:text-[#15130E] transition-colors cursor-pointer text-xs">✕</button>
@@ -1241,7 +1241,7 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout }) => {
       {/* EDIT LEAD MODAL */}
       {showEditModal && selectedLead && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
-          <div className="w-full max-w-lg bg-[#EFEDE5] border border-[#D3CEC0] rounded-2xl overflow-hidden shadow-2xl text-[#15130E]">
+          <div className="w-full max-w-lg bg-[#EFEDE5] border border-[#D3CEC0] overflow-hidden shadow-xl text-[#15130E]">
             <div className="bg-[#E7E4D9]/60 border-b border-[#D3CEC0] px-6 py-4 flex items-center justify-between">
               <h3 className="text-sm font-semibold uppercase tracking-wider text-[#15130E] font-display">Edit Lead Profile</h3>
               <button onClick={() => setShowEditModal(false)} className="text-[#8B857A] hover:text-[#15130E] transition-colors cursor-pointer text-xs">✕</button>
@@ -1304,7 +1304,7 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout }) => {
       {/* EMAIL PREVIEW MODAL */}
       {showPreviewModal && previewEmail && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
-          <div className="w-full max-w-2xl bg-[#EFEDE5] border border-[#D3CEC0] rounded-2xl overflow-hidden shadow-2xl flex flex-col max-h-[85vh] text-[#15130E]">
+          <div className="w-full max-w-2xl bg-[#EFEDE5] border border-[#D3CEC0] overflow-hidden shadow-xl flex flex-col max-h-[85vh] text-[#15130E]">
             <div className="bg-[#E7E4D9]/60 border-b border-[#D3CEC0] px-6 py-4 flex items-center justify-between">
               <h3 className="text-sm font-semibold uppercase tracking-wider text-[#15130E] font-mono">Personalized AI Outreach Preview</h3>
               <button onClick={() => setShowPreviewModal(false)} className="text-[#8B857A] hover:text-[#15130E] transition-colors cursor-pointer text-xs">✕</button>

@@ -1,9 +1,11 @@
-import React, { useEffect, useRef, useState } from 'react';
+﻿import React, { useEffect, useRef, useState } from 'react';
 import HeroWebGLBackground from './HeroWebGLBackground';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import SiteHeader from './SiteHeader';
 import SiteFooter from './SiteFooter';
+import HeroQuickForm from './HeroQuickForm';
+import ContentCta from './ContentCta';
 import './OnPageSeoLosAngelesPage.css';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -148,11 +150,6 @@ export default function OnPageSeoLosAngelesPage() {
               When competing for visibility, generic SEO is no longer enough. Gobiya delivers elite <strong>on page seo los angeles</strong> services engineered to optimize your website’s structural integrity, crawl budget, and entity relevance. By aligning on-page architecture directly with Google’s core updates and the retrieval layers of modern AI engines, we ensure your Los Angeles business commands search results. We clean up toxic redirect loops, resolve indexation conflicts, build structured JSON-LD schemas, and implement conversion architecture that turns raw search volume into predictable pipeline revenue.
             </p>
 
-            <div className="hero-actions">
-              <a href="/book" className="btn btn-primary">Book forensic audit</a>
-              <a href="/case-studies" className="btn btn-ghost">View case studies</a>
-            </div>
-
             <div className="hero-specs">
               <div className="spec-item">
                 <span className="label">Focus</span>
@@ -169,28 +166,8 @@ export default function OnPageSeoLosAngelesPage() {
             </div>
           </div>
 
-          <div className="hero-widget">
-            <div className="widget-card">
-              <div className="widget-head">
-                <span className="dot" />
-                <span>live-audit-simulator.log</span>
-              </div>
-              <div className="widget-body">
-                <div className="log-line success">[OK] Initializing Gobiya On-Page Crawl Engine v2.6...</div>
-                <div className="log-line">[SCANNING] Checking domain: www.gobiya.com</div>
-                <div className="log-line warn">[WARNING] Found 3 duplicate canonical forks (/about vs /about/)</div>
-                <div className="log-line warn">[WARNING] Redirect loop detected in legacy /locations/ endpoints</div>
-                <div className="log-line info">[INFO] Missing structural Person JSON-LD entity graph on author page</div>
-                <div className="log-line success">[FIXED] Relative paths normalized to absolute SSL targets</div>
-                <div className="log-line success">[FIXED] Schema graph injected dynamically into SSR head</div>
-                <div className="log-line success">[DOM COMPLETE] Core Web Vitals hydrated in 280ms (sub-second threshold met)</div>
-                <div className="log-line-final">Crawl complete: 100/100 search health verified.</div>
-              </div>
-              <div className="widget-foot">
-                <span>BBB A+ Rating</span>
-                <span>Los Angeles, CA</span>
-              </div>
-            </div>
+          <div className="hero-widget" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+            <HeroQuickForm source="On-Page SEO Los Angeles" variant="light" accent="#2F5D50" heading="Request an on-page SEO audit" subheading="Tell us about your site and we’ll send a quick read." style={{ maxWidth: '100%' }} />
           </div>
 
         </div>
@@ -335,6 +312,8 @@ export default function OnPageSeoLosAngelesPage() {
         </div>
       </section>
 
+      <ContentCta headline="Ready to dominate on-page SEO in Los Angeles?" sub="Our team responds within one business day." accent="#2F5D50" background="var(--paper)" />
+
       {/* Interactive Checklist Section */}
       <section className="checklist-section">
         <div className="onpage-container">
@@ -383,6 +362,8 @@ export default function OnPageSeoLosAngelesPage() {
           </div>
         </div>
       </section>
+
+      <ContentCta headline="Let's map out your local rankings." sub="Start with a free site audit — no commitment, 24-hour response." accent="#2F5D50" background="var(--paper-2)" />
 
       {/* FAQ Section */}
       <section className="faq-section">

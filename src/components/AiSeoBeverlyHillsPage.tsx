@@ -1,9 +1,11 @@
-import React, { useEffect, useRef, useState } from 'react';
+﻿import React, { useEffect, useRef, useState } from 'react';
 import HeroWebGLBackground from './HeroWebGLBackground';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import SiteHeader from './SiteHeader';
 import SiteFooter from './SiteFooter';
+import HeroQuickForm from './HeroQuickForm';
+import ContentCta from './ContentCta';
 import './OnPageSeoLosAngelesPage.css';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -192,11 +194,6 @@ export default function AiSeoBeverlyHillsPage() {
               AI SEO Beverly Hills means engineering your brand to rank on Google and be cited by ChatGPT, Claude, and Gemini when buyers in the 90210 market search for your services. The luxury and professional services market in Beverly Hills is one of the most competitively contested search environments in the country — generic SEO has no chance here. We build entity graphs, structured knowledge signals, and AI-readable content architectures that secure citations across every surface where high-net-worth buyers discover brands. <a href="/performance/seo-discoverability-agency" style={{color:'var(--green)'}}>Our SEO &amp; Discoverability practice</a> has operated in this market since 2012.
             </p>
 
-            <div className="hero-actions">
-              <a href="/book" className="btn btn-primary">Book Beverly Hills audit</a>
-              <a href="/case-studies" className="btn btn-ghost">View case studies</a>
-            </div>
-
             <div className="hero-specs">
               <div className="spec-item">
                 <span className="label">Market</span>
@@ -213,29 +210,8 @@ export default function AiSeoBeverlyHillsPage() {
             </div>
           </div>
 
-          <div className="hero-widget">
-            <div className="widget-card">
-              <div className="widget-head">
-                <span className="dot" />
-                <span>bev-hills-ai-seo-audit.log</span>
-              </div>
-              <div className="widget-body">
-                <div className="log-line success">[OK] Initializing Gobiya AI SEO Engine — Beverly Hills v3.1...</div>
-                <div className="log-line">[SCANNING] Target market: Beverly Hills, CA 90210</div>
-                <div className="log-line">[SCANNING] AI citation gap analysis across ChatGPT, Gemini, Perplexity...</div>
-                <div className="log-line warn">[WARNING] Brand entity absent from Wikidata knowledge graph</div>
-                <div className="log-line warn">[WARNING] GBP listing: NAP inconsistency detected — 2 competing sources</div>
-                <div className="log-line warn">[WARNING] 0 AI citations found for target queries in Beverly Hills</div>
-                <div className="log-line info">[INFO] 17 high-intent commercial queries with zero competitor AI citations</div>
-                <div className="log-line success">[FIXED] Entity graph injected: schema, Wikidata, GBP aligned</div>
-                <div className="log-line success">[FIXED] GEO architecture deployed — 3 AI platforms targeted</div>
-                <div className="log-line-final">Pipeline active — estimated first AI citations: 21 days.</div>
-              </div>
-              <div className="widget-foot">
-                <span>Beverly Hills, CA 90210</span>
-                <span>AI SEO · GEO · Local</span>
-              </div>
-            </div>
+          <div className="hero-widget" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+            <HeroQuickForm source="AI SEO Beverly Hills" variant="light" accent="#2F5D50" heading="Request a Beverly Hills AI SEO audit" subheading="Tell us about your business and we’ll send a quick read." style={{ maxWidth: '100%' }} />
           </div>
 
         </div>
@@ -335,6 +311,8 @@ export default function AiSeoBeverlyHillsPage() {
         </div>
       </section>
 
+      <ContentCta headline="Ready to dominate local search?" sub="Our team responds within one business day." accent="#2F5D50" background="var(--paper)" />
+
       {/* ── INTERACTIVE CHECKLIST ── */}
       <section className="checklist-section">
         <div className="onpage-container">
@@ -383,6 +361,8 @@ export default function AiSeoBeverlyHillsPage() {
           </div>
         </div>
       </section>
+
+      <ContentCta headline="Let's map out your local rankings." sub="Start with a free site audit — no commitment, 24-hour response." accent="#2F5D50" background="var(--paper-2)" />
 
       {/* ── FAQ ── */}
       <section className="faq-section">

@@ -15,6 +15,15 @@ export interface ArticleMeta {
 /** All articles — newest first. */
 export const ARTICLE_META: ArticleMeta[] = [
   {
+    slug: "how-can-a-startup-figure-out-whether-its-content-is-being-picked-up-by-llms",
+    title: "How Can a Startup Figure Out Whether Its Content Is Being Picked Up by LLMs?",
+    category: "Strategy",
+    readTime: "9 min read",
+    date: "June 30, 2026",
+    image: "/images/llm-content-pickup-thumbnail.webp",
+    metaDescription: "How can a startup figure out whether its content is being picked up by LLMs? Run a prompt library across ChatGPT, Claude & Perplexity, track citations & AI referral traffic. Get a free AI visibility audit.",
+  },
+  {
     slug: "what-are-ai-seo-services",
     title: "What Are AI SEO Services? The 2026 Guide to Getting Cited by AI",
     category: "AI SEO",
@@ -29,7 +38,7 @@ export const ARTICLE_META: ArticleMeta[] = [
     category: "Strategy",
     readTime: "5 min read",
     date: "June 17, 2026",
-    image: "/images/article-introducing-open-knowledge-format-thumbnail.webp",
+    image: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=1200&q=80",
     metaDescription: "Google Cloud's new open spec, OKF, for representing knowledge as a portable file-system hierarchy of markdown and YAML.",
   },
   {
@@ -38,7 +47,7 @@ export const ARTICLE_META: ArticleMeta[] = [
     category: "Local SEO",
     readTime: "10 min read",
     date: "June 13, 2026",
-    image: "/images/article-multi-location-websites-franchises-thumbnail.webp",
+    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&q=80",
     metaDescription: "A technical guide to multi-location websites for franchises. How to configure subdirectory URLs, prevent page cannibalization, and establish secure SEO governance.",
   },
   {
@@ -47,7 +56,7 @@ export const ARTICLE_META: ArticleMeta[] = [
     category: "Strategy",
     readTime: "14 min read",
     date: "May 26, 2026",
-    image: "/images/article-b2b-organic-traffic-growth.webp",
+    image: "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=1200&q=80",
     metaDescription: "How traffic and pipeline decoupled in B2B during 2025-2026, why the best B2B SEO programs are now growing less traffic on purpose, and what the new organic growth math actually looks like.",
   },
   {
@@ -56,17 +65,17 @@ export const ARTICLE_META: ArticleMeta[] = [
     category: "Strategy",
     readTime: "12 min read",
     date: "June 12, 2026",
-    image: "/images/article-behavioral-psychology-b2b-landing-page-wireframes-thumbnail.webp",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80",
     metaDescription: "Learn how to apply behavioral psychology principles like the Fogg Behavior Model and Hick\\",
   },
   {
     slug: "gobiya-vs-enterprise-seo-agencies",
     title: "Enterprise SEO Agencies vs. Gobiya: The Honest Comparison",
     category: "Strategy",
-    readTime: "9 min read",
+    readTime: "14 min read",
     date: "June 3, 2026",
-    image: "/images/enterprise-seo-agencies-comparison.png",
-    metaDescription: "We compare enterprise SEO agencies vs Gobiya, showing the speed, cost, and CRM pipeline differences for B2B brands.",
+    image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=1200&q=80",
+    metaDescription: "We compare enterprise SEO agencies vs Gobiya across execution speed, GEO citation rates, pipeline attribution, and real ROI math for B2B brands.",
   },
   {
     slug: "how-do-b2b-companies-use-seo-to-generate-predictable-revenue",
@@ -74,7 +83,7 @@ export const ARTICLE_META: ArticleMeta[] = [
     category: "Strategy",
     readTime: "6 min read",
     date: "May 31, 2026",
-    image: "/images/b2b-pipeline-revenue-performance-dashboard.png",
+    image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1200&q=80",
     metaDescription: "Learn how to connect search clusters to B2B pipeline revenue, map content to the buying committee, and scale inbound conversions.",
   },
   {
@@ -83,7 +92,7 @@ export const ARTICLE_META: ArticleMeta[] = [
     category: "GEO",
     readTime: "8 min read",
     date: "June 3, 2026",
-    image: "/images/llm-company-verification-data-sources.png",
+    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&q=80",
     metaDescription: "Discover how ChatGPT and Claude handle LLM company verification by crawling Wikidata, LinkedIn, and review portals to establish trust.",
   },
   {
@@ -92,16 +101,16 @@ export const ARTICLE_META: ArticleMeta[] = [
     category: "GEO",
     readTime: "8 min read",
     date: "June 4, 2026",
-    image: "/images/knowledge-graph-optimization-vs-geo-model.png",
+    image: "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=1200&q=80",
     metaDescription: "Understand how Knowledge Graph optimization differs from GEO, how entity resolution works, and how to secure AI citation visibility.",
   },
   {
     slug: "chatgpt-vs-google-for-business-discovery",
     title: "ChatGPT vs Google Search: Customer Trends",
     category: "SEO",
-    readTime: "8 min read",
+    readTime: "12 min read",
     date: "May 29, 2026",
-    image: "/images/chatgpt-vs-google-search-conversion-rates.png",
+    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&q=80",
     metaDescription: "Comparing ChatGPT vs Google search discovery rates. Learn how to optimize your brand footprint to win both AI summaries and clicks.",
   },
   {
@@ -110,7 +119,7 @@ export const ARTICLE_META: ArticleMeta[] = [
     category: "SEO",
     readTime: "9 min read",
     date: "May 29, 2026",
-    image: "/images/manual-action-vs-algorithmic-penalty-checklist.png",
+    image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1200&q=80",
     metaDescription: "Understand manual action vs algorithmic penalty differences, Search Console reports, and step-by-step diagnostic checklists for recovery.",
   },
   {
@@ -119,7 +128,7 @@ export const ARTICLE_META: ArticleMeta[] = [
     category: "SEO",
     readTime: "10 min read",
     date: "May 30, 2026",
-    image: "/images/generative-engine-optimization-rag-citations.png",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80",
     metaDescription: "A complete technical guide to Generative Engine Optimization (GEO). Learn how RAG-based AI search engines cite content and how to optimize.",
   },
   {
@@ -128,7 +137,7 @@ export const ARTICLE_META: ArticleMeta[] = [
     category: "SEO",
     readTime: "10 min read",
     date: "May 27, 2026",
-    image: "/images/google-manual-action-removal-recovery-checklist.png",
+    image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1200&q=80",
     metaDescription: "Use our Google manual action removal checklist to audit link profiles, document cleanup, and submit a successful reconsideration appeal.",
   },
   {
@@ -137,7 +146,7 @@ export const ARTICLE_META: ArticleMeta[] = [
     category: "Strategy",
     readTime: "12 min read",
     date: "May 25, 2026",
-    image: "/images/b2b-sales-pipeline-automation-citation-share.png",
+    image: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=1200&q=80",
     metaDescription: "Integrate B2B sales pipeline automation with search intent. Learn how AI citation share decides who gets on the buyer shortlist.",
   },
   {
@@ -146,7 +155,7 @@ export const ARTICLE_META: ArticleMeta[] = [
     category: "Strategy",
     readTime: "13 min read",
     date: "May 25, 2026",
-    image: "/images/automated-lead-generation-intent-mapping-chart.png",
+    image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=80",
     metaDescription: "Set up automated lead generation by mapping high-intent search clusters to your B2B pipeline to drive closed sales, not just page views.",
   },
   {
@@ -155,7 +164,7 @@ export const ARTICLE_META: ArticleMeta[] = [
     category: "Strategy",
     readTime: "12 min read",
     date: "May 25, 2026",
-    image: "/images/outbound-seo-prospecting-intent-signals.png",
+    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&q=80",
     metaDescription: "Use outbound SEO prospecting to monitor search intent triggers. Learn how to pitch buyers at the exact moment they search for your service.",
   },
   {
@@ -164,7 +173,7 @@ export const ARTICLE_META: ArticleMeta[] = [
     category: "Strategy",
     readTime: "13 min read",
     date: "May 25, 2026",
-    image: "/images/b2b-sales-pipeline-automation-outreach.png",
+    image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&q=80",
     metaDescription: "Configure B2B sales pipeline automation workflows. Learn how to connect search intent, lead data enrichment, and automated email campaigns.",
   },
   {
@@ -173,7 +182,7 @@ export const ARTICLE_META: ArticleMeta[] = [
     category: "Strategy",
     readTime: "11 min read",
     date: "May 25, 2026",
-    image: "/images/best-seo-agency-for-b2b-checklist.png",
+    image: "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=1200&q=80",
     metaDescription: "How to select the best SEO agency for B2B brands. Follow our evaluation checklist to verify technical authority, case studies, and contracts.",
   },
   {
@@ -182,7 +191,7 @@ export const ARTICLE_META: ArticleMeta[] = [
     category: "Strategy",
     readTime: "14 min read",
     date: "May 25, 2026",
-    image: "/images/seo-for-b2b-lead-generation-committee-structure.png",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80",
     metaDescription: "Optimize SEO for B2B lead generation by mapping content to the buying committee stakeholders to increase deal velocity and close rates.",
   },
   {
@@ -191,7 +200,7 @@ export const ARTICLE_META: ArticleMeta[] = [
     category: "Local SEO",
     readTime: "13 min read",
     date: "May 26, 2026",
-    image: "/images/local-seo-service-maps-performance.png",
+    image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200&q=80",
     metaDescription: "Deploy an advanced local SEO strategy to dominate the Google 3-Pack, optimize schema markup, and capture geographic searches.",
   },
   {
@@ -200,7 +209,7 @@ export const ARTICLE_META: ArticleMeta[] = [
     category: "Local SEO",
     readTime: "10 min read",
     date: "May 27, 2026",
-    image: "/images/article-local-seo-explained.png",
+    image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=1200&q=80",
     metaDescription: "Our local SEO explained guide shows how to run weekly optimizations, review acquisitions, and local profile updates to secure Map Pack dominance.",
   },
   {
@@ -209,7 +218,7 @@ export const ARTICLE_META: ArticleMeta[] = [
     category: "Local SEO",
     readTime: "12 min read",
     date: "May 27, 2026",
-    image: "/images/multi-location-seo-structure-url-hierarchy.png",
+    image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1200&q=80",
     metaDescription: "Learn to structure a multi-location SEO website structure that prevents cannibalization, consolidates link equity, and ranks every city page.",
   },
   {
@@ -218,7 +227,7 @@ export const ARTICLE_META: ArticleMeta[] = [
     category: "Local SEO",
     readTime: "14 min read",
     date: "May 28, 2026",
-    image: "/images/website-structure-for-multiple-locations-setup.png",
+    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&q=80",
     metaDescription: "Our guide details the best website structure multiple locations setup. Compare subdirectory vs subdomain hierarchies for localized organic growth.",
   },
   {
@@ -227,7 +236,7 @@ export const ARTICLE_META: ArticleMeta[] = [
     category: "SEO",
     readTime: "15 min read",
     date: "May 28, 2026",
-    image: "/images/google-core-update-recovery-traffic-charts.png",
+    image: "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=1200&q=80",
     metaDescription: "Our Google core update recovery guide details the timeline, content pruning strategies, and quality updates needed to restore search traffic.",
   },
   {
@@ -236,16 +245,16 @@ export const ARTICLE_META: ArticleMeta[] = [
     category: "Local SEO",
     readTime: "16 min read",
     date: "May 28, 2026",
-    image: "/images/google-business-profile-optimization-visibility.png",
+    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&q=80",
     metaDescription: "Learn our Google Business Profile optimization checklist to recover suspended profiles, appeal algorithmic soft bans, and verify map listings.",
   },
   {
     slug: "b2b-seo-agency",
     title: "B2B SEO Agency: Pipeline Attribution Guide",
     category: "Strategy",
-    readTime: "12 min read",
+    readTime: "14 min read",
     date: "May 27, 2026",
-    image: "/images/b2b-seo-agency-funnel-strategy-session.png",
+    image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1200&q=80",
     metaDescription: "Partner with a B2B SEO agency built around pipeline value, not just search volume. Verify our committee mapping and conversion playbooks.",
   },
   {
@@ -254,7 +263,7 @@ export const ARTICLE_META: ArticleMeta[] = [
     category: "SEO",
     readTime: "12 min read",
     date: "May 31, 2026",
-    image: "/images/seo-case-study-traffic-recovery-growth.png",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80",
     metaDescription: "A forensic SEO case study on traffic recovery after Google\\",
   },
   {
@@ -263,7 +272,7 @@ export const ARTICLE_META: ArticleMeta[] = [
     category: "GEO",
     readTime: "10 min read",
     date: "June 4, 2026",
-    image: "/images/ai-search-engines-scraping-html-data-comparison.png",
+    image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1200&q=80",
     metaDescription: "Understand how AI search scraping works. Learn why AI crawlers bypass JavaScript APIs and read raw public HTML blocks instead.",
   },
   {
@@ -272,17 +281,17 @@ export const ARTICLE_META: ArticleMeta[] = [
     category: "Knowledge Graph Intelligence",
     readTime: "12 min read",
     date: "June 10, 2026",
-    image: "/images/article-brand-entity-extraction-perception-drift.webp",
+    image: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=1200&q=80",
     metaDescription: "How brand entity extraction works across Google, Bing, Wikidata, and LLM knowledge graphs — and how to detect and correct perception drift before it costs you AI citations.",
   },
   {
     slug: "dental-seo-agency",
     title: "Dental SEO Agency Checklist: Red Flags and KPIs to Watch",
     category: "Local SEO",
-    readTime: "11 min read",
+    readTime: "14 min read",
     date: "June 7, 2026",
-    image: "/images/article-dental-seo-agency.png",
-    metaDescription: "Avoid costly hiring mistakes. Use our comprehensive evaluation checklist for dental SEO agencies, covering contract traps, KPIs, and case study audits.",
+    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&q=80",
+    metaDescription: "Avoid costly hiring mistakes. Use our comprehensive evaluation checklist for dental SEO agencies, covering contract traps, KPIs, case study audits, and ROI benchmarks.",
   },
 ];
 

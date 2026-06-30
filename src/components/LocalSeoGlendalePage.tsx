@@ -1,9 +1,11 @@
-import React, { useEffect, useRef, useState } from 'react';
+﻿import React, { useEffect, useRef, useState } from 'react';
 import HeroWebGLBackground from './HeroWebGLBackground';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import SiteHeader from './SiteHeader';
 import SiteFooter from './SiteFooter';
+import HeroQuickForm from './HeroQuickForm';
+import ContentCta from './ContentCta';
 import './OnPageSeoLosAngelesPage.css';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -193,11 +195,6 @@ export default function LocalSeoGlendalePage() {
               Local SEO Glendale means showing up in Google's Map Pack and organic results when buyers on Brand Boulevard and throughout the 91201–91210 market search for your services. Glendale is one of LA County's most competitive local search markets — the Americana at Brand corridor alone drives thousands of high-intent local queries every day, and the businesses that rank in the top three map positions capture the overwhelming majority of that traffic. We engineer the four signals that determine local rank: <a href="/insights/google-business-profile-optimization" style={{color:'var(--green)'}}>Google Business Profile</a> authority, NAP citation consistency, review velocity, and local schema. Our <a href="/performance/seo-discoverability-agency" style={{color:'var(--green)'}}>SEO &amp; Discoverability practice</a> has served the Glendale market since 2012.
             </p>
 
-            <div className="hero-actions">
-              <a href="/book" className="btn btn-primary">Book Glendale SEO audit</a>
-              <a href="/case-studies" className="btn btn-ghost">View results</a>
-            </div>
-
             <div className="hero-specs">
               <div className="spec-item">
                 <span className="label">Market</span>
@@ -214,30 +211,8 @@ export default function LocalSeoGlendalePage() {
             </div>
           </div>
 
-          <div className="hero-widget">
-            <div className="widget-card">
-              <div className="widget-head">
-                <span className="dot" />
-                <span>glendale-local-seo-audit.log</span>
-              </div>
-              <div className="widget-body">
-                <div className="log-line success">[OK] Initializing Gobiya Local SEO Engine — Glendale v3.1...</div>
-                <div className="log-line">[SCANNING] Target market: Glendale, CA 91203</div>
-                <div className="log-line">[SCANNING] Google Business Profile signal check...</div>
-                <div className="log-line warn">[WARNING] GBP primary category mismatch — ranking suppressed</div>
-                <div className="log-line warn">[WARNING] NAP divergence: Yelp vs Google vs Apple Maps inconsistent</div>
-                <div className="log-line warn">[WARNING] Review velocity: 1.1/month (competitive threshold is 4.5/month)</div>
-                <div className="log-line info">[INFO] 23 high-intent Glendale queries with Map Pack visibility gaps</div>
-                <div className="log-line info">[INFO] 3 direct Brand Blvd competitors averaging 80+ reviews</div>
-                <div className="log-line success">[FIXED] GBP categories, service areas, and hours corrected</div>
-                <div className="log-line success">[FIXED] NAP aligned across 40 directory sources</div>
-                <div className="log-line-final">Map Pack pipeline active — estimated entry: 45–60 days.</div>
-              </div>
-              <div className="widget-foot">
-                <span>Glendale, CA 91203</span>
-                <span>Local SEO · GBP · Map Pack</span>
-              </div>
-            </div>
+          <div className="hero-widget" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+            <HeroQuickForm source="Local SEO Glendale" variant="light" accent="#2F5D50" heading="Request a Glendale local SEO quote" subheading="Tell us about your business and we’ll send a quick read." style={{ maxWidth: '100%' }} />
           </div>
 
         </div>
@@ -337,6 +312,8 @@ export default function LocalSeoGlendalePage() {
         </div>
       </section>
 
+      <ContentCta headline="Ready to dominate local search?" sub="Our team responds within one business day." accent="#2F5D50" background="var(--paper)" />
+
       {/* ── INTERACTIVE CHECKLIST ── */}
       <section className="checklist-section">
         <div className="onpage-container">
@@ -387,6 +364,8 @@ export default function LocalSeoGlendalePage() {
           </div>
         </div>
       </section>
+
+      <ContentCta headline="Let's map out your local rankings." sub="Start with a free site audit — no commitment, 24-hour response." accent="#2F5D50" background="var(--paper-2)" />
 
       {/* ── FAQ ── */}
       <section className="faq-section">

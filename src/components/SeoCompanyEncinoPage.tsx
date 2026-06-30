@@ -1,9 +1,11 @@
-import React, { useEffect, useRef, useState } from 'react';
+﻿import React, { useEffect, useRef, useState } from 'react';
 import HeroWebGLBackground from './HeroWebGLBackground';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import SiteHeader from './SiteHeader';
 import SiteFooter from './SiteFooter';
+import HeroQuickForm from './HeroQuickForm';
+import ContentCta from './ContentCta';
 import './OnPageSeoLosAngelesPage.css';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -194,11 +196,6 @@ export default function SeoCompanyEncinoPage() {
               An SEO company in Encino should do one thing well: generate consistent, qualified pipeline from organic search — not just traffic. The Ventura Boulevard corridor and San Fernando Valley business market runs on referrals and reputation, but the businesses growing fastest in Encino have added organic search and AI citation visibility to that foundation. We are a technical SEO company serving Encino, Tarzana, Sherman Oaks, and the broader Valley market — engineering the ranking architecture, entity graphs, and content systems that turn search into predictable revenue. Our <a href="/performance/seo-discoverability-agency" style={{color:'var(--green)'}}>SEO &amp; Discoverability system</a> has operated in this market since 2012.
             </p>
 
-            <div className="hero-actions">
-              <a href="/book" className="btn btn-primary">Book Encino SEO audit</a>
-              <a href="/case-studies" className="btn btn-ghost">View results</a>
-            </div>
-
             <div className="hero-specs">
               <div className="spec-item">
                 <span className="label">Market</span>
@@ -215,30 +212,8 @@ export default function SeoCompanyEncinoPage() {
             </div>
           </div>
 
-          <div className="hero-widget">
-            <div className="widget-card">
-              <div className="widget-head">
-                <span className="dot" />
-                <span>encino-seo-audit.log</span>
-              </div>
-              <div className="widget-body">
-                <div className="log-line success">[OK] Initializing Gobiya SEO Engine — Encino v3.1...</div>
-                <div className="log-line">[SCANNING] Target market: Encino, CA 91316</div>
-                <div className="log-line">[SCANNING] Organic visibility gap analysis running...</div>
-                <div className="log-line warn">[WARNING] Target keyword cluster: 0 top-10 rankings detected</div>
-                <div className="log-line warn">[WARNING] Technical crawl: 14 pages blocked by canonical conflicts</div>
-                <div className="log-line warn">[WARNING] Schema coverage: missing on 8 of 12 key service pages</div>
-                <div className="log-line info">[INFO] 31 commercial intent queries — zero current visibility</div>
-                <div className="log-line info">[INFO] 3 Ventura Blvd competitors occupying top-3 positions</div>
-                <div className="log-line success">[FIXED] Canonical structure corrected, crawl budget reallocated</div>
-                <div className="log-line success">[FIXED] Service page schema deployed — LocalBusiness + Service entities</div>
-                <div className="log-line-final">Encino SEO pipeline active — est. first rankings: 60–90 days.</div>
-              </div>
-              <div className="widget-foot">
-                <span>Encino, CA 91316</span>
-                <span>Technical SEO · Pipeline · GEO</span>
-              </div>
-            </div>
+          <div className="hero-widget" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+            <HeroQuickForm source="SEO Company Encino" variant="light" accent="#2F5D50" heading="Request an Encino SEO quote" subheading="Tell us about your business and we’ll send a quick read." style={{ maxWidth: '100%' }} />
           </div>
 
         </div>
@@ -338,6 +313,8 @@ export default function SeoCompanyEncinoPage() {
         </div>
       </section>
 
+      <ContentCta headline="Ready to dominate local search?" sub="Our team responds within one business day." accent="#2F5D50" background="var(--paper)" />
+
       {/* ── CHECKLIST ── */}
       <section className="checklist-section">
         <div className="onpage-container">
@@ -388,6 +365,8 @@ export default function SeoCompanyEncinoPage() {
           </div>
         </div>
       </section>
+
+      <ContentCta headline="Let's map out your local rankings." sub="Start with a free site audit — no commitment, 24-hour response." accent="#2F5D50" background="var(--paper-2)" />
 
       {/* ── FAQ ── */}
       <section className="faq-section">

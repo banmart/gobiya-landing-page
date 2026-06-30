@@ -1,6 +1,8 @@
-import React, { useEffect } from 'react';
+﻿import React, { useEffect } from 'react';
 import SiteHeader from './SiteHeader';
 import SiteFooter from './SiteFooter';
+import HeroQuickForm from './HeroQuickForm';
+import ContentCta from './ContentCta';
 
 const FAQ_ITEMS = [
   {
@@ -270,8 +272,8 @@ export default function PlasticSurgeryMarketingPage() {
       <SiteHeader />
 
       {/* ── HERO ── */}
-      <section style={{ background: '#ffffff', padding: '13rem 5vw 5rem', borderBottom: '1px solid #e5e7eb' }}>
-        <nav style={{ fontFamily: 'monospace', fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.18em', color: '#9ca3af', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+      <section style={{ background: '#ffffff', padding: 'clamp(5rem,15vw,13rem) 5vw 5rem', borderBottom: '1px solid #e5e7eb' }}>
+        <nav style={{ fontFamily: 'monospace', fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.18em', color: '#9ca3af', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
           <a href="/" style={{ color: '#9ca3af', textDecoration: 'none' }}>Home</a>
           <span>/</span>
           <a href="/performance" style={{ color: '#9ca3af', textDecoration: 'none' }}>Performance</a>
@@ -279,21 +281,14 @@ export default function PlasticSurgeryMarketingPage() {
           <span style={{ color: '#374151' }}>Plastic Surgery Internet Marketing</span>
         </nav>
 
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr auto', gap: '4rem', alignItems: 'start' }}>
-          <div>
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '4rem', alignItems: 'flex-start' }}>
+          <div style={{ flex: '1 1 480px', minWidth: 0 }}>
             <h1 style={{ fontSize: 'clamp(2.5rem, 5.5vw, 4.5rem)', fontWeight: 700, letterSpacing: '-0.03em', lineHeight: 1.05, color: '#111827', maxWidth: '820px', marginBottom: '1.5rem' }}>
               Plastic Surgery Internet Marketing
             </h1>
             <p style={{ fontSize: '1.1rem', color: '#4b5563', lineHeight: 1.75, maxWidth: '640px', marginBottom: '2.5rem' }}>
               Plastic surgery internet marketing is how high-performing practices get found by the right patients — people actively researching procedures, comparing surgeons, and making decisions worth $8,000 to $25,000. The practices that dominate these searches didn't get there by posting more on social media. They built a compounding system: technical SEO that captures procedure-specific queries, content architecture that nurtures across a 3–6 month consideration cycle, Google Ads tuned to high-intent searches, and reputation infrastructure that turns patient reviews into conversion assets. Our <a href="/performance/seo-discoverability-agency" style={{ color: 'var(--green)', textDecoration: 'none' }}>SEO &amp; Discoverability practice</a> anchors every plastic surgery campaign we run.
             </p>
-            <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginBottom: '3rem' }}>
-              <a href="/book" className="btn btn-primary magnetic">
-                Book a plastic surgery marketing consultation
-                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" /></svg>
-              </a>
-              <a href="/performance/seo-discoverability-agency" className="btn btn-ghost magnetic">SEO & Discoverability</a>
-            </div>
 
             {/* Patient Journey Diagram */}
             <div style={{ borderTop: '1px solid #e5e7eb', paddingTop: '2rem' }}>
@@ -302,8 +297,11 @@ export default function PlasticSurgeryMarketingPage() {
             </div>
           </div>
 
-          {/* Sidebar stats card */}
-          <div style={{ minWidth: '220px', border: '1px solid #e5e7eb', padding: '2rem', flexShrink: 0 }}>
+          {/* Sidebar: quick form + stats card */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', flex: '1 1 420px', maxWidth: '560px' }}>
+          <HeroQuickForm source="Plastic Surgery Internet Marketing" variant="light" heading="Request a marketing consultation" subheading="Tell us about your practice and we’ll follow up promptly." />
+          {/* Stats card */}
+          <div style={{ border: '1px solid #e5e7eb', padding: '2rem' }}>
             <span style={{ fontFamily: 'monospace', fontSize: '0.65rem', textTransform: 'uppercase', letterSpacing: '0.12em', color: '#9ca3af', display: 'block', marginBottom: '1.5rem' }}>Practice snapshot</span>
             {[
               { label: 'Est.', val: '2012' },
@@ -317,6 +315,7 @@ export default function PlasticSurgeryMarketingPage() {
                 <span style={{ fontSize: '0.85rem', color: '#111827', fontWeight: 600, textAlign: 'right' }}>{r.val}</span>
               </div>
             ))}
+          </div>
           </div>
         </div>
       </section>
@@ -376,6 +375,8 @@ export default function PlasticSurgeryMarketingPage() {
           ))}
         </div>
       </section>
+
+      <ContentCta headline="Ready to attract more qualified patients?" sub="Our team responds within one business day." accent="#111827" background="#ffffff" />
 
       {/* ── WHAT PLASTIC SURGERY DIGITAL MARKETING INCLUDES ── */}
       <section style={{ padding: '5rem 5vw', borderBottom: '1px solid #e5e7eb', background: '#f9fafb' }}>
@@ -510,6 +511,8 @@ export default function PlasticSurgeryMarketingPage() {
           </div>
         </div>
       </section>
+
+      <ContentCta headline="Let's build your patient acquisition system." sub="Start with a free site audit — no commitment, 24-hour response." accent="#111827" background="#f9fafb" />
 
       {/* ── REVIEWS / CHOOSING A COMPANY ── */}
       <section style={{ padding: '5rem 5vw', borderBottom: '1px solid #e5e7eb', background: '#ffffff' }}>

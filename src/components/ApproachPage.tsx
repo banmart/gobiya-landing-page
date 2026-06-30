@@ -177,7 +177,7 @@ const ApproachPage: React.FC = () => {
       <div id="content" className="site-content flex-grow">
         <main id="primary" className="site-main">
 
-      <section id="top" style={{ background: '#ffffff', padding: '13rem 5vw 5rem', borderBottom: '1px solid #e5e7eb', position: 'relative' }}>
+      <section id="top" style={{ background: '#ffffff', padding: 'clamp(7rem,15vw,13rem) 5vw 5rem', borderBottom: '1px solid #e5e7eb', position: 'relative' }}>
         <span style={{ fontFamily: 'monospace', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.2em', color: '#9ca3af', display: 'block', marginBottom: '1.5rem' }}>
           Gobiya / Our approach
         </span>
