@@ -39,11 +39,9 @@ const CATEGORIES: Record<string, CategoryConfig> = {
     stat3: { value: '3×', label: 'Avg. engagement lift' },
     video: '/videos/rollb.webm',
     services: [
-      { href: '/creativity/brand-identity-strategy-agency', label: 'Brand Identity Strategy' },
-      { href: '/creativity/communication-concepts-agency', label: 'Communication Concepts' },
       { href: '/creativity/seo-web-copywriting-agency', label: 'SEO & Web Copywriting' },
-      { href: '/creativity/creative-art-direction-agency', label: 'Creative Art Direction' },
-      { href: '/creativity/social-media-management-agency', label: 'Social Media Management' },
+      { href: '/creativity/seo-content-strategy-agency', label: 'SEO Content Strategy' },
+      { href: '/creativity/geo-ai-content-writing-agency', label: 'GEO & AI Content Writing' },
     ],
     faqs: [
       {
@@ -70,28 +68,6 @@ const CATEGORIES: Record<string, CategoryConfig> = {
     cards: [
       {
         number: '01',
-        title: 'Brand Identity Strategy',
-        desc: 'We define the unique essence, voice, and visual character of your business — logo, typography, colour palette, and a brand manual to guide all communications.',
-        links: [
-          { href: '/creativity/brand-identity-strategy-agency', label: 'Visual identity systems' },
-          { href: '/creativity/brand-identity-strategy-agency', label: 'Brand voice & tone' },
-          { href: '/creativity/brand-identity-strategy-agency', label: 'Brand guidelines' },
-        ],
-        href: '/creativity/brand-identity-strategy-agency',
-      },
-      {
-        number: '02',
-        title: 'Communication Concepts',
-        desc: 'We translate complex business objectives into clear, compelling communication that resonates with the people who matter most to your growth — across every channel.',
-        links: [
-          { href: '/creativity/communication-concepts-agency', label: 'Campaign concepts' },
-          { href: '/creativity/communication-concepts-agency', label: 'Messaging architecture' },
-          { href: '/creativity/communication-concepts-agency', label: 'Multichannel narratives' },
-        ],
-        href: '/creativity/communication-concepts-agency',
-      },
-      {
-        number: '03',
         title: 'SEO & Web Copywriting',
         desc: 'We write content that engages human readers and ranks in search algorithms — from landing pages and service copy to long-form editorial that builds authority.',
         links: [
@@ -100,28 +76,6 @@ const CATEGORIES: Record<string, CategoryConfig> = {
           { href: '/creativity/seo-web-copywriting-agency', label: 'Email & ad copy' },
         ],
         href: '/creativity/seo-web-copywriting-agency',
-      },
-      {
-        number: '04',
-        title: 'Creative Art Direction',
-        desc: 'We coordinate styling, imagery, layout, and motion across all your digital and print assets — ensuring every touchpoint expresses your brand with clarity and impact.',
-        links: [
-          { href: '/creativity/creative-art-direction-agency', label: 'Photo & video direction' },
-          { href: '/creativity/creative-art-direction-agency', label: 'Digital asset production' },
-          { href: '/creativity/creative-art-direction-agency', label: 'Motion & animation' },
-        ],
-        href: '/creativity/creative-art-direction-agency',
-      },
-      {
-        number: '05',
-        title: 'Social Media Management',
-        desc: 'We grow active community loops around your core brand message — content calendars, community management, and performance analytics across every platform.',
-        links: [
-          { href: '/creativity/social-media-management-agency', label: 'Content strategy' },
-          { href: '/creativity/social-media-management-agency', label: 'Community management' },
-          { href: '/creativity/social-media-management-agency', label: 'Platform analytics' },
-        ],
-        href: '/creativity/social-media-management-agency',
       },
     ],
   },
@@ -235,9 +189,7 @@ const CATEGORIES: Record<string, CategoryConfig> = {
     services: [
       { href: '/relations/authority-building-agency', label: 'Authority & Link Building' },
       { href: '/relations/digital-pr-media-outreach-agency', label: 'Digital PR & Media Outreach' },
-      { href: '/relations/content-marketing-syndication-agency', label: 'Content Marketing Syndication' },
-      { href: '/relations/influencer-marketing-agency', label: 'Influencer Marketing' },
-      { href: '/relations/local-community-relations-agency', label: 'Local Community Relations' },
+      { href: '/relations/google-ads-ppc-strategy-agency', label: 'Google Ads & PPC Strategy' },
     ],
     faqs: [
       {
@@ -283,39 +235,6 @@ const CATEGORIES: Record<string, CategoryConfig> = {
           { href: '/relations/digital-pr-media-outreach-agency', label: 'Journalist relationships' },
         ],
         href: '/relations/digital-pr-media-outreach-agency',
-      },
-      {
-        number: '03',
-        title: 'Content Marketing Syndication',
-        desc: 'We create high-value research, guides, and analysis — then distribute them across industry publications and aggregators that extend your reach and build external link signals.',
-        links: [
-          { href: '/relations/content-marketing-syndication-agency', label: 'Topic cluster architecture' },
-          { href: '/relations/content-marketing-syndication-agency', label: 'Syndication networks' },
-          { href: '/relations/content-marketing-syndication-agency', label: 'Long-form editorial' },
-        ],
-        href: '/relations/content-marketing-syndication-agency',
-      },
-      {
-        number: '04',
-        title: 'Influencer Marketing',
-        desc: 'We identify creators whose audience demographics and engagement patterns genuinely align with your brand — managing campaigns from brief to post-campaign analysis.',
-        links: [
-          { href: '/relations/influencer-marketing-agency', label: 'Creator research & vetting' },
-          { href: '/relations/influencer-marketing-agency', label: 'Campaign management' },
-          { href: '/relations/influencer-marketing-agency', label: 'Performance reporting' },
-        ],
-        href: '/relations/influencer-marketing-agency',
-      },
-      {
-        number: '05',
-        title: 'Local Community Relations',
-        desc: 'We optimize your regional citation footprint, Google Business Profile, and map pack signals — while building community positioning through local partnerships and press.',
-        links: [
-          { href: '/relations/local-community-relations-agency', label: 'Google Business Profile' },
-          { href: '/relations/local-community-relations-agency', label: 'Local citation audit' },
-          { href: '/relations/local-community-relations-agency', label: 'Community partnership' },
-        ],
-        href: '/relations/local-community-relations-agency',
       },
     ],
   },

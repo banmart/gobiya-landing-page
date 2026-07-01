@@ -271,7 +271,19 @@ function App({ url }: AppProps) {
       // Legacy /resources/ URLs from prior CMS — 404ing in search results
       '/resources/zero-click-is-the-new-billboard-monetize-it-mk82t8ki': '/insights/automated-b2b-sales-pipeline-seo',
       '/resources/how-to-recover-from-a-google-algorithm-update-2026-guide-ml3c2pbz': '/insights/can-a-site-fully-recover-from-a-google-core-update',
-      '/resources': '/insights'
+      '/resources': '/insights',
+      // Removed service pages — redirect to nearest real service
+      '/creativity/brand-identity-strategy-agency': '/creativity/seo-web-copywriting-agency',
+      '/creativity/communication-concepts-agency': '/creativity/seo-web-copywriting-agency',
+      '/creativity/creative-art-direction-agency': '/performance/web-development-agency',
+      '/creativity/social-media-management-agency': '/internet-marketing-services-los-angeles',
+      '/performance/mobile-app-development-agency': '/performance/web-development-agency',
+      '/performance/it-consulting-services-agency': '/performance/web-development-agency',
+      '/relations/influencer-marketing-agency': '/relations/authority-building-agency',
+      '/relations/local-community-relations-agency': '/performance/local-seo-services-agency',
+      '/relations/content-marketing-syndication-agency': '/creativity/seo-content-strategy-agency',
+      // Canonical Google Ads page lives at /relations/ not /performance/
+      '/performance/google-ads-ppc-strategy-agency': '/relations/google-ads-ppc-strategy-agency'
     };
     
     const target = legacyRedirects[normalized];

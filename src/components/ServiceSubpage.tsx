@@ -81,66 +81,8 @@ export default function ServiceSubpage({ path, isFanOut, category, slug }: Servi
       advantagesHeading?: string;
       advantageCards?: { title: string; description: string }[];
     }> = {
-      'brand-identity-strategy-agency': {
-        pageTitle: 'Brand identity strategy',
-        pageSubheading: 'We define the unique essence, voice, and visual character of your business.',
-        overlaySubtitle: 'We translate ideas into high-impact campaigns',
-        overlayTitle: 'Art and creative direction for brand identity campaigns',
-        overlayP1: 'It seems obvious, but a company presents itself and communicates with its target group through images and content that represent it across multiple channels.',
-        overlayP2: 'But who decides how your assets should be designed? Who chooses the quality and tone? Who thinks about, makes, and manages the creation of your creative properties?',
-        deepDiveHeading: 'Visual, verbal, and audio identity: telling everyone who you are',
-        deepDiveParagraphs: [
-          'We develop a distinctive voice for your brand with targeted vocabulary and tone — to communicate transparently and respond to your audience\'s needs. We don\'t just work with words: we devise a powerful visual system in line with who you are, to tell what you do and how you do it across every platform.',
-          'We select the ideal synthesis for your logo, typography, and colour palette that best expresses your values and brand personality. These specifications are delivered in a dedicated brand manual so you can always communicate in the most correct and consistent way.',
-          'We create a unified identity across all media and channels — online and offline — for consistent communication and a successful brand image: from website to business cards, from social content to digital advertising.'
-        ],
-        concreteStepsHeading: 'How do we build a brand identity, concretely?',
-        concreteSteps: [
-          'We put in place multidisciplinary teams where specific skills — design, copy, and strategy — can cross-fertilise and produce the best possible result',
-          'We start by meeting and listening to get to know each client in depth: their business context, competitors, and target audience',
-          'We analyse the market, the target audience, and search trends to identify positioning opportunities and naming territories',
-          'We study the identities and communication of competitors from all points of view — visual, verbal, and digital',
-          'We define the copy strategy, concept basis for naming and brand payoff, and overall brand personality',
-          'We establish the tone of voice, visual system, and brand manual that will guide all communications going forward'
-        ],
-        advantagesHeading: 'What are the advantages of investing in brand identity?',
-        advantageCards: [
-          { title: 'Branding', description: 'Improve brand recognition, reputation, and awareness across every customer touchpoint and channel' },
-          { title: 'Visual', description: 'Establish a coordinated visual identity across all channels that builds instant recognition and recall' },
-          { title: 'Engagement', description: 'Increase engagement by connecting authentically with your target audience through consistent messaging' },
-          { title: 'Control', description: 'Keep creative decisions aligned with a brand manual that guides every output and production partner' }
-        ]
-      },
-      'communication-concepts-agency': {
-        pageTitle: 'Communication concepts',
-        pageSubheading: 'We will tell about you, with visuals and words',
-        overlaySubtitle: 'We translate ideas into high-impact campaigns',
-        overlayTitle: 'Creativity is the art of mixing cards to find a new point of view',
-        overlayP1: 'At Gobiya, creativity is the contamination of different skills, experiences and sensibilities that allows us to develop communication concepts that position the brand.',
-        overlayP2: 'These concepts are functional to the target market, strategic objectives, and channels.',
-        deepDiveHeading: 'Strategic concepts engineered to position your brand and move audiences to action',
-        deepDiveParagraphs: [
-          'Great communication starts with a clear strategic idea. We develop campaign concepts rooted in data, audience psychology, and market positioning — not guesswork. Every concept we create is designed to be functional across multiple channels and formats.',
-          'We collaborate with your team to define the emotional and rational hooks that make your messaging memorable. From there, we translate those hooks into headline concepts, visual narratives, and campaign frameworks that perform across digital and physical touchpoints.',
-          'The result is a communication system — not a one-off campaign — that gives your brand a consistent, distinctive presence. Every execution, from social post to campaign film, remains anchored in the same strategic idea.'
-        ],
-        concreteStepsHeading: 'How do we develop a communication concept, concretely?',
-        concreteSteps: [
-          'We start with an immersion session to understand your brand, audience, competitive landscape, and communication objectives',
-          'We conduct insight mapping to identify the emotional and rational drivers that influence your target buyer\'s decisions',
-          'We develop multiple creative territories — strategic directions with distinct visual and verbal identities',
-          'We prototype the strongest concept across primary formats: headlines, visual direction, and channel executions',
-          'We refine the selected concept with your team and align it to campaign rollout requirements and budget',
-          'We deliver a campaign toolkit: concept rationale, copy frameworks, visual references, and channel guidelines'
-        ],
-        advantagesHeading: 'What are the advantages of a strong communication concept?',
-        advantageCards: [
-          { title: 'Clarity', description: 'A single strategic idea makes every communication output instantly recognisable and purposeful' },
-          { title: 'Reach', description: 'Channel-agnostic concepts translate seamlessly from digital ads to events and print without losing impact' },
-          { title: 'Engagement', description: 'Emotionally resonant messaging drives higher attention, recall, and audience interaction across platforms' },
-          { title: 'Consistency', description: 'A documented concept framework keeps all team members and production partners aligned and on-brand' }
-        ]
-      },
+      
+      
       'seo-web-copywriting-agency': {
         pageTitle: 'SEO & web copywriting',
         pageSubheading: 'We write words that engage human hearts and rank in search algorithms.',
@@ -171,66 +113,8 @@ export default function ServiceSubpage({ path, isFanOut, category, slug }: Servi
           { title: 'Efficiency', description: 'Organic content compounds over time, reducing cost-per-lead versus paid acquisition channels' }
         ]
       },
-      'creative-art-direction-agency': {
-        pageTitle: 'Creative art direction',
-        pageSubheading: 'We direct visual aesthetics that elevate brand perception.',
-        overlaySubtitle: 'We translate ideas into high-impact campaigns',
-        overlayTitle: 'Design is intelligence made visible',
-        overlayP1: 'Art direction coordinates the styling, imagery, layout, and motion design of your assets.',
-        overlayP2: 'This coordinates with selected production teams and partners to ensure your brand feels cohesive, modern, and premium across all media.',
-        deepDiveHeading: 'Visual direction that gives your brand a language everyone instantly recognises',
-        deepDiveParagraphs: [
-          'Art direction is the discipline of making visual decisions with intent. Every colour choice, every typographic decision, every image selection either reinforces your brand\'s identity or erodes it. We ensure every visual decision your brand makes is purposeful and consistent.',
-          'We work across all production formats — photography direction, video treatment, digital design systems, and campaign visuals — coordinating with internal teams and external production partners to maintain cohesion at every scale.',
-          'The result is a brand that looks as premium as it actually is. Consistency builds trust, and trust builds revenue. Our art direction process ensures your visual identity is never an afterthought.'
-        ],
-        concreteStepsHeading: 'How do we develop art direction for a brand, concretely?',
-        concreteSteps: [
-          'We review all existing brand assets and identify visual inconsistencies, quality gaps, and opportunities for improvement',
-          'We develop mood boards and visual reference libraries that define the precise aesthetic direction and tone',
-          'We produce a detailed art direction brief covering colour, typography, imagery style, and layout principles',
-          'We oversee creative production — photography, video, and design — to ensure all outputs match the established brief',
-          'We review all deliverables against the art direction standard before sign-off and release to any channel',
-          'We compile a visual guidelines document for internal teams and agency partners to reference on future projects'
-        ],
-        advantagesHeading: 'What are the advantages of professional art direction?',
-        advantageCards: [
-          { title: 'Coherence', description: 'A unified visual system makes your brand instantly recognisable across every format and touchpoint' },
-          { title: 'Quality', description: 'Directed production raises the standard of every deliverable, from social posts to campaign films' },
-          { title: 'Efficiency', description: 'Clear visual briefs reduce revision rounds and speed up creative production timelines significantly' },
-          { title: 'Premium', description: 'Consistent, considered visuals signal professionalism and build consumer trust at every touchpoint' }
-        ]
-      },
-      'social-media-management-agency': {
-        pageTitle: 'Social media management',
-        pageSubheading: 'We grow active communities around your brand\'s core message.',
-        overlaySubtitle: 'We translate ideas into high-impact campaigns',
-        overlayTitle: 'Attention is the new currency of the digital age',
-        overlayP1: 'Social media is about more than posts; it is about building relationship loops.',
-        overlayP2: 'We handle content creation, community engagement, and distribution strategies to keep your audience loyal.',
-        deepDiveHeading: 'Active community management that converts followers into loyal brand advocates',
-        deepDiveParagraphs: [
-          'Social media growth is not an accident. It is the result of consistent creative execution, data-informed scheduling, and genuine community engagement. We manage your social presence as a full-time discipline — not an afterthought.',
-          'We produce original content calendars built around your brand\'s messaging pillars, audience behaviours, and platform-specific algorithm preferences. Every post is crafted to perform — not just to fill a calendar slot.',
-          'Beyond posting, we manage comments, DMs, and community interactions to build the relationship loops that turn passive followers into active advocates and repeat customers.'
-        ],
-        concreteStepsHeading: 'How do we manage social media for a brand, concretely?',
-        concreteSteps: [
-          'We audit your existing channels: follower quality, engagement rates, top-performing content, and competitive benchmarks',
-          'We develop a platform-specific strategy and monthly content calendar aligned to your campaign and sales objectives',
-          'We produce original creative assets — graphics, short-form video, and copy — for each platform format and algorithm',
-          'We schedule and publish content at optimal times based on your audience\'s activity and engagement data',
-          'We actively manage community engagement: responding to comments, moderating conversations, and nurturing relationships',
-          'We deliver monthly analytics reports with performance insights, optimizations, and the next month\'s strategic priorities'
-        ],
-        advantagesHeading: 'What are the advantages of professional social media management?',
-        advantageCards: [
-          { title: 'Growth', description: 'Consistent, algorithm-optimized content steadily grows your follower base and organic reach over time' },
-          { title: 'Engagement', description: 'Active community management builds the relationship loops that drive loyalty and word-of-mouth referrals' },
-          { title: 'Authority', description: 'Regular, high-quality content positions your brand as a credible, active voice in your industry' },
-          { title: 'Pipeline', description: 'Social channels become active lead generation assets — not just brand awareness tools' }
-        ]
-      },
+      
+      
       'seo-discoverability-agency': {
         pageTitle: 'SEO & discoverability',
         pageSubheading: 'We align technical structures to place your business at the top of search intent.',
@@ -321,66 +205,8 @@ export default function ServiceSubpage({ path, isFanOut, category, slug }: Servi
           { title: 'SEO', description: 'Crawler-clean builds with correct rendering, schema, and Core Web Vitals from the first deploy' }
         ]
       },
-      'mobile-app-development-agency': {
-        pageTitle: 'Mobile app development',
-        pageSubheading: 'We build cross-platform mobile applications that perform natively on iOS and Android.',
-        overlaySubtitle: 'We engineer systems for measurable outcomes',
-        overlayTitle: 'One codebase. Two platforms. No performance compromise.',
-        overlayP1: 'React Native and Expo give us access to native device APIs, hardware, and platform-specific UI patterns without maintaining two separate codebases.',
-        overlayP2: 'Every mobile application we ship is optimized for app store performance, offline capability, and the UX expectations of mobile-first users.',
-        deepDiveHeading: 'Cross-platform mobile development without the typical cross-platform compromises',
-        deepDiveParagraphs: [
-          'The historic trade-off in cross-platform mobile development — one codebase but sluggish, non-native feel — has been solved by React Native\'s architecture improvements and Expo\'s managed build pipeline. We build apps that users cannot distinguish from native applications by look or feel.',
-          'We access native device features — camera, GPS, push notifications, biometric authentication, local storage — through stable, well-maintained libraries. Every integration is tested on real devices across iOS and Android before any release.',
-          'App store optimization, review guidelines compliance, and release management are included in our mobile development process. We handle the full lifecycle from first build through production deployment and post-launch iteration.'
-        ],
-        concreteStepsHeading: 'How do we build a mobile application, concretely?',
-        concreteSteps: [
-          'We define the feature scope, user flows, and native device integrations required for your use case',
-          'We prototype key screens in Figma or code to validate UX assumptions before full development begins',
-          'We build using React Native and Expo with native modules where performance demands it',
-          'We implement push notifications, offline mode, authentication, and API integrations per spec',
-          'We test on physical iOS and Android devices across multiple OS versions and screen sizes',
-          'We manage app store submission, review compliance, and post-launch monitoring for crashes and performance'
-        ],
-        advantagesHeading: 'What are the advantages of cross-platform mobile development?',
-        advantageCards: [
-          { title: 'Efficiency', description: 'One codebase covers both platforms — 40–60% of the cost of two native apps without sacrificing quality' },
-          { title: 'Native feel', description: 'React Native renders actual native UI components — not web views — for platform-authentic interactions' },
-          { title: 'Speed to market', description: 'Shared business logic and component architecture means faster iteration and faster initial release' },
-          { title: 'Maintenance', description: 'A single codebase is dramatically easier to maintain, update, and hand off to an internal team' }
-        ]
-      },
-      'it-consulting-services-agency': {
-        pageTitle: 'IT consulting & strategy',
-        pageSubheading: 'We align your technology stack to business outcomes through architecture and advisory.',
-        overlaySubtitle: 'We engineer systems for measurable outcomes',
-        overlayTitle: 'Technology decisions made from outcomes backward — not tools forward',
-        overlayP1: 'Bad technology choices compound. The wrong stack choice in year one creates years of migration debt, performance drag, and team friction.',
-        overlayP2: 'We bring an engineering-first perspective to technology selection, architecture review, and digital transformation planning.',
-        deepDiveHeading: 'Architecture advisory and digital transformation: technology decisions that age well',
-        deepDiveParagraphs: [
-          'Most IT consulting engagements start with a solution and work backward to justify it. We start with your business problems — revenue leakage, operational bottlenecks, scaling failures — and identify the specific technology decisions that are causing or sustaining them.',
-          'We conduct architecture reviews of existing systems: database design, API layer structure, frontend rendering strategy, hosting configuration, and vendor dependencies. Every finding is prioritized by business impact, not technical elegance.',
-          'The output of our consulting engagements is a technology roadmap your team can execute: phased, prioritized, and tied to specific business outcomes. No 300-page reports, no vendor kickbacks, no recommended platforms we happen to resell.'
-        ],
-        concreteStepsHeading: 'How do we run an IT consulting engagement, concretely?',
-        concreteSteps: [
-          'We conduct a technology audit: current stack, vendor dependencies, performance bottlenecks, security gaps, and scaling constraints',
-          'We interview key stakeholders — engineering, operations, and leadership — to map business pain to technical root cause',
-          'We produce a gap analysis: where your current technology is holding revenue, reliability, or team velocity hostage',
-          'We develop a phased technology roadmap: what to fix now, what to migrate over 6–12 months, and what to defer',
-          'We prioritize recommendations by ROI — cost of the change versus cost of the status quo — not by technical preference',
-          'We support implementation as an embedded advisor or hand off to your internal team with a documented execution plan'
-        ],
-        advantagesHeading: 'What are the advantages of independent IT consulting?',
-        advantageCards: [
-          { title: 'Clarity', description: 'An independent assessment surfaces the technology constraints your internal team is too close to see' },
-          { title: 'Alignment', description: 'Technology decisions mapped to business outcomes reduce wasted spend on tools that don\'t move the needle' },
-          { title: 'Risk reduction', description: 'Architecture decisions reviewed before implementation prevent years of migration and refactoring debt' },
-          { title: 'Velocity', description: 'A clear technology roadmap eliminates decision paralysis and lets engineering teams ship with confidence' }
-        ]
-      },
+      
+      
       'ecommerce-web-development-agency': {
         pageTitle: 'E-commerce development',
         pageSubheading: 'We build high-performance online stores engineered to convert at scale.',
@@ -681,96 +507,9 @@ export default function ServiceSubpage({ path, isFanOut, category, slug }: Servi
           { title: 'Traffic', description: 'Featured articles in high-traffic publications drive direct referral visitors and long-term SEO benefit' }
         ]
       },
-      'content-marketing-syndication-agency': {
-        pageTitle: 'Content marketing syndication',
-        pageSubheading: 'We distribute research-driven content across authoritative networks.',
-        overlaySubtitle: 'We build authority and brand reputation',
-        overlayTitle: 'Publishing content is only half the battle; distribution is the other',
-        overlayP1: 'We syndicate high-value research, articles, and whitepapers to industry-specific channels.',
-        overlayP2: 'This builds brand authority and drives high-intent lead flow.',
-        deepDiveHeading: 'Research-driven content distributed where your buyers seek authority and answers',
-        deepDiveParagraphs: [
-          'Content marketing is not about volume — it is about depth, distribution, and strategic positioning. We create high-value research, guides, and analysis that establish your brand as the definitive authority in your market. Then we distribute that content to the channels where influence lives.',
-          'We build content architectures — topic clusters, pillar pages, and supporting content — designed around the specific questions your target buyers ask at every stage of the decision journey. Every piece serves a precise purpose in the ranking and conversion funnel.',
-          'Distribution amplifies creation. We syndicate content to industry publications, partner platforms, and aggregators that extend your reach far beyond your own domain — building both brand awareness and the external link signals that drive organic authority.'
-        ],
-        concreteStepsHeading: 'How do we build a content marketing system, concretely?',
-        concreteSteps: [
-          'We audit existing content for performance, keyword gaps, cannibalisation, and alignment with current buyer intent',
-          'We design a topic cluster architecture: pillar pages, supporting content, and a strategic internal linking plan',
-          'We build an editorial calendar aligned to campaign priorities, seasonal trends, and keyword opportunity windows',
-          'We produce each content asset with SEO optimization, E-E-A-T signals, and conversion architecture built in from the start',
-          'We syndicate published content to industry publications, newsletters, and social platforms for amplified distribution',
-          'We track performance metrics — organic traffic, ranking positions, backlinks earned, and leads generated per piece'
-        ],
-        advantagesHeading: 'What are the advantages of content marketing and syndication?',
-        advantageCards: [
-          { title: 'Authority', description: 'Consistent, deep content establishes your brand as the go-to expert for buyers and search algorithms alike' },
-          { title: 'Traffic', description: 'A well-structured content architecture generates compounding organic traffic from high-intent keyword queries' },
-          { title: 'Leads', description: 'Strategic content at each funnel stage captures, nurtures, and qualifies prospects throughout the buying journey' },
-          { title: 'Distribution', description: 'Syndicated content multiplies reach, drives referral traffic, and earns the backlinks that build domain authority' }
-        ]
-      },
-      'influencer-marketing-agency': {
-        pageTitle: 'Influencer marketing',
-        pageSubheading: 'We partner with trusted creators to tell your brand story.',
-        overlaySubtitle: 'We build authority and brand reputation',
-        overlayTitle: 'Trust is transferred through authentic digital voices',
-        overlayP1: 'We identify, contract, and manage creators who align with your brand demographics.',
-        overlayP2: 'We engineer creative campaigns that convert attention into business revenue.',
-        deepDiveHeading: 'Authentic creator partnerships that transfer trust and drive measurable revenue',
-        deepDiveParagraphs: [
-          'Influencer marketing works when the partnership is authentic, the brief is clear, and the measurement is precise. We identify creators whose audience demographics, engagement patterns, and content quality genuinely align with your brand — not just those with the highest follower count.',
-          'We manage the complete campaign lifecycle: influencer research and vetting, outreach and negotiation, creative briefing, content approval, campaign scheduling, and post-campaign performance analysis. You maintain brand control while we handle the operational work.',
-          'We build long-term creator relationships, not one-off transactional campaigns. Repeat partnerships build deeper audience trust and reduce content production costs while increasing campaign effectiveness over time.'
-        ],
-        concreteStepsHeading: 'How do we run an influencer marketing campaign, concretely?',
-        concreteSteps: [
-          'We define the campaign brief: objectives, audience demographics, content formats, and performance KPIs',
-          'We research and vet potential creators across audience size, engagement rate, content quality, and demographic alignment',
-          'We conduct outreach, present the partnership opportunity, and manage fee negotiation and contract execution',
-          'We write detailed creative briefs that guide the creator while leaving room for authentic, platform-native execution',
-          'We review all content for brand alignment and compliance before it goes live, requesting revisions when necessary',
-          'We compile a campaign performance report: reach, engagement, link clicks, conversions, and earned media value'
-        ],
-        advantagesHeading: 'What are the advantages of influencer marketing?',
-        advantageCards: [
-          { title: 'Reach', description: 'Established creators amplify your message to highly engaged, targeted audiences you cannot easily reach organically' },
-          { title: 'Authenticity', description: 'Creator-native content performs significantly better than traditional advertising in audience trust and engagement' },
-          { title: 'Engagement', description: 'Influencer audiences engage with sponsored content at rates that brand-owned channels rarely match' },
-          { title: 'Revenue', description: 'Well-executed creator partnerships generate measurable conversions well beyond brand awareness alone' }
-        ]
-      },
-      'local-community-relations-agency': {
-        pageTitle: 'Local community relations',
-        pageSubheading: 'We secure local maps prominence and regional search authority.',
-        overlaySubtitle: 'We build authority and brand reputation',
-        overlayTitle: 'All global success begins with dominant local roots',
-        overlayP1: 'We optimize your regional citation footprint, map pack signals, and hyper-local sponsorships.',
-        overlayP2: 'This ensures your business dominates its core geographic markets.',
-        deepDiveHeading: 'Local map pack dominance and community authority: owning your geographic market',
-        deepDiveParagraphs: [
-          'For businesses that serve defined geographic markets, local search visibility is the highest-value SEO investment available. The Google Maps pack drives the majority of calls and direction requests for local businesses — and it is determined by signals that most businesses fail to optimize.',
-          'We audit and optimize every local ranking signal: Google Business Profile completeness, NAP citation consistency across directories, review velocity and sentiment, local schema markup, and hyper-local content that signals geographic relevance.',
-          'Beyond technical optimization, we build community positioning through local partnership development, regional press outreach, and sponsorship strategy — signals that both search algorithms and local buyers respond to as indicators of genuine community integration.'
-        ],
-        concreteStepsHeading: 'How do we build local community authority, concretely?',
-        concreteSteps: [
-          'We audit your local presence: GBP profile completeness, NAP consistency, citation coverage, review count, and map pack positions',
-          'We clean and verify all NAP citations across the top data aggregators and industry-specific directories',
-          'We optimize your Google Business Profile: categories, attributes, photos, Q&A, services, and booking integration',
-          'We develop a local content strategy: location pages, neighborhood guides, and locally-relevant articles that signal geographic authority',
-          'We build local partnerships, sponsorships, and community PR opportunities that generate organic local mentions and backlinks',
-          'We monitor map pack rankings, GBP insights, and review velocity monthly, adjusting strategy as local signals evolve'
-        ],
-        advantagesHeading: 'What are the advantages of local community relations?',
-        advantageCards: [
-          { title: 'Maps Pack', description: 'Optimized local signals place your business in the top three Google Maps results where the most clicks happen' },
-          { title: 'Local Rankings', description: 'Consistent NAP citations and local authority signals improve organic ranking for all geo-targeted queries' },
-          { title: 'Reviews', description: 'A proactive review generation strategy builds the social proof that converts local searchers into paying customers' },
-          { title: 'Community', description: 'Local partnerships and press coverage build the trust signals that both algorithms and local buyers respond to' }
-        ]
-      },
+      
+      
+      
       'blockchain-web3-development-agency': {
         pageTitle: 'Blockchain & Web3 development',
         pageSubheading: 'We develop secure, smart-contract-driven decentralized applications.',
