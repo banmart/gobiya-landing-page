@@ -30,8 +30,10 @@ export { default as SeoDiscoverabilityPage } from './SeoDiscoverabilityPage';
 export { default as WebDevelopmentPage } from './WebDevelopmentPage';
 export { default as GoogleAdsPpcPage } from './GoogleAdsPpcPage';
 export { default as SeoTrafficRecoveryPage } from './SeoTrafficRecoveryPage';
-export { default as LocalSeoServicesBurbankPage } from './LocalSeoServicesBurbankPage';
+
 export { default as GlendaleSeoPage } from './GlendaleSeoPage';
 export { default as PlasticSurgeryMarketingPage } from './PlasticSurgeryMarketingPage';
 export { default as InternetMarketingServicesLosAngelesPage } from './InternetMarketingServicesLosAngelesPage';
 export { default as AiSearchMarketingSantaClaritaPage } from './AiSearchMarketingSantaClaritaPage';
+export { default as AiVideosPage } from './AiVideosPage';
+export { default as CryptoWeb3Page } from './CryptoWeb3Page';

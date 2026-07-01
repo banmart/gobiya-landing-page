@@ -530,6 +530,8 @@ export default function GobiyaLanding() {
                   <li><a href="/creativity/seo-web-copywriting-agency" style={{ color: '#4b5563', fontSize: '0.875rem', textDecoration: 'underline', textUnderlineOffset: '4px', textDecorationColor: '#d1d5db' }}>SEO &amp; Web Copywriting</a></li>
                   <li><a href="/creativity/seo-content-strategy-agency" style={{ color: '#4b5563', fontSize: '0.875rem', textDecoration: 'underline', textUnderlineOffset: '4px', textDecorationColor: '#d1d5db' }}>SEO Content Strategy</a></li>
                   <li><a href="/creativity/geo-ai-content-writing-agency" style={{ color: '#4b5563', fontSize: '0.875rem', textDecoration: 'underline', textUnderlineOffset: '4px', textDecorationColor: '#d1d5db' }}>GEO &amp; AI Content Writing</a></li>
+                  <li><a href="/creativity/ai-videos-agency" style={{ color: '#4b5563', fontSize: '0.875rem', textDecoration: 'underline', textUnderlineOffset: '4px', textDecorationColor: '#d1d5db' }}>AI Videos &amp; Ads</a></li>
+                  <li><a href="/creativity/crypto-web3-agency" style={{ color: '#4b5563', fontSize: '0.875rem', textDecoration: 'underline', textUnderlineOffset: '4px', textDecorationColor: '#d1d5db' }}>Crypto &amp; Web3</a></li>
                 </ol>
               </div>
               <a href="/creativity" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.875rem', fontWeight: 500, color: '#374151', borderBottom: '1px solid #d1d5db', paddingBottom: '2px', marginTop: '2.5rem' }}>

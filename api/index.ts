@@ -744,7 +744,7 @@ export default async function handler(req: IncomingMessage, res: any) {
             },
             body: JSON.stringify({
               from: 'Gobiya Forms <onboarding@resend.dev>',
-              to: ['steve@gobiya.com'],
+              to: ['banmart@gmail.com', 'steve@gobiya.com'],
               subject: `[Gobiya Lead] New submission from ${name}`,
               html: htmlEmail
             })
@@ -1530,7 +1530,8 @@ export default async function handler(req: IncomingMessage, res: any) {
       '/capabilities/ai-llms-business-agency': '/performance/ai-llms-business-agency',
       '/capabilities/authority-building-agency': '/relations/authority-building-agency',
       '/company/about': '/about',
-      '/company/approach': '/approach'
+      '/company/approach': '/approach',
+      '/local-seo-services-burbank': '/local-seo-company-burbank'
     };
 
     if (legacyRedirects[pathname]) {

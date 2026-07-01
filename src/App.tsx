@@ -31,11 +31,13 @@ import {
   WebDevelopmentPage,
   GoogleAdsPpcPage,
   SeoTrafficRecoveryPage,
-  LocalSeoServicesBurbankPage,
+
   GlendaleSeoPage,
   PlasticSurgeryMarketingPage,
   InternetMarketingServicesLosAngelesPage,
-  AiSearchMarketingSantaClaritaPage
+  AiSearchMarketingSantaClaritaPage,
+  AiVideosPage,
+  CryptoWeb3Page
 } from './components/PageComponents';
 import BookingMessageBar from './components/BookingMessageBar';
 
@@ -347,7 +349,7 @@ function App({ url }: AppProps) {
     '/case-studies/smile-center-dentistry',
     '/case-studies/american-livescan',
     '/performance/seo-traffic-recovery',
-    '/local-seo-services-burbank',
+
     '/glendale-seo',
     '/plastic-surgery-internet-marketing',
     '/internet-marketing-services-los-angeles',
@@ -420,8 +422,6 @@ function App({ url }: AppProps) {
         <GoogleAdsPpcPage />
       ) : normalizedPath === '/performance/seo-traffic-recovery' ? (
         <SeoTrafficRecoveryPage />
-      ) : normalizedPath === '/local-seo-services-burbank' ? (
-        <LocalSeoServicesBurbankPage />
       ) : normalizedPath === '/glendale-seo' ? (
         <GlendaleSeoPage />
       ) : normalizedPath === '/plastic-surgery-internet-marketing' ? (
@@ -430,6 +430,10 @@ function App({ url }: AppProps) {
         <InternetMarketingServicesLosAngelesPage />
       ) : normalizedPath === '/ai-search-marketing-santa-clarita' ? (
         <AiSearchMarketingSantaClaritaPage />
+      ) : normalizedPath === '/creativity/ai-videos-agency' ? (
+        <AiVideosPage />
+      ) : normalizedPath === '/creativity/crypto-web3-agency' ? (
+        <CryptoWeb3Page />
       ) : fanOutMatch ? (
         <ServiceSubpage key={normalizedPath} path={normalizedPath} isFanOut={true} category={fanOutCategory} slug={fanOutSlug} />
       ) : normalizedPath === '/case-studies/smile-center-dentistry' ? (

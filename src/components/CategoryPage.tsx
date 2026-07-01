@@ -42,6 +42,8 @@ const CATEGORIES: Record<string, CategoryConfig> = {
       { href: '/creativity/seo-web-copywriting-agency', label: 'SEO & Web Copywriting' },
       { href: '/creativity/seo-content-strategy-agency', label: 'SEO Content Strategy' },
       { href: '/creativity/geo-ai-content-writing-agency', label: 'GEO & AI Content Writing' },
+      { href: '/creativity/ai-videos-agency', label: 'AI Videos & Ads' },
+      { href: '/creativity/crypto-web3-agency', label: 'Crypto & Web3' },
     ],
     faqs: [
       {
@@ -76,6 +78,28 @@ const CATEGORIES: Record<string, CategoryConfig> = {
           { href: '/creativity/seo-web-copywriting-agency', label: 'Email & ad copy' },
         ],
         href: '/creativity/seo-web-copywriting-agency',
+      },
+      {
+        number: '02',
+        title: 'AI Videos & Ads',
+        desc: 'YouTube pre-roll ads, Amazon Prime Video spots, Paramount+ commercials, and social video — produced with Veo 3, Google Omni, AI scriptwriting, and text-to-voice in 3–5 days.',
+        links: [
+          { href: '/creativity/ai-videos-agency', label: 'YouTube pre-roll ads' },
+          { href: '/creativity/ai-videos-agency', label: 'Amazon Prime & Paramount+' },
+          { href: '/creativity/ai-videos-agency', label: 'Veo 3 & AI voiceover' },
+        ],
+        href: '/creativity/ai-videos-agency',
+      },
+      {
+        number: '03',
+        title: 'Crypto & Web3',
+        desc: 'Smart contracts on Ethereum and Pulsechain, React dApp interfaces with wallet connection, and crypto SEO content that ranks in Google and gets cited by AI — built and launched together.',
+        links: [
+          { href: '/creativity/crypto-web3-agency', label: 'Smart contract development' },
+          { href: '/creativity/crypto-web3-agency', label: 'Pulsechain & Ethereum dApps' },
+          { href: '/creativity/crypto-web3-agency', label: 'Crypto SEO & Web3 content' },
+        ],
+        href: '/creativity/crypto-web3-agency',
       },
     ],
   },

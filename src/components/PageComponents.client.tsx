@@ -39,8 +39,10 @@ export const SeoDiscoverabilityPage = lazy(() => import('./SeoDiscoverabilityPag
 export const WebDevelopmentPage = lazy(() => import('./WebDevelopmentPage'));
 export const GoogleAdsPpcPage = lazy(() => import('./GoogleAdsPpcPage'));
 export const SeoTrafficRecoveryPage = lazy(() => import('./SeoTrafficRecoveryPage'));
-export const LocalSeoServicesBurbankPage = lazy(() => import('./LocalSeoServicesBurbankPage'));
+
 export const GlendaleSeoPage = lazy(() => import('./GlendaleSeoPage'));
 export const PlasticSurgeryMarketingPage = lazy(() => import('./PlasticSurgeryMarketingPage'));
 export const InternetMarketingServicesLosAngelesPage = lazy(() => import('./InternetMarketingServicesLosAngelesPage'));
 export const AiSearchMarketingSantaClaritaPage = lazy(() => import('./AiSearchMarketingSantaClaritaPage'));
+export const AiVideosPage = lazy(() => import('./AiVideosPage'));
+export const CryptoWeb3Page = lazy(() => import('./CryptoWeb3Page'));
