@@ -1201,7 +1201,7 @@ timestamp: string   # Optional: ISO-8601 modification date
         </p>
 
         <div className="border-l-4 border-[#F26522] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
-          <img src="/images/steve-portrait.webp" alt="Steve Martin" className="w-12 h-12 object-cover border border-white/10 shrink-0" />
+          <img src="/images/steve-portrait-thumb.webp" alt="Steve Martin" width="48" height="48" loading="lazy" className="w-12 h-12 object-cover rounded-full border border-white/10 shrink-0" />
           <div>
             <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-1 font-sans">Steve's Take</p>
             <p className="text-[15px] italic text-gray-700 leading-relaxed font-sans">
@@ -1647,7 +1647,7 @@ timestamp: string   # Optional: ISO-8601 modification date
         </p>
 
         <div className="border-l-4 border-[#F26522] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
-          <img src="/images/steve-portrait.webp" alt="Steve Martin" className="w-12 h-12 object-cover border border-white/10 shrink-0" />
+          <img src="/images/steve-portrait-thumb.webp" alt="Steve Martin" width="48" height="48" loading="lazy" className="w-12 h-12 object-cover rounded-full border border-white/10 shrink-0" />
           <div>
             <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-1 font-sans">Steve's Take</p>
             <p className="text-[15px] italic text-white leading-relaxed font-sans">
@@ -1846,7 +1846,7 @@ timestamp: string   # Optional: ISO-8601 modification date
         </p>
 
         <div className="border-l-4 border-[#F26522] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
-          <img src="/images/steve-portrait.webp" alt="Steve Martin" className="w-12 h-12 object-cover border border-white/10 shrink-0" />
+          <img src="/images/steve-portrait-thumb.webp" alt="Steve Martin" width="48" height="48" loading="lazy" className="w-12 h-12 object-cover rounded-full border border-white/10 shrink-0" />
           <div>
             <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-1 font-sans">Steve's Take</p>
             <p className="text-[15px] italic text-white leading-relaxed font-sans">
@@ -2392,7 +2392,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
         </p>
 
         <div className="border-l-4 border-[#F26522] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
-          <img src="/images/steve-portrait.webp" alt="Steve Martin" className="w-12 h-12 object-cover border border-white/10 shrink-0" />
+          <img src="/images/steve-portrait-thumb.webp" alt="Steve Martin" width="48" height="48" loading="lazy" className="w-12 h-12 object-cover rounded-full border border-white/10 shrink-0" />
           <div>
             <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-1 font-sans">Steve's Take</p>
             <p className="text-[15px] italic text-white leading-relaxed font-sans">
@@ -2660,7 +2660,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
         </p>
 
         <div className="border-l-4 border-[#F26522] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
-          <img src="/images/steve-portrait.webp" alt="Steve Martin" className="w-12 h-12 object-cover border border-white/10 shrink-0" />
+          <img src="/images/steve-portrait-thumb.webp" alt="Steve Martin" width="48" height="48" loading="lazy" className="w-12 h-12 object-cover rounded-full border border-white/10 shrink-0" />
           <div>
             <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-1 font-sans">Steve's Take</p>
             <p className="text-[15px] italic text-white leading-relaxed font-sans">
@@ -2983,7 +2983,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
         </div>
 
         <div className="border-l-4 border-[#F26522] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
-          <img src="/images/steve-portrait.webp" alt="Steve Martin" className="w-12 h-12 object-cover border border-white/10 shrink-0" />
+          <img src="/images/steve-portrait-thumb.webp" alt="Steve Martin" width="48" height="48" loading="lazy" className="w-12 h-12 object-cover rounded-full border border-white/10 shrink-0" />
           <div>
             <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-1 font-sans">Steve's Take</p>
             <p className="text-[15px] italic text-white leading-relaxed font-sans">
@@ -3245,7 +3245,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
         </div>
 
         <div className="border-l-4 border-[#F26522] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
-          <img src="/images/steve-portrait.webp" alt="Steve Martin" className="w-12 h-12 object-cover border border-white/10 shrink-0" />
+          <img src="/images/steve-portrait-thumb.webp" alt="Steve Martin" width="48" height="48" loading="lazy" className="w-12 h-12 object-cover rounded-full border border-white/10 shrink-0" />
           <div>
             <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-1 font-sans">Steve's Take</p>
             <p className="text-[15px] italic text-white leading-relaxed font-sans">
@@ -3597,7 +3597,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
         </p>
 
         <div className="border-l-4 border-[#F26522] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
-          <img src="/images/steve-portrait.webp" alt="Steve Martin" className="w-12 h-12 object-cover border border-white/10 shrink-0" />
+          <img src="/images/steve-portrait-thumb.webp" alt="Steve Martin" width="48" height="48" loading="lazy" className="w-12 h-12 object-cover rounded-full border border-white/10 shrink-0" />
           <div>
             <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-1 font-sans">Steve's Take</p>
             <p className="text-[15px] italic text-white leading-relaxed font-sans">
@@ -3877,7 +3877,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
         </p>
 
         <div className="border-l-4 border-[#F26522] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
-          <img src="/images/steve-portrait.webp" alt="Steve Martin" className="w-12 h-12 object-cover border border-white/10 shrink-0" />
+          <img src="/images/steve-portrait-thumb.webp" alt="Steve Martin" width="48" height="48" loading="lazy" className="w-12 h-12 object-cover rounded-full border border-white/10 shrink-0" />
           <div>
             <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-1 font-sans">Steve's Take</p>
             <p className="text-[15px] italic text-white leading-relaxed font-sans">
@@ -4190,7 +4190,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
         </p>
 
         <div className="border-l-4 border-[#F26522] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
-          <img src="/images/steve-portrait.webp" alt="Steve Martin" className="w-12 h-12 object-cover border border-white/10 shrink-0" />
+          <img src="/images/steve-portrait-thumb.webp" alt="Steve Martin" width="48" height="48" loading="lazy" className="w-12 h-12 object-cover rounded-full border border-white/10 shrink-0" />
           <div>
             <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-1 font-sans">Steve's Take</p>
             <p className="text-[15px] italic text-white leading-relaxed font-sans">
@@ -4570,7 +4570,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
         </p>
 
         <div className="border-l-4 border-[#F26522] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
-          <img src="/images/steve-portrait.webp" alt="Steve Martin" className="w-12 h-12 object-cover border border-white/10 shrink-0" />
+          <img src="/images/steve-portrait-thumb.webp" alt="Steve Martin" width="48" height="48" loading="lazy" className="w-12 h-12 object-cover rounded-full border border-white/10 shrink-0" />
           <div>
             <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-1 font-sans">Steve's Take</p>
             <p className="text-[15px] italic text-white leading-relaxed font-sans">
@@ -4943,7 +4943,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
         </p>
 
         <div className="border-l-4 border-[#F26522] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
-          <img src="/images/steve-portrait.webp" alt="Steve Martin" className="w-12 h-12 object-cover border border-white/10 shrink-0" />
+          <img src="/images/steve-portrait-thumb.webp" alt="Steve Martin" width="48" height="48" loading="lazy" className="w-12 h-12 object-cover rounded-full border border-white/10 shrink-0" />
           <div>
             <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-1 font-sans">Steve's Take</p>
             <p className="text-[15px] italic text-white leading-relaxed font-sans">
@@ -5368,7 +5368,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
         </p>
 
         <div className="border-l-4 border-[#F26522] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
-          <img src="/images/steve-portrait.webp" alt="Steve Martin" className="w-12 h-12 object-cover border border-white/10 shrink-0" />
+          <img src="/images/steve-portrait-thumb.webp" alt="Steve Martin" width="48" height="48" loading="lazy" className="w-12 h-12 object-cover rounded-full border border-white/10 shrink-0" />
           <div>
             <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-1 font-sans">Steve's Take</p>
             <p className="text-[15px] italic text-white leading-relaxed font-sans">
@@ -5752,7 +5752,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
         </p>
 
         <div className="border-l-4 border-[#F26522] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
-          <img src="/images/steve-portrait.webp" alt="Steve Martin" className="w-12 h-12 object-cover border border-white/10 shrink-0" />
+          <img src="/images/steve-portrait-thumb.webp" alt="Steve Martin" width="48" height="48" loading="lazy" className="w-12 h-12 object-cover rounded-full border border-white/10 shrink-0" />
           <div>
             <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-1 font-sans">Steve's Take</p>
             <p className="text-[15px] italic text-white leading-relaxed font-sans">
@@ -6088,7 +6088,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
         </p>
 
         <div className="border-l-4 border-[#F26522] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
-          <img src="/images/steve-portrait.webp" alt="Steve Martin" className="w-12 h-12 object-cover border border-white/10 shrink-0" />
+          <img src="/images/steve-portrait-thumb.webp" alt="Steve Martin" width="48" height="48" loading="lazy" className="w-12 h-12 object-cover rounded-full border border-white/10 shrink-0" />
           <div>
             <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-1 font-sans">Steve's Take</p>
             <p className="text-[15px] italic text-white leading-relaxed font-sans">
@@ -6494,7 +6494,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
         </p>
 
         <div className="border-l-4 border-[#F26522] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
-          <img src="/images/steve-portrait.webp" alt="Steve Martin" className="w-12 h-12 object-cover border border-white/10 shrink-0" />
+          <img src="/images/steve-portrait-thumb.webp" alt="Steve Martin" width="48" height="48" loading="lazy" className="w-12 h-12 object-cover rounded-full border border-white/10 shrink-0" />
           <div>
             <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-1 font-sans">Steve's Take</p>
             <p className="text-[15px] italic text-white leading-relaxed font-sans">
@@ -6822,7 +6822,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
         </p>
 
         <div className="border-l-4 border-[#F26522] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
-          <img src="/images/steve-portrait.webp" alt="Steve Martin" className="w-12 h-12 object-cover border border-white/10 shrink-0" />
+          <img src="/images/steve-portrait-thumb.webp" alt="Steve Martin" width="48" height="48" loading="lazy" className="w-12 h-12 object-cover rounded-full border border-white/10 shrink-0" />
           <div>
             <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-1 font-sans">Steve's Take</p>
             <p className="text-[15px] italic text-white leading-relaxed font-sans">
@@ -7068,7 +7068,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
         </p>
 
         <div className="border-l-4 border-[#F26522] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
-          <img src="/images/steve-portrait.webp" alt="Steve Martin" className="w-12 h-12 object-cover border border-white/10 shrink-0" />
+          <img src="/images/steve-portrait-thumb.webp" alt="Steve Martin" width="48" height="48" loading="lazy" className="w-12 h-12 object-cover rounded-full border border-white/10 shrink-0" />
           <div>
             <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-1 font-sans">Steve's Take</p>
             <p className="text-[15px] italic text-white leading-relaxed font-sans">
@@ -7371,7 +7371,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
         </p>
 
         <div className="border-l-4 border-[#F26522] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
-          <img src="/images/steve-portrait.webp" alt="Steve Martin" className="w-12 h-12 object-cover border border-white/10 shrink-0" />
+          <img src="/images/steve-portrait-thumb.webp" alt="Steve Martin" width="48" height="48" loading="lazy" className="w-12 h-12 object-cover rounded-full border border-white/10 shrink-0" />
           <div>
             <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-1 font-sans">Steve's Take</p>
             <p className="text-[15px] italic text-white leading-relaxed font-sans">
@@ -7733,7 +7733,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
         </p>
 
         <div className="border-l-4 border-[#F26522] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
-          <img src="/images/steve-portrait.webp" alt="Steve Martin" className="w-12 h-12 object-cover border border-white/10 shrink-0" />
+          <img src="/images/steve-portrait-thumb.webp" alt="Steve Martin" width="48" height="48" loading="lazy" className="w-12 h-12 object-cover rounded-full border border-white/10 shrink-0" />
           <div>
             <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-1 font-sans">Steve's Take</p>
             <p className="text-[15px] italic text-white leading-relaxed font-sans">
@@ -8030,7 +8030,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
         </p>
 
         <div className="border-l-4 border-[#F26522] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
-          <img src="/images/steve-portrait.webp" alt="Steve Martin" className="w-12 h-12 object-cover border border-white/10 shrink-0" />
+          <img src="/images/steve-portrait-thumb.webp" alt="Steve Martin" width="48" height="48" loading="lazy" className="w-12 h-12 object-cover rounded-full border border-white/10 shrink-0" />
           <div>
             <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-1 font-sans">Steve's Take</p>
             <p className="text-[15px] italic text-white leading-relaxed font-sans">
@@ -8418,7 +8418,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
         </p>
 
         <div className="border-l-4 border-[#F26522] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
-          <img src="/images/steve-portrait.webp" alt="Steve Martin" className="w-12 h-12 object-cover border border-white/10 shrink-0" />
+          <img src="/images/steve-portrait-thumb.webp" alt="Steve Martin" width="48" height="48" loading="lazy" className="w-12 h-12 object-cover rounded-full border border-white/10 shrink-0" />
           <div>
             <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-1 font-sans">Steve's Take</p>
             <p className="text-[15px] italic text-white leading-relaxed font-sans">
@@ -8730,7 +8730,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
         </p>
 
         <div className="border-l-4 border-[#F26522] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
-          <img src="/images/steve-portrait.webp" alt="Steve Martin" className="w-12 h-12 object-cover border border-white/10 shrink-0" />
+          <img src="/images/steve-portrait-thumb.webp" alt="Steve Martin" width="48" height="48" loading="lazy" className="w-12 h-12 object-cover rounded-full border border-white/10 shrink-0" />
           <div>
             <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-1 font-sans">Steve's Take</p>
             <p className="text-[15px] italic text-white leading-relaxed font-sans">
@@ -8965,7 +8965,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
         </p>
 
         <div className="border-l-4 border-[#F26522] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
-          <img src="/images/steve-portrait.webp" alt="Steve Martin" className="w-12 h-12 object-cover border border-white/10 shrink-0" />
+          <img src="/images/steve-portrait-thumb.webp" alt="Steve Martin" width="48" height="48" loading="lazy" className="w-12 h-12 object-cover rounded-full border border-white/10 shrink-0" />
           <div>
             <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-1 font-sans">Steve's Take</p>
             <p className="text-[15px] italic text-white leading-relaxed font-sans">
@@ -9498,7 +9498,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           Why Gobiya approaches entity engineering differently
         </h2>
         <div className="border-l-4 border-[#F26522] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
-          <img src="/images/steve-portrait.webp" alt="Steve Martin" className="w-12 h-12 object-cover border border-white/10 shrink-0" />
+          <img src="/images/steve-portrait-thumb.webp" alt="Steve Martin" width="48" height="48" loading="lazy" className="w-12 h-12 object-cover rounded-full border border-white/10 shrink-0" />
           <div>
             <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-1 font-sans">Steve's Take</p>
             <p className="text-[15px] italic text-white leading-relaxed font-sans">
@@ -9690,7 +9690,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
         </div>
 
         <div className="border-l-4 border-[#F26522] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
-          <img src="/images/steve-portrait.webp" alt="Steve Martin" className="w-12 h-12 object-cover border border-white/10 shrink-0" />
+          <img src="/images/steve-portrait-thumb.webp" alt="Steve Martin" width="48" height="48" loading="lazy" className="w-12 h-12 object-cover rounded-full border border-white/10 shrink-0" />
           <div>
             <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-1 font-sans">Steve's Take</p>
             <p className="text-[15px] italic text-white leading-relaxed font-sans">
@@ -10926,7 +10926,7 @@ const ArticlePage: React.FC<ArticlePageProps> = ({ slug }) => {
 
           <div className="art-byline" data-anim="fade">
             <div className="byline-left">
-              <img src="/images/steve-portrait.webp" alt="Steve Martin" className="author-mark" />
+              <img src="/images/steve-portrait-thumb.webp" alt="Steve Martin" width="46" height="46" className="author-mark" />
               <div>
                 <p className="name"><a href="/about/steve-martin">Steve Martin</a></p>
                 <p className="role mono-tag">Founder &amp; principal — Gobiya</p>

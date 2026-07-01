@@ -537,7 +537,7 @@ const BookingPage: React.FC = () => {
                   <p className="text-[10px] font-mono uppercase tracking-[0.2em] text-gray-400 font-semibold mb-4">Your Strategist</p>
                   <div className="flex items-center gap-4 mb-6">
                     <img 
-                      src="/images/steve-portrait.webp" 
+                      src="/images/steve-portrait-thumb.webp" 
                       alt="Steve Martin" 
                       className="w-16 h-16 rounded-full object-cover border border-[#D3CEC0] shadow-sm" 
                     />

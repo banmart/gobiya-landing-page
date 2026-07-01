@@ -46,7 +46,7 @@ const BookingMessageBar: React.FC<BookingMessageBarProps> = ({ currentPath }) =>
           <div className="booking-message-content-inner">
             <div className="booking-message-avatar-wrapper">
               <img 
-                src="/images/steve-portrait.webp" 
+                src="/images/steve-portrait-thumb.webp" 
                 alt="Steve Martin" 
                 className="booking-message-avatar" 
               />

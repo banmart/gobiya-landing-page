@@ -222,7 +222,7 @@ export default function GobiyaAboutPage() {
             <div data-anim="fade" style={{ border: '1px solid #111827', background: '#111827', color: '#f9fafb', padding: '1.75rem 2rem' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.5rem', paddingBottom: '1rem', borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
                 <img
-                  src="/images/steve-portrait.webp"
+                  src="/images/steve-portrait-thumb.webp"
                   alt="Steve Martin"
                   style={{ width: '48px', height: '48px', objectFit: 'cover', flexShrink: 0 }}
                 />
