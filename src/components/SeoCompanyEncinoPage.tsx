@@ -1,14 +1,24 @@
-﻿import React, { useEffect, useRef, useState } from 'react';
-import HeroWebGLBackground from './HeroWebGLBackground';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import SiteHeader from './SiteHeader';
-import SiteFooter from './SiteFooter';
-import HeroQuickForm from './HeroQuickForm';
-import ContentCta from './ContentCta';
-import './OnPageSeoLosAngelesPage.css';
+import React, { useState } from 'react';
+import LocalServicePageTemplate from './LocalServicePageTemplate';
 
-gsap.registerPlugin(ScrollTrigger);
+const FAQ_ITEMS = [
+  {
+    q: 'We have worked with two different SEO agencies over the past two years and neither one moved our rankings. What are the signs an agency is actually doing real work?',
+    a: 'The most reliable signal is whether they can show you what they changed and where. A legitimate SEO engagement produces visible deliverables: a technical audit with specific issues documented and a changelog showing which ones were fixed, content pieces live on your site targeting specific queries, and link or citation acquisitions you can verify independently. If your agency sends monthly reports showing rankings and traffic graphs without being able to show you what changed in the site to produce those changes, the work is either not happening or happening at a cosmetic level.'
+  },
+  {
+    q: 'We are a professional services firm in Encino. We are not sure whether to focus on local SEO for Encino specifically or on broader national content SEO. Which comes first?',
+    a: 'Start with where your revenue actually comes from. If your clients are primarily within the San Fernando Valley, local SEO targeting Map Pack and local organic results for Encino, Tarzana, Sherman Oaks, and Woodland Hills queries has a much faster path to new client acquisition than national content SEO. Local buyers searching for an attorney or financial advisor in Encino have high purchase intent. National content SEO builds domain authority over time but rarely produces near-term client acquisition for a regional professional services firm.'
+  },
+  {
+    q: 'We need organic traffic but we also need leads right now. How do we run Google Ads and SEO at the same time without wasting money?',
+    a: 'Run them as complementary channels, not competing ones. Google Ads should target your highest-intent queries right now — where a buyer is actively looking and ready to contact someone today. SEO should target the broader research and comparison queries where the buyer is not yet ready to pay for a click. The waste happens when both channels target the exact same queries — you end up paying for clicks on branded terms that your organic ranking would have captured for free.'
+  },
+  {
+    q: 'Our last SEO agency promised first-page results in 90 days and nothing happened by day 180. What is a realistic timeline for SEO to actually start working?',
+    a: 'Ninety days is not a realistic timeline for first-page results in any competitive Encino professional services category. The honest timeline is 6 to 12 months for sustained organic rankings in categories like legal, financial advisory, medical, or real estate. In that period, the first 90 days are foundational: technical fixes, keyword architecture, and on-page optimization. Rankings typically start moving meaningfully at months 4 to 6 for lower-competition queries and at months 8 to 12 for the highest-value terms. Ask any agency to show you actual historical client ranking timelines, not projections.'
+  }
+];
 
 const SCHEMA = {
   "@context": "https://schema.org",
@@ -45,40 +55,14 @@ const SCHEMA = {
     },
     {
       "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "We have worked with two different SEO agencies over the past two years and neither one moved our rankings. What are the signs an agency is actually doing real work?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "The most reliable signal is whether they can show you what they changed and where. A legitimate SEO engagement produces visible deliverables: a technical audit with specific issues documented and a changelog showing which ones were fixed, content pieces live on your site targeting specific queries, and link or citation acquisitions you can verify independently. If your agency sends monthly reports showing rankings and traffic graphs without being able to show you what changed in the site to produce those changes, the work is either not happening or happening at a cosmetic level."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "We are a professional services firm in Encino. We are not sure whether to focus on local SEO for Encino specifically or on broader national content SEO. Which comes first?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Start with where your revenue actually comes from. If your clients are primarily within the San Fernando Valley, local SEO targeting Map Pack and local organic results for Encino, Tarzana, Sherman Oaks, and Woodland Hills queries has a much faster path to new client acquisition than national content SEO. Local buyers searching for an attorney or financial advisor in Encino have high purchase intent. National content SEO builds domain authority over time but rarely produces near-term client acquisition for a regional professional services firm."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "We need organic traffic but we also need leads right now. How do we run Google Ads and SEO at the same time without wasting money?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Run them as complementary channels, not competing ones. Google Ads should target your highest-intent queries right now — where a buyer is actively looking and ready to contact someone today. SEO should target the broader research and comparison queries where the buyer is not yet ready to pay for a click. The waste happens when both channels target the exact same queries — you end up paying for clicks on branded terms that your organic ranking would have captured for free."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Our last SEO agency promised first-page results in 90 days and nothing happened by day 180. What is a realistic timeline for SEO to actually start working?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Ninety days is not a realistic timeline for first-page results in any competitive Encino professional services category. The honest timeline is 6 to 12 months for sustained organic rankings in categories like legal, financial advisory, medical, or real estate. In that period, the first 90 days are foundational: technical fixes, keyword architecture, and on-page optimization. Rankings typically start moving meaningfully at months 4 to 6 for lower-competition queries and at months 8 to 12 for the highest-value terms. Ask any agency to show you actual historical client ranking timelines, not projections."
-          }
+      "mainEntity": FAQ_ITEMS.map(f => ({
+        "@type": "Question",
+        "name": f.q,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": f.a
         }
-      ]
+      }))
     }
   ]
 };
@@ -106,369 +90,219 @@ const AUDIT_STEPS = [
   }
 ];
 
+const ORIGIN_CARDS = [
+  {
+    title: 'The Valley\'s Most Competitive Commercial Corridor',
+    label: 'Ventura Boulevard',
+    body: "The stretch of Ventura Boulevard running through Encino is one of the highest-density concentrations of professional services in the San Fernando Valley. Attorneys, financial advisors, medical practices, dental offices, and real estate firms all compete for the same high-intent local queries. Every category has at least four to six established competitors with domain histories stretching back 10+ years. Outranking them requires more than a title tag audit — it requires rebuilding your technical authority from the crawl layer up.",
+  },
+  {
+    title: 'High-Value Buyers Who Research Before They Call',
+    label: 'Buyer Profile',
+    body: "Encino's median household income is among the highest in the San Fernando Valley — which means the buyers searching for services here are research-oriented, comparison-driven, and hard to win on price alone. They read the first three search results, check reviews, and look for authority signals before picking up the phone. An SEO company that delivers surface-level rankings without the content depth and trust signals to convert that traffic is billing you for visibility you cannot monetize.",
+  },
+  {
+    title: 'Adjacent Markets Create Search Cannibalization',
+    label: 'Competition Pattern',
+    body: "Sherman Oaks, Studio City, Tarzana, and Woodland Hills all have competing businesses targeting the same Ventura Blvd queries. Without a deliberate geographic content strategy, Encino businesses often find their rankings diluted by adjacent competitors whose pages target overlapping service areas. We structure service area pages, LocalBusiness schema, and internal link architecture to establish clear geographic authority for Encino without creating the cannibalization issues that come from sloppy multi-location page strategies.",
+  },
+  {
+    title: 'Most Encino Businesses Have Never Had Real Technical SEO',
+    label: 'The Real Gap',
+    body: "The majority of Encino businesses that come to us have had SEO in some form before — a marketing agency that \"handled SEO\" as a line item, a freelancer running Semrush reports, a web developer who installed Yoast. None of those approaches touch the actual technical and entity-level work that moves rankings in a competitive local market. When we run an initial audit, we routinely find canonical split conflicts, missing schema, crawl budget waste on low-value pagination, and zero entity verification across Google's knowledge systems. The work has not been done. That is the gap.",
+  },
+];
+
+const CAPABILITIES = [
+  {
+    title: 'Technical SEO Engineering',
+    body: 'Technical SEO is the foundation every other SEO investment depends on. If Googlebot cannot crawl your site efficiently, if your pages have canonical conflicts, if your JavaScript rendering blocks indexation — no amount of content or link building recovers those losses. We execute code-level technical fixes: redirect chain resolution, server-side schema injection, Core Web Vitals optimization, crawl budget allocation, and structured data alignment. Not recommendations documents — actual changes to the code.',
+  },
+  {
+    title: 'Content Architecture & Topical Authority',
+    body: 'Topical authority is how Google decides which site deserves to rank for a category of queries — and it is built through a structured hub-and-spoke content architecture, not random blog posts. For an Encino law firm, that means a legal practice area hub with deep supporting content for each specialization. For a medical practice, it means condition and procedure pages with clinical depth. We map the full content architecture, identify topical gaps your competitors have not covered, and build the content structure that signals comprehensive subject-matter authority to Google.',
+  },
+  {
+    title: 'AI Citation Engineering (GEO)',
+    body: 'A growing share of service discovery now begins on ChatGPT, Gemini, and Perplexity rather than Google — particularly for high-consideration purchases like legal, financial, and medical services where buyers ask conversational questions before searching for a specific firm. We apply Generative Engine Optimization (GEO) — structuring your Encino service pages with claim-evidence-citation formatting, FAQ schema, and entity verification that AI engines cite when answering buyer queries.',
+  },
+  {
+    title: 'Pipeline Attribution & Reporting',
+    body: 'SEO reporting that stops at rankings and traffic is not useful to an Encino business owner trying to justify a monthly investment. We build reporting around pipeline metrics: qualified form submissions, tracked phone calls from organic search, revenue attributed to organic acquisition, and cost-per-lead comparisons against paid channels. When you can see that organic search is generating five qualified leads per month at $280 cost per lead versus $1,200 per lead from Google Ads, the SEO budget conversation changes entirely.',
+  },
+];
+
+const CLUSTER_CARDS = [
+  {
+    label: 'Service',
+    title: 'SEO & Discoverability Agency',
+    link: '/performance/seo-discoverability-agency',
+    body: 'The parent service practice covering Technical SEO, GEO, AI citations, and organic pipeline engineering. Encino SEO is a specific market application of this full-stack system.',
+    cta: 'View practice →'
+  },
+  {
+    label: 'Guide',
+    title: 'Gobiya vs. Enterprise SEO Agencies',
+    link: '/insights/gobiya-vs-enterprise-seo-agencies',
+    body: 'An honest comparison covering where enterprise agency budgets actually go, what technical depth looks like at each price tier, and how to evaluate which type of firm matches your Encino growth stage.',
+    cta: 'Read comparison →'
+  },
+  {
+    label: 'Guide',
+    title: 'Best SEO Agency for B2B: Evaluation Checklist',
+    link: '/insights/best-seo-agency-for-b2b-brands',
+    body: 'The 12-point checklist for evaluating an SEO company before signing. Covers contract terms to avoid, case study verification, technical depth signals, and the questions every Encino business owner should ask.',
+    cta: 'Read checklist →'
+  },
+  {
+    label: 'Guide',
+    title: 'How B2B Companies Use SEO to Scale Pipeline',
+    link: '/insights/how-do-b2b-companies-use-seo-to-generate-predictable-revenue',
+    body: 'How to connect search clusters to pipeline revenue, map content to the buying committee, and scale inbound conversions from organic search. The strategy framework behind our Encino SEO engagements.',
+    cta: 'Read guide →'
+  }
+];
+
 export default function SeoCompanyEncinoPage() {
-  const containerRef = useRef<HTMLDivElement>(null);
   const [activeChecklist, setActiveChecklist] = useState<number>(0);
 
-  useEffect(() => {
-    document.documentElement.classList.add('js');
-    gsap.to(document.body, { opacity: 1, duration: 0.6, ease: 'power2.out' });
-
-    const timer = setTimeout(() => {
-      const ctx = gsap.context(() => {
-        const navInner = document.getElementById('nav-inner');
-        const burger = document.getElementById('burger');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        const handleBurgerClick = () => {
-          if (!mobileMenu || !burger) return;
-          const open = mobileMenu.classList.toggle('open');
-          burger.classList.toggle('open', open);
-          burger.setAttribute('aria-expanded', String(open));
-        };
-        if (burger) burger.addEventListener('click', handleBurgerClick);
-
-        const handleScroll = () => {
-          if (navInner) navInner.classList.toggle('is-scrolled', window.scrollY > 40);
-        };
-        window.addEventListener('scroll', handleScroll, { passive: true });
-
-        const ease = 'power3.out';
-        const tl = gsap.timeline({ defaults: { ease, duration: 0.9 } });
-        tl.from('.onpage-page .breadcrumb', { opacity: 0, y: 12 })
-          .from('.onpage-page .hero h1 .line > span', { yPercent: 108, stagger: 0.06 }, '-=0.6')
-          .from('.onpage-page .hero-sub', { opacity: 0, y: 18, duration: 0.7 }, '-=0.5')
-          .from('.onpage-page .hero-actions', { opacity: 0, y: 14, duration: 0.6 }, '-=0.4')
-          .from('.onpage-page .hero-widget', { opacity: 0, scale: 0.98, y: 20, duration: 0.8 }, '-=0.5');
-
-        gsap.from('.onpage-page .capabilities-grid .grid-card', {
-          opacity: 0, y: 30, duration: 0.8, stagger: 0.1, ease: 'power3.out',
-          scrollTrigger: { trigger: '.onpage-page .capabilities-section', start: 'top 80%' }
-        });
-
-        gsap.from('.onpage-page .checklist-split', {
-          opacity: 0, y: 40, duration: 0.9, ease: 'power3.out',
-          scrollTrigger: { trigger: '.onpage-page .checklist-section', start: 'top 80%' }
-        });
-
-        gsap.from('.onpage-page .faq-item', {
-          opacity: 0, y: 20, duration: 0.7, stagger: 0.08, ease: 'power3.out',
-          scrollTrigger: { trigger: '.onpage-page .faq-section', start: 'top 85%' }
-        });
-      }, containerRef);
-
-      return () => ctx.revert();
-    }, 50);
-
-    return () => clearTimeout(timer);
-  }, []);
-
   return (
-    <div className="onpage-page" ref={containerRef}>
-      <SiteHeader />
+    <LocalServicePageTemplate
+      schema={SCHEMA}
+      breadcrumb="Services / Encino"
+      heroTitle="SEO Company Encino."
+      heroSubtitle="Gobiya is an SEO company serving Encino, Tarzana, and Sherman Oaks along the Ventura Boulevard corridor in the San Fernando Valley. Founded in 2012, the agency provides technical SEO, entity graph engineering, and AI citation optimization for professional services businesses that depend on organic search for client acquisition. Our SEO & Discoverability system has operated in this market since 2012."
+      specs={[
+        { label: 'Market', val: 'Encino, CA · Valley' },
+        { label: 'Focus', val: 'Technical & Pipeline' },
+        { label: 'Category', val: 'SEO & Discoverability' }
+      ]}
+      introHeading="Why Encino Businesses Need a Technical SEO Company, Not a Generic Agency"
+      introParagraphs={[
+        "Encino's business profile — affluent residential catchment, Ventura Boulevard commercial density, strong professional services sector — creates specific SEO dynamics that generic template-based agencies consistently misread."
+      ]}
+      servicesLabel="Market Intelligence"
+      servicesTitle="The Landscape of Local Search"
+      services={ORIGIN_CARDS.map(c => ({ title: c.title, body: c.body }))}
+      faqs={FAQ_ITEMS}
+      useHeroForm={true}
+    >
 
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(SCHEMA) }}
-      />
+      {/* CAPABILITIES SECTION */}
+      <section className="py-24 border-b border-gray-200 bg-white px-[5vw]">
+        <div className="mb-12">
+          <span className="text-sm font-mono uppercase tracking-widest text-gray-400 block mb-3">What We Do</span>
+          <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-gray-900">
+            SEO Services for Encino Businesses
+          </h2>
+          <p className="text-gray-500 mt-4 max-w-3xl leading-relaxed">
+            Four engineering layers that form a complete SEO system — built for the Encino and San Fernando Valley market, delivered without the bloat of a large agency model.
+          </p>
+        </div>
 
-      {/* ── HERO ── */}
-      <section className="hero">
-        <HeroWebGLBackground />
-        <div className="hero-grid" aria-hidden="true" />
-        <div className="hero-inner">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {CAPABILITIES.map((cap, i) => (
+            <div key={i} className="p-10 border border-gray-200 bg-gray-50" data-anim="up">
+              <span className="font-mono text-xs text-gray-400 block mb-4">{String(i + 1).padStart(2, '0')}</span>
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">{cap.title}</h3>
+              <p className="text-gray-500 text-sm leading-relaxed">{cap.body}</p>
+            </div>
+          ))}
+        </div>
+      </section>
 
-          <div className="hero-copy">
-            <nav className="breadcrumb">
-              <a href="/">Gobiya</a>
-              <i>›</i>
-              <a href="/performance/seo-discoverability-agency">SEO &amp; Discoverability</a>
-              <i>›</i>
-              <span>Encino</span>
-            </nav>
-
-            <h1>
-              <span className="line"><span>SEO Company</span></span>
-              <span className="line"><span className="accent">Encino.</span></span>
-            </h1>
-
-            <p className="hero-sub">
-              Gobiya is an SEO company serving Encino, Tarzana, and Sherman Oaks along the Ventura Boulevard corridor in the San Fernando Valley. Founded in 2010, the agency provides technical SEO, entity graph engineering, and AI citation optimization for professional services businesses that depend on organic search for client acquisition. Our <a href="/performance/seo-discoverability-agency" style={{color:'var(--green)'}}>SEO &amp; Discoverability system</a> has operated in this market since 2012.
+      {/* CHECKLIST SECTION */}
+      <section className="py-24 border-b border-gray-200 bg-gray-50 px-[5vw]">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16">
+          <div data-anim="up">
+            <span className="text-sm font-mono uppercase tracking-widest text-gray-400 block mb-3">Engagement Sequence</span>
+            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-gray-900 mb-6">
+              How We Run an Encino SEO Engagement
+            </h2>
+            <p className="text-gray-500 mb-8 leading-relaxed">
+              The four-step sequence from initial technical audit to authority deployment — what we do, in what order, and why it matters for Encino's competitive market.
             </p>
 
-            <div className="hero-specs">
-              <div className="spec-item">
-                <span className="label">Market</span>
-                <span className="val">Encino, CA · San Fernando Valley</span>
-              </div>
-              <div className="spec-item">
-                <span className="label">Focus</span>
-                <span className="val">Technical SEO &amp; Organic Pipeline</span>
-              </div>
-              <div className="spec-item">
-                <span className="label">Category</span>
-                <span className="val">SEO &amp; Discoverability</span>
-              </div>
+            <div className="flex flex-col gap-2">
+              {AUDIT_STEPS.map((step, idx) => (
+                <button
+                  key={idx}
+                  type="button"
+                  className={`text-left px-6 py-4 border transition-colors flex justify-between items-center ${activeChecklist === idx ? 'border-black bg-black text-white' : 'border-gray-200 bg-white text-gray-900 hover:border-gray-400'}`}
+                  onClick={() => setActiveChecklist(idx)}
+                >
+                  <span className="font-medium text-sm">{step.title}</span>
+                  <svg viewBox="0 0 24 24" fill="none" width="14" height="14" className={activeChecklist === idx ? 'text-white' : 'text-gray-400'}>
+                    <path d="M9 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </button>
+              ))}
             </div>
           </div>
 
-          <div className="hero-widget" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-            <HeroQuickForm source="SEO Company Encino" variant="light" accent="#2F5D50" heading="Request an Encino SEO quote" subheading="Tell us about your business and we’ll send a quick read." style={{ maxWidth: '100%' }} />
+          <div data-anim="up" className="flex flex-col justify-center">
+            <div className="border border-gray-200 bg-white flex flex-col h-full">
+              <div className="px-6 py-4 border-b border-gray-200 font-mono text-[10px] text-gray-500 uppercase tracking-widest bg-gray-50">
+                encino-seo-protocol.log
+              </div>
+              <div className="p-8 lg:p-10 flex-grow flex flex-col justify-center">
+                <h4 className="text-2xl font-bold text-gray-900 mb-4">{AUDIT_STEPS[activeChecklist].title}</h4>
+                <p className="text-gray-600 font-medium mb-6">{AUDIT_STEPS[activeChecklist].short}</p>
+                <div className="w-full h-px bg-gray-200 mb-6"></div>
+                <p className="text-gray-500 leading-relaxed mb-8">{AUDIT_STEPS[activeChecklist].detail}</p>
+                <a href="/book" className="inline-flex items-center gap-2 font-mono text-[10px] uppercase tracking-widest text-black hover:text-gray-500 transition-colors mt-auto">
+                  Run this audit on your Encino business
+                  <svg viewBox="0 0 24 24" fill="none" width="12" height="12">
+                    <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
           </div>
-
         </div>
       </section>
 
-      {/* ── ENCINO MARKET CONTEXT ── */}
-      <section className="capabilities-section" style={{ background: 'var(--paper-2)' }}>
-        <div className="onpage-container">
-          <div className="section-head">
-            <span className="mono-tag">Market Intelligence</span>
-            <h2>Why Encino Businesses Need a Technical SEO Company, Not a Generic Agency</h2>
-            <p>
-              Encino's business profile — affluent residential catchment, Ventura Boulevard commercial density, strong professional services sector — creates specific SEO dynamics that generic template-based agencies consistently misread.
+      {/* CLUSTER LINKS */}
+      <section className="py-24 border-b border-gray-200 bg-white px-[5vw]">
+        <div className="mb-12">
+          <span className="text-sm font-mono uppercase tracking-widest text-gray-400 block mb-3">SEO &amp; Discoverability Cluster</span>
+          <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-gray-900">
+            Related Guides &amp; Services
+          </h2>
+          <p className="text-gray-500 mt-4 max-w-3xl leading-relaxed">
+            Resources from our SEO &amp; Discoverability practice that directly support Encino businesses evaluating or scaling their organic search investment.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {CLUSTER_CARDS.map((card, i) => (
+            <div key={i} className="p-8 border border-gray-200 bg-gray-50" data-anim="up">
+              <span className="font-mono text-xs text-gray-400 block mb-4">{card.label}</span>
+              <h3 className="text-xl font-semibold text-gray-900 mb-4"><a href={card.link} className="hover:text-gray-600">{card.title}</a></h3>
+              <p className="text-gray-500 text-sm leading-relaxed mb-6">{card.body}</p>
+              <a href={card.link} className="text-green-600 text-xs font-mono uppercase tracking-widest hover:text-green-700">{card.cta}</a>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-24 px-[5vw] bg-gray-50 border-t border-gray-200">
+        <div className="max-w-4xl mx-auto p-12 bg-white border border-gray-200 flex flex-col md:flex-row gap-8 items-center" data-anim="up">
+          <div className="flex-1">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Start Your Encino SEO Engagement</h2>
+            <p className="text-gray-600 leading-relaxed text-sm">
+              We run a 15-minute live technical session for Encino businesses — crawl audit, visibility gap analysis, competitor ranking review, and schema coverage check. No slides, no pitch deck. A direct read on where your organic search stands right now and what a realistic improvement timeline looks like for your specific Ventura Boulevard market.
             </p>
           </div>
-
-          <div className="capabilities-grid">
-            <div className="grid-card">
-              <div className="card-num">Ventura Boulevard</div>
-              <h3>The Valley's Most Competitive Commercial Corridor</h3>
-              <p>
-                The stretch of Ventura Boulevard running through Encino is one of the highest-density concentrations of professional services in the San Fernando Valley. Attorneys, financial advisors, medical practices, dental offices, and real estate firms all compete for the same high-intent local queries. Every category has at least four to six established competitors with domain histories stretching back 10+ years. Outranking them requires more than a title tag audit — it requires rebuilding your technical authority from the crawl layer up.
-              </p>
-            </div>
-
-            <div className="grid-card">
-              <div className="card-num">Buyer Profile</div>
-              <h3>High-Value Buyers Who Research Before They Call</h3>
-              <p>
-                Encino's median household income is among the highest in the San Fernando Valley — which means the buyers searching for services here are research-oriented, comparison-driven, and hard to win on price alone. They read the first three search results, check reviews, and look for authority signals before picking up the phone. An SEO company that delivers surface-level rankings without the content depth and trust signals to convert that traffic is billing you for visibility you cannot monetize. Our <a href="/insights/how-do-b2b-companies-use-seo-to-generate-predictable-revenue" style={{color:'var(--green)'}}>B2B revenue guide</a> covers this conversion architecture in detail.
-              </p>
-            </div>
-
-            <div className="grid-card">
-              <div className="card-num">Competition Pattern</div>
-              <h3>Adjacent Markets Create Search Cannibalization</h3>
-              <p>
-                Sherman Oaks, Studio City, Tarzana, and Woodland Hills all have competing businesses targeting the same Ventura Blvd queries. Without a deliberate geographic content strategy, Encino businesses often find their rankings diluted by adjacent competitors whose pages target overlapping service areas. We structure service area pages, LocalBusiness schema, and internal link architecture to establish clear geographic authority for Encino without creating the cannibalization issues that come from sloppy multi-location page strategies. See our <a href="/insights/multi-location-seo-website-structure" style={{color:'var(--green)'}}>multi-location SEO structure guide</a>.
-              </p>
-            </div>
-
-            <div className="grid-card">
-              <div className="card-num">The Real Gap</div>
-              <h3>Most Encino Businesses Have Never Had Real Technical SEO</h3>
-              <p>
-                The majority of Encino businesses that come to us have had SEO in some form before — a marketing agency that "handled SEO" as a line item, a freelancer running Semrush reports, a web developer who installed Yoast. None of those approaches touch the actual technical and entity-level work that moves rankings in a competitive local market. When we run an initial audit, we routinely find canonical split conflicts, missing schema, crawl budget waste on low-value pagination, and zero entity verification across Google's knowledge systems. The work has not been done. That is the gap.
-              </p>
-            </div>
+          <div className="flex flex-col items-center gap-4">
+            <a href="/book" className="px-8 py-4 bg-black text-white text-sm font-semibold tracking-wide uppercase hover:bg-gray-800 transition-colors">
+              Book Encino SEO audit
+            </a>
+            <span className="text-[10px] uppercase tracking-widest text-gray-400 font-mono">15-min session · No commitment</span>
           </div>
         </div>
       </section>
-
-      {/* ── CAPABILITIES ── */}
-      <section className="capabilities-section">
-        <div className="onpage-container">
-          <div className="section-head">
-            <span className="mono-tag">What We Do</span>
-            <h2>SEO Services for Encino Businesses</h2>
-            <p>
-              Four engineering layers that form a complete SEO system — built for the Encino and San Fernando Valley market, delivered without the bloat of a large agency model.
-            </p>
-          </div>
-
-          <div className="capabilities-grid">
-            <div className="grid-card">
-              <div className="card-num">01</div>
-              <h3>Technical SEO Engineering</h3>
-              <p>
-                Technical SEO is the foundation every other SEO investment depends on. If Googlebot cannot crawl your site efficiently, if your pages have canonical conflicts, if your JavaScript rendering blocks indexation — no amount of content or link building recovers those losses. We execute code-level technical fixes: redirect chain resolution, server-side schema injection, Core Web Vitals optimization, crawl budget allocation, and structured data alignment. Not recommendations documents — actual changes to the code. For Encino businesses on older CMS platforms, this layer alone typically produces ranking movement within 30–45 days.
-              </p>
-            </div>
-
-            <div className="grid-card">
-              <div className="card-num">02</div>
-              <h3>Content Architecture &amp; Topical Authority</h3>
-              <p>
-                Topical authority is how Google decides which site deserves to rank for a category of queries — and it is built through a structured hub-and-spoke content architecture, not random blog posts. For an Encino law firm, that means a legal practice area hub with deep supporting content for each specialization. For a medical practice, it means condition and procedure pages with clinical depth. We map the full content architecture, identify topical gaps your competitors have not covered, and build the content structure that signals comprehensive subject-matter authority to Google. The methodology is detailed in our <a href="/insights/b2b-organic-traffic-growth" style={{color:'var(--green)'}}>B2B organic traffic growth guide</a>.
-              </p>
-            </div>
-
-            <div className="grid-card">
-              <div className="card-num">03</div>
-              <h3>AI Citation Engineering (GEO)</h3>
-              <p>
-                A growing share of service discovery now begins on ChatGPT, Gemini, and Perplexity rather than Google — particularly for high-consideration purchases like legal, financial, and medical services where buyers ask conversational questions before searching for a specific firm. We apply <a href="/insights/what-is-generative-engine-optimization-and-how-does-it-work" style={{color:'var(--green)'}}>Generative Engine Optimization (GEO)</a> — structuring your Encino service pages with claim-evidence-citation formatting, FAQ schema, and entity verification that AI engines cite when answering buyer queries. This creates a second organic acquisition channel that most Encino competitors have not touched.
-              </p>
-            </div>
-
-            <div className="grid-card">
-              <div className="card-num">04</div>
-              <h3>Pipeline Attribution &amp; Reporting</h3>
-              <p>
-                SEO reporting that stops at rankings and traffic is not useful to an Encino business owner trying to justify a monthly investment. We build reporting around pipeline metrics: qualified form submissions, tracked phone calls from organic search, revenue attributed to organic acquisition, and cost-per-lead comparisons against paid channels. When you can see that organic search is generating five qualified leads per month at $280 cost per lead versus $1,200 per lead from Google Ads, the SEO budget conversation changes entirely. Our <a href="/insights/how-do-b2b-companies-use-seo-to-generate-predictable-revenue" style={{color:'var(--green)'}}>B2B pipeline revenue guide</a> details the attribution model.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <ContentCta headline="Ready to dominate local search?" sub="Our team responds within one business day." accent="#2F5D50" background="var(--paper)" />
-
-      {/* ── CHECKLIST ── */}
-      <section className="checklist-section">
-        <div className="onpage-container">
-          <div className="checklist-split">
-            <div className="checklist-left">
-              <span className="mono-tag">Engagement Sequence</span>
-              <h2>How We Run an Encino SEO Engagement</h2>
-              <p>
-                The four-step sequence from initial technical audit to authority deployment — what we do, in what order, and why it matters for Encino's competitive market.
-              </p>
-
-              <div className="checklist-buttons">
-                {AUDIT_STEPS.map((step, idx) => (
-                  <button
-                    key={idx}
-                    type="button"
-                    className={`checklist-btn ${activeChecklist === idx ? 'active' : ''}`}
-                    onClick={() => setActiveChecklist(idx)}
-                  >
-                    <span>{step.title}</span>
-                    <svg viewBox="0 0 24 24" fill="none" width="14" height="14">
-                      <path d="M9 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            <div className="checklist-right">
-              <div className="checklist-card">
-                <div className="card-head">
-                  <span>encino-seo-protocol.log</span>
-                </div>
-                <div className="card-body">
-                  <h4>{AUDIT_STEPS[activeChecklist].title}</h4>
-                  <p className="short-desc">{AUDIT_STEPS[activeChecklist].short}</p>
-                  <hr />
-                  <p className="long-desc">{AUDIT_STEPS[activeChecklist].detail}</p>
-                  <a href="/book" className="card-cta">
-                    Run this audit on your Encino business
-                    <svg viewBox="0 0 24 24" fill="none" width="12" height="12">
-                      <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-                    </svg>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <ContentCta headline="Let's map out your local rankings." sub="Start with a free site audit — no commitment, 24-hour response." accent="#2F5D50" background="var(--paper-2)" />
-
-      {/* ── FAQ ── */}
-      <section className="faq-section">
-        <div className="onpage-container">
-          <div className="section-head">
-            <span className="mono-tag">Common questions</span>
-            <h2>SEO Company Questions, Answered Directly</h2>
-            <p>The questions Encino business owners ask before engaging an SEO company — answered without the agency spin.</p>
-          </div>
-
-          <div className="faq-grid">
-            <div className="faq-item">
-              <h2 style={{fontSize:'1.1rem', fontWeight:600, fontFamily:'var(--font-display)', lineHeight:1.4, color:'var(--ink)', marginBottom:0}}>We have worked with two different SEO agencies over two years and neither one moved our rankings. What are the signs an agency is actually doing real work?</h2>
-              <p>
-                The most reliable signal is whether they can show you what they changed and where. A legitimate SEO engagement produces visible deliverables: a technical audit with specific issues documented and a changelog showing which ones were fixed, content pieces live on your site targeting specific queries, and citation or link acquisitions you can verify independently. If your agency sends monthly reports showing rankings and traffic graphs without being able to show you what changed in the site to produce those changes, the work is either not happening or happening at a cosmetic level that does not move competitive rankings. Ask to see the last three months of actual deliverables, not reporting decks.
-              </p>
-            </div>
-
-            <div className="faq-item">
-              <h2 style={{fontSize:'1.1rem', fontWeight:600, fontFamily:'var(--font-display)', lineHeight:1.4, color:'var(--ink)', marginBottom:0}}>We are a professional services firm in Encino. We are not sure whether to focus on local SEO for Encino specifically or on broader national content SEO. Which comes first?</h2>
-              <p>
-                Start with where your revenue actually comes from. If your clients are primarily within the San Fernando Valley — the typical profile for an Encino professional services firm — local SEO targeting Map Pack and local organic results for Encino, Tarzana, Sherman Oaks, and Woodland Hills queries has a much faster path to new client acquisition than national content SEO. Local buyers searching for an attorney, financial advisor, or accountant in Encino have high purchase intent and are often ready to book. National content SEO builds domain authority over time but rarely produces near-term client acquisition for a regional firm. The exception is if your practice has a specialty that attracts clients from outside the Valley — then national content around that specialty makes sense alongside local SEO, not instead of it.
-              </p>
-            </div>
-
-            <div className="faq-item">
-              <h2 style={{fontSize:'1.1rem', fontWeight:600, fontFamily:'var(--font-display)', lineHeight:1.4, color:'var(--ink)', marginBottom:0}}>We need organic traffic but we also need leads right now. How do we run Google Ads and SEO at the same time without wasting money?</h2>
-              <p>
-                Run them as complementary channels, not competing ones. Google Ads should target your highest-intent, highest-value queries right now — where a buyer is actively looking and ready to contact someone today. SEO should target the broader research and comparison queries where the buyer is not yet ready to pay for a click. The waste happens when both channels target the exact same queries — you end up paying for clicks on branded or navigational terms that your organic ranking would have captured for free. A simple rule: if you are already in organic positions one through three for a query, pause the paid campaign on that term and redirect the budget to queries you do not yet rank for. See our <a href="/insights/b2b-seo-agency" style={{color:'var(--green)'}}>B2B SEO pipeline attribution guide</a> for the full channel sequencing model.
-              </p>
-            </div>
-
-            <div className="faq-item">
-              <h2 style={{fontSize:'1.1rem', fontWeight:600, fontFamily:'var(--font-display)', lineHeight:1.4, color:'var(--ink)', marginBottom:0}}>Our last SEO agency promised first-page results in 90 days and nothing happened by day 180. What is a realistic timeline for SEO to actually start working?</h2>
-              <p>
-                Ninety days is not a realistic timeline for first-page results in any competitive Encino professional services category. The honest timeline is 6 to 12 months for sustained organic rankings in categories like legal, financial advisory, medical, or real estate — where established competitors have years of authority built up. In that period, the first 90 days are foundational: technical fixes, keyword architecture, and on-page optimization. Rankings typically start moving meaningfully at months 4 to 6 for lower-competition queries and at months 8 to 12 for the highest-value terms. An agency that promises 90-day results is either targeting low-competition queries that will not drive meaningful traffic, or setting an expectation they know is unrealistic to close the contract. Ask to see actual historical client ranking timelines, not projections.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── CLUSTER LINKS ── */}
-      <section className="capabilities-section" style={{ borderBottom: '1px solid var(--line)', background: 'var(--paper-2)' }}>
-        <div className="onpage-container">
-          <div className="section-head">
-            <span className="mono-tag">SEO &amp; Discoverability Cluster</span>
-            <h2>Related Guides &amp; Services</h2>
-            <p>Resources from our SEO &amp; Discoverability practice that directly support Encino businesses evaluating or scaling their organic search investment.</p>
-          </div>
-
-          <div className="capabilities-grid">
-            <div className="grid-card">
-              <div className="card-num">Service</div>
-              <h3><a href="/performance/seo-discoverability-agency" style={{color:'inherit',textDecoration:'none'}}>SEO &amp; Discoverability Agency</a></h3>
-              <p>The parent service practice covering Technical SEO, GEO, AI citations, and organic pipeline engineering. Encino SEO is a specific market application of this full-stack system.</p>
-              <a href="/performance/seo-discoverability-agency" style={{color:'var(--green)',fontSize:'0.85rem',fontFamily:'var(--font-mono)',letterSpacing:'0.06em',textTransform:'uppercase',marginTop:'1rem',display:'inline-flex',alignItems:'center',gap:'0.4rem'}}>View practice →</a>
-            </div>
-
-            <div className="grid-card">
-              <div className="card-num">Guide</div>
-              <h3><a href="/insights/gobiya-vs-enterprise-seo-agencies" style={{color:'inherit',textDecoration:'none'}}>Gobiya vs. Enterprise SEO Agencies</a></h3>
-              <p>An honest comparison covering where enterprise agency budgets actually go, what technical depth looks like at each price tier, and how to evaluate which type of firm matches your Encino growth stage.</p>
-              <a href="/insights/gobiya-vs-enterprise-seo-agencies" style={{color:'var(--green)',fontSize:'0.85rem',fontFamily:'var(--font-mono)',letterSpacing:'0.06em',textTransform:'uppercase',marginTop:'1rem',display:'inline-flex',alignItems:'center',gap:'0.4rem'}}>Read comparison →</a>
-            </div>
-
-            <div className="grid-card">
-              <div className="card-num">Guide</div>
-              <h3><a href="/insights/best-seo-agency-for-b2b-brands" style={{color:'inherit',textDecoration:'none'}}>Best SEO Agency for B2B: Evaluation Checklist</a></h3>
-              <p>The 12-point checklist for evaluating an SEO company before signing. Covers contract terms to avoid, case study verification, technical depth signals, and the questions every Encino business owner should ask before committing to a retainer.</p>
-              <a href="/insights/best-seo-agency-for-b2b-brands" style={{color:'var(--green)',fontSize:'0.85rem',fontFamily:'var(--font-mono)',letterSpacing:'0.06em',textTransform:'uppercase',marginTop:'1rem',display:'inline-flex',alignItems:'center',gap:'0.4rem'}}>Read checklist →</a>
-            </div>
-
-            <div className="grid-card">
-              <div className="card-num">Guide</div>
-              <h3><a href="/insights/how-do-b2b-companies-use-seo-to-generate-predictable-revenue" style={{color:'inherit',textDecoration:'none'}}>How B2B Companies Use SEO to Scale Pipeline</a></h3>
-              <p>How to connect search clusters to pipeline revenue, map content to the buying committee, and scale inbound conversions from organic search. The strategy framework behind our Encino SEO engagements.</p>
-              <a href="/insights/how-do-b2b-companies-use-seo-to-generate-predictable-revenue" style={{color:'var(--green)',fontSize:'0.85rem',fontFamily:'var(--font-mono)',letterSpacing:'0.06em',textTransform:'uppercase',marginTop:'1rem',display:'inline-flex',alignItems:'center',gap:'0.4rem'}}>Read guide →</a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── CTA ── */}
-      <section className="cta-section">
-        <div className="onpage-container">
-          <div className="cta-card">
-            <div className="cta-left">
-              <h2>Start Your Encino SEO Engagement</h2>
-              <p>
-                We run a 15-minute live technical session for Encino businesses — crawl audit, visibility gap analysis, competitor ranking review, and schema coverage check. No slides, no pitch deck. A direct read on where your organic search stands right now and what a realistic improvement timeline looks like for your specific Ventura Boulevard market.
-              </p>
-            </div>
-            <div className="cta-right">
-              <a href="/book" className="btn btn-primary">Book Encino SEO audit</a>
-              <span className="subtext">15-min live session · Encino, CA · No commitment</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <SiteFooter />
-    </div>
+    </LocalServicePageTemplate>
   );
 }

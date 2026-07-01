@@ -1,14 +1,5 @@
-﻿import React, { useEffect, useRef, useState } from 'react';
-import HeroWebGLBackground from './HeroWebGLBackground';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import SiteHeader from './SiteHeader';
-import SiteFooter from './SiteFooter';
-import HeroQuickForm from './HeroQuickForm';
-import ContentCta from './ContentCta';
-import './OnPageSeoLosAngelesPage.css';
-
-gsap.registerPlugin(ScrollTrigger);
+import React, { useState } from 'react';
+import LocalServicePageTemplate from './LocalServicePageTemplate';
 
 const FAQ_ITEMS = [
   {
@@ -108,379 +99,148 @@ const AUDIT_STEPS = [
   },
 ];
 
+const CAPABILITIES = [
+  {
+    title: 'AI Entity Graph Engineering',
+    body: 'We construct a complete, verifiable entity graph for your Santa Clarita business — linking your brand to Google Knowledge Graph, Wikidata, and structured JSON-LD schema on your site. This is the infrastructure layer that makes AI citations possible. Without a verified entity, AI engines like ChatGPT and Perplexity will not cite your business in category responses regardless of content quality or Google ranking.',
+  },
+  {
+    title: 'Generative Engine Optimization (GEO)',
+    body: 'GEO is the technical discipline of making your content readable, extractable, and citable by AI language models. We format your Santa Clarita service pages with claim-evidence-citation structures, FAQ schema with buyer-realistic question phrasing, and passage-level density that AI retrieval pipelines favor over generic long-form content.',
+  },
+  {
+    title: 'Local SEO & Santa Clarita Map Pack',
+    body: 'The Santa Clarita Map Pack for queries like "contractor SCV," "accountant Valencia CA," and "marketing agency near me Santa Clarita" is won through GBP category precision, NAP citation consistency across 40+ directories, and engineered review velocity — not keyword density.',
+  },
+  {
+    title: 'Technical SEO & Site Performance',
+    body: 'Page speed, crawl efficiency, canonical structure, and Core Web Vitals are prerequisites for both Google ranking and AI indexability. AI crawlers follow the same crawl rules as Googlebot and cannot extract content from pages that block bots, load too slowly, or have JavaScript rendering issues.',
+  },
+];
+
+const SHIFT_CARDS = [
+  {
+    title: 'Where B2B Buyers Start Their Research Now',
+    body: 'A growing portion of commercial purchasing decisions — particularly in B2B professional services, healthcare vendor selection, and high-ticket contracting — begin with a question asked to an AI assistant rather than a Google search. Studies tracking B2B research behavior in 2025 found that AI-assisted research precedes 35 to 40 percent of enterprise vendor discovery sessions. For businesses in the Valencia corporate parks, this is not a future trend — it is where your buyers are researching right now.',
+  },
+  {
+    title: 'Santa Clarita Marketing Has Not Caught Up',
+    body: 'Most Santa Clarita businesses still operate with a traditional digital marketing stack: a Google Ads campaign, a website optimized for a handful of local search terms, and a Google Business Profile. That stack captures buyers who already know what they\'re looking for. It does not capture the buyer who asks ChatGPT "who are the most reliable commercial electrical contractors in the Santa Clarita Valley" and acts on the first two answers.',
+  },
+  {
+    title: 'AI Search Sales Navigator',
+    body: 'The term "AI search sales navigator" captures something real: sophisticated buyers are now using AI chat tools as a research layer that sits above Google. They prompt for vendor recommendations, ask follow-up questions about specific companies, and request comparisons — all before visiting a single website.',
+  },
+  {
+    title: 'Dual-Surface Authority',
+    body: 'The technical work required for AI search marketing and traditional Santa Clarita SEO reinforces each other. Entity graph construction improves Google Knowledge Panel accuracy. GEO content structure improves E-E-A-T signals for Google\'s organic algorithm. Running both surfaces from the same strategic foundation is more efficient than treating them as separate programs.',
+  },
+];
+
 export default function AiSearchMarketingSantaClaritaPage() {
-  const containerRef = useRef<HTMLDivElement>(null);
   const [activeChecklist, setActiveChecklist] = useState<number>(0);
 
-  useEffect(() => {
-    document.documentElement.classList.add('js');
-    gsap.to(document.body, { opacity: 1, duration: 0.6, ease: 'power2.out' });
-
-    const timer = setTimeout(() => {
-      const ctx = gsap.context(() => {
-        const navInner = document.getElementById('nav-inner');
-        const burger = document.getElementById('burger');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        const handleBurgerClick = () => {
-          if (!mobileMenu || !burger) return;
-          const open = mobileMenu.classList.toggle('open');
-          burger.classList.toggle('open', open);
-          burger.setAttribute('aria-expanded', String(open));
-        };
-        if (burger) burger.addEventListener('click', handleBurgerClick);
-
-        const handleScroll = () => {
-          if (navInner) navInner.classList.toggle('is-scrolled', window.scrollY > 40);
-        };
-        window.addEventListener('scroll', handleScroll, { passive: true });
-
-        const ease = 'power3.out';
-        const tl = gsap.timeline({ defaults: { ease, duration: 0.9 } });
-        tl.from('.onpage-page .breadcrumb', { opacity: 0, y: 12 })
-          .from('.onpage-page .hero h1 .line > span', { yPercent: 108, stagger: 0.06 }, '-=0.6')
-          .from('.onpage-page .hero-sub', { opacity: 0, y: 18, duration: 0.7 }, '-=0.5')
-          .from('.onpage-page .hero-actions', { opacity: 0, y: 14, duration: 0.6 }, '-=0.4')
-          .from('.onpage-page .hero-widget', { opacity: 0, scale: 0.98, y: 20, duration: 0.8 }, '-=0.5');
-
-        gsap.from('.onpage-page .capabilities-grid .grid-card', {
-          opacity: 0, y: 30, duration: 0.8, stagger: 0.1, ease: 'power3.out',
-          scrollTrigger: { trigger: '.onpage-page .capabilities-section', start: 'top 80%' },
-        });
-
-        gsap.from('.onpage-page .checklist-split', {
-          opacity: 0, y: 40, duration: 0.9, ease: 'power3.out',
-          scrollTrigger: { trigger: '.onpage-page .checklist-section', start: 'top 80%' },
-        });
-
-        gsap.from('.onpage-page .faq-item', {
-          opacity: 0, y: 20, duration: 0.7, stagger: 0.08, ease: 'power3.out',
-          scrollTrigger: { trigger: '.onpage-page .faq-section', start: 'top 85%' },
-        });
-      }, containerRef);
-
-      return () => ctx.revert();
-    }, 50);
-
-    return () => clearTimeout(timer);
-  }, []);
-
   return (
-    <div className="onpage-page" ref={containerRef}>
-      <SiteHeader />
+    <LocalServicePageTemplate
+      schema={SCHEMA}
+      breadcrumb="Services / AI Search"
+      heroTitle="AI Search Marketing Santa Clarita."
+      heroSubtitle="Gobiya is a Los Angeles digital marketing agency founded in 2010 that builds AI search visibility for businesses in the Santa Clarita Valley, including the Valencia corridor and Newhall. AI search marketing means engineering your brand to be found and cited on ChatGPT, Perplexity, and Google AI Overviews — not just ranking in traditional search results."
+      tags={[
+        'AI Overviews',
+        'GEO Optimization',
+        'ChatGPT Citations',
+        'Perplexity Search',
+        'Entity Graphs',
+        'Local Map Pack',
+        'Technical SEO'
+      ]}
+      relevantSlugs={[
+        'what-are-ai-seo-services',
+        'how-can-a-startup-figure-out-whether-its-content-is-being-picked-up-by-llms',
+        'what-data-sources-do-llms-crawl-to-verify-b2b-company-information'
+      ]}
+      introHeading="Why the SCV Market Is Underserved in AI Search"
+      introParagraphs={[
+        "Santa Clarita is the fourth-largest city in Los Angeles County, with a business base concentrated in professional services, healthcare, manufacturing, and B2B contractors. Almost none of those businesses are optimized for AI search — which means early movers in the SCV market can establish AI citations before competition locks them out.",
+        "If your brand does not appear in AI-generated answers, you are invisible to a growing segment of the market no matter how well you rank on Google. Our SEO & Discoverability practice builds AI search visibility alongside Google authority for Santa Clarita businesses that need both."
+      ]}
+      servicesLabel="The Opportunity"
+      servicesTitle="The Santa Clarita AI Shift"
+      services={SHIFT_CARDS}
+      faqs={FAQ_ITEMS}
+      useHeroForm={true}
+    >
+      {/* CAPABILITIES SECTION */}
+      <section className="py-24 border-b border-gray-200 bg-gray-50 px-[5vw]">
+        <div className="mb-12">
+          <span className="text-sm font-mono uppercase tracking-widest text-gray-400 block mb-3">Service Architecture</span>
+          <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-gray-900">
+            AI Search Marketing Capabilities for Santa Clarita
+          </h2>
+        </div>
 
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(SCHEMA) }}
-      />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {CAPABILITIES.map((cap, i) => (
+            <div key={i} className="p-10 border border-gray-200 bg-white" data-anim="up">
+              <span className="font-mono text-xs text-gray-400 block mb-4">{String(i + 1).padStart(2, '0')}</span>
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">{cap.title}</h3>
+              <p className="text-gray-500 leading-relaxed">{cap.body}</p>
+            </div>
+          ))}
+        </div>
+      </section>
 
-      {/* ── HERO ── */}
-      <section className="hero">
-        <HeroWebGLBackground />
-        <div className="hero-grid" aria-hidden="true" />
-        <div className="hero-inner">
-
-          <div className="hero-copy">
-            <nav className="breadcrumb">
-              <a href="/">Gobiya</a>
-              <i>›</i>
-              <a href="/performance/seo-discoverability-agency">SEO &amp; Discoverability</a>
-              <i>›</i>
-              <span>Santa Clarita</span>
-            </nav>
-
-            <h1>
-              <span className="line"><span>AI Search Marketing</span></span>
-              <span className="line"><span className="accent">Santa Clarita.</span></span>
-            </h1>
-
-            <p className="hero-sub">
-              Gobiya is a Los Angeles digital marketing agency founded in 2010 that builds AI search visibility for businesses in the Santa Clarita Valley, including the Valencia corridor and Newhall. AI search marketing means engineering your brand to be found and cited on ChatGPT, Perplexity, and Google AI Overviews — not just ranking in traditional search results. Studies from 2024–2025 indicate 25–40% of B2B research queries now begin on AI assistants before a web search; for businesses in Santa Clarita, that shift is already affecting how buyers find local vendors. If your brand does not appear in those AI-generated answers, you are invisible to that segment of the market no matter how well you rank on Google. <a href="/performance/seo-discoverability-agency" style={{color:'var(--green)'}}>Our SEO &amp; Discoverability practice</a> builds AI search visibility alongside Google authority for Santa Clarita businesses that need both.
+      {/* CHECKLIST SECTION */}
+      <section className="py-24 border-b border-gray-200 bg-white px-[5vw]">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16">
+          <div data-anim="up">
+            <span className="text-sm font-mono uppercase tracking-widest text-gray-400 block mb-3">Engagement Sequence</span>
+            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-gray-900 mb-6">
+              How We Build AI Search Marketing in Santa Clarita
+            </h2>
+            <p className="text-gray-500 mb-8 leading-relaxed">
+              The four-phase sequence we run on every Santa Clarita engagement — from entity foundation to measurable AI pipeline contribution.
             </p>
 
-            <div className="hero-specs">
-              <div className="spec-item">
-                <span className="label">Market</span>
-                <span className="val">Santa Clarita Valley, CA</span>
+            <div className="flex flex-col gap-2">
+              {AUDIT_STEPS.map((step, idx) => (
+                <button
+                  key={idx}
+                  type="button"
+                  className={`text-left px-6 py-4 border transition-colors flex justify-between items-center ${activeChecklist === idx ? 'border-black bg-black text-white' : 'border-gray-200 bg-white text-gray-900 hover:border-gray-400'}`}
+                  onClick={() => setActiveChecklist(idx)}
+                >
+                  <span className="font-medium text-sm">{step.title}</span>
+                  <svg viewBox="0 0 24 24" fill="none" width="14" height="14" className={activeChecklist === idx ? 'text-white' : 'text-gray-400'}>
+                    <path d="M9 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </button>
+              ))}
+            </div>
+          </div>
+
+          <div data-anim="up" className="flex flex-col justify-center">
+            <div className="border border-gray-200 bg-gray-50 flex flex-col h-full">
+              <div className="px-6 py-4 border-b border-gray-200 font-mono text-[10px] text-gray-500 uppercase tracking-widest bg-gray-100">
+                scv-engagement-protocol.log
               </div>
-              <div className="spec-item">
-                <span className="label">Engines</span>
-                <span className="val">Google + ChatGPT, Perplexity, AI Overviews</span>
-              </div>
-              <div className="spec-item">
-                <span className="label">Category</span>
-                <span className="val">AI Search &amp; Discoverability</span>
-              </div>
-            </div>
-          </div>
-
-          <div className="hero-widget" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-            <HeroQuickForm source="AI Search Marketing Santa Clarita" variant="light" accent="#2F5D50" heading="Request a Santa Clarita audit" subheading="Tell us about your business and we’ll send a quick read." style={{ maxWidth: '100%' }} />
-          </div>
-
-        </div>
-      </section>
-
-      {/* ── WHY SANTA CLARITA ── */}
-      <section className="capabilities-section" style={{ background: 'var(--paper-2)' }}>
-        <div className="onpage-container">
-          <div className="section-head">
-            <span className="mono-tag">The Santa Clarita AI Opportunity</span>
-            <h2>Why the SCV Market Is Underserved in AI Search</h2>
-            <p>
-              Santa Clarita is the fourth-largest city in Los Angeles County, with a business base concentrated in professional services, healthcare, manufacturing, and B2B contractors. Almost none of those businesses are optimized for AI search — which means early movers in the SCV market can establish AI citations before competition locks them out.
-            </p>
-          </div>
-
-          <div className="capabilities-grid">
-            <div className="grid-card">
-              <div className="card-num">The Shift</div>
-              <h3>Where B2B Buyers Start Their Research Now</h3>
-              <p>
-                A growing portion of commercial purchasing decisions — particularly in B2B professional services, healthcare vendor selection, and high-ticket contracting — begin with a question asked to an AI assistant rather than a Google search. Studies tracking B2B research behavior in 2025 found that AI-assisted research precedes 35 to 40 percent of enterprise vendor discovery sessions. For businesses in the Valencia corporate parks serving clients in construction, aerospace supply chain, and professional services, this is not a future trend — it is where your buyers are researching right now. The question is whether they find you or a competitor in those AI-generated answers.
-              </p>
-            </div>
-
-            <div className="grid-card">
-              <div className="card-num">The Gap</div>
-              <h3>Santa Clarita Marketing Has Not Caught Up</h3>
-              <p>
-                Most Santa Clarita businesses still operate with a traditional digital marketing stack: a Google Ads campaign, a website optimized for a handful of local search terms, and a Google Business Profile that may or may not be current. That stack captures buyers who already know what they're looking for and where to look. It does not capture the buyer who asks ChatGPT "who are the most reliable commercial electrical contractors in the Santa Clarita Valley" and acts on the first two answers. The local <a href="/insights/what-are-ai-seo-services" style={{color:'var(--green)'}}>AI SEO gap</a> is real, measurable, and closing — businesses that move first will own the citation position for their category before competitors realize the surface exists.
-              </p>
-            </div>
-
-            <div className="grid-card">
-              <div className="card-num">The Buyer</div>
-              <h3>AI Search Sales Navigator: How Buyers Find Vendors</h3>
-              <p>
-                The term "AI search sales navigator" captures something real: sophisticated buyers are now using AI chat tools as a research layer that sits above Google. They prompt for vendor recommendations, ask follow-up questions about specific companies, and request comparisons — all before visiting a single website. For a Santa Clarita professional services firm or B2B contractor, appearing in those AI-generated vendor lists is the equivalent of being on the first page of Google in 2012. The <a href="/insights/chatgpt-vs-google-for-business-discovery" style={{color:'var(--green)'}}>ChatGPT vs. Google discovery comparison</a> we published breaks down exactly where these two surfaces differ and which queries AI platforms now dominate.
-              </p>
-            </div>
-
-            <div className="grid-card">
-              <div className="card-num">The Advantage</div>
-              <h3>Dual-Surface Authority: Google and AI Simultaneously</h3>
-              <p>
-                The good news is that the technical work required for AI search marketing and traditional <a href="/performance/seo-discoverability-agency" style={{color:'var(--green)'}}>Santa Clarita SEO</a> reinforces each other. Entity graph construction improves Google Knowledge Panel accuracy. GEO content structure improves E-E-A-T signals for Google's organic algorithm. Citation diversity across authoritative directories benefits both Google local authority and AI engine verification confidence. Running both surfaces from the same strategic foundation is more efficient than treating them as separate programs — and it is what businesses that want to dominate Santa Clarita search in 2026 are doing.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── CAPABILITIES ── */}
-      <section className="capabilities-section">
-        <div className="onpage-container">
-          <div className="section-head">
-            <span className="mono-tag">Service Architecture</span>
-            <h2>AI Search Marketing Capabilities for Santa Clarita</h2>
-            <p>
-              Santa Clarita marketing in 2026 requires a search presence that works across two surfaces: Google's ranking algorithm and the AI discovery layer where an increasing share of buyers now research before they ever contact a vendor. Our <a href="/performance/seo-discoverability-agency" style={{color:'var(--green)'}}>SEO &amp; Discoverability practice</a> is built to cover both from a single integrated program.
-            </p>
-          </div>
-
-          <div className="capabilities-grid">
-            <div className="grid-card">
-              <div className="card-num">01</div>
-              <h3>AI Entity Graph Engineering</h3>
-              <p>
-                We construct a complete, verifiable entity graph for your Santa Clarita business — linking your brand to Google Knowledge Graph, Wikidata, and structured JSON-LD schema on your site. This is the infrastructure layer that makes AI citations possible. Without a verified entity, AI engines like ChatGPT and Perplexity will not cite your business in category responses regardless of content quality or Google ranking. Related: <a href="/insights/what-is-the-difference-between-google-knowledge-graph-optimization-and-geo" style={{color:'var(--green)'}}>Knowledge Graph optimization vs. GEO</a>.
-              </p>
-            </div>
-
-            <div className="grid-card">
-              <div className="card-num">02</div>
-              <h3>Generative Engine Optimization (GEO)</h3>
-              <p>
-                GEO is the technical discipline of making your content readable, extractable, and citable by AI language models. We format your Santa Clarita service pages with claim-evidence-citation structures, FAQ schema with buyer-realistic question phrasing, and passage-level density that AI retrieval pipelines favor over generic long-form content. When a buyer asks Perplexity for the top marketing companies near Santa Clarita, a GEO-optimized entity gets cited — an unoptimized one does not appear in the output at all. See our <a href="/insights/what-is-generative-engine-optimization-and-how-does-it-work" style={{color:'var(--green)'}}>full GEO technical guide</a>.
-              </p>
-            </div>
-
-            <div className="grid-card">
-              <div className="card-num">03</div>
-              <h3>Local SEO &amp; Santa Clarita Map Pack</h3>
-              <p>
-                The Santa Clarita Map Pack for queries like "contractor SCV," "accountant Valencia CA," and "marketing agency near me Santa Clarita" is won through GBP category precision, NAP citation consistency across 40+ directories, and engineered review velocity — not keyword density. We work directly at the data layer to align every signal Google uses to rank local results, and we configure service area coverage for the full SCV geography: Valencia, Newhall, Canyon Country, Stevenson Ranch, and Saugus. For context on what drives local visibility, see our <a href="/insights/local-seo-explained" style={{color:'var(--green)'}}>local SEO explained guide</a>.
-              </p>
-            </div>
-
-            <div className="grid-card">
-              <div className="card-num">04</div>
-              <h3>Technical SEO &amp; Site Performance</h3>
-              <p>
-                Page speed, crawl efficiency, canonical structure, and Core Web Vitals are prerequisites for both Google ranking and AI indexability. AI crawlers — GPTBot, ClaudeBot, Applebot — follow the same crawl rules as Googlebot and cannot extract content from pages that block bots, load too slowly, or have JavaScript rendering issues. We execute code-level fixes: redirect chain elimination, server-side schema injection, image delivery optimization, and structured navigation that AI crawlers can traverse. The technical foundation that supports <a href="/performance/seo-discoverability-agency" style={{color:'var(--green)'}}>organic discoverability</a> is where every engagement starts.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <ContentCta headline="Ready to get found on AI search in Santa Clarita?" sub="Our team responds within one business day." accent="#2F5D50" background="var(--paper-2)" />
-
-      {/* ── INTERACTIVE CHECKLIST ── */}
-      <section className="checklist-section">
-        <div className="onpage-container">
-          <div className="checklist-split">
-            <div className="checklist-left">
-              <span className="mono-tag">Engagement Sequence</span>
-              <h2>How We Build AI Search Marketing in Santa Clarita</h2>
-              <p>The four-phase sequence we run on every Santa Clarita engagement — from entity foundation to measurable AI pipeline contribution.</p>
-
-              <div className="checklist-buttons">
-                {AUDIT_STEPS.map((step, idx) => (
-                  <button
-                    key={idx}
-                    type="button"
-                    className={`checklist-btn ${activeChecklist === idx ? 'active' : ''}`}
-                    onClick={() => setActiveChecklist(idx)}
-                  >
-                    <span>{step.title}</span>
-                    <svg viewBox="0 0 24 24" fill="none" width="14" height="14">
-                      <path d="M9 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            <div className="checklist-right">
-              <div className="checklist-card">
-                <div className="card-head">
-                  <span>scv-engagement-protocol.log</span>
-                </div>
-                <div className="card-body">
-                  <h4>{AUDIT_STEPS[activeChecklist].title}</h4>
-                  <p className="short-desc">{AUDIT_STEPS[activeChecklist].short}</p>
-                  <hr />
-                  <p className="long-desc">{AUDIT_STEPS[activeChecklist].detail}</p>
-                  <a href="/book" className="card-cta">
-                    Apply this to your Santa Clarita brand
-                    <svg viewBox="0 0 24 24" fill="none" width="12" height="12">
-                      <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-                    </svg>
-                  </a>
-                </div>
+              <div className="p-8 lg:p-10 flex-grow flex flex-col justify-center">
+                <h4 className="text-2xl font-bold text-gray-900 mb-4">{AUDIT_STEPS[activeChecklist].title}</h4>
+                <p className="text-gray-600 font-medium mb-6">{AUDIT_STEPS[activeChecklist].short}</p>
+                <div className="w-full h-px bg-gray-200 mb-6"></div>
+                <p className="text-gray-500 leading-relaxed mb-8">{AUDIT_STEPS[activeChecklist].detail}</p>
+                <a href="/book" className="inline-flex items-center gap-2 font-mono text-[10px] uppercase tracking-widest text-black hover:text-gray-500 transition-colors mt-auto">
+                  Apply this to your Santa Clarita brand
+                  <svg viewBox="0 0 24 24" fill="none" width="12" height="12">
+                    <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                  </svg>
+                </a>
               </div>
             </div>
           </div>
         </div>
       </section>
-
-      <ContentCta headline="Let's get your Santa Clarita business into AI answers." sub="Start with a free audit — 24-hour response." accent="#2F5D50" background="var(--paper)" />
-
-      {/* ── FAQ ── */}
-      <section className="faq-section">
-        <div className="onpage-container">
-          <div className="section-head">
-            <span className="mono-tag">Common questions</span>
-            <h2>AI Search Marketing Santa Clarita: What Businesses Ask</h2>
-            <p>
-              The questions Santa Clarita business owners ask before engaging an AI search marketing program — answered directly.
-            </p>
-          </div>
-
-          <div className="faq-grid">
-            <div className="faq-item">
-              <h2 style={{fontSize:'1.1rem', fontWeight:600, fontFamily:'var(--font-display)', lineHeight:1.4, color:'var(--ink)', marginBottom:0}}>We rank well on Google for our main keywords in Santa Clarita, but when prospects ask ChatGPT or Perplexity about vendors in our category near them, our company does not come up. How do we change that?</h2>
-              <p>
-                Google organic rankings and AI citation are driven by completely different signals. AI engines like ChatGPT and Perplexity surface businesses based on entity confidence — how well your brand is represented in structured, machine-readable knowledge sources. To appear in AI-generated responses for Santa Clarita category queries, your entity needs verified schema on your site, presence in the data sources AI training pipelines crawl, and content formatted with claim-evidence-citation structure that retrieval models extract at the passage level. Strong Google rankings help but do not transfer directly into AI citation — the <a href="/insights/what-is-generative-engine-optimization-and-how-does-it-work" style={{color:'var(--green)'}}>GEO layer</a> is a separate engineering effort.
-              </p>
-            </div>
-
-            <div className="faq-item">
-              <h2 style={{fontSize:'1.1rem', fontWeight:600, fontFamily:'var(--font-display)', lineHeight:1.4, color:'var(--ink)', marginBottom:0}}>We already invest in Santa Clarita SEO and Google Ads. Is AI search marketing a replacement for those or something we run alongside them?</h2>
-              <p>
-                Alongside, not instead of. Google still processes the majority of high-intent commercial searches, and your existing investment should not be abandoned. What <a href="/performance/ai-llms-business-agency" style={{color:'var(--green)'}}>AI search marketing</a> adds is coverage of the 35 to 40 percent of research journeys that now begin with a question asked directly to an AI assistant before the buyer ever opens a browser. A buyer who asks ChatGPT "who are the best commercial contractors in Santa Clarita" is running a query your traditional SEO cannot capture. The programs that win run Google and AI discovery simultaneously — and the GEO work often strengthens your E-E-A-T signals for Google as a by-product.
-              </p>
-            </div>
-
-            <div className="faq-item">
-              <h2 style={{fontSize:'1.1rem', fontWeight:600, fontFamily:'var(--font-display)', lineHeight:1.4, color:'var(--ink)', marginBottom:0}}>A competitor in the Santa Clarita Valley keeps appearing in AI answers when our category comes up. How do we find out what signals are driving that?</h2>
-              <p>
-                The signals AI engines use to cite a business fall into three categories. First, entity authority — verified Wikidata presence, accurate Google Knowledge Panel, schema matched to GBP. Second, content citability — passage-level structure with specific claims and supporting data in tight paragraphs. Third, coverage breadth — presence in editorial content, press mentions, and industry directories that AI training sets index heavily. A <a href="/insights/brand-entity-extraction-perception-drift" style={{color:'var(--green)'}}>brand entity audit</a> usually identifies which of the three your competitor is winning on within the first session. Knowing the gap is the first step to closing it.
-              </p>
-            </div>
-
-            <div className="faq-item">
-              <h2 style={{fontSize:'1.1rem', fontWeight:600, fontFamily:'var(--font-display)', lineHeight:1.4, color:'var(--ink)', marginBottom:0}}>We need leads this quarter, not next year. How long does AI search marketing take to start showing real results?</h2>
-              <p>
-                Early AI citations for lower-competition Santa Clarita queries often appear within 30 to 60 days of GEO deployment when the entity foundation is in place. Competitive category queries take 90 to 120 days for consistent citation presence. If you need leads this quarter specifically, the fastest path is running Google Ads in parallel while the AI search layer builds — paid search can be turned on within days. AI search compounds in a way paid ads do not: once a citation is established and reinforced, it persists across queries without ongoing spend. The combination of immediate paid coverage and compounding AI citation is the strategy we run for most Santa Clarita clients who need near-term results and long-term independence from ad spend.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── RELATED CLUSTER ── */}
-      <section className="capabilities-section" style={{ borderBottom: '1px solid var(--line)', background: 'var(--paper-2)' }}>
-        <div className="onpage-container">
-          <div className="section-head">
-            <span className="mono-tag">AI Search &amp; Discoverability Cluster</span>
-            <h2>Related Services &amp; Deep Dives</h2>
-            <p>Resources from the SEO &amp; Discoverability practice cluster that directly support Santa Clarita AI search strategy.</p>
-          </div>
-
-          <div className="capabilities-grid">
-            <div className="grid-card">
-              <div className="card-num">Service</div>
-              <h3><a href="/performance/seo-discoverability-agency" style={{color:'inherit',textDecoration:'none'}}>SEO &amp; Discoverability Agency</a></h3>
-              <p>The parent practice covering Technical SEO, GEO, AI citations, and organic pipeline engineering. Santa Clarita AI search marketing is a specific market application of this full-stack system.</p>
-              <a href="/performance/seo-discoverability-agency" style={{color:'var(--green)',fontSize:'0.85rem',fontFamily:'var(--font-mono)',letterSpacing:'0.06em',textTransform:'uppercase',marginTop:'1rem',display:'inline-flex',alignItems:'center',gap:'0.4rem'}}>View practice →</a>
-            </div>
-
-            <div className="grid-card">
-              <div className="card-num">Service</div>
-              <h3><a href="/performance/ai-llms-business-agency" style={{color:'inherit',textDecoration:'none'}}>AI &amp; LLMs for Business</a></h3>
-              <p>How businesses integrate AI tools into their operations and visibility stack. Covers LLM-readiness, AI content infrastructure, and making your brand machine-readable for automated research agents.</p>
-              <a href="/performance/ai-llms-business-agency" style={{color:'var(--green)',fontSize:'0.85rem',fontFamily:'var(--font-mono)',letterSpacing:'0.06em',textTransform:'uppercase',marginTop:'1rem',display:'inline-flex',alignItems:'center',gap:'0.4rem'}}>View service →</a>
-            </div>
-
-            <div className="grid-card">
-              <div className="card-num">Location</div>
-              <h3><a href="/ai-seo-beverly-hills" style={{color:'inherit',textDecoration:'none'}}>AI SEO Beverly Hills</a></h3>
-              <p>Our Beverly Hills AI SEO program — the same dual-surface architecture applied to the 90210 luxury and professional services market. Useful context for SCV businesses serving high-net-worth clients across greater LA.</p>
-              <a href="/ai-seo-beverly-hills" style={{color:'var(--green)',fontSize:'0.85rem',fontFamily:'var(--font-mono)',letterSpacing:'0.06em',textTransform:'uppercase',marginTop:'1rem',display:'inline-flex',alignItems:'center',gap:'0.4rem'}}>View program →</a>
-            </div>
-
-            <div className="grid-card">
-              <div className="card-num">Guide</div>
-              <h3><a href="/insights/what-is-generative-engine-optimization-and-how-does-it-work" style={{color:'inherit',textDecoration:'none'}}>Generative Engine Optimization (GEO)</a></h3>
-              <p>The technical playbook for getting cited on ChatGPT, Claude, Perplexity, and Google AI Overviews. Covers RAG pipeline mechanics, passage-level formatting, entity triangulation, and citation-signal engineering.</p>
-              <a href="/insights/what-is-generative-engine-optimization-and-how-does-it-work" style={{color:'var(--green)',fontSize:'0.85rem',fontFamily:'var(--font-mono)',letterSpacing:'0.06em',textTransform:'uppercase',marginTop:'1rem',display:'inline-flex',alignItems:'center',gap:'0.4rem'}}>Read guide →</a>
-            </div>
-
-            <div className="grid-card">
-              <div className="card-num">Guide</div>
-              <h3><a href="/insights/chatgpt-vs-google-for-business-discovery" style={{color:'inherit',textDecoration:'none'}}>ChatGPT vs. Google for Business Discovery</a></h3>
-              <p>A data-backed comparison of how buyer discovery differs between ChatGPT and Google — which query types each platform dominates, and how to structure content to win both surfaces.</p>
-              <a href="/insights/chatgpt-vs-google-for-business-discovery" style={{color:'var(--green)',fontSize:'0.85rem',fontFamily:'var(--font-mono)',letterSpacing:'0.06em',textTransform:'uppercase',marginTop:'1rem',display:'inline-flex',alignItems:'center',gap:'0.4rem'}}>Read analysis →</a>
-            </div>
-
-            <div className="grid-card">
-              <div className="card-num">Guide</div>
-              <h3><a href="/insights/what-data-sources-do-llms-crawl-to-verify-b2b-company-information" style={{color:'inherit',textDecoration:'none'}}>What Data Sources Do LLMs Crawl?</a></h3>
-              <p>An audit of the specific data sources — aggregators, directories, public databases, web crawls — that AI language models use to verify business information and determine citation eligibility.</p>
-              <a href="/insights/what-data-sources-do-llms-crawl-to-verify-b2b-company-information" style={{color:'var(--green)',fontSize:'0.85rem',fontFamily:'var(--font-mono)',letterSpacing:'0.06em',textTransform:'uppercase',marginTop:'1rem',display:'inline-flex',alignItems:'center',gap:'0.4rem'}}>Read guide →</a>
-            </div>
-
-            <div className="grid-card">
-              <div className="card-num">Guide</div>
-              <h3><a href="/insights/brand-entity-extraction-perception-drift" style={{color:'inherit',textDecoration:'none'}}>Brand Entity Extraction &amp; Perception Drift</a></h3>
-              <p>How AI models form — and sometimes distort — their understanding of your brand. What causes perception drift, how to audit it, and how to realign your entity representation across AI platforms.</p>
-              <a href="/insights/brand-entity-extraction-perception-drift" style={{color:'var(--green)',fontSize:'0.85rem',fontFamily:'var(--font-mono)',letterSpacing:'0.06em',textTransform:'uppercase',marginTop:'1rem',display:'inline-flex',alignItems:'center',gap:'0.4rem'}}>Read guide →</a>
-            </div>
-
-            <div className="grid-card">
-              <div className="card-num">Guide</div>
-              <h3><a href="/insights/what-are-ai-seo-services" style={{color:'inherit',textDecoration:'none'}}>What Are AI SEO Services?</a></h3>
-              <p>A plain-language breakdown of what AI SEO services actually include, what they do not include, and how to evaluate whether an agency's offering is substantive or rebranded traditional SEO.</p>
-              <a href="/insights/what-are-ai-seo-services" style={{color:'var(--green)',fontSize:'0.85rem',fontFamily:'var(--font-mono)',letterSpacing:'0.06em',textTransform:'uppercase',marginTop:'1rem',display:'inline-flex',alignItems:'center',gap:'0.4rem'}}>Read guide →</a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <SiteFooter />
-    </div>
+    </LocalServicePageTemplate>
   );
 }

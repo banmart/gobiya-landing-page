@@ -1,14 +1,24 @@
-﻿import React, { useEffect, useRef, useState } from 'react';
-import HeroWebGLBackground from './HeroWebGLBackground';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import SiteHeader from './SiteHeader';
-import SiteFooter from './SiteFooter';
-import HeroQuickForm from './HeroQuickForm';
-import ContentCta from './ContentCta';
-import './OnPageSeoLosAngelesPage.css';
+import React, { useState } from 'react';
+import LocalServicePageTemplate from './LocalServicePageTemplate';
 
-gsap.registerPlugin(ScrollTrigger);
+const FAQ_ITEMS = [
+  {
+    q: 'We show up in Google Search for our business name but we are barely visible on Google Maps for any category search. Why would those two perform so differently?',
+    a: 'Branded search and Map Pack visibility are driven by completely different signals. Branded rankings come from your website\'s link authority for your business name. Map Pack visibility is driven by GBP category accuracy, proximity and service area configuration, and entity authority (NAP consistency, review velocity, local link signals). A business can rank number one for its own name and be completely absent from the Map Pack for category searches because those ranking systems are independent.'
+  },
+  {
+    q: 'Our Google Business Profile was suspended with no warning. What is the first thing we should do and how long does reinstatement take?',
+    a: 'Do not create a new listing — that almost always makes reinstatement harder. Diagnose the suspension type: soft suspensions (profile visible but unverifiable) often resolve with re-verification. Hard suspensions (listing completely removed) require a Business Reinstatement Request with supporting documentation. Policy violations require correcting the violation first. Timeline: soft suspensions resolve in 3 to 7 business days; hard suspensions typically take 2 to 4 weeks.'
+  },
+  {
+    q: 'We have more five-star reviews than every competitor in our Burbank category, but we still rank below them in Google Maps. How is that possible?',
+    a: 'Review count is one signal among many in the Map Pack algorithm — and often not the most decisive one. The businesses outranking you with fewer reviews are almost certainly winning on GBP category accuracy, service area configuration, NAP citation consistency, or local link authority. Review velocity also matters: 200 total reviews with none in 90 days loses to 40 reviews with 6 in the last 30 days.'
+  },
+  {
+    q: 'We hired a local SEO agency in Burbank eight months ago and our Map Pack position has not moved. How do we tell if the work is actually happening?',
+    a: 'Ask for GBP data. A legitimate local SEO campaign produces measurable GBP signal movement: GBP profile actions (calls, direction requests, website clicks) should increase month over month. Your agency should also show a before-and-after citation audit and demonstrate review velocity improvement. If none of those three things have moved in eight months, the engagement is not producing results.'
+  }
+];
 
 const SCHEMA = {
   "@context": "https://schema.org",
@@ -53,40 +63,14 @@ const SCHEMA = {
     },
     {
       "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "We show up in Google Search for our business name but we are barely visible on Google Maps for any category search. Why would those two perform so differently?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Branded search and Map Pack visibility are driven by completely different signals. Branded rankings come from your website's link authority for your business name. Map Pack visibility is driven by GBP category accuracy, proximity and service area configuration, and entity authority (NAP consistency, review velocity, local link signals). A business can rank number one for its own name and be completely absent from the Map Pack for category searches because those ranking systems are independent."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Our Google Business Profile was suspended with no warning. What is the first thing we should do and how long does reinstatement take?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Do not create a new listing — that almost always makes reinstatement harder. Diagnose the suspension type: soft suspensions (profile visible but unverifiable) often resolve with re-verification. Hard suspensions (listing completely removed) require a Business Reinstatement Request with supporting documentation. Policy violations require correcting the violation first. Timeline: soft suspensions resolve in 3 to 7 business days; hard suspensions typically take 2 to 4 weeks."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "We have more five-star reviews than every competitor in our Burbank category, but we still rank below them in Google Maps. How is that possible?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Review count is one signal among many in the Map Pack algorithm — and often not the most decisive one. The businesses outranking you with fewer reviews are almost certainly winning on GBP category accuracy, service area configuration, NAP citation consistency, or local link authority. Review velocity also matters: 200 total reviews with none in 90 days loses to 40 reviews with 6 in the last 30 days."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "We hired a local SEO agency in Burbank eight months ago and our Map Pack position has not moved. How do we tell if the work is actually happening?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Ask for GBP data. A legitimate local SEO campaign produces measurable GBP signal movement: GBP profile actions (calls, direction requests, website clicks) should increase month over month. Your agency should also show a before-and-after citation audit and demonstrate review velocity improvement. If none of those three things have moved in eight months, the engagement is not producing results."
-          }
+      "mainEntity": FAQ_ITEMS.map(f => ({
+        "@type": "Question",
+        "name": f.q,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": f.a
         }
-      ]
+      }))
     }
   ]
 };
@@ -114,419 +98,253 @@ const AUDIT_STEPS = [
   }
 ];
 
+const ORIGIN_CARDS = [
+  {
+    title: 'The Entertainment Capital of Local Search',
+    label: 'Media District',
+    body: "Burbank hosts Warner Bros., Disney, NBCUniversal, and dozens of supporting production companies, talent agencies, and media services firms. This concentration creates a unique local search environment: buyers are sophisticated, searches are high-intent, and competition for the Map Pack in business services, legal, financial, and medical categories is genuinely fierce. Winning a top-three Map Pack position in Burbank requires more than a complete GBP — it requires a higher review score, stronger citation authority, and cleaner entity data than every competitor within your serving radius.",
+  },
+  {
+    title: 'A Commercial Corridor With Dense Local Competition',
+    label: 'San Fernando Blvd',
+    body: "San Fernando Boulevard from downtown Burbank through the Media District is one of the highest-density commercial corridors in the San Fernando Valley. Medical, dental, legal, financial, and hospitality businesses compete for the same local intent queries — and Google's Map Pack only shows three. In this environment, the businesses that invest in systematic local SEO engineering hold the top positions; the ones that treat GBP as a one-time setup fall off the pack entirely.",
+  },
+  {
+    title: 'Toluca Lake, Studio City, and Glendale Overlap Burbank Searches',
+    label: 'Adjacent Markets',
+    body: "Burbank's service area naturally extends into Toluca Lake, Studio City, North Hollywood, and Glendale. Buyers in those communities search for Burbank businesses regularly — and Burbank businesses that structure their service area data correctly in Google Business Profile and schema markup capture that adjacent demand. Incorrectly configured service areas silently exclude thousands of relevant monthly searches. We define these boundaries with precision.",
+  },
+  {
+    title: '280% Map Pack Call Growth for a Burbank Services Business',
+    label: 'Results',
+    body: "A Burbank professional services client saw a 280% increase in Map Pack phone calls and consultation requests after we restructured their local entity graph, corrected NAP across 40+ directory sources, and secured local citations from Burbank-specific directories and the Burbank Chamber of Commerce. The full program ran 90 days. The competitive gap they closed had been costing them an estimated 12–18 qualified inquiries every month.",
+  },
+];
+
+const CAPABILITIES = [
+  {
+    title: 'Google Business Profile Optimization',
+    body: 'GBP is the single highest-weight local ranking signal — and the majority of Burbank businesses have critical errors in their profiles that suppress Map Pack visibility without any visible warning. Wrong primary category. Missing service items. Service areas that exclude Toluca Lake, Studio City, and North Hollywood. Outdated hours. Zero GBP post activity in the last 90 days. We treat GBP as a living ranking asset and manage it actively.',
+  },
+  {
+    title: 'Citation Building & NAP Consistency',
+    body: 'Google cross-references your business data across dozens of authoritative directories to verify your entity. A single character difference in your business name or a transposed phone digit creates a confidence gap that lowers local ranking. We audit and correct your NAP signal across 40+ sources — Yelp, Apple Maps, Bing Places, Facebook, YellowPages, Foursquare, and vertical-specific directories relevant to Burbank\'s industry mix.',
+  },
+  {
+    title: 'Review Generation & Velocity Management',
+    body: 'In competitive Burbank categories — dental, medical, legal, financial services, entertainment support — the businesses ranking in positions 1–3 of the Map Pack maintain a steady review velocity of 4–8 new reviews per month, not just a high total count. Google\'s algorithm weights recency heavily: a business with 50 reviews and 6 in the last 30 days consistently outranks one with 220 reviews and none in six months. We build systems that generate reviews from real customers.',
+  },
+  {
+    title: 'Local Schema & Burbank Entity Mapping',
+    body: 'On-page LocalBusiness schema with Burbank coordinates, service areas, and opening hours is the technical foundation that connects your website to your GBP entity in Google\'s local index. Without it, your site and your GBP listing may function as separate, weakly connected signals — reducing Google\'s confidence in both. We inject server-rendered JSON-LD that ties them together as a single verified entity.',
+  },
+];
+
+const RATED_CARDS = [
+  {
+    title: 'Technical Depth Over Dashboard Access',
+    label: 'Engineering',
+    body: 'Top-rated local SEO in Burbank means working at the technical layer of Google\'s algorithm — not just logging into your GBP and making surface-level edits. The agencies that consistently produce Map Pack results for competitive Burbank categories do GBP data layer work, inject server-rendered schema, and correct entity graph signals at the code level. Agencies that hand you a login and a monthly rank report are managing, not engineering.',
+  },
+  {
+    title: 'Reporting Tied to Map Pack Position and Calls',
+    label: 'Transparency',
+    body: 'A top-rated local SEO company reports on the metrics that matter to a Burbank business owner: Map Pack position for target queries, GBP call volume, GBP direction requests, and review velocity benchmarks against your direct competitors. If your monthly report is full of impressions, domain authority scores, and keyword rankings without Map Pack call data, the program is measuring the wrong thing.',
+  },
+  {
+    title: 'Burbank Market Fluency, Not Generic Templates',
+    label: 'Local Knowledge',
+    body: 'The Burbank market has specific competitive dynamics that do not show up in generic local SEO playbooks. The media industry concentration creates unusual competitor profiles. The adjacency to Glendale and North Hollywood means service area configuration matters more than in most markets. The professional services density on San Fernando Boulevard creates genuinely competitive Map Pack environments.',
+  },
+  {
+    title: 'No 12-Month Contracts Built on False Promise',
+    label: 'Accountability',
+    body: 'Many agencies in the Burbank market lock clients into 12-month contracts before delivering any meaningful work, then rely on inertia to keep the engagement alive. We operate on shorter initial engagement windows with clear deliverables — GBP audit and correction, NAP cleanup across 40+ sources, review velocity system deployment, and schema injection — before asking for a long-term commitment.',
+  },
+];
+
 export default function LocalSeoBurbankPage() {
-  const containerRef = useRef<HTMLDivElement>(null);
   const [activeChecklist, setActiveChecklist] = useState<number>(0);
 
-  useEffect(() => {
-    document.documentElement.classList.add('js');
-    gsap.to(document.body, { opacity: 1, duration: 0.6, ease: 'power2.out' });
-
-    const timer = setTimeout(() => {
-      const ctx = gsap.context(() => {
-        const navInner = document.getElementById('nav-inner');
-        const burger = document.getElementById('burger');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        const handleBurgerClick = () => {
-          if (!mobileMenu || !burger) return;
-          const open = mobileMenu.classList.toggle('open');
-          burger.classList.toggle('open', open);
-          burger.setAttribute('aria-expanded', String(open));
-        };
-        if (burger) burger.addEventListener('click', handleBurgerClick);
-
-        const handleScroll = () => {
-          if (navInner) navInner.classList.toggle('is-scrolled', window.scrollY > 40);
-        };
-        window.addEventListener('scroll', handleScroll, { passive: true });
-
-        const ease = 'power3.out';
-        const tl = gsap.timeline({ defaults: { ease, duration: 0.9 } });
-        tl.from('.onpage-page .breadcrumb', { opacity: 0, y: 12 })
-          .from('.onpage-page .hero h1 .line > span', { yPercent: 108, stagger: 0.06 }, '-=0.6')
-          .from('.onpage-page .hero-sub', { opacity: 0, y: 18, duration: 0.7 }, '-=0.5')
-          .from('.onpage-page .hero-actions', { opacity: 0, y: 14, duration: 0.6 }, '-=0.4')
-          .from('.onpage-page .hero-widget', { opacity: 0, scale: 0.98, y: 20, duration: 0.8 }, '-=0.5');
-
-        gsap.from('.onpage-page .capabilities-grid .grid-card', {
-          opacity: 0, y: 30, duration: 0.8, stagger: 0.1, ease: 'power3.out',
-          scrollTrigger: { trigger: '.onpage-page .capabilities-section', start: 'top 80%' }
-        });
-
-        gsap.from('.onpage-page .checklist-split', {
-          opacity: 0, y: 40, duration: 0.9, ease: 'power3.out',
-          scrollTrigger: { trigger: '.onpage-page .checklist-section', start: 'top 80%' }
-        });
-
-        gsap.from('.onpage-page .faq-item', {
-          opacity: 0, y: 20, duration: 0.7, stagger: 0.08, ease: 'power3.out',
-          scrollTrigger: { trigger: '.onpage-page .faq-section', start: 'top 85%' }
-        });
-      }, containerRef);
-
-      return () => ctx.revert();
-    }, 50);
-
-    return () => clearTimeout(timer);
-  }, []);
-
   return (
-    <div className="onpage-page" ref={containerRef}>
-      <SiteHeader />
+    <LocalServicePageTemplate
+      schema={SCHEMA}
+      breadcrumb="Services / Burbank"
+      heroTitle="Local SEO Company Burbank."
+      heroSubtitle="Gobiya is a local SEO company serving Burbank, Toluca Lake, and Studio City. Established in 2012, we engineer Google Business Profile optimization, Map Pack dominance, citation authority, and review velocity systems for local businesses."
+      tags={[
+        'Local SEO',
+        'Map Pack',
+        'Google Business Profile',
+        'Citation Authority',
+        'Burbank, CA',
+        'Reputation Systems'
+      ]}
+      relevantSlugs={[
+        'multi-location-websites-for-franchises',
+        'how-do-b2b-companies-use-seo-to-generate-predictable-revenue',
+        'what-are-ai-seo-services'
+      ]}
+      introHeading="Why Burbank Local SEO Is a Different Problem"
+      introParagraphs={[
+        "Burbank is not a generic suburban market. Its entertainment industry concentration, professional services density, and adjacency to major media studios create specific local search dynamics that most agencies simply do not understand."
+      ]}
+      servicesLabel="Market Intelligence"
+      servicesTitle="The Landscape of Local Search"
+      services={ORIGIN_CARDS.map(c => ({ title: c.title, body: c.body }))}
+      faqs={FAQ_ITEMS}
+      useHeroForm={true}
+    >
+      {/* CAPABILITIES SECTION */}
+      <section className="py-24 border-b border-gray-200 bg-gray-50 px-[5vw]">
+        <div className="mb-12">
+          <span className="text-sm font-mono uppercase tracking-widest text-gray-400 block mb-3">Service Architecture</span>
+          <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-gray-900">
+            Local SEO Services for Burbank Businesses
+          </h2>
+          <p className="text-gray-500 mt-4 max-w-3xl leading-relaxed">
+            The four-layer local SEO system we deploy for every Burbank engagement — engineered around the ranking signals that actually determine Map Pack position, not vanity metrics.
+          </p>
+        </div>
 
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(SCHEMA) }}
-      />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {CAPABILITIES.map((cap, i) => (
+            <div key={i} className="p-10 border border-gray-200 bg-white" data-anim="up">
+              <span className="font-mono text-xs text-gray-400 block mb-4">{String(i + 1).padStart(2, '0')}</span>
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">{cap.title}</h3>
+              <p className="text-gray-500 leading-relaxed">{cap.body}</p>
+            </div>
+          ))}
+        </div>
+      </section>
 
-      {/* ── HERO ── */}
-      <section className="hero">
-        <HeroWebGLBackground />
-        <div className="hero-grid" aria-hidden="true" />
-        <div className="hero-inner">
-
-          <div className="hero-copy">
-            <nav className="breadcrumb">
-              <a href="/">Gobiya</a>
-              <i>›</i>
-              <a href="/performance/seo-discoverability-agency">SEO &amp; Discoverability</a>
-              <i>›</i>
-              <span>Local SEO Company Burbank</span>
-            </nav>
-
-            <h1>
-              <span className="line"><span>Local SEO Company</span></span>
-              <span className="line"><span className="accent">Burbank.</span></span>
-            </h1>
-
-            <p className="hero-sub">
-              Gobiya is a local SEO company serving Burbank, CA (ZIP 91501–91510), specializing in Google Map Pack placement, Google Business Profile authority, and citation consistency for businesses on San Fernando Boulevard and in the Burbank Media District. Burbank is one of the most media-dense, commercially active markets in the San Fernando Valley, and the businesses at the top of local search results did not get there by accident. We engineer the four signals that determine local rank: <a href="/insights/google-business-profile-optimization" style={{color:'var(--green)'}}>Google Business Profile</a> authority, NAP citation consistency, review velocity, and local schema. Our <a href="/performance/seo-discoverability-agency" style={{color:'var(--green)'}}>SEO &amp; Discoverability practice</a> has served the greater Los Angeles market since 2012, with deep experience in the Burbank 91501–91510 corridor.
+      {/* CHECKLIST SECTION */}
+      <section className="py-24 border-b border-gray-200 bg-white px-[5vw]">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16">
+          <div data-anim="up">
+            <span className="text-sm font-mono uppercase tracking-widest text-gray-400 block mb-3">Engagement Sequence</span>
+            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-gray-900 mb-6">
+              How We Run a Burbank Local SEO Engagement
+            </h2>
+            <p className="text-gray-500 mb-8 leading-relaxed">
+              The four-step sequence we execute for every Burbank client — from the initial GBP audit through full citation cleanup and schema deployment.
             </p>
 
-            <div className="hero-specs">
-              <div className="spec-item">
-                <span className="label">Market</span>
-                <span className="val">Burbank, CA 91501–91510</span>
-              </div>
-              <div className="spec-item">
-                <span className="label">Focus</span>
-                <span className="val">Map Pack, GBP &amp; Local Authority</span>
-              </div>
-              <div className="spec-item">
-                <span className="label">Category</span>
-                <span className="val">SEO &amp; Discoverability</span>
-              </div>
+            <div className="flex flex-col gap-2">
+              {AUDIT_STEPS.map((step, idx) => (
+                <button
+                  key={idx}
+                  type="button"
+                  className={`text-left px-6 py-4 border transition-colors flex justify-between items-center ${activeChecklist === idx ? 'border-black bg-black text-white' : 'border-gray-200 bg-white text-gray-900 hover:border-gray-400'}`}
+                  onClick={() => setActiveChecklist(idx)}
+                >
+                  <span className="font-medium text-sm">{step.title}</span>
+                  <svg viewBox="0 0 24 24" fill="none" width="14" height="14" className={activeChecklist === idx ? 'text-white' : 'text-gray-400'}>
+                    <path d="M9 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </button>
+              ))}
             </div>
           </div>
 
-          <div className="hero-widget" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-            <HeroQuickForm source="Local SEO Company Burbank" variant="light" accent="#2F5D50" heading="Request a Burbank local SEO quote" subheading="Tell us about your business and we’ll send a quick read." style={{ maxWidth: '100%' }} />
+          <div data-anim="up" className="flex flex-col justify-center">
+            <div className="border border-gray-200 bg-gray-50 flex flex-col h-full">
+              <div className="px-6 py-4 border-b border-gray-200 font-mono text-[10px] text-gray-500 uppercase tracking-widest bg-gray-100">
+                burbank-local-seo-protocol.log
+              </div>
+              <div className="p-8 lg:p-10 flex-grow flex flex-col justify-center">
+                <h4 className="text-2xl font-bold text-gray-900 mb-4">{AUDIT_STEPS[activeChecklist].title}</h4>
+                <p className="text-gray-600 font-medium mb-6">{AUDIT_STEPS[activeChecklist].short}</p>
+                <div className="w-full h-px bg-gray-200 mb-6"></div>
+                <p className="text-gray-500 leading-relaxed mb-8">{AUDIT_STEPS[activeChecklist].detail}</p>
+                <a href="/book" className="inline-flex items-center gap-2 font-mono text-[10px] uppercase tracking-widest text-black hover:text-gray-500 transition-colors mt-auto">
+                  Run this audit on your Burbank business
+                  <svg viewBox="0 0 24 24" fill="none" width="12" height="12">
+                    <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
           </div>
-
         </div>
       </section>
 
-      {/* ── WHY BURBANK IS A DISTINCT LOCAL SEO MARKET ── */}
-      <section className="capabilities-section" style={{ background: 'var(--paper-2)' }}>
-        <div className="onpage-container">
-          <div className="section-head">
-            <span className="mono-tag">Market Intelligence</span>
-            <h2>Why Burbank Local SEO Is a Different Problem</h2>
-            <p>
-              Burbank is not a generic suburban market. Its entertainment industry concentration, professional services density, and adjacency to major media studios create specific local search dynamics that most agencies simply do not understand.
+      {/* RATED CARDS SECTION */}
+      <section className="py-24 border-b border-gray-200 bg-gray-50 px-[5vw]">
+        <div className="mb-12">
+          <span className="text-sm font-mono uppercase tracking-widest text-gray-400 block mb-3">What "Top Rated" Actually Means</span>
+          <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-gray-900">
+            Top Rated Local SEO Company in Burbank: What to Look For
+          </h2>
+          <p className="text-gray-500 mt-4 max-w-3xl leading-relaxed">
+            The phrase gets used loosely. Here is what separates a genuinely top-rated local SEO company from one that just ranks for the term.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {RATED_CARDS.map((cap, i) => (
+            <div key={i} className="p-10 border border-gray-200 bg-white" data-anim="up">
+              <span className="font-mono text-xs text-gray-400 block mb-4">{cap.label}</span>
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">{cap.title}</h3>
+              <p className="text-gray-500 leading-relaxed">{cap.body}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* RELATED CLUSTER SECTION */}
+      <section className="py-24 border-b border-gray-200 bg-gray-50 px-[5vw]">
+        <div className="mb-12">
+          <span className="text-sm font-mono uppercase tracking-widest text-gray-400 block mb-3">SEO &amp; Discoverability Cluster</span>
+          <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-gray-900">
+            Related Guides &amp; Services
+          </h2>
+          <p className="text-gray-500 mt-4 max-w-3xl leading-relaxed">
+            Resources from our local SEO and discoverability practice that directly support Burbank businesses.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="p-8 border border-gray-200 bg-white" data-anim="up">
+            <span className="font-mono text-xs text-gray-400 block mb-4">Service</span>
+            <h3 className="text-xl font-semibold text-gray-900 mb-4"><a href="/performance/seo-discoverability-agency" className="hover:text-gray-600">SEO &amp; Discoverability Agency</a></h3>
+            <p className="text-gray-500 text-sm leading-relaxed mb-6">The full-stack parent service covering Technical SEO, local Map Pack engineering, GEO, and organic pipeline systems.</p>
+            <a href="/performance/seo-discoverability-agency" className="text-green-600 text-xs font-mono uppercase tracking-widest hover:text-green-700">View practice →</a>
+          </div>
+
+          <div className="p-8 border border-gray-200 bg-white" data-anim="up">
+            <span className="font-mono text-xs text-gray-400 block mb-4">Location</span>
+            <h3 className="text-xl font-semibold text-gray-900 mb-4"><a href="/local-seo-glendale" className="hover:text-gray-600">Local SEO Glendale</a></h3>
+            <p className="text-gray-500 text-sm leading-relaxed mb-6">Our Glendale local SEO practice covering the Brand Boulevard corridor, GBP optimization, and NAP consistency for businesses.</p>
+            <a href="/local-seo-glendale" className="text-green-600 text-xs font-mono uppercase tracking-widest hover:text-green-700">View Glendale →</a>
+          </div>
+
+          <div className="p-8 border border-gray-200 bg-white" data-anim="up">
+            <span className="font-mono text-xs text-gray-400 block mb-4">Guide</span>
+            <h3 className="text-xl font-semibold text-gray-900 mb-4"><a href="/insights/local-seo" className="hover:text-gray-600">Local SEO Strategy</a></h3>
+            <p className="text-gray-500 text-sm leading-relaxed mb-6">The complete local SEO playbook for 2026 — covering the full Map Pack ranking framework, review velocity benchmarks, and citation building hierarchy.</p>
+            <a href="/insights/local-seo" className="text-green-600 text-xs font-mono uppercase tracking-widest hover:text-green-700">Read guide →</a>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-24 px-[5vw] bg-white border-t border-gray-200">
+        <div className="max-w-4xl mx-auto p-12 bg-gray-50 border border-gray-200 flex flex-col md:flex-row gap-8 items-center" data-anim="up">
+          <div className="flex-1">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Start Your Burbank Local SEO Engagement</h2>
+            <p className="text-gray-600 leading-relaxed text-sm">
+              We run a 15-minute live local SEO session for Burbank businesses — GBP audit, NAP consistency check, Map Pack gap analysis, and review velocity benchmark against your top three local competitors. No slides, no pitch. Just a direct read on where your business stands in local search and exactly what it would take to reach position one in the Burbank Map Pack.
             </p>
           </div>
-
-          <div className="capabilities-grid">
-            <div className="grid-card">
-              <div className="card-num">Media District</div>
-              <h3>The Entertainment Capital of Local Search</h3>
-              <p>
-                Burbank hosts Warner Bros., Disney, NBCUniversal, and dozens of supporting production companies, talent agencies, and media services firms. This concentration creates a unique local search environment: buyers are sophisticated, searches are high-intent, and competition for the Map Pack in business services, legal, financial, and medical categories is genuinely fierce. Winning a top-three Map Pack position in Burbank requires more than a complete GBP — it requires a higher review score, stronger citation authority, and cleaner entity data than every competitor within your serving radius.
-              </p>
-            </div>
-
-            <div className="grid-card">
-              <div className="card-num">San Fernando Blvd</div>
-              <h3>A Commercial Corridor With Dense Local Competition</h3>
-              <p>
-                San Fernando Boulevard from downtown Burbank through the Media District is one of the highest-density commercial corridors in the San Fernando Valley. Medical, dental, legal, financial, and hospitality businesses compete for the same local intent queries — and Google's Map Pack only shows three. In this environment, the businesses that invest in systematic local SEO engineering hold the top positions; the ones that treat GBP as a one-time setup fall off the pack entirely. For background on how this competitive dynamic plays out, see our <a href="/insights/local-seo" style={{color:'var(--green)'}}>2026 local SEO playbook</a>.
-              </p>
-            </div>
-
-            <div className="grid-card">
-              <div className="card-num">Adjacent Markets</div>
-              <h3>Toluca Lake, Studio City, and Glendale Overlap Burbank Searches</h3>
-              <p>
-                Burbank's service area naturally extends into Toluca Lake, Studio City, North Hollywood, and Glendale. Buyers in those communities search for Burbank businesses regularly — and Burbank businesses that structure their service area data correctly in Google Business Profile and schema markup capture that adjacent demand. Incorrectly configured service areas silently exclude thousands of relevant monthly searches. We define these boundaries with precision. For the technical side of multi-market coverage, see our <a href="/insights/multi-location-seo-website-structure" style={{color:'var(--green)'}}>multi-location SEO structure guide</a>.
-              </p>
-            </div>
-
-            <div className="grid-card">
-              <div className="card-num">Results</div>
-              <h3>280% Map Pack Call Growth for a Burbank Services Business</h3>
-              <p>
-                A Burbank professional services client saw a 280% increase in Map Pack phone calls and consultation requests after we restructured their local entity graph, corrected NAP across 40+ directory sources, and secured local citations from Burbank-specific directories and the Burbank Chamber of Commerce. The full program ran 90 days. The competitive gap they closed had been costing them an estimated 12–18 qualified inquiries every month — the difference between treating local SEO as a setup task and engineering it as a compounding system. That is the standard we work to.
-              </p>
-            </div>
+          <div className="flex flex-col items-center gap-4">
+            <a href="/book" className="px-8 py-4 bg-black text-white text-sm font-semibold tracking-wide uppercase hover:bg-gray-800 transition-colors" id="burbank-footer-book-cta">
+              Book Burbank audit
+            </a>
+            <span className="text-[10px] uppercase tracking-widest text-gray-400 font-mono">15-min session · No commitment</span>
           </div>
         </div>
       </section>
-
-      {/* ── CAPABILITIES ── */}
-      <section className="capabilities-section">
-        <div className="onpage-container">
-          <div className="section-head">
-            <span className="mono-tag">Service Architecture</span>
-            <h2>Local SEO Services for Burbank Businesses</h2>
-            <p>
-              The four-layer local SEO system we deploy for every Burbank engagement — engineered around the ranking signals that actually determine Map Pack position, not vanity metrics.
-            </p>
-          </div>
-
-          <div className="capabilities-grid">
-            <div className="grid-card">
-              <div className="card-num">01</div>
-              <h3>Google Business Profile Optimization</h3>
-              <p>
-                GBP is the single highest-weight local ranking signal — and the majority of Burbank businesses have critical errors in their profiles that suppress Map Pack visibility without any visible warning. Wrong primary category. Missing service items. Service areas that exclude Toluca Lake, Studio City, and North Hollywood. Outdated hours. Zero GBP post activity in the last 90 days. We treat GBP as a living ranking asset and manage it actively. Read our full guide to <a href="/insights/google-business-profile-optimization" style={{color:'var(--green)'}}>Google Business Profile optimization</a>.
-              </p>
-            </div>
-
-            <div className="grid-card">
-              <div className="card-num">02</div>
-              <h3>Citation Building &amp; NAP Consistency</h3>
-              <p>
-                Google cross-references your business data across dozens of authoritative directories to verify your entity. A single character difference in your business name or a transposed phone digit creates a confidence gap that lowers local ranking. We audit and correct your NAP signal across 40+ sources — Yelp, Apple Maps, Bing Places, Facebook, YellowPages, Foursquare, and vertical-specific directories relevant to Burbank's industry mix. For the foundational theory, see our <a href="/insights/local-seo-explained" style={{color:'var(--green)'}}>local SEO explained guide</a>.
-              </p>
-            </div>
-
-            <div className="grid-card">
-              <div className="card-num">03</div>
-              <h3>Review Generation &amp; Velocity Management</h3>
-              <p>
-                In competitive Burbank categories — dental, medical, legal, financial services, entertainment support — the businesses ranking in positions 1–3 of the Map Pack maintain a steady review velocity of 4–8 new reviews per month, not just a high total count. Google's algorithm weights recency heavily: a business with 50 reviews and 6 in the last 30 days consistently outranks one with 220 reviews and none in six months. We build systems that generate reviews from real customers at the right cadence, within Google's policy guidelines, as a permanent operational layer.
-              </p>
-            </div>
-
-            <div className="grid-card">
-              <div className="card-num">04</div>
-              <h3>Local Schema &amp; Burbank Entity Mapping</h3>
-              <p>
-                On-page LocalBusiness schema with Burbank coordinates, service areas, and opening hours is the technical foundation that connects your website to your GBP entity in Google's local index. Without it, your site and your GBP listing may function as separate, weakly connected signals — reducing Google's confidence in both. We inject server-rendered JSON-LD that ties them together as a single verified entity, the same approach that powers visibility in the Map Pack and in AI assistant responses for local Burbank queries. Our broader <a href="/performance/seo-discoverability-agency" style={{color:'var(--green)'}}>SEO &amp; Discoverability system</a> covers both layers.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <ContentCta headline="Ready to dominate local search?" sub="Our team responds within one business day." accent="#2F5D50" background="var(--paper)" />
-
-      {/* ── INTERACTIVE CHECKLIST ── */}
-      <section className="checklist-section">
-        <div className="onpage-container">
-          <div className="checklist-split">
-            <div className="checklist-left">
-              <span className="mono-tag">Engagement Sequence</span>
-              <h2>How We Run a Burbank Local SEO Engagement</h2>
-              <p>
-                The four-step sequence we execute for every Burbank client — from the initial GBP audit through full citation cleanup and schema deployment.
-              </p>
-
-              <div className="checklist-buttons">
-                {AUDIT_STEPS.map((step, idx) => (
-                  <button
-                    key={idx}
-                    type="button"
-                    id={`burbank-audit-step-${idx}`}
-                    className={`checklist-btn ${activeChecklist === idx ? 'active' : ''}`}
-                    onClick={() => setActiveChecklist(idx)}
-                  >
-                    <span>{step.title}</span>
-                    <svg viewBox="0 0 24 24" fill="none" width="14" height="14">
-                      <path d="M9 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            <div className="checklist-right">
-              <div className="checklist-card">
-                <div className="card-head">
-                  <span>burbank-local-seo-protocol.log</span>
-                </div>
-                <div className="card-body">
-                  <h4>{AUDIT_STEPS[activeChecklist].title}</h4>
-                  <p className="short-desc">{AUDIT_STEPS[activeChecklist].short}</p>
-                  <hr />
-                  <p className="long-desc">{AUDIT_STEPS[activeChecklist].detail}</p>
-                  <a href="/book" className="card-cta" id="burbank-checklist-book-cta">
-                    Run this audit on your Burbank business
-                    <svg viewBox="0 0 24 24" fill="none" width="12" height="12">
-                      <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-                    </svg>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <ContentCta headline="Ready to dominate local search?" sub="Our team responds within one business day." accent="#2F5D50" background="var(--paper)" />
-
-      {/* ── TOP RATED SECTION ── */}
-      <section className="capabilities-section" style={{ background: 'var(--paper-2)' }}>
-        <div className="onpage-container">
-          <div className="section-head">
-            <span className="mono-tag">What "Top Rated" Actually Means</span>
-            <h2>Top Rated Local SEO Company in Burbank: What to Look For</h2>
-            <p>
-              The phrase gets used loosely. Here is what separates a genuinely top-rated local SEO company from one that just ranks for the term.
-            </p>
-          </div>
-
-          <div className="capabilities-grid">
-            <div className="grid-card">
-              <div className="card-num">Engineering</div>
-              <h3>Technical Depth Over Dashboard Access</h3>
-              <p>
-                Top-rated local SEO in Burbank means working at the technical layer of Google's algorithm — not just logging into your GBP and making surface-level edits. The agencies that consistently produce Map Pack results for competitive Burbank categories do GBP data layer work, inject server-rendered schema, and correct entity graph signals at the code level. Agencies that hand you a login and a monthly rank report are managing, not engineering. There is a meaningful performance difference between the two approaches in a market as competitive as Burbank.
-              </p>
-            </div>
-
-            <div className="grid-card">
-              <div className="card-num">Transparency</div>
-              <h3>Reporting Tied to Map Pack Position and Calls</h3>
-              <p>
-                A top-rated local SEO company reports on the metrics that matter to a Burbank business owner: Map Pack position for target queries, GBP call volume, GBP direction requests, and review velocity benchmarks against your direct competitors. If your monthly report is full of impressions, domain authority scores, and keyword rankings without Map Pack call data, the program is measuring the wrong thing. We report on the numbers tied directly to revenue — call volume, appointment requests, and local query rankings in the Burbank 91501–91510 market.
-              </p>
-            </div>
-
-            <div className="grid-card">
-              <div className="card-num">Local Knowledge</div>
-              <h3>Burbank Market Fluency, Not Generic Templates</h3>
-              <p>
-                The Burbank market has specific competitive dynamics that do not show up in generic local SEO playbooks. The media industry concentration creates unusual competitor profiles. The adjacency to Glendale and North Hollywood means service area configuration matters more than in most markets. The professional services density on San Fernando Boulevard creates genuinely competitive Map Pack environments that require above-average review velocity and citation authority. We work in this market with enough regularity to know those dynamics — and we factor them into every engagement from day one.
-              </p>
-            </div>
-
-            <div className="grid-card">
-              <div className="card-num">Accountability</div>
-              <h3>No 12-Month Contracts Built on False Promise</h3>
-              <p>
-                Many agencies in the Burbank market lock clients into 12-month contracts before delivering any meaningful work, then rely on inertia to keep the engagement alive. We operate on shorter initial engagement windows with clear deliverables — GBP audit and correction, NAP cleanup across 40+ sources, review velocity system deployment, and schema injection — before asking for a long-term commitment. Our <a href="/approach" style={{color:'var(--green)'}}>approach to client engagements</a> is built on earned trust, not contractual lock-in. If the work does not move your Map Pack position in 60–90 days, we want to know why.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <ContentCta headline="Let's map out your local rankings." sub="Start with a free site audit — no commitment, 24-hour response." accent="#2F5D50" background="var(--paper-2)" />
-
-      {/* ── FAQ ── */}
-      <section className="faq-section">
-        <div className="onpage-container">
-          <div className="section-head">
-            <span className="mono-tag">Common questions</span>
-            <h2>Local SEO Company Burbank: Common Questions Answered</h2>
-            <p>The questions Burbank business owners ask before starting a local SEO engagement — answered directly, without the agency spin.</p>
-          </div>
-
-          <div className="faq-grid">
-            <div className="faq-item">
-              <h2 style={{fontSize:'1.1rem', fontWeight:600, fontFamily:'var(--font-display)', lineHeight:1.4, color:'var(--ink)', marginBottom:0}}>We show up in Google Search for our business name but we are barely visible on Google Maps for any category search. Why would those two perform so differently?</h2>
-              <p>
-                Branded search and Map Pack visibility are driven by completely different signals. Branded rankings come from your website's relevance and link authority for your business name — once someone knows you exist and searches directly, that is easy to win. Map Pack visibility is driven by three signals: Google Business Profile signals (category accuracy, completeness, posting activity), proximity and service area configuration, and entity authority (NAP consistency across directories, review velocity, local link signals). A business can rank number one for its own name and be completely absent from the Map Pack for "dentist near me" or "attorney Burbank" because those ranking systems are independent. The Map Pack fix requires GBP engineering, not website SEO.
-              </p>
-            </div>
-
-            <div className="faq-item">
-              <h2 style={{fontSize:'1.1rem', fontWeight:600, fontFamily:'var(--font-display)', lineHeight:1.4, color:'var(--ink)', marginBottom:0}}>Our Google Business Profile was suspended with no warning. What is the first thing we should do and how long does reinstatement take?</h2>
-              <p>
-                Do not create a new listing — that almost always makes reinstatement harder. The first step is diagnosing the suspension type: if it is a soft suspension (profile still visible but unverifiable), a re-verification often resolves it. If it is a hard suspension (listing completely removed), you need to file a Business Reinstatement Request with supporting documentation — government-issued business license, utility bill confirming address, physical photos of the business location matching the listed address. Suspensions caused by policy violations (keyword stuffing in business name, wrong category, virtual office address for a service-area business) require correcting the violation before submitting reinstatement. Timeline: soft suspensions resolve in 3 to 7 business days; hard suspensions typically take 2 to 4 weeks. For existing clients we handle the complete reinstatement process.
-              </p>
-            </div>
-
-            <div className="faq-item">
-              <h2 style={{fontSize:'1.1rem', fontWeight:600, fontFamily:'var(--font-display)', lineHeight:1.4, color:'var(--ink)', marginBottom:0}}>We have more five-star reviews than every competitor in our Burbank category, but we still rank below them in Google Maps. How is that possible?</h2>
-              <p>
-                Review count is one signal among many in the Map Pack algorithm — and often not the most decisive one. The businesses outranking you with fewer reviews are almost certainly winning on GBP category accuracy (the right primary category creates a massive relevance advantage), service area configuration (if your area excludes Toluca Lake, Studio City, or North Hollywood, you are invisible to nearby searchers), NAP citation consistency (if your business name or address appears differently across Yelp, Apple Maps, and Bing Places, Google entity confidence drops), or local link authority. Review velocity also matters — 200 total reviews with none in the last 90 days loses to 40 reviews with 6 in the last 30 days. A competitive audit usually surfaces the specific gap within the first session.
-              </p>
-            </div>
-
-            <div className="faq-item">
-              <h2 style={{fontSize:'1.1rem', fontWeight:600, fontFamily:'var(--font-display)', lineHeight:1.4, color:'var(--ink)', marginBottom:0}}>We hired a local SEO agency in Burbank eight months ago and our Map Pack position has not moved. How do we tell if the work is actually happening?</h2>
-              <p>
-                Ask for GBP data. A legitimate local SEO campaign produces measurable GBP signal movement: the number of GBP profile actions (calls, direction requests, website clicks) should increase month over month. If your agency cannot show you that data, they are not working at the GBP layer. The second indicator is citation changes — your agency should be able to show you a before-and-after citation audit documenting what was corrected across which directories. Third, review velocity: if your review count has not increased since the engagement started, the reputation system either was not built or is not working. If none of those three things have moved in eight months, the engagement is not producing results and you should ask for a detailed accounting of what work was done. See the <a href="/performance/seo-discoverability-agency" style={{color:'var(--green)'}}>SEO &amp; Discoverability practice overview</a> for what a complete engagement should deliver.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── RELATED CLUSTER ── */}
-      <section className="capabilities-section" style={{ borderBottom: '1px solid var(--line)', background: 'var(--paper-2)' }}>
-        <div className="onpage-container">
-          <div className="section-head">
-            <span className="mono-tag">SEO &amp; Discoverability Cluster</span>
-            <h2>Related Guides &amp; Services</h2>
-            <p>Resources from our local SEO and discoverability practice that directly support Burbank businesses.</p>
-          </div>
-
-          <div className="capabilities-grid">
-            <div className="grid-card">
-              <div className="card-num">Service</div>
-              <h3><a href="/performance/seo-discoverability-agency" style={{color:'inherit',textDecoration:'none'}}>SEO &amp; Discoverability Agency</a></h3>
-              <p>The full-stack parent service covering Technical SEO, local Map Pack engineering, GEO, and organic pipeline systems. Burbank local SEO is one specialized application of this broader practice.</p>
-              <a href="/performance/seo-discoverability-agency" style={{color:'var(--green)',fontSize:'0.85rem',fontFamily:'var(--font-mono)',letterSpacing:'0.06em',textTransform:'uppercase',marginTop:'1rem',display:'inline-flex',alignItems:'center',gap:'0.4rem'}}>View practice →</a>
-            </div>
-
-            <div className="grid-card">
-              <div className="card-num">Location</div>
-              <h3><a href="/local-seo-glendale" style={{color:'inherit',textDecoration:'none'}}>Local SEO Glendale</a></h3>
-              <p>Our Glendale local SEO practice covering the Brand Boulevard corridor, GBP optimization, and NAP consistency for businesses in the 91201–91210 market — Burbank's immediate neighbor.</p>
-              <a href="/local-seo-glendale" style={{color:'var(--green)',fontSize:'0.85rem',fontFamily:'var(--font-mono)',letterSpacing:'0.06em',textTransform:'uppercase',marginTop:'1rem',display:'inline-flex',alignItems:'center',gap:'0.4rem'}}>View Glendale →</a>
-            </div>
-
-            <div className="grid-card">
-              <div className="card-num">Guide</div>
-              <h3><a href="/insights/google-business-profile-optimization" style={{color:'inherit',textDecoration:'none'}}>Google Business Profile Optimization</a></h3>
-              <p>The forensic GBP audit checklist covering profile recovery, suspension appeals, category correction, service area configuration, and the review signals that drive Map Pack rank.</p>
-              <a href="/insights/google-business-profile-optimization" style={{color:'var(--green)',fontSize:'0.85rem',fontFamily:'var(--font-mono)',letterSpacing:'0.06em',textTransform:'uppercase',marginTop:'1rem',display:'inline-flex',alignItems:'center',gap:'0.4rem'}}>Read guide →</a>
-            </div>
-
-            <div className="grid-card">
-              <div className="card-num">Guide</div>
-              <h3><a href="/insights/local-seo" style={{color:'inherit',textDecoration:'none'}}>Local SEO Strategy: 2026 Map Pack Playbook</a></h3>
-              <p>The complete local SEO playbook for 2026 — covering the full Map Pack ranking framework, review velocity benchmarks, citation building hierarchy, and entity graph construction for competitive LA markets.</p>
-              <a href="/insights/local-seo" style={{color:'var(--green)',fontSize:'0.85rem',fontFamily:'var(--font-mono)',letterSpacing:'0.06em',textTransform:'uppercase',marginTop:'1rem',display:'inline-flex',alignItems:'center',gap:'0.4rem'}}>Read guide →</a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── CTA ── */}
-      <section className="cta-section">
-        <div className="onpage-container">
-          <div className="cta-card">
-            <div className="cta-left">
-              <h2>Start Your Burbank Local SEO Engagement</h2>
-              <p>
-                We run a 15-minute live local SEO session for Burbank businesses — GBP audit, NAP consistency check, Map Pack gap analysis, and review velocity benchmark against your top three local competitors. No slides, no pitch. Just a direct read on where your business stands in local search and exactly what it would take to reach position one in the Burbank Map Pack.
-              </p>
-            </div>
-            <div className="cta-right">
-              <a href="/book" className="btn btn-primary" id="burbank-footer-book-cta">Book Burbank audit</a>
-              <span className="subtext">15-min live session · Burbank, CA · No commitment</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <SiteFooter />
-    </div>
+    </LocalServicePageTemplate>
   );
 }

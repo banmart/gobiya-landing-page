@@ -2,14 +2,26 @@ import React, { useRef, useState, MouseEvent as ReactMouseEvent } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { ARTICLE_META } from '../lib/articlesMeta';
 
-const LatestInsights: React.FC = () => {
+interface LatestInsightsProps {
+  relevantSlugs?: string[];
+}
+
+const LatestInsights: React.FC<LatestInsightsProps> = ({ relevantSlugs }) => {
   const sliderRef = useRef<HTMLDivElement>(null);
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(0);
   const dragDistance = useRef(0);
 
-  const latestArticles = ARTICLE_META.slice(0, 8);
+  let displayArticles = [...ARTICLE_META];
+  if (relevantSlugs && relevantSlugs.length > 0) {
+    const relevant = ARTICLE_META.filter(a => relevantSlugs.includes(a.slug));
+    relevant.sort((a, b) => relevantSlugs.indexOf(a.slug) - relevantSlugs.indexOf(b.slug));
+    const remaining = ARTICLE_META.filter(a => !relevantSlugs.includes(a.slug));
+    displayArticles = [...relevant, ...remaining];
+  }
+
+  const latestArticles = displayArticles.slice(0, 8);
 
   const handleMouseDown = (e: ReactMouseEvent<HTMLDivElement>) => {
     if (!sliderRef.current) return;
