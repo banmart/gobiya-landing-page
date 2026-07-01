@@ -138,7 +138,7 @@ export default function LocalSeoGlendalePage() {
     <LocalServicePageTemplate
       schema={SCHEMA}
       breadcrumb="Services / Glendale"
-      heroTitle="Local SEO Glendale."
+      heroTitle="Local SEO Glendale: Map Pack Dominance on Brand Boulevard"
       heroSubtitle="Gobiya has served Glendale businesses since 2012. We engineer Google Business Profile optimization, Map Pack dominance, citation authority, and review velocity systems for local businesses."
       tags={[
         'Local SEO',

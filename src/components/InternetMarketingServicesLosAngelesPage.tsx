@@ -124,7 +124,7 @@ export default function InternetMarketingServicesLosAngelesPage() {
     <LocalServicePageTemplate
       schema={SCHEMA}
       breadcrumb="Services / Los Angeles"
-      heroTitle="Internet Marketing Services Los Angeles."
+      heroTitle="Internet Marketing Services Los Angeles: Visibility Turned Into Pipeline"
       heroSubtitle="Gobiya is a full-service internet marketing agency based in Los Angeles, CA, founded in 2012, providing SEO, Google Ads management, website development, and CRM pipeline automation for B2B and professional services businesses."
       tags={[
         'Digital Marketing',

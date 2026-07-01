@@ -137,7 +137,7 @@ export default function GlendaleSeoPage() {
     <LocalServicePageTemplate
       schema={SCHEMA}
       breadcrumb="Services / Glendale"
-      heroTitle="Glendale SEO Services."
+      heroTitle="Glendale SEO Services: Map Pack Dominance & Page-One Rankings"
       heroSubtitle="Gobiya is an SEO agency serving Glendale, CA (ZIP 91201–91210) since 2012. Glendale SEO is the work of engineering your business to rank on Google — in organic listings, local Map Pack results, and AI-generated answers — for the queries your buyers in the 91201–91210 market actually type. Glendale is one of Los Angeles County's most commercially contested markets: Brand Boulevard and the Americana corridor drive thousands of high-intent searches every day, and the businesses at the top of those results built their position deliberately. We run technical SEO, local optimization, content architecture, and authority building as a compounding system."
       tags={[
         'Local SEO',

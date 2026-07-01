@@ -84,8 +84,8 @@ export default function ServiceSubpage({ path, isFanOut, category, slug }: Servi
       
       
       'seo-web-copywriting-agency': {
-        pageTitle: 'SEO & web copywriting',
-        pageSubheading: 'We write words that engage human hearts and rank in search algorithms.',
+        pageTitle: 'SEO & web copywriting: ranked by algorithms, read by humans',
+        pageSubheading: 'Pages that never name the query they answer never rank for it. We map every page to a buyer query and write copy that ranks on Google and converts human readers.',
         overlaySubtitle: 'We translate ideas into high-impact campaigns',
         overlayTitle: 'Words are the code that programs human decisions',
         overlayP1: 'At Gobiya, our copywriting blends semantic SEO optimization with high-conversion storytelling.',
@@ -116,8 +116,8 @@ export default function ServiceSubpage({ path, isFanOut, category, slug }: Servi
       
       
       'seo-discoverability-agency': {
-        pageTitle: 'SEO & discoverability',
-        pageSubheading: 'We align technical structures to place your business at the top of search intent.',
+        pageTitle: 'SEO & discoverability: key pages indexed, ranked, and cited',
+        pageSubheading: 'A page Google never indexes earns nothing. We resolve crawl leaks and index blocks, then align your technical structure to the top of search intent.',
         overlaySubtitle: 'We engineer systems for measurable outcomes',
         overlayTitle: 'Visibility is the foundation of digital pipeline',
         overlayP1: 'We optimize every technical layer of your platform, from Core Web Vitals to semantic structured data.',
@@ -146,8 +146,8 @@ export default function ServiceSubpage({ path, isFanOut, category, slug }: Servi
         ]
       },
       'web-development-agency': {
-        pageTitle: 'Web & IT app development',
-        pageSubheading: 'We build custom, high-speed digital infrastructure that scales.',
+        pageTitle: 'Web & IT app development: sub-second loads, zero lock-in',
+        pageSubheading: 'Slow, template-built sites lose rankings and leads to faster competitors. We build custom, high-speed digital infrastructure that scales.',
         overlaySubtitle: 'We engineer systems for measurable outcomes',
         overlayTitle: 'Speed and security are not features; they are trust metrics',
         overlayP1: 'We build custom React, Vite, and Next.js applications designed for maximum performance, clean code architecture, and seamless CRM and API integration.',
@@ -176,8 +176,8 @@ export default function ServiceSubpage({ path, isFanOut, category, slug }: Servi
         ]
       },
       'custom-web-app-development-agency': {
-        pageTitle: 'Custom web app development',
-        pageSubheading: 'We build bespoke applications engineered for speed, clean architecture, and scale.',
+        pageTitle: 'Custom web app development: speed, clean architecture, scale',
+        pageSubheading: 'Off-the-shelf platforms cap what your product can do. We build bespoke applications engineered for speed, clean architecture, and scale.',
         overlaySubtitle: 'We engineer systems for measurable outcomes',
         overlayTitle: 'A custom application is an asset — a generic one is a liability',
         overlayP1: 'Off-the-shelf platforms trade flexibility for vendor dependency. We build custom React, Next.js, and Vite applications that your team owns, controls, and can evolve without permission from a SaaS provider.',
@@ -208,8 +208,8 @@ export default function ServiceSubpage({ path, isFanOut, category, slug }: Servi
       
       
       'ecommerce-web-development-agency': {
-        pageTitle: 'E-commerce development',
-        pageSubheading: 'We build high-performance online stores engineered to convert at scale.',
+        pageTitle: 'E-commerce development: stores engineered to convert at scale',
+        pageSubheading: 'Slow product pages and clunky checkouts leak revenue on every visit. We build high-performance online stores engineered to convert at scale.',
         overlaySubtitle: 'We engineer systems for measurable outcomes',
         overlayTitle: 'E-commerce performance is a revenue equation, not a design choice',
         overlayP1: 'Page speed, checkout friction, and product page architecture each have a measurable, documented impact on e-commerce conversion rates.',
@@ -238,8 +238,8 @@ export default function ServiceSubpage({ path, isFanOut, category, slug }: Servi
         ]
       },
       'google-ads-ppc-strategy-agency': {
-        pageTitle: 'Google Ads & PPC strategy',
-        pageSubheading: 'We execute hyper-targeted paid acquisition campaigns that return ROI.',
+        pageTitle: 'Google Ads & PPC strategy: lower CPL, higher ROAS',
+        pageSubheading: 'Most ad accounts pay for clicks that never had a chance of converting. We execute hyper-targeted paid acquisition built around cost per qualified lead.',
         overlaySubtitle: 'We engineer systems for measurable outcomes',
         overlayTitle: 'Spend is only valuable when mapped to conversion pipelines',
         overlayP1: 'We structure search, display, and retargeting ads around customer acquisition costs.',
@@ -268,8 +268,8 @@ export default function ServiceSubpage({ path, isFanOut, category, slug }: Servi
         ]
       },
       'google-search-ads-agency': {
-        pageTitle: 'Google Search Ads management',
-        pageSubheading: 'Keyword-level campaign management built around intent, not impression share.',
+        pageTitle: 'Google Search Ads management: qualified leads, not wasted clicks',
+        pageSubheading: 'Broad match keywords quietly eat ad budgets. Keyword-level campaign management built around intent, not impression share.',
         overlaySubtitle: 'Paid search done right',
         overlayTitle: 'Intent-matched search campaigns that convert, not just click',
         overlayP1: 'Google Search Ads work when campaigns are structured around buyer intent — not keyword volume. We build campaigns around what a ready-to-buy searcher actually types.',
@@ -298,8 +298,8 @@ export default function ServiceSubpage({ path, isFanOut, category, slug }: Servi
         ]
       },
       'google-shopping-ads-agency': {
-        pageTitle: 'Google Shopping Ads management',
-        pageSubheading: 'Product feed optimization and Shopping campaign management that drives purchase-intent traffic.',
+        pageTitle: 'Google Shopping Ads management: purchase-intent traffic',
+        pageSubheading: 'A weak product feed buries good products below competitors. Feed optimization and Shopping campaign management that drives purchase-ready traffic.',
         overlaySubtitle: 'E-commerce paid acquisition',
         overlayTitle: 'Shopping Ads that win on product relevance, not bid alone',
         overlayP1: 'Google Shopping performance is determined 70% by product feed quality and 30% by bid strategy. Most agencies focus on bids. We start with the feed.',
@@ -328,8 +328,8 @@ export default function ServiceSubpage({ path, isFanOut, category, slug }: Servi
         ]
       },
       'remarketing-display-ads-agency': {
-        pageTitle: 'Remarketing & Display Ads management',
-        pageSubheading: 'Audience-based retargeting and display campaigns that recapture high-intent visitors.',
+        pageTitle: 'Remarketing & Display Ads management: lost visitors recaptured',
+        pageSubheading: 'Most first visits end without a lead — and most brands let those buyers go. Audience-based retargeting and display campaigns that recapture high-intent visitors.',
         overlaySubtitle: 'Retargeting & display',
         overlayTitle: 'Recapture the audience that already showed intent',
         overlayP1: 'Remarketing converts visitors who already know you. We build audience segments based on behavior — what pages were viewed, how far visitors got in the funnel, and how recently they visited.',
@@ -358,8 +358,8 @@ export default function ServiceSubpage({ path, isFanOut, category, slug }: Servi
         ]
       },
       'youtube-advertising-agency': {
-        pageTitle: 'YouTube Advertising management',
-        pageSubheading: 'Video ad campaigns across YouTube engineered for awareness, consideration, and direct response.',
+        pageTitle: 'YouTube Advertising management: awareness turned into response',
+        pageSubheading: 'Video budgets disappear fast without a funnel behind them. Campaigns across YouTube engineered for awareness, consideration, and direct response.',
         overlaySubtitle: 'YouTube ad campaigns',
         overlayTitle: 'YouTube advertising built for the full buyer journey, not just views',
         overlayP1: 'YouTube reaches buyers at every stage — in-stream ads for awareness, discovery ads for consideration, and skippable ads with direct response calls to action for conversion.',
@@ -388,8 +388,8 @@ export default function ServiceSubpage({ path, isFanOut, category, slug }: Servi
         ]
       },
       'cro-ux-analysis-agency': {
-        pageTitle: 'CRO & UX analysis',
-        pageSubheading: 'We analyze user behavior and redesign paths to eliminate friction.',
+        pageTitle: 'CRO & UX analysis: friction removed, conversions lifted',
+        pageSubheading: 'Traffic that never converts is a design problem, not a traffic problem. We analyze user behavior and redesign paths to eliminate friction.',
         overlaySubtitle: 'We engineer systems for measurable outcomes',
         overlayTitle: 'Every pixel is a decision point for your visitor',
         overlayP1: 'Conversion rate optimization is a science. We run heatmaps, user tests, and data analyses.',
@@ -418,8 +418,8 @@ export default function ServiceSubpage({ path, isFanOut, category, slug }: Servi
         ]
       },
       'ai-llms-business-agency': {
-        pageTitle: 'AI & LLM systems consulting',
-        pageSubheading: 'We deploy secure, custom AI agents and models to automate office tasks.',
+        pageTitle: 'AI & LLM systems consulting: office workflows automated',
+        pageSubheading: 'Manual data entry and fragmented tools drain hours from every team. We deploy secure, custom AI agents and models to automate office tasks.',
         overlaySubtitle: 'We engineer systems for measurable outcomes',
         overlayTitle: 'Intelligence is the ultimate leverage for lean teams',
         overlayP1: 'We build custom LLM workflows, automated doc parsing, and agentic integrations.',
@@ -448,8 +448,8 @@ export default function ServiceSubpage({ path, isFanOut, category, slug }: Servi
         ]
       },
       'authority-building-agency': {
-        pageTitle: 'Authority & link building',
-        pageSubheading: 'We acquire high-authority references that build domain ranking power.',
+        pageTitle: 'Authority & link building: domain trust that compounds',
+        pageSubheading: 'Without authority signals, even great content stalls on page two. We acquire high-authority references that build domain ranking power.',
         overlaySubtitle: 'We build authority and brand reputation',
         overlayTitle: 'In the search index, links are votes of digital trust',
         overlayP1: 'We build authority through clean, white-hat outreach and content placement.',
@@ -478,8 +478,8 @@ export default function ServiceSubpage({ path, isFanOut, category, slug }: Servi
         ]
       },
       'digital-pr-media-outreach-agency': {
-        pageTitle: 'Digital PR & media outreach',
-        pageSubheading: 'We coordinate brand storytelling to secure editorial coverage.',
+        pageTitle: 'Digital PR & media outreach: earned coverage, lasting authority',
+        pageSubheading: 'Brands nobody writes about lose the citation race in Google and AI answers. We coordinate brand storytelling to secure editorial coverage.',
         overlaySubtitle: 'We build authority and brand reputation',
         overlayTitle: 'Earned media is the most credible signal you can produce',
         overlayP1: 'We design research-backed campaigns, local studies, and PR assets that journalists actively want to quote.',
@@ -511,24 +511,24 @@ export default function ServiceSubpage({ path, isFanOut, category, slug }: Servi
       
       
       'blockchain-web3-development-agency': {
-        pageTitle: 'Blockchain & Web3 development',
-        pageSubheading: 'We develop secure, smart-contract-driven decentralized applications.',
+        pageTitle: 'Blockchain & Web3 development: secure contracts, live dApps',
+        pageSubheading: 'One contract flaw can sink a protocol and its community. We develop secure, smart-contract-driven decentralized applications.',
         overlaySubtitle: 'We engineer systems for measurable outcomes',
         overlayTitle: 'Decentralization is the next wave of database architecture',
         overlayP1: 'We build secure, audited smart contracts, custom tokens, and dApp frontends.',
         overlayP2: 'We leverage distributed ledger technology to create trusted peer-to-peer applications.'
       },
       'ai-prospect-scraper-agency': {
-        pageTitle: 'AI prospect scraper agency',
-        pageSubheading: 'We build automated lead scraping pipelines powered by agentic search.',
+        pageTitle: 'AI prospect scraper: CRM-ready leads on autopilot',
+        pageSubheading: 'Manual prospecting cannot keep a pipeline full. We build automated lead scraping pipelines powered by agentic search.',
         overlaySubtitle: 'We engineer systems for measurable outcomes',
         overlayTitle: 'The best pipeline is fueled by real-time target data',
         overlayP1: 'We build intelligent scraping pipelines that identify, extract, and clean high-value target accounts.',
         overlayP2: 'We route qualified leads directly into your CRM.'
       },
       'native-crm-agency': {
-        pageTitle: 'Native CRM integration',
-        pageSubheading: 'We synchronize sales data and automate communication workflows.',
+        pageTitle: 'Native CRM integration: your pipeline data, owned',
+        pageSubheading: 'Monthly SaaS fees rent you access to your own customers. We synchronize sales data and automate communication workflows inside your codebase.',
         overlaySubtitle: 'We engineer systems for measurable outcomes',
         overlayTitle: 'A unified database is the foundation of sales velocity',
         overlayP1: 'We connect your front-of-house forms, chats, and lead sources directly to your CRM.',
@@ -537,8 +537,8 @@ export default function ServiceSubpage({ path, isFanOut, category, slug }: Servi
 
       // ── SEO & Web Copywriting fan-out cluster ──────────────────────
       'landing-page-copywriting-agency': {
-        pageTitle: 'Landing page copywriting',
-        pageSubheading: 'High-conversion landing page copy engineered for the page that decides the sale.',
+        pageTitle: 'Landing page copywriting: clicks converted into leads',
+        pageSubheading: 'Most landing pages lose the sale in the first scroll. High-conversion copy engineered for the page that decides the sale.',
         overlaySubtitle: 'Part of the SEO & Web Copywriting cluster',
         overlayTitle: 'The page that decides whether your ad spend pays off',
         overlayP1: 'Every paid click and organic visit lands somewhere. That page either converts the intent into a lead or it doesn\'t. We write copy that closes the gap.',
@@ -568,8 +568,8 @@ export default function ServiceSubpage({ path, isFanOut, category, slug }: Servi
       },
 
       'website-copywriting-services-agency': {
-        pageTitle: 'Website copywriting services',
-        pageSubheading: 'Your entire website, written to rank in search and convert every visitor into a lead.',
+        pageTitle: 'Website copywriting services: every page ranking and converting',
+        pageSubheading: 'Vague copy ranks for nothing and persuades no one. Your entire website, written to rank in search and convert every visitor into a lead.',
         overlaySubtitle: 'Part of the SEO & Web Copywriting cluster',
         overlayTitle: 'Every page of your site is a sales conversation with a search engine and a human',
         overlayP1: 'Your website is the only marketing channel you own outright. We write every page to work as hard as possible — ranking for the right queries and converting the visitors who arrive.',
@@ -599,8 +599,8 @@ export default function ServiceSubpage({ path, isFanOut, category, slug }: Servi
       },
 
       'seo-content-strategy-agency': {
-        pageTitle: 'SEO content strategy',
-        pageSubheading: 'The architecture before the words: keyword mapping, topic clusters, and internal link design.',
+        pageTitle: 'SEO content strategy: topic clusters that compound',
+        pageSubheading: 'Publishing without architecture wastes every word you pay for. Keyword mapping, topic clusters, and internal link design — before the words.',
         overlaySubtitle: 'Part of the SEO & Web Copywriting cluster',
         overlayTitle: 'Strategy first. Every word earns its place in the plan.',
         overlayP1: 'Content without strategy is output. Content with strategy is a compounding asset. We build the plan before a single word is written — mapping queries, intents, competitors, and gaps into a structure that dominates its topic.',
@@ -630,8 +630,8 @@ export default function ServiceSubpage({ path, isFanOut, category, slug }: Servi
       },
 
       'geo-ai-content-writing-agency': {
-        pageTitle: 'GEO & AI content writing',
-        pageSubheading: 'Content engineered to be cited by ChatGPT, Perplexity, and Google AI Overviews — not just indexed.',
+        pageTitle: 'GEO & AI content writing: cited by ChatGPT and Perplexity',
+        pageSubheading: 'Being indexed no longer means being found — AI answers skip unstructured pages. Content engineered to be cited by ChatGPT, Perplexity, and Google AI Overviews.',
         overlaySubtitle: 'Part of the SEO & Web Copywriting cluster',
         overlayTitle: 'The next search frontier: getting your brand into AI-generated answers',
         overlayP1: 'Traditional SEO gets you into the blue links. Generative Engine Optimization (GEO) gets your content cited in the AI answer above those links — where a growing share of search intent is resolved without a click.',
@@ -662,8 +662,8 @@ export default function ServiceSubpage({ path, isFanOut, category, slug }: Servi
 
       // ── SEO & Discoverability fan-out cluster ──────────────────────────────
       'technical-seo-audit-agency': {
-        pageTitle: 'Technical SEO audit',
-        pageSubheading: 'A full diagnostic of your crawl health, index coverage, Core Web Vitals, and structured data — with a prioritized fix list.',
+        pageTitle: 'Technical SEO audit: every ranking blocker found and prioritized',
+        pageSubheading: 'Invisible technical faults quietly cap your rankings. A full diagnostic of crawl health, index coverage, Core Web Vitals, and structured data — with a prioritized fix list.',
         overlaySubtitle: 'Part of the SEO & Discoverability cluster',
         overlayTitle: 'Technical SEO is the foundation every other optimization builds on',
         overlayP1: 'You cannot rank content that Googlebot cannot crawl, cannot index pages blocked by accidental noindex tags, and cannot earn E-E-A-T signals without a clean technical foundation beneath your content.',
@@ -692,8 +692,8 @@ export default function ServiceSubpage({ path, isFanOut, category, slug }: Servi
         ]
       },
       'local-seo-services-agency': {
-        pageTitle: 'Local SEO services',
-        pageSubheading: 'GBP optimization, NAP consistency, local citation building, and map-pack rankings for businesses that serve a geographic area.',
+        pageTitle: 'Local SEO services: top of the Map Pack',
+        pageSubheading: 'If you are not in the Map Pack, nearby buyers never see you. GBP optimization, NAP consistency, local citation building, and map-pack rankings for businesses that serve a geographic area.',
         overlaySubtitle: 'Part of the SEO & Discoverability cluster',
         overlayTitle: 'Local search is a different algorithm — and most agencies treat it like regular SEO',
         overlayP1: 'Map-pack rankings, GBP prominence, and "near me" query dominance are governed by proximity, relevance, and prominence signals that are entirely separate from organic ranking factors.',
@@ -722,8 +722,8 @@ export default function ServiceSubpage({ path, isFanOut, category, slug }: Servi
         ]
       },
       'b2b-seo-agency': {
-        pageTitle: 'B2B SEO',
-        pageSubheading: 'Long-cycle, high-value buyer journey optimization targeting decision-makers and procurement queries — not just traffic volume.',
+        pageTitle: 'B2B SEO: pipeline value, not traffic volume',
+        pageSubheading: 'Traffic that never reaches the buying committee is just noise in a report. Long-cycle buyer journey optimization targeting decision-makers and procurement queries.',
         overlaySubtitle: 'Part of the SEO & Discoverability cluster',
         overlayTitle: 'B2B SEO is not about impressions — it\'s about reaching the right buyer at the right stage',
         overlayP1: 'B2B purchase decisions involve multiple stakeholders, research cycles measured in weeks, and queries that look nothing like B2C search patterns. Ranking for high-volume keywords is irrelevant if none of those visitors have budget authority.',
@@ -752,8 +752,8 @@ export default function ServiceSubpage({ path, isFanOut, category, slug }: Servi
         ]
       },
       'ecommerce-seo-agency': {
-        pageTitle: 'E-commerce SEO',
-        pageSubheading: 'Category and product page architecture, faceted navigation, schema, and commercial-intent content clusters for online stores.',
+        pageTitle: 'E-commerce SEO: rankings that drive revenue',
+        pageSubheading: 'Faceted navigation and thin product pages bleed crawl equity. Category and product page architecture, schema, and commercial-intent content clusters for online stores.',
         overlaySubtitle: 'Part of the SEO & Discoverability cluster',
         overlayTitle: 'E-commerce SEO has unique technical challenges that generic agencies miss entirely',
         overlayP1: 'Faceted navigation, duplicate product pages, thin category content, and crawl budget misallocation are e-commerce-specific problems that standard SEO audits don\'t fully address.',
@@ -783,8 +783,8 @@ export default function ServiceSubpage({ path, isFanOut, category, slug }: Servi
       },
 
       'google-penalty-recovery': {
-        pageTitle: 'Google penalty recovery',
-        pageSubheading: 'We diagnose algorithmic suppressions and manual actions, then deploy the precise fix.',
+        pageTitle: 'Google penalty recovery: rankings restored',
+        pageSubheading: 'Guessing at the cause of a penalty makes recovery slower. We diagnose algorithmic suppressions and manual actions, then deploy the precise fix.',
         overlaySubtitle: 'We restore organic authority through forensic diagnosis',
         overlayTitle: 'Every penalty has a root cause — and a documented path to recovery',
         overlayP1: 'Google penalties fall into two distinct categories: manual actions issued by a human reviewer, and algorithmic suppressions triggered by quality classifiers during core updates.',
@@ -823,6 +823,9 @@ export default function ServiceSubpage({ path, isFanOut, category, slug }: Servi
       overlayP2: catLower === 'creativity' ? 'Who decides how your assets should be designed? Who thinks about, makes, and manages the creation of your creative properties?' : catLower === 'performance' ? 'Who audits your Core Web Vitals? Who designs your data pipeline? Who handles your structured schema markup?' : 'Who manages your digital PR outreach? Who syndicates your content to high-value publications?'
     };
 
+    // Keyword-only form of the title (text before the outcome colon) for breadcrumbs and generated headings
+    const pageTitleShort = pageData.pageTitle.split(':')[0].trim();
+
     const overlaySubtitle = pageData.overlaySubtitle;
     const overlayTitle = pageData.overlayTitle;
     const overlayP1 = pageData.overlayP1;
@@ -849,7 +852,7 @@ export default function ServiceSubpage({ path, isFanOut, category, slug }: Servi
         'The result is a brand that commands attention, earns trust, and maintains dominant visibility in its market — because its authority is built on real, verifiable signals rather than short-term tactics.'
       ]
     );
-    const concreteStepsHeading = pageData.concreteStepsHeading ?? `How do we approach ${pageData.pageTitle.toLowerCase()}, concretely?`;
+    const concreteStepsHeading = pageData.concreteStepsHeading ?? `How do we approach ${pageTitleShort.toLowerCase()}, concretely?`;
     const concreteSteps: string[] = pageData.concreteSteps ?? (
       catLower === 'creativity' ? [
         'We start with a discovery session to fully understand your brand, audience, competitors, and communication objectives',
@@ -874,7 +877,7 @@ export default function ServiceSubpage({ path, isFanOut, category, slug }: Servi
         'We report on results monthly: placements secured, authority signals gained, and ranking or traffic improvements'
       ]
     );
-    const advantagesHeading = pageData.advantagesHeading ?? `What are the advantages of ${pageData.pageTitle.toLowerCase()}?`;
+    const advantagesHeading = pageData.advantagesHeading ?? `What are the advantages of ${pageTitleShort.toLowerCase()}?`;
     const advantageCards: { title: string; description: string }[] = pageData.advantageCards ?? (
       catLower === 'creativity' ? [
         { title: 'Branding', description: 'Strong creative strategy builds immediate recognition and lasting brand recall across every channel' },
@@ -912,7 +915,7 @@ export default function ServiceSubpage({ path, isFanOut, category, slug }: Servi
         `To structure a creative project we always start by meeting and sharing with the client, colleagues, and partners, including professional designers, writers, and directors. From there, we build a strategic and well-coordinated project, defined down to the smallest detail: the aim is to transfer concepts, mood, style, and tone of the brand.`,
         `To do this, we draw up detailed storyboards and style boards, invest time in brainstorming and comparisons with your team in order to transfer concepts and develop solutions that comply with the idea behind the project.`
       ];
-      addedValueTitle = `${pageData.pageTitle} management, why is it an added value?`;
+      addedValueTitle = `${pageTitleShort} management, why is it an added value?`;
       addedValueItems = [
         "Because every communication tool you use needs visuals that tell your brand story at its best",
         "Because the right image or copy must tell the essence and values of your brand, at a glance",
@@ -930,7 +933,7 @@ export default function ServiceSubpage({ path, isFanOut, category, slug }: Servi
         `To structure an optimization cycle we always start by auditing your existing signals and search performance graphs. From there, we build a technical roadmap that targets indexing gaps, server-side issues, and entity structure definition.`,
         `To do this, we write custom JSON-LD schema, design custom page-speed optimizations, and continuously monitor search console logs to resolve issues before they affect conversions or rankings.`
       ];
-      addedValueTitle = `${pageData.pageTitle} integration, why is it an added value?`;
+      addedValueTitle = `${pageTitleShort} integration, why is it an added value?`;
       addedValueItems = [
         "Because optimized codebase architectures ensure sub-second loads and zero crawler friction",
         "Because clean semantic markup defines your entities clearly for LLMs and search engines",
@@ -966,7 +969,7 @@ export default function ServiceSubpage({ path, isFanOut, category, slug }: Servi
         `To structure an outreach campaign we always start by auditing your backlink profile and market visibility benchmarks. From there, we identify target publications and create editorial content that earns natural citation share.`,
         `To do this, we coordinate with journalists, write research-focused whitepapers, and run active link audits to ensure clean, high-quality reference signals.`
       ];
-      addedValueTitle = `${pageData.pageTitle} distribution, why is it an added value?`;
+      addedValueTitle = `${pageTitleShort} distribution, why is it an added value?`;
       addedValueItems = [
         "Because clean external backlinks build core algorithmic domain authority",
         "Because high-profile digital PR establishes brand recognition and trust",
@@ -1027,9 +1030,9 @@ export default function ServiceSubpage({ path, isFanOut, category, slug }: Servi
                 <span className="text-gray-200">/</span>
                 <a href={`/${catLower}`} className="hover:text-gray-700 transition-colors capitalize">{formattedCategory}</a>
                 <span className="text-gray-200">/</span>
-                <span className="text-gray-900 font-semibold">{pageData.pageTitle}</span>
+                <span className="text-gray-900 font-semibold">{pageTitleShort}</span>
               </nav>
-              <h1 className="text-[clamp(3rem,7vw,6.5rem)] font-bold tracking-tight text-gray-900 leading-[1.03] mb-7">
+              <h1 className="text-[clamp(2.5rem,5.5vw,4.75rem)] font-bold tracking-tight text-gray-900 leading-[1.05] mb-7" style={{ maxWidth: '1100px' }}>
                 {pageData.pageTitle}
               </h1>
               <p className="text-xl sm:text-2xl text-gray-400 font-light leading-relaxed" style={{ maxWidth: '640px' }}>

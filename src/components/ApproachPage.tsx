@@ -182,7 +182,7 @@ const ApproachPage: React.FC = () => {
           Gobiya / Our approach
         </span>
         <h1 style={{ fontSize: 'clamp(2.5rem, 5.5vw, 4.5rem)', fontWeight: 700, letterSpacing: '-0.03em', lineHeight: 1.05, color: '#111827', maxWidth: '880px', marginBottom: '1.75rem' }}>
-          Keywords are strings. Google indexes things.
+          Our Approach: An Operating Model for Algorithmic Dominance
         </h1>
         <p style={{ fontSize: '1.1rem', color: '#4b5563', lineHeight: 1.75, maxWidth: '640px', marginBottom: '2.5rem' }}>
           Search engine optimization is no longer a marketing checklist — it's a technical engineering discipline. This is Gobiya's operating model for algorithmic dominance, entity-based indexing, and closed-loop pipeline conversion.

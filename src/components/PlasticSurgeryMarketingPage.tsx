@@ -219,7 +219,7 @@ export default function PlasticSurgeryMarketingPage() {
     <LocalServicePageTemplate
       schema={SCHEMA}
       breadcrumb="Services / Plastic Surgery"
-      heroTitle="Plastic surgery patients research for 3–6 months before booking. You need to be in front of them at every stage."
+      heroTitle="Plastic Surgery Marketing: Consultation Bookings at Every Stage of the Patient Journey"
       heroSubtitle="Most plastic surgery practices run ads that don't convert because they're hitting research-phase buyers with decision-phase offers. Meta restricts before/after imagery. Google requires LegitScript certification. And patients considering an $8,000–$25,000 procedure don't book from a single ad — they read, compare, and come back. Gobiya builds the SEO, content, and paid strategy that matches each stage of that journey and turns it into consultation bookings."
       tags={[
         'Elective Medicine',

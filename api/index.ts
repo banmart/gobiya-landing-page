@@ -355,84 +355,148 @@ const metadataMap: Record<string, SEOMetadata> = {
     description: 'Gobiya is a full service digital marketing agency in Los Angeles. SEO, AI visibility, web development, CRM pipelines, and paid media — strategy and implementation under one roof, since 2012.'
   },
   '/on-page-seo-los-angeles': {
-    title: 'On-page SEO agency in LA: schema, entity structure, speed - Gobiya',
-    description: "Struggling with organic drops or low conversions? Our elite on-page SEO services in Los Angeles optimize your site's entity structure, schema, speed, and content mapping for Google and AI engines."
+    title: 'On-Page SEO Los Angeles: rankings in Google & AI search - Gobiya',
+    description: "On-page SEO services in Los Angeles that turn organic drops into recovered rankings — entity structure, schema, speed, and content mapping optimized for Google and AI engines."
   },
   '/local-seo-company-burbank': {
-    title: 'Local SEO Company Burbank: Map Pack & Google Business Profile - Gobiya',
+    title: 'Local SEO Company Burbank: Map Pack & GBP, open now - Gobiya',
     description: 'Local SEO company Burbank — we engineer Google Map Pack dominance, GBP optimization, citation consistency, and review velocity for businesses on San Fernando Boulevard and throughout the Burbank, CA 91501–91510 market.'
   },
   '/internet-marketing-services-los-angeles': {
-    title: 'Internet Marketing Services Los Angeles | Gobiya',
-    description: 'Gobiya provides top rated internet marketing services in Los Angeles. We are a digital marketing agency focusing on SEO, CRM pipeline automation, web development, and AI-driven online visibility for businesses across California.'
+    title: 'Internet Marketing Los Angeles: visibility turned into pipeline - Gobiya',
+    description: 'Gobiya provides top rated internet marketing services in Los Angeles — SEO, CRM pipeline automation, web development, and AI-driven online visibility for businesses across California. Founded 2010, BBB A+ rated.'
   },
   '/ai-search-marketing-santa-clarita': {
-    title: 'AI Search Marketing Santa Clarita | Google & AI Visibility - Gobiya',
-    description: 'AI search marketing agency in Santa Clarita. We optimize your business for Google Search, Map Pack, ChatGPT, Perplexity, and Gemini. Convert AI traffic into leads.'
+    title: 'AI Search Marketing Santa Clarita: Cited in ChatGPT & Perplexity',
+    description: 'Gobiya engineers the localized schema and entity graph that get your Santa Clarita business cited in ChatGPT and Perplexity answers — AI visibility turned into booked work.'
   },
   '/local-seo-services-burbank': {
     title: 'Local SEO services Burbank: GBP, citations, Map Pack rankings - Gobiya',
     description: 'Local SEO services in Burbank, CA — top rated, online appointments available. We optimize Google Business Profile, NAP citations, review velocity, and local schema for businesses in the 91501–91510 corridor. Open Mon–Fri, book online.'
   },
   '/glendale-seo': {
-    title: 'Glendale SEO: top rated, open now, online appointments - Gobiya',
+    title: 'Glendale SEO: Map Pack & technical SEO, BBB A+ - Gobiya',
     description: 'Glendale SEO agency — technical SEO, local Map Pack optimization, content architecture, and authority building for businesses in the 91201–91210 market. Top rated, BBB A+, online appointments available. Book a pre-read today.'
   },
   '/plastic-surgery-internet-marketing': {
-    title: 'Plastic surgery internet marketing: SEO, Ads & patient acquisition - Gobiya',
-    description: 'Plastic surgery internet marketing agency — procedure-specific SEO, compliant Google Ads, content architecture for 3–6 month consideration cycles, review velocity management, and AI citation visibility. Best plastic surgery marketing company for LA practices.'
+    title: 'Plastic Surgery Marketing: booked consultations, not clicks - Gobiya',
+    description: 'Plastic surgery internet marketing agency — procedure-specific SEO, compliant Google Ads, content architecture for 3–6 month consideration cycles, review velocity management, and AI citation visibility.'
   },
   '/performance/seo-traffic-recovery': {
-    title: 'SEO traffic recovery agency in LA: algorithm diagnosis, ranking restoration - Gobiya',
+    title: 'SEO Traffic Recovery Los Angeles: rankings restored - Gobiya',
     description: 'SEO traffic recovery specialists in Los Angeles. We diagnose the exact Google update or penalty behind an organic traffic drop, execute the precise fix sequence, and restore rankings — forensic read first, targeted fix second.'
   },
+  '/ai-seo-beverly-hills': {
+    title: 'AI SEO Beverly Hills: ChatGPT, Claude & Gemini citations - Gobiya',
+    description: 'AI SEO Beverly Hills — we engineer Google organic visibility and AI platform citations (ChatGPT, Claude, Gemini) for Beverly Hills businesses in the 90210 market. Entity graphs, GEO, and local Map Pack engineering.'
+  },
+  '/local-seo-glendale': {
+    title: 'Local SEO Glendale: Map Pack & GBP, top rated - Gobiya',
+    description: 'Local SEO Glendale — we engineer Google Map Pack dominance, GBP optimization, citation consistency, and review velocity for businesses on Brand Boulevard and throughout the Glendale, CA market.'
+  },
+  '/seo-company-encino': {
+    title: 'SEO Company Encino: Google visibility & AI citations, BBB A+ - Gobiya',
+    description: 'SEO company in Encino engineering Google visibility, AI citations, and organic pipeline growth for businesses on Ventura Boulevard and throughout the San Fernando Valley.'
+  },
+  '/los-angeles-seo-professional': {
+    title: 'Los Angeles SEO: entity graph & AI citations, BBB A+ - Gobiya',
+    description: 'Los Angeles SEO professional practice. Gobiya engineers technical SEO, commercial-intent content architecture, entity schema, and AI citation visibility for B2B brands and professional services firms across Greater Los Angeles.'
+  },
+  '/google-penalty-recovery': {
+    title: 'Google Penalty Recovery Los Angeles: rankings restored - Gobiya',
+    description: 'Google penalty recovery specialists in Los Angeles. We diagnose manual actions and algorithmic suppressions, then execute the precise fix sequence — forensic audit, content consolidation, E-E-A-T rebuilding, and Search Console reconsideration.'
+  },
+  '/relations/google-ads-ppc-strategy-agency': {
+    title: 'Google Ads Agency Los Angeles: 5.7x ROAS, 61% lower CPL - Gobiya',
+    description: 'Google Ads & PPC strategy agency in Los Angeles. We build precision-targeted paid pipelines that capture high-intent buyers, aggressively lower customer acquisition costs, and maximize ROAS.'
+  },
+  '/creativity/ai-videos-agency': {
+    title: 'AI Video Production Los Angeles: broadcast ads in 3–5 days - Gobiya',
+    description: 'AI video production agency in Los Angeles. YouTube pre-roll ads, Amazon Prime Video spots, Paramount+ commercials, and social video using Veo 3, Google Omni, AI scriptwriting, and text-to-voice. 3–5 day turnaround.'
+  },
+  '/creativity/crypto-web3-agency': {
+    title: 'Crypto & Web3 Agency Los Angeles: launched, ranked, cited - Gobiya',
+    description: 'Los Angeles crypto marketing and Web3 development agency. Smart contracts on Ethereum and Pulsechain, React dApp interfaces, and crypto SEO content that ranks in Google and gets cited by AI. TheARKCrypto.com is a live Pulsechain build.'
+  },
+  '/creativity/geo-ai-content-writing-agency': {
+    title: 'GEO & AI Content Writing Los Angeles: cited by ChatGPT - Gobiya',
+    description: 'Content built to be cited by ChatGPT, Perplexity, and Google AI Overviews — not just indexed. Structured for AI extraction, passage-level coherence, and entity verification.'
+  },
+  '/creativity/landing-page-copywriting-agency': {
+    title: 'Landing Page Copy Los Angeles: engineered to convert - Gobiya',
+    description: 'Copy engineered to convert the visitor who arrives from an ad or organic click into a lead or sale. Benefit framing, friction reduction, and social proof — built to perform.'
+  },
+  '/creativity/website-copywriting-services-agency': {
+    title: 'Website Copywriting Los Angeles: SEO-structured copy - Gobiya',
+    description: 'Every page of your site — home, about, services, product — written to rank and convert. SEO-structured, conversion-optimized, brand-voice aligned.'
+  },
+  '/creativity/seo-content-strategy-agency': {
+    title: 'SEO Content Strategy Los Angeles: topic clusters, BBB A+ - Gobiya',
+    description: 'The architecture before the words: keyword mapping, topic clusters, internal link plan, and content gap analysis — before a single word is written.'
+  },
+  '/performance/technical-seo-audit-agency': {
+    title: 'Technical SEO Audit Los Angeles: crawl, CWV & schema - Gobiya',
+    description: 'Full diagnostic of your crawl health, index coverage, Core Web Vitals, and structured data — with a prioritized fix list tied directly to ranking impact, not just a checklist.'
+  },
+  '/performance/local-seo-services-agency': {
+    title: 'Local SEO Services Agency Los Angeles: GBP & Map Pack - Gobiya',
+    description: 'GBP optimization, NAP consistency across citations, location pages, and map-pack rankings for businesses that serve a geographic area. Los Angeles-based, nationwide service.'
+  },
+  '/performance/b2b-seo-agency': {
+    title: 'B2B SEO Agency Los Angeles: pipeline attribution - Gobiya',
+    description: 'Long-cycle, high-value buyer journey optimization targeting decision-makers and procurement queries — not just traffic volume. B2B SEO measured in pipeline value, not impressions.'
+  },
+  '/performance/ecommerce-seo-agency': {
+    title: 'E-Commerce SEO Los Angeles: product schema & category - Gobiya',
+    description: 'Category and product page architecture, faceted navigation control, schema deployment, and commercial-intent content clusters for online stores. Rankings that drive revenue.'
+  },
   '/creativity': {
-    title: 'Creative brand & identity design agency in LA: styling, voice, copy - Gobiya',
+    title: 'Creative Brand Agency Los Angeles: voice, copy & SEO - Gobiya',
     description: 'Express your brand identity and capture market attention with Gobiya. We design custom brand identity systems, write compelling copy, and direct creative concepts.'
   },
   '/performance': {
-    title: 'High-performance digital growth & IT dev agency in LA: React, SEO, CRO - Gobiya',
+    title: 'Performance Agency Los Angeles: SEO, React & CRO - Gobiya',
     description: 'Engineer high-speed digital pipelines to scale conversions. Sub-second React/Next.js/Vite development, technical SEO, and conversion optimization.'
   },
   '/relations': {
-    title: 'PR & authority building agency in LA: link acquisition, media outreach - Gobiya',
+    title: 'PR & Authority Agency Los Angeles: DR 50+ links - Gobiya',
     description: 'Construct sector authority and earn absolute market trust. Manually verified PR, content syndication, and high-quality contextual link building.'
   },
   '/performance/web-development-agency': {
-    title: 'Web & IT development agency in LA: React, custom sites, speed - Gobiya',
-    description: 'GOBIYA replaces slow page-builders with custom, hand-coded React and Next.js websites — 100/100 Core Web Vitals, sub-second loads, zero templates, engineered to convert and rank natively.'
+    title: 'Web Development Los Angeles: sub-second React builds - Gobiya',
+    description: 'Custom React & Next.js web development in LA. Sub-second load times, 90+ Lighthouse scores, zero platform lock-in. Book a free audit.'
   },
   '/performance/native-crm-agency': {
-    title: 'PPC & Lead generation agency in LA: CRM integrations, pipeline, ads - Gobiya',
-    description: 'We build custom CRM website integrations directly into your codebase. Stop paying monthly software fees and own your pipeline data.'
+    title: 'Native CRM Agency Los Angeles: own your pipeline data - Gobiya',
+    description: 'As a native CRM agency, we build custom CRM integrations directly into your codebase. Stop paying monthly software fees and own your pipeline data with full control.'
   },
   '/performance/seo-discoverability-agency': {
-    title: 'SEO & Discoverability agency in LA: SEO expert, recovery, audit - Gobiya',
-    description: 'We build technical SEO for React websites into the codebase, optimizing crawlability, rendering speed, and AI citations.'
+    title: 'SEO Indexing & Discoverability: key pages indexed & ranking - Gobiya',
+    description: 'Gobiya resolves Google crawl budget leaks, diagnostic blocks, and canonical tag issues — key pages out of "Crawled – currently not indexed" and into the rankings.'
   },
   '/performance/blockchain-web3-development-agency': {
-    title: 'Blockchain & Web3 agency in LA: smart contracts, dApps, tokens - Gobiya',
+    title: 'Blockchain & Web3 Los Angeles: smart contracts & dApps - Gobiya',
     description: 'Our blockchain Web3 development services integrate smart contracts, dApps, and secure on-chain token functions into React apps.'
   },
   '/performance/ai-prospect-scraper-agency': {
-    title: 'AI Prospect Scraper agency in LA: lead scraping, automation, data - Gobiya',
+    title: 'AI Prospect Scraper Los Angeles: CRM-ready lead pipeline - Gobiya',
     description: 'Our native CRM features an AI prospect scraper that extracts target contact profiles and coordinates automated outbound email campaigns.'
   },
   '/performance/ai-llms-business-agency': {
-    title: 'AI & LLM systems agency in LA: office automation, custom models, workflows - Gobiya',
+    title: 'AI & LLM Systems Los Angeles: office automation - Gobiya',
     description: 'We integrate custom AI models and secure LLMs directly into your everyday office tasks. Automate document parsing, email replies, and CRM syncing with complete data privacy.'
   },
   '/performance/google-ads-ppc-strategy-agency': {
-    title: 'Google Ads & PPC strategy agency in LA: paid acquisition, ROAS, targeting - Gobiya',
-    description: 'Stop burning cash on generic ad campaigns. We build precision-targeted paid pipelines that capture high-intent buyers, aggressively lower customer acquisition costs, and maximize ROAS.'
+    title: 'Google Ads Agency Los Angeles: 5.7x ROAS, 61% lower CPL - Gobiya',
+    description: 'Precision-targeted paid pipelines that capture high-intent buyers, lower customer acquisition costs, and maximize ROAS — ad spend turned into qualified pipeline, not click volume.'
   },
   '/performance/cro-ux-analysis-agency': {
-    title: 'CRO & UX analysis agency in LA: funnel optimization, conversion lift - Gobiya',
+    title: 'CRO & UX Analysis Los Angeles: heatmaps & A/B tests - Gobiya',
     description: 'We isolate funnel friction and redesign user flows to lift conversions. Data-backed CRO analysis across landing pages, checkout flows, and lead capture forms.'
   },
   '/relations/authority-building-agency': {
-    title: 'Authority & PR agency in LA: backlink acquisition, citations, outreach - Gobiya',
-    description: 'Build search engine trust with high-quality, relevant backlink acquisition and structured localized entity citations, engineered for long-term organic authority.'
+    title: 'Authority Building Los Angeles: DR 50+ editorial links - Gobiya',
+    description: 'Authority building agency for B2B and professional services brands. High-quality editorial backlinks, structured local citations, and entity alignment — engineered for long-term organic authority.'
   },
   '/creativity/brand-identity-strategy-agency': {
     title: 'Brand identity strategy agency in LA: brand design, voice, positioning - Gobiya',
@@ -443,8 +507,8 @@ const metadataMap: Record<string, SEOMetadata> = {
     description: 'Tell your story through dynamic visual and textual concepts. We develop integrated communication campaigns that turn attention into pipeline.'
   },
   '/creativity/seo-web-copywriting-agency': {
-    title: 'SEO & web copywriting agency in LA: landing pages, blog, conversion copy - Gobiya',
-    description: 'We write content that engages human hearts and ranks in algorithms. SEO-optimized copywriting for websites, landing pages, and campaigns that turns readers into buyers.'
+    title: 'SEO Copywriting Los Angeles: keyword-mapped, AI-citable - Gobiya',
+    description: 'Keyword-mapped copy that ranks on Google and gets cited by AI platforms. Keyword research, semantic architecture, conversion copy, and GEO-optimized content for B2B and professional services.'
   },
   '/creativity/creative-art-direction-agency': {
     title: 'Creative art direction agency in LA: styling, imagery, layout, motion - Gobiya',
@@ -455,15 +519,15 @@ const metadataMap: Record<string, SEOMetadata> = {
     description: 'We grow active community loops around your core brand message. Strategic social content planning, production, and analytics for sustained audience growth.'
   },
   '/about': {
-    title: 'SEO & Marketing agency in LA: Gobiya team, Steve Martin, experience - Gobiya',
-    description: 'GOBIYA is a precision-engineered search visibility and digital solutions firm, founded 2012 in Los Angeles and led by Steve Martin — 25+ years bridging full-stack engineering and organic search.'
+    title: 'About Gobiya: Los Angeles SEO, founded 2010, BBB A+ - Gobiya',
+    description: 'Gobiya is an SEO and web development agency in Los Angeles founded in 2010 by Steve Martin — 25+ years in web development and search, bilingual English/Spanish, BBB A+ rated.'
   },
   '/case-studies': {
-    title: 'SEO & growth case studies in LA: Smile Center, Livescan, results - Gobiya',
+    title: 'SEO Case Studies LA: 5x inquiries, 3x bookings - Gobiya',
     description: 'Real clients, real numbers. SmileCenter Dentistry: 5x patient inquiries and 213K impressions. American Livescan: 3x bookings after a legacy migration. Data-backed search recovery and pipeline case studies from GOBIYA.'
   },
   '/approach': {
-    title: 'Forensic SEO & growth approach in LA: entity structure, GEO, HCU recovery - Gobiya',
+    title: 'Forensic SEO Approach LA: entity structure & GEO - Gobiya',
     description: "GOBIYA's operating model for algorithmic dominance: entity-based indexing, topical authority and schema engineering, Generative Engine Optimization (GEO) for LLM visibility, and pipeline-first conversion architecture."
   },
   '/case-studies/smile-center-dentistry': {
@@ -475,7 +539,7 @@ const metadataMap: Record<string, SEOMetadata> = {
     description: 'How we replaced a legacy .htm site with a clean-URL architecture, optimized the Google Business Profile, and tripled online appointments and phone calls for a high-volume LA fingerprinting service.'
   },
   '/insights': {
-    title: 'SEO & Algorithmic Intelligence in LA: insights, core updates, briefs - Gobiya',
+    title: 'SEO & AI Intelligence LA: core updates, GEO briefs - Gobiya',
     description: 'Advanced tactical intelligence on Google and AI search: algorithm update analysis, GEO and LLM citation tactics, entity SEO, technical recovery briefs, and pipeline engineering field notes from GOBIYA.'
   },
   '/insights/how-to-apply-behavioral-psychology-principles-to-high-ticket-b2b-landing-page-wireframes-to-decrease-friction': {
@@ -504,24 +568,24 @@ const metadataMap: Record<string, SEOMetadata> = {
     image: '/images/article-introducing-open-knowledge-format-thumbnail.webp'
   },
   '/contact': {
-    title: 'Contact SEO & growth agency in LA: book call, free audit, locations - Gobiya',
-    description: 'Reach GOBIYA in Los Angeles. Call 323-744-1338, email hello@gobiya.com, or fill out our contact form for an SEO audit, web development, or AI growth consultation.'
+    title: 'Contact Gobiya LA: book call, free audit, open now - Gobiya',
+    description: 'Reach Gobiya in Los Angeles. Call 323-744-1338, email hello@gobiya.com, or fill out our contact form for an SEO audit, web development, or AI growth consultation.'
   },
   '/company/careers': {
     title: 'Growth Engineering Careers: Join Our Dev Team | Gobiya',
     description: 'Explore growth engineering jobs at Gobiya. We are hiring React developers, technical SEO specialists, and sales engineers. Apply now.'
   },
   '/book': {
-    title: 'Book forensic SEO audit in LA: 15-min review, search recovery, CRM audit - Gobiya',
-    description: 'Book pipeline strategy call with Steve Martin, CEO & lead engineer. Audit search performance, local map visibility, and CRM setup.'
+    title: 'Book SEO Audit Los Angeles: free 15-min, open now - Gobiya',
+    description: 'Book a strategy call with Steve Martin, founder of Gobiya. Audit your search performance, local map visibility, and site speed. Free, no obligation. Available Mon–Fri.'
   },
   '/book-call': {
-    title: 'Book forensic SEO audit in LA: 15-min review, search recovery, CRM audit - Gobiya',
-    description: 'Book pipeline strategy call with Steve Martin, CEO & lead engineer. Audit search performance, local map visibility, and CRM setup.'
+    title: 'Book SEO Audit Los Angeles: free 15-min, open now - Gobiya',
+    description: 'Book a strategy call with Steve Martin, founder of Gobiya. Audit your search performance, local map visibility, and site speed. Free, no obligation. Available Mon–Fri.'
   },
   '/capabilities': {
-    title: 'SEO & Web development capabilities in LA: custom CRM, React, authority - Gobiya',
-    description: 'GOBIYA builds fast, modern web applications with native CRM pipelines, built-in SEO discoverability, AI prospect automation, and custom Web3 integrations — one codebase, complete data ownership.'
+    title: 'SEO & Web Development Capabilities LA: CRM, React - Gobiya',
+    description: 'Gobiya builds fast, modern web applications with native CRM pipelines, built-in SEO discoverability, AI prospect automation, and custom Web3 integrations — one codebase, complete data ownership.'
   },
   '/insights/gobiya-vs-enterprise-seo-agencies': {
     title: 'Enterprise SEO vs Gobiya: Speed & Cost Compare | Gobiya',

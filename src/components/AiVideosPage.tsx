@@ -267,7 +267,7 @@ export default function AiVideosPage() {
               <span style={{ color: '#374151' }}>AI Videos</span>
             </nav>
             <h1 style={{ fontSize: 'clamp(2.5rem, 5.5vw, 4.5rem)', fontWeight: 700, letterSpacing: '-0.03em', lineHeight: 1.05, color: '#111827', maxWidth: '920px', marginBottom: '1.5rem' }}>
-              AI Video Production for YouTube Ads, CTV, and Social.
+              AI Video Production: Broadcast-Quality Ads in 3–5 Days
             </h1>
             <p style={{ fontSize: '1.1rem', color: '#4b5563', lineHeight: 1.75, maxWidth: '640px', marginBottom: '2.5rem' }}>
               Most businesses want video ads but can't justify a $30,000–$80,000 production quote for a 30-second spot. Gobiya is a Los Angeles AI video production agency, founded in 2010, that produces YouTube pre-roll ads, Amazon Prime Video spots, Paramount+ commercials, and social video using Veo 3 and Google Omni — delivered in 3–5 days at a fraction of traditional production cost.

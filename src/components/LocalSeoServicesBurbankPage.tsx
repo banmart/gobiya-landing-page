@@ -141,7 +141,7 @@ export default function LocalSeoServicesBurbankPage() {
     <LocalServicePageTemplate
       schema={SCHEMA}
       breadcrumb="Services / Burbank"
-      heroTitle="Local SEO Services Burbank."
+      heroTitle="Local SEO Services Burbank: Map Pack Placement, Month to Month"
       heroSubtitle="Gobiya's Burbank local SEO service is a month-to-month program covering Google Business Profile optimization, NAP citation audits, review velocity management, and local schema markup for businesses in the Burbank 91501–91510 ZIP corridor. The service targets Map Pack placement for category searches on San Fernando Boulevard and in the Burbank Media District."
       tags={[
         'Local SEO',

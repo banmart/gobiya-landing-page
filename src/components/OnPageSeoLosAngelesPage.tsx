@@ -108,7 +108,7 @@ export default function OnPageSeoLosAngelesPage() {
     <LocalServicePageTemplate
       schema={SCHEMA}
       breadcrumb="Capabilities / On-Page SEO"
-      heroTitle="On-Page SEO Los Angeles."
+      heroTitle="On-Page SEO Los Angeles: Pages That Rank in Google and AI Search"
       heroSubtitle="Gobiya is a Los Angeles on-page SEO agency founded in 2012 that diagnoses and fixes organic search problems at the code level — redirect chains, missing schema, Core Web Vitals failures, and content mapped to the wrong intent stage. Most Los Angeles businesses with stalled organic growth have the same underlying problem: sessions that never become leads. The root is almost always on-page — redirect chains bleeding crawl budget, schema missing, or content targeting the wrong intent stage. We find it at the code level and fix it there. Clean redirects, structured entity graphs, sub-second Core Web Vitals, and content mapped to commercial intent — implemented directly, not through plugins."
       specs={[
         { label: 'Focus', val: 'Topical Authority & Speed' },

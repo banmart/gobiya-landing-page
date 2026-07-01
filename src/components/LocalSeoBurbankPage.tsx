@@ -170,7 +170,7 @@ export default function LocalSeoBurbankPage() {
     <LocalServicePageTemplate
       schema={SCHEMA}
       breadcrumb="Services / Burbank"
-      heroTitle="Local SEO Company Burbank."
+      heroTitle="Local SEO Company Burbank: Map Pack Dominance & Review Velocity"
       heroSubtitle="Gobiya is a local SEO company serving Burbank, Toluca Lake, and Studio City. Established in 2012, we engineer Google Business Profile optimization, Map Pack dominance, citation authority, and review velocity systems for local businesses."
       tags={[
         'Local SEO',

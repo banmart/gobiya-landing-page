@@ -104,7 +104,7 @@ export default function SeoWebCopywritingPage() {
               <span style={{ color: '#374151' }}>SEO &amp; Web Copywriting</span>
             </nav>
             <h1 style={{ fontSize: 'clamp(2.5rem, 5.5vw, 4.5rem)', fontWeight: 700, letterSpacing: '-0.03em', lineHeight: 1.05, color: '#111827', maxWidth: '920px', marginBottom: '1.5rem' }}>
-              SEO &amp; Web Copywriting that ranks in algorithms and converts human readers.
+              SEO &amp; Web Copywriting: Copy That Ranks in Algorithms and Converts Human Readers
             </h1>
             <p style={{ fontSize: '1.1rem', color: '#4b5563', lineHeight: 1.75, maxWidth: '640px', marginBottom: '2.5rem' }}>
               Most business websites have a content problem that looks like a traffic problem. The pages exist, the services are described, posts go out regularly — but search engines don't know what specific query each page is supposed to answer. That ambiguity means nothing ranks. Gobiya is a Los Angeles SEO copywriting agency, founded in 2010, that maps every page to a buyer query and writes copy that ranks on Google and gets cited by AI platforms including ChatGPT, Perplexity, and Google AI Overviews.

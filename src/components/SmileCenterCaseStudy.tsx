@@ -148,9 +148,9 @@ const SmileCenterCaseStudy: React.FC = () => {
               Gobiya Case Studies &gt; Multi-Location Dental
             </p>
             <h1 className="hero-title text-[clamp(1.5rem,5.5vw,3.2rem)] sm:text-[clamp(1.8rem,4.5vw,3.8rem)] font-medium leading-[1.15] tracking-[-0.03em] max-w-[1100px]" style={{ color: '#ffffff' }}>
-              <span className="line"><span>How SmileCenter Dentistry </span></span>
-              <span className="line"><span><span style={{ color: '#6ee7b7' }}>5x'd patient inquiries</span></span></span>
-              <span className="line"><span>across multiple regional locations.</span></span>
+              <span className="line"><span>SmileCenter Dentistry: </span></span>
+              <span className="line"><span><span style={{ color: '#6ee7b7' }}>5x patient inquiries</span></span></span>
+              <span className="line"><span>across multiple regional locations</span></span>
             </h1>
             <p className="hero-sub mt-6 text-[15px] sm:text-[17px] max-w-[700px] leading-relaxed" style={{ color: 'rgba(255,255,255,0.65)' }}>
               Website redesign · Multi-location search architecture · Conversion architecture · React/Vite

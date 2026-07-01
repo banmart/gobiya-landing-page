@@ -144,7 +144,7 @@ export default function AiSearchMarketingSantaClaritaPage() {
     <LocalServicePageTemplate
       schema={SCHEMA}
       breadcrumb="Services / AI Search"
-      heroTitle="Your business ranks on Google. Buyers are asking ChatGPT — and you don't appear there at all."
+      heroTitle="AI Search Marketing Santa Clarita: Cited in ChatGPT, Perplexity & Google AI"
       heroSubtitle="35–40% of commercial research journeys now start with a question to an AI assistant before the buyer ever opens a browser. If a Santa Clarita buyer asks ChatGPT 'who are the most reliable contractors in the SCV' and your business doesn't appear, you've already lost that prospect — to a competitor who engineered their AI search presence before you did. Gobiya builds the entity graph, citation architecture, and content structure that puts your brand in front of that audience."
       tags={[
         'AI Overviews',

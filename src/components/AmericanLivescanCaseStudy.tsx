@@ -151,9 +151,9 @@ const AmericanLivescanCaseStudy: React.FC = () => {
               Gobiya Case Studies &gt; Local SEO &amp; Site Rebuild
             </p>
             <h1 className="hero-title text-[clamp(1.5rem,5.5vw,3.2rem)] sm:text-[clamp(1.8rem,4.5vw,3.8rem)] font-medium leading-[1.15] tracking-[-0.03em] max-w-[1100px]" style={{ color: '#ffffff' }}>
-              <span className="line"><span>How American Livescan </span></span>
+              <span className="line"><span>American Livescan: </span></span>
               <span className="line"><span><span style={{ color: '#6ee7b7' }}>tripled bookings &amp; calls</span></span></span>
-              <span className="line"><span>with a site rebuild and local SEO.</span></span>
+              <span className="line"><span>with a site rebuild and local SEO</span></span>
             </h1>
             <p className="hero-sub mt-6 text-[15px] sm:text-[17px] max-w-[720px] leading-relaxed" style={{ color: 'rgba(255,255,255,0.6)' }}>
               Website redesign · Legacy migration · Google Business Profile · Service-specific landing pages · Content engine

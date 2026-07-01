@@ -109,7 +109,7 @@ const SuccessStories: React.FC = () => {
           Gobiya / Case studies
         </span>
         <h1 style={{ fontSize: 'clamp(2.5rem, 5.5vw, 4.5rem)', fontWeight: 700, letterSpacing: '-0.03em', lineHeight: 1.05, color: '#111827', maxWidth: '880px', marginBottom: '1.75rem' }}>
-          SEO Case Studies
+          SEO Case Studies: 5x Inquiries, 3x Bookings, Real Numbers
         </h1>
         <p style={{ fontSize: '1.1rem', color: '#4b5563', lineHeight: 1.75, maxWidth: '640px', marginBottom: '2.5rem' }}>
           Data-backed search recovery and pipeline results — exactly what Gobiya built, why it was built, and what moved as a result. Query by query, position by position.

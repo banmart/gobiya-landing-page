@@ -104,7 +104,7 @@ export default function GoogleAdsPpcPage() {
           <span style={{ color: '#374151' }}>Google Ads &amp; PPC Strategy</span>
         </nav>
         <h1 style={{ fontSize: 'clamp(2.5rem, 5.5vw, 4.5rem)', fontWeight: 700, letterSpacing: '-0.03em', lineHeight: 1.05, color: '#111827', maxWidth: '920px', marginBottom: '1.5rem' }}>
-          Google Ads &amp; PPC Strategy built around acquisition cost, not click volume.
+          Google Ads &amp; PPC Strategy: Lower Acquisition Costs, Higher ROAS
         </h1>
         <p style={{ fontSize: '1.1rem', color: '#4b5563', lineHeight: 1.75, maxWidth: '640px', marginBottom: '2.5rem' }}>
           Most businesses running Google Ads are paying for clicks that never had a chance of converting. The pattern is consistent: campaigns built for volume — broad match keywords eating the budget, ads mismatched to the landing page, conversion tracking that counts page views instead of actual leads. Gobiya is a Los Angeles PPC agency, founded in 2010, that restructures campaigns around one number: cost per qualified lead. Documented results include a 61% reduction in cost per lead after account rebuilds and 5.7x ROAS on a $15,000/month budget.

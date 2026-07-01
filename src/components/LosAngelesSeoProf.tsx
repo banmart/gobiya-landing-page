@@ -209,7 +209,7 @@ export default function LosAngelesSeoProf() {
     <LocalServicePageTemplate
       schema={SCHEMA}
       breadcrumb="Services / Los Angeles"
-      heroTitle="Los Angeles SEO Professional."
+      heroTitle="Los Angeles SEO Professional: Rankings, AI Citations & Pipeline"
       heroSubtitle="Gobiya is a Los Angeles SEO professional services firm established in 2012, providing technical SEO, entity graph engineering, and AI citation optimization for B2B brands and professional services clients across greater Los Angeles. Steve Martin, the founder, traces exactly why organic traffic is not generating pipeline, fixes the root cause at the code level, and builds the structured entity signals that make a brand visible across Google, AI Overviews, ChatGPT, and Perplexity. Our SEO & Discoverability practice is engineering-led — every fix is implemented directly in code, validated against both traditional Googlebot and AI crawler requirements, and tied to pipeline outcomes rather than traffic volume."
       specs={[
         { label: 'Founding', val: 'Est. 2012' },

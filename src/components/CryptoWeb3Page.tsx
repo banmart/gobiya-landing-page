@@ -169,7 +169,7 @@ export default function CryptoWeb3Page() {
               <span style={{ color: '#374151' }}>Crypto &amp; Web3</span>
             </nav>
             <h1 style={{ fontSize: 'clamp(2.5rem, 5.5vw, 4.5rem)', fontWeight: 700, letterSpacing: '-0.03em', lineHeight: 1.05, color: '#111827', maxWidth: '920px', marginBottom: '1.5rem' }}>
-              Crypto marketing, smart contracts, and Web3 development — built to launch and rank.
+              Crypto Marketing &amp; Web3 Development: Launched, Ranked, and Found by Investors
             </h1>
             <p style={{ fontSize: '1.1rem', color: '#4b5563', lineHeight: 1.75, maxWidth: '640px', marginBottom: '2rem' }}>
               Most crypto projects fail not because the protocol is bad — but because no investor outside the Telegram group ever finds it. Gobiya is a Los Angeles Web3 agency, founded in 2010, that builds smart contracts on Ethereum and Pulsechain, develops dApp interfaces, and produces crypto SEO content that captures investors in research mode. TheARKCrypto.com is a live Pulsechain project we built end-to-end — contract, dApp, and site.
@@ -215,7 +215,7 @@ export default function CryptoWeb3Page() {
               TheARKCrypto.com — deployed on Pulsechain mainnet.
             </h2>
             <p style={{ fontSize: '1rem', color: '#9ca3af', lineHeight: 1.8, marginBottom: '2.5rem', maxWidth: '520px' }}>
-              A production Pulsechain project built end-to-end by Gobiya: smart contract, Web3 dApp interface with live wallet connection, and a full marketing site. Not a mockup — live on mainnet.
+              The ARK Crypto is a decentralized PRC-20 token on Pulsechain. The token itself has a fee of 9% (3% Liquidity, 3% Burned, 3% Stakers). There is a locker / vault that gives 3% rewards (stakers) for up to 5 years with unlock penalties. A complete production project built end-to-end by Gobiya: smart contract, Web3 dApp interface, and a full marketing site. Not a mockup — live on mainnet.
             </p>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem' }}>
               {['Smart contract', 'Pulsechain mainnet', 'Wallet connect', 'AI video brand film', 'SEO foundation'].map(tag => (

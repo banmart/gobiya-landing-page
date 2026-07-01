@@ -98,7 +98,7 @@ export default function SeoTrafficRecoveryPage() {
               <span style={{ color: '#374151' }}>SEO Traffic Recovery</span>
             </nav>
             <h1 style={{ fontSize: 'clamp(2.5rem, 5.5vw, 4.5rem)', fontWeight: 700, letterSpacing: '-0.03em', lineHeight: 1.05, color: '#111827', maxWidth: '920px', marginBottom: '1.5rem' }}>
-              Your traffic dropped. The worst thing you can do next is guess.
+              SEO Traffic Recovery: Rankings Restored After Google Updates and Penalties
             </h1>
             <p style={{ fontSize: '1.1rem', color: '#4b5563', lineHeight: 1.75, maxWidth: '680px', marginBottom: '2.5rem' }}>
               Most sites that lose organic traffic after a Google update respond by publishing more content, building more links, or making broad site-wide changes — before knowing what actually caused the drop. That's why recoveries drag on for 12 to 18 months instead of six weeks. Every recovery we run starts the same way: map the traffic curve against Google's update timeline, classify the specific cause, then build a targeted fix that addresses only what triggered the suppression. One documented engagement went from forensic read to deployed fix in nine days. Our <a href="/performance/seo-discoverability-agency" style={{ color: 'var(--green)', textDecoration: 'none' }}>SEO &amp; Discoverability practice</a> is built entirely around this model.

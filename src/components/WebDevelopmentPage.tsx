@@ -102,7 +102,7 @@ export default function WebDevelopmentPage() {
           <span style={{ color: '#374151' }}>Web Development Agency</span>
         </nav>
         <h1 style={{ fontSize: 'clamp(2.5rem, 5.5vw, 4.5rem)', fontWeight: 700, letterSpacing: '-0.03em', lineHeight: 1.05, color: '#111827', maxWidth: '920px', marginBottom: '1.5rem' }}>
-          Websites built to load fast, rank well, and convert — not just look good.
+          Web Development: Sub-Second Loads, Higher Rankings, More Leads
         </h1>
         <p style={{ fontSize: '1.1rem', color: '#4b5563', lineHeight: 1.75, maxWidth: '640px', marginBottom: '1.5rem' }}>
           Most business websites were built to look good in a portfolio — not to rank on Google or convert the visitors who do arrive. The result is a slow, template-based site that loses search positions to faster competitors, fails to turn traffic into inquiries, and locks you into a platform you'll eventually have to pay someone to escape. Gobiya builds custom React, Next.js, and Vite sites in Los Angeles — engineered backward from one goal: qualified leads.

@@ -149,7 +149,7 @@ export default function GobiyaAboutPage() {
           <span style={{ color: '#374151' }}>About the agency</span>
         </nav>
         <h1 style={{ fontSize: 'clamp(2.5rem, 5.5vw, 4.5rem)', fontWeight: 700, letterSpacing: '-0.03em', lineHeight: 1.05, color: '#111827', maxWidth: '880px', marginBottom: '1.75rem' }}>
-          The Los Angeles SEO agency that treats search like an engineering problem.
+          The Los Angeles SEO Agency Engineered for Rankings, Citations, and Pipeline
         </h1>
         <p style={{ fontSize: '1.1rem', color: '#4b5563', lineHeight: 1.75, maxWidth: '640px', marginBottom: '2.5rem' }}>
           Gobiya is a digital marketing and SEO agency in Los Angeles, California. Steve Martin started the practice in 2010 and incorporated it as Gobiya LLC in 2012. The agency specializes in recovering organic search traffic lost to Google algorithm updates, technical SEO, local SEO for LA-area businesses, Google Ads management, custom React and Next.js web development, and SEO copywriting. It is BBB A+ rated, bilingual in English and Spanish, and serves clients in dental, home services, B2B SaaS, e-commerce, and professional services.

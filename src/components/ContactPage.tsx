@@ -86,7 +86,7 @@ export default function ContactPage() {
               Gobiya / Contact
             </span>
             <h1 style={{ fontSize: 'clamp(2.5rem, 5.5vw, 4.5rem)', fontWeight: 700, letterSpacing: '-0.03em', lineHeight: 1.05, color: '#111827', maxWidth: '600px', marginBottom: '1.75rem' }}>
-              Let's talk about your growth.
+              Your Growth Plan, One Conversation Away
             </h1>
             <p style={{ fontSize: '1.05rem', color: '#4b5563', lineHeight: 1.75, marginBottom: '2.5rem' }}>
               We respond within one business day. For urgent matters, call us directly — a real person picks up.

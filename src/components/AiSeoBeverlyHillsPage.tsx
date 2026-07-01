@@ -137,7 +137,7 @@ export default function AiSeoBeverlyHillsPage() {
     <LocalServicePageTemplate
       schema={SCHEMA}
       breadcrumb="Services / Beverly Hills"
-      heroTitle="AI SEO Beverly Hills."
+      heroTitle="AI SEO Beverly Hills: Citations in ChatGPT, Claude & Gemini"
       heroSubtitle="Gobiya is a Los Angeles SEO and GEO agency founded in 2010 that builds entity graphs and AI citation signals for luxury businesses and professional practices in Beverly Hills, CA (ZIP 90210). The agency builds entity graphs, structured knowledge signals, and AI-readable content architectures that secure citations across every surface where high-net-worth buyers discover brands."
       tags={[
         'Luxury SEO',

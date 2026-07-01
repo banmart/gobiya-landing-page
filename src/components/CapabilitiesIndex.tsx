@@ -145,9 +145,9 @@ export default function CapabilitiesIndex() {
 
             <h1 className="display">
               <span className="line"><span>SEO & Web Development Services:</span></span>
-              <span className="line"><span>One codebase.</span></span>
-              <span className="line"><span>Every system</span></span>
-              <span className="line"><span className="accent">built in.</span></span>
+              <span className="line"><span>One codebase,</span></span>
+              <span className="line"><span>every system</span></span>
+              <span className="line"><span className="accent">built in</span></span>
             </h1>
 
             <p className="hero-sub body-l" data-hero="2">

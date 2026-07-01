@@ -104,7 +104,7 @@ export default function SeoDiscoverabilityPage() {
           <span style={{ color: '#374151' }}>SEO &amp; Discoverability</span>
         </nav>
         <h1 style={{ fontSize: 'clamp(2.5rem, 5.5vw, 4.5rem)', fontWeight: 700, letterSpacing: '-0.03em', lineHeight: 1.05, color: '#111827', maxWidth: '920px', marginBottom: '1.5rem' }}>
-          Get your pages out of the "Crawled – currently not indexed" trap.
+          SEO &amp; Discoverability: Key Pages Out of the "Crawled – Currently Not Indexed" Trap
         </h1>
         <p style={{ fontSize: '1.1rem', color: '#4b5563', lineHeight: 1.75, maxWidth: '640px', marginBottom: '2.5rem' }}>
           We resolve crawl budget leaks, fix technical index blocks, and build the topical authority needed so Google actually indexes your key commercial pages and drives qualified leads to your business.

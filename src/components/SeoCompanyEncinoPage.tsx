@@ -170,7 +170,7 @@ export default function SeoCompanyEncinoPage() {
     <LocalServicePageTemplate
       schema={SCHEMA}
       breadcrumb="Services / Encino"
-      heroTitle="SEO Company Encino."
+      heroTitle="SEO Company Encino: Google Visibility, AI Citations, Client Growth"
       heroSubtitle="Gobiya is an SEO company serving Encino, Tarzana, and Sherman Oaks along the Ventura Boulevard corridor in the San Fernando Valley. Founded in 2012, the agency provides technical SEO, entity graph engineering, and AI citation optimization for professional services businesses that depend on organic search for client acquisition. Our SEO & Discoverability system has operated in this market since 2012."
       specs={[
         { label: 'Market', val: 'Encino, CA · Valley' },
