@@ -370,37 +370,11 @@ const SiteHeader: React.FC = () => {
                             <span className="opacity-0 -translate-x-2 group-hover/link:opacity-100 group-hover/link:translate-x-0 transition-all duration-200 text-gray-900 font-bold">&rarr;</span>
                           </a>
                         </li>
-                        {/* Hub item — inline spoke sub-nav */}
-                        <li onMouseEnter={() => setFlyoutItem('google-ads-ppc')}>
-                          <a href="/relations/google-ads-ppc-strategy-agency" className="group/link transition-all duration-200 flex items-center justify-between text-base py-2 border-b border-gray-100/30" style={{ color: flyoutItem === 'google-ads-ppc' ? '#111827' : '#6b7280' }}>
-                            <span style={{ fontWeight: flyoutItem === 'google-ads-ppc' ? 600 : 400 }}>Google Ads &amp; PPC Strategy</span>
-                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style={{ color: flyoutItem === 'google-ads-ppc' ? '#111827' : '#9ca3af', transition: 'color 0.2s, transform 0.2s', transform: flyoutItem === 'google-ads-ppc' ? 'rotate(90deg)' : 'none' }}>
-                              <path d="M5 3l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                            </svg>
+                        <li onMouseEnter={() => setFlyoutItem(null)}>
+                          <a href="/relations/google-ads-ppc-strategy-agency" className="group/link text-gray-500 hover:text-gray-900 transition-all duration-200 flex items-center justify-between text-base py-2 border-b border-gray-100/30">
+                            <span>Google Ads &amp; PPC Strategy</span>
+                            <span className="opacity-0 -translate-x-2 group-hover/link:opacity-100 group-hover/link:translate-x-0 transition-all duration-200 text-gray-900 font-bold">&rarr;</span>
                           </a>
-                          {/* Inline spoke sub-list */}
-                          <ul style={{
-                            overflow: 'hidden',
-                            maxHeight: flyoutItem === 'google-ads-ppc' ? '200px' : '0',
-                            opacity: flyoutItem === 'google-ads-ppc' ? 1 : 0,
-                            transition: 'max-height 0.25s ease, opacity 0.2s ease',
-                            paddingLeft: '0.75rem',
-                            borderLeft: '2px solid #e5e7eb',
-                            marginTop: flyoutItem === 'google-ads-ppc' ? '4px' : '0',
-                            marginBottom: flyoutItem === 'google-ads-ppc' ? '4px' : '0',
-                          }}>
-                            {RELATIONS_SPOKES['google-ads-ppc'].map((spoke, i) => (
-                              <li key={i}>
-                                <a href={spoke.href} className="group/spoke flex items-center justify-between transition-colors duration-150" style={{ color: '#6b7280', textDecoration: 'none', padding: '5px 0', fontSize: '0.875rem' }}
-                                  onMouseEnter={e => (e.currentTarget.style.color = '#111827')}
-                                  onMouseLeave={e => (e.currentTarget.style.color = '#6b7280')}
-                                >
-                                  {spoke.title}
-                                  <span className="opacity-0 group-hover/spoke:opacity-100 transition-opacity" style={{ fontWeight: 700 }}>&rarr;</span>
-                                </a>
-                              </li>
-                            ))}
-                          </ul>
                         </li>
 
                       </ul>
