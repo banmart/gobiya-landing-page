@@ -4,90 +4,64 @@ const path = require('path');
 // 1. Get current date for lastmod (YYYY-MM-DD format)
 const currentDate = new Date().toISOString().split('T')[0];
 
-// 2. Define static core pages
-const corePages = [
-  { url: 'https://www.gobiya.com', priority: '1.0', changefreq: 'weekly', lastmod: currentDate },
-  { url: 'https://www.gobiya.com/capabilities', priority: '0.85', changefreq: 'weekly', lastmod: '2026-06-13' },
-  { url: 'https://www.gobiya.com/capabilities/web-development', priority: '0.90', changefreq: 'weekly', lastmod: '2026-06-13' },
-  { url: 'https://www.gobiya.com/capabilities/native-crm', priority: '0.90', changefreq: 'weekly', lastmod: '2026-06-13' },
-  { url: 'https://www.gobiya.com/capabilities/seo-discoverability', priority: '0.90', changefreq: 'weekly', lastmod: '2026-06-13' },
-  { url: 'https://www.gobiya.com/capabilities/blockchain-web3-development', priority: '0.90', changefreq: 'weekly', lastmod: '2026-06-13' },
-  { url: 'https://www.gobiya.com/capabilities/ai-prospect-scraper', priority: '0.90', changefreq: 'weekly', lastmod: '2026-06-13' },
-  { url: 'https://www.gobiya.com/capabilities/ai-llms-business', priority: '0.90', changefreq: 'weekly', lastmod: '2026-06-13' },
-  { url: 'https://www.gobiya.com/capabilities/authority-building', priority: '0.90', changefreq: 'weekly', lastmod: currentDate },
-  { url: 'https://www.gobiya.com/insights', priority: '0.75', changefreq: 'daily', lastmod: currentDate },
-  { url: 'https://www.gobiya.com/about', priority: '0.70', changefreq: 'monthly', lastmod: '2026-05-28' },
-  { url: 'https://www.gobiya.com/case-studies', priority: '0.80', changefreq: 'weekly', lastmod: '2026-05-28' },
-  { url: 'https://www.gobiya.com/approach', priority: '0.80', changefreq: 'weekly', lastmod: '2026-05-28' },
-  { url: 'https://www.gobiya.com/contact', priority: '0.85', changefreq: 'weekly', lastmod: '2026-05-28' },
-  { url: 'https://www.gobiya.com/book', priority: '0.80', changefreq: 'weekly', lastmod: '2026-06-04' },
-  { url: 'https://www.gobiya.com/about/steve-martin', priority: '0.70', changefreq: 'monthly', lastmod: '2026-05-25' },
-  { url: 'https://www.gobiya.com/author/steve-martin', priority: '0.70', changefreq: 'monthly', lastmod: '2026-05-25' },
-  { url: 'https://www.gobiya.com/case-studies/smile-center-dentistry', priority: '0.80', changefreq: 'monthly', lastmod: '2026-05-28' },
-  { url: 'https://www.gobiya.com/case-studies/american-livescan', priority: '0.80', changefreq: 'monthly', lastmod: '2026-05-28' },
-  { url: 'https://www.gobiya.com/google-penalty-recovery', priority: '0.85', changefreq: 'weekly', lastmod: currentDate },
+// 2. Read api/index.ts to extract static routes dynamically
+const apiPath = path.resolve(__dirname, '../api/index.ts');
+const apiContent = fs.readFileSync(apiPath, 'utf8');
+
+const metadataMapMatch = apiContent.match(/const metadataMap: Record<string, SEOMetadata> = \{([\s\S]*?)\n\};/);
+if (!metadataMapMatch) {
+  console.error("Could not find metadataMap in api/index.ts");
+  process.exit(1);
+}
+
+const mapContent = metadataMapMatch[1];
+// Extract keys: looking for lines that start with '  '/some-path': {'
+const routeRegex = /^\s*'(\/[^']+)'\s*:/gm;
+let staticRoutes = [];
+let match;
+while ((match = routeRegex.exec(mapContent)) !== null) {
+  const route = match[1];
+  // Exclude image paths that might have accidentally matched
+  if (!route.startsWith('/images/')) {
+    staticRoutes.push(route);
+  }
+}
+
+// Map static routes to sitemap objects
+const corePages = staticRoutes.map(route => {
+  let priority = '0.85';
+  let changefreq = 'weekly';
   
-  // Category Pages
-  { url: 'https://www.gobiya.com/creativity', priority: '0.90', changefreq: 'weekly', lastmod: currentDate },
-  { url: 'https://www.gobiya.com/performance', priority: '0.90', changefreq: 'weekly', lastmod: currentDate },
-  { url: 'https://www.gobiya.com/relations', priority: '0.90', changefreq: 'weekly', lastmod: currentDate },
+  if (route === '/') {
+    priority = '1.0';
+  } else if (route.startsWith('/capabilities') || route.startsWith('/creativity') || route.startsWith('/performance') || route.startsWith('/relations')) {
+    priority = '0.90';
+  } else if (route === '/insights') {
+    priority = '0.75';
+    changefreq = 'daily';
+  } else if (route.startsWith('/about') || route.startsWith('/author')) {
+    priority = '0.70';
+    changefreq = 'monthly';
+  }
 
-  // Creativity Fan-Outs
-  { url: 'https://www.gobiya.com/creativity/brand-identity-strategy-agency', priority: '0.85', changefreq: 'weekly', lastmod: currentDate },
-  { url: 'https://www.gobiya.com/creativity/communication-concepts-agency', priority: '0.85', changefreq: 'weekly', lastmod: currentDate },
-  { url: 'https://www.gobiya.com/creativity/seo-web-copywriting-agency', priority: '0.85', changefreq: 'weekly', lastmod: currentDate },
-  { url: 'https://www.gobiya.com/creativity/creative-art-direction-agency', priority: '0.85', changefreq: 'weekly', lastmod: currentDate },
-  { url: 'https://www.gobiya.com/creativity/social-media-management-agency', priority: '0.85', changefreq: 'weekly', lastmod: currentDate },
+  // Ensure root URL doesn't end with a trailing slash in the sitemap if route is '/'
+  const urlPath = route === '/' ? '' : route;
+  
+  return {
+    url: `https://www.gobiya.com${urlPath}`,
+    priority,
+    changefreq,
+    lastmod: currentDate
+  };
+});
 
-  // Performance Fan-Outs
-  { url: 'https://www.gobiya.com/performance/seo-discoverability-agency', priority: '0.85', changefreq: 'weekly', lastmod: currentDate },
-  { url: 'https://www.gobiya.com/performance/web-development-agency', priority: '0.85', changefreq: 'weekly', lastmod: currentDate },
-  { url: 'https://www.gobiya.com/performance/google-ads-ppc-strategy-agency', priority: '0.85', changefreq: 'weekly', lastmod: currentDate },
-  { url: 'https://www.gobiya.com/performance/cro-ux-analysis-agency', priority: '0.85', changefreq: 'weekly', lastmod: currentDate },
-  { url: 'https://www.gobiya.com/performance/ai-llms-business-agency', priority: '0.85', changefreq: 'weekly', lastmod: currentDate },
-  { url: 'https://www.gobiya.com/performance/native-crm-agency', priority: '0.85', changefreq: 'weekly', lastmod: currentDate },
-  { url: 'https://www.gobiya.com/performance/blockchain-web3-development-agency', priority: '0.85', changefreq: 'weekly', lastmod: currentDate },
-  { url: 'https://www.gobiya.com/performance/ai-prospect-scraper-agency', priority: '0.85', changefreq: 'weekly', lastmod: currentDate },
-
-  // Relations Fan-Outs
-  { url: 'https://www.gobiya.com/relations/authority-building-agency', priority: '0.85', changefreq: 'weekly', lastmod: currentDate },
-  { url: 'https://www.gobiya.com/relations/digital-pr-media-outreach-agency', priority: '0.85', changefreq: 'weekly', lastmod: currentDate },
-  { url: 'https://www.gobiya.com/relations/content-marketing-syndication-agency', priority: '0.85', changefreq: 'weekly', lastmod: currentDate },
-  { url: 'https://www.gobiya.com/relations/influencer-marketing-agency', priority: '0.85', changefreq: 'weekly', lastmod: currentDate },
-  { url: 'https://www.gobiya.com/relations/local-community-relations-agency', priority: '0.85', changefreq: 'weekly', lastmod: currentDate },
-
-  // New Pages / Local Pages
-  { url: 'https://www.gobiya.com/ai-search-marketing-santa-clarita', priority: '0.85', changefreq: 'weekly', lastmod: currentDate },
-  { url: 'https://www.gobiya.com/on-page-seo-los-angeles', priority: '0.85', changefreq: 'weekly', lastmod: currentDate },
-  { url: 'https://www.gobiya.com/ai-seo-beverly-hills', priority: '0.85', changefreq: 'weekly', lastmod: currentDate },
-  { url: 'https://www.gobiya.com/local-seo-glendale', priority: '0.85', changefreq: 'weekly', lastmod: currentDate },
-  { url: 'https://www.gobiya.com/seo-company-encino', priority: '0.85', changefreq: 'weekly', lastmod: currentDate },
-  { url: 'https://www.gobiya.com/local-seo-company-burbank', priority: '0.85', changefreq: 'weekly', lastmod: currentDate },
-  { url: 'https://www.gobiya.com/local-seo-services-burbank', priority: '0.85', changefreq: 'weekly', lastmod: currentDate },
-  { url: 'https://www.gobiya.com/glendale-seo', priority: '0.85', changefreq: 'weekly', lastmod: currentDate },
-  { url: 'https://www.gobiya.com/plastic-surgery-internet-marketing', priority: '0.85', changefreq: 'weekly', lastmod: currentDate },
-  { url: 'https://www.gobiya.com/internet-marketing-services-los-angeles', priority: '0.85', changefreq: 'weekly', lastmod: currentDate },
-  { url: 'https://www.gobiya.com/los-angeles-seo-professional', priority: '0.85', changefreq: 'weekly', lastmod: currentDate },
-
-  // New Creativity Pages
-  { url: 'https://www.gobiya.com/creativity/seo-content-strategy-agency', priority: '0.85', changefreq: 'weekly', lastmod: currentDate },
-  { url: 'https://www.gobiya.com/creativity/geo-ai-content-writing-agency', priority: '0.85', changefreq: 'weekly', lastmod: currentDate },
-  { url: 'https://www.gobiya.com/creativity/ai-videos-agency', priority: '0.85', changefreq: 'weekly', lastmod: currentDate },
-  { url: 'https://www.gobiya.com/creativity/crypto-web3-agency', priority: '0.85', changefreq: 'weekly', lastmod: currentDate },
-  { url: 'https://www.gobiya.com/creativity/landing-page-copywriting-agency', priority: '0.85', changefreq: 'weekly', lastmod: currentDate },
-  { url: 'https://www.gobiya.com/creativity/website-copywriting-services-agency', priority: '0.85', changefreq: 'weekly', lastmod: currentDate }
-];
+console.log(`Extracted ${corePages.length} core pages from api/index.ts`);
 
 // 3. Read ArticlePage.tsx content to extract article slugs and dates
 const articlePagePath = path.resolve(__dirname, '../src/components/ArticlePage.tsx');
 const articlePageContent = fs.readFileSync(articlePagePath, 'utf8');
 
 // Match slugs and dates
-// Example structure:
-// 'multi-location-websites-for-franchises': {
-//   slug: 'multi-location-websites-for-franchises',
-//   ...
-//   date: 'June 13, 2026',
 const articleBlocks = articlePageContent.split(/^\s*'[a-z0-9-]+':\s*\{/gm);
 
 const articles = [];
