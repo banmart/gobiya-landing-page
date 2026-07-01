@@ -1,4 +1,4 @@
-﻿import React, { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import SiteHeader from './SiteHeader';
 import SiteFooter from './SiteFooter';
 import HeroQuickForm from './HeroQuickForm';
@@ -62,14 +62,14 @@ const SCHEMA = {
           acceptedAnswer: { '@type': 'Answer', text: 'Our core office hours are Monday through Friday, 9:00 AM to 6:00 PM Pacific Time. However, you can submit inquiries or schedule an online appointment at any time through our portal, and our Los Angeles team will respond promptly during business hours.' },
         },
         {
-          ‘@type’: ‘Question’,
-          name: ‘What separates an internet marketing agency that generates pipeline from one that just generates traffic?’,
-          acceptedAnswer: { ‘@type’: ‘Answer’, text: ‘Pipeline-focused agencies connect every marketing channel — organic search, paid, email — directly to your CRM so every lead is tracked from first click to closed deal. Traffic-focused agencies optimise for clicks and impressions but stop there. The practical difference: one shows you revenue attributable to marketing spend, the other shows you a graph of sessions.’ },
+          '@type': 'Question',
+          name: 'What separates an internet marketing agency that generates pipeline from one that just generates traffic?',
+          acceptedAnswer: { '@type': 'Answer', text: 'Pipeline-focused agencies connect every marketing channel — organic search, paid, email — directly to your CRM so every lead is tracked from first click to closed deal. Traffic-focused agencies optimise for clicks and impressions but stop there. The practical difference: one shows you revenue attributable to marketing spend, the other shows you a graph of sessions.' },
         },
         {
-          ‘@type’: ‘Question’,
-          name: ‘What does a Gobiya internet marketing engagement look like in the first 90 days?’,
-          acceptedAnswer: { ‘@type’: ‘Answer’, text: ‘The first 30 days are diagnostic: technical SEO audit, CRM audit, and keyword intent mapping. Days 31–60 are implementation: fixing crawl issues, deploying structured data, and connecting web forms to your pipeline. Days 61–90 are iteration: content depth improvements, performance reporting, and identifying the next highest-leverage channel. Most clients see measurable ranking or lead-quality changes within the first cycle.’ },
+          '@type': 'Question',
+          name: 'What does a Gobiya internet marketing engagement look like in the first 90 days?',
+          acceptedAnswer: { '@type': 'Answer', text: 'The first 30 days are diagnostic: technical SEO audit, CRM audit, and keyword intent mapping. Days 31–60 are implementation: fixing crawl issues, deploying structured data, and connecting web forms to your pipeline. Days 61–90 are iteration: content depth improvements, performance reporting, and identifying the next highest-leverage channel. Most clients see measurable ranking or lead-quality changes within the first cycle.' },
         },
       ],
     },
