@@ -1,8 +1,5 @@
-import React, { useEffect } from 'react';
-import SiteHeader from './SiteHeader';
-import SiteFooter from './SiteFooter';
-import HeroQuickForm from './HeroQuickForm';
-import ContentCta from './ContentCta';
+import React from 'react';
+import LocalServicePageTemplate from './LocalServicePageTemplate';
 
 const SCHEMA = {
   '@context': 'https://schema.org',
@@ -115,12 +112,12 @@ const STATS = [
 ];
 
 const SERVICES = [
-  { n: '01', title: 'Google Business Profile optimization', body: 'Your GBP is the primary ranking signal for the Map Pack. We optimize every field — categories, service area, hours, attributes — manage photo strategy, build out Q&A, and maintain the posting cadence that keeps the profile active in Google\'s eyes.' },
-  { n: '02', title: 'NAP citation audit & repair', body: 'Name, Address, Phone — any mismatch across directories erodes Google\'s confidence in your entity. We audit your citations on Google, Yelp, Bing Places, Apple Maps, and 30+ vertical directories, then correct every inconsistency.' },
-  { n: '03', title: 'Review velocity management', body: 'Review count and recency are direct Map Pack ranking signals. We build a repeatable review acquisition workflow that gets satisfied clients to leave Google reviews — systematically and in compliance with Google\'s policies.' },
-  { n: '04', title: 'LocalBusiness schema markup', body: 'Schema markup tells Google exactly what your business is, where it operates, and what services it provides — in a format crawlers can process without ambiguity. We implement this directly in the code, not through a plugin.' },
-  { n: '05', title: 'Location page architecture', body: 'For businesses serving multiple Burbank neighborhoods or surrounding San Fernando Valley cities, we build location-specific pages with correct entity structure, local content depth, and internal link equity routing.' },
-  { n: '06', title: 'Competitor gap analysis', body: 'We read the Map Pack for your target queries and document exactly which signals the ranking businesses have that you don\'t — GBP completeness, citation count, review velocity, schema — then close those gaps in order of impact.' },
+  { title: 'Google Business Profile optimization', body: 'Your GBP is the primary ranking signal for the Map Pack. We optimize every field — categories, service area, hours, attributes — manage photo strategy, build out Q&A, and maintain the posting cadence that keeps the profile active in Google\'s eyes.' },
+  { title: 'NAP citation audit & repair', body: 'Name, Address, Phone — any mismatch across directories erodes Google\'s confidence in your entity. We audit your citations on Google, Yelp, Bing Places, Apple Maps, and 30+ vertical directories, then correct every inconsistency.' },
+  { title: 'Review velocity management', body: 'Review count and recency are direct Map Pack ranking signals. We build a repeatable review acquisition workflow that gets satisfied clients to leave Google reviews — systematically and in compliance with Google\'s policies.' },
+  { title: 'LocalBusiness schema markup', body: 'Schema markup tells Google exactly what your business is, where it operates, and what services it provides — in a format crawlers can process without ambiguity. We implement this directly in the code, not through a plugin.' },
+  { title: 'Location page architecture', body: 'For businesses serving multiple Burbank neighborhoods or surrounding San Fernando Valley cities, we build location-specific pages with correct entity structure, local content depth, and internal link equity routing.' },
+  { title: 'Competitor gap analysis', body: 'We read the Map Pack for your target queries and document exactly which signals the ranking businesses have that you don\'t — GBP completeness, citation count, review velocity, schema — then close those gaps in order of impact.' },
 ];
 
 const STEPS = [
@@ -132,188 +129,152 @@ const STEPS = [
   'Monthly rank reporting — Map Pack position tracking for all target queries in the Burbank market, with plain-language explanations of what moved and why',
 ];
 
+const FAQS_LIST = [
+  { q: 'We were in the top three on Google Maps for our main category for over a year, then one update knocked us out of the Map Pack completely. How do we find out what happened?', a: 'A sudden Map Pack drop after a Google update usually traces to one of three things. First, proximity weighting changes — Google periodically adjusts how much weight it gives to the searcher\'s location versus a business\'s configured service area, which can move rankings for businesses on the edge of their target zones. Second, GBP category reconfiguration — if Google updated its business category taxonomy and your category was deprecated or split, your relevance signal drops until you reconfigure. Third, review recency — if you had a burst of reviews earlier and they have since aged without new ones, the velocity signal decays. The diagnostic is a side-by-side comparison of your current GBP data versus your competitors who held their positions through the update.' },
+  { q: 'We ask every happy customer to leave us a Google review and almost nobody follows through. How do you actually improve that conversion rate?', a: 'The friction is almost always in the request itself — asking verbally at the point of service, or sending a general follow-up email without a direct link, produces single-digit conversion rates. What works: send a follow-up SMS within 24 hours of service with a direct Google review link that opens the compose screen. Ask at the right moment in the experience, not at checkout when the customer is focused on leaving. The practices achieving 4 to 6 reviews per month consistently have an automated SMS follow-up sequence tied to their scheduling or payment system. We build that workflow as part of the local SEO engagement.' },
+  { q: 'Our NAP looks consistent everywhere we can see, but Google sometimes shows our old address or an outdated phone number. What is causing that?', a: 'Google aggregates business data from multiple sources — and not all of those sources are directories you can see or edit directly. Data aggregators like Data Axle, Neustar Localeze, and Foursquare feed business information into Google\'s Knowledge Graph, and if those aggregators have cached your old data, Google may still pull it even after you updated your GBP directly. The fix requires a full citation audit that goes beyond the visible directories to the aggregator layer, correcting records at the source so they propagate correctly into Google\'s entity graph.' },
+  { q: 'We are a new business in Burbank. How long does it realistically take for local SEO to start generating calls from Google Maps?', a: 'For a new business with no existing GBP history, the honest timeline is 90 to 180 days before Map Pack rankings become consistent for competitive category queries. The first 30 days focus on GBP verification, category setup, and initial citation building. By day 60 to 90, with consistent GBP posting activity, early citation signals, and the first review velocity building, visibility starts expanding. Full competitive Map Pack positioning in Burbank\'s professional service categories typically requires 6 months of consistent work.' },
+];
+
 export default function LocalSeoServicesBurbankPage() {
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'instant' });
-  }, []);
-
   return (
-    <div className="min-h-screen bg-white font-sans">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(SCHEMA) }} />
+    <LocalServicePageTemplate
+      schema={SCHEMA}
+      breadcrumb="Services / Burbank"
+      heroTitle="Local SEO Services Burbank."
+      heroSubtitle="Gobiya's Burbank local SEO service is a month-to-month program covering Google Business Profile optimization, NAP citation audits, review velocity management, and local schema markup for businesses in the Burbank 91501–91510 ZIP corridor. The service targets Map Pack placement for category searches on San Fernando Boulevard and in the Burbank Media District."
+      tags={[
+        'Local SEO',
+        'Map Pack',
+        'Google Business Profile',
+        'Citation Authority',
+        'Burbank, CA',
+        'Reputation Systems'
+      ]}
+      relevantSlugs={[
+        'multi-location-websites-for-franchises',
+        'how-do-b2b-companies-use-seo-to-generate-predictable-revenue',
+        'what-are-ai-seo-services'
+      ]}
+      introHeading="What Local SEO Services in Burbank Actually Include"
+      introParagraphs={[
+        "Local SEO services in Burbank cover the four technical signals Google uses to determine Map Pack rankings: Google Business Profile authority, NAP citation consistency across directories, review velocity and recency, and local schema markup. If any one of these breaks down, the others can't compensate.",
+        "Burbank's commercial geography makes local SEO more competitive than most people expect. The corridor from downtown Burbank through Toluca Lake handles a concentrated mix of entertainment-adjacent businesses, medical and dental practices, home services, and professional services — all competing for the same Map Pack real estate.",
+        "None of these are hard to fix once identified. The issue is that most businesses — and many agencies — don't run a methodical audit before touching anything. We do a full signal read before making any changes, which is why our technical SEO audit is the entry point for every local campaign."
+      ]}
+      stats={STATS}
+      servicesLabel="What's included"
+      servicesTitle="What Burbank Local SEO Services Include"
+      services={SERVICES}
+      spokes={SPOKES}
+      spokesTitle="How we cover the full local SEO services Burbank search landscape"
+      spokesLabel="Query fan-out cluster"
+      useHeroForm={true}
+      faqs={FAQS_LIST}
+    >
+      {/* Burbank vs LA Context */}
+      <section className="py-24 border-b border-gray-200 bg-white px-[5vw]">
+        <div className="max-w-4xl" data-anim="up">
+          <span className="text-sm font-mono uppercase tracking-widest text-gray-400 block mb-3">Market context</span>
+          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-gray-900 mb-6">
+            Local SEO services in Los Angeles vs Burbank — why the market is different
+          </h2>
+          <p className="text-gray-600 leading-relaxed mb-6">
+            Burbank operates as its own sub-market within Greater Los Angeles, with distinct search patterns shaped by industry concentration. Warner Bros., Disney, NBC, and Nickelodeon all have Burbank campuses. That means the B2B and consumer search landscape around Burbank differs significantly from, say, the Westside or downtown LA. Medical and dental practices in Burbank compete not just with Burbank providers but with Glendale, Pasadena, and North Hollywood for the same patient searches.
+          </p>
+          <p className="text-gray-600 leading-relaxed mb-8">
+            Searching "local seo services in Los Angeles" will return agencies that technically serve Burbank but may have never run a campaign for a business operating in the 91501–91510 ZIP codes. The GBP category performance, citation source weighting, and competitor landscape in Burbank are specific enough that broad LA expertise doesn't automatically translate.
+          </p>
 
-      <SiteHeader />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 border border-gray-200 bg-gray-50 p-6 md:p-8 mb-8">
+            <div>
+              <strong className="font-mono text-xs text-gray-900 block mb-4 uppercase tracking-widest">Los Angeles (broad)</strong>
+              <ul className="space-y-3">
+                {[
+                  'High competition across all verticals',
+                  'Generic local SEO tactics still get results in some niches',
+                  'Agency supply is dense — harder to evaluate',
+                  'Broad LA queries ("dentist Los Angeles") are extremely competitive'
+                ].map((p, j) => (
+                  <li key={j} className="text-sm text-gray-600 flex gap-2">
+                    <span className="text-gray-400">—</span>
+                    {p}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <strong className="font-mono text-xs text-gray-900 block mb-4 uppercase tracking-widest">Burbank (specific)</strong>
+              <ul className="space-y-3">
+                {[
+                  'Entertainment-adjacent B2B market with distinct signals',
+                  'Neighborhood-level queries ("dentist near Warner Center") are winnable with correct GBP signals',
+                  'Local SEO expertise is rarer — specialist advantage is real',
+                  'ZIP-code targeting in GBP service area matters significantly'
+                ].map((p, j) => (
+                  <li key={j} className="text-sm text-gray-600 flex gap-2">
+                    <span className="text-green-600">—</span>
+                    {p}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+          <p className="text-sm text-gray-500">
+            Our <a href="/on-page-seo-los-angeles" className="text-green-600 font-semibold hover:underline">on-page SEO work in Los Angeles</a> covers the broader metro. For Burbank specifically, we bring the same technical depth plus 12+ years of active client work in the San Fernando Valley market. See the <a href="/local-seo-company-burbank" className="text-green-600 font-semibold hover:underline">Burbank practice profile</a> for market-specific detail.
+          </p>
+        </div>
+      </section>
 
-      {/* -- HERO -- */}
-      <section style={{ background: '#ffffff', padding: 'clamp(7rem,15vw,13rem) 5vw 5rem', borderBottom: '1px solid #e5e7eb' }}>
-        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '3rem', alignItems: 'flex-start', justifyContent: 'space-between' }}>
-          <div style={{ flex: '1 1 480px', minWidth: 0 }}>
-            <nav style={{ fontFamily: 'monospace', fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.18em', color: '#9ca3af', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-              <a href="/" style={{ color: '#9ca3af', textDecoration: 'none' }}>Home</a>
-              <span>/</span>
-              <a href="/performance" style={{ color: '#9ca3af', textDecoration: 'none' }}>Performance</a>
-              <span>/</span>
-              <span style={{ color: '#374151' }}>Local SEO Services Burbank</span>
-            </nav>
-            <h1 style={{ fontSize: 'clamp(2.5rem, 5.5vw, 4.5rem)', fontWeight: 700, letterSpacing: '-0.03em', lineHeight: 1.05, color: '#111827', maxWidth: '920px', marginBottom: '1.5rem' }}>
-              Local SEO Services Burbank
-            </h1>
-            <p style={{ fontSize: '1.1rem', color: '#4b5563', lineHeight: 1.75, maxWidth: '680px', marginBottom: '2.5rem' }}>
-              Gobiya's Burbank local SEO service is a month-to-month program covering Google Business Profile optimization, NAP citation audits, review velocity management, and local schema markup for businesses in the Burbank 91501–91510 ZIP corridor. The service targets Map Pack placement for category searches on San Fernando Boulevard and in the Burbank Media District. For background on the diagnostic approach and client results, see the <a href="/local-seo-company-burbank" style={{ color: 'var(--green)', textDecoration: 'none' }}>Burbank local SEO company overview</a>.
+      {/* 6 Stage Campaign */}
+      <section className="py-24 border-b border-gray-200 bg-gray-50 px-[5vw]">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-16" data-anim="up">
+          <div>
+            <span className="text-sm font-mono uppercase tracking-widest text-gray-400 block mb-3">How we run a local SEO campaign</span>
+            <h2 className="text-3xl font-bold tracking-tight text-gray-900 mb-6">
+              Map Pack audit to ranking in 6 stages
+            </h2>
+            <p className="text-gray-500 text-sm leading-relaxed">
+              Every stage is sequenced to close the highest-impact gaps first. Local SEO compounds — GBP + citations + reviews + schema working together produces faster results than any one signal alone.
             </p>
           </div>
-          <div style={{ flex: '1 1 460px', maxWidth: '560px' }}>
-            <HeroQuickForm source="Local SEO Services Burbank" variant="light" heading="Request a Burbank local SEO quote" subheading="Tell us about your business and we'll send a quick read." />
-          </div>
-        </div>
-      </section>
-
-      {/* -- STATS BAR -- */}
-      <section style={{ borderBottom: '1px solid #e5e7eb', background: '#f9fafb' }}>
-        <div className="rg-stats" style={{ padding: '0 5vw' }}>
-          {STATS.map((s, i) => (
-            <div key={i} style={{ padding: '2rem 0', borderRight: i < 2 ? '1px solid #e5e7eb' : 'none', paddingLeft: i > 0 ? '3rem' : 0 }}>
-              <span style={{ display: 'block', fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 700, letterSpacing: '-0.04em', color: '#111827', lineHeight: 1 }}>{s.val}</span>
-              <span style={{ display: 'block', fontSize: '0.78rem', fontFamily: 'monospace', textTransform: 'uppercase', letterSpacing: '0.12em', color: '#9ca3af', marginTop: '0.5rem' }}>{s.label}</span>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* -- CLUSTER MAP -- */}
-      <section style={{ padding: '5rem 5vw', borderBottom: '1px solid #e5e7eb', background: '#ffffff' }}>
-        <div style={{ marginBottom: '2.5rem' }}>
-          <span style={{ fontFamily: 'monospace', fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.18em', color: '#9ca3af', display: 'block', marginBottom: '0.5rem' }}>Query fan-out cluster</span>
-          <h2 style={{ fontSize: 'clamp(1.6rem, 3vw, 2.4rem)', fontWeight: 700, letterSpacing: '-0.03em', color: '#111827', maxWidth: '600px' }}>
-            How we cover the full local SEO services Burbank search landscape
-          </h2>
-        </div>
-
-        <div style={{ border: '2px solid #111827', padding: '1.75rem 2rem', marginBottom: '1px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '1rem' }}>
-          <div>
-            <span style={{ fontFamily: 'monospace', fontSize: '0.65rem', textTransform: 'uppercase', letterSpacing: '0.14em', color: '#6b7280', display: 'block', marginBottom: '0.4rem' }}>Hub — you are here</span>
-            <strong style={{ fontSize: '1.05rem', color: '#111827' }}>Local SEO Services Burbank</strong>
-            <span style={{ display: 'block', fontSize: '0.8rem', color: '#6b7280', marginTop: '0.2rem', fontFamily: 'monospace' }}>"local seo services burbank"</span>
-          </div>
-          <span style={{ fontFamily: 'monospace', fontSize: '0.65rem', textTransform: 'uppercase', letterSpacing: '0.14em', color: '#9ca3af', border: '1px solid #e5e7eb', padding: '0.3rem 0.75rem', borderRadius: '100px' }}>
-            /local-seo-services-burbank
-          </span>
-        </div>
-
-        <div className="rg-spokes" style={{ border: '1px solid #e5e7eb', borderTop: 'none' }}>
-          {SPOKES.map((s, i) => (
-            <a
-              key={i}
-              href={s.href}
-              style={{ display: 'block', padding: '1.5rem', borderRight: i < 3 ? '1px solid #e5e7eb' : 'none', textDecoration: 'none', transition: 'background 0.2s' }}
-              onMouseEnter={e => (e.currentTarget.style.background = '#f9fafb')}
-              onMouseLeave={e => (e.currentTarget.style.background = 'transparent')}
-            >
-              <span style={{ fontFamily: 'monospace', fontSize: '0.6rem', textTransform: 'uppercase', letterSpacing: '0.14em', color: '#9ca3af', display: 'block', marginBottom: '0.6rem' }}>
-                Spoke {String(i + 1).padStart(2, '0')}
-              </span>
-              <strong style={{ fontSize: '0.9rem', color: '#111827', display: 'block', marginBottom: '0.4rem', lineHeight: 1.3 }}>{s.title}</strong>
-              <span style={{ fontSize: '0.7rem', fontFamily: 'monospace', color: '#9ca3af', display: 'block', marginBottom: '0.75rem' }}>{s.query}</span>
-              <p style={{ fontSize: '0.8rem', color: '#6b7280', lineHeight: 1.6 }}>{s.desc}</p>
-              <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.3rem', fontSize: '0.7rem', fontFamily: 'monospace', textTransform: 'uppercase', letterSpacing: '0.1em', color: '#374151', marginTop: '1rem', borderBottom: '1px solid #d1d5db', paddingBottom: '2px' }}>
-                View page
-                <svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M1 11L11 1M11 1H3M11 1V9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
-              </span>
-            </a>
-          ))}
-        </div>
-      </section>
-
-      <ContentCta headline="Ready to grow your Burbank local rankings?" sub="Our team responds within one business day." accent="#111827" background="#ffffff" />
-
-      {/* -- WHAT LOCAL SEO SERVICES INCLUDE -- */}
-      <section style={{ padding: '5rem 5vw', borderBottom: '1px solid #e5e7eb', background: '#f9fafb' }}>
-        <div style={{ maxWidth: '860px' }}>
-          <span style={{ fontFamily: 'monospace', fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.18em', color: '#9ca3af', display: 'block', marginBottom: '1rem' }}>What's included</span>
-          <h2 style={{ fontSize: 'clamp(1.6rem, 3vw, 2.4rem)', fontWeight: 700, letterSpacing: '-0.03em', color: '#111827', marginBottom: '1.5rem', lineHeight: 1.2 }}>
-            What local SEO services in Burbank actually include
-          </h2>
-          <p style={{ fontSize: '1rem', color: '#374151', lineHeight: 1.8, marginBottom: '1rem' }}>
-            Local SEO services in Burbank cover the four technical signals Google uses to determine Map Pack rankings: <a href="https://support.google.com/business/answer/3038177" style={{ color: 'var(--green)' }} target="_blank" rel="noopener noreferrer">Google Business Profile</a> authority, NAP citation consistency across directories, review velocity and recency, and local schema markup. If any one of these breaks down, the others can't compensate.
-          </p>
-          <p style={{ fontSize: '1rem', color: '#374151', lineHeight: 1.8, marginBottom: '1rem' }}>
-            Burbank's commercial geography makes local SEO more competitive than most people expect. The corridor from downtown Burbank through Toluca Lake handles a concentrated mix of entertainment-adjacent businesses, medical and dental practices, home services, and professional services — all competing for the same Map Pack real estate. Many of them have unclaimed or under-optimized GBP profiles, NAP data that disagrees across Google, Yelp, Bing Places, and Apple Maps, and review counts that haven't grown in 18 months or more.
-          </p>
-          <p style={{ fontSize: '1rem', color: '#374151', lineHeight: 1.8, marginBottom: '2rem' }}>
-            None of these are hard to fix once identified. The issue is that most businesses — and many agencies — don't run a methodical audit before touching anything. We do a full signal read before making any changes, which is why our <a href="/performance/technical-seo-audit-agency" style={{ color: 'var(--green)' }}>technical SEO audit</a> is the entry point for every local campaign.
-          </p>
-        </div>
-
-        <div className="rg-services" style={{ border: '1px solid #e5e7eb', background: '#e5e7eb', gap: '1px', maxWidth: '100%' }}>
-          {SERVICES.map(s => (
-            <div key={s.n} style={{ background: '#ffffff', padding: '2.5rem' }}>
-              <span style={{ fontFamily: 'monospace', fontSize: '0.7rem', color: '#9ca3af', display: 'block', marginBottom: '1rem' }}>{s.n}</span>
-              <h3 style={{ fontSize: '1.05rem', fontWeight: 600, color: '#111827', marginBottom: '0.75rem', letterSpacing: '-0.01em' }}>{s.title}</h3>
-              <p style={{ fontSize: '0.875rem', color: '#6b7280', lineHeight: 1.75 }}>{s.body}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* -- TOP RATED / REVIEWS -- */}
-      <section style={{ padding: '5rem 5vw', borderBottom: '1px solid #e5e7eb', background: '#ffffff' }}>
-        <div style={{ maxWidth: '860px' }}>
-          <span style={{ fontFamily: 'monospace', fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.18em', color: '#9ca3af', display: 'block', marginBottom: '1rem' }}>Trust & credentials</span>
-          <h2 style={{ fontSize: 'clamp(1.6rem, 3vw, 2.4rem)', fontWeight: 700, letterSpacing: '-0.03em', color: '#111827', marginBottom: '1.5rem', lineHeight: 1.2 }}>
-            Top rated local SEO services Burbank — what reviews actually tell you
-          </h2>
-          <p style={{ fontSize: '1rem', color: '#374151', lineHeight: 1.8, marginBottom: '1rem' }}>
-            When searching for "top rated local SEO services Burbank," you'll find a mix of directories, agency self-promotions, and review aggregators. Reviews matter — but the useful signals are buried under a lot of noise. A five-star review that says "great communication" doesn't tell you whether the agency actually moved a ranking. Reviews that mention specific query types, Map Pack positions, or lead volume changes are the ones worth reading.
-          </p>
-          <p style={{ fontSize: '1rem', color: '#374151', lineHeight: 1.8, marginBottom: '1rem' }}>
-            Beyond reviews, the indicators worth checking are: client tenure (18-month relationships signal results; one-month project lists signal churn), vertical experience (local SEO for a dental practice is different from local SEO for a home services contractor — ask which they've actually done), and whether the agency can show you the Map Pack before and after, not just a traffic chart.
-          </p>
-
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.5rem', margin: '2rem 0' }}>
-            {[
-              { label: 'BBB accreditation', val: 'A+ rated', desc: 'Better Business Bureau A+ rating — independent verification of business conduct and accountability.' },
-              { label: 'Years in Burbank market', val: 'Since 2012', desc: 'Over a decade of active client work in the Burbank and San Fernando Valley local search environment.' },
-              { label: 'Vertical experience', val: 'Medical, home services, professional', desc: 'Documented local SEO outcomes across dental, remodeling, and B2B professional services in this market.' },
-            ].map((c, i) => (
-              <div key={i} style={{ border: '1px solid #e5e7eb', padding: '1.75rem' }}>
-                <span style={{ fontFamily: 'monospace', fontSize: '0.65rem', textTransform: 'uppercase', letterSpacing: '0.12em', color: '#9ca3af', display: 'block', marginBottom: '0.5rem' }}>{c.label}</span>
-                <strong style={{ fontSize: '1.1rem', color: '#111827', display: 'block', marginBottom: '0.5rem' }}>{c.val}</strong>
-                <p style={{ fontSize: '0.82rem', color: '#6b7280', lineHeight: 1.65 }}>{c.desc}</p>
+          <div className="lg:col-span-2 border-t border-gray-200 divide-y divide-gray-200">
+            {STEPS.map((step, i) => (
+              <div key={i} className="grid grid-cols-12 py-6 items-start gap-4">
+                <span className="col-span-1 font-mono text-sm text-gray-400">0{i + 1}</span>
+                <p className="col-span-11 text-sm sm:text-base text-gray-700 leading-relaxed">{step}</p>
               </div>
             ))}
           </div>
-          <p style={{ fontSize: '0.95rem', color: '#6b7280', lineHeight: 1.75 }}>
-            We don't rank on "best Burbank SEO agency" lists — those lists are pay-to-play. Documented outcomes are in our <a href="/case-studies" style={{ color: 'var(--green)' }}>case studies</a>, and the specifics of what we'd do for your market are in a pre-read consultation, not a sales deck.
-          </p>
         </div>
       </section>
 
-      {/* -- OPEN NOW / ONLINE APPOINTMENTS -- */}
-      <section style={{ padding: '5rem 5vw', borderBottom: '1px solid #e5e7eb', background: '#f9fafb' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '5rem', alignItems: 'start' }}>
+      {/* Burbank open now details */}
+      <section className="py-24 border-b border-gray-200 bg-white px-[5vw]">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16" data-anim="up">
           <div>
-            <span style={{ fontFamily: 'monospace', fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.18em', color: '#9ca3af', display: 'block', marginBottom: '1rem' }}>Available now</span>
-            <h2 style={{ fontSize: 'clamp(1.6rem, 3vw, 2.4rem)', fontWeight: 700, letterSpacing: '-0.03em', color: '#111827', marginBottom: '1.25rem', lineHeight: 1.2 }}>
+            <span className="text-sm font-mono uppercase tracking-widest text-gray-400 block mb-3">Available now</span>
+            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-gray-900 mb-6">
               Local SEO services Burbank, open now — book an online appointment today
             </h2>
-            <p style={{ fontSize: '1rem', color: '#374151', lineHeight: 1.8, marginBottom: '1rem' }}>
+            <p className="text-gray-600 leading-relaxed mb-6">
               If you found this page because you need local SEO help now — a GBP suspension, a Map Pack drop after a Google update, a new business launching in Burbank and needing local visibility from day one — the fastest path forward is a pre-read consultation.
             </p>
-            <p style={{ fontSize: '1rem', color: '#374151', lineHeight: 1.8, marginBottom: '1.5rem' }}>
+            <p className="text-gray-600 leading-relaxed mb-6">
               Online appointments are available through our booking page. A pre-read is a 30–45 minute session where we audit your current GBP, citation profile, and competitive position in the Burbank market before you commit to anything. You'll know exactly what's causing the problem and what we'd fix.
             </p>
-            <p style={{ fontSize: '1rem', color: '#374151', lineHeight: 1.8, marginBottom: '2rem' }}>
+            <p className="text-gray-600 leading-relaxed mb-8">
               For urgent GBP suspensions or sudden Map Pack disappearances, reach us directly. Those situations need a same-day read, not a scheduled consultation.
             </p>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-              <a href="/book" className="btn btn-primary magnetic" style={{ alignSelf: 'flex-start' }}>
+            <div className="flex flex-col gap-4">
+              <a href="/book" className="inline-flex items-center justify-center px-6 py-3 bg-black text-white font-semibold text-sm uppercase tracking-wider hover:bg-gray-800 transition-colors self-start">
                 Book online — local SEO consultation
-                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" /></svg>
               </a>
-              <span style={{ fontSize: '0.875rem', color: '#6b7280' }}>Or contact directly: <a href="mailto:hello@gobiya.com" style={{ color: 'var(--green)' }}>hello@gobiya.com</a> — <a href="tel:3237441338" style={{ color: 'var(--green)' }}>323-744-1338</a></span>
+              <span className="text-xs text-gray-500">Or contact directly: <a href="mailto:hello@gobiya.com" className="text-green-600 font-semibold">hello@gobiya.com</a> — <a href="tel:3237441338" className="text-green-600 font-semibold">323-744-1338</a></span>
             </div>
           </div>
 
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '0' }}>
+          <div className="border border-gray-200 bg-white">
             {[
               { label: 'Phone', val: '323-744-1338', href: 'tel:3237441338' },
               { label: 'Email', val: 'hello@gobiya.com', href: 'mailto:hello@gobiya.com' },
@@ -322,12 +283,12 @@ export default function LocalSeoServicesBurbankPage() {
               { label: 'Service area', val: 'Burbank 91501–91510 + greater LA', href: null },
               { label: 'Office', val: '3580 Wilshire Blvd, Ste 132, Los Angeles, CA 90010', href: null },
             ].map((r, i) => (
-              <div key={i} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', padding: '1.25rem 0', borderBottom: '1px solid #e5e7eb', gap: '1rem' }}>
-                <span style={{ fontSize: '0.78rem', fontFamily: 'monospace', textTransform: 'uppercase', letterSpacing: '0.1em', color: '#9ca3af', flexShrink: 0 }}>{r.label}</span>
+              <div key={i} className="flex justify-between items-baseline px-6 py-5 border-b border-gray-100 last:border-none gap-4">
+                <span className="text-[10px] font-mono uppercase tracking-wider text-gray-400 flex-shrink-0">{r.label}</span>
                 {r.href ? (
-                  <a href={r.href} style={{ fontSize: '0.95rem', color: '#111827', fontWeight: 500, textDecoration: 'none', textAlign: 'right' }}>{r.val}</a>
+                  <a href={r.href} className="text-sm text-gray-900 font-medium hover:underline text-right">{r.val}</a>
                 ) : (
-                  <span style={{ fontSize: '0.95rem', color: '#374151', textAlign: 'right' }}>{r.val}</span>
+                  <span className="text-sm text-gray-600 text-right">{r.val}</span>
                 )}
               </div>
             ))}
@@ -335,148 +296,45 @@ export default function LocalSeoServicesBurbankPage() {
         </div>
       </section>
 
-      {/* -- BURBANK VS LOS ANGELES -- */}
-      <section style={{ padding: '5rem 5vw', borderBottom: '1px solid #e5e7eb', background: '#ffffff' }}>
-        <div style={{ maxWidth: '860px' }}>
-          <span style={{ fontFamily: 'monospace', fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.18em', color: '#9ca3af', display: 'block', marginBottom: '1rem' }}>Market context</span>
-          <h2 style={{ fontSize: 'clamp(1.6rem, 3vw, 2.4rem)', fontWeight: 700, letterSpacing: '-0.03em', color: '#111827', marginBottom: '1.5rem', lineHeight: 1.2 }}>
-            Local SEO services in Los Angeles vs Burbank — why the market is different
-          </h2>
-          <p style={{ fontSize: '1rem', color: '#374151', lineHeight: 1.8, marginBottom: '1rem' }}>
-            Burbank operates as its own sub-market within Greater Los Angeles, with distinct search patterns shaped by industry concentration. Warner Bros., Disney, NBC, and Nickelodeon all have Burbank campuses. That means the B2B and consumer search landscape around Burbank differs significantly from, say, the Westside or downtown LA. Medical and dental practices in Burbank compete not just with Burbank providers but with Glendale, Pasadena, and North Hollywood for the same patient searches.
-          </p>
-          <p style={{ fontSize: '1rem', color: '#374151', lineHeight: 1.8, marginBottom: '1rem' }}>
-            Searching "local seo services in Los Angeles" will return agencies that technically serve Burbank but may have never run a campaign for a business operating in the 91501–91510 ZIP codes. The GBP category performance, citation source weighting, and competitor landscape in Burbank are specific enough that broad LA expertise doesn't automatically translate.
-          </p>
-
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1px', border: '1px solid #e5e7eb', background: '#e5e7eb', margin: '2rem 0' }}>
-            {[
-              { market: 'Los Angeles (broad)', points: ['High competition across all verticals', 'Generic local SEO tactics still get results in some niches', 'Agency supply is dense — harder to evaluate', 'Broad LA queries ("dentist Los Angeles") are extremely competitive'] },
-              { market: 'Burbank (specific)', points: ['Entertainment-adjacent B2B market with distinct signals', 'Neighborhood-level queries ("dentist near Warner Center") are winnable with correct GBP signals', 'Local SEO expertise is rarer — specialist advantage is real', 'ZIP-code targeting in GBP service area matters significantly'] },
-            ].map((m, i) => (
-              <div key={i} style={{ background: '#ffffff', padding: '2rem' }}>
-                <strong style={{ fontSize: '0.75rem', color: '#111827', display: 'block', marginBottom: '1rem', fontFamily: 'monospace', textTransform: 'uppercase', letterSpacing: '0.08em' }}>{m.market}</strong>
-                <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
-                  {m.points.map((p, j) => (
-                    <li key={j} style={{ fontSize: '0.875rem', color: '#6b7280', lineHeight: 1.65, paddingLeft: '1rem', position: 'relative' }}>
-                      <span style={{ position: 'absolute', left: 0, color: '#9ca3af' }}>—</span>
-                      {p}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-          <p style={{ fontSize: '0.95rem', color: '#6b7280', lineHeight: 1.75 }}>
-            Our <a href="/on-page-seo-los-angeles" style={{ color: 'var(--green)' }}>on-page SEO work in Los Angeles</a> covers the broader metro. For Burbank specifically, we bring the same technical depth plus 12+ years of active client work in the San Fernando Valley market. See the <a href="/local-seo-company-burbank" style={{ color: 'var(--green)' }}>Burbank practice profile</a> for market-specific detail.
-          </p>
-        </div>
-      </section>
-
-      {/* -- PROCESS -- */}
-      <section style={{ padding: '5rem 5vw', borderBottom: '1px solid #e5e7eb', background: '#f9fafb' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 2fr', gap: '5rem', alignItems: 'start' }}>
-          <div style={{ position: 'sticky', top: '6rem' }}>
-            <span style={{ fontFamily: 'monospace', fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.18em', color: '#9ca3af', display: 'block', marginBottom: '0.5rem' }}>How we run a local SEO campaign</span>
-            <h2 style={{ fontSize: 'clamp(1.6rem, 3vw, 2.4rem)', fontWeight: 700, letterSpacing: '-0.03em', color: '#111827', lineHeight: 1.15 }}>
-              Map Pack audit to ranking in 6 stages
+      {/* Case studies highlight */}
+      <section className="py-24 border-b border-gray-200 bg-gray-50 px-[5vw]">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16" data-anim="up">
+          <div>
+            <span className="text-sm font-mono uppercase tracking-widest text-gray-400 block mb-3">In the field</span>
+            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-gray-900 mb-6">
+              200+ qualified leads a month — built on local SEO and local intent.
             </h2>
-            <p style={{ fontSize: '0.9rem', color: '#6b7280', lineHeight: 1.7, marginTop: '1rem' }}>
-              Every stage is sequenced to close the highest-impact gaps first. Local SEO compounds — GBP + citations + reviews + schema working together produces faster results than any one signal alone.
+            <p className="text-gray-600 leading-relaxed mb-6">
+              A home-services remodeling client in the greater LA market went from inconsistent inbound to 200+ qualified leads per month. The foundation was hyper-local SEO: 47 commercial keywords ranked, Map Pack positions held across multiple core update cycles, and a <a href="/performance/native-crm-agency" className="text-green-600 font-semibold hover:underline">native CRM integration</a> that tracked every lead from first search to booked job.
             </p>
+            <p className="text-gray-600 leading-relaxed mb-8">
+              The same methodology applies to Burbank-specific campaigns — the market is different, the signals are the same.
+            </p>
+            <div className="flex flex-wrap gap-4">
+              <a href="/case-studies" className="inline-flex items-center justify-center px-6 py-3 bg-black text-white font-semibold text-sm uppercase tracking-wider hover:bg-gray-800 transition-colors">
+                See case studies
+              </a>
+              <a href="/book" className="inline-flex items-center justify-center px-6 py-3 bg-transparent border border-gray-200 text-gray-900 font-semibold text-sm uppercase tracking-wider hover:bg-gray-50 transition-colors">
+                Start a campaign
+              </a>
+            </div>
           </div>
-          <div style={{ borderTop: '1px solid #e5e7eb' }}>
-            {STEPS.map((step, i) => (
-              <div key={i} style={{ display: 'grid', gridTemplateColumns: '64px 1fr', padding: '1.75rem 0', borderBottom: '1px solid #e5e7eb', alignItems: 'start' }}>
-                <span style={{ fontFamily: 'monospace', fontSize: '0.75rem', color: '#9ca3af', paddingTop: '2px' }}>0{i + 1}</span>
-                <p style={{ fontSize: '1rem', color: '#374151', lineHeight: 1.7 }}>{step}</p>
+
+          <div className="bg-white border border-gray-200 p-8 flex flex-col justify-center gap-6">
+            {[
+              { label: 'Qualified leads per month', val: '200+' },
+              { label: 'Commercial keywords ranked', val: '47' },
+              { label: 'Market', val: 'Greater Los Angeles, home services' },
+              { label: 'Rankings held across core updates', val: 'Yes' },
+            ].map((r, i) => (
+              <div key={i} className="flex justify-between items-baseline border-b border-gray-200 last:border-none pb-4 last:pb-0">
+                <span className="text-xs font-mono text-gray-500">{r.label}</span>
+                <span className="text-lg font-bold text-gray-900">{r.val}</span>
               </div>
             ))}
           </div>
         </div>
       </section>
-
-      <ContentCta headline="See how Burbank businesses grow with Gobiya." sub="Start with a free site audit — no commitment, 24-hour response." accent="#111827" background="#f9fafb" />
-
-      {/* -- CASE STUDY CTA -- */}
-      <section style={{ padding: '5rem 5vw', borderBottom: '1px solid #e5e7eb', background: '#ffffff', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center' }}>
-        <div>
-          <span style={{ fontFamily: 'monospace', fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.18em', color: '#9ca3af', display: 'block', marginBottom: '0.5rem' }}>In the field</span>
-          <h2 style={{ fontSize: 'clamp(1.4rem, 2.5vw, 2rem)', fontWeight: 700, letterSpacing: '-0.03em', color: '#111827', lineHeight: 1.2, marginBottom: '1rem' }}>
-            200+ qualified leads a month — built on local SEO and local intent.
-          </h2>
-          <p style={{ fontSize: '0.95rem', color: '#6b7280', lineHeight: 1.75, marginBottom: '1rem' }}>
-            A home-services remodeling client in the greater LA market went from inconsistent inbound to 200+ qualified leads per month. The foundation was hyper-local SEO: 47 commercial keywords ranked, Map Pack positions held across multiple core update cycles, and a <a href="/performance/native-crm-agency" style={{ color: 'var(--green)' }}>native CRM integration</a> that tracked every lead from first search to booked job.
-          </p>
-          <p style={{ fontSize: '0.95rem', color: '#6b7280', lineHeight: 1.75, marginBottom: '2rem' }}>
-            The same methodology applies to Burbank-specific campaigns — the market is different, the signals are the same.
-          </p>
-          <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-            <a href="/case-studies" className="btn btn-primary magnetic">See case studies</a>
-            <a href="/book" className="btn btn-ghost magnetic">Start a campaign</a>
-          </div>
-        </div>
-        <div style={{ background: '#f9fafb', border: '1px solid #e5e7eb', padding: '2.5rem', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-          {[
-            { label: 'Qualified leads per month', val: '200+' },
-            { label: 'Commercial keywords ranked', val: '47' },
-            { label: 'Market', val: 'Greater Los Angeles, home services' },
-            { label: 'Rankings held across core updates', val: 'Yes' },
-          ].map((r, i) => (
-            <div key={i} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', borderBottom: i < 3 ? '1px solid #e5e7eb' : 'none', paddingBottom: i < 3 ? '1.5rem' : 0 }}>
-              <span style={{ fontSize: '0.82rem', color: '#6b7280', fontFamily: 'monospace' }}>{r.label}</span>
-              <span style={{ fontSize: '1.05rem', fontWeight: 700, color: '#111827' }}>{r.val}</span>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* -- FAQ -- */}
-      <section style={{ padding: '5rem 5vw', borderBottom: '1px solid #e5e7eb', background: '#f9fafb' }}>
-        <div style={{ marginBottom: '3rem' }}>
-          <span style={{ fontFamily: 'monospace', fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.18em', color: '#9ca3af', display: 'block', marginBottom: '0.5rem' }}>Common questions</span>
-          <h2 style={{ fontSize: 'clamp(1.6rem, 3vw, 2.4rem)', fontWeight: 700, letterSpacing: '-0.03em', color: '#111827' }}>
-            Local SEO services Burbank — answered directly
-          </h2>
-        </div>
-        <div style={{ borderTop: '1px solid #e5e7eb', maxWidth: '860px' }}>
-          {[
-            { q: 'We were in the top three on Google Maps for our main category for over a year, then one update knocked us out of the Map Pack completely. How do we find out what happened?', a: 'A sudden Map Pack drop after a Google update usually traces to one of three things. First, proximity weighting changes — Google periodically adjusts how much weight it gives to the searcher\'s location versus a business\'s configured service area, which can move rankings for businesses on the edge of their target zones. Second, GBP category reconfiguration — if Google updated its business category taxonomy and your category was deprecated or split, your relevance signal drops until you reconfigure. Third, review recency — if you had a burst of reviews earlier and they have since aged without new ones, the velocity signal decays. The diagnostic is a side-by-side comparison of your current GBP data versus your competitors who held their positions through the update.' },
-            { q: 'We ask every happy customer to leave us a Google review and almost nobody follows through. How do you actually improve that conversion rate?', a: 'The friction is almost always in the request itself — asking verbally at the point of service, or sending a general follow-up email without a direct link, produces single-digit conversion rates. What works: send a follow-up SMS within 24 hours of service with a direct Google review link that opens the compose screen. Ask at the right moment in the experience, not at checkout when the customer is focused on leaving. The practices achieving 4 to 6 reviews per month consistently have an automated SMS follow-up sequence tied to their scheduling or payment system. We build that workflow as part of the local SEO engagement.' },
-            { q: 'Our NAP looks consistent everywhere we can see, but Google sometimes shows our old address or an outdated phone number. What is causing that?', a: 'Google aggregates business data from multiple sources — and not all of those sources are directories you can see or edit directly. Data aggregators like Data Axle, Neustar Localeze, and Foursquare feed business information into Google\'s Knowledge Graph, and if those aggregators have cached your old data, Google may still pull it even after you updated your GBP directly. The fix requires a full citation audit that goes beyond the visible directories to the aggregator layer, correcting records at the source so they propagate correctly into Google\'s entity graph.' },
-            { q: 'We are a new business in Burbank. How long does it realistically take for local SEO to start generating calls from Google Maps?', a: 'For a new business with no existing GBP history, the honest timeline is 90 to 180 days before Map Pack rankings become consistent for competitive category queries. The first 30 days focus on GBP verification, category setup, and initial citation building. By day 60 to 90, with consistent GBP posting activity, early citation signals, and the first review velocity building, visibility starts expanding. Full competitive Map Pack positioning in Burbank\'s professional service categories typically requires 6 months of consistent work.' },
-          ].map((f, i) => (
-            <div key={i} style={{ padding: '2rem 0', borderBottom: '1px solid #e5e7eb' }}>
-              <h3 style={{ fontSize: '1.05rem', fontWeight: 600, color: '#111827', marginBottom: '0.75rem', letterSpacing: '-0.01em' }}>{f.q}</h3>
-              <p style={{ fontSize: '0.92rem', color: '#6b7280', lineHeight: 1.8 }}>{f.a}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* -- BOTTOM CTA -- */}
-      <section style={{ padding: '5rem 5vw', background: '#111827' }}>
-        <div style={{ maxWidth: '680px' }}>
-          <span style={{ fontFamily: 'monospace', fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.18em', color: 'rgba(255,255,255,0.4)', display: 'block', marginBottom: '1rem' }}>Start here</span>
-          <h2 style={{ fontSize: 'clamp(1.6rem, 3vw, 2.4rem)', fontWeight: 700, letterSpacing: '-0.03em', color: '#ffffff', marginBottom: '1rem', lineHeight: 1.2 }}>
-            Tell us your Burbank market and target queries. We'll show you what's blocking you.
-          </h2>
-          <p style={{ fontSize: '0.95rem', color: 'rgba(255,255,255,0.65)', lineHeight: 1.75, marginBottom: '2rem' }}>
-            A pre-read is how every engagement starts. We audit your GBP, citation profile, and Map Pack competitive position in Burbank — and tell you what we'd fix before you commit. See the <a href="/performance/seo-discoverability-agency" style={{ color: 'rgba(255,255,255,0.8)' }}>SEO &amp; Discoverability practice</a> for the technical scope, or <a href="/local-seo-company-burbank" style={{ color: 'rgba(255,255,255,0.8)' }}>the Burbank practice profile</a> for market context.
-          </p>
-          <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', alignItems: 'center' }}>
-            <a href="/book" className="btn btn-primary magnetic">
-              Book a local SEO pre-read
-              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" /></svg>
-            </a>
-            <a href="tel:3237441338" style={{ color: 'rgba(255,255,255,0.65)', fontSize: '0.9rem', textDecoration: 'none' }}>
-              Or call 323-744-1338 ?
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <SiteFooter />
-    </div>
+    </LocalServicePageTemplate>
   );
 }

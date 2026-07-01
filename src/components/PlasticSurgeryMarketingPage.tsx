@@ -1,8 +1,5 @@
-﻿import React, { useEffect } from 'react';
-import SiteHeader from './SiteHeader';
-import SiteFooter from './SiteFooter';
-import HeroQuickForm from './HeroQuickForm';
-import ContentCta from './ContentCta';
+import React from 'react';
+import LocalServicePageTemplate from './LocalServicePageTemplate';
 
 const FAQ_ITEMS = [
   {
@@ -100,76 +97,33 @@ const SPOKES = [
 ];
 
 const STATS = [
-  { val: '$8K–$25K', label: 'Average procedure value in aesthetic medicine — the economics that make SEO and content the highest-ROI acquisition channel for plastic surgery practices' },
-  { val: '3–6 mo', label: 'Typical patient consideration cycle for elective aesthetic procedures — why content architecture that nurtures across sessions outperforms single-touch paid ads' },
+  { val: '$8K–$25K', label: 'Average procedure value in elective medicine — the economics that make SEO and content the highest-ROI acquisition channel' },
+  { val: '3–6 mo', label: 'Typical patient consideration cycle for procedures — why content architecture that nurtures outperforms single-touch ads' },
   { val: '200+', label: 'Qualified leads per month built for a home-services client through the same local SEO and PPC compound system we deploy for medical practices' },
 ];
 
 const SERVICES = [
   {
-    n: '01',
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-        <circle cx="14" cy="14" r="13" stroke="#111827" strokeWidth="1.5"/>
-        <path d="M8 14h12M14 8v12" stroke="#111827" strokeWidth="1.5" strokeLinecap="round"/>
-      </svg>
-    ),
     title: 'Procedure-specific SEO',
     body: 'Dedicated landing pages for each procedure — rhinoplasty, breast augmentation, liposuction, mommy makeover — targeting the full keyword map around each service, including cost queries, recovery queries, and "near me" intent.',
   },
   {
-    n: '02',
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-        <rect x="2" y="6" width="24" height="16" rx="2" stroke="#111827" strokeWidth="1.5"/>
-        <path d="M7 16l4-4 4 4 6-6" stroke="#111827" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-      </svg>
-    ),
-    title: 'Google Ads for aesthetic medicine',
+    title: 'Google Ads for elective medicine',
     body: 'Search campaigns structured around high-intent procedure queries, with negative keyword discipline to exclude research-only traffic, RLSA layers for site visitors who didn\'t convert, and cost-per-consultation as the primary KPI.',
   },
   {
-    n: '03',
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-        <path d="M4 4h20v14H4z" stroke="#111827" strokeWidth="1.5" strokeLinejoin="round"/>
-        <path d="M9 22h10M14 18v4" stroke="#111827" strokeWidth="1.5" strokeLinecap="round"/>
-      </svg>
-    ),
     title: 'Content architecture',
     body: 'Topic clusters built around each procedure and patient concern — "is rhinoplasty worth it," "rhinoplasty recovery week by week," "how to choose a plastic surgeon" — content that nurtures the 3–6 month consideration journey and builds topical authority for AI citation.',
   },
   {
-    n: '04',
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-        <path d="M14 4l2.5 5 5.5.8-4 3.9.95 5.5L14 17l-4.95 2.2.95-5.5-4-3.9 5.5-.8L14 4z" stroke="#111827" strokeWidth="1.5" strokeLinejoin="round"/>
-      </svg>
-    ),
     title: 'Review velocity management',
     body: 'A repeatable post-appointment workflow for requesting Google and RealSelf reviews from satisfied patients. Review recency and volume are direct ranking signals in local search, and the primary trust signal for a prospective patient evaluating surgeons.',
   },
   {
-    n: '05',
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-        <circle cx="10" cy="10" r="6" stroke="#111827" strokeWidth="1.5"/>
-        <circle cx="18" cy="10" r="6" stroke="#111827" strokeWidth="1.5"/>
-        <circle cx="14" cy="18" r="6" stroke="#111827" strokeWidth="1.5"/>
-      </svg>
-    ),
     title: 'Local SEO & Map Pack',
     body: 'Google Business Profile optimization, NAP citation consistency, and local schema for the geographic markets where your patients search — "plastic surgeon Beverly Hills," "board certified surgeon Glendale" — capturing the Map Pack positions that drive the most local consultation requests.',
   },
   {
-    n: '06',
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-        <path d="M4 20L10 14l4 4 10-12" stroke="#111827" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-        <circle cx="10" cy="14" r="1.5" fill="#111827"/>
-        <circle cx="14" cy="18" r="1.5" fill="#111827"/>
-      </svg>
-    ),
     title: 'AI citation optimization',
     body: 'Engineering your practice to appear in ChatGPT, Perplexity, Google AI Overviews, and Bing Copilot responses when prospective patients ask about plastic surgery options — a channel that didn\'t exist three years ago and is now a meaningful source of high-intent referrals.',
   },
@@ -261,176 +215,83 @@ const CAMPAIGN_PHASES = [
 ];
 
 export default function PlasticSurgeryMarketingPage() {
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'instant' });
-  }, []);
-
   return (
-    <div className="min-h-screen bg-white font-sans">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(SCHEMA) }} />
-
-      <SiteHeader />
-
-      {/* ── HERO ── */}
-      <section style={{ background: '#ffffff', padding: 'clamp(5rem,15vw,13rem) 5vw 5rem', borderBottom: '1px solid #e5e7eb' }}>
-        <nav style={{ fontFamily: 'monospace', fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.18em', color: '#9ca3af', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
-          <a href="/" style={{ color: '#9ca3af', textDecoration: 'none' }}>Home</a>
-          <span>/</span>
-          <a href="/performance" style={{ color: '#9ca3af', textDecoration: 'none' }}>Performance</a>
-          <span>/</span>
-          <span style={{ color: '#374151' }}>Plastic Surgery Internet Marketing</span>
-        </nav>
-
-        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '4rem', alignItems: 'flex-start' }}>
-          <div style={{ flex: '1 1 480px', minWidth: 0 }}>
-            <h1 style={{ fontSize: 'clamp(2.5rem, 5.5vw, 4.5rem)', fontWeight: 700, letterSpacing: '-0.03em', lineHeight: 1.05, color: '#111827', maxWidth: '820px', marginBottom: '1.5rem' }}>
-              Plastic Surgery Internet Marketing
-            </h1>
-            <p style={{ fontSize: '1.1rem', color: '#4b5563', lineHeight: 1.75, maxWidth: '640px', marginBottom: '2.5rem' }}>
-              Gobiya is a Los Angeles digital marketing agency founded in 2010 that provides SEO, Google Ads, and content marketing for plastic surgery and aesthetic medicine practices. Patient decisions in this category typically involve procedure costs of $8,000 to $25,000 and a 3–6 month research cycle. High-performing practices dominate these searches by building a compounding system: technical SEO that captures procedure-specific queries, content architecture that nurtures across a 3–6 month consideration cycle, Google Ads tuned to high-intent searches, and reputation infrastructure that turns patient reviews into conversion assets. Our <a href="/performance/seo-discoverability-agency" style={{ color: 'var(--green)', textDecoration: 'none' }}>SEO &amp; Discoverability practice</a> anchors every plastic surgery campaign we run.
-            </p>
-
-            {/* Patient Journey Diagram */}
-            <div style={{ borderTop: '1px solid #e5e7eb', paddingTop: '2rem' }}>
-              <span style={{ fontFamily: 'monospace', fontSize: '0.65rem', textTransform: 'uppercase', letterSpacing: '0.14em', color: '#9ca3af', display: 'block', marginBottom: '1rem' }}>Patient acquisition journey</span>
-              <PatientJourneyDiagram />
-            </div>
-          </div>
-
-          {/* Sidebar: quick form + stats card */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', flex: '1 1 420px', maxWidth: '560px' }}>
-          <HeroQuickForm source="Plastic Surgery Internet Marketing" variant="light" heading="Request a marketing consultation" subheading="Tell us about your practice and we’ll follow up promptly." />
-          {/* Stats card */}
-          <div style={{ border: '1px solid #e5e7eb', padding: '2rem' }}>
-            <span style={{ fontFamily: 'monospace', fontSize: '0.65rem', textTransform: 'uppercase', letterSpacing: '0.12em', color: '#9ca3af', display: 'block', marginBottom: '1.5rem' }}>Practice snapshot</span>
-            {[
-              { label: 'Est.', val: '2012' },
-              { label: 'BBB', val: 'A+ rated' },
-              { label: 'Market', val: 'Los Angeles' },
-              { label: 'Phone', val: '323-744-1338' },
-              { label: 'Specialty', val: 'Medical & aesthetic' },
-            ].map((r, i) => (
-              <div key={i} style={{ display: 'flex', justifyContent: 'space-between', padding: '0.75rem 0', borderBottom: '1px solid #f3f4f6', gap: '1rem' }}>
-                <span style={{ fontSize: '0.72rem', fontFamily: 'monospace', textTransform: 'uppercase', letterSpacing: '0.1em', color: '#9ca3af' }}>{r.label}</span>
-                <span style={{ fontSize: '0.85rem', color: '#111827', fontWeight: 600, textAlign: 'right' }}>{r.val}</span>
-              </div>
-            ))}
-          </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── STATS BAR ── */}
-      <section style={{ borderBottom: '1px solid #e5e7eb', background: '#f9fafb' }}>
-        <div className="rg-stats" style={{ padding: '0 5vw' }}>
-          {STATS.map((s, i) => (
-            <div key={i} style={{ padding: '2rem 0', borderRight: i < 2 ? '1px solid #e5e7eb' : 'none', paddingLeft: i > 0 ? '3rem' : 0 }}>
-              <span style={{ display: 'block', fontSize: 'clamp(1.8rem, 3.5vw, 2.8rem)', fontWeight: 700, letterSpacing: '-0.04em', color: '#111827', lineHeight: 1 }}>{s.val}</span>
-              <span style={{ display: 'block', fontSize: '0.78rem', fontFamily: 'monospace', textTransform: 'uppercase', letterSpacing: '0.12em', color: '#9ca3af', marginTop: '0.5rem' }}>{s.label}</span>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* ── CLUSTER MAP ── */}
-      <section style={{ padding: '5rem 5vw', borderBottom: '1px solid #e5e7eb', background: '#ffffff' }}>
-        <div style={{ marginBottom: '2.5rem' }}>
-          <span style={{ fontFamily: 'monospace', fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.18em', color: '#9ca3af', display: 'block', marginBottom: '0.5rem' }}>Query fan-out cluster</span>
-          <h2 style={{ fontSize: 'clamp(1.6rem, 3vw, 2.4rem)', fontWeight: 700, letterSpacing: '-0.03em', color: '#111827', maxWidth: '600px' }}>
-            How we cover the full plastic surgery marketing search landscape
+    <LocalServicePageTemplate
+      schema={SCHEMA}
+      breadcrumb="Services / Plastic Surgery"
+      heroTitle="Plastic Surgery Internet Marketing."
+      heroSubtitle="Gobiya is a Los Angeles digital marketing agency founded in 2012 that provides SEO, Google Ads, and content marketing for plastic surgery and aesthetic medicine practices. Patient decisions in this category typically involve procedure costs of $8,000 to $25,000 and a 3–6 month research cycle."
+      tags={[
+        'Elective Medicine',
+        'Google Ads PPC',
+        'Aesthetic Marketing',
+        'HIPAA Compliance',
+        'Local SEO & Map Pack',
+        'Review Velocity'
+      ]}
+      relevantSlugs={[
+        'how-do-b2b-companies-use-seo-to-generate-predictable-revenue',
+        'what-are-ai-seo-services',
+        'multi-location-websites-for-franchises'
+      ]}
+      introHeading="What Plastic Surgery Digital Marketing Actually Includes"
+      introParagraphs={[
+        "Plastic surgery digital marketing operates under constraints that don't apply to most industries. Meta (Instagram, Facebook) restricts before/after imagery in paid ads and prohibits targeting based on body image insecurities. HIPAA governs how patient data can be used in retargeting. The FTC requires disclosure for paid testimonials. Google's healthcare advertising policies require LegitScript certification for certain cosmetic procedure keywords.",
+        "We build plastic surgery digital marketing systems that work within these constraints. That means prioritizing channels where compliance is manageable — organic search, Google Ads with compliant creative, content marketing, and review management — and structuring each channel to compound into the next. A patient who finds your practice via organic search for 'rhinoplasty recovery timeline' reads three more posts, sees a retargeting ad (compliant), visits your consultation booking page, and books."
+      ]}
+      stats={STATS}
+      servicesLabel="What's included"
+      servicesTitle="What plastic surgery digital marketing actually includes"
+      services={SERVICES}
+      spokes={SPOKES}
+      spokesTitle="How we cover the full plastic surgery marketing search landscape"
+      spokesLabel="Query fan-out cluster"
+      useHeroForm={true}
+      faqs={FAQ_ITEMS}
+    >
+      {/* Patient journey diagram */}
+      <section className="py-24 border-b border-gray-200 bg-white px-[5vw]">
+        <div className="max-w-4xl" data-anim="up">
+          <span className="text-sm font-mono uppercase tracking-widest text-gray-400 block mb-3">Patient Acquisition Journey</span>
+          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-gray-900 mb-6">
+            Connecting touchpoints from initial query to booked procedure
           </h2>
-        </div>
-
-        <div style={{ border: '2px solid #111827', padding: '1.75rem 2rem', marginBottom: '1px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '1rem' }}>
-          <div>
-            <span style={{ fontFamily: 'monospace', fontSize: '0.65rem', textTransform: 'uppercase', letterSpacing: '0.14em', color: '#6b7280', display: 'block', marginBottom: '0.4rem' }}>Hub — you are here</span>
-            <strong style={{ fontSize: '1.05rem', color: '#111827' }}>Plastic Surgery Internet Marketing</strong>
-            <span style={{ display: 'block', fontSize: '0.8rem', color: '#6b7280', marginTop: '0.2rem', fontFamily: 'monospace' }}>"plastic surgery internet marketing"</span>
+          <p className="text-gray-600 leading-relaxed mb-10">
+            Elective medical decisions aren't made on a whim. The journey is multi-session, starting with information queries about safety, cost, and recovery, moving into comparative analysis of surgeons, and ending with direct consult booking.
+          </p>
+          <div className="border border-gray-100 p-8 rounded-lg bg-gray-50 flex justify-center">
+            <PatientJourneyDiagram />
           </div>
-          <span style={{ fontFamily: 'monospace', fontSize: '0.65rem', textTransform: 'uppercase', letterSpacing: '0.14em', color: '#9ca3af', border: '1px solid #e5e7eb', padding: '0.3rem 0.75rem', borderRadius: '100px' }}>
-            /plastic-surgery-internet-marketing
-          </span>
-        </div>
-
-        <div className="rg-spokes" style={{ border: '1px solid #e5e7eb', borderTop: 'none' }}>
-          {SPOKES.map((s, i) => (
-            <a
-              key={i}
-              href={s.href}
-              style={{ display: 'block', padding: '1.5rem', borderRight: i < 3 ? '1px solid #e5e7eb' : 'none', textDecoration: 'none', transition: 'background 0.2s' }}
-              onMouseEnter={e => (e.currentTarget.style.background = '#f9fafb')}
-              onMouseLeave={e => (e.currentTarget.style.background = 'transparent')}
-            >
-              <span style={{ fontFamily: 'monospace', fontSize: '0.6rem', textTransform: 'uppercase', letterSpacing: '0.14em', color: '#9ca3af', display: 'block', marginBottom: '0.6rem' }}>
-                Spoke {String(i + 1).padStart(2, '0')}
-              </span>
-              <strong style={{ fontSize: '0.9rem', color: '#111827', display: 'block', marginBottom: '0.4rem', lineHeight: 1.3 }}>{s.title}</strong>
-              <span style={{ fontSize: '0.7rem', fontFamily: 'monospace', color: '#9ca3af', display: 'block', marginBottom: '0.75rem' }}>{s.query}</span>
-              <p style={{ fontSize: '0.8rem', color: '#6b7280', lineHeight: 1.6 }}>{s.desc}</p>
-              <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.3rem', fontSize: '0.7rem', fontFamily: 'monospace', textTransform: 'uppercase', letterSpacing: '0.1em', color: '#374151', marginTop: '1rem', borderBottom: '1px solid #d1d5db', paddingBottom: '2px' }}>
-                View page
-                <svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M1 11L11 1M11 1H3M11 1V9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
-              </span>
-            </a>
-          ))}
         </div>
       </section>
 
-      <ContentCta headline="Ready to attract more qualified patients?" sub="Our team responds within one business day." accent="#111827" background="#ffffff" />
-
-      {/* ── WHAT PLASTIC SURGERY DIGITAL MARKETING INCLUDES ── */}
-      <section style={{ padding: '5rem 5vw', borderBottom: '1px solid #e5e7eb', background: '#f9fafb' }}>
-        <div style={{ maxWidth: '860px', marginBottom: '3rem' }}>
-          <span style={{ fontFamily: 'monospace', fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.18em', color: '#9ca3af', display: 'block', marginBottom: '1rem' }}>What's included</span>
-          <h2 style={{ fontSize: 'clamp(1.6rem, 3vw, 2.4rem)', fontWeight: 700, letterSpacing: '-0.03em', color: '#111827', marginBottom: '1.5rem', lineHeight: 1.2 }}>
-            What plastic surgery digital marketing actually includes
-          </h2>
-          <p style={{ fontSize: '1rem', color: '#374151', lineHeight: 1.8, marginBottom: '1rem' }}>
-            Plastic surgery digital marketing operates under constraints that don't apply to most industries. Meta (Instagram, Facebook) restricts before/after imagery in paid ads and prohibits targeting based on body image insecurities. HIPAA governs how patient data can be used in retargeting. The FTC requires disclosure for paid testimonials. Google's healthcare advertising policies require LegitScript certification for certain cosmetic procedure keywords. Any plastic surgery marketing company that doesn't account for these constraints will either waste budget on disapproved ads or expose the practice to compliance risk.
-          </p>
-          <p style={{ fontSize: '1rem', color: '#374151', lineHeight: 1.8, marginBottom: '1rem' }}>
-            We build plastic surgery digital marketing systems that work within these constraints. That means prioritizing channels where compliance is manageable — organic search, Google Ads with compliant creative, content marketing, and review management — and structuring each channel to compound into the next. A patient who finds your practice via organic search for "rhinoplasty recovery timeline" reads three more posts, sees a retargeting ad (compliant), visits your consultation booking page, and books. That's the system. It doesn't depend on a single channel.
-          </p>
-        </div>
-
-        <div className="rg-services" style={{ border: '1px solid #e5e7eb', background: '#e5e7eb', gap: '1px' }}>
-          {SERVICES.map(s => (
-            <div key={s.n} style={{ background: '#ffffff', padding: '2.5rem' }}>
-              <div style={{ marginBottom: '1rem' }}>{s.icon}</div>
-              <span style={{ fontFamily: 'monospace', fontSize: '0.65rem', color: '#9ca3af', display: 'block', marginBottom: '0.5rem' }}>{s.n}</span>
-              <h3 style={{ fontSize: '1.05rem', fontWeight: 600, color: '#111827', marginBottom: '0.75rem', letterSpacing: '-0.01em' }}>{s.title}</h3>
-              <p style={{ fontSize: '0.875rem', color: '#6b7280', lineHeight: 1.75 }}>{s.body}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* ── PLASTIC SURGERY MARKETING CAMPAIGN ── */}
-      <section style={{ padding: '5rem 5vw', borderBottom: '1px solid #e5e7eb', background: '#ffffff' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '5rem', alignItems: 'start' }}>
+      {/* Campaign Architecture & Funnel */}
+      <section className="py-24 border-b border-gray-200 bg-gray-50 px-[5vw]">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16" data-anim="up">
           <div>
-            <span style={{ fontFamily: 'monospace', fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.18em', color: '#9ca3af', display: 'block', marginBottom: '1rem' }}>Campaign architecture</span>
-            <h2 style={{ fontSize: 'clamp(1.6rem, 3vw, 2.4rem)', fontWeight: 700, letterSpacing: '-0.03em', color: '#111827', marginBottom: '1.25rem', lineHeight: 1.2 }}>
+            <span className="text-sm font-mono uppercase tracking-widest text-gray-400 block mb-3">Campaign Architecture</span>
+            <h2 className="text-3xl font-bold tracking-tight text-gray-900 mb-6">
               How to build a plastic surgery marketing campaign that compounds
             </h2>
-            <p style={{ fontSize: '1rem', color: '#374151', lineHeight: 1.8, marginBottom: '1rem' }}>
+            <p className="text-gray-600 leading-relaxed mb-6">
               A plastic surgery marketing campaign that compounds is one where each channel reinforces the others over time. SEO builds organic visibility that reduces paid search cost per click. Content earns trust that increases conversion rate on paid search. Reviews earned through organic patient interactions improve Map Pack rankings. The whole system produces more consultations per dollar spent after 12 months than it did in month one.
             </p>
-            <p style={{ fontSize: '1rem', color: '#374151', lineHeight: 1.8, marginBottom: '1.5rem' }}>
-              Campaigns that don't compound are ones built around a single channel — typically a high paid-search budget with no organic or content layer. Those produce results that plateau early and stop entirely when the budget stops. We build the compound version. See the <a href="/performance/seo-discoverability-agency" style={{ color: 'var(--green)' }}>SEO &amp; Discoverability practice</a> for the organic layer and the <a href="/relations/google-ads-ppc-strategy-agency" style={{ color: 'var(--green)' }}>Google Ads practice</a> for the paid layer.
+            <p className="text-gray-600 leading-relaxed mb-8">
+              Campaigns that don't compound are ones built around a single channel — typically a high paid-search budget with no organic or content layer. Those produce results that plateau early and stop entirely when the budget stops. We build the compound version.
             </p>
 
-            <div style={{ borderTop: '1px solid #e5e7eb', paddingTop: '2rem' }}>
+            <div className="border-t border-gray-200 divide-y divide-gray-200">
               {CAMPAIGN_PHASES.map((phase, i) => (
-                <div key={i} style={{ marginBottom: '1.5rem', paddingBottom: '1.5rem', borderBottom: i < CAMPAIGN_PHASES.length - 1 ? '1px solid #f3f4f6' : 'none' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.6rem' }}>
-                    <span style={{ fontFamily: 'monospace', fontSize: '0.65rem', textTransform: 'uppercase', letterSpacing: '0.12em', color: '#9ca3af', background: '#f3f4f6', padding: '0.2rem 0.6rem', borderRadius: '100px' }}>Phase {i + 1}</span>
-                    <strong style={{ fontSize: '0.9rem', color: '#111827' }}>{phase.phase}</strong>
+                <div key={i} className="py-6">
+                  <div className="flex items-center gap-3 mb-3">
+                    <span className="font-mono text-xs text-gray-400 bg-white border border-gray-200 px-2 py-0.5 rounded-full">Phase 0{i + 1}</span>
+                    <strong className="text-sm text-gray-900">{phase.phase}</strong>
                   </div>
-                  <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.3rem' }}>
+                  <ul className="space-y-2">
                     {phase.items.map((item, j) => (
-                      <li key={j} style={{ fontSize: '0.82rem', color: '#6b7280', paddingLeft: '1rem', position: 'relative', lineHeight: 1.6 }}>
-                        <span style={{ position: 'absolute', left: 0, color: '#d1d5db' }}>—</span>{item}
+                      <li key={j} className="text-sm text-gray-500 flex gap-2">
+                        <span>—</span>
+                        {item}
                       </li>
                     ))}
                   </ul>
@@ -439,70 +300,69 @@ export default function PlasticSurgeryMarketingPage() {
             </div>
           </div>
 
-          {/* Funnel diagram */}
-          <div>
-            <div style={{ border: '1px solid #e5e7eb', padding: '2.5rem', background: '#f9fafb' }}>
-              <span style={{ fontFamily: 'monospace', fontSize: '0.65rem', textTransform: 'uppercase', letterSpacing: '0.14em', color: '#9ca3af', display: 'block', marginBottom: '2rem', textAlign: 'center' }}>Plastic surgery patient acquisition funnel</span>
+          <div className="bg-white border border-gray-200 p-8 rounded-lg flex flex-col justify-between gap-8 shadow-sm">
+            <div>
+              <span className="text-sm font-mono uppercase tracking-widest text-gray-400 block mb-6 text-center">Patient Acquisition Funnel</span>
               <MarketingFunnel />
-              <div style={{ marginTop: '2rem', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-                {[
-                  { stage: 'Awareness', channel: 'Organic SEO · AI citations · Content', color: '#9ca3af' },
-                  { stage: 'Consideration', channel: 'Remarketing · Review management', color: '#6b7280' },
-                  { stage: 'Decision', channel: 'Paid search · Direct booking', color: '#374151' },
-                  { stage: 'Conversion', channel: 'Consultation booked', color: '#111827' },
-                ].map((row, i) => (
-                  <div key={i} style={{ display: 'flex', gap: '0.75rem', alignItems: 'baseline' }}>
-                    <span style={{ fontSize: '0.72rem', fontFamily: 'monospace', color: row.color, minWidth: '90px', textTransform: 'uppercase', letterSpacing: '0.08em' }}>{row.stage}</span>
-                    <span style={{ fontSize: '0.8rem', color: '#9ca3af' }}>{row.channel}</span>
-                  </div>
-                ))}
-              </div>
+            </div>
+            <div className="space-y-3">
+              {[
+                { stage: 'Awareness', channel: 'Organic SEO · AI citations · Content', color: 'bg-gray-100' },
+                { stage: 'Consideration', channel: 'Remarketing · Review management', color: 'bg-gray-200' },
+                { stage: 'Decision', channel: 'Paid search · Direct booking', color: 'bg-gray-300' },
+                { stage: 'Conversion', channel: 'Consultation booked', color: 'bg-black text-white' },
+              ].map((row, i) => (
+                <div key={i} className={`flex justify-between items-center px-4 py-3 rounded ${row.color}`}>
+                  <span className="text-xs font-mono font-bold uppercase tracking-wider">{row.stage}</span>
+                  <span className="text-xs">{row.channel}</span>
+                </div>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
-      {/* ── PLASTIC SURGERY MARKETING IDEAS ── */}
-      <section style={{ padding: '5rem 5vw', borderBottom: '1px solid #e5e7eb', background: '#f9fafb' }}>
-        <div style={{ maxWidth: '860px' }}>
-          <span style={{ fontFamily: 'monospace', fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.18em', color: '#9ca3af', display: 'block', marginBottom: '1rem' }}>What works in 2026</span>
-          <h2 style={{ fontSize: 'clamp(1.6rem, 3vw, 2.4rem)', fontWeight: 700, letterSpacing: '-0.03em', color: '#111827', marginBottom: '1.5rem', lineHeight: 1.2 }}>
+      {/* Ideas comparison */}
+      <section className="py-24 border-b border-gray-200 bg-white px-[5vw]">
+        <div className="max-w-4xl" data-anim="up">
+          <span className="text-sm font-mono uppercase tracking-widest text-gray-400 block mb-3">What works in 2026</span>
+          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-gray-900 mb-6">
             Plastic surgery marketing ideas that work in 2026 — and ones that don't
           </h2>
-          <p style={{ fontSize: '1rem', color: '#374151', lineHeight: 1.8, marginBottom: '2rem' }}>
-            Most plastic surgery marketing ideas you'll find online are either outdated (social-first strategies that ignore organic search) or undifferentiated (every practice has a before/after Instagram). The ideas that drive real patient acquisition in 2026 are ones that reach patients where they're actually making decisions — on Google, in AI-generated answers, and in review platforms. Here's what we see working.
+          <p className="text-gray-600 leading-relaxed mb-10">
+            Most plastic surgery marketing ideas you'll find online are either outdated (social-first strategies that ignore organic search) or undifferentiated (every practice has a before/after Instagram). The ideas that drive real patient acquisition in 2026 are ones that reach patients where they're actually making decisions — on Google, in AI-generated answers, and in review platforms.
           </p>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1px', border: '1px solid #e5e7eb', background: '#e5e7eb', marginBottom: '2rem' }}>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-px border border-gray-200 bg-gray-200 mb-8">
             {[
               {
                 heading: 'High-return in 2026',
-                accent: '#111827',
+                color: 'text-gray-900',
                 items: [
                   { title: 'Procedure cluster SEO', desc: 'Deep topic hubs around each procedure — answering the full research journey from "what is X" to "X recovery week 2" to "X cost in LA" — capturing organic traffic at every stage.' },
-                  { title: 'AI citation optimization', desc: 'Engineering your practice content to appear in ChatGPT, Perplexity, and Google AI Overviews. Patients increasingly start their plastic surgery research with AI-generated answers, not traditional search results.' },
+                  { title: 'AI citation optimization', desc: 'Engineering your practice content to appear in ChatGPT, Perplexity, and Google AI Overviews. Patients increasingly start their plastic surgery research with AI-generated answers.' },
                   { title: 'Google Ads by procedure + RLSA', desc: 'Tightly themed ad groups per procedure, with RLSA remarketing to warm audiences who visited your procedure pages but didn\'t book a consult.' },
-                  { title: 'Review velocity system', desc: 'A repeatable post-appointment workflow that generates consistent new Google and RealSelf reviews — review recency and volume are ranking signals in local search and trust signals for prospective patients.' },
+                  { title: 'Review velocity system', desc: 'A repeatable post-appointment workflow that generates consistent new Google and RealSelf reviews.' },
                 ],
               },
               {
                 heading: 'Lower-return or declining',
-                accent: '#9ca3af',
+                color: 'text-gray-400',
                 items: [
-                  { title: 'Before/after Instagram as primary channel', desc: 'Before/after posts drive engagement but convert poorly without an SEO or paid search layer capturing patients who are actively searching — not passively scrolling.' },
-                  { title: 'Broad awareness display ads', desc: 'CPM-based display campaigns generate impressions but don\'t capture intent. Plastic surgery is a high-consideration decision; intent channels outperform awareness channels.' },
-                  { title: 'Single-page procedure sites', desc: 'Sites with one thin page per procedure, no content depth, and no internal linking structure are increasingly outranked by practices with comprehensive procedure hubs.' },
-                  { title: 'Buying RealSelf reviews', desc: 'Paid or incentivized reviews on medical review platforms violate platform terms and FTC guidelines — and are increasingly detectable by both platforms and patients.' },
+                  { title: 'Before/after Instagram as primary channel', desc: 'Before/after posts drive engagement but convert poorly without an SEO or paid search layer capturing patients who are actively searching.' },
+                  { title: 'Broad awareness display ads', desc: 'CPM-based display campaigns generate impressions but don\'t capture intent. Elective medicine is a high-consideration decision.' },
+                  { title: 'Single-page procedure sites', desc: 'Sites with one thin page per procedure, no content depth, and no internal linking structure are outranked by practices with comprehensive procedure hubs.' },
+                  { title: 'Buying RealSelf reviews', desc: 'Paid or incentivized reviews on medical review platforms violate platform terms and FTC guidelines.' },
                 ],
               },
             ].map((col, i) => (
-              <div key={i} style={{ background: '#ffffff', padding: '2rem' }}>
-                <strong style={{ fontSize: '0.75rem', fontFamily: 'monospace', textTransform: 'uppercase', letterSpacing: '0.1em', color: col.accent, display: 'block', marginBottom: '1.25rem' }}>{col.heading}</strong>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+              <div key={i} className="bg-white p-8">
+                <strong className={`text-xs font-mono uppercase tracking-widest ${col.color} block mb-6`}>{col.heading}</strong>
+                <div className="space-y-6">
                   {col.items.map((item, j) => (
                     <div key={j}>
-                      <strong style={{ fontSize: '0.875rem', color: '#111827', display: 'block', marginBottom: '0.3rem' }}>{item.title}</strong>
-                      <p style={{ fontSize: '0.8rem', color: '#6b7280', lineHeight: 1.65 }}>{item.desc}</p>
+                      <strong className="text-sm text-gray-900 block mb-2">{item.title}</strong>
+                      <p className="text-sm text-gray-500 leading-relaxed">{item.desc}</p>
                     </div>
                   ))}
                 </div>
@@ -512,86 +372,39 @@ export default function PlasticSurgeryMarketingPage() {
         </div>
       </section>
 
-      <ContentCta headline="Let's build your patient acquisition system." sub="Start with a free site audit — no commitment, 24-hour response." accent="#111827" background="#f9fafb" />
-
-      {/* ── REVIEWS / CHOOSING A COMPANY ── */}
-      <section style={{ padding: '5rem 5vw', borderBottom: '1px solid #e5e7eb', background: '#ffffff' }}>
-        <div style={{ maxWidth: '860px' }}>
-          <span style={{ fontFamily: 'monospace', fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.18em', color: '#9ca3af', display: 'block', marginBottom: '1rem' }}>How to choose</span>
-          <h2 style={{ fontSize: 'clamp(1.6rem, 3vw, 2.4rem)', fontWeight: 700, letterSpacing: '-0.03em', color: '#111827', marginBottom: '1.5rem', lineHeight: 1.2 }}>
+      {/* Choosing a company grid */}
+      <section className="py-24 border-b border-gray-200 bg-gray-50 px-[5vw]">
+        <div className="max-w-4xl" data-anim="up">
+          <span className="text-sm font-mono uppercase tracking-widest text-gray-400 block mb-3">How to choose</span>
+          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-gray-900 mb-6">
             Plastic surgery internet marketing reviews — what to look for when choosing a company
           </h2>
-          <p style={{ fontSize: '1rem', color: '#374151', lineHeight: 1.8, marginBottom: '1rem' }}>
+          <p className="text-gray-600 leading-relaxed mb-10">
             Searching "plastic surgery internet marketing companies" or "plastic surgery marketing agency reviews" produces a long list of agencies — most of them general digital marketing shops that have added a healthcare page to their site. Very few have specific plastic surgery client experience, compliance knowledge, or documented patient acquisition outcomes.
           </p>
-          <p style={{ fontSize: '1rem', color: '#374151', lineHeight: 1.8, marginBottom: '2rem' }}>
-            When evaluating plastic surgery internet marketing companies, the questions that cut through the noise are: Can you show me organic rankings for procedure-specific keywords (not just branded queries)? What is your cost-per-consultation from paid search for a practice in my procedure mix? Have you navigated Meta's before/after ad restrictions and Google's healthcare advertising compliance requirements? How do you handle a GBP suspension — which is one of the most common emergencies in medical local SEO?
-          </p>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.5rem', marginBottom: '2rem' }}>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
             {[
               { label: 'Ask for', val: 'Procedure-level keyword rankings', desc: 'Not branded traffic. Not overall sessions. Specific non-branded procedure queries and the positions they rank for, before and after the engagement.' },
               { label: 'Ask for', val: 'Cost-per-consultation data', desc: 'From paid search specifically — how many consultation form fills and phone calls per $1,000 of ad spend, for a practice with a similar procedure mix.' },
               { label: 'Ask for', val: 'Compliance track record', desc: 'What is their protocol for Meta ad creative that avoids before/after restrictions? Have they had client accounts suspended? How did they resolve it?' },
             ].map((c, i) => (
-              <div key={i} style={{ border: '1px solid #e5e7eb', padding: '1.75rem' }}>
-                <span style={{ fontFamily: 'monospace', fontSize: '0.65rem', textTransform: 'uppercase', letterSpacing: '0.12em', color: '#9ca3af', display: 'block', marginBottom: '0.5rem' }}>{c.label}</span>
-                <strong style={{ fontSize: '1rem', color: '#111827', display: 'block', marginBottom: '0.75rem', lineHeight: 1.3 }}>{c.val}</strong>
-                <p style={{ fontSize: '0.82rem', color: '#6b7280', lineHeight: 1.65 }}>{c.desc}</p>
+              <div key={i} className="border border-gray-200 bg-white p-6 rounded-lg">
+                <span className="font-mono text-xs text-gray-400 block mb-2 uppercase tracking-widest">{c.label}</span>
+                <strong className="text-base text-gray-900 block mb-3 leading-tight">{c.val}</strong>
+                <p className="text-xs text-gray-500 leading-relaxed">{c.desc}</p>
               </div>
             ))}
           </div>
 
-          <div style={{ background: '#f9fafb', border: '1px solid #e5e7eb', padding: '2rem' }}>
-            <strong style={{ fontSize: '0.85rem', color: '#111827', display: 'block', marginBottom: '0.75rem' }}>Why Gobiya — the short version</strong>
-            <p style={{ fontSize: '0.9rem', color: '#6b7280', lineHeight: 1.75 }}>
-              BBB A+ rated, serving medical and aesthetic practice clients since 2012. We've built procedure-specific SEO systems, run compliant Google Ads for medical aesthetics, and recovered practices from GBP suspensions and Google algorithm hits. Our <a href="/case-studies" style={{ color: 'var(--green)' }}>case studies</a> document specific outcomes — not impressions. We don't take clients in categories where we can't produce documented results in the first 90 days.
+          <div className="bg-white border border-gray-200 p-8 rounded-lg">
+            <strong className="text-sm text-gray-900 block mb-4">Why Gobiya — the short version</strong>
+            <p className="text-sm text-gray-600 leading-relaxed">
+              BBB A+ rated, serving medical and aesthetic practice clients since 2012. We've built procedure-specific SEO systems, run compliant Google Ads for medical aesthetics, and recovered practices from GBP suspensions and Google algorithm hits. Our <a href="/case-studies" className="text-green-600 font-semibold hover:underline">case studies</a> document specific outcomes — not impressions. We don't take clients in categories where we can't produce documented results in the first 90 days.
             </p>
           </div>
         </div>
       </section>
-
-      {/* ── FAQ ── */}
-      <section style={{ padding: '5rem 5vw', borderBottom: '1px solid #e5e7eb', background: '#f9fafb' }}>
-        <div style={{ marginBottom: '3rem' }}>
-          <span style={{ fontFamily: 'monospace', fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.18em', color: '#9ca3af', display: 'block', marginBottom: '0.5rem' }}>People also ask</span>
-          <h2 style={{ fontSize: 'clamp(1.6rem, 3vw, 2.4rem)', fontWeight: 700, letterSpacing: '-0.03em', color: '#111827' }}>
-            Plastic surgery internet marketing — answered directly
-          </h2>
-        </div>
-        <div style={{ borderTop: '1px solid #e5e7eb', maxWidth: '860px' }}>
-          {FAQ_ITEMS.map((f, i) => (
-            <div key={i} style={{ padding: '2rem 0', borderBottom: '1px solid #e5e7eb' }}>
-              <h3 style={{ fontSize: '1.05rem', fontWeight: 600, color: '#111827', marginBottom: '0.75rem', letterSpacing: '-0.01em' }}>{f.q}</h3>
-              <p style={{ fontSize: '0.92rem', color: '#6b7280', lineHeight: 1.8 }}>{f.a}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* ── BOTTOM CTA ── */}
-      <section style={{ padding: '5rem 5vw', background: '#111827' }}>
-        <div style={{ maxWidth: '680px' }}>
-          <span style={{ fontFamily: 'monospace', fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.18em', color: 'rgba(255,255,255,0.4)', display: 'block', marginBottom: '1rem' }}>Start here</span>
-          <h2 style={{ fontSize: 'clamp(1.6rem, 3vw, 2.4rem)', fontWeight: 700, letterSpacing: '-0.03em', color: '#ffffff', marginBottom: '1rem', lineHeight: 1.2 }}>
-            Tell us your procedure mix and target markets. We'll show you exactly what's missing.
-          </h2>
-          <p style={{ fontSize: '0.95rem', color: 'rgba(255,255,255,0.65)', lineHeight: 1.75, marginBottom: '2rem' }}>
-            A pre-read is how every engagement starts. We audit your current organic procedure rankings, GBP setup, paid search structure, and review profile — and tell you what we'd fix before you commit. See the <a href="/performance/seo-discoverability-agency" style={{ color: 'rgba(255,255,255,0.8)' }}>SEO &amp; Discoverability practice</a> or the <a href="/relations/google-ads-ppc-strategy-agency" style={{ color: 'rgba(255,255,255,0.8)' }}>Google Ads practice</a> for full scope.
-          </p>
-          <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', alignItems: 'center' }}>
-            <a href="/book" className="btn btn-primary magnetic">
-              Book a plastic surgery marketing pre-read
-              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" /></svg>
-            </a>
-            <a href="tel:3237441338" style={{ color: 'rgba(255,255,255,0.65)', fontSize: '0.9rem', textDecoration: 'none' }}>
-              Or call 323-744-1338 →
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <SiteFooter />
-    </div>
+    </LocalServicePageTemplate>
   );
 }
