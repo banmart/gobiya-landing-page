@@ -1,15 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
 // Spoke definitions for flyout sub-menus
-const CREATIVITY_SPOKES: Record<string, { title: string; href: string; query: string }[]> = {
-  'seo-copywriting': [
-    { title: 'Landing Page Copywriting', href: '/creativity/landing-page-copywriting-agency', query: 'landing page copy' },
-    { title: 'Website Copywriting', href: '/creativity/website-copywriting-services-agency', query: 'website copy services' },
-    { title: 'SEO Content Strategy', href: '/creativity/seo-content-strategy-agency', query: 'seo content strategy' },
-    { title: 'GEO & AI Content', href: '/creativity/geo-ai-content-writing-agency', query: 'geo ai content writing' },
-  ],
-};
-
 const PERFORMANCE_SPOKES: Record<string, { title: string; href: string; query: string }[]> = {
   'seo-discoverability': [
     { title: 'Technical SEO Audit', href: '/performance/technical-seo-audit-agency', query: 'technical seo audit' },
@@ -19,18 +10,7 @@ const PERFORMANCE_SPOKES: Record<string, { title: string; href: string; query: s
   ],
   'web-development': [
     { title: 'Custom Web App Development', href: '/performance/custom-web-app-development-agency', query: 'custom web app dev' },
-    { title: 'Mobile App Development', href: '/performance/mobile-app-development-agency', query: 'mobile app dev' },
-    { title: 'IT Consulting & Strategy', href: '/performance/it-consulting-services-agency', query: 'it consulting' },
     { title: 'E-commerce Development', href: '/performance/ecommerce-web-development-agency', query: 'ecommerce dev' },
-  ],
-};
-
-const RELATIONS_SPOKES: Record<string, { title: string; href: string; query: string }[]> = {
-  'google-ads-ppc': [
-    { title: 'Google Search Ads', href: '/relations/google-search-ads-agency', query: 'google search ads' },
-    { title: 'Google Shopping Ads', href: '/relations/google-shopping-ads-agency', query: 'google shopping ads' },
-    { title: 'Remarketing & Display', href: '/relations/remarketing-display-ads-agency', query: 'remarketing display ads' },
-    { title: 'YouTube Advertising', href: '/relations/youtube-advertising-agency', query: 'youtube advertising' },
   ],
 };
 
@@ -227,58 +207,32 @@ const SiteHeader: React.FC = () => {
                           <a href="/creativity" className="text-gray-900 font-bold text-lg hover:text-gray-500 transition-colors block border-b border-line pb-4 mb-2">Overview &rarr;</a>
                         </li>
                         <li onMouseEnter={() => setFlyoutItem(null)}>
-                          <a href="/creativity/brand-identity-strategy-agency" className="group/link text-gray-500 hover:text-gray-900 transition-all duration-200 flex items-center justify-between text-base py-2 border-b border-gray-100/30">
-                            <span>Brand Identity Strategy</span>
+                          <a href="/creativity/seo-web-copywriting-agency" className="group/link text-gray-500 hover:text-gray-900 transition-all duration-200 flex items-center justify-between text-base py-2 border-b border-gray-100/30">
+                            <span>SEO &amp; Web Copywriting</span>
                             <span className="opacity-0 -translate-x-2 group-hover/link:opacity-100 group-hover/link:translate-x-0 transition-all duration-200 text-gray-900 font-bold">&rarr;</span>
                           </a>
                         </li>
                         <li onMouseEnter={() => setFlyoutItem(null)}>
-                          <a href="/creativity/communication-concepts-agency" className="group/link text-gray-500 hover:text-gray-900 transition-all duration-200 flex items-center justify-between text-base py-2 border-b border-gray-100/30">
-                            <span>Communication Concepts</span>
-                            <span className="opacity-0 -translate-x-2 group-hover/link:opacity-100 group-hover/link:translate-x-0 transition-all duration-200 text-gray-900 font-bold">&rarr;</span>
-                          </a>
-                        </li>
-                        {/* Hub item — inline spoke sub-nav */}
-                        <li onMouseEnter={() => setFlyoutItem('seo-copywriting')}>
-                          <a href="/creativity/seo-web-copywriting-agency" className="group/link transition-all duration-200 flex items-center justify-between text-base py-2 border-b border-gray-100/30" style={{ color: flyoutItem === 'seo-copywriting' ? '#111827' : '#6b7280' }}>
-                            <span style={{ fontWeight: flyoutItem === 'seo-copywriting' ? 600 : 400 }}>SEO &amp; Web Copywriting</span>
-                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style={{ color: flyoutItem === 'seo-copywriting' ? '#111827' : '#9ca3af', transition: 'color 0.2s, transform 0.2s', transform: flyoutItem === 'seo-copywriting' ? 'rotate(90deg)' : 'none' }}>
-                              <path d="M5 3l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                            </svg>
-                          </a>
-                          {/* Inline spoke sub-list */}
-                          <ul style={{
-                            overflow: 'hidden',
-                            maxHeight: flyoutItem === 'seo-copywriting' ? '200px' : '0',
-                            opacity: flyoutItem === 'seo-copywriting' ? 1 : 0,
-                            transition: 'max-height 0.25s ease, opacity 0.2s ease',
-                            paddingLeft: '0.75rem',
-                            borderLeft: '2px solid #e5e7eb',
-                            marginTop: flyoutItem === 'seo-copywriting' ? '4px' : '0',
-                            marginBottom: flyoutItem === 'seo-copywriting' ? '4px' : '0',
-                          }}>
-                            {CREATIVITY_SPOKES['seo-copywriting'].map((spoke, i) => (
-                              <li key={i}>
-                                <a href={spoke.href} className="group/spoke flex items-center justify-between transition-colors duration-150" style={{ color: '#6b7280', textDecoration: 'none', padding: '5px 0', fontSize: '0.875rem' }}
-                                  onMouseEnter={e => (e.currentTarget.style.color = '#111827')}
-                                  onMouseLeave={e => (e.currentTarget.style.color = '#6b7280')}
-                                >
-                                  {spoke.title}
-                                  <span className="opacity-0 group-hover/spoke:opacity-100 transition-opacity" style={{ fontWeight: 700 }}>&rarr;</span>
-                                </a>
-                              </li>
-                            ))}
-                          </ul>
-                        </li>
-                        <li onMouseEnter={() => setFlyoutItem(null)}>
-                          <a href="/creativity/creative-art-direction-agency" className="group/link text-gray-500 hover:text-gray-900 transition-all duration-200 flex items-center justify-between text-base py-2 border-b border-gray-100/30">
-                            <span>Creative Art Direction</span>
+                          <a href="/creativity/seo-content-strategy-agency" className="group/link text-gray-500 hover:text-gray-900 transition-all duration-200 flex items-center justify-between text-base py-2 border-b border-gray-100/30">
+                            <span>SEO Content Strategy</span>
                             <span className="opacity-0 -translate-x-2 group-hover/link:opacity-100 group-hover/link:translate-x-0 transition-all duration-200 text-gray-900 font-bold">&rarr;</span>
                           </a>
                         </li>
                         <li onMouseEnter={() => setFlyoutItem(null)}>
-                          <a href="/creativity/social-media-management-agency" className="group/link text-gray-500 hover:text-gray-900 transition-all duration-200 flex items-center justify-between text-base py-2 border-b border-gray-100/30">
-                            <span>Social Media Management</span>
+                          <a href="/creativity/geo-ai-content-writing-agency" className="group/link text-gray-500 hover:text-gray-900 transition-all duration-200 flex items-center justify-between text-base py-2 border-b border-gray-100/30">
+                            <span>GEO &amp; AI Content Writing</span>
+                            <span className="opacity-0 -translate-x-2 group-hover/link:opacity-100 group-hover/link:translate-x-0 transition-all duration-200 text-gray-900 font-bold">&rarr;</span>
+                          </a>
+                        </li>
+                        <li onMouseEnter={() => setFlyoutItem(null)}>
+                          <a href="/creativity/ai-videos-agency" className="group/link text-gray-500 hover:text-gray-900 transition-all duration-200 flex items-center justify-between text-base py-2 border-b border-gray-100/30">
+                            <span>AI Videos &amp; Ads</span>
+                            <span className="opacity-0 -translate-x-2 group-hover/link:opacity-100 group-hover/link:translate-x-0 transition-all duration-200 text-gray-900 font-bold">&rarr;</span>
+                          </a>
+                        </li>
+                        <li onMouseEnter={() => setFlyoutItem(null)}>
+                          <a href="/creativity/crypto-web3-agency" className="group/link text-gray-500 hover:text-gray-900 transition-all duration-200 flex items-center justify-between text-base py-2 border-b border-gray-100/30">
+                            <span>Crypto &amp; Web3</span>
                             <span className="opacity-0 -translate-x-2 group-hover/link:opacity-100 group-hover/link:translate-x-0 transition-all duration-200 text-gray-900 font-bold">&rarr;</span>
                           </a>
                         </li>
@@ -448,24 +402,7 @@ const SiteHeader: React.FC = () => {
                             ))}
                           </ul>
                         </li>
-                        <li onMouseEnter={() => setFlyoutItem(null)}>
-                          <a href="/relations/content-marketing-syndication-agency" className="group/link text-gray-500 hover:text-gray-900 transition-all duration-200 flex items-center justify-between text-base py-2 border-b border-gray-100/30">
-                            <span>Content Marketing Syndication</span>
-                            <span className="opacity-0 -translate-x-2 group-hover/link:opacity-100 group-hover/link:translate-x-0 transition-all duration-200 text-gray-900 font-bold">&rarr;</span>
-                          </a>
-                        </li>
-                        <li onMouseEnter={() => setFlyoutItem(null)}>
-                          <a href="/relations/influencer-marketing-agency" className="group/link text-gray-500 hover:text-gray-900 transition-all duration-200 flex items-center justify-between text-base py-2 border-b border-gray-100/30">
-                            <span>Influencer Marketing</span>
-                            <span className="opacity-0 -translate-x-2 group-hover/link:opacity-100 group-hover/link:translate-x-0 transition-all duration-200 text-gray-900 font-bold">&rarr;</span>
-                          </a>
-                        </li>
-                        <li onMouseEnter={() => setFlyoutItem(null)}>
-                          <a href="/relations/local-community-relations-agency" className="group/link text-gray-500 hover:text-gray-900 transition-all duration-200 flex items-center justify-between text-base py-2 border-b border-gray-100/30">
-                            <span>Local Community Relations</span>
-                            <span className="opacity-0 -translate-x-2 group-hover/link:opacity-100 group-hover/link:translate-x-0 transition-all duration-200 text-gray-900 font-bold">&rarr;</span>
-                          </a>
-                        </li>
+
                       </ul>
                     </div>
                     <div className="hidden lg:block lg:w-2/3 bg-gray-50/50"></div>
@@ -551,28 +488,11 @@ const SiteHeader: React.FC = () => {
               <div style={{ overflow: 'hidden', marginTop: '1.5rem' }}>
                 <div className="flex flex-col gap-5 pl-4" style={{ borderLeft: '2px solid #F3F4F6' }}>
                   <a href="/creativity" style={{ fontSize: '1.25rem', fontWeight: 600, color: '#111827' }}>Overview &rarr;</a>
-                  <a href="/creativity/brand-identity-strategy-agency" style={{ fontSize: '1.125rem', color: '#6B7280' }}>Brand Identity Strategy</a>
-                  <a href="/creativity/communication-concepts-agency" style={{ fontSize: '1.125rem', color: '#6B7280' }}>Communication Concepts</a>
-                  {/* Hub item with tap-to-expand spokes */}
-                  <div>
-                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                      <a href="/creativity/seo-web-copywriting-agency" style={{ fontSize: '1.125rem', color: '#111827', fontWeight: 600 }}>SEO &amp; Web Copywriting</a>
-                      <button onClick={() => setMobileExpanded(mobileExpanded === 'seo-copywriting' ? null : 'seo-copywriting')} style={{ background: 'none', border: '1px solid #e5e7eb', borderRadius: '4px', padding: '4px 8px', cursor: 'pointer', display: 'flex', alignItems: 'center' }} aria-label="Expand spoke pages">
-                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style={{ color: '#6B7280', transition: 'transform 0.2s', transform: mobileExpanded === 'seo-copywriting' ? 'rotate(90deg)' : 'none' }}>
-                          <path d="M5 3l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                        </svg>
-                      </button>
-                    </div>
-                    {mobileExpanded === 'seo-copywriting' && (
-                      <div style={{ marginTop: '0.75rem', paddingLeft: '1rem', borderLeft: '2px solid #e5e7eb', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-                        {CREATIVITY_SPOKES['seo-copywriting'].map((spoke, i) => (
-                          <a key={i} href={spoke.href} style={{ fontSize: '1rem', color: '#6B7280' }}>{spoke.title}</a>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                  <a href="/creativity/creative-art-direction-agency" style={{ fontSize: '1.125rem', color: '#6B7280' }}>Creative Art Direction</a>
-                  <a href="/creativity/social-media-management-agency" style={{ fontSize: '1.125rem', color: '#6B7280' }}>Social Media Management</a>
+                  <a href="/creativity/seo-web-copywriting-agency" style={{ fontSize: '1.125rem', color: '#6B7280' }}>SEO &amp; Web Copywriting</a>
+                  <a href="/creativity/seo-content-strategy-agency" style={{ fontSize: '1.125rem', color: '#6B7280' }}>SEO Content Strategy</a>
+                  <a href="/creativity/geo-ai-content-writing-agency" style={{ fontSize: '1.125rem', color: '#6B7280' }}>GEO &amp; AI Content Writing</a>
+                  <a href="/creativity/ai-videos-agency" style={{ fontSize: '1.125rem', color: '#6B7280' }}>AI Videos &amp; Ads</a>
+                  <a href="/creativity/crypto-web3-agency" style={{ fontSize: '1.125rem', color: '#6B7280' }}>Crypto &amp; Web3</a>
                 </div>
               </div>
             </div>
@@ -638,27 +558,7 @@ const SiteHeader: React.FC = () => {
                   <a href="/relations" style={{ fontSize: '1.25rem', fontWeight: 600, color: '#111827' }}>Overview &rarr;</a>
                   <a href="/relations/authority-building-agency" style={{ fontSize: '1.125rem', color: '#6B7280' }}>Authority &amp; Link Building</a>
                   <a href="/relations/digital-pr-media-outreach-agency" style={{ fontSize: '1.125rem', color: '#6B7280' }}>Digital PR &amp; Media Outreach</a>
-                  {/* Hub item with tap-to-expand spokes */}
-                  <div>
-                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                      <a href="/relations/google-ads-ppc-strategy-agency" style={{ fontSize: '1.125rem', color: '#111827', fontWeight: 600 }}>Google Ads &amp; PPC Strategy</a>
-                      <button onClick={() => setMobileExpanded(mobileExpanded === 'google-ads-ppc' ? null : 'google-ads-ppc')} style={{ background: 'none', border: '1px solid #e5e7eb', borderRadius: '4px', padding: '4px 8px', cursor: 'pointer', display: 'flex', alignItems: 'center' }} aria-label="Expand spoke pages">
-                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style={{ color: '#6B7280', transition: 'transform 0.2s', transform: mobileExpanded === 'google-ads-ppc' ? 'rotate(90deg)' : 'none' }}>
-                          <path d="M5 3l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                        </svg>
-                      </button>
-                    </div>
-                    {mobileExpanded === 'google-ads-ppc' && (
-                      <div style={{ marginTop: '0.75rem', paddingLeft: '1rem', borderLeft: '2px solid #e5e7eb', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-                        {RELATIONS_SPOKES['google-ads-ppc'].map((spoke, i) => (
-                          <a key={i} href={spoke.href} style={{ fontSize: '1rem', color: '#6B7280' }}>{spoke.title}</a>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                  <a href="/relations/content-marketing-syndication-agency" style={{ fontSize: '1.125rem', color: '#6B7280' }}>Content Marketing Syndication</a>
-                  <a href="/relations/influencer-marketing-agency" style={{ fontSize: '1.125rem', color: '#6B7280' }}>Influencer Marketing</a>
-                  <a href="/relations/local-community-relations-agency" style={{ fontSize: '1.125rem', color: '#6B7280' }}>Local Community Relations</a>
+                  <a href="/relations/google-ads-ppc-strategy-agency" style={{ fontSize: '1.125rem', color: '#6B7280' }}>Google Ads &amp; PPC Strategy</a>
                 </div>
               </div>
             </div>
