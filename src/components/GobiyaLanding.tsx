@@ -247,9 +247,9 @@ export default function GobiyaLanding() {
               Full service digital marketing agency · Los Angeles
             </span>
             <h1 className="text-5xl sm:text-7xl font-black tracking-tight text-gray-900 leading-[1.05]">
-              The full service digital marketing agency built for{' '}
+              Stop paying for traffic that doesn't{' '}
               <span className="relative inline-block whitespace-nowrap">
-                measurable growth
+                convert into leads
                 <svg
                   className="swash-underline absolute left-0 -bottom-1 sm:-bottom-2 w-full"
                   style={{ zIndex: -1 }}

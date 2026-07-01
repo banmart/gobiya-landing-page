@@ -1,4 +1,4 @@
-﻿import React, { useEffect } from 'react';
+import React, { useEffect } from 'react';
 
 interface SEOMetadata {
   title: string;
@@ -9,8 +9,8 @@ interface SEOMetadata {
 // Outcome-focused metadata lookup map for crawlers and search bots (must match api/index.ts exactly)
 const metadataMap: Record<string, SEOMetadata> = {
   '/': {
-    title: `Digital Marketing Los Angeles: 5.7x ROAS, founded 2010 - Gobiya`,
-    description: `Gobiya is a full service digital marketing agency in Los Angeles. SEO, AI visibility, web development, CRM pipelines, and paid media â€” strategy and implementation under one roof, since 2010.`
+    title: `Los Angeles Digital Marketing Agency: Stop Wasting Ad Spend - Gobiya`,
+    description: `Struggling to turn clicks into pipeline? Gobiya is a Los Angeles digital marketing agency resolving stalled organic rankings, wasted ad budget, and slow load speeds.`
   },
   '/on-page-seo-los-angeles': {
     title: `On-Page SEO Los Angeles: schema & CWV fixes, code-level - Gobiya`,
@@ -46,8 +46,8 @@ const metadataMap: Record<string, SEOMetadata> = {
     description: `Gobiya provides top rated internet marketing services in Los Angeles â€” SEO, CRM pipeline automation, web development, and AI-driven online visibility for businesses across California. Founded 2010, BBB A+ rated.`
   },
   '/ai-search-marketing-santa-clarita': {
-    title: `AI Search Marketing Santa Clarita: ChatGPT & Perplexity - Gobiya`,
-    description: `AI search marketing agency in Santa Clarita. We optimize your business for Google Search, Map Pack, ChatGPT, Perplexity, and Gemini. Convert AI traffic into leads.`
+    title: `AI Search Marketing Santa Clarita: Get Cited in ChatGPT & Perplexity`,
+    description: `Is your brand missing from AI search answers? Gobiya engineers the localized schema and entity graph to get your Santa Clarita business cited on ChatGPT and Perplexity.`
   },
   '/los-angeles-seo-professional': {
     title: `Los Angeles SEO: entity graph & AI citations, BBB A+ - Gobiya`,
@@ -78,8 +78,8 @@ const metadataMap: Record<string, SEOMetadata> = {
     description: `As a native CRM agency, we build custom CRM integrations directly into your codebase. Stop paying monthly software fees and own your pipeline data with full control.`
   },
   '/performance/seo-discoverability-agency': {
-    title: `SEO & Discoverability Los Angeles: 213K impressions - Gobiya`,
-    description: `Technical SEO precision, semantic entity architecture, and algorithmic recovery â€” built as a compounding system. Crawl audits, Core Web Vitals, on-page optimization, and rank monitoring.`
+    title: `SEO Indexing & Discoverability: Fix "Crawled Not Indexed" - Gobiya`,
+    description: `Struggling with unindexed pages? Gobiya resolves Google crawl budget leaks, diagnostic blocks, and canonical tag issues to get your key pages indexed and ranking.`
   },
   '/performance/seo-traffic-recovery': {
     title: `SEO Traffic Recovery Los Angeles: forensic diagnosis - Gobiya`,

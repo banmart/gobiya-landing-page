@@ -104,10 +104,10 @@ export default function SeoDiscoverabilityPage() {
           <span style={{ color: '#374151' }}>SEO &amp; Discoverability</span>
         </nav>
         <h1 style={{ fontSize: 'clamp(2.5rem, 5.5vw, 4.5rem)', fontWeight: 700, letterSpacing: '-0.03em', lineHeight: 1.05, color: '#111827', maxWidth: '920px', marginBottom: '1.5rem' }}>
-          SEO &amp; Discoverability that places you at the top of every buyer's search.
+          Get your pages out of the "Crawled – currently not indexed" trap.
         </h1>
         <p style={{ fontSize: '1.1rem', color: '#4b5563', lineHeight: 1.75, maxWidth: '640px', marginBottom: '2.5rem' }}>
-          Most businesses doing SEO for over a year without seeing results have the same underlying problem: ongoing work — content, links, updates — is building on a technical foundation that's quietly suppressing the entire site. Crawl errors, duplicate content, canonical misconfigurations, and weak page architecture create a ceiling no amount of publishing breaks through. Gobiya is a Los Angeles SEO agency, founded in 2010, that identifies the structural blockers first — then builds compounding search presence on top. Clients have achieved 213K monthly organic impressions and Map Pack top-3 rankings after algorithm-driven traffic losses.
+          We resolve crawl budget leaks, fix technical index blocks, and build the topical authority needed so Google actually indexes your key commercial pages and drives qualified leads to your business.
         </p>
           </div>
           <div style={{ flex: '1 1 460px', maxWidth: '560px' }}>
