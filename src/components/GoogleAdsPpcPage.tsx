@@ -9,13 +9,13 @@ const SPOKES = [
     title: 'Google Search Ads',
     query: '"google search ads agency"',
     href: '/relations/google-search-ads-agency',
-    desc: 'Keyword-level search campaign management � intent mapping, bid strategy, ad copy, and landing page alignment for maximum conversion yield.',
+    desc: 'Keyword-level search campaign management — intent mapping, bid strategy, ad copy, and landing page alignment for maximum conversion yield.',
   },
   {
     title: 'Google Shopping Ads',
     query: '"google shopping ads agency"',
     href: '/relations/google-shopping-ads-agency',
-    desc: 'Product listing ad management for e-commerce � feed optimization, bidding structure, and product page alignment to drive qualified purchase intent.',
+    desc: 'Product listing ad management for e-commerce — feed optimization, bidding structure, and product page alignment to drive qualified purchase intent.',
   },
   {
     title: 'Remarketing & Display',
@@ -27,37 +27,37 @@ const SPOKES = [
     title: 'YouTube Advertising',
     query: '"youtube advertising agency"',
     href: '/relations/youtube-advertising-agency',
-    desc: 'Video ad campaign management across YouTube � in-stream, discovery, and bumper formats engineered for awareness, consideration, and direct response.',
+    desc: 'Video ad campaign management across YouTube — in-stream, discovery, and bumper formats engineered for awareness, consideration, and direct response.',
   },
 ];
 
 const SERVICES = [
-  { n: '01', title: 'Campaign architecture & structure', body: 'Account and campaign structure built around intent layers � not keyword dumps. Every ad group maps to a specific searcher intent and a matching landing experience.' },
+  { n: '01', title: 'Campaign architecture & structure', body: 'Account and campaign structure built around intent layers — not keyword dumps. Every ad group maps to a specific searcher intent and a matching landing experience.' },
   { n: '02', title: 'Keyword research & negative management', body: 'Thorough keyword mapping across match types, with continuous negative keyword expansion to eliminate wasted spend on irrelevant queries from day one.' },
   { n: '03', title: 'Ad copy & creative testing', body: 'Headline and description variants tested systematically across each campaign. Copy decisions are made from conversion data, not preference.' },
   { n: '04', title: 'Landing page alignment', body: 'Message-match between ad copy and landing page is the single largest driver of Quality Score and conversion rate. We audit and align both before any budget goes live.' },
-  { n: '05', title: 'Bid strategy & budget allocation', body: 'Smart bidding configurations � Target CPA, Target ROAS, or manual � selected and tuned for your specific funnel velocity and revenue goals.' },
+  { n: '05', title: 'Bid strategy & budget allocation', body: 'Smart bidding configurations — Target CPA, Target ROAS, or manual — selected and tuned for your specific funnel velocity and revenue goals.' },
   { n: '06', title: 'Ongoing optimization & attribution', body: 'Weekly bid reviews, search term analysis, creative rotation, and attribution model calibration. The campaign improves every week, not just at launch.' },
 ];
 
 const STEPS = [
-  'Account audit � wasted spend, Quality Score gaps, conversion tracking gaps, and landing page mismatches identified before any new budget runs',
-  'Intent mapping � buyer journey stages modeled and matched to campaign types, match types, and keyword clusters',
-  'Campaign build � structure, ad copy variants, negative keyword lists, and bid strategies configured to spec',
-  'Landing page alignment � message-match between ad creative and destination page confirmed before launch',
-  'Conversion tracking � Google Ads + GA4 attribution verified across all goal types before spend goes live',
-  'Optimization cadence � weekly search term reviews, creative rotation, bid adjustments, and monthly performance reporting',
+  'Account audit — wasted spend, Quality Score gaps, conversion tracking gaps, and landing page mismatches identified before any new budget runs',
+  'Intent mapping — buyer journey stages modeled and matched to campaign types, match types, and keyword clusters',
+  'Campaign build — structure, ad copy variants, negative keyword lists, and bid strategies configured to spec',
+  'Landing page alignment — message-match between ad creative and destination page confirmed before launch',
+  'Conversion tracking — Google Ads + GA4 attribution verified across all goal types before spend goes live',
+  'Optimization cadence — weekly search term reviews, creative rotation, bid adjustments, and monthly performance reporting',
 ];
 
 const FAQS = [
-  { q: 'We are spending money on Google Ads every month and cannot tell if it is working. What should we be tracking?', a: 'At minimum you need to know cost per lead (or cost per sale), which campaigns and keywords are generating those leads, and what the lead quality looks like downstream. If your reporting shows clicks and impressions but not conversions with dollar values attached, you are flying blind on the metric that actually matters. The most common setup problem we find on audits is conversion tracking that is either missing entirely or counting the wrong things � thank-you page views instead of form submissions, for example.' },
-  { q: 'We tried Google Ads before and burned through budget with nothing to show for it. What went wrong?', a: 'The most common cause is a mismatch between campaign structure and search intent. Running broad match keywords on a small budget sends your ads to queries that have nothing to do with what you sell. The second most common cause is landing page misalignment � the ad promises one thing and the page delivers something different, so the visitor bounces. We audit the account and the landing pages together, because both need to be right for the campaign to convert.' },
+  { q: 'We are spending money on Google Ads every month and cannot tell if it is working. What should we be tracking?', a: 'At minimum you need to know cost per lead (or cost per sale), which campaigns and keywords are generating those leads, and what the lead quality looks like downstream. If your reporting shows clicks and impressions but not conversions with dollar values attached, you are flying blind on the metric that actually matters. The most common setup problem we find on audits is conversion tracking that is either missing entirely or counting the wrong things — thank-you page views instead of form submissions, for example.' },
+  { q: 'We tried Google Ads before and burned through budget with nothing to show for it. What went wrong?', a: 'The most common cause is a mismatch between campaign structure and search intent. Running broad match keywords on a small budget sends your ads to queries that have nothing to do with what you sell. The second most common cause is landing page misalignment — the ad promises one thing and the page delivers something different, so the visitor bounces. We audit the account and the landing pages together, because both need to be right for the campaign to convert.' },
   { q: 'How much should we be spending on Google Ads to see real results?', a: 'It depends entirely on your cost per click and your target cost per acquisition. In competitive markets in Los Angeles, service-business keywords often cost fifteen to sixty dollars per click. At a realistic conversion rate of three to five percent, you need two thousand to four thousand dollars per month in spend just to generate enough data to optimize. Below that threshold, most campaigns never accumulate enough conversion data for the algorithm to optimize effectively. We scope the right budget for your specific market and margin in the first week of an engagement.' },
-  { q: 'Our Google Ads agency sends reports every month but we do not understand what they mean. Is that normal?', a: 'It should not be. A useful paid search report tells you three things clearly: how much did we spend, how many qualified leads did we generate, and what did each lead cost. Everything else � impressions, CTR, Quality Score, average position � is supporting data. If your report leads with those metrics instead of leads and cost per lead, the agency may be obscuring underperformance with volume numbers. Ask specifically: how many phone calls and form fills came from paid search last month, and what did each one cost us?' },
+  { q: 'Our Google Ads agency sends reports every month but we do not understand what they mean. Is that normal?', a: 'It should not be. A useful paid search report tells you three things clearly: how much did we spend, how many qualified leads did we generate, and what did each lead cost. Everything else — impressions, CTR, Quality Score, average position — is supporting data. If your report leads with those metrics instead of leads and cost per lead, the agency may be obscuring underperformance with volume numbers. Ask specifically: how many phone calls and form fills came from paid search last month, and what did each one cost us?' },
 ];
 
 const STATS = [
-  { val: '3.5�', label: 'Average ROAS lift when campaigns are rebuilt around intent architecture' },
+  { val: '3.5—', label: 'Average ROAS lift when campaigns are rebuilt around intent architecture' },
   { val: '47%', label: 'Typical wasted spend found in Google Ads accounts we audit on day one' },
   { val: '6 wks', label: 'Median time to stable, optimized performance after a full account rebuild' },
 ];
@@ -111,7 +111,7 @@ export default function GoogleAdsPpcPage() {
         </p>
           </div>
           <div style={{ flex: '1 1 460px', maxWidth: '560px' }}>
-            <HeroQuickForm source="Google Ads & PPC Strategy" variant="light" heading="Get a free PPC audit" subheading="Tell us about your campaigns and we�ll respond quickly." />
+            <HeroQuickForm source="Google Ads & PPC Strategy" variant="light" heading="Get a free PPC audit" subheading="Tell us about your campaigns and we'll respond quickly." />
           </div>
         </div>
       </section>
@@ -140,7 +140,7 @@ export default function GoogleAdsPpcPage() {
         {/* Hub card */}
         <div style={{ border: '2px solid #111827', padding: '1.75rem 2rem', marginBottom: '1px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '1rem' }}>
           <div>
-            <span style={{ fontFamily: 'monospace', fontSize: '0.65rem', textTransform: 'uppercase', letterSpacing: '0.14em', color: '#6b7280', display: 'block', marginBottom: '0.4rem' }}>Hub � you are here</span>
+            <span style={{ fontFamily: 'monospace', fontSize: '0.65rem', textTransform: 'uppercase', letterSpacing: '0.14em', color: '#6b7280', display: 'block', marginBottom: '0.4rem' }}>Hub — you are here</span>
             <strong style={{ fontSize: '1.05rem', color: '#111827' }}>Google Ads &amp; PPC Strategy</strong>
             <span style={{ display: 'block', fontSize: '0.8rem', color: '#6b7280', marginTop: '0.2rem', fontFamily: 'monospace' }}>"google ads ppc strategy agency"</span>
           </div>
@@ -221,10 +221,10 @@ export default function GoogleAdsPpcPage() {
         <div>
           <span style={{ fontFamily: 'monospace', fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.18em', color: '#9ca3af', display: 'block', marginBottom: '0.5rem' }}>In the field</span>
           <h2 style={{ fontSize: 'clamp(1.4rem, 2.5vw, 2rem)', fontWeight: 700, letterSpacing: '-0.03em', color: '#111827', lineHeight: 1.2, marginBottom: '1rem' }}>
-            Paid acquisition that shipped and converted � not theory.
+            Paid acquisition that shipped and converted — not theory.
           </h2>
           <p style={{ fontSize: '0.95rem', color: '#6b7280', lineHeight: 1.75, marginBottom: '2rem' }}>
-            American Livescan: a full Google Ads restructure that compressed cost-per-acquisition while growing lead volume � driven by intent-based campaign architecture and landing page alignment, not just higher bids.
+            American Livescan: a full Google Ads restructure that compressed cost-per-acquisition while growing lead volume — driven by intent-based campaign architecture and landing page alignment, not just higher bids.
           </p>
           <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
             <a href="/case-studies/american-livescan" className="btn btn-primary magnetic">Read the case study</a>
@@ -234,7 +234,7 @@ export default function GoogleAdsPpcPage() {
         <a href="/case-studies/american-livescan" style={{ display: 'block', overflow: 'hidden', aspectRatio: '16/9' }}>
           <img
             src="/images/american-livescan-homepage.webp"
-            alt="American Livescan � Google Ads results"
+            alt="American Livescan — Google Ads results"
             style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.6s ease', display: 'block' }}
             onMouseEnter={e => ((e.target as HTMLImageElement).style.transform = 'scale(1.04)')}
             onMouseLeave={e => ((e.target as HTMLImageElement).style.transform = 'scale(1)')}
@@ -243,7 +243,7 @@ export default function GoogleAdsPpcPage() {
       </section>
 
 
-      <ContentCta headline="See how Gobiya-managed campaigns perform." sub="Start with a free audit � no commitment, 24-hour turnaround." accent="#111827" background="#f9fafb" />
+      <ContentCta headline="See how Gobiya-managed campaigns perform." sub="Start with a free audit — no commitment, 24-hour turnaround." accent="#111827" background="#f9fafb" />
 
       {/* -- FAQs -- */}
       <section style={{ padding: '5rem 5vw', borderBottom: '1px solid #e5e7eb', background: '#ffffff' }}>
