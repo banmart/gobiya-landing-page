@@ -104,28 +104,28 @@ const STATS = [
 
 const SERVICES = [
   {
-    title: 'Procedure-specific SEO',
-    body: 'Dedicated landing pages for each procedure — rhinoplasty, breast augmentation, liposuction, mommy makeover — targeting the full keyword map around each service, including cost queries, recovery queries, and "near me" intent.',
+    title: 'Patients search "rhinoplasty recovery week by week" before they ever search for a surgeon — and your site isn\'t there',
+    body: 'Each procedure needs a dedicated landing page built around the full query map: cost queries, recovery questions, comparison queries, and "near me" intent. Without procedure-specific pages that match what buyers actually search, your practice is invisible for most of the 3–6 month decision journey.',
   },
   {
-    title: 'Google Ads for elective medicine',
-    body: 'Search campaigns structured around high-intent procedure queries, with negative keyword discipline to exclude research-only traffic, RLSA layers for site visitors who didn\'t convert, and cost-per-consultation as the primary KPI.',
+    title: 'Your Google Ads are paying for research-phase clicks that never convert into consultations',
+    body: 'Campaigns without tight negative keyword lists spend on "rhinoplasty before and after" and "what is a mommy makeover" — research intent, not booking intent. We build campaigns around high-conversion procedure queries, exclude research traffic, and retarget the visitors who almost booked with RLSA. Cost per consultation is the only KPI we optimize toward.',
   },
   {
-    title: 'Content architecture',
-    body: 'Topic clusters built around each procedure and patient concern — "is rhinoplasty worth it," "rhinoplasty recovery week by week," "how to choose a plastic surgeon" — content that nurtures the 3–6 month consideration journey and builds topical authority for AI citation.',
+    title: 'You\'re publishing blog posts but patients research for months and there\'s no system to keep them coming back to you',
+    body: 'Informational posts about procedures attract buyers who won\'t book for 90 days. That audience is valuable only if there\'s a nurture layer: email capture, remarketing sequences, and consultation CTAs woven into the content experience. Without it, you\'re building audience for your competitors to retarget.',
   },
   {
-    title: 'Review velocity management',
-    body: 'A repeatable post-appointment workflow for requesting Google and RealSelf reviews from satisfied patients. Review recency and volume are direct ranking signals in local search, and the primary trust signal for a prospective patient evaluating surgeons.',
+    title: 'You have satisfied patients who never leave a review — and it\'s costing you Map Pack positions to competitors with half your skill',
+    body: 'Review velocity is what separates Map Pack position 1 from position 4. A practice with 60 reviews and 5 in the last 30 days consistently outranks one with 200 total and none in six months. We build the post-appointment workflow that generates authentic reviews from real patients on Google and RealSelf — within policy, without incentivizing.',
   },
   {
-    title: 'Local SEO & Map Pack',
-    body: 'Google Business Profile optimization, NAP citation consistency, and local schema for the geographic markets where your patients search — "plastic surgeon Beverly Hills," "board certified surgeon Glendale" — capturing the Map Pack positions that drive the most local consultation requests.',
+    title: 'Patients search "plastic surgeon near me" on Google Maps and your practice doesn\'t appear in the top three',
+    body: 'Map Pack visibility for local procedure queries is driven by GBP category accuracy, NAP consistency across directories, and review velocity — not just website ranking. We optimize your Google Business Profile, align your citation data across 40+ sources, and inject local schema to secure the Map Pack positions that generate the most consultation requests.',
   },
   {
-    title: 'AI citation optimization',
-    body: 'Engineering your practice to appear in ChatGPT, Perplexity, Google AI Overviews, and Bing Copilot responses when prospective patients ask about plastic surgery options — a channel that didn\'t exist three years ago and is now a meaningful source of high-intent referrals.',
+    title: 'A prospective patient asks ChatGPT "best board-certified rhinoplasty surgeon in Los Angeles" — your competitor appears, not you',
+    body: 'AI platforms cite practices with verified entity data, structured schema, and content formatted for passage-level extraction. Most practice websites have none of these. We engineer your AI search presence so your brand appears when patients research options in the channel that now influences 30–40% of high-consideration purchase journeys.',
   },
 ];
 
@@ -219,8 +219,8 @@ export default function PlasticSurgeryMarketingPage() {
     <LocalServicePageTemplate
       schema={SCHEMA}
       breadcrumb="Services / Plastic Surgery"
-      heroTitle="Plastic Surgery Internet Marketing."
-      heroSubtitle="Gobiya is a Los Angeles digital marketing agency founded in 2012 that provides SEO, Google Ads, and content marketing for plastic surgery and aesthetic medicine practices. Patient decisions in this category typically involve procedure costs of $8,000 to $25,000 and a 3–6 month research cycle."
+      heroTitle="Plastic surgery patients research for 3–6 months before booking. You need to be in front of them at every stage."
+      heroSubtitle="Most plastic surgery practices run ads that don't convert because they're hitting research-phase buyers with decision-phase offers. Meta restricts before/after imagery. Google requires LegitScript certification. And patients considering an $8,000–$25,000 procedure don't book from a single ad — they read, compare, and come back. Gobiya builds the SEO, content, and paid strategy that matches each stage of that journey and turns it into consultation bookings."
       tags={[
         'Elective Medicine',
         'Google Ads PPC',

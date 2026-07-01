@@ -101,20 +101,20 @@ const AUDIT_STEPS = [
 
 const CAPABILITIES = [
   {
-    title: 'AI Entity Graph Engineering',
-    body: 'We construct a complete, verifiable entity graph for your Santa Clarita business — linking your brand to Google Knowledge Graph, Wikidata, and structured JSON-LD schema on your site. This is the infrastructure layer that makes AI citations possible. Without a verified entity, AI engines like ChatGPT and Perplexity will not cite your business in category responses regardless of content quality or Google ranking.',
+    title: 'AI engines won\'t cite your business because they can\'t verify it exists as a real, structured entity',
+    body: 'ChatGPT and Perplexity don\'t cite businesses they can\'t verify. Without your brand linked to Google Knowledge Graph, Wikidata, and structured JSON-LD schema on your site, you\'re invisible to AI — regardless of how well your website ranks or how good your content is. We build the entity foundation that makes citation possible.',
   },
   {
-    title: 'Generative Engine Optimization (GEO)',
-    body: 'GEO is the technical discipline of making your content readable, extractable, and citable by AI language models. We format your Santa Clarita service pages with claim-evidence-citation structures, FAQ schema with buyer-realistic question phrasing, and passage-level density that AI retrieval pipelines favor over generic long-form content.',
+    title: 'Your content is too vague for AI models to extract — they need a specific claim, not a paragraph of general description',
+    body: 'AI retrieval pipelines favor tight, claim-evidence-citation content over generic long-form writing. If your service pages read like company descriptions, AI models pass over them. We restructure your Santa Clarita service pages at the passage level so AI engines can extract and cite specific, verifiable facts about your business.',
   },
   {
-    title: 'Local SEO & Santa Clarita Map Pack',
-    body: 'The Santa Clarita Map Pack for queries like "contractor SCV," "accountant Valencia CA," and "marketing agency near me Santa Clarita" is won through GBP category precision, NAP citation consistency across 40+ directories, and engineered review velocity — not keyword density.',
+    title: 'You\'re not showing up in Santa Clarita Map Pack results for the queries your best customers use to find services like yours',
+    body: 'Map Pack placement for local queries like "contractor SCV" and "accountant Valencia CA" is won through GBP category precision, NAP citation consistency across 40+ directories, and review velocity — not keyword density. Most local businesses have misconfigured profiles that silently exclude adjacent-city searches from Newhall and Stevenson Ranch.',
   },
   {
-    title: 'Technical SEO & Site Performance',
-    body: 'Page speed, crawl efficiency, canonical structure, and Core Web Vitals are prerequisites for both Google ranking and AI indexability. AI crawlers follow the same crawl rules as Googlebot and cannot extract content from pages that block bots, load too slowly, or have JavaScript rendering issues.',
+    title: 'AI crawlers can\'t read your pages because the site is too slow and renders in JavaScript — so your content never enters the index',
+    body: 'AI crawlers follow the same crawl rules as Googlebot. Pages that block bots, load in over 3 seconds, or depend entirely on client-side JavaScript rendering are either excluded or deprioritized from AI training pipelines. We fix crawl efficiency, Core Web Vitals, and canonical structure so your content is actually accessible to the models you want to appear in.',
   },
 ];
 
@@ -144,8 +144,8 @@ export default function AiSearchMarketingSantaClaritaPage() {
     <LocalServicePageTemplate
       schema={SCHEMA}
       breadcrumb="Services / AI Search"
-      heroTitle="AI Search Marketing Santa Clarita."
-      heroSubtitle="Gobiya is a Los Angeles digital marketing agency founded in 2010 that builds AI search visibility for businesses in the Santa Clarita Valley, including the Valencia corridor and Newhall. AI search marketing means engineering your brand to be found and cited on ChatGPT, Perplexity, and Google AI Overviews — not just ranking in traditional search results."
+      heroTitle="Your business ranks on Google. Buyers are asking ChatGPT — and you don't appear there at all."
+      heroSubtitle="35–40% of commercial research journeys now start with a question to an AI assistant before the buyer ever opens a browser. If a Santa Clarita buyer asks ChatGPT 'who are the most reliable contractors in the SCV' and your business doesn't appear, you've already lost that prospect — to a competitor who engineered their AI search presence before you did. Gobiya builds the entity graph, citation architecture, and content structure that puts your brand in front of that audience."
       tags={[
         'AI Overviews',
         'GEO Optimization',

@@ -268,10 +268,10 @@ export default function GobiyaLanding() {
           <div className="flex flex-col justify-between" data-anim="up">
             <div className="text-gray-600 text-lg sm:text-xl leading-relaxed">
               <p className="mb-6">
-                Gobiya is an SEO and web development agency in Los Angeles, California, founded in 2010 by Steve Martin. The agency specializes in recovering organic search traffic after Google algorithm updates, technical SEO, local SEO, Google Ads management, custom React and Next.js web development, and content written to appear in AI-generated answers. Steve is bilingual in English and Spanish and has worked in web development and search since 1996.
+                Most businesses with a search, content, or paid traffic problem have already tried something — an agency that sent reports without results, a freelancer who built a site that never ranked, ad spend that generated clicks but not leads. Gobiya is a Los Angeles digital marketing agency, founded in 2010 by Steve Martin, that fixes those specific failures: recovering organic traffic after algorithm updates, rebuilding Google Ads campaigns around cost per lead, building custom sites that actually load and convert, and writing content that ranks on Google and gets cited by AI platforms.
               </p>
               <p>
-                Documented results include a 5x increase in patient inquiries for a dental practice, a 45% organic traffic increase for a home remodeling company, 5.7x Google Ads ROAS on a $15K/month budget for a windows and doors company, a 3x increase in online bookings for a fingerprinting service, and a 61% reduction in cost per lead for a B2B SaaS company.
+                Documented results: 5x increase in patient inquiries for a dental practice, 5.7x Google Ads ROAS on a $15K/month budget, a 3x increase in online bookings for a fingerprinting service, and a 61% reduction in cost per lead after a full campaign rebuild. Steve has worked in web development and search since 1996 and is bilingual in English and Spanish.
               </p>
             </div>
             <div className="mt-8">
@@ -481,7 +481,7 @@ export default function GobiyaLanding() {
           <div className="mb-16" data-anim="up">
             <span className="text-sm font-mono uppercase tracking-widest text-gray-500 block mb-2">Our capability ecosystem</span>
             <h2 className="text-4xl sm:text-6xl font-bold tracking-tight text-gray-900 leading-tight max-w-3xl">
-              Three universes, one mission: offering solutions that work.
+              Three services. One outcome: more of the right people finding you, trusting you, and contacting you.
             </h2>
           </div>
 
@@ -524,7 +524,7 @@ export default function GobiyaLanding() {
                 <span style={{ fontFamily: 'monospace', fontSize: '0.8rem', color: '#9ca3af', display: 'block', marginBottom: '1rem' }}>01</span>
                 <h3 style={{ fontSize: '2rem', fontWeight: 500, letterSpacing: '-0.02em', textTransform: 'lowercase', color: '#1f2937', marginBottom: '1.5rem' }}>creativity</h3>
                 <p style={{ color: '#6b7280', fontSize: '0.9rem', lineHeight: 1.7, marginBottom: '2rem' }}>
-                  Creativity makes the way you express your identity unique and effective: the presentation you give yourself, the worlds you choose and the images you process to describe yourself all contribute to creating your world.
+                  You need content, copy, or creative that actually brings people in — not just fills pages. We write SEO-mapped web copy, script and produce AI video ads, develop Web3 launch content, and build the content architecture that makes search engines and AI platforms choose your site as the answer.
                 </p>
                 <ol style={{ listStyleType: 'decimal', paddingLeft: '1.2rem', display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
                   <li><a href="/creativity/seo-web-copywriting-agency" style={{ color: '#4b5563', fontSize: '0.875rem', textDecoration: 'underline', textUnderlineOffset: '4px', textDecorationColor: '#d1d5db' }}>SEO &amp; Web Copywriting</a></li>
@@ -546,7 +546,7 @@ export default function GobiyaLanding() {
                 <span style={{ fontFamily: 'monospace', fontSize: '0.8rem', color: '#9ca3af', display: 'block', marginBottom: '1rem' }}>02</span>
                 <h3 style={{ fontSize: '2rem', fontWeight: 500, letterSpacing: '-0.02em', textTransform: 'lowercase', color: '#1f2937', marginBottom: '1.5rem' }}>performance</h3>
                 <p style={{ color: '#6b7280', fontSize: '0.9rem', lineHeight: 1.7, marginBottom: '2rem' }}>
-                  Strong performance is what enables you to achieve the goals you set for yourself, with measurable results that you can count on.
+                  Your site is slow, your rankings stalled, or your ads cost more than they return. We fix the technical architecture, rebuild campaigns around cost per lead, and hand-code custom sites that rank and convert — all measured against outcomes, not activity.
                 </p>
                 <ol style={{ listStyleType: 'decimal', paddingLeft: '1.2rem', display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
                   <li><a href="/performance/seo-discoverability-agency" style={{ color: '#4b5563', fontSize: '0.875rem', textDecoration: 'underline', textUnderlineOffset: '4px', textDecorationColor: '#d1d5db' }}>SEO &amp; Discoverability</a></li>
@@ -568,7 +568,7 @@ export default function GobiyaLanding() {
                 <span style={{ fontFamily: 'monospace', fontSize: '0.8rem', color: '#9ca3af', display: 'block', marginBottom: '1rem' }}>03</span>
                 <h3 style={{ fontSize: '2rem', fontWeight: 500, letterSpacing: '-0.02em', textTransform: 'lowercase', color: '#1f2937', marginBottom: '1.5rem' }}>relations</h3>
                 <p style={{ color: '#6b7280', fontSize: '0.9rem', lineHeight: 1.7, marginBottom: '2rem' }}>
-                  Relationships are the contact point between your project and the market. Listening, writing, authority building, and building solid PR connections transform a digital project into a successful one.
+                  Being invisible to the publications, directories, and AI platforms your buyers trust costs you deals you never knew you were losing. We build the authority signals — backlinks, press mentions, structured data — that make your site the answer Google and AI serve first.
                 </p>
                 <ol style={{ listStyleType: 'decimal', paddingLeft: '1.2rem', display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
                   <li><a href="/relations/authority-building-agency" style={{ color: '#4b5563', fontSize: '0.875rem', textDecoration: 'underline', textUnderlineOffset: '4px', textDecorationColor: '#d1d5db' }}>Authority &amp; Link Building</a></li>

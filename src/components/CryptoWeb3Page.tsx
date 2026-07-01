@@ -8,42 +8,42 @@ const SERVICES = [
   {
     n: '01',
     title: 'Smart Contract Development',
-    body: 'Audited Solidity and Vyper contracts for token launches, staking protocols, NFT minting, and DAO governance. Written for gas efficiency, upgradability, and security — not just functionality.',
+    body: 'You have a protocol idea but every dev you\'ve talked to writes unaudited code with no security review, or quotes you six figures and six months. We write Solidity contracts that are gas-efficient, upgradeable, and reviewed for the attack vectors — reentrancy, access control gaps, overflow — that get protocols exploited.',
   },
   {
     n: '02',
     title: 'Web3 Interface & dApp Development',
-    body: 'React-based decentralized application frontends with wallet connection (MetaMask, WalletConnect), live on-chain data reads, and transaction signing flows that work across mobile and desktop.',
+    body: 'A MetaMask connect button that breaks on mobile. On-chain data that goes stale. Transaction flows that confuse non-technical users and kill conversions before they happen. We build React dApps that handle wallet connection, live on-chain reads, and transaction signing cleanly — across every device and wallet.',
   },
   {
     n: '03',
     title: 'Pulsechain & Ethereum Deployment',
-    body: 'Contract deployment and verification on Ethereum mainnet, Pulsechain, and EVM-compatible L2s. We bridge the gap between chain selection, testnet validation, and production launch.',
+    body: 'Choosing the wrong chain at launch means rebuilding community trust and paying to migrate contracts. We scope chain selection, testnet validation, and mainnet deployment as a single coordinated process — so you launch on the right network with the right gas economics the first time.',
   },
   {
     n: '04',
     title: 'Crypto SEO & Discoverability',
-    body: 'Keyword architecture, on-page optimization, and AI-citation content built around how investors search: "best DeFi protocols", "Pulsechain projects", "how to stake [token]". Organic discoverability compounds where paid ads cannot run.',
+    body: 'Google won\'t run your ads. Meta won\'t run your ads. Organic search is one of the only acquisition channels crypto projects can reliably build — and most projects never start. We build the keyword architecture and on-page content that puts you in front of investors the moment they search for what your protocol does.',
   },
   {
     n: '05',
     title: 'Web3 Content & GEO Writing',
-    body: 'Long-form educational content written to rank in Google and be cited by ChatGPT, Perplexity, and AI Overviews. Tokenomics explainers, protocol comparisons, staking guides, and whitepaper-level editorial.',
+    body: 'An investor searches "best Pulsechain staking protocol" and your project doesn\'t appear. They ask ChatGPT for DeFi recommendations and you\'re not mentioned. We write content that ranks in Google and gets cited by AI — staking guides, tokenomics explainers, and protocol comparisons that reach investors in research mode.',
   },
   {
     n: '06',
     title: 'Project Marketing & Launch Strategy',
-    body: 'Pre-launch visibility architecture: landing page, SEO foundation, content calendar, and community funnel — built before TGE so the project has search equity and organic traffic on day one.',
+    body: 'Most crypto projects launch with no search presence, no indexed content, and no organic traffic — then wonder why growth stalls after the initial community push fades. We build your SEO foundation and content calendar before TGE so you have compounding organic reach from day one, not month six.',
   },
 ];
 
 const STEPS = [
-  'Discovery: chain selection, contract requirements, SEO keyword targets, and launch timeline scoped together — not in separate silos',
-  'Architecture: smart contract structure, dApp component map, and content cluster designed in parallel before any build begins',
-  'Contract development: Solidity / EVM contract written, unit tested on testnet, and reviewed for common vulnerabilities (reentrancy, overflow, access control)',
-  'Frontend build: React dApp with wallet integration, on-chain state reads, and transaction flows verified across wallets and devices',
-  'SEO foundation: title tags, structured data, internal link architecture, and pillar page live before the contract deploys',
-  'Launch & growth: contract verified on Etherscan / PulseScan, site indexed, content publishing cadence active — organic traffic building from day one',
+  'Discovery: we scope chain selection, contract requirements, SEO keyword targets, and launch timeline in one session — not in three separate conversations with three separate vendors',
+  'Architecture: contract structure, dApp component map, and SEO content cluster designed in parallel — so nothing has to be rebuilt when the other piece lands',
+  'Contract build: Solidity contract written, unit tested on testnet, and reviewed for the vulnerabilities that get protocols exploited — before a single dollar goes to mainnet gas',
+  'Frontend build: React dApp with wallet connection, live on-chain data reads, and transaction flows tested across MetaMask, WalletConnect, and mobile — not just on the developer\'s machine',
+  'SEO foundation: title structure, schema markup, internal link architecture, and pillar content live before the contract deploys — so Google starts indexing the day you launch',
+  'Launch: contract verified and published on PulseScan or Etherscan, site indexed, content cadence active — you have organic search presence from day one, not six months after',
 ];
 
 const STATS = [
@@ -172,7 +172,7 @@ export default function CryptoWeb3Page() {
               Crypto marketing, smart contracts, and Web3 development — built to launch and rank.
             </h1>
             <p style={{ fontSize: '1.1rem', color: '#4b5563', lineHeight: 1.75, maxWidth: '640px', marginBottom: '2rem' }}>
-              Gobiya is a Los Angeles Web3 agency founded in 2010 that builds smart contracts on Ethereum and Pulsechain, develops dApp interfaces, and produces crypto SEO content that ranks in Google and gets cited by AI. TheARKCrypto.com is a live Pulsechain project we built end-to-end — contract, dApp, and site.
+              Most crypto projects fail not because the protocol is bad — but because no investor outside the Telegram group ever finds it. Gobiya is a Los Angeles Web3 agency, founded in 2010, that builds smart contracts on Ethereum and Pulsechain, develops dApp interfaces, and produces crypto SEO content that captures investors in research mode. TheARKCrypto.com is a live Pulsechain project we built end-to-end — contract, dApp, and site.
             </p>
             {/* Chain / tech chips */}
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '0' }}>
@@ -246,7 +246,7 @@ export default function CryptoWeb3Page() {
         <div style={{ marginBottom: '3rem' }}>
           <span style={{ fontFamily: 'monospace', fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.18em', color: '#9ca3af', display: 'block', marginBottom: '0.5rem' }}>What we build</span>
           <h2 style={{ fontSize: 'clamp(1.6rem, 3vw, 2.4rem)', fontWeight: 700, letterSpacing: '-0.03em', color: '#111827' }}>
-            Six disciplines — contracts, interfaces, and search visibility
+            Six problems crypto projects face — and what we do about each one
           </h2>
         </div>
         <div className="rg-services" style={{ border: '1px solid #e5e7eb', background: '#e5e7eb', gap: '1px' }}>
@@ -266,7 +266,7 @@ export default function CryptoWeb3Page() {
           <div>
             <span style={{ fontFamily: 'monospace', fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.18em', color: '#9ca3af', display: 'block', marginBottom: '0.5rem' }}>Why it matters</span>
             <h2 style={{ fontSize: 'clamp(1.6rem, 3vw, 2.4rem)', fontWeight: 700, letterSpacing: '-0.03em', color: '#111827', lineHeight: 1.15, marginBottom: '1.5rem' }}>
-              Community is fast. Search is permanent.
+              Your community disappears in 24 hours. Search compounds for 18 months.
             </h2>
             <p style={{ fontSize: '0.95rem', color: '#6b7280', lineHeight: 1.8, marginBottom: '1.5rem' }}>
               Twitter posts and Telegram messages have a 24-hour half-life. A well-optimized article explaining your protocol's staking mechanics ranks for 18 months and captures investors in research mode — the highest-intent users in the funnel.

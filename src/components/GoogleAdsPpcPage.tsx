@@ -32,12 +32,12 @@ const SPOKES = [
 ];
 
 const SERVICES = [
-  { n: '01', title: 'Campaign architecture & structure', body: 'Account and campaign structure built around intent layers — not keyword dumps. Every ad group maps to a specific searcher intent and a matching landing experience.' },
-  { n: '02', title: 'Keyword research & negative management', body: 'Thorough keyword mapping across match types, with continuous negative keyword expansion to eliminate wasted spend on irrelevant queries from day one.' },
-  { n: '03', title: 'Ad copy & creative testing', body: 'Headline and description variants tested systematically across each campaign. Copy decisions are made from conversion data, not preference.' },
-  { n: '04', title: 'Landing page alignment', body: 'Message-match between ad copy and landing page is the single largest driver of Quality Score and conversion rate. We audit and align both before any budget goes live.' },
-  { n: '05', title: 'Bid strategy & budget allocation', body: 'Smart bidding configurations — Target CPA, Target ROAS, or manual — selected and tuned for your specific funnel velocity and revenue goals.' },
-  { n: '06', title: 'Ongoing optimization & attribution', body: 'Weekly bid reviews, search term analysis, creative rotation, and attribution model calibration. The campaign improves every week, not just at launch.' },
+  { n: '01', title: 'Your report shows clicks and impressions — but you still don\'t know your cost per lead', body: 'If your Google Ads reporting can\'t tell you how many phone calls and form fills came from paid search last month and what each one cost, the campaigns were built for volume, not acquisition. We rebuild around one metric: cost per qualified lead.' },
+  { n: '02', title: 'Broad match keywords on a small budget are burning your spend on searches that have nothing to do with your business', body: 'Without tight match types and aggressive negative keyword lists, Google sends your ads to anything loosely related to your keywords. On most accounts we audit, 40–50% of spend is pure waste on day one. We stop that before a single dollar goes live.' },
+  { n: '03', title: 'Your ad creates one expectation and your landing page delivers something completely different — that\'s where leads fall off', body: 'Message-match between ad copy and landing page is the single largest driver of Quality Score and conversion rate. Most campaigns that don\'t convert have this mismatch. We audit and align both before any budget runs.' },
+  { n: '04', title: 'Your campaigns were set up once and the algorithm has been optimizing toward the wrong goals ever since', body: 'Google\'s smart bidding requires clean conversion signals. If tracking is misconfigured — counting page views instead of form submissions, or missing phone call tracking entirely — the algorithm is actively working against you. We verify attribution before anything else.' },
+  { n: '05', title: 'Your competitor shows up above you on every search and you don\'t understand why your higher bid isn\'t winning', body: 'Ad rank isn\'t just the highest bid — it\'s bid multiplied by Quality Score, which reflects relevance and landing page experience. A structurally correct campaign with half the budget can outrank a bigger spend. We build for Quality Score, not just bid.' },
+  { n: '06', title: 'The agency sends a monthly report but you can\'t tell if any of it is actually working', body: 'A useful paid search report shows three things: spend, qualified leads generated, and cost per lead. If yours leads with impressions, CTR, and average position instead, the report is covering activity — not outcomes. We report on what you actually hired us to improve.' },
 ];
 
 const STEPS = [
@@ -107,7 +107,7 @@ export default function GoogleAdsPpcPage() {
           Google Ads &amp; PPC Strategy built around acquisition cost, not click volume.
         </h1>
         <p style={{ fontSize: '1.1rem', color: '#4b5563', lineHeight: 1.75, maxWidth: '640px', marginBottom: '2.5rem' }}>
-          Gobiya is a Los Angeles Google Ads management agency founded in 2010. The agency manages Search, Shopping, Display, and YouTube campaigns for service businesses and e-commerce brands, with documented results including 5.7x ROAS on a $15,000/month budget and a 61% reduction in cost per lead after account rebuilds.
+          Most businesses running Google Ads are paying for clicks that never had a chance of converting. The pattern is consistent: campaigns built for volume — broad match keywords eating the budget, ads mismatched to the landing page, conversion tracking that counts page views instead of actual leads. Gobiya is a Los Angeles PPC agency, founded in 2010, that restructures campaigns around one number: cost per qualified lead. Documented results include a 61% reduction in cost per lead after account rebuilds and 5.7x ROAS on a $15,000/month budget.
         </p>
           </div>
           <div style={{ flex: '1 1 460px', maxWidth: '560px' }}>
@@ -182,7 +182,7 @@ export default function GoogleAdsPpcPage() {
         <div style={{ marginBottom: '3rem' }}>
           <span style={{ fontFamily: 'monospace', fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.18em', color: '#9ca3af', display: 'block', marginBottom: '0.5rem' }}>What we manage</span>
           <h2 style={{ fontSize: 'clamp(1.6rem, 3vw, 2.4rem)', fontWeight: 700, letterSpacing: '-0.03em', color: '#111827' }}>
-            Six paid acquisition disciplines, one compounding system
+            Six reasons your Google Ads spend isn't turning into leads — and what we do about each one
           </h2>
         </div>
         <div className="rg-services" style={{ border: '1px solid #e5e7eb', background: '#e5e7eb', gap: '1px' }}>

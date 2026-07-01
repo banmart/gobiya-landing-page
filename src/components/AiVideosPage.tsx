@@ -41,43 +41,43 @@ const CAPABILITIES = [
   {
     n: '01',
     title: 'AI Script & Concept Development',
-    body: 'Every video starts with a brief. We use AI-assisted scriptwriting to develop concepts, dialogue, voiceover scripts, and scene-by-scene shot lists aligned to your brand voice and conversion objective.',
+    body: 'You know what you want to say but not how to structure a 30-second spot that holds attention. We develop the concept, scene structure, and voiceover script from your brief — starting with the one thing that makes your viewer stop skipping.',
   },
   {
     n: '02',
     title: 'Text-to-Voice & AI Voiceover',
-    body: 'Professional-quality AI voiceover using ElevenLabs, Google text-to-speech, and OpenAI TTS models. We match tone, pacing, and accent to your brand — no voice actor scheduling, no studio booking.',
+    body: 'Voice actor schedules add weeks and thousands of dollars before a single frame is shot. We generate professional-quality voiceover matched to your brand tone — same day, no casting, no studio, no revision cycles.',
   },
   {
     n: '03',
     title: 'Veo 3 & Google Omni Video Generation',
-    body: 'We generate video using Google Veo 3 and Google Omni — the most capable AI video generation models available. Cinematic motion, realistic lighting, and coherent scene continuity at scale.',
+    body: 'A traditional production crew costs $20,000 before you have a single frame. Veo 3 and Google Omni render cinematic-quality video from your script and visual direction — no crew, no location fees, no six-week schedule.',
   },
   {
     n: '04',
     title: 'YouTube Pre-Roll Ad Production',
-    body: 'We produce 6-second bumpers, 15-second skippable ads, and 30-second non-skippable spots formatted for Google Ads / YouTube campaigns — with hooks engineered to beat the 5-second skip threshold.',
+    body: 'Most pre-roll ads fail in the first 5 seconds — before the skip button disappears — because the hook is an afterthought. We engineer the hook first, then build the 15- or 30-second story around it, formatted and uploaded to your Google Ads account ready to run.',
   },
   {
     n: '05',
     title: 'Connected TV: Amazon Prime & Paramount+',
-    body: 'We produce 15- and 30-second spots formatted for connected TV inventory on Amazon DSP, Paramount+ Advertising, Peacock, and Hulu — high-reach placements previously out of reach for SMBs.',
+    body: 'CTV placements on Amazon Prime and Paramount+ used to require agency minimums and production budgets only enterprise brands could justify. AI production changes that math — we produce CTV-spec spots at a cost that works for a $10K/month media budget.',
   },
   {
     n: '06',
     title: 'Social Video: Shorts, Reels & TikTok',
-    body: 'Vertical-format AI video for YouTube Shorts, Instagram Reels, and TikTok. Fast iteration means you can test 5 creative angles in the time a traditional production takes to produce one.',
+    body: 'Your competitor is posting video every day. You\'re not — because a single shoot takes weeks and you can\'t afford to test five different angles. AI video lets you produce and test multiple creatives in the time one traditional shoot takes to schedule.',
   },
 ];
 
 // ── Process steps ────────────────────────────────────────────────────────────
 const PROCESS = [
-  'Brief: campaign objective, target audience, tone, and distribution channels',
-  'Script & storyboard: AI-assisted concept, scene-by-scene shot list, and voiceover draft',
-  'Voice generation: AI voiceover recorded, paced, and mixed with ambient audio',
-  'Video generation: Veo 3 / Google Omni renders scenes from script and visual direction',
-  'Edit & assembly: scenes cut, timed to voiceover, motion graphics and captions added',
-  'Format export: delivered in all required aspect ratios (16:9, 9:16, 1:1) and specs',
+  'Brief: you tell us your campaign objective, target audience, and the one action you want a viewer to take — we handle everything from there',
+  'Script & hook: we write the 5-second hook first — the thing that stops the skip — then build the full scene-by-scene script and voiceover around it',
+  'Voice: AI voiceover generated, paced, and mixed the same day — no casting delays, no studio bookings, no revision cycle with a voice actor',
+  'Video: Veo 3 / Google Omni renders your scenes from the script — cinematic motion and realistic lighting without a crew or location',
+  'Edit: scenes cut and timed to voiceover, captions and motion graphics added, pacing reviewed against platform attention benchmarks',
+  'Delivery: files exported in every spec your platforms require (16:9, 9:16, 1:1) and ready to upload — or loaded directly into your ad account',
 ];
 
 // ── FAQ ──────────────────────────────────────────────────────────────────────
@@ -270,7 +270,7 @@ export default function AiVideosPage() {
               AI Video Production for YouTube Ads, CTV, and Social.
             </h1>
             <p style={{ fontSize: '1.1rem', color: '#4b5563', lineHeight: 1.75, maxWidth: '640px', marginBottom: '2.5rem' }}>
-              Gobiya is a Los Angeles AI video production agency, founded in 2010, that produces YouTube pre-roll ads, Amazon Prime Video spots, Paramount+ commercials, and social video using Veo 3, Google Omni, AI scriptwriting, and text-to-voice — delivered in 3 to 5 days.
+              Most businesses want video ads but can't justify a $30,000–$80,000 production quote for a 30-second spot. Gobiya is a Los Angeles AI video production agency, founded in 2010, that produces YouTube pre-roll ads, Amazon Prime Video spots, Paramount+ commercials, and social video using Veo 3 and Google Omni — delivered in 3–5 days at a fraction of traditional production cost.
             </p>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem' }}>
               {['Veo 3 Video Generation', 'Google Omni', 'AI Scriptwriting', 'Text-to-Voice', 'YouTube Pre-Roll', 'Amazon Prime Ads', 'Paramount+ Spots', 'YouTube Shorts'].map(tag => (
@@ -351,7 +351,7 @@ export default function AiVideosPage() {
         <div style={{ marginBottom: '3rem' }}>
           <span style={{ fontFamily: 'monospace', fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.18em', color: '#9ca3af', display: 'block', marginBottom: '0.5rem' }}>What we build</span>
           <h2 style={{ fontSize: 'clamp(1.6rem, 3vw, 2.4rem)', fontWeight: 700, letterSpacing: '-0.03em', color: '#111827' }}>
-            Six AI video production capabilities
+            Six production problems we solve — script, voice, video, and distribution
           </h2>
         </div>
         <div className="rg-services" style={{ border: '1px solid #e5e7eb', background: '#e5e7eb', gap: '1px' }}>

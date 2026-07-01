@@ -31,8 +31,8 @@ interface CategoryConfig {
 const CATEGORIES: Record<string, CategoryConfig> = {
   creativity: {
     label: 'Creativity',
-    heading: 'Express your brand identity and capture market attention.',
-    introParagraph: 'We bring together designers, strategists, writers, and directors to develop creative outputs that are not just visually compelling but strategically positioned to drive business outcomes. Every creative decision is grounded in audience insight, competitive analysis, and brand positioning.',
+    heading: 'Your competitors are ranking for what you do. Your site isn\'t. That\'s a content and strategy problem.',
+    introParagraph: 'Most businesses have a visibility gap: they do good work but the right buyers never find them. The content on their site either misses the queries buyers actually search, isn\'t structured for AI platforms to cite, or is too generic to earn trust once someone lands. We map every piece of content to a specific buyer query or problem — then write, script, or produce it from there.',
     introLink: '/about',
     stat1: { value: '5+', label: 'Brand systems delivered' },
     stat2: { value: '100%', label: 'Custom — no templates' },
@@ -71,7 +71,7 @@ const CATEGORIES: Record<string, CategoryConfig> = {
       {
         number: '01',
         title: 'SEO & Web Copywriting',
-        desc: 'We write content that engages human readers and ranks in search algorithms — from landing pages and service copy to long-form editorial that builds authority.',
+        desc: 'Your pages don\'t rank because nothing on your site maps to the queries your buyers actually search. We write keyword-mapped web copy, landing pages, and editorial content that ranks on Google and gets cited by AI platforms.',
         links: [
           { href: '/creativity/seo-web-copywriting-agency', label: 'SEO landing pages' },
           { href: '/creativity/seo-web-copywriting-agency', label: 'Editorial content' },
@@ -82,7 +82,7 @@ const CATEGORIES: Record<string, CategoryConfig> = {
       {
         number: '02',
         title: 'AI Videos & Ads',
-        desc: 'YouTube pre-roll ads, Amazon Prime Video spots, Paramount+ commercials, and social video — produced with Veo 3, Google Omni, AI scriptwriting, and text-to-voice in 3–5 days.',
+        desc: 'A traditional 30-second video production quote runs $30,000–$80,000 and takes 8 weeks. We produce YouTube pre-roll, Amazon Prime, and social video using Veo 3 in 3–5 days — script, voice, and delivery included.',
         links: [
           { href: '/creativity/ai-videos-agency', label: 'YouTube pre-roll ads' },
           { href: '/creativity/ai-videos-agency', label: 'Amazon Prime & Paramount+' },
@@ -93,7 +93,7 @@ const CATEGORIES: Record<string, CategoryConfig> = {
       {
         number: '03',
         title: 'Crypto & Web3',
-        desc: 'Smart contracts on Ethereum and Pulsechain, React dApp interfaces with wallet connection, and crypto SEO content that ranks in Google and gets cited by AI — built and launched together.',
+        desc: 'Your protocol doesn\'t fail because the code is bad — it fails because no investor outside your Telegram ever finds it. We build the smart contract, the dApp, and the SEO content that puts your project in front of people actively searching for it.',
         links: [
           { href: '/creativity/crypto-web3-agency', label: 'Smart contract development' },
           { href: '/creativity/crypto-web3-agency', label: 'Pulsechain & Ethereum dApps' },
@@ -106,8 +106,8 @@ const CATEGORIES: Record<string, CategoryConfig> = {
 
   performance: {
     label: 'Performance',
-    heading: 'Engineer high-speed digital pipelines to scale conversions.',
-    introParagraph: 'Performance is a system, not a set of isolated tactics. We align your technical infrastructure, paid channels, organic search signals, and conversion architecture into a single, coordinated growth engine — designed to generate predictable, compounding pipeline.',
+    heading: 'Your site, ads, or rankings aren\'t performing. We find the specific constraint and fix it.',
+    introParagraph: 'Most performance problems have one root cause — a slow site blocking rankings, ad spend wasted on unqualified clicks, or a technical gap suppressing traffic that should be converting. We run a forensic read before touching anything, identify the specific constraint, and build the fix that moves the metric you actually care about: qualified leads.',
     introLink: '/about',
     stat1: { value: '100/100', label: 'Core Web Vitals target' },
     stat2: { value: '61%', label: 'Avg. CPL reduction' },
@@ -147,7 +147,7 @@ const CATEGORIES: Record<string, CategoryConfig> = {
       {
         number: '01',
         title: 'SEO & Discoverability',
-        desc: 'We align your technical architecture with modern search intent — Core Web Vitals, semantic schema, entity structure, and crawl optimization for sustained organic growth.',
+        desc: 'Your site has been doing SEO for a year and rankings haven\'t moved. There\'s a structural reason — crawl errors, keyword cannibalization, or a technical ceiling no content will break through. We find it and fix it first.',
         links: [
           { href: '/performance/seo-discoverability-agency', label: 'Technical SEO audits' },
           { href: '/performance/seo-discoverability-agency', label: 'Entity & schema markup' },
@@ -159,7 +159,7 @@ const CATEGORIES: Record<string, CategoryConfig> = {
       {
         number: '02',
         title: 'Web & IT Development',
-        desc: 'We build custom React, Next.js, and Vite applications with zero templates — engineered for sub-second load times, native CRM integration, and complete data ownership.',
+        desc: 'Your current site is slow, template-built, and locks you into a platform that charges you to leave. We build custom React and Next.js sites that rank fast, convert cleanly, and belong entirely to you.',
         links: [
           { href: '/performance/web-development-agency', label: 'React / Next.js builds' },
           { href: '/performance/web-development-agency', label: 'Native CRM pipelines' },
@@ -170,7 +170,7 @@ const CATEGORIES: Record<string, CategoryConfig> = {
       {
         number: '03',
         title: 'Google Ads & PPC',
-        desc: 'We architect hyper-targeted paid acquisition campaigns with rigorous attribution, conversion tracking, and continuous bid optimization to maximize return on ad spend.',
+        desc: 'You\'re spending on Google Ads and can\'t tell which campaign generated a single qualified lead. We rebuild around one metric — cost per lead — and verify attribution before a dollar of new budget goes live.',
         links: [
           { href: '/performance/google-ads-ppc-strategy-agency', label: 'Search & Display campaigns' },
           { href: '/performance/google-ads-ppc-strategy-agency', label: 'Conversion tracking' },
@@ -181,7 +181,7 @@ const CATEGORIES: Record<string, CategoryConfig> = {
       {
         number: '04',
         title: 'CRO & UX Analysis',
-        desc: 'We isolate friction in your conversion funnel using heatmaps, session recordings, and A/B tests — then redesign the flows that move visitors to customers.',
+        desc: 'You\'re getting traffic but visitors read one screen and leave without contacting you. We audit where they drop off, test the specific friction points, and redesign the flows that turn visits into inquiries.',
         links: [
           { href: '/performance/cro-ux-analysis-agency', label: 'Funnel audit & heatmaps' },
           { href: '/performance/cro-ux-analysis-agency', label: 'A/B & multivariate tests' },
@@ -192,7 +192,7 @@ const CATEGORIES: Record<string, CategoryConfig> = {
       {
         number: '05',
         title: 'AI & LLM Consulting',
-        desc: 'We deploy secure custom LLM integrations and automated workflows that eliminate daily friction — using open-weight and API-based models with full data sovereignty.',
+        desc: 'You\'re doing repetitive manual work that should be automated — intake, routing, reporting, follow-up — but don\'t know which tools are trustworthy or where to start. We build the specific integrations that remove the daily friction.',
         links: [
           { href: '/performance/ai-llms-business-agency', label: 'Custom LLM integrations' },
           { href: '/performance/ai-llms-business-agency', label: 'Workflow automation' },
@@ -205,8 +205,8 @@ const CATEGORIES: Record<string, CategoryConfig> = {
 
   relations: {
     label: 'Relations',
-    heading: 'Construct sector authority and earn absolute market trust.',
-    introParagraph: 'Building digital authority is an active, ongoing process. We connect your brand with the external signals — media coverage, backlinks, citations, and community presence — that establish genuine credibility. These signals compound over time, becoming more valuable with each passing month.',
+    heading: 'Your competitors get press, backlinks, and AI citations. You don\'t. Here\'s how that gap closes.',
+    introParagraph: 'Authority signals — editorial backlinks, press mentions, structured citations — are what tell Google and AI platforms that your site is the credible answer. Without them, even technically correct pages lose to competitors with stronger external signals. We build those signals over 12 months through earned editorial coverage, structured outreach, and entity optimization.',
     introLink: '/about',
     stat1: { value: '300+', label: 'Placements secured' },
     stat2: { value: 'DR 50+', label: 'Avg. domain rating of links' },
@@ -243,7 +243,7 @@ const CATEGORIES: Record<string, CategoryConfig> = {
       {
         number: '01',
         title: 'Authority & Link Building',
-        desc: 'We earn high-quality contextual backlinks from authoritative industry domains through manually verified outreach — no link farms, no paid placements, no shortcuts.',
+        desc: 'Your site has clean content and solid technical SEO, but competitors with weaker pages outrank you because they have more authoritative sites linking to them. We earn editorial backlinks through manual outreach — no link farms, no paid placements.',
         links: [
           { href: '/relations/authority-building-agency', label: 'Editorial link outreach' },
           { href: '/relations/authority-building-agency', label: 'Competitor backlink audits' },
@@ -254,7 +254,7 @@ const CATEGORIES: Record<string, CategoryConfig> = {
       {
         number: '02',
         title: 'Digital PR & Media Outreach',
-        desc: 'We pitch compelling stories to top-tier journalists and media outlets — securing editorial coverage that builds brand recognition and generates lasting authority signals.',
+        desc: 'Journalists cover companies they\'ve heard of. If your brand never appears in the outlets your buyers read, you\'re invisible when it matters most. We pitch and place stories that generate press coverage and the editorial links that compound authority over time.',
         links: [
           { href: '/relations/digital-pr-media-outreach-agency', label: 'Media pitch campaigns' },
           { href: '/relations/digital-pr-media-outreach-agency', label: 'Press release distribution' },

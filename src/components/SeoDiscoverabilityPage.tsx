@@ -32,12 +32,12 @@ const SPOKES = [
 ];
 
 const SERVICES = [
-  { n: '01', title: 'Full technical audit', body: 'We crawl your site the way Googlebot does — surfacing crawl errors, index bloat, duplicate content, Core Web Vitals failures, and structured data gaps. Every finding is prioritized by ranking impact.' },
-  { n: '02', title: 'Keyword & intent mapping', body: 'We identify every query your buyers use across the full purchase journey — awareness through decision — and map each to a specific URL with a clear ranking goal.' },
-  { n: '03', title: 'Page architecture & internal links', body: 'URL structure, heading hierarchy, and internal link equity flow are the three levers most agencies ignore. We restructure them to concentrate authority on your highest-value pages.' },
-  { n: '04', title: 'Structured data & entity signals', body: 'JSON-LD schema for Organization, LocalBusiness, Article, FAQ, and Product types. Entity clarity signals that help Google and AI engines categorize and cite your content correctly.' },
-  { n: '05', title: 'On-page optimization', body: 'Title tags, meta descriptions, H-tag hierarchies, semantic content clusters, image alt text, and internal anchor text — each treated as a ranked signal, not a checkbox.' },
-  { n: '06', title: 'Ongoing rank monitoring', body: 'Weekly Search Console diagnostics, rank tracking, and traffic attribution. We catch anomalies before they become drops and iterate strategy continuously.' },
+  { n: '01', title: 'Your site has crawl errors Google has been silently suppressing for months — and your SEO agency never flagged them', body: 'Technical problems — crawl errors, duplicate content, incorrect canonical tags, slow Core Web Vitals — create a ceiling that no content or link work can break through. We crawl your site the way Googlebot does and prioritize every finding by ranking impact before any other work begins.' },
+  { n: '02', title: 'You\'re publishing content but multiple pages target the same vague keyword — so they compete against each other and both lose', body: 'Keyword cannibalization is one of the most common causes of stalled rankings on sites that are actively producing content. Every page needs a specific, distinct query it owns. We map your full URL set to a non-overlapping keyword target before anything gets written or revised.' },
+  { n: '03', title: 'Your highest-value service pages have no internal links pointing to them — Google treats them as orphans', body: 'Internal link equity is how authority flows through your site. Pages that no other page links to look like dead ends to search engines, regardless of how well they\'re written. We restructure your internal linking to concentrate authority on the pages you actually need to rank.' },
+  { n: '04', title: 'AI platforms answer questions in your category by citing your competitors — your site has no schema so you\'re invisible to the new search layer', body: 'Google AI Overviews, Perplexity, and ChatGPT pull answers from content with clear entity signals and structured data. Without JSON-LD schema for your business type, services, and FAQs, your content doesn\'t get surfaced — even if it\'s the best answer on the page.' },
+  { n: '05', title: 'Your title tags were written at launch and still say "Services | Company Name" — you\'re losing clicks on every ranking you do have', body: 'Title tag and meta description are the two elements that determine whether someone clicks your result or skips to the next one. If they were written during site launch and never optimized around specific buyer queries, you\'re leaving 20–40% of your potential clicks on the table.' },
+  { n: '06', title: 'Your traffic dropped and you have no idea which pages changed, which queries stopped sending visitors, or what triggered it', body: 'Without ongoing rank monitoring and Search Console diagnostics, algorithm updates and indexation changes are invisible until the traffic loss is already significant. We set up weekly anomaly detection so drops are caught and diagnosed before they compound.' },
 ];
 
 const STEPS = [
@@ -107,7 +107,7 @@ export default function SeoDiscoverabilityPage() {
           SEO &amp; Discoverability that places you at the top of every buyer's search.
         </h1>
         <p style={{ fontSize: '1.1rem', color: '#4b5563', lineHeight: 1.75, maxWidth: '640px', marginBottom: '2.5rem' }}>
-          Gobiya is a Los Angeles SEO agency founded in 2010 that provides technical SEO, local search optimization, and AI citation engineering for businesses in Southern California. Clients have achieved 213,000 monthly organic impressions and Map Pack top-3 rankings after algorithm-driven traffic losses.
+          Most businesses doing SEO for over a year without seeing results have the same underlying problem: ongoing work — content, links, updates — is building on a technical foundation that's quietly suppressing the entire site. Crawl errors, duplicate content, canonical misconfigurations, and weak page architecture create a ceiling no amount of publishing breaks through. Gobiya is a Los Angeles SEO agency, founded in 2010, that identifies the structural blockers first — then builds compounding search presence on top. Clients have achieved 213K monthly organic impressions and Map Pack top-3 rankings after algorithm-driven traffic losses.
         </p>
           </div>
           <div style={{ flex: '1 1 460px', maxWidth: '560px' }}>
@@ -188,7 +188,7 @@ export default function SeoDiscoverabilityPage() {
         <div style={{ marginBottom: '3rem' }}>
           <span style={{ fontFamily: 'monospace', fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.18em', color: '#9ca3af', display: 'block', marginBottom: '0.5rem' }}>What we optimize</span>
           <h2 style={{ fontSize: 'clamp(1.6rem, 3vw, 2.4rem)', fontWeight: 700, letterSpacing: '-0.03em', color: '#111827' }}>
-            Six SEO disciplines, one integrated system
+            Six reasons your site isn't ranking despite doing SEO — and how we fix each one
           </h2>
         </div>
         <div className="rg-services" style={{ border: '1px solid #e5e7eb', background: '#e5e7eb', gap: '1px' }}>

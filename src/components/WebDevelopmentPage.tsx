@@ -32,10 +32,10 @@ const SPOKES = [
 ];
 
 const VALUE_PROPS = [
-  { n: '01', title: 'Built for speed, not just looks', body: "Every build targets sub-second load times and a 90+ Lighthouse score. Page speed isn't an afterthought — it's written into the brief before a line of code exists, because slow sites lose both rankings and leads." },
-  { n: '02', title: 'You own everything', body: 'Custom-coded sites mean your code and your data are yours — no platform lock-in, no monthly software tax, no rebuild every two years because the page-builder fell behind.' },
-  { n: '03', title: 'Engineered to convert, not just exist', body: "Information architecture and user journeys get mapped before design starts. The goal isn't a site that looks good in a portfolio — it's one that turns visitors into pipeline." },
-  { n: '04', title: 'One team, start to finish', body: 'Frontend, backend, API integrations, QA, and deployment monitoring all run through the same team — so nothing gets lost in a handoff between your designer, developer, and SEO vendor.' },
+  { n: '01', title: 'Your current site loads in 4 seconds — and every second costs you rankings and leads before anyone reads a word', body: "Sub-second load time and a 90+ Lighthouse score aren't aspirational — they're written into the brief before a line of code is written. Because slow sites don't just frustrate visitors, they rank below faster competitors on identical content." },
+  { n: '02', title: 'You\'re paying a monthly platform fee on a site you don\'t actually own and will someday pay someone to migrate off', body: 'Custom-coded sites mean your code and your data are yours — no software subscription, no rebuild every two years because the page-builder fell behind the framework, no migration fee when you outgrow the platform.' },
+  { n: '03', title: 'Your site has traffic but visitors read one paragraph and leave without contacting you', body: "Information architecture and conversion flow get mapped before visual design starts. The goal isn't a site that looks good in a portfolio — it's one where the visitor journey ends at your phone or inbox, not the back button." },
+  { n: '04', title: 'Your designer, developer, and SEO agency don\'t talk to each other — and your lead funnel breaks in the gaps between them', body: 'Frontend, backend, API integrations, performance, and SEO architecture all run through the same team — so page speed, schema markup, and conversion flow are built in from the start, not patched on after launch.' },
 ];
 
 const STEPS = [
@@ -105,10 +105,10 @@ export default function WebDevelopmentPage() {
           Websites built to load fast, rank well, and convert — not just look good.
         </h1>
         <p style={{ fontSize: '1.1rem', color: '#4b5563', lineHeight: 1.75, maxWidth: '640px', marginBottom: '1.5rem' }}>
-          Gobiya hand-codes custom React, Next.js, and Vite sites in Los Angeles — engineered from business outcomes backward, with sub-second load times and zero platform lock-in.
+          Most business websites were built to look good in a portfolio — not to rank on Google or convert the visitors who do arrive. The result is a slow, template-based site that loses search positions to faster competitors, fails to turn traffic into inquiries, and locks you into a platform you'll eventually have to pay someone to escape. Gobiya builds custom React, Next.js, and Vite sites in Los Angeles — engineered backward from one goal: qualified leads.
         </p>
         <p style={{ fontSize: '0.9rem', color: '#9ca3af', fontFamily: 'monospace', marginBottom: '2.5rem' }}>
-          No templates. No page-builder bloat. Just a site that's fast enough to rank and clean enough to convert.
+          No templates. No page-builder bloat. No software tax. Just code you own and a site that compounds.
         </p>
           </div>
           <div style={{ flex: '1 1 460px', maxWidth: '560px' }}>
@@ -180,9 +180,9 @@ export default function WebDevelopmentPage() {
       {/* -- VALUE PROPS -- */}
       <section style={{ padding: '5rem 5vw', borderBottom: '1px solid #e5e7eb', background: '#f9fafb' }}>
         <div style={{ marginBottom: '3rem' }}>
-          <span style={{ fontFamily: 'monospace', fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.18em', color: '#9ca3af', display: 'block', marginBottom: '0.5rem' }}>Why Gobiya</span>
+          <span style={{ fontFamily: 'monospace', fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.18em', color: '#9ca3af', display: 'block', marginBottom: '0.5rem' }}>What your current site is costing you</span>
           <h2 style={{ fontSize: 'clamp(1.6rem, 3vw, 2.4rem)', fontWeight: 700, letterSpacing: '-0.03em', color: '#111827' }}>
-            Four reasons clients choose hand-coded over templated
+            Four problems with template-built sites — and what a hand-coded build solves
           </h2>
         </div>
         <div className="rg-value-2" style={{ border: '1px solid #e5e7eb', background: '#e5e7eb', gap: '1px' }}>

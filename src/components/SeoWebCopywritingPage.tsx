@@ -32,12 +32,12 @@ const SPOKES = [
 ];
 
 const SERVICES = [
-  { n: '01', title: 'Keyword & intent research', body: 'We map the precise language your buyers use at each stage of the search journey — from awareness questions to bottom-funnel comparisons — and build your copy around those signals.' },
-  { n: '02', title: 'Page copy & heading architecture', body: 'H1, H2, and body copy written with semantic depth. Every page has a clear keyword focus, entity relationships, and a logical structure that search engines and humans can parse.' },
-  { n: '03', title: 'Conversion copywriting', body: 'Ranked pages that don\'t convert waste budget. We apply persuasion architecture — benefit framing, friction reduction, social proof — so rankings turn into revenue.' },
-  { n: '04', title: 'On-page SEO elements', body: 'Title tags, meta descriptions, image alt text, schema markup, and internal link anchor text are all treated as copy — each one a micro-moment that affects clicks and rankings.' },
-  { n: '05', title: 'Content refreshes & audits', body: 'We identify underperforming pages with real organic potential and rewrite them to capture rankings they\'re close to — without a full rebuild.' },
-  { n: '06', title: 'GEO-optimized content', body: 'Structured for AI citation: clear factual claims, verifiable entity signals, FAQ blocks, and citation-worthy data that AI models pick up and surface in answers.' },
+  { n: '01', title: 'Your pages are on Google — just not the first five pages, because no one mapped them to the query your buyer actually types', body: 'Writing good copy and targeting the right keyword are two different skills. A page that describes your service in your language won\'t rank for the phrase your buyer searches. We map every page to the exact query before a word is written.' },
+  { n: '02', title: 'Your homepage describes what you do — but gives the visitor no reason to choose you over the three competitors they\'re comparing you to', body: 'Most service site copy is a list of capabilities: "We provide X, Y, and Z." That\'s not persuasion — it\'s a company description. We rewrite around your buyer\'s specific problem and the specific outcome you deliver, so the page earns the inquiry.' },
+  { n: '03', title: 'You\'re getting organic visitors who read one paragraph and leave without contacting you', body: 'A ranked page that doesn\'t convert wastes every piece of SEO work that got it there. We apply conversion architecture — problem framing, friction reduction, social proof placement — so the traffic you already have starts generating inquiries.' },
+  { n: '04', title: 'Your title tags still say "Services | Company Name" — that\'s a missed click on every ranking you do have', body: 'Title tag, meta description, H1, and image alt text are each a moment where your page either earns the click or loses it. If those elements were written at launch and never touched, they\'re likely costing you 20–40% of the clicks your rankings should be generating.' },
+  { n: '05', title: 'You\'ve published 40 blog posts and none of them rank — because they weren\'t built around search intent from the start', body: 'Volume without architecture produces a lot of indexed URLs and almost no rankings. A topic cluster — one primary page on the core query, supported by content that answers the research questions buyers ask before they\'re ready to convert — concentrates authority and produces rankings volume alone never will.' },
+  { n: '06', title: 'ChatGPT answers your customers\' questions by citing your competitor — not you', body: 'AI platforms cite content that makes specific, verifiable claims with clear entity signals. Most website copy is too vague to cite. We structure content with factual statements, FAQ blocks, and citation-worthy data that AI models pick up and surface in AI Overviews, Perplexity, and ChatGPT answers.' },
 ];
 
 const STEPS = [
@@ -107,7 +107,7 @@ export default function SeoWebCopywritingPage() {
               SEO &amp; Web Copywriting that ranks in algorithms and converts human readers.
             </h1>
             <p style={{ fontSize: '1.1rem', color: '#4b5563', lineHeight: 1.75, maxWidth: '640px', marginBottom: '2.5rem' }}>
-              Gobiya is a Los Angeles SEO copywriting agency, founded in 2010, that writes keyword-mapped website copy for B2B, professional services, and e-commerce businesses. Copy is structured to rank on Google and be cited by AI platforms including ChatGPT, Perplexity, and Google AI Overviews.
+              Most business websites have a content problem that looks like a traffic problem. The pages exist, the services are described, posts go out regularly — but search engines don't know what specific query each page is supposed to answer. That ambiguity means nothing ranks. Gobiya is a Los Angeles SEO copywriting agency, founded in 2010, that maps every page to a buyer query and writes copy that ranks on Google and gets cited by AI platforms including ChatGPT, Perplexity, and Google AI Overviews.
             </p>
           </div>
           <div style={{ flex: '1 1 460px', maxWidth: '560px' }}>
@@ -188,7 +188,7 @@ export default function SeoWebCopywritingPage() {
         <div style={{ marginBottom: '3rem' }}>
           <span style={{ fontFamily: 'monospace', fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.18em', color: '#9ca3af', display: 'block', marginBottom: '0.5rem' }}>What we write</span>
           <h2 style={{ fontSize: 'clamp(1.6rem, 3vw, 2.4rem)', fontWeight: 700, letterSpacing: '-0.03em', color: '#111827' }}>
-            Six copywriting disciplines, one integrated system
+            Six content problems that kill organic traffic — and what we write to fix each one
           </h2>
         </div>
         <div className="rg-services" style={{ border: '1px solid #e5e7eb', background: '#e5e7eb', gap: '1px' }}>
