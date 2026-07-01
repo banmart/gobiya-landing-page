@@ -119,6 +119,7 @@ const CATEGORIES: Record<string, CategoryConfig> = {
       { href: '/performance/google-ads-ppc-strategy-agency', label: 'Google Ads & PPC Strategy' },
       { href: '/performance/cro-ux-analysis-agency', label: 'CRO & UX Analysis' },
       { href: '/performance/ai-llms-business-agency', label: 'AI & LLM Systems Consulting' },
+      { href: '/ai-search-marketing-santa-clarita', label: 'AI Search Marketing (Santa Clarita)' },
     ],
     faqs: [
       {
@@ -151,6 +152,7 @@ const CATEGORIES: Record<string, CategoryConfig> = {
           { href: '/performance/seo-discoverability-agency', label: 'Technical SEO audits' },
           { href: '/performance/seo-discoverability-agency', label: 'Entity & schema markup' },
           { href: '/performance/seo-discoverability-agency', label: 'Core Web Vitals' },
+          { href: '/ai-search-marketing-santa-clarita', label: 'AI Search Marketing' },
         ],
         href: '/performance/seo-discoverability-agency',
       },

@@ -54,7 +54,28 @@ const corePages = [
   { url: 'https://www.gobiya.com/relations/digital-pr-media-outreach-agency', priority: '0.85', changefreq: 'weekly', lastmod: currentDate },
   { url: 'https://www.gobiya.com/relations/content-marketing-syndication-agency', priority: '0.85', changefreq: 'weekly', lastmod: currentDate },
   { url: 'https://www.gobiya.com/relations/influencer-marketing-agency', priority: '0.85', changefreq: 'weekly', lastmod: currentDate },
-  { url: 'https://www.gobiya.com/relations/local-community-relations-agency', priority: '0.85', changefreq: 'weekly', lastmod: currentDate }
+  { url: 'https://www.gobiya.com/relations/local-community-relations-agency', priority: '0.85', changefreq: 'weekly', lastmod: currentDate },
+
+  // New Pages / Local Pages
+  { url: 'https://www.gobiya.com/ai-search-marketing-santa-clarita', priority: '0.85', changefreq: 'weekly', lastmod: currentDate },
+  { url: 'https://www.gobiya.com/on-page-seo-los-angeles', priority: '0.85', changefreq: 'weekly', lastmod: currentDate },
+  { url: 'https://www.gobiya.com/ai-seo-beverly-hills', priority: '0.85', changefreq: 'weekly', lastmod: currentDate },
+  { url: 'https://www.gobiya.com/local-seo-glendale', priority: '0.85', changefreq: 'weekly', lastmod: currentDate },
+  { url: 'https://www.gobiya.com/seo-company-encino', priority: '0.85', changefreq: 'weekly', lastmod: currentDate },
+  { url: 'https://www.gobiya.com/local-seo-company-burbank', priority: '0.85', changefreq: 'weekly', lastmod: currentDate },
+  { url: 'https://www.gobiya.com/local-seo-services-burbank', priority: '0.85', changefreq: 'weekly', lastmod: currentDate },
+  { url: 'https://www.gobiya.com/glendale-seo', priority: '0.85', changefreq: 'weekly', lastmod: currentDate },
+  { url: 'https://www.gobiya.com/plastic-surgery-internet-marketing', priority: '0.85', changefreq: 'weekly', lastmod: currentDate },
+  { url: 'https://www.gobiya.com/internet-marketing-services-los-angeles', priority: '0.85', changefreq: 'weekly', lastmod: currentDate },
+  { url: 'https://www.gobiya.com/los-angeles-seo-professional', priority: '0.85', changefreq: 'weekly', lastmod: currentDate },
+
+  // New Creativity Pages
+  { url: 'https://www.gobiya.com/creativity/seo-content-strategy-agency', priority: '0.85', changefreq: 'weekly', lastmod: currentDate },
+  { url: 'https://www.gobiya.com/creativity/geo-ai-content-writing-agency', priority: '0.85', changefreq: 'weekly', lastmod: currentDate },
+  { url: 'https://www.gobiya.com/creativity/ai-videos-agency', priority: '0.85', changefreq: 'weekly', lastmod: currentDate },
+  { url: 'https://www.gobiya.com/creativity/crypto-web3-agency', priority: '0.85', changefreq: 'weekly', lastmod: currentDate },
+  { url: 'https://www.gobiya.com/creativity/landing-page-copywriting-agency', priority: '0.85', changefreq: 'weekly', lastmod: currentDate },
+  { url: 'https://www.gobiya.com/creativity/website-copywriting-services-agency', priority: '0.85', changefreq: 'weekly', lastmod: currentDate }
 ];
 
 // 3. Read ArticlePage.tsx content to extract article slugs and dates
