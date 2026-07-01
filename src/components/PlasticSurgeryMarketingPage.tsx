@@ -287,7 +287,7 @@ export default function PlasticSurgeryMarketingPage() {
               Plastic Surgery Internet Marketing
             </h1>
             <p style={{ fontSize: '1.1rem', color: '#4b5563', lineHeight: 1.75, maxWidth: '640px', marginBottom: '2.5rem' }}>
-              Plastic surgery internet marketing is how high-performing practices get found by the right patients — people actively researching procedures, comparing surgeons, and making decisions worth $8,000 to $25,000. The practices that dominate these searches didn't get there by posting more on social media. They built a compounding system: technical SEO that captures procedure-specific queries, content architecture that nurtures across a 3–6 month consideration cycle, Google Ads tuned to high-intent searches, and reputation infrastructure that turns patient reviews into conversion assets. Our <a href="/performance/seo-discoverability-agency" style={{ color: 'var(--green)', textDecoration: 'none' }}>SEO &amp; Discoverability practice</a> anchors every plastic surgery campaign we run.
+              Gobiya is a Los Angeles digital marketing agency founded in 2010 that provides SEO, Google Ads, and content marketing for plastic surgery and aesthetic medicine practices. Patient decisions in this category typically involve procedure costs of $8,000 to $25,000 and a 3–6 month research cycle. High-performing practices dominate these searches by building a compounding system: technical SEO that captures procedure-specific queries, content architecture that nurtures across a 3–6 month consideration cycle, Google Ads tuned to high-intent searches, and reputation infrastructure that turns patient reviews into conversion assets. Our <a href="/performance/seo-discoverability-agency" style={{ color: 'var(--green)', textDecoration: 'none' }}>SEO &amp; Discoverability practice</a> anchors every plastic surgery campaign we run.
             </p>
 
             {/* Patient Journey Diagram */}
@@ -322,7 +322,7 @@ export default function PlasticSurgeryMarketingPage() {
 
       {/* ── STATS BAR ── */}
       <section style={{ borderBottom: '1px solid #e5e7eb', background: '#f9fafb' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', padding: '0 5vw' }}>
+        <div className="rg-stats" style={{ padding: '0 5vw' }}>
           {STATS.map((s, i) => (
             <div key={i} style={{ padding: '2rem 0', borderRight: i < 2 ? '1px solid #e5e7eb' : 'none', paddingLeft: i > 0 ? '3rem' : 0 }}>
               <span style={{ display: 'block', fontSize: 'clamp(1.8rem, 3.5vw, 2.8rem)', fontWeight: 700, letterSpacing: '-0.04em', color: '#111827', lineHeight: 1 }}>{s.val}</span>
@@ -352,7 +352,7 @@ export default function PlasticSurgeryMarketingPage() {
           </span>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', border: '1px solid #e5e7eb', borderTop: 'none' }}>
+        <div className="rg-spokes" style={{ border: '1px solid #e5e7eb', borderTop: 'none' }}>
           {SPOKES.map((s, i) => (
             <a
               key={i}
@@ -393,7 +393,7 @@ export default function PlasticSurgeryMarketingPage() {
           </p>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', border: '1px solid #e5e7eb', background: '#e5e7eb', gap: '1px' }}>
+        <div className="rg-services" style={{ border: '1px solid #e5e7eb', background: '#e5e7eb', gap: '1px' }}>
           {SERVICES.map(s => (
             <div key={s.n} style={{ background: '#ffffff', padding: '2.5rem' }}>
               <div style={{ marginBottom: '1rem' }}>{s.icon}</div>

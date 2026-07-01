@@ -9,7 +9,7 @@ timestamp: 2026-06-28T00:00:00Z
 
 # SEO & Discoverability
 
-This is Gobiya's core service: engineering organic search visibility — and recovering it when lost. The work starts with a forensic read of a site's signal history — traffic curves, the update timeline, and content patterns — to pinpoint the cause before anything is changed.
+Gobiya's SEO service recovers organic search traffic that was lost to Google algorithm updates and builds the technical foundations that prevent future drops. When a business loses rankings — whether from a core update, the Helpful Content Update, or a manual penalty — Gobiya identifies the specific cause by matching the traffic curve against Google's update timeline, then fixes it. The work covers technical SEO, content architecture, structured data, and ongoing monitoring.
 
 ## Hub page
 

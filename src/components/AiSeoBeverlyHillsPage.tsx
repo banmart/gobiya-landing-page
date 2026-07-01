@@ -191,7 +191,7 @@ export default function AiSeoBeverlyHillsPage() {
             </h1>
 
             <p className="hero-sub">
-              AI SEO Beverly Hills means engineering your brand to rank on Google and be cited by ChatGPT, Claude, and Gemini when buyers in the 90210 market search for your services. The luxury and professional services market in Beverly Hills is one of the most competitively contested search environments in the country — generic SEO has no chance here. We build entity graphs, structured knowledge signals, and AI-readable content architectures that secure citations across every surface where high-net-worth buyers discover brands. <a href="/performance/seo-discoverability-agency" style={{color:'var(--green)'}}>Our SEO &amp; Discoverability practice</a> has operated in this market since 2012.
+              Gobiya is a Los Angeles SEO and GEO agency founded in 2010 that builds entity graphs and AI citation signals for luxury businesses and professional practices in Beverly Hills, CA (ZIP 90210). The agency builds entity graphs, structured knowledge signals, and AI-readable content architectures that secure citations across every surface where high-net-worth buyers discover brands. <a href="/performance/seo-discoverability-agency" style={{color:'var(--green)'}}>Our SEO &amp; Discoverability practice</a> has operated in this market since 2012.
             </p>
 
             <div className="hero-specs">
@@ -233,7 +233,7 @@ export default function AiSeoBeverlyHillsPage() {
               <div className="card-num">Hollywood</div>
               <h3>Where We Cut Our Teeth on Competitive SEO</h3>
               <p>
-                Hollywood's entertainment, hospitality, and creative agency market is brutal — dozens of vendors chasing the same high-value clients, with no loyalty and infinite noise. We learned to build search systems that differentiated brands at the entity level, not just the keyword level. Citation authority, entity verification, AI discoverability — we were engineering these before the industry had names for them. The <a href="/seo-hollywood" style={{color:'var(--green)'}}>Hollywood AI SEO program</a> we run today uses the same forensic architecture we perfected on our first clients.
+                Hollywood's entertainment, hospitality, and creative agency market is brutal — dozens of vendors chasing the same high-value clients, with no loyalty and infinite noise. We learned to build search systems that differentiated brands at the entity level, not just the keyword level. Citation authority, entity verification, AI discoverability — we were engineering these before the industry had names for them. That forensic architecture, refined across some of LA's most competitive search environments, is what we bring to Beverly Hills today.
               </p>
             </div>
 
@@ -241,7 +241,7 @@ export default function AiSeoBeverlyHillsPage() {
               <div className="card-num">Koreatown</div>
               <h3>Where We Mastered Local AI SEO at Scale</h3>
               <p>
-                Koreatown on Wilshire Corridor is one of the highest-density business districts in Los Angeles — a market where local map pack position determines whether a business survives. We ran NAP audits, GBP recovery, and citation engineering for professional services and medical providers across K-Town's dense grid. That precision work shaped how we handle multi-signal local AI SEO today. The <a href="/seo-koreatown" style={{color:'var(--green)'}}>Koreatown SEO system</a> we built still runs for active clients in that market.
+                Koreatown on Wilshire Corridor is one of the highest-density business districts in Los Angeles — a market where local map pack position determines whether a business survives. We ran NAP audits, GBP recovery, and citation engineering for professional services and medical providers across K-Town's dense grid. That precision work shaped how we handle multi-signal local AI SEO today — and those same clients are still active.
               </p>
             </div>
 

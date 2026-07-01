@@ -7,40 +7,54 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 const STATS = [
-  { label: 'Experience', val: '25+', unit: 'yrs', desc: 'Bridging full-stack software engineering and organic search traffic acquisition since 2000.' },
-  { label: 'Founded', val: '2012', unit: '', desc: 'Headquartered in Los Angeles, serving mid-market to enterprise brands nationally.' },
-  { label: 'Trust score', val: '98.4', unit: '%', desc: 'BBB A+ rated and a certified partner — accountability is part of the architecture.' },
+  { label: 'In business', val: '2010', unit: '', desc: 'Founded in Los Angeles in 2010. Incorporated as Gobiya LLC in 2012. Serving contractors, dental practices, SaaS, e-commerce, and professional services.' },
+  { label: 'Experience', val: '25+', unit: 'yrs', desc: 'Web development since 1996, SEO since Google\'s early years, Google Ads certified 2015–2019.' },
+  { label: 'Accreditation', val: 'BBB', unit: 'A+', desc: 'BBB A+ rated. Bilingual — English and Spanish. Work done directly by the founder, not delegated.' },
   { label: 'URI paths analyzed', val: '1.4M', unit: '', desc: 'In a single forensic scan — the scale a recovery read actually runs at.' },
 ];
 
 const TIMELINE = [
   {
-    year: '2000',
-    label: 'The foundation',
-    title: 'Engineering meets search.',
-    body: 'Full-stack software engineering and organic search traffic acquisition, practiced side by side from the start. Most marketers learned to talk to Google; this practice learned to read it.',
-    tags: ['Full-stack dev', 'Organic search'],
+    year: '1996–2000',
+    label: 'The start',
+    title: 'Web tech at AT&T WorldNet.',
+    body: 'Steve Martin began his career providing web technology support at AT&T WorldNet in Burbank, helping businesses build their first websites. He earned a Certificate in Website Design from Glendale Career College in 1996.',
+    tags: ['AT&T WorldNet', 'Glendale Career College'],
   },
   {
-    year: '2012',
+    year: '2000–2005',
+    label: 'The platform',
+    title: 'Sony Music & Webcastr.com.',
+    body: 'Built a video content distribution platform for Sony Music artists at Webcastr.com in West Hollywood — engineering and organic search practiced side by side from the start.',
+    tags: ['Sony Music', 'Web development', 'Organic search'],
+  },
+  {
+    year: '2005–2010',
+    label: 'The field',
+    title: 'In-house SEO and digital marketing.',
+    body: 'Led internet marketing and website management for Mr. Speedy Plumbing & Rooter in Los Angeles, achieving top Google Maps rankings for primary plumbing terms across the city.',
+    tags: ['Local SEO', 'Google Maps', 'Lead generation'],
+  },
+  {
+    year: '2010',
     label: 'The agency',
     title: 'Gobiya is founded in Los Angeles.',
-    body: 'A precision-engineered search visibility and digital solutions firm — built for high-stakes technical environments and data-driven revenue, not broad generalist tactics.',
-    tags: ['Technical SEO', 'Performance marketing'],
+    body: 'Founded to specialize in the intersection of technical web development and organic search — recovering sites from algorithm updates, building custom React sites, and managing paid media for businesses that need measurable results.',
+    tags: ['Technical SEO', 'Performance marketing', 'React development'],
   },
   {
-    year: '2012–2023',
+    year: '2011–2023',
     label: 'The updates',
-    title: 'Every algorithm cycle, survived.',
-    body: 'Penguin, Hummingbird, Medic, BERT, the Helpful Content update — each one re-ranked the web, and each one sharpened the recovery practice that clients now hire Gobiya for.',
-    tags: ['Recovery forensics', '1.4M URI scans'],
+    title: 'Every algorithm cycle, inside live accounts.',
+    body: 'Panda, Penguin, Hummingbird, Medic, BERT, the Helpful Content Update, and the 2024 core updates — each tracked inside active client accounts. Documented recovery rate: 92%. Median time from diagnosis to restored rankings: six weeks.',
+    tags: ['Recovery forensics', '92% recovery rate', '1.4M URI scans'],
   },
   {
     year: '2024 → now',
     label: 'The AI era',
-    title: 'Search becomes answers. Gobiya adapts first.',
-    body: 'Schema markup, entity optimization, and structured citations for LLMs — plus native CRM, Web3 builds, and AI prospect automation. The next update is TBD. The posture is ready.',
-    tags: ['GEO / LLM citations', 'Native CRM', 'AI automation'],
+    title: 'Search becomes answers.',
+    body: 'Google AI Overviews arrived in 2024 and began intercepting clicks from sites that rank well but are invisible in AI-generated answers. Gobiya added GEO (Generative Engine Optimization) — content and entity structure built to be cited by ChatGPT, Perplexity, and Google AI Overviews.',
+    tags: ['GEO / AI citations', 'Google AI Overviews', 'Structured data'],
   },
 ];
 
@@ -54,11 +68,13 @@ const CAPABILITIES = [
 ];
 
 const OP_ROWS = [
-  { k: 'Background', v: 'Full-stack engineering × organic search, since 2000' },
-  { k: 'Specialty', v: 'Advanced search mechanics, performance marketing, digital infrastructure design' },
-  { k: 'Dev stack', v: 'React, Next.js, Vite, Tailwind CSS, Supabase, custom AI chat & automation builds' },
-  { k: 'AI-era SEO', v: 'Schema markup, entity optimization, structured citations for LLMs' },
-  { k: 'Credentials', v: 'Certified partner · BBB A+ rated · professional certifications on file' },
+  { k: 'Founded', v: 'Est. 2010 · Incorporated as Gobiya LLC 2012 · Los Angeles, CA' },
+  { k: 'Background', v: 'AT&T WorldNet (1996–2000) · Sony Music / Webcastr.com (2000–2005) · SEO & digital marketing since 2005' },
+  { k: 'Specialty', v: 'Google algorithm recovery, technical SEO, local SEO, Google Ads, React web development, GEO for AI search' },
+  { k: 'Dev stack', v: 'React, Next.js, Vite, Tailwind CSS, Supabase, JavaScript, WordPress' },
+  { k: 'Languages', v: 'English · Spanish (bilingual)' },
+  { k: 'Credentials', v: 'Certified Google Partner — Google Ads & Analytics (2015–2019) · BBB A+ rated · Certificate in Website Design, Glendale Career College (1996)' },
+  { k: 'Paid media', v: 'Google Ads · Bing Ads · Meta Ads · Yelp Ads — budgets managed up to $15K/month' },
 ];
 
 export default function GobiyaAboutPage() {
@@ -136,7 +152,7 @@ export default function GobiyaAboutPage() {
           The Los Angeles SEO agency that treats search like an engineering problem.
         </h1>
         <p style={{ fontSize: '1.1rem', color: '#4b5563', lineHeight: 1.75, maxWidth: '640px', marginBottom: '2.5rem' }}>
-          Gobiya is a precision-engineered search visibility and digital solutions firm. Founded in 2012 in Los Angeles — built for high-stakes technical environments and data-driven revenue generation.
+          Gobiya is a digital marketing and SEO agency in Los Angeles, California. Steve Martin started the practice in 2010 and incorporated it as Gobiya LLC in 2012. The agency specializes in recovering organic search traffic lost to Google algorithm updates, technical SEO, local SEO for LA-area businesses, Google Ads management, custom React and Next.js web development, and SEO copywriting. It is BBB A+ rated, bilingual in English and Spanish, and serves clients in dental, home services, B2B SaaS, e-commerce, and professional services.
         </p>
         <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
           <a href="/book" className="btn btn-primary magnetic">
@@ -149,7 +165,7 @@ export default function GobiyaAboutPage() {
 
       {/* ── STATS BAR ── */}
       <section style={{ borderBottom: '1px solid #e5e7eb', background: '#f9fafb' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', padding: '0 5vw' }}>
+        <div className="rg-stats-4" style={{ padding: '0 5vw' }}>
           {STATS.map((s, i) => (
             <div
               key={i}
@@ -192,13 +208,13 @@ export default function GobiyaAboutPage() {
           <div>
             <div data-anim="stagger" style={{ marginBottom: '2.5rem' }}>
               <p style={{ fontSize: '1.05rem', color: '#374151', lineHeight: 1.8, marginBottom: '1.25rem' }} data-anim-child>
-                Gobiya is led by Steve Martin — 25+ years of digital marketing and full-stack development experience. That dual background is the whole point: the person reading your traffic curve is the same kind of person who can read your codebase.
+                Gobiya is founded and run by Steve Martin, a bilingual (English/Spanish) SEO specialist and web developer based in Los Angeles. Steve started in web technology in 1996 at AT&T WorldNet in Burbank, then built a video distribution platform for Sony Music artists at Webcastr.com in West Hollywood from 2000 to 2005. He has worked in SEO since Google's early days — tracking every major algorithm update since Panda (2011) inside active client accounts.
               </p>
               <p style={{ fontSize: '1.05rem', color: '#374151', lineHeight: 1.8, marginBottom: '1.25rem' }} data-anim-child>
-                Since 2000, that has meant bridging software engineering and organic search acquisition — and since 2012, running Gobiya as a precision-engineered growth practice for brands that require high-performance technical SEO and scalable digital revenue engines.
+                He founded Gobiya in 2010 and was a certified Google Partner for Google Ads and Analytics from 2015 to 2019. Every client engagement is run directly by Steve — SEO audits, schema markup, code changes, Google Ads management, and content strategy are handled by the same person who made the diagnosis, not passed to a junior team.
               </p>
               <p style={{ fontSize: '1.05rem', color: '#374151', lineHeight: 1.8 }} data-anim-child>
-                No layers between you and the work. No strategy deck handed to a junior team. The diagnosis, the build, and the deployment come from the same desk.
+                Documented results: 5x patient inquiries for a dental practice, 45% organic traffic growth for a home remodeling company, 5.7x Google Ads ROAS for a windows and doors company, and a 61% reduction in cost per lead for a B2B SaaS company.
               </p>
             </div>
 
@@ -233,7 +249,15 @@ export default function GobiyaAboutPage() {
                     }}
                   >
                     <span style={{ color: '#9ca3af', flexShrink: 0 }}>{row.k}</span>
-                    <span style={{ color: '#d1d5db', textAlign: 'right' }}>{row.v}</span>
+                    {row.k === 'Credentials' ? (
+                      <span style={{ color: '#d1d5db', textAlign: 'right' }}>
+                        Google-certified (YouTube &amp; Analytics, 2015–2019) ·{' '}
+                        <a href="https://www.bbb.org/us/ca/los-angeles/profile/digital-marketing/gobiya-llc-1216-495569" target="_blank" rel="noopener noreferrer" style={{ color: '#d1f851', textDecoration: 'underline' }}>BBB A+ rated</a>
+                        {' '}· Gobiya LLC
+                      </span>
+                    ) : (
+                      <span style={{ color: '#d1d5db', textAlign: 'right' }}>{row.v}</span>
+                    )}
                   </div>
                 ))}
               </div>
@@ -321,7 +345,7 @@ export default function GobiyaAboutPage() {
           </div>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', border: '1px solid #e5e7eb', background: '#e5e7eb', gap: '1px' }}>
+        <div className="rg-services" style={{ border: '1px solid #e5e7eb', background: '#e5e7eb', gap: '1px' }}>
           {CAPABILITIES.map((cap) => (
             <a
               key={cap.n}

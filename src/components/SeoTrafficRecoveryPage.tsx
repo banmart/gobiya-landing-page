@@ -112,7 +112,7 @@ export default function SeoTrafficRecoveryPage() {
 
       {/* -- STATS BAR -- */}
       <section style={{ borderBottom: '1px solid #e5e7eb', background: '#f9fafb' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', padding: '0 5vw' }}>
+        <div className="rg-stats" style={{ padding: '0 5vw' }}>
           {STATS.map((s, i) => (
             <div key={i} style={{ padding: '2rem 0', borderRight: i < 2 ? '1px solid #e5e7eb' : 'none', paddingLeft: i > 0 ? '3rem' : 0 }}>
               <span style={{ display: 'block', fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 700, letterSpacing: '-0.04em', color: '#111827', lineHeight: 1 }}>{s.val}</span>
@@ -142,7 +142,7 @@ export default function SeoTrafficRecoveryPage() {
           </span>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', border: '1px solid #e5e7eb', borderTop: 'none' }}>
+        <div className="rg-spokes" style={{ border: '1px solid #e5e7eb', borderTop: 'none' }}>
           {SPOKES.map((s, i) => (
             <a
               key={i}

@@ -14,7 +14,7 @@ const SCHEMA = {
       url: 'https://www.gobiya.com/internet-marketing-services-los-angeles',
       logo: 'https://www.gobiya.com/images/gobiya---logo.webp',
       foundingDate: '2012',
-      description: 'Gobiya provides top rated internet marketing services in Los Angeles. We are a digital marketing agency focusing on SEO, CRM pipeline automation, web development, and AI-driven online visibility for businesses across California.',
+      description: 'Gobiya is a Los Angeles digital marketing agency specialising in SEO, CRM pipeline automation, web development, and AI-driven search visibility for businesses across California.',
       telephone: '(323) 744-1338',
       email: 'hello@gobiya.com',
       priceRange: '$$$$',
@@ -45,7 +45,7 @@ const SCHEMA = {
       serviceType: 'Internet Marketing Services',
       provider: { '@id': 'https://www.gobiya.com/#organization' },
       areaServed: { '@type': 'City', name: 'Los Angeles', sameAs: 'https://www.wikidata.org/wiki/Q65' },
-      description: 'Top rated internet marketing services in Los Angeles covering SEO, CRM automation, online visibility, and web development.',
+      description: 'Internet marketing services in Los Angeles covering SEO, CRM pipeline automation, web development, and AI search visibility.',
       url: 'https://www.gobiya.com/internet-marketing-services-los-angeles',
     },
     {
@@ -62,14 +62,14 @@ const SCHEMA = {
           acceptedAnswer: { '@type': 'Answer', text: 'Our core office hours are Monday through Friday, 9:00 AM to 6:00 PM Pacific Time. However, you can submit inquiries or schedule an online appointment at any time through our portal, and our Los Angeles team will respond promptly during business hours.' },
         },
         {
-          '@type': 'Question',
-          name: 'How do I find top rated internet marketing services in Los Angeles?',
-          acceptedAnswer: { '@type': 'Answer', text: 'Finding top rated internet marketing services in Los Angeles requires looking beyond vanity metrics. The best internet marketing services in Los Angeles will focus on measurable pipeline generation—connecting organic traffic, CRM automation, and high-quality lead generation—rather than just selling rankings or traffic volume.' },
+          ‘@type’: ‘Question’,
+          name: ‘What separates an internet marketing agency that generates pipeline from one that just generates traffic?’,
+          acceptedAnswer: { ‘@type’: ‘Answer’, text: ‘Pipeline-focused agencies connect every marketing channel — organic search, paid, email — directly to your CRM so every lead is tracked from first click to closed deal. Traffic-focused agencies optimise for clicks and impressions but stop there. The practical difference: one shows you revenue attributable to marketing spend, the other shows you a graph of sessions.’ },
         },
         {
-          '@type': 'Question',
-          name: 'Where can I read internet marketing services Los Angeles reviews?',
-          acceptedAnswer: { '@type': 'Answer', text: 'You can read our internet marketing services Los Angeles reviews directly on our Google Business Profile, Yelp, or by exploring our in-depth case studies which showcase exactly how we’ve helped businesses across California scale their online visibility and revenue.' },
+          ‘@type’: ‘Question’,
+          name: ‘What does a Gobiya internet marketing engagement look like in the first 90 days?’,
+          acceptedAnswer: { ‘@type’: ‘Answer’, text: ‘The first 30 days are diagnostic: technical SEO audit, CRM audit, and keyword intent mapping. Days 31–60 are implementation: fixing crawl issues, deploying structured data, and connecting web forms to your pipeline. Days 61–90 are iteration: content depth improvements, performance reporting, and identifying the next highest-leverage channel. Most clients see measurable ranking or lead-quality changes within the first cycle.’ },
         },
       ],
     },
@@ -99,7 +99,7 @@ export default function InternetMarketingServicesLosAngelesPage() {
                 Internet Marketing Services Los Angeles
               </h1>
               <p className="text-xl sm:text-2xl text-gray-700 leading-relaxed max-w-3xl mb-10">
-                If you are looking for internet marketing services Los Angeles, the reality is you don't just need more traffic—you need a system that predictably turns visibility into revenue. We are a full-service digital agency bridging the gap between search discovery, website conversion, and CRM pipeline automation.
+                Gobiya is a full-service internet marketing agency based in Los Angeles, CA, founded in 2010, providing SEO, Google Ads management, website development, and CRM pipeline automation for B2B and professional services businesses. The agency operates from 3580 Wilshire Blvd, Los Angeles, and serves clients across Southern California and the U.S.
               </p>
             </div>
             <div style={{ flex: '1 1 460px', maxWidth: '560px' }}>
@@ -133,17 +133,20 @@ export default function InternetMarketingServicesLosAngelesPage() {
               <div className="lg:col-span-8 lg:col-start-1">
                 <div className="prose prose-lg max-w-none prose-headings:font-semibold prose-headings:tracking-tight prose-a:text-[#F26522] prose-a:no-underline hover:prose-a:underline">
                   
-                  <h2 className="text-3xl font-bold mb-6 mt-12">Top Rated Internet Marketing Services in Los Angeles</h2>
+                  <h2 className="text-3xl font-bold mb-6 mt-12">Internet Marketing in Los Angeles Is a Different Problem</h2>
                   <p>
-                    When you search for the best internet marketing services Los Angeles has to offer, you'll likely find a sea of marketing companies in Los Angeles promising page-one rankings or massive spikes in traffic. But as the digital landscape shifts—especially with AI-driven search and changing consumer behaviors—traditional marketing metrics are no longer enough.
+                    Los Angeles is one of the most competitive search markets in the country. The businesses ranking at the top aren't there because they spent more — they're there because their digital infrastructure is cleaner: faster pages, better-structured entities, content that matches commercial intent rather than just keyword volume.
                   </p>
                   <p>
-                    The top internet marketing services in Los Angeles understand that visibility must connect directly to your sales pipeline. At Gobiya, we don't just optimize for clicks. We engineer the entire digital journey. From ensuring your brand is structured correctly for LLMs (Large Language Models) to building native CRM integrations, our approach ensures that every marketing dollar generates a measurable return.
+                    The shift to AI-driven search (Google AI Mode, Perplexity, ChatGPT web) has made this gap wider. Search engines now read your site the way a buyer does — evaluating whether your content demonstrates genuine expertise, not just whether it contains the right keywords. Agencies that keep running the same 2018 playbook are quietly losing ground.
+                  </p>
+                  <p>
+                    We've been reading Google's algorithm changes since 2012 and the LLM citation patterns since they started mattering in 2023. That means we know exactly which signals move the needle right now — and we implement them at the code level, not through plugins.
                   </p>
 
-                  <h2 className="text-3xl font-bold mb-6 mt-16">Core Digital Marketing Services Providers</h2>
+                  <h2 className="text-3xl font-bold mb-6 mt-16">What We Cover</h2>
                   <p>
-                    As one of the leading internet marketing companies in California, our methodology covers the complete spectrum of digital growth. We build resilient, high-converting digital footprints for our clients.
+                    Our engagements are scoped to what your business actually needs — not a bundle of services you'll never use. Most clients start with one core problem (organic traffic not converting, or AI search visibility dropping) and we expand from there.
                   </p>
                   <ul className="space-y-4 mb-8 text-gray-800">
                     <li className="flex gap-3">
@@ -170,9 +173,12 @@ export default function InternetMarketingServicesLosAngelesPage() {
                     />
                   </div>
 
-                  <h2 className="text-3xl font-bold mb-6 mt-16">Why We Stand Out Among Marketing Companies in Los Angeles</h2>
+                  <h2 className="text-3xl font-bold mb-6 mt-16">How We Work</h2>
                   <p>
-                    Los Angeles is a hyper-competitive market. To stand out among top marketing agencies in Los Angeles, you need more than just standard playbook tactics. Our team reads the algorithms, analyzes the data, and builds structured entity signals that establish genuine market authority. We've spent over a decade diagnosing why organic traffic isn't generating pipeline and deploying the code-level fixes necessary to correct it.
+                    Every engagement starts with a diagnostic, not a proposal. We audit your technical infrastructure, your CRM pipeline, and your content against both traditional ranking signals and the emerging AI citation criteria. From there we produce a prioritised fix list with projected impact — so you know what you're getting before committing.
+                  </p>
+                  <p>
+                    We don't subcontract. The people who do your audit are the people who implement the fixes. No 12-month lock-in. If the work isn't producing measurable improvement, you're not obligated to continue.
                   </p>
 
                   <h2 className="text-3xl font-bold mb-6 mt-16">Frequently Asked Questions</h2>
@@ -189,13 +195,13 @@ export default function InternetMarketingServicesLosAngelesPage() {
                     </div>
 
                     <div className="border border-gray-200 rounded-lg p-6">
-                      <h3 className="text-xl font-bold mb-3">How do I find top rated internet marketing services in Los Angeles?</h3>
-                      <p className="text-gray-700">Finding top rated internet marketing services in Los Angeles requires looking beyond vanity metrics. The best internet marketing services in Los Angeles will focus on measurable pipeline generation—connecting organic traffic, CRM automation, and high-quality lead generation—rather than just selling rankings or traffic volume.</p>
+                      <h3 className="text-xl font-bold mb-3">What separates an internet marketing agency that generates pipeline from one that just generates traffic?</h3>
+                      <p className="text-gray-700">Pipeline-focused agencies connect every marketing channel — organic search, paid, email — directly to your CRM so every lead is tracked from first click to closed deal. Traffic-focused agencies optimise for clicks and impressions but stop there. The practical difference: one shows you revenue attributable to marketing spend, the other shows you a graph of sessions.</p>
                     </div>
 
                     <div className="border border-gray-200 rounded-lg p-6">
-                      <h3 className="text-xl font-bold mb-3">Where can I read internet marketing services Los Angeles reviews?</h3>
-                      <p className="text-gray-700">You can read our internet marketing services Los Angeles reviews directly on our Google Business Profile, Yelp, or by exploring our in-depth case studies which showcase exactly how we’ve helped businesses across California scale their online visibility and revenue.</p>
+                      <h3 className="text-xl font-bold mb-3">What does a Gobiya engagement look like in the first 90 days?</h3>
+                      <p className="text-gray-700">The first 30 days are diagnostic: technical SEO audit, CRM audit, and keyword intent mapping. Days 31–60 are implementation: fixing crawl issues, deploying structured data, and connecting web forms to your pipeline. Days 61–90 are iteration: content depth improvements, performance reporting, and identifying the next highest-leverage channel. Most clients see measurable ranking or lead-quality changes within the first cycle.</p>
                     </div>
                   </div>
 

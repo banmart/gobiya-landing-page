@@ -147,7 +147,7 @@ export default function OnPageSeoLosAngelesPage() {
             </h1>
 
             <p className="hero-sub">
-              When competing for visibility, generic SEO is no longer enough. Gobiya delivers elite <strong>on page seo los angeles</strong> services engineered to optimize your website’s structural integrity, crawl budget, and entity relevance. By aligning on-page architecture directly with Google’s core updates and the retrieval layers of modern AI engines, we ensure your Los Angeles business commands search results. We clean up toxic redirect loops, resolve indexation conflicts, build structured JSON-LD schemas, and implement conversion architecture that turns raw search volume into predictable pipeline revenue.
+              Gobiya is a Los Angeles on-page SEO agency founded in 2010 that diagnoses and fixes organic search problems at the code level — redirect chains, missing schema, Core Web Vitals failures, and content mapped to the wrong intent stage. Most Los Angeles businesses with stalled organic growth have the same underlying problem: sessions that never become leads. The root is almost always on-page — redirect chains bleeding crawl budget, schema missing, or content targeting the wrong intent stage. We find it at the code level and fix it there. Clean redirects, structured entity graphs, sub-second Core Web Vitals, and content mapped to commercial intent — implemented directly, not through plugins.
             </p>
 
             <div className="hero-specs">

@@ -193,7 +193,7 @@ export default function SeoCompanyEncinoPage() {
             </h1>
 
             <p className="hero-sub">
-              An SEO company in Encino should do one thing well: generate consistent, qualified pipeline from organic search — not just traffic. The Ventura Boulevard corridor and San Fernando Valley business market runs on referrals and reputation, but the businesses growing fastest in Encino have added organic search and AI citation visibility to that foundation. We are a technical SEO company serving Encino, Tarzana, Sherman Oaks, and the broader Valley market — engineering the ranking architecture, entity graphs, and content systems that turn search into predictable revenue. Our <a href="/performance/seo-discoverability-agency" style={{color:'var(--green)'}}>SEO &amp; Discoverability system</a> has operated in this market since 2012.
+              Gobiya is an SEO company serving Encino, Tarzana, and Sherman Oaks along the Ventura Boulevard corridor in the San Fernando Valley. Founded in 2010, the agency provides technical SEO, entity graph engineering, and AI citation optimization for professional services businesses that depend on organic search for client acquisition. Our <a href="/performance/seo-discoverability-agency" style={{color:'var(--green)'}}>SEO &amp; Discoverability system</a> has operated in this market since 2012.
             </p>
 
             <div className="hero-specs">

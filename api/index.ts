@@ -1649,7 +1649,7 @@ export default async function handler(req: IncomingMessage, res: any) {
           "https://m.yelp.com/biz/gobiya-los-angeles-5"
         ],
         "telephone": "(323) 744-1338",
-        "foundingDate": "2012-11-15",
+        "foundingDate": "2012-11-25",
         "priceRange": "$$$$",
         "numberOfEmployees": { "@type": "QuantitativeValue", "value": 5 },
         "logo": {

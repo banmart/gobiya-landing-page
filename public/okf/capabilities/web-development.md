@@ -9,7 +9,7 @@ timestamp: 2026-06-26T00:00:00Z
 
 # Web Development
 
-Gobiya builds fast, modern websites — described as blazing-fast React builds — engineered for both search ranking and conversion. The builds can ship with native CRM and blockchain integration rather than bolted-on third-party tools.
+Gobiya builds custom websites using React and Next.js — hand-coded without page builders or templates — targeting sub-second load times and 90+ Lighthouse performance scores. The agency builds sites for businesses in Los Angeles and remotely across the U.S., with a focus on technical performance and search ranking rather than visual design alone. A slow or technically broken site is also an SEO problem, so web development and SEO work are treated as the same system.
 
 ## What it covers
 

@@ -192,7 +192,7 @@ export default function LocalSeoGlendalePage() {
             </h1>
 
             <p className="hero-sub">
-              Local SEO Glendale means showing up in Google's Map Pack and organic results when buyers on Brand Boulevard and throughout the 91201–91210 market search for your services. Glendale is one of LA County's most competitive local search markets — the Americana at Brand corridor alone drives thousands of high-intent local queries every day, and the businesses that rank in the top three map positions capture the overwhelming majority of that traffic. We engineer the four signals that determine local rank: <a href="/insights/google-business-profile-optimization" style={{color:'var(--green)'}}>Google Business Profile</a> authority, NAP citation consistency, review velocity, and local schema. Our <a href="/performance/seo-discoverability-agency" style={{color:'var(--green)'}}>SEO &amp; Discoverability practice</a> has served the Glendale market since 2012.
+              Gobiya has served Glendale businesses since 2010. Glendale's local search market has two layers most agencies miss. The first is the Map Pack competition on Brand Boulevard and the Americana corridor — some of the densest retail and professional services density in LA County, where three positions capture most of the clicks. The second is Glendale's demographic reality: the city has the largest Armenian-American population in the US and a significant Korean-American business community, meaning the businesses that truly dominate local search here also have multilingual GBP profiles, Armenian and Korean directory citations, and review velocity from both English and non-English speakers. We've worked in this market since 2012 and understand both layers. Our <a href="/performance/seo-discoverability-agency" style={{color:'var(--green)'}}>SEO &amp; Discoverability practice</a> covers Map Pack engineering, GBP authority, NAP consistency, and multilingual local signals.
             </p>
 
             <div className="hero-specs">
@@ -309,6 +309,25 @@ export default function LocalSeoGlendalePage() {
               </p>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* ── MULTILINGUAL LOCAL SEO ── */}
+      <section style={{ background: '#ffffff', borderBottom: '1px solid #e5e7eb', padding: '5rem 5vw' }}>
+        <div style={{ maxWidth: '860px' }}>
+          <span style={{ fontFamily: 'monospace', fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.18em', color: '#9ca3af', display: 'block', marginBottom: '1rem' }}>Glendale-specific signal</span>
+          <h2 style={{ fontSize: 'clamp(1.6rem, 3vw, 2.4rem)', fontWeight: 700, letterSpacing: '-0.03em', color: '#111827', marginBottom: '1.25rem', lineHeight: 1.2 }}>
+            Multilingual GBP Optimization for the Glendale Market
+          </h2>
+          <p style={{ fontSize: '1rem', color: '#374151', lineHeight: 1.8, marginBottom: '1rem' }}>
+            Glendale has the largest concentration of Armenian-Americans in the United States and a substantial Korean-American business community along the Wilshire and Western corridor. A significant share of high-intent local searches in Glendale happen in Armenian and Korean — not just English. Google Business Profiles that include the correct primary language, secondary language support, and category translations for these communities rank materially higher for non-English local queries than profiles that ignore them.
+          </p>
+          <p style={{ fontSize: '1rem', color: '#374151', lineHeight: 1.8, marginBottom: '1rem' }}>
+            We build GBP profiles with language-appropriate business descriptions, ensure citation consistency across Armenian and Korean directories active in the Glendale market, and configure review request workflows that reach both English and non-English speaking customers. For professional services — dental, medical, legal, financial — this is often the fastest Map Pack ranking lever available, because very few competitors have optimised for it.
+          </p>
+          <p style={{ fontSize: '1rem', color: '#374151', lineHeight: 1.8 }}>
+            This is not a generic local SEO tactic. It is specific to Glendale's market and the demographic data that shapes its search behaviour. If your competitors haven't done it, this gap is yours to close.
+          </p>
         </div>
       </section>
 

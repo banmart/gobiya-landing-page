@@ -34,29 +34,6 @@ const RELATIONS_SPOKES: Record<string, { title: string; href: string; query: str
   ],
 };
 
-const RotatingWord: React.FC = () => {
-  const words = ['ChatGPT', 'Claude', 'Gemini'];
-  const [index, setIndex] = useState(0);
-  const [fade, setFade] = useState(true);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setFade(false);
-      setTimeout(() => {
-        setIndex(prev => (prev + 1) % words.length);
-        setFade(true);
-      }, 300);
-    }, 2800);
-    return () => clearInterval(interval);
-  }, []);
-
-  return (
-    <span className={`rotating-word ${fade ? 'fade-in' : 'fade-out'}`}>
-      ({words[index]})
-    </span>
-  );
-};
-
 const SiteHeader: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [openCategory, setOpenCategory] = useState<string | null>(null);
@@ -146,10 +123,7 @@ const SiteHeader: React.FC = () => {
       {showAnnounce && (
         <div className="top-announcement-bar" onClick={() => window.location.href = '/book'}>
           <div className="top-announcement-link">
-            Get found on all of the major AI platforms like&nbsp;
-            <span className="rotating-word-wrapper">
-              <RotatingWord />
-            </span>
+            <strong>15% off your first service</strong>&nbsp;— book a strategy call this week
           </div>
           <button 
             type="button" 

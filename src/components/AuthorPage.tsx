@@ -116,8 +116,11 @@ const AuthorPage: React.FC<AuthorPageProps> = ({ path }) => {
         <h1 style={{ fontSize: 'clamp(2.5rem, 5.5vw, 4.5rem)', fontWeight: 700, letterSpacing: '-0.03em', lineHeight: 1.05, color: '#111827', marginBottom: '1rem' }}>
           Steve Martin
         </h1>
-        <p style={{ fontSize: '1.1rem', color: '#4b5563' }}>
+        <p style={{ fontSize: '1.1rem', color: '#4b5563', marginBottom: '1.25rem' }}>
           Founder, Lead Developer &amp; Marketer at Gobiya
+        </p>
+        <p style={{ fontSize: '1rem', color: '#4b5563', lineHeight: 1.75, maxWidth: '720px' }}>
+          Steve Martin founded Gobiya in 2010 and incorporated it as Gobiya LLC in 2012. He started his career in web technology in 1996 at AT&T WorldNet in Burbank, then built a video content distribution platform for Sony Music artists at Webcastr.com in West Hollywood from 2000 to 2005. He has worked in SEO since Google's early years and was a certified Google Partner for Google Ads and Analytics from 2015 to 2019. He is bilingual in English and Spanish. Gobiya is BBB A+ rated and located at 3580 Wilshire Blvd, Ste 132, Los Angeles, CA 90010.
         </p>
       </section>
 
@@ -192,7 +195,7 @@ const AuthorPage: React.FC<AuthorPageProps> = ({ path }) => {
           {/* 5 credential tiles */}
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1rem', marginBottom: '2.5rem' }}>
             {[
-              { n: '01', title: '25+ Years in Search Engineering', desc: 'Direct hands-on search engineering since 1999 across contractors, healthcare, SaaS, and e-commerce verticals.' },
+              { n: '01', title: '25+ Years in Search Engineering', desc: 'Direct hands-on search engineering since 1999 across contractors, healthcare, SaaS, and e-commerce verticals. Google-certified in YouTube Advertising and Analytics (2015–2019).' },
               { n: '02', title: 'Entity & AI Search Specialist', desc: 'Schema markup, GEO, and structured data for Google AI Overviews, ChatGPT, and Perplexity citation optimization.' },
               { n: '03', title: 'React & Full-Stack Builder', desc: 'Builds custom React/Vite sites and Supabase-backed tools directly — no delegation to junior staff or offshore teams.' },
               { n: '04', title: 'B2B Pipeline Attribution', desc: 'Connects organic search programs to CRM pipeline and closed-won revenue — not just rankings or traffic volume.' },
@@ -212,7 +215,7 @@ const AuthorPage: React.FC<AuthorPageProps> = ({ path }) => {
             {[
               {
                 q: 'Who is Steve Martin at Gobiya?',
-                a: 'Steve Martin is the founder of Gobiya and its lead developer and marketer. Unlike agency principals who delegate all technical work, Steve writes the code, implements the schema, configures the analytics, and runs the actual SEO programs he designs. He has 25+ years of search engineering experience across multiple industries and currently focuses on entity-based SEO and AI search optimization.'
+                a: 'Steve Martin is the founder of Gobiya and its lead developer and marketer. Unlike agency principals who delegate all technical work, Steve writes the code, implements the schema, configures the analytics, and runs the actual SEO programs he designs. He has 25+ years of search engineering experience across multiple industries, holds Google certifications in YouTube Advertising and Analytics, and operates Gobiya as a BBB A+ rated business.'
               },
               {
                 q: 'What industries has Steve Martin worked in?',

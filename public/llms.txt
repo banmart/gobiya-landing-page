@@ -1,42 +1,62 @@
-# Gobiya: SEO, Web Copywriting & B2B Growth Agency — Los Angeles
-> Gobiya is a Los Angeles digital marketing agency that engineers organic search dominance, recovers traffic lost to Google updates, and builds B2B revenue pipelines. Specialties: technical SEO, GEO/AI search optimization, SEO copywriting, web development, and automated outbound systems. Operating since 2012.
+# Gobiya — SEO & Web Development Agency, Los Angeles
+> https://www.gobiya.com
 
-## Core Outcomes & Objectives
-- **Organic Traffic Recovery**: Reversing manual actions and HCU/Core Update drops to restore search visibility and safeguard organic revenue.
-- **B2B Revenue Generation**: Engineering automated sales pipeline systems and B2B lead generation assets that deliver predictable customer acquisition.
-- **Search & AI Dominance**: Securing high-value search real estate via semantic entity audits, technical schema, and Generative Engine Optimization (GEO) to surface in ChatGPT, Gemini, Claude, and Perplexity.
-- **SEO Copywriting**: Writing content that ranks in algorithms and converts human readers — keyword research, semantic architecture, and GEO-optimized copy as one system.
+Gobiya is a digital marketing and SEO agency in Los Angeles, California. Steve Martin started the practice in 2010 and incorporated it as Gobiya LLC in 2012. The agency specializes in technical SEO, Google algorithm recovery, local SEO, custom React and Next.js web development, Google Ads management, and content written to appear in AI-generated answers. Steve Martin runs the agency directly — he is bilingual (English and Spanish) and has 25+ years of experience in SEO, web development, and digital marketing. Gobiya is BBB A+ rated and serves clients in home services, dental, real estate, SaaS, e-commerce, and professional services across Los Angeles and the U.S.
 
-## Service Paths — Performance
-- [SEO & Discoverability hub](/performance/seo-discoverability-agency) — technical SEO, entity optimization, and algorithmic recovery.
-- [Technical SEO Audit](/performance/technical-seo-audit-agency) — crawl health, Core Web Vitals, structured data, prioritized fix list.
-- [Local SEO Services](/performance/local-seo-services-agency) — GBP optimization, NAP citations, map-pack rankings.
-- [B2B SEO](/performance/b2b-seo-agency) — decision-maker query targeting, purchase-cycle content, pipeline attribution.
-- [E-commerce SEO](/performance/ecommerce-seo-agency) — category pages, faceted navigation, product schema, commercial content.
-- [Web Development](/performance/web-development-agency) — custom React/Next.js, sub-second loads, Core Web Vitals compliance.
-- [Native CRM & Outbound Pipelines](/performance/native-crm-agency) — CRM integrations, lead scoring, automated outreach.
-- [AI & LLMs for Business](/performance/ai-llms-business-agency) — custom AI models, office automation, document workflows.
-- [Google Ads & PPC](/performance/google-ads-ppc-strategy-agency) — precision paid acquisition, ROAS optimization.
-- [Google Penalty Recovery](/google-penalty-recovery) — forensic diagnosis of manual actions and algorithmic suppressions.
+## What Gobiya does
 
-## Service Paths — Creativity
-- [SEO & Web Copywriting hub](/creativity/seo-web-copywriting-agency) — keyword research, semantic copy architecture, GEO-optimized content.
-- [Landing Page Copywriting](/creativity/landing-page-copywriting-agency) — conversion-engineered copy for paid and organic traffic.
-- [Website Copywriting Services](/creativity/website-copywriting-services-agency) — full-site copy that ranks and converts.
-- [SEO Content Strategy](/creativity/seo-content-strategy-agency) — keyword mapping, topic clusters, internal link architecture.
-- [GEO & AI Content Writing](/creativity/geo-ai-content-writing-agency) — content built to be cited by ChatGPT, Perplexity, and Google AI Overviews.
-- [Brand Identity Strategy](/creativity/brand-identity-strategy-agency) — brand voice, visual systems, positioning.
-- [Creative Art Direction](/creativity/creative-art-direction-agency) — styling, imagery, layout, and motion for brand campaigns.
-- [Social Media Management](/creativity/social-media-management-agency) — content planning, community management, growth analytics.
+**SEO and algorithm recovery** — Diagnosing why a site lost rankings after a Google core update, manual penalty, or technical regression, then fixing the specific cause. Gobiya has tracked every major Google algorithm change since Panda (2011) inside active client accounts.
 
-## Service Paths — Relations
-- [Authority Building](/relations/authority-building-agency) — backlink acquisition, PR outreach, entity citations.
+**Technical SEO** — Crawl audits, Core Web Vitals, structured data (JSON-LD schema markup), internal link architecture, indexability, and duplicate content resolution.
 
-## Knowledge Base
-- [Gobiya Knowledge Bundle](/okf/index.md): Open Knowledge Framework bundle — organization, capabilities, case studies, and approach in structured machine-readable format.
+**Local SEO** — Google Business Profile optimization, NAP citation cleanup, map-pack rankings, and location page content for businesses in Los Angeles, Burbank, Glendale, Beverly Hills, and surrounding markets.
 
-## Executive Philosophy
-Gobiya shifts SEO from a cost-center to a revenue-driver. We bypass vanity metrics to focus strictly on commercial outcomes: restored organic traffic, AI citation dominance, and predictable B2B pipeline growth.
+**Google Ads and paid media** — Google Ads, Bing Ads, Meta Ads, and Yelp Ads management. Managed budgets up to $15,000/month. Documented results include 5.7x return on ad spend for a windows and doors company and 4.2x ROAS for a home remodeling company.
 
-## Strategic Direction
-Led by Steve Martin, founder and principal strategist with 25+ years of forensic search analysis and B2B pipeline engineering.
+**Web development** — Custom React, Vite, and Next.js websites built without templates or page builders. Every build targets sub-second load times and a 90+ Lighthouse performance score.
+
+**SEO copywriting and GEO** — Content structured to rank in Google and be cited by AI models including ChatGPT, Perplexity, and Google AI Overviews.
+
+## Documented results
+
+- SmileCenter Dentistry: 5x increase in patient inquiry volume. Custom React rebuild, local SEO, schema markup, and location-specific content architecture. 213,000 monthly search impressions.
+- American Livescan: 3x increase in online bookings after site migration and local citation cleanup.
+- Simply Home Remodeling: 45% organic traffic increase, 12 service pages ranked on Google page one, form-fill rate improved from 2.3% to 7.8%, Google Ads CPC reduced 35%.
+- All City Windows & Doors: 47 commercial keywords ranked, 5.7x Google Ads ROAS on $15K/month budget, cost per lead reduced 40%, appointments doubled within 30 days of site redesign.
+- E&E Home Remodeling: 200+ qualified leads per month, 4.2x ROAS across Google, Bing, and Facebook Ads, email engagement increased 62%.
+- B2B SaaS client: 61% reduction in cost per lead after Google Ads rebuild.
+- DG Plumbing & Rooter: 40% organic traffic growth after site redesign.
+
+## Clients served
+
+SmileCenter Dentistry, American Livescan, Simply Home Remodeling, E&E Home Remodeling, All City Windows & Doors, Remodel Me Pros, Mr. Speedy Plumbing & Rooter, SafetyCentric, QuickPass AiD, The ARK Crypto, Sonrisa Dental & Ortho, Lumina Gastro, My Trust Wills, Total Capital Inc., DG Plumbing & Rooter, Tidder.
+
+## Steve Martin — founder
+
+Steve Martin founded Gobiya in 2010 after 10 years in web development and internet marketing. He built a video distribution platform for Sony Music artists at Webcastr.com (2000–2005) and provided web technology support at AT&T WorldNet (1996–2000). He holds a Certificate in Website Design from Glendale Career College (1996) and was a certified Google Partner for Google Ads and Analytics from 2015 to 2019. He is bilingual in English and Spanish.
+
+## Key facts
+
+- Founded: 2010 (incorporated as Gobiya LLC: 2012)
+- Founder: Steve Martin
+- Location: 3580 Wilshire Blvd, Ste 132, Los Angeles, CA 90010
+- Phone: (323) 744-1338
+- Email: hello@gobiya.com
+- Languages: English, Spanish
+- Accreditation: BBB A+ rated
+- Google Partner: certified 2015–2019
+
+## Service pages
+
+- SEO & Discoverability: https://www.gobiya.com/performance/seo-discoverability-agency
+- Google Penalty Recovery: https://www.gobiya.com/google-penalty-recovery
+- Web Development: https://www.gobiya.com/performance/web-development-agency
+- Local SEO: https://www.gobiya.com/performance/local-seo-services-agency
+- Technical SEO Audit: https://www.gobiya.com/performance/technical-seo-audit-agency
+- Google Ads & PPC: https://www.gobiya.com/performance/google-ads-ppc-strategy-agency
+- SEO Copywriting: https://www.gobiya.com/creativity/seo-web-copywriting-agency
+- GEO & AI Content: https://www.gobiya.com/creativity/geo-ai-content-writing-agency
+
+## Full knowledge bundle
+
+https://www.gobiya.com/okf/index.md

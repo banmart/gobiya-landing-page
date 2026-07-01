@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import SiteHeader from './SiteHeader';
 import SiteFooter from './SiteFooter';
 import LatestInsights from './LatestInsights';
+import OfferNudge from './OfferNudge';
 
 const yieldToMain = (): Promise<void> => {
   if (typeof window === 'undefined') return Promise.resolve();
@@ -245,17 +246,32 @@ export default function GobiyaLanding() {
             <span className="text-sm font-mono uppercase tracking-widest text-gray-500 mb-4">
               Full service digital marketing agency · Los Angeles
             </span>
-            <h1 className="text-4xl sm:text-6xl font-bold tracking-tight text-gray-900 leading-tight">
-              The full service digital marketing agency built for measurable growth.
+            <h1 className="text-5xl sm:text-7xl font-black tracking-tight text-gray-900 leading-[1.05]">
+              The full service digital marketing agency built for{' '}
+              <span className="relative inline-block whitespace-nowrap">
+                measurable growth
+                <svg
+                  className="swash-underline absolute left-0 -bottom-1 sm:-bottom-2 w-full"
+                  style={{ zIndex: -1 }}
+                  viewBox="0 0 300 24"
+                  preserveAspectRatio="none"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M2 16 C 40 6, 80 22, 120 12 S 200 4, 298 14"
+                    pathLength="1"
+                  />
+                </svg>
+              </span>.
             </h1>
           </div>
           <div className="flex flex-col justify-between" data-anim="up">
             <div className="text-gray-600 text-lg sm:text-xl leading-relaxed">
               <p className="mb-6">
-                Gobiya is a full service digital marketing agency in Los Angeles — covering SEO, AI search visibility, web development, CRM pipeline automation, and paid media under one roof. No handoffs. Every channel engineered to produce pipeline, not just traffic.
+                Gobiya is an SEO and web development agency in Los Angeles, California, founded in 2010 by Steve Martin. The agency specializes in recovering organic search traffic after Google algorithm updates, technical SEO, local SEO, Google Ads management, custom React and Next.js web development, and content written to appear in AI-generated answers. Steve is bilingual in English and Spanish and has worked in web development and search since 1996.
               </p>
               <p>
-                Reading Google's algorithm since 2012. Now reading the LLMs' too. We diagnose exactly why your organic traffic isn't generating pipeline, fix the root cause at the code level, and build the structured entity signals that make your brand visible on every surface where buyers search.
+                Documented results include a 5x increase in patient inquiries for a dental practice, a 45% organic traffic increase for a home remodeling company, 5.7x Google Ads ROAS on a $15K/month budget for a windows and doors company, a 3x increase in online bookings for a fingerprinting service, and a 61% reduction in cost per lead for a B2B SaaS company.
               </p>
             </div>
             <div className="mt-8">
@@ -571,9 +587,49 @@ export default function GobiyaLanding() {
           </div>
       </section>
 
+      {/* Offer Band */}
+      <section className="offer-band" style={{ background: '#d1f851', borderBottom: '1px solid #1f2937' }}>
+        <div
+          style={{
+            padding: '2.25rem 5vw',
+            display: 'flex',
+            flexWrap: 'wrap',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            gap: '1.5rem',
+          }}
+        >
+          <p
+            className="text-2xl sm:text-3xl"
+            style={{ fontWeight: 800, color: '#111827', letterSpacing: '-0.02em', margin: 0 }}
+          >
+            15% off your first service — book a strategy call this week.
+          </p>
+          <a
+            href="/contact"
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '0.5rem',
+              fontSize: '1rem',
+              fontWeight: 700,
+              color: '#ffffff',
+              background: '#111827',
+              borderRadius: '9999px',
+              padding: '0.85rem 1.75rem',
+              whiteSpace: 'nowrap',
+            }}
+          >
+            Claim the offer
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path fillRule="evenodd" clipRule="evenodd" d="M7 7C7 6.44772 7.44772 6 8 6H17C17.5523 6 18 6.44772 18 7V16C18 16.5523 17.5523 17 17 17C16.4477 17 16 16.5523 16 16V9.41421L7.70711 17.7071C7.31658 18.0976 6.68342 18.0976 6.29289 17.7071C5.90237 17.3166 5.90237 16.6834 6.29289 16.2929L14.5858 8H8C7.44772 8 7 7.55228 7 7Z" fill="currentColor"/></svg>
+          </a>
+        </div>
+      </section>
+
       {/* Latest Insights Slider Section */}
       <LatestInsights />
 
+      <OfferNudge />
 
     </main>
   </div>

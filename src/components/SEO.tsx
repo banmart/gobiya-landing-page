@@ -73,8 +73,8 @@ const metadataMap: Record<string, SEOMetadata> = {
 
   // ── Performance subpages ──
   '/performance/web-development-agency': {
-    title: `Web & IT development agency in LA: React, custom sites, speed - Gobiya`,
-    description: `Gobiya replaces slow page-builders with custom, hand-coded React and Next.js websites — 100/100 Core Web Vitals, sub-second loads, zero templates, engineered to convert and rank natively.`
+    title: `Web Development Agency Los Angeles | Gobiya`,
+    description: `Custom React & Next.js web development in LA. Sub-second load times, 90+ Lighthouse scores, zero platform lock-in. Book a free audit.`
   },
   '/performance/native-crm-agency': {
     title: `Native CRM agency in LA: custom pipeline, zero SaaS fees, data ownership - Gobiya`,
@@ -526,7 +526,7 @@ const SEO: React.FC<SEOProps> = ({ path }) => {
           "https://m.yelp.com/biz/gobiya-los-angeles-5"
         ],
         "telephone": "(323) 744-1338",
-        "foundingDate": "2012",
+        "foundingDate": "2012-11-25",
         "priceRange": "$$$$",
         "numberOfEmployees": { "@type": "QuantitativeValue", "value": 5 },
         "logo": {
