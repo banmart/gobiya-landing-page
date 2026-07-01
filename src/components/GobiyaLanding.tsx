@@ -527,11 +527,9 @@ export default function GobiyaLanding() {
                   Creativity makes the way you express your identity unique and effective: the presentation you give yourself, the worlds you choose and the images you process to describe yourself all contribute to creating your world.
                 </p>
                 <ol style={{ listStyleType: 'decimal', paddingLeft: '1.2rem', display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
-                  <li><a href="/creativity/brand-identity-strategy-agency" style={{ color: '#4b5563', fontSize: '0.875rem', textDecoration: 'underline', textUnderlineOffset: '4px', textDecorationColor: '#d1d5db' }}>Brand Identity Strategy</a></li>
-                  <li><a href="/creativity/communication-concepts-agency" style={{ color: '#4b5563', fontSize: '0.875rem', textDecoration: 'underline', textUnderlineOffset: '4px', textDecorationColor: '#d1d5db' }}>Communication Concepts</a></li>
                   <li><a href="/creativity/seo-web-copywriting-agency" style={{ color: '#4b5563', fontSize: '0.875rem', textDecoration: 'underline', textUnderlineOffset: '4px', textDecorationColor: '#d1d5db' }}>SEO &amp; Web Copywriting</a></li>
-                  <li><a href="/creativity/creative-art-direction-agency" style={{ color: '#4b5563', fontSize: '0.875rem', textDecoration: 'underline', textUnderlineOffset: '4px', textDecorationColor: '#d1d5db' }}>Creative Art Direction</a></li>
-                  <li><a href="/creativity/social-media-management-agency" style={{ color: '#4b5563', fontSize: '0.875rem', textDecoration: 'underline', textUnderlineOffset: '4px', textDecorationColor: '#d1d5db' }}>Social Media Management</a></li>
+                  <li><a href="/creativity/seo-content-strategy-agency" style={{ color: '#4b5563', fontSize: '0.875rem', textDecoration: 'underline', textUnderlineOffset: '4px', textDecorationColor: '#d1d5db' }}>SEO Content Strategy</a></li>
+                  <li><a href="/creativity/geo-ai-content-writing-agency" style={{ color: '#4b5563', fontSize: '0.875rem', textDecoration: 'underline', textUnderlineOffset: '4px', textDecorationColor: '#d1d5db' }}>GEO &amp; AI Content Writing</a></li>
                 </ol>
               </div>
               <a href="/creativity" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.875rem', fontWeight: 500, color: '#374151', borderBottom: '1px solid #d1d5db', paddingBottom: '2px', marginTop: '2.5rem' }}>
@@ -573,9 +571,7 @@ export default function GobiyaLanding() {
                 <ol style={{ listStyleType: 'decimal', paddingLeft: '1.2rem', display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
                   <li><a href="/relations/authority-building-agency" style={{ color: '#4b5563', fontSize: '0.875rem', textDecoration: 'underline', textUnderlineOffset: '4px', textDecorationColor: '#d1d5db' }}>Authority &amp; Link Building</a></li>
                   <li><a href="/relations/digital-pr-media-outreach-agency" style={{ color: '#4b5563', fontSize: '0.875rem', textDecoration: 'underline', textUnderlineOffset: '4px', textDecorationColor: '#d1d5db' }}>Digital PR &amp; Media Outreach</a></li>
-                  <li><a href="/relations/content-marketing-syndication-agency" style={{ color: '#4b5563', fontSize: '0.875rem', textDecoration: 'underline', textUnderlineOffset: '4px', textDecorationColor: '#d1d5db' }}>Content Marketing Syndication</a></li>
-                  <li><a href="/relations/influencer-marketing-agency" style={{ color: '#4b5563', fontSize: '0.875rem', textDecoration: 'underline', textUnderlineOffset: '4px', textDecorationColor: '#d1d5db' }}>Influencer Marketing</a></li>
-                  <li><a href="/relations/local-community-relations-agency" style={{ color: '#4b5563', fontSize: '0.875rem', textDecoration: 'underline', textUnderlineOffset: '4px', textDecorationColor: '#d1d5db' }}>Local Community Relations</a></li>
+                  <li><a href="/relations/google-ads-ppc-strategy-agency" style={{ color: '#4b5563', fontSize: '0.875rem', textDecoration: 'underline', textUnderlineOffset: '4px', textDecorationColor: '#d1d5db' }}>Google Ads &amp; PPC Strategy</a></li>
                 </ol>
               </div>
               <a href="/relations" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.875rem', fontWeight: 500, color: '#374151', borderBottom: '1px solid #d1d5db', paddingBottom: '2px', marginTop: '2.5rem' }}>
