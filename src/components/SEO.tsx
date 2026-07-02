@@ -9,8 +9,8 @@ interface SEOMetadata {
 // Outcome-focused metadata lookup map for crawlers and search bots (must match api/index.ts exactly)
 const metadataMap: Record<string, SEOMetadata> = {
   '/': {
-    title: `Los Angeles Digital Marketing Agency: Stop Wasting Ad Spend - Gobiya`,
-    description: `Struggling to turn clicks into pipeline? Gobiya is a Los Angeles digital marketing agency resolving stalled organic rankings, wasted ad budget, and slow load speeds.`
+    title: `Los Angeles Digital Marketing Agency: Rank on Google & AI - Gobiya`,
+    description: `Lost rankings after a Google update? Invisible in ChatGPT answers? Gobiya is a Los Angeles digital marketing agency that recovers organic traffic and engineers AI citations for local service businesses and B2B firms.`
   },
   '/on-page-seo-los-angeles': {
     title: `On-Page SEO Los Angeles: rankings in Google & AI search - Gobiya`,
