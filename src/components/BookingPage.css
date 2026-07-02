@@ -37,14 +37,14 @@
 }
 
 .booking-page .cal-grid-light .cal-day.selectable:hover {
-  border-color: #F26522;
-  background: rgba(242, 101, 34, 0.05);
-  color: #F26522;
+  border-color: #111827;
+  background: rgba(17, 24, 39, 0.04);
+  color: #111827;
 }
 
 .booking-page .cal-grid-light .cal-day.selected {
-  background: #F26522 !important;
-  border-color: #F26522 !important;
+  background: #111827 !important;
+  border-color: #111827 !important;
   color: #ffffff !important;
   font-weight: bold;
 }
@@ -72,14 +72,14 @@
 }
 
 .booking-page .time-slot:hover {
-  border-color: #F26522;
-  color: #F26522;
-  background: rgba(242, 101, 34, 0.05);
+  border-color: #111827;
+  color: #111827;
+  background: rgba(17, 24, 39, 0.04);
 }
 
 .booking-page .time-slot-selected {
-  background: #F26522 !important;
-  border-color: #F26522 !important;
+  background: #111827 !important;
+  border-color: #111827 !important;
   color: #ffffff !important;
   font-weight: bold;
 }
@@ -163,9 +163,9 @@
 .booking-page input:focus,
 .booking-page select:focus,
 .booking-page textarea:focus {
-  border-color: #F26522 !important;
+  border-color: #111827 !important;
   background-color: #ffffff !important;
-  box-shadow: 0 0 0 2px rgba(242, 101, 34, 0.15) !important;
+  box-shadow: 0 0 0 2px rgba(17, 24, 39, 0.12) !important;
 }
 
 .booking-page input::placeholder,

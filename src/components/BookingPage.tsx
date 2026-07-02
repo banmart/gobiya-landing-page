@@ -289,7 +289,7 @@ const BookingPage: React.FC = () => {
                             value={firstName} 
                             onChange={e => setFirstName(e.target.value)} 
                             placeholder="First Name" 
-                            className="bg-gray-50 border border-gray-200 py-2.5 px-3 rounded text-sm text-gray-900 focus:border-[#2F5D50] focus:bg-white outline-none transition-all w-full"
+                            className="bg-gray-50 border border-gray-200 py-2.5 px-3 rounded text-sm text-gray-900 focus:border-gray-900 focus:bg-white outline-none transition-all w-full"
                           />
                         </div>
                         <div className="flex flex-col gap-1 book-field">
@@ -301,7 +301,7 @@ const BookingPage: React.FC = () => {
                             value={lastName} 
                             onChange={e => setLastName(e.target.value)} 
                             placeholder="Last Name" 
-                            className="bg-gray-50 border border-gray-200 py-2.5 px-3 rounded text-sm text-gray-900 focus:border-[#2F5D50] focus:bg-white outline-none transition-all w-full"
+                            className="bg-gray-50 border border-gray-200 py-2.5 px-3 rounded text-sm text-gray-900 focus:border-gray-900 focus:bg-white outline-none transition-all w-full"
                           />
                         </div>
                       </div>
@@ -315,7 +315,7 @@ const BookingPage: React.FC = () => {
                           value={email} 
                           onChange={e => setEmail(e.target.value)} 
                           placeholder="Email address" 
-                          className="bg-gray-50 border border-gray-200 py-2.5 px-3 rounded text-sm text-gray-900 focus:border-[#2F5D50] focus:bg-white outline-none transition-all w-full"
+                          className="bg-gray-50 border border-gray-200 py-2.5 px-3 rounded text-sm text-gray-900 focus:border-gray-900 focus:bg-white outline-none transition-all w-full"
                         />
                       </div>
 
@@ -328,7 +328,7 @@ const BookingPage: React.FC = () => {
                           value={website} 
                           onChange={e => setWebsite(e.target.value)} 
                           placeholder="e.g. company.com" 
-                          className="bg-gray-50 border border-gray-200 py-2.5 px-3 rounded text-sm text-gray-900 focus:border-[#2F5D50] focus:bg-white outline-none transition-all w-full"
+                          className="bg-gray-50 border border-gray-200 py-2.5 px-3 rounded text-sm text-gray-900 focus:border-gray-900 focus:bg-white outline-none transition-all w-full"
                         />
                       </div>
 
@@ -340,7 +340,7 @@ const BookingPage: React.FC = () => {
                             required 
                             value={budget} 
                             onChange={e => setBudget(e.target.value)}
-                            className="bg-gray-50 border border-gray-200 py-2.5 px-2 rounded text-sm text-gray-900 focus:border-[#2F5D50] focus:bg-white outline-none transition-all w-full select-field"
+                            className="bg-gray-50 border border-gray-200 py-2.5 px-2 rounded text-sm text-gray-900 focus:border-gray-900 focus:bg-white outline-none transition-all w-full select-field"
                           >
                             <option value="">Select budget...</option>
                             {BUDGET_OPTIONS.map(o => (
@@ -357,7 +357,7 @@ const BookingPage: React.FC = () => {
                             value={phone} 
                             onChange={e => setPhone(e.target.value)} 
                             placeholder="+1 (555) 000-0000" 
-                            className="bg-gray-50 border border-gray-200 py-2.5 px-3 rounded text-sm text-gray-900 focus:border-[#2F5D50] focus:bg-white outline-none transition-all w-full"
+                            className="bg-gray-50 border border-gray-200 py-2.5 px-3 rounded text-sm text-gray-900 focus:border-gray-900 focus:bg-white outline-none transition-all w-full"
                           />
                         </div>
                       </div>
@@ -370,14 +370,14 @@ const BookingPage: React.FC = () => {
                           value={challenges} 
                           onChange={e => setChallenges(e.target.value)} 
                           placeholder="E.g., Hit by Google updates, lost 40% pipeline, need audit." 
-                          className="bg-gray-50 border border-gray-200 py-2 px-3 rounded text-sm text-gray-900 focus:border-[#2F5D50] focus:bg-white outline-none transition-all w-full resize-none"
+                          className="bg-gray-50 border border-gray-200 py-2 px-3 rounded text-sm text-gray-900 focus:border-gray-900 focus:bg-white outline-none transition-all w-full resize-none"
                         />
                       </div>
 
                       <button 
                         type="button" 
                         className="w-full mt-4 rounded font-bold uppercase tracking-[0.06em] transition-all duration-200 outline-none cursor-pointer hover:opacity-90"
-                        style={{ backgroundColor: '#F26522', color: '#ffffff', border: '1px solid #F26522', fontSize: '14px', padding: '14px 24px' }}
+                        style={{ backgroundColor: '#111827', color: '#ffffff', border: '1px solid #111827', fontSize: '14px', padding: '14px 24px' }}
                         onClick={() => {
                           if (!firstName || !lastName || !email || !website || !budget || !phone) {
                             setErrorMsg('Please fill out all required fields marked with *');
@@ -442,9 +442,9 @@ const BookingPage: React.FC = () => {
                   ) : (
                     /* STEP 2: Calendar scheduling */
                     <div className="flex flex-col text-left">
-                      <div className="flex items-center justify-between mb-4 pb-2 border-b border-[#D3CEC0]">
+                      <div className="flex items-center justify-between mb-4 pb-2 border-b border-gray-200">
                         <span className="text-[11px] font-mono uppercase tracking-wider text-gray-400 font-bold">Step 2: Choose session slot</span>
-                        <button type="button" onClick={() => setStep(1)} className="text-[11px] text-[#2F5D50] hover:underline font-medium uppercase tracking-wider font-mono">Go Back</button>
+                        <button type="button" onClick={() => setStep(1)} className="text-[11px] text-gray-900 hover:underline font-medium uppercase tracking-wider font-mono">Go Back</button>
                       </div>
 
                       <div className="cal-nav">
@@ -475,14 +475,14 @@ const BookingPage: React.FC = () => {
                         </div>
                       )}
 
-                      <div className="flex gap-3 mt-6 pt-4 border-t border-[#D3CEC0]">
+                      <div className="flex gap-3 mt-6 pt-4 border-t border-gray-200">
                         <button type="button" className="py-2.5 px-4 border border-gray-200 rounded text-[11px] font-mono uppercase tracking-wider text-gray-500 hover:border-gray-400 hover:text-gray-900 transition-colors" onClick={() => setStep(1)}>
                           Back
                         </button>
                         <button 
                           type="button" 
                           className="flex-1 rounded font-bold uppercase tracking-[0.06em] transition-all duration-200 disabled:opacity-40 disabled:cursor-not-allowed outline-none cursor-pointer hover:opacity-90"
-                          style={{ backgroundColor: '#F26522', color: '#ffffff', border: '1px solid #F26522', fontSize: '14px', padding: '14px 24px' }}
+                          style={{ backgroundColor: '#111827', color: '#ffffff', border: '1px solid #111827', fontSize: '14px', padding: '14px 24px' }}
                           disabled={!selectedDate || !selectedTimeSlot || submitting}
                           onClick={() => handleBookingSubmit()}
                         >
@@ -520,8 +520,8 @@ const BookingPage: React.FC = () => {
                     { title: "Executive-ready reporting templates", desc: "Design forecasting dashboards and templates that B2B executive leadership teams actually trust." },
                     { title: "90-day execution roadmap", desc: "Map out a step-by-step action plan to align search attribution with pipeline CRM performance from day one." }
                   ].map((item, idx) => (
-                    <div key={idx} className="flex gap-4 items-start border-b border-[#D3CEC0] pb-8 pt-4">
-                      <div className="w-8 h-8 rounded-full bg-[#2F5D50]/10 flex items-center justify-center shrink-0 text-[#2F5D50] mt-0.5">
+                    <div key={idx} className="flex gap-4 items-start border-b border-gray-200 pb-8 pt-4">
+                      <div className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center shrink-0 text-gray-900 mt-0.5">
                         <svg viewBox="0 0 24 24" fill="none" width="16" height="16" stroke="currentColor" strokeWidth="2.5"><path d="M5 13l4 4L19 7" strokeLinecap="round" strokeLinejoin="round"/></svg>
                       </div>
                       <div>
@@ -539,11 +539,11 @@ const BookingPage: React.FC = () => {
                     <img 
                       src="/images/steve-portrait-thumb.webp" 
                       alt="Steve Martin" 
-                      className="w-16 h-16 rounded-full object-cover border border-[#D3CEC0] shadow-sm" 
+                      className="w-16 h-16 rounded-full object-cover border border-gray-200 shadow-sm" 
                     />
                     <div>
-                      <h3 className="font-bold text-lg text-[#15130E] leading-tight">Steve Martin</h3>
-                      <p className="text-[10px] font-mono uppercase tracking-wider text-[#2F5D50] mt-1 font-semibold">CEO &amp; Lead Growth Engineer</p>
+                      <h3 className="font-bold text-lg text-gray-900 leading-tight">Steve Martin</h3>
+                      <p className="text-[10px] font-mono uppercase tracking-wider text-gray-500 mt-1 font-semibold">CEO &amp; Lead Growth Engineer</p>
                     </div>
                   </div>
                   <div className="text-gray-600 text-sm leading-relaxed space-y-4 font-light">
@@ -572,11 +572,11 @@ const BookingPage: React.FC = () => {
         <section className="bg-white text-gray-900 border-b border-gray-100" style={{ padding: '5rem 5vw' }}>
           <div className="success-screen grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="success-copy flex flex-col gap-6 text-left">
-              <div className="w-16 h-16 rounded-full border border-[#2F5D50] flex items-center justify-center text-[#2F5D50]">
+              <div className="w-16 h-16 rounded-full border border-gray-900 flex items-center justify-center text-gray-900">
                 <svg viewBox="0 0 24 24" fill="none" width="28" height="28" stroke="currentColor" strokeWidth="2"><path d="M5 13l4 4L19 7" strokeLinecap="round" strokeLinejoin="round"/></svg>
               </div>
               <div>
-                <p className="font-mono text-xs uppercase tracking-wider text-[#2F5D50] font-semibold mb-2">Booking Confirmed</p>
+                <p className="font-mono text-xs uppercase tracking-wider text-gray-500 font-semibold mb-2">Booking Confirmed</p>
                 <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-gray-900 leading-tight">Your session is locked in.</h1>
               </div>
               <p className="text-gray-600 text-sm sm:text-base leading-relaxed">

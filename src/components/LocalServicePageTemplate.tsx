@@ -113,17 +113,19 @@ export default function LocalServicePageTemplate({
       // Stats counters
       gsap.utils.toArray('[data-count]').forEach(el => {
         const text = (el as HTMLElement).dataset.count || '0';
-        const numericMatch = text.match(/[\d.]+/);
-        if (!numericMatch) return;
+        const numericMatch = text.match(/\d[\d.]*/);
+        if (!numericMatch || numericMatch.index === undefined) return;
         const target = parseFloat(numericMatch[0]);
-        const suffix = text.replace(/[\d.]+/, '');
+        if (isNaN(target)) return;
+        const prefix = text.slice(0, numericMatch.index);
+        const suffix = text.slice(numericMatch.index + numericMatch[0].length);
         const obj = { v: 0 };
         gsap.to(obj, {
           v: target, duration: 1.8, ease: 'power2.out',
           scrollTrigger: { trigger: el as Element, start: 'top 90%' },
-          onUpdate: () => { 
+          onUpdate: () => {
             const val = target % 1 !== 0 ? obj.v.toFixed(1) : Math.round(obj.v);
-            (el as HTMLElement).textContent = String(val) + suffix; 
+            (el as HTMLElement).textContent = prefix + String(val) + suffix;
           }
         });
       });
@@ -248,7 +250,7 @@ export default function LocalServicePageTemplate({
             {stats.map((s, i) => (
               <div key={i} className={`text-center py-16 px-8 ${i > 0 ? 'md:border-l border-gray-200 border-t md:border-t-0' : ''}`} data-anim="up">
                 <div className="text-5xl sm:text-7xl font-light text-gray-900 leading-none tracking-tight mb-3">
-                  <span data-count={s.val}>{s.val.replace(/[\d.]+/, '0')}</span>
+                  <span data-count={s.val}>{s.val.replace(/\d[\d.]*/, '0')}</span>
                 </div>
                 <div className="text-sm text-gray-500 max-w-xs mx-auto leading-relaxed">{s.label}</div>
               </div>

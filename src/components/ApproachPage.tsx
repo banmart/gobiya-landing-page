@@ -246,8 +246,8 @@ const ApproachPage: React.FC = () => {
         <div style={{ maxWidth: '1120px', margin: '0 auto' }}>
 
           {/* Quick Answer */}
-          <div style={{ borderLeft: '4px solid #F26522', padding: '1.25rem 1.5rem', background: '#fff', marginBottom: '2.5rem', maxWidth: '780px' }}>
-            <p style={{ fontFamily: 'monospace', fontSize: '0.68rem', textTransform: 'uppercase', letterSpacing: '0.2em', color: '#F26522', marginBottom: '0.5rem' }}>Gobiya's Approach in Brief</p>
+          <div style={{ borderLeft: '4px solid #111827', padding: '1.25rem 1.5rem', background: '#fff', marginBottom: '2.5rem', maxWidth: '780px' }}>
+            <p style={{ fontFamily: 'monospace', fontSize: '0.68rem', textTransform: 'uppercase', letterSpacing: '0.2em', color: '#6b7280', marginBottom: '0.5rem' }}>Gobiya's Approach in Brief</p>
             <p style={{ fontSize: '1rem', lineHeight: 1.75, color: '#111827', fontWeight: 500 }}>Gobiya optimizes for entities, not keywords. Search engines stopped ranking pages by string matching and now index based on Knowledge Graph entity connections. Every technical and content decision is anchored to that model — and every result is measured in pipeline, not traffic.</p>
           </div>
 
@@ -261,7 +261,7 @@ const ApproachPage: React.FC = () => {
               { n: '05', title: 'Pipeline Attribution', desc: 'CRM integration to trace every organic visit to qualified meetings and closed-won revenue — zero vanity metric reporting.' },
             ].map(({ n, title, desc }) => (
               <div key={n} style={{ background: '#ffffff', border: '1px solid #e5e7eb', padding: '1.25rem 1.5rem' }}>
-                <p style={{ fontSize: '0.68rem', color: '#F26522', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.15em', marginBottom: '0.5rem', fontFamily: 'monospace' }}>{n}</p>
+                <p style={{ fontSize: '0.68rem', color: '#6b7280', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.15em', marginBottom: '0.5rem', fontFamily: 'monospace' }}>{n}</p>
                 <p style={{ fontSize: '0.92rem', fontWeight: 600, color: '#111827', marginBottom: '0.4rem' }}>{title}</p>
                 <p style={{ fontSize: '0.83rem', color: '#6b7280', lineHeight: 1.6 }}>{desc}</p>
               </div>
@@ -344,7 +344,7 @@ const ApproachPage: React.FC = () => {
               <div className="doctrine-text" data-anim="stagger">
                 <p data-anim-child>In the early eras of organic search, pages were indexed by direct string matching — rank for "B2B sales pipeline integration tools" by repeating that phrase in titles, headings, and copy at the right density. <strong>Google's Helpful Content System, core quality classifiers, and neural matching now operate on a fundamentally different paradigm:</strong> search engines no longer index strings. They index entities — distinct, well-defined concepts, organizations, and things cataloged in the Knowledge Graph with machine-readable IDs.</p>
                 <p data-anim-child>When a user enters a query, the engine decomposes the prompt into recognized entities, resolves the implicit and explicit intent, and queries its graph database for pages with a <strong>high-salience connection to the requested entity node.</strong> Gobiya's approach is built around semantic triples — Subject, Predicate, Object — mapping your business entities, service offerings, and target categories into the precise format crawlers expect, minimizing semantic distance to verified authority nodes.</p>
-                <p data-anim-child>This entity methodology is also the absolute foundation of <a href="/insights/chatgpt-vs-google-for-business-discovery" className="text-[#2F5D50] hover:text-[#F26522] underline underline-offset-4 transition-colors font-medium">Generative Engine Optimization</a>. LLMs like GPT, Claude, and Gemini don't navigate page-authority vectors — they map semantic spaces. To be cited inside conversational answers, your entity connections must be defined explicitly.</p>
+                <p data-anim-child>This entity methodology is also the absolute foundation of <a href="/insights/chatgpt-vs-google-for-business-discovery" className="text-gray-900 hover:text-gray-600 underline underline-offset-4 transition-colors font-medium">Generative Engine Optimization</a>. LLMs like GPT, Claude, and Gemini don't navigate page-authority vectors — they map semantic spaces. To be cited inside conversational answers, your entity connections must be defined explicitly.</p>
               </div>
 
               <div className="side-panel" data-anim="scale" aria-label="Semantic triple diagram: your brand offers pipeline engineering, which is about a verified Wikipedia entity">
@@ -496,8 +496,8 @@ const ApproachPage: React.FC = () => {
 
             <div className="doctrine-body">
               <div className="doctrine-text" data-anim="stagger">
-                <p data-anim-child>Traditional agency models celebrate traffic growth even when it fails to generate qualified revenue. Gobiya operates under a <strong>pipeline-first framework</strong> — connecting search traffic to automated sales development systems and turning the website into an active, high-yield pipeline generator. <a href="/capabilities/web-development-agency/" className="text-[#2F5D50] hover:text-[#F26522] underline underline-offset-4 transition-colors font-medium">Custom React and Vite architectures</a> deliver the sub-second loads that satisfy Core Web Vitals and capture high-intent users who would otherwise bounce.</p>
-                <p data-anim-child><strong>Visitor de-anonymization is integrated directly into the page layer:</strong> visiting IP addresses are resolved to specific corporate networks in real time, logging which organizations are researching your products and which pages they read. That intent data feeds straight into your <a href="/capabilities/native-crm-agency/" className="text-[#2F5D50] hover:text-[#F26522] underline underline-offset-4 transition-colors font-medium">CRM</a> — Salesforce or HubSpot — and triggers timing-optimized sequences targeting matching buyers at those accounts.</p>
+                <p data-anim-child>Traditional agency models celebrate traffic growth even when it fails to generate qualified revenue. Gobiya operates under a <strong>pipeline-first framework</strong> — connecting search traffic to automated sales development systems and turning the website into an active, high-yield pipeline generator. <a href="/capabilities/web-development-agency/" className="text-gray-900 hover:text-gray-600 underline underline-offset-4 transition-colors font-medium">Custom React and Vite architectures</a> deliver the sub-second loads that satisfy Core Web Vitals and capture high-intent users who would otherwise bounce.</p>
+                <p data-anim-child><strong>Visitor de-anonymization is integrated directly into the page layer:</strong> visiting IP addresses are resolved to specific corporate networks in real time, logging which organizations are researching your products and which pages they read. That intent data feeds straight into your <a href="/capabilities/native-crm-agency/" className="text-gray-900 hover:text-gray-600 underline underline-offset-4 transition-colors font-medium">CRM</a> — Salesforce or HubSpot — and triggers timing-optimized sequences targeting matching buyers at those accounts.</p>
                 <p data-anim-child>The loop closes with <strong>multi-touch attribution:</strong> every pipeline opportunity is traced back to the specific content hubs and entity nodes that first captured the buyer — so every investment in the search engineering protocol is justified by measurable closed-won revenue.</p>
               </div>
 

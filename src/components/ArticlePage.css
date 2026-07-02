@@ -229,14 +229,14 @@
   margin-bottom: 0;
 }
 .art-body a:not(.btn):not(.text-link) {
-  color: var(--green-deep); 
-  border-bottom: 1px solid rgba(47,93,80,0.4);
+  color: #111827;
+  border-bottom: 1px solid #d1d5db;
   font-weight: 500;
   transition: border-color .25s ease, color .25s ease;
 }
 .art-body a:not(.btn):not(.text-link):hover { 
-  color: var(--green); 
-  border-bottom-color: var(--green); 
+  color: #4b5563;
+  border-bottom-color: #111827;
 }
 
 .art-body h2 {

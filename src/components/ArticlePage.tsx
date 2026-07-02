@@ -152,8 +152,8 @@ const ARTICLES: Record<string, ArticleData> = {
               { id: 'sources', label: 'Sources & further reading' },
             ].map(({ id, label }) => (
               <li key={id} className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#F26522] shrink-0" />
-                <a href={'#' + id} className="hover:text-[#F26522] transition-colors">{label}</a>
+                <span className="w-1.5 h-1.5 rounded-full bg-[#111827] shrink-0" />
+                <a href={'#' + id} className="hover:text-gray-900 transition-colors">{label}</a>
               </li>
             ))}
           </ul>
@@ -178,7 +178,7 @@ const ARTICLES: Record<string, ArticleData> = {
           <li><strong>Cited</strong> — your URL appears as an explicit, often clickable, source in the answer (Perplexity's inline citations, ChatGPT Search's source links, Google AI Overviews' references).</li>
         </ul>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          There's also a critical distinction between a <strong>mention</strong> (the AI names your brand in the answer — an <em>awareness</em> signal) and a <strong>citation</strong> (the AI attributes information to your domain as a source — an <em>authority</em> signal). A startup can be mentioned without being cited, which usually means the model knows your brand but doesn't trust your content enough to source it. Knowing which layer you're measuring keeps your conclusions honest: "ChatGPT mentioned us" and "ChatGPT cited our blog post" are very different wins. To understand more on how mentions tie to trust, you can read our guide on <a href="/insights/brand-entity-extraction-perception-drift" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">brand entity extraction & perception drift</a>.
+          There's also a critical distinction between a <strong>mention</strong> (the AI names your brand in the answer — an <em>awareness</em> signal) and a <strong>citation</strong> (the AI attributes information to your domain as a source — an <em>authority</em> signal). A startup can be mentioned without being cited, which usually means the model knows your brand but doesn't trust your content enough to source it. Knowing which layer you're measuring keeps your conclusions honest: "ChatGPT mentioned us" and "ChatGPT cited our blog post" are very different wins. To understand more on how mentions tie to trust, you can read our guide on <a href="/insights/brand-entity-extraction-perception-drift" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">brand entity extraction & perception drift</a>.
         </p>
         
         <figure className="my-10 sm:my-14 border border-gray-200 rounded-xl overflow-hidden bg-white shadow-sm">
@@ -226,7 +226,7 @@ const ARTICLES: Record<string, ArticleData> = {
           Manual tracking is the right start, but at 50+ prompts across four engines on a weekly cadence, it becomes real overhead that eats your team's time. That's the point to consider an <strong>AI citation-tracking tool</strong>. A category of these now exists, purpose-built to run hundreds of prompts across ChatGPT, Claude, Perplexity, Gemini, and Google AI Overviews automatically and log which URLs get cited, how often, with what sentiment, and how your share of voice compares to competitors.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Entry-level options start around $29/month; enterprise platforms go much higher and add GA4/revenue integration. What a tool buys you over the manual method: scale (hundreds of prompts, daily/weekly, without manual labor), consistency (the same prompt set tracked over time for reliable trends), competitor benchmarking (share-of-voice math done for you), and the "used vs. cited" distinction surfaced automatically. The honest guidance on timing: a seed-stage startup can and should start manual; graduate to a tool once you're tracking enough prompts and platforms that manual measurement is stealing time from actually <em>improving</em> the content. The tool measures the problem; it doesn't fix it. For details on how we apply such approaches natively into CRMs, see our <a href="/insights/automated-b2b-sales-pipeline-seo" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">B2B sales pipeline automation guide</a>.
+          Entry-level options start around $29/month; enterprise platforms go much higher and add GA4/revenue integration. What a tool buys you over the manual method: scale (hundreds of prompts, daily/weekly, without manual labor), consistency (the same prompt set tracked over time for reliable trends), competitor benchmarking (share-of-voice math done for you), and the "used vs. cited" distinction surfaced automatically. The honest guidance on timing: a seed-stage startup can and should start manual; graduate to a tool once you're tracking enough prompts and platforms that manual measurement is stealing time from actually <em>improving</em> the content. The tool measures the problem; it doesn't fix it. For details on how we apply such approaches natively into CRMs, see our <a href="/insights/automated-b2b-sales-pipeline-seo" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">B2B sales pipeline automation guide</a>.
         </p>
 
         <h2 id="metrics" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
@@ -283,7 +283,7 @@ const ARTICLES: Record<string, ArticleData> = {
           Mentions vs. citations: how do LLMs understand content?
         </h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          To measure pickup well, it helps to understand <em>how do LLMs understand content</em> in the first place. LLMs don't "read" a page the way a person does; they process text as tokens and represent meaning as patterns learned across enormous training corpora, then, in AI search, retrieve and synthesize from web sources at query time. What makes a page <em>understandable</em> — and therefore citable — to an LLM is structure and clarity it can parse and extract: clear hierarchical headings, direct answer blocks (a concise 40–60-word answer right under the question), statistics with explicit attribution, FAQ formats that mirror how people query, and schema markup. For the specific mechanics of this, you might check <a href="/insights/what-is-generative-engine-optimization-and-how-does-it-work" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">Generative Engine Optimization (GEO) principles</a>.
+          To measure pickup well, it helps to understand <em>how do LLMs understand content</em> in the first place. LLMs don't "read" a page the way a person does; they process text as tokens and represent meaning as patterns learned across enormous training corpora, then, in AI search, retrieve and synthesize from web sources at query time. What makes a page <em>understandable</em> — and therefore citable — to an LLM is structure and clarity it can parse and extract: clear hierarchical headings, direct answer blocks (a concise 40–60-word answer right under the question), statistics with explicit attribution, FAQ formats that mirror how people query, and schema markup. For the specific mechanics of this, you might check <a href="/insights/what-is-generative-engine-optimization-and-how-does-it-work" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">Generative Engine Optimization (GEO) principles</a>.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
           Content with clear formatting (headings, bullets, tables) is meaningfully more likely to be cited — one analysis put it at 28–40% more likely. The practical link to measurement: when your tracking shows you're <em>mentioned but not cited</em>, it usually means the model recognizes your brand but your content isn't structured or authoritative enough to be extracted as the <em>source</em>. Understanding how LLMs parse content tells you what to fix when the measurement comes back weak — make the answer extractable, attributed, and well-structured.
@@ -307,10 +307,10 @@ const ARTICLES: Record<string, ArticleData> = {
         </p>
         <ul className="space-y-4 mb-8 text-[16px] sm:text-[17px] text-gray-800 leading-[1.75] list-disc pl-6">
           <li><strong>AI crawlers are blocked.</strong> Your <code>robots.txt</code> may disallow <code>GPTBot</code>, <code>ClaudeBot</code>, or <code>PerplexityBot</code>, or your site may be hard for them to render. If models can't access your content, nothing else matters — check this first.</li>
-          <li><strong>No <code>llms.txt</code> / weak technical readiness.</strong> Missing structured data and an <code>llms.txt</code> file make your content harder for AI systems to interpret. Technical AI-readiness is the foundation. (For a deep dive into structured frameworks, see our overview of the <a href="/insights/introducing-open-knowledge-format-why-it-matters-for-ai-ready-businesses" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">Open Knowledge Format</a>.)</li>
+          <li><strong>No <code>llms.txt</code> / weak technical readiness.</strong> Missing structured data and an <code>llms.txt</code> file make your content harder for AI systems to interpret. Technical AI-readiness is the foundation. (For a deep dive into structured frameworks, see our overview of the <a href="/insights/introducing-open-knowledge-format-why-it-matters-for-ai-ready-businesses" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">Open Knowledge Format</a>.)</li>
           <li><strong>Content isn't extractable.</strong> Walls of prose without clear answer blocks, headings, stats, or FAQ structure give the model nothing clean to lift. Restructure into direct, attributed, well-formatted answers.</li>
           <li><strong>Weak authority and thin third-party presence.</strong> LLMs lean heavily on what <em>other</em> trusted sources say — research found ~85% of top-of-funnel brand visibility comes from <em>unowned</em> domains. If you're absent from the publications, communities (Reddit, industry forums), and review sites your category cites, you're absent from the answers. Brands cited across four-plus domain types are far more likely to hold visibility.</li>
-          <li><strong>Toxic or manipulative backlinks.</strong> A spammy link profile can suppress the trust signal LLMs use to decide whom to cite — sometimes cleaning it up is what unlocks visibility. Learn more about <a href="/insights/what-is-the-difference-between-a-manual-action-and-an-algorithmic-penalty" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">algorithmic penalties vs. manual actions</a>.</li>
+          <li><strong>Toxic or manipulative backlinks.</strong> A spammy link profile can suppress the trust signal LLMs use to decide whom to cite — sometimes cleaning it up is what unlocks visibility. Learn more about <a href="/insights/what-is-the-difference-between-a-manual-action-and-an-algorithmic-penalty" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">algorithmic penalties vs. manual actions</a>.</li>
         </ul>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
           The fix mirrors the diagnosis: ensure crawler access and technical readiness, restructure content for extractability, build genuine authority across the third-party sources your category trusts, and re-measure. Pickup follows from removing the blocker <em>and</em> supplying the positive signals.
@@ -323,17 +323,17 @@ const ARTICLES: Record<string, ArticleData> = {
           This question matters to startups for two reasons: you want AI to describe <em>you</em> accurately, and the same principle governs whether your content gets cited. <strong>One reliable way to reduce the likelihood of an LLM producing made-up (hallucinated) text is to ground it in verifiable, retrievable sources</strong> — the technique broadly called retrieval-augmented generation (RAG), where the model answers from supplied, citable documents rather than from memory alone. Giving a model authoritative source material to draw from, and prompting it to cite that material, measurably reduces fabrication.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          For a startup, the parallel is direct and useful: you reduce the chance an AI <em>misrepresents your brand</em> by publishing clear, accurate, well-structured, and authoritative content the models can retrieve and ground their answers in — and by maintaining consistent, correct information about your company across the third-party sources AI engines trust. If an AI is saying something wrong about you, the fix is the same one that improves citation: supply better, clearer, more authoritative grounding (and document the inaccuracy, then correct your owned content), so the model has accurate material to retrieve instead of guessing. Grounding reduces hallucination; for your brand, <em>being</em> good grounding is also what gets you cited. See <a href="/insights/what-data-sources-do-llms-crawl-to-verify-b2b-company-information" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">what data sources LLMs crawl</a> to learn more.
+          For a startup, the parallel is direct and useful: you reduce the chance an AI <em>misrepresents your brand</em> by publishing clear, accurate, well-structured, and authoritative content the models can retrieve and ground their answers in — and by maintaining consistent, correct information about your company across the third-party sources AI engines trust. If an AI is saying something wrong about you, the fix is the same one that improves citation: supply better, clearer, more authoritative grounding (and document the inaccuracy, then correct your owned content), so the model has accurate material to retrieve instead of guessing. Grounding reduces hallucination; for your brand, <em>being</em> good grounding is also what gets you cited. See <a href="/insights/what-data-sources-do-llms-crawl-to-verify-b2b-company-information" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">what data sources LLMs crawl</a> to learn more.
         </p>
 
         <h2 id="how-gobiya" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
           How Gobiya measures and improves LLM pickup
         </h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Gobiya treats LLM visibility as a measurable engineering problem, not guesswork. Our <a href="/performance/seo-discoverability-agency" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">SEO and AI-discoverability practice</a> starts exactly where this article does: building a prompt library for your category, baselining your citation rate and share of voice across ChatGPT, Claude, Perplexity, and Google AI Overviews, and auditing the technical layer (crawler access, <code>robots.txt</code>, <code>llms.txt</code>, structured data) that determines whether models can pick up your content at all.
+          Gobiya treats LLM visibility as a measurable engineering problem, not guesswork. Our <a href="/performance/seo-discoverability-agency" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">SEO and AI-discoverability practice</a> starts exactly where this article does: building a prompt library for your category, baselining your citation rate and share of voice across ChatGPT, Claude, Perplexity, and Google AI Overviews, and auditing the technical layer (crawler access, <code>robots.txt</code>, <code>llms.txt</code>, structured data) that determines whether models can pick up your content at all.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          From there we fix the blockers and supply the positive signals — restructuring content for extractability, building authority across the third-party sources your category cites, and tracking whether the numbers actually move. Because we build on fast, clean, crawlable infrastructure, AI-readiness is engineered in rather than bolted on. Want to know whether LLMs are picking up your content right now? <a href="/book" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">Book a free AI visibility audit</a>.
+          From there we fix the blockers and supply the positive signals — restructuring content for extractability, building authority across the third-party sources your category cites, and tracking whether the numbers actually move. Because we build on fast, clean, crawlable infrastructure, AI-readiness is engineered in rather than bolted on. Want to know whether LLMs are picking up your content right now? <a href="/book" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">Book a free AI visibility audit</a>.
         </p>
 
         <h2 id="right-call" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
@@ -402,10 +402,10 @@ const ARTICLES: Record<string, ArticleData> = {
           Sources & further reading
         </h2>
         <ul className="space-y-4 mb-8 text-[16px] sm:text-[17px] text-gray-800 leading-[1.75] list-disc pl-6">
-          <li><a href="https://arxiv.org/abs/2311.09735" target="_blank" rel="noopener noreferrer" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">Generative Engine Optimization (Princeton, Georgia Tech, IIT Delhi)</a> — the peer-reviewed study finding statistics, sources, and quotes raise AI citation likelihood 30–40%.</li>
-          <li><a href="https://developers.google.com/search/docs/fundamentals/ai-optimization-guide" target="_blank" rel="noopener noreferrer" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">Google Search Central — Optimizing for AI features on Google Search</a> — Google's guidance on how AI search surfaces and attributes content.</li>
-          <li><a href="https://en.wikipedia.org/wiki/Generative_engine_optimization" target="_blank" rel="noopener noreferrer" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">Generative Engine Optimization (GEO) — overview</a> — definitions of AI visibility, citations, and measurement.</li>
-          <li><a href="https://developers.google.com/search/docs/crawling-indexing/robots/intro" target="_blank" rel="noopener noreferrer" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">Google Search Central — robots.txt and controlling crawling</a> — how crawler access (including AI bots) is governed.</li>
+          <li><a href="https://arxiv.org/abs/2311.09735" target="_blank" rel="noopener noreferrer" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">Generative Engine Optimization (Princeton, Georgia Tech, IIT Delhi)</a> — the peer-reviewed study finding statistics, sources, and quotes raise AI citation likelihood 30–40%.</li>
+          <li><a href="https://developers.google.com/search/docs/fundamentals/ai-optimization-guide" target="_blank" rel="noopener noreferrer" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">Google Search Central — Optimizing for AI features on Google Search</a> — Google's guidance on how AI search surfaces and attributes content.</li>
+          <li><a href="https://en.wikipedia.org/wiki/Generative_engine_optimization" target="_blank" rel="noopener noreferrer" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">Generative Engine Optimization (GEO) — overview</a> — definitions of AI visibility, citations, and measurement.</li>
+          <li><a href="https://developers.google.com/search/docs/crawling-indexing/robots/intro" target="_blank" rel="noopener noreferrer" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">Google Search Central — robots.txt and controlling crawling</a> — how crawler access (including AI bots) is governed.</li>
         </ul>
       </>
     )
@@ -526,8 +526,8 @@ const ARTICLES: Record<string, ArticleData> = {
               { id: 'faq', label: 'Frequently Asked Questions' },
             ].map(({ id, label }) => (
               <li key={id} className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#F26522] shrink-0" />
-                <a href={'#' + id} className="hover:text-[#F26522] transition-colors">{label}</a>
+                <span className="w-1.5 h-1.5 rounded-full bg-[#111827] shrink-0" />
+                <a href={'#' + id} className="hover:text-gray-900 transition-colors">{label}</a>
               </li>
             ))}
           </ul>
@@ -538,7 +538,7 @@ const ARTICLES: Record<string, ArticleData> = {
           What are AI SEO services? (The short answer)
         </h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          <strong>AI SEO services are optimization services that make your brand visible in AI-powered search</strong> — getting your content cited, quoted, and recommended inside answers from ChatGPT, Google's AI Overviews, Gemini, Perplexity, and Claude, not just ranked in traditional blue links. Where traditional SEO targets keyword rankings and backlinks, AI SEO services add layers built for how AI models select and cite sources: <a href="/insights/what-is-generative-engine-optimization-and-how-does-it-work" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">Generative Engine Optimization (GEO)</a>, Answer Engine Optimization (AEO), entity and structured-data optimization, AI citation tracking, and multi-platform visibility monitoring.
+          <strong>AI SEO services are optimization services that make your brand visible in AI-powered search</strong> — getting your content cited, quoted, and recommended inside answers from ChatGPT, Google's AI Overviews, Gemini, Perplexity, and Claude, not just ranked in traditional blue links. Where traditional SEO targets keyword rankings and backlinks, AI SEO services add layers built for how AI models select and cite sources: <a href="/insights/what-is-generative-engine-optimization-and-how-does-it-work" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">Generative Engine Optimization (GEO)</a>, Answer Engine Optimization (AEO), entity and structured-data optimization, AI citation tracking, and multi-platform visibility monitoring.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
           As Google itself states, optimizing for generative AI search is still fundamentally SEO. AI SEO services apply that foundation to the AI answer layer, where discovery is increasingly happening.
@@ -555,11 +555,11 @@ const ARTICLES: Record<string, ArticleData> = {
           Concretely, AI SEO does the following:
         </p>
         <ul className="space-y-4 mb-8 text-[16px] sm:text-[17px] text-gray-800 leading-[1.75]">
-          <li className="flex gap-3"><span className="text-[#F26522] font-bold shrink-0">→</span><span><strong>Earns citations in AI answers</strong> — structuring content so large language models extract and attribute it when answering user questions in ChatGPT, Perplexity, Gemini, and Google AI Overviews.</span></li>
-          <li className="flex gap-3"><span className="text-[#F26522] font-bold shrink-0">→</span><span><strong>Builds brand entity clarity</strong> — making your brand consistently understood across the web (your site, Wikipedia, Reddit, reviews, press) so AI models associate you with your topics with confidence. This is closely related to <a href="/insights/brand-entity-extraction-perception-drift" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">how brand entity extraction works</a>.</span></li>
-          <li className="flex gap-3"><span className="text-[#F26522] font-bold shrink-0">→</span><span><strong>Improves extractability</strong> — clear structure, direct answers, FAQs, and evidence (statistics, named sources, expert quotes) that AI systems can lift cleanly. The first peer-reviewed GEO study found these elements raised AI citation rates by 30–40%.</span></li>
-          <li className="flex gap-3"><span className="text-[#F26522] font-bold shrink-0">→</span><span><strong>Tracks AI visibility</strong> — monitoring how and where your brand appears (or doesn't) across AI platforms, the AI-era equivalent of rank tracking.</span></li>
-          <li className="flex gap-3"><span className="text-[#F26522] font-bold shrink-0">→</span><span><strong>Protects traditional rankings too</strong> — because AI answers still pull heavily from top-ranking, authoritative content, so AI SEO reinforces classic SEO rather than abandoning it.</span></li>
+          <li className="flex gap-3"><span className="text-[#2E8C68] font-bold shrink-0">→</span><span><strong>Earns citations in AI answers</strong> — structuring content so large language models extract and attribute it when answering user questions in ChatGPT, Perplexity, Gemini, and Google AI Overviews.</span></li>
+          <li className="flex gap-3"><span className="text-[#2E8C68] font-bold shrink-0">→</span><span><strong>Builds brand entity clarity</strong> — making your brand consistently understood across the web (your site, Wikipedia, Reddit, reviews, press) so AI models associate you with your topics with confidence. This is closely related to <a href="/insights/brand-entity-extraction-perception-drift" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">how brand entity extraction works</a>.</span></li>
+          <li className="flex gap-3"><span className="text-[#2E8C68] font-bold shrink-0">→</span><span><strong>Improves extractability</strong> — clear structure, direct answers, FAQs, and evidence (statistics, named sources, expert quotes) that AI systems can lift cleanly. The first peer-reviewed GEO study found these elements raised AI citation rates by 30–40%.</span></li>
+          <li className="flex gap-3"><span className="text-[#2E8C68] font-bold shrink-0">→</span><span><strong>Tracks AI visibility</strong> — monitoring how and where your brand appears (or doesn't) across AI platforms, the AI-era equivalent of rank tracking.</span></li>
+          <li className="flex gap-3"><span className="text-[#2E8C68] font-bold shrink-0">→</span><span><strong>Protects traditional rankings too</strong> — because AI answers still pull heavily from top-ranking, authoritative content, so AI SEO reinforces classic SEO rather than abandoning it.</span></li>
         </ul>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
           The shift driving all of this: AI Overviews and chat-based search are reducing clicks to traditional results, so visibility increasingly means being <em>inside the answer</em> — which is exactly what AI SEO does.
@@ -582,18 +582,18 @@ const ARTICLES: Record<string, ArticleData> = {
             </thead>
             <tbody>
               <tr className="border-b border-gray-200">
-                <td className="py-3 pr-6 font-bold text-[#F26522]">Using AI in SEO</td>
+                <td className="py-3 pr-6 font-bold text-[#2E8C68]">Using AI in SEO</td>
                 <td className="py-3">Using AI <em>tools</em> to do SEO work faster — generating content drafts, clustering keywords, automating audits. AI as a productivity assistant for traditional SEO tasks.</td>
               </tr>
               <tr>
-                <td className="py-3 pr-6 font-bold text-[#F26522]">AI SEO services</td>
+                <td className="py-3 pr-6 font-bold text-[#2E8C68]">AI SEO services</td>
                 <td className="py-3">Optimizing <em>for</em> AI search engines as the destination — making your brand visible inside AI-generated answers. The "AI" describes the target (AI search), not just the tooling.</td>
               </tr>
             </tbody>
           </table>
         </div>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          A quality provider does both: uses AI to execute efficiently <em>and</em> optimizes for AI search engines as the goal. The warning sign is an agency that's simply rebranded traditional SEO as "AI SEO" with buzzwords while changing nothing about the methodology — ask whether they actually optimize for <a href="/insights/chatgpt-vs-google-for-business-discovery" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">AI citation visibility</a>, or just use AI to write the same old content.
+          A quality provider does both: uses AI to execute efficiently <em>and</em> optimizes for AI search engines as the goal. The warning sign is an agency that's simply rebranded traditional SEO as "AI SEO" with buzzwords while changing nothing about the methodology — ask whether they actually optimize for <a href="/insights/chatgpt-vs-google-for-business-discovery" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">AI citation visibility</a>, or just use AI to write the same old content.
         </p>
 
         {/* ── SECTION 4: TYPES OF SEO ── */}
@@ -643,12 +643,12 @@ const ARTICLES: Record<string, ArticleData> = {
           If you're wondering what AI SEO is called, you'll encounter several overlapping names — and as of early 2026 there's no single agreed definition separating them; they're often used interchangeably. The main terms:
         </p>
         <ul className="space-y-4 mb-8 text-[16px] sm:text-[17px] text-gray-800 leading-[1.75]">
-          <li className="flex gap-3"><span className="text-[#F26522] font-bold shrink-0">→</span><span><strong>AI SEO</strong> — the umbrella consumer term for optimizing for AI search.</span></li>
-          <li className="flex gap-3"><span className="text-[#F26522] font-bold shrink-0">→</span><span><strong>GEO (Generative Engine Optimization)</strong> — optimizing to be cited by generative engines like ChatGPT, Gemini, and Claude; emphasizes brand entity consistency and authority across many sources. Our guide on <a href="/insights/what-is-the-difference-between-google-knowledge-graph-optimization-and-geo" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">how Knowledge Graph optimization relates to GEO</a> explains the distinction in full.</span></li>
-          <li className="flex gap-3"><span className="text-[#F26522] font-bold shrink-0">→</span><span><strong>AEO (Answer Engine Optimization)</strong> — optimizing on-page content (direct answer blocks, FAQ schema) so AI extracts factual answers and attributes them to you; targets features like Google's AI Overviews.</span></li>
-          <li className="flex gap-3"><span className="text-[#F26522] font-bold shrink-0">→</span><span><strong>AIO / LLMO</strong> — broader and alternate labels for the same goal of AI visibility.</span></li>
+          <li className="flex gap-3"><span className="text-[#2E8C68] font-bold shrink-0">→</span><span><strong>AI SEO</strong> — the umbrella consumer term for optimizing for AI search.</span></li>
+          <li className="flex gap-3"><span className="text-[#2E8C68] font-bold shrink-0">→</span><span><strong>GEO (Generative Engine Optimization)</strong> — optimizing to be cited by generative engines like ChatGPT, Gemini, and Claude; emphasizes brand entity consistency and authority across many sources. Our guide on <a href="/insights/what-is-the-difference-between-google-knowledge-graph-optimization-and-geo" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">how Knowledge Graph optimization relates to GEO</a> explains the distinction in full.</span></li>
+          <li className="flex gap-3"><span className="text-[#2E8C68] font-bold shrink-0">→</span><span><strong>AEO (Answer Engine Optimization)</strong> — optimizing on-page content (direct answer blocks, FAQ schema) so AI extracts factual answers and attributes them to you; targets features like Google's AI Overviews.</span></li>
+          <li className="flex gap-3"><span className="text-[#2E8C68] font-bold shrink-0">→</span><span><strong>AIO / LLMO</strong> — broader and alternate labels for the same goal of AI visibility.</span></li>
         </ul>
-        <blockquote className="border-l-4 border-[#F26522] pl-6 py-2 my-8 text-gray-700 italic text-[17px] leading-[1.7]">
+        <blockquote className="border-l-4 border-[#111827] pl-6 py-2 my-8 text-gray-700 italic text-[17px] leading-[1.7]">
           Google's own position is that "optimizing for generative AI search is optimizing for the search experience, and thus still SEO." The labels differ, but the underlying work — clear, authoritative, well-structured, trustworthy content — is continuous with good SEO.
         </blockquote>
 
@@ -673,15 +673,15 @@ const ARTICLES: Record<string, ArticleData> = {
           So what AI services are there for SEO, and what does a real provider actually deliver? A full AI SEO engagement typically includes some or all of the following:
         </p>
         <ul className="space-y-4 mb-8 text-[16px] sm:text-[17px] text-gray-800 leading-[1.75]">
-          <li className="flex gap-3"><span className="text-[#F26522] font-bold shrink-0">→</span><span><strong>AI visibility audit</strong> — baseline of how often (and how) your brand currently appears across ChatGPT, Gemini, Perplexity, and AI Overviews.</span></li>
-          <li className="flex gap-3"><span className="text-[#F26522] font-bold shrink-0">→</span><span><strong>Generative Engine Optimization (GEO)</strong> — building brand entity consistency and authoritative presence across the sources AI engines trust. Understanding <a href="/insights/what-data-sources-do-llms-crawl-to-verify-b2b-company-information" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">which data sources LLMs crawl to verify your brand</a> is foundational to this work.</span></li>
-          <li className="flex gap-3"><span className="text-[#F26522] font-bold shrink-0">→</span><span><strong>Answer Engine Optimization (AEO)</strong> — restructuring content into extractable answer blocks, FAQs, and schema so AI can cite it.</span></li>
-          <li className="flex gap-3"><span className="text-[#F26522] font-bold shrink-0">→</span><span><strong>Entity & structured-data optimization</strong> — clarifying who you are and what you're an authority on, so AI models map your brand to the right topics.</span></li>
-          <li className="flex gap-3"><span className="text-[#F26522] font-bold shrink-0">→</span><span><strong>Technical readiness for AI crawlers</strong> — ensuring AI bots can access, parse, and interpret your content.</span></li>
-          <li className="flex gap-3"><span className="text-[#F26522] font-bold shrink-0">→</span><span><strong>AI citation tracking & monitoring</strong> — ongoing measurement of mentions, share of voice, and sentiment across AI platforms.</span></li>
-          <li className="flex gap-3"><span className="text-[#F26522] font-bold shrink-0">→</span><span><strong>Content strategy</strong> — evidence-rich, decision-useful content (data, expert quotes, comparisons) that performs in both AI and traditional search.</span></li>
+          <li className="flex gap-3"><span className="text-[#2E8C68] font-bold shrink-0">→</span><span><strong>AI visibility audit</strong> — baseline of how often (and how) your brand currently appears across ChatGPT, Gemini, Perplexity, and AI Overviews.</span></li>
+          <li className="flex gap-3"><span className="text-[#2E8C68] font-bold shrink-0">→</span><span><strong>Generative Engine Optimization (GEO)</strong> — building brand entity consistency and authoritative presence across the sources AI engines trust. Understanding <a href="/insights/what-data-sources-do-llms-crawl-to-verify-b2b-company-information" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">which data sources LLMs crawl to verify your brand</a> is foundational to this work.</span></li>
+          <li className="flex gap-3"><span className="text-[#2E8C68] font-bold shrink-0">→</span><span><strong>Answer Engine Optimization (AEO)</strong> — restructuring content into extractable answer blocks, FAQs, and schema so AI can cite it.</span></li>
+          <li className="flex gap-3"><span className="text-[#2E8C68] font-bold shrink-0">→</span><span><strong>Entity & structured-data optimization</strong> — clarifying who you are and what you're an authority on, so AI models map your brand to the right topics.</span></li>
+          <li className="flex gap-3"><span className="text-[#2E8C68] font-bold shrink-0">→</span><span><strong>Technical readiness for AI crawlers</strong> — ensuring AI bots can access, parse, and interpret your content.</span></li>
+          <li className="flex gap-3"><span className="text-[#2E8C68] font-bold shrink-0">→</span><span><strong>AI citation tracking & monitoring</strong> — ongoing measurement of mentions, share of voice, and sentiment across AI platforms.</span></li>
+          <li className="flex gap-3"><span className="text-[#2E8C68] font-bold shrink-0">→</span><span><strong>Content strategy</strong> — evidence-rich, decision-useful content (data, expert quotes, comparisons) that performs in both AI and traditional search.</span></li>
         </ul>
-        <div className="border-l-4 border-[#F26522] bg-gray-50 p-5 my-8 rounded-r-lg">
+        <div className="border-l-4 border-[#111827] bg-gray-50 p-5 my-8 rounded-r-lg">
           <p className="text-[15px] font-semibold text-gray-900 mb-1">What separates genuine AI SEO from traditional SEO with new labels</p>
           <p className="text-[15px] text-gray-700 leading-relaxed">A credible provider can show you a citation report from a current client and a roadmap with measurable milestones — not just promises. Ask for both before signing.</p>
         </div>
@@ -694,9 +694,9 @@ const ARTICLES: Record<string, ArticleData> = {
           <strong>Can ChatGPT do SEO? Partially.</strong> ChatGPT and similar AI tools are genuinely useful for SEO tasks — drafting content, brainstorming keywords and topics, generating FAQ schema, outlining articles, summarizing competitor pages, and speeding up research. Used well, they save substantial time. But ChatGPT cannot, on its own, <em>do</em> your SEO:
         </p>
         <ul className="space-y-4 mb-8 text-[16px] sm:text-[17px] text-gray-800 leading-[1.75]">
-          <li className="flex gap-3"><span className="text-[#F26522] font-bold shrink-0">✗</span><span>It can't audit your live site's technical health, crawl your pages, or implement fixes.</span></li>
-          <li className="flex gap-3"><span className="text-[#F26522] font-bold shrink-0">✗</span><span>It can't build genuine authority, earn real citations, or establish the cross-web entity consistency GEO requires.</span></li>
-          <li className="flex gap-3"><span className="text-[#F26522] font-bold shrink-0">✗</span><span>It produces generic output that needs human expertise to fact-check, add original insight, and align to your brand — Google rewards quality and trustworthiness regardless of who or what wrote it, but mass unedited AI content is a real risk to both SEO and brand.</span></li>
+          <li className="flex gap-3"><span className="text-[#2E8C68] font-bold shrink-0">✗</span><span>It can't audit your live site's technical health, crawl your pages, or implement fixes.</span></li>
+          <li className="flex gap-3"><span className="text-[#2E8C68] font-bold shrink-0">✗</span><span>It can't build genuine authority, earn real citations, or establish the cross-web entity consistency GEO requires.</span></li>
+          <li className="flex gap-3"><span className="text-[#2E8C68] font-bold shrink-0">✗</span><span>It produces generic output that needs human expertise to fact-check, add original insight, and align to your brand — Google rewards quality and trustworthiness regardless of who or what wrote it, but mass unedited AI content is a real risk to both SEO and brand.</span></li>
         </ul>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
           The consensus in 2026: the strongest results are <strong>AI-assisted but human-led</strong>. ChatGPT is a powerful assistant for SEO execution; it is not a replacement for an SEO strategy, a technical implementation, or the authority-building that AI SEO services provide.
@@ -710,10 +710,10 @@ const ARTICLES: Record<string, ArticleData> = {
           <strong>What is the best SEO AI?</strong> There's no single "best" — it depends on the job, and the strongest setups combine several tools with human strategy. Categories of AI services for SEO, including what AI services are free to start:
         </p>
         <ul className="space-y-4 mb-8 text-[16px] sm:text-[17px] text-gray-800 leading-[1.75]">
-          <li className="flex gap-3"><span className="text-[#F26522] font-bold shrink-0">→</span><span><strong>AI writing/assistant tools</strong> (ChatGPT, Claude, Gemini) — drafting and ideation; free tiers available.</span></li>
-          <li className="flex gap-3"><span className="text-[#F26522] font-bold shrink-0">→</span><span><strong>AI-integrated SEO platforms</strong> (Semrush, Ahrefs and similar, with AI-visibility features) — keyword, content, and increasingly AI-citation tracking; mostly paid, some free trials.</span></li>
-          <li className="flex gap-3"><span className="text-[#F26522] font-bold shrink-0">→</span><span><strong>AI visibility / citation trackers</strong> — monitor how your brand appears across AI platforms; emerging category, mix of free and paid.</span></li>
-          <li className="flex gap-3"><span className="text-[#F26522] font-bold shrink-0">→</span><span><strong>Google's own free tools</strong> — Search Console and Google's published AI-optimization guidance are free and authoritative starting points.</span></li>
+          <li className="flex gap-3"><span className="text-[#2E8C68] font-bold shrink-0">→</span><span><strong>AI writing/assistant tools</strong> (ChatGPT, Claude, Gemini) — drafting and ideation; free tiers available.</span></li>
+          <li className="flex gap-3"><span className="text-[#2E8C68] font-bold shrink-0">→</span><span><strong>AI-integrated SEO platforms</strong> (Semrush, Ahrefs and similar, with AI-visibility features) — keyword, content, and increasingly AI-citation tracking; mostly paid, some free trials.</span></li>
+          <li className="flex gap-3"><span className="text-[#2E8C68] font-bold shrink-0">→</span><span><strong>AI visibility / citation trackers</strong> — monitor how your brand appears across AI platforms; emerging category, mix of free and paid.</span></li>
+          <li className="flex gap-3"><span className="text-[#2E8C68] font-bold shrink-0">→</span><span><strong>Google's own free tools</strong> — Search Console and Google's published AI-optimization guidance are free and authoritative starting points.</span></li>
         </ul>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
           The AI assistants' free tiers, Google Search Console, and Google's documentation cost nothing and are a legitimate starting point. But tools are only levers — the best SEO AI outcome comes from pairing them with expertise, because no tool by itself builds the authority and entity signals that get you cited. The "best AI" is the one integrated into a sound, human-led strategy.
@@ -738,22 +738,22 @@ const ARTICLES: Record<string, ArticleData> = {
             <tbody>
               <tr className="border-b border-gray-200">
                 <td className="py-3 pr-4 font-bold">Entry-level</td>
-                <td className="py-3 pr-4 text-[#F26522] font-semibold">~$1,500–$3,000/mo</td>
+                <td className="py-3 pr-4 text-[#2E8C68] font-semibold">~$1,500–$3,000/mo</td>
                 <td className="py-3">Basic content optimization, foundational AEO, limited tracking</td>
               </tr>
               <tr className="border-b border-gray-200">
                 <td className="py-3 pr-4 font-bold">Mid-market</td>
-                <td className="py-3 pr-4 text-[#F26522] font-semibold">~$3,000–$6,000/mo</td>
+                <td className="py-3 pr-4 text-[#2E8C68] font-semibold">~$3,000–$6,000/mo</td>
                 <td className="py-3">Technical + content + entity building; the common range for most businesses</td>
               </tr>
               <tr className="border-b border-gray-200">
                 <td className="py-3 pr-4 font-bold">Specialist/full-stack</td>
-                <td className="py-3 pr-4 text-[#F26522] font-semibold">~$6,000–$15,000/mo</td>
+                <td className="py-3 pr-4 text-[#2E8C68] font-semibold">~$6,000–$15,000/mo</td>
                 <td className="py-3">Full GEO + AEO + LLM citation strategy, prompt audits, multi-platform</td>
               </tr>
               <tr>
                 <td className="py-3 pr-4 font-bold">Enterprise</td>
-                <td className="py-3 pr-4 text-[#F26522] font-semibold">~$15,000–$25,000+/mo</td>
+                <td className="py-3 pr-4 text-[#2E8C68] font-semibold">~$15,000–$25,000+/mo</td>
                 <td className="py-3">Multi-market, many pages, deep reporting across business units</td>
               </tr>
             </tbody>
@@ -768,7 +768,7 @@ const ARTICLES: Record<string, ArticleData> = {
           Will AI Replace SEO? Does Google Offer SEO Services?
         </h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          <strong>Will AI replace SEO? No.</strong> AI is being absorbed <em>into</em> SEO, not replacing it. AI engines rely entirely on human-made web content, authority signals, and SEO foundations — without indexed, trustworthy, well-structured content, AI has nothing reliable to summarize. What's changing is the <em>surface</em> (answers instead of links) and the <em>metrics</em> (citations and brand mentions alongside rankings and clicks), not the underlying need to be discoverable, authoritative, and trustworthy. SEO is evolving into AI search optimization, not disappearing. For the mechanics of why, our guide on <a href="/insights/what-is-generative-engine-optimization-and-how-does-it-work" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">how GEO and AI retrieval actually work</a> is the right place to start.
+          <strong>Will AI replace SEO? No.</strong> AI is being absorbed <em>into</em> SEO, not replacing it. AI engines rely entirely on human-made web content, authority signals, and SEO foundations — without indexed, trustworthy, well-structured content, AI has nothing reliable to summarize. What's changing is the <em>surface</em> (answers instead of links) and the <em>metrics</em> (citations and brand mentions alongside rankings and clicks), not the underlying need to be discoverable, authoritative, and trustworthy. SEO is evolving into AI search optimization, not disappearing. For the mechanics of why, our guide on <a href="/insights/what-is-generative-engine-optimization-and-how-does-it-work" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">how GEO and AI retrieval actually work</a> is the right place to start.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
           <strong>Does Google offer SEO services?</strong> No — Google does not sell SEO services, and it warns against anyone promising guaranteed rankings. What Google <em>does</em> offer is free guidance: Search Console, Search Central documentation, and, in 2026, official documentation on optimizing for generative AI features. Google's stance is that good AI-search optimization is good SEO; it provides the rules, not the service. The service — the actual implementation and authority-building — is what an AI SEO provider does.
@@ -790,10 +790,10 @@ const ARTICLES: Record<string, ArticleData> = {
           How Gobiya Delivers AI SEO Services
         </h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Gobiya treats AI search visibility as an engineering problem with measurable inputs, not a buzzword. Our <a href="/performance/seo-discoverability-agency" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">SEO and AI-discoverability practice</a> covers the full AI SEO stack: an AI visibility audit to baseline where your brand appears across ChatGPT, Gemini, Perplexity, and AI Overviews; GEO and AEO work to make your content extractable and your brand entity consistent across the sources AI engines trust; structured data and technical readiness for AI crawlers; and ongoing citation tracking so visibility gains are measured, not assumed.
+          Gobiya treats AI search visibility as an engineering problem with measurable inputs, not a buzzword. Our <a href="/performance/seo-discoverability-agency" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">SEO and AI-discoverability practice</a> covers the full AI SEO stack: an AI visibility audit to baseline where your brand appears across ChatGPT, Gemini, Perplexity, and AI Overviews; GEO and AEO work to make your content extractable and your brand entity consistent across the sources AI engines trust; structured data and technical readiness for AI crawlers; and ongoing citation tracking so visibility gains are measured, not assumed.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Because we <a href="/performance/web-development-agency" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">build on fast, clean, crawlable infrastructure</a>, the technical foundations AI systems reward are built in rather than bolted on — and because everything is wired into <a href="/performance/native-crm-agency" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">native CRM and pipeline attribution</a>, we connect AI visibility to actual inquiries and revenue, not vanity mentions. If you want to know where you stand, <a href="/book" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors font-semibold">book a strategy call</a> and request an AI visibility audit.
+          Because we <a href="/performance/web-development-agency" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">build on fast, clean, crawlable infrastructure</a>, the technical foundations AI systems reward are built in rather than bolted on — and because everything is wired into <a href="/performance/native-crm-agency" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">native CRM and pipeline attribution</a>, we connect AI visibility to actual inquiries and revenue, not vanity mentions. If you want to know where you stand, <a href="/book" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors font-semibold">book a strategy call</a> and request an AI visibility audit.
         </p>
 
         {/* ── RIGHT CALL SUMMARY ── */}
@@ -858,7 +858,7 @@ const ARTICLES: Record<string, ArticleData> = {
             <details key={q} className="group border border-gray-200 rounded-lg overflow-hidden">
               <summary className="flex items-center justify-between gap-4 p-5 cursor-pointer font-semibold text-gray-900 text-[15px] list-none hover:bg-gray-50 transition-colors">
                 {q}
-                <svg className="w-4 h-4 shrink-0 text-[#F26522] transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" /></svg>
+                <svg className="w-4 h-4 shrink-0 text-[#111827] transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" /></svg>
               </summary>
               <div className="px-5 pb-5 text-gray-700 text-[15px] leading-[1.75] border-t border-gray-100 pt-4">
                 {a}
@@ -871,9 +871,9 @@ const ARTICLES: Record<string, ArticleData> = {
         <div className="border border-gray-200 rounded-lg p-6 my-10 bg-gray-50">
           <h3 className="text-[15px] font-semibold text-gray-900 mb-4 uppercase tracking-wider">Sources & further reading</h3>
           <ul className="space-y-2 text-[14px] text-gray-700">
-            <li>→ <a href="https://developers.google.com/search/docs/fundamentals/ai-optimization-guide" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors" target="_blank" rel="noopener noreferrer">Google Search Central — Optimizing for generative AI features on Google Search</a> — Google's official position that optimizing for AI search is still SEO.</li>
-            <li>→ <a href="https://arxiv.org/abs/2311.09735" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors" target="_blank" rel="noopener noreferrer">Generative Engine Optimization (Princeton, Georgia Tech, IIT Delhi)</a> — the peer-reviewed study finding statistics, sources, and quotes raise AI citation rates 30–40%.</li>
-            <li>→ <a href="https://developers.google.com/search/docs/fundamentals/seo-starter-guide" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors" target="_blank" rel="noopener noreferrer">Google Search Central — SEO Starter Guide</a> — the foundational SEO practices AI search still depends on.</li>
+            <li>→ <a href="https://developers.google.com/search/docs/fundamentals/ai-optimization-guide" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors" target="_blank" rel="noopener noreferrer">Google Search Central — Optimizing for generative AI features on Google Search</a> — Google's official position that optimizing for AI search is still SEO.</li>
+            <li>→ <a href="https://arxiv.org/abs/2311.09735" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors" target="_blank" rel="noopener noreferrer">Generative Engine Optimization (Princeton, Georgia Tech, IIT Delhi)</a> — the peer-reviewed study finding statistics, sources, and quotes raise AI citation rates 30–40%.</li>
+            <li>→ <a href="https://developers.google.com/search/docs/fundamentals/seo-starter-guide" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors" target="_blank" rel="noopener noreferrer">Google Search Central — SEO Starter Guide</a> — the foundational SEO practices AI search still depends on.</li>
           </ul>
         </div>
       </>
@@ -1053,35 +1053,35 @@ timestamp: string   # Optional: ISO-8601 modification date
         <h2 id="sources" className="text-2xl font-semibold text-gray-900 mt-10 mb-4 font-display">6. Reference Materials & Specifications</h2>
         <ul className="list-disc pl-6 mb-8 space-y-2 text-gray-700">
           <li>
-            <a href="https://cloud.google.com/blog/products/data-analytics/how-the-open-knowledge-format-can-improve-data-sharing/" target="_blank" rel="noopener noreferrer" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">Open Knowledge Format Google Cloud Announcement</a>
+            <a href="https://cloud.google.com/blog/products/data-analytics/how-the-open-knowledge-format-can-improve-data-sharing/" target="_blank" rel="noopener noreferrer" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">Open Knowledge Format Google Cloud Announcement</a>
           </li>
           <li>
-            <a href="https://github.com/GoogleCloudPlatform/knowledge-catalog/tree/main/okf" target="_blank" rel="noopener noreferrer" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">Google Cloud OKF Spec Repository on GitHub</a>
+            <a href="https://github.com/GoogleCloudPlatform/knowledge-catalog/tree/main/okf" target="_blank" rel="noopener noreferrer" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">Google Cloud OKF Spec Repository on GitHub</a>
           </li>
           <li>
-            <a href="https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f" target="_blank" rel="noopener noreferrer" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">Andrej Karpathy — The LLM Wiki Gist</a>
+            <a href="https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f" target="_blank" rel="noopener noreferrer" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">Andrej Karpathy — The LLM Wiki Gist</a>
           </li>
         </ul>
 
         <h2 id="related" className="text-2xl font-semibold text-gray-900 mt-10 mb-4 font-display">7. Related on Gobiya</h2>
         <ul className="list-disc pl-6 mb-8 space-y-2 text-gray-700">
           <li>
-            <a href="/capabilities/seo-discoverability-agency/" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">SEO &amp; AI-engine discoverability</a>
+            <a href="/capabilities/seo-discoverability-agency/" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">SEO &amp; AI-engine discoverability</a>
           </li>
           <li>
-            <a href="/capabilities/web-development-agency/" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">Web development for fast, clean, crawlable sites</a>
+            <a href="/capabilities/web-development-agency/" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">Web development for fast, clean, crawlable sites</a>
           </li>
           <li>
-            <a href="/capabilities/native-crm-agency/" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">Native CRM &amp; pipeline attribution</a>
+            <a href="/capabilities/native-crm-agency/" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">Native CRM &amp; pipeline attribution</a>
           </li>
           <li>
-            <a href="/case-studies/smile-center-dentistry" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">SmileCenter Dentistry case study</a>
+            <a href="/case-studies/smile-center-dentistry" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">SmileCenter Dentistry case study</a>
           </li>
           <li>
-            <a href="/insights" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">More insights</a>
+            <a href="/insights" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">More insights</a>
           </li>
           <li>
-            <a href="/book" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">Book a strategy call</a>
+            <a href="/book" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">Book a strategy call</a>
           </li>
         </ul>
       </>
@@ -1170,8 +1170,8 @@ timestamp: string   # Optional: ISO-8601 modification date
               { id: 'faq', label: 'Frequently Asked Questions' }
             ].map((item) => (
               <li key={item.id}>
-                <a href={`#${item.id}`} className="hover:text-[#F26522] transition-colors flex items-center gap-2">
-                  <span className="text-[#F26522] text-xs">◆</span> {item.label}
+                <a href={`#${item.id}`} className="hover:text-gray-900 transition-colors flex items-center gap-2">
+                  <span className="text-[#2E8C68] text-xs">◆</span> {item.label}
                 </a>
               </li>
             ))}
@@ -1200,10 +1200,10 @@ timestamp: string   # Optional: ISO-8601 modification date
           The franchises that fail resolve this tension by collapsing one side into the other, either rigid corporate templating that makes every location page identical (killing local relevance and triggering duplicate filters), or unmanaged local autonomy that fragments the brand into inconsistent hours, categories, and NAP data across the web. The franchises that win hold both: a consolidated authority structure with genuinely differentiated local entities inside it.
         </p>
 
-        <div className="border-l-4 border-[#F26522] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
+        <div className="border-l-4 border-[#111827] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
           <img src="/images/steve-portrait-thumb.webp" alt="Steve Martin" width="48" height="48" loading="lazy" className="w-12 h-12 object-cover rounded-full border border-white/10 shrink-0" />
           <div>
-            <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-1 font-sans">Steve's Take</p>
+            <p className="text-[12px] uppercase tracking-wider text-[#2E8C68] font-semibold mb-1 font-sans">Steve's Take</p>
             <p className="text-[15px] italic text-gray-700 leading-relaxed font-sans">
               "A franchise isn't one brand competing in one market; it's one brand supporting dozens of distinct local operations. If your architecture doesn't mirror that structure, you will duplicate effort locally and dilute authority nationally."
             </p>
@@ -1217,7 +1217,7 @@ timestamp: string   # Optional: ISO-8601 modification date
           The first and most consequential decision is URL architecture, and for most franchises the answer is settled. Three structures exist, and they are not equal.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
-          <strong>Subdirectories (brand.com/locations/city-name)</strong> are the consensus recommendation for franchises with fewer than roughly 100 locations, and often well beyond. The reason is authority consolidation: every location page lives under the main domain, so each one inherits the brand's accumulated domain authority and link equity rather than starting from scratch. Search Engine Journal's architecture analysis and essentially every 2026 franchise-SEO source converge here, subdirectories give crawlers the clearest path and give each location a meaningful ranking advantage on day one. For a franchise, where the whole value proposition is a known brand, this is almost always correct. Read our comprehensive analysis of <a href="/insights/multi-location-seo-website-structure" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">multi-location SEO website structure</a> to see how authority maps to these paths.
+          <strong>Subdirectories (brand.com/locations/city-name)</strong> are the consensus recommendation for franchises with fewer than roughly 100 locations, and often well beyond. The reason is authority consolidation: every location page lives under the main domain, so each one inherits the brand's accumulated domain authority and link equity rather than starting from scratch. Search Engine Journal's architecture analysis and essentially every 2026 franchise-SEO source converge here, subdirectories give crawlers the clearest path and give each location a meaningful ranking advantage on day one. For a franchise, where the whole value proposition is a known brand, this is almost always correct. Read our comprehensive analysis of <a href="/insights/multi-location-seo-website-structure" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">multi-location SEO website structure</a> to see how authority maps to these paths.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
           <strong>Subdomains (city-name.brand.com)</strong> offer more local customization flexibility but are treated by search engines as more separate from the main domain, diluting the authority-sharing benefit and adding management complexity. They suit very large franchises with extensive, genuinely independent local marketing operations—the exception, not the default.
@@ -1226,7 +1226,7 @@ timestamp: string   # Optional: ISO-8601 modification date
           <strong>Separate domains per franchisee</strong> are the structure to avoid unless contractually forced into them: they force every location to build authority from zero, fragment link-building, and multiply management cost. The one legitimate case is when independent franchisees are contractually permitted to run their own branded sites—a business-model constraint, not an SEO choice. When that's the reality, the architecture has to manage cross-linking and brand-entity consistency deliberately to recover some of the lost consolidation.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
-          A structural note that matters for franchises specifically: decide whether <em>location</em> or <em>service</em> is your primary dimension. Retail and most franchises are location-primary (/locations/phoenix), with services nested beneath each location; service businesses operating across cities may invert it (/phoenix/service). Choosing the wrong primary dimension builds cannibalization into the URL structure itself. See our blueprint on the <a href="/insights/best-website-structure-multiple-locations-different-cities" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">best website structure for multiple locations in different cities</a> for step-by-step routing details.
+          A structural note that matters for franchises specifically: decide whether <em>location</em> or <em>service</em> is your primary dimension. Retail and most franchises are location-primary (/locations/phoenix), with services nested beneath each location; service businesses operating across cities may invert it (/phoenix/service). Choosing the wrong primary dimension builds cannibalization into the URL structure itself. See our blueprint on the <a href="/insights/best-website-structure-multiple-locations-different-cities" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">best website structure for multiple locations in different cities</a> for step-by-step routing details.
         </p>
 
         <h2 id="location-pages" className="text-xl sm:text-2xl font-bold text-gray-900 mt-12 mb-6 font-display">
@@ -1256,7 +1256,7 @@ timestamp: string   # Optional: ISO-8601 modification date
           <strong>LocalBusiness schema</strong> is non-negotiable in 2026, and increasingly so as search shifts toward AI-generated answers. Structured data is how each location's name, address, phone, hours, and geo-coordinates are delivered to search engines and the AI models now constructing direct answers, and it's how the franchise brand entity is connected to each individual location entity. As generative search grows, the goal moves from merely ranking to being the structured, trusted source an AI cites, which makes correct, per-location LocalBusiness schema a foundational requirement rather than a nice-to-have.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
-          <strong>NAP(W) consistency</strong>—Name, Address, Phone, Website, identical across every page, every Google Business Profile, and every external citation—is repeatedly named the single most critical local-SEO element. Even minor variations (St. vs Street, Suite vs Ste., a national 800 number instead of the local line) confuse search engines, erode trust, and depress rankings. At franchise scale, where data is entered by many hands across many systems, NAP consistency is an active discipline, not a one-time setup, and inconsistency is one of the most common silent killers of franchise local visibility. Learn more about these variables in our guide <a href="/insights/local-seo-explained" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">local SEO explained</a> for a breakdown of GBP citation layers.
+          <strong>NAP(W) consistency</strong>—Name, Address, Phone, Website, identical across every page, every Google Business Profile, and every external citation—is repeatedly named the single most critical local-SEO element. Even minor variations (St. vs Street, Suite vs Ste., a national 800 number instead of the local line) confuse search engines, erode trust, and depress rankings. At franchise scale, where data is entered by many hands across many systems, NAP consistency is an active discipline, not a one-time setup, and inconsistency is one of the most common silent killers of franchise local visibility. Learn more about these variables in our guide <a href="/insights/local-seo-explained" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">local SEO explained</a> for a breakdown of GBP citation layers.
         </p>
 
         <div className="my-10" data-anim="fade">
@@ -1271,7 +1271,7 @@ timestamp: string   # Optional: ISO-8601 modification date
         </div>
 
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
-          <strong>Crawl and performance at scale</strong> round it out: hundreds of location pages must stay fast, mobile-first (local queries are overwhelmingly mobile, and mobile-first is now the baseline for local ranking), and efficiently crawlable, with URL and internal-link structures that distribute authority and avoid location cannibalization at the architecture level. And because GBP signals account for roughly 32% of local pack rankings, the single largest factor, the website and the Google Business Profile layer have to be engineered as one system: the site's location data, schema, and the corresponding GBP must agree perfectly, or the largest ranking lever works against you. Read our playbook on <a href="/insights/google-business-profile-optimization" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">Google Business Profile optimization</a> for verification protocols.
+          <strong>Crawl and performance at scale</strong> round it out: hundreds of location pages must stay fast, mobile-first (local queries are overwhelmingly mobile, and mobile-first is now the baseline for local ranking), and efficiently crawlable, with URL and internal-link structures that distribute authority and avoid location cannibalization at the architecture level. And because GBP signals account for roughly 32% of local pack rankings, the single largest factor, the website and the Google Business Profile layer have to be engineered as one system: the site's location data, schema, and the corresponding GBP must agree perfectly, or the largest ranking lever works against you. Read our playbook on <a href="/insights/google-business-profile-optimization" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">Google Business Profile optimization</a> for verification protocols.
         </p>
 
         <h2 id="governance" className="text-xl sm:text-2xl font-bold text-gray-900 mt-12 mb-6 font-display">
@@ -1288,13 +1288,13 @@ timestamp: string   # Optional: ISO-8601 modification date
           How Gobiya builds franchise web infrastructure
         </h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
-          Gobiya approaches franchise and multi-location websites as the systems problem they are—engineered architecture rather than replicated templates. The build starts with the right foundation: a single-domain, subdirectory architecture on <a href="/capabilities/web-development-agency/" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">fast, modern web infrastructure</a> that consolidates brand authority while giving every location its own genuinely differentiated, schema-backed page, structured for the location-hub-and-spoke internal linking that prevents cannibalization.
+          Gobiya approaches franchise and multi-location websites as the systems problem they are—engineered architecture rather than replicated templates. The build starts with the right foundation: a single-domain, subdirectory architecture on <a href="/capabilities/web-development-agency/" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">fast, modern web infrastructure</a> that consolidates brand authority while giving every location its own genuinely differentiated, schema-backed page, structured for the location-hub-and-spoke internal linking that prevents cannibalization.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
-          That architecture is wired into <a href="/capabilities/native-crm-agency/" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">native CRM and attribution</a> so corporate gets national, cross-location pipeline visibility while each location's calls, form fills, and direction requests are tracked to source—the tiered reporting franchise governance requires. And it's engineered for <a href="/capabilities/seo-discoverability-agency/" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">search and AI-engine discoverability</a>, the LocalBusiness schema, NAP consistency, and entity structure that decide whether each location ranks in the map pack and gets cited in AI answers.
+          That architecture is wired into <a href="/capabilities/native-crm-agency/" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">native CRM and attribution</a> so corporate gets national, cross-location pipeline visibility while each location's calls, form fills, and direction requests are tracked to source—the tiered reporting franchise governance requires. And it's engineered for <a href="/capabilities/seo-discoverability-agency/" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">search and AI-engine discoverability</a>, the LocalBusiness schema, NAP consistency, and entity structure that decide whether each location ranks in the map pack and gets cited in AI answers.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
-          The multi-location pattern is proven in work like <a href="/case-studies/smile-center-dentistry" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">SmileCenter Dentistry's multi-office build</a> (5x patient inquiries, 2.8x search impressions across locations). If you're scaling a franchise and want the architecture audited or built to rank every location, <a href="/book" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">book a strategy call</a> and request a multi-location technical audit.
+          The multi-location pattern is proven in work like <a href="/case-studies/smile-center-dentistry" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">SmileCenter Dentistry's multi-office build</a> (5x patient inquiries, 2.8x search impressions across locations). If you're scaling a franchise and want the architecture audited or built to rank every location, <a href="/book" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">book a strategy call</a> and request a multi-location technical audit.
         </p>
 
         <h2 id="right-call" className="text-xl sm:text-2xl font-bold text-gray-900 mt-12 mb-6 font-display">
@@ -1304,7 +1304,7 @@ timestamp: string   # Optional: ISO-8601 modification date
           So how do you build a multi-location website for a franchise that ranks every location? Consolidate on one domain with location subdirectories so every page inherits brand authority; make each location page genuinely local (40%+ unique content, neighborhoods, local team, area reviews, location FAQs) so it escapes the duplicate-content trap; enforce geographic specificity and a central locations hub so your pages stop competing with each other; engineer the technical layer (per-location LocalBusiness schema, absolute NAP consistency, mobile-first speed, GBP-website alignment) because it carries a third of your local rankings; and govern the whole thing as one owned system rather than a fragmented set of teams. Build it once, structurally, then replicate cleanly for every new market.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
-          Two decisions matter most. First: whether you build a consolidated, single-domain architecture with genuinely differentiated local pages, or fragment into microsites and templated city-swap pages that split your authority and trip duplicate filters—this choice is hard to reverse later and largely determines the ceiling on every location's performance. Second: whether one owner governs the full system—architecture, content standards, schema, NAP, GBP, and reporting—as a repeatable whole, or whether ownership stays fragmented across teams that each touch part of it, which is where the same brand ends up with three different phone numbers online and nobody accountable for the rankings it costs. If your business targets local searchers in competitive markets, review our playbook on <a href="/insights/local-seo" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">local SEO</a> to capture geo-targeted search volume.
+          Two decisions matter most. First: whether you build a consolidated, single-domain architecture with genuinely differentiated local pages, or fragment into microsites and templated city-swap pages that split your authority and trip duplicate filters—this choice is hard to reverse later and largely determines the ceiling on every location's performance. Second: whether one owner governs the full system—architecture, content standards, schema, NAP, GBP, and reporting—as a repeatable whole, or whether ownership stays fragmented across teams that each touch part of it, which is where the same brand ends up with three different phone numbers online and nobody accountable for the rankings it costs. If your business targets local searchers in competitive markets, review our playbook on <a href="/insights/local-seo" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">local SEO</a> to capture geo-targeted search volume.
         </p>
 
         {/* ── FAQ ACCORDION SECTION ── */}
@@ -1387,7 +1387,7 @@ timestamp: string   # Optional: ISO-8601 modification date
                 { id: 'making-right-call', label: 'Making the right call for your B2B organic growth program' },
               ].map((item) => (
                 <li key={item.id}>
-                  <a href={`#${item.id}`} className="text-[15px] text-gray-700 hover:text-[#F26522] transition-colors">
+                  <a href={`#${item.id}`} className="text-[15px] text-gray-700 hover:text-gray-900 transition-colors">
                     {item.label}
                   </a>
                 </li>
@@ -1404,8 +1404,8 @@ timestamp: string   # Optional: ISO-8601 modification date
             { stat: '88%', label: 'Google AI Mode citations that do not appear in the organic top 10 results', source: 'Moz analysis of 40,000 queries, 2026' },
             { stat: '2.4%', label: 'Conversion rate of B2B sites with strong SEO programs vs 1.5% cross-industry average', source: 'First Page Sage, 2026' },
           ].map(({ stat, label, source }) => (
-            <div key={stat} className="border border-[#F26522]/30 bg-[#F26522]/5 p-6">
-              <p className="text-4xl font-bold text-[#F26522] mb-2 font-display">{stat}</p>
+            <div key={stat} className="border border-gray-200 bg-gray-50 p-6">
+              <p className="text-4xl font-bold text-[#2E8C68] mb-2 font-display">{stat}</p>
               <p className="text-[14px] text-gray-900 leading-snug mb-1">{label}</p>
               <p className="text-[11px] uppercase tracking-wider text-gray-500">{source}</p>
             </div>
@@ -1416,7 +1416,7 @@ timestamp: string   # Optional: ISO-8601 modification date
           B2B organic traffic growth in 2026 has detached from the metric that used to define it. The old math was simple: more organic traffic, more pipeline, more revenue. That math has broken — not slowly, and not subtly. Factors.ai's 2026 analysis of more than 100 B2B companies found median organic traffic dropped 1.25 percent year over year, while organic conversion rates rose 21.4 percent for the same cohort. Fewer people are arriving. The right people are still arriving.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          This is the problem a modern B2B organic traffic growth strategy solves. The strongest operators have stopped optimizing for traffic volume as the leading indicator and started optimizing for the <em>composition</em> of organic traffic — which channels, which intent, which buyer roles, which signals make it through to pipeline. This directly connects to how <a href="/insights/seo-for-b2b-lead-generation" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">SEO for B2B lead generation</a> has fundamentally changed in the AI search era.
+          This is the problem a modern B2B organic traffic growth strategy solves. The strongest operators have stopped optimizing for traffic volume as the leading indicator and started optimizing for the <em>composition</em> of organic traffic — which channels, which intent, which buyer roles, which signals make it through to pipeline. This directly connects to how <a href="/insights/seo-for-b2b-lead-generation" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">SEO for B2B lead generation</a> has fundamentally changed in the AI search era.
         </p>
 
         {/* ── SECTION: What it means ── */}
@@ -1429,8 +1429,8 @@ timestamp: string   # Optional: ISO-8601 modification date
           Google's AI Overviews and AI Mode have compressed click-through rates on informational queries. The Moz analysis of 40,000 queries shows 88 percent of AI Mode citations don't appear in the organic top 10, which means a page can rank #1 and be functionally invisible to the AI layer where a growing share of B2B research now happens. B2B organic traffic growth in 2026 is a discipline of growing the <em>composition</em> of traffic, not just the <em>count</em>.
         </p>
 
-        <div className="bg-gray-50 border-l-4 border-[#F26522] p-6 sm:p-8 my-10">
-          <h3 className="text-[15px] font-semibold uppercase tracking-wider text-[#F26522] mb-3">Why session-count growth alone has stopped predicting pipeline</h3>
+        <div className="bg-gray-50 border-l-4 border-[#111827] p-6 sm:p-8 my-10">
+          <h3 className="text-[15px] font-semibold uppercase tracking-wider text-[#2E8C68] mb-3">Why session-count growth alone has stopped predicting pipeline</h3>
           <p className="text-[15px] sm:text-[16px] leading-[1.7] text-gray-700">
             Session-count growth handles the first pass: more visitors, more chances to convert. But B2B conversion in 2026 is heavily concentrated in a small share of traffic that arrives with pre-formed intent — from brand search, from AI citations, from comparison-stage discovery. A program that doubles informational top-of-funnel traffic while leaving the high-intent traffic shape unchanged will see traffic numbers double and pipeline numbers stay flat. Volume-only organic growth is not sufficient as a B2B pipeline strategy in 2026.
           </p>
@@ -1443,7 +1443,7 @@ timestamp: string   # Optional: ISO-8601 modification date
           The decoupling became impossible to ignore during 2025 and 2026. Three forces converged. First, Google's AI Overviews and AI Mode launched and matured, compressing click-through rates on informational queries. Second, B2B buyers shifted research into ChatGPT, Claude, Perplexity, and Gemini — G2's April 2026 survey placed 51 percent of B2B software buyers starting research in an AI chatbot rather than a search engine. Third, the AI engines began citing pages that weren't necessarily the highest-ranking ones on Google.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          The combined effect is that two B2B sites in the same category can post very different traffic profiles and very similar pipeline numbers. This is precisely why an <a href="/insights/automated-b2b-sales-pipeline-seo" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">AI-driven B2B sales pipeline SEO strategy</a> has to account for citation share across AI platforms — not just Google rankings — to accurately reflect where pipeline actually originates.
+          The combined effect is that two B2B sites in the same category can post very different traffic profiles and very similar pipeline numbers. This is precisely why an <a href="/insights/automated-b2b-sales-pipeline-seo" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">AI-driven B2B sales pipeline SEO strategy</a> has to account for citation share across AI platforms — not just Google rankings — to accurately reflect where pipeline actually originates.
         </p>
 
         {/* ── SECTION: Cost ── */}
@@ -1466,11 +1466,11 @@ timestamp: string   # Optional: ISO-8601 modification date
           A credible program starts with a traffic-composition audit, not a content calendar. The audit segments existing organic traffic by source (Google search, AI engines individually, direct, referral, branded vs non-branded), by intent type, and by buyer role engagement. The goal is to map the actual revenue topology of the organic channel — not the aggregate session count, but the underlying signal of which content, from which surface, reaching which role, actually produces revenue.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Content production prioritizes the surfaces and intent types the audit identified as revenue-producing. Content for informational top-of-funnel queries gets reduced or eliminated when the audit shows it doesn't connect to pipeline. The same composition-first thinking applies directly to <a href="/insights/automated-lead-generation-seo" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">automated lead generation SEO</a> — the traffic isn't the goal; the shape of the traffic determines whether the lead gen program has anything to work with.
+          Content production prioritizes the surfaces and intent types the audit identified as revenue-producing. Content for informational top-of-funnel queries gets reduced or eliminated when the audit shows it doesn't connect to pipeline. The same composition-first thinking applies directly to <a href="/insights/automated-lead-generation-seo" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">automated lead generation SEO</a> — the traffic isn't the goal; the shape of the traffic determines whether the lead gen program has anything to work with.
         </p>
 
-        <div className="bg-gray-50 border-l-4 border-[#F26522] p-6 sm:p-8 my-10">
-          <h3 className="text-[15px] font-semibold uppercase tracking-wider text-[#F26522] mb-3">How the right organic traffic shape powers B2B lead generation</h3>
+        <div className="bg-gray-50 border-l-4 border-[#111827] p-6 sm:p-8 my-10">
+          <h3 className="text-[15px] font-semibold uppercase tracking-wider text-[#2E8C68] mb-3">How the right organic traffic shape powers B2B lead generation</h3>
           <p className="text-[15px] sm:text-[16px] leading-[1.7] text-gray-700">
             A program producing 50,000 monthly sessions evenly split across informational and commercial-intent pages converts very differently from a program producing the same sessions but skewed 70/30 toward commercial-intent. The second site produces materially more leads and pipeline despite identical traffic. A site that holds traffic flat but shifts composition toward 60 percent branded and commercial intent will see lead generation rise meaningfully on the same total session count.
           </p>
@@ -1483,7 +1483,7 @@ timestamp: string   # Optional: ISO-8601 modification date
           Start with what's being measured at the report level. If the program owner's top KPI is organic sessions, keyword rankings, or domain authority, the program is operating against the 2019 model. Real B2B organic growth programs in 2026 measure traffic composition, pipeline contribution by content cluster, conversion rate by source segment, and the trajectory of high-intent traffic specifically.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Ask whether the program reports comfortably on declining traffic when conversion and pipeline are rising. Ask how AI search visibility is tracked — citation share across ChatGPT, Claude, Perplexity, and Gemini. Ask whether the program has actively reduced content production in any category in the last 12 months, because an operator's willingness to kill underperforming content is often a stronger signal of program discipline than their willingness to produce new content. Understanding <a href="/insights/outbound-seo-prospecting" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">how intent signals feed outbound SEO prospecting</a> is one mark of a program operating against modern B2B reality rather than legacy dashboards.
+          Ask whether the program reports comfortably on declining traffic when conversion and pipeline are rising. Ask how AI search visibility is tracked — citation share across ChatGPT, Claude, Perplexity, and Gemini. Ask whether the program has actively reduced content production in any category in the last 12 months, because an operator's willingness to kill underperforming content is often a stronger signal of program discipline than their willingness to produce new content. Understanding <a href="/insights/outbound-seo-prospecting" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">how intent signals feed outbound SEO prospecting</a> is one mark of a program operating against modern B2B reality rather than legacy dashboards.
         </p>
 
         {/* ── SECTION: Gobiya ── */}
@@ -1494,7 +1494,7 @@ timestamp: string   # Optional: ISO-8601 modification date
           Gobiya's entire methodology is built around composition-first organic growth rather than session-volume metrics. The team operates from Los Angeles with a focused client roster — which means the composition audit is not a checklist item, it's the strategic foundation the engagement is built on. Every content decision is mapped against a documented hypothesis about which surfaces produce revenue and which don't. Reporting covers traffic by source, conversion by source, and pipeline contribution by content cluster — not a session-count graph.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          For operators evaluating a <a href="/insights/best-seo-agency-for-b2b-brands" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">B2B SEO agency partner</a>, the differentiator isn't claim — it's measurement model. An agency comfortable reporting flat or declining traffic alongside rising pipeline is operating against the modern decoupled reality. An agency that hedges by reframing to "leading indicators" when pipeline lags traffic isn't.
+          For operators evaluating a <a href="/insights/best-seo-agency-for-b2b-brands" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">B2B SEO agency partner</a>, the differentiator isn't claim — it's measurement model. An agency comfortable reporting flat or declining traffic alongside rising pipeline is operating against the modern decoupled reality. An agency that hedges by reframing to "leading indicators" when pipeline lags traffic isn't.
         </p>
 
               </div>
@@ -1509,7 +1509,7 @@ timestamp: string   # Optional: ISO-8601 modification date
             { role: 'Vertical SaaS & Niche Leaders', detail: 'Composition-first lets a smaller-traffic site dominate AI citation share in a focused vertical without competing on aggregate volume against horizontal competitors.' },
           ].map(({ role, detail }) => (
             <div key={role} className="border border-gray-200 p-5 sm:p-6">
-              <p className="text-[13px] uppercase tracking-wider font-semibold text-[#F26522] mb-2">{role}</p>
+              <p className="text-[13px] uppercase tracking-wider font-semibold text-[#2E8C68] mb-2">{role}</p>
               <p className="text-[14px] text-gray-700 leading-relaxed">{detail}</p>
             </div>
           ))}
@@ -1519,10 +1519,10 @@ timestamp: string   # Optional: ISO-8601 modification date
         <div id="getting-started" className="scroll-mt-24" />
         <h2 className="text-[1.6rem] sm:text-[2rem] font-display font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">What getting started with B2B organic traffic growth actually looks like</h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          A credible engagement starts with a composition audit, not a traffic projection. The audit segments existing organic traffic by source, intent, and <a href="/insights/how-do-b2b-companies-use-seo-to-generate-predictable-revenue" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">pipeline contribution</a>. It maps which traffic shapes correlate with closed-won opportunities and which produce no measurable pipeline impact. It runs the brand through ChatGPT, Claude, Perplexity, and Gemini to baseline current AI citation share. It identifies clusters over-producing traffic relative to pipeline and clusters under-producing traffic relative to their pipeline potential.
+          A credible engagement starts with a composition audit, not a traffic projection. The audit segments existing organic traffic by source, intent, and <a href="/insights/how-do-b2b-companies-use-seo-to-generate-predictable-revenue" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">pipeline contribution</a>. It maps which traffic shapes correlate with closed-won opportunities and which produce no measurable pipeline impact. It runs the brand through ChatGPT, Claude, Perplexity, and Gemini to baseline current AI citation share. It identifies clusters over-producing traffic relative to pipeline and clusters under-producing traffic relative to their pipeline potential.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          The output is a hypothesis-driven roadmap — not "we will grow traffic by X percent" but "we will shift composition toward Y, accept a Z percent decline in aggregate sessions if necessary, and target a W percent increase in pipeline contribution over the next 12 months." The same rigour that makes a <a href="/insights/b2b-seo-agency" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">B2B SEO agency partnership</a> valuable applies here: proximity to the business means the composition audit reflects actual sales cycle intelligence, not templated benchmarks.
+          The output is a hypothesis-driven roadmap — not "we will grow traffic by X percent" but "we will shift composition toward Y, accept a Z percent decline in aggregate sessions if necessary, and target a W percent increase in pipeline contribution over the next 12 months." The same rigour that makes a <a href="/insights/b2b-seo-agency" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">B2B SEO agency partnership</a> valuable applies here: proximity to the business means the composition audit reflects actual sales cycle intelligence, not templated benchmarks.
         </p>
 
         {/* ── SECTION: Making the call ── */}
@@ -1537,13 +1537,13 @@ timestamp: string   # Optional: ISO-8601 modification date
 
         {/* ── CTA ── */}
         <div className="bg-gray-900 rounded-xl p-8 sm:p-10 my-14">
-          <p className="text-[11px] uppercase tracking-wider font-semibold text-[#F26522] mb-3">Get A Composition Audit</p>
+          <p className="text-[11px] uppercase tracking-wider font-semibold text-[#2E8C68] mb-3">Get A Composition Audit</p>
           <h3 className="text-white text-[1.4rem] sm:text-[1.7rem] font-display font-medium leading-[1.2] mb-4">Find out what your organic traffic is actually producing for pipeline.</h3>
           <p className="text-gray-400 text-[15px] leading-relaxed mb-6">Walk through your current organic traffic and the pipeline it's actually producing — before another quarter of growth gets reported on a metric that has stopped predicting the outcome your program is being paid to produce.</p>
-          <a href="/contact" className="inline-flex items-center gap-3 bg-[#F26522] hover:bg-[#e05a1a] text-white pl-6 pr-2 py-2.5 transition-colors duration-300 font-medium text-[14px]">
+          <a href="/contact" className="inline-flex items-center gap-3 bg-[#d1f851] hover:bg-[#c3ea45] text-[#111827] pl-6 pr-2 py-2.5 transition-colors duration-300 font-medium text-[14px]">
             Request a composition audit
             <div className="w-7 h-7 bg-white flex items-center justify-center">
-              <svg className="w-3.5 h-3.5 text-[#F26522]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"/></svg>
+              <svg className="w-3.5 h-3.5 text-[#2E8C68]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"/></svg>
             </div>
           </a>
         </div>
@@ -1631,8 +1631,8 @@ timestamp: string   # Optional: ISO-8601 modification date
               { id: 'right-call', label: 'Making the right call on your wireframe' }
             ].map(({ id, label }) => (
               <li key={id} className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#F26522] shrink-0" />
-                <a href={'#' + id} className="hover:text-[#F26522] transition-colors">{label}</a>
+                <span className="w-1.5 h-1.5 rounded-full bg-[#111827] shrink-0" />
+                <a href={'#' + id} className="hover:text-gray-900 transition-colors">{label}</a>
               </li>
             ))}
           </ul>
@@ -1646,10 +1646,10 @@ timestamp: string   # Optional: ISO-8601 modification date
           High-ticket B2B raises the stakes on every term in the equation. The visitor isn't deciding to buy, they're deciding whether to risk a meeting, their time, and a sliver of professional credibility on you, usually on behalf of a buying group of six to ten stakeholders they'll have to convince later. That means the psychology that moves a $40 e-commerce checkout is necessary but not sufficient here: the wireframe must also manage perceived career risk, multi-stakeholder defensibility, and the fact that a "conversion" is actually a request for a sales conversation. This article walks the full fusion, principle by principle, zone by zone, with the 2026 benchmark numbers that prove each placement.
         </p>
 
-        <div className="border-l-4 border-[#F26522] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
+        <div className="border-l-4 border-[#111827] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
           <img src="/images/steve-portrait-thumb.webp" alt="Steve Martin" width="48" height="48" loading="lazy" className="w-12 h-12 object-cover rounded-full border border-white/10 shrink-0" />
           <div>
-            <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-1 font-sans">Steve's Take</p>
+            <p className="text-[12px] uppercase tracking-wider text-[#2E8C68] font-semibold mb-1 font-sans">Steve's Take</p>
             <p className="text-[15px] italic text-white leading-relaxed font-sans">
               "Most designers build wireframes to look good in internal decks. But the buying committee doesn't see your slides. They feel the friction. Design your page around Motivation and Ability first, then clean up the UI."
             </p>
@@ -1745,13 +1745,13 @@ timestamp: string   # Optional: ISO-8601 modification date
           How Gobiya engineers this into conversion infrastructure
         </h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Gobiya treats landing pages the way this article does, as engineered behavioral systems, not design deliverables, and builds the infrastructure that makes the psychology measurable. The behavioral wireframe is implemented on <a href="/capabilities/web-development-agency/" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">blazing-fast web builds</a> (because the first five seconds are a motivation budget that slow pages spend on nothing), wired into <a href="/capabilities/native-crm-agency/" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">native CRM and pipeline tracking</a> so every form variant, field count, and CTA placement is attributed to actual opportunities rather than raw conversion vanity, exactly the rate-versus-quality trade high-ticket pages must manage, and structured for <a href="/capabilities/seo-discoverability-agency/" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">search and AI-engine discoverability</a> so the intent-matched traffic the wireframe assumes actually arrives.
+          Gobiya treats landing pages the way this article does, as engineered behavioral systems, not design deliverables, and builds the infrastructure that makes the psychology measurable. The behavioral wireframe is implemented on <a href="/capabilities/web-development-agency/" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">blazing-fast web builds</a> (because the first five seconds are a motivation budget that slow pages spend on nothing), wired into <a href="/capabilities/native-crm-agency/" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">native CRM and pipeline tracking</a> so every form variant, field count, and CTA placement is attributed to actual opportunities rather than raw conversion vanity, exactly the rate-versus-quality trade high-ticket pages must manage, and structured for <a href="/capabilities/seo-discoverability-agency/" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">search and AI-engine discoverability</a> so the intent-matched traffic the wireframe assumes actually arrives.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          The results pattern is documented in work like <a href="/case-studies/smile-center-dentistry" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">SmileCenter's 5x inquiry growth</a>, and the operating philosophy is the same one on our homepage: no vanity metrics, <a href="/insights/how-do-b2b-companies-use-seo-to-generate-predictable-revenue" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">pipeline ROI</a> built in. If you want your page audited against the exact friction framework above, <a href="/book" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">book a strategy call</a> and request the landing page friction audit.
+          The results pattern is documented in work like <a href="/case-studies/smile-center-dentistry" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">SmileCenter's 5x inquiry growth</a>, and the operating philosophy is the same one on our homepage: no vanity metrics, <a href="/insights/how-do-b2b-companies-use-seo-to-generate-predictable-revenue" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">pipeline ROI</a> built in. If you want your page audited against the exact friction framework above, <a href="/book" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">book a strategy call</a> and request the landing page friction audit.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          For more context on organic search, check our guide on <a href="/insights/b2b-organic-traffic-growth" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">B2B organic traffic growth</a> or read about <a href="/insights/seo-for-b2b-lead-generation" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">demand generation SEO</a>. You can also review how to optimize for new search engines in our analysis of <a href="/insights/chatgpt-vs-google-for-business-discovery" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">ChatGPT vs. Google for Business Discovery</a> and how to handle <a href="/insights/google-manual-action-removal-agency-caused-penalty" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">Google manual actions</a>. If your business targets local searchers, read about <a href="/insights/local-seo" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">local search dominance</a>.
+          For more context on organic search, check our guide on <a href="/insights/b2b-organic-traffic-growth" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">B2B organic traffic growth</a> or read about <a href="/insights/seo-for-b2b-lead-generation" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">demand generation SEO</a>. You can also review how to optimize for new search engines in our analysis of <a href="/insights/chatgpt-vs-google-for-business-discovery" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">ChatGPT vs. Google for Business Discovery</a> and how to handle <a href="/insights/google-manual-action-removal-agency-caused-penalty" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">Google manual actions</a>. If your business targets local searchers, read about <a href="/insights/local-seo" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">local search dominance</a>.
         </p>
 
         <h2 id="right-call" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
@@ -1829,8 +1829,8 @@ timestamp: string   # Optional: ISO-8601 modification date
             { stat: '88%', label: 'Google AI Mode citations that do NOT appear in the organic top 10', source: 'Moz, 40K queries, 2026' },
             { stat: '$8K–$20K', label: 'Typical monthly retainer for a traditional enterprise SEO agency', source: 'Industry range, 2026' },
           ].map(({ stat, label, source }) => (
-            <div key={stat} className="border border-[#F26522]/30 bg-[#F26522]/5 p-6">
-              <p className="text-4xl font-bold text-[#F26522] mb-2 font-display">{stat}</p>
+            <div key={stat} className="border border-gray-200 bg-gray-50 p-6">
+              <p className="text-4xl font-bold text-[#2E8C68] mb-2 font-display">{stat}</p>
               <p className="text-[14px] text-gray-900 leading-snug mb-1">{label}</p>
               <p className="text-[11px] uppercase tracking-wider text-gray-500">{source}</p>
             </div>
@@ -1845,10 +1845,10 @@ timestamp: string   # Optional: ISO-8601 modification date
           The four capabilities that determine modern B2B search success have shifted. Page rendering speed, GEO citation rate, technical execution velocity, and CRM pipeline attribution are now the real scorecard — not rankings reports and traffic charts. This guide compares both models across all four dimensions with the specificity a buying committee actually needs to make the decision.
         </p>
 
-        <div className="border-l-4 border-[#F26522] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
+        <div className="border-l-4 border-[#111827] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
           <img src="/images/steve-portrait-thumb.webp" alt="Steve Martin" width="48" height="48" loading="lazy" className="w-12 h-12 object-cover rounded-full border border-white/10 shrink-0" />
           <div>
-            <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-1 font-sans">Steve's Take</p>
+            <p className="text-[12px] uppercase tracking-wider text-[#2E8C68] font-semibold mb-1 font-sans">Steve's Take</p>
             <p className="text-[15px] italic text-white leading-relaxed font-sans">
               "I've watched enterprise agencies charge $20,000 a month only to delegate the work to junior account managers who have never built a website. In the AI era, search is an engineering problem. You need builders, not coordinators."
             </p>
@@ -1874,8 +1874,8 @@ timestamp: string   # Optional: ISO-8601 modification date
               { id: 'faqs', label: 'Frequently asked questions' },
             ].map(({ id, label }) => (
               <li key={id} className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#F26522] shrink-0" />
-                <a href={`#${id}`} className="hover:text-[#F26522] transition-colors">{label}</a>
+                <span className="w-1.5 h-1.5 rounded-full bg-[#111827] shrink-0" />
+                <a href={`#${id}`} className="hover:text-gray-900 transition-colors">{label}</a>
               </li>
             ))}
           </ul>
@@ -1891,8 +1891,8 @@ timestamp: string   # Optional: ISO-8601 modification date
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
           The Moz analysis of 40,000 queries found 88 percent of Google AI Mode citations don't appear in the organic top 10. A page can rank first on Google and be completely invisible to the AI layer where a growing share of B2B research now happens. Enterprise agencies built around rankings reports cannot fix this. It requires a different architecture — entity graphs, structured schema, citation-optimized content — built by engineers who understand how RAG retrieval actually works.
         </p>
-        <div className="bg-gray-50 border-l-4 border-[#F26522] p-6 sm:p-8 my-10">
-          <h3 className="text-[15px] font-semibold uppercase tracking-wider text-[#F26522] mb-3">The three forces that made the old model obsolete</h3>
+        <div className="bg-gray-50 border-l-4 border-[#111827] p-6 sm:p-8 my-10">
+          <h3 className="text-[15px] font-semibold uppercase tracking-wider text-[#2E8C68] mb-3">The three forces that made the old model obsolete</h3>
           <ul className="space-y-3 text-[15px] sm:text-[16px] leading-[1.7] text-gray-700">
             <li><strong>AI Overviews &amp; AI Mode</strong> — compressed click-through rates on informational queries where enterprise agencies concentrate most of their content effort.</li>
             <li><strong>B2B research migration</strong> — more than half of B2B buyers now resolve shortlisting questions in AI assistants, where only cited sources get considered.</li>
@@ -1926,7 +1926,7 @@ timestamp: string   # Optional: ISO-8601 modification date
             <thead>
               <tr className="border-b border-gray-300 bg-gray-50">
                 <th className="p-4 font-semibold text-[14px]">Dimension</th>
-                <th className="p-4 font-semibold text-[14px] text-[#F26522]">Gobiya Search Engineering</th>
+                <th className="p-4 font-semibold text-[14px] text-[#2E8C68]">Gobiya Search Engineering</th>
                 <th className="p-4 font-semibold text-[14px]">Traditional Enterprise SEO Agency</th>
               </tr>
             </thead>
@@ -1974,8 +1974,8 @@ timestamp: string   # Optional: ISO-8601 modification date
         </p>
 
         {/* ROI Math Box */}
-        <div className="bg-[#F26522]/5 border border-[#F26522]/30 rounded-lg p-6 sm:p-8 my-10">
-          <p className="text-[12px] font-semibold uppercase tracking-wider text-[#F26522] mb-4">ROI Scenario — Mid-Market B2B SaaS</p>
+        <div className="bg-gray-50 border border-gray-200 rounded-lg p-6 sm:p-8 my-10">
+          <p className="text-[12px] font-semibold uppercase tracking-wider text-[#2E8C68] mb-4">ROI Scenario — Mid-Market B2B SaaS</p>
           <p className="text-[15px] sm:text-[16px] leading-[1.8] text-gray-800 mb-4">
             A B2B SaaS company on a <strong>$6,000/month Gobiya retainer</strong> typically reaches <strong>8–14 qualified pipeline opportunities per month</strong> by the end of month six, driven by high-intent keyword clusters, schema-optimized service pages, and AI citation placement across Perplexity and Google AI Mode.
           </p>
@@ -2043,7 +2043,7 @@ timestamp: string   # Optional: ISO-8601 modification date
               <ul className="space-y-2.5">
                 {items.map((item, i) => (
                   <li key={i} className="flex items-start gap-3 text-[14px] sm:text-[15px] text-gray-700">
-                    <svg className="w-4 h-4 text-[#F26522] mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" /></svg>
+                    <svg className="w-4 h-4 text-[#2E8C68] mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" /></svg>
                     {item}
                   </li>
                 ))}
@@ -2103,7 +2103,7 @@ timestamp: string   # Optional: ISO-8601 modification date
             { label: 'Existing domain with resolvable technical debt', body: 'A domain that has been operating for 2+ years typically has technical issues suppressing its earned authority. Resolving crawl errors, improving CWV scores, and deploying correct schema often produces measurable ranking improvement within 60–90 days — faster than building authority from scratch.' },
           ].map(({ label, body }, i) => (
             <li key={i} className="flex gap-4 items-start">
-              <span className="w-6 h-6 rounded-full bg-[#F26522] text-white text-[12px] font-bold flex items-center justify-center shrink-0 mt-0.5">{i + 1}</span>
+              <span className="w-6 h-6 rounded-full bg-[#111827] text-white text-[12px] font-bold flex items-center justify-center shrink-0 mt-0.5">{i + 1}</span>
               <div>
                 <p className="text-[15px] sm:text-[16px] font-semibold text-gray-900 mb-1">{label}</p>
                 <p className="text-[14px] sm:text-[15px] leading-[1.7] text-gray-600">{body}</p>
@@ -2129,9 +2129,9 @@ timestamp: string   # Optional: ISO-8601 modification date
         <div className="bg-gray-50 border border-gray-200 rounded-lg p-6 sm:p-8 my-10">
           <p className="text-[14px] font-semibold uppercase tracking-wider text-gray-500 mb-4">Related reading</p>
           <ul className="space-y-3 text-[15px]">
-            <li><a href="/insights/best-seo-agency-for-b2b-brands" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">Best SEO Agency for B2B: Full Evaluation Checklist →</a></li>
-            <li><a href="/insights/b2b-organic-traffic-growth" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">B2B Organic Traffic Growth: Why Traffic and Pipeline Decoupled in 2026 →</a></li>
-            <li><a href="/performance/seo-discoverability-agency" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">Gobiya SEO &amp; Discoverability: How the Engagement Works →</a></li>
+            <li><a href="/insights/best-seo-agency-for-b2b-brands" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">Best SEO Agency for B2B: Full Evaluation Checklist →</a></li>
+            <li><a href="/insights/b2b-organic-traffic-growth" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">B2B Organic Traffic Growth: Why Traffic and Pipeline Decoupled in 2026 →</a></li>
+            <li><a href="/performance/seo-discoverability-agency" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">Gobiya SEO &amp; Discoverability: How the Engagement Works →</a></li>
           </ul>
         </div>
 
@@ -2203,7 +2203,7 @@ timestamp: string   # Optional: ISO-8601 modification date
 
         <h2 id="pipeline-math" className="text-2xl font-semibold text-gray-900 mt-10 mb-4 font-display">1. The Session-to-Pipeline Disconnect</h2>
         <p className="mb-6">
-          <a href="/insights/b2b-organic-traffic-growth" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">B2B organic search programs</a> fail when they optimize for traffic volume instead of pipeline velocity. High-volume informational queries (e.g., "what is data compliance") drive sessions but do not yield sales pipeline. Predictable pipeline generation requires targeting commercial-intent queries linked directly to business outcomes.
+          <a href="/insights/b2b-organic-traffic-growth" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">B2B organic search programs</a> fail when they optimize for traffic volume instead of pipeline velocity. High-volume informational queries (e.g., "what is data compliance") drive sessions but do not yield sales pipeline. Predictable pipeline generation requires targeting commercial-intent queries linked directly to business outcomes.
         </p>
         <p className="mb-6">
           Pipeline generation is governed by the following funnel equation:
@@ -2391,10 +2391,10 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           How does LLM company verification work? When AI models crawl the web to reference B2B details, they do not just trust your website. They cross-reference external databases to confirm who you are. If your entity footprint is inconsistent across these verification channels, AI models will ignore you. Here is the source hierarchy they actually use.
         </p>
 
-        <div className="border-l-4 border-[#F26522] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
+        <div className="border-l-4 border-[#111827] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
           <img src="/images/steve-portrait-thumb.webp" alt="Steve Martin" width="48" height="48" loading="lazy" className="w-12 h-12 object-cover rounded-full border border-white/10 shrink-0" />
           <div>
-            <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-1 font-sans">Steve's Take</p>
+            <p className="text-[12px] uppercase tracking-wider text-[#2E8C68] font-semibold mb-1 font-sans">Steve's Take</p>
             <p className="text-[15px] italic text-white leading-relaxed font-sans">
               "AI systems prioritize structured reference platforms like Wikidata and professional directories like LinkedIn. If your details don't match exactly across them, models trigger a 'hallucination penalty' and exclude you."
             </p>
@@ -2404,15 +2404,15 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
         <div className="border border-gray-200 p-6 bg-gray-50 mb-8 rounded-lg">
           <ul className="space-y-4 pl-0">
             <li className="flex items-start gap-3 text-[16px] sm:text-[17px] leading-[1.6] text-gray-800">
-              <span className="mt-1.5 w-2 h-2 rounded-full bg-[#F26522] shrink-0" />
+              <span className="mt-1.5 w-2 h-2 rounded-full bg-[#111827] shrink-0" />
               <span><strong>~5% ceiling</strong> — Even the single most-cited domain on any AI platform rarely exceeds 5% of total citations; verification is distributed across a set of sources, not won at any one (Evertune analysis of 200M prompts, 2026).</span>
             </li>
             <li className="flex items-start gap-3 text-[16px] sm:text-[17px] leading-[1.6] text-gray-800">
-              <span className="mt-1.5 w-2 h-2 rounded-full bg-[#F26522] shrink-0" />
+              <span className="mt-1.5 w-2 h-2 rounded-full bg-[#111827] shrink-0" />
               <span><strong>LinkedIn #1</strong> — The most-cited domain for professional and B2B queries across all six major AI platforms in 2026, the biggest authority mover of the year (Profound tracking, 2026).</span>
             </li>
             <li className="flex items-start gap-3 text-[16px] sm:text-[17px] leading-[1.6] text-gray-800">
-              <span className="mt-1.5 w-2 h-2 rounded-full bg-[#F26522] shrink-0" />
+              <span className="mt-1.5 w-2 h-2 rounded-full bg-[#111827] shrink-0" />
               <span><strong>Silence over citation</strong> — When a company's information is inconsistent or unverifiable across sources, AI models tend to omit the company rather than risk citing wrong information — the "hallucination penalty" that turns fragmented entity data into invisibility (multiple 2026 sources).</span>
             </li>
           </ul>
@@ -2427,7 +2427,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
         </p>
 
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
-          This article covers exactly <a href="/insights/what-is-generative-engine-optimization-and-how-does-it-work" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">which data sources LLMs use</a> to verify B2B company information, the tiers of trust among them, how the engines cross-reference sources to resolve and verify a company's identity, why consistency across sources is the real lever, and how to structure a verifiable presence across the verification set.
+          This article covers exactly <a href="/insights/what-is-generative-engine-optimization-and-how-does-it-work" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">which data sources LLMs use</a> to verify B2B company information, the tiers of trust among them, how the engines cross-reference sources to resolve and verify a company's identity, why consistency across sources is the real lever, and how to structure a verifiable presence across the verification set.
         </p>
 
         {/* ── TABLE OF CONTENTS ── */}
@@ -2450,8 +2450,8 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
               { id: 'faqs', label: 'Frequently Asked Questions (FAQ)' }
             ].map(({ id, label }) => (
               <li key={id} className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#F26522] shrink-0" />
-                <a href={'#' + id} className="hover:text-[#F26522] transition-colors">{label}</a>
+                <span className="w-1.5 h-1.5 rounded-full bg-[#111827] shrink-0" />
+                <a href={'#' + id} className="hover:text-gray-900 transition-colors">{label}</a>
               </li>
             ))}
           </ul>
@@ -2464,7 +2464,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           The starting point is understanding why verification happens at all. An LLM generating an answer about a company faces a basic problem: it cannot simply trust the company's own marketing claims, because every company claims to be the best, the leader, the most trusted. Marketing copy is, from the model's perspective, low-evidence — self-interested, unverifiable, and present for every competitor equally. So the model does what a careful researcher does: it looks for external corroboration. It checks the company's claims against sources that are harder to manipulate and more likely to reflect reality — third-party databases, editorial coverage, review platforms, structured reference sources.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          The governing principle, stated plainly across the 2026 GEO research, is that LLMs cite entities they can verify, not pages they can merely find. Finding your page is necessary but not sufficient. The model has to be able to <a href="/capabilities/semantic-search-intelligence" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">resolve your company as a distinct, real entity</a>, confirm its key attributes (what it does, what category it's in, where it's located, who it serves) against external sources, and reach enough confidence to include it in an answer. This is why entity verification, not content production, is the actual foundation of B2B LLM visibility — and why the external source set matters more than most companies realize.
+          The governing principle, stated plainly across the 2026 GEO research, is that LLMs cite entities they can verify, not pages they can merely find. Finding your page is necessary but not sufficient. The model has to be able to <a href="/capabilities/semantic-search-intelligence" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">resolve your company as a distinct, real entity</a>, confirm its key attributes (what it does, what category it's in, where it's located, who it serves) against external sources, and reach enough confidence to include it in an answer. This is why entity verification, not content production, is the actual foundation of B2B LLM visibility — and why the external source set matters more than most companies realize.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
           The verification also explains the most frustrating experience in B2B LLM visibility: a company that ranks #1 on Google, gets substantial organic traffic, and produces excellent content, yet never appears when prospects ask ChatGPT for vendors in its category. The content quality and SEO aren't the problem. The problem is that the model can't confidently verify the company as an entity against its trusted sources — so it omits the company rather than risk describing it wrong. Verification is the gate, and the company never cleared it.
@@ -2480,7 +2480,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           <strong>Tier 1: Structured reference sources (Wikipedia and Wikidata).</strong> Wikipedia and its structured-data counterpart Wikidata are the gold standard for entity verification. Wikipedia is consistently the single most-cited source by ChatGPT and a primary grounding source across the major engines, in part because encyclopedic, neutral, well-cited prose is exactly what models were trained to treat as authoritative entity description. Wikidata, the structured database behind Wikipedia, feeds Google's Knowledge Graph and provides machine-readable entity facts with authoritative identifiers. For a company notable enough to have a Wikipedia article, that article is a powerful verification anchor. For companies below Wikipedia's notability threshold — most B2B companies — Wikidata is the accessible alternative: a well-maintained Wikidata item with accurate statements, sourced references, and authoritative identifiers (official website, official registries, and identifiers like ISNI or VIAF where applicable) improves entity resolution and the likelihood that LLMs correctly identify and describe the company.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          <strong>Tier 2: Professional and business databases (LinkedIn, Crunchbase, official registries).</strong> LinkedIn was the biggest authority mover of 2025-2026, climbing to become the single most-cited domain for professional and <a href="/insights/chatgpt-vs-google-for-business-discovery" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">B2B queries across all six major AI platforms</a> by early 2026. For B2B specifically, LinkedIn is foundational verification infrastructure — the company page, the employee presence, the leadership content. The engines weight LinkedIn content differently: ChatGPT and Google AI Mode pull the majority of their LinkedIn citations from individual member content (leaders' posts and profiles), while Perplexity pulls the majority from company pages — which means a complete, accurate company page <em>and</em> active, substantive leadership content both matter. Crunchbase provides verifiable company facts (funding, founding, leadership, category), and official business registries provide the legal-existence verification that confirms a company is real. Together this tier answers the model's "is this a real company and what are its basic facts" questions.
+          <strong>Tier 2: Professional and business databases (LinkedIn, Crunchbase, official registries).</strong> LinkedIn was the biggest authority mover of 2025-2026, climbing to become the single most-cited domain for professional and <a href="/insights/chatgpt-vs-google-for-business-discovery" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">B2B queries across all six major AI platforms</a> by early 2026. For B2B specifically, LinkedIn is foundational verification infrastructure — the company page, the employee presence, the leadership content. The engines weight LinkedIn content differently: ChatGPT and Google AI Mode pull the majority of their LinkedIn citations from individual member content (leaders' posts and profiles), while Perplexity pulls the majority from company pages — which means a complete, accurate company page <em>and</em> active, substantive leadership content both matter. Crunchbase provides verifiable company facts (funding, founding, leadership, category), and official business registries provide the legal-existence verification that confirms a company is real. Together this tier answers the model's "is this a real company and what are its basic facts" questions.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
           <strong>Tier 3: Review and category platforms (G2, Capterra, TrustRadius, Gartner Peer Insights).</strong> For B2B software and services specifically, the review platforms are where the model verifies category placement and "best for" claims. G2, Capterra, TrustRadius, and Gartner Peer Insights offer structured product data combined with verified user reviews, and AI models reference these heavily when explaining why a product is "best for" a specific use case or when listing vendors in a category. (Note the 2026 consolidation: G2 acquired Capterra, Software Advice, and GetApp from Gartner, closing in February 2026 — which concentrates a large share of B2B review-platform authority.) A complete, accurately-categorized, well-reviewed profile on the dominant review platform in a company's category is a primary verification source for that company's category membership and standing.
@@ -2489,7 +2489,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           <strong>Tier 4: High-engagement and media sources (YouTube, Reddit, industry publications).</strong> YouTube appears in a meaningful share of AI citations (roughly 18.8% of Google AI Overview citations and 13.9% of Perplexity citations in 2026 measurements), making an accurate, well-described branded channel a verification signal. Reddit is among the most-cited domains overall across several platforms, reflecting the weight engines place on authentic user discussion. Industry and trade publications that name and categorize a company consistently provide editorial corroboration. This tier provides the "what do real people and credible outlets say about this company" dimension of verification.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          <strong>Tier 5: The company's own website and structured data.</strong> The company's own site is the lowest-evidence source for <em>claims</em> (the model knows it's self-interested) but the authoritative source for <em>facts the company controls</em> — and it plays a critical technical role through structured data to help <a href="/insights/how-do-b2b-companies-use-seo-to-generate-predictable-revenue" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">generate predictable revenue</a>. The site is where the company asserts its identity; the external tiers are where the model verifies that assertion.
+          <strong>Tier 5: The company's own website and structured data.</strong> The company's own site is the lowest-evidence source for <em>claims</em> (the model knows it's self-interested) but the authoritative source for <em>facts the company controls</em> — and it plays a critical technical role through structured data to help <a href="/insights/how-do-b2b-companies-use-seo-to-generate-predictable-revenue" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">generate predictable revenue</a>. The site is where the company asserts its identity; the external tiers are where the model verifies that assertion.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
           The critical structural insight across all five tiers: no single source dominates. The Evertune analysis of 200 million prompts found that even the most-cited domain on any platform rarely exceeds 5% of total citations, with the remaining citations spread across thousands of domains — a long-tail distribution fundamentally unlike traditional SEO's winner-take-all top-ten. The implication is that verification is distributed: a company needs consistent, accurate presence across the <em>set</em> of trusted sources, not dominance of any single one.
@@ -2505,7 +2505,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           This triangulation is why consistency is the real lever. When a company's name, category, description, leadership, and core facts are consistent across Wikidata, LinkedIn, Crunchbase, G2, and its own site, the model can confidently resolve and verify the entity — the sources reinforce each other, confidence is high, and the company becomes citable. When the information is inconsistent — the company describes itself as one category on its site, another on LinkedIn, a third on G2; the leadership listed on Crunchbase doesn't match LinkedIn; the company name appears in three slightly different forms — the model's confidence drops, because it can't cleanly resolve which version is true. Fragmented or contradictory entity data makes a company harder to cite alongside well-established entities, because the system's confidence in its identity is lower.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
-          The consequence of low confidence is the single most important and least understood dynamic in B2B LLM visibility: the model tends to choose silence over citation. Faced with a company it can't confidently verify, an LLM would rather omit the company than risk stating something incorrect about it — because the engines are tuned to avoid confidently wrong answers (hallucinations). Inconsistent or unverifiable brand data effectively triggers a hallucination penalty: the model, unable to verify, stays silent. This is why a company can have excellent content and strong SEO yet remain invisible in AI answers — the inconsistency across its verification sources kept the model's confidence below the threshold for inclusion, and silence was the safe choice. We analyze these shifting SEO dynamics in our guide to <a href="/insights/b2b-organic-traffic-growth" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">B2B organic traffic growth</a>.
+          The consequence of low confidence is the single most important and least understood dynamic in B2B LLM visibility: the model tends to choose silence over citation. Faced with a company it can't confidently verify, an LLM would rather omit the company than risk stating something incorrect about it — because the engines are tuned to avoid confidently wrong answers (hallucinations). Inconsistent or unverifiable brand data effectively triggers a hallucination penalty: the model, unable to verify, stays silent. This is why a company can have excellent content and strong SEO yet remain invisible in AI answers — the inconsistency across its verification sources kept the model's confidence below the threshold for inclusion, and silence was the safe choice. We analyze these shifting SEO dynamics in our guide to <a href="/insights/b2b-organic-traffic-growth" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">B2B organic traffic growth</a>.
         </p>
 
         <h2 id="verifiable-presence" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
@@ -2524,7 +2524,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           <strong>Own the category on the dominant review platform.</strong> Maintain a complete, accurately-categorized profile on the primary review platform for the company's category (G2 for much of B2B software, with the caveat of its 2026 consolidation of Capterra and others), with accurate category tags, verified product descriptions, and a healthy review base. This is where the model verifies category membership and "best for" standing.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          <strong>Implement the technical verification layer.</strong> On the company's own site, implement Organization schema with <code>sameAs</code> properties that explicitly link to the company's authoritative profiles (Wikidata, LinkedIn, Crunchbase, G2, etc.). The <code>sameAs</code> links are the machine-readable statement "all of these profiles are the same entity as us," which directly supports the model's entity-resolution and cross-referencing. This fits into the broader <a href="/insights/seo-for-b2b-lead-generation" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">B2B lead generation SEO</a> framework some practitioners frame as EAV-E — Entity, Attribute, Value, Evidence: define the company as a clear entity, with explicit attributes, specific values, and external evidence the model can verify against. Structured, evidence-backed self-description plus <code>sameAs</code> links to corroborating sources is the technical core of verifiability.
+          <strong>Implement the technical verification layer.</strong> On the company's own site, implement Organization schema with <code>sameAs</code> properties that explicitly link to the company's authoritative profiles (Wikidata, LinkedIn, Crunchbase, G2, etc.). The <code>sameAs</code> links are the machine-readable statement "all of these profiles are the same entity as us," which directly supports the model's entity-resolution and cross-referencing. This fits into the broader <a href="/insights/seo-for-b2b-lead-generation" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">B2B lead generation SEO</a> framework some practitioners frame as EAV-E — Entity, Attribute, Value, Evidence: define the company as a clear entity, with explicit attributes, specific values, and external evidence the model can verify against. Structured, evidence-backed self-description plus <code>sameAs</code> links to corroborating sources is the technical core of verifiability.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
           <strong>Ensure cross-source consistency above all.</strong> The single highest-leverage principle: the company's name, category, description, leadership, location, and core facts must be consistent across every source in the verification set. Consistency is what lets the model resolve the entity confidently; inconsistency is what triggers the silence. A company that does nothing else but make its entity data consistent across Wikidata, LinkedIn, Crunchbase, G2, and its own structured data has done the most important part of the work.
@@ -2537,7 +2537,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           Not every provider offering LLM visibility or GEO services understands that verification, not content, is the foundation for B2B. Many focus entirely on producing more content for the company's own site — which addresses the lowest-evidence source while leaving the verification source set untouched.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
-          Start with the diagnosis. Ask a prospective provider how they'd determine <em>why</em> a company is or isn't appearing in AI answers. If the answer is purely about content production and <a href="/services/seo" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">on-site SEO</a> optimization, they're missing the entity-verification layer that actually gates B2B citation. A credible <a href="/insights/b2b-seo-agency" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">B2B SEO agency</a> audits the company's presence and consistency across the external verification sources — Wikidata, LinkedIn, Crunchbase, the relevant review platforms — and checks for the inconsistencies that trigger model silence. Ask whether they implement Organization schema with <code>sameAs</code> links to authoritative sources, since that's the technical core of machine-readable entity verification. Ask how they'd resolve an entity-consistency problem (a company described differently across its sources), since that's frequently the actual cause of invisibility. Ask whether they understand the platform-specific weighting (LinkedIn individual content for ChatGPT vs company pages for Perplexity, for instance), since one-size-fits-all approaches miss how the engines differ. Ask how they measure outcomes — credible measurement tracks whether and how the company appears across the major engines, not just on-site metrics. A real entity-verification practice works the external source set and the consistency across it. Content-only GEO produces more pages on the one source the model trusts least.
+          Start with the diagnosis. Ask a prospective provider how they'd determine <em>why</em> a company is or isn't appearing in AI answers. If the answer is purely about content production and <a href="/services/seo" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">on-site SEO</a> optimization, they're missing the entity-verification layer that actually gates B2B citation. A credible <a href="/insights/b2b-seo-agency" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">B2B SEO agency</a> audits the company's presence and consistency across the external verification sources — Wikidata, LinkedIn, Crunchbase, the relevant review platforms — and checks for the inconsistencies that trigger model silence. Ask whether they implement Organization schema with <code>sameAs</code> links to authoritative sources, since that's the technical core of machine-readable entity verification. Ask how they'd resolve an entity-consistency problem (a company described differently across its sources), since that's frequently the actual cause of invisibility. Ask whether they understand the platform-specific weighting (LinkedIn individual content for ChatGPT vs company pages for Perplexity, for instance), since one-size-fits-all approaches miss how the engines differ. Ask how they measure outcomes — credible measurement tracks whether and how the company appears across the major engines, not just on-site metrics. A real entity-verification practice works the external source set and the consistency across it. Content-only GEO produces more pages on the one source the model trusts least.
         </p>
 
                 <div className="gobiya-cta-block">
@@ -2545,7 +2545,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           Why Gobiya is positioned differently for B2B entity verification
         </h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8 font-medium">
-          Gobiya is positioned differently for B2B entity verification because we treat LLM visibility as a database integrity and code engineering challenge rather than a standard content play. We start by auditing and aligning your brand's digital footprints across Wikidata, LinkedIn, Crunchbase, and G2, locating the precise data conflicts that trigger model silence. On your site, we implement deep organization schema graphs using explicit sameAs attributes to establish machine-readable connections. Our work is guided by EAV-E (Entity, Attribute, Value, Evidence) framing and an empirical understanding of how different engines weight sources. By measuring citation share across ChatGPT, Claude, Gemini, and Perplexity via our <a href="/capabilities/generative-engine-optimization" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">Generative Engine Optimization service</a>, we help brands align their <a href="/insights/automated-b2b-sales-pipeline-seo" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">B2B sales pipeline SEO</a> to move from complete AI invisibility to consistent, authoritative citations.
+          Gobiya is positioned differently for B2B entity verification because we treat LLM visibility as a database integrity and code engineering challenge rather than a standard content play. We start by auditing and aligning your brand's digital footprints across Wikidata, LinkedIn, Crunchbase, and G2, locating the precise data conflicts that trigger model silence. On your site, we implement deep organization schema graphs using explicit sameAs attributes to establish machine-readable connections. Our work is guided by EAV-E (Entity, Attribute, Value, Evidence) framing and an empirical understanding of how different engines weight sources. By measuring citation share across ChatGPT, Claude, Gemini, and Perplexity via our <a href="/capabilities/generative-engine-optimization" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">Generative Engine Optimization service</a>, we help brands align their <a href="/insights/automated-b2b-sales-pipeline-seo" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">B2B sales pipeline SEO</a> to move from complete AI invisibility to consistent, authoritative citations.
         </p>
         </div>
 
@@ -2585,7 +2585,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           B2B companies absent from AI answers are often optimizing the wrong thing — producing more content on their own site, the source the model trusts least, while the external verification sources that actually gate citation sit incomplete and inconsistent, keeping the model's confidence below the threshold for including them at all. The shift to verification-source work isn't about producing more content. It's about building the consistent, structured, cross-corroborated entity presence that lets an AI engine confidently confirm who you are and decide you're safe to cite.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
-          Two decisions matter most. First: whether your company's core facts — name, category, description, leadership, location — are genuinely consistent across the verification source set (Wikidata, LinkedIn, Crunchbase, your category's review platform, your own structured data), or whether contradictions across those sources are quietly triggering the model to omit you. Second: whether you've actually checked how the engines describe and cite you today, and diagnosed whether your absence is a content problem or — far more likely for B2B — an <a href="/insights/brand-entity-extraction-perception-drift" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">entity-verification problem</a> that content production won't fix.
+          Two decisions matter most. First: whether your company's core facts — name, category, description, leadership, location — are genuinely consistent across the verification source set (Wikidata, LinkedIn, Crunchbase, your category's review platform, your own structured data), or whether contradictions across those sources are quietly triggering the model to omit you. Second: whether you've actually checked how the engines describe and cite you today, and diagnosed whether your absence is a content problem or — far more likely for B2B — an <a href="/insights/brand-entity-extraction-perception-drift" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">entity-verification problem</a> that content production won't fix.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
           Gobiya is a logical starting point for B2B companies that want to be verifiable — and therefore citable — in AI answers, built around auditing and aligning your entity across the sources LLMs actually verify against, implementing the structured-data layer that supports machine-readable entity resolution, and measuring how the engines describe and cite you across the major platforms. Request a verification audit, walk through how AI engines currently describe your company and where your entity data is inconsistent across the sources they check, and find out exactly what's keeping you below the citation threshold — before competitors with cleaner, more consistent entity data become the ones the engines confidently name in your category.
@@ -2594,18 +2594,18 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
         {/* ── INLINE CTA ── */}
         <div className="bg-gray-900 text-white p-6 sm:p-8 my-10 sm:my-14 flex flex-col sm:flex-row items-start sm:items-center gap-6">
           <div className="flex-1">
-            <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-2">Gobiya Service</p>
+            <p className="text-[12px] uppercase tracking-wider text-[#d1f851] font-semibold mb-2">Gobiya Service</p>
             <p className="text-[17px] sm:text-[19px] font-medium leading-snug">
               Establish a verifiable entity footprint to secure AI citations. Work with our B2B growth engineers.
             </p>
           </div>
           <a
             href="/book"
-            className="group flex items-center bg-[#F26522] hover:bg-[#e05a1a] text-white pl-5 pr-2 py-2 transition-colors duration-300 whitespace-nowrap shrink-0"
+            className="group flex items-center bg-[#d1f851] hover:bg-[#c3ea45] text-[#111827] pl-5 pr-2 py-2 transition-colors duration-300 whitespace-nowrap shrink-0"
           >
             <span className="text-[13px] font-medium mr-3">Request a Verification Audit</span>
             <div className="w-6 h-6 bg-white flex items-center justify-center">
-              <ArrowRight className="w-3.5 h-3.5 text-[#F26522] transition-transform duration-300 group-hover:-rotate-45" />
+              <ArrowRight className="w-3.5 h-3.5 text-[#111827] transition-transform duration-300 group-hover:-rotate-45" />
             </div>
           </a>
         </div>
@@ -2659,10 +2659,10 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           How does Google Knowledge Graph optimization differ from Generative Engine Optimization (GEO)? While they are often discussed as competing strategies, they are two parts of the same entity-centric framework. Knowledge Graph optimization resolves who you are, while GEO ensures AI engines cite you. Here is how they work.
         </p>
 
-        <div className="border-l-4 border-[#F26522] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
+        <div className="border-l-4 border-[#111827] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
           <img src="/images/steve-portrait-thumb.webp" alt="Steve Martin" width="48" height="48" loading="lazy" className="w-12 h-12 object-cover rounded-full border border-white/10 shrink-0" />
           <div>
-            <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-1 font-sans">Steve's Take</p>
+            <p className="text-[12px] uppercase tracking-wider text-[#2E8C68] font-semibold mb-1 font-sans">Steve's Take</p>
             <p className="text-[15px] italic text-white leading-relaxed font-sans">
               "Without a solid Knowledge Graph foundation, AI engines have low confidence in your site. Think of KG as entity verification, and GEO as optimization for extraction. You need both to win."
             </p>
@@ -2674,22 +2674,22 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           <p className="text-[14px] uppercase tracking-wider text-gray-500 font-semibold mb-4">KG vs GEO: 2026 Update</p>
           <ul className="space-y-4 pl-0">
             <li className="flex items-start gap-3 text-[16px] sm:text-[17px] leading-[1.6] text-gray-800">
-              <span className="mt-1.5 w-2 h-2 rounded-full bg-[#F26522] shrink-0" />
+              <span className="mt-1.5 w-2 h-2 rounded-full bg-[#111827] shrink-0" />
               <span><strong>2 different questions</strong> — Knowledge Graph optimization asks "does Google understand what this brand actually is?"; GEO asks "do generative engines across the ecosystem cite and recommend it?" — related work, different scope.</span>
             </li>
             <li className="flex items-start gap-3 text-[16px] sm:text-[17px] leading-[1.6] text-gray-800">
-              <span className="mt-1.5 w-2 h-2 rounded-full bg-[#F26522] shrink-0" />
+              <span className="mt-1.5 w-2 h-2 rounded-full bg-[#111827] shrink-0" />
               <span><strong>GEO depends on KG resolution</strong> — Generative-engine citation depends substantially on entities that are already resolved in the Knowledge Graph, making KG work a foundation for GEO rather than a competitor.</span>
             </li>
             <li className="flex items-start gap-3 text-[16px] sm:text-[17px] leading-[1.6] text-gray-800">
-              <span className="mt-1.5 w-2 h-2 rounded-full bg-[#F26522] shrink-0" />
+              <span className="mt-1.5 w-2 h-2 rounded-full bg-[#111827] shrink-0" />
               <span><strong>Gemini-generated Knowledge Panels</strong> — Google's Knowledge Panel descriptions, historically pulled from Wikipedia's first sentence, increasingly use Gemini-generated multi-source descriptions as of 2025-2026 — the clearest sign the entity layer and the generative layer are converging inside Google itself.</span>
             </li>
           </ul>
         </div>
 
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
-          The difference between Google Knowledge Graph optimization and <a href="/insights/what-is-generative-engine-optimization-and-how-does-it-work" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">Generative Engine Optimization (GEO)</a> is a question that trips up a lot of marketers, because the two disciplines overlap heavily, share most of their underlying techniques, and are increasingly converging — yet they're not the same thing, and treating them as interchangeable leads to muddled effort. The cleanest way to understand the relationship: Knowledge Graph optimization is the older, narrower, Google-specific discipline of getting Google to correctly understand and represent your brand as an entity — to resolve it cleanly in the Knowledge Graph and show a Knowledge Panel. GEO is the newer, broader, multi-engine discipline of getting your brand cited and recommended across all generative AI engines — ChatGPT, Claude, Perplexity, Gemini, and Google's own AI Overviews and AI Mode.
+          The difference between Google Knowledge Graph optimization and <a href="/insights/what-is-generative-engine-optimization-and-how-does-it-work" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">Generative Engine Optimization (GEO)</a> is a question that trips up a lot of marketers, because the two disciplines overlap heavily, share most of their underlying techniques, and are increasingly converging — yet they're not the same thing, and treating them as interchangeable leads to muddled effort. The cleanest way to understand the relationship: Knowledge Graph optimization is the older, narrower, Google-specific discipline of getting Google to correctly understand and represent your brand as an entity — to resolve it cleanly in the Knowledge Graph and show a Knowledge Panel. GEO is the newer, broader, multi-engine discipline of getting your brand cited and recommended across all generative AI engines — ChatGPT, Claude, Perplexity, Gemini, and Google's own AI Overviews and AI Mode.
         </p>
 
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
@@ -2706,7 +2706,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           The core question Knowledge Graph optimization answers is fundamentally different from the question keyword SEO answers. Keyword SEO asks "which phrase should this page rank for?" Knowledge Graph optimization asks "does Google understand what this brand, service, author, and topic actually <em>are</em>?" It's optimization for things (entities with defined attributes and relationships) rather than strings (text to match).
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          The work involves writing a consistent entity definition and reusing it across the site, schema, profiles, and media; implementing Organization schema with logo, URL, <code>sameAs</code> links, contact details, and founding information; creating entity-support pages for core services, founders, locations, and topic clusters; building consistent presence across the <a href="/insights/what-data-sources-do-llms-crawl-to-verify-b2b-company-information" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">structured sources</a> Google's Knowledge Graph draws on (Wikipedia, Wikidata, Crunchbase, LinkedIn, official registries); and earning the third-party mentions that signal the entity is real and notable.
+          The work involves writing a consistent entity definition and reusing it across the site, schema, profiles, and media; implementing Organization schema with logo, URL, <code>sameAs</code> links, contact details, and founding information; creating entity-support pages for core services, founders, locations, and topic clusters; building consistent presence across the <a href="/insights/what-data-sources-do-llms-crawl-to-verify-b2b-company-information" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">structured sources</a> Google's Knowledge Graph draws on (Wikipedia, Wikidata, Crunchbase, LinkedIn, official registries); and earning the third-party mentions that signal the entity is real and notable.
         </p>
 
         <h2 id="what-geo-is" className="text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
@@ -2716,10 +2716,10 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           Generative Engine Optimization is the discipline of getting content and brands cited, mentioned, and recommended within AI-generated answers across the generative ecosystem — ChatGPT, Claude, Perplexity, Gemini, Google AI Overviews and AI Mode. Where Knowledge Graph optimization is about Google's structured understanding of an entity, GEO is about being a source that generative engines synthesize from and cite when they answer questions.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          For this comparison, the relevant characteristics of GEO are its scope and its mechanism. Its scope is the entire generative ecosystem, not a single search engine's database — optimizing for ChatGPT's behavior, Perplexity's behavior, Gemini's behavior, and Google AI's behavior, each of which surfaces and cites content differently. Its mechanism is retrieval-and-citation: generative engines <a href="/insights/are-ai-search-engines-scraping-hidden-api-data-or-public-html-text-blocks" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">retrieve candidate sources</a>, synthesize answers from them, and cite the sources they drew on.
+          For this comparison, the relevant characteristics of GEO are its scope and its mechanism. Its scope is the entire generative ecosystem, not a single search engine's database — optimizing for ChatGPT's behavior, Perplexity's behavior, Gemini's behavior, and Google AI's behavior, each of which surfaces and cites content differently. Its mechanism is retrieval-and-citation: generative engines <a href="/insights/are-ai-search-engines-scraping-hidden-api-data-or-public-html-text-blocks" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">retrieve candidate sources</a>, synthesize answers from them, and cite the sources they drew on.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          The crucial point for the comparison: GEO's mechanism depends on entity resolution. Generative engines evaluate entity coverage, factual consistency, and cross-source agreement before deciding whether to cite a brand — and they can only do that for entities they can resolve and verify. This is a core finding when <a href="/insights/chatgpt-vs-google-for-business-discovery" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">evaluating Google and ChatGPT for business discovery</a>: an entity that Google's Knowledge Graph has cleanly resolved is an entity that generative engines can more confidently cite.
+          The crucial point for the comparison: GEO's mechanism depends on entity resolution. Generative engines evaluate entity coverage, factual consistency, and cross-source agreement before deciding whether to cite a brand — and they can only do that for entities they can resolve and verify. This is a core finding when <a href="/insights/chatgpt-vs-google-for-business-discovery" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">evaluating Google and ChatGPT for business discovery</a>: an entity that Google's Knowledge Graph has cleanly resolved is an entity that generative engines can more confidently cite.
         </p>
 
         {/* ── comparison table ── */}
@@ -2731,7 +2731,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
             <thead>
               <tr className="border-b border-gray-300 bg-gray-50">
                 <th className="p-4 font-semibold text-[14px]">Dimension</th>
-                <th className="p-4 font-semibold text-[14px] text-[#F26522]">Knowledge Graph Optimization</th>
+                <th className="p-4 font-semibold text-[14px] text-[#2E8C68]">Knowledge Graph Optimization</th>
                 <th className="p-4 font-semibold text-[14px]">Generative Engine Optimization (GEO)</th>
               </tr>
             </thead>
@@ -2793,7 +2793,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
             Be especially wary of guaranteed-Knowledge-Panel shortcuts. Providers promising a "guaranteed Knowledge Panel in 7 days" for a low fee are using synthetic-trust techniques — creating hundreds of fake profile pages on free wiki sites to fabricate the appearance of notability.
           </p>
           <p className="text-[16px] sm:text-[17px] leading-[1.6] text-gray-800">
-            While this may trigger a panel temporarily, Google's systems eventually detect the low-quality pattern, delete the panel, and may permanently suppress the entity. Genuine authority can't be bought; it must be built through real, consistent, verifiable presence, managed by a legitimate <a href="/insights/b2b-seo-agency" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">B2B SEO agency</a>.
+            While this may trigger a panel temporarily, Google's systems eventually detect the low-quality pattern, delete the panel, and may permanently suppress the entity. Genuine authority can't be bought; it must be built through real, consistent, verifiable presence, managed by a legitimate <a href="/insights/b2b-seo-agency" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">B2B SEO agency</a>.
           </p>
         </div>
 
@@ -2803,7 +2803,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           Why Gobiya is positioned differently for entity and generative visibility
         </h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Gobiya is positioned differently for entity and generative visibility because we treat entity resolution as a software engineering and database challenge rather than a simple SEO task. We do not engage in risky synthetic-trust shortcuts or build fake wiki profiles to force temporary Knowledge Panels that eventually get flagged. Instead, we architect verifiable, machine-readable connections. Using deep JSON-LD organization schema graphs and explicit <code>sameAs</code> mappings, we link your primary domain to authoritative datasets including Wikidata, LinkedIn, and Crunchbase. By resolving these data conflicts at the source, we build a robust entity layer. This foundation is then extended into the generative superset via our specialized <a href="/capabilities/generative-engine-optimization" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">Generative Engine Optimization service</a> and <a href="/capabilities/semantic-search-intelligence" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">semantic search intelligence</a>, optimizing your content for multi-engine retrieval and measuring your citation share across ChatGPT, Perplexity, Gemini, and Claude.
+          Gobiya is positioned differently for entity and generative visibility because we treat entity resolution as a software engineering and database challenge rather than a simple SEO task. We do not engage in risky synthetic-trust shortcuts or build fake wiki profiles to force temporary Knowledge Panels that eventually get flagged. Instead, we architect verifiable, machine-readable connections. Using deep JSON-LD organization schema graphs and explicit <code>sameAs</code> mappings, we link your primary domain to authoritative datasets including Wikidata, LinkedIn, and Crunchbase. By resolving these data conflicts at the source, we build a robust entity layer. This foundation is then extended into the generative superset via our specialized <a href="/capabilities/generative-engine-optimization" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">Generative Engine Optimization service</a> and <a href="/capabilities/semantic-search-intelligence" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">semantic search intelligence</a>, optimizing your content for multi-engine retrieval and measuring your citation share across ChatGPT, Perplexity, Gemini, and Claude.
         </p>
         </div>
 
@@ -2816,16 +2816,16 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
         </p>
         <ul className="space-y-4 pl-0 mb-8">
           <li className="flex items-start gap-3 text-[16px] sm:text-[17px] leading-[1.6] text-gray-800">
-            <span className="mt-1.5 w-2 h-2 rounded-full bg-[#F26522] shrink-0" />
+            <span className="mt-1.5 w-2 h-2 rounded-full bg-[#111827] shrink-0" />
             <span><strong>Organizations with no clean entity foundation</strong> — should prioritize the Knowledge Graph optimization foundation first. Attempting GEO without resolvable entity data is building on sand.</span>
           </li>
           <li className="flex items-start gap-3 text-[16px] sm:text-[17px] leading-[1.6] text-gray-800">
-            <span className="mt-1.5 w-2 h-2 rounded-full bg-[#F26522] shrink-0" />
-            <span><strong>Organizations with a solid entity foundation but weak AI citation</strong> — should prioritize the GEO superset — the content, cross-engine, and citation work that the entity foundation enables. This is where <a href="/insights/seo-for-b2b-lead-generation" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">SEO for B2B lead generation</a> content characteristics come into play.</span>
+            <span className="mt-1.5 w-2 h-2 rounded-full bg-[#111827] shrink-0" />
+            <span><strong>Organizations with a solid entity foundation but weak AI citation</strong> — should prioritize the GEO superset — the content, cross-engine, and citation work that the entity foundation enables. This is where <a href="/insights/seo-for-b2b-lead-generation" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">SEO for B2B lead generation</a> content characteristics come into play.</span>
           </li>
           <li className="flex items-start gap-3 text-[16px] sm:text-[17px] leading-[1.6] text-gray-800">
-            <span className="mt-1.5 w-2 h-2 rounded-full bg-[#F26522] shrink-0" />
-            <span><strong>Organizations in competitive B2B categories</strong> — should pursue both in sequence. In crowded categories, both clean entity resolution and strong generative citation are competitive necessities. This aligns with modern strategies for <a href="/insights/how-do-b2b-companies-use-seo-to-generate-predictable-revenue" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">generating predictable revenue</a> and <a href="/insights/automated-b2b-sales-pipeline-seo" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">automated B2B sales pipeline SEO</a>.</span>
+            <span className="mt-1.5 w-2 h-2 rounded-full bg-[#111827] shrink-0" />
+            <span><strong>Organizations in competitive B2B categories</strong> — should pursue both in sequence. In crowded categories, both clean entity resolution and strong generative citation are competitive necessities. This aligns with modern strategies for <a href="/insights/how-do-b2b-companies-use-seo-to-generate-predictable-revenue" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">generating predictable revenue</a> and <a href="/insights/automated-b2b-sales-pipeline-seo" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">automated B2B sales pipeline SEO</a>.</span>
           </li>
         </ul>
 
@@ -2848,17 +2848,17 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
 
         {/* ── dynamic callout ── */}
         <div className="bg-[#111] text-white p-8 sm:p-10 my-10 sm:my-14 rounded-lg">
-          <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-3">Audit Your Visibility</p>
+          <p className="text-[12px] uppercase tracking-wider text-[#2E8C68] font-semibold mb-3">Audit Your Visibility</p>
           <p className="text-[18px] sm:text-[20px] font-medium leading-snug mb-6">
             Find out exactly where your entity foundation and your generative visibility stand today.
           </p>
           <a
             href="/book"
-            className="group inline-flex items-center bg-[#F26522] hover:bg-[#e05a1a] text-white pl-5 pr-2 py-2 transition-colors duration-300 whitespace-nowrap"
+            className="group inline-flex items-center bg-[#d1f851] hover:bg-[#c3ea45] text-[#111827] pl-5 pr-2 py-2 transition-colors duration-300 whitespace-nowrap"
           >
             <span className="text-[13px] font-medium mr-3">Request an entity-and-generative assessment</span>
             <div className="w-6 h-6 bg-white flex items-center justify-center">
-              <span className="text-[#F26522] transform group-hover:translate-x-0.5 transition-transform duration-300 font-bold">→</span>
+              <span className="text-[#2E8C68] transform group-hover:translate-x-0.5 transition-transform duration-300 font-bold">→</span>
             </div>
           </a>
         </div>
@@ -2975,17 +2975,17 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
             { stat: '93%', label: 'Google AI Mode searches that end without an external click', source: 'Semrush tracking, Q2 2026' },
           ].map(({ stat, label, source }, i) => (
             <div key={i} className="bg-gray-50 border border-gray-200 rounded-lg p-5">
-              <p className="text-[2rem] font-bold text-[#F26522] leading-none mb-2">{stat}</p>
+              <p className="text-[2rem] font-bold text-[#2E8C68] leading-none mb-2">{stat}</p>
               <p className="text-[14px] text-gray-700 leading-[1.5] mb-1">{label}</p>
               <p className="text-[11px] text-gray-400 uppercase tracking-wide">{source}</p>
             </div>
           ))}
         </div>
 
-        <div className="border-l-4 border-[#F26522] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
+        <div className="border-l-4 border-[#111827] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
           <img src="/images/steve-portrait-thumb.webp" alt="Steve Martin" width="48" height="48" loading="lazy" className="w-12 h-12 object-cover rounded-full border border-white/10 shrink-0" />
           <div>
-            <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-1 font-sans">Steve's Take</p>
+            <p className="text-[12px] uppercase tracking-wider text-[#2E8C68] font-semibold mb-1 font-sans">Steve's Take</p>
             <p className="text-[15px] italic text-white leading-relaxed font-sans">
               "Google brings traffic; ChatGPT brings buyers. Traditional SEO targets keywords to drive clicks, while AI search requires you to establish authority so the model recommends you directly."
             </p>
@@ -3013,8 +3013,8 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
               { id: 'faqs', label: 'Frequently Asked Questions (FAQ)' }
             ].map(({ id, label }) => (
               <li key={id} className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#F26522] shrink-0" />
-                <a href={`#${id}`} className="hover:text-[#F26522] transition-colors">{label}</a>
+                <span className="w-1.5 h-1.5 rounded-full bg-[#111827] shrink-0" />
+                <a href={`#${id}`} className="hover:text-gray-900 transition-colors">{label}</a>
               </li>
             ))}
           </ul>
@@ -3042,7 +3042,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           Google processes roughly 99 to 136 billion monthly visits versus ChatGPT's 4 to 5.6 billion. If raw traffic volume is the only metric that matters, Google wins by a margin that isn't close. But the clicks-per-visit metric changes the picture significantly: ChatGPT users click an average of 1.4 external links per session, compared to 0.6 from Google users, according to Semrush's 2024 platform behavior report.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Google is also cannibalizing its own click traffic faster than most brands have accounted for. When Google shows an AI Overview, organic CTR drops to 8% from a baseline of 15% without one. A Seer Interactive study found that CTR falls from 1.76% to 0.61% for queries with AI Overviews, a 61% decline. By Q2 2026, 93% of searches in Google's full AI Mode ended without an external click, per Semrush tracking data. These figures span a range of commercial and informational query categories, not just niche or long-tail searches. To understand how updates impact visibility, check out our guide on <a href="/insights/can-a-site-fully-recover-from-a-google-core-update" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">algorithmic traffic recovery</a>.
+          Google is also cannibalizing its own click traffic faster than most brands have accounted for. When Google shows an AI Overview, organic CTR drops to 8% from a baseline of 15% without one. A Seer Interactive study found that CTR falls from 1.76% to 0.61% for queries with AI Overviews, a 61% decline. By Q2 2026, 93% of searches in Google's full AI Mode ended without an external click, per Semrush tracking data. These figures span a range of commercial and informational query categories, not just niche or long-tail searches. To understand how updates impact visibility, check out our guide on <a href="/insights/can-a-site-fully-recover-from-a-google-core-update" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">algorithmic traffic recovery</a>.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
           The conversion quality edge belongs to AI channels, but the volume base still belongs to Google. A brand that abandons one for the other leaves both value pools on the table. The right response isn't to pick a channel. It's to engineer visibility in both, using two different technical playbooks that happen to share a common foundation.
@@ -3053,13 +3053,13 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           How AI assistants decide which businesses to surface
         </h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Standard ChatGPT draws answers from its training data, which has a knowledge cutoff and no live business listings. Browse-enabled ChatGPT retrieves from current web sources, but what it retrieves depends entirely on what's been indexed and how clearly that content signals the brand's authority and relevance. For a useful primer on how ChatGPT sources and updates information, see this explainer on <a href="https://www.scribbr.com/frequently-asked-questions/chatgpt-information/" target="_blank" rel="noopener noreferrer" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">how ChatGPT gets its information</a>. For local business queries, observed patterns and source analysis indicate ChatGPT's retrieval mix typically includes business websites, directory mentions, and review data. Many businesses have optimized for none of these layers with AI retrieval in mind.
+          Standard ChatGPT draws answers from its training data, which has a knowledge cutoff and no live business listings. Browse-enabled ChatGPT retrieves from current web sources, but what it retrieves depends entirely on what's been indexed and how clearly that content signals the brand's authority and relevance. For a useful primer on how ChatGPT sources and updates information, see this explainer on <a href="https://www.scribbr.com/frequently-asked-questions/chatgpt-information/" target="_blank" rel="noopener noreferrer" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">how ChatGPT gets its information</a>. For local business queries, observed patterns and source analysis indicate ChatGPT's retrieval mix typically includes business websites, directory mentions, and review data. Many businesses have optimized for none of these layers with AI retrieval in mind.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Entity signals are the currency of AI citation. Structured data, consistent NAP (name, address, phone) across all web properties, schema markup on service and FAQ pages, and corroborating mentions from authoritative third-party sources are what tell AI systems a business is real, credible, and relevant. The most effective schema types for business citation are Organization, LocalBusiness, FAQPage, and Service markup implemented in JSON-LD. For traditional search integration, we detail these in our guide on <a href="/services/seo" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">SEO architectures</a>. For practical guidance on markup specifically oriented toward AI retrieval, review best practices for <a href="https://www.seoptimer.com/blog/schema-markup-for-ai-search/" target="_blank" rel="noopener noreferrer" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">schema markup for AI search</a>. AI citation mechanics reward entity clarity over keyword density, the opposite of how most brands have been trained to think about optimization.
+          Entity signals are the currency of AI citation. Structured data, consistent NAP (name, address, phone) across all web properties, schema markup on service and FAQ pages, and corroborating mentions from authoritative third-party sources are what tell AI systems a business is real, credible, and relevant. The most effective schema types for business citation are Organization, LocalBusiness, FAQPage, and Service markup implemented in JSON-LD. For traditional search integration, we detail these in our guide on <a href="/services/seo" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">SEO architectures</a>. For practical guidance on markup specifically oriented toward AI retrieval, review best practices for <a href="https://www.seoptimer.com/blog/schema-markup-for-ai-search/" target="_blank" rel="noopener noreferrer" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">schema markup for AI search</a>. AI citation mechanics reward entity clarity over keyword density, the opposite of how most brands have been trained to think about optimization.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
-          Without intentional <a href="/insights/what-is-generative-engine-optimization-and-how-does-it-work" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">entity engineering</a>, a brand doesn't exist in the knowledge layer that AI assistants draw from. This isn't a content volume problem. It's a signal architecture problem. Brands that address this now are locking in AI-native visibility before their competitors recognize the gap. One documented 12-week GEO experiment on a B2B company showed a 16.5% appearance rate across relevant AI responses and 42 cited mentions after just six weeks of structured entity work, a useful early benchmark, though the study focused on visibility rather than revenue attribution. The window for first-mover advantage is open, though the pace of adoption suggests it won't stay that way.
+          Without intentional <a href="/insights/what-is-generative-engine-optimization-and-how-does-it-work" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">entity engineering</a>, a brand doesn't exist in the knowledge layer that AI assistants draw from. This isn't a content volume problem. It's a signal architecture problem. Brands that address this now are locking in AI-native visibility before their competitors recognize the gap. One documented 12-week GEO experiment on a B2B company showed a 16.5% appearance rate across relevant AI responses and 42 cited mentions after just six weeks of structured entity work, a useful early benchmark, though the study focused on visibility rather than revenue attribution. The window for first-mover advantage is open, though the pace of adoption suggests it won't stay that way.
         </p>
 
         {/* ── SECTION 4 ── */}
@@ -3067,10 +3067,10 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           Local discovery and the Google Business Profile blind spot
         </h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Google Business Profile is built for proximity-based discovery: local packs, Maps placements, direction requests, and phone clicks from someone nearby. An <a href="/insights/google-business-profile-optimization" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">optimized GBP profile</a> can improve Discovery search visibility, the scenario where a customer searches for a service category rather than a specific business name, though the impact varies by category competitiveness and market. For transactional, location-ready intent, GBP remains one of the strongest local tools available.
+          Google Business Profile is built for proximity-based discovery: local packs, Maps placements, direction requests, and phone clicks from someone nearby. An <a href="/insights/google-business-profile-optimization" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">optimized GBP profile</a> can improve Discovery search visibility, the scenario where a customer searches for a service category rather than a specific business name, though the impact varies by category competitiveness and market. For transactional, location-ready intent, GBP remains one of the strongest local tools available.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          When a customer asks ChatGPT "who's the best commercial HVAC contractor in my area," the assistant doesn't pull a live map. It synthesizes an answer from whatever structured, machine-readable information it can access about relevant businesses in that category. A complete GBP profile doesn't automatically transfer into that synthesis layer. If you want to explore technical approaches for connecting business listings into conversational models, this guide on <a href="https://windsor.ai/how-to-connect-google-business-profile-to-chatgpt/" target="_blank" rel="noopener noreferrer" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">how to connect Google Business Profile to ChatGPT</a> is a useful starting point. ChatGPT-style prompts for local discovery tend to be longer and more conversational than Google queries, phrased as "recommend a contractor near me for..." rather than "HVAC contractor near me", and the retrieval logic behind each is completely different.
+          When a customer asks ChatGPT "who's the best commercial HVAC contractor in my area," the assistant doesn't pull a live map. It synthesizes an answer from whatever structured, machine-readable information it can access about relevant businesses in that category. A complete GBP profile doesn't automatically transfer into that synthesis layer. If you want to explore technical approaches for connecting business listings into conversational models, this guide on <a href="https://windsor.ai/how-to-connect-google-business-profile-to-chatgpt/" target="_blank" rel="noopener noreferrer" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">how to connect Google Business Profile to ChatGPT</a> is a useful starting point. ChatGPT-style prompts for local discovery tend to be longer and more conversational than Google queries, phrased as "recommend a contractor near me for..." rather than "HVAC contractor near me", and the retrieval logic behind each is completely different.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
           In competitive service categories, a business with weaker GBP signals but stronger entity architecture can dominate AI-generated recommendations while ranking below a competitor on traditional Google Maps. These are two different optimization targets requiring two different technical approaches. Brands that have only optimized for local Google visibility are effectively invisible when customers shift their discovery query to a conversational AI assistant.
@@ -3109,7 +3109,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
         </p>
 
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
-          This is where Gobiya's <a href="/services/geo-optimization" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">Generative Engine Optimization service</a> operates: diagnosing the entity signal gaps that keep a brand out of AI-generated answers and rebuilding the authority architecture so the brand gets recommended natively. The work is forensic, systematic, and measurable, a different category from publishing more blog content and hoping for the best.
+          This is where Gobiya's <a href="/services/geo-optimization" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">Generative Engine Optimization service</a> operates: diagnosing the entity signal gaps that keep a brand out of AI-generated answers and rebuilding the authority architecture so the brand gets recommended natively. The work is forensic, systematic, and measurable, a different category from publishing more blog content and hoping for the best.
         </p>
 
         {/* ── SECTION 6 ── */}
@@ -3117,13 +3117,13 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           The window to move first is still open
         </h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Google and ChatGPT-style assistants serve different customer intents, reward different technical signals, and require different optimization strategies. Treating them as the same channel is how brands end up invisible in both. Google still owns the volume base, but its click traffic is contracting sharply as AI Overviews and AI Mode absorb more queries without sending users anywhere. For a broader discussion of the changing dynamics between AI search and traditional search engines, see this analysis of <a href="https://growth-engines.com/insights/seo-aeo/ai-search-vs-google/" target="_blank" rel="noopener noreferrer" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">AI search vs Google</a>. AI assistants own the conversion quality edge, but only for brands that have done the entity engineering work to earn a place in their answers.
+          Google and ChatGPT-style assistants serve different customer intents, reward different technical signals, and require different optimization strategies. Treating them as the same channel is how brands end up invisible in both. Google still owns the volume base, but its click traffic is contracting sharply as AI Overviews and AI Mode absorb more queries without sending users anywhere. For a broader discussion of the changing dynamics between AI search and traditional search engines, see this analysis of <a href="https://growth-engines.com/insights/seo-aeo/ai-search-vs-google/" target="_blank" rel="noopener noreferrer" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">AI search vs Google</a>. AI assistants own the conversion quality edge, but only for brands that have done the entity engineering work to earn a place in their answers.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
           The 4.4x conversion advantage of AI-referred visitors reflects the difference between a user who is still filtering options and a user who has already accepted a recommendation. Brands that engineer their entity signals into AI recommendation layers now are building a compounding early-mover asset. Businesses that earn AI citations first are likely to be harder to displace as AI-driven discovery becomes a more dominant channel for their customer base.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
-          When it comes to <strong>ChatGPT vs Google for business discovery</strong>, the brands that win won't be the ones that picked the right channel, they'll be the ones that engineered visibility in both. If your brand isn't showing up when customers ask an AI assistant for a recommendation in your category, a competitor may be capturing that visibility right now. Gobiya's Generative Engine Optimization service is built specifically to change that. <a href="/book" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">Reach out to Gobiya</a> to find out exactly where your brand stands in AI-generated answers today.
+          When it comes to <strong>ChatGPT vs Google for business discovery</strong>, the brands that win won't be the ones that picked the right channel, they'll be the ones that engineered visibility in both. If your brand isn't showing up when customers ask an AI assistant for a recommendation in your category, a competitor may be capturing that visibility right now. Gobiya's Generative Engine Optimization service is built specifically to change that. <a href="/book" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">Reach out to Gobiya</a> to find out exactly where your brand stands in AI-generated answers today.
         </p>
 
         {/* ── COMMON MISTAKES ── */}
@@ -3148,18 +3148,18 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
         {/* ── INLINE CTA ── */}
         <div className="bg-gray-900 text-white p-6 sm:p-8 my-10 sm:my-14 flex flex-col sm:flex-row items-start sm:items-center gap-6">
           <div className="flex-1">
-            <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-2">Gobiya Service</p>
+            <p className="text-[12px] uppercase tracking-wider text-[#d1f851] font-semibold mb-2">Gobiya Service</p>
             <p className="text-[17px] sm:text-[19px] font-medium leading-snug">
               Optimize your brand's presence in AI-generated search engines and recommendations.
             </p>
           </div>
           <a
             href="/services/geo-optimization"
-            className="group flex items-center bg-[#F26522] hover:bg-[#e05a1a] text-white pl-5 pr-2 py-2 transition-colors duration-300 whitespace-nowrap shrink-0"
+            className="group flex items-center bg-[#d1f851] hover:bg-[#c3ea45] text-[#111827] pl-5 pr-2 py-2 transition-colors duration-300 whitespace-nowrap shrink-0"
           >
             <span className="text-[13px] font-medium mr-3">Generative Engine Optimization</span>
             <div className="w-6 h-6 bg-white flex items-center justify-center">
-              <ArrowRight className="w-3.5 h-3.5 text-[#F26522] transition-transform duration-300 group-hover:-rotate-45" />
+              <ArrowRight className="w-3.5 h-3.5 text-[#111827] transition-transform duration-300 group-hover:-rotate-45" />
             </div>
           </a>
         </div>
@@ -3236,18 +3236,18 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
             { stat: '6mo–2yr', label: 'Realistic recovery timeline for a core update algorithmic suppression — often tied to the next update cycle', source: 'Industry consensus, 2026' },
             { stat: '3 types', label: 'Most common manual action categories: unnatural links, thin content, and scaled content abuse', source: 'Google Spam Policies, 2026' },
           ].map(({ stat, label, source }) => (
-            <div key={stat} className="border border-[#F26522]/30 bg-[#F26522]/5 p-6">
-              <p className="text-4xl font-bold text-[#F26522] mb-2 font-display">{stat}</p>
+            <div key={stat} className="border border-gray-200 bg-gray-50 p-6">
+              <p className="text-4xl font-bold text-[#2E8C68] mb-2 font-display">{stat}</p>
               <p className="text-[14px] text-gray-900 leading-snug mb-1">{label}</p>
               <p className="text-[11px] uppercase tracking-wider text-gray-500">{source}</p>
             </div>
           ))}
         </div>
 
-        <div className="border-l-4 border-[#F26522] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
+        <div className="border-l-4 border-[#111827] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
           <img src="/images/steve-portrait-thumb.webp" alt="Steve Martin" width="48" height="48" loading="lazy" className="w-12 h-12 object-cover rounded-full border border-white/10 shrink-0" />
           <div>
-            <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-1 font-sans">Steve's Take</p>
+            <p className="text-[12px] uppercase tracking-wider text-[#2E8C68] font-semibold mb-1 font-sans">Steve's Take</p>
             <p className="text-[15px] italic text-white leading-relaxed font-sans">
               "If Google Search Console displays 'No issues detected,' stop submitting reconsideration requests. There is no human on the other side to read them. Focus on lifting your content quality instead."
             </p>
@@ -3277,8 +3277,8 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
               { id: 'faqs', label: 'Frequently Asked Questions (FAQ)' }
             ].map(({ id, label }) => (
               <li key={id} className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#F26522] shrink-0" />
-                <a href={`#${id}`} className="hover:text-[#F26522] transition-colors">{label}</a>
+                <span className="w-1.5 h-1.5 rounded-full bg-[#111827] shrink-0" />
+                <a href={`#${id}`} className="hover:text-gray-900 transition-colors">{label}</a>
               </li>
             ))}
           </ul>
@@ -3295,7 +3295,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
             'Search Console → Security & Manual Actions — The single free, instant check that tells you which one you have: a notification means manual; "No issues detected" means algorithmic.'
           ].map((item, idx) => (
             <li key={idx} className="flex items-start gap-3 text-[16px] sm:text-[17px] leading-[1.6] text-gray-800">
-              <span className="mt-1.5 w-2 h-2 rounded-full bg-[#F26522] shrink-0" />
+              <span className="mt-1.5 w-2 h-2 rounded-full bg-[#111827] shrink-0" />
               {item}
             </li>
           ))}
@@ -3324,7 +3324,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           The notification appears in Google Search Console under Security & Manual Actions → Manual Actions. This is the single most useful fact about manual actions: there is no guesswork. The notification states the violation type (unnatural links to your site, unnatural links from your site, thin content with little or no added value, pure spam, cloaking, sneaky redirects, scaled content abuse, user-generated spam, and others) and identifies the affected pages or whether the action is sitewide. You know exactly what the problem is and where it applies, because Google has told you in plain language.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
-          Common manual action triggers in 2026 include unnatural inbound or outbound links (link schemes, paid links passing PageRank, large-scale link manipulation), thin content with little added value, pure spam (aggressive spam techniques, auto-generated gibberish), cloaking and sneaky redirects (showing different content to Google than to users), scaled content abuse (mass-produced low-value content, frequently AI-generated and detailed in our <a href="/insights/google-manual-action-removal-agency-caused-penalty" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">agency-caused penalty case guide</a>), and user-generated spam (spammy comments, forum posts, profile spam). Each violation type has a specific remediation, and the recovery requires fixing the specific thing the notification names.
+          Common manual action triggers in 2026 include unnatural inbound or outbound links (link schemes, paid links passing PageRank, large-scale link manipulation), thin content with little added value, pure spam (aggressive spam techniques, auto-generated gibberish), cloaking and sneaky redirects (showing different content to Google than to users), scaled content abuse (mass-produced low-value content, frequently AI-generated and detailed in our <a href="/insights/google-manual-action-removal-agency-caused-penalty" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">agency-caused penalty case guide</a>), and user-generated spam (spammy comments, forum posts, profile spam). Each violation type has a specific remediation, and the recovery requires fixing the specific thing the notification names.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
           The recovery path for a manual action is procedural and well-defined: fully fix the violation the notification identifies (partial fixes get reconsideration requests rejected), document the remediation, and submit a reconsideration request through Search Console. A human reviewer then evaluates whether you've actually fixed the problem, and if you have, lifts the action. Manual actions clear relatively quickly once properly remediated — typically 10 to 30 days, or 2 to 4 weeks after the reconsideration request — and you receive a notification confirming the action has been removed. The reconsideration request is the defining feature of manual action recovery: it exists only for manual actions, because only manual actions involve a human decision that another human can be asked to reconsider.
@@ -3341,10 +3341,10 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           A terminology note worth making, because it affects how you think about recovery: Google itself does not technically classify algorithmic adjustments as "penalties." A penalty implies punishment for a violation. A core update, by contrast, is a re-evaluation of relative quality — your site didn't necessarily do anything wrong; the ranking system reassessed which content best serves the queries and concluded other content does it better. "Algorithmic penalty" is common usage and everyone understands what it means, but the more accurate framing is "algorithmic suppression" or "algorithmic re-evaluation," and that framing matters because it shapes the recovery: you're not removing a punishment, you're re-earning a position.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
-          Algorithmic suppressions come from several systems. Core updates (like the March 2026 core update) are broad re-evaluations of content quality and relevance across the entire web — purely algorithmic, no human involved. To understand the mechanics of these events, explore our guide on <a href="/insights/can-a-site-fully-recover-from-a-google-core-update" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">algorithmic traffic recovery</a>. The Helpful Content system (now folded into core ranking) evaluates whether content was created primarily for people or for search engines, and catches sites publishing large volumes of low-value or AI-generated content. SpamBrain, Google's AI-based spam detection system, handles most spam detection algorithmically (though the Search Quality team also issues manual actions for severe cases). Link-based algorithmic systems devalue manipulative link patterns automatically. Each of these can suppress a site's rankings without any notification.
+          Algorithmic suppressions come from several systems. Core updates (like the March 2026 core update) are broad re-evaluations of content quality and relevance across the entire web — purely algorithmic, no human involved. To understand the mechanics of these events, explore our guide on <a href="/insights/can-a-site-fully-recover-from-a-google-core-update" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">algorithmic traffic recovery</a>. The Helpful Content system (now folded into core ranking) evaluates whether content was created primarily for people or for search engines, and catches sites publishing large volumes of low-value or AI-generated content. SpamBrain, Google's AI-based spam detection system, handles most spam detection algorithmically (though the Search Quality team also issues manual actions for severe cases). Link-based algorithmic systems devalue manipulative link patterns automatically. Each of these can suppress a site's rankings without any notification.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
-          The recovery path for an algorithmic suppression is substantive, not procedural. There is no reconsideration request to submit — there's no manual action to reconsider. Recovery requires identifying what the algorithm is suppressing you for (usually content quality, search intent mismatch, weak E-E-A-T signals, link quality, or some combination), fixing it substantively, and waiting for Google to recrawl and re-evaluate. The timeline is much longer than for manual actions — weeks to months for partial recovery, often 6 months to 2 years for full recovery, and frequently the recovery doesn't fully register until the next core update re-runs the evaluation with your improvements factored in. The wait-for-the-next-cycle dynamic is the defining feature of algorithmic recovery, and it's why algorithmic recovery is slower and less certain than manual action recovery. A detailed breakdown of how to plan and execute this timeline is documented in our <a href="/insights/seo-case-study-traffic-recovery" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">SEO case study traffic recovery</a>, which chronicles a 12-week turnaround from a major update drop.
+          The recovery path for an algorithmic suppression is substantive, not procedural. There is no reconsideration request to submit — there's no manual action to reconsider. Recovery requires identifying what the algorithm is suppressing you for (usually content quality, search intent mismatch, weak E-E-A-T signals, link quality, or some combination), fixing it substantively, and waiting for Google to recrawl and re-evaluate. The timeline is much longer than for manual actions — weeks to months for partial recovery, often 6 months to 2 years for full recovery, and frequently the recovery doesn't fully register until the next core update re-runs the evaluation with your improvements factored in. The wait-for-the-next-cycle dynamic is the defining feature of algorithmic recovery, and it's why algorithmic recovery is slower and less certain than manual action recovery. A detailed breakdown of how to plan and execute this timeline is documented in our <a href="/insights/seo-case-study-traffic-recovery" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">SEO case study traffic recovery</a>, which chronicles a 12-week turnaround from a major update drop.
         </p>
 
         {/* ── SECTION 4: The four dimensions of difference ── */}
@@ -3391,7 +3391,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           <strong>If it says "No issues detected":</strong> you do not have a manual action. Your traffic loss, if it's a Google ranking issue, is algorithmic. Your recovery path is the algorithmic path: identify what the ranking system is suppressing you for, fix it substantively, and wait for re-evaluation.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          If the Manual Actions report is clean and you've confirmed the drop isn't a manual action, the next step for an algorithmic diagnosis is to cross-reference your traffic drop date against known Google update dates (using the Google Search Status Dashboard). A drop that aligns with a confirmed core update or spam update rollout points to that update as the cause. A drop that doesn't align with any known update may indicate a technical issue, a reporting anomaly, or a more gradual algorithmic re-evaluation rather than a discrete update event. For local search visibility issues, you should instead audit for <a href="/insights/google-business-profile-optimization" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">Google Business Profile optimization</a> or suspension problems.
+          If the Manual Actions report is clean and you've confirmed the drop isn't a manual action, the next step for an algorithmic diagnosis is to cross-reference your traffic drop date against known Google update dates (using the Google Search Status Dashboard). A drop that aligns with a confirmed core update or spam update rollout points to that update as the cause. A drop that doesn't align with any known update may indicate a technical issue, a reporting anomaly, or a more gradual algorithmic re-evaluation rather than a discrete update event. For local search visibility issues, you should instead audit for <a href="/insights/google-business-profile-optimization" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">Google Business Profile optimization</a> or suspension problems.
         </p>
 
         {/* ── SECTION 6: When you have both at once ── */}
@@ -3420,7 +3420,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
             'Panic-acting before diagnosing at all — Skipping the five-minute Search Console check entirely and beginning aggressive corrective action (deleting pages, disavowing links) based on a guess about the cause.'
           ].map((item, idx) => (
             <li key={idx} className="flex items-start gap-3 text-[16px] sm:text-[17px] leading-[1.6] text-gray-800">
-              <span className="mt-1.5 w-2 h-2 rounded-full bg-[#F26522] shrink-0" />
+              <span className="mt-1.5 w-2 h-2 rounded-full bg-[#111827] shrink-0" />
               {item}
             </li>
           ))}
@@ -3440,7 +3440,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           Why Gobiya is positioned differently for penalized sites
         </h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
-          Gobiya is positioned differently for penalized sites because of our rigorous diagnostic discipline and code-level execution capability. Before recommending any action, we confirm whether the drop is a manual action or an algorithmic suppression using live Search Console diagnostics—preventing the wasted weeks of guessing. For manual actions, Gobiya offers proven <a href="/google-penalty-recovery" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">penalty recovery protocols</a> and reconsideration request writing that achieves high first-submission success. For algorithmic suppressions, we execute substantive content audits and semantic <a href="/services/seo" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">SEO architectures</a> to align entities with Google's quality framework. We sequence combined cases (manual action first, followed by algorithmic quality work) to provide a clear path to ranking restoration with honest, data-backed timelines.
+          Gobiya is positioned differently for penalized sites because of our rigorous diagnostic discipline and code-level execution capability. Before recommending any action, we confirm whether the drop is a manual action or an algorithmic suppression using live Search Console diagnostics—preventing the wasted weeks of guessing. For manual actions, Gobiya offers proven <a href="/google-penalty-recovery" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">penalty recovery protocols</a> and reconsideration request writing that achieves high first-submission success. For algorithmic suppressions, we execute substantive content audits and semantic <a href="/services/seo" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">SEO architectures</a> to align entities with Google's quality framework. We sequence combined cases (manual action first, followed by algorithmic quality work) to provide a clear path to ranking restoration with honest, data-backed timelines.
         </p>
 
         </div>
@@ -3518,18 +3518,18 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
         {/* ── INLINE CTA ── */}
         <div className="bg-gray-900 text-white p-6 sm:p-8 my-10 sm:my-14 flex flex-col sm:flex-row items-start sm:items-center gap-6">
           <div className="flex-1">
-            <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-2">Gobiya Service</p>
+            <p className="text-[12px] uppercase tracking-wider text-[#d1f851] font-semibold mb-2">Gobiya Service</p>
             <p className="text-[17px] sm:text-[19px] font-medium leading-snug">
               Recover your organic pipeline from algorithmic and manual penalties.
             </p>
           </div>
           <a
             href="/google-penalty-recovery"
-            className="group flex items-center bg-[#F26522] hover:bg-[#e05a1a] text-white pl-5 pr-2 py-2 transition-colors duration-300 whitespace-nowrap shrink-0"
+            className="group flex items-center bg-[#d1f851] hover:bg-[#c3ea45] text-[#111827] pl-5 pr-2 py-2 transition-colors duration-300 whitespace-nowrap shrink-0"
           >
             <span className="text-[13px] font-medium mr-3">Penalty Recovery Services</span>
             <div className="w-6 h-6 bg-white flex items-center justify-center">
-              <ArrowRight className="w-3.5 h-3.5 text-[#F26522] transition-transform duration-300 group-hover:-rotate-45" />
+              <ArrowRight className="w-3.5 h-3.5 text-[#111827] transition-transform duration-300 group-hover:-rotate-45" />
             </div>
           </a>
         </div>
@@ -3574,8 +3574,8 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
             <li>Google Spam Policies, 2026 — Unnatural links, thin content, scaled content abuse, and cloaking policy definitions</li>
             <li>Google Search Status Dashboard — Historical update calendar for cross-referencing traffic drop dates</li>
             <li>Google Webmaster Blog — Official guidance on reconsideration requests and the review process</li>
-            <li>Gobiya: <a href="/insights/seo-case-study-traffic-recovery" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">SEO Case Study Traffic Recovery: 320% Growth</a> — documented 12-week algorithmic recovery sequence</li>
-            <li>Gobiya: <a href="/insights/google-manual-action-removal-agency-caused-penalty" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">Google Manual Action Removal: Agency-Caused Penalty</a> — reconsideration request case walkthrough</li>
+            <li>Gobiya: <a href="/insights/seo-case-study-traffic-recovery" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">SEO Case Study Traffic Recovery: 320% Growth</a> — documented 12-week algorithmic recovery sequence</li>
+            <li>Gobiya: <a href="/insights/google-manual-action-removal-agency-caused-penalty" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">Google Manual Action Removal: Agency-Caused Penalty</a> — reconsideration request case walkthrough</li>
           </ol>
         </div>
       </>
@@ -3596,10 +3596,10 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           Generative Engine Optimization (GEO) is how brands get cited by AI engines — ChatGPT, Claude, Perplexity, Google AI Overviews — when a buyer asks a question your company should be answering. Unlike traditional SEO, which targets ranked positions in a list of blue links, GEO targets passage-level extraction inside retrieval-augmented generation (RAG) pipelines. Here is the technical playbook.
         </p>
 
-        <div className="border-l-4 border-[#F26522] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
+        <div className="border-l-4 border-[#111827] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
           <img src="/images/steve-portrait-thumb.webp" alt="Steve Martin" width="48" height="48" loading="lazy" className="w-12 h-12 object-cover rounded-full border border-white/10 shrink-0" />
           <div>
-            <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-1 font-sans">Steve's Take</p>
+            <p className="text-[12px] uppercase tracking-wider text-[#2E8C68] font-semibold mb-1 font-sans">Steve's Take</p>
             <p className="text-[15px] italic text-white leading-relaxed font-sans">
               "GEO is about passage relevance and evidence. You must structure content to be easily extracted by RAG systems, and back up your assertions with statistics so the model trusts you enough to cite you."
             </p>
@@ -3635,8 +3635,8 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
               { id: 'faqs', label: 'Frequently Asked Questions (FAQ)' }
             ].map(({ id, label }) => (
               <li key={id} className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#F26522] shrink-0" />
-                <a href={`#${id}`} className="hover:text-[#F26522] transition-colors">{label}</a>
+                <span className="w-1.5 h-1.5 rounded-full bg-[#111827] shrink-0" />
+                <a href={`#${id}`} className="hover:text-gray-900 transition-colors">{label}</a>
               </li>
             ))}
           </ul>
@@ -3653,7 +3653,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
             'Query fan-out → retrieval → synthesis → citation — The four-stage pipeline by which generative engines answer questions, and the mechanism GEO is designed to influence (multiple 2026 sources)'
           ].map((item, idx) => (
             <li key={idx} className="flex items-start gap-3 text-[16px] sm:text-[17px] leading-[1.6] text-gray-800">
-              <span className="mt-1.5 w-2 h-2 rounded-full bg-[#F26522] shrink-0" />
+              <span className="mt-1.5 w-2 h-2 rounded-full bg-[#111827] shrink-0" />
               {item}
             </li>
           ))}
@@ -3667,7 +3667,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           GEO is not just a rebranding of SEO — it's a formally defined discipline with academic origins. Researchers led by teams at Princeton University (with collaborators at IIT Delhi, Georgia Tech, and the Allen Institute for AI) formalized Generative Engine Optimization in a research paper that introduced it as a distinct optimization framework, distinct from traditional search engine optimization. The paper's central empirical finding became the foundation of the discipline: content modified to include statistics, quotations, and citations achieved 30-40% higher visibility in AI-generated responses compared to unmodified content, while keyword stuffing — the tactic that defined an earlier era of SEO — performed below baseline. The research established, with measurable evidence, that the content characteristics that earn AI citations are fundamentally different from the ones that chased keyword density, and that GEO therefore required its own framework rather than an extension of existing SEO practice.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          The terminology around the discipline hasn't fully settled. You'll see GEO referred to as AEO (Answer Engine Optimization), LLMO (Large Language Model Optimization), GSO (Generative Search Optimization), AIO (AI Optimization), or simply AI SEO. The industry uses these terms with varying degrees of precision, and they overlap substantially. The clearest way to think about the relationship: they all describe the same fundamental goal — getting your content cited, mentioned, and recommended inside AI-generated answers — but GEO has emerged as the broadest and most commonly used umbrella term for the full discipline, while AEO is sometimes used more narrowly for the specific subset focused on direct-answer extraction. To learn more about how these platforms stack up, see our analysis on <a href="/insights/chatgpt-vs-google-for-business-discovery" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">ChatGPT vs Google for business discovery</a>.
+          The terminology around the discipline hasn't fully settled. You'll see GEO referred to as AEO (Answer Engine Optimization), LLMO (Large Language Model Optimization), GSO (Generative Search Optimization), AIO (AI Optimization), or simply AI SEO. The industry uses these terms with varying degrees of precision, and they overlap substantially. The clearest way to think about the relationship: they all describe the same fundamental goal — getting your content cited, mentioned, and recommended inside AI-generated answers — but GEO has emerged as the broadest and most commonly used umbrella term for the full discipline, while AEO is sometimes used more narrowly for the specific subset focused on direct-answer extraction. To learn more about how these platforms stack up, see our analysis on <a href="/insights/chatgpt-vs-google-for-business-discovery" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">ChatGPT vs Google for business discovery</a>.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
           What makes GEO genuinely distinct from traditional SEO is the nature of what's being optimized for. Traditional SEO optimizes for a position in a ranked list — a deterministic, observable, relatively stable outcome. You rank #3 for a query, and that ranking is the same for everyone who searches it, and it changes slowly. GEO optimizes for inclusion in a synthesized, non-deterministic, variable output. Large language models are non-deterministic — ask the same question five times and you may get five different answers, citing different sources each time. There is no fixed "position" to rank in. GEO is therefore not about securing a stable rank but about maximizing the probability and frequency with which your content is retrieved and cited across the variable answers an engine generates. This is a different optimization problem with a different success metric — share of citations or "share of model" rather than ranking position — and it's why GEO required its own framework.
@@ -3704,13 +3704,13 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           One of the most common questions about GEO is whether it replaces SEO. It does not. The clearest mental model is a stack, where each layer builds on the one below it.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          <strong>SEO is the foundation.</strong> Traditional SEO produces indexation, authority, and rankings. This foundation is not optional for GEO, because the largest AI search surfaces draw their retrieval candidates from traditional search indexes — Google AI Mode draws from Google's index, Bing AI from Bing's. Traditional rankings remain, in a real sense, the entry fee to AI citation in these engines: if you don't rank and aren't indexed, your content doesn't enter the retrieval pool that AI answers are synthesized from. Strong SEO fundamentals (technical health, indexation, topical authority, quality backlinks) are the substrate GEO operates on. We detail our foundational approach in our guide to <a href="/services/seo" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">SEO services</a>.
+          <strong>SEO is the foundation.</strong> Traditional SEO produces indexation, authority, and rankings. This foundation is not optional for GEO, because the largest AI search surfaces draw their retrieval candidates from traditional search indexes — Google AI Mode draws from Google's index, Bing AI from Bing's. Traditional rankings remain, in a real sense, the entry fee to AI citation in these engines: if you don't rank and aren't indexed, your content doesn't enter the retrieval pool that AI answers are synthesized from. Strong SEO fundamentals (technical health, indexation, topical authority, quality backlinks) are the substrate GEO operates on. We detail our foundational approach in our guide to <a href="/services/seo" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">SEO services</a>.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          <strong>AEO focuses the foundation into answer extraction.</strong> Answer Engine Optimization concentrates on being cited as the direct answer — structuring content so it can be extracted cleanly into featured snippets, AI Overviews, and direct AI responses. AEO is about being the precise, extractable answer to a specific question. A site owner struggling with updates can learn about recovery in our guide on <a href="/insights/can-a-site-fully-recover-from-a-google-core-update" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">recovering from a Google core update</a>.
+          <strong>AEO focuses the foundation into answer extraction.</strong> Answer Engine Optimization concentrates on being cited as the direct answer — structuring content so it can be extracted cleanly into featured snippets, AI Overviews, and direct AI responses. AEO is about being the precise, extractable answer to a specific question. A site owner struggling with updates can learn about recovery in our guide on <a href="/insights/can-a-site-fully-recover-from-a-google-core-update" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">recovering from a Google core update</a>.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
-          <strong>GEO is the broad discipline above both.</strong> Generative Engine Optimization encompasses AEO and extends further — to share of model (how often your brand appears across the full range of AI answers in your category), sentiment management (<a href="/insights/brand-entity-extraction-perception-drift" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">how your brand is characterized when it appears</a>), and narrative control across the entire generative AI ecosystem, including the engines like ChatGPT and Claude where users go directly without starting from a search engine at all. GEO is the full-spectrum discipline of managing your brand's presence, positioning, and citation across all generative AI surfaces.
+          <strong>GEO is the broad discipline above both.</strong> Generative Engine Optimization encompasses AEO and extends further — to share of model (how often your brand appears across the full range of AI answers in your category), sentiment management (<a href="/insights/brand-entity-extraction-perception-drift" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">how your brand is characterized when it appears</a>), and narrative control across the entire generative AI ecosystem, including the engines like ChatGPT and Claude where users go directly without starting from a search engine at all. GEO is the full-spectrum discipline of managing your brand's presence, positioning, and citation across all generative AI surfaces.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
           The stack model resolves the "does GEO replace SEO" question cleanly: GEO doesn't replace SEO, it builds on it. A site with no SEO foundation has nothing for GEO to work with. A site with strong SEO but no GEO layer is retrievable but not optimized for the citation, structure, and authority signals that earn AI references. The two work together, with SEO as the necessary foundation and GEO as the layer that turns retrievability into citation.
@@ -3759,7 +3759,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           Why Gobiya is positioned differently for GEO
         </h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
-          Gobiya is positioned differently for GEO because we treat Generative Engine Optimization as a technical engineering discipline rather than a relabeled content service. We focus on the actual mechanics of AI retrieval: conducting crawler access audits (robots.txt validation for GPTBot, PerplexityBot, and others), optimizing content structure for passage-level extraction, and employing empirical statistics-and-data tactics to maximize citable elements. We track performance using share-of-citations metrics across ChatGPT, Perplexity, Claude, and Gemini rather than traditional keyword ranking grids, while orchestrating the third-party earned-media placements that feed the RAG synthesis engine. In B2B and high-consideration categories, Gobiya's clients have achieved measurable citation-share gains—such as a <a href="/case-studies/smile-center-dentistry" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">22% average increase in brand references</a> across major conversational interfaces over a 90-day period (Gobiya client account data, 2025–2026)—backed by clear entity verification and schema validation. This builds directly upon our specialized <a href="/services/geo-optimization" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">Generative Engine Optimization service</a> mapping.
+          Gobiya is positioned differently for GEO because we treat Generative Engine Optimization as a technical engineering discipline rather than a relabeled content service. We focus on the actual mechanics of AI retrieval: conducting crawler access audits (robots.txt validation for GPTBot, PerplexityBot, and others), optimizing content structure for passage-level extraction, and employing empirical statistics-and-data tactics to maximize citable elements. We track performance using share-of-citations metrics across ChatGPT, Perplexity, Claude, and Gemini rather than traditional keyword ranking grids, while orchestrating the third-party earned-media placements that feed the RAG synthesis engine. In B2B and high-consideration categories, Gobiya's clients have achieved measurable citation-share gains—such as a <a href="/case-studies/smile-center-dentistry" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">22% average increase in brand references</a> across major conversational interfaces over a 90-day period (Gobiya client account data, 2025–2026)—backed by clear entity verification and schema validation. This builds directly upon our specialized <a href="/services/geo-optimization" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">Generative Engine Optimization service</a> mapping.
         </p>
 
         </div>
@@ -3781,7 +3781,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           <strong>Content publishers and media businesses</strong> face GEO as both an opportunity and an existential question — AI synthesis can reduce click-through even when content is cited, but being the cited source preserves authority and some referral traffic, while being uncited removes the business from the conversation entirely. For publishers, GEO is about preserving relevance as the discovery layer shifts.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
-          <strong>Local and service businesses</strong> face an emerging GEO dimension as consumers ask AI tools for local recommendations, and the engines synthesize answers about which local businesses to consider — a surface most local businesses haven't yet optimized for. For these businesses, optimizing local directories is just as important as <a href="/insights/google-business-profile-optimization" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">Google Business Profile optimization</a>. For businesses targeting regional search markets, integrating these strategies with targeted <a href="/capabilities/seo-discoverability-agency/" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">on-page SEO</a> builds the localized entity signals that AI engines seek.
+          <strong>Local and service businesses</strong> face an emerging GEO dimension as consumers ask AI tools for local recommendations, and the engines synthesize answers about which local businesses to consider — a surface most local businesses haven't yet optimized for. For these businesses, optimizing local directories is just as important as <a href="/insights/google-business-profile-optimization" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">Google Business Profile optimization</a>. For businesses targeting regional search markets, integrating these strategies with targeted <a href="/capabilities/seo-discoverability-agency/" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">on-page SEO</a> builds the localized entity signals that AI engines seek.
         </p>
 
         {/* ── SECTION 9: What getting started with GEO actually looks like ── */}
@@ -3806,24 +3806,24 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           Two decisions matter most. First: whether your content is technically accessible to AI crawlers and structured for the passage-level retrieval that generative engines actually perform, or whether it's invisible to the AI layer because it's blocked, unstructured, or lacking the citation-earning characteristics the discipline is built on. Second: whether you're measuring your presence in AI answers — citation share across the major engines — or whether you're still measuring only traditional rankings and missing the visibility surface that's reshaping how people find information.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
-          Gobiya is a logical starting point for organizations that want to understand and improve their presence in AI-generated answers — built around the actual retrieval-and-citation mechanism generative engines use, the technical and structural work that makes content citable, measurement of citation share across ChatGPT, Claude, Perplexity, and Google AI, and the earned-media strategy that AI citations draw on. Request a GEO audit, walk through how your brand currently appears (or doesn't) in AI answers for your category, and find out exactly where you stand on the visibility surface that's becoming the first point of contact between your customers and the information they use to decide. <a href="/book" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">Reach out to Gobiya</a> today.
+          Gobiya is a logical starting point for organizations that want to understand and improve their presence in AI-generated answers — built around the actual retrieval-and-citation mechanism generative engines use, the technical and structural work that makes content citable, measurement of citation share across ChatGPT, Claude, Perplexity, and Google AI, and the earned-media strategy that AI citations draw on. Request a GEO audit, walk through how your brand currently appears (or doesn't) in AI answers for your category, and find out exactly where you stand on the visibility surface that's becoming the first point of contact between your customers and the information they use to decide. <a href="/book" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">Reach out to Gobiya</a> today.
         </p>
 
         {/* ── INLINE CTA ── */}
         <div className="bg-gray-900 text-white p-6 sm:p-8 my-10 sm:my-14 flex flex-col sm:flex-row items-start sm:items-center gap-6">
           <div className="flex-1">
-            <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-2">Gobiya Service</p>
+            <p className="text-[12px] uppercase tracking-wider text-[#d1f851] font-semibold mb-2">Gobiya Service</p>
             <p className="text-[17px] sm:text-[19px] font-medium leading-snug">
               Optimize your brand's presence in AI-generated search engines and recommendations.
             </p>
           </div>
           <a
             href="/services/geo-optimization"
-            className="group flex items-center bg-[#F26522] hover:bg-[#e05a1a] text-white pl-5 pr-2 py-2 transition-colors duration-300 whitespace-nowrap shrink-0"
+            className="group flex items-center bg-[#d1f851] hover:bg-[#c3ea45] text-[#111827] pl-5 pr-2 py-2 transition-colors duration-300 whitespace-nowrap shrink-0"
           >
             <span className="text-[13px] font-medium mr-3">Generative Engine Optimization</span>
             <div className="w-6 h-6 bg-white flex items-center justify-center">
-              <ArrowRight className="w-3.5 h-3.5 text-[#F26522] transition-transform duration-300 group-hover:-rotate-45" />
+              <ArrowRight className="w-3.5 h-3.5 text-[#111827] transition-transform duration-300 group-hover:-rotate-45" />
             </div>
           </a>
         </div>
@@ -3876,10 +3876,10 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           When coordinating a Google manual action removal, your in-house team is suddenly responsible for fixing a penalty your legacy agency triggered. You must audit links or scaled content, document cleanup, and submit a successful reconsideration appeal to restore indexation. Here is how to handle it.
         </p>
 
-        <div className="border-l-4 border-[#F26522] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
+        <div className="border-l-4 border-[#111827] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
           <img src="/images/steve-portrait-thumb.webp" alt="Steve Martin" width="48" height="48" loading="lazy" className="w-12 h-12 object-cover rounded-full border border-white/10 shrink-0" />
           <div>
-            <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-1 font-sans">Steve's Take</p>
+            <p className="text-[12px] uppercase tracking-wider text-[#2E8C68] font-semibold mb-1 font-sans">Steve's Take</p>
             <p className="text-[15px] italic text-white leading-relaxed font-sans">
               "When agencies cause a penalty with low-quality AI content, they usually offer to 'fix it for free.' Don't let them. If their systems triggered the filter in the first place, they do not possess the skills to recover it. Bring in independent help."
             </p>
@@ -3906,8 +3906,8 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
               { id: 'right-call', label: 'Making the right call in the first 72 hours' },
             ].map(({ id, label }) => (
               <li key={id} className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#F26522] shrink-0" />
-                <a href={`#${id}`} className="hover:text-[#F26522] transition-colors">{label}</a>
+                <span className="w-1.5 h-1.5 rounded-full bg-[#111827] shrink-0" />
+                <a href={`#${id}`} className="hover:text-gray-900 transition-colors">{label}</a>
               </li>
             ))}
           </ul>
@@ -3924,7 +3924,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
             '60–70% — Failure rate of first reconsideration requests when handled by the same agency that caused the penalty, or by generalist SEO firms without scaled content abuse case experience (multiple 2026 industry estimates)',
           ].map((item) => (
             <li key={item} className="flex items-start gap-3 text-[16px] sm:text-[17px] leading-[1.6] text-gray-800">
-              <span className="mt-1.5 w-2 h-2 rounded-full bg-[#F26522] shrink-0" />
+              <span className="mt-1.5 w-2 h-2 rounded-full bg-[#111827] shrink-0" />
               {item}
             </li>
           ))}
@@ -3976,18 +3976,18 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
         {/* ── INLINE CTA ── */}
         <div className="bg-gray-900 text-white p-6 sm:p-8 my-10 sm:my-14 flex flex-col sm:flex-row items-start sm:items-center gap-6">
           <div className="flex-1">
-            <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-2">Gobiya Service</p>
+            <p className="text-[12px] uppercase tracking-wider text-[#d1f851] font-semibold mb-2">Gobiya Service</p>
             <p className="text-[17px] sm:text-[19px] font-medium leading-snug">
               Recover your organic pipeline from algorithmic and manual penalties.
             </p>
           </div>
           <a
             href="/google-penalty-recovery"
-            className="group flex items-center bg-[#F26522] hover:bg-[#e05a1a] text-white pl-5 pr-2 py-2 transition-colors duration-300 whitespace-nowrap shrink-0"
+            className="group flex items-center bg-[#d1f851] hover:bg-[#c3ea45] text-[#111827] pl-5 pr-2 py-2 transition-colors duration-300 whitespace-nowrap shrink-0"
           >
             <span className="text-[13px] font-medium mr-3">Penalty Recovery Services</span>
             <div className="w-6 h-6 bg-white flex items-center justify-center">
-              <ArrowRight className="w-3.5 h-3.5 text-[#F26522] transition-transform duration-300 group-hover:-rotate-45" />
+              <ArrowRight className="w-3.5 h-3.5 text-[#111827] transition-transform duration-300 group-hover:-rotate-45" />
             </div>
           </a>
         </div>
@@ -4025,7 +4025,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
         </p>
 
         {/* ── PULL QUOTE ── */}
-        <blockquote className="border-l-4 border-[#F26522] pl-6 sm:pl-8 my-10 sm:my-14 bg-gray-50 py-4 pr-4">
+        <blockquote className="border-l-4 border-[#111827] pl-6 sm:pl-8 my-10 sm:my-14 bg-gray-50 py-4 pr-4">
           <p className="text-[15px] sm:text-[16px] font-medium leading-[1.5] text-gray-800">
             <strong>Note:</strong> Penalty impact and recovery cost ranges vary significantly by industry, organic dependence, site size, and content library complexity. The figures above reflect commonly observed ranges for U.S. mid-market content-dependent businesses hit by agency-caused scaled content abuse penalties in 2025-2026. Run your own organic contribution math against the recovery timeline before making engagement decisions.
           </p>
@@ -4081,7 +4081,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           Why Gobiya is positioned differently for in-house teams handling agency-caused penalties
         </h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
-          Gobiya combines deep architectural <a href="/services/seo" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">SEO capability</a> with verifiable penalty recovery protocols. We maintain strict independence from mass-production agencies and deploy our own editorial and forensic teams to rebuild trust metrics. Our recovery isn't just about deleting thin pages—it's about re-establishing the entity-level signals that prove expertise to Google's neural matching systems, while equipping executive teams with the data they need to report up.
+          Gobiya combines deep architectural <a href="/services/seo" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">SEO capability</a> with verifiable penalty recovery protocols. We maintain strict independence from mass-production agencies and deploy our own editorial and forensic teams to rebuild trust metrics. Our recovery isn't just about deleting thin pages—it's about re-establishing the entity-level signals that prove expertise to Google's neural matching systems, while equipping executive teams with the data they need to report up.
         </p>
         </div>
 
@@ -4090,7 +4090,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           What getting started actually looks like
         </h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          A credible engagement starts with a 1-2 week triage audit, not a full recovery proposal. The triage confirms the <a href="/insights/can-a-site-fully-recover-from-a-google-core-update" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">penalty type</a> (some teams misdiagnose), assesses the affected content library, baselines the current revenue impact, and produces a scoped recovery proposal with realistic timeline and cost estimates. The triage is fast enough that the in-house team can engage a specialist to run it while still having the conversation with the existing agency, without committing to a full recovery engagement before the diagnostic work is done. Many in-house teams use the triage as a way to get clarity on the situation before they have the harder conversations with the agency and the executive team — the triage produces the precise documentation those conversations require.
+          A credible engagement starts with a 1-2 week triage audit, not a full recovery proposal. The triage confirms the <a href="/insights/can-a-site-fully-recover-from-a-google-core-update" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">penalty type</a> (some teams misdiagnose), assesses the affected content library, baselines the current revenue impact, and produces a scoped recovery proposal with realistic timeline and cost estimates. The triage is fast enough that the in-house team can engage a specialist to run it while still having the conversation with the existing agency, without committing to a full recovery engagement before the diagnostic work is done. Many in-house teams use the triage as a way to get clarity on the situation before they have the harder conversations with the agency and the executive team — the triage produces the precise documentation those conversations require.
         </p>
         
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
@@ -4115,7 +4115,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
 
         {/* ── FINAL CTA ── */}
         <div className="bg-gray-900 text-white p-8 sm:p-12 my-10 sm:my-14">
-          <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-4">Start With an Audit</p>
+          <p className="text-[12px] uppercase tracking-wider text-[#2E8C68] font-semibold mb-4">Start With an Audit</p>
           <h3 className="text-[22px] sm:text-[28px] font-medium leading-[1.2] tracking-[-0.02em] mb-4 max-w-xl">
             Triage the manual action and begin your path to algorithmic trust.
           </h3>
@@ -4124,11 +4124,11 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           </p>
           <a
             href="/google-penalty-recovery"
-            className="group inline-flex items-center bg-[#F26522] hover:bg-[#e05a1a] text-white pl-6 pr-2 py-3 transition-colors duration-300"
+            className="group inline-flex items-center bg-[#d1f851] hover:bg-[#c3ea45] text-[#111827] pl-6 pr-2 py-3 transition-colors duration-300"
           >
             <span className="text-[14px] font-medium mr-4">Request a triage audit</span>
             <div className="w-8 h-8 bg-white flex items-center justify-center">
-              <ArrowRight className="w-4 h-4 text-[#F26522] transition-transform duration-500 group-hover:-rotate-45" />
+              <ArrowRight className="w-4 h-4 text-[#111827] transition-transform duration-500 group-hover:-rotate-45" />
             </div>
           </a>
         </div>
@@ -4153,8 +4153,8 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
             { stat: '51%', label: 'B2B software buyers starting research in an AI chatbot', source: 'G2, April 2026' },
             { stat: '5.1×', label: 'AI search conversion rate advantage over Google organic', source: 'SE Ranking 2026' },
           ].map(({ stat, label, source }) => (
-            <div key={stat} className="border border-[#F26522]/30 bg-[#F26522]/5 p-6">
-              <p className="text-4xl font-bold text-[#F26522] mb-2 font-display">{stat}</p>
+            <div key={stat} className="border border-gray-200 bg-gray-50 p-6">
+              <p className="text-4xl font-bold text-[#2E8C68] mb-2 font-display">{stat}</p>
               <p className="text-[14px] text-gray-900 leading-snug mb-1">{label}</p>
               <p className="text-[11px] uppercase tracking-wider text-gray-500">{source}</p>
             </div>
@@ -4178,8 +4178,8 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
               { id: 'making-right-call', label: 'Making the right call for your pipeline' },
             ].map(({ id, label }) => (
               <li key={id} className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#F26522] shrink-0" />
-                <a href={`#${id}`} className="hover:text-[#F26522] transition-colors">{label}</a>
+                <span className="w-1.5 h-1.5 rounded-full bg-[#111827] shrink-0" />
+                <a href={`#${id}`} className="hover:text-gray-900 transition-colors">{label}</a>
               </li>
             ))}
           </ul>
@@ -4189,10 +4189,10 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           How does B2B sales pipeline automation connect to search visibility? Today, B2B buyers ask ChatGPT for recommendations before visiting a site. If your search footprint is not structured for AI retrieval, your business will miss the shortlist. Let's look at how AI citation share shapes your sales pipeline automation.
         </p>
 
-        <div className="border-l-4 border-[#F26522] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
+        <div className="border-l-4 border-[#111827] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
           <img src="/images/steve-portrait-thumb.webp" alt="Steve Martin" width="48" height="48" loading="lazy" className="w-12 h-12 object-cover rounded-full border border-white/10 shrink-0" />
           <div>
-            <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-1 font-sans">Steve's Take</p>
+            <p className="text-[12px] uppercase tracking-wider text-[#2E8C68] font-semibold mb-1 font-sans">Steve's Take</p>
             <p className="text-[15px] italic text-white leading-relaxed font-sans">
               "B2B buying committees don't browse the web anymore to make their shortlist. They let AI models do the comparison. If your content doesn't supply clean RAG snippets, you don't even make the longlist."
             </p>
@@ -4209,18 +4209,18 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
         {/* ── INLINE CTA (interlinking to lead-generation) ── */}
         <div className="bg-gray-900 text-white p-6 sm:p-8 my-10 sm:my-14 flex flex-col sm:flex-row items-start sm:items-center gap-6">
           <div className="flex-1">
-            <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-2">Gobiya Service</p>
+            <p className="text-[12px] uppercase tracking-wider text-[#d1f851] font-semibold mb-2">Gobiya Service</p>
             <p className="text-[17px] sm:text-[19px] font-medium leading-snug">
               Build a predictable B2B pipeline with AI-aware prospecting systems.
             </p>
           </div>
           <a
             href="/services/lead-generation"
-            className="group flex items-center bg-[#F26522] hover:bg-[#e05a1a] text-white pl-5 pr-2 py-2 transition-colors duration-300 whitespace-nowrap shrink-0"
+            className="group flex items-center bg-[#d1f851] hover:bg-[#c3ea45] text-[#111827] pl-5 pr-2 py-2 transition-colors duration-300 whitespace-nowrap shrink-0"
           >
             <span className="text-[13px] font-medium mr-3">B2B Pipeline Architecture</span>
             <div className="w-6 h-6 bg-white flex items-center justify-center">
-              <ArrowRight className="w-3.5 h-3.5 text-[#F26522] transition-transform duration-300 group-hover:-rotate-45" />
+              <ArrowRight className="w-3.5 h-3.5 text-[#111827] transition-transform duration-300 group-hover:-rotate-45" />
             </div>
           </a>
         </div>
@@ -4238,7 +4238,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
           Automated B2B sales pipeline SEO adds a layer of operational logic on top of{' '}
-          <a href="/services/seo" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">
+          <a href="/services/seo" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">
             traditional SEO
           </a>
           . The system identifies which questions buyers actually ask AI tools at each stage of the pipeline, produces
@@ -4247,7 +4247,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
         </p>
 
         {/* ── PULL QUOTE ── */}
-        <blockquote className="border-l-4 border-[#F26522] pl-6 sm:pl-8 my-10 sm:my-14">
+        <blockquote className="border-l-4 border-[#111827] pl-6 sm:pl-8 my-10 sm:my-14">
           <p className="text-[18px] sm:text-[22px] font-medium leading-[1.5] text-gray-900 italic">
             "It's not about publishing more posts. It's about making sure the right content is retrievable by the right
             system at the moment a buyer is forming an opinion."
@@ -4311,7 +4311,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
           If 51% of buyers start in an AI chatbot and 69% change their planned vendor based on AI guidance, then the vendor
           that isn't cited has already lost the deal before the SDR sequence begins. A team running a $30,000-per-month{' '}
-          <a href="/services/lead-generation" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">
+          <a href="/services/lead-generation" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">
             outbound program
           </a>{' '}
           is buying roughly 150 qualified meetings at the upper end. If even 30% of target accounts have already shortlisted
@@ -4341,7 +4341,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
           The same content infrastructure that earns AI citations also feeds outbound. When AI-cited content surfaces an
           account, the visit can be matched to a firmographic profile and routed to the SDR queue with full context. This is
-          the bridge between <a href="/insights/automated-lead-generation-seo" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">automated lead generation SEO</a> and <a href="/insights/outbound-seo-prospecting" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">outbound SEO prospecting</a>. The page does the discovery work. The
+          the bridge between <a href="/insights/automated-lead-generation-seo" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">automated lead generation SEO</a> and <a href="/insights/outbound-seo-prospecting" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">outbound SEO prospecting</a>. The page does the discovery work. The
           intent signal does the routing work. The SDR's first touch becomes a response to a known research session, not a
           cold start.
         </p>
@@ -4370,7 +4370,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
               ].map(([finding, stat, source]) => (
                 <tr key={finding as string} className="even:bg-gray-50">
                   <td className="px-4 py-3 text-gray-800 leading-snug">{finding}</td>
-                  <td className="px-4 py-3 font-bold text-[#F26522] whitespace-nowrap">{stat}</td>
+                  <td className="px-4 py-3 font-bold text-[#2E8C68] whitespace-nowrap">{stat}</td>
                   <td className="px-4 py-3 text-gray-500 whitespace-nowrap text-[13px]">{source}</td>
                 </tr>
               ))}
@@ -4381,18 +4381,18 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
         {/* ── GEO CTA ── */}
         <div className="bg-gray-900 text-white p-6 sm:p-8 my-10 sm:my-14 flex flex-col sm:flex-row items-start sm:items-center gap-6">
           <div className="flex-1">
-            <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-2">Related Service</p>
+            <p className="text-[12px] uppercase tracking-wider text-[#d1f851] font-semibold mb-2">Related Service</p>
             <p className="text-[17px] sm:text-[19px] font-medium leading-snug">
               Get cited by ChatGPT, Claude, Perplexity, and Gemini — not just Google.
             </p>
           </div>
           <a
             href="/services/geo-optimization"
-            className="group flex items-center bg-[#F26522] hover:bg-[#e05a1a] text-white pl-5 pr-2 py-2 transition-colors duration-300 whitespace-nowrap shrink-0"
+            className="group flex items-center bg-[#d1f851] hover:bg-[#c3ea45] text-[#111827] pl-5 pr-2 py-2 transition-colors duration-300 whitespace-nowrap shrink-0"
           >
             <span className="text-[13px] font-medium mr-3">Generative Engine Optimization</span>
             <div className="w-6 h-6 bg-white flex items-center justify-center">
-              <ArrowRight className="w-3.5 h-3.5 text-[#F26522] transition-transform duration-300 group-hover:-rotate-45" />
+              <ArrowRight className="w-3.5 h-3.5 text-[#111827] transition-transform duration-300 group-hover:-rotate-45" />
             </div>
           </a>
         </div>
@@ -4402,10 +4402,10 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           What separates legitimate automation from a marketing claim
         </h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Not every <a href="/insights/best-seo-agency-for-b2b-brands" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">agency</a> or platform calling itself "AI SEO" operates at the same standard. Start with measurement. Ask
+          Not every <a href="/insights/best-seo-agency-for-b2b-brands" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">agency</a> or platform calling itself "AI SEO" operates at the same standard. Start with measurement. Ask
           any prospective vendor what they track. If the only metrics they report are Google rankings, organic clicks, and
           domain authority, they are not running AI-aware pipeline SEO — they are running classical{' '}
-          <a href="/services/seo" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">
+          <a href="/services/seo" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">
             SEO
           </a>{' '}
           with a new label.
@@ -4421,7 +4421,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
             'Earned-media or digital-PR motion — over 85% of non-paid AI citations originate from earned media sources',
           ].map((item) => (
             <li key={item} className="flex items-start gap-3 text-[16px] sm:text-[17px] leading-[1.6] text-gray-800">
-              <span className="mt-1.5 w-2 h-2 rounded-full bg-[#F26522] shrink-0" />
+              <span className="mt-1.5 w-2 h-2 rounded-full bg-[#111827] shrink-0" />
               {item}
             </li>
           ))}
@@ -4447,7 +4447,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
             },
             {
               title: 'Outsourced Services Firms',
-              body: '<a href="/insights/b2b-seo-agency" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">Agencies</a> and consultancies benefit most from earned-media-led citation strategies, because their categories are saturated with self-promotional content that AI engines have learned to deprioritise.',
+              body: '<a href="/insights/b2b-seo-agency" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">Agencies</a> and consultancies benefit most from earned-media-led citation strategies, because their categories are saturated with self-promotional content that AI engines have learned to deprioritise.',
               link: '/services/lead-generation',
               linkLabel: 'Explore lead gen',
             },
@@ -4458,10 +4458,10 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
               linkLabel: 'Our approach',
             },
           ].map(({ title, body, link, linkLabel }) => (
-            <div key={title} className="border border-gray-200 p-6 hover:border-[#F26522]/40 transition-colors duration-300 group">
+            <div key={title} className="border border-gray-200 p-6 hover:border-gray-400 transition-colors duration-300 group">
               <h3 className="text-[16px] font-semibold text-gray-900 mb-3">{title}</h3>
               <p className="text-[14px] text-gray-700 leading-relaxed mb-4">{body}</p>
-              <a href={link} className="inline-flex items-center gap-2 text-[12px] uppercase tracking-wider font-semibold text-[#F26522] group-hover:gap-3 transition-all duration-300">
+              <a href={link} className="inline-flex items-center gap-2 text-[12px] uppercase tracking-wider font-semibold text-[#2E8C68] group-hover:gap-3 transition-all duration-300">
                 {linkLabel} <ArrowRight className="w-3 h-3" />
               </a>
             </div>
@@ -4475,12 +4475,12 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
           B2B operators still running ranking-first SEO are watching organic traffic erode while their rankings stay stable,
           and watching outbound reply rates flatten while their target accounts quietly shortlist competitors in AI tools
-          the SDR team never sees. Transitioning to a unified model of <a href="/insights/b2b-sales-pipeline-automation" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">B2B sales pipeline automation</a> isn't about chasing a new acronym. It's
+          the SDR team never sees. Transitioning to a unified model of <a href="/insights/b2b-sales-pipeline-automation" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">B2B sales pipeline automation</a> isn't about chasing a new acronym. It's
           about operating an orchestrated program that the systems your buyers actually use will surface.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
           Two decisions matter most. First: whether your current{' '}
-          <a href="/services/seo" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">
+          <a href="/services/seo" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">
             SEO and content program
           </a>{' '}
           produces output that AI engines retrieve and cite, or output that only Google indexes. Second: whether the team
@@ -4490,7 +4490,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
 
         {/* ── FINAL CTA ── */}
         <div className="bg-gray-900 text-white p-8 sm:p-12 my-10 sm:my-14">
-          <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-4">Start With an Audit</p>
+          <p className="text-[12px] uppercase tracking-wider text-[#2E8C68] font-semibold mb-4">Start With an Audit</p>
           <h3 className="text-[22px] sm:text-[28px] font-medium leading-[1.2] tracking-[-0.02em] mb-4 max-w-xl">
             Find out exactly where your program stands relative to the AI citation threshold.
           </h3>
@@ -4501,11 +4501,11 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           </p>
           <a
             href="/book"
-            className="group inline-flex items-center bg-[#F26522] hover:bg-[#e05a1a] text-white pl-6 pr-2 py-3 transition-colors duration-300"
+            className="group inline-flex items-center bg-[#d1f851] hover:bg-[#c3ea45] text-[#111827] pl-6 pr-2 py-3 transition-colors duration-300"
           >
             <span className="text-[14px] font-medium mr-4">Request a citation audit</span>
             <div className="w-8 h-8 bg-white flex items-center justify-center">
-              <ArrowRight className="w-4 h-4 text-[#F26522] transition-transform duration-500 group-hover:-rotate-45" />
+              <ArrowRight className="w-4 h-4 text-[#111827] transition-transform duration-500 group-hover:-rotate-45" />
             </div>
           </a>
         </div>
@@ -4532,8 +4532,8 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
             { stat: '87.4%', label: "ChatGPT's share of all AI referral traffic to websites", source: 'Conductor, 2026' },
             { stat: '90%', label: 'B2B click-through rate on AI Overview sources', source: 'Omniscient Digital, 2026' },
           ].map(({ stat, label, source }) => (
-            <div key={stat} className="border border-[#F26522]/30 bg-[#F26522]/5 p-6">
-              <p className="text-4xl font-bold text-[#F26522] mb-2 font-display">{stat}</p>
+            <div key={stat} className="border border-gray-200 bg-gray-50 p-6">
+              <p className="text-4xl font-bold text-[#2E8C68] mb-2 font-display">{stat}</p>
               <p className="text-[14px] text-gray-900 leading-snug mb-1">{label}</p>
               <p className="text-[11px] uppercase tracking-wider text-gray-500">{source}</p>
             </div>
@@ -4558,8 +4558,8 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
               { id: 'making-call-funnel', label: 'Making the right call for your funnel' },
             ].map(({ id, label }) => (
               <li key={id} className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#F26522] shrink-0" />
-                <a href={`#${id}`} className="hover:text-[#F26522] transition-colors">{label}</a>
+                <span className="w-1.5 h-1.5 rounded-full bg-[#111827] shrink-0" />
+                <a href={`#${id}`} className="hover:text-gray-900 transition-colors">{label}</a>
               </li>
             ))}
           </ul>
@@ -4569,10 +4569,10 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           How can you deploy automated lead generation that converts without cold outreach? Traditional B2B marketing relies on gating ebooks and cold calling unengaged contacts. Automated lead generation shifts the model by using search intent and AI citation paths to pre-qualify prospects before they fill out a form.
         </p>
 
-        <div className="border-l-4 border-[#F26522] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
+        <div className="border-l-4 border-[#111827] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
           <img src="/images/steve-portrait-thumb.webp" alt="Steve Martin" width="48" height="48" loading="lazy" className="w-12 h-12 object-cover rounded-full border border-white/10 shrink-0" />
           <div>
-            <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-1 font-sans">Steve's Take</p>
+            <p className="text-[12px] uppercase tracking-wider text-[#2E8C68] font-semibold mb-1 font-sans">Steve's Take</p>
             <p className="text-[15px] italic text-white leading-relaxed font-sans">
               "High-intent traffic referred by ChatGPT converts up to 4.4 times better than standard organic. When AI answers pre-qualify a prospect, you're skipped right past the research stage directly to the buy stage."
             </p>
@@ -4587,18 +4587,18 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
         {/* ── INLINE CTA (lead gen service) ── */}
         <div className="bg-gray-900 text-white p-6 sm:p-8 my-10 sm:my-14 flex flex-col sm:flex-row items-start sm:items-center gap-6">
           <div className="flex-1">
-            <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-2">Gobiya Service</p>
+            <p className="text-[12px] uppercase tracking-wider text-[#d1f851] font-semibold mb-2">Gobiya Service</p>
             <p className="text-[17px] sm:text-[19px] font-medium leading-snug">
               Build AI-aware lead capture systems that route pre-qualified buyers directly to your pipeline.
             </p>
           </div>
           <a
             href="/services/lead-generation"
-            className="group flex items-center bg-[#F26522] hover:bg-[#e05a1a] text-white pl-5 pr-2 py-2 transition-colors duration-300 whitespace-nowrap shrink-0"
+            className="group flex items-center bg-[#d1f851] hover:bg-[#c3ea45] text-[#111827] pl-5 pr-2 py-2 transition-colors duration-300 whitespace-nowrap shrink-0"
           >
             <span className="text-[13px] font-medium mr-3">B2B Pipeline Architecture</span>
             <div className="w-6 h-6 bg-white flex items-center justify-center">
-              <ArrowRight className="w-3.5 h-3.5 text-[#F26522] transition-transform duration-300 group-hover:-rotate-45" />
+              <ArrowRight className="w-3.5 h-3.5 text-[#111827] transition-transform duration-300 group-hover:-rotate-45" />
             </div>
           </a>
         </div>
@@ -4614,9 +4614,9 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           out a thousand of those forms and learned the only consequence is a six-week SDR sequence they didn't ask for.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          <a href="/insights/seo-for-b2b-lead-generation" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">Automated lead generation SEO</a> replaces volume-first capture with intent-first capture. The system identifies the
+          <a href="/insights/seo-for-b2b-lead-generation" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">Automated lead generation SEO</a> replaces volume-first capture with intent-first capture. The system identifies the
           buyer-research questions{' '}
-          <a href="/services/geo-optimization" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">
+          <a href="/services/geo-optimization" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">
             AI tools are surfacing in the category
           </a>
           , produces content engineered to be cited inside those answers, captures the inbound visits AI citations generate,
@@ -4624,7 +4624,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
         </p>
 
         {/* ── PULL QUOTE ── */}
-        <blockquote className="border-l-4 border-[#F26522] pl-6 sm:pl-8 my-10 sm:my-14">
+        <blockquote className="border-l-4 border-[#111827] pl-6 sm:pl-8 my-10 sm:my-14">
           <p className="text-[18px] sm:text-[22px] font-medium leading-[1.5] text-gray-900 italic">
             "It's not about producing more leads. It's about producing leads who arrived because an AI assistant told them
             the vendor was worth evaluating — and converting them while they're still in the consideration window."
@@ -4712,10 +4712,10 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
           The same citation infrastructure that produces inbound also informs outbound. When an account visits an AI-cited
           page, that visit can be matched to a firmographic profile via reverse-IP enrichment and routed to the{' '}
-          <a href="/insights/outbound-seo-prospecting" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">
+          <a href="/insights/outbound-seo-prospecting" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">
             SDR queue with full context via outbound SEO prospecting
           </a>
-          . This integrated approach establishes the core framework for <a href="/insights/b2b-sales-pipeline-automation" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">B2B sales pipeline automation</a>. Without that connection,
+          . This integrated approach establishes the core framework for <a href="/insights/b2b-sales-pipeline-automation" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">B2B sales pipeline automation</a>. Without that connection,
           outbound sequences fire into accounts that may have already shortlisted a competitor twenty minutes earlier in
           ChatGPT.
         </p>
@@ -4723,18 +4723,18 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
         {/* ── RELATED CTA / BOX ── */}
         <div className="bg-gray-900 text-white p-6 sm:p-8 my-10 sm:my-14 flex flex-col sm:flex-row items-start sm:items-center gap-6">
           <div className="flex-1">
-            <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-2">Related Article</p>
+            <p className="text-[12px] uppercase tracking-wider text-[#d1f851] font-semibold mb-2">Related Article</p>
             <p className="text-[17px] sm:text-[19px] font-medium leading-snug">
               How AI citations shape your B2B vendor shortlist — the pipeline SEO playbook.
             </p>
           </div>
           <a
             href="/insights/automated-b2b-sales-pipeline-seo"
-            className="group flex items-center bg-[#F26522] hover:bg-[#e05a1a] text-white pl-5 pr-2 py-2 transition-colors duration-300 whitespace-nowrap shrink-0"
+            className="group flex items-center bg-[#d1f851] hover:bg-[#c3ea45] text-[#111827] pl-5 pr-2 py-2 transition-colors duration-300 whitespace-nowrap shrink-0"
           >
             <span className="text-[13px] font-medium mr-3">B2B Pipeline SEO</span>
             <div className="w-6 h-6 bg-white flex items-center justify-center">
-              <ArrowRight className="w-3.5 h-3.5 text-[#F26522] transition-transform duration-300 group-hover:-rotate-45" />
+              <ArrowRight className="w-3.5 h-3.5 text-[#111827] transition-transform duration-300 group-hover:-rotate-45" />
             </div>
           </a>
         </div>
@@ -4763,7 +4763,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
               ].map(([finding, stat, source]) => (
                 <tr key={finding as string} className="even:bg-gray-50">
                   <td className="px-4 py-3 text-gray-800 leading-snug">{finding}</td>
-                  <td className="px-4 py-3 font-bold text-[#F26522] whitespace-nowrap">{stat}</td>
+                  <td className="px-4 py-3 font-bold text-[#2E8C68] whitespace-nowrap">{stat}</td>
                   <td className="px-4 py-3 text-gray-500 whitespace-nowrap text-[13px]">{source}</td>
                 </tr>
               ))}
@@ -4778,7 +4778,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
           Start with what is being measured. If the deliverable is still organic sessions, MQL volume, and CPL, the program
           is not built for AI-sourced lead generation — it's a traditional{' '}
-          <a href="/services/seo" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">
+          <a href="/services/seo" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">
             content marketing engagement
           </a>{' '}
           with new vocabulary.
@@ -4794,7 +4794,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
             'Third-party earned-media placement — 85%+ of non-paid AI citations originate from earned media',
           ].map((item) => (
             <li key={item} className="flex items-start gap-3 text-[16px] sm:text-[17px] leading-[1.6] text-gray-800">
-              <span className="mt-1.5 w-2 h-2 rounded-full bg-[#F26522] shrink-0" />
+              <span className="mt-1.5 w-2 h-2 rounded-full bg-[#111827] shrink-0" />
               {item}
             </li>
           ))}
@@ -4831,10 +4831,10 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
               linkLabel: 'Our approach',
             },
           ].map(({ title, body, link, linkLabel }) => (
-            <div key={title} className="border border-gray-200 p-6 hover:border-[#F26522]/40 transition-colors duration-300 group">
+            <div key={title} className="border border-gray-200 p-6 hover:border-gray-400 transition-colors duration-300 group">
               <h3 className="text-[16px] font-semibold text-gray-900 mb-3">{title}</h3>
               <p className="text-[14px] text-gray-700 leading-relaxed mb-4">{body}</p>
-              <a href={link} className="inline-flex items-center gap-2 text-[12px] uppercase tracking-wider font-semibold text-[#F26522] group-hover:gap-3 transition-all duration-300">
+              <a href={link} className="inline-flex items-center gap-2 text-[12px] uppercase tracking-wider font-semibold text-[#2E8C68] group-hover:gap-3 transition-all duration-300">
                 {linkLabel} <ArrowRight className="w-3 h-3" />
               </a>
             </div>
@@ -4850,7 +4850,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           is already educated by an AI, and watching pipeline-to-close ratios decline while the dashboard reports steady
           lead production. The shift to automated lead generation SEO isn't about a new content tactic. It's about
           operating a{' '}
-          <a href="/services/lead-generation" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">
+          <a href="/services/lead-generation" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">
             lead gen program
           </a>{' '}
           built around how buyers actually research in 2026 — through an AI assistant first, the vendor's site second, and
@@ -4864,7 +4864,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
 
         {/* ── FINAL CTA ── */}
         <div className="bg-gray-900 text-white p-8 sm:p-12 my-10 sm:my-14">
-          <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-4">Start With a Lead-Source Audit</p>
+          <p className="text-[12px] uppercase tracking-wider text-[#2E8C68] font-semibold mb-4">Start With a Lead-Source Audit</p>
           <h3 className="text-[22px] sm:text-[28px] font-medium leading-[1.2] tracking-[-0.02em] mb-4 max-w-xl">
             Find out exactly where in your funnel AI-sourced leads are being lost.
           </h3>
@@ -4875,11 +4875,11 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           </p>
           <a
             href="/book"
-            className="group inline-flex items-center bg-[#F26522] hover:bg-[#e05a1a] text-white pl-6 pr-2 py-3 transition-colors duration-300"
+            className="group inline-flex items-center bg-[#d1f851] hover:bg-[#c3ea45] text-[#111827] pl-6 pr-2 py-3 transition-colors duration-300"
           >
             <span className="text-[14px] font-medium mr-4">Request a lead-source audit</span>
             <div className="w-8 h-8 bg-white flex items-center justify-center">
-              <ArrowRight className="w-4 h-4 text-[#F26522] transition-transform duration-500 group-hover:-rotate-45" />
+              <ArrowRight className="w-4 h-4 text-[#111827] transition-transform duration-500 group-hover:-rotate-45" />
             </div>
           </a>
         </div>
@@ -4905,8 +4905,8 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
             { stat: '15–25%', label: 'Reply rate for signal-anchored outreach', source: 'Sopro / Salesmotion, 2026' },
             { stat: '70–80%', label: 'Share of the B2B buying journey completed before rep contact', source: 'Salesmotion, 2026' },
           ].map(({ stat, label, source }) => (
-            <div key={stat} className="border border-[#F26522]/30 bg-[#F26522]/5 p-6">
-              <p className="text-4xl font-bold text-[#F26522] mb-2 font-display">{stat}</p>
+            <div key={stat} className="border border-gray-200 bg-gray-50 p-6">
+              <p className="text-4xl font-bold text-[#2E8C68] mb-2 font-display">{stat}</p>
               <p className="text-[14px] text-gray-900 leading-snug mb-1">{label}</p>
               <p className="text-[11px] uppercase tracking-wider text-gray-500">{source}</p>
             </div>
@@ -4931,8 +4931,8 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
               { id: 'positioned-differently', label: 'Why Gobiya is positioned differently for B2B operators' },
             ].map(({ id, label }) => (
               <li key={id} className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#F26522] shrink-0" />
-                <a href={`#${id}`} className="hover:text-[#F26522] transition-colors">{label}</a>
+                <span className="w-1.5 h-1.5 rounded-full bg-[#111827] shrink-0" />
+                <a href={`#${id}`} className="hover:text-gray-900 transition-colors">{label}</a>
               </li>
             ))}
           </ul>
@@ -4942,10 +4942,10 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           How does outbound SEO prospecting optimize B2B outreach? Only about 5% of your target accounts are actively buying at any given moment. Outbound SEO prospecting tracks intent signals from organic pages to pinpoint which accounts are researching right now, what they are reading, and the exact second to pitch them.
         </p>
 
-        <div className="border-l-4 border-[#F26522] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
+        <div className="border-l-4 border-[#111827] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
           <img src="/images/steve-portrait-thumb.webp" alt="Steve Martin" width="48" height="48" loading="lazy" className="w-12 h-12 object-cover rounded-full border border-white/10 shrink-0" />
           <div>
-            <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-1 font-sans">Steve's Take</p>
+            <p className="text-[12px] uppercase tracking-wider text-[#2E8C68] font-semibold mb-1 font-sans">Steve's Take</p>
             <p className="text-[15px] italic text-white leading-relaxed font-sans">
               "Your website already generates high-intent account IP data. Routing those signals directly to your outbound sales team turns cold emails into warm, timing-perfect outreach."
             </p>
@@ -4959,18 +4959,18 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
         {/* ── INLINE CTA (interlinking to lead-generation) ── */}
         <div className="bg-gray-900 text-white p-6 sm:p-8 my-10 sm:my-14 flex flex-col sm:flex-row items-start sm:items-center gap-6">
           <div className="flex-1">
-            <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-2">Gobiya Service</p>
+            <p className="text-[12px] uppercase tracking-wider text-[#d1f851] font-semibold mb-2">Gobiya Service</p>
             <p className="text-[17px] sm:text-[19px] font-medium leading-snug">
               Route your SEO intent signals directly into your sales outbound queue.
             </p>
           </div>
           <a
             href="/services/lead-generation"
-            className="group flex items-center bg-[#F26522] hover:bg-[#e05a1a] text-white pl-5 pr-2 py-2 transition-colors duration-300 whitespace-nowrap shrink-0"
+            className="group flex items-center bg-[#d1f851] hover:bg-[#c3ea45] text-[#111827] pl-5 pr-2 py-2 transition-colors duration-300 whitespace-nowrap shrink-0"
           >
             <span className="text-[13px] font-medium mr-3">Build Your Outreach System</span>
             <div className="w-6 h-6 bg-white flex items-center justify-center">
-              <ArrowRight className="w-3.5 h-3.5 text-[#F26522] transition-transform duration-300 group-hover:-rotate-45" />
+              <ArrowRight className="w-3.5 h-3.5 text-[#111827] transition-transform duration-300 group-hover:-rotate-45" />
             </div>
           </a>
         </div>
@@ -5033,11 +5033,11 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           A fully-loaded SDR in the U.S. runs $50,000 to $80,000 per year and produces 30 to 50 qualified leads per month at the upper end of well-run programs. At a 3.43 percent reply rate, an SDR sending 100 cold emails per day across a 22-day workweek month is generating roughly 75 replies — most of which are "not interested," with maybe 20 substantive conversations and a smaller number of booked meetings. The cost per booked meeting in pure cold outbound regularly clears $300 to $500 once SDR salary, tooling, and data subscriptions are layered in. Enterprise segments routinely run higher.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Frame it against signal-anchored alternatives. The same SDR working a list of 200 SEO-signal-qualified accounts per month — accounts that visited a competitor-comparison page, downloaded a category report, or arrived from a search engine citation qualified via <a href="/insights/automated-b2b-sales-pipeline-seo" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">automated B2B sales pipeline SEO</a> — operates in a different reply rate regime entirely. At 15 to 25 percent reply rates, the same SDR generates 30 to 50 substantive conversations from a list one-tenth the size. This alignment is what unlocks true <a href="/insights/b2b-sales-pipeline-automation" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">B2B sales pipeline automation</a>. The visible activity volume is lower. The cost per meeting drops materially, and the meetings that do get booked convert to pipeline at a higher rate because the prospect was already in-market when the sequence fired. Volume-first outbound looks productive on the dashboard. Signal-first outbound produces revenue on the close report.
+          Frame it against signal-anchored alternatives. The same SDR working a list of 200 SEO-signal-qualified accounts per month — accounts that visited a competitor-comparison page, downloaded a category report, or arrived from a search engine citation qualified via <a href="/insights/automated-b2b-sales-pipeline-seo" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">automated B2B sales pipeline SEO</a> — operates in a different reply rate regime entirely. At 15 to 25 percent reply rates, the same SDR generates 30 to 50 substantive conversations from a list one-tenth the size. This alignment is what unlocks true <a href="/insights/b2b-sales-pipeline-automation" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">B2B sales pipeline automation</a>. The visible activity volume is lower. The cost per meeting drops materially, and the meetings that do get booked convert to pipeline at a higher rate because the prospect was already in-market when the sequence fired. Volume-first outbound looks productive on the dashboard. Signal-first outbound produces revenue on the close report.
         </p>
 
         {/* ── PULL QUOTE ── */}
-        <blockquote className="border-l-4 border-[#F26522] pl-6 sm:pl-8 my-10 sm:my-14">
+        <blockquote className="border-l-4 border-[#111827] pl-6 sm:pl-8 my-10 sm:my-14">
           <p className="text-[18px] sm:text-[22px] font-medium leading-[1.5] text-gray-900 italic">
             "Stop treating outbound and SEO as separate silos. Route the intent data your content generates directly to your SDR queues to turn cold prospecting into a high-converting timing game."
           </p>
@@ -5059,7 +5059,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
         </h3>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
           The same SEO infrastructure that generates inbound leads also feeds outbound prospecting. When an AI-cited page or a high-intent comparison page is visited by an account that doesn't convert on the form, the visit is still valuable — it becomes an outbound signal rather than an inbound lead. This is the operational bridge between{' '}
-          <a href="/insights/automated-lead-generation-seo" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">
+          <a href="/insights/automated-lead-generation-seo" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">
             automated lead generation SEO
           </a>{' '}
           and outbound SEO prospecting: the page captures every visitor it can convert directly, and routes every visitor it can't convert to outbound with the context already attached. Nothing is wasted. The 99 percent of visitors who don't fill out a form become the highest-quality SDR list the team has access to, because the visit itself was the qualification.
@@ -5087,7 +5087,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
               ].map(([method, rate, timing]) => (
                 <tr key={method as string} className="even:bg-gray-50">
                   <td className="px-4 py-3 text-gray-800 leading-snug">{method}</td>
-                  <td className="px-4 py-3 font-bold text-[#F26522] whitespace-nowrap">{rate}</td>
+                  <td className="px-4 py-3 font-bold text-[#2E8C68] whitespace-nowrap">{rate}</td>
                   <td className="px-4 py-3 text-gray-500 whitespace-nowrap text-[13px]">{timing}</td>
                 </tr>
               ))}
@@ -5100,7 +5100,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           What separates real outbound SEO prospecting from a "we have intent data" claim
         </h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Not every vendor or <a href="/insights/best-seo-agency-for-b2b-brands" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">agency</a> selling intent-based outbound operates at the same standard. The category has filled rapidly with third-party intent data resellers, generic firmographic filtering rebranded as "intent," and dashboards that surface signals nobody routes into outreach.
+          Not every vendor or <a href="/insights/best-seo-agency-for-b2b-brands" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">agency</a> selling intent-based outbound operates at the same standard. The category has filled rapidly with third-party intent data resellers, generic firmographic filtering rebranded as "intent," and dashboards that surface signals nobody routes into outreach.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-4">
           Real outbound SEO prospecting is built on first-party intent. Ask your providers:
@@ -5114,7 +5114,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
             'Is there visibility into AI-source referrers? (ChatGPT, Claude, Gemini, and Perplexity pass identifiable headers.)',
           ].map((item) => (
             <li key={item} className="flex items-start gap-3 text-[16px] sm:text-[17px] leading-[1.6] text-gray-800">
-              <span className="mt-1.5 w-2 h-2 rounded-full bg-[#F26522] shrink-0" />
+              <span className="mt-1.5 w-2 h-2 rounded-full bg-[#111827] shrink-0" />
               {item}
             </li>
           ))}
@@ -5151,10 +5151,10 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
               linkLabel: 'Our Approach',
             },
           ].map(({ title, body, link, linkLabel }) => (
-            <div key={title} className="border border-gray-200 p-6 hover:border-[#F26522]/40 transition-colors duration-300 group">
+            <div key={title} className="border border-gray-200 p-6 hover:border-gray-400 transition-colors duration-300 group">
               <h3 className="text-[16px] font-semibold text-gray-900 mb-3">{title}</h3>
               <p className="text-[14px] text-gray-700 leading-relaxed mb-4">{body}</p>
-              <a href={link} className="inline-flex items-center gap-2 text-[12px] uppercase tracking-wider font-semibold text-[#F26522] group-hover:gap-3 transition-all duration-300">
+              <a href={link} className="inline-flex items-center gap-2 text-[12px] uppercase tracking-wider font-semibold text-[#2E8C68] group-hover:gap-3 transition-all duration-300">
                 {linkLabel} <ArrowRight className="w-3 h-3" />
               </a>
             </div>
@@ -5167,13 +5167,13 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           Why Gobiya is positioned differently for B2B operators
         </h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          As a <a href="/insights/b2b-seo-agency" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">B2B SEO agency</a>, Gobiya provides complete operational alignment between search acquisition and outbound pipeline engineering. We do not sell third-party intent databases or run generic email spam sequences. We audit your existing traffic, set up real-time reverse-IP enrichment layers, configure direct routing into your CRM, and build custom SEO structures designed specifically to generate high-intent outbound signals.
+          As a <a href="/insights/b2b-seo-agency" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">B2B SEO agency</a>, Gobiya provides complete operational alignment between search acquisition and outbound pipeline engineering. We do not sell third-party intent databases or run generic email spam sequences. We audit your existing traffic, set up real-time reverse-IP enrichment layers, configure direct routing into your CRM, and build custom SEO structures designed specifically to generate high-intent outbound signals.
         </p>
         </div>
 
         {/* ── FINAL CTA ── */}
         <div className="bg-gray-900 text-white p-8 sm:p-12 my-10 sm:my-14">
-          <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-4">Request a Signal Audit</p>
+          <p className="text-[12px] uppercase tracking-wider text-[#2E8C68] font-semibold mb-4">Request a Signal Audit</p>
           <h3 className="text-[22px] sm:text-[28px] font-medium leading-[1.2] tracking-[-0.02em] mb-4 max-w-xl">
             Identify the buying intent signals you are currently discarding.
           </h3>
@@ -5182,11 +5182,11 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           </p>
           <a
             href="/book"
-            className="group inline-flex items-center bg-[#F26522] hover:bg-[#e05a1a] text-white pl-6 pr-2 py-3 transition-colors duration-300"
+            className="group inline-flex items-center bg-[#d1f851] hover:bg-[#c3ea45] text-[#111827] pl-6 pr-2 py-3 transition-colors duration-300"
           >
             <span className="text-[14px] font-medium mr-4">Request a signal audit</span>
             <div className="w-8 h-8 bg-white flex items-center justify-center">
-              <ArrowRight className="w-4 h-4 text-[#F26522] transition-transform duration-500 group-hover:-rotate-45" />
+              <ArrowRight className="w-4 h-4 text-[#111827] transition-transform duration-500 group-hover:-rotate-45" />
             </div>
           </a>
         </div>
@@ -5251,8 +5251,8 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
         />
 
         {/* ── QUICK ANSWER ── */}
-        <div className="bg-[#F26522]/5 border-l-4 border-[#F26522] p-5 sm:p-6 my-8 rounded-r-sm">
-          <p className="text-[11px] uppercase tracking-wider text-[#F26522] font-semibold mb-2">Quick Answer</p>
+        <div className="bg-gray-50 border-l-4 border-[#111827] p-5 sm:p-6 my-8 rounded-r-sm">
+          <p className="text-[11px] uppercase tracking-wider text-[#2E8C68] font-semibold mb-2">Quick Answer</p>
           <p className="text-[15px] sm:text-[16px] leading-[1.7] text-gray-900 font-medium">B2B sales pipeline automation connects intent signals, lead enrichment, CRM routing, and outreach sequencing into one orchestrated system — replacing the manual data-copying between disconnected tools that kills productivity even when your team owns a full AI software stack.</p>
         </div>
 
@@ -5268,7 +5268,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
               'Every automated interaction must be logged back to the CRM automatically to enable clean attribution and accurate pipeline forecasting.',
             ].map((point, i) => (
               <li key={i} className="flex items-start gap-3 text-[14px] sm:text-[15px] text-gray-800 leading-snug">
-                <span className="w-5 h-5 rounded-full bg-[#F26522] text-white text-[10px] font-bold flex items-center justify-center shrink-0 mt-0.5">{i + 1}</span>
+                <span className="w-5 h-5 rounded-full bg-[#111827] text-white text-[10px] font-bold flex items-center justify-center shrink-0 mt-0.5">{i + 1}</span>
                 {point}
               </li>
             ))}
@@ -5314,7 +5314,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
               { n: '05', title: 'CRM Logging', desc: 'Every interaction written back as a clean record' },
             ].map(({ n, title, desc }, i) => (
               <div key={i} className="p-4 sm:p-5 border-b sm:border-b-0 sm:border-r border-gray-200 last:border-0">
-                <p className="text-[11px] text-[#F26522] font-semibold mb-1">{n}</p>
+                <p className="text-[11px] text-[#2E8C68] font-semibold mb-1">{n}</p>
                 <p className="text-[13px] font-semibold text-gray-900 mb-1">{title}</p>
                 <p className="text-[12px] text-gray-500 leading-snug">{desc}</p>
               </div>
@@ -5330,7 +5330,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
             { stat: '<40%', label: 'Sellers who report AI agents have actually improved productivity', source: 'Gartner, 2026' },
           ].map((item, idx) => (
             <div key={idx} className="bg-gray-50 border border-gray-100 p-6 rounded-sm">
-              <span className="block text-4xl sm:text-5xl font-bold text-[#F26522] tracking-tight mb-2 font-display">{item.stat}</span>
+              <span className="block text-4xl sm:text-5xl font-bold text-[#2E8C68] tracking-tight mb-2 font-display">{item.stat}</span>
               <p className="text-[13px] text-gray-900 leading-snug mb-1">{item.label}</p>
               <p className="text-[11px] uppercase tracking-wider text-gray-500">{item.source}</p>
             </div>
@@ -5356,8 +5356,8 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
               { id: 'getting-started', label: 'What getting started with B2B sales pipeline automation actually looks like' },
             ].map(({ id, label }) => (
               <li key={id} className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#F26522] shrink-0" />
-                <a href={`#${id}`} className="hover:text-[#F26522] transition-colors">{label}</a>
+                <span className="w-1.5 h-1.5 rounded-full bg-[#111827] shrink-0" />
+                <a href={`#${id}`} className="hover:text-gray-900 transition-colors">{label}</a>
               </li>
             ))}
           </ul>
@@ -5367,10 +5367,10 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           Deploying B2B sales pipeline automation requires more than just installing scattered AI search tools. True sales acceleration happens at the orchestration layer, where your search intent signals, database enrichment, and CRM routing are synced. Here is how to construct a unified B2B sales pipeline automation strategy.
         </p>
 
-        <div className="border-l-4 border-[#F26522] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
+        <div className="border-l-4 border-[#111827] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
           <img src="/images/steve-portrait-thumb.webp" alt="Steve Martin" width="48" height="48" loading="lazy" className="w-12 h-12 object-cover rounded-full border border-white/10 shrink-0" />
           <div>
-            <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-1 font-sans">Steve's Take</p>
+            <p className="text-[12px] uppercase tracking-wider text-[#2E8C68] font-semibold mb-1 font-sans">Steve's Take</p>
             <p className="text-[15px] italic text-white leading-relaxed font-sans">
               "Most teams pay for twelve tools and still have reps copy-pasting data between tabs. Focus on building the orchestration layer that links your signal capture to your CRM action."
             </p>
@@ -5384,18 +5384,18 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
         {/* ── INLINE CTA (interlinking to services) ── */}
         <div className="bg-gray-900 text-white p-6 sm:p-8 my-10 sm:my-14 flex flex-col sm:flex-row items-start sm:items-center gap-6">
           <div className="flex-1">
-            <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-2">Gobiya Service</p>
+            <p className="text-[12px] uppercase tracking-wider text-[#d1f851] font-semibold mb-2">Gobiya Service</p>
             <p className="text-[17px] sm:text-[19px] font-medium leading-snug">
               Establish a unified B2B sales pipeline orchestration layer driven by first-party signals.
             </p>
           </div>
           <a
             href="/services#lead-generation"
-            className="group flex items-center bg-[#F26522] hover:bg-[#e05a1a] text-white pl-5 pr-2 py-2 transition-colors duration-300 whitespace-nowrap shrink-0"
+            className="group flex items-center bg-[#d1f851] hover:bg-[#c3ea45] text-[#111827] pl-5 pr-2 py-2 transition-colors duration-300 whitespace-nowrap shrink-0"
           >
             <span className="text-[13px] font-medium mr-3">Build Your Pipeline System</span>
             <div className="w-6 h-6 bg-white flex items-center justify-center">
-              <ArrowRight className="w-3.5 h-3.5 text-[#F26522] transition-transform duration-300 group-hover:-rotate-45" />
+              <ArrowRight className="w-3.5 h-3.5 text-[#111827] transition-transform duration-300 group-hover:-rotate-45" />
             </div>
           </a>
         </div>
@@ -5415,7 +5415,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           Why point-solution AI tools alone don't produce the pipeline lift the demos promise
         </h3>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Buying an AI SDR handles one workflow: prospect research, message generation, sequence execution. The tool works as advertised in isolation. But the AI SDR is only as good as the signals fed into it and the CRM hygiene it writes back to. If the signal layer is broken — third-party intent data resold to every competitor, no <a href="/insights/automated-b2b-sales-pipeline-seo" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">first-party SEO signal routing</a>, no AI-source referral capture — the AI SDR is just executing high-volume sequences with better grammar, and the reply rate looks roughly identical to a human SDR running the same broken inputs.
+          Buying an AI SDR handles one workflow: prospect research, message generation, sequence execution. The tool works as advertised in isolation. But the AI SDR is only as good as the signals fed into it and the CRM hygiene it writes back to. If the signal layer is broken — third-party intent data resold to every competitor, no <a href="/insights/automated-b2b-sales-pipeline-seo" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">first-party SEO signal routing</a>, no AI-source referral capture — the AI SDR is just executing high-volume sequences with better grammar, and the reply rate looks roughly identical to a human SDR running the same broken inputs.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
           Point-solution AI is not sufficient for actual pipeline lift. Orchestration across the full motion is the layer that converts AI capability into revenue outcome. Without it, the team is paying for AI productivity on tasks the productivity gain doesn't compound through. Programs that show strong tool-level metrics while pipeline-to-close ratios stay flat are running automation theater, not automation.
@@ -5443,7 +5443,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           A revenue team paying $200,000 in software, $150,000 in RevOps labor allocated to stack maintenance, and another $400,000 in SDR fully-loaded cost across four reps is operating a $750,000 annual motion. If the pipeline produced by that motion is structurally limited by signal leakage between disconnected tools, the actual pipeline ceiling is far below what the stack should be capable of producing. The visible cost is the software. The invisible cost is the pipeline that leaks at every integration seam, on every workflow that requires manual handoff to complete.
         </p>
 
-        <blockquote className="border-l-4 border-[#F26522] pl-4 italic text-gray-600 my-6">
+        <blockquote className="border-l-4 border-[#111827] pl-4 italic text-gray-600 my-6">
           <strong>Note:</strong> Stack costs and integration overhead vary widely by team size, vertical, and existing infrastructure. The figures above reflect typical U.S. mid-market B2B SaaS configurations in 2026.
         </blockquote>
 
@@ -5461,18 +5461,18 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
         {/* ── INLINE CTA (interlinking to automated-lead-generation-seo) ── */}
         <div className="bg-[#f9f9f9] border border-gray-100 p-6 sm:p-8 my-10 sm:my-14 flex flex-col sm:flex-row items-start sm:items-center gap-6">
           <div className="flex-1">
-            <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-bold mb-2">Related Spoke</p>
+            <p className="text-[12px] uppercase tracking-wider text-[#2E8C68] font-bold mb-2">Related Spoke</p>
             <p className="text-[16px] sm:text-[18px] font-semibold text-gray-900 leading-snug">
               Discover how automated SEO content qualifies pipeline before reps make contact.
             </p>
           </div>
           <a
             href="/insights/automated-lead-generation-seo"
-            className="group flex items-center bg-[#F26522] hover:bg-[#e05a1a] text-white pl-5 pr-2 py-2 transition-colors duration-300 whitespace-nowrap shrink-0"
+            className="group flex items-center bg-[#d1f851] hover:bg-[#c3ea45] text-[#111827] pl-5 pr-2 py-2 transition-colors duration-300 whitespace-nowrap shrink-0"
           >
             <span className="text-[13px] font-semibold mr-3">Read Lead Gen Article</span>
             <div className="w-6 h-6 bg-white flex items-center justify-center">
-              <ArrowRight className="w-3.5 h-3.5 text-[#F26522] transition-transform duration-300 group-hover:-rotate-45" />
+              <ArrowRight className="w-3.5 h-3.5 text-[#111827] transition-transform duration-300 group-hover:-rotate-45" />
             </div>
           </a>
         </div>
@@ -5485,7 +5485,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           The signals that drive automation have to come from somewhere. The teams getting the strongest results in 2026 use SEO and content infrastructure as the primary signal generator: first-party page visits, AI-citation referrals, comparison-page engagement, downloaded gated assets, demo-request form-fills. Those signals are exclusive to the vendor, arrive in real time, and carry meaningful intent context the orchestration layer can act on without needing to buy third-party data that's been resold across the category.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
-          This is the operational bridge between <a href="/insights/seo-for-b2b-lead-generation" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">SEO for B2B lead generation</a>, <a href="/insights/outbound-seo-prospecting" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">outbound SEO prospecting</a>, and B2B sales pipeline automation. Each one of those motions feeds the other. The SEO content captures direct conversions where it can, generates signals the outbound layer routes into sequences for visitors who didn't convert, and produces the data the automation layer needs to qualify and prioritize accounts at scale.
+          This is the operational bridge between <a href="/insights/seo-for-b2b-lead-generation" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">SEO for B2B lead generation</a>, <a href="/insights/outbound-seo-prospecting" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">outbound SEO prospecting</a>, and B2B sales pipeline automation. Each one of those motions feeds the other. The SEO content captures direct conversions where it can, generates signals the outbound layer routes into sequences for visitors who didn't convert, and produces the data the automation layer needs to qualify and prioritize accounts at scale.
         </p>
 
         {/* ── SECTION 6 ── */}
@@ -5562,11 +5562,11 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           </h3>
           <a
             href="/book"
-            className="group inline-flex items-center bg-[#F26522] hover:bg-[#e05a1a] text-white pl-6 pr-2 py-3 transition-colors duration-300"
+            className="group inline-flex items-center bg-[#d1f851] hover:bg-[#c3ea45] text-[#111827] pl-6 pr-2 py-3 transition-colors duration-300"
           >
             <span className="text-[14px] font-medium mr-4">Request an orchestration audit</span>
             <div className="w-8 h-8 bg-white flex items-center justify-center">
-              <ArrowRight className="w-4 h-4 text-[#F26522] transition-transform duration-500 group-hover:-rotate-45" />
+              <ArrowRight className="w-4 h-4 text-[#111827] transition-transform duration-500 group-hover:-rotate-45" />
             </div>
           </a>
         </div>
@@ -5632,8 +5632,8 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
         />
 
         {/* ── QUICK ANSWER ── */}
-        <div className="bg-[#F26522]/5 border-l-4 border-[#F26522] p-5 sm:p-6 my-8 rounded-r-sm">
-          <p className="text-[11px] uppercase tracking-wider text-[#F26522] font-semibold mb-2">Quick Answer</p>
+        <div className="bg-gray-50 border-l-4 border-[#111827] p-5 sm:p-6 my-8 rounded-r-sm">
+          <p className="text-[11px] uppercase tracking-wider text-[#2E8C68] font-semibold mb-2">Quick Answer</p>
           <p className="text-[15px] sm:text-[16px] leading-[1.7] text-gray-900 font-medium">The best SEO agency for B2B brands measures success in qualified pipeline and closed revenue — not just traffic. Verify pipeline attribution capability, multi-stakeholder content methodology, and demonstrated AI search expertise before signing any contract.</p>
         </div>
 
@@ -5649,7 +5649,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
               'Disclosed methodology — is their technical and content framework specific enough to verify before signing?',
             ].map((point, i) => (
               <li key={i} className="flex items-start gap-3 text-[14px] sm:text-[15px] text-gray-800 leading-snug">
-                <span className="w-5 h-5 rounded-full bg-[#F26522] text-white text-[10px] font-bold flex items-center justify-center shrink-0 mt-0.5">{i + 1}</span>
+                <span className="w-5 h-5 rounded-full bg-[#111827] text-white text-[10px] font-bold flex items-center justify-center shrink-0 mt-0.5">{i + 1}</span>
                 {point}
               </li>
             ))}
@@ -5715,8 +5715,8 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
             { stat: '88%', label: 'Google AI Mode citations NOT in organic top 10', source: 'Moz, 2026' },
             { stat: '9x', label: 'AI referral conversion rate vs Google organic', source: 'Data-Mania, 2026' },
           ].map(({ stat, label, source }) => (
-            <div key={stat} className="border border-[#F26522]/30 bg-[#F26522]/5 p-6">
-              <p className="text-4xl font-bold text-[#F26522] mb-2 font-display">{stat}</p>
+            <div key={stat} className="border border-gray-200 bg-gray-50 p-6">
+              <p className="text-4xl font-bold text-[#2E8C68] mb-2 font-display">{stat}</p>
               <p className="text-[14px] text-gray-900 leading-snug mb-1">{label}</p>
               <p className="text-[11px] uppercase tracking-wider text-gray-500">{source}</p>
             </div>
@@ -5740,8 +5740,8 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
               { id: 'making-right-call', label: 'Making the right call for your B2B SEO program' },
             ].map(({ id, label }) => (
               <li key={id} className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#F26522] shrink-0" />
-                <a href={`#${id}`} className="hover:text-[#F26522] transition-colors">{label}</a>
+                <span className="w-1.5 h-1.5 rounded-full bg-[#111827] shrink-0" />
+                <a href={`#${id}`} className="hover:text-gray-900 transition-colors">{label}</a>
               </li>
             ))}
           </ul>
@@ -5751,10 +5751,10 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           How do you select the best SEO agency for B2B brands in the AI era? Traditional B2B buyers now start their vendor research in conversational engines like ChatGPT, Claude, and Perplexity. Finding the best SEO agency for B2B requires moving beyond old keyword metrics to verify technical crawlability, AI citation rates, and CRM pipeline attribution.
         </p>
 
-        <div className="border-l-4 border-[#F26522] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
+        <div className="border-l-4 border-[#111827] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
           <img src="/images/steve-portrait-thumb.webp" alt="Steve Martin" width="48" height="48" loading="lazy" className="w-12 h-12 object-cover rounded-full border border-white/10 shrink-0" />
           <div>
-            <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-1 font-sans">Steve's Take</p>
+            <p className="text-[12px] uppercase tracking-wider text-[#2E8C68] font-semibold mb-1 font-sans">Steve's Take</p>
             <p className="text-[15px] italic text-white leading-relaxed font-sans">
               "Stop hiring SEO agencies based on how well they rank their own site for 'SEO agency.' Check their understanding of RAG retrieval, schema graph nesting, and CRM sales integration instead."
             </p>
@@ -5773,24 +5773,24 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           Traditional agency selection ran on three signals: case studies, rankings reports, and price. That worked when the relationship between traffic and pipeline was reasonably linear. It works less well when buyers complete most of their research in AI assistants before any vendor page is visited.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          "Best" for a B2B SEO agency in 2026 means the agency operates a measurement model that connects content to pipeline rather than to traffic. It has a documented point of view on AI search — how it integrates <a href="/services/geo-optimization" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">GEO (Generative Engine Optimization)</a> into the same content motion rather than treating it as a separate service line. It discloses its methodology clearly enough that a prospective client can verify the work matches the pitch.
+          "Best" for a B2B SEO agency in 2026 means the agency operates a measurement model that connects content to pipeline rather than to traffic. It has a documented point of view on AI search — how it integrates <a href="/services/geo-optimization" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">GEO (Generative Engine Optimization)</a> into the same content motion rather than treating it as a separate service line. It discloses its methodology clearly enough that a prospective client can verify the work matches the pitch.
         </p>
 
         {/* ── INLINE CTA ── */}
         <div className="bg-gray-900 text-white p-6 sm:p-8 my-10 sm:my-14 flex flex-col sm:flex-row items-start sm:items-center gap-6">
           <div className="flex-1">
-            <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-2">Gobiya Service</p>
+            <p className="text-[12px] uppercase tracking-wider text-[#d1f851] font-semibold mb-2">Gobiya Service</p>
             <p className="text-[17px] sm:text-[19px] font-medium leading-snug">
               Work with a specialized team that measures success in pipeline, not just traffic.
             </p>
           </div>
           <a
             href="/services/seo"
-            className="group flex items-center bg-[#F26522] hover:bg-[#e05a1a] text-white pl-5 pr-2 py-2 transition-colors duration-300 whitespace-nowrap shrink-0"
+            className="group flex items-center bg-[#d1f851] hover:bg-[#c3ea45] text-[#111827] pl-5 pr-2 py-2 transition-colors duration-300 whitespace-nowrap shrink-0"
           >
             <span className="text-[13px] font-medium mr-3">Explore B2B SEO</span>
             <div className="w-6 h-6 bg-white flex items-center justify-center">
-              <ArrowRight className="w-3.5 h-3.5 text-[#F26522] transition-transform duration-300 group-hover:-rotate-45" />
+              <ArrowRight className="w-3.5 h-3.5 text-[#111827] transition-transform duration-300 group-hover:-rotate-45" />
             </div>
           </a>
         </div>
@@ -5807,7 +5807,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           How the AI search shift reshaped the evaluation criteria that matter
         </h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          A <a href="/insights/b2b-seo-agency" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">B2B SEO agency</a> in 2026 is being evaluated against a fundamentally different set of criteria than the same agency was being evaluated against in 2022. The role of an SEO agency in this market is not just to rank pages — it's to make sure the brand is present in the AI-synthesized answer at the moment the buyer is forming the shortlist. This is where <a href="/insights/automated-b2b-sales-pipeline-seo" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">automated B2B sales pipeline SEO</a> becomes critical. Any agency that hasn't reframed its services around that outcome is selling 2019 SEO with 2026 invoicing.
+          A <a href="/insights/b2b-seo-agency" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">B2B SEO agency</a> in 2026 is being evaluated against a fundamentally different set of criteria than the same agency was being evaluated against in 2022. The role of an SEO agency in this market is not just to rank pages — it's to make sure the brand is present in the AI-synthesized answer at the moment the buyer is forming the shortlist. This is where <a href="/insights/automated-b2b-sales-pipeline-seo" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">automated B2B sales pipeline SEO</a> becomes critical. Any agency that hasn't reframed its services around that outcome is selling 2019 SEO with 2026 invoicing.
         </p>
 
         {/* ── COST BOX ── */}
@@ -5831,18 +5831,18 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           A credible engagement starts with an audit and a documented baseline, not a content calendar. The audit covers the brand's current AI citation footprint across ChatGPT, Claude, Perplexity, and Gemini for category-defining queries. It maps the third-party sources each AI engine is citing in the category. 
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          The engagement itself looks different from a traditional SEO retainer. Content production is balanced against earned-media placement, because the citations come from both. For companies integrating outbound strategies, this approach feeds directly into <a href="/insights/outbound-seo-prospecting" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">outbound SEO prospecting</a>, where content visibility directly triggers outbound workflows.
+          The engagement itself looks different from a traditional SEO retainer. Content production is balanced against earned-media placement, because the citations come from both. For companies integrating outbound strategies, this approach feeds directly into <a href="/insights/outbound-seo-prospecting" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">outbound SEO prospecting</a>, where content visibility directly triggers outbound workflows.
         </p>
 
         <h3 className="text-[18px] sm:text-[20px] font-medium text-gray-900 mt-10 mb-4">
           How SEO for B2B lead generation fits into the agency's measurement model
         </h3>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          The way an agency handles <a href="/insights/automated-lead-generation-seo" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">automated lead generation SEO</a> tells you more about its discipline than its case studies do. A real B2B SEO program in 2026 measures organic-sourced pipeline by stage, segments referral traffic by source (Google, ChatGPT, Claude, Perplexity, Gemini, direct, paid), and reports on cost per organic-sourced opportunity rather than cost per session or cost per click.
+          The way an agency handles <a href="/insights/automated-lead-generation-seo" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">automated lead generation SEO</a> tells you more about its discipline than its case studies do. A real B2B SEO program in 2026 measures organic-sourced pipeline by stage, segments referral traffic by source (Google, ChatGPT, Claude, Perplexity, Gemini, direct, paid), and reports on cost per organic-sourced opportunity rather than cost per session or cost per click.
         </p>
 
         {/* ── PULL QUOTE ── */}
-        <blockquote className="border-l-4 border-[#F26522] pl-6 sm:pl-8 my-10 sm:my-14">
+        <blockquote className="border-l-4 border-[#111827] pl-6 sm:pl-8 my-10 sm:my-14">
           <p className="text-[18px] sm:text-[22px] font-medium leading-[1.5] text-gray-900 italic">
             "If the agency's monthly report is built around organic sessions and keyword positions, the agency is measuring an outcome that has stopped predicting pipeline in B2B SaaS specifically."
           </p>
@@ -5883,7 +5883,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           Why Gobiya is positioned differently for B2B operators
         </h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Gobiya is engineered specifically for B2B brands that reject vanity traffic reports and demand pipeline accountability. We do not operate as a generalist content mill or resell standard SEO checklists. Our team consists of seasoned B2B growth engineers and developers who build custom React architectures, design AI search authority frameworks, and implement first-party <a href="/insights/b2b-sales-pipeline-automation" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">B2B sales pipeline automation</a> to convert search behavior into revenue. Every engagement starts with a forensic audit and clear, code-backed attribution, ensuring that our search strategies map directly to your SQLs and closed-won contracts.
+          Gobiya is engineered specifically for B2B brands that reject vanity traffic reports and demand pipeline accountability. We do not operate as a generalist content mill or resell standard SEO checklists. Our team consists of seasoned B2B growth engineers and developers who build custom React architectures, design AI search authority frameworks, and implement first-party <a href="/insights/b2b-sales-pipeline-automation" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">B2B sales pipeline automation</a> to convert search behavior into revenue. Every engagement starts with a forensic audit and clear, code-backed attribution, ensuring that our search strategies map directly to your SQLs and closed-won contracts.
         </p>
         </div>
 
@@ -5958,8 +5958,8 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
         />
 
         {/* ── QUICK ANSWER ── */}
-        <div className="bg-[#F26522]/5 border-l-4 border-[#F26522] p-5 sm:p-6 my-8 rounded-r-sm">
-          <p className="text-[11px] uppercase tracking-wider text-[#F26522] font-semibold mb-2">Quick Answer</p>
+        <div className="bg-gray-50 border-l-4 border-[#111827] p-5 sm:p-6 my-8 rounded-r-sm">
+          <p className="text-[11px] uppercase tracking-wider text-[#2E8C68] font-semibold mb-2">Quick Answer</p>
           <p className="text-[15px] sm:text-[16px] leading-[1.7] text-gray-900 font-medium">SEO for B2B lead generation requires mapping content to every stakeholder on the buying committee — not just the champion who fills out a form. B2B deals involve 11+ decision-makers who each research independently, and any one of them can stall a deal their champion already won.</p>
         </div>
 
@@ -5975,7 +5975,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
               'GEO (Generative Engine Optimization) ensures brand content is cited by AI assistants where 51% of B2B buyers now start research.',
             ].map((point, i) => (
               <li key={i} className="flex items-start gap-3 text-[14px] sm:text-[15px] text-gray-800 leading-snug">
-                <span className="w-5 h-5 rounded-full bg-[#F26522] text-white text-[10px] font-bold flex items-center justify-center shrink-0 mt-0.5">{i + 1}</span>
+                <span className="w-5 h-5 rounded-full bg-[#111827] text-white text-[10px] font-bold flex items-center justify-center shrink-0 mt-0.5">{i + 1}</span>
                 {point}
               </li>
             ))}
@@ -6055,7 +6055,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
               { id: 'making-right-call', label: 'Making the right call for your B2B lead generation program' },
             ].map((item) => (
               <li key={item.id}>
-                <a href={`#${item.id}`} className="text-[15px] text-gray-700 hover:text-[#F26522] transition-colors">
+                <a href={`#${item.id}`} className="text-[15px] text-gray-700 hover:text-gray-900 transition-colors">
                   {item.label}
                 </a>
               </li>
@@ -6073,7 +6073,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
             { stat: '40–60%', label: 'Qualified pipeline lost to buying committee non-consensus', source: 'SPOTIO, 2026' },
           ].map((item, idx) => (
             <div key={idx} className="bg-gray-50 border border-gray-100 p-6 rounded-sm">
-              <p className="text-3xl font-semibold text-[#F26522] mb-2">{item.stat}</p>
+              <p className="text-3xl font-semibold text-[#2E8C68] mb-2">{item.stat}</p>
               <p className="text-[13px] leading-snug text-gray-600">{item.label}</p>
               <p className="text-[11px] text-gray-400 mt-2">{item.source}</p>
             </div>
@@ -6087,10 +6087,10 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           Why does standard SEO for B2B lead generation fail to drive closed revenue? The issue is that most content programs target a single buyer champion, ignoring the 11+ stakeholders on a B2B buying committee. To scale conversions, your SEO for B2B lead generation must arm every stakeholder with role-specific answers.
         </p>
 
-        <div className="border-l-4 border-[#F26522] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
+        <div className="border-l-4 border-[#111827] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
           <img src="/images/steve-portrait-thumb.webp" alt="Steve Martin" width="48" height="48" loading="lazy" className="w-12 h-12 object-cover rounded-full border border-white/10 shrink-0" />
           <div>
-            <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-1 font-sans">Steve's Take</p>
+            <p className="text-[12px] uppercase tracking-wider text-[#2E8C68] font-semibold mb-1 font-sans">Steve's Take</p>
             <p className="text-[15px] italic text-white leading-relaxed font-sans">
               "When you target champions only, you get orphaned MQLs. Your content must satisfy the IT director, the CFO, and the procurement lead too. Build multi-role content clusters."
             </p>
@@ -6117,7 +6117,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           Why champion-only content produces orphaned MQLs
         </h3>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Champion-only content handles the first pass: someone fills out a form, lands in the CRM, and gets routed to sales. The lead looks good on the dashboard. But B2B research consistently shows that the champion is one of 11 people who need to align, and that 74 percent of buying committees report internal conflict during the decision (per Corporate Visions' 2026 behavior research). The champion who downloaded the ebook can't close the deal alone. The procurement person who's never heard of the vendor will object on principle. The technical evaluator who can't find the brand in their preferred research channels will recommend a competitor they're already familiar with. This is the exact pipeline leakage that <a href="/insights/automated-lead-generation-seo" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">automated lead generation SEO</a> systems are designed to close at scale.
+          Champion-only content handles the first pass: someone fills out a form, lands in the CRM, and gets routed to sales. The lead looks good on the dashboard. But B2B research consistently shows that the champion is one of 11 people who need to align, and that 74 percent of buying committees report internal conflict during the decision (per Corporate Visions' 2026 behavior research). The champion who downloaded the ebook can't close the deal alone. The procurement person who's never heard of the vendor will object on principle. The technical evaluator who can't find the brand in their preferred research channels will recommend a competitor they're already familiar with. This is the exact pipeline leakage that <a href="/insights/automated-lead-generation-seo" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">automated lead generation SEO</a> systems are designed to close at scale.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
           Single-persona lead generation is not sufficient to close B2B deals in 2026. Multi-role content coverage is the layer that makes the champion's internal pitch actually land. Without it, the program produces leads who get added to "committee can't agree" deals — the largest single bucket of lost pipeline in modern B2B.
@@ -6129,10 +6129,10 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           How committee buying reshaped the discipline of B2B SEO
         </h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          A <a href="/insights/b2b-seo-agency" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">B2B SEO program</a> in 2026 is operating against a fundamentally different buyer behavior than the same program was operating against five years ago. Forrester's 2026 Buyers' Journey Survey of 18,000 buyers found generative AI and conversational search are now named as the most meaningful research source — outranking vendor websites, product experts, and sales representatives. 6sense's 2025 B2B Buyer Experience Report found 95 percent of buyers walk in with their shortlist defined on day one, 83 percent have pre-defined requirements, and 94 percent use AI in some part of their research. Demandbase's 2025 buying group research identified 10 distinct decision-maker functions across the typical committee.
+          A <a href="/insights/b2b-seo-agency" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">B2B SEO program</a> in 2026 is operating against a fundamentally different buyer behavior than the same program was operating against five years ago. Forrester's 2026 Buyers' Journey Survey of 18,000 buyers found generative AI and conversational search are now named as the most meaningful research source — outranking vendor websites, product experts, and sales representatives. 6sense's 2025 B2B Buyer Experience Report found 95 percent of buyers walk in with their shortlist defined on day one, 83 percent have pre-defined requirements, and 94 percent use AI in some part of their research. Demandbase's 2025 buying group research identified 10 distinct decision-maker functions across the typical committee.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          The category got more complex faster than the buying process got more efficient. Software stacks expanded. Security and compliance requirements hardened. Procurement processes professionalized. Risk aversion intensified. The natural response from buyers was to involve more stakeholders earlier in the process. The role of B2B SEO in that market is no longer to convert a single buyer. It's to surface the brand across every research channel every committee member will touch — and that includes the <a href="/services/geo-optimization" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">generative engine optimization</a> layer where AI assistants synthesize answers for committee members researching independently.
+          The category got more complex faster than the buying process got more efficient. Software stacks expanded. Security and compliance requirements hardened. Procurement processes professionalized. Risk aversion intensified. The natural response from buyers was to involve more stakeholders earlier in the process. The role of B2B SEO in that market is no longer to convert a single buyer. It's to surface the brand across every research channel every committee member will touch — and that includes the <a href="/services/geo-optimization" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">generative engine optimization</a> layer where AI assistants synthesize answers for committee members researching independently.
         </p>
 
         {/* ── SECTION: The cost of single-persona B2B lead gen ── */}
@@ -6202,7 +6202,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           How B2B organic traffic growth supports committee coverage
         </h3>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          The organic traffic numbers tell you whether the committee architecture is actually being discovered. A B2B program operating on the buying-committee model produces traffic patterns that look different from a single-persona program: more distinct visitor profiles per account, more diverse content engagement per opportunity, and account-level engagement signals that show up before any individual lead converts. A program that shows steady traffic growth but flat account-level diversity is producing single-persona reach. A program that shows growing distinct-stakeholders-per-account is producing committee coverage. Both look fine on a top-line dashboard. Only the second one is solving the consensus problem. This is the same signal architecture that powers effective <a href="/insights/automated-b2b-sales-pipeline-seo" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">automated B2B sales pipeline SEO</a> — first-party data from committee-level engagement, routed into outbound workflows.
+          The organic traffic numbers tell you whether the committee architecture is actually being discovered. A B2B program operating on the buying-committee model produces traffic patterns that look different from a single-persona program: more distinct visitor profiles per account, more diverse content engagement per opportunity, and account-level engagement signals that show up before any individual lead converts. A program that shows steady traffic growth but flat account-level diversity is producing single-persona reach. A program that shows growing distinct-stakeholders-per-account is producing committee coverage. Both look fine on a top-line dashboard. Only the second one is solving the consensus problem. This is the same signal architecture that powers effective <a href="/insights/automated-b2b-sales-pipeline-seo" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">automated B2B sales pipeline SEO</a> — first-party data from committee-level engagement, routed into outbound workflows.
         </p>
 
         {/* ── SECTION: vs B2C-style content engine ── */}
@@ -6214,7 +6214,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           Not every program calling itself B2B lead generation SEO is operating against the actual B2B buyer journey. The category is full of programs imported from B2C and consumer SaaS playbooks, where the buyer is largely the user and the funnel is largely linear. B2B doesn't work that way, and programs that haven't structurally adapted produce predictable failures.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Start with how the program treats the buying committee. Ask whether the agency or in-house team has a documented committee map for the client's category, with specific role-by-role content allocation in the editorial calendar. If the answer is "we cover the buyer journey" without specifying which roles within the committee each piece is built for, the program is operating on the linear-funnel assumption that B2B abandoned a decade ago. Ask how the team measures consensus-stage content effectiveness — because that's where deals actually die. Content that helps the champion enable their committee internally is materially different from content built to acquire new leads. Understanding <a href="/insights/b2b-sales-pipeline-automation" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">B2B sales pipeline automation</a> at the orchestration layer reveals why most "lead gen" programs are measuring the wrong outcomes entirely.
+          Start with how the program treats the buying committee. Ask whether the agency or in-house team has a documented committee map for the client's category, with specific role-by-role content allocation in the editorial calendar. If the answer is "we cover the buyer journey" without specifying which roles within the committee each piece is built for, the program is operating on the linear-funnel assumption that B2B abandoned a decade ago. Ask how the team measures consensus-stage content effectiveness — because that's where deals actually die. Content that helps the champion enable their committee internally is materially different from content built to acquire new leads. Understanding <a href="/insights/b2b-sales-pipeline-automation" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">B2B sales pipeline automation</a> at the orchestration layer reveals why most "lead gen" programs are measuring the wrong outcomes entirely.
         </p>
 
         {/* ── SECTION: Why Gobiya is positioned differently ── */}
@@ -6224,7 +6224,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           Why Gobiya is positioned differently for B2B operators
         </h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Gobiya is engineered for B2B brands that need their content program to close pipeline, not just generate leads. We don't operate as a generalist content mill or resell standard SEO templates. Our team builds buying-committee content architectures from a documented committee map specific to each client's category — mapping every role, every research channel, and every consensus-stage gap before a single piece of content is produced. Every engagement starts with a forensic committee and content audit pulled from your CRM data, not from a generic persona template, and reporting ties content directly to pipeline stages and closed-won attribution. Our approach to <a href="/insights/best-seo-agency-for-b2b-brands" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">choosing the best SEO agency for B2B brands</a> reflects the same evaluation framework we apply to our own methodology — pipeline accountability over vanity metrics.
+          Gobiya is engineered for B2B brands that need their content program to close pipeline, not just generate leads. We don't operate as a generalist content mill or resell standard SEO templates. Our team builds buying-committee content architectures from a documented committee map specific to each client's category — mapping every role, every research channel, and every consensus-stage gap before a single piece of content is produced. Every engagement starts with a forensic committee and content audit pulled from your CRM data, not from a generic persona template, and reporting ties content directly to pipeline stages and closed-won attribution. Our approach to <a href="/insights/best-seo-agency-for-b2b-brands" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">choosing the best SEO agency for B2B brands</a> reflects the same evaluation framework we apply to our own methodology — pipeline accountability over vanity metrics.
         </p>
 
         </div>
@@ -6268,12 +6268,12 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           What getting started with SEO for B2B lead generation actually looks like
         </h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          A credible engagement starts with a committee and content audit, not a list of keywords to target. The audit maps the actual buying committee composition for the brand's deals — pulled from CRM analysis of closed-won deals over the last 12 months, not from a generic persona template. It identifies which roles on those committees the existing content already serves, which roles are underserved, and where the consensus-stage gaps are most likely to be killing pipeline. It segments the existing organic traffic by content type to determine which committee roles are actually being reached versus which are being missed entirely. It reviews the brand's earned-media footprint to identify where the executive-sponsor and procurement-stage credibility signals are weakest. And it ties the findings to a pipeline hypothesis — not "we'll grow traffic by X percent" but "we'll close more of the 40 to 60 percent of qualified opportunities currently lost to non-consensus by arming the underserved committee roles." Teams that integrate this with <a href="/insights/outbound-seo-prospecting" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">outbound SEO prospecting</a> see compounding returns as the committee-coverage content simultaneously feeds signal-anchored outbound sequences.
+          A credible engagement starts with a committee and content audit, not a list of keywords to target. The audit maps the actual buying committee composition for the brand's deals — pulled from CRM analysis of closed-won deals over the last 12 months, not from a generic persona template. It identifies which roles on those committees the existing content already serves, which roles are underserved, and where the consensus-stage gaps are most likely to be killing pipeline. It segments the existing organic traffic by content type to determine which committee roles are actually being reached versus which are being missed entirely. It reviews the brand's earned-media footprint to identify where the executive-sponsor and procurement-stage credibility signals are weakest. And it ties the findings to a pipeline hypothesis — not "we'll grow traffic by X percent" but "we'll close more of the 40 to 60 percent of qualified opportunities currently lost to non-consensus by arming the underserved committee roles." Teams that integrate this with <a href="/insights/outbound-seo-prospecting" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">outbound SEO prospecting</a> see compounding returns as the committee-coverage content simultaneously feeds signal-anchored outbound sequences.
         </p>
 
         {/* ── SECTION: CTA ── */}
         <div className="bg-gray-900 text-white p-8 sm:p-10 rounded-xl my-12 sm:my-16 relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-[#F26522]/20 to-transparent pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-br from-gray-200 to-transparent pointer-events-none" />
           <div className="relative z-10">
             <p className="text-[20px] sm:text-[24px] font-medium leading-tight mb-3">
               Ready to close the consensus gap?
@@ -6283,11 +6283,11 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
             </p>
             <a
               href="/book"
-              className="group inline-flex items-center bg-[#F26522] hover:bg-[#e05a1a] text-white pl-6 pr-2 py-3 transition-colors duration-300"
+              className="group inline-flex items-center bg-[#d1f851] hover:bg-[#c3ea45] text-[#111827] pl-6 pr-2 py-3 transition-colors duration-300"
             >
               <span className="text-[14px] font-medium mr-4">Request a committee audit</span>
               <div className="w-8 h-8 bg-white flex items-center justify-center">
-                <ArrowRight className="w-4 h-4 text-[#F26522] transition-transform duration-500 group-hover:-rotate-45" />
+                <ArrowRight className="w-4 h-4 text-[#111827] transition-transform duration-500 group-hover:-rotate-45" />
               </div>
             </a>
           </div>
@@ -6305,7 +6305,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           Two decisions matter most. First: whether your current content program is built around a documented committee map for your category, or around a single-buyer persona that no longer reflects how decisions actually get made. Second: whether your team measures consensus-stage content effectiveness — engagement diversity per account, multi-stakeholder content touch before close — or only top-of-funnel MQL volume that masks where the funnel is actually breaking.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Gobiya is a logical starting point for B2B operators that want a lead generation SEO program built around how committees actually buy in 2026, not around how single buyers were imagined to convert in 2018. Request a <a href="/services/lead-generation" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">committee and content audit</a>, walk through your current program and the funnel stages it's actually being measured on, and find out exactly where your content architecture stands relative to the consensus-ready pipeline threshold.
+          Gobiya is a logical starting point for B2B operators that want a lead generation SEO program built around how committees actually buy in 2026, not around how single buyers were imagined to convert in 2018. Request a <a href="/services/lead-generation" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">committee and content audit</a>, walk through your current program and the funnel stages it's actually being measured on, and find out exactly where your content architecture stands relative to the consensus-ready pipeline threshold.
         </p>
       </>
     ),
@@ -6367,8 +6367,8 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
         />
 
         {/* ── QUICK ANSWER ── */}
-        <div className="bg-[#F26522]/5 border-l-4 border-[#F26522] p-5 sm:p-6 my-8 rounded-r-sm">
-          <p className="text-[11px] uppercase tracking-wider text-[#F26522] font-semibold mb-2">Quick Answer</p>
+        <div className="bg-gray-50 border-l-4 border-[#111827] p-5 sm:p-6 my-8 rounded-r-sm">
+          <p className="text-[11px] uppercase tracking-wider text-[#2E8C68] font-semibold mb-2">Quick Answer</p>
           <p className="text-[15px] sm:text-[16px] leading-[1.7] text-gray-900 font-medium">Local SEO is the practice of optimizing a business's online presence to appear in Google's 3-Pack and local organic results. The most important ranking factors are Google Business Profile signals, review velocity, on-page localized content, and NAP consistency across directories.</p>
         </div>
 
@@ -6384,7 +6384,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
               'Behavioral signals — map pack click-through rate and website engagement from local visitors',
             ].map((point, i) => (
               <li key={i} className="flex items-start gap-3 text-[14px] sm:text-[15px] text-gray-800 leading-snug">
-                <span className="w-5 h-5 rounded-full bg-[#F26522] text-white text-[10px] font-bold flex items-center justify-center shrink-0 mt-0.5">{i + 1}</span>
+                <span className="w-5 h-5 rounded-full bg-[#111827] text-white text-[10px] font-bold flex items-center justify-center shrink-0 mt-0.5">{i + 1}</span>
                 {point}
               </li>
             ))}
@@ -6464,7 +6464,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
                 { id: 'making-right-call', label: 'Making the right call for your local search visibility' },
               ].map((item) => (
                 <li key={item.id}>
-                  <a href={`#${item.id}`} className="text-[15px] text-gray-700 hover:text-[#F26522] transition-colors">
+                  <a href={`#${item.id}`} className="text-[15px] text-gray-700 hover:text-gray-900 transition-colors">
                     {item.label}
                   </a>
                 </li>
@@ -6481,8 +6481,8 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
             { stat: '32%', label: 'Share of local pack ranking weight assigned to Google Business Profile signals — the single largest factor a business can directly control', source: 'Whitespark / BrightLocal, 2026' },
             { stat: '1.2% vs 35.9%', label: 'Rate at which ChatGPT recommends local business locations vs. their visibility in Google\'s 3-Pack — the AI-local visibility gap most businesses haven\'t measured', source: 'SOCi 2026 Local Visibility Index' },
           ].map(({ stat, label, source }) => (
-            <div key={stat} className="border border-[#F26522]/30 bg-[#F26522]/5 p-6">
-              <p className="text-4xl font-bold text-[#F26522] mb-2 font-display">{stat}</p>
+            <div key={stat} className="border border-gray-200 bg-gray-50 p-6">
+              <p className="text-4xl font-bold text-[#2E8C68] mb-2 font-display">{stat}</p>
               <p className="text-[14px] text-gray-900 leading-snug mb-1">{label}</p>
               <p className="text-[11px] uppercase tracking-wider text-gray-500">{source}</p>
             </div>
@@ -6493,10 +6493,10 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           Building a dominant local SEO strategy requires moving beyond simple directory submissions. With AI Overviews and proximity updates reshaping local search engine result pages, your local SEO strategy must optimize localized schema markup, review velocity, and regional landing pages. Here is our map pack optimization playbook.
         </p>
 
-        <div className="border-l-4 border-[#F26522] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
+        <div className="border-l-4 border-[#111827] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
           <img src="/images/steve-portrait-thumb.webp" alt="Steve Martin" width="48" height="48" loading="lazy" className="w-12 h-12 object-cover rounded-full border border-white/10 shrink-0" />
           <div>
-            <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-1 font-sans">Steve's Take</p>
+            <p className="text-[12px] uppercase tracking-wider text-[#2E8C68] font-semibold mb-1 font-sans">Steve's Take</p>
             <p className="text-[15px] italic text-white leading-relaxed font-sans">
               "Competitive markets are too tough to rely on basic Google profile setups. You need localized schema markup, review velocity past the 3-Pack threshold, and geo-targeted service subdirectories to stand out."
             </p>
@@ -6511,14 +6511,14 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
         <div id="what-local-seo-does" className="scroll-mt-24" />
         <h2 className="text-[1.6rem] sm:text-[2rem] font-display font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">What local SEO actually does in 2026</h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Local SEO in 2026 is fundamentally a multi-surface optimization discipline. The system optimizes the <a href="/insights/google-business-profile-optimization" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">Google Business Profile</a> against every field Google uses for ranking — primary category accuracy, profile completeness, photo volume and recency, post activity, attributes, services, products. It builds and maintains review velocity (the single ranking factor that has risen most in importance through 2025-2026). It ensures NAP (Name, Address, Phone) consistency across the GBP, website, and every directory citation. It produces on-page content with proper LocalBusiness schema, neighborhood-specific landing pages, and content that reflects how local consumers actually search.
+          Local SEO in 2026 is fundamentally a multi-surface optimization discipline. The system optimizes the <a href="/insights/google-business-profile-optimization" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">Google Business Profile</a> against every field Google uses for ranking — primary category accuracy, profile completeness, photo volume and recency, post activity, attributes, services, products. It builds and maintains review velocity (the single ranking factor that has risen most in importance through 2025-2026). It ensures NAP (Name, Address, Phone) consistency across the GBP, website, and every directory citation. It produces on-page content with proper LocalBusiness schema, neighborhood-specific landing pages, and content that reflects how local consumers actually search.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          And it engineers the business's presence in the AI-recommendation layer — because Gemini, ChatGPT, and Perplexity are increasingly the first stop for consumers asking "where should I go" before they ever open Google Maps. This multi-surface architecture is the same methodology applied in <a href="/insights/b2b-organic-traffic-growth" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">B2B organic traffic growth programs</a>: optimizing for composition of visibility across surfaces, not just volume on a single platform.
+          And it engineers the business's presence in the AI-recommendation layer — because Gemini, ChatGPT, and Perplexity are increasingly the first stop for consumers asking "where should I go" before they ever open Google Maps. This multi-surface architecture is the same methodology applied in <a href="/insights/b2b-organic-traffic-growth" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">B2B organic traffic growth programs</a>: optimizing for composition of visibility across surfaces, not just volume on a single platform.
         </p>
 
-        <div className="bg-gray-50 border-l-4 border-[#F26522] p-6 sm:p-8 my-10">
-          <h3 className="text-[15px] font-semibold uppercase tracking-wider text-[#F26522] mb-3">Why a complete Google Business Profile alone isn't enough anymore</h3>
+        <div className="bg-gray-50 border-l-4 border-[#111827] p-6 sm:p-8 my-10">
+          <h3 className="text-[15px] font-semibold uppercase tracking-wider text-[#2E8C68] mb-3">Why a complete Google Business Profile alone isn't enough anymore</h3>
           <p className="text-[15px] sm:text-[16px] leading-[1.7] text-gray-700">
             In saturated local markets, basic GBP completeness is now table stakes — every competitor has the same baseline. The businesses winning the 3-Pack are doing the things that compound on top of completeness: review velocity, photo volume past the 250-image threshold, active GBP posting, neighborhood-level content, geo-tagged service pages, and earned mentions on major directories and local publications. Profile completeness alone leaves the business doing the cheapest, most replicable part of local SEO and stopping where every competitor has already stopped.
           </p>
@@ -6531,7 +6531,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           The March 2026 Core Update pushed AI Overviews into 68 percent of local queries, meaning businesses without structured data, photo volume, and E-E-A-T signals are losing visibility on searches they used to win. Review recency has become the single most important individual ranking factor according to Whitespark's 2026 survey, overtaking review count and rating. The relevance pillar has tightened around primary category accuracy and entity recognition. And keyword stuffing in business names now triggers GBP policy enforcement suspensions.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Google has every incentive to push spam out of the organic local pack and reward businesses demonstrating actual local legitimacy. Businesses that haven't restructured around the 2026 signal hierarchy are competing against a 2024 version of the algorithm that no longer exists. The same shift in AI-driven search behavior documented in <a href="/insights/automated-b2b-sales-pipeline-seo" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">B2B pipeline SEO research</a> applies at the local level: the surfaces producing visibility have multiplied, and the signal sets don't always overlap.
+          Google has every incentive to push spam out of the organic local pack and reward businesses demonstrating actual local legitimacy. Businesses that haven't restructured around the 2026 signal hierarchy are competing against a 2024 version of the algorithm that no longer exists. The same shift in AI-driven search behavior documented in <a href="/insights/automated-b2b-sales-pipeline-seo" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">B2B pipeline SEO research</a> applies at the local level: the surfaces producing visibility have multiplied, and the signal sets don't always overlap.
         </p>
 
         {/* ── SECTION: Cost of invisibility ── */}
@@ -6551,8 +6551,8 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           A credible program starts with an audit of the actual local search results the business is competing in, not a generic checklist. The audit checks current rank for core service terms across multiple target districts (rankings vary materially by exact location — a business ranking #2 in one district may rank #12 in another for the same query), evaluates competitor 3-Pack incumbents, reviews the GBP against the 2026 signal hierarchy, audits review velocity and rating against direct competitors, checks NAP consistency, and runs the business through Gemini, ChatGPT, and Perplexity to baseline AI-recommendation visibility.
         </p>
 
-        <div className="bg-gray-50 border-l-4 border-[#F26522] p-6 sm:p-8 my-10">
-          <h3 className="text-[15px] font-semibold uppercase tracking-wider text-[#F26522] mb-3">How business search rankings actually get earned in 2026</h3>
+        <div className="bg-gray-50 border-l-4 border-[#111827] p-6 sm:p-8 my-10">
+          <h3 className="text-[15px] font-semibold uppercase tracking-wider text-[#2E8C68] mb-3">How business search rankings actually get earned in 2026</h3>
           <p className="text-[15px] sm:text-[16px] leading-[1.7] text-gray-700">
             The proximity pillar (55% of local ranking decisions per Whitespark 2026) is largely outside a business's control. But prominence and relevance are entirely controllable — and they're where the rankings competition actually happens. Prominence is earned through review volume, velocity, response rate, third-party mentions on authoritative local sources, and branded search volume over time. Relevance is earned through primary category accuracy, services listed, attributes, neighborhood-specific content, and keywords appearing naturally in customer reviews. A business systematically earning these signals over 6–12 months will out-rank a business with stronger proximity in many queries.
           </p>
@@ -6562,10 +6562,10 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
         <div id="real-vs-fake" className="scroll-mt-24" />
         <h2 className="text-[1.6rem] sm:text-[2rem] font-display font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">What separates a real local SEO program from a "we'll set up your Google listing" service</h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Ask what the recurring monthly work actually consists of. If the answer is "we set up your Google Business Profile and submit you to directories," the provider is selling a one-time service. Real local SEO programs operate on the kind of structured <a href="/insights/local-seo-explained" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">operational cadence</a> that produces ranking movement — review request systems, GBP post production, photo refreshes, review response within 24–48 hours, citation audits, on-page content updates, rank tracking across multiple neighborhoods, and AI-layer monitoring.
+          Ask what the recurring monthly work actually consists of. If the answer is "we set up your Google Business Profile and submit you to directories," the provider is selling a one-time service. Real local SEO programs operate on the kind of structured <a href="/insights/local-seo-explained" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">operational cadence</a> that produces ranking movement — review request systems, GBP post production, photo refreshes, review response within 24–48 hours, citation audits, on-page content updates, rank tracking across multiple neighborhoods, and AI-layer monitoring.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Ask whether the provider tracks rankings from multiple specific locations, not just a single citywide rank. Ask whether they have a documented review acquisition system integrated into the business's customer workflow — passive requests produce 1–2% conversion while integrated systems produce 25–40%. Ask whether they have a position on AI-layer visibility. The same questions that distinguish a real <a href="/insights/best-seo-agency-for-b2b-brands" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">B2B SEO agency from a commodity provider</a> apply equally to local SEO: does the program operate against the current algorithm, or a 2019 playbook with refreshed branding?
+          Ask whether the provider tracks rankings from multiple specific locations, not just a single citywide rank. Ask whether they have a documented review acquisition system integrated into the business's customer workflow — passive requests produce 1–2% conversion while integrated systems produce 25–40%. Ask whether they have a position on AI-layer visibility. The same questions that distinguish a real <a href="/insights/best-seo-agency-for-b2b-brands" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">B2B SEO agency from a commodity provider</a> apply equally to local SEO: does the program operate against the current algorithm, or a 2019 playbook with refreshed branding?
         </p>
 
         {/* ── SECTION: Gobiya ── */}
@@ -6576,7 +6576,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           Gobiya is built for high-performance delivery nationwide. Local SEO programs are built on a neighborhood-by-neighborhood understanding of how local geography, publication ecosystems, and customer behavior patterns shape rankings. Every engagement starts with a multi-neighborhood rank audit and a competitive GBP analysis — not a generic local SEO template.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          The methodology covers all five ranking pillars simultaneously: GBP optimization, review velocity engineering, NAP consistency, neighborhood-specific on-page content, and AI-layer visibility. Reporting includes rank tracking across the specific target districts where the client's customers are searching — not a single citywide number that masks the neighborhood-level variation that determines what real customers actually see. The same <a href="/insights/seo-for-b2b-lead-generation" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">pipeline-first SEO methodology</a> applied to B2B lead generation drives local SEO programs: every signal is tracked against actual customer contacts, not abstract ranking positions.
+          The methodology covers all five ranking pillars simultaneously: GBP optimization, review velocity engineering, NAP consistency, neighborhood-specific on-page content, and AI-layer visibility. Reporting includes rank tracking across the specific target districts where the client's customers are searching — not a single citywide number that masks the neighborhood-level variation that determines what real customers actually see. The same <a href="/insights/seo-for-b2b-lead-generation" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">pipeline-first SEO methodology</a> applied to B2B lead generation drives local SEO programs: every signal is tracked against actual customer contacts, not abstract ranking positions.
         </p>
 
               </div>
@@ -6591,7 +6591,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
             { role: 'Retail, Fitness & Wellness', detail: 'Direction-request actions on GBP often correlate more directly with revenue than calls. Neighborhood-level visibility matters more than citywide ranking.' },
           ].map(({ role, detail }) => (
             <div key={role} className="border border-gray-200 p-5 sm:p-6">
-              <p className="text-[13px] uppercase tracking-wider font-semibold text-[#F26522] mb-2">{role}</p>
+              <p className="text-[13px] uppercase tracking-wider font-semibold text-[#2E8C68] mb-2">{role}</p>
               <p className="text-[14px] text-gray-700 leading-relaxed">{detail}</p>
             </div>
           ))}
@@ -6601,10 +6601,10 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
         <div id="getting-started" className="scroll-mt-24" />
         <h2 className="text-[1.6rem] sm:text-[2rem] font-display font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">What getting started with local SEO actually looks like</h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          A credible engagement starts with a local visibility audit, not a sales pitch. The audit checks current rankings across multiple specific target neighborhoods for core service terms, baselines the GBP against the 2026 signal hierarchy, evaluates review velocity and rating against direct competitors in the relevant target neighborhood, audits NAP consistency across major citation sources, runs the business through Gemini, ChatGPT, and Perplexity to baseline AI-recommendation visibility, and produces a hypothesis-driven roadmap tying gaps to specific customer-contact and revenue projections. For brands operating across multiple regions, this audit includes a full assessment of their <a href="/insights/multi-location-seo-website-structure" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">multi-location SEO website structure</a>.
+          A credible engagement starts with a local visibility audit, not a sales pitch. The audit checks current rankings across multiple specific target neighborhoods for core service terms, baselines the GBP against the 2026 signal hierarchy, evaluates review velocity and rating against direct competitors in the relevant target neighborhood, audits NAP consistency across major citation sources, runs the business through Gemini, ChatGPT, and Perplexity to baseline AI-recommendation visibility, and produces a hypothesis-driven roadmap tying gaps to specific customer-contact and revenue projections. For brands operating across multiple regions, this audit includes a full assessment of their <a href="/insights/multi-location-seo-website-structure" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">multi-location SEO website structure</a>.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          The businesses that get the most from local SEO treat it as an ongoing operational discipline — review acquisition built into customer workflow, GBP treated as a real asset, content production focused on neighborhood-specific terms, AI-layer presence monitored as actively as Google rankings. The same composition-first approach that drives <a href="/insights/automated-lead-generation-seo" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">automated lead generation SEO</a> for B2B operators applies: the surface mix that produces visibility has changed, and programs that haven't adapted are paying the cost of the old model.
+          The businesses that get the most from local SEO treat it as an ongoing operational discipline — review acquisition built into customer workflow, GBP treated as a real asset, content production focused on neighborhood-specific terms, AI-layer presence monitored as actively as Google rankings. The same composition-first approach that drives <a href="/insights/automated-lead-generation-seo" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">automated lead generation SEO</a> for B2B operators applies: the surface mix that produces visibility has changed, and programs that haven't adapted are paying the cost of the old model.
         </p>
 
         {/* ── SECTION: Making the call ── */}
@@ -6619,13 +6619,13 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
 
         {/* ── CTA ── */}
         <div className="bg-gray-900 rounded-xl p-8 sm:p-10 my-14">
-          <p className="text-[11px] uppercase tracking-wider font-semibold text-[#F26522] mb-3">Get A Local Visibility Audit</p>
+          <p className="text-[11px] uppercase tracking-wider font-semibold text-[#2E8C68] mb-3">Get A Local Visibility Audit</p>
           <h3 className="text-white text-[1.4rem] sm:text-[1.7rem] font-display font-medium leading-[1.2] mb-4">Find out where your business stands across Google's local surfaces and the AI-recommendation layer.</h3>
           <p className="text-gray-400 text-[15px] leading-relaxed mb-6">Walk through your current local search presence before the competitive gap widens into something expensive to close.</p>
-          <a href="/book" className="inline-flex items-center gap-3 bg-[#F26522] hover:bg-[#e05a1a] text-white pl-6 pr-2 py-2.5 transition-colors duration-300 font-medium text-[14px]">
+          <a href="/book" className="inline-flex items-center gap-3 bg-[#d1f851] hover:bg-[#c3ea45] text-[#111827] pl-6 pr-2 py-2.5 transition-colors duration-300 font-medium text-[14px]">
             Request a local visibility audit
             <div className="w-7 h-7 bg-white flex items-center justify-center ml-3">
-              <svg className="w-3.5 h-3.5 text-[#F26522]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"/></svg>
+              <svg className="w-3.5 h-3.5 text-[#2E8C68]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"/></svg>
             </div>
           </a>
         </div>
@@ -6690,8 +6690,8 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
         />
 
         {/* ── QUICK ANSWER ── */}
-        <div className="bg-[#F26522]/5 border-l-4 border-[#F26522] p-5 sm:p-6 my-8 rounded-r-sm">
-          <p className="text-[11px] uppercase tracking-wider text-[#F26522] font-semibold mb-2">Quick Answer</p>
+        <div className="bg-gray-50 border-l-4 border-[#111827] p-5 sm:p-6 my-8 rounded-r-sm">
+          <p className="text-[11px] uppercase tracking-wider text-[#2E8C68] font-semibold mb-2">Quick Answer</p>
           <p className="text-[15px] sm:text-[16px] leading-[1.7] text-gray-900 font-medium">Local SEO explained simply: it is the ongoing weekly and monthly practice of keeping your Google Business Profile active, acquiring reviews consistently, maintaining citation accuracy, and publishing localized content. Rankings reward businesses that maintain consistent activity — and drop businesses that go quiet for even 6–8 weeks.</p>
         </div>
 
@@ -6707,7 +6707,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
               'Monthly: Track map pack rank position for top 5–10 local keywords and diagnose any movement',
             ].map((point, i) => (
               <li key={i} className="flex items-start gap-3 text-[14px] sm:text-[15px] text-gray-800 leading-snug">
-                <span className="w-5 h-5 rounded-full bg-[#F26522] text-white text-[10px] font-bold flex items-center justify-center shrink-0 mt-0.5">{i + 1}</span>
+                <span className="w-5 h-5 rounded-full bg-[#111827] text-white text-[10px] font-bold flex items-center justify-center shrink-0 mt-0.5">{i + 1}</span>
                 {point}
               </li>
             ))}
@@ -6760,11 +6760,11 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
               },
             ].map(({ period, items }, i) => (
               <div key={i} className={`p-4 sm:p-5 border-b sm:border-b-0 sm:border-r border-gray-200 last:border-0 ${i === 0 ? 'bg-white' : i === 1 ? 'bg-gray-50' : 'bg-white'}`}>
-                <p className="text-[13px] font-bold text-[#F26522] mb-3">{period}</p>
+                <p className="text-[13px] font-bold text-[#2E8C68] mb-3">{period}</p>
                 <ul className="space-y-2">
                   {items.map((item, j) => (
                     <li key={j} className="flex items-start gap-2 text-[13px] text-gray-700 leading-snug">
-                      <span className="text-[#F26522] mt-0.5">✓</span>
+                      <span className="text-[#2E8C68] mt-0.5">✓</span>
                       {item}
                     </li>
                   ))}
@@ -6781,8 +6781,8 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
             { stat: '2.7x', label: 'Click lift for Google Business Profiles with 30+ photos vs fewer than 10', source: 'SE Ranking 2026' },
             { stat: '6–8 wks', label: 'Window in which ranking drops typically occur when review velocity stops', source: 'SE Ranking 2026' },
           ].map(({ stat, label, source }) => (
-            <div key={stat} className="border border-[#F26522]/30 bg-[#F26522]/5 p-6">
-              <p className="text-4xl font-bold text-[#F26522] mb-2 font-display">{stat}</p>
+            <div key={stat} className="border border-gray-200 bg-gray-50 p-6">
+              <p className="text-4xl font-bold text-[#2E8C68] mb-2 font-display">{stat}</p>
               <p className="text-[14px] text-gray-900 leading-snug mb-1">{label}</p>
               <p className="text-[11px] uppercase tracking-wider text-gray-500">{source}</p>
             </div>
@@ -6810,8 +6810,8 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
               { id: 'making-call', label: 'Making the right call for your local SEO operating model' },
             ].map(({ id, label }) => (
               <li key={id} className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#F26522] shrink-0" />
-                <a href={`#${id}`} className="hover:text-[#F26522] transition-colors">{label}</a>
+                <span className="w-1.5 h-1.5 rounded-full bg-[#111827] shrink-0" />
+                <a href={`#${id}`} className="hover:text-gray-900 transition-colors">{label}</a>
               </li>
             ))}
           </ul>
@@ -6821,10 +6821,10 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           How does local SEO explained work in daily practice? When we have local SEO explained by experts, the focus is never on secret tips, but on operational consistency. Winning Google's local 3-Pack requires a weekly operating cadence that signals constant local relevance.
         </p>
 
-        <div className="border-l-4 border-[#F26522] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
+        <div className="border-l-4 border-[#111827] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
           <img src="/images/steve-portrait-thumb.webp" alt="Steve Martin" width="48" height="48" loading="lazy" className="w-12 h-12 object-cover rounded-full border border-white/10 shrink-0" />
           <div>
-            <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-1 font-sans">Steve's Take</p>
+            <p className="text-[12px] uppercase tracking-wider text-[#2E8C68] font-semibold mb-1 font-sans">Steve's Take</p>
             <p className="text-[15px] italic text-white leading-relaxed font-sans">
               "Google's algorithm measures profile activity and review velocity. If you go dark for even six weeks, your rankings drop to active competitors. Build local SEO directly into your customer support workflows."
             </p>
@@ -6858,8 +6858,8 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           This operating shape is what the algorithm actually rewards. The 2026 Whitespark data shows that GBPs receiving more than one review per week outrank stable-velocity GBPs by 1.7 positions on average. Businesses that respond to reviews within 24 hours see 18% higher review velocity than slow responders. The compounding effect of weekly work over six to twelve months is what produces durable 3-Pack positions. The absence of that work is what produces the 6-to-8-week ranking drops the data documents in competitive markets.
         </p>
 
-        <div className="bg-gray-50 border-l-4 border-[#F26522] p-6 sm:p-8 my-10">
-          <h3 className="text-[15px] font-semibold uppercase tracking-wider text-[#F26522] mb-3">Why one-time setup followed by silence almost always fails in competitive markets</h3>
+        <div className="bg-gray-50 border-l-4 border-[#111827] p-6 sm:p-8 my-10">
+          <h3 className="text-[15px] font-semibold uppercase tracking-wider text-[#2E8C68] mb-3">Why one-time setup followed by silence almost always fails in competitive markets</h3>
           <p className="text-[15px] sm:text-[16px] leading-[1.7] text-gray-700">
             One-time setup handles the first pass: the business gets claimed, the profile gets filled in, basic citations get submitted. The dashboard looks better immediately. But the algorithm does not maintain rankings on the basis of a profile that was complete six months ago. It maintains rankings on the basis of ongoing signal — fresh reviews, fresh photos, fresh posts, fresh on-page content, sustained behavioral engagement. A business that goes silent after setup is sending the algorithm a signal that the business has gone dormant, and the algorithm responds by reweighting toward more-active competitors.
           </p>
@@ -6930,7 +6930,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
         <div id="real-discipline" className="scroll-mt-24" />
         <h2 className="text-[1.6rem] sm:text-[2rem] font-display font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">What separates a real local SEO operating discipline from a &quot;set it and forget it&quot; service</h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Not every provider offering local SEO operates against the cadence reality. The category is heavily populated with white-label setup services, one-time GBP optimization vendors, and agencies that bill monthly for work that's actually one-time-only repackaged. Selecting a partner requires the same diligence as choosing the <a href="/insights/best-seo-agency-for-b2b-brands" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">best SEO agency for B2B brands</a>: you need to look past the marketing deck and audit their actual operational rhythm.
+          Not every provider offering local SEO operates against the cadence reality. The category is heavily populated with white-label setup services, one-time GBP optimization vendors, and agencies that bill monthly for work that's actually one-time-only repackaged. Selecting a partner requires the same diligence as choosing the <a href="/insights/best-seo-agency-for-b2b-brands" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">best SEO agency for B2B brands</a>: you need to look past the marketing deck and audit their actual operational rhythm.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
           Start with what the recurring work consists of. Ask the provider — agency, freelancer, or internal team member — to describe what they will actually do in week 1 versus week 5 versus week 9 of the engagement. If the answer is essentially the same activities repeating with different framing, the cadence is real. If the answer is &quot;we did the setup in month one and now we're maintaining,&quot; the cadence is not real and the maintenance is going to look like checking on the profile occasionally rather than doing the recurring work the algorithm rewards.
@@ -6950,7 +6950,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           Gobiya's programs are built on a neighborhood-by-neighborhood understanding of how specific geography, publication ecosystems, and customer behavior patterns shape rankings. Every engagement starts with a multi-neighborhood rank audit and a competitive GBP analysis — not a generic local SEO template.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          The methodology covers all five ranking pillars simultaneously: GBP optimization, review velocity engineering, NAP consistency, neighborhood-specific on-page content, and AI-layer visibility. Reporting includes rank tracking across the specific neighborhoods where the client's customers are searching — not a single citywide number that masks the neighborhood-level variation that determines what real customers actually see. The same <a href="/insights/seo-for-b2b-lead-generation" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">pipeline-first SEO methodology</a> applied to B2B lead generation drives local SEO programs: every signal is tracked against actual customer contacts, not abstract ranking positions.
+          The methodology covers all five ranking pillars simultaneously: GBP optimization, review velocity engineering, NAP consistency, neighborhood-specific on-page content, and AI-layer visibility. Reporting includes rank tracking across the specific neighborhoods where the client's customers are searching — not a single citywide number that masks the neighborhood-level variation that determines what real customers actually see. The same <a href="/insights/seo-for-b2b-lead-generation" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">pipeline-first SEO methodology</a> applied to B2B lead generation drives local SEO programs: every signal is tracked against actual customer contacts, not abstract ranking positions.
         </p>
 
         </div>
@@ -6971,7 +6971,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           <strong>Businesses in geographically limited markets</strong> (single-neighborhood operators who don't compete with the entire city) face cadence requirements driven more by the specific local competitive set than by citywide dynamics. The operational discipline still matters but the volume of work required is lower.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          <strong>Multi-location businesses</strong> (chains, franchises, and regional operators) face the most operationally complex local SEO challenge, because every location has its own GBP, its own review stream, its own neighborhood-specific content needs, and its own competitive set. The cadence discipline scales linearly with location count, and businesses that try to centralize all of it under one process typically underperform location-level operators who run each location's GBP individually. The specific configuration varies by business model, which is why a proper <a href="/insights/multi-location-seo-website-structure" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">multi-location SEO website structure</a> is required to prevent locations from cannibalizing each other.
+          <strong>Multi-location businesses</strong> (chains, franchises, and regional operators) face the most operationally complex local SEO challenge, because every location has its own GBP, its own review stream, its own neighborhood-specific content needs, and its own competitive set. The cadence discipline scales linearly with location count, and businesses that try to centralize all of it under one process typically underperform location-level operators who run each location's GBP individually. The specific configuration varies by business model, which is why a proper <a href="/insights/multi-location-seo-website-structure" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">multi-location SEO website structure</a> is required to prevent locations from cannibalizing each other.
         </p>
 
         {/* ── SECTION: Getting Started ── */}
@@ -6996,13 +6996,13 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
 
         {/* ── CTA ── */}
         <div className="bg-gray-900 rounded-xl p-8 sm:p-10 my-14">
-          <p className="text-[11px] uppercase tracking-wider font-semibold text-[#F26522] mb-3">Get A Local Visibility Audit</p>
+          <p className="text-[11px] uppercase tracking-wider font-semibold text-[#2E8C68] mb-3">Get A Local Visibility Audit</p>
           <h3 className="text-white text-[1.4rem] sm:text-[1.7rem] font-display font-medium leading-[1.2] mb-4">Find out where your business stands across Google's local surfaces and the AI-recommendation layer.</h3>
           <p className="text-gray-400 text-[15px] leading-relaxed mb-6">Walk through your current local search presence before the competitive gap widens into something expensive to close.</p>
-          <a href="/book" className="inline-flex items-center gap-3 bg-[#F26522] hover:bg-[#e05a1a] text-white pl-6 pr-2 py-2.5 transition-colors duration-300 font-medium text-[14px]">
+          <a href="/book" className="inline-flex items-center gap-3 bg-[#d1f851] hover:bg-[#c3ea45] text-[#111827] pl-6 pr-2 py-2.5 transition-colors duration-300 font-medium text-[14px]">
             Request an operating-cadence audit
             <div className="w-7 h-7 bg-white flex items-center justify-center ml-3">
-              <svg className="w-3.5 h-3.5 text-[#F26522]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"/></svg>
+              <svg className="w-3.5 h-3.5 text-[#2E8C68]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"/></svg>
             </div>
           </a>
         </div>
@@ -7028,8 +7028,8 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
             { stat: '1:1', label: 'Required relationship between each location page and its corresponding GBP', source: 'SE Ranking 2026' },
             { stat: '4 of 5', label: 'Markets a multi-location operator becomes invisible in when lacking location pages', source: 'SEO Architectural Failure Case, 2026' },
           ].map(({ stat, label, source }) => (
-            <div key={stat} className="border border-[#F26522]/30 bg-[#F26522]/5 p-6">
-              <p className="text-4xl font-bold text-[#F26522] mb-2 font-display">{stat}</p>
+            <div key={stat} className="border border-gray-200 bg-gray-50 p-6">
+              <p className="text-4xl font-bold text-[#2E8C68] mb-2 font-display">{stat}</p>
               <p className="text-[14px] text-gray-900 leading-snug mb-1">{label}</p>
               <p className="text-[11px] uppercase tracking-wider text-gray-500">{source}</p>
             </div>
@@ -7056,8 +7056,8 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
               { id: 'making-call', label: 'Making the right call for your multi-location architecture' },
             ].map(({ id, label }) => (
               <li key={id} className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#F26522] shrink-0" />
-                <a href={`#${id}`} className="hover:text-[#F26522] transition-colors">{label}</a>
+                <span className="w-1.5 h-1.5 rounded-full bg-[#111827] shrink-0" />
+                <a href={`#${id}`} className="hover:text-gray-900 transition-colors">{label}</a>
               </li>
             ))}
           </ul>
@@ -7067,10 +7067,10 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           Designing a scalable multi-location SEO website structure is the single most important technical choice for regional brands. Built incorrectly, your city subdirectories will cannibalize each other's rankings. Our multi-location SEO website structure playbook ensures each office functions as a distinct authority node with its own crawl path.
         </p>
 
-        <div className="border-l-4 border-[#F26522] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
+        <div className="border-l-4 border-[#111827] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
           <img src="/images/steve-portrait-thumb.webp" alt="Steve Martin" width="48" height="48" loading="lazy" className="w-12 h-12 object-cover rounded-full border border-white/10 shrink-0" />
           <div>
-            <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-1 font-sans">Steve's Take</p>
+            <p className="text-[12px] uppercase tracking-wider text-[#2E8C68] font-semibold mb-1 font-sans">Steve's Take</p>
             <p className="text-[15px] italic text-white leading-relaxed font-sans">
               "Never let web developers design your URL structures without SEO input. They will build flat, single-page templates with a generic drop-down list, which Google treats as a single URL. Every city needs a directory path."
             </p>
@@ -7078,7 +7078,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
         </div>
 
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          This is the problem a proper multi-location SEO website structure solves. The strongest multi-location operators have stopped treating their website as a single brand asset with location information scattered across it and started treating it as a federation of location-specific pages, each with its own authority, content, and search footprint, all linked through a coherent architecture that helps rather than hurts. Most operators don't realize how much their architecture is hurting them until they look at their analytics — especially as <a href="/insights/b2b-organic-traffic-growth" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">organic traffic and pipeline decoupled</a> in 2026 — and discover that one location is producing 80% of organic traffic while the other locations look invisible — and assume that's a local SEO problem rather than the technical SEO problem it actually is.
+          This is the problem a proper multi-location SEO website structure solves. The strongest multi-location operators have stopped treating their website as a single brand asset with location information scattered across it and started treating it as a federation of location-specific pages, each with its own authority, content, and search footprint, all linked through a coherent architecture that helps rather than hurts. Most operators don't realize how much their architecture is hurting them until they look at their analytics — especially as <a href="/insights/b2b-organic-traffic-growth" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">organic traffic and pipeline decoupled</a> in 2026 — and discover that one location is producing 80% of organic traffic while the other locations look invisible — and assume that's a local SEO problem rather than the technical SEO problem it actually is.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
           This article covers what proper multi-location SEO website structure actually means in 2026, why architectural decisions made at site-build time determine the ceiling for every downstream local SEO effort, what the cost of structural cannibalization looks like, and what separates a real multi-location architecture from a single-location website with location names sprinkled in.
@@ -7095,7 +7095,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
         <div id="what-it-means" className="scroll-mt-24" />
         <h2 className="text-[1.6rem] sm:text-[2rem] font-display font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">What multi-location SEO website structure actually means</h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Multi-location SEO website structure is fundamentally about giving each physical location enough independent identity in the website's architecture for Google to treat it as a distinct local entity. Single-location websites have one job: rank the business for its core terms in its city. Multi-location websites have a more complex job: rank each location independently for its own terms in its own city, while presenting the brand coherently to the customer who knows the chain by name and to Google as a unified domain. Those two goals — local independence and brand coherence — are the tension every multi-location architecture has to resolve. Finding the right balance is covered in detail in our guide on <a href="/insights/local-seo" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">local SEO strategies</a>.
+          Multi-location SEO website structure is fundamentally about giving each physical location enough independent identity in the website's architecture for Google to treat it as a distinct local entity. Single-location websites have one job: rank the business for its core terms in its city. Multi-location websites have a more complex job: rank each location independently for its own terms in its own city, while presenting the brand coherently to the customer who knows the chain by name and to Google as a unified domain. Those two goals — local independence and brand coherence — are the tension every multi-location architecture has to resolve. Finding the right balance is covered in detail in our guide on <a href="/insights/local-seo" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">local SEO strategies</a>.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
           The 2026 standard for multi-location SEO website structure has converged around a few specific architectural principles. Each real location gets its own dedicated landing page on the website (typically at /locations/[city-name] or /[city-name]/[service] URL structures). Each location page has a 1:1 relationship with a verified Google Business Profile for that specific location. Each location page contains substantively unique content — not boilerplate with the city name swapped in, but actual content about the actual location, its actual services, its actual hours, its actual team, its actual neighborhood. Each location page is linked from a parent "Locations" hub page that gives both users and crawlers a clean navigation path to every location. The URL structure follows a consistent hierarchical pattern across the entire site. Internal linking flows from the parent hub to individual locations and from related content (service pages, blog posts about regional topics) to the specific locations they pertain to. Breadcrumb navigation follows the structure Home &gt; Locations &gt; [State/Region] &gt; [City] to provide an additional layer of geographic signal to crawlers.
@@ -7104,8 +7104,8 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           This architecture is what gives each location enough independent identity for Google to rank it on its own merits. The opposite — a single "About Us" page that mentions five cities, a "Contact" page with five phone numbers in a list, and no dedicated location pages — gives Google no architectural reason to treat each location as a distinct entity, and the algorithm responds by collapsing the locations into a single brand presence that ranks only in whichever market has the strongest signal.
         </p>
 
-        <div className="bg-gray-50 border-l-4 border-[#F26522] p-6 sm:p-8 my-10">
-          <h3 className="text-[15px] font-semibold uppercase tracking-wider text-[#F26522] mb-3">Why templated location pages with minor variation are barely better than no location pages</h3>
+        <div className="bg-gray-50 border-l-4 border-[#111827] p-6 sm:p-8 my-10">
+          <h3 className="text-[15px] font-semibold uppercase tracking-wider text-[#2E8C68] mb-3">Why templated location pages with minor variation are barely better than no location pages</h3>
           <p className="text-[15px] sm:text-[16px] leading-[1.7] text-gray-700">
             Some multi-location operators do create location pages but populate them with templated content — the same paragraphs repeated across every location with only the city name and address varying. This approach is barely better than no location pages at all, and in some categories it triggers Google's duplicate content filters in ways that suppress all the location pages rather than just consolidating them. Templated content sends the algorithm the same signal that no location pages send: there's no real distinction between the markets, and the algorithm can pick one to rank and ignore the rest.
           </p>
@@ -7118,7 +7118,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
         <div id="downstream-ceiling" className="scroll-mt-24" />
         <h2 className="text-[1.6rem] sm:text-[2rem] font-display font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">How architectural decisions made at site-build time determine the downstream ceiling</h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          A multi-location operator's website architecture sets the ceiling for every downstream local SEO effort. Get the architecture right and ongoing local SEO work compounds across all locations. Get the architecture wrong and ongoing work runs into a structural wall that no amount of GBP optimization, review acquisition, or content production can overcome — meaning you lose the benefits of a disciplined <a href="/insights/local-seo-explained" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">local SEO operational cadence</a>. The asymmetry matters because architectural fixes are expensive (often requiring a partial site rebuild) while ongoing local SEO work is cheaper and more flexible — meaning operators frequently spend years adding more local SEO work to a fundamentally broken architecture rather than fixing the architecture itself.
+          A multi-location operator's website architecture sets the ceiling for every downstream local SEO effort. Get the architecture right and ongoing local SEO work compounds across all locations. Get the architecture wrong and ongoing work runs into a structural wall that no amount of GBP optimization, review acquisition, or content production can overcome — meaning you lose the benefits of a disciplined <a href="/insights/local-seo-explained" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">local SEO operational cadence</a>. The asymmetry matters because architectural fixes are expensive (often requiring a partial site rebuild) while ongoing local SEO work is cheaper and more flexible — meaning operators frequently spend years adding more local SEO work to a fundamentally broken architecture rather than fixing the architecture itself.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
           The most common architectural failure is the <strong>single-page locations directory</strong>. The operator creates one "Our Locations" page with a list of addresses, phone numbers, and maybe small descriptions of each location, and treats that as their multi-location infrastructure. This produces precisely zero independent location authority. Google has nothing to rank for any specific city other than the brand homepage, which ranks where the brand's overall signal is strongest. Every other location is invisible to local search in its own city. The fix is dedicated location pages — but if the site is built on a CMS that makes adding new pages difficult, or if the directory page is hard-wired into the navigation, the fix becomes a meaningful technical project rather than a content update.
@@ -7159,8 +7159,8 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           <strong>At the parent-architecture level:</strong> a &quot;Locations&quot; hub page provides a navigable list of all locations with the parent of the URL hierarchy. Internal links flow from the hub to individual location pages and from the homepage to the hub. Service pages link to the relevant location pages where that service is offered. Blog content about specific regions or cities links to the relevant location pages. The result is an architecture where Google can crawl from any entry point on the site to any location page through a coherent set of internal links, and where the location pages themselves contain enough unique authority signals to rank independently in their respective markets.
         </p>
 
-        <div className="bg-gray-50 border-l-4 border-[#F26522] p-6 sm:p-8 my-10">
-          <h3 className="text-[15px] font-semibold uppercase tracking-wider text-[#F26522] mb-3">How local landing pages SEO fits into the architectural framework</h3>
+        <div className="bg-gray-50 border-l-4 border-[#111827] p-6 sm:p-8 my-10">
+          <h3 className="text-[15px] font-semibold uppercase tracking-wider text-[#2E8C68] mb-3">How local landing pages SEO fits into the architectural framework</h3>
           <p className="text-[15px] sm:text-[16px] leading-[1.7] text-gray-700">
             The architecture is the skeleton. The local landing pages are the muscle. A multi-location website with proper architecture but thin location pages will under-rank against a competitor with strong location pages and slightly weaker architecture — but a multi-location website with strong location pages and broken architecture will under-rank against either. The two work together.
           </p>
@@ -7182,7 +7182,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           Ask about GBP integration — will each location's website field on its GBP point to its own dedicated page, and is the development team set up to maintain that mapping if locations are added or moved. Ask about schema markup — will LocalBusiness schema be implemented per page with location-specific data, or will a single business-level schema be applied site-wide. Ask about content production at scale — if the operator has 50 locations, who is producing the substantively unique content for each location's page, and what is the editorial workflow that maintains that uniqueness over time. Ask about internal linking — will the site have a coherent linking pattern from the homepage to a locations hub to individual location pages, with reverse links and cross-links between related locations and services.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Evaluating a technical partner for this build requires the same standard of scrutiny as choosing the <a href="/insights/best-seo-agency-for-b2b-brands" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">best SEO agency for B2B brands</a>: you need to look past visual styling and audit their technical capabilities. A real multi-location SEO architecture has explicit, defensible answers to every one of these questions before site build begins. A single-location site with location names added has hand-waving answers to most of them, and the consequences show up six to twelve months later when the operator realizes that all the local SEO work being done downstream is hitting an architectural wall.
+          Evaluating a technical partner for this build requires the same standard of scrutiny as choosing the <a href="/insights/best-seo-agency-for-b2b-brands" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">best SEO agency for B2B brands</a>: you need to look past visual styling and audit their technical capabilities. A real multi-location SEO architecture has explicit, defensible answers to every one of these questions before site build begins. A single-location site with location names added has hand-waving answers to most of them, and the consequences show up six to twelve months later when the operator realizes that all the local SEO work being done downstream is hitting an architectural wall.
         </p>
 
         {/* ── SECTION: Why Gobiya is Positioned Differently ── */}
@@ -7217,7 +7217,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           <strong>Retail and restaurant chains</strong> face architectural challenges where content per location is genuinely thin (the menus are mostly the same, the layouts are mostly the same) but where local search visibility is essential. The architectural work here focuses heavily on schema markup, location-specific imagery, and review velocity as the differentiating signals when content is necessarily template-similar.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          For professional services firms with multiple offices, this technical footprint forms the base of their <a href="/insights/seo-for-b2b-lead-generation" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">B2B lead generation SEO</a>: the architecture must support named-team-member content and local credibility signals at each location.
+          For professional services firms with multiple offices, this technical footprint forms the base of their <a href="/insights/seo-for-b2b-lead-generation" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">B2B lead generation SEO</a>: the architecture must support named-team-member content and local credibility signals at each location.
         </p>
 
         {/* ── SECTION: Getting Started ── */}
@@ -7242,13 +7242,13 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
 
         {/* ── CTA ── */}
         <div className="bg-gray-900 rounded-xl p-8 sm:p-10 my-14">
-          <p className="text-[11px] uppercase tracking-wider font-semibold text-[#F26522] mb-3">Get A Multi-Location Audit</p>
+          <p className="text-[11px] uppercase tracking-wider font-semibold text-[#2E8C68] mb-3">Get A Multi-Location Audit</p>
           <h3 className="text-white text-[1.4rem] sm:text-[1.7rem] font-display font-medium leading-[1.2] mb-4">Find out how your website represents each of your locations and where the structural gaps are creating cannibalization.</h3>
           <p className="text-gray-400 text-[15px] leading-relaxed mb-6">Walk through your current multi-location hierarchy before the competitive gap widens into something expensive to close.</p>
-          <a href="/book" className="inline-flex items-center gap-3 bg-[#F26522] hover:bg-[#e05a1a] text-white pl-6 pr-2 py-2.5 transition-colors duration-300 font-medium text-[14px]">
+          <a href="/book" className="inline-flex items-center gap-3 bg-[#d1f851] hover:bg-[#c3ea45] text-[#111827] pl-6 pr-2 py-2.5 transition-colors duration-300 font-medium text-[14px]">
             Request an architectural audit
             <div className="w-7 h-7 bg-white flex items-center justify-center ml-3">
-              <svg className="w-3.5 h-3.5 text-[#F26522]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"/></svg>
+              <svg className="w-3.5 h-3.5 text-[#2E8C68]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"/></svg>
             </div>
           </a>
         </div>
@@ -7327,8 +7327,8 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
             { stat: '46%', label: 'Share of all Google searches carrying local intent — each invisible city is a daily, per-city customer cost', source: 'Whitespark Local Search Ranking Factors, 2026' },
             { stat: '76%', label: 'Local searchers who visit a business within 24 hours of a local search — the revenue impact of structural invisibility is immediate', source: 'Google Consumer Insights, 2026' },
           ].map(({ stat, label, source }) => (
-            <div key={stat} className="border border-[#F26522]/30 bg-[#F26522]/5 p-6">
-              <p className="text-4xl font-bold text-[#F26522] mb-2 font-display">{stat}</p>
+            <div key={stat} className="border border-gray-200 bg-gray-50 p-6">
+              <p className="text-4xl font-bold text-[#2E8C68] mb-2 font-display">{stat}</p>
               <p className="text-[14px] text-gray-900 leading-snug mb-1">{label}</p>
               <p className="text-[11px] uppercase tracking-wider text-gray-500">{source}</p>
             </div>
@@ -7358,8 +7358,8 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
               { id: 'faq', label: 'Frequently Asked Questions' },
             ].map(({ id, label }) => (
               <li key={id} className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#F26522] shrink-0" />
-                <a href={`#${id}`} className="hover:text-[#F26522] transition-colors">{label}</a>
+                <span className="w-1.5 h-1.5 rounded-full bg-[#111827] shrink-0" />
+                <a href={`#${id}`} className="hover:text-gray-900 transition-colors">{label}</a>
               </li>
             ))}
           </ul>
@@ -7370,10 +7370,10 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           What is the best website structure multiple locations require to maximize local organic search presence? The consensus is clear: consolidating all cities onto subdirectories of a single root domain is the most effective approach. This best website structure multiple locations configuration pools link equity, enabling new branch locations to rank much faster.
         </p>
 
-        <div className="border-l-4 border-[#F26522] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
+        <div className="border-l-4 border-[#111827] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
           <img src="/images/steve-portrait-thumb.webp" alt="Steve Martin" width="48" height="48" loading="lazy" className="w-12 h-12 object-cover rounded-full border border-white/10 shrink-0" />
           <div>
-            <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-1 font-sans">Steve's Take</p>
+            <p className="text-[12px] uppercase tracking-wider text-[#2E8C68] font-semibold mb-1 font-sans">Steve's Take</p>
             <p className="text-[15px] italic text-white leading-relaxed font-sans">
               "Never run separate domains like 'MyBrandChicago.com' alongside 'MyBrandDenver.com.' You will end up spending triple the budget on backlinks because you are maintaining separate sites rather than leveraging one authority domain."
             </p>
@@ -7381,7 +7381,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
         </div>
 
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          For a business operating in genuinely different cities — distinct metros, sometimes distinct states, each with its own competitive set and its own local search behavior — the structural decision is more consequential than it is for a business with several locations clustered in one metro. Each city represents a genuinely separate market the business needs to rank in independently. The foundational principles of <a href="/insights/multi-location-seo-website-structure" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">multi-location SEO website structure</a> apply in full — and the stakes for getting the decision wrong compound with every additional city the business enters.
+          For a business operating in genuinely different cities — distinct metros, sometimes distinct states, each with its own competitive set and its own local search behavior — the structural decision is more consequential than it is for a business with several locations clustered in one metro. Each city represents a genuinely separate market the business needs to rank in independently. The foundational principles of <a href="/insights/multi-location-seo-website-structure" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">multi-location SEO website structure</a> apply in full — and the stakes for getting the decision wrong compound with every additional city the business enters.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
           This is the structural problem multi-city businesses get wrong most often, and it's the one that's most expensive to fix later. The strongest multi-city operators settle the domain-and-hierarchy decision before they build the site, because retrofitting a broken structure — migrating from subdomains to subdirectories, consolidating separate domains, or rebuilding a flat structure into a proper hierarchy — is a meaningful technical project with real SEO risk.
@@ -7397,7 +7397,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
             <><strong>18 → near-zero</strong> — A regional service business with locations in 18 cities published 18 near-identical location pages; Google suppressed most of them rather than ranking them — the canonical cross-city structural failure (Uygen 2026)</>,
           ].map((item, i) => (
             <li key={i} className="flex items-start gap-3 text-[16px] sm:text-[17px] leading-[1.6] text-gray-800">
-              <span className="mt-1.5 w-2 h-2 rounded-full bg-[#F26522] shrink-0" />
+              <span className="mt-1.5 w-2 h-2 rounded-full bg-[#111827] shrink-0" />
               <span>{item}</span>
             </li>
           ))}
@@ -7419,8 +7419,8 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           <strong>Separate domains (MyBusinessChicago.com, MyBusinessDenver.com)</strong> give each city its own standalone domain. This is the worst option for SEO in nearly all cases. It fragments authority completely — every city domain starts from zero and has to build authority entirely independently, with no benefit from the brand's overall authority or from the authority earned in other cities. It multiplies the operational burden: separate technical SEO, separate analytics, separate Search Console, separate link-building for each domain. The only defensible cases are genuine franchise models where each location is independently owned with its own distinct brand, or businesses where each city operation is legally and operationally separate to a degree that shared branding would be misleading.
         </p>
 
-        <div className="bg-gray-50 border-l-4 border-[#F26522] p-6 sm:p-8 my-10">
-          <h3 className="text-[15px] font-semibold uppercase tracking-wider text-[#F26522] mb-3">The compounding authority gap over time</h3>
+        <div className="bg-gray-50 border-l-4 border-[#111827] p-6 sm:p-8 my-10">
+          <h3 className="text-[15px] font-semibold uppercase tracking-wider text-[#2E8C68] mb-3">The compounding authority gap over time</h3>
           <p className="text-[15px] sm:text-[16px] leading-[1.7] text-gray-700">
             A business that launches on subdirectories and operates in 10 cities has one domain accumulating authority from all 10 cities' worth of content, links, and signals, with each city benefiting from the whole. A business that launches the same 10 cities on separate domains has 10 domains each building authority from scratch, none benefiting from the others, and 10× the operational overhead. Five years later, the subdirectory business has a strong consolidated domain ranking well across all cities. The separate-domain business has 10 weak domains each struggling individually. The structural decision made at launch determines which outcome the business experiences.
           </p>
@@ -7429,18 +7429,18 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
         {/* ── INLINE CTA ── */}
         <div className="bg-gray-900 text-white p-6 sm:p-8 my-10 sm:my-14 flex flex-col sm:flex-row items-start sm:items-center gap-6">
           <div className="flex-1">
-            <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-2">Gobiya Service</p>
+            <p className="text-[12px] uppercase tracking-wider text-[#d1f851] font-semibold mb-2">Gobiya Service</p>
             <p className="text-[17px] sm:text-[19px] font-medium leading-snug">
               Fix your multi-city website structure before another city market becomes invisible.
             </p>
           </div>
           <a
             href="/services/seo"
-            className="group flex items-center bg-[#F26522] hover:bg-[#e05a1a] text-white pl-5 pr-2 py-2 transition-colors duration-300 whitespace-nowrap shrink-0"
+            className="group flex items-center bg-[#d1f851] hover:bg-[#c3ea45] text-[#111827] pl-5 pr-2 py-2 transition-colors duration-300 whitespace-nowrap shrink-0"
           >
             <span className="text-[13px] font-medium mr-3">Multi-City SEO Architecture</span>
             <div className="w-6 h-6 bg-white flex items-center justify-center">
-              <ArrowRight className="w-3.5 h-3.5 text-[#F26522] transition-transform duration-300 group-hover:-rotate-45" />
+              <ArrowRight className="w-3.5 h-3.5 text-[#111827] transition-transform duration-300 group-hover:-rotate-45" />
             </div>
           </a>
         </div>
@@ -7449,7 +7449,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
         <div id="why-cross-city-matters-more" className="scroll-mt-24" />
         <h2 className="text-[1.6rem] sm:text-[2rem] font-display font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">Why the single-domain decision matters more for cross-city businesses specifically</h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          For a business with several locations in one metro — five coffee shops across a single metro area, say — the authority-consolidation benefit of a single domain is real but less decisive, because the locations share a metro-level market and Google's proximity signals do much of the work of distinguishing them. The full picture of <a href="/insights/local-seo" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">how the local algorithm weights proximity, prominence, and relevance</a> makes clear why single-metro operators have some geographic shortcut available to them.
+          For a business with several locations in one metro — five coffee shops across a single metro area, say — the authority-consolidation benefit of a single domain is real but less decisive, because the locations share a metro-level market and Google's proximity signals do much of the work of distinguishing them. The full picture of <a href="/insights/local-seo" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">how the local algorithm weights proximity, prominence, and relevance</a> makes clear why single-metro operators have some geographic shortcut available to them.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
           For a business with locations in genuinely different cities — Chicago, Denver, Seattle, Austin — the single-domain decision is more consequential, because each city is a separate market with a separate competitive set, and the business needs each city's pages to rank independently in that city's local results against that city's competitors. The consolidated authority of a single domain is what gives each city's pages the authority foundation to compete in their respective markets. A business that fragments authority across subdomains or separate domains forces each city to compete in its market with only the authority that city has independently earned — which, for newer cities, is close to none. This is why cross-city businesses pay a steeper price for the wrong structural decision than single-metro businesses do.
@@ -7471,7 +7471,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           <strong>State or regional pages</strong> are optional and depend on scale. A business in 4 cities probably doesn't need state-level pages — the hub can link directly to city pages. A business in 40 cities across 12 states benefits from state-level pages that organize the structure, provide a layer of geographic relevance, and create a cleaner crawl path.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          <strong>The one-city-multiple-locations problem</strong> is a specific complication of the hierarchy. When a business has several locations in a single city — three urgent care clinics in Denver, say — the structure needs to distinguish them without cannibalizing. The standard approach is a city-level page that serves as a hub for that city and ranks for city-level queries, with individual location pages beneath it, each mapped 1:1 to its own Google Business Profile. The same <a href="/insights/local-seo-explained" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">1:1 GBP-to-page mapping discipline</a> that defines a properly-architected local presence applies here: each location page contains genuinely location-specific content — the specific address, neighborhood, hours, and staff — that gives Google a distinct local entity to rank.
+          <strong>The one-city-multiple-locations problem</strong> is a specific complication of the hierarchy. When a business has several locations in a single city — three urgent care clinics in Denver, say — the structure needs to distinguish them without cannibalizing. The standard approach is a city-level page that serves as a hub for that city and ranks for city-level queries, with individual location pages beneath it, each mapped 1:1 to its own Google Business Profile. The same <a href="/insights/local-seo-explained" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">1:1 GBP-to-page mapping discipline</a> that defines a properly-architected local presence applies here: each location page contains genuinely location-specific content — the specific address, neighborhood, hours, and staff — that gives Google a distinct local entity to rank.
         </p>
 
         {/* ── SECTION 5 ── */}
@@ -7484,10 +7484,10 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           This is not a Google penalty. There's no manual action involved. It's an algorithmic suppression that happens when Google encounters many near-duplicate pages and, unable to distinguish meaningful differences between them, declines to rank most of them — choosing one (or none) rather than ranking 18 versions of substantively the same page. The business effectively asked Google to pick between 18 near-identical pages, and Google's response is usually to suppress rather than to pick.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          The fix is genuine content differentiation per city. The differentiation has to come from the genuinely local elements: the specific service area and neighborhoods served in each city, local landmarks and geographic references, city-specific service considerations, location-specific team members, city-specific customer testimonials and case studies, local pricing or service availability differences, and city-specific FAQ content addressing the questions that city's customers actually ask. The content for each city page has to contain enough genuinely city-specific material that Google recognizes it as a distinct, valuable page serving a distinct local market — not a template with the city name swapped in. This is the same content-uniqueness principle that distinguishes a real <a href="/insights/multi-location-seo-website-structure" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">multi-location SEO website structure</a> from a single-location site with location names added.
+          The fix is genuine content differentiation per city. The differentiation has to come from the genuinely local elements: the specific service area and neighborhoods served in each city, local landmarks and geographic references, city-specific service considerations, location-specific team members, city-specific customer testimonials and case studies, local pricing or service availability differences, and city-specific FAQ content addressing the questions that city's customers actually ask. The content for each city page has to contain enough genuinely city-specific material that Google recognizes it as a distinct, valuable page serving a distinct local market — not a template with the city name swapped in. This is the same content-uniqueness principle that distinguishes a real <a href="/insights/multi-location-seo-website-structure" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">multi-location SEO website structure</a> from a single-location site with location names added.
         </p>
 
-        <blockquote className="border-l-4 border-[#F26522] pl-6 sm:pl-8 my-10 sm:my-14">
+        <blockquote className="border-l-4 border-[#111827] pl-6 sm:pl-8 my-10 sm:my-14">
           <p className="text-[18px] sm:text-[22px] font-medium leading-[1.5] text-gray-900 italic">
             "Structure sets the ceiling. Content reaches toward it. Cross-city businesses need both because the geographic market separation gives them no proximity shortcut around either requirement."
           </p>
@@ -7529,7 +7529,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           Start with the domain decision. Ask whether the build will use a single domain with city subdirectories, and if anyone proposes subdomains or separate domains per city, ask for the specific reasoning. Ask about the hierarchy — will there be a /locations/ hub, will the URL structure follow a consistent state-city-location pattern, and how will cities with multiple locations be handled. Ask about content differentiation — who is producing the genuinely city-specific content for each city page, and what's the editorial process that ensures the pages aren't near-identical templates. Ask about the physical-location vs service-area distinction — does the team understand the difference and will they represent the two correctly. Ask about GBP-to-page mapping — will each physical location's GBP point to its own dedicated page within the hierarchy.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
-          The same evaluation discipline that applies to choosing the <a href="/insights/best-seo-agency-for-b2b-brands" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">best SEO agency for B2B brands</a> applies here: look past visual styling and audit technical capabilities. A properly-architected multi-city site has explicit, defensible answers to all of these questions before site build begins. A flat collection of city pages has hand-waving answers and produces the cross-city cannibalization failure six months later.
+          The same evaluation discipline that applies to choosing the <a href="/insights/best-seo-agency-for-b2b-brands" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">best SEO agency for B2B brands</a> applies here: look past visual styling and audit technical capabilities. A properly-architected multi-city site has explicit, defensible answers to all of these questions before site build begins. A flat collection of city pages has hand-waving answers and produces the cross-city cannibalization failure six months later.
         </p>
 
         {/* ── SECTION 9 ── */}
@@ -7540,7 +7540,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           Gobiya approaches multi-city website structure as a technical engineering challenge, not a content production exercise. Our team has built and audited structures for businesses operating anywhere from three to hundreds of locations across multiple states. We don't guess at URL hierarchies or copy boilerplate templates — we audit crawl maps, design clean state-city-location hierarchies, map 1:1 GBP relationships, build custom LocalBusiness schema architectures that prevent cross-city cannibalization, and produce genuine per-city content differentiation through our editorial process.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          The same <a href="/services/seo" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">technical SEO methodology</a> applied to single-location and B2B operators drives our multi-city engagements: every architectural decision is backed by live crawl data, authority-flow modeling, and performance tracking across each individual city market. We provide open, documented build plans and migration strategies — including explicit redirect mapping and ranking-volatility expectations for businesses remediating a broken existing structure.
+          The same <a href="/services/seo" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">technical SEO methodology</a> applied to single-location and B2B operators drives our multi-city engagements: every architectural decision is backed by live crawl data, authority-flow modeling, and performance tracking across each individual city market. We provide open, documented build plans and migration strategies — including explicit redirect mapping and ranking-volatility expectations for businesses remediating a broken existing structure.
         </p>
 
               </div>
@@ -7559,7 +7559,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
             { role: 'Enterprise Businesses (100+ Locations)', detail: 'The narrow case where subdomain structures sometimes become defensible due to operational scale. Even here, most enterprises are better served by a single-domain subdirectory model with strong templating and content-differentiation systems.' },
           ].map(({ role, detail }) => (
             <div key={role} className="border border-gray-200 p-5 sm:p-6">
-              <p className="text-[13px] uppercase tracking-wider font-semibold text-[#F26522] mb-2">{role}</p>
+              <p className="text-[13px] uppercase tracking-wider font-semibold text-[#2E8C68] mb-2">{role}</p>
               <p className="text-[14px] text-gray-700 leading-relaxed">{detail}</p>
             </div>
           ))}
@@ -7572,7 +7572,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           A credible engagement starts with a structural audit and decision framework, not a redesign mockup. The audit evaluates the current structure (if one exists), models the authority-consolidation implications of the current vs recommended structure, maps the correct state-city-location hierarchy for the business's specific city footprint, identifies where physical-location and service-area cities need different treatment, and produces a build plan (for new sites) or a migration plan (for existing broken structures) with explicit redirect strategy and ranking-volatility expectations.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          For a business getting this right at launch, the work is straightforward — establish the single domain, build the hierarchy, set up the hub, and ensure per-city content differentiation from day one. For a business remediating a broken structure, the work is a careful migration that preserves the authority the business has earned while restructuring how it's organized. The multi-city businesses that get the most from getting their structure right are the ones that treat it as the foundational decision it is — settled before the site is built, or remediated deliberately before more downstream local SEO work is layered on top of a broken foundation. The downstream discipline of an <a href="/insights/local-seo-explained" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">operational local SEO cadence</a> only compounds returns when the structure underneath it is right.
+          For a business getting this right at launch, the work is straightforward — establish the single domain, build the hierarchy, set up the hub, and ensure per-city content differentiation from day one. For a business remediating a broken structure, the work is a careful migration that preserves the authority the business has earned while restructuring how it's organized. The multi-city businesses that get the most from getting their structure right are the ones that treat it as the foundational decision it is — settled before the site is built, or remediated deliberately before more downstream local SEO work is layered on top of a broken foundation. The downstream discipline of an <a href="/insights/local-seo-explained" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">operational local SEO cadence</a> only compounds returns when the structure underneath it is right.
         </p>
 
         {/* ── SECTION 12 ── */}
@@ -7590,13 +7590,13 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
 
         {/* ── FINAL CTA ── */}
         <div className="bg-gray-900 rounded-xl p-8 sm:p-10 my-14">
-          <p className="text-[11px] uppercase tracking-wider font-semibold text-[#F26522] mb-3">Get A Multi-City Structural Audit</p>
+          <p className="text-[11px] uppercase tracking-wider font-semibold text-[#2E8C68] mb-3">Get A Multi-City Structural Audit</p>
           <h3 className="text-white text-[1.4rem] sm:text-[1.7rem] font-display font-medium leading-[1.2] mb-4">Find out where your multi-city structure is fragmenting authority and suppressing city-market rankings.</h3>
           <p className="text-gray-400 text-[15px] leading-relaxed mb-6">Walk through your current domain structure, city hierarchy, and content differentiation before the architectural gap widens into something expensive to close.</p>
-          <a href="/book" className="inline-flex items-center gap-3 bg-[#F26522] hover:bg-[#e05a1a] text-white pl-6 pr-2 py-2.5 transition-colors duration-300 font-medium text-[14px]">
+          <a href="/book" className="inline-flex items-center gap-3 bg-[#d1f851] hover:bg-[#c3ea45] text-[#111827] pl-6 pr-2 py-2.5 transition-colors duration-300 font-medium text-[14px]">
             Request a structural audit
             <div className="w-7 h-7 bg-white flex items-center justify-center ml-3">
-              <svg className="w-3.5 h-3.5 text-[#F26522]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"/></svg>
+              <svg className="w-3.5 h-3.5 text-[#2E8C68]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"/></svg>
             </div>
           </a>
         </div>
@@ -7630,7 +7630,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
             <details key={q} className="border border-gray-200 rounded-lg group">
               <summary className="flex items-center justify-between p-5 sm:p-6 cursor-pointer list-none">
                 <span className="text-[15px] sm:text-[16px] font-medium text-gray-900 pr-4">{q}</span>
-                <svg className="w-5 h-5 text-[#F26522] shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" /></svg>
+                <svg className="w-5 h-5 text-[#2E8C68] shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" /></svg>
               </summary>
               <div className="px-5 sm:px-6 pb-5 sm:pb-6">
                 <p className="text-[15px] sm:text-[16px] leading-[1.7] text-gray-700 border-t border-gray-100 pt-4">{a}</p>
@@ -7688,8 +7688,8 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
             { stat: '3–6m', label: 'Typical timeline required for substantive content quality adjustments to be crawled and re-evaluated by broad updates.', source: 'Industry Case Data, 2026' },
             { stat: '50–80%', label: 'Traffic recovery range reported for sites executing substantive, non-cosmetic quality improvements.', source: 'NextAISEO 50+ Site Analysis, 2026' },
           ].map(({ stat, label, source }) => (
-            <div key={stat} className="border border-[#F26522]/30 bg-[#F26522]/5 p-6">
-              <p className="text-4xl font-bold text-[#F26522] mb-2 font-display">{stat}</p>
+            <div key={stat} className="border border-gray-200 bg-gray-50 p-6">
+              <p className="text-4xl font-bold text-[#2E8C68] mb-2 font-display">{stat}</p>
               <p className="text-[14px] text-gray-900 leading-snug mb-1">{label}</p>
               <p className="text-[11px] uppercase tracking-wider text-gray-500">{source}</p>
             </div>
@@ -7716,8 +7716,8 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
               { id: 'right-call-core-recovery', label: 'Making the right call for your core update recovery' },
             ].map(({ id, label }) => (
               <li key={id} className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#F26522] shrink-0" />
-                <a href={`#${id}`} className="hover:text-[#F26522] transition-colors">{label}</a>
+                <span className="w-1.5 h-1.5 rounded-full bg-[#111827] shrink-0" />
+                <a href={`#${id}`} className="hover:text-gray-900 transition-colors">{label}</a>
               </li>
             ))}
           </ul>
@@ -7732,10 +7732,10 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           When executing Google core update recovery, your site needs a systematic quality audit to earn back search engines' trust. A successful Google core update recovery plan requires three to six months of content pruning, entity consolidation, and search intent alignment. Here is how to construct a restoration strategy.
         </p>
 
-        <div className="border-l-4 border-[#F26522] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
+        <div className="border-l-4 border-[#111827] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
           <img src="/images/steve-portrait-thumb.webp" alt="Steve Martin" width="48" height="48" loading="lazy" className="w-12 h-12 object-cover rounded-full border border-white/10 shrink-0" />
           <div>
-            <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-1 font-sans">Steve's Take</p>
+            <p className="text-[12px] uppercase tracking-wider text-[#2E8C68] font-semibold mb-1 font-sans">Steve's Take</p>
             <p className="text-[15px] italic text-white leading-relaxed font-sans">
               "When you get hit by a core update, don't rush to make tiny edits or disavow random backlinks. Google is evaluating your entire site's quality. Pruning thin pages is the fastest way to signal improvement."
             </p>
@@ -7752,7 +7752,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           What a core update actually is — and why it determines whether you can recover
         </h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          A Google core update is not a penalty. This is the single most important thing to understand, because it determines the entire nature of recovery. Spam updates and <a href="/insights/google-manual-action-removal-agency-caused-penalty" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">manual actions</a> target specific violations — buying links, keyword stuffing, scaled content abuse — and recovery means removing the violation. A core update is fundamentally different: it's a broad recalibration of how Google evaluates content quality and relevance across billions of pages, adjusting the entire ranking formula rather than penalizing specific behaviors. When your site loses rankings in a core update, the most accurate framing is not "your site got worse" — it's "Google's re-evaluation determined that other content better satisfies the queries you were ranking for." You didn't necessarily do anything wrong. The relative standard moved, and your content ended up on the wrong side of the new evaluation.
+          A Google core update is not a penalty. This is the single most important thing to understand, because it determines the entire nature of recovery. Spam updates and <a href="/insights/google-manual-action-removal-agency-caused-penalty" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">manual actions</a> target specific violations — buying links, keyword stuffing, scaled content abuse — and recovery means removing the violation. A core update is fundamentally different: it's a broad recalibration of how Google evaluates content quality and relevance across billions of pages, adjusting the entire ranking formula rather than penalizing specific behaviors. When your site loses rankings in a core update, the most accurate framing is not "your site got worse" — it's "Google's re-evaluation determined that other content better satisfies the queries you were ranking for." You didn't necessarily do anything wrong. The relative standard moved, and your content ended up on the wrong side of the new evaluation.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
           This framing determines what recovery requires, and it's why so many recovery efforts fail. If a core update were a penalty, recovery would mean fixing a specific violation. Because a core update is a relative re-evaluation, recovery means re-earning your relative quality position against the competition — demonstrating to Google's recalibrated systems that your content does, in fact, best satisfy the queries you want to rank for. That's a fundamentally harder and slower thing than removing a violation. It requires substantive improvement to content quality, experience signals, and relevance, not the removal of a penalty flag. And critically, it requires Google to re-run the evaluation that placed you where you are now — which is why recovery is tied to the core update cycle.
@@ -7779,10 +7779,10 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           <strong>Full recovery is possible but not guaranteed.</strong> Google states plainly that not all sites will fully recover. Some sites hit by a core update — particularly those whose traffic was built on content patterns the update specifically devalued — never return to their former levels, because the content model that generated the traffic is the thing the update structurally devalued. For these sites, "recovery" realistically means rebuilding on a different content foundation, not restoring the old one.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          <strong>Partial recovery is the common outcome.</strong> Practitioner data consistently reports partial recovery as the typical result for sites that execute substantive quality work: one analysis across 50+ sites reports 50-80% of traffic recovered when quality fixes are done well, another reports sites regaining 60-70% of lost traffic within 6-8 weeks of real improvements. The pattern suggests that meaningful recovery is achievable for most sites willing to do substantive work, but that recovering the full 100% of pre-update traffic is harder and less common than recovering a majority of it. However, exceptional outcomes are possible—as documented in our <a href="/insights/seo-case-study-traffic-recovery" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">SEO case study traffic recovery</a> where a B2B e-commerce site achieved a 320% organic traffic recovery following a dual-update rollout.
+          <strong>Partial recovery is the common outcome.</strong> Practitioner data consistently reports partial recovery as the typical result for sites that execute substantive quality work: one analysis across 50+ sites reports 50-80% of traffic recovered when quality fixes are done well, another reports sites regaining 60-70% of lost traffic within 6-8 weeks of real improvements. The pattern suggests that meaningful recovery is achievable for most sites willing to do substantive work, but that recovering the full 100% of pre-update traffic is harder and less common than recovering a majority of it. However, exceptional outcomes are possible—as documented in our <a href="/insights/seo-case-study-traffic-recovery" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">SEO case study traffic recovery</a> where a B2B e-commerce site achieved a 320% organic traffic recovery following a dual-update rollout.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
-          <strong>Recovery timelines cluster at 3-6 months.</strong> Quick technical fixes can show effect in 2-4 weeks, standard sites with normal recovery effort see results in 2-6 months, and YMYL (Your Money or Your Life) sites — health, finance, legal, anything affecting wellbeing or money — take longer, often 6-12 months, because Google holds YMYL content to a higher quality and trust standard and re-evaluates it more conservatively. For local service operators, a traffic drop is rarely simple. If the drop is accompanied by a sudden phone-call decline while organic indexation remains normal, the root issue might be a suspended listing rather than an organic algorithm update, necessitating a dedicated <a href="/insights/google-business-profile-optimization" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">Google Business Profile optimization</a> process rather than an organic content overhaul.
+          <strong>Recovery timelines cluster at 3-6 months.</strong> Quick technical fixes can show effect in 2-4 weeks, standard sites with normal recovery effort see results in 2-6 months, and YMYL (Your Money or Your Life) sites — health, finance, legal, anything affecting wellbeing or money — take longer, often 6-12 months, because Google holds YMYL content to a higher quality and trust standard and re-evaluates it more conservatively. For local service operators, a traffic drop is rarely simple. If the drop is accompanied by a sudden phone-call decline while organic indexation remains normal, the root issue might be a suspended listing rather than an organic algorithm update, necessitating a dedicated <a href="/insights/google-business-profile-optimization" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">Google Business Profile optimization</a> process rather than an organic content overhaul.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
           <strong>The severity and cause of the original drop affect recovery odds.</strong> A site that dropped because of fixable issues (thin content, intent mismatch, weak E-E-A-T signals on otherwise legitimate content) has better recovery odds than a site that dropped because its entire model was the thing the update devalued (a thin-affiliate site hit by an update targeting affiliate content thinness, for instance — affiliate sites were hit hardest in recent updates at 71% impact rates). The more the drop reflects a structural problem with the site's fundamental value proposition rather than a fixable quality gap, the lower the full-recovery odds.
@@ -7791,18 +7791,18 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
         {/* ── INLINE CTA ── */}
         <div className="bg-gray-900 text-white p-6 sm:p-8 my-10 sm:my-14 flex flex-col sm:flex-row items-start sm:items-center gap-6">
           <div className="flex-1">
-            <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-2">Gobiya Service</p>
+            <p className="text-[12px] uppercase tracking-wider text-[#d1f851] font-semibold mb-2">Gobiya Service</p>
             <p className="text-[17px] sm:text-[19px] font-medium leading-snug">
               Audit your domain quality signals and design a core update recovery plan.
             </p>
           </div>
           <a
             href="/services/seo"
-            className="group flex items-center bg-[#F26522] hover:bg-[#e05a1a] text-white pl-5 pr-2 py-2 transition-colors duration-300 whitespace-nowrap shrink-0"
+            className="group flex items-center bg-[#d1f851] hover:bg-[#c3ea45] text-[#111827] pl-5 pr-2 py-2 transition-colors duration-300 whitespace-nowrap shrink-0"
           >
             <span className="text-[13px] font-medium mr-3">Core Recovery Audit</span>
             <div className="w-6 h-6 bg-white flex items-center justify-center">
-              <ArrowRight className="w-3.5 h-3.5 text-[#F26522] transition-transform duration-300 group-hover:-rotate-45" />
+              <ArrowRight className="w-3.5 h-3.5 text-[#111827] transition-transform duration-300 group-hover:-rotate-45" />
             </div>
           </a>
         </div>
@@ -7875,13 +7875,13 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           <strong>Sites with fixable quality gaps</strong> have the best recovery odds — legitimate businesses with real expertise whose content simply wasn't demonstrating that expertise well, sites with intent-mismatched content that can be realigned, sites with a mix of strong and thin content where pruning the thin content lifts the whole. These sites can genuinely become the better answer with substantive work, and they recover at the higher end of the range.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          <strong>YMYL sites</strong> (health, finance, legal, anything affecting money or wellbeing) face longer recovery timelines and a higher bar, because Google evaluates these categories more conservatively and demands stronger E-E-A-T and trust signals. Recovery is achievable but slower (6-12 months is common), and the E-E-A-T work has to be substantive and verifiable — real credentials, real expertise, real trust signals, not cosmetic author boxes. For local businesses, this recovery often overlaps with local-pack metrics, requiring a coordinated <a href="/insights/local-seo-explained" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">local search engine optimization</a> approach to maintain regional authority.
+          <strong>YMYL sites</strong> (health, finance, legal, anything affecting money or wellbeing) face longer recovery timelines and a higher bar, because Google evaluates these categories more conservatively and demands stronger E-E-A-T and trust signals. Recovery is achievable but slower (6-12 months is common), and the E-E-A-T work has to be substantive and verifiable — real credentials, real expertise, real trust signals, not cosmetic author boxes. For local businesses, this recovery often overlaps with local-pack metrics, requiring a coordinated <a href="/insights/local-seo-explained" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">local search engine optimization</a> approach to maintain regional authority.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
           <strong>Affiliate and thin-content sites</strong> face the hardest recovery, because recent updates have specifically and aggressively devalued thin affiliate content (71% impact rates in recent updates). For these sites, recovery often isn't a matter of improving the existing model but of fundamentally rebuilding on a different content foundation — adding genuine original value, first-hand testing, and unique insight that the thin-affiliate model lacked. Some of these sites don't fully recover because the thing the update devalued was their entire value proposition.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
-          <strong>Sites hit primarily by the AI Overview / SERP-structure shift</strong> rather than by a quality re-evaluation face a different recovery challenge entirely — their rankings may be fine, but the SERP now intercepts their former clicks. Recovery for these sites involves optimizing for AI Overview inclusion, building brand and direct traffic that bypasses the SERP, and diversifying beyond Google-organic dependence. For brands operating across multiple regions, managing <a href="/insights/multi-location-seo-website-structure" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">multi-location SEO architecture</a> is critical to isolate low-value pages. A poorly mapped <a href="/insights/best-website-structure-multiple-locations-different-cities" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">website structure across different cities</a> can trigger duplicate content filters that Google's core updates evaluate as thin, dragging down the entire root domain's quality score. The specific recovery path depends on which cause is actually driving the loss — which is why diagnosis matters more than any default recovery playbook.
+          <strong>Sites hit primarily by the AI Overview / SERP-structure shift</strong> rather than by a quality re-evaluation face a different recovery challenge entirely — their rankings may be fine, but the SERP now intercepts their former clicks. Recovery for these sites involves optimizing for AI Overview inclusion, building brand and direct traffic that bypasses the SERP, and diversifying beyond Google-organic dependence. For brands operating across multiple regions, managing <a href="/insights/multi-location-seo-website-structure" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">multi-location SEO architecture</a> is critical to isolate low-value pages. A poorly mapped <a href="/insights/best-website-structure-multiple-locations-different-cities" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">website structure across different cities</a> can trigger duplicate content filters that Google's core updates evaluate as thin, dragging down the entire root domain's quality score. The specific recovery path depends on which cause is actually driving the loss — which is why diagnosis matters more than any default recovery playbook.
         </p>
 
         {/* ── SECTION 9 ── */}
@@ -7985,8 +7985,8 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
             { stat: '15–25%', label: 'Monthly revenue loss for a small business during a typical five-week Google Business Profile suspension.', source: 'ReviewSense 2026' },
             { stat: '3–7d vs 4–8w', label: 'Reinstatement timelines: straightforward cases resolve in days, complex or manual-review cases take weeks.', source: 'Multiple 2026 Sources' },
           ].map(({ stat, label, source }) => (
-            <div key={stat} className="border border-[#F26522]/30 bg-[#F26522]/5 p-6">
-              <p className="text-4xl font-bold text-[#F26522] mb-2 font-display">{stat}</p>
+            <div key={stat} className="border border-gray-200 bg-gray-50 p-6">
+              <p className="text-4xl font-bold text-[#2E8C68] mb-2 font-display">{stat}</p>
               <p className="text-[14px] text-gray-900 leading-snug mb-1">{label}</p>
               <p className="text-[11px] uppercase tracking-wider text-gray-500">{source}</p>
             </div>
@@ -8013,8 +8013,8 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
               { id: 'right-call-local-visibility', label: 'Making the right call for your local visibility recovery' },
             ].map(({ id, label }) => (
               <li key={id} className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#F26522] shrink-0" />
-                <a href={`#${id}`} className="hover:text-[#F26522] transition-colors">{label}</a>
+                <span className="w-1.5 h-1.5 rounded-full bg-[#111827] shrink-0" />
+                <a href={`#${id}`} className="hover:text-gray-900 transition-colors">{label}</a>
               </li>
             ))}
           </ul>
@@ -8029,10 +8029,10 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           When resolving local traffic drops, a complete Google Business Profile optimization audit is your first line of defense. A suspended, unoptimized, or algorithmic-soft-banned profile will sink Map Pack visibility to zero. Professional Google Business Profile optimization ensures all verification parameters, category tags, and NAP citations align with Google's guidelines.
         </p>
 
-        <div className="border-l-4 border-[#F26522] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
+        <div className="border-l-4 border-[#111827] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
           <img src="/images/steve-portrait-thumb.webp" alt="Steve Martin" width="48" height="48" loading="lazy" className="w-12 h-12 object-cover rounded-full border border-white/10 shrink-0" />
           <div>
-            <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-1 font-sans">Steve's Take</p>
+            <p className="text-[12px] uppercase tracking-wider text-[#2E8C68] font-semibold mb-1 font-sans">Steve's Take</p>
             <p className="text-[15px] italic text-white leading-relaxed font-sans">
               "Never delete a suspended profile to 'start over.' Google flags new profiles at the same address as guidelines evasion, resulting in a permanent ban. Correct the profile's data and submit an official reinstatement appeal instead."
             </p>
@@ -8067,7 +8067,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           Pouring website SEO effort into a GBP-driven traffic loss is the single most common and most costly misdiagnosis in local traffic recovery. Website optimization — content production, technical SEO, link building, on-page work — affects organic rankings. It has essentially no effect on a suspended or degraded GBP. A business can publish the best content in its category and build a pristine technical SEO foundation, and if its GBP is suspended, it will remain invisible in the local pack and Google Maps regardless. The recovery for a GBP problem is a GBP process: diagnose the suspension type or degradation cause, fix the underlying issue, and either submit a reinstatement appeal (for suspensions) or correct the profile signals (for degradation). None of that work happens on the website.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
-          Website SEO is not a substitute for GBP recovery. The two address different systems. The first step in any <a href="/insights/local-seo-explained" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">local traffic recovery</a> is determining which system the problem actually lives in — and a business that skips that diagnostic step and defaults to website work has a meaningful chance of spending its recovery effort on the wrong system entirely. For instance, when executing a broader organic recovery strategy—such as the one detailed in our <a href="/insights/seo-case-study-traffic-recovery" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">SEO case study traffic recovery</a> playbook—we isolate technical crawl issues from local GBP suspensions to ensure each channel receives the correct remedy.
+          Website SEO is not a substitute for GBP recovery. The two address different systems. The first step in any <a href="/insights/local-seo-explained" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">local traffic recovery</a> is determining which system the problem actually lives in — and a business that skips that diagnostic step and defaults to website work has a meaningful chance of spending its recovery effort on the wrong system entirely. For instance, when executing a broader organic recovery strategy—such as the one detailed in our <a href="/insights/seo-case-study-traffic-recovery" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">SEO case study traffic recovery</a> playbook—we isolate technical crawl issues from local GBP suspensions to ensure each channel receives the correct remedy.
         </p>
 
         {/* ── SECTION 3 ── */}
@@ -8094,18 +8094,18 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
         {/* ── INLINE CTA ── */}
         <div className="bg-gray-900 text-white p-6 sm:p-8 my-10 sm:my-14 flex flex-col sm:flex-row items-start sm:items-center gap-6">
           <div className="flex-1">
-            <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-2">Gobiya Service</p>
+            <p className="text-[12px] uppercase tracking-wider text-[#d1f851] font-semibold mb-2">Gobiya Service</p>
             <p className="text-[17px] sm:text-[19px] font-medium leading-snug">
               Recover your local pack footprint and resolve Google Business Profile suspensions.
             </p>
           </div>
           <a
             href="/google-penalty-recovery"
-            className="group flex items-center bg-[#F26522] hover:bg-[#e05a1a] text-white pl-5 pr-2 py-2 transition-colors duration-300 whitespace-nowrap shrink-0"
+            className="group flex items-center bg-[#d1f851] hover:bg-[#c3ea45] text-[#111827] pl-5 pr-2 py-2 transition-colors duration-300 whitespace-nowrap shrink-0"
           >
             <span className="text-[13px] font-medium mr-3">Suspension Recovery Services</span>
             <div className="w-6 h-6 bg-white flex items-center justify-center">
-              <ArrowRight className="w-3.5 h-3.5 text-[#F26522] transition-transform duration-300 group-hover:-rotate-45" />
+              <ArrowRight className="w-3.5 h-3.5 text-[#111827] transition-transform duration-300 group-hover:-rotate-45" />
             </div>
           </a>
         </div>
@@ -8152,10 +8152,10 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           How GBP recovery connects to broader Google traffic recovery
         </h3>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          A GBP problem is one of several distinct causes of local and organic traffic loss, and the broader Google traffic recovery discipline involves correctly diagnosing which cause is in play before applying a fix. Organic traffic loss from an algorithm update requires content and quality remediation. Traffic loss from a manual action requires the <a href="/insights/google-manual-action-removal-agency-caused-penalty" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">reconsideration process</a>. Traffic loss from a technical SEO issue requires technical fixes. And local visibility loss from a GBP suspension or degradation requires the GBP recovery process described above.
+          A GBP problem is one of several distinct causes of local and organic traffic loss, and the broader Google traffic recovery discipline involves correctly diagnosing which cause is in play before applying a fix. Organic traffic loss from an algorithm update requires content and quality remediation. Traffic loss from a manual action requires the <a href="/insights/google-manual-action-removal-agency-caused-penalty" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">reconsideration process</a>. Traffic loss from a technical SEO issue requires technical fixes. And local visibility loss from a GBP suspension or degradation requires the GBP recovery process described above.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
-          The diagnostic discipline is the common thread — a business that misdiagnoses the cause applies the wrong fix and extends the recovery. This is the operational link between <a href="/insights/local-seo" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">Google Business Profile optimization</a> and Google traffic recovery: GBP is one of the major recovery levers, it's the one most often missed because it's invisible to website analytics, and it's the one where the wrong panic response can make recovery permanently impossible. A complete traffic recovery practice checks the GBP first precisely because it's the highest-risk, most-commonly-missed cause.
+          The diagnostic discipline is the common thread — a business that misdiagnoses the cause applies the wrong fix and extends the recovery. This is the operational link between <a href="/insights/local-seo" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">Google Business Profile optimization</a> and Google traffic recovery: GBP is one of the major recovery levers, it's the one most often missed because it's invisible to website analytics, and it's the one where the wrong panic response can make recovery permanently impossible. A complete traffic recovery practice checks the GBP first precisely because it's the highest-risk, most-commonly-missed cause.
         </p>
 
         {/* ── SECTION 6 ── */}
@@ -8202,7 +8202,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           <strong>Healthcare and professional services practices</strong> (dentists, doctors, attorneys, accountants) face GBP-driven loss complicated by the fact that these profiles often have multiple practitioners, multiple locations, or practitioner-vs-practice listing complexity that creates suspension and duplicate risk. The patient or client acquisition value is high enough that even short suspensions carry significant revenue impact.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
-          <strong>Multi-location businesses</strong> face GBP risk multiplied across every location, and a systematic issue (a bulk edit, a data aggregator error, a category change applied across locations) can suspend or degrade multiple profiles simultaneously. The diagnostic and recovery work scales with location count, and the prevention infrastructure (controlled edit processes, monitoring across all profiles) matters more at scale. The specific <a href="/insights/multi-location-seo-website-structure" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">multi-location SEO configuration</a> varies by business type, which is why a GBP diagnostic matters more than any default recovery assumption. For companies operating across multiple regions, having the right <a href="/insights/best-website-structure-multiple-locations-different-cities" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">website structure for multiple locations in different cities</a> is a prerequisite to isolating these local ranking signals.
+          <strong>Multi-location businesses</strong> face GBP risk multiplied across every location, and a systematic issue (a bulk edit, a data aggregator error, a category change applied across locations) can suspend or degrade multiple profiles simultaneously. The diagnostic and recovery work scales with location count, and the prevention infrastructure (controlled edit processes, monitoring across all profiles) matters more at scale. The specific <a href="/insights/multi-location-seo-website-structure" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">multi-location SEO configuration</a> varies by business type, which is why a GBP diagnostic matters more than any default recovery assumption. For companies operating across multiple regions, having the right <a href="/insights/best-website-structure-multiple-locations-different-cities" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">website structure for multiple locations in different cities</a> is a prerequisite to isolating these local ranking signals.
         </p>
 
         {/* ── SECTION 9 ── */}
@@ -8300,8 +8300,8 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
         />
 
         {/* ── QUICK ANSWER ── */}
-        <div className="bg-[#F26522]/5 border-l-4 border-[#F26522] p-5 sm:p-6 my-8 rounded-r-sm">
-          <p className="text-[11px] uppercase tracking-wider text-[#F26522] font-semibold mb-2">Quick Answer</p>
+        <div className="bg-gray-50 border-l-4 border-[#111827] p-5 sm:p-6 my-8 rounded-r-sm">
+          <p className="text-[11px] uppercase tracking-wider text-[#2E8C68] font-semibold mb-2">Quick Answer</p>
           <p className="text-[15px] sm:text-[16px] leading-[1.7] text-gray-900 font-medium">A B2B SEO agency specializes in connecting organic search to pipeline and closed revenue — not just traffic. The core difference from a generalist agency: multi-stakeholder content, high-intent keyword targeting, CRM attribution, and AI citation tracking built into the standard methodology.</p>
         </div>
 
@@ -8317,7 +8317,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
               'AI search (ChatGPT, Perplexity, Google AI Mode) now influences 51% of B2B buyer research; GEO must be part of the standard methodology, not an add-on.',
             ].map((point, i) => (
               <li key={i} className="flex items-start gap-3 text-[14px] sm:text-[15px] text-gray-800 leading-snug">
-                <span className="w-5 h-5 rounded-full bg-[#F26522] text-white text-[10px] font-bold flex items-center justify-center shrink-0 mt-0.5">{i + 1}</span>
+                <span className="w-5 h-5 rounded-full bg-[#111827] text-white text-[10px] font-bold flex items-center justify-center shrink-0 mt-0.5">{i + 1}</span>
                 {point}
               </li>
             ))}
@@ -8364,7 +8364,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
               'You can\'t trace which organic content led to specific closed deals',
             ].map((sign, i) => (
               <div key={i} className="flex items-start gap-3 p-4 border border-gray-200 bg-gray-50">
-                <span className="text-[#F26522] font-bold text-[13px] shrink-0">✕</span>
+                <span className="text-[#2E8C68] font-bold text-[13px] shrink-0">✕</span>
                 <p className="text-[13px] sm:text-[14px] text-gray-800 leading-snug">{sign}</p>
               </div>
             ))}
@@ -8378,8 +8378,8 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
             { stat: '11', label: 'Stakeholders involved in the average B2B purchase decision', source: 'Onely 2026' },
             { stat: '20x', label: 'Conversion rate of high buying-intent B2B keywords vs top-of-funnel', source: 'Grow and Convert, 2026' },
           ].map(({ stat, label, source }) => (
-            <div key={stat} className="border border-[#F26522]/30 bg-[#F26522]/5 p-6">
-              <p className="text-4xl font-bold text-[#F26522] mb-2 font-display">{stat}</p>
+            <div key={stat} className="border border-gray-200 bg-gray-50 p-6">
+              <p className="text-4xl font-bold text-[#2E8C68] mb-2 font-display">{stat}</p>
               <p className="text-[14px] text-gray-900 leading-snug mb-1">{label}</p>
               <p className="text-[11px] uppercase tracking-wider text-gray-500">{source}</p>
             </div>
@@ -8406,8 +8406,8 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
               { id: 'making-call', label: 'Making the right call for your B2B SEO partnership' },
             ].map(({ id, label }) => (
               <li key={id} className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#F26522] shrink-0" />
-                <a href={`#${id}`} className="hover:text-[#F26522] transition-colors">{label}</a>
+                <span className="w-1.5 h-1.5 rounded-full bg-[#111827] shrink-0" />
+                <a href={`#${id}`} className="hover:text-gray-900 transition-colors">{label}</a>
               </li>
             ))}
           </ul>
@@ -8417,10 +8417,10 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           When selecting a specialized B2B SEO agency, you are choosing a partner built around pipeline value, not just search volume. Because B2B buying cycles involve 11+ stakeholders and 180-day consideration periods, a modern B2B SEO agency must connect search footprint directly to CRM closed revenue.
         </p>
 
-        <div className="border-l-4 border-[#F26522] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
+        <div className="border-l-4 border-[#111827] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
           <img src="/images/steve-portrait-thumb.webp" alt="Steve Martin" width="48" height="48" loading="lazy" className="w-12 h-12 object-cover rounded-full border border-white/10 shrink-0" />
           <div>
-            <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-1 font-sans">Steve's Take</p>
+            <p className="text-[12px] uppercase tracking-wider text-[#2E8C68] font-semibold mb-1 font-sans">Steve's Take</p>
             <p className="text-[15px] italic text-white leading-relaxed font-sans">
               "Generalist agencies run B2C playbooks on B2B accounts. They celebrate traffic spikes, but when the client asks where the revenue is, they blame the sales team. Work with B2B specialist search engineers."
             </p>
@@ -8462,13 +8462,13 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           These six divergences are what make B2B SEO a category. An agency operating across all six dimensions correctly is a B2B SEO agency. An agency operating across some of them is a generalist that happens to take B2B clients. The two categories produce measurably different outcomes for B2B operators, and the gap has widened — not narrowed — as AI search has added a seventh dimension where B2B-specialist methodologies for AI citation, earned-media placement, and entity-based optimization are diverging further from B2C-generalist approaches.
         </p>
 
-        <div className="bg-gray-50 border-l-4 border-[#F26522] p-6 sm:p-8 my-10">
-          <h3 className="text-[15px] font-semibold uppercase tracking-wider text-[#F26522] mb-3">Why a generalist agency's B2B services page isn't enough</h3>
+        <div className="bg-gray-50 border-l-4 border-[#111827] p-6 sm:p-8 my-10">
+          <h3 className="text-[15px] font-semibold uppercase tracking-wider text-[#2E8C68] mb-3">Why a generalist agency's B2B services page isn't enough</h3>
           <p className="text-[15px] sm:text-[16px] leading-[1.7] text-gray-700">
             Most agencies have a B2B services page. The page exists because B2B clients ask whether the agency serves B2B before they sign, and the page provides reassurance. But the existence of a B2B services page is a marketing artifact, not an operational specialization. The agency's underlying methodology, staffing, measurement infrastructure, and case study experience may still be 70-80% B2C, with B2B treated as an addressable adjacent market rather than the operational focus.
           </p>
           <p className="text-[15px] sm:text-[16px] leading-[1.7] text-gray-700 mt-4">
-            A B2B services page is not sufficient evidence of B2B SEO agency specialization. Operating focus across all six structural dimensions is what makes an agency a B2B specialist. Without that operating focus, the agency is applying B2C instincts to B2B problems and producing B2C-shaped outcomes — traffic growth that doesn't connect to pipeline, content that wins single buyers but not committees, measurement that satisfies the marketing dashboard but doesn't survive the CFO's revenue attribution question. Programs with strong B2C-style metrics and weak B2B pipeline contribution are usually generalist agencies producing generalist work for B2B clients who needed specialist work. This divergence is similar to local search programs, where a setup-and-forget approach decays without a continuous <a href="/insights/local-seo-explained" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">local SEO operational cadence</a>.
+            A B2B services page is not sufficient evidence of B2B SEO agency specialization. Operating focus across all six structural dimensions is what makes an agency a B2B specialist. Without that operating focus, the agency is applying B2C instincts to B2B problems and producing B2C-shaped outcomes — traffic growth that doesn't connect to pipeline, content that wins single buyers but not committees, measurement that satisfies the marketing dashboard but doesn't survive the CFO's revenue attribution question. Programs with strong B2C-style metrics and weak B2B pipeline contribution are usually generalist agencies producing generalist work for B2B clients who needed specialist work. This divergence is similar to local search programs, where a setup-and-forget approach decays without a continuous <a href="/insights/local-seo-explained" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">local SEO operational cadence</a>.
           </p>
         </div>
 
@@ -8476,7 +8476,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
         <div id="category-emergence" className="scroll-mt-24" />
         <h2 className="text-[1.6rem] sm:text-[2rem] font-display font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">How the B2B SEO category emerged and why it matters more in 2026</h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          The B2B SEO agency category emerged because the structural differences between B2B and B2C SEO outgrew the generalist agency model. Through the early 2010s, the differences were real but manageable — a competent generalist agency could serve B2B clients adequately by tuning their B2C methodology slightly. Through the late 2010s, B2B sales cycles lengthened, buying committees grew, and the gap between B2B keywords and B2C keywords widened. By the early 2020s, the structural divergence had become large enough that specialist agencies began outperforming generalists serving B2B clients on every meaningful pipeline metric. By 2026, the gap has compounded further as AI search has added new dimensions where B2B-specialist optimization approaches (entity authority, earned-media placement, AI citation tracking across ChatGPT/Claude/Perplexity/Gemini) operate differently from B2C-specialist approaches (still optimized primarily for Google traditional search and AI Overviews). For businesses requiring geographic visibility, these local factors are detailed in our guide on <a href="/insights/local-seo" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">local SEO strategies</a>.
+          The B2B SEO agency category emerged because the structural differences between B2B and B2C SEO outgrew the generalist agency model. Through the early 2010s, the differences were real but manageable — a competent generalist agency could serve B2B clients adequately by tuning their B2C methodology slightly. Through the late 2010s, B2B sales cycles lengthened, buying committees grew, and the gap between B2B keywords and B2C keywords widened. By the early 2020s, the structural divergence had become large enough that specialist agencies began outperforming generalists serving B2B clients on every meaningful pipeline metric. By 2026, the gap has compounded further as AI search has added new dimensions where B2B-specialist optimization approaches (entity authority, earned-media placement, AI citation tracking across ChatGPT/Claude/Perplexity/Gemini) operate differently from B2C-specialist approaches (still optimized primarily for Google traditional search and AI Overviews). For businesses requiring geographic visibility, these local factors are detailed in our guide on <a href="/insights/local-seo" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">local SEO strategies</a>.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
           The category matters more in 2026 because the cost of category confusion has increased. AI search has compressed the buyer research timeline — buyers now arrive at vendor sites with their shortlist effectively defined from AI assistants, and the agencies that have built specialist methodologies for AI citation in B2B categories are producing measurable share-of-shortlist outcomes that generalists serving B2B can't match. The 280% increase in demo requests one specialist agency produced for a SaaS client, the 17% improvement in AI search citations another delivered in 12 weeks, the $1B+ in client revenue a third claims to have generated under its "Customer Generation" methodology — these are outcomes that emerge from operating models built specifically around B2B buying dynamics, not from generalist SEO scaled to B2B clients. The market has bifurcated, and the bifurcation is accelerating.
@@ -8486,14 +8486,14 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
         <div id="cost-of-generalist" className="scroll-mt-24" />
         <h2 className="text-[1.6rem] sm:text-[2rem] font-display font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">The cost of hiring a generalist agency for B2B work</h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          A mid-market B2B SaaS company hiring a generalist SEO agency at $8,000-$25,000 per month is operating on a $100,000-$300,000 annual program. The visible deliverables look similar to what a B2B specialist would produce — content, technical SEO, link building, reporting. The invisible difference is what the work actually optimizes for. A generalist agency optimizes for traffic, ranking, and conversion rate on the assumption that those metrics correlate with revenue. A B2B specialist optimizes for pipeline contribution, opportunity creation, and closed-won attribution on the knowledge that traffic-and-ranking optimization in B2B has decoupled from pipeline outcomes in measurable ways — a phenomenon explored in our analysis of <a href="/insights/b2b-organic-traffic-growth" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">B2B organic traffic growth</a> (the 21.4% organic conversion uplift on declining B2B traffic that Factors.ai documented in their 2026 benchmark of 100+ B2B companies is the cleanest evidence of this decoupling).
+          A mid-market B2B SaaS company hiring a generalist SEO agency at $8,000-$25,000 per month is operating on a $100,000-$300,000 annual program. The visible deliverables look similar to what a B2B specialist would produce — content, technical SEO, link building, reporting. The invisible difference is what the work actually optimizes for. A generalist agency optimizes for traffic, ranking, and conversion rate on the assumption that those metrics correlate with revenue. A B2B specialist optimizes for pipeline contribution, opportunity creation, and closed-won attribution on the knowledge that traffic-and-ranking optimization in B2B has decoupled from pipeline outcomes in measurable ways — a phenomenon explored in our analysis of <a href="/insights/b2b-organic-traffic-growth" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">B2B organic traffic growth</a> (the 21.4% organic conversion uplift on declining B2B traffic that Factors.ai documented in their 2026 benchmark of 100+ B2B companies is the cleanest evidence of this decoupling).
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
           Frame the cost in concrete terms. A B2B SaaS company with a $25,000 average deal size needs roughly 200 closed deals annually to hit a $5M ARR contribution target. If the SEO program is structurally limited by generalist methodology — chasing high-volume top-of-funnel terms instead of low-volume high-intent terms, producing single-buyer content for committee buying decisions, reporting on rankings instead of pipeline — the program will produce traffic growth without proportional pipeline growth, and the company will spend a year discovering through CFO scrutiny that the channel isn't producing the revenue contribution it's being paid for. The retainer cost is the same. The pipeline outcome is dramatically different. The opportunity cost of a year spent with the wrong agency type is the closed-won deals that went to competitors whose specialist agencies were producing pipeline-contributing content while the generalist was producing rankings.
         </p>
         {/* ROI Math Box */}
-        <div className="bg-[#F26522]/5 border border-[#F26522]/30 rounded-lg p-6 sm:p-8 my-10">
-          <p className="text-[12px] font-semibold uppercase tracking-wider text-[#F26522] mb-4">ROI Scenario — Specialist vs. Generalist at the Same Budget</p>
+        <div className="bg-gray-50 border border-gray-200 rounded-lg p-6 sm:p-8 my-10">
+          <p className="text-[12px] font-semibold uppercase tracking-wider text-[#2E8C68] mb-4">ROI Scenario — Specialist vs. Generalist at the Same Budget</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <div>
               <p className="text-[13px] font-semibold uppercase tracking-wider text-gray-400 mb-3">Generalist agency — $10K/mo</p>
@@ -8505,7 +8505,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
               </ul>
             </div>
             <div>
-              <p className="text-[13px] font-semibold uppercase tracking-wider text-[#F26522] mb-3">B2B specialist — $10K/mo</p>
+              <p className="text-[13px] font-semibold uppercase tracking-wider text-[#2E8C68] mb-3">B2B specialist — $10K/mo</p>
               <ul className="space-y-2 text-[14px] text-gray-700">
                 <li>• High-intent cluster targeting: comparison, alternative-to, integration queries</li>
                 <li>• 10 pipeline opps/month by month 6 × 18% close = <strong>~2 deals/mo</strong></li>
@@ -8531,10 +8531,10 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           The ongoing work reflects the B2B operational model. Keyword research prioritizes intent over volume — comparison terms, alternative-to terms, integration terms, "best [tool category] for [specific use case]" terms — with low aggregate search volume but high per-conversion value. Content production targets the full buying committee with role-by-role assets: technical evaluator content (integration guides, architecture documentation, security overviews), economic buyer content (ROI frameworks, vendor comparison analysis, analyst-style category overviews), end-user content (workflow tutorials, productivity-focused use cases), procurement content (security documentation, compliance overviews, reference materials), and executive content (thought leadership in trade publications). Earned media and authority signals receive disproportionate investment because B2B AI citations skew heavily toward third-party sources rather than vendor domains. AI search visibility is tracked as a primary metric, with citation share across ChatGPT, Claude, Perplexity, and Gemini reported alongside traditional Google rankings. Reporting connects specific content to specific pipeline outcomes — not "we produced 12 articles this month" but "this comparison page generated 47 SQLs and influenced $340K in closed pipeline over the last 90 days."
         </p>
 
-        <div className="bg-gray-50 border-l-4 border-[#F26522] p-6 sm:p-8 my-10">
-          <h3 id="seo-lead-generation" className="text-[15px] font-semibold uppercase tracking-wider text-[#F26522] mb-3">How lead generation operates inside the B2B SEO agency model</h3>
+        <div className="bg-gray-50 border-l-4 border-[#111827] p-6 sm:p-8 my-10">
+          <h3 id="seo-lead-generation" className="text-[15px] font-semibold uppercase tracking-wider text-[#2E8C68] mb-3">How lead generation operates inside the B2B SEO agency model</h3>
           <p className="text-[15px] sm:text-[16px] leading-[1.7] text-gray-700">
-            The way a B2B SEO agency handles lead generation is one of the cleanest indicators of whether it operates as a real specialist. Our dedicated guide on <a href="/insights/seo-for-b2b-lead-generation" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">SEO for B2B lead generation</a> outlines this committee-coverage approach, which ensures that every role on the 11-person buying committee can independently encounter the brand in their preferred research channel, with content built for their specific stage of the evaluation.
+            The way a B2B SEO agency handles lead generation is one of the cleanest indicators of whether it operates as a real specialist. Our dedicated guide on <a href="/insights/seo-for-b2b-lead-generation" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">SEO for B2B lead generation</a> outlines this committee-coverage approach, which ensures that every role on the 11-person buying committee can independently encounter the brand in their preferred research channel, with content built for their specific stage of the evaluation.
           </p>
           <p className="text-[15px] sm:text-[16px] leading-[1.7] text-gray-700 mt-4">
             The operational difference is enormous. A generalist agency producing 12 articles a month for a B2B SaaS client typically produces 12 articles aimed at the same persona, hitting the same stage of the funnel. A B2B specialist producing 12 articles a month produces a deliberate mix across roles, stages, and channels — three pieces for technical evaluators, two for procurement, two thought-leadership pieces for executive sponsors, three for the end-user role, and two for mid-funnel comparison consideration. The total output is the same. The pipeline contribution diverges sharply over a 6-12 month engagement.
@@ -8574,7 +8574,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           <strong>Mid-market B2B SaaS operators</strong> typically have the most to gain from B2B specialization because the buying committee dynamics, long sales cycles, and pipeline-attribution complexity that define B2B SaaS are exactly the problems generalist agencies are weakest at solving. Mid-market is also where the price gap between specialists and generalists is least prohibitive, making the ROI math particularly favorable.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          <strong>Enterprise B2B operators</strong> benefit from specialists primarily because the technical SEO complexity at enterprise scale (large content libraries, international architecture, multi-domain strategies, compliance considerations) compounds with B2B-specific methodology requirements, often requiring a complex <a href="/insights/multi-location-seo-website-structure" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">multi-location SEO website structure</a> to serve regional offices without internal cannibalization. Enterprise B2B engagements also have the revenue scale to justify specialist retainers in the $25,000-$50,000+/month range where the deepest B2B agency practices operate.
+          <strong>Enterprise B2B operators</strong> benefit from specialists primarily because the technical SEO complexity at enterprise scale (large content libraries, international architecture, multi-domain strategies, compliance considerations) compounds with B2B-specific methodology requirements, often requiring a complex <a href="/insights/multi-location-seo-website-structure" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">multi-location SEO website structure</a> to serve regional offices without internal cannibalization. Enterprise B2B engagements also have the revenue scale to justify specialist retainers in the $25,000-$50,000+/month range where the deepest B2B agency practices operate.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
           <strong>B2B services and consulting firms</strong> benefit from specialist B2B SEO agencies oriented around earned media and named-author authority signals, because their categories reward credibility over content volume in ways B2C-derived methodologies don't naturally produce. A specialist agency with a digital PR practice baked into the engagement is meaningfully different from a generalist with a separate digital PR upcharge.
@@ -8587,7 +8587,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
         <div id="getting-started" className="scroll-mt-24" />
         <h2 className="text-[1.6rem] sm:text-[2rem] font-display font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">What getting started with a B2B SEO agency engagement actually looks like</h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          A credible engagement starts with a pipeline-and-attribution audit, not a content calendar review. The audit evaluates the operator's current attribution model from organic traffic through to closed-won revenue, identifies the gaps where pipeline contribution is being undercounted or miscredited, baselines current AI search citation share across the four major engines for category-defining queries, assesses content coverage across the buying committee roles, and produces a pipeline-targeted roadmap rather than a traffic projection. The shortlist of agencies being evaluated gets assembled against the structural criteria above — B2B specialization, vertical depth, measurement infrastructure, AI search capability, team composition — rather than against the agencies that happen to surface first in a search. This selection framework mirrors the criteria detailed in our guide on choosing the <a href="/insights/best-seo-agency-for-b2b-brands" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">best SEO agency for B2B brands</a>.
+          A credible engagement starts with a pipeline-and-attribution audit, not a content calendar review. The audit evaluates the operator's current attribution model from organic traffic through to closed-won revenue, identifies the gaps where pipeline contribution is being undercounted or miscredited, baselines current AI search citation share across the four major engines for category-defining queries, assesses content coverage across the buying committee roles, and produces a pipeline-targeted roadmap rather than a traffic projection. The shortlist of agencies being evaluated gets assembled against the structural criteria above — B2B specialization, vertical depth, measurement infrastructure, AI search capability, team composition — rather than against the agencies that happen to surface first in a search. This selection framework mirrors the criteria detailed in our guide on choosing the <a href="/insights/best-seo-agency-for-b2b-brands" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">best SEO agency for B2B brands</a>.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
           The B2B operators that get the most from a specialist agency engagement are the ones that approach the relationship as a strategic revenue partnership rather than a tactical content vendor. The question of "should we hire a B2B SEO agency" usually has an obvious answer (yes, for most B2B operators above a certain stage). The question of "should we hire a B2B specialist or a generalist that takes B2B clients" has a less obvious answer that determines whether the next 12 months of investment produces pipeline-contributing returns or traffic-growth-with-flat-pipeline outcomes.
@@ -8656,13 +8656,13 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
 
         {/* ── CTA ── */}
         <div className="bg-gray-900 rounded-xl p-8 sm:p-10 my-14">
-          <p className="text-[11px] uppercase tracking-wider font-semibold text-[#F26522] mb-3">Scale Your B2B Pipeline</p>
+          <p className="text-[11px] uppercase tracking-wider font-semibold text-[#2E8C68] mb-3">Scale Your B2B Pipeline</p>
           <h3 className="text-white text-[1.4rem] sm:text-[1.7rem] font-display font-medium leading-[1.2] mb-4">Request a CRM pipeline and organic search attribution audit from Gobiya.</h3>
           <p className="text-gray-400 text-[15px] leading-relaxed mb-6">Walk through how your current organic search setup attributes revenue and identify the gaps before another year gets optimized against the wrong outcomes.</p>
-          <a href="/book" className="inline-flex items-center gap-3 bg-[#F26522] hover:bg-[#e05a1a] text-white pl-6 pr-2 py-2.5 transition-colors duration-300 font-medium text-[14px]">
+          <a href="/book" className="inline-flex items-center gap-3 bg-[#d1f851] hover:bg-[#c3ea45] text-[#111827] pl-6 pr-2 py-2.5 transition-colors duration-300 font-medium text-[14px]">
             Request a pipeline-and-attribution audit
             <div className="w-7 h-7 bg-white flex items-center justify-center ml-3">
-              <svg className="w-3.5 h-3.5 text-[#F26522]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"/></svg>
+              <svg className="w-3.5 h-3.5 text-[#2E8C68]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"/></svg>
             </div>
           </a>
         </div>
@@ -8729,10 +8729,10 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           How do you restore rankings after a core algorithm drop? This SEO case study traffic recovery breakdown details how we diagnosed and reversed a severe organic traffic collapse after Google's March 2026 update. Read our step-by-step diagnostic sequence to learn how we secured a 320% organic traffic lift.
         </p>
 
-        <div className="border-l-4 border-[#F26522] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
+        <div className="border-l-4 border-[#111827] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
           <img src="/images/steve-portrait-thumb.webp" alt="Steve Martin" width="48" height="48" loading="lazy" className="w-12 h-12 object-cover rounded-full border border-white/10 shrink-0" />
           <div>
-            <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-1 font-sans">Steve's Take</p>
+            <p className="text-[12px] uppercase tracking-wider text-[#2E8C68] font-semibold mb-1 font-sans">Steve's Take</p>
             <p className="text-[15px] italic text-white leading-relaxed font-sans">
               "Recovery is a sequence problem, not just a fix list. If you rewrite content before resolving server-side crawl issues, Googlebot won't index your updates. Fix technical issues first, then content."
             </p>
@@ -8740,11 +8740,11 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
         </div>
 
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
-          The first week of March 2026, a B2B e-commerce client watched their organic traffic fall off a cliff. Google's first <a href="/insights/can-a-site-fully-recover-from-a-google-core-update" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">broad core update</a> of the year rolled out alongside a concurrent spam algorithm update, and within days, core money pages that had been generating consistent revenue dropped from page one to page three and beyond. By the time they contacted Gobiya, two previous agencies had already attempted fixes. Neither moved the needle.
+          The first week of March 2026, a B2B e-commerce client watched their organic traffic fall off a cliff. Google's first <a href="/insights/can-a-site-fully-recover-from-a-google-core-update" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">broad core update</a> of the year rolled out alongside a concurrent spam algorithm update, and within days, core money pages that had been generating consistent revenue dropped from page one to page three and beyond. By the time they contacted Gobiya, two previous agencies had already attempted fixes. Neither moved the needle.
         </p>
 
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
-          What followed was a 12-week forensic recovery process that ended with the site surpassing its pre-update organic traffic baseline by 320%, a client-reported outcome documented in their Google Search Console data across the recovery window. This isn't a general guide about SEO best practices. It's the exact diagnostic sequence and fix order used to identify root causes, remediate the technical layer, restructure the content, and rebuild off-site authority. The order of operations mattered as much as the fixes themselves. If your site took a hit in the March 2026 update or any subsequent core event, this <a href="/google-penalty-recovery" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">traffic drop recovery playbook</a> documents what actually worked, and why the sequence is as important as the tactics.
+          What followed was a 12-week forensic recovery process that ended with the site surpassing its pre-update organic traffic baseline by 320%, a client-reported outcome documented in their Google Search Console data across the recovery window. This isn't a general guide about SEO best practices. It's the exact diagnostic sequence and fix order used to identify root causes, remediate the technical layer, restructure the content, and rebuild off-site authority. The order of operations mattered as much as the fixes themselves. If your site took a hit in the March 2026 update or any subsequent core event, this <a href="/google-penalty-recovery" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">traffic drop recovery playbook</a> documents what actually worked, and why the sequence is as important as the tactics.
         </p>
 
         {/* ── TABLE OF CONTENTS ── */}
@@ -8765,8 +8765,8 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
               { id: 'faqs', label: 'Frequently Asked Questions (FAQ)' }
             ].map(({ id, label }) => (
               <li key={id} className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#F26522] shrink-0" />
-                <a href={'#' + id} className="hover:text-[#F26522] transition-colors">{label}</a>
+                <span className="w-1.5 h-1.5 rounded-full bg-[#111827] shrink-0" />
+                <a href={'#' + id} className="hover:text-gray-900 transition-colors">{label}</a>
               </li>
             ))}
           </ul>
@@ -8779,17 +8779,17 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
         
         <h3 className="text-[18px] sm:text-[20px] font-medium text-gray-900 mt-8 mb-4">What the client's data showed the morning after the update</h3>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          When we pulled the GSC data, the picture was specific and ugly. According to the client's Search Console export, impressions had started declining in the first week of March 2026, with a secondary drop in clicks following approximately four days later. Three core category pages, each previously ranking between positions 2 and 5, had fallen to positions 14 through 22. A transactional product cluster accounting for roughly 40% of organic revenue had effectively disappeared from the first two pages of results. These figures come from the client's own <a href="/services/seo" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">Search Console and ranking data</a> and are presented here as reported outcomes rather than independently verified benchmarks.
+          When we pulled the GSC data, the picture was specific and ugly. According to the client's Search Console export, impressions had started declining in the first week of March 2026, with a secondary drop in clicks following approximately four days later. Three core category pages, each previously ranking between positions 2 and 5, had fallen to positions 14 through 22. A transactional product cluster accounting for roughly 40% of organic revenue had effectively disappeared from the first two pages of results. These figures come from the client's own <a href="/services/seo" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">Search Console and ranking data</a> and are presented here as reported outcomes rather than independently verified benchmarks.
         </p>
 
         <h3 className="text-[18px] sm:text-[20px] font-medium text-gray-900 mt-8 mb-4">Why the first two agencies missed the root cause</h3>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          The client had already run through two rounds of fixes before reaching out to us. The <a href="/insights/b2b-seo-agency" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">previous agencies</a> had made content tweaks, cleaned up a handful of redirects, and submitted a disavow file. None of it worked. The problem wasn't that the tactics were wrong in isolation; it was that they were applied without a real diagnosis. Fixing symptoms without mapping the architecture underneath is how recovery timelines stretch from weeks into quarters.
+          The client had already run through two rounds of fixes before reaching out to us. The <a href="/insights/b2b-seo-agency" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">previous agencies</a> had made content tweaks, cleaned up a handful of redirects, and submitted a disavow file. None of it worked. The problem wasn't that the tactics were wrong in isolation; it was that they were applied without a real diagnosis. Fixing symptoms without mapping the architecture underneath is how recovery timelines stretch from weeks into quarters.
         </p>
 
         <h3 className="text-[18px] sm:text-[20px] font-medium text-gray-900 mt-8 mb-4">How to tell a core update hit from a spam update hit</h3>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          The March 2026 event was actually two overlapping updates, documented separately in Google's Search Central announcements, and treating them as one caused the previous recovery attempts to fail. <strong>A core update redistributes rankings across a topic cluster based on quality signals; a spam update creates sharp, page-specific collapses tied to link quality or manipulative patterns.</strong> This client had both: broad ranking redistribution from the core update affecting the whole domain, and a cluster of pages with link patterns flagged by the <a href="/insights/what-is-the-difference-between-a-manual-action-and-an-algorithmic-penalty" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">spam update hit</a>. The technical and content layers needed to be treated separately before any consolidation work could begin.
+          The March 2026 event was actually two overlapping updates, documented separately in Google's Search Central announcements, and treating them as one caused the previous recovery attempts to fail. <strong>A core update redistributes rankings across a topic cluster based on quality signals; a spam update creates sharp, page-specific collapses tied to link quality or manipulative patterns.</strong> This client had both: broad ranking redistribution from the core update affecting the whole domain, and a cluster of pages with link patterns flagged by the <a href="/insights/what-is-the-difference-between-a-manual-action-and-an-algorithmic-penalty" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">spam update hit</a>. The technical and content layers needed to be treated separately before any consolidation work could begin.
         </p>
 
         {/* ── SECTION 2 ── */}
@@ -8804,12 +8804,12 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
 
         <h3 className="text-[18px] sm:text-[20px] font-medium text-gray-900 mt-8 mb-4">Crawl audit findings: what was quietly breaking the site</h3>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          The crawl surfaced compounding problems that were invisible at the surface level. Per the Screaming Frog audit conducted at project intake, several redirect chains had grown to three and four hops across the site's history of migrations and URL restructuring. Server logs confirmed a cluster of pages returning intermittent 5xx errors during peak traffic windows, degrading Googlebot's crawl consistency. Canonicalization conflicts existed between paginated URLs and their parent category pages, creating index confusion about which version of each page should rank. <strong>None of these issues were catastrophic individually, but together they were fragmenting crawl budget and diluting link equity across the wrong URLs.</strong> For a practical reference on how different HTTP response codes affect SEO and why intermittent 5xxs matter, we reviewed industry documentation on <a href="https://www.searchenginejournal.com/technical-seo/http-status-codes/" target="_blank" rel="noopener noreferrer" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">HTTP status codes for SEO</a>.
+          The crawl surfaced compounding problems that were invisible at the surface level. Per the Screaming Frog audit conducted at project intake, several redirect chains had grown to three and four hops across the site's history of migrations and URL restructuring. Server logs confirmed a cluster of pages returning intermittent 5xx errors during peak traffic windows, degrading Googlebot's crawl consistency. Canonicalization conflicts existed between paginated URLs and their parent category pages, creating index confusion about which version of each page should rank. <strong>None of these issues were catastrophic individually, but together they were fragmenting crawl budget and diluting link equity across the wrong URLs.</strong> For a practical reference on how different HTTP response codes affect SEO and why intermittent 5xxs matter, we reviewed industry documentation on <a href="https://www.searchenginejournal.com/technical-seo/http-status-codes/" target="_blank" rel="noopener noreferrer" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">HTTP status codes for SEO</a>.
         </p>
 
         <h3 className="text-[18px] sm:text-[20px] font-medium text-gray-900 mt-8 mb-4">Content quality signals and E-E-A-T gaps</h3>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          The content audit was equally revealing. A set of previously top-performing pages had been ranking primarily on backlink strength rather than genuine topical depth, and post-update, Google's quality systems had reassessed those pages and found them thin. There was also a layer of supporting pages created to capture long-tail variants: pages with shallow content, no referring domains, and engagement patterns indicating users weren't finding what they came for. These pages were dragging the site's overall quality perception down at the domain level, the kind of site-wide assessment the Helpful Content system is designed to make. For additional context on how helpful content assessments operate in practice, we consulted industry guidance on the <a href="https://www.semrush.com/blog/helpful-content/" target="_blank" rel="noopener noreferrer" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">Helpful Content signal</a>.
+          The content audit was equally revealing. A set of previously top-performing pages had been ranking primarily on backlink strength rather than genuine topical depth, and post-update, Google's quality systems had reassessed those pages and found them thin. There was also a layer of supporting pages created to capture long-tail variants: pages with shallow content, no referring domains, and engagement patterns indicating users weren't finding what they came for. These pages were dragging the site's overall quality perception down at the domain level, the kind of site-wide assessment the Helpful Content system is designed to make. For additional context on how helpful content assessments operate in practice, we consulted industry guidance on the <a href="https://www.semrush.com/blog/helpful-content/" target="_blank" rel="noopener noreferrer" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">Helpful Content signal</a>.
         </p>
 
         {/* ── SECTION 3 ── */}
@@ -8859,7 +8859,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
 
         <h3 className="text-[18px] sm:text-[20px] font-medium text-gray-900 mt-8 mb-4">Backlink audit and the disavow decision</h3>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          The backlink review, conducted using third-party audit tooling, flagged referring domains that had either gone toxic themselves or shown signals consistent with spam-update penalties in March 2026. The disavow decision followed a documented methodology: links from domains with obvious spam signals, a history of link manipulation, or dramatic visibility drops coinciding with the March update were disavowed. Links from weak but legitimately operating sites were left alone. An indiscriminate disavow file removes legitimate equity alongside bad links, so precision mattered as much here as it did in the content pruning process. We used guidance on evaluating <a href="https://seranking.com/blog/referring-domains/" target="_blank" rel="noopener noreferrer" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">referring domains</a> to inform which domains to prioritize for disavow versus those to monitor.
+          The backlink review, conducted using third-party audit tooling, flagged referring domains that had either gone toxic themselves or shown signals consistent with spam-update penalties in March 2026. The disavow decision followed a documented methodology: links from domains with obvious spam signals, a history of link manipulation, or dramatic visibility drops coinciding with the March update were disavowed. Links from weak but legitimately operating sites were left alone. An indiscriminate disavow file removes legitimate equity alongside bad links, so precision mattered as much here as it did in the content pruning process. We used guidance on evaluating <a href="https://seranking.com/blog/referring-domains/" target="_blank" rel="noopener noreferrer" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">referring domains</a> to inform which domains to prioritize for disavow versus those to monitor.
         </p>
 
         <h3 className="text-[18px] sm:text-[20px] font-medium text-gray-900 mt-8 mb-4">Rebuilding referring domain velocity</h3>
@@ -8869,7 +8869,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
 
         <h3 className="text-[18px] sm:text-[20px] font-medium text-gray-900 mt-8 mb-4">Strengthening entity signals through structured data</h3>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Organization schema, FAQ schema on the rewritten pages, and author entity markup for bylined content were added as part of the recovery's final layer. This is standard practice in Gobiya's forensic recovery methodology: technical fixes stabilize crawl and index health, content fixes address quality signals, and <a href="/insights/google-business-profile-optimization" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">structured data</a> supports trust re-establishment with Google's quality systems by clarifying who created the content and what entity it represents. These signals don't create rankings directly, but they reinforce the E-E-A-T foundation that core updates consistently reward, and GSC enhancements reports were monitored to confirm correct implementation.
+          Organization schema, FAQ schema on the rewritten pages, and author entity markup for bylined content were added as part of the recovery's final layer. This is standard practice in Gobiya's forensic recovery methodology: technical fixes stabilize crawl and index health, content fixes address quality signals, and <a href="/insights/google-business-profile-optimization" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">structured data</a> supports trust re-establishment with Google's quality systems by clarifying who created the content and what entity it represents. These signals don't create rankings directly, but they reinforce the E-E-A-T foundation that core updates consistently reward, and GSC enhancements reports were monitored to confirm correct implementation.
         </p>
 
         {/* ── SECTION 6 ── */}
@@ -8900,10 +8900,10 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           The 320% organic traffic recovery in this case study didn't come from a single tactic or a lucky timing window. It came from running a disciplined, sequenced process that addressed the technical layer first, the content layer second, and the authority layer in parallel. For any site owner staring at a post-update traffic collapse right now, the most important thing to understand is that speed matters less than sequence. Publishing new content before fixing crawl and canonicalization issues wastes the effort entirely.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Gobiya's forensic SEO methodology is built on exactly this sequence: diagnose before you fix, fix the foundation before you build on it, and validate each layer before moving to the next. If your site took a hit in a recent Google update and the standard fixes haven't moved the needle, the problem is almost certainly architectural, not cosmetic. The agencies that missed it before weren't wrong to try, they were working without a complete diagnostic picture. Post-update SEO recovery fails when it treats the symptom (lost rankings) rather than the system (crawl, content quality, and authority working together). For an industry perspective on how the March core update shifted rankings and what changed, see the coverage of the <a href="https://searchengineland.com/march-2026-google-core-update-what-changed-474397" target="_blank" rel="noopener noreferrer" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">March 2026 Google core update</a>.
+          Gobiya's forensic SEO methodology is built on exactly this sequence: diagnose before you fix, fix the foundation before you build on it, and validate each layer before moving to the next. If your site took a hit in a recent Google update and the standard fixes haven't moved the needle, the problem is almost certainly architectural, not cosmetic. The agencies that missed it before weren't wrong to try, they were working without a complete diagnostic picture. Post-update SEO recovery fails when it treats the symptom (lost rankings) rather than the system (crawl, content quality, and authority working together). For an industry perspective on how the March core update shifted rankings and what changed, see the coverage of the <a href="https://searchengineland.com/march-2026-google-core-update-what-changed-474397" target="_blank" rel="noopener noreferrer" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">March 2026 Google core update</a>.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          If you want this same forensic process run on your own site, reach out to the Gobiya team. We'll map what's broken against a full technical and content diagnostic, prioritize fixes by actual leverage, and give you the exact sequence to start restoring organic traffic, without wasting effort on surface-level changes that won't hold. <a href="/book" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">Request a forensic SEO audit from Gobiya.</a>
+          If you want this same forensic process run on your own site, reach out to the Gobiya team. We'll map what's broken against a full technical and content diagnostic, prioritize fixes by actual leverage, and give you the exact sequence to start restoring organic traffic, without wasting effort on surface-level changes that won't hold. <a href="/book" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">Request a forensic SEO audit from Gobiya.</a>
         </p>
 
         {/* ── FAQ SECTION ── */}
@@ -8964,10 +8964,10 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           How does AI search scraping target your web data? When analyzing AI search scraping, we find crawlers fetch raw, server-rendered HTML. Because most AI crawler bots do not execute JavaScript, any client-side rendered pages are completely invisible to their indexers.
         </p>
 
-        <div className="border-l-4 border-[#F26522] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
+        <div className="border-l-4 border-[#111827] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
           <img src="/images/steve-portrait-thumb.webp" alt="Steve Martin" width="48" height="48" loading="lazy" className="w-12 h-12 object-cover rounded-full border border-white/10 shrink-0" />
           <div>
-            <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-1 font-sans">Steve's Take</p>
+            <p className="text-[12px] uppercase tracking-wider text-[#2E8C68] font-semibold mb-1 font-sans">Steve's Take</p>
             <p className="text-[15px] italic text-white leading-relaxed font-sans">
               "If you want to test your site's AI visibility, turn off JavaScript in your browser. Whatever text disappears when JS is disabled is completely invisible to GPTBot, ClaudeBot, and PerplexityBot. Render server-side."
             </p>
@@ -8975,8 +8975,8 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
         </div>
 
         {/* ── STATS / UPDATE ── */}
-        <div className="bg-gray-50 border-l-4 border-[#F26522] p-6 my-10 space-y-4">
-          <p className="text-sm font-bold uppercase text-[#F26522] tracking-wider">AI Crawler Content Acquisition — 2026 Update</p>
+        <div className="bg-gray-50 border-l-4 border-[#111827] p-6 my-10 space-y-4">
+          <p className="text-sm font-bold uppercase text-[#2E8C68] tracking-wider">AI Crawler Content Acquisition — 2026 Update</p>
           <ul className="space-y-3 text-gray-700 text-sm font-body">
             <li><strong>Zero JS execution</strong> — An analysis of over 500 million GPTBot fetches found no evidence of JavaScript ever being executed; GPTBot downloads JS files about 11.5% of the time but never runs them (Vercel/MERJ, 2026).</li>
             <li><strong>Only Googlebot renders JS</strong> — Among major crawlers, only Googlebot fully renders JavaScript; GPTBot, ClaudeBot, PerplexityBot, Bytespider, and Meta-ExternalAgent read raw HTML only, with Bing offering limited rendering.</li>
@@ -9007,7 +9007,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           The key technical fact is what happens (or doesn\'t) next. In a real browser, the JavaScript in those script tags executes: it runs the application, makes API calls to fetch data, builds the page\'s components, and injects the full content into the DOM — and within seconds, the human visitor sees a complete page. The AI crawlers don\'t do this. They don\'t execute the JavaScript, don\'t wait for rendering, don\'t make the API calls the JavaScript would have made, and don\'t make a second attempt later. They take the initial HTML response and that\'s it. The Vercel/MERJ analysis of over 500 million GPTBot fetches found zero evidence of JavaScript execution — GPTBot downloads JavaScript files about 11.5% of the time but never runs them. The same holds for ClaudeBot, PerplexityBot, Meta\'s ExternalAgent, and Bytespider: none of the major AI crawlers execute JavaScript.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          So the answer to the question is precise: AI engines read public HTML text blocks — specifically, the raw HTML the server returns before any JavaScript runs. They do not scrape hidden API data, and they cannot access content that depends on client-side JavaScript (including content their target page would have fetched from your APIs in the browser). What\'s in the initial server HTML response is what they see. Everything else is invisible. For a detailed breakdown of what data points language models retrieve off-site, see our guide on <a href="/insights/what-data-sources-do-llms-crawl-to-verify-b2b-company-information" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">what data sources LLMs crawl to verify B2B company information</a>.
+          So the answer to the question is precise: AI engines read public HTML text blocks — specifically, the raw HTML the server returns before any JavaScript runs. They do not scrape hidden API data, and they cannot access content that depends on client-side JavaScript (including content their target page would have fetched from your APIs in the browser). What\'s in the initial server HTML response is what they see. Everything else is invisible. For a detailed breakdown of what data points language models retrieve off-site, see our guide on <a href="/insights/what-data-sources-do-llms-crawl-to-verify-b2b-company-information" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">what data sources LLMs crawl to verify B2B company information</a>.
         </p>
 
         {/* ── SECTION 2 ── */}
@@ -9021,7 +9021,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           Googlebot renders JavaScript. It uses a two-wave indexing process: first it fetches and indexes the raw HTML, then later — using a headless Chromium-based Web Rendering Service — it may execute the JavaScript and index the rendered content. This rendering is not instant (it can lag the initial crawl by hours to weeks) and it\'s not guaranteed (heavy scripts, blocked resources, and timing issues can cause rendered content to be missed), but Googlebot can, in general, eventually see client-side-rendered content. The question "can Google render JavaScript?" was largely settled years ago: yes, with caveats.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          The AI crawlers cannot. GPTBot, ClaudeBot, PerplexityBot, Bytespider, and Meta-ExternalAgent render no JavaScript whatsoever — none of them. Bing has only partial, less-reliable JavaScript support, and Applebot relies mostly on static HTML. This divide is dangerous precisely because Google\'s rendering capability masks the problem: a site can be indexed perfectly well by Google (because Googlebot eventually rendered it) while being completely invisible to ChatGPT, Perplexity, and Claude (because their crawlers only ever saw the empty shell). Technical audits routinely turn up single-page applications that rank fine in Google search yet are practically invisible in ChatGPT Search and Perplexity. The site owner sees healthy Google rankings and assumes the technical foundation is sound — while the entire AI-search channel can\'t see the content at all. To learn more about how conversational search behaves differently, read our breakdown of <a href="/insights/chatgpt-vs-google-for-business-discovery" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">ChatGPT vs Google for business discovery</a>.
+          The AI crawlers cannot. GPTBot, ClaudeBot, PerplexityBot, Bytespider, and Meta-ExternalAgent render no JavaScript whatsoever — none of them. Bing has only partial, less-reliable JavaScript support, and Applebot relies mostly on static HTML. This divide is dangerous precisely because Google\'s rendering capability masks the problem: a site can be indexed perfectly well by Google (because Googlebot eventually rendered it) while being completely invisible to ChatGPT, Perplexity, and Claude (because their crawlers only ever saw the empty shell). Technical audits routinely turn up single-page applications that rank fine in Google search yet are practically invisible in ChatGPT Search and Perplexity. The site owner sees healthy Google rankings and assumes the technical foundation is sound — while the entire AI-search channel can\'t see the content at all. To learn more about how conversational search behaves differently, read our breakdown of <a href="/insights/chatgpt-vs-google-for-business-discovery" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">ChatGPT vs Google for business discovery</a>.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
           The problem compounds through the Bing dependency. A large share of ChatGPT\'s search functionality relies on Bing\'s index — by one 2026 measure, around 92% of ChatGPT agent queries lean on Bing\'s search index — and Bingbot itself has only limited JavaScript rendering. So a client-side-rendered site faces a double exposure: the AI crawlers can\'t render it directly, and the Bing index that many AI engines query also struggles to render it. The site falls out of both the direct-crawl path and the search-index path that feed AI answers.
@@ -9038,7 +9038,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           There is no partial visibility here. A client-side-rendered page either has its content in the initial HTML response or it does not. The AI crawlers don\'t render, don\'t wait, and don\'t retry, so there\'s no second chance for the content to appear. If the initial HTML is an empty shell, the site is invisible to the AI systems processing billions of queries — not partially visible, not poorly ranked, but absent from their view of the web entirely. This is what makes rendering the most binary factor in GEO: you\'re either in the initial HTML or you\'re not, and there\'s no partial credit. It\'s also, conversely, why fixing it produces immediate results rather than the slow compounding of content optimization — once the content is in the server HTML, the crawlers can see it on their next fetch.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          This binary quality is why rendering should be checked first in any GEO technical audit. All the entity verification, structured data, citation-worthy content, and authority signals in the world are moot if the AI crawler receives an empty shell. The content has to exist in the server\'s HTML response before any other GEO factor can matter. For details on how we map topical graphs, see <a href="/insights/what-is-the-difference-between-google-knowledge-graph-optimization-and-geo" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">Google Knowledge Graph Optimization vs GEO</a>.
+          This binary quality is why rendering should be checked first in any GEO technical audit. All the entity verification, structured data, citation-worthy content, and authority signals in the world are moot if the AI crawler receives an empty shell. The content has to exist in the server\'s HTML response before any other GEO factor can matter. For details on how we map topical graphs, see <a href="/insights/what-is-the-difference-between-google-knowledge-graph-optimization-and-geo" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">Google Knowledge Graph Optimization vs GEO</a>.
         </p>
 
         {/* ── SECTION 4 ── */}
@@ -9052,7 +9052,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           The crawlers split by purpose. OpenAI operates several: GPTBot (collects training data for the GPT models), OAI-SearchBot (powers ChatGPT\'s search function), and ChatGPT-User (makes live fetches when a user references a specific URL in a conversation). Anthropic similarly operates ClaudeBot (training) and Claude-SearchBot (search). Perplexity operates PerplexityBot. Others in server logs include Google-Extended (Google\'s AI training crawler, separate from Googlebot), Bytespider (ByteDance), and Meta-ExternalAgent. The purpose distinction matters for robots.txt strategy: blocking the <em>training</em> crawlers (GPTBot, ClaudeBot, Google-Extended) opts you out of model training but the <em>search</em> crawlers (OAI-SearchBot, Claude-SearchBot, PerplexityBot) are what fetch content for live AI search answers — so a site that wants to appear in AI search answers should allow the search crawlers even if it chooses to block the training crawlers. Blocking everything by default, a common reflexive move, removes the site from AI search visibility entirely.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          A related robots.txt trap, specific to the rendering problem: some configurations block the JavaScript, CSS, or API endpoints that crawlers need. While the AI crawlers don\'t execute JS, blocking these resources can interfere with crawlers (including Googlebot) that do attempt rendering, and can prevent proper page understanding. Confirm robots.txt doesn\'t block the resources needed to understand the page. To check how AI search visibility feeds into your B2B funnel goals, refer to our piece on <a href="/insights/automated-b2b-sales-pipeline-seo" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">automated B2B sales pipeline SEO</a>.
+          A related robots.txt trap, specific to the rendering problem: some configurations block the JavaScript, CSS, or API endpoints that crawlers need. While the AI crawlers don\'t execute JS, blocking these resources can interfere with crawlers (including Googlebot) that do attempt rendering, and can prevent proper page understanding. Confirm robots.txt doesn\'t block the resources needed to understand the page. To check how AI search visibility feeds into your B2B funnel goals, refer to our piece on <a href="/insights/automated-b2b-sales-pipeline-seo" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">automated B2B sales pipeline SEO</a>.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
           One more operational reality: there is no Search Console equivalent for AI crawlers. The only reliable way to confirm AI crawlers are actually accessing your content is to check your server logs for their user-agent strings — GPTBot, OAI-SearchBot, ClaudeBot, Claude-SearchBot, PerplexityBot, Bytespider, and the others. Server-log monitoring is the AI-crawler analog of Search Console, and it\'s how a technical team verifies that the content acquisition is actually happening.
@@ -9072,7 +9072,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           The verification is simple and should be done on every important page: load the page with JavaScript disabled in the browser, and look at what remains. If the critical content — the claims, product descriptions, pricing, author signals — is still there with JS off, it\'s in the server HTML and AI crawlers can see it. If the page is blank or a shell with JS disabled, the content is client-side-rendered and invisible to AI crawlers. Also verify, in the raw HTML source (view-source, not the rendered DOM in dev tools), that schema markup and metadata are present in the server response rather than injected by JavaScript — structured data that only appears after JS runs is invisible to the crawlers that don\'t run JS.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          This is genuinely the highest-leverage, fastest-acting fix in technical GEO. It\'s a one-time architectural correction (versus the ongoing work of content and authority optimization), and the moment the content is in the server HTML, the AI crawlers can see it on their next fetch. For a site that\'s been invisible to AI engines due to client-side rendering, fixing the rendering is the difference between absence and presence. Read more on how this impacts customer conversion on our page detailing <a href="/insights/automated-lead-generation-seo" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">automated lead generation SEO</a>.
+          This is genuinely the highest-leverage, fastest-acting fix in technical GEO. It\'s a one-time architectural correction (versus the ongoing work of content and authority optimization), and the moment the content is in the server HTML, the AI crawlers can see it on their next fetch. For a site that\'s been invisible to AI engines due to client-side rendering, fixing the rendering is the difference between absence and presence. Read more on how this impacts customer conversion on our page detailing <a href="/insights/automated-lead-generation-seo" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">automated lead generation SEO</a>.
         </p>
 
         {/* ── SECTION 6 ── */}
@@ -9095,7 +9095,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           Gobiya is built specifically around the technical mechanics of the modern search ecosystem. We don\'t just write articles or optimize metadata; we audit rendering engines, analyze crawl budgets, write custom server-side React architectures, and implement entity graphs that verify your brand across the web. Our team treats AI visibility as a technical challenge first, ensuring your content is fully accessible and formatted for vector retrieval.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          By combining server-side rendering expertise with deep knowledge of search crawler behaviors, we bridge the gap between software development and organic marketing. When you work with Gobiya, we verify every template, test server-log crawl activity for user agents, and structure your templates for immediate RAG extraction. To review our core services, explore our dedicated <a href="/capabilities/generative-engine-optimization" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">Generative Engine Optimization services page</a>.
+          By combining server-side rendering expertise with deep knowledge of search crawler behaviors, we bridge the gap between software development and organic marketing. When you work with Gobiya, we verify every template, test server-log crawl activity for user agents, and structure your templates for immediate RAG extraction. To review our core services, explore our dedicated <a href="/capabilities/generative-engine-optimization" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">Generative Engine Optimization services page</a>.
         </p>
         </div>
 
@@ -9135,7 +9135,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           Two decisions matter most. First: whether your critical content and structured data are present in the initial server HTML response, or whether they\'re injected by client-side JavaScript that the AI crawlers never execute — a difference you can confirm in minutes by loading your pages with JavaScript disabled. Second: whether your robots.txt and crawler strategy deliberately allow the AI search crawlers (OAI-SearchBot, Claude-SearchBot, PerplexityBot) that fetch content for live AI answers, or whether a reflexive blanket block is removing you from AI search visibility entirely.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Gobiya is a logical starting point for technical teams that want to be visible to AI engines at the acquisition layer — built around rendering audits that confirm your content is in the server HTML the AI crawlers actually read, SSR/SSG architecture guidance, crawler-taxonomy-aware robots.txt configuration, and server-log verification that the AI crawlers are reaching your content. Request a rendering audit, load your key pages with JavaScript disabled to see what the AI crawlers see, and find out whether your content is actually in their view of the web — before another quarter of AI-search visibility is lost to content hidden behind JavaScript the crawlers never run. <a href="/book" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">Request a technical rendering audit from Gobiya today.</a>
+          Gobiya is a logical starting point for technical teams that want to be visible to AI engines at the acquisition layer — built around rendering audits that confirm your content is in the server HTML the AI crawlers actually read, SSR/SSG architecture guidance, crawler-taxonomy-aware robots.txt configuration, and server-log verification that the AI crawlers are reaching your content. Request a rendering audit, load your key pages with JavaScript disabled to see what the AI crawlers see, and find out whether your content is actually in their view of the web — before another quarter of AI-search visibility is lost to content hidden behind JavaScript the crawlers never run. <a href="/book" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">Request a technical rendering audit from Gobiya today.</a>
         </p>
 
         {/* ── FAQ SECTION ── */}
@@ -9257,22 +9257,22 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
             </thead>
             <tbody>
               <tr className="border-b border-gray-200">
-                <td className="py-3 pr-6 font-bold text-[#F26522]">58%</td>
+                <td className="py-3 pr-6 font-bold text-[#2E8C68]">58%</td>
                 <td className="py-3">of searches now resolve zero-click — intercepted by AI Overviews and featured snippets built from entity data, not your landing page</td>
               </tr>
               <tr className="border-b border-gray-200">
-                <td className="py-3 pr-6 font-bold text-[#F26522]">4+</td>
+                <td className="py-3 pr-6 font-bold text-[#2E8C68]">4+</td>
                 <td className="py-3">distinct knowledge graph ecosystems (Google, Bing/Copilot, Wikidata, LLM-internal) reconstruct your brand independently — and disagree more than you'd expect</td>
               </tr>
               <tr>
-                <td className="py-3 pr-6 font-bold text-[#F26522]">30–90 days</td>
+                <td className="py-3 pr-6 font-bold text-[#2E8C68]">30–90 days</td>
                 <td className="py-3">the freshness window in which AI systems disproportionately cite sources, making stale entity signals compound into drift</td>
               </tr>
             </tbody>
           </table>
         </div>
 
-        <blockquote className="border-l-4 border-[#F26522] pl-6 py-2 my-8 text-gray-700 italic text-[17px] leading-[1.7]">
+        <blockquote className="border-l-4 border-[#111827] pl-6 py-2 my-8 text-gray-700 italic text-[17px] leading-[1.7]">
           Your brand exists twice: once in reality, and once as an entity node inside the knowledge graphs that power Google, Bing, ChatGPT, Gemini, Claude, and Perplexity. When those two versions diverge — wrong category, stale services, outdated leadership, mixed sentiment — that's perception drift, and it silently reroutes citations, recommendations, and revenue to competitors whose entity data is cleaner.
         </blockquote>
 
@@ -9298,8 +9298,8 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
               { id: 'faqs', label: 'Frequently Asked Questions' },
             ].map(({ id, label }) => (
               <li key={id} className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#F26522] shrink-0" />
-                <a href={'#' + id} className="hover:text-[#F26522] transition-colors">{label}</a>
+                <span className="w-1.5 h-1.5 rounded-full bg-[#111827] shrink-0" />
+                <a href={'#' + id} className="hover:text-gray-900 transition-colors">{label}</a>
               </li>
             ))}
           </ul>
@@ -9321,7 +9321,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           A traditional crawler reads your pages and indexes keywords. That's it. The index has no durable concept of <em>you</em> — only documents that mention certain strings. Entity extraction adds a layer above the index: named entity recognition identifies that "Gobiya," "the agency on Wilshire," and "gobiya.com" refer to one organization; disambiguation separates that organization from every similarly-named thing on the web; and reconciliation merges signals from your site, directories, press, reviews, and structured databases into a single node with attributes — category, location, services, leadership, founding date, relationships to other entities.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          That node is what answer engines actually consult. When Google assembles an AI Overview or a knowledge panel, when Copilot recommends vendors, when Perplexity builds a comparison table, they are reading entity attributes and relationship edges — not re-reading your homepage in real time. <strong>Extraction quality is the ceiling on your AI visibility.</strong> If the graph's version of your brand is thin, ambiguous, or wrong, no amount of content volume on your own domain compensates — a core principle behind our <a href="/capabilities/generative-engine-optimization" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">Generative Engine Optimization</a> practice.
+          That node is what answer engines actually consult. When Google assembles an AI Overview or a knowledge panel, when Copilot recommends vendors, when Perplexity builds a comparison table, they are reading entity attributes and relationship edges — not re-reading your homepage in real time. <strong>Extraction quality is the ceiling on your AI visibility.</strong> If the graph's version of your brand is thin, ambiguous, or wrong, no amount of content volume on your own domain compensates — a core principle behind our <a href="/capabilities/generative-engine-optimization" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">Generative Engine Optimization</a> practice.
         </p>
 
         {/* ── SECTION 2 ── */}
@@ -9332,9 +9332,9 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           Schema markup is where most teams start — and stop. Publishing Organization schema with <code className="bg-gray-100 px-1.5 py-0.5 rounded text-[14px] font-mono text-gray-700">sameAs</code> links is genuinely necessary. But markup is a <em>declaration</em>, and knowledge graphs are built to be skeptical of declarations. Anyone can claim anything in their own JSON-LD.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          What graphs actually weigh is <strong>corroboration</strong>: does the declared identity match what independent sources say? Your schema asserts a category; do industry directories, press coverage, review platforms, and Wikidata agree? Your site claims a service line; do third parties describe you that way? When declared data and corroborating data align, the graph promotes attributes to facts. When they conflict, the graph either hedges — thin panels, no entity recognition in AI answers — or worse, it trusts the third-party version over yours. This is why <a href="/insights/what-data-sources-do-llms-crawl-to-verify-b2b-company-information" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">understanding which data sources LLMs use for verification</a> is so foundational to entity work.
+          What graphs actually weigh is <strong>corroboration</strong>: does the declared identity match what independent sources say? Your schema asserts a category; do industry directories, press coverage, review platforms, and Wikidata agree? Your site claims a service line; do third parties describe you that way? When declared data and corroborating data align, the graph promotes attributes to facts. When they conflict, the graph either hedges — thin panels, no entity recognition in AI answers — or worse, it trusts the third-party version over yours. This is why <a href="/insights/what-data-sources-do-llms-crawl-to-verify-b2b-company-information" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">understanding which data sources LLMs use for verification</a> is so foundational to entity work.
         </p>
-        <div className="border-l-4 border-[#F26522] bg-gray-50 p-5 my-8 rounded-r-lg">
+        <div className="border-l-4 border-[#111827] bg-gray-50 p-5 my-8 rounded-r-lg">
           <p className="text-[15px] font-semibold text-gray-900 mb-1">The operative rule</p>
           <p className="text-[15px] text-gray-700 leading-relaxed">Knowledge graphs resolve conflicts by source authority and consensus, not by who owns the domain. If five aged directory listings say you're a "web design shop" and your new schema says "AI growth consultancy," the graph sides with the directories until you fix the directories.</p>
         </div>
@@ -9350,7 +9350,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           Drift compounds for two reasons. First, <strong>graphs are conservative</strong> — they prefer attributes confirmed across many sources over time, so stale consensus beats fresh truth until the fresh truth is also a consensus. Second, <strong>AI systems have a freshness bias at the retrieval layer but inertia at the entity layer</strong>. An LLM with web search will cite recent pages, but its underlying sense of what your brand <em>is</em> updates slowly, on training and reconciliation cycles. The result: a model can quote your newest blog post while still categorizing you as something you stopped being three years ago.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          The commercial cost is invisible until you look for it. Drifted entities get excluded from "best X in Y" answers because the model isn't confident the brand belongs in category X. They lose knowledge panel real estate. They get misdescribed in comparison queries prospects run before ever visiting your site. With a majority of searches now resolving without a click, the graph's version of you <em>is</em> your first impression — a dynamic we analyze further in our <a href="/capabilities/semantic-search-intelligence" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">Semantic Search Intelligence</a> capability overview.
+          The commercial cost is invisible until you look for it. Drifted entities get excluded from "best X in Y" answers because the model isn't confident the brand belongs in category X. They lose knowledge panel real estate. They get misdescribed in comparison queries prospects run before ever visiting your site. With a majority of searches now resolving without a click, the graph's version of you <em>is</em> your first impression — a dynamic we analyze further in our <a href="/capabilities/semantic-search-intelligence" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">Semantic Search Intelligence</a> capability overview.
         </p>
 
         {/* ── SECTION 4 ── */}
@@ -9372,25 +9372,25 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
             </thead>
             <tbody>
               <tr className="border-b border-gray-200">
-                <td className="p-4 font-semibold text-[#F26522]">Google Knowledge Graph</td>
+                <td className="p-4 font-semibold text-[#2E8C68]">Google Knowledge Graph</td>
                 <td className="p-4">Search, knowledge panels, AI Overviews, Gemini</td>
                 <td className="p-4">Corroborated structured data, authoritative coverage, GBP, Wikipedia/Wikidata</td>
                 <td className="p-4">Weeks–months, on recrawl and reconciliation</td>
               </tr>
               <tr className="border-b border-gray-200">
-                <td className="p-4 font-semibold text-[#F26522]">Microsoft / Bing entity graph</td>
+                <td className="p-4 font-semibold text-[#2E8C68]">Microsoft / Bing entity graph</td>
                 <td className="p-4">Bing, Copilot, ChatGPT live search layer</td>
                 <td className="p-4">Bing Webmaster–verified site data, LinkedIn signals, directory consensus</td>
                 <td className="p-4">Weeks–months; often lags Google</td>
               </tr>
               <tr className="border-b border-gray-200">
-                <td className="p-4 font-semibold text-[#F26522]">Wikidata / open graphs</td>
+                <td className="p-4 font-semibold text-[#2E8C68]">Wikidata / open graphs</td>
                 <td className="p-4">Backbone many systems reconcile against; LLM training corpora</td>
                 <td className="p-4">Sourced, notable, structured claims with references</td>
                 <td className="p-4">Immediate to edit, slow to propagate</td>
               </tr>
               <tr>
-                <td className="p-4 font-semibold text-[#F26522]">LLM-internal representations</td>
+                <td className="p-4 font-semibold text-[#2E8C68]">LLM-internal representations</td>
                 <td className="p-4">ChatGPT, Claude, Perplexity, Gemini base models</td>
                 <td className="p-4">Training-corpus consensus + retrieval-time sources</td>
                 <td className="p-4">Retrieval layer: 30–90 days. Parametric layer: model release cycles</td>
@@ -9399,7 +9399,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           </table>
         </div>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          The practical implication: your entity must be audited in each ecosystem separately. A brand can hold a clean Google knowledge panel while Copilot — drawing on Bing's graph and LinkedIn — describes it wrong, and Perplexity describes it a third way. Platform fragmentation is the rule, not the exception. Understanding <a href="/insights/what-is-the-difference-between-google-knowledge-graph-optimization-and-geo" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">how Knowledge Graph optimization differs from GEO</a> is essential for building a strategy that covers all four.
+          The practical implication: your entity must be audited in each ecosystem separately. A brand can hold a clean Google knowledge panel while Copilot — drawing on Bing's graph and LinkedIn — describes it wrong, and Perplexity describes it a third way. Platform fragmentation is the rule, not the exception. Understanding <a href="/insights/what-is-the-difference-between-google-knowledge-graph-optimization-and-geo" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">how Knowledge Graph optimization differs from GEO</a> is essential for building a strategy that covers all four.
         </p>
 
         {/* ── SECTION 5 ── */}
@@ -9410,7 +9410,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           When a crawler or training pipeline ingests a page that mentions your brand, the sequence runs roughly like this. Named entity recognition tags the mention. Disambiguation resolves which entity it refers to, using context, co-occurring entities, and existing graph identifiers. Attribute extraction pulls claims — services, locations, relationships, dates — from the surrounding text and any structured data. Reconciliation then compares those claims against the node's existing attributes: confirming signals strengthen confidence scores, conflicting signals lower them or trigger re-evaluation. The output is not a copy of your page; it's an updated probability distribution over what's true about you.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          This is why <strong>extractability is a content property</strong>. Pages with clear, self-contained claims near the top produce clean attribute extraction. Pages that bury identity in narrative, hedge every claim, or describe the brand differently on every URL produce noisy extraction and weak confidence. The same on-page discipline that wins featured snippets also feeds the graph, which is why entity work and <a href="/on-page-seo-los-angeles" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">on-page SEO</a> are inseparable in practice. For a deeper look at how AI systems decide what's citable, our guide on <a href="/insights/what-is-generative-engine-optimization-and-how-does-it-work" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">what GEO is and how it works</a> covers the retrieval mechanics directly.
+          This is why <strong>extractability is a content property</strong>. Pages with clear, self-contained claims near the top produce clean attribute extraction. Pages that bury identity in narrative, hedge every claim, or describe the brand differently on every URL produce noisy extraction and weak confidence. The same on-page discipline that wins featured snippets also feeds the graph, which is why entity work and <a href="/on-page-seo-los-angeles" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">on-page SEO</a> are inseparable in practice. For a deeper look at how AI systems decide what's citable, our guide on <a href="/insights/what-is-generative-engine-optimization-and-how-does-it-work" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">what GEO is and how it works</a> covers the retrieval mechanics directly.
         </p>
 
         {/* ── SECONDARY IMAGE ── */}
@@ -9434,7 +9434,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           A drift audit answers one question per ecosystem: <em>what does this system currently believe about us, and where does that belief diverge from reality?</em> The credible version of that audit pulls your entity record from Google's Knowledge Graph Search API, captures your knowledge panel state, queries your brand and your core commercial topics in ChatGPT, Gemini, Claude, and Perplexity — with and without browsing — and inventories every third-party surface the graphs reconcile against: Wikidata, Wikipedia where warranted, major directories, LinkedIn, review platforms, and press.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          The output is a drift map: a per-attribute, per-ecosystem table of what's stored versus what's true, with each discrepancy traced back to the sources still asserting the stale version. That last step is the one most audits skip, and it's the only one that makes correction possible. You cannot fix an attribute without fixing the sources the graph trusts for it. This same forensic approach — tracing problems to their root signals — underpins how we handle <a href="/capabilities/forensic-seo-penalty-recovery" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">forensic SEO and penalty recovery</a> engagements, where stale entity signals and trust issues frequently appear in the same picture.
+          The output is a drift map: a per-attribute, per-ecosystem table of what's stored versus what's true, with each discrepancy traced back to the sources still asserting the stale version. That last step is the one most audits skip, and it's the only one that makes correction possible. You cannot fix an attribute without fixing the sources the graph trusts for it. This same forensic approach — tracing problems to their root signals — underpins how we handle <a href="/capabilities/forensic-seo-penalty-recovery" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">forensic SEO and penalty recovery</a> engagements, where stale entity signals and trust issues frequently appear in the same picture.
         </p>
 
         {/* ── SECTION 7 ── */}
@@ -9451,7 +9451,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
             { step: '03', label: 'Feed the retrieval layer', body: 'Fresh, well-structured, third-party-validated content in the 30–90 day window AI systems disproportionately cite, so the live answers reinforce the corrected entity rather than resurrecting the old one.' },
           ].map((item) => (
             <li key={item.step} className="flex items-start gap-4 border-b border-gray-100 pb-4">
-              <span className="w-8 h-8 bg-[#F26522] text-white text-[12px] font-bold flex items-center justify-center shrink-0 rounded-sm">{item.step}</span>
+              <span className="w-8 h-8 bg-[#111827] text-white text-[12px] font-bold flex items-center justify-center shrink-0 rounded-sm">{item.step}</span>
               <div>
                 <p className="font-semibold text-gray-900 mb-1 text-[15px]">{item.label}</p>
                 <p className="text-[15px] text-gray-700 leading-relaxed">{item.body}</p>
@@ -9466,18 +9466,18 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
         {/* ── INLINE CTA ── */}
         <div className="bg-gray-900 text-white p-6 sm:p-8 my-10 sm:my-14 flex flex-col sm:flex-row items-start sm:items-center gap-6">
           <div className="flex-1">
-            <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-2">Gobiya Entity Engineering</p>
+            <p className="text-[12px] uppercase tracking-wider text-[#d1f851] font-semibold mb-2">Gobiya Entity Engineering</p>
             <p className="text-[17px] sm:text-[19px] font-medium leading-snug">
               Find out what the graphs currently believe about your brand. We run entity baselines across all four ecosystems.
             </p>
           </div>
           <a
             href="/book"
-            className="group flex items-center bg-[#F26522] hover:bg-[#e05a1a] text-white pl-5 pr-2 py-2 transition-colors duration-300 whitespace-nowrap shrink-0"
+            className="group flex items-center bg-[#d1f851] hover:bg-[#c3ea45] text-[#111827] pl-5 pr-2 py-2 transition-colors duration-300 whitespace-nowrap shrink-0"
           >
             <span className="text-[13px] font-medium mr-3">Request an Entity Audit</span>
             <div className="w-6 h-6 bg-white flex items-center justify-center">
-              <svg className="w-3.5 h-3.5 text-[#F26522]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
+              <svg className="w-3.5 h-3.5 text-[#2E8C68]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
             </div>
           </a>
         </div>
@@ -9490,27 +9490,27 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           "Entity SEO" is used loosely. Plenty of vendors mean "we installed a schema plugin." The questions that separate a real practice from a claim: Can they show you your current Knowledge Graph API record and explain each attribute's likely sources? Do they audit Bing/Copilot and the LLMs separately, or only Google? Is their correction plan source-by-source — naming the specific directories, databases, and publications that need to change — or is it "publish more content"? Do they measure drift on a recurring cadence with screenshots and API pulls, or report rankings and call it done?
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          The structural tell: legitimate entity work spends most of its effort <em>off</em> your domain, on corroboration. Any proposal where 90 percent of the deliverables are pages on your own site is a content retainer wearing an entity costume. Self-description doesn't build graph confidence. Independent confirmation does. If you're evaluating partners on this criterion, our <a href="/insights/best-seo-agency-for-b2b-brands" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">B2B agency evaluation checklist</a> offers a practical framework for separating real technical practices from polished pitches.
+          The structural tell: legitimate entity work spends most of its effort <em>off</em> your domain, on corroboration. Any proposal where 90 percent of the deliverables are pages on your own site is a content retainer wearing an entity costume. Self-description doesn't build graph confidence. Independent confirmation does. If you're evaluating partners on this criterion, our <a href="/insights/best-seo-agency-for-b2b-brands" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">B2B agency evaluation checklist</a> offers a practical framework for separating real technical practices from polished pitches.
         </p>
 
         {/* ── SECTION 9 ── */}
         <h2 id="gobiya-approach" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
           Why Gobiya approaches entity engineering differently
         </h2>
-        <div className="border-l-4 border-[#F26522] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
+        <div className="border-l-4 border-[#111827] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
           <img src="/images/steve-portrait-thumb.webp" alt="Steve Martin" width="48" height="48" loading="lazy" className="w-12 h-12 object-cover rounded-full border border-white/10 shrink-0" />
           <div>
-            <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-1 font-sans">Steve's Take</p>
+            <p className="text-[12px] uppercase tracking-wider text-[#2E8C68] font-semibold mb-1 font-sans">Steve's Take</p>
             <p className="text-[15px] italic text-white leading-relaxed font-sans">
               "Most agencies install a schema plugin and call it entity work. Real entity engineering starts with the Knowledge Graph API record and ends with every third-party source the graph trusts telling the same story. That's what moves the needle."
             </p>
           </div>
         </div>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Gobiya is a Los Angeles digital firm, operating since 2012, that treats entity work as engineering rather than content marketing. Our <a href="/services/geo-optimization" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">GEO practice</a> is built around the full reconciliation loop: Knowledge Graph API baselining, per-platform LLM perception testing, schema graphs that declare a single consistent identity across every URL, and source-by-source corroboration campaigns that bring directories, open databases, and coverage into agreement with the current brand.
+          Gobiya is a Los Angeles digital firm, operating since 2012, that treats entity work as engineering rather than content marketing. Our <a href="/services/geo-optimization" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">GEO practice</a> is built around the full reconciliation loop: Knowledge Graph API baselining, per-platform LLM perception testing, schema graphs that declare a single consistent identity across every URL, and source-by-source corroboration campaigns that bring directories, open databases, and coverage into agreement with the current brand.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Because we also build the underlying sites — sub-second React/Vite platforms through our <a href="/capabilities/custom-digital-infrastructure" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">Custom Digital Infrastructure</a> practice — entity declarations live in the codebase, not in a plugin that drifts on its own. Clients have seen AI referral growth north of 2,000 percent on optimized, category-defining entity nodes — the mechanism is exactly what this article describes: the graphs stopped hedging and started recommending.
+          Because we also build the underlying sites — sub-second React/Vite platforms through our <a href="/capabilities/custom-digital-infrastructure" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">Custom Digital Infrastructure</a> practice — entity declarations live in the codebase, not in a plugin that drifts on its own. Clients have seen AI referral growth north of 2,000 percent on optimized, category-defining entity nodes — the mechanism is exactly what this article describes: the graphs stopped hedging and started recommending.
         </p>
 
         {/* ── SECTION 10 ── */}
@@ -9525,7 +9525,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
             { label: 'Brands with name collisions', body: 'Need disambiguation work above all, because the graphs may be merging or confusing entities and attributing someone else\'s reputation to them.' },
           ].map((item) => (
             <li key={item.label} className="flex items-start gap-3 border-b border-gray-100 pb-4">
-              <span className="mt-2 w-2 h-2 rounded-full bg-[#F26522] shrink-0" />
+              <span className="mt-2 w-2 h-2 rounded-full bg-[#111827] shrink-0" />
               <div>
                 <span className="font-semibold text-gray-900">{item.label}</span>
                 <span className="text-gray-700 text-[16px] leading-relaxed"> — {item.body}</span>
@@ -9542,7 +9542,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           A credible engagement starts with the drift map, not a proposal deck. Baseline the entity in all four ecosystems, trace every discrepancy to its sources, and rank corrections by commercial impact — the attributes that gate inclusion in the AI answers your buyers actually ask for. Then the correction passes run in order: source of truth, corroborators, retrieval layer. Then the cadence: quarterly re-measurement against the same baseline, because the graphs will keep moving whether you watch them or not.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          The businesses that win this are the ones that treat their entity as infrastructure — owned, versioned, monitored — rather than assuming the graphs will eventually figure it out. They won't. Graphs converge on consensus, and consensus is something you build deliberately or inherit accidentally. If you're also working through a <a href="/google-penalty-recovery" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">Google penalty recovery</a> engagement, note the overlap: stale and conflicting entity signals frequently surface in the same forensic picture as trust issues, and fixing one tends to accelerate the other.
+          The businesses that win this are the ones that treat their entity as infrastructure — owned, versioned, monitored — rather than assuming the graphs will eventually figure it out. They won't. Graphs converge on consensus, and consensus is something you build deliberately or inherit accidentally. If you're also working through a <a href="/google-penalty-recovery" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">Google penalty recovery</a> engagement, note the overlap: stale and conflicting entity signals frequently surface in the same forensic picture as trust issues, and fixing one tends to accelerate the other.
         </p>
 
         {/* ── FAQ SECTION ── */}
@@ -9682,17 +9682,17 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
             { stat: '5x', label: 'Average new patient inquiry lift in documented dental SEO campaign case studies', source: 'Dental Economics, 2026' },
           ].map(({ stat, label, source }, i) => (
             <div key={i} className="bg-gray-50 border border-gray-200 rounded-lg p-5">
-              <p className="text-[2rem] font-bold text-[#F26522] leading-none mb-2">{stat}</p>
+              <p className="text-[2rem] font-bold text-[#2E8C68] leading-none mb-2">{stat}</p>
               <p className="text-[14px] text-gray-700 leading-[1.5] mb-1">{label}</p>
               <p className="text-[11px] text-gray-400 uppercase tracking-wide">{source}</p>
             </div>
           ))}
         </div>
 
-        <div className="border-l-4 border-[#F26522] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
+        <div className="border-l-4 border-[#111827] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
           <img src="/images/steve-portrait-thumb.webp" alt="Steve Martin" width="48" height="48" loading="lazy" className="w-12 h-12 object-cover rounded-full border border-white/10 shrink-0" />
           <div>
-            <p className="text-[12px] uppercase tracking-wider text-[#F26522] font-semibold mb-1 font-sans">Steve's Take</p>
+            <p className="text-[12px] uppercase tracking-wider text-[#2E8C68] font-semibold mb-1 font-sans">Steve's Take</p>
             <p className="text-[15px] italic text-white leading-relaxed font-sans">
               "Most dental practices evaluate agencies on their ranking charts, not their new patient metrics. But if organic traffic doesn't translate to bookings, it's just vanity. You need to link search traffic directly to your calendar."
             </p>
@@ -9716,8 +9716,8 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
               { id: 'framework', label: 'Use this framework before your next agency conversation' },
             ].map((item) => (
               <li key={item.id}>
-                <a href={`#${item.id}`} className="hover:text-[#F26522] transition-colors flex items-center gap-2">
-                  <span className="text-[#F26522] text-xs">◆</span> {item.label}
+                <a href={`#${item.id}`} className="hover:text-gray-900 transition-colors flex items-center gap-2">
+                  <span className="text-[#2E8C68] text-xs">◆</span> {item.label}
                 </a>
               </li>
             ))}
@@ -9735,14 +9735,14 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           A full dental SEO engagement covers six functional areas: local SEO for dentists, Google Business Profile (GBP) optimization, on-page content (service pages, city pages, FAQs), technical fixes (site speed, schema markup, mobile performance), backlink acquisition, and conversion rate optimization. Each of those areas has a concrete deliverable attached to it. If a dental SEO agency describes "SEO" without naming what they actually produce each month, that vagueness is already a signal worth noting.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
-          GBP deliverables, for example, should include profile setup or audit, category selection, photo optimization, post cadence, Q&A management, and tracked call activity. Content deliverables should specify a number of pages or posts per month. Technical deliverables should include a structured audit report and a prioritized fix list. <strong>No deliverable, no accountability.</strong> For practices focused on local search momentum, a clear operational cadence for GBP and local citations matters more than flashy promises. For example, Gobiya's guide on <a href="/insights/local-seo-explained" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">The 90-Day Cadence: How We Win Local Search</a> demonstrates the structure a local campaign requires.
+          GBP deliverables, for example, should include profile setup or audit, category selection, photo optimization, post cadence, Q&A management, and tracked call activity. Content deliverables should specify a number of pages or posts per month. Technical deliverables should include a structured audit report and a prioritized fix list. <strong>No deliverable, no accountability.</strong> For practices focused on local search momentum, a clear operational cadence for GBP and local citations matters more than flashy promises. For example, Gobiya's guide on <a href="/insights/local-seo-explained" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">The 90-Day Cadence: How We Win Local Search</a> demonstrates the structure a local campaign requires.
         </p>
 
         <h3 className="text-lg font-bold text-gray-900 mt-8 mb-4 font-display">
           What separates dental-specific SEO from generic SEO
         </h3>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
-          Dental practices compete on hyper-local intent. A patient searching "dental implants Los Angeles" or "dentist near me" is ready to book, not browse. That kind of query demands GBP expertise, citation consistency across directories, and localized content that a general digital marketing agency rarely prioritizes as a core competency. Generic SEO firms optimize for traffic; dental digital marketing optimizes for the chair. If you're comparing vertical specialists to broad generalists, review the piece on <a href="/insights/b2b-seo-agency" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">B2B SEO Agency vs. Generalist: The Vital Difference</a> to understand how specialization changes deliverables and outcomes.
+          Dental practices compete on hyper-local intent. A patient searching "dental implants Los Angeles" or "dentist near me" is ready to book, not browse. That kind of query demands GBP expertise, citation consistency across directories, and localized content that a general digital marketing agency rarely prioritizes as a core competency. Generic SEO firms optimize for traffic; dental digital marketing optimizes for the chair. If you're comparing vertical specialists to broad generalists, review the piece on <a href="/insights/b2b-seo-agency" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">B2B SEO Agency vs. Generalist: The Vital Difference</a> to understand how specialization changes deliverables and outcomes.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
           Multi-location practices face additional complexity that most agencies underestimate. Each location needs its own verified GBP profile, its own location page with unique content, and its own local citation footprint. A single merged strategy across locations typically dilutes rankings for every location rather than strengthening any of them.
@@ -9825,7 +9825,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           The most credible case studies show specific baseline and follow-up metrics in the same category. Documented examples from dental SEO campaigns include practices that went from 13 to 49 top-3 keyword rankings, practices that saw 231% organic traffic growth in six months, and campaigns that grew monthly patient inquiries from 15 to 58 over a 12-month period. That level of specificity is what separates a real result from marketing copy. If a case study doesn't show you a baseline, it's not a case study, it's a testimonial.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
-          Our own case study on <a href="/case-studies/smile-center-dentistry" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">SmileCenter Dentistry</a> (located at <a href="https://smilecenter.com" target="_blank" rel="noopener noreferrer" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">smilecenter.com</a>) displays this baseline verification, showing a 5x increase in Southern California patient inquiries through technical React structure changes and correct schema graphs. Similarly, the local optimization strategy at <a href="https://sonrisadental.com" target="_blank" rel="noopener noreferrer" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">sonrisadental.com</a> highlights the power of clean code architecture.
+          Our own case study on <a href="/case-studies/smile-center-dentistry" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">SmileCenter Dentistry</a> (located at <a href="https://smilecenter.com" target="_blank" rel="noopener noreferrer" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">smilecenter.com</a>) displays this baseline verification, showing a 5x increase in Southern California patient inquiries through technical React structure changes and correct schema graphs. Similarly, the local optimization strategy at <a href="https://sonrisadental.com" target="_blank" rel="noopener noreferrer" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">sonrisadental.com</a> highlights the power of clean code architecture.
         </p>
 
         <h3 className="text-lg font-bold text-gray-900 mt-8 mb-4 font-display">
@@ -9857,8 +9857,8 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
         </p>
 
         {/* ── ROI MATH BOX ── */}
-        <div className="bg-[#F26522]/5 border border-[#F26522]/30 rounded-lg p-6 sm:p-8 my-10">
-          <p className="text-[12px] font-semibold uppercase tracking-wider text-[#F26522] mb-4">ROI Scenario — Single-Location Practice, Mid-Density Market</p>
+        <div className="bg-gray-50 border border-gray-200 rounded-lg p-6 sm:p-8 my-10">
+          <p className="text-[12px] font-semibold uppercase tracking-wider text-[#2E8C68] mb-4">ROI Scenario — Single-Location Practice, Mid-Density Market</p>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-[14px] text-gray-800">
             <div>
               <p className="font-semibold text-gray-900 mb-2">Investment</p>
@@ -9898,7 +9898,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           Where Gobiya fits if you're evaluating technical dental SEO partners
         </h3>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
-          For practices that need more than keyword rankings, specifically a fast custom website, native booking integration, multi-location local SEO, and full data ownership over their lead pipeline, that's where a technical dental SEO agency like Gobiya operates differently from standard dental digital marketing firms. Gobiya combines technical SEO with custom-built website infrastructure that practices own outright rather than rent from a vendor, giving clients both performance and long-term asset control. If you want a checklist-oriented evaluation approach before you hire, consult Gobiya's <a href="/insights/best-seo-agency-for-b2b-brands" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">Evaluation Checklist: Don't Hire the Wrong Partner</a> as a practical template for vendor interviews.
+          For practices that need more than keyword rankings, specifically a fast custom website, native booking integration, multi-location local SEO, and full data ownership over their lead pipeline, that's where a technical dental SEO agency like Gobiya operates differently from standard dental digital marketing firms. Gobiya combines technical SEO with custom-built website infrastructure that practices own outright rather than rent from a vendor, giving clients both performance and long-term asset control. If you want a checklist-oriented evaluation approach before you hire, consult Gobiya's <a href="/insights/best-seo-agency-for-b2b-brands" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">Evaluation Checklist: Don't Hire the Wrong Partner</a> as a practical template for vendor interviews.
         </p>
 
         {/* ── COMMON MISTAKES ── */}
@@ -9952,7 +9952,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
               q: "How is dental SEO different from general SEO?",
               a: (
                 <>
-                  Dental SEO focuses on hyper-local intent and transactional queries (e.g., “dental implants Los Angeles” or “dentist near me”), so it prioritizes GBP expertise, citation consistency, and localized content that drives bookings. Generalist SEO firms often optimize for traffic, while dental digital marketing optimizes for the chair; see <a href="/insights/b2b-seo-agency" className="text-[#F26522] underline underline-offset-4 hover:text-[#e05a1a] transition-colors">B2B SEO Agency vs. Generalist: The Vital Difference</a> for context on specialization.
+                  Dental SEO focuses on hyper-local intent and transactional queries (e.g., “dental implants Los Angeles” or “dentist near me”), so it prioritizes GBP expertise, citation consistency, and localized content that drives bookings. Generalist SEO firms often optimize for traffic, while dental digital marketing optimizes for the chair; see <a href="/insights/b2b-seo-agency" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">B2B SEO Agency vs. Generalist: The Vital Difference</a> for context on specialization.
                 </>
               )
             },

@@ -298,7 +298,7 @@ export default function AiVideosPage() {
 
       {/* ── PROMO STRIP ── */}
       <div style={{ background: '#111827', borderBottom: '1px solid #1f2937', borderTop: '1px solid #1f2937', padding: '1.25rem 5vw', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1.5rem', flexWrap: 'wrap' }}>
-        <span style={{ fontFamily: 'monospace', fontSize: '0.65rem', textTransform: 'uppercase', letterSpacing: '0.18em', color: '#F26522' }}>Limited offer</span>
+        <span style={{ fontFamily: 'monospace', fontSize: '0.65rem', textTransform: 'uppercase', letterSpacing: '0.18em', color: '#d1f851' }}>Limited offer</span>
         <span style={{ color: '#ffffff', fontSize: '1rem', fontWeight: 600, letterSpacing: '-0.01em' }}>FREE AI Brand Video with a full website build.</span>
         <a href="/book" style={{ fontFamily: 'monospace', fontSize: '0.65rem', textTransform: 'uppercase', letterSpacing: '0.14em', color: '#9ca3af', borderBottom: '1px solid #374151', paddingBottom: '1px', textDecoration: 'none', flexShrink: 0 }}>Book a call →</a>
       </div>

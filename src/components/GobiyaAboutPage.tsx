@@ -301,7 +301,7 @@ export default function GobiyaAboutPage() {
                   {phase.year}
                 </span>
                 <div>
-                  <span style={{ fontFamily: 'monospace', fontSize: '0.6rem', textTransform: 'uppercase', letterSpacing: '0.14em', color: '#F26522', display: 'block', marginBottom: '0.4rem' }}>
+                  <span style={{ fontFamily: 'monospace', fontSize: '0.6rem', textTransform: 'uppercase', letterSpacing: '0.14em', color: '#6b7280', display: 'block', marginBottom: '0.4rem' }}>
                     {phase.label}
                   </span>
                   <h3 style={{ fontSize: '1.05rem', fontWeight: 600, color: '#111827', letterSpacing: '-0.01em', marginBottom: '0.75rem', lineHeight: 1.3 }}>
@@ -372,7 +372,7 @@ export default function GobiyaAboutPage() {
       {/* ── CTA ── */}
       <section style={{ padding: '5rem 5vw', background: '#111827', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center' }}>
         <div>
-          <span style={{ fontFamily: 'monospace', fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.18em', color: '#F26522', display: 'block', marginBottom: '0.5rem' }}>Ready to start</span>
+          <span style={{ fontFamily: 'monospace', fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.18em', color: '#d1f851', display: 'block', marginBottom: '0.5rem' }}>Ready to start</span>
           <h2 style={{ fontSize: 'clamp(1.6rem, 3vw, 2.4rem)', fontWeight: 700, letterSpacing: '-0.03em', color: '#f9fafb', lineHeight: 1.2, marginBottom: '1rem' }}>
             The diagnosis, the build, and the deployment — from one desk.
           </h2>

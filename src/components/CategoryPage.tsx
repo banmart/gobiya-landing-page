@@ -406,8 +406,8 @@ export default function CategoryPage({ category }: CategoryPageProps) {
                 <h3 style={{ fontSize: '1.35rem', fontWeight: 600, color: '#111827', marginBottom: '1rem', letterSpacing: '-0.01em' }}>{card.title}</h3>
                 <p style={{ color: '#6b7280', fontSize: '0.875rem', lineHeight: 1.7, marginBottom: '1.5rem' }}>{card.desc}</p>
                 <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
-                  {card.links.map(l => (
-                    <li key={l.href}>
+                  {card.links.map((l, li) => (
+                    <li key={`${l.href}-${li}`}>
                       <a href={l.href} style={{ color: '#4b5563', fontSize: '0.8rem', textDecoration: 'underline', textUnderlineOffset: '3px', textDecorationColor: '#d1d5db' }}>
                         {l.label}
                       </a>

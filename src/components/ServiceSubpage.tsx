@@ -1162,7 +1162,7 @@ export default function ServiceSubpage({ path, isFanOut, category, slug }: Servi
           <ContentCta
             headline="Ready to talk through your project?"
             sub="Our team responds within one business day."
-            accent={catLower === 'creativity' ? '#F26522' : '#2F5D50'}
+            accent={'#111827'}
             background="#f9fafb"
           />
 
@@ -1218,7 +1218,7 @@ export default function ServiceSubpage({ path, isFanOut, category, slug }: Servi
         <ContentCta
           headline="Let's scope your project — no commitment."
           sub="Start with a free audit. We respond within 24 hours."
-          accent={catLower === 'creativity' ? '#F26522' : '#2F5D50'}
+          accent={'#111827'}
           background="#ffffff"
         />
         <SiteFooter />
@@ -1989,7 +1989,7 @@ export default function ServiceSubpage({ path, isFanOut, category, slug }: Servi
                 <HeroQuickForm
                   source={config.title || path}
                   variant="light"
-                  accent={isServicesPath ? '#2F5D50' : '#F26522'}
+                  accent={'#111827'}
                   heading="Get a fast response"
                   subheading="Send a few details and we’ll get back to you shortly."
                 />
@@ -2092,7 +2092,7 @@ export default function ServiceSubpage({ path, isFanOut, category, slug }: Servi
         <ContentCta
           headline="Ready to build a pipeline that scales?"
           sub="Our team responds within one business day."
-          accent={isServicesPath ? '#2F5D50' : '#F26522'}
+          accent={'#111827'}
           background="#f9fafb"
         />
       )}
@@ -2110,7 +2110,7 @@ export default function ServiceSubpage({ path, isFanOut, category, slug }: Servi
         <ContentCta
           headline="Let's scope your project — no commitment."
           sub="Start with a free audit. We respond within 24 hours."
-          accent={isServicesPath ? '#2F5D50' : '#F26522'}
+          accent={'#111827'}
           background="#ffffff"
         />
       )}

@@ -173,8 +173,8 @@ const SuccessStories: React.FC = () => {
         <div style={{ maxWidth: '1120px', margin: '0 auto' }}>
 
           {/* Quick Answer */}
-          <div style={{ borderLeft: '4px solid #F26522', padding: '1.25rem 1.5rem', background: '#fff', marginBottom: '2.5rem', maxWidth: '780px' }}>
-            <p style={{ fontFamily: 'monospace', fontSize: '0.68rem', textTransform: 'uppercase', letterSpacing: '0.2em', color: '#F26522', marginBottom: '0.5rem' }}>What to Expect</p>
+          <div style={{ borderLeft: '4px solid #111827', padding: '1.25rem 1.5rem', background: '#fff', marginBottom: '2.5rem', maxWidth: '780px' }}>
+            <p style={{ fontFamily: 'monospace', fontSize: '0.68rem', textTransform: 'uppercase', letterSpacing: '0.2em', color: '#6b7280', marginBottom: '0.5rem' }}>What to Expect</p>
             <p style={{ fontSize: '1rem', lineHeight: 1.75, color: '#111827', fontWeight: 500 }}>Every Gobiya case study discloses what was built, why it was built, and what moved — query by query, position by position. Results are measured in pipeline and closed revenue, not just organic sessions.</p>
           </div>
 
@@ -188,7 +188,7 @@ const SuccessStories: React.FC = () => {
               { n: '05', title: 'Technical SEO Fixes', desc: 'Crawl budget restored, redirect chains cleaned, schema implemented, and Core Web Vitals optimized to eliminate indexation barriers.' },
             ].map(({ n, title, desc }) => (
               <div key={n} style={{ background: '#ffffff', border: '1px solid #e5e7eb', padding: '1.25rem 1.5rem' }}>
-                <p style={{ fontSize: '0.68rem', color: '#F26522', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.15em', marginBottom: '0.5rem', fontFamily: 'monospace' }}>{n}</p>
+                <p style={{ fontSize: '0.68rem', color: '#6b7280', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.15em', marginBottom: '0.5rem', fontFamily: 'monospace' }}>{n}</p>
                 <p style={{ fontSize: '0.92rem', fontWeight: 600, color: '#111827', marginBottom: '0.4rem' }}>{title}</p>
                 <p style={{ fontSize: '0.83rem', color: '#6b7280', lineHeight: 1.6 }}>{desc}</p>
               </div>

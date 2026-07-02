@@ -185,7 +185,7 @@ const AuthorPage: React.FC<AuthorPageProps> = ({ path }) => {
       {/* ── QUICK OVERVIEW ── */}
       <section style={{ background: '#f9fafb', padding: '4rem 5vw', borderBottom: '1px solid #e5e7eb' }}>
         <div style={{ maxWidth: '1120px', margin: '0 auto' }}>
-          <span style={{ fontFamily: 'monospace', fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.2em', color: '#F26522', display: 'block', marginBottom: '1rem' }}>
+          <span style={{ fontFamily: 'monospace', fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.2em', color: '#6b7280', display: 'block', marginBottom: '1rem' }}>
             Quick Overview
           </span>
           <p style={{ fontSize: '1.05rem', lineHeight: 1.8, color: '#374151', maxWidth: '780px', marginBottom: '2.5rem', fontWeight: 500 }}>
@@ -202,7 +202,7 @@ const AuthorPage: React.FC<AuthorPageProps> = ({ path }) => {
               { n: '05', title: 'Multi-Industry Track Record', desc: 'SaaS startups, dental and medical practices, real estate agencies, contractors, and professional service firms.' },
             ].map(({ n, title, desc }) => (
               <div key={n} style={{ background: '#ffffff', border: '1px solid #e5e7eb', padding: '1.25rem 1.5rem' }}>
-                <p style={{ fontSize: '0.68rem', color: '#F26522', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.15em', marginBottom: '0.5rem', fontFamily: 'monospace' }}>{n}</p>
+                <p style={{ fontSize: '0.68rem', color: '#6b7280', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.15em', marginBottom: '0.5rem', fontFamily: 'monospace' }}>{n}</p>
                 <p style={{ fontSize: '0.92rem', fontWeight: 600, color: '#111827', marginBottom: '0.4rem' }}>{title}</p>
                 <p style={{ fontSize: '0.83rem', color: '#6b7280', lineHeight: 1.6 }}>{desc}</p>
               </div>
