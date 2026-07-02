@@ -10,7 +10,7 @@ const SCHEMA = {
       name: 'Gobiya — Local SEO Services Burbank',
       url: 'https://www.gobiya.com/local-seo-services-burbank',
       logo: 'https://www.gobiya.com/images/gobiya---logo.webp',
-      foundingDate: '2012',
+      foundingDate: '2012-11-25',
       description: 'Local SEO services for Burbank businesses — Google Business Profile optimization, NAP citation consistency, review velocity, and local schema. We engineer Map Pack rankings for the 91501–91510 corridor.',
       telephone: '(323) 744-1338',
       email: 'hello@gobiya.com',

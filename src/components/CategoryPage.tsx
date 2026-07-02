@@ -326,17 +326,22 @@ export default function CategoryPage({ category }: CategoryPageProps) {
           .cat-cards-grid { grid-template-columns: repeat(2, 1fr); }
         }
       `}</style>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: cfg.faqs.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+      }) }} />
       <SiteHeader />
 
-      {/* Hero — fullscreen video */}
-      <section className="relative w-full h-screen min-h-[600px] overflow-hidden bg-black">
+      {/* Hero — fullscreen video on desktop, native 16:9 on mobile (video is 16:9; a 9:16 viewport would crop it to a sliver) */}
+      <section className="relative w-full aspect-video md:aspect-auto md:h-screen md:min-h-[600px] overflow-hidden bg-black">
         <video
           autoPlay muted loop playsInline
           className="absolute inset-0 w-full h-full object-cover"
           src={cfg.video}
         />
         <div className="absolute inset-0 z-10 bg-black/40" />
-        <div className="absolute bottom-10 z-20" style={{ left: '5vw' }}>
+        <div className="absolute bottom-4 md:bottom-10 z-20" style={{ left: '5vw' }}>
           <span className="text-white/60 text-xs font-mono uppercase tracking-[0.2em] block">{cfg.label}</span>
         </div>
       </section>
@@ -346,9 +351,9 @@ export default function CategoryPage({ category }: CategoryPageProps) {
         <div className="cat-intro-grid">
           <div>
             <span className="text-sm font-mono uppercase tracking-widest text-gray-400 block mb-4">{cfg.label} overview</span>
-            <h2 style={{ fontSize: 'clamp(2rem, 4vw, 3.5rem)', fontWeight: 700, letterSpacing: '-0.03em', lineHeight: 1.1, color: '#111827' }}>
+            <h1 style={{ fontSize: 'clamp(2rem, 4vw, 3.5rem)', fontWeight: 700, letterSpacing: '-0.03em', lineHeight: 1.1, color: '#111827' }}>
               {cfg.heading}
-            </h2>
+            </h1>
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', gap: '2rem' }}>
             <p style={{ color: '#4b5563', fontSize: '1.125rem', lineHeight: 1.75 }}>{cfg.introParagraph}</p>

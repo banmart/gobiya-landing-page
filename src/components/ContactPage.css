@@ -310,3 +310,9 @@
   font-weight: 700; letter-spacing: -0.02em; color: var(--ink);
 }
 .contact-page .cta-inner p { color: var(--ink-soft); font-size: .9rem; margin-top: .4rem; }
+
+/* Hero aside (address/hours column) — border+pad only when side-by-side */
+.contact-page .contact-hero-aside { border-left: 1px solid #e5e7eb; padding-left: 5rem; }
+@media (max-width: 900px) {
+  .contact-page .contact-hero-aside { border-left: none; padding-left: 0; border-top: 1px solid #e5e7eb; padding-top: 2rem; }
+}

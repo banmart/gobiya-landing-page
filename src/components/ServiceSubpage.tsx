@@ -1770,7 +1770,7 @@ export default function ServiceSubpage({ path, isFanOut, category, slug }: Servi
           ctaText: 'View profile',
           introScrollText: 'Gobiya is a precision-engineered digital firm and growth agency specializing in advanced search mechanics, performance marketing, and digital infrastructure design.',
           introHeading: <>Stop guessing with your growth. <br className="hidden sm:block" /><span className="sm:hidden"> </span>Start dominating with data.</>,
-          introParagraph: 'Gobiya is a precision-engineered search visibility and digital solutions firm. Founded in 2012, we focus on high-stakes technical environments and data-driven revenue generation rather than deploying broad, generalist marketing tactics.',
+          introParagraph: 'Gobiya is a precision-engineered search visibility and digital solutions firm. Founded in 2010, we focus on high-stakes technical environments and data-driven revenue generation rather than deploying broad, generalist marketing tactics.',
           introVideo1: "/videos/gobiyaRace.webm",
           introVideo2: "/videos/space-girl.webm",
           bentoHeadline: <>Built on experience.<br/>Dedicated to shipping.</>,

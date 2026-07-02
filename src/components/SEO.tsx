@@ -18,11 +18,11 @@ const metadataMap: Record<string, SEOMetadata> = {
   },
   '/ai-seo-beverly-hills': {
     title: `AI SEO Beverly Hills: ChatGPT, Claude & Gemini citations - Gobiya`,
-    description: `AI SEO Beverly Hills â€” we engineer Google organic visibility and AI platform citations (ChatGPT, Claude, Gemini) for Beverly Hills businesses in the 90210 market. Entity graphs, GEO, and local Map Pack engineering.`
+    description: `AI SEO Beverly Hills — we engineer Google organic visibility and AI platform citations (ChatGPT, Claude, Gemini) for Beverly Hills businesses in the 90210 market. Entity graphs, GEO, and local Map Pack engineering.`
   },
   '/local-seo-glendale': {
     title: `Local SEO Glendale: Map Pack & GBP, top rated - Gobiya`,
-    description: `Local SEO Glendale â€” we engineer Google Map Pack dominance, GBP optimization, citation consistency, and review velocity for businesses on Brand Boulevard and throughout the Glendale, CA market.`
+    description: `Local SEO Glendale — we engineer Google Map Pack dominance, GBP optimization, citation consistency, and review velocity for businesses on Brand Boulevard and throughout the Glendale, CA market.`
   },
   '/seo-company-encino': {
     title: `SEO Company Encino: Google visibility & AI citations, BBB A+ - Gobiya`,
@@ -30,12 +30,12 @@ const metadataMap: Record<string, SEOMetadata> = {
   },
   '/local-seo-company-burbank': {
     title: `Local SEO Company Burbank: Map Pack & GBP, open now - Gobiya`,
-    description: `Local SEO company Burbank â€” we engineer Google Map Pack dominance, GBP optimization, citation consistency, and review velocity for businesses on San Fernando Boulevard and throughout the Burbank, CA 91501â€“91510 market.`
+    description: `Local SEO company Burbank — we engineer Google Map Pack dominance, GBP optimization, citation consistency, and review velocity for businesses on San Fernando Boulevard and throughout the Burbank, CA 91501–91510 market.`
   },
 
   '/glendale-seo': {
     title: `Glendale SEO: Map Pack & technical SEO, BBB A+ - Gobiya`,
-    description: `Glendale SEO agency â€” technical SEO, local Map Pack optimization, content architecture, and authority building for businesses in the 91201â€“91210 market. Top rated, BBB A+, online appointments available. Book a pre-read today.`
+    description: `Glendale SEO agency — technical SEO, local Map Pack optimization, content architecture, and authority building for businesses in the 91201–91210 market. Top rated, BBB A+, online appointments available. Book a pre-read today.`
   },
   '/plastic-surgery-internet-marketing': {
     title: `Plastic Surgery Marketing: booked consultations, not clicks - Gobiya`,
@@ -87,7 +87,7 @@ const metadataMap: Record<string, SEOMetadata> = {
   },
   '/performance/technical-seo-audit-agency': {
     title: `Technical SEO Audit Los Angeles: crawl, CWV & schema - Gobiya`,
-    description: `Full diagnostic of your crawl health, index coverage, Core Web Vitals, and structured data â€” with a prioritized fix list tied directly to ranking impact, not just a checklist.`
+    description: `Full diagnostic of your crawl health, index coverage, Core Web Vitals, and structured data — with a prioritized fix list tied directly to ranking impact, not just a checklist.`
   },
   '/performance/local-seo-services-agency': {
     title: `Local SEO Services Agency Los Angeles: GBP & Map Pack - Gobiya`,
@@ -95,7 +95,7 @@ const metadataMap: Record<string, SEOMetadata> = {
   },
   '/performance/b2b-seo-agency': {
     title: `B2B SEO Agency Los Angeles: pipeline attribution - Gobiya`,
-    description: `Long-cycle, high-value buyer journey optimization targeting decision-makers and procurement queries â€” not just traffic volume. B2B SEO measured in pipeline value, not impressions.`
+    description: `Long-cycle, high-value buyer journey optimization targeting decision-makers and procurement queries — not just traffic volume. B2B SEO measured in pipeline value, not impressions.`
   },
   '/performance/ecommerce-seo-agency': {
     title: `E-Commerce SEO Los Angeles: product schema & category - Gobiya`,
@@ -123,9 +123,13 @@ const metadataMap: Record<string, SEOMetadata> = {
   },
 
   // â”€â”€ Relations subpages â”€â”€
+  '/relations/digital-pr-media-outreach-agency': {
+    title: `Digital PR & Media Outreach LA: earned links & AI citations - Gobiya`,
+    description: `Digital PR and media outreach agency in Los Angeles. We pitch and place stories in the outlets your buyers read — earned editorial coverage, press mentions, and the backlinks that compound authority and AI citation visibility.`
+  },
   '/relations/authority-building-agency': {
     title: `Authority Building Los Angeles: DR 50+ editorial links - Gobiya`,
-    description: `Authority building agency for B2B and professional services brands. High-quality editorial backlinks, structured local citations, and entity alignment â€” engineered for long-term organic authority.`
+    description: `Authority building agency for B2B and professional services brands. High-quality editorial backlinks, structured local citations, and entity alignment — engineered for long-term organic authority.`
   },
 
   '/relations/google-ads-ppc-strategy-agency': {
@@ -146,19 +150,19 @@ const metadataMap: Record<string, SEOMetadata> = {
   },
   '/creativity/landing-page-copywriting-agency': {
     title: `Landing Page Copy Los Angeles: engineered to convert - Gobiya`,
-    description: `Copy engineered to convert the visitor who arrives from an ad or organic click into a lead or sale. Benefit framing, friction reduction, and social proof â€” built to perform.`
+    description: `Copy engineered to convert the visitor who arrives from an ad or organic click into a lead or sale. Benefit framing, friction reduction, and social proof — built to perform.`
   },
   '/creativity/website-copywriting-services-agency': {
     title: `Website Copywriting Los Angeles: SEO-structured copy - Gobiya`,
-    description: `Every page of your site â€” home, about, services, product â€” written to rank and convert. SEO-structured, conversion-optimized, brand-voice aligned.`
+    description: `Every page of your site — home, about, services, product — written to rank and convert. SEO-structured, conversion-optimized, brand-voice aligned.`
   },
   '/creativity/seo-content-strategy-agency': {
     title: `SEO Content Strategy Los Angeles: topic clusters, BBB A+ - Gobiya`,
-    description: `The architecture before the words: keyword mapping, topic clusters, internal link plan, and content gap analysis â€” before a single word is written.`
+    description: `The architecture before the words: keyword mapping, topic clusters, internal link plan, and content gap analysis — before a single word is written.`
   },
   '/creativity/ai-videos-agency': {
     title: `AI Video Production Los Angeles: broadcast ads in 3–5 days - Gobiya`,
-    description: `AI video production agency in Los Angeles. YouTube pre-roll ads, Amazon Prime Video spots, Paramount+ commercials, and social video using Veo 3, Google Omni, AI scriptwriting, and text-to-voice. 3â€“5 day turnaround.`
+    description: `AI video production agency in Los Angeles. YouTube pre-roll ads, Amazon Prime Video spots, Paramount+ commercials, and social video using Veo 3, Google Omni, AI scriptwriting, and text-to-voice. 3–5 day turnaround.`
   },
   '/creativity/crypto-web3-agency': {
     title: `Crypto & Web3 Agency Los Angeles: launched, ranked, cited - Gobiya`,
@@ -166,16 +170,16 @@ const metadataMap: Record<string, SEOMetadata> = {
   },
   '/creativity/geo-ai-content-writing-agency': {
     title: `GEO & AI Content Writing Los Angeles: cited by ChatGPT - Gobiya`,
-    description: `Content built to be cited by ChatGPT, Perplexity, and Google AI Overviews â€” not just indexed. Structured for AI extraction, passage-level coherence, and entity verification.`
+    description: `Content built to be cited by ChatGPT, Perplexity, and Google AI Overviews — not just indexed. Structured for AI extraction, passage-level coherence, and entity verification.`
   },
   // â”€â”€ Legacy capabilities URLs (kept for backward compatibility with existing indexed pages) â”€â”€
   '/capabilities': {
     title: `SEO & Web Development Capabilities LA: CRM, React - Gobiya`,
-    description: `Gobiya builds fast, modern web applications with native CRM pipelines, built-in SEO discoverability, AI prospect automation, and custom Web3 integrations â€” one codebase, complete data ownership.`
+    description: `Gobiya builds fast, modern web applications with native CRM pipelines, built-in SEO discoverability, AI prospect automation, and custom Web3 integrations — one codebase, complete data ownership.`
   },
   '/capabilities/web-development-agency': {
     title: `Web & IT Development LA: React, custom sites, speed - Gobiya`,
-    description: `Gobiya replaces slow page-builders with custom, hand-coded React and Next.js websites â€” 100/100 Core Web Vitals, sub-second loads, zero templates, engineered to convert and rank natively.`
+    description: `Gobiya replaces slow page-builders with custom, hand-coded React and Next.js websites — 100/100 Core Web Vitals, sub-second loads, zero templates, engineered to convert and rank natively.`
   },
   '/capabilities/native-crm-agency': {
     title: `PPC & Lead Generation LA: CRM integrations, pipeline - Gobiya`,
@@ -205,7 +209,7 @@ const metadataMap: Record<string, SEOMetadata> = {
   // â”€â”€ Core pages â”€â”€
   '/about': {
     title: `About Gobiya: Los Angeles SEO, founded 2010, BBB A+ - Gobiya`,
-    description: `Gobiya is an SEO and web development agency in Los Angeles founded in 2010 by Steve Martin â€” 25+ years in web development and search, bilingual English/Spanish, BBB A+ rated.`
+    description: `Gobiya is an SEO and web development agency in Los Angeles founded in 2010 by Steve Martin — 25+ years in web development and search, bilingual English/Spanish, BBB A+ rated.`
   },
   '/case-studies': {
     title: `SEO Case Studies LA: 5x inquiries, 3x bookings - Gobiya`,
@@ -233,11 +237,11 @@ const metadataMap: Record<string, SEOMetadata> = {
   },
   '/book': {
     title: `Book SEO Audit Los Angeles: free 15-min, open now - Gobiya`,
-    description: `Book a strategy call with Steve Martin, founder of Gobiya. Audit your search performance, local map visibility, and site speed. Free, no obligation. Available Monâ€“Fri.`
+    description: `Book a strategy call with Steve Martin, founder of Gobiya. Audit your search performance, local map visibility, and site speed. Free, no obligation. Available Mon–Fri.`
   },
   '/book-call': {
     title: `Book SEO Audit Los Angeles: free 15-min, open now - Gobiya`,
-    description: `Book a strategy call with Steve Martin, founder of Gobiya. Audit your search performance, local map visibility, and site speed. Free, no obligation. Available Monâ€“Fri.`
+    description: `Book a strategy call with Steve Martin, founder of Gobiya. Audit your search performance, local map visibility, and site speed. Free, no obligation. Available Mon–Fri.`
   },
   '/insights': {
     title: `SEO & AI Intelligence LA: core updates, GEO briefs - Gobiya`,
@@ -248,162 +252,162 @@ const metadataMap: Record<string, SEOMetadata> = {
   '/insights/how-to-apply-behavioral-psychology-principles-to-high-ticket-b2b-landing-page-wireframes-to-decrease-friction': {
     title: `Behavioral Psychology for B2B Landing Pages | Gobiya`,
     description: `Learn how to apply behavioral psychology principles like the Fogg Behavior Model and Hick's Law to high-ticket B2B landing page wireframes to decrease friction.`,
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80'
+    image: '/images/article-behavioral-psychology-b2b-landing-page-wireframes-thumbnail.webp'
   },
   '/insights/multi-location-websites-for-franchises': {
     title: `Multi-Location Franchise Websites: 2026 SEO Playbook | Gobiya`,
     description: `A technical guide to multi-location websites for franchises. Learn subdirectory URL configuration, page cannibalization avoidance, and SEO governance.`,
-    image: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200&q=80'
+    image: '/images/article-multi-location-websites-franchises-thumbnail.webp'
   },
   '/insights/dental-seo-agency': {
     title: `Dental SEO Agency Evaluation Checklist & KPIs | Gobiya`,
     description: `Avoid costly hiring mistakes. Use our comprehensive evaluation checklist for dental SEO agencies, covering contract traps, KPIs, and case study audits.`,
-    image: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=1200&q=80'
+    image: '/images/article-dental-seo-agency.png'
   },
   '/insights/brand-entity-extraction-perception-drift': {
     title: `Brand Entity Extraction & Perception Drift | Gobiya`,
-    description: `How brand entity extraction works across Google, Bing, Wikidata, and LLM knowledge graphs â€” and how to detect and correct perception drift.`,
-    image: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1200&q=80'
+    description: `How brand entity extraction works across Google, Bing, Wikidata, and LLM knowledge graphs — and how to detect and correct perception drift.`,
+    image: '/images/article-brand-entity-extraction-perception-drift.webp'
   },
   '/insights/what-are-ai-seo-services': {
     title: `AI SEO Services: Get Cited by ChatGPT & Google AI | Gobiya`,
-    description: `What are AI SEO services? AI SEO services optimize your brand to be cited in ChatGPT, Gemini, Perplexity & Google AI Overviews. See types, costs & ROI â€” book a free AI visibility audit.`,
+    description: `What are AI SEO services? AI SEO services optimize your brand to be cited in ChatGPT, Gemini, Perplexity & Google AI Overviews. See types, costs & ROI — book a free AI visibility audit.`,
     image: '/images/article-what-are-ai-seo-services.webp'
   },
   '/insights/introducing-open-knowledge-format-why-it-matters-for-ai-ready-businesses': {
     title: `Open Knowledge Format (OKF): AI-Ready Business Guide | Gobiya`,
     description: `Google Cloud's new open spec, OKF, formalizes the 'LLM-wiki' pattern into a portable, vendor-neutral standard for the knowledge AI agents actually need.`,
-    image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&q=80'
+    image: '/images/article-introducing-open-knowledge-format-thumbnail.webp'
   },
   '/insights/gobiya-vs-enterprise-seo-agencies': {
     title: `Enterprise SEO vs Gobiya: Speed & Cost Compare | Gobiya`,
     description: `We compare enterprise SEO agencies vs Gobiya, showing the speed, cost, and CRM pipeline differences for B2B brands.`,
-    image: 'https://images.unsplash.com/photo-1553877522-43269d4ea984?w=1200&q=80'
+    image: '/images/enterprise-seo-agencies-comparison.png'
   },
   '/insights/automated-b2b-sales-pipeline-seo': {
     title: `Automate B2B Sales Pipelines via AI Citations | Gobiya`,
     description: `Integrate B2B sales pipeline automation with search intent. Learn how AI citation share decides who gets on the buyer shortlist.`,
-    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&q=80'
+    image: '/images/b2b-sales-pipeline-automation-citation-share.png'
   },
   '/insights/automated-lead-generation-seo': {
     title: `Automate Lead Generation: Search Intent Maps | Gobiya`,
     description: `Set up automated lead generation by mapping high-intent search clusters to your B2B pipeline to drive closed sales, not just page views.`,
-    image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1200&q=80'
+    image: '/images/automated-lead-generation-intent-mapping-chart.png'
   },
   '/insights/outbound-seo-prospecting': {
     title: `Outbound SEO Prospecting: Target Search Intent | Gobiya`,
     description: `Use outbound SEO prospecting to monitor search intent triggers. Learn how to pitch buyers at the exact moment they search for your service.`,
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80'
+    image: '/images/outbound-seo-prospecting-intent-signals.png'
   },
   '/insights/b2b-sales-pipeline-automation': {
     title: `Automate B2B Sales: Connect Search to CRM | Gobiya`,
     description: `Configure B2B sales pipeline automation workflows. Learn how to connect search intent, lead data enrichment, and automated email campaigns.`,
-    image: 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1200&q=80'
+    image: '/images/b2b-sales-pipeline-automation-outreach.png'
   },
   '/insights/best-seo-agency-for-b2b-brands': {
     title: `Select the Best B2B SEO Agency: 2026 Checklist | Gobiya`,
     description: `How to select the best SEO agency for B2B brands. Follow our evaluation checklist to verify technical authority, case studies, and contracts.`,
-    image: 'https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=1200&q=80'
+    image: '/images/best-seo-agency-for-b2b-checklist.png'
   },
   '/insights/seo-for-b2b-lead-generation': {
     title: `SEO for B2B Lead Gen: Win the Buying Committee | Gobiya`,
     description: `Learn how to deploy SEO for B2B lead generation by mapping landing pages to the full buying committee, satisfying all key decision-makers.`,
-    image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=80'
+    image: '/images/seo-for-b2b-lead-generation-committee-structure.png'
   },
   '/insights/b2b-seo-agency': {
     title: `B2B SEO Agency: Focus on Pipeline Attribution | Gobiya`,
     description: `Partner with a B2B SEO agency built around pipeline value, not just search volume. Verify our committee mapping and conversion playbooks.`,
-    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&q=80'
+    image: '/images/b2b-seo-agency-funnel-strategy-session.png'
   },
   '/insights/local-seo': {
     title: `Local SEO Strategy: Dominate the 3-Pack Maps | Gobiya`,
     description: `Optimize your search presence with our local SEO strategy. Learn the weekly rhythm and maps pack audit tactics to win local organic rankings.`,
-    image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&q=80'
+    image: '/images/local-seo-service-maps-performance.png'
   },
   '/insights/local-seo-explained': {
     title: `Local SEO Explained: Dominate Search in 90 Days | Gobiya`,
     description: `Our local SEO explained playbook delivers a 90-day execution framework. Master business signals, citations, and tracking to dominate local grids.`,
-    image: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?w=1200&q=80'
+    image: '/images/article-local-seo-explained.png'
   },
   '/insights/b2b-organic-traffic-growth': {
     title: `B2B Organic Traffic: Build CRM Pipeline Value | Gobiya`,
-    description: `Why B2B organic traffic is decoupling from pipeline revenueâ€”and how to target high-intent search clusters to build pipeline value.`,
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80'
+    description: `Why B2B organic traffic is decoupling from pipeline revenue—and how to target high-intent search clusters to build pipeline value.`,
+    image: '/images/article-b2b-organic-traffic-growth.webp'
   },
   '/insights/multi-location-seo-website-structure': {
     title: `Multi-Location SEO: Design URL Hierarchies | Gobiya`,
     description: `Learn to structure a multi-location SEO website structure that prevents cannibalization, consolidates link equity, and ranks every city page.`,
-    image: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200&q=80'
+    image: '/images/multi-location-seo-structure-url-hierarchy.png'
   },
   '/insights/best-website-structure-multiple-locations-different-cities': {
     title: `Best Website Structure for Multiple Locations | Gobiya`,
     description: `Our guide details the best website structure for multiple locations. Compare subdirectory vs subdomain hierarchies for localized organic growth.`,
-    image: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=1200&q=80'
+    image: '/images/website-structure-for-multiple-locations-setup.png'
   },
   '/insights/google-business-profile-optimization': {
     title: `Google Business Profile: Suspensions & Audits | Gobiya`,
     description: `Learn our Google Business Profile optimization checklist to recover suspended profiles, appeal algorithmic soft bans, and verify map listings.`,
-    image: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1200&q=80'
+    image: '/images/google-business-profile-optimization-visibility.png'
   },
   '/insights/can-a-site-fully-recover-from-a-google-core-update': {
     title: `Google Core Update Recovery: Restore Full Traffic | Gobiya`,
     description: `Our Google core update recovery guide details the timeline, content pruning strategies, and quality updates needed to restore search traffic.`,
-    image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&q=80'
+    image: '/images/google-core-update-recovery-traffic-charts.png'
   },
   '/insights/google-manual-action-removal-agency-caused-penalty': {
     title: `Remove Google Manual Actions: Reconsideration Guide | Gobiya`,
     description: `Use our Google manual action removal checklist to audit link profiles, document cleanup, and submit a successful reconsideration appeal.`,
-    image: 'https://images.unsplash.com/photo-1553877522-43269d4ea984?w=1200&q=80'
+    image: '/images/google-manual-action-removal-recovery-checklist.png'
   },
   '/insights/what-is-the-difference-between-a-manual-action-and-an-algorithmic-penalty': {
     title: `Manual Action vs Algorithmic Penalty: Diagnostic Guide | Gobiya`,
     description: `Understand manual action vs algorithmic penalty differences, Search Console reports, and step-by-step diagnostic checklists for recovery.`,
-    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&q=80'
+    image: '/images/manual-action-vs-algorithmic-penalty-checklist.png'
   },
   '/insights/chatgpt-vs-google-for-business-discovery': {
     title: `ChatGPT vs Google Search: Customer Discovery | Gobiya`,
     description: `Comparing ChatGPT vs Google search discovery rates. Learn how to optimize your brand footprint to win both AI summaries and clicks.`,
-    image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1200&q=80'
+    image: '/images/chatgpt-vs-google-search-conversion-rates.png'
   },
   '/insights/how-do-b2b-companies-use-seo-to-generate-predictable-revenue': {
     title: `B2B Pipeline Revenue: How SEO Drives B2B Leads | Gobiya`,
     description: `Learn how to connect search clusters to B2B pipeline revenue, map content to the buying committee, and scale inbound conversions.`,
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80'
+    image: '/images/b2b-pipeline-revenue-performance-dashboard.png'
   },
   '/insights/what-data-sources-do-llms-crawl-to-verify-b2b-company-information': {
     title: `LLM Company Verification: Data Sources AI Uses | Gobiya`,
     description: `Discover how ChatGPT and Claude handle LLM company verification by crawling Wikidata, LinkedIn, and review portals to establish trust.`,
-    image: 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1200&q=80'
+    image: '/images/llm-company-verification-data-sources.png'
   },
   '/insights/what-is-the-difference-between-google-knowledge-graph-optimization-and-geo': {
     title: `Knowledge Graph Optimization vs GEO: AI Splits | Gobiya`,
     description: `Understand how Knowledge Graph optimization differs from GEO, how entity resolution works, and how to secure AI citation visibility.`,
-    image: 'https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=1200&q=80'
+    image: '/images/knowledge-graph-optimization-vs-geo-model.png'
   },
   '/insights/seo-case-study-traffic-recovery': {
     title: `SEO Case Study: Recover 320% Traffic Growth | Gobiya`,
     description: `A forensic SEO case study on traffic recovery after Google's March 2026 dual-update event. Learn the exact 12-week diagnostic sequence and fix order Gobiya used.`,
-    image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=80'
+    image: '/images/seo-case-study-traffic-recovery-growth.png'
   },
   '/insights/what-is-generative-engine-optimization-and-how-does-it-work': {
     title: `Generative Engine Optimization (GEO): Complete AI Guide | Gobiya`,
     description: `A complete technical guide to Generative Engine Optimization (GEO). Learn how RAG-based AI search engines cite content and how to optimize.`,
-    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&q=80'
+    image: '/images/generative-engine-optimization-rag-citations.png'
   },
   '/insights/are-ai-search-engines-scraping-hidden-api-data-or-public-html-text-blocks': {
     title: `AI Search Scraping: API vs Server HTML Blocks | Gobiya`,
     description: `Understand how AI search scraping works. Learn why AI crawlers bypass JavaScript APIs and read raw public HTML blocks instead.`,
-    image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&q=80'
+    image: '/images/ai-search-engines-scraping-html-data-comparison.png'
   },
 
   // â”€â”€ Author pages â”€â”€
   '/about/steve-martin': {
     title: `Steve Martin: SEO & Dev LA, founded Gobiya 2010, BBB A+ - Gobiya`,
-    description: `Steve Martin is the founder of Gobiya, an SEO and web development agency in Los Angeles established in 2010. 25+ years in web development and search, bilingual English/Spanish, Google Partner 2015â€“2019, BBB A+ rated.`
+    description: `Steve Martin is the founder of Gobiya, an SEO and web development agency in Los Angeles established in 2010. 25+ years in web development and search, bilingual English/Spanish, Google Partner 2015–2019, BBB A+ rated.`
   },
   '/author/steve-martin': {
     title: `Steve Martin: SEO & Dev LA, founded Gobiya 2010, BBB A+ - Gobiya`,
-    description: `Steve Martin is the founder of Gobiya, an SEO and web development agency in Los Angeles established in 2010. 25+ years in web development and search, bilingual English/Spanish, Google Partner 2015â€“2019, BBB A+ rated.`
+    description: `Steve Martin is the founder of Gobiya, an SEO and web development agency in Los Angeles established in 2010. 25+ years in web development and search, bilingual English/Spanish, Google Partner 2015–2019, BBB A+ rated.`
   }
 };
 
@@ -429,9 +433,13 @@ const SEO: React.FC<SEOProps> = ({ path }) => {
         const segments = pathname.split('/').filter(Boolean);
         const category = segments[0].charAt(0).toUpperCase() + segments[0].slice(1);
         const lastSegment = segments[segments.length - 1];
-        const formattedTitle = lastSegment.replace(/-agency$/, '').replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+        const formattedTitle = lastSegment
+          .replace(/-agency$/, '')
+          .replace(/-/g, ' ')
+          .replace(/\b\w/g, l => l.toUpperCase())
+          .replace(/\b(Seo|Ai|Crm|Ppc|Geo|Cro|Ux|B2b|Llm|Llms|It|Pr)\b/g, m => m.toUpperCase());
         seo = {
-          title: `${formattedTitle} agency in LA - Gobiya`,
+          title: `${formattedTitle} Agency Los Angeles - Gobiya`,
           description: `${category} solutions: ${formattedTitle} services from Gobiya. Hyper-targeted strategy and execution for measurable discoverability and conversion.`
         };
       } else {
@@ -465,15 +473,6 @@ const SEO: React.FC<SEOProps> = ({ path }) => {
     let ogImageUrl = 'https://www.gobiya.com/images/gobiya---logo.webp';
     if (seo.image) {
       ogImageUrl = seo.image.startsWith('http') ? seo.image : `https://www.gobiya.com${seo.image}`;
-    } else if (pathname.startsWith('/insights/')) {
-      const slug = pathname.substring('/insights/'.length);
-      if (slug === 'are-ai-search-engines-scraping-hidden-api-data-or-public-html-text-blocks') {
-        ogImageUrl = `https://www.gobiya.comhttps://images.unsplash.com/photo-1531482615713-2afd69097998?w=1200&q=80`;
-      } else if (slug === 'seo-case-study-traffic-recovery') {
-        ogImageUrl = `https://www.gobiya.comhttps://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80`;
-      } else {
-        ogImageUrl = `https://www.gobiya.comhttps://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200&q=80${slug}.webp`;
-      }
     }
 
     const ogImageTag = document.querySelector('meta[property="og:image"]');
@@ -599,7 +598,7 @@ const SEO: React.FC<SEOProps> = ({ path }) => {
             "name": "How does Generative Engine Optimization (GEO) work?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "GEO structures your brand's digital footprintsâ€”including custom schema graphs, entity connections, and structured tablesâ€”so conversational LLMs (such as ChatGPT, Claude, Perplexity, and Gemini) can confidently parse, recommend, and cite your business as a trusted authority."
+              "text": "GEO structures your brand's digital footprints—including custom schema graphs, entity connections, and structured tables—so conversational LLMs (such as ChatGPT, Claude, Perplexity, and Gemini) can confidently parse, recommend, and cite your business as a trusted authority."
             }
           },
           {
@@ -802,7 +801,7 @@ const SEO: React.FC<SEOProps> = ({ path }) => {
               "name": "Why does inconsistent data across B2B directories lead to AI silence?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "LLMs verify entities by triangulating facts across multiple external databases. If they encounter contradictory dataâ€”such as differing company categories, leadership names, or locationsâ€”the model's confidence scores drop. To avoid hallucinating wrong answers, conversational engines will typically omit the company entirely rather than risk citing incorrect information."
+                "text": "LLMs verify entities by triangulating facts across multiple external databases. If they encounter contradictory data—such as differing company categories, leadership names, or locations—the model's confidence scores drop. To avoid hallucinating wrong answers, conversational engines will typically omit the company entirely rather than risk citing incorrect information."
               }
             },
             {

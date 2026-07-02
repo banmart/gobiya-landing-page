@@ -29,7 +29,7 @@ const SCHEMA = {
       name: 'Gobiya — Plastic Surgery Internet Marketing',
       url: 'https://www.gobiya.com/plastic-surgery-internet-marketing',
       logo: 'https://www.gobiya.com/images/gobiya---logo.webp',
-      foundingDate: '2012',
+      foundingDate: '2012-11-25',
       description: 'Plastic surgery internet marketing agency — SEO, Google Ads, content architecture, and reputation management engineered for plastic surgery and aesthetic medicine practices.',
       telephone: '(323) 744-1338',
       email: 'hello@gobiya.com',

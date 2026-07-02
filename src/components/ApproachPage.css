@@ -188,7 +188,8 @@
 .approach-page .doctrine-text p + p { margin-top: 1.4rem; }
 .approach-page .doctrine-text strong { font-weight: 500; color: var(--ink); }
 @media (max-width: 940px) {
-  .approach-page .doctrine-body { grid-template-columns: 1fr; }
+  .approach-page .doctrine-body { grid-template-columns: minmax(0, 1fr); }
+  .approach-page .doctrine-body > div { min-width: 0; }
 }
 
 /* dark side-panel (triple diagram, citation loop) */

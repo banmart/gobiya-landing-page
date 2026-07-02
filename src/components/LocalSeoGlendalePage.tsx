@@ -29,7 +29,7 @@ const SCHEMA = {
       "name": "Gobiya — Local SEO Glendale",
       "url": "https://www.gobiya.com/local-seo-glendale",
       "logo": "https://www.gobiya.com/images/gobiya---logo.webp",
-      "foundingDate": "2012",
+      "foundingDate": "2012-11-25",
       "description": "Local SEO services for Glendale businesses. We engineer Google Map Pack dominance, GBP optimization, and citation authority for businesses on Brand Boulevard and throughout the Glendale, CA market.",
       "telephone": "(323) 744-1338",
       "priceRange": "$$$$",

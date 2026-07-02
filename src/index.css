@@ -2284,3 +2284,37 @@ pre {
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
 }
+/* ============================================================
+   MOBILE-FIRST OVERRIDES for inline-styled layout grids.
+   Many page sections declare fixed multi-column grids via inline
+   styles (no media-query access); collapse them to a single
+   column on small screens. Narrow label grids (64px 1fr etc.)
+   are intentionally NOT matched. Selectors cover both SSR
+   (no space after colon) and client (space) style serialization.
+   ============================================================ */
+@media (max-width: 900px) {
+  [style*="grid-template-columns: 1fr 1fr"],
+  [style*="grid-template-columns:1fr 1fr"],
+  [style*="grid-template-columns: 1fr 2fr"],
+  [style*="grid-template-columns:1fr 2fr"],
+  [style*="grid-template-columns: 2fr 1fr"],
+  [style*="grid-template-columns:2fr 1fr"],
+  [style*="grid-template-columns: 1fr 1.5fr"],
+  [style*="grid-template-columns:1fr 1.5fr"],
+  [style*="grid-template-columns: repeat(2, 1fr)"],
+  [style*="grid-template-columns:repeat(2, 1fr)"],
+  [style*="grid-template-columns: repeat(3, 1fr)"],
+  [style*="grid-template-columns:repeat(3, 1fr)"] {
+    grid-template-columns: 1fr !important;
+  }
+  /* Wide desktop gaps read as dead space once columns stack */
+  [style*="gap: 5rem"][style*="grid"], [style*="gap:5rem"][style*="grid"],
+  [style*="gap: 4rem"][style*="grid"], [style*="gap:4rem"][style*="grid"] {
+    gap: 2.5rem !important;
+  }
+  /* Inline sticky rails should flow normally once stacked */
+  [style*="position: sticky"][style*="top: 6rem"],
+  [style*="position:sticky"][style*="top:6rem"] {
+    position: static !important;
+  }
+}

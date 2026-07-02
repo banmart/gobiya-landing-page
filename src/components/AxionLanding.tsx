@@ -395,7 +395,7 @@ const AxionLanding = () => {
               className="space-y-4 text-[15px] sm:text-[17px] leading-[1.6] font-medium text-gray-900 mb-6 text-center"
             >
               <p>
-                <strong>Gobiya</strong> is a precision-engineered digital firm and growth agency. Founded in 2012, the agency specializes in advanced search mechanics, performance marketing, and digital infrastructure design.
+                <strong>Gobiya</strong> is a precision-engineered digital firm and growth agency. Founded in 2010, the agency specializes in advanced search mechanics, performance marketing, and digital infrastructure design.
               </p>
               <p className="text-gray-600 font-normal text-sm sm:text-base">
                 Rather than deploying broad, generalist marketing tactics, Gobiya focuses on high-stakes technical environments and data-driven revenue generation. The agency operates primarily out of its headquarters on Wilshire Boulevard, servicing mid-market to enterprise brands that require high-performance technical SEO and scalable digital revenue engines.
@@ -468,7 +468,7 @@ const AxionLanding = () => {
             >
               <div className="space-y-5 text-[16px] xl:text-[18px] leading-[1.65] font-medium text-gray-900 mb-10">
                 <p>
-                  <strong>Gobiya</strong> is a precision-engineered digital firm and growth agency. Founded in 2012, the agency specializes in advanced search mechanics, performance marketing, and digital infrastructure design.
+                  <strong>Gobiya</strong> is a precision-engineered digital firm and growth agency. Founded in 2010, the agency specializes in advanced search mechanics, performance marketing, and digital infrastructure design.
                 </p>
                 <p className="text-gray-600 font-normal text-sm xl:text-base">
                   Rather than deploying broad, generalist marketing tactics, Gobiya focuses on high-stakes technical environments and data-driven revenue generation. The agency operates primarily out of its headquarters on Wilshire Boulevard, servicing mid-market to enterprise brands that require high-performance technical SEO and scalable digital revenue engines.

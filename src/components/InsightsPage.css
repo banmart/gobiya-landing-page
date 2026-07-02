@@ -342,3 +342,9 @@
   .insights-page .cta-actions { flex-direction: column; }
   .insights-page .cta-actions .btn { width: 100%; }
 }
+
+/* Pagination — compact and wrappable on small screens */
+@media (max-width: 640px) {
+  .insights-page .pagination { flex-wrap: wrap; gap: 0.75rem; }
+  .insights-page .pagination .btn { height: 44px; padding: 0 1.1rem; }
+}

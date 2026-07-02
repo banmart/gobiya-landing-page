@@ -10,7 +10,7 @@ const SCHEMA = {
       name: 'Gobiya — Internet Marketing Services Los Angeles',
       url: 'https://www.gobiya.com/internet-marketing-services-los-angeles',
       logo: 'https://www.gobiya.com/images/gobiya---logo.webp',
-      foundingDate: '2012',
+      foundingDate: '2012-11-25',
       description: 'Gobiya is a Los Angeles digital marketing agency specialising in SEO, CRM pipeline automation, web development, and AI-driven search visibility for businesses across California.',
       telephone: '(323) 744-1338',
       email: 'hello@gobiya.com',
@@ -101,7 +101,7 @@ const SPOKES = [
 ];
 
 const STATS = [
-  { val: 'Est. 2012', label: 'Over a decade of search engineering and pipeline automation experience' },
+  { val: 'Est. 2010', label: 'Over a decade of search engineering and pipeline automation experience' },
   { val: '200+', label: 'Qualified leads per month delivered for B2B and home-services clients' },
   { val: 'Sub-1s', label: 'Average page load speed built for maximum conversion rates' },
 ];
@@ -125,7 +125,7 @@ export default function InternetMarketingServicesLosAngelesPage() {
       schema={SCHEMA}
       breadcrumb="Services / Los Angeles"
       heroTitle="Internet Marketing Services Los Angeles: Visibility Turned Into Pipeline"
-      heroSubtitle="Gobiya is a full-service internet marketing agency based in Los Angeles, CA, founded in 2012, providing SEO, Google Ads management, website development, and CRM pipeline automation for B2B and professional services businesses."
+      heroSubtitle="Gobiya is a full-service internet marketing agency based in Los Angeles, CA, founded in 2010, providing SEO, Google Ads management, website development, and CRM pipeline automation for B2B and professional services businesses."
       tags={[
         'Digital Marketing',
         'SEO & Discoverability',
@@ -143,7 +143,7 @@ export default function InternetMarketingServicesLosAngelesPage() {
       introParagraphs={[
         "Los Angeles is one of the most competitive search markets in the country. The businesses ranking at the top aren't there because they spent more — they're there because their digital infrastructure is cleaner: faster pages, better-structured entities, content that matches commercial intent rather than just keyword volume.",
         "The shift to AI-driven search (Google AI Mode, Perplexity, ChatGPT web) has made this gap wider. Search engines now read your site the way a buyer does — evaluating whether your content demonstrates genuine expertise, not just whether it contains the right keywords. Agencies that keep running the same 2018 playbook are quietly losing ground.",
-        "We've been reading Google's algorithm changes since 2012 and the LLM citation patterns since they started mattering in 2023. That means we know exactly which signals move the needle right now — and we implement them at the code level, not through plugins."
+        "We've been reading Google's algorithm changes since 2010 and the LLM citation patterns since they started mattering in 2023. That means we know exactly which signals move the needle right now — and we implement them at the code level, not through plugins."
       ]}
       stats={STATS}
       servicesLabel="What we cover"

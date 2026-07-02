@@ -97,7 +97,7 @@ const SCHEMA = {
         postalCode: '90211',
         addressCountry: 'US',
       },
-      foundingDate: '2010',
+      foundingDate: '2012-11-25',
       description: 'Los Angeles crypto marketing, Web3 development, and smart contract agency. Smart contracts on Ethereum and Pulsechain, dApp interfaces, and SEO for crypto and DeFi projects.',
       hasOfferCatalog: {
         '@type': 'OfferCatalog',

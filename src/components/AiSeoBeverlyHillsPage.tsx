@@ -29,7 +29,7 @@ const SCHEMA = {
       "name": "Gobiya — AI SEO Beverly Hills",
       "url": "https://www.gobiya.com/ai-seo-beverly-hills",
       "logo": "https://www.gobiya.com/images/gobiya---logo.webp",
-      "foundingDate": "2012",
+      "foundingDate": "2012-11-25",
       "description": "AI SEO services for Beverly Hills businesses. We engineer Google organic visibility and AI platform citations — ChatGPT, Claude, Gemini — for brands competing in the 90210 market.",
       "telephone": "(323) 744-1338",
       "priceRange": "$$$$",

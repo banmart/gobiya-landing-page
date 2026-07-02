@@ -29,7 +29,7 @@ const SCHEMA = {
       "name": 'Gobiya — Glendale SEO',
       "url": 'https://www.gobiya.com/glendale-seo',
       "logo": 'https://www.gobiya.com/images/gobiya---logo.webp',
-      "foundingDate": '2012',
+      "foundingDate": '2012-11-25',
       "description": 'Glendale SEO agency — technical SEO, local Map Pack optimization, content architecture, and authority building for businesses in the Glendale 91201–91210 market.',
       "telephone": '(323) 744-1338',
       "email": 'hello@gobiya.com',

@@ -96,7 +96,7 @@ export default function ContactPage() {
               <a href="mailto:hello@gobiya.com" className="btn btn-ghost">hello@gobiya.com</a>
             </div>
           </div>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', borderLeft: '1px solid #e5e7eb', paddingLeft: '5rem' }}>
+          <div className="contact-hero-aside" style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
             {[
               { label: 'Address', val: '3580 Wilshire Blvd, Ste 132\nLos Angeles, CA 90010' },
               { label: 'Phone', val: '323-744-1338' },

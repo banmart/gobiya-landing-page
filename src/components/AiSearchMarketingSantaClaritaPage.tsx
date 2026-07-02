@@ -29,7 +29,7 @@ const SCHEMA = {
       name: 'Gobiya — AI Search Marketing Santa Clarita',
       url: 'https://www.gobiya.com/ai-search-marketing-santa-clarita',
       logo: 'https://www.gobiya.com/images/gobiya---logo.webp',
-      foundingDate: '2012',
+      foundingDate: '2012-11-25',
       description: 'AI search marketing for Santa Clarita businesses. We engineer Google organic visibility and AI platform citations — ChatGPT, Perplexity, Google AI Overviews — for brands competing across the Valencia corridor and the broader SCV market.',
       telephone: '(323) 744-1338',
       email: 'hello@gobiya.com',

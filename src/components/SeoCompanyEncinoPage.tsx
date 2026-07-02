@@ -29,7 +29,7 @@ const SCHEMA = {
       "name": "Gobiya — SEO Company Encino",
       "url": "https://www.gobiya.com/seo-company-encino",
       "logo": "https://www.gobiya.com/images/gobiya---logo.webp",
-      "foundingDate": "2012",
+      "foundingDate": "2012-11-25",
       "description": "Technical SEO company serving Encino and the San Fernando Valley. We engineer Google visibility, AI citations, and organic pipeline systems for businesses on Ventura Boulevard and throughout the 91316 market.",
       "telephone": "(323) 744-1338",
       "priceRange": "$$$$",
@@ -171,7 +171,7 @@ export default function SeoCompanyEncinoPage() {
       schema={SCHEMA}
       breadcrumb="Services / Encino"
       heroTitle="SEO Company Encino: Google Visibility, AI Citations, Client Growth"
-      heroSubtitle="Gobiya is an SEO company serving Encino, Tarzana, and Sherman Oaks along the Ventura Boulevard corridor in the San Fernando Valley. Founded in 2012, the agency provides technical SEO, entity graph engineering, and AI citation optimization for professional services businesses that depend on organic search for client acquisition. Our SEO & Discoverability system has operated in this market since 2012."
+      heroSubtitle="Gobiya is an SEO company serving Encino, Tarzana, and Sherman Oaks along the Ventura Boulevard corridor in the San Fernando Valley. Founded in 2010, the agency provides technical SEO, entity graph engineering, and AI citation optimization for professional services businesses that depend on organic search for client acquisition. Our SEO & Discoverability system has operated in this market since 2012."
       specs={[
         { label: 'Market', val: 'Encino, CA · Valley' },
         { label: 'Focus', val: 'Technical & Pipeline' },

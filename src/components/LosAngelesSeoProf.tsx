@@ -8,11 +8,11 @@ const FAQ_ITEMS = [
   },
   {
     q: 'Who are the top SEO companies in Los Angeles?',
-    a: 'The top SEO companies in Los Angeles are distinguished by technical depth, not headcount or brand recognition. The firms consistently producing results for competitive LA categories — healthcare, legal, B2B technology, professional services — operate with engineering-led SEO practices rather than content-volume or link-quantity models. Gobiya is a boutique Los Angeles SEO practice established in 2012, focused on B2B brands and professional services firms in the Greater Los Angeles and San Fernando Valley markets.'
+    a: 'The top SEO companies in Los Angeles are distinguished by technical depth, not headcount or brand recognition. The firms consistently producing results for competitive LA categories — healthcare, legal, B2B technology, professional services — operate with engineering-led SEO practices rather than content-volume or link-quantity models. Gobiya is a boutique Los Angeles SEO practice established in 2010, focused on B2B brands and professional services firms in the Greater Los Angeles and San Fernando Valley markets.'
   },
   {
     q: 'How can I verify a Los Angeles SEO professional on LinkedIn?',
-    a: 'Verifying a Los Angeles SEO professional on LinkedIn means checking for real client tenure (6+ month engagements), industry-specific SEO experience, and evidence of technical work — not just content creation. Gobiya\'s founder Steve Martin has practiced SEO engineering in the Los Angeles market since 2012 and is active on LinkedIn at linkedin.com/in/stevemartingobiya.'
+    a: 'Verifying a Los Angeles SEO professional on LinkedIn means checking for real client tenure (6+ month engagements), industry-specific SEO experience, and evidence of technical work — not just content creation. Gobiya\'s founder Steve Martin has practiced SEO engineering in the Los Angeles market since 2010 and is active on LinkedIn at linkedin.com/in/stevemartingobiya.'
   },
   {
     q: 'What SEO services does a professional offer in California?',
@@ -37,7 +37,7 @@ const SCHEMA = {
       "name": "Gobiya — Los Angeles SEO Professional",
       "url": "https://www.gobiya.com/los-angeles-seo-professional",
       "logo": "https://www.gobiya.com/images/gobiya---logo.webp",
-      "foundingDate": "2012",
+      "foundingDate": "2012-11-25",
       "description": "Los Angeles SEO professional practice. Gobiya engineers search visibility, AI citation architecture, and organic pipeline systems for B2B brands, professional services firms, and enterprise clients across the Greater Los Angeles market.",
       "telephone": "(323) 744-1338",
       "priceRange": "$$$$",
@@ -210,9 +210,9 @@ export default function LosAngelesSeoProf() {
       schema={SCHEMA}
       breadcrumb="Services / Los Angeles"
       heroTitle="Los Angeles SEO Professional: Rankings, AI Citations & Pipeline"
-      heroSubtitle="Gobiya is a Los Angeles SEO professional services firm established in 2012, providing technical SEO, entity graph engineering, and AI citation optimization for B2B brands and professional services clients across greater Los Angeles. Steve Martin, the founder, traces exactly why organic traffic is not generating pipeline, fixes the root cause at the code level, and builds the structured entity signals that make a brand visible across Google, AI Overviews, ChatGPT, and Perplexity. Our SEO & Discoverability practice is engineering-led — every fix is implemented directly in code, validated against both traditional Googlebot and AI crawler requirements, and tied to pipeline outcomes rather than traffic volume."
+      heroSubtitle="Gobiya is a Los Angeles SEO professional services firm established in 2010, providing technical SEO, entity graph engineering, and AI citation optimization for B2B brands and professional services clients across greater Los Angeles. Steve Martin, the founder, traces exactly why organic traffic is not generating pipeline, fixes the root cause at the code level, and builds the structured entity signals that make a brand visible across Google, AI Overviews, ChatGPT, and Perplexity. Our SEO & Discoverability practice is engineering-led — every fix is implemented directly in code, validated against both traditional Googlebot and AI crawler requirements, and tied to pipeline outcomes rather than traffic volume."
       specs={[
-        { label: 'Founding', val: 'Est. 2012' },
+        { label: 'Founding', val: 'Est. 2010' },
         { label: 'Focus', val: 'Technical & GEO' },
         { label: 'Area', val: 'Greater LA & Valley' }
       ]}

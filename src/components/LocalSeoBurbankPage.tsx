@@ -29,7 +29,7 @@ const SCHEMA = {
       "name": "Gobiya — Local SEO Company Burbank",
       "url": "https://www.gobiya.com/local-seo-company-burbank",
       "logo": "https://www.gobiya.com/images/gobiya---logo.webp",
-      "foundingDate": "2012",
+      "foundingDate": "2012-11-25",
       "description": "Local SEO company serving Burbank businesses. We engineer Google Map Pack dominance, Google Business Profile optimization, citation authority, and review velocity systems for businesses on San Fernando Boulevard and throughout the Burbank, CA 91501–91510 market.",
       "telephone": "(323) 744-1338",
       "priceRange": "$$$$",
@@ -171,7 +171,7 @@ export default function LocalSeoBurbankPage() {
       schema={SCHEMA}
       breadcrumb="Services / Burbank"
       heroTitle="Local SEO Company Burbank: Map Pack Dominance & Review Velocity"
-      heroSubtitle="Gobiya is a local SEO company serving Burbank, Toluca Lake, and Studio City. Established in 2012, we engineer Google Business Profile optimization, Map Pack dominance, citation authority, and review velocity systems for local businesses."
+      heroSubtitle="Gobiya is a local SEO company serving Burbank, Toluca Lake, and Studio City. Established in 2010, we engineer Google Business Profile optimization, Map Pack dominance, citation authority, and review velocity systems for local businesses."
       tags={[
         'Local SEO',
         'Map Pack',

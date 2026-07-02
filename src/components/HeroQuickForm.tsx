@@ -157,7 +157,8 @@ export default function HeroQuickForm({
 
   const LogoStrip = () =>
     showLogos ? (
-      <div style={{ marginTop: '1.25rem', paddingTop: '1rem', borderTop: `1px solid ${dividerColor}`, overflow: 'hidden' }}>
+      // contain: inline-size keeps the max-content marquee track from inflating ancestor min-content (page-wide overflow on mobile)
+      <div style={{ marginTop: '1.25rem', paddingTop: '1rem', borderTop: `1px solid ${dividerColor}`, overflow: 'hidden', contain: 'inline-size' }}>
         <p style={{ fontSize: '0.62rem', textTransform: 'uppercase', letterSpacing: '0.14em', color: subColor, margin: '0 0 0.75rem', textAlign: 'center' }}>
           Trusted by teams at
         </p>
