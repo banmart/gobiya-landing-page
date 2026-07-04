@@ -354,6 +354,14 @@ const metadataMap: Record<string, SEOMetadata> = {
     title: "Technical SEO & B2B Pipeline Engineering | Gobiya",
     description: "Lost rankings after a Google update? Invisible in ChatGPT answers? Gobiya is a Los Angeles digital marketing agency that recovers organic traffic and engineers AI citations for local service businesses and B2B firms."
   },
+  '/about/steve-martin': {
+    title: 'Steve Martin - Technical SEO Director & Founder',
+    description: 'Steve Martin is a technical SEO specialist and founder of Gobiya, based in Los Angeles.'
+  },
+  '/author/steve-martin': {
+    title: 'Steve Martin - Technical SEO Director & Founder',
+    description: 'Steve Martin is a technical SEO specialist and founder of Gobiya, based in Los Angeles.'
+  },
   '/local-seo-services-burbank': {
     title: 'Local SEO services Burbank | Gobiya',
     description: 'Local SEO services in Burbank, CA — top rated, online appointments available. We optimize Google Business Profile, NAP citations, review velocity, and local schema for businesses in the 91501–91510 corridor. Open Mon–Fri, book online.'

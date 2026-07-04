@@ -105,6 +105,14 @@ const metadataMap: Record<string, SEOMetadata> = {
     title: `About Gobiya: Los Angeles SEO, founded 2010, BBB A+ | Gobiya`,
     description: `Gobiya is an SEO and web development agency in Los Angeles founded in 2010 by Steve Martin — 25+ years in web development and search, bilingual English/Spanish, BBB A+ rated.`
   },
+  '/about/steve-martin': {
+    title: `Steve Martin - Technical SEO Director & Founder`,
+    description: `Steve Martin is a technical SEO specialist and founder of Gobiya, based in Los Angeles.`
+  },
+  '/author/steve-martin': {
+    title: `Steve Martin - Technical SEO Director & Founder`,
+    description: `Steve Martin is a technical SEO specialist and founder of Gobiya, based in Los Angeles.`
+  },
   '/work': {
     title: `SEO Case Studies LA: 5x inquiries, 3x bookings | Gobiya`,
     description: `Real clients, real numbers. SmileCenter Dentistry: 5x patient inquiries and 213K impressions. American Livescan: 3x bookings after a legacy migration. Data-backed search recovery and pipeline case studies from Gobiya.`
