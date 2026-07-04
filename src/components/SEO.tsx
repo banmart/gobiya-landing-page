@@ -146,10 +146,6 @@ const metadataMap: Record<string, SEOMetadata> = {
     title: `SEO Case Studies LA: 5x inquiries, 3x bookings | Gobiya`,
     description: `Real clients, real numbers. SmileCenter Dentistry: 5x patient inquiries and 213K impressions. American Livescan: 3x bookings after a legacy migration. Data-backed search recovery and pipeline case studies from Gobiya.`
   },
-  '/approach': {
-    title: `Forensic SEO Approach LA: entity structure & GEO | Gobiya`,
-    description: `Gobiya's operating model for algorithmic dominance: entity-based indexing, topical authority and schema engineering, Generative Engine Optimization (GEO) for LLM visibility, and pipeline-first conversion architecture.`
-  },
   '/contact': {
     title: `Contact Gobiya LA: book call, free audit, open now | Gobiya`,
     description: `Reach Gobiya in Los Angeles. Call 323-744-1338, email hello@gobiya.com, or fill out our contact form for an SEO audit, web development, or AI growth consultation.`

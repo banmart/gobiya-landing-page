@@ -186,13 +186,6 @@ const SiteHeader: React.FC = () => {
                 </a>
               </li>
 
-              {/* Approach */}
-              <li className="menu-item relative lg:static h-full flex items-center" style={{ position: 'static' }}>
-                <a href="/approach" className="flex items-center gap-1 py-4 font-medium hover:text-gray-400 transition-colors" style={{ color: isHeaderActive ? "#111827" : "#ffffff" }}>
-                  Approach
-                </a>
-              </li>
-
               {/* About Dropdown */}
               <li className="menu-item group cursor-pointer relative lg:static h-full flex items-center" style={{ position: 'static' }} onMouseLeave={() => setFlyoutItem(null)}>
                 <a href="/about" className="flex items-center gap-1 py-4 font-medium hover:text-gray-400 transition-colors" style={{ color: isHeaderActive ? "#111827" : "#ffffff" }}>
@@ -274,13 +267,6 @@ const SiteHeader: React.FC = () => {
             <div className="border-b border-gray-200 pb-8">
               <a href="/work" className="w-full text-gray-900 block" style={{ fontSize: '2.5rem', fontWeight: 800, letterSpacing: '-0.02em', fontFamily: 'inherit' }}>
                 Work
-              </a>
-            </div>
-
-            {/* Approach */}
-            <div className="border-b border-gray-200 pb-8">
-              <a href="/approach" className="w-full text-gray-900 block" style={{ fontSize: '2.5rem', fontWeight: 800, letterSpacing: '-0.02em', fontFamily: 'inherit' }}>
-                Approach
               </a>
             </div>
 

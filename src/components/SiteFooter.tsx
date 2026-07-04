@@ -51,7 +51,6 @@ const SiteFooter: React.FC<SiteFooterProps> = ({ showWebGL = false, hideCTA = fa
               </a>
               <div className="flex flex-col gap-4 text-base font-medium">
                 <a href="/about" className="text-[#E5E7EB] hover:text-white transition-colors" style={{ textDecoration: 'none' }}>Company profile</a>
-                <a href="/insights" className="text-[#E5E7EB] hover:text-white transition-colors" style={{ textDecoration: 'none' }}>Press review</a>
               </div>
             </div>
           </div>

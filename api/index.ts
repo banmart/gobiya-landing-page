@@ -478,10 +478,6 @@ const metadataMap: Record<string, SEOMetadata> = {
     title: "SEO Case Studies LA: 5x inquiries, 3x bookings | Gobiya",
     description: "Real clients, real numbers. SmileCenter Dentistry: 5x patient inquiries and 213K impressions. American Livescan: 3x bookings after a legacy migration. Data-backed search recovery and pipeline case studies from Gobiya."
   },
-  '/approach': {
-    title: "Forensic SEO Approach LA: entity structure & GEO | Gobiya",
-    description: "Gobiya's operating model for algorithmic dominance: entity-based indexing, topical authority and schema engineering, Generative Engine Optimization (GEO) for LLM visibility, and pipeline-first conversion architecture."
-  },
   '/insights': {
     title: "SEO & AI Intelligence LA: core updates, GEO briefs | Gobiya",
     description: "Advanced tactical intelligence on Google and AI search: algorithm update analysis, GEO and LLM citation tactics, entity SEO, technical recovery briefs, and pipeline engineering field notes from Gobiya."
