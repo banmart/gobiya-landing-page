@@ -354,53 +354,17 @@ const metadataMap: Record<string, SEOMetadata> = {
     title: "Technical SEO & B2B Pipeline Engineering | Gobiya",
     description: "Lost rankings after a Google update? Invisible in ChatGPT answers? Gobiya is a Los Angeles digital marketing agency that recovers organic traffic and engineers AI citations for local service businesses and B2B firms."
   },
-  '/on-page-seo-los-angeles': {
-    title: "On-Page SEO Los Angeles: rankings in Google & AI search | Gobiya",
-    description: "On-page SEO services in Los Angeles that turn organic drops into recovered rankings — entity structure, schema, speed, and content mapping optimized for Google and AI engines."
-  },
-  '/local-seo-company-burbank': {
-    title: "Local SEO Company Burbank: Map Pack & GBP, open now | Gobiya",
-    description: "Local SEO company Burbank — we engineer Google Map Pack dominance, GBP optimization, citation consistency, and review velocity for businesses on San Fernando Boulevard and throughout the Burbank, CA 91501–91510 market."
-  },
-  '/internet-marketing-services-los-angeles': {
-    title: "Internet Marketing Los Angeles: visibility turned into pipeline | Gobiya",
-    description: "Gobiya provides top rated internet marketing services in Los Angeles — SEO, CRM pipeline automation, web development, and AI-driven online visibility for businesses across California. Founded 2010, BBB A+ rated."
-  },
-  '/ai-search-marketing-santa-clarita': {
-    title: "AI Search Marketing Santa Clarita: Cited in ChatGPT & Perplexity",
-    description: "Gobiya engineers the localized schema and entity graph that get your Santa Clarita business cited in ChatGPT and Perplexity answers — AI visibility turned into booked work."
-  },
   '/local-seo-services-burbank': {
     title: 'Local SEO services Burbank | Gobiya',
     description: 'Local SEO services in Burbank, CA — top rated, online appointments available. We optimize Google Business Profile, NAP citations, review velocity, and local schema for businesses in the 91501–91510 corridor. Open Mon–Fri, book online.'
-  },
-  '/glendale-seo': {
-    title: "Glendale SEO: Map Pack & technical SEO, BBB A+ | Gobiya",
-    description: "Glendale SEO agency — technical SEO, local Map Pack optimization, content architecture, and authority building for businesses in the 91201–91210 market. Top rated, BBB A+, online appointments available. Book a pre-read today."
-  },
-  '/plastic-surgery-internet-marketing': {
-    title: "Plastic Surgery Marketing: booked consultations, not clicks | Gobiya",
-    description: "Plastic surgery internet marketing agency — procedure-specific SEO, compliant Google Ads, content architecture for 3–6 month consideration cycles, review velocity management, and AI citation visibility."
   },
   '/performance/seo-traffic-recovery': {
     title: "SEO Traffic Recovery Los Angeles: rankings restored | Gobiya",
     description: "SEO traffic recovery specialists in Los Angeles. We diagnose the exact Google update or penalty behind an organic traffic drop, execute the precise fix sequence, and restore rankings — forensic read first, targeted fix second."
   },
-  '/ai-seo-beverly-hills': {
-    title: "AI SEO Beverly Hills: ChatGPT, Claude & Gemini citations | Gobiya",
-    description: "AI SEO Beverly Hills — we engineer Google organic visibility and AI platform citations (ChatGPT, Claude, Gemini) for Beverly Hills businesses in the 90210 market. Entity graphs, GEO, and local Map Pack engineering."
-  },
   '/local-seo-glendale': {
     title: "Local SEO Glendale: Map Pack & GBP, top rated | Gobiya",
     description: "Local SEO Glendale — we engineer Google Map Pack dominance, GBP optimization, citation consistency, and review velocity for businesses on Brand Boulevard and throughout the Glendale, CA market."
-  },
-  '/seo-company-encino': {
-    title: "SEO Company Encino: Google visibility & AI citations, BBB A+ | Gobiya",
-    description: "SEO company in Encino engineering Google visibility, AI citations, and organic pipeline growth for businesses on Ventura Boulevard and throughout the San Fernando Valley."
-  },
-  '/los-angeles-seo-professional': {
-    title: "Los Angeles SEO: entity graph & AI citations, BBB A+ | Gobiya",
-    description: "Los Angeles SEO professional practice. Gobiya engineers technical SEO, commercial-intent content architecture, entity schema, and AI citation visibility for B2B brands and professional services firms across Greater Los Angeles."
   },
   '/google-penalty-recovery': {
     title: "Google Penalty Recovery Los Angeles: rankings restored | Gobiya",

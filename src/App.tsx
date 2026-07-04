@@ -258,6 +258,17 @@ function App({ url }: AppProps) {
       '/capabilities/authority-building-agency': '/relations/authority-building-agency/',
       '/company/about': '/about',
 
+      // Geo redirects
+      '/on-page-seo-los-angeles': '/',
+      '/ai-seo-beverly-hills': '/',
+      '/local-seo-company-burbank': '/',
+      '/seo-company-encino': '/',
+      '/los-angeles-seo-professional': '/',
+      '/glendale-seo': '/',
+      '/plastic-surgery-internet-marketing': '/',
+      '/internet-marketing-services-los-angeles': '/',
+      '/ai-search-marketing-santa-clarita': '/',
+
       // Legacy /resources/ URLs from prior CMS — 404ing in search results
       '/resources/zero-click-is-the-new-billboard-monetize-it-mk82t8ki': '/insights/automated-b2b-sales-pipeline-seo',
       '/resources/how-to-recover-from-a-google-algorithm-update-2026-guide-ml3c2pbz': '/insights/can-a-site-fully-recover-from-a-google-core-update',
@@ -302,20 +313,7 @@ function App({ url }: AppProps) {
   const isValidRoute = [
     '/',
     '/admin',
-    '/on-page-seo-los-angeles',
-    '/ai-seo-beverly-hills',
-    '/local-seo-company-burbank',
-    '/seo-company-encino',
-    '/los-angeles-seo-professional',
-    '/book',
-    '/about',
-    '/thank-you',
-    '/work',
     '/contact',
-    '/glendale-seo',
-    '/plastic-surgery-internet-marketing',
-    '/internet-marketing-services-los-angeles',
-    '/ai-search-marketing-santa-clarita',
   ].includes(normalizedPath);
 
   return (
@@ -362,14 +360,6 @@ function App({ url }: AppProps) {
         <SuccessStories />
       ) : normalizedPath === '/contact' ? (
         <ContactPage />
-      ) : normalizedPath === '/glendale-seo' ? (
-        <GlendaleSeoPage />
-      ) : normalizedPath === '/plastic-surgery-internet-marketing' ? (
-        <PlasticSurgeryMarketingPage />
-      ) : normalizedPath === '/internet-marketing-services-los-angeles' ? (
-        <InternetMarketingServicesLosAngelesPage />
-      ) : normalizedPath === '/ai-search-marketing-santa-clarita' ? (
-        <AiSearchMarketingSantaClaritaPage />
       ) : (
         <NotFound />
       )}

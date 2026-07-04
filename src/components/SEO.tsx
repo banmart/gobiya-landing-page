@@ -12,43 +12,6 @@ const metadataMap: Record<string, SEOMetadata> = {
     title: `Technical SEO & B2B Pipeline Engineering | Gobiya`,
     description: `We recover organic traffic and improve AI search citations for local service businesses and B2B firms.`
   },
-  '/on-page-seo-los-angeles': {
-    title: `On-Page SEO Services | Gobiya`,
-    description: `On-page SEO services to improve structure, speed, and content mapping for modern search engines.`
-  },
-  '/ai-seo-beverly-hills': {
-    title: `AI SEO Services | Gobiya`,
-    description: `We engineer organic visibility and AI platform citations for businesses using entity graphs and Generative Engine Optimization.`
-  },
-  '/seo-company-encino': {
-    title: `SEO Company | Gobiya`,
-    description: `SEO company focused on search visibility, AI citations, and organic pipeline growth for your business.`
-  },
-  '/local-seo-company-burbank': {
-    title: `Local SEO Company | Gobiya`,
-    description: `Local SEO services that help you dominate the Map Pack, optimize your Google Business Profile, and improve citation consistency.`
-  },
-
-  '/glendale-seo': {
-    title: `Technical & Local SEO | Gobiya`,
-    description: `Technical SEO, local Map Pack optimization, and content architecture services to build authority for your business.`
-  },
-  '/plastic-surgery-internet-marketing': {
-    title: `Plastic Surgery Marketing | Gobiya`,
-    description: `Marketing services for plastic surgeons, focusing on procedure-specific SEO, compliant ads, and AI citation visibility.`
-  },
-  '/internet-marketing-services-los-angeles': {
-    title: `Internet Marketing Services | Gobiya`,
-    description: `Internet marketing services including SEO, CRM pipeline automation, web development, and AI-driven online visibility.`
-  },
-  '/ai-search-marketing-santa-clarita': {
-    title: `AI Search Marketing | Gobiya`,
-    description: `We engineer localized schema and entity graphs to get your business cited in ChatGPT and Perplexity answers.`
-  },
-  '/los-angeles-seo-professional': {
-    title: `SEO Professional Services | Gobiya`,
-    description: `Technical SEO, commercial-intent content architecture, entity schema, and AI citation visibility for B2B brands and professional services.`
-  },
 
   // ── Outcomes ──
   '/outcomes': {

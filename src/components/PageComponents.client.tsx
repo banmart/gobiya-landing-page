@@ -17,18 +17,7 @@ export const SuccessStories = lazy(() => import('./SuccessStories'));
 export const ApproachPage = lazy(() => import('./ApproachPage'));
 export const AdminLogin = lazy(() => import('./AdminLogin'));
 export const AdminDashboard = lazy(() => import('./AdminDashboard'));
-export const ContactPage = lazy(() => import('./ContactPage'));
-export const OnPageSeoLosAngelesPage = lazy(() => import('./OnPageSeoLosAngelesPage'));
-export const AiSeoBeverlyHillsPage = lazy(() => import('./AiSeoBeverlyHillsPage'));
-export const SeoCompanyEncinoPage = lazy(() => import('./SeoCompanyEncinoPage'));
-export const LosAngelesSeoProf = lazy(() => import('./LosAngelesSeoProf'));
 export const NotFound = lazy(() => import('./NotFound'));
-
-export const GlendaleSeoPage = lazy(() => import('./GlendaleSeoPage'));
-export const PlasticSurgeryMarketingPage = lazy(() => import('./PlasticSurgeryMarketingPage'));
-export const InternetMarketingServicesLosAngelesPage = lazy(() => import('./InternetMarketingServicesLosAngelesPage'));
-export const AiSearchMarketingSantaClaritaPage = lazy(() => import('./AiSearchMarketingSantaClaritaPage'));
-
 export const OutcomesIndex = lazy(() => import('./OutcomesIndex'));
 export const OutcomeTrafficPage = lazy(() => import('./OutcomeTrafficPage'));
 export const OutcomeRankingsPage = lazy(() => import('./OutcomeRankingsPage'));
