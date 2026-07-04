@@ -39,7 +39,7 @@ const testimonials: Testimonial[] = [
     role: "Lead Dentist",
     image_url: "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=1200&q=80",
     logo_url: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80",
-    case_study_link: "/case-studies"
+    case_study_link: "/work"
   }
 ];
 

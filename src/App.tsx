@@ -7,7 +7,6 @@ import {
   AuthorPage,
   ThankYouPage,
   BookingPage,
-  CapabilitiesIndex,
   SuccessStories,
   ApproachPage,
   InsightsPage,
@@ -22,19 +21,10 @@ import {
   LosAngelesSeoProf,
   SEO,
   NotFound,
-  CategoryPage,
-  SeoWebCopywritingPage,
-  SeoDiscoverabilityPage,
-  WebDevelopmentPage,
-  GoogleAdsPpcPage,
-  SeoTrafficRecoveryPage,
-
   GlendaleSeoPage,
   PlasticSurgeryMarketingPage,
   InternetMarketingServicesLosAngelesPage,
   AiSearchMarketingSantaClaritaPage,
-  AiVideosPage,
-  CryptoWeb3Page,
   OutcomesIndex,
   OutcomeTrafficPage,
   OutcomeRankingsPage,
@@ -235,13 +225,14 @@ function App({ url }: AppProps) {
       '/insights/local-seo-los-angeles': '/insights/local-seo',
       '/insights/los-angeles-local-seo-explained': '/insights/local-seo-explained',
       '/insights/google-my-business-optimization': '/insights/google-business-profile-optimization',
-      '/company/success-stories': '/case-studies',
-      '/success-stories': '/case-studies',
-      '/success-stories/smile-center-dentistry': '/case-studies',
-      '/success-stories/american-livescan': '/case-studies',
-      // Retired case-study subpages — consolidated into the /case-studies index
-      '/case-studies/smile-center-dentistry': '/case-studies',
-      '/case-studies/american-livescan': '/case-studies',
+      '/company/success-stories': '/work',
+      '/success-stories': '/work',
+      '/success-stories/smile-center-dentistry': '/work',
+      '/success-stories/american-livescan': '/work',
+      // Retired case-study subpages — consolidated into the /work index
+      '/case-studies/smile-center-dentistry': '/work',
+      '/case-studies/american-livescan': '/work',
+      '/case-studies': '/work',
       '/services': '/capabilities',
       '/services/seo': '/performance/seo-discoverability-agency/',
       '/services/lead-generation': '/performance/native-crm-agency/',
@@ -307,8 +298,8 @@ function App({ url }: AppProps) {
 
     // Catch-all: any /case-studies/ subpath collapses to the index
     if (normalized.startsWith('/case-studies/')) {
-      window.history.replaceState({}, '', '/case-studies');
-      setCurrentPath('/case-studies');
+      window.history.replaceState({}, '', '/work');
+      setCurrentPath('/work');
     }
   }, [currentPath]);
 
@@ -319,19 +310,7 @@ function App({ url }: AppProps) {
   const articleMatch = normalizedPath.match(/^\/insights\/([a-z0-9-]+)$/);
   const articleSlug = articleMatch ? articleMatch[1] : null;
 
-  const fanOutMatch = normalizedPath.match(/^\/(creativity|performance|relations)\/([a-z0-9-]+-agency)$/);
-  const fanOutCategory = fanOutMatch ? fanOutMatch[1] : null;
-  const fanOutSlug = fanOutMatch ? fanOutMatch[2] : null;
-
   const isValidServiceSubpage = [
-    '/creativity',
-    '/performance',
-    '/relations',
-    '/services/seo',
-    '/services/lead-generation',
-    '/services/geo-optimization',
-    '/services/web-design',
-    '/services/advertising',
     '/company/careers',
     '/outcomes',
     '/outcomes/traffic',
@@ -352,12 +331,10 @@ function App({ url }: AppProps) {
     '/author/steve-martin',
     '/about',
     '/thank-you',
-    '/capabilities',
-    '/case-studies',
+    '/work',
     '/approach',
     '/insights',
     '/contact',
-    '/performance/seo-traffic-recovery',
 
     '/glendale-seo',
     '/plastic-surgery-internet-marketing',
@@ -367,7 +344,7 @@ function App({ url }: AppProps) {
     '/outcomes/traffic',
     '/outcomes/rankings',
     '/outcomes/sales'
-  ].includes(normalizedPath) || normalizedPath === '/google-penalty-recovery' || isValidServiceSubpage || !!articleSlug || !!fanOutMatch;
+  ].includes(normalizedPath) || normalizedPath === '/google-penalty-recovery' || isValidServiceSubpage || !!articleSlug;
 
   return (
     <Suspense fallback={null}>
@@ -413,9 +390,7 @@ function App({ url }: AppProps) {
         <OutcomeRankingsPage />
       ) : normalizedPath === '/outcomes/sales' ? (
         <OutcomeSalesPage />
-      ) : normalizedPath === '/capabilities' ? (
-        <CapabilitiesIndex />
-      ) : normalizedPath === '/case-studies' ? (
+      ) : normalizedPath === '/work' ? (
         <SuccessStories />
       ) : normalizedPath === '/approach' ? (
         <ApproachPage />
@@ -423,24 +398,8 @@ function App({ url }: AppProps) {
         <InsightsPage currentPath={currentPath} />
       ) : normalizedPath === '/contact' ? (
         <ContactPage />
-      ) : normalizedPath === '/creativity' ? (
-        <CategoryPage category="creativity" />
-      ) : normalizedPath === '/performance' ? (
-        <CategoryPage category="performance" />
-      ) : normalizedPath === '/relations' ? (
-        <CategoryPage category="relations" />
       ) : normalizedPath === '/google-penalty-recovery' ? (
         <ServiceSubpage key={normalizedPath} path={normalizedPath} isFanOut={true} category="recovery" slug="google-penalty-recovery" />
-      ) : normalizedPath === '/creativity/seo-web-copywriting-agency' ? (
-        <SeoWebCopywritingPage />
-      ) : normalizedPath === '/performance/seo-discoverability-agency' ? (
-        <SeoDiscoverabilityPage />
-      ) : normalizedPath === '/performance/web-development-agency' ? (
-        <WebDevelopmentPage />
-      ) : normalizedPath === '/relations/google-ads-ppc-strategy-agency' ? (
-        <GoogleAdsPpcPage />
-      ) : normalizedPath === '/performance/seo-traffic-recovery' ? (
-        <SeoTrafficRecoveryPage />
       ) : normalizedPath === '/glendale-seo' ? (
         <GlendaleSeoPage />
       ) : normalizedPath === '/plastic-surgery-internet-marketing' ? (
@@ -449,12 +408,6 @@ function App({ url }: AppProps) {
         <InternetMarketingServicesLosAngelesPage />
       ) : normalizedPath === '/ai-search-marketing-santa-clarita' ? (
         <AiSearchMarketingSantaClaritaPage />
-      ) : normalizedPath === '/creativity/ai-videos-agency' ? (
-        <AiVideosPage />
-      ) : normalizedPath === '/creativity/crypto-web3-agency' ? (
-        <CryptoWeb3Page />
-      ) : fanOutMatch ? (
-        <ServiceSubpage key={normalizedPath} path={normalizedPath} isFanOut={true} category={fanOutCategory} slug={fanOutSlug} />
       ) : (
         <ServiceSubpage key={normalizedPath} path={normalizedPath} />
       )}

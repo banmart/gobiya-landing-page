@@ -102,11 +102,11 @@ const getCTAConfig = (path: string, topic?: string): CTAConfig => {
       tagline: "Growth Intelligence",
       headline: "Let's build your custom growth playbook and outpace the competition.",
       buttonText: "Read our case studies",
-      buttonLink: "/case-studies"
+      buttonLink: "/work"
     };
   }
 
-  if (cleanPath.startsWith('/case-studies')) {
+  if (cleanPath.startsWith('/work')) {
     return {
       tagline: "Success Stories",
       headline: "Let's build your case study and achieve measurable results.",

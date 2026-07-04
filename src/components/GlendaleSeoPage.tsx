@@ -305,7 +305,7 @@ export default function GlendaleSeoPage() {
           </div>
 
           <p className="text-sm text-gray-500">
-            We've worked across all three verticals in the greater Glendale market since 2012. See our <a href="/case-studies" className="text-green-600 font-semibold hover:underline">case studies</a> for documented outcomes, or the <a href="/performance/b2b-seo-agency" className="text-green-600 font-semibold hover:underline">B2B SEO practice</a> for the enterprise side of what we do in LA-area markets.
+            We've worked across all three verticals in the greater Glendale market since 2012. See our <a href="/work" className="text-green-600 font-semibold hover:underline">case studies</a> for documented outcomes, or the <a href="/performance/b2b-seo-agency" className="text-green-600 font-semibold hover:underline">B2B SEO practice</a> for the enterprise side of what we do in LA-area markets.
           </p>
         </div>
       </section>
@@ -348,7 +348,7 @@ export default function GlendaleSeoPage() {
               Both engagements used the same methodology we bring to Glendale: forensic read first, targeted build second, monthly reporting against real pipeline metrics.
             </p>
             <div className="flex flex-wrap gap-4">
-              <a href="/case-studies" className="inline-flex items-center justify-center px-6 py-3 bg-black text-white font-semibold text-sm uppercase tracking-wider hover:bg-gray-800 transition-colors">
+              <a href="/work" className="inline-flex items-center justify-center px-6 py-3 bg-black text-white font-semibold text-sm uppercase tracking-wider hover:bg-gray-800 transition-colors">
                 See case studies
               </a>
               <a href="/book" className="inline-flex items-center justify-center px-6 py-3 bg-transparent border border-gray-200 text-gray-900 font-semibold text-sm uppercase tracking-wider hover:bg-gray-50 transition-colors">

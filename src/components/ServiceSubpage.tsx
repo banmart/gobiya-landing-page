@@ -1190,20 +1190,20 @@ export default function ServiceSubpage({ path, isFanOut, category, slug }: Servi
                 <h2 className="text-[clamp(1.75rem,3.5vw,2.5rem)] font-bold text-gray-900 leading-tight">Case Studies</h2>
                 <div>
                   <p className="text-xl text-gray-500 font-light mb-6 leading-relaxed">Success stories that can inspire you</p>
-                  <a href="/case-studies" className="inline-flex items-center gap-2 text-gray-900 font-medium underline underline-offset-4 hover:text-gray-500 transition-colors text-sm tracking-wide">
+                  <a href="/work" className="inline-flex items-center gap-2 text-gray-900 font-medium underline underline-offset-4 hover:text-gray-500 transition-colors text-sm tracking-wide">
                     Discover how we create value together with our clients →
                   </a>
                 </div>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <a href="/case-studies" className="group block">
+                <a href="/work" className="group block">
                   <div className="overflow-hidden mb-4" style={{ height: '320px' }}>
                     <img src="/images/smile-center-homepage.webp" alt="Smile Center Dentistry case study" width={720} height={320} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                   </div>
                   <h3 className="text-lg font-bold text-gray-900 mb-1">Smile Center Dentistry</h3>
                   <p className="text-sm text-gray-400">SEO & Web Development</p>
                 </a>
-                <a href="/case-studies" className="group block">
+                <a href="/work" className="group block">
                   <div className="overflow-hidden mb-4" style={{ height: '320px' }}>
                     <img src="/images/american-livescan-storefront.webp" alt="American Livescan case study" width={720} height={320} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                   </div>
@@ -1349,7 +1349,7 @@ export default function ServiceSubpage({ path, isFanOut, category, slug }: Servi
   }, [path]);
 
   useEffect(() => {
-    if (path !== '/case-studies') return;
+    if (path !== '/work') return;
     
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -1368,11 +1368,11 @@ export default function ServiceSubpage({ path, isFanOut, category, slug }: Servi
   }, [path]);
 
   useEffect(() => {
-    if (path !== '/case-studies') return;
+    if (path !== '/work') return;
     const interval = setInterval(() => {
       setSimulatedVisitors(prev => {
         const companies = ['SpaceX', 'Stripe', 'Airbnb', 'HubSpot', 'Salesforce', 'Figma', 'Slack', 'Chevron'];
-        const pages = ['/services/seo', '/services/lead-gen', '/services/geo', '/approach', '/case-studies'];
+        const pages = ['/services/seo', '/services/lead-gen', '/services/geo', '/approach', '/work'];
         const randomCompany = companies[Math.floor(Math.random() * companies.length)];
         const randomPage = pages[Math.floor(Math.random() * pages.length)];
         const randomIntent = Math.floor(Math.random() * 25) + 75; // 75-100
@@ -1708,7 +1708,7 @@ export default function ServiceSubpage({ path, isFanOut, category, slug }: Servi
             { href: '/services/web-design', colSpan: 2, icon: <PenTool size={40} className={`${accentClass} mb-6 sm:mb-10`} strokeWidth={1.5} />, title: 'React UI/UX Engineering', description: 'Next.js architectures delivering seamless interactions and sub-second page loads.' },
             { href: '/services/seo', colSpan: 1, icon: <BarChart size={40} className="text-gray-900 mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'Core Web Vitals', description: 'Flawless performance metrics ensuring Google ranking boosts.' },
             { href: '/services/advertising', colSpan: 1, icon: <Target size={40} className="text-gray-900 mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'Landing Page CRO', description: 'High-converting funnels explicitly designed to lower acquisition costs.' },
-            { href: '/case-studies', colSpan: 2, gradient: true, icon: <Briefcase size={40} className="text-gray-900 mb-6 sm:mb-10 relative z-10" strokeWidth={1.5} />, title: 'Conversion Architecture', description: 'Your site should be your best salesperson. We engineer platforms that maximize revenue yield from every visitor.' }
+            { href: '/work', colSpan: 2, gradient: true, icon: <Briefcase size={40} className="text-gray-900 mb-6 sm:mb-10 relative z-10" strokeWidth={1.5} />, title: 'Conversion Architecture', description: 'Your site should be your best salesperson. We engineer platforms that maximize revenue yield from every visitor.' }
           ],
           showCalculator: true,
           calculatorProps: { title: "Calculate CRO Revenue Uplift", description: "Input your monthly traffic to see the revenue impact of improving your conversion rate via high-performance web design.", sliderLabel: "Monthly Site Traffic", sliderMin: 5000, sliderMax: 200000, sliderStep: 5000, conversionRate: 0.015, ltv: 200, resultLabel: "Added Monthly Revenue (1.5% CRO Uplift)", disclaimer: "*Based on a 1.5% conversion rate increase and $200 Average Order Value." }
@@ -1756,7 +1756,7 @@ export default function ServiceSubpage({ path, isFanOut, category, slug }: Servi
             { href: '/google-penalty-recovery', colSpan: 2, icon: <ShieldAlert size={40} className={`${accentClass} mb-6 sm:mb-10`} strokeWidth={1.5} />, title: 'Algorithmic Diagnostics', description: 'Deep-dive audits into Core Updates and HCU suppressions to identify the exact toxic vectors.' },
             { href: '/services/seo', colSpan: 1, icon: <Search size={40} className="text-gray-900 mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'Manual Actions', description: 'Expert removal of spam penalties and toxic links.' },
             { href: '/services/web-design', colSpan: 1, icon: <PenTool size={40} className="text-gray-900 mb-6 sm:mb-10" strokeWidth={1.5} />, title: 'Content Pruning', description: 'Architectural restructuring to purge unhelpful content.' },
-            { href: '/case-studies', colSpan: 2, gradient: true, icon: <TrendingUp size={40} className="text-gray-900 mb-6 sm:mb-10 relative z-10" strokeWidth={1.5} />, title: 'Traffic Resurrection', description: 'We have recovered millions in lost pipeline revenue for brands devastated by Google updates.' }
+            { href: '/work', colSpan: 2, gradient: true, icon: <TrendingUp size={40} className="text-gray-900 mb-6 sm:mb-10 relative z-10" strokeWidth={1.5} />, title: 'Traffic Resurrection', description: 'We have recovered millions in lost pipeline revenue for brands devastated by Google updates.' }
           ],
           showCalculator: true,
           calculatorProps: { title: "Calculate Penalty Revenue Leak", description: "Input the monthly traffic your site lost during the update. See the pipeline revenue leak.", sliderLabel: "Monthly Traffic Lost", sliderMin: 1000, sliderMax: 200000, sliderStep: 1000, conversionRate: 0.02, ltv: 500, resultLabel: "Monthly Revenue Leak", disclaimer: "*Based on 2% conversion rate and $500 LTV." }
@@ -1783,7 +1783,7 @@ export default function ServiceSubpage({ path, isFanOut, category, slug }: Servi
             { href: '/about/steve-martin', colSpan: 2, gradient: true, icon: <TrendingUp size={40} className="text-gray-900 mb-6 sm:mb-10 relative z-10" strokeWidth={1.5} />, title: 'Steve Martin Credentials', description: 'View professional experience, client projects, certifications, and background.' }
           ]
         };
-      case '/case-studies':
+      case '/work':
         return { ...defaultPageConfig,
           subtitle: 'Gobiya > Case Studies',
           title: 'Proven results. Search recovery and revenue scaling.',
@@ -2001,14 +2001,14 @@ export default function ServiceSubpage({ path, isFanOut, category, slug }: Servi
 
       
       {/* SECTION: SCROLL REVEAL INTRO */}
-      {path !== '/insights' && path !== '/contact' && path !== '/services' && path !== '/approach' && path !== '/case-studies' && (
+      {path !== '/insights' && path !== '/contact' && path !== '/services' && path !== '/approach' && path !== '/work' && (
         <section className="w-full relative">
           <SplitTextReveal text={config.introScrollText} />
         </section>
       )}
 
       {/* SECTION: INTRO CONTENT */}
-      {path !== '/insights' && path !== '/contact' && path !== '/services' && path !== '/approach' && path !== '/case-studies' && (        <section className="bg-[#EFEDE5] text-[#15130E] pt-16 sm:pt-20 lg:pt-32 pb-12 sm:pb-16 lg:pb-24 overflow-hidden w-full max-w-[1440px] mx-auto border-t border-[#D3CEC0]">
+      {path !== '/insights' && path !== '/contact' && path !== '/services' && path !== '/approach' && path !== '/work' && (        <section className="bg-[#EFEDE5] text-[#15130E] pt-16 sm:pt-20 lg:pt-32 pb-12 sm:pb-16 lg:pb-24 overflow-hidden w-full max-w-[1440px] mx-auto border-t border-[#D3CEC0]">
           <div className="px-5 sm:px-8 lg:px-12 flex items-center gap-3 mb-6 sm:mb-8">
             <div className={`w-6 h-6 sm:w-7 sm:h-7 ${themeBgAccent} text-gray-900 text-[11px] sm:text-[12px] font-semibold flex items-center justify-center`}>2</div>
             <div className="text-[12px] sm:text-[13px] font-medium text-[#2F5D50] border border-[#D3CEC0] px-3 sm:px-4 py-1 sm:py-1.5">Context & Methodology</div>
@@ -2088,7 +2088,7 @@ export default function ServiceSubpage({ path, isFanOut, category, slug }: Servi
         </section>
       )}
 
-      {path !== '/insights' && path !== '/contact' && path !== '/services' && path !== '/approach' && path !== '/case-studies' && (
+      {path !== '/insights' && path !== '/contact' && path !== '/services' && path !== '/approach' && path !== '/work' && (
         <ContentCta
           headline="Ready to build a pipeline that scales?"
           sub="Our team responds within one business day."
@@ -2098,7 +2098,7 @@ export default function ServiceSubpage({ path, isFanOut, category, slug }: Servi
       )}
 
       {/* BENTO CARDS SECTION */}
-      {path !== '/insights' && path !== '/contact' && path !== '/services' && path !== '/approach' && path !== '/case-studies' && config.bentoHeadline && (
+      {path !== '/insights' && path !== '/contact' && path !== '/services' && path !== '/approach' && path !== '/work' && config.bentoHeadline && (
         <StackedBento
           headline={config.bentoHeadline}
           description={config.bentoDescription}
@@ -2106,7 +2106,7 @@ export default function ServiceSubpage({ path, isFanOut, category, slug }: Servi
         />
       )}
 
-      {path !== '/insights' && path !== '/contact' && path !== '/services' && path !== '/approach' && path !== '/case-studies' && config.bentoHeadline && (
+      {path !== '/insights' && path !== '/contact' && path !== '/services' && path !== '/approach' && path !== '/work' && config.bentoHeadline && (
         <ContentCta
           headline="Let's scope your project — no commitment."
           sub="Start with a free audit. We respond within 24 hours."
@@ -2350,7 +2350,7 @@ export default function ServiceSubpage({ path, isFanOut, category, slug }: Servi
       )}
 
       {/* REAL CASE STUDIES FOR SUCCESS STORIES PATH */}
-      {path === '/case-studies' && (
+      {path === '/work' && (
         <section className="bg-gray-50 text-gray-900 py-20 sm:py-32 border-t border-black/10 relative z-20">
           <div className="max-w-[1440px] w-full mx-auto px-5 sm:px-8 lg:px-12">
             <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-16">
@@ -2443,7 +2443,7 @@ export default function ServiceSubpage({ path, isFanOut, category, slug }: Servi
                       SmileCenter Dentistry — 5x Patient Inquiries
                     </h2>
                     <a
-                      href="/case-studies"
+                      href="/work"
                       className="group flex items-center gap-2 text-[#F26522] hover:text-gray-900 border border-[#F26522]/40 hover:border-black/20 px-4 py-2 text-[13px] font-semibold transition-colors flex-shrink-0"
                     >
                       Full case study <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:-rotate-45" />
@@ -2513,7 +2513,7 @@ export default function ServiceSubpage({ path, isFanOut, category, slug }: Servi
                       American Livescan — 3x Bookings &amp; Calls After Legacy Site Migration
                     </h2>
                     <a
-                      href="/case-studies"
+                      href="/work"
                       className="group flex items-center gap-2 text-[#F26522] hover:text-gray-900 border border-[#F26522]/40 hover:border-black/20 px-4 py-2 text-[13px] font-semibold transition-colors flex-shrink-0"
                     >
                       Full case study <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:-rotate-45" />

@@ -33,7 +33,7 @@ export default function OutcomeTrafficPage() {
   }, []);
 
   return (
-    <div id="page" ref={containerRef} className="bg-white min-h-screen font-sans flex flex-col">
+    <div id="page" ref={containerRef} className="bg-white text-gray-900 antialiased font-sans min-h-screen flex flex-col">
       <SiteHeader />
       <div id="content" className="site-content flex-grow">
         <main id="primary" className="site-main">
@@ -60,42 +60,42 @@ export default function OutcomeTrafficPage() {
           </section>
 
           {/* AI INTERACTIVE TOOL PLACEHOLDER */}
-          <section className="section bg-gray-50">
-            <div className="section-inner max-w-5xl mx-auto" data-anim="up">
-              <div className="bg-white rounded-2xl p-10 shadow-xl border border-gray-100 relative overflow-hidden">
+          <section className="section" style={{ background: '#0a0a0a', borderTop: '1px solid #1f2937', borderBottom: '1px solid #1f2937' }}>
+            <div className="max-w-5xl mx-auto py-24 px-6" data-anim="up">
+              <div className="rounded-2xl p-10 shadow-2xl relative overflow-hidden" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.1)', backdropFilter: 'blur(10px)' }}>
                 <div className="absolute top-0 right-0 p-4">
-                  <span className="bg-green-100 text-green-800 text-xs font-bold px-3 py-1 rounded-full flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                  <span className="text-xs font-bold px-3 py-1 rounded-full flex items-center gap-2" style={{ background: 'rgba(209, 248, 81, 0.1)', color: 'var(--color-green)', border: '1px solid rgba(209, 248, 81, 0.2)' }}>
+                    <span className="w-2 h-2 rounded-full animate-pulse" style={{ background: 'var(--color-green)' }}></span>
                     AI Agent Active
                   </span>
                 </div>
-                <h3 className="text-3xl font-bold mb-4 text-gray-900">Interactive Traffic Forecaster</h3>
-                <p className="text-gray-500 mb-8 max-w-2xl">Use our AI agent to calculate your potential traffic growth over the next 12 months based on your business size.</p>
+                <h3 className="text-3xl font-bold mb-4 text-white">Interactive Traffic Forecaster</h3>
+                <p className="mb-8 max-w-2xl" style={{ color: '#9ca3af' }}>Use our AI agent to calculate your potential traffic growth over the next 12 months based on your business size.</p>
                 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-                  <div className="border border-gray-200 rounded-xl p-6 hover:border-blue-500 transition-colors cursor-pointer group">
-                    <h4 className="font-bold text-xl group-hover:text-blue-600">Enterprise</h4>
-                    <p className="text-sm text-gray-500 mt-2">100k+ monthly visitors. Focus: Global semantic dominance.</p>
+                  <div className="rounded-xl p-6 transition-all duration-300 cursor-pointer group hover:scale-[1.02]" style={{ border: '1px solid rgba(255,255,255,0.1)', background: 'rgba(0,0,0,0.2)' }}>
+                    <h4 className="font-bold text-xl text-white group-hover:text-[var(--color-green)] transition-colors">Enterprise</h4>
+                    <p className="text-sm mt-2" style={{ color: '#6b7280' }}>100k+ monthly visitors. Focus: Global semantic dominance.</p>
                   </div>
-                  <div className="border border-blue-500 bg-blue-50/50 rounded-xl p-6 cursor-pointer group">
-                    <h4 className="font-bold text-xl text-blue-600">Medium Business</h4>
-                    <p className="text-sm text-gray-500 mt-2">10k-100k visitors. Focus: Aggressive market capture.</p>
+                  <div className="rounded-xl p-6 transition-all duration-300 cursor-pointer group scale-[1.02]" style={{ border: '1px solid var(--color-green)', background: 'rgba(209, 248, 81, 0.05)', boxShadow: '0 0 20px rgba(209, 248, 81, 0.05)' }}>
+                    <h4 className="font-bold text-xl text-[var(--color-green)]">Medium Business</h4>
+                    <p className="text-sm mt-2" style={{ color: '#9ca3af' }}>10k-100k visitors. Focus: Aggressive market capture.</p>
                   </div>
-                  <div className="border border-gray-200 rounded-xl p-6 hover:border-blue-500 transition-colors cursor-pointer group">
-                    <h4 className="font-bold text-xl group-hover:text-blue-600">Small Business</h4>
-                    <p className="text-sm text-gray-500 mt-2">&lt;10k visitors. Focus: Hyper-local dominance & lead generation.</p>
+                  <div className="rounded-xl p-6 transition-all duration-300 cursor-pointer group hover:scale-[1.02]" style={{ border: '1px solid rgba(255,255,255,0.1)', background: 'rgba(0,0,0,0.2)' }}>
+                    <h4 className="font-bold text-xl text-white group-hover:text-[var(--color-green)] transition-colors">Small Business</h4>
+                    <p className="text-sm mt-2" style={{ color: '#6b7280' }}>&lt;10k visitors. Focus: Hyper-local dominance & lead generation.</p>
                   </div>
                 </div>
 
-                <div className="bg-gray-900 rounded-xl p-8 text-white">
+                <div className="rounded-xl p-8" style={{ background: '#000', border: '1px solid rgba(255,255,255,0.05)' }}>
                   <div className="flex justify-between items-center mb-6">
-                    <div className="text-sm text-gray-400 font-mono">Predicted Growth Curve (Month 1-12)</div>
-                    <div className="text-green-400 font-bold text-2xl">+342%</div>
+                    <div className="text-sm font-mono" style={{ color: '#6b7280' }}>Predicted Growth Curve (Month 1-12)</div>
+                    <div className="font-bold text-2xl" style={{ color: 'var(--color-green)' }}>+342%</div>
                   </div>
                   <div className="h-40 w-full flex items-end justify-between gap-2">
                     {/* Fake Bar Chart */}
                     {[10,15,25,40,45,60,80,110,140,180,220,280].map((val, i) => (
-                      <div key={i} className="bg-blue-500 rounded-t-sm w-full transition-all duration-1000" style={{ height: `${(val/280)*100}%`, opacity: (i/12)*0.8 + 0.2 }}></div>
+                      <div key={i} className="rounded-t-sm w-full transition-all duration-1000" style={{ background: 'var(--color-green)', height: `${(val/280)*100}%`, opacity: (i/12)*0.8 + 0.2 }}></div>
                     ))}
                   </div>
                 </div>
@@ -112,7 +112,7 @@ export default function OutcomeTrafficPage() {
 
           {/* PAINPOINTS SECTION */}
           <section className="section">
-            <div className="section-inner" style={{ maxWidth: '1000px', margin: '0 auto' }}>
+            <div className="max-w-5xl mx-auto py-24 px-6">
               <div className="text-center mb-16" data-anim="up">
                 <h2 className="display text-4xl">Stop settling for mediocre traffic.</h2>
               </div>

@@ -43,7 +43,7 @@ export default function OutcomesIndex() {
   }, []);
 
   return (
-    <div id="page" ref={containerRef} className="bg-white min-h-screen font-sans flex flex-col">
+    <div id="page" ref={containerRef} className="bg-white text-gray-900 antialiased font-sans min-h-screen flex flex-col">
       <SiteHeader />
       <div id="content" className="site-content flex-grow">
         <main id="primary" className="site-main">

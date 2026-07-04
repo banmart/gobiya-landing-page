@@ -400,7 +400,7 @@ export default function PlasticSurgeryMarketingPage() {
           <div className="bg-white border border-gray-200 p-8 rounded-lg">
             <strong className="text-sm text-gray-900 block mb-4">Why Gobiya — the short version</strong>
             <p className="text-sm text-gray-600 leading-relaxed">
-              BBB A+ rated, serving medical and aesthetic practice clients since 2012. We've built procedure-specific SEO systems, run compliant Google Ads for medical aesthetics, and recovered practices from GBP suspensions and Google algorithm hits. Our <a href="/case-studies" className="text-green-600 font-semibold hover:underline">case studies</a> document specific outcomes — not impressions. We don't take clients in categories where we can't produce documented results in the first 90 days.
+              BBB A+ rated, serving medical and aesthetic practice clients since 2012. We've built procedure-specific SEO systems, run compliant Google Ads for medical aesthetics, and recovered practices from GBP suspensions and Google algorithm hits. Our <a href="/work" className="text-green-600 font-semibold hover:underline">case studies</a> document specific outcomes — not impressions. We don't take clients in categories where we can't produce documented results in the first 90 days.
             </p>
           </div>
         </div>

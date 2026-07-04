@@ -123,34 +123,6 @@ const SiteHeader: React.FC = () => {
           </button>
         </div>
       )}
-      {/* Top Menu Layer */}
-      <div 
-        className="top-menu transition-all duration-300" 
-        style={{ 
-          backgroundColor: isHeaderActive 
-            ? "#1C201D" 
-            : "transparent",
-          borderBottom: isHeaderActive 
-            ? "1px solid #2d332f" 
-            : "1px solid rgba(255,255,255,0.1)" 
-        }}
-      >
-        <div className="container top-menu__inner">
-          <div className="menu-top-en-container">
-            <ul 
-              id="menu-top-en" 
-              className="menu transition-colors duration-300" 
-              style={{ 
-                color: isHeaderActive 
-                  ? "#A1A8A3" 
-                  : "#ffffff" 
-              }}
-            >
-              {/* Top menu links removed per request */}
-            </ul>
-          </div>
-        </div>
-      </div>
 
       {/* Main Menu Layer */}
       <div className={`page-header__inner w-full mx-auto flex items-center justify-between static transition-all duration-300 ${isHeaderActive ? "bg-white shadow-md border-b border-line" : "bg-transparent"}`} style={{ paddingLeft: '5vw', paddingRight: '5vw', position: 'static' }}>
@@ -209,8 +181,8 @@ const SiteHeader: React.FC = () => {
 
               {/* Case Studies */}
               <li className="menu-item relative lg:static h-full flex items-center" style={{ position: 'static' }}>
-                <a href="/case-studies" className="flex items-center gap-1 py-4 font-medium hover:text-gray-400 transition-colors" style={{ color: isHeaderActive ? "#111827" : "#ffffff" }}>
-                  Case Studies
+                <a href="/work" className="flex items-center gap-1 py-4 font-medium hover:text-gray-400 transition-colors" style={{ color: isHeaderActive ? "#111827" : "#ffffff" }}>
+                  Work
                 </a>
               </li>
 
@@ -300,8 +272,8 @@ const SiteHeader: React.FC = () => {
 
             {/* Case Studies */}
             <div className="border-b border-gray-200 pb-8">
-              <a href="/case-studies" className="w-full text-gray-900 block" style={{ fontSize: '2.5rem', fontWeight: 800, letterSpacing: '-0.02em', fontFamily: 'inherit' }}>
-                Case Studies
+              <a href="/work" className="w-full text-gray-900 block" style={{ fontSize: '2.5rem', fontWeight: 800, letterSpacing: '-0.02em', fontFamily: 'inherit' }}>
+                Work
               </a>
             </div>
 

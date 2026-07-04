@@ -8,7 +8,7 @@ const DEFAULT_MENU_ITEMS = [
   { label: 'Rankings', link: '/outcomes/rankings' },
   { label: 'Sales', link: '/outcomes/sales' },
   { label: 'Recovery', link: '/google-penalty-recovery' },
-  { label: 'Case Studies', link: '/case-studies' },
+  { label: 'Case Studies', link: '/work' },
   { label: 'Approach', link: '/approach' },
   { label: 'About', isHeader: true },
   { label: 'Steve Martin', link: '/about/steve-martin' },

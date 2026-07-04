@@ -453,8 +453,8 @@ const ApproachPage: React.FC = () => {
 
             <div className="doctrine-body">
               <div className="doctrine-text" data-anim="stagger">
-                <p data-anim-child>Traditional agency models celebrate traffic growth even when it fails to generate qualified revenue. Gobiya operates under a <strong>pipeline-first framework</strong> — connecting search traffic to automated sales development systems and turning the website into an active, high-yield pipeline generator. <a href="/capabilities/web-development-agency/" className="text-gray-900 hover:text-gray-600 underline underline-offset-4 transition-colors font-medium">Custom React and Vite architectures</a> deliver the sub-second loads that satisfy Core Web Vitals and capture high-intent users who would otherwise bounce.</p>
-                <p data-anim-child><strong>Visitor de-anonymization is integrated directly into the page layer:</strong> visiting IP addresses are resolved to specific corporate networks in real time, logging which organizations are researching your products and which pages they read. That intent data feeds straight into your <a href="/capabilities/native-crm-agency/" className="text-gray-900 hover:text-gray-600 underline underline-offset-4 transition-colors font-medium">CRM</a> — Salesforce or HubSpot — and triggers timing-optimized sequences targeting matching buyers at those accounts.</p>
+                <p data-anim-child>Traditional agency models celebrate traffic growth even when it fails to generate qualified revenue. Gobiya operates under a <strong>pipeline-first framework</strong> — connecting search traffic to automated sales development systems and turning the website into an active, high-yield pipeline generator. <span className="font-medium text-gray-900">Custom React and Vite architectures</span> deliver the sub-second loads that satisfy Core Web Vitals and capture high-intent users who would otherwise bounce.</p>
+                <p data-anim-child><strong>Visitor de-anonymization is integrated directly into the page layer:</strong> visiting IP addresses are resolved to specific corporate networks in real time, logging which organizations are researching your products and which pages they read. That intent data feeds straight into your <span className="font-medium text-gray-900">CRM</span> — Salesforce or HubSpot — and triggers timing-optimized sequences targeting matching buyers at those accounts.</p>
                 <p data-anim-child>The loop closes with <strong>multi-touch attribution:</strong> every pipeline opportunity is traced back to the specific content hubs and entity nodes that first captured the buyer — so every investment in the search engineering protocol is justified by measurable closed-won revenue.</p>
               </div>
 
@@ -502,8 +502,8 @@ const ApproachPage: React.FC = () => {
       <section className="clients" aria-label="Clients">
         <div className="clients-inner" data-anim="fade">
           <span className="mono-tag">Doctrine in production for —</span>
-          <a href="/case-studies" className="client-name">SmileCenter</a>
-          <a href="/case-studies" className="client-name">American LiveScan</a>
+          <a href="/work" className="client-name">SmileCenter</a>
+          <a href="/work" className="client-name">American LiveScan</a>
           <span className="client-name">RemodelMe Pros</span>
           <span className="client-name">QuickPass</span>
           <span className="client-name">MyTrustWills</span>

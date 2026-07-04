@@ -34,7 +34,7 @@ const caseStudies = [
     title: "SmileCenter Dental Offices",
     description: "5x patient inquiries · 2.8x search impressions · Multi-location SEO · React Vite.",
     videoSrc: "/videos/smilecenter-screencast.webm",
-    link: "/case-studies",
+    link: "/work",
     badge: "5x Inquiries",
     ctaText: "View case study",
   },
@@ -43,7 +43,7 @@ const caseStudies = [
     title: "American Livescan Fingerprinting",
     description: "3x online bookings & calls · +30% walk-ins · Local SEO & site rebuild.",
     imageSrc: "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=1200&q=80",
-    link: "/case-studies",
+    link: "/work",
     badge: "3x Bookings",
     ctaText: "View case study",
   }

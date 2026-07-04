@@ -159,7 +159,7 @@ export default function GobiyaAboutPage() {
             Book a strategy call
             <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" /></svg>
           </a>
-          <a href="/case-studies" className="btn btn-ghost magnetic">See case studies</a>
+          <a href="/work" className="btn btn-ghost magnetic">See case studies</a>
         </div>
       </section>
 
@@ -386,7 +386,7 @@ export default function GobiyaAboutPage() {
             <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" /></svg>
           </a>
           <a
-            href="/case-studies"
+            href="/work"
             style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.75rem', fontFamily: 'monospace', textTransform: 'uppercase', letterSpacing: '0.1em', color: '#9ca3af', textDecoration: 'none', borderBottom: '1px solid rgba(255,255,255,0.15)', paddingBottom: '2px' }}
           >
             View case studies
