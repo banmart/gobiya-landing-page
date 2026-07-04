@@ -125,62 +125,6 @@ const AuthorPage: React.FC<AuthorPageProps> = ({ path }) => {
       </section>
 
       {/* ── STRUCTURED DATA ── */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Person",
-            "name": "Steve Martin",
-            "jobTitle": "Founder, Lead Developer & Marketer",
-            "worksFor": {
-              "@type": "Organization",
-              "name": "Gobiya",
-              "url": "https://www.gobiya.com"
-            },
-            "url": "https://www.gobiya.com/about/steve-martin",
-            "image": "https://www.gobiya.com/images/steve-portrait.webp",
-            "sameAs": ["https://www.linkedin.com/in/stevemartingobiya/"],
-            "knowsAbout": ["Search Engine Optimization", "Generative Engine Optimization", "B2B Marketing", "React", "Schema Markup", "Local SEO", "Pipeline Attribution"],
-            "description": "Steve Martin is the founder of Gobiya with 25+ years of search engineering experience. He specializes in entity-based SEO, AI search optimization, and B2B pipeline attribution."
-          })
-        }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            "mainEntity": [
-              {
-                "@type": "Question",
-                "name": "Who is Steve Martin at Gobiya?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Steve Martin is the founder of Gobiya and its lead developer and marketer, with 25+ years of search engineering experience. He builds client websites and tools hands-on and specializes in entity-based SEO, Generative Engine Optimization (GEO), schema markup, and connecting organic search programs to CRM pipeline and closed-won revenue."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "What is Steve Martin's SEO background and experience?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Steve Martin has 25+ years of search engineering experience working with contractors, dental and medical practices, real estate businesses, and SaaS startups. His current focus is schema and entity optimization for AI search results (ChatGPT, Perplexity, Google AI Overviews), React and Vite web development, and AI-powered lead generation and CRM automation systems."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "What services does Steve Martin provide through Gobiya?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Through Gobiya, Steve Martin provides B2B SEO and pipeline attribution, entity-based schema markup and structured data implementation, Generative Engine Optimization (GEO) for AI search visibility, custom React and Vite web development, local SEO, Google Business Profile optimization, and AI-powered lead generation systems and CRM automation."
-                }
-              }
-            ]
-          })
-        }}
-      />
 
       {/* ── QUICK OVERVIEW ── */}
       <section style={{ background: '#f9fafb', padding: '4rem 5vw', borderBottom: '1px solid #e5e7eb' }}>

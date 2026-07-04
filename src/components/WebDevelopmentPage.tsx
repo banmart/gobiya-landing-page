@@ -88,11 +88,6 @@ export default function WebDevelopmentPage() {
 
   return (
     <div className="min-h-screen bg-white font-sans">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
-        '@context': 'https://schema.org',
-        '@type': 'FAQPage',
-        mainEntity: FAQS.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
-      }) }} />
       <SiteHeader />
 
       {/* -- HERO -- */}

@@ -144,9 +144,7 @@ export default function LocalServicePageTemplate({
 
   return (
     <div className="min-h-screen bg-white text-gray-900 antialiased font-sans flex flex-col">
-      {schema && (
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
-      )}
+
       <SiteHeader />
 
       {/* 01. Hero Section (Light mode matching /creativity/ai-videos-agency) */}

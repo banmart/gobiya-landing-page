@@ -39,90 +39,6 @@ const ARTICLES: Record<string, ArticleData> = {
     metaDescription: 'How can a startup figure out whether its content is being picked up by LLMs? Run a prompt library across ChatGPT, Claude & Perplexity, track citations & AI referral traffic. Get a free AI visibility audit.',
     content: (
       <>
-        {/* JSON-LD FAQ SCHEMA */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "FAQPage",
-              "mainEntity": [
-                {
-                  "@type": "Question",
-                  "name": "How can a startup tell if LLMs are using its content?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Three ways. Run a library of 50–100 buyer-relevant prompts weekly across ChatGPT, Claude, Perplexity, and Google AI Overviews and record whether your brand and URLs appear. Track AI referral traffic (visits from chatgpt.com, perplexity.ai, etc.) and AI-crawler hits (GPTBot, ClaudeBot) in your analytics and server logs. And, once that's too much to do by hand, use an AI citation-tracking tool to automate it at scale. There's no Google Search Console equivalent for LLMs yet, so you build the measurement yourself, anchored on citation rate over time."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "How do LLMs understand content?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "LLMs process text as tokens and represent meaning as patterns learned across large training corpora, then, in AI search, retrieve and synthesize from web sources at query time. They don't read like humans; they parse structure. Content that's clearly structured — hierarchical headings, concise answer blocks, attributed statistics, FAQ formats, schema markup — is easier for them to understand and extract, and is meaningfully (roughly 28–40%) more likely to be cited. If you're mentioned but not cited, it usually means the model recognizes your brand but your content isn't structured or authoritative enough to be used as the source."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "How do LLMs determine context?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Within a conversation, LLMs use the surrounding text — your prompt and any prior turns — and, in AI search, the retrieved source documents, weighting relevance through attention mechanisms to decide what's important for the answer. Notably, AI engines often reformulate a user's question into sub-queries rather than searching the literal words (one study found ChatGPT \"never searches the same way twice\"), and context is query-dependent and probabilistic. That's why a varied library of prompts beats a single keyword, and why citation status changes from prompt to prompt and day to day, making repeated measurement essential."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "Do we know exactly how LLMs work?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Not completely. We understand the architecture (transformer models that predict tokens from learned patterns) and the broad mechanics, but the internal reasoning of large models isn't fully interpretable, even to the teams that build them. This is exactly why you measure LLM pickup empirically — running prompts and observing outputs — rather than trying to deduce it. You can't read the model's mind, so you watch what it actually does, consistently and over time."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "What is one way to reduce the likelihood of LLMs producing made-up text?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Ground the model in verifiable, retrievable sources — the technique known as retrieval-augmented generation (RAG), where the model answers from supplied, citable documents rather than from memory alone, and is prompted to cite that material. For a startup, the parallel is to publish clear, accurate, authoritative content (and keep consistent, correct information across trusted third-party sources) so AI systems have good material to ground answers about you in, instead of guessing. Grounding reduces hallucination — and being good grounding is also what earns citations."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "What's the difference between a mention and a citation?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "A mention is when an AI answer names your brand — an awareness signal. A citation is when the AI attributes information to your domain as a source (a linked or named URL) — an authority signal. You can be mentioned without being cited, which usually means the model knows your brand but doesn't trust your content enough to source it. Citations are the higher-value signal: they drive referral traffic and compound (cited sources tend to get cited again). Track both, but treat citation rate as the primary measure of whether your content is truly being picked up."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "What citation rate should a startup aim for?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "For B2B/SaaS in 2026, seed-stage startups realistically start around 2–8%, below roughly 10% is effectively invisible, 20–30% is a solid target, and 40%+ is category-leading for competitive spaces. These are directional benchmarks, not guarantees — your numbers depend on category, competition, and content maturity. Focus on the trend: a citation rate climbing week over week as you fix crawler access, restructure content, and build authority is the signal that your content is increasingly being picked up."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "Why isn't my startup's content showing up in AI answers at all?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "The most common cause is technical: your robots.txt may be blocking AI crawlers (GPTBot, ClaudeBot, PerplexityBot), or you may lack structured data and an llms.txt file — if models can't access or parse your content, nothing else matters, so check this first. Beyond that: content that isn't extractable (no clear answer blocks, headings, or stats), weak authority and thin presence on the third-party sources your category cites (around 85% of top-of-funnel AI visibility comes from unowned domains), or a toxic backlink profile suppressing trust. Fix access first, then extractability, then authority."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "Do I need a paid tool to track LLM visibility?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "No — start free. A manual prompt library run weekly across the major engines, plus GA4 referral segmentation and server-log crawler checks, costs nothing and is the right first step because it forces you to understand the signal. Move to a paid citation-tracking tool (entry-level around $29/month, enterprise far higher) once you're tracking enough prompts and platforms that manual measurement eats too much time. The tool adds scale, consistency, and competitor share-of-voice math — but it measures the problem; it doesn't fix it. Budget for the fixing, not just the tracking."
-                  }
-                }
-              ]
-            })
-          }}
-        />
 
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8 font-medium">
           A practical, no-fluff guide to measuring whether ChatGPT, Claude, Perplexity, and Google's AI Overviews are actually citing your startup's content — the free methods, the metrics that matter, and how to fix it when the answer is "they're not."
@@ -423,81 +339,6 @@ const ARTICLES: Record<string, ArticleData> = {
     content: (
       <>
         {/* ── JSON-LD FAQ SCHEMA ── */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "FAQPage",
-              "mainEntity": [
-                {
-                  "@type": "Question",
-                  "name": "What does AI SEO do?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "AI SEO makes your brand the answer AI engines give, not just a link users dig for. It earns citations in AI-generated answers (ChatGPT, Perplexity, Gemini, Google AI Overviews), builds brand entity clarity across the web, improves content extractability with clear structure and evidence, tracks your visibility across AI platforms, and reinforces traditional rankings — since AI answers still pull from authoritative, top-ranking content. In short, it optimizes for how AI models select, summarize, and cite sources."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "What are the 4 types of SEO?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "The four classic types are on-page SEO (content, keywords, and structure on your own pages), off-page SEO (backlinks, brand mentions, and authority signals from other sites), technical SEO (crawlability, speed, indexing, structured data), and local SEO (Google Business Profile and map-pack visibility for location searches). AI SEO adds a fifth dimension that runs across all four: optimizing how AI engines interpret, trust, and cite your content in generated answers."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "Can ChatGPT do SEO?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Partially. ChatGPT is genuinely useful for SEO tasks — drafting content, brainstorming keywords, generating FAQ schema, outlining, and research — and can save significant time. But it can't audit or fix your live site, build real authority, earn genuine citations, or establish the cross-web entity consistency AI visibility requires, and its raw output needs human expertise to fact-check and refine. The best results are AI-assisted but human-led; ChatGPT is a powerful assistant, not a replacement for an SEO strategy."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "What is the best SEO AI?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "There's no single best — it depends on the task, and strong setups combine tools with human strategy. AI assistants (ChatGPT, Claude, Gemini) help with drafting and ideation; AI-integrated platforms (Semrush, Ahrefs and similar) handle keyword, content, and AI-citation tracking; dedicated AI-visibility trackers monitor your presence across AI engines; and Google's free Search Console and AI-optimization documentation are authoritative starting points. Tools are levers — the best outcome comes from pairing them with expertise that builds the authority AI engines cite."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "What is AI SEO called?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "AI SEO goes by several overlapping names with no single agreed definition as of 2026: GEO (Generative Engine Optimization), AEO (Answer Engine Optimization), AIO (Artificial Intelligence Optimization), and LLMO (LLM Optimization). GEO emphasizes getting cited by generative engines like ChatGPT and Gemini; AEO focuses on extractable on-page answers for features like AI Overviews. Google's view is that all of it is still fundamentally SEO — optimizing for the search experience as it evolves toward AI answers."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "Will AI replace SEO?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "No. AI is being absorbed into SEO, not replacing it. AI engines depend entirely on human-made, indexed, authoritative content to generate answers — without SEO foundations, they have nothing reliable to cite. What's changing is the surface (answers instead of links) and the metrics (citations and brand mentions alongside rankings), not the need to be discoverable, authoritative, and trustworthy. SEO is evolving into AI search optimization, not disappearing."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "How much should I pay for SEO services?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "AI SEO services in 2026 typically run $1,500–$3,000/month entry-level, $3,000–$6,000 for most mid-market businesses, $6,000–$15,000 for specialist full-stack work, and $15,000–$25,000+ for enterprise, with project work $5,000–$50,000 by scope. Pay enough for sustained work (AI search evolves; one-time sprints fade in 60–90 days), budget 9–12 months for compounding returns, and evaluate on cost per outcome rather than the retainer alone."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "Are AI SEO services worth it?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "For most businesses whose customers use AI to research and decide, yes — when matched to genuine quality and a realistic 9–12 month timeline. They're worth it if your buyers use ChatGPT, Perplexity, or AI Overviews, you have or will build real authority for AI to cite, and you commit to sustained work. They're not worth it for 30-day-miracle expectations, the cheapest relabeled packages, or sites too weak to surface — fix the foundation first."
-                  }
-                }
-              ]
-            })
-          }}
-        />
 
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8 font-medium">
           AI SEO services optimize your brand for the AI-driven search era — so ChatGPT, Gemini, Perplexity, and Google's AI Overviews cite, quote, and recommend you, not just rank you. Here's what they include, what they cost, and whether they're worth it.
@@ -890,41 +731,6 @@ const ARTICLES: Record<string, ArticleData> = {
     metaDescription: "Google Cloud's new open spec, OKF, for representing knowledge as a portable file-system hierarchy of markdown and YAML.",
     content: (
       <>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "FAQPage",
-              "mainEntity": [
-                {
-                  "@type": "Question",
-                  "name": "What is the Open Knowledge Format (OKF)?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "OKF is an open, vendor-neutral specification for representing metadata, context, and domain knowledge in a standardized file system hierarchy of markdown files with YAML frontmatter. It allows different AI tools and agents to consume knowledge without custom translation layers."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "What technical problem does OKF solve?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "It resolves the Context Assembly Gap. By standardizing folder structures, YAML frontmatter schemas, index files, and chronological change logs, OKF enables agents to ingest, traverse, and query knowledge programmatically using simple file-system tools and generic markdown parsers."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "How does OKF connect with Generative Engine Optimization (GEO)?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "GEO optimizes public web content for search crawler retrieval, while OKF optimizes internal knowledge bases for agentic context-retrieval. Both rely on standardized entity schemas and explicit relationship graphs to make domain concepts readable to LLMs."
-                  }
-                }
-              ]
-            })
-          }}
-        />
 
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8 font-medium">
           Google Cloud's Open Knowledge Format (OKF) solves a specific problem: engineers rebuilding custom extractors every time they connect an AI agent to fragmented internal knowledge. OKF replaces that with a portable, vendor-neutral filesystem hierarchy — markdown files with YAML frontmatter — that any agent can traverse with standard tools, no proprietary runtime required. Here is how the spec works.
@@ -1098,49 +904,6 @@ timestamp: string   # Optional: ISO-8601 modification date
     metaDescription: 'A technical guide to multi-location websites for franchises. How to configure subdirectory URLs, prevent page cannibalization, and establish secure SEO governance.',
     content: (
       <>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "FAQPage",
-              "mainEntity": [
-                {
-                  "@type": "Question",
-                  "name": "What is the best website structure for a franchise with multiple locations?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "A single corporate domain with location subdirectories (brand.com/locations/city-name) is the consensus best structure for most franchises, especially those under ~100 locations. It consolidates the brand's domain authority so every location page benefits from it."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "Why do franchise location pages fail to rank?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Almost always because they're templated, where only the city name, address, and phone are swapped in. Google detects this duplicate pattern and suppresses the pages. Aim for at least 40% unique, hyper-local content."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "How do I stop my franchise location pages from competing with each other?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "This is keyword cannibalization. Fix it with geographic specificity (targeting distinct served areas), differentiated local content, and a central locations hub page that links out to every individual location page."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "Why is NAP consistency critical at franchise scale?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Name, Address, and Phone data must be identical everywhere. Variations confuse search engines, erode trust, and depress rankings across Google Search and Maps."
-                  }
-                }
-              ]
-            })
-          }}
-        />
 
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8 font-medium">
           A multi-location website for a franchise is the architecture that lets one brand rank as many distinct local entities, and the central engineering problem is that those two goals pull against each other. The brand wants consolidated authority, consistent identity, and centralized control; each location needs to be the single best answer for "service + its city" without competing against its sibling locations or tripping Google's duplicate-content detection. Get the architecture right—single corporate domain, location subdirectories, genuinely unique local pages, correct structured data, and disciplined governance—and every new franchise location launches with the brand's accumulated authority behind it. Get it wrong—separate microsites, templated city-swap pages, fragmented ownership—and you fragment your authority across hundreds of weak pages that cannibalize each other and quietly fail to rank.
@@ -1561,49 +1324,6 @@ timestamp: string   # Optional: ISO-8601 modification date
     metaDescription: 'Learn how to apply behavioral psychology principles like the Fogg Behavior Model and Hick\'s Law to high-ticket B2B landing page wireframes to decrease friction.',
     content: (
       <>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "FAQPage",
-              "mainEntity": [
-                {
-                  "@type": "Question",
-                  "name": "What is the Fogg Behavior Model and how does it apply to B2B landing page wireframes?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "The Fogg Behavior Model (B = MAP) asserts that behavior occurs when Motivation, Ability, and a Prompt converge at the same moment. In a high-ticket B2B wireframe, each section is arranged to support this sequence: above the fold increases motivation and displays the prompt; middle sections reinforce motivation via authority and proof while increasing ability through clarity; and the form balances ability and qualification requirements before triggering the prompt again."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "How does Hick's Law impact B2B landing page conversions?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Hick's Law states that decision time increases with the number and complexity of choices. For B2B landing pages, removing navigation menus and focusing on a single, repeated Call to Action (CTA) prevents decision paralysis. 2026 benchmarks show that single-CTA demo pages convert at 13.5% compared to 10.5% for multi-CTA pages."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "Why is friction treated as a budget on high-ticket B2B landing pages?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Unlike low-ticket sales where all friction is eliminated to maximize sign-ups, high-ticket B2B programs use friction intentionally. By removing unintentional friction (slow speeds, complex layouts) and spending it on intentional filters (7-10 form fields detailing budget or stack), you trade raw volume for highly qualified leads, optimizing the demo-to-opportunity rate."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "Where should social proof be placed on high-ticket B2B landing pages?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Social proof must be placed above or immediately below the fold. Since B2B purchases involve multiple stakeholders, decision-makers look for segment-matched logos and outcome-specific metrics early to justify the initial risk of booking a call."
-                  }
-                }
-              ]
-            })
-          }}
-        />
 
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8 font-medium">
           Applying behavioral psychology to a high-ticket B2B landing page wireframe means treating each zone of the layout as the structural answer to a specific psychological question, and the master key is the Fogg Behavior Model: a behavior occurs when <strong>Motivation, Ability, and a Prompt converge at the same moment (B = MAP)</strong>. Map that onto a wireframe and the page stops being a design exercise and becomes an engineering one.
@@ -1778,49 +1498,6 @@ timestamp: string   # Optional: ISO-8601 modification date
     content: (
       <>
         {/* ── JSON-LD FAQ SCHEMA ── */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "FAQPage",
-              "mainEntity": [
-                {
-                  "@type": "Question",
-                  "name": "What is the main difference between an enterprise SEO agency and Gobiya?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Enterprise SEO agencies typically operate large account teams where senior strategists pitch the work and junior coordinators execute it. Gobiya is a search engineering shop — the senior people who scope the engagement are the same people who build and execute it. The operational difference shows up in execution speed, technical capability, and measurable pipeline outcomes."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "How much do enterprise SEO agencies typically charge?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Traditional enterprise SEO agency retainers typically run $8,000–$20,000 per month for mid-market B2B clients. That budget covers account management overhead, reporting layers, and multi-department coordination — before any actual technical work is delivered. Gobiya operates at a fraction of that overhead because there is no coordination layer between strategy and execution."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "Do enterprise SEO agencies optimize for AI search and GEO?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Most enterprise agencies treat GEO (Generative Engine Optimization) as an add-on service line or future roadmap item. Gobiya builds AI citation optimization into the standard content and schema workflow because 51% of B2B buyers now start research in AI chatbots — not Google. Treating it as optional is the same mistake agencies made with mobile in 2013."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "What ROI should a B2B company expect from a search engineering engagement?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "ROI varies by deal size and cycle length. A mid-market B2B SaaS company on a $6,000/month Gobiya retainer typically reaches 8–14 qualified pipeline opportunities per month by month six. At an 18% close rate and $38,000 median ACV, that produces a 9:1 first-year return on the search investment — before compounding organic equity in year two and beyond."
-                  }
-                }
-              ]
-            })
-          }}
-        />
 
         {/* ── LEAD STATS ── */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 my-10 sm:my-14">
@@ -2161,41 +1838,6 @@ timestamp: string   # Optional: ISO-8601 modification date
     metaDescription: 'Learn how to connect search clusters to B2B pipeline revenue, map content to the buying committee, and scale inbound conversions.',
     content: (
       <>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "FAQPage",
-              "mainEntity": [
-                {
-                  "@type": "Question",
-                  "name": "Why does B2B SEO often fail to generate sales pipeline?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "B2B SEO projects fail due to a session-to-pipeline misalignment. Teams optimize for high-volume informational queries instead of low-volume, high-intent commercial modifiers that target active evaluators and decision-makers."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "What is the optimal attribution model for B2B search channels?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "W-shaped multi-touch attribution is optimal. It assigns 30% credit each to first touch, lead creation, and opportunity creation, with the remaining 10% distributed across intermediate interactions."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "How do you align content with the B2B buying committee?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Map search clusters to specific roles: technical evaluations (integrations, security specs) for the CTO/SysOps, economic valuations (ROI, pricing calculators) for the CFO, and functional execution guides for operational leads."
-                  }
-                }
-              ]
-            })
-          }}
-        />
 
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8 font-medium">
           B2B companies generate predictable pipeline from SEO by mapping content to buying committee roles, not traffic volume. Decision-makers, economic buyers, and technical evaluators each search with distinct queries at distinct stages. The program that targets those low-volume, high-intent queries — and connects search behavior to CRM stages — is the one that generates actual revenue.
@@ -2911,57 +2553,6 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
     content: (
       <>
         {/* ── JSON-LD FAQ SCHEMA ── */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "FAQPage",
-              "mainEntity": [
-                {
-                  "@type": "Question",
-                  "name": "Does ChatGPT get more traffic than Google?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "No. Google processes roughly 99–136 billion monthly visits versus ChatGPT's 4–5.6 billion. Google holds a massive raw volume advantage, but ChatGPT users click an average of 1.4 external links per session compared to 0.6 from Google — and AI-referred visitors convert at up to 4.4x the rate of standard search traffic."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "Why do AI-referred visitors convert at higher rates than Google searchers?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Conversational AI seekers ask for a recommendation and accept an answer rather than filtering multiple options. By the time they reach a website via an AI referral, they have already moved through much of the consideration phase inside the conversation — they arrive closer to a purchase decision than a typical SERP click."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "How do you optimize for ChatGPT business discovery?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "AI assistants reward entity clarity, structured signals, and corroborated authority — not keyword density. Key tactics: implement Organization and Service schema in JSON-LD, ensure your brand is corroborated by consistent third-party signals (directories, press, reviews), and create structured FAQ and comparison content that AI systems can cite directly."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "Is Google search traffic declining because of AI?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Click traffic is declining, not search volume. When Google shows an AI Overview, organic CTR drops from a ~15% baseline to ~8%. A Seer Interactive study found CTR falls from 1.76% to 0.61% for queries with AI Overviews — a 61% decline. By Q2 2026, 93% of searches in Google's full AI Mode ended without an external click."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "Should I optimize for Google or AI search?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Both — but with different playbooks. Google still owns the volume base and requires keyword relevance, link authority, and technical performance. AI search requires entity clarity, schema markup, structured authority signals, and extractable content. A dual optimization strategy captures both the volume base and the high-converting AI referral channel."
-                  }
-                }
-              ]
-            })
-          }}
-        />
 
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8 font-medium">
           When comparing ChatGPT vs Google search for business discovery, the choice is clear. Google still commands raw traffic volume, but ChatGPT referrals convert at over four times the rate of standard searchers. Reconciling this tension requires a dual optimization strategy. Here is how it works.
@@ -5206,49 +4797,6 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
     content: (
       <>
         {/* ── FAQ SCHEMA ── */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "FAQPage",
-              "mainEntity": [
-                {
-                  "@type": "Question",
-                  "name": "What is B2B sales pipeline automation?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "B2B sales pipeline automation is an orchestration system that connects search intent signals, lead enrichment, CRM routing, and outreach sequencing into one integrated workflow — eliminating the manual data-copying that stalls revenue teams even when they own a full software stack."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "How does B2B sales pipeline automation work?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "B2B sales pipeline automation works in five stages: (1) Signal capture — monitoring SEO traffic, AI-citation referrals, content downloads, and third-party intent data. (2) Enrichment — appending firmographic and contact data to each signal. (3) Routing — delivering enriched signals to the correct rep or AI workflow within a response window. (4) Sequencing — multi-step outreach anchored to the original signal source. (5) CRM logging — writing every interaction back as a clean pipeline record for attribution and forecasting."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "What tools are needed for B2B sales pipeline automation?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "A complete B2B pipeline automation stack requires an intent data layer (6sense, Bombora, or G2 Buyer Intent), a data enrichment service (Clay, Apollo, or Clearbit), a CRM platform (Salesforce or HubSpot), a sales engagement tool (Outreach or Salesloft), and an orchestration middleware that connects all systems without manual intervention."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "What ROI does B2B sales pipeline automation deliver?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Teams with a fully integrated orchestration layer report 3–5x pipeline lift at 70% lower cost-per-meeting versus manual SDR operations. Disconnected point solutions with no orchestration layer rarely produce positive pipeline ROI despite average software spend of $200,000+ per year."
-                  }
-                }
-              ]
-            })
-          }}
-        />
 
         {/* ── QUICK ANSWER ── */}
         <div className="bg-gray-50 border-l-4 border-[#111827] p-5 sm:p-6 my-8 rounded-r-sm">
@@ -5587,49 +5135,6 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
     content: (
       <>
         {/* ── FAQ SCHEMA ── */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "FAQPage",
-              "mainEntity": [
-                {
-                  "@type": "Question",
-                  "name": "What makes an SEO agency the best choice for B2B brands?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "The best SEO agency for B2B brands measures success in qualified pipeline and closed revenue — not just traffic and keyword rankings. Key differentiators include a documented methodology for multi-stakeholder content, proven CRM pipeline attribution capability, a clear point of view on AI search and GEO (Generative Engine Optimization), and case studies that disclose revenue outcomes, not just ranking lifts."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "How do I evaluate a B2B SEO agency before signing?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Ask five questions: (1) What percentage of your roster is B2B? (2) Can you show case studies with pipeline and revenue metrics? (3) How many clients does each strategist manage? (4) What does your CRM pipeline attribution model look like? (5) How do you track AI citation share across ChatGPT, Perplexity, and Google AI Mode? Agencies that answer all five with specifics are specialists. Those that answer with generalities are generalist agencies with a B2B services page."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "How is a B2B SEO agency different from a general SEO agency?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "A B2B SEO agency is structured around the unique requirements of B2B buying: low-volume high-intent keywords instead of high-volume transactional terms, multi-stakeholder content for 11-person buying committees instead of single-buyer pages, and CRM pipeline attribution instead of session-based conversion metrics. Generalist agencies applying B2C instincts to B2B typically produce traffic growth with flat pipeline."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "What red flags should I watch for when hiring a B2B SEO agency?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Key red flags: ranking guarantees (search rankings cannot be guaranteed), traffic-only reporting with no pipeline attribution, vague methodology with no disclosed content or technical framework, case studies that only show organic sessions with no revenue data, and no demonstrated understanding of AI search and citation optimization. Any agency that ranks itself for 'best SEO agency' but can't explain how it connects organic content to CRM data should be disqualified."
-                  }
-                }
-              ]
-            })
-          }}
-        />
 
         {/* ── QUICK ANSWER ── */}
         <div className="bg-gray-50 border-l-4 border-[#111827] p-5 sm:p-6 my-8 rounded-r-sm">
@@ -5913,49 +5418,6 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
     content: (
       <>
         {/* ── FAQ SCHEMA ── */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "FAQPage",
-              "mainEntity": [
-                {
-                  "@type": "Question",
-                  "name": "How does SEO help B2B lead generation?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "SEO helps B2B lead generation by placing content in front of every stakeholder on a buying committee at each stage of their independent research process. Unlike B2C, B2B deals involve 11+ decision-makers who each research separately — the economic buyer, technical evaluator, end user, and procurement lead each search different queries on different platforms. An effective B2B SEO program maps content to every role's specific questions so that when the champion advances the deal internally, every other stakeholder has already formed a positive impression of the brand."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "What SEO strategies drive B2B leads?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "The most effective SEO strategies for B2B lead generation include: buying committee content mapping (content for each stakeholder role at each buying stage), high-intent keyword targeting (low-volume queries from buyers who are actively evaluating vendors), GEO optimization (ensuring brand content is cited by ChatGPT, Perplexity, and Google AI Mode), comparison and alternatives pages (capturing bottom-of-funnel evaluation queries), and technical SEO that ensures content is crawlable and indexable across both standard search and AI crawler bots."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "Why does B2B SEO lead generation produce MQLs that don't convert?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "B2B SEO produces orphaned MQLs when content targets only the champion (the person who fills out the form) and ignores the other 10+ stakeholders who must approve the deal. The champion downloads the ebook, gets scored as an MQL, enters the sales process — and then the deal stalls because the technical evaluator, CFO, and procurement lead have never heard of the vendor and block internal consensus. Multi-role content coverage is the layer that prevents this outcome."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "How long does it take for SEO to generate B2B leads?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "B2B SEO lead generation typically produces the first high-intent organic leads within 90–180 days for competitive categories, and faster for long-tail buying-committee queries that have lower competition. Initial technical SEO and content architecture takes 30–60 days to implement. Content then needs to be crawled, indexed, and accumulate authority signals over the following 60–120 days before ranking for target queries. The full compounding effect of a mature B2B SEO program typically shows at the 12-month mark."
-                  }
-                }
-              ]
-            })
-          }}
-        />
 
         {/* ── QUICK ANSWER ── */}
         <div className="bg-gray-50 border-l-4 border-[#111827] p-5 sm:p-6 my-8 rounded-r-sm">
@@ -6322,49 +5784,6 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
     content: (
       <>
         {/* ── FAQ SCHEMA ── */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "FAQPage",
-              "mainEntity": [
-                {
-                  "@type": "Question",
-                  "name": "What is local SEO?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Local SEO is the practice of optimizing a business's online presence to appear in geographically relevant search results — primarily Google's 3-Pack (the map listing shown above organic results) and location-based organic pages. It involves optimizing the Google Business Profile, building NAP (Name, Address, Phone) consistency across directories, generating review velocity, producing localized on-page content, and implementing LocalBusiness schema markup."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "What are the most important local SEO ranking factors?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "The top local SEO ranking factors in 2026 are: (1) Google Business Profile signals — primary category accuracy, profile completeness, photo volume, and post activity (32% of local pack ranking weight). (2) Review velocity — the rate and recency of new Google reviews, which is the single fastest-rising ranking signal. (3) On-page content — localized pages with city-specific content and proper LocalBusiness schema. (4) Citations — NAP consistency across key directories. (5) Behavioral signals — click-through rates from the map pack and website engagement from local visitors."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "How long does local SEO take to show results?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Local SEO results typically become measurable within 30–90 days for Google Business Profile optimizations and citation corrections, and 60–180 days for on-page content and new local landing pages to rank. Review velocity improvements can produce map pack position lifts within 4–8 weeks when a consistent weekly acquisition cadence is maintained. Highly competitive local markets (e.g. multiple-location categories in dense metro areas) may take 6–12 months for full 3-Pack penetration."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "What is the difference between local SEO and regular SEO?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Local SEO focuses on geographic relevance signals — Google Business Profile optimization, review acquisition, proximity signals, and localized landing pages — in addition to standard on-page and technical SEO. Regular (national) SEO focuses on domain authority, keyword targeting, and content depth without location specificity. Local SEO also optimizes for the map pack (a separate ranking system from the organic blue links) which requires an entirely different signal set than standard organic rankings."
-                  }
-                }
-              ]
-            })
-          }}
-        />
 
         {/* ── QUICK ANSWER ── */}
         <div className="bg-gray-50 border-l-4 border-[#111827] p-5 sm:p-6 my-8 rounded-r-sm">
@@ -6645,49 +6064,6 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
     content: (
       <>
         {/* ── FAQ SCHEMA ── */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "FAQPage",
-              "mainEntity": [
-                {
-                  "@type": "Question",
-                  "name": "What is local SEO explained simply?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Local SEO is the ongoing practice of optimizing a business's online presence to appear prominently in geographically targeted search results — specifically Google's 3-Pack map listings and local organic results. It involves a weekly and monthly operating cadence of Google Business Profile updates, review acquisition, citation maintenance, and localized content publishing. Unlike a one-time setup, local SEO requires consistent operation to maintain and improve rankings."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "What does local SEO include?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Local SEO includes: Google Business Profile (GBP) optimization and weekly maintenance, review acquisition and response management, NAP (Name, Address, Phone) citation building and monitoring, local landing page creation and optimization, LocalBusiness schema markup implementation, and local link acquisition from neighborhood publications and community organizations. Advanced local SEO also includes AI search optimization to capture the growing segment of buyers using ChatGPT and Perplexity for local business discovery."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "How often should local SEO tasks be performed?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Local SEO tasks should follow a weekly and monthly cadence: weekly tasks include posting on GBP, responding to new reviews, and checking for and correcting any listing changes. Monthly tasks include publishing new localized content, auditing citation accuracy, analyzing rank position trends, and planning the next month's review acquisition campaigns. Businesses that stop active maintenance for 6–8 weeks typically see ranking drops to competitors who maintained their cadence."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "Why do local SEO rankings drop when you stop optimizing?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Local SEO rankings drop when you stop optimizing because Google's algorithm continuously measures fresh activity signals — review velocity, GBP post recency, photo updates, and on-page content freshness. When a business goes quiet, these signals decay relative to competitors who continue their cadence. SE Ranking's 2026 research shows ranking drops typically begin 6–8 weeks after review velocity stops, and continued inactivity compounds the loss over subsequent months."
-                  }
-                }
-              ]
-            })
-          }}
-        />
 
         {/* ── QUICK ANSWER ── */}
         <div className="bg-gray-50 border-l-4 border-[#111827] p-5 sm:p-6 my-8 rounded-r-sm">
@@ -7268,57 +6644,6 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
     content: (
       <>
         {/* ── JSON-LD FAQ SCHEMA ── */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "FAQPage",
-              "mainEntity": [
-                {
-                  "@type": "Question",
-                  "name": "Should a multi-city business use subdirectories or subdomains?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Subdirectories (yourdomain.com/locations/chicago/) are the correct choice for nearly all multi-city businesses. They consolidate domain authority so every backlink and content signal earned across all cities accrues to one root domain, flowing down to support every city page. Subdomains (chicago.yourdomain.com) split that authority and force each city to build ranking power largely independently — a significant disadvantage for newer city markets."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "What is the correct URL hierarchy for a multi-city business website?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "The 2026 consensus hierarchy is: Home > /locations/ (hub page) > /locations/[state]/ (optional, for businesses with many cities across multiple states) > /locations/[city]/ (city page) > /locations/[city]/[neighborhood]/ (individual location, when a city has multiple locations). This structure is mirrored in breadcrumb navigation and gives Google a clear crawl path to every market the business serves."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "Why are my city location pages not ranking on Google?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "The most common cause is near-identical templated content across city pages — only the city name and address differ. Google suppresses near-duplicate pages rather than ranking them independently. The fix is genuine city-specific content: local service areas, city-specific team members, local testimonials, city-specific FAQ content, and references to local landmarks and neighborhood characteristics that make each page genuinely distinct."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "What is the difference between a physical location page and a service-area page?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "A physical location page maps 1:1 to a verified Google Business Profile with a real address and ranks for location-specific queries. A service-area page targets cities where the business serves customers but has no physical office — it can rank organically for '[service] in [city]' queries but should never claim a physical address or create a GBP for that location, which violates Google's guidelines and risks GBP suspension."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "How much does fixing a broken multi-city website structure cost?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Structural remediation — migrating from subdomains to subdirectories, consolidating separate domains, or rebuilding a flat structure into a proper hierarchy — typically involves a multi-month technical SEO project with costs running into tens of thousands of dollars, depending on site complexity, number of cities, and existing URL patterns requiring redirect mapping. The cost is almost always smaller than the revenue currently being lost from invisible city markets."
-                  }
-                }
-              ]
-            })
-          }}
-        />
 
         {/* ── LEAD STATS ── */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 my-10 sm:my-14">
@@ -7654,33 +6979,6 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
     content: (
       <>
         {/* ── JSON-LD FAQ SCHEMA ── */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "FAQPage",
-              "mainEntity": [
-                {
-                  "@type": "Question",
-                  "name": "Can a site fully recover from a Google core update?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Yes, a site can fully recover, but it is not automatic, guaranteed, or quick. Recovery requires diagnosing whether the drop was quality-driven, intent-driven, or due to a SERP layout change, followed by making substantive quality improvements. Because Google's core evaluation of your content is relative and broad, full recovery typically materializes when the next core update rolls out and Google re-runs its algorithm against your updated pages."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "How long does it take to recover from a core update drop?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Timelines generally cluster around 3 to 6 months. Substantive content improvements (pruning, consolidating, and enhancing quality) require time to be crawled, and the re-evaluation of site quality signals usually takes effect during the next major core update cycle. YMYL (Your Money or Your Life) sites hold to a higher standard and can take 6 to 12 months to show meaningful recovery."
-                  }
-                }
-              ]
-            })
-          }}
-        />
 
         {/* ── LEAD STATS ── */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 my-10 sm:my-14">
@@ -7926,57 +7224,6 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
     content: (
       <>
         {/* ── JSON-LD FAQ SCHEMA ── */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "FAQPage",
-              "mainEntity": [
-                {
-                  "@type": "Question",
-                  "name": "Why does my business not show up on Google Maps anymore?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "This is usually caused by a hard suspension, which completely removes your profile from Google Maps and Search, or an automated moderation trigger. Google's automated systems frequently flag edits to core business fields like name, address, or categories. To fix this, you must identify the violation, correct the listing data to match official documents, and submit a single reinstatement appeal with a documented evidence package."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "What is the difference between a soft suspension and a hard suspension on GBP?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "A soft suspension leaves your business listing publicly visible on Google Maps and Search, but marks it as suspended in your dashboard, locking you out of editing details, replying to reviews, or posting updates. A hard suspension completely deletes the profile from public search results and Maps. The recovery paths differ, and a hard suspension requires a comprehensive evidence package showing physical storefront indicators."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "What is video verification for Google Business Profile, and what does it require?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "In 2026, Google increasingly mandates video verification to confirm business legitimacy. The video must be recorded in one continuous shot without cuts. It needs to show three things: your location (street signs, nearby landmarks, or building exterior), proof of business operations (vehicles, branded tools, marketing materials, or utility bills), and proof of management access (unlocking the door, accessing the cash register, or opening the backend admin dashboard)."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "Should I delete a suspended Google Business Profile and create a new one?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "No, deleting a suspended profile is a critical error. Google treats creating a new profile to replace a suspended one as evasion, which leads to immediate suspension of the new profile and can result in a permanent ban for your business. You must freeze all edits, stabilize the profile, assemble your evidence, and use the official appeals process to recover the original listing."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "How long does it take for a Google Business Profile suspension to be resolved?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Reinstatement timelines vary significantly by case complexity. Straightforward cases where the business provides a clean license and utility bill can resolve in 3 to 7 days. However, complex cases, service-area reconfigurations, or those requiring manual appeals and video verification often take between 4 to 8 weeks. During this time, you should avoid submitting duplicate appeals as this resets your queue position."
-                  }
-                }
-              ]
-            })
-          }}
-        />
 
         {/* ── LEAD STATS ── */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 my-10 sm:my-14">
@@ -8247,57 +7494,6 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
     content: (
       <>
         {/* ── JSON-LD FAQ SCHEMA ── */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "FAQPage",
-              "mainEntity": [
-                {
-                  "@type": "Question",
-                  "name": "What is a B2B SEO agency?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "A B2B SEO agency is an organic search firm whose entire operating model — methodology, measurement, staffing, and reporting — is built around the structural requirements of B2B buying. This means prioritizing low-volume high-intent keywords over high-volume terms, creating content for 11-person buying committees rather than single buyers, and connecting organic search directly to CRM pipeline and closed-won revenue rather than reporting on traffic and rankings."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "How is a B2B SEO agency different from a generalist SEO agency?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "A B2B SEO agency diverges from generalist agencies across six structural dimensions: buyer behavior (committees vs. individuals), keyword universe (low-volume high-intent vs. high-volume transactional), content strategy (multi-stakeholder depth vs. single-buyer resonance), conversion model (pipeline attribution vs. session-based conversion), measurement framework (CRM-linked revenue vs. traffic dashboards), and sales motion integration (revenue team alignment vs. independent operation). Generalist agencies applying B2C instincts to B2B problems typically produce traffic growth with flat pipeline — the opposite of what B2B operators need."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "What ROI should a B2B company expect from a specialist B2B SEO agency?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "ROI depends on ACV, deal cycle, and competitive density. Mid-market B2B SaaS companies with $25,000+ ACVs and 90-day cycles typically see the clearest returns: a $6,000–$8,000/month specialist engagement often produces 8–14 qualified pipeline opportunities per month by month six, which at median close rates yields a 6:1 to 12:1 first-year return before compounding organic equity in subsequent years."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "How do B2B SEO agencies handle AI search optimization in 2026?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Real B2B SEO specialists build GEO (Generative Engine Optimization) into the standard content and schema workflow — not as an add-on. This includes entity-optimized Organization schema, earned-media placement for third-party citation authority, passage-level content structured for AI retrieval, and citation-share tracking across ChatGPT, Claude, Perplexity, and Google AI Mode. Agencies that treat AI search as a future roadmap item are producing content invisible to the research layer where 51% of B2B buyers now start their vendor evaluations."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "How do I evaluate a B2B SEO agency before signing a contract?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Ask five questions: (1) What percentage of your client roster is B2B — and can you name them? (2) Can you show case studies with pipeline and closed-revenue metrics, not just traffic? (3) How many clients does each strategist handle? (4) What does your CRM pipeline attribution model look like? (5) How do you track AI citation share across the major AI engines? Agencies that answer all five with specifics are B2B specialists. Agencies that answer with generalities are generalists with a B2B services page."
-                  }
-                }
-              ]
-            })
-          }}
-        />
 
         {/* ── QUICK ANSWER ── */}
         <div className="bg-gray-50 border-l-4 border-[#111827] p-5 sm:p-6 my-8 rounded-r-sm">
@@ -8681,49 +7877,6 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
     content: (
       <>
         {/* ── JSON-LD FAQ SCHEMA ── */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "FAQPage",
-              "mainEntity": [
-                {
-                  "@type": "Question",
-                  "name": "How do you differentiate between a Google core update drop and a spam update hit?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "A core update redistributes rankings across an entire domain or topic cluster based on content quality and relevance. A spam update typically causes sharp, page-specific ranking collapses linked to manipulative patterns, such as toxic links or scaled thin content."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "What are the first technical fixes to prioritize during an SEO recovery process?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "You should first prioritize collapsing multi-hop redirect chains to single hops, resolving 5xx server errors, fixing canonicalization conflicts, and aligning sitemaps. Resolving foundation-level technical issues ensures Googlebot can crawl and re-evaluate content updates efficiently."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "How does content pruning and consolidation help in recovering lost organic traffic?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Pruning involves redirecting (301) or removing (deindexing) low-performing, thin, or duplicate pages that drag down the overall quality of the domain. Consolidating this search equity and internal linking toward high-value pages signals topical authority to Google, helping reclaim lost search visibility."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "How long does it take to see traffic recovery after applying these technical and content fixes?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "For a mid-sized site, technical fixes can propagate in Google Search Console coverage reports within 3 weeks, while rewritten content typically shows ranking recovery within 4 to 6 weeks. A complete recovery and traffic lift (such as the 320% recovery documented in this case study) generally takes around 8 to 12 weeks of disciplined execution."
-                  }
-                }
-              ]
-            })
-          }}
-        />
 
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8 font-medium">
           How do you restore rankings after a core algorithm drop? This SEO case study traffic recovery breakdown details how we diagnosed and reversed a severe organic traffic collapse after Google's March 2026 update. Read our step-by-step diagnostic sequence to learn how we secured a 320% organic traffic lift.
@@ -9183,65 +8336,6 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
     content: (
       <>
         {/* ── JSON-LD FAQ SCHEMA ── */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "FAQPage",
-              "mainEntity": [
-                {
-                  "@type": "Question",
-                  "name": "What is brand entity extraction?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Brand entity extraction is the process by which search engines and AI models identify your brand as a distinct, machine-readable entity — a node with stable identity, attributes, and relationships — rather than a loose string of keywords. Extraction quality determines whether you appear in knowledge panels, AI Overviews, and LLM recommendations."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "What is perception drift in a knowledge graph?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Perception drift is the gradual divergence between how your brand actually operates and how the graphs describe it. Stale directories, old press, unclaimed open-data records, and conflicting profiles accumulate until Google, Bing, or an LLM attributes the wrong category, services, locations, or leadership to your entity."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "Does schema markup alone fix entity problems?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "No. Schema is a declaration, and graphs are built to be skeptical of declarations. Your structured data must be corroborated by consistent third-party signals — directories, press, reviews, Wikidata, verified profiles — before the graph promotes your declared attributes to facts. Markup without corroboration is routinely ignored."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "How long does it take to correct perception drift?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Google and Bing entity records typically reconcile over weeks to a few months as recrawls confirm consistent signals. LLM parametric knowledge updates on model release cycles, which is why the retrieval layer — fresh, extractable pages and current third-party coverage in the 30–90 day citation window — is the fastest lever for changing what AI answers say today."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "Which knowledge graphs actually matter for a commercial brand?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Four: Google's Knowledge Graph (Search, AI Overviews, Gemini), Microsoft's Bing entity graph (Bing, Copilot, and ChatGPT's search layer), Wikidata and the open graphs many systems reconcile against, and the internal representations inside the LLMs themselves. They disagree more than most marketers expect, so each needs its own audit."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "How do I check what AI models currently believe about my brand?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Query your brand name and your core commercial topics in ChatGPT, Gemini, Claude, and Perplexity separately — with and without web search enabled — and screenshot the answers and cited sources. Pull your record from Google's Knowledge Graph Search API and review your Wikidata entry. The gaps between those answers are your drift map."
-                  }
-                }
-              ]
-            })
-          }}
-        />
 
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8 font-medium">
           Search engines and AI models don't rank your brand — they reconstruct it. When that reconstruction goes stale or wrong, you lose citations, knowledge panels, and AI recommendations to competitors whose entity data is cleaner. Here's how extraction actually works, how drift sets in, and how to correct it.
@@ -9598,73 +8692,6 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
     content: (
       <>
         {/* ── JSON-LD FAQ SCHEMA ── */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "FAQPage",
-              "mainEntity": [
-                {
-                  "@type": "Question",
-                  "name": "What should a complete dental SEO package include?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "A full dental SEO engagement should cover six functional areas: local SEO for dentists, Google Business Profile (GBP) optimization, on-page content (service pages, city pages, FAQs), technical fixes (site speed, schema markup, mobile performance), backlink acquisition, and conversion rate optimization. Each area should come with concrete deliverables (e.g., GBP setup or audit, a specified number of content pages per month, and a structured technical audit with a prioritized fix list)."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "What are common red flags when evaluating a dental SEO agency?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Vague language about “SEO” without naming monthly deliverables is a key red flag, as is polished sales copy promising first-page rankings with no evidence. Long-term contracts, difficulty retrieving website files when you leave, and templated campaign approaches are also warning signs — remember: No deliverable, no accountability."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "How should I evaluate a dental SEO agency before signing a contract?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Apply a consistent diagnostic lens across scope, evidence, pricing, and contract terms and insist on written, specific deliverables for each functional area. Ask for audit reports, examples of multi-location work, GBP cadence, and clear performance KPIs before committing."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "How is dental SEO different from general SEO?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Dental SEO focuses on hyper-local intent and transactional queries (e.g., “dental implants Los Angeles” or “dentist near me”), so it prioritizes GBP expertise, citation consistency, and localized content that drives bookings. Generalist SEO firms often optimize for traffic, while dental digital marketing optimizes for the chair; see B2B SEO Agency vs. Generalist: The Vital Difference for context on specialization."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "Do I need Google Business Profile (GBP) optimization for my dental practice?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Yes — GBP is critical for patients ready to book and should be a core deliverable. GBP work should include profile setup or audit, category selection, photo optimization, a post cadence, Q&A management, and tracked call activity to measure patient leads."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "Should I add conversion rate optimization (CRO) or paid ads to my dental SEO package?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "CRO is highly recommended because better conversion ensures SEO-driven traffic becomes booked appointments; typical CRO deliverables include landing page improvements, click-to-call placement, booking form testing, and trust signals like review displays and doctor bios. Adding pay-per-click management makes sense for new practices, highly competitive markets, or any situation needing patient volume quickly while organic rankings build over the next 6–12 months."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "How should multi-location dental practices handle SEO?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Each location needs its own verified Google Business Profile (GBP), a unique location page with distinct content, and its own local citation footprint to avoid diluting rankings. Treating multiple locations with a single merged strategy usually weakens performance for every location rather than strengthening any of them."
-                  }
-                }
-              ]
-            })
-          }}
-        />
 
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8 font-medium">
           Choosing the right dental SEO agency requires a strict framework for evaluation. Many practices sign lengthy contracts based on polished sales decks, only to receive zero transparent deliverables. If you are currently evaluating a dental SEO agency, the metrics and contract safeguards you demand before signing will determine your ultimate search visibility and patient booking volume.

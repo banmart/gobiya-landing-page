@@ -326,11 +326,6 @@ export default function CategoryPage({ category }: CategoryPageProps) {
           .cat-cards-grid { grid-template-columns: repeat(2, 1fr); }
         }
       `}</style>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
-        '@context': 'https://schema.org',
-        '@type': 'FAQPage',
-        mainEntity: cfg.faqs.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
-      }) }} />
       <SiteHeader />
 
       {/* Hero — fullscreen video on desktop, native 16:9 on mobile (video is 16:9; a 9:16 viewport would crop it to a sliver) */}

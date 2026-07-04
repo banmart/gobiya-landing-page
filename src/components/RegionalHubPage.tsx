@@ -558,7 +558,6 @@ const RegionalHubPage: React.FC<RegionalHubPageProps> = ({ region }) => {
     const existingScript = document.querySelector('script[data-regional-schema]');
     if (existingScript) existingScript.remove();
     const script = document.createElement('script');
-    script.type = 'application/ld+json';
     script.setAttribute('data-regional-schema', 'true');
     script.textContent = JSON.stringify(data.schemaJson);
     document.head.appendChild(script);

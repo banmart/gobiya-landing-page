@@ -115,45 +115,7 @@ const STATS = [
   { val: '90%+', label: 'Cost reduction vs. traditional production' },
 ];
 
-// ── Schema ───────────────────────────────────────────────────────────────────
-const SCHEMA = {
-  '@context': 'https://schema.org',
-  '@graph': [
-    {
-      '@type': ['LocalBusiness', 'ProfessionalService'],
-      '@id': 'https://www.gobiya.com/#organization',
-      name: 'Gobiya',
-      url: 'https://www.gobiya.com',
-      telephone: '(323) 744-1338',
-      email: 'hello@gobiya.com',
-      address: {
-        '@type': 'PostalAddress',
-        streetAddress: '3580 Wilshire Blvd, Ste 132',
-        addressLocality: 'Los Angeles',
-        addressRegion: 'CA',
-        postalCode: '90010',
-        addressCountry: 'US',
-      },
-    },
-    {
-      '@type': 'Service',
-      name: 'AI Video Production Los Angeles',
-      serviceType: 'AI Video Production',
-      provider: { '@id': 'https://www.gobiya.com/#organization' },
-      description: 'AI-generated video ads for YouTube pre-roll, Amazon Prime, Paramount+, and social media. Veo 3 video generation, AI scriptwriting, and text-to-voice production in Los Angeles.',
-      url: 'https://www.gobiya.com/creativity/ai-videos-agency',
-      areaServed: { '@type': 'City', name: 'Los Angeles', sameAs: 'https://www.wikidata.org/wiki/Q65' },
-    },
-    {
-      '@type': 'FAQPage',
-      mainEntity: FAQS.map(f => ({
-        '@type': 'Question',
-        name: f.q,
-        acceptedAnswer: { '@type': 'Answer', text: f.a },
-      })),
-    },
-  ],
-};
+
 
 // ── Sub-components ───────────────────────────────────────────────────────────
 function FaqItem({ q, a }: { q: string; a: string }) {
@@ -252,7 +214,6 @@ function VideoCard({ video, index }: { video: typeof VIDEOS[0]; index: number })
 export default function AiVideosPage() {
   return (
     <div className="min-h-screen bg-white font-sans">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(SCHEMA) }} />
       <SiteHeader />
 
       {/* ── HERO ── */}

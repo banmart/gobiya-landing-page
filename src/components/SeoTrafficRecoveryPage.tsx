@@ -82,7 +82,6 @@ export default function SeoTrafficRecoveryPage() {
 
   return (
     <div className="min-h-screen bg-white font-sans">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       <SiteHeader />
 

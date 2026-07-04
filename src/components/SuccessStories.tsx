@@ -135,64 +135,8 @@ const SuccessStories: React.FC = () => {
         </div>
 
         {/* ── BREADCRUMB SCHEMA ── */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "BreadcrumbList",
-              "itemListElement": [
-                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.gobiya.com/" },
-                { "@type": "ListItem", "position": 2, "name": "Case Studies", "item": "https://www.gobiya.com/case-studies" }
-              ]
-            })
-          }}
-        />
 
         {/* ── FAQ SCHEMA ── */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "FAQPage",
-              "mainEntity": [
-                {
-                  "@type": "Question",
-                  "name": "What kind of SEO results does Gobiya produce?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Gobiya's case studies show measurable outcomes including traffic recovery after Google algorithm updates, local 3-Pack rankings for competitive service categories, and pipeline growth from organic search. Results are reported at the query and position level — not just aggregate traffic numbers. Every case study discloses what was built, why it was built, and what ranking or pipeline movement resulted."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "What industries does Gobiya have SEO case studies for?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Gobiya has documented case studies across industries including dental and medical practices, professional services, B2B SaaS, local service businesses, and e-commerce. Case studies cover both local SEO (map pack visibility and Google Business Profile recovery) and B2B organic search (pipeline attribution and buying committee content programs)."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "How does Gobiya measure SEO success?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Gobiya measures success in pipeline and closed revenue — not just traffic and keyword rankings. Every organic search program is connected to CRM data so results can be traced to qualified meetings and closed-won deals. Traffic without pipeline attribution is treated as a vanity metric, not a success signal."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "How long did it take Gobiya to produce SEO results for clients?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Timeline varies by starting point and competitive category. Technical fixes (redirect cleanup, schema implementation, Core Web Vitals) typically produce measurable ranking changes within 30–60 days. Content programs and authority building take 90–180 days for significant organic traffic growth. Local SEO map pack improvements are often visible within 30–90 days when review velocity and GBP optimization are addressed together."
-                  }
-                }
-              ]
-            })
-          }}
-        />
 
         {/* ── FULL-BLEED OVERLAY ── */}
         <div className="relative w-full flex items-end" style={{ minHeight: '80vh', backgroundColor: '#0d0d0d' }}>
