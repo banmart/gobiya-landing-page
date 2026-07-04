@@ -142,7 +142,7 @@ const ARTICLES: Record<string, ArticleData> = {
           Manual tracking is the right start, but at 50+ prompts across four engines on a weekly cadence, it becomes real overhead that eats your team's time. That's the point to consider an <strong>AI citation-tracking tool</strong>. A category of these now exists, purpose-built to run hundreds of prompts across ChatGPT, Claude, Perplexity, Gemini, and Google AI Overviews automatically and log which URLs get cited, how often, with what sentiment, and how your share of voice compares to competitors.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Entry-level options start around $29/month; enterprise platforms go much higher and add GA4/revenue integration. What a tool buys you over the manual method: scale (hundreds of prompts, daily/weekly, without manual labor), consistency (the same prompt set tracked over time for reliable trends), competitor benchmarking (share-of-voice math done for you), and the "used vs. cited" distinction surfaced automatically. The honest guidance on timing: a seed-stage startup can and should start manual; graduate to a tool once you're tracking enough prompts and platforms that manual measurement is stealing time from actually <em>improving</em> the content. The tool measures the problem; it doesn't fix it. For details on how we apply such approaches natively into CRMs, see our <a href="/insights/automated-b2b-sales-pipeline-seo" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">B2B sales pipeline automation guide</a>.
+          Entry-level options start around $29/month; enterprise platforms go much higher and add GA4/revenue integration. What a tool buys you over the manual method: scale (hundreds of prompts, daily/weekly, without manual labor), consistency (the same prompt set tracked over time for reliable trends), competitor benchmarking (share-of-voice math done for you), and the "used vs. cited" distinction surfaced automatically. The honest guidance on timing: a seed-stage startup can and should start manual; graduate to a tool once you're tracking enough prompts and platforms that manual measurement is stealing time from actually <em>improving</em> the content. The tool measures the problem; it doesn't fix it. For details on how we apply such approaches natively into CRMs, see our <a href="/insights/b2b-sales-pipeline-automation" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">B2B sales pipeline automation guide</a>.
         </p>
 
         <h2 id="metrics" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
@@ -1206,7 +1206,7 @@ timestamp: string   # Optional: ISO-8601 modification date
           The decoupling became impossible to ignore during 2025 and 2026. Three forces converged. First, Google's AI Overviews and AI Mode launched and matured, compressing click-through rates on informational queries. Second, B2B buyers shifted research into ChatGPT, Claude, Perplexity, and Gemini — G2's April 2026 survey placed 51 percent of B2B software buyers starting research in an AI chatbot rather than a search engine. Third, the AI engines began citing pages that weren't necessarily the highest-ranking ones on Google.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          The combined effect is that two B2B sites in the same category can post very different traffic profiles and very similar pipeline numbers. This is precisely why an <a href="/insights/automated-b2b-sales-pipeline-seo" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">AI-driven B2B sales pipeline SEO strategy</a> has to account for citation share across AI platforms — not just Google rankings — to accurately reflect where pipeline actually originates.
+          The combined effect is that two B2B sites in the same category can post very different traffic profiles and very similar pipeline numbers. This is precisely why an <a href="/insights/b2b-sales-pipeline-automation" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">AI-driven B2B sales pipeline SEO strategy</a> has to account for citation share across AI platforms — not just Google rankings — to accurately reflect where pipeline actually originates.
         </p>
 
         {/* ── SECTION: Cost ── */}
@@ -1229,7 +1229,7 @@ timestamp: string   # Optional: ISO-8601 modification date
           A credible program starts with a traffic-composition audit, not a content calendar. The audit segments existing organic traffic by source (Google search, AI engines individually, direct, referral, branded vs non-branded), by intent type, and by buyer role engagement. The goal is to map the actual revenue topology of the organic channel — not the aggregate session count, but the underlying signal of which content, from which surface, reaching which role, actually produces revenue.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Content production prioritizes the surfaces and intent types the audit identified as revenue-producing. Content for informational top-of-funnel queries gets reduced or eliminated when the audit shows it doesn't connect to pipeline. The same composition-first thinking applies directly to <a href="/insights/automated-lead-generation-seo" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">automated lead generation SEO</a> — the traffic isn't the goal; the shape of the traffic determines whether the lead gen program has anything to work with.
+          Content production prioritizes the surfaces and intent types the audit identified as revenue-producing. Content for informational top-of-funnel queries gets reduced or eliminated when the audit shows it doesn't connect to pipeline. The same composition-first thinking applies directly to <a href="/insights/b2b-sales-pipeline-automation" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">automated lead generation SEO</a> — the traffic isn't the goal; the shape of the traffic determines whether the lead gen program has anything to work with.
         </p>
 
         <div className="bg-gray-50 border-l-4 border-[#111827] p-6 sm:p-8 my-10">
@@ -2187,7 +2187,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           Why Gobiya is positioned differently for B2B entity verification
         </h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8 font-medium">
-          Gobiya is positioned differently for B2B entity verification because we treat LLM visibility as a database integrity and code engineering challenge rather than a standard content play. We start by auditing and aligning your brand's digital footprints across Wikidata, LinkedIn, Crunchbase, and G2, locating the precise data conflicts that trigger model silence. On your site, we implement deep organization schema graphs using explicit sameAs attributes to establish machine-readable connections. Our work is guided by EAV-E (Entity, Attribute, Value, Evidence) framing and an empirical understanding of how different engines weight sources. By measuring citation share across ChatGPT, Claude, Gemini, and Perplexity via our <a href="/capabilities/generative-engine-optimization" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">Generative Engine Optimization service</a>, we help brands align their <a href="/insights/automated-b2b-sales-pipeline-seo" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">B2B sales pipeline SEO</a> to move from complete AI invisibility to consistent, authoritative citations.
+          Gobiya is positioned differently for B2B entity verification because we treat LLM visibility as a database integrity and code engineering challenge rather than a standard content play. We start by auditing and aligning your brand's digital footprints across Wikidata, LinkedIn, Crunchbase, and G2, locating the precise data conflicts that trigger model silence. On your site, we implement deep organization schema graphs using explicit sameAs attributes to establish machine-readable connections. Our work is guided by EAV-E (Entity, Attribute, Value, Evidence) framing and an empirical understanding of how different engines weight sources. By measuring citation share across ChatGPT, Claude, Gemini, and Perplexity via our <a href="/capabilities/generative-engine-optimization" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">Generative Engine Optimization service</a>, we help brands align their <a href="/insights/b2b-sales-pipeline-automation" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">B2B sales pipeline SEO</a> to move from complete AI invisibility to consistent, authoritative citations.
         </p>
         </div>
 
@@ -2467,7 +2467,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           </li>
           <li className="flex items-start gap-3 text-[16px] sm:text-[17px] leading-[1.6] text-gray-800">
             <span className="mt-1.5 w-2 h-2 rounded-full bg-[#111827] shrink-0" />
-            <span><strong>Organizations in competitive B2B categories</strong> — should pursue both in sequence. In crowded categories, both clean entity resolution and strong generative citation are competitive necessities. This aligns with modern strategies for <a href="/insights/how-do-b2b-companies-use-seo-to-generate-predictable-revenue" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">generating predictable revenue</a> and <a href="/insights/automated-b2b-sales-pipeline-seo" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">automated B2B sales pipeline SEO</a>.</span>
+            <span><strong>Organizations in competitive B2B categories</strong> — should pursue both in sequence. In crowded categories, both clean entity resolution and strong generative citation are competitive necessities. This aligns with modern strategies for <a href="/insights/how-do-b2b-companies-use-seo-to-generate-predictable-revenue" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">generating predictable revenue</a> and <a href="/insights/b2b-sales-pipeline-automation" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">automated B2B sales pipeline SEO</a>.</span>
           </li>
         </ul>
 
@@ -3726,1065 +3726,6 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
       </>
     ),
   },
-  'automated-b2b-sales-pipeline-seo': {
-    slug: 'automated-b2b-sales-pipeline-seo',
-    title: 'B2B Sales Pipeline Automation: AI Citations',
-    category: 'Strategy',
-    readTime: '12 min read',
-    date: 'May 25, 2026',
-    image: 'https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=1200&q=80',
-    heroAlt: 'Abstract data-flow visualization representing an automated B2B sales pipeline powered by AI-driven SEO',
-    metaDescription: 'Integrate B2B sales pipeline automation with search intent. Learn how AI citation share decides who gets on the buyer shortlist.',
-    content: (
-      <>
-        {/* ── LEAD STATS ── */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 my-10 sm:my-14">
-          {[
-            { stat: '73%', label: 'B2B buyers using AI tools in vendor research', source: 'Averi, March 2026' },
-            { stat: '51%', label: 'B2B software buyers starting research in an AI chatbot', source: 'G2, April 2026' },
-            { stat: '5.1×', label: 'AI search conversion rate advantage over Google organic', source: 'SE Ranking 2026' },
-          ].map(({ stat, label, source }) => (
-            <div key={stat} className="border border-gray-200 bg-gray-50 p-6">
-              <p className="text-4xl font-bold text-[#2E8C68] mb-2 font-display">{stat}</p>
-              <p className="text-[14px] text-gray-900 leading-snug mb-1">{label}</p>
-              <p className="text-[11px] uppercase tracking-wider text-gray-500">{source}</p>
-            </div>
-          ))}
-        </div>
-
-        {/* ── TABLE OF CONTENTS ── */}
-        <details className="bg-gray-50 border border-gray-200 rounded-lg p-6 sm:p-8 my-10 sm:my-14 group" open>
-          <summary className="text-[14px] font-semibold uppercase tracking-wider text-gray-500 cursor-pointer list-none flex items-center justify-between">
-            Table of Contents
-            <svg className="w-4 h-4 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" /></svg>
-          </summary>
-          <ul className="mt-6 space-y-3.5 text-[15px] font-medium text-gray-900 border-t border-gray-200 pt-6">
-            {[
-              { id: 'b2b-pipeline-seo-does', label: 'What automated B2B sales pipeline SEO actually does' },
-              { id: 'ai-citation-framework', label: 'How the AI citation framework shapes your pipeline outcome' },
-              { id: 'cost-of-invisibility', label: 'The cost of invisibility most operators overlook' },
-              { id: 'how-it-works', label: 'How automated B2B sales pipeline SEO works — from query to captured pipeline' },
-              { id: 'legitimate-automation', label: 'What separates legitimate automation from a marketing claim' },
-              { id: 'clearest-return', label: 'Which B2B motions get the clearest return' },
-              { id: 'making-right-call', label: 'Making the right call for your pipeline' },
-            ].map(({ id, label }) => (
-              <li key={id} className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#111827] shrink-0" />
-                <a href={`#${id}`} className="hover:text-gray-900 transition-colors">{label}</a>
-              </li>
-            ))}
-          </ul>
-        </details>
-
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
-          How does B2B sales pipeline automation connect to search visibility? Today, B2B buyers ask ChatGPT for recommendations before visiting a site. If your search footprint is not structured for AI retrieval, your business will miss the shortlist. Let's look at how AI citation share shapes your sales pipeline automation.
-        </p>
-
-        <div className="border-l-4 border-[#111827] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
-          <img src="/images/steve-portrait-thumb.webp" alt="Steve Martin" width="48" height="48" loading="lazy" className="w-12 h-12 object-cover rounded-full border border-white/10 shrink-0" />
-          <div>
-            <p className="text-[12px] uppercase tracking-wider text-[#2E8C68] font-semibold mb-1 font-sans">Steve's Take</p>
-            <p className="text-[15px] italic text-white leading-relaxed font-sans">
-              "B2B buying committees don't browse the web anymore to make their shortlist. They let AI models do the comparison. If your content doesn't supply clean RAG snippets, you don't even make the longlist."
-            </p>
-          </div>
-        </div>
-
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
-          This is the problem an automated B2B sales pipeline SEO approach solves. The strongest B2B operators have rebuilt
-          their content and prospecting workflows around how AI systems retrieve, cite, and recommend vendors. Most
-          companies don't find out their pipeline is structurally invisible to AI until an entire quarter of inbound dries
-          up — while their Google rankings still look fine.
-        </p>
-
-        {/* ── INLINE CTA (interlinking to lead-generation) ── */}
-        <div className="bg-gray-900 text-white p-6 sm:p-8 my-10 sm:my-14 flex flex-col sm:flex-row items-start sm:items-center gap-6">
-          <div className="flex-1">
-            <p className="text-[12px] uppercase tracking-wider text-[#d1f851] font-semibold mb-2">Gobiya Service</p>
-            <p className="text-[17px] sm:text-[19px] font-medium leading-snug">
-              Build a predictable B2B pipeline with AI-aware prospecting systems.
-            </p>
-          </div>
-          <a
-            href="/services/lead-generation"
-            className="group flex items-center bg-[#d1f851] hover:bg-[#c3ea45] text-[#111827] pl-5 pr-2 py-2 transition-colors duration-300 whitespace-nowrap shrink-0"
-          >
-            <span className="text-[13px] font-medium mr-3">B2B Pipeline Architecture</span>
-            <div className="w-6 h-6 bg-white flex items-center justify-center">
-              <ArrowRight className="w-3.5 h-3.5 text-[#111827] transition-transform duration-300 group-hover:-rotate-45" />
-            </div>
-          </a>
-        </div>
-
-        {/* ── SECTION 1 ── */}
-        <h2 id="b2b-pipeline-seo-does" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
-          What automated B2B sales pipeline SEO actually does
-        </h2>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Traditional B2B SEO targets keywords and links. The content team writes a blog post, the SEO team builds
-          backlinks, and the page ranks for a query a buyer might type into Google. That worked when the buyer journey
-          started with a search box and ended on a results page. It works less well now that more than half of B2B software
-          buyers begin their research inside an AI chatbot — and that AI chatbot synthesises the answer rather than handing
-          them ten links to click.
-        </p>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Automated B2B sales pipeline SEO adds a layer of operational logic on top of{' '}
-          <a href="/services/seo" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">
-            traditional SEO
-          </a>
-          . The system identifies which questions buyers actually ask AI tools at each stage of the pipeline, produces
-          content engineered to be extracted and cited by those tools, monitors which third-party sources the AI engines
-          trust in the category, and feeds prospecting workflows with the accounts already exhibiting research-stage intent.
-        </p>
-
-        {/* ── PULL QUOTE ── */}
-        <blockquote className="border-l-4 border-[#111827] pl-6 sm:pl-8 my-10 sm:my-14">
-          <p className="text-[18px] sm:text-[22px] font-medium leading-[1.5] text-gray-900 italic">
-            "It's not about publishing more posts. It's about making sure the right content is retrievable by the right
-            system at the moment a buyer is forming an opinion."
-          </p>
-        </blockquote>
-
-        <h3 className="text-[18px] sm:text-[20px] font-medium text-gray-900 mt-10 mb-4">
-          Why publishing volume alone isn't enough for AI citation
-        </h3>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Publishing handles the first pass: more pages, more topical coverage, more chances to be indexed. But indexing is
-          not citation. AI assistants don't cite pages because they exist — they cite pages that match a specific question
-          with a clean, self-contained answer, are reinforced by third-party sources the model already trusts, and are
-          recent enough to clear the freshness threshold the model applies to time-sensitive topics.
-        </p>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
-          Volume-only SEO is not sufficient for AI citation eligibility. Entity association across third-party publications
-          is the layer that makes a vendor citable and trustable. Without that earned-media footprint, you have a larger
-          website — not a more retrievable one.
-        </p>
-
-        {/* ── SECTION 2 ── */}
-        <h2 id="ai-citation-framework" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
-          How the AI citation framework shapes your pipeline outcome
-        </h2>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          AI assistants operate under a retrieval-and-trust framework. Vendors with weak entity association, thin
-          third-party coverage, and stale content receive lower citation priority than vendors with clear answers, recent
-          updates, and earned-media presence on the sources each platform tends to trust.
-        </p>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Forrester's 2026 Buyers' Journey Survey of nearly 18,000 global buyers found generative AI and conversational
-          search are now named as the most meaningful research source — outranking vendor websites, product experts, and
-          sales representatives. A separate Moz analysis of 40,000 queries found that{' '}
-          <strong className="font-semibold text-gray-900">88% of Google AI Mode citations do not appear in the organic top ten results</strong>.
-          The implication is direct: the page that ranks #3 on Google may not be the page the AI cites.
-        </p>
-
-        {/* ── COST SECTION ── */}
-        <h2 id="cost-of-invisibility" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
-          The cost of invisibility most operators overlook
-        </h2>
-        <div className="bg-[#f7f7f7] border border-gray-200 p-6 sm:p-10 my-8">
-          <h3 className="text-[15px] uppercase tracking-wider font-semibold text-gray-500 mb-6">U.S. B2B Lead Cost Benchmarks — 2026</h3>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-            {[
-              { label: 'Average qualified B2B lead', value: '$198' },
-              { label: 'Healthcare technology lead', value: '$400+' },
-              { label: 'Enterprise software lead', value: '$440+' },
-            ].map(({ label, value }) => (
-              <div key={label} className="flex flex-col">
-                <span className="text-3xl font-bold text-gray-900 mb-1">{value}</span>
-                <span className="text-[13px] text-gray-600 leading-snug">{label}</span>
-              </div>
-            ))}
-          </div>
-          <p className="text-[12px] text-gray-500 mt-6 leading-relaxed border-t border-gray-200 pt-4">
-            <strong>Note:</strong> Cost-per-qualified-lead benchmarks vary by industry, ACV, and geography. These figures reflect U.S. B2B SaaS averages reported across multiple 2026 industry analyses. Verify against your own pipeline data before making budget decisions.
-          </p>
-        </div>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          If 51% of buyers start in an AI chatbot and 69% change their planned vendor based on AI guidance, then the vendor
-          that isn't cited has already lost the deal before the SDR sequence begins. A team running a $30,000-per-month{' '}
-          <a href="/services/lead-generation" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">
-            outbound program
-          </a>{' '}
-          is buying roughly 150 qualified meetings at the upper end. If even 30% of target accounts have already shortlisted
-          competitors via AI before the first cold email lands, that's the equivalent of paying for a sequence sent to
-          prospects who already have a different vendor on their evaluation list.
-        </p>
-
-        {/* ── SECTION 3 ── */}
-        <h2 id="how-it-works" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
-          How automated B2B sales pipeline SEO works — from query to captured pipeline
-        </h2>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          When a buyer asks an AI assistant a vendor-research question, the model runs retrieval against its training data
-          and live web index. Sources are weighted by authority, third-party validation, freshness, and answer-extractability.
-          The model assembles a shortlist of cited vendors within seconds. That shortlist is what the buyer takes into the
-          next stage.
-        </p>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          AI search traffic converts at <strong className="font-semibold text-gray-900">14.2%</strong> compared with 2.8%
-          for Google organic, and that traffic spends 68% more time on the site (SE Ranking, 2026). Some operators integrate
-          intent-signal capture directly into the workflow, surfacing visiting accounts to sales in near real time.
-        </p>
-
-        <h3 className="text-[18px] sm:text-[20px] font-medium text-gray-900 mt-10 mb-4">
-          How automated lead generation SEO connects to outbound prospecting
-        </h3>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          The same content infrastructure that earns AI citations also feeds outbound. When AI-cited content surfaces an
-          account, the visit can be matched to a firmographic profile and routed to the SDR queue with full context. This is
-          the bridge between <a href="/insights/automated-lead-generation-seo" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">automated lead generation SEO</a> and <a href="/insights/outbound-seo-prospecting" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">outbound SEO prospecting</a>. The page does the discovery work. The
-          intent signal does the routing work. The SDR's first touch becomes a response to a known research session, not a
-          cold start.
-        </p>
-
-        {/* ── DATA TABLE ── */}
-        <h2 id="citation-problem" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
-          The citation problem by the numbers
-        </h2>
-        <div className="overflow-x-auto my-8">
-          <table className="w-full border-collapse text-[14px] sm:text-[15px]">
-            <thead>
-              <tr className="bg-gray-900 text-white">
-                <th className="text-left px-4 py-3 font-semibold text-[12px] uppercase tracking-wider">Finding</th>
-                <th className="text-left px-4 py-3 font-semibold text-[12px] uppercase tracking-wider">Stat</th>
-                <th className="text-left px-4 py-3 font-semibold text-[12px] uppercase tracking-wider">Source</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-gray-200">
-              {[
-                ['B2B buyers start research in AI chatbot', '51%', 'G2, April 2026'],
-                ['Changed planned vendor based on AI guidance', '69%', 'G2, April 2026'],
-                ['Bought from a vendor never heard of before AI surfaced it', '33%', 'G2, April 2026'],
-                ['Think more highly of a vendor when AI mentions them', '85%', 'G2, April 2026'],
-                ['Non-paid AI citations from earned media sources', '85%+', 'Muck Rack analysis'],
-                ['Google AI Mode citations NOT in organic top 10', '88%', 'Moz analysis, 40k queries'],
-              ].map(([finding, stat, source]) => (
-                <tr key={finding as string} className="even:bg-gray-50">
-                  <td className="px-4 py-3 text-gray-800 leading-snug">{finding}</td>
-                  <td className="px-4 py-3 font-bold text-[#2E8C68] whitespace-nowrap">{stat}</td>
-                  <td className="px-4 py-3 text-gray-500 whitespace-nowrap text-[13px]">{source}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-
-        {/* ── GEO CTA ── */}
-        <div className="bg-gray-900 text-white p-6 sm:p-8 my-10 sm:my-14 flex flex-col sm:flex-row items-start sm:items-center gap-6">
-          <div className="flex-1">
-            <p className="text-[12px] uppercase tracking-wider text-[#d1f851] font-semibold mb-2">Related Service</p>
-            <p className="text-[17px] sm:text-[19px] font-medium leading-snug">
-              Get cited by ChatGPT, Claude, Perplexity, and Gemini — not just Google.
-            </p>
-          </div>
-          <a
-            href="/services/geo-optimization"
-            className="group flex items-center bg-[#d1f851] hover:bg-[#c3ea45] text-[#111827] pl-5 pr-2 py-2 transition-colors duration-300 whitespace-nowrap shrink-0"
-          >
-            <span className="text-[13px] font-medium mr-3">Generative Engine Optimization</span>
-            <div className="w-6 h-6 bg-white flex items-center justify-center">
-              <ArrowRight className="w-3.5 h-3.5 text-[#111827] transition-transform duration-300 group-hover:-rotate-45" />
-            </div>
-          </a>
-        </div>
-
-        {/* ── SECTION 4 ── */}
-        <h2 id="legitimate-automation" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
-          What separates legitimate automation from a marketing claim
-        </h2>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Not every <a href="/insights/best-seo-agency-for-b2b-brands" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">agency</a> or platform calling itself "AI SEO" operates at the same standard. Start with measurement. Ask
-          any prospective vendor what they track. If the only metrics they report are Google rankings, organic clicks, and
-          domain authority, they are not running AI-aware pipeline SEO — they are running classical{' '}
-          <a href="/services/seo" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">
-            SEO
-          </a>{' '}
-          with a new label.
-        </p>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-4">Real programs track:</p>
-        <ul className="space-y-3 mb-8 pl-0">
-          {[
-            'AI citation share across ChatGPT, Claude, Perplexity, and Gemini',
-            'Third-party sources cited in AI answers for your category',
-            'Referral traffic from AI platforms (all four pass identifiable referrer signals)',
-            'robots.txt access for GPTBot, ClaudeBot, PerplexityBot, and Google-Extended',
-            'Scheduled freshness updates on revenue-tied pages (AI citations skew toward content updated in the last 30–90 days)',
-            'Earned-media or digital-PR motion — over 85% of non-paid AI citations originate from earned media sources',
-          ].map((item) => (
-            <li key={item} className="flex items-start gap-3 text-[16px] sm:text-[17px] leading-[1.6] text-gray-800">
-              <span className="mt-1.5 w-2 h-2 rounded-full bg-[#111827] shrink-0" />
-              {item}
-            </li>
-          ))}
-        </ul>
-
-        {/* ── B2B MOTION CARDS ── */}
-        <h2 id="clearest-return" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
-          Which B2B motions get the clearest return
-        </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
-          {[
-            {
-              title: 'Product-Led Growth SaaS',
-              body: 'Buyers who arrive from an AI-cited shortlist convert into trials at materially higher rates than paid-acquisition traffic, and the time-to-value compression compounds quarter over quarter.',
-              link: '/services/geo-optimization',
-              linkLabel: 'Explore GEO',
-            },
-            {
-              title: 'Enterprise & High-ACV Platforms',
-              body: 'Procurement teams research independently in different AI tools. A vendor that wins ChatGPT but is invisible in Claude may be missing the developer audience that decides whether the deal moves to commercial review.',
-              link: '/services/seo',
-              linkLabel: 'Explore SEO',
-            },
-            {
-              title: 'Outsourced Services Firms',
-              body: '<a href="/insights/b2b-seo-agency" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">Agencies</a> and consultancies benefit most from earned-media-led citation strategies, because their categories are saturated with self-promotional content that AI engines have learned to deprioritise.',
-              link: '/services/lead-generation',
-              linkLabel: 'Explore lead gen',
-            },
-            {
-              title: 'B2B Marketplaces & Platform Plays',
-              body: 'Need category-defining content that AI engines can use to map the category itself — since the platform\'s value depends on being cited as the answer to "where do I find providers in this space?"',
-              link: '/approach',
-              linkLabel: 'Our approach',
-            },
-          ].map(({ title, body, link, linkLabel }) => (
-            <div key={title} className="border border-gray-200 p-6 hover:border-gray-400 transition-colors duration-300 group">
-              <h3 className="text-[16px] font-semibold text-gray-900 mb-3">{title}</h3>
-              <p className="text-[14px] text-gray-700 leading-relaxed mb-4">{body}</p>
-              <a href={link} className="inline-flex items-center gap-2 text-[12px] uppercase tracking-wider font-semibold text-[#2E8C68] group-hover:gap-3 transition-all duration-300">
-                {linkLabel} <ArrowRight className="w-3 h-3" />
-              </a>
-            </div>
-          ))}
-        </div>
-
-        {/* ── CONCLUSION ── */}
-        <h2 id="making-right-call" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
-          Making the right call for your pipeline
-        </h2>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          B2B operators still running ranking-first SEO are watching organic traffic erode while their rankings stay stable,
-          and watching outbound reply rates flatten while their target accounts quietly shortlist competitors in AI tools
-          the SDR team never sees. Transitioning to a unified model of <a href="/insights/b2b-sales-pipeline-automation" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">B2B sales pipeline automation</a> isn't about chasing a new acronym. It's
-          about operating an orchestrated program that the systems your buyers actually use will surface.
-        </p>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Two decisions matter most. First: whether your current{' '}
-          <a href="/services/seo" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">
-            SEO and content program
-          </a>{' '}
-          produces output that AI engines retrieve and cite, or output that only Google indexes. Second: whether the team
-          running the program tracks the right signals — citation share, earned-media footprint, AI referral traffic,
-          intent-routed outbound — or only the legacy metrics that no longer correlate with pipeline.
-        </p>
-
-        {/* ── FINAL CTA ── */}
-        <div className="bg-gray-900 text-white p-8 sm:p-12 my-10 sm:my-14">
-          <p className="text-[12px] uppercase tracking-wider text-[#2E8C68] font-semibold mb-4">Start With an Audit</p>
-          <h3 className="text-[22px] sm:text-[28px] font-medium leading-[1.2] tracking-[-0.02em] mb-4 max-w-xl">
-            Find out exactly where your program stands relative to the AI citation threshold.
-          </h3>
-          <p className="text-gray-400 text-[15px] leading-relaxed max-w-2xl mb-8">
-            A credible engagement starts with a citation audit, not a content calendar. We run your brand and core category
-            queries through ChatGPT, Claude, Perplexity, and Gemini, capture the citation landscape, identify the
-            third-party sources each engine trusts, and audit your owned content for AI extractability.
-          </p>
-          <a
-            href="/book"
-            className="group inline-flex items-center bg-[#d1f851] hover:bg-[#c3ea45] text-[#111827] pl-6 pr-2 py-3 transition-colors duration-300"
-          >
-            <span className="text-[14px] font-medium mr-4">Request a citation audit</span>
-            <div className="w-8 h-8 bg-white flex items-center justify-center">
-              <ArrowRight className="w-4 h-4 text-[#111827] transition-transform duration-500 group-hover:-rotate-45" />
-            </div>
-          </a>
-        </div>
-      </>
-    ),
-  },
-
-  // ─────────────────────────────────────────────────────────────────────────────
-  'automated-lead-generation-seo': {
-    slug: 'automated-lead-generation-seo',
-    title: 'Automated Lead Generation: Search Intent Mapping',
-    category: 'Strategy',
-    readTime: '13 min read',
-    date: 'May 25, 2026',
-    image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=80',
-    heroAlt: 'Glowing geometric funnel with orange data-flow nodes representing AI-driven automated lead generation SEO',
-    metaDescription: 'Set up automated lead generation by mapping high-intent search clusters to your B2B pipeline to drive closed sales, not just page views.',
-    content: (
-      <>
-        {/* ── LEAD STATS ── */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 my-10 sm:my-14">
-          {[
-            { stat: '4.4×', label: 'Conversion premium of AI-referred traffic vs traditional organic', source: 'Conductor, 2026' },
-            { stat: '87.4%', label: "ChatGPT's share of all AI referral traffic to websites", source: 'Conductor, 2026' },
-            { stat: '90%', label: 'B2B click-through rate on AI Overview sources', source: 'Omniscient Digital, 2026' },
-          ].map(({ stat, label, source }) => (
-            <div key={stat} className="border border-gray-200 bg-gray-50 p-6">
-              <p className="text-4xl font-bold text-[#2E8C68] mb-2 font-display">{stat}</p>
-              <p className="text-[14px] text-gray-900 leading-snug mb-1">{label}</p>
-              <p className="text-[11px] uppercase tracking-wider text-gray-500">{source}</p>
-            </div>
-          ))}
-        </div>
-
-        {/* ── TABLE OF CONTENTS ── */}
-        <details className="bg-gray-50 border border-gray-200 rounded-lg p-6 sm:p-8 my-10 sm:my-14 group" open>
-          <summary className="text-[14px] font-semibold uppercase tracking-wider text-gray-500 cursor-pointer list-none flex items-center justify-between">
-            Table of Contents
-            <svg className="w-4 h-4 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" /></svg>
-          </summary>
-          <ul className="mt-6 space-y-3.5 text-[15px] font-medium text-gray-900 border-t border-gray-200 pt-6">
-            {[
-              { id: 'automated-lead-gen-does', label: 'What automated lead generation SEO actually does' },
-              { id: 'pre-qualification-flywheel', label: 'How the AI pre-qualification flywheel changes lead economics' },
-              { id: 'cost-of-wrong-metric', label: 'The cost of optimizing for the wrong metric' },
-              { id: 'how-lead-gen-works', label: 'How automated lead generation SEO works — from citation to closed pipeline' },
-              { id: 'lead-quality-numbers', label: 'The lead quality problem by the numbers' },
-              { id: 'separates-real-lead-gen', label: 'What separates real automated lead generation SEO from a content retainer' },
-              { id: 'clearest-return-teams', label: 'Which B2B teams get the clearest return' },
-              { id: 'making-call-funnel', label: 'Making the right call for your funnel' },
-            ].map(({ id, label }) => (
-              <li key={id} className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#111827] shrink-0" />
-                <a href={`#${id}`} className="hover:text-gray-900 transition-colors">{label}</a>
-              </li>
-            ))}
-          </ul>
-        </details>
-
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
-          How can you deploy automated lead generation that converts without cold outreach? Traditional B2B marketing relies on gating ebooks and cold calling unengaged contacts. Automated lead generation shifts the model by using search intent and AI citation paths to pre-qualify prospects before they fill out a form.
-        </p>
-
-        <div className="border-l-4 border-[#111827] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
-          <img src="/images/steve-portrait-thumb.webp" alt="Steve Martin" width="48" height="48" loading="lazy" className="w-12 h-12 object-cover rounded-full border border-white/10 shrink-0" />
-          <div>
-            <p className="text-[12px] uppercase tracking-wider text-[#2E8C68] font-semibold mb-1 font-sans">Steve's Take</p>
-            <p className="text-[15px] italic text-white leading-relaxed font-sans">
-              "High-intent traffic referred by ChatGPT converts up to 4.4 times better than standard organic. When AI answers pre-qualify a prospect, you're skipped right past the research stage directly to the buy stage."
-            </p>
-          </div>
-        </div>
-
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
-          Most teams don't realize the gap exists until they look at the numbers and find that 1% of their traffic is
-          producing 12% of their pipeline, and ask why. This is the problem an automated lead generation SEO approach solves.
-        </p>
-
-        {/* ── INLINE CTA (lead gen service) ── */}
-        <div className="bg-gray-900 text-white p-6 sm:p-8 my-10 sm:my-14 flex flex-col sm:flex-row items-start sm:items-center gap-6">
-          <div className="flex-1">
-            <p className="text-[12px] uppercase tracking-wider text-[#d1f851] font-semibold mb-2">Gobiya Service</p>
-            <p className="text-[17px] sm:text-[19px] font-medium leading-snug">
-              Build AI-aware lead capture systems that route pre-qualified buyers directly to your pipeline.
-            </p>
-          </div>
-          <a
-            href="/services/lead-generation"
-            className="group flex items-center bg-[#d1f851] hover:bg-[#c3ea45] text-[#111827] pl-5 pr-2 py-2 transition-colors duration-300 whitespace-nowrap shrink-0"
-          >
-            <span className="text-[13px] font-medium mr-3">B2B Pipeline Architecture</span>
-            <div className="w-6 h-6 bg-white flex items-center justify-center">
-              <ArrowRight className="w-3.5 h-3.5 text-[#111827] transition-transform duration-300 group-hover:-rotate-45" />
-            </div>
-          </a>
-        </div>
-
-        {/* ── SECTION 1 ── */}
-        <h2 id="automated-lead-gen-does" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
-          What automated lead generation SEO actually does
-        </h2>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Traditional lead generation SEO targets a volume number. The marketing team builds gated assets, the demand gen
-          team drives traffic to them, and the funnel reports CPL as the headline metric. That worked when buyers were
-          willing to trade an email address for a whitepaper. It works less well now that the average B2B buyer has filled
-          out a thousand of those forms and learned the only consequence is a six-week SDR sequence they didn't ask for.
-        </p>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          <a href="/insights/seo-for-b2b-lead-generation" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">Automated lead generation SEO</a> replaces volume-first capture with intent-first capture. The system identifies the
-          buyer-research questions{' '}
-          <a href="/services/geo-optimization" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">
-            AI tools are surfacing in the category
-          </a>
-          , produces content engineered to be cited inside those answers, captures the inbound visits AI citations generate,
-          and routes those visits to sales with full context — which page, which AI referrer, which research-stage intent.
-        </p>
-
-        {/* ── PULL QUOTE ── */}
-        <blockquote className="border-l-4 border-[#111827] pl-6 sm:pl-8 my-10 sm:my-14">
-          <p className="text-[18px] sm:text-[22px] font-medium leading-[1.5] text-gray-900 italic">
-            "It's not about producing more leads. It's about producing leads who arrived because an AI assistant told them
-            the vendor was worth evaluating — and converting them while they're still in the consideration window."
-          </p>
-        </blockquote>
-
-        <h3 className="text-[18px] sm:text-[20px] font-medium text-gray-900 mt-10 mb-4">
-          Why gated content alone isn't enough anymore
-        </h3>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          The lead that fills out a form in 2026 is not the same lead that filled out a form in 2018. They have already
-          researched the category in ChatGPT or Claude before they ever found the gate. They are filling out the form to
-          validate a decision they have largely made — not to begin a buying journey. Programs reporting CPL improvements
-          while pipeline-to-close ratios decline are solving for the wrong metric.
-        </p>
-
-        {/* ── SECTION 2: FLYWHEEL ── */}
-        <h2 id="pre-qualification-flywheel" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
-          How the AI pre-qualification flywheel changes lead economics
-        </h2>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          AI assistants pre-qualify buyers before they ever click through to a vendor's site. The buyer asks a question,
-          the AI assembles an answer that names a small number of vendors, and the buyer clicks through only after the AI
-          has effectively endorsed the click. That endorsement is what produces the conversion premium.
-        </p>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Pixis's 2026 analysis found that AI search traffic converts at 4–5 times the rate of organic. In single-company
-          case studies of B2B SaaS products, the differential reaches <strong className="font-semibold text-gray-900">23×</strong>.
-          Eyeful Media's portfolio data places AI referral traffic at{' '}
-          <strong className="font-semibold text-gray-900">534% higher conversion influence</strong> than the average across
-          all website channels.
-        </p>
-
-        {/* ── COST BOX ── */}
-        <h2 id="cost-of-wrong-metric" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
-          The cost of optimizing for the wrong metric
-        </h2>
-        <div className="bg-[#f7f7f7] border border-gray-200 p-6 sm:p-10 my-8">
-          <h3 className="text-[15px] uppercase tracking-wider font-semibold text-gray-500 mb-6">CPL Reality Check — 2026</h3>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-            {[
-              { label: 'Reported CPL on a $30k/mo demand gen program', value: '$200' },
-              { label: 'Real cost per SQL (70% MQL-to-SQL falloff)', value: '$670' },
-              { label: 'All-in cost per opportunity in most B2B SaaS segments', value: '$2,500+' },
-            ].map(({ label, value }) => (
-              <div key={label} className="flex flex-col">
-                <span className="text-3xl font-bold text-gray-900 mb-1">{value}</span>
-                <span className="text-[13px] text-gray-600 leading-snug">{label}</span>
-              </div>
-            ))}
-          </div>
-          <p className="text-[12px] text-gray-500 mt-6 leading-relaxed border-t border-gray-200 pt-4">
-            <strong>Note:</strong> Lead quality benchmarks vary by ACV, sales motion, and category maturity. These figures reflect U.S. B2B SaaS averages from 2026 industry analyses. Run your own pipeline-to-close math against current funnel data before reallocating budget.
-          </p>
-        </div>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          A program that produces 30 AI-sourced leads per month instead of 150 form-fills sounds like a step backward —
-          until the conversion math is applied. At a 9× conversion premium, those 30 leads produce more closed pipeline
-          than 270 traditional form-fills. The visible CPL is higher. The cost per actual revenue dollar is dramatically
-          lower. CPL optimization in an AI-decided market is the modern equivalent of optimizing print ad placement during
-          the rise of digital.
-        </p>
-
-        {/* ── SECTION 3 ── */}
-        <h2 id="how-lead-gen-works" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
-          How automated lead generation SEO works — from citation to closed pipeline
-        </h2>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          When an AI assistant returns a category answer that names a vendor, the cited vendor's site receives a visit with
-          a specific referrer signal — ChatGPT, Perplexity, Claude, and Gemini all pass identifiable headers that can be
-          captured in analytics. That visit arrives with context the visitor doesn't even know they're carrying: the prompt
-          that generated the citation, the position the vendor held in the answer, the comparison set the AI assembled
-          around them.
-        </p>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Conductor's 2026 benchmark places AI referral traffic at roughly <strong className="font-semibold text-gray-900">1% of total website volume</strong> but
-          driving a wildly disproportionate share of conversion events. In a B2B SaaS case study, AI-referred visitors
-          accounted for 0.5% of sessions but produced <strong className="font-semibold text-gray-900">12.1% of signups</strong> — a 23× conversion differential
-          within a single program.
-        </p>
-
-        <h3 className="text-[18px] sm:text-[20px] font-medium text-gray-900 mt-10 mb-4">
-          How outbound SEO prospecting connects to AI-sourced leads
-        </h3>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          The same citation infrastructure that produces inbound also informs outbound. When an account visits an AI-cited
-          page, that visit can be matched to a firmographic profile via reverse-IP enrichment and routed to the{' '}
-          <a href="/insights/outbound-seo-prospecting" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">
-            SDR queue with full context via outbound SEO prospecting
-          </a>
-          . This integrated approach establishes the core framework for <a href="/insights/b2b-sales-pipeline-automation" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">B2B sales pipeline automation</a>. Without that connection,
-          outbound sequences fire into accounts that may have already shortlisted a competitor twenty minutes earlier in
-          ChatGPT.
-        </p>
-
-        {/* ── RELATED CTA / BOX ── */}
-        <div className="bg-gray-900 text-white p-6 sm:p-8 my-10 sm:my-14 flex flex-col sm:flex-row items-start sm:items-center gap-6">
-          <div className="flex-1">
-            <p className="text-[12px] uppercase tracking-wider text-[#d1f851] font-semibold mb-2">Related Article</p>
-            <p className="text-[17px] sm:text-[19px] font-medium leading-snug">
-              How AI citations shape your B2B vendor shortlist — the pipeline SEO playbook.
-            </p>
-          </div>
-          <a
-            href="/insights/automated-b2b-sales-pipeline-seo"
-            className="group flex items-center bg-[#d1f851] hover:bg-[#c3ea45] text-[#111827] pl-5 pr-2 py-2 transition-colors duration-300 whitespace-nowrap shrink-0"
-          >
-            <span className="text-[13px] font-medium mr-3">B2B Pipeline SEO</span>
-            <div className="w-6 h-6 bg-white flex items-center justify-center">
-              <ArrowRight className="w-3.5 h-3.5 text-[#111827] transition-transform duration-300 group-hover:-rotate-45" />
-            </div>
-          </a>
-        </div>
-
-        {/* ── DATA TABLE ── */}
-        <h2 id="lead-quality-numbers" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
-          The lead quality problem by the numbers
-        </h2>
-        <div className="overflow-x-auto my-8">
-          <table className="w-full border-collapse text-[14px] sm:text-[15px]">
-            <thead>
-              <tr className="bg-gray-900 text-white">
-                <th className="text-left px-4 py-3 font-semibold text-[12px] uppercase tracking-wider">Finding</th>
-                <th className="text-left px-4 py-3 font-semibold text-[12px] uppercase tracking-wider">Stat</th>
-                <th className="text-left px-4 py-3 font-semibold text-[12px] uppercase tracking-wider">Source</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-gray-200">
-              {[
-                ['AI referral conversion premium over organic', '4.4×', 'Conductor, 2026'],
-                ['AI referral conversion influence vs all channels', '+534%', 'Eyeful Media, 2026'],
-                ['AI search referral conversion rate (conservative)', '+22%', 'DigitalApplied, 2026'],
-                ['AI referral vs Google organic conversion rate', '15.9% vs 1.8%', 'Data-Mania B2B SaaS, 2026'],
-                ['B2B buyers click AI Overview sources', '90%', 'Omniscient Digital, 2026'],
-                ['ChatGPT share of all AI referral traffic', '87.4%', 'Conductor, 2026'],
-              ].map(([finding, stat, source]) => (
-                <tr key={finding as string} className="even:bg-gray-50">
-                  <td className="px-4 py-3 text-gray-800 leading-snug">{finding}</td>
-                  <td className="px-4 py-3 font-bold text-[#2E8C68] whitespace-nowrap">{stat}</td>
-                  <td className="px-4 py-3 text-gray-500 whitespace-nowrap text-[13px]">{source}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-
-        {/* ── SECTION 4: SEPARATING REAL FROM REBRAND ── */}
-        <h2 id="separates-real-lead-gen" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
-          What separates real automated lead generation SEO from a content retainer
-        </h2>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Start with what is being measured. If the deliverable is still organic sessions, MQL volume, and CPL, the program
-          is not built for AI-sourced lead generation — it's a traditional{' '}
-          <a href="/services/seo" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">
-            content marketing engagement
-          </a>{' '}
-          with new vocabulary.
-        </p>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-4">Real programs report on:</p>
-        <ul className="space-y-3 mb-8 pl-0">
-          {[
-            'AI citation share across ChatGPT, Claude, Perplexity, and Gemini',
-            'Conversion rate segmented by AI referrer source (not aggregated channel)',
-            'Intent-routing logic connecting AI-sourced visits to the SDR queue with context',
-            'robots.txt access for GPTBot, ClaudeBot, PerplexityBot, and Google-Extended',
-            'Freshness cadence on revenue-tied pages — AI citations skew toward content updated in the last 30–90 days',
-            'Third-party earned-media placement — 85%+ of non-paid AI citations originate from earned media',
-          ].map((item) => (
-            <li key={item} className="flex items-start gap-3 text-[16px] sm:text-[17px] leading-[1.6] text-gray-800">
-              <span className="mt-1.5 w-2 h-2 rounded-full bg-[#111827] shrink-0" />
-              {item}
-            </li>
-          ))}
-        </ul>
-
-        {/* ── B2B TEAM CARDS ── */}
-        <h2 id="clearest-return-teams" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
-          Which B2B teams get the clearest return
-        </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
-          {[
-            {
-              title: 'Product-Led Growth SaaS',
-              body: 'Buyers who arrive from an AI citation often convert directly into trials without a sales touch, eliminating the SDR-to-trial step and compressing time-to-revenue on smaller deal sizes.',
-              link: '/services/geo-optimization',
-              linkLabel: 'Explore GEO',
-            },
-            {
-              title: 'Sales-Led Enterprise SaaS',
-              body: 'The deal still requires a human sales motion, but AI-sourced leads convert at materially higher rates once an SDR engages. Routing SDRs to AI-sourced leads vs cold lists is the most direct ROI compounding lever available.',
-              link: '/services/lead-generation',
-              linkLabel: 'Build the pipeline',
-            },
-            {
-              title: 'High-ACV Consulting & Services',
-              body: 'A single trusted-publication mention often produces more qualified inbound than a quarter of self-published thought leadership. Earned media-led citation strategies reward credibility over content volume.',
-              link: '/services/seo',
-              linkLabel: 'Explore SEO',
-            },
-            {
-              title: 'Vertical SaaS & Niche Category Leaders',
-              body: 'AI engines compress categories aggressively — once a small set of vendors is consistently cited, the citation gap widens faster than in broader markets. Defensive citation strategies are essential.',
-              link: '/approach',
-              linkLabel: 'Our approach',
-            },
-          ].map(({ title, body, link, linkLabel }) => (
-            <div key={title} className="border border-gray-200 p-6 hover:border-gray-400 transition-colors duration-300 group">
-              <h3 className="text-[16px] font-semibold text-gray-900 mb-3">{title}</h3>
-              <p className="text-[14px] text-gray-700 leading-relaxed mb-4">{body}</p>
-              <a href={link} className="inline-flex items-center gap-2 text-[12px] uppercase tracking-wider font-semibold text-[#2E8C68] group-hover:gap-3 transition-all duration-300">
-                {linkLabel} <ArrowRight className="w-3 h-3" />
-              </a>
-            </div>
-          ))}
-        </div>
-
-        {/* ── CONCLUSION ── */}
-        <h2 id="making-call-funnel" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
-          Making the right call for your funnel
-        </h2>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          B2B teams still optimizing for CPL volume are paying for leads that arrive uneducated in a market where the buyer
-          is already educated by an AI, and watching pipeline-to-close ratios decline while the dashboard reports steady
-          lead production. The shift to automated lead generation SEO isn't about a new content tactic. It's about
-          operating a{' '}
-          <a href="/services/lead-generation" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">
-            lead gen program
-          </a>{' '}
-          built around how buyers actually research in 2026 — through an AI assistant first, the vendor's site second, and
-          the form-fill only as a confirmation step.
-        </p>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Two decisions matter most. First: whether your current lead gen program produces leads pre-qualified by AI citation, or leads pre-qualified only by being willing to trade an email address for a download. Second: whether the team
-          tracks AI citation share, conversion rate by AI source, and intent-routed pipeline — or only legacy metrics that
-          no longer correlate with revenue.
-        </p>
-
-        {/* ── FINAL CTA ── */}
-        <div className="bg-gray-900 text-white p-8 sm:p-12 my-10 sm:my-14">
-          <p className="text-[12px] uppercase tracking-wider text-[#2E8C68] font-semibold mb-4">Start With a Lead-Source Audit</p>
-          <h3 className="text-[22px] sm:text-[28px] font-medium leading-[1.2] tracking-[-0.02em] mb-4 max-w-xl">
-            Find out exactly where in your funnel AI-sourced leads are being lost.
-          </h3>
-          <p className="text-gray-400 text-[15px] leading-relaxed max-w-2xl mb-8">
-            A credible engagement starts with a lead-source audit — not a content brief. We segment your current pipeline
-            by source, isolate AI-referred traffic, run your brand through ChatGPT, Claude, Perplexity, and Gemini to
-            capture current citation share, and identify exactly where the funnel is leaking AI-sourced intent.
-          </p>
-          <a
-            href="/book"
-            className="group inline-flex items-center bg-[#d1f851] hover:bg-[#c3ea45] text-[#111827] pl-6 pr-2 py-3 transition-colors duration-300"
-          >
-            <span className="text-[14px] font-medium mr-4">Request a lead-source audit</span>
-            <div className="w-8 h-8 bg-white flex items-center justify-center">
-              <ArrowRight className="w-4 h-4 text-[#111827] transition-transform duration-500 group-hover:-rotate-45" />
-            </div>
-          </a>
-        </div>
-      </>
-    ),
-  },
-
-  'outbound-seo-prospecting': {
-    slug: 'outbound-seo-prospecting',
-    title: 'Outbound SEO Prospecting: Timing Intent Signals',
-    category: 'Strategy',
-    readTime: '12 min read',
-    date: 'May 25, 2026',
-    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&q=80',
-    heroAlt: 'Abstract network visualization representing signal-anchored outbound SEO prospecting',
-    metaDescription: 'Use outbound SEO prospecting to monitor search intent triggers. Learn how to pitch buyers at the exact moment they search for your service.',
-    content: (
-      <>
-        {/* ── LEAD STATS ── */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 my-10 sm:my-14">
-          {[
-            { stat: '3.43%', label: 'Industry-average cold email reply rate across billions of sends', source: 'Instantly, 2026' },
-            { stat: '15–25%', label: 'Reply rate for signal-anchored outreach', source: 'Sopro / Salesmotion, 2026' },
-            { stat: '70–80%', label: 'Share of the B2B buying journey completed before rep contact', source: 'Salesmotion, 2026' },
-          ].map(({ stat, label, source }) => (
-            <div key={stat} className="border border-gray-200 bg-gray-50 p-6">
-              <p className="text-4xl font-bold text-[#2E8C68] mb-2 font-display">{stat}</p>
-              <p className="text-[14px] text-gray-900 leading-snug mb-1">{label}</p>
-              <p className="text-[11px] uppercase tracking-wider text-gray-500">{source}</p>
-            </div>
-          ))}
-        </div>
-
-        {/* ── TABLE OF CONTENTS ── */}
-        <details className="bg-gray-50 border border-gray-200 rounded-lg p-6 sm:p-8 my-10 sm:my-14 group" open>
-          <summary className="text-[14px] font-semibold uppercase tracking-wider text-gray-500 cursor-pointer list-none flex items-center justify-between">
-            Table of Contents
-            <svg className="w-4 h-4 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" /></svg>
-          </summary>
-          <ul className="mt-6 space-y-3.5 text-[15px] font-medium text-gray-900 border-t border-gray-200 pt-6">
-            {[
-              { id: 'outbound-prospecting-does', label: 'What outbound SEO prospecting actually does' },
-              { id: 'signal-outreach-framework', label: 'How the signal-to-outreach framework reshapes outbound economics' },
-              { id: 'cost-cold-outbound', label: 'The cost of pure cold outbound in 2026' },
-              { id: 'how-prospecting-works', label: 'How outbound SEO prospecting works from page visit to booked meeting' },
-              { id: 'reply-rate-problem', label: 'The reply rate problem by the numbers' },
-              { id: 'separates-real-prospecting', label: 'What separates real outbound SEO prospecting from a "we have intent data" claim' },
-              { id: 'clearest-return-teams', label: 'Which B2B teams get the clearest return' },
-              { id: 'positioned-differently', label: 'Why Gobiya is positioned differently for B2B operators' },
-            ].map(({ id, label }) => (
-              <li key={id} className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#111827] shrink-0" />
-                <a href={`#${id}`} className="hover:text-gray-900 transition-colors">{label}</a>
-              </li>
-            ))}
-          </ul>
-        </details>
-
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
-          How does outbound SEO prospecting optimize B2B outreach? Only about 5% of your target accounts are actively buying at any given moment. Outbound SEO prospecting tracks intent signals from organic pages to pinpoint which accounts are researching right now, what they are reading, and the exact second to pitch them.
-        </p>
-
-        <div className="border-l-4 border-[#111827] bg-white/[0.02] p-5 my-8 flex items-start gap-4">
-          <img src="/images/steve-portrait-thumb.webp" alt="Steve Martin" width="48" height="48" loading="lazy" className="w-12 h-12 object-cover rounded-full border border-white/10 shrink-0" />
-          <div>
-            <p className="text-[12px] uppercase tracking-wider text-[#2E8C68] font-semibold mb-1 font-sans">Steve's Take</p>
-            <p className="text-[15px] italic text-white leading-relaxed font-sans">
-              "Your website already generates high-intent account IP data. Routing those signals directly to your outbound sales team turns cold emails into warm, timing-perfect outreach."
-            </p>
-          </div>
-        </div>
-
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
-          This is the problem outbound SEO prospecting solves. The strongest B2B operators have stopped treating outbound and SEO as separate disciplines and started routing the intent data their content generates directly into the SDR queue. Most teams don't realize how much intent data their site is already producing — most of it gets discarded in analytics dashboards no one in the sales org has ever opened.
-        </p>
-
-        {/* ── INLINE CTA (interlinking to lead-generation) ── */}
-        <div className="bg-gray-900 text-white p-6 sm:p-8 my-10 sm:my-14 flex flex-col sm:flex-row items-start sm:items-center gap-6">
-          <div className="flex-1">
-            <p className="text-[12px] uppercase tracking-wider text-[#d1f851] font-semibold mb-2">Gobiya Service</p>
-            <p className="text-[17px] sm:text-[19px] font-medium leading-snug">
-              Route your SEO intent signals directly into your sales outbound queue.
-            </p>
-          </div>
-          <a
-            href="/services/lead-generation"
-            className="group flex items-center bg-[#d1f851] hover:bg-[#c3ea45] text-[#111827] pl-5 pr-2 py-2 transition-colors duration-300 whitespace-nowrap shrink-0"
-          >
-            <span className="text-[13px] font-medium mr-3">Build Your Outreach System</span>
-            <div className="w-6 h-6 bg-white flex items-center justify-center">
-              <ArrowRight className="w-3.5 h-3.5 text-[#111827] transition-transform duration-300 group-hover:-rotate-45" />
-            </div>
-          </a>
-        </div>
-
-        {/* ── SECTION 1 ── */}
-        <h2 id="outbound-prospecting-does" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
-          What outbound SEO prospecting actually does
-        </h2>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Traditional outbound starts with a target account list and a sequence template. The SDR works the list top to bottom, the sequence fires, replies come back at industry-average rates, and the team chalks up the response to the message, the data, or the timing. None of those are usually the actual problem. The actual problem is that the list was assembled from firmographic fit — company size, industry, role — with no information about whether the account was in-market in the first place. Firmographic fit tells you who the buyer <em>could</em> be. It tells you nothing about whether the buyer is <em>currently looking</em>.
-        </p>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Outbound SEO prospecting adds a behavioral layer on top of firmographic targeting. The SEO and content infrastructure that exists to attract organic traffic also generates a stream of intent signals — which accounts visited which pages, what referrer brought them, how long they engaged, whether they came from an AI citation or a Google result, what comparison query likely surfaced the page. Those signals are matched to account records via reverse-IP enrichment and routed to the SDR queue with context attached. This signal layer is what separates outbound SEO prospecting from cold outbound. It's not about sending more sequences. It's about sending fewer sequences to better-timed accounts with messaging anchored to a known research event.
-        </p>
-
-        <h3 className="text-[18px] sm:text-[20px] font-medium text-gray-900 mt-10 mb-4">
-          Why firmographic targeting alone produces the wrong math
-        </h3>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Firmographic targeting handles the first pass: who could buy. But "could buy" and "is buying this quarter" are different states, and the gap between them is where outbound goes to die. Backlinko's analysis of 12 million outreach emails found only 8.5 percent receive any reply at all — including the "not interested" and "unsubscribe me" responses. The remaining 91.5 percent vanish into inboxes that were never going to engage in the first place.
-        </p>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
-          Volume-only outbound is not sufficient for a pipeline that compounds. Timing-anchored outreach is the layer that makes a sequence land. Without it, you have a high-effort prospecting motion that produces lottery-style outcomes. Programs reporting steady sequence volume while reply rates decline are sending more emails to the same not-in-market accounts.
-        </p>
-
-        {/* ── SECTION 2 ── */}
-        <h2 id="signal-outreach-framework" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
-          How the signal-to-outreach framework reshapes outbound economics
-        </h2>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Signal-anchored outbound operates under a fundamentally different framework than cold outbound. Instead of sending sequences and waiting for replies, the team waits for a signal that indicates an account has entered the 5 percent in-market window, then reaches out within minutes or hours of the signal firing. Sopro's 2026 data places cold email reply rates at 1 to 5 percent and signal-anchored outreach at 15 to 25 percent — a 3x to 25x improvement depending on signal quality and outreach speed. Instantly's 2026 Benchmark Report places the platform-wide cold reply average at 3.43 percent and notes that elite teams running intelligence-led outbound consistently hit double-digit replies on the same data.
-        </p>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          This framework exists for a reason. A buyer who has just read a comparison page on the vendor's site is not the same prospect as a buyer who fits the ICP but has shown no behavior. The intent gap between those two prospects is enormous, and it shows up in every downstream metric — open rate, reply rate, meeting-set rate, opportunity creation, deal velocity. The vendor that wires SEO intent directly into the SDR motion is reaching out at the moment the account is most receptive. The vendor that doesn't is paying full SDR cost for outreach to accounts the AI assistants have already steered toward competitors.
-        </p>
-
-        {/* ── COST SECTION ── */}
-        <h2 id="cost-cold-outbound" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
-          The cost of pure cold outbound in 2026
-        </h2>
-        <div className="bg-[#f7f7f7] border border-gray-200 p-6 sm:p-10 my-8">
-          <h3 className="text-[15px] uppercase tracking-wider font-semibold text-gray-500 mb-6">SDR Economics & Efficiency Benchmarks — 2026</h3>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-            {[
-              { label: 'Fully-loaded SDR (US average)', value: '$50k–$80k' },
-              { label: 'Cold outreach cost per booked meeting', value: '$300–$500' },
-              { label: 'Signal-anchored reply rate premium', value: '15%–25%' },
-            ].map(({ label, value }) => (
-              <div key={label} className="flex flex-col">
-                <span className="text-3xl font-bold text-gray-900 mb-1">{value}</span>
-                <span className="text-[13px] text-gray-600 leading-snug">{label}</span>
-              </div>
-            ))}
-          </div>
-          <p className="text-[12px] text-gray-500 mt-6 leading-relaxed border-t border-gray-200 pt-4">
-            <strong>Note:</strong> SDR economics and reply rate benchmarks vary by ACV, segment maturity, and message quality. The figures above reflect U.S. B2B SaaS averages from 2026 industry analyses. Audit your own reply rate by signal source before reallocating headcount.
-          </p>
-        </div>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          A fully-loaded SDR in the U.S. runs $50,000 to $80,000 per year and produces 30 to 50 qualified leads per month at the upper end of well-run programs. At a 3.43 percent reply rate, an SDR sending 100 cold emails per day across a 22-day workweek month is generating roughly 75 replies — most of which are "not interested," with maybe 20 substantive conversations and a smaller number of booked meetings. The cost per booked meeting in pure cold outbound regularly clears $300 to $500 once SDR salary, tooling, and data subscriptions are layered in. Enterprise segments routinely run higher.
-        </p>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Frame it against signal-anchored alternatives. The same SDR working a list of 200 SEO-signal-qualified accounts per month — accounts that visited a competitor-comparison page, downloaded a category report, or arrived from a search engine citation qualified via <a href="/insights/automated-b2b-sales-pipeline-seo" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">automated B2B sales pipeline SEO</a> — operates in a different reply rate regime entirely. At 15 to 25 percent reply rates, the same SDR generates 30 to 50 substantive conversations from a list one-tenth the size. This alignment is what unlocks true <a href="/insights/b2b-sales-pipeline-automation" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">B2B sales pipeline automation</a>. The visible activity volume is lower. The cost per meeting drops materially, and the meetings that do get booked convert to pipeline at a higher rate because the prospect was already in-market when the sequence fired. Volume-first outbound looks productive on the dashboard. Signal-first outbound produces revenue on the close report.
-        </p>
-
-        {/* ── PULL QUOTE ── */}
-        <blockquote className="border-l-4 border-[#111827] pl-6 sm:pl-8 my-10 sm:my-14">
-          <p className="text-[18px] sm:text-[22px] font-medium leading-[1.5] text-gray-900 italic">
-            "Stop treating outbound and SEO as separate silos. Route the intent data your content generates directly to your SDR queues to turn cold prospecting into a high-converting timing game."
-          </p>
-        </blockquote>
-
-        {/* ── SECTION 3 ── */}
-        <h2 id="how-prospecting-works" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
-          How outbound SEO prospecting works from page visit to booked meeting
-        </h2>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          When an account visits a page on the vendor's site, the visit is captured via analytics and matched to a firmographic profile through reverse-IP enrichment or a similar identity-resolution layer. The match produces an account-level record with context attached: which page was visited, how long the visitor spent on it, what referrer brought them (Google, ChatGPT, Claude, Perplexity, direct, paid), what other pages on the site the account has touched historically, and what the dominant intent of the visited page suggests about where the account sits in the buying cycle. That enriched record is routed to the SDR queue in near real time — minutes to hours, not days — and the SDR's first touch becomes a response to a known research event rather than a cold opener.
-        </p>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          The sequence itself looks different too. A signal-anchored opener references the comparison set the page was built around, the question the page was structured to answer, or the category problem the AI citation that surfaced the page was tied to. The SDR isn't guessing what the account cares about — the page visit has already told them. Multi-channel sequences in 2026 average 40 percent higher engagement than single-channel sends, and that lift compounds further when each channel touch is anchored to the same intent signal rather than reading like three different reps reaching out about three different things.
-        </p>
-
-        <h3 className="text-[18px] sm:text-[20px] font-medium text-gray-900 mt-10 mb-4">
-          How automated lead generation SEO connects to the outbound layer
-        </h3>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          The same SEO infrastructure that generates inbound leads also feeds outbound prospecting. When an AI-cited page or a high-intent comparison page is visited by an account that doesn't convert on the form, the visit is still valuable — it becomes an outbound signal rather than an inbound lead. This is the operational bridge between{' '}
-          <a href="/insights/automated-lead-generation-seo" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">
-            automated lead generation SEO
-          </a>{' '}
-          and outbound SEO prospecting: the page captures every visitor it can convert directly, and routes every visitor it can't convert to outbound with the context already attached. Nothing is wasted. The 99 percent of visitors who don't fill out a form become the highest-quality SDR list the team has access to, because the visit itself was the qualification.
-        </p>
-
-        {/* ── DATA TABLE ── */}
-        <h2 id="reply-rate-problem" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
-          The reply rate problem by the numbers
-        </h2>
-        <div className="overflow-x-auto my-8">
-          <table className="w-full border-collapse text-[14px] sm:text-[15px]">
-            <thead>
-              <tr className="bg-gray-900 text-white">
-                <th className="text-left px-4 py-3 font-semibold text-[12px] uppercase tracking-wider">Prospecting Method</th>
-                <th className="text-left px-4 py-3 font-semibold text-[12px] uppercase tracking-wider">Reply Rate</th>
-                <th className="text-left px-4 py-3 font-semibold text-[12px] uppercase tracking-wider">Timing & Context</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-gray-200">
-              {[
-                ['Pure Cold Outreach', '1.0% - 5.0%', 'Out-of-market spraying, generic lists'],
-                ['Platform-wide Cold Email Average', '3.43%', 'Instantly 2026 data, high saturation'],
-                ['Signal-Based Target Outreach', '15.0% - 25.0%', 'Reaching out within hours of intent signals'],
-                ['AI-Referred Traffic Conversion', '14.2%', 'Highest buyer readiness, pre-qualified by LLMs'],
-              ].map(([method, rate, timing]) => (
-                <tr key={method as string} className="even:bg-gray-50">
-                  <td className="px-4 py-3 text-gray-800 leading-snug">{method}</td>
-                  <td className="px-4 py-3 font-bold text-[#2E8C68] whitespace-nowrap">{rate}</td>
-                  <td className="px-4 py-3 text-gray-500 whitespace-nowrap text-[13px]">{timing}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-
-        {/* ── SECTION 4 ── */}
-        <h2 id="separates-real-prospecting" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
-          What separates real outbound SEO prospecting from a "we have intent data" claim
-        </h2>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Not every vendor or <a href="/insights/best-seo-agency-for-b2b-brands" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">agency</a> selling intent-based outbound operates at the same standard. The category has filled rapidly with third-party intent data resellers, generic firmographic filtering rebranded as "intent," and dashboards that surface signals nobody routes into outreach.
-        </p>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-4">
-          Real outbound SEO prospecting is built on first-party intent. Ask your providers:
-        </p>
-        <ul className="space-y-3 mb-8 pl-0">
-          {[
-            'Where do the signals originate? (First-party visits to comparison pages are exclusive and run in real time; third-party intent is resold to competitors and arrives too late.)',
-            'What is the signal-to-outreach latency? (Minutes/hours is the standard; days is too late.)',
-            'Are reply and meeting rates segmented by signal source? (Aggregated data hides low-quality sources.)',
-            'How is the SDR sequence customized to the specific page visited? (Generic openers defeat the purpose.)',
-            'Is there visibility into AI-source referrers? (ChatGPT, Claude, Gemini, and Perplexity pass identifiable headers.)',
-          ].map((item) => (
-            <li key={item} className="flex items-start gap-3 text-[16px] sm:text-[17px] leading-[1.6] text-gray-800">
-              <span className="mt-1.5 w-2 h-2 rounded-full bg-[#111827] shrink-0" />
-              {item}
-            </li>
-          ))}
-        </ul>
-
-        {/* ── B2B TEAM CARDS ── */}
-        <h2 id="clearest-return-teams" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
-          Which B2B teams get the clearest return
-        </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
-          {[
-            {
-              title: 'Sales-Led SaaS Teams',
-              body: 'Teams with established SEO traffic benefit fastest by routing existing anonymous site visits into targeted outreach campaigns without needing new content retainers.',
-              link: '/services/lead-generation',
-              linkLabel: 'Explore Outreach Systems',
-            },
-            {
-              title: 'ABM-Focused Enterprise',
-              body: 'Enterprise teams combine static named-account lists with real-time SEO page visit alerts to target multi-million dollar deals at the precise moment they begin researching.',
-              link: '/services/seo',
-              linkLabel: 'Explore ABM SEO',
-            },
-            {
-              title: 'Outsourced BDR Providers',
-              body: 'Agencies that replace third-party data feeds with clients first-party SEO signals secure a structural conversion advantage that generic list sellers cannot match.',
-              link: '/services/geo-optimization',
-              linkLabel: 'Explore GEO Integration',
-            },
-            {
-              title: 'High-Velocity B2B',
-              body: 'Shorter sales cycles require near-zero signal-to-outreach latency. Reaching out within minutes of a pricing page visit captures deals before the window closes.',
-              link: '/approach',
-              linkLabel: 'Our Approach',
-            },
-          ].map(({ title, body, link, linkLabel }) => (
-            <div key={title} className="border border-gray-200 p-6 hover:border-gray-400 transition-colors duration-300 group">
-              <h3 className="text-[16px] font-semibold text-gray-900 mb-3">{title}</h3>
-              <p className="text-[14px] text-gray-700 leading-relaxed mb-4">{body}</p>
-              <a href={link} className="inline-flex items-center gap-2 text-[12px] uppercase tracking-wider font-semibold text-[#2E8C68] group-hover:gap-3 transition-all duration-300">
-                {linkLabel} <ArrowRight className="w-3 h-3" />
-              </a>
-            </div>
-          ))}
-        </div>
-
-        {/* ── CONCLUSION ── */}
-                <div className="gobiya-cta-block">
-<h2 id="positioned-differently" className="scroll-mt-24 text-[clamp(1.4rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-gray-900 mt-14 mb-6">
-          Why Gobiya is positioned differently for B2B operators
-        </h2>
-        <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          As a <a href="/insights/b2b-seo-agency" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">B2B SEO agency</a>, Gobiya provides complete operational alignment between search acquisition and outbound pipeline engineering. We do not sell third-party intent databases or run generic email spam sequences. We audit your existing traffic, set up real-time reverse-IP enrichment layers, configure direct routing into your CRM, and build custom SEO structures designed specifically to generate high-intent outbound signals.
-        </p>
-        </div>
-
-        {/* ── FINAL CTA ── */}
-        <div className="bg-gray-900 text-white p-8 sm:p-12 my-10 sm:my-14">
-          <p className="text-[12px] uppercase tracking-wider text-[#2E8C68] font-semibold mb-4">Request a Signal Audit</p>
-          <h3 className="text-[22px] sm:text-[28px] font-medium leading-[1.2] tracking-[-0.02em] mb-4 max-w-xl">
-            Identify the buying intent signals you are currently discarding.
-          </h3>
-          <p className="text-gray-400 text-[15px] leading-relaxed max-w-2xl mb-8">
-            A credible engagement starts with auditing your existing traffic. We run a comprehensive audit to map your anonymous traffic to target accounts, isolate high-intent SEO visits, and show you exactly where to insert signal-based outreach into your outbound flow.
-          </p>
-          <a
-            href="/book"
-            className="group inline-flex items-center bg-[#d1f851] hover:bg-[#c3ea45] text-[#111827] pl-6 pr-2 py-3 transition-colors duration-300"
-          >
-            <span className="text-[14px] font-medium mr-4">Request a signal audit</span>
-            <div className="w-8 h-8 bg-white flex items-center justify-center">
-              <ArrowRight className="w-4 h-4 text-[#111827] transition-transform duration-500 group-hover:-rotate-45" />
-            </div>
-          </a>
-        </div>
-      </>
-    ),
-  },
-
   'b2b-sales-pipeline-automation': {
     slug: 'b2b-sales-pipeline-automation',
     title: 'B2B Sales Pipeline Automation: CRM Pipelines',
@@ -4963,7 +3904,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           Why point-solution AI tools alone don't produce the pipeline lift the demos promise
         </h3>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Buying an AI SDR handles one workflow: prospect research, message generation, sequence execution. The tool works as advertised in isolation. But the AI SDR is only as good as the signals fed into it and the CRM hygiene it writes back to. If the signal layer is broken — third-party intent data resold to every competitor, no <a href="/insights/automated-b2b-sales-pipeline-seo" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">first-party SEO signal routing</a>, no AI-source referral capture — the AI SDR is just executing high-volume sequences with better grammar, and the reply rate looks roughly identical to a human SDR running the same broken inputs.
+          Buying an AI SDR handles one workflow: prospect research, message generation, sequence execution. The tool works as advertised in isolation. But the AI SDR is only as good as the signals fed into it and the CRM hygiene it writes back to. If the signal layer is broken — third-party intent data resold to every competitor, no <a href="/insights/b2b-sales-pipeline-automation" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">first-party SEO signal routing</a>, no AI-source referral capture — the AI SDR is just executing high-volume sequences with better grammar, and the reply rate looks roughly identical to a human SDR running the same broken inputs.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-8">
           Point-solution AI is not sufficient for actual pipeline lift. Orchestration across the full motion is the layer that converts AI capability into revenue outcome. Without it, the team is paying for AI productivity on tasks the productivity gain doesn't compound through. Programs that show strong tool-level metrics while pipeline-to-close ratios stay flat are running automation theater, not automation.
@@ -5006,7 +3947,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           That workflow looks straightforward described in a paragraph. Building it across a real B2B stack is where automation programs typically stall. Average B2B sales cycles run over 35 days for simple deals and 60 days for complex ones, with manual qualification cited as the largest single bottleneck. Compression happens by eliminating manual handoffs, not by adding more disconnected AI to the motion.
         </p>
 
-        {/* ── INLINE CTA (interlinking to automated-lead-generation-seo) ── */}
+        {/* ── INLINE CTA (interlinking to b2b-sales-pipeline-automation) ── */}
         <div className="bg-[#f9f9f9] border border-gray-100 p-6 sm:p-8 my-10 sm:my-14 flex flex-col sm:flex-row items-start sm:items-center gap-6">
           <div className="flex-1">
             <p className="text-[12px] uppercase tracking-wider text-[#2E8C68] font-bold mb-2">Related Spoke</p>
@@ -5015,7 +3956,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
             </p>
           </div>
           <a
-            href="/insights/automated-lead-generation-seo"
+            href="/insights/b2b-sales-pipeline-automation"
             className="group flex items-center bg-[#d1f851] hover:bg-[#c3ea45] text-[#111827] pl-5 pr-2 py-2 transition-colors duration-300 whitespace-nowrap shrink-0"
           >
             <span className="text-[13px] font-semibold mr-3">Read Lead Gen Article</span>
@@ -5312,7 +4253,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           How the AI search shift reshaped the evaluation criteria that matter
         </h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          A <a href="/insights/b2b-seo-agency" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">B2B SEO agency</a> in 2026 is being evaluated against a fundamentally different set of criteria than the same agency was being evaluated against in 2022. The role of an SEO agency in this market is not just to rank pages — it's to make sure the brand is present in the AI-synthesized answer at the moment the buyer is forming the shortlist. This is where <a href="/insights/automated-b2b-sales-pipeline-seo" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">automated B2B sales pipeline SEO</a> becomes critical. Any agency that hasn't reframed its services around that outcome is selling 2019 SEO with 2026 invoicing.
+          A <a href="/insights/b2b-seo-agency" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">B2B SEO agency</a> in 2026 is being evaluated against a fundamentally different set of criteria than the same agency was being evaluated against in 2022. The role of an SEO agency in this market is not just to rank pages — it's to make sure the brand is present in the AI-synthesized answer at the moment the buyer is forming the shortlist. This is where <a href="/insights/b2b-sales-pipeline-automation" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">automated B2B sales pipeline SEO</a> becomes critical. Any agency that hasn't reframed its services around that outcome is selling 2019 SEO with 2026 invoicing.
         </p>
 
         {/* ── COST BOX ── */}
@@ -5343,7 +4284,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           How SEO for B2B lead generation fits into the agency's measurement model
         </h3>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          The way an agency handles <a href="/insights/automated-lead-generation-seo" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">automated lead generation SEO</a> tells you more about its discipline than its case studies do. A real B2B SEO program in 2026 measures organic-sourced pipeline by stage, segments referral traffic by source (Google, ChatGPT, Claude, Perplexity, Gemini, direct, paid), and reports on cost per organic-sourced opportunity rather than cost per session or cost per click.
+          The way an agency handles <a href="/insights/b2b-sales-pipeline-automation" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">automated lead generation SEO</a> tells you more about its discipline than its case studies do. A real B2B SEO program in 2026 measures organic-sourced pipeline by stage, segments referral traffic by source (Google, ChatGPT, Claude, Perplexity, Gemini, direct, paid), and reports on cost per organic-sourced opportunity rather than cost per session or cost per click.
         </p>
 
         {/* ── PULL QUOTE ── */}
@@ -5579,7 +4520,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           Why champion-only content produces orphaned MQLs
         </h3>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Champion-only content handles the first pass: someone fills out a form, lands in the CRM, and gets routed to sales. The lead looks good on the dashboard. But B2B research consistently shows that the champion is one of 11 people who need to align, and that 74 percent of buying committees report internal conflict during the decision (per Corporate Visions' 2026 behavior research). The champion who downloaded the ebook can't close the deal alone. The procurement person who's never heard of the vendor will object on principle. The technical evaluator who can't find the brand in their preferred research channels will recommend a competitor they're already familiar with. This is the exact pipeline leakage that <a href="/insights/automated-lead-generation-seo" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">automated lead generation SEO</a> systems are designed to close at scale.
+          Champion-only content handles the first pass: someone fills out a form, lands in the CRM, and gets routed to sales. The lead looks good on the dashboard. But B2B research consistently shows that the champion is one of 11 people who need to align, and that 74 percent of buying committees report internal conflict during the decision (per Corporate Visions' 2026 behavior research). The champion who downloaded the ebook can't close the deal alone. The procurement person who's never heard of the vendor will object on principle. The technical evaluator who can't find the brand in their preferred research channels will recommend a competitor they're already familiar with. This is the exact pipeline leakage that <a href="/insights/b2b-sales-pipeline-automation" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">automated lead generation SEO</a> systems are designed to close at scale.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
           Single-persona lead generation is not sufficient to close B2B deals in 2026. Multi-role content coverage is the layer that makes the champion's internal pitch actually land. Without it, the program produces leads who get added to "committee can't agree" deals — the largest single bucket of lost pipeline in modern B2B.
@@ -5664,7 +4605,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           How B2B organic traffic growth supports committee coverage
         </h3>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          The organic traffic numbers tell you whether the committee architecture is actually being discovered. A B2B program operating on the buying-committee model produces traffic patterns that look different from a single-persona program: more distinct visitor profiles per account, more diverse content engagement per opportunity, and account-level engagement signals that show up before any individual lead converts. A program that shows steady traffic growth but flat account-level diversity is producing single-persona reach. A program that shows growing distinct-stakeholders-per-account is producing committee coverage. Both look fine on a top-line dashboard. Only the second one is solving the consensus problem. This is the same signal architecture that powers effective <a href="/insights/automated-b2b-sales-pipeline-seo" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">automated B2B sales pipeline SEO</a> — first-party data from committee-level engagement, routed into outbound workflows.
+          The organic traffic numbers tell you whether the committee architecture is actually being discovered. A B2B program operating on the buying-committee model produces traffic patterns that look different from a single-persona program: more distinct visitor profiles per account, more diverse content engagement per opportunity, and account-level engagement signals that show up before any individual lead converts. A program that shows steady traffic growth but flat account-level diversity is producing single-persona reach. A program that shows growing distinct-stakeholders-per-account is producing committee coverage. Both look fine on a top-line dashboard. Only the second one is solving the consensus problem. This is the same signal architecture that powers effective <a href="/insights/b2b-sales-pipeline-automation" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">automated B2B sales pipeline SEO</a> — first-party data from committee-level engagement, routed into outbound workflows.
         </p>
 
         {/* ── SECTION: vs B2C-style content engine ── */}
@@ -5950,7 +4891,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           The March 2026 Core Update pushed AI Overviews into 68 percent of local queries, meaning businesses without structured data, photo volume, and E-E-A-T signals are losing visibility on searches they used to win. Review recency has become the single most important individual ranking factor according to Whitespark's 2026 survey, overtaking review count and rating. The relevance pillar has tightened around primary category accuracy and entity recognition. And keyword stuffing in business names now triggers GBP policy enforcement suspensions.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          Google has every incentive to push spam out of the organic local pack and reward businesses demonstrating actual local legitimacy. Businesses that haven't restructured around the 2026 signal hierarchy are competing against a 2024 version of the algorithm that no longer exists. The same shift in AI-driven search behavior documented in <a href="/insights/automated-b2b-sales-pipeline-seo" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">B2B pipeline SEO research</a> applies at the local level: the surfaces producing visibility have multiplied, and the signal sets don't always overlap.
+          Google has every incentive to push spam out of the organic local pack and reward businesses demonstrating actual local legitimacy. Businesses that haven't restructured around the 2026 signal hierarchy are competing against a 2024 version of the algorithm that no longer exists. The same shift in AI-driven search behavior documented in <a href="/insights/b2b-sales-pipeline-automation" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">B2B pipeline SEO research</a> applies at the local level: the surfaces producing visibility have multiplied, and the signal sets don't always overlap.
         </p>
 
         {/* ── SECTION: Cost of invisibility ── */}
@@ -6023,7 +4964,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           A credible engagement starts with a local visibility audit, not a sales pitch. The audit checks current rankings across multiple specific target neighborhoods for core service terms, baselines the GBP against the 2026 signal hierarchy, evaluates review velocity and rating against direct competitors in the relevant target neighborhood, audits NAP consistency across major citation sources, runs the business through Gemini, ChatGPT, and Perplexity to baseline AI-recommendation visibility, and produces a hypothesis-driven roadmap tying gaps to specific customer-contact and revenue projections. For brands operating across multiple regions, this audit includes a full assessment of their <a href="/insights/multi-location-seo-website-structure" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">multi-location SEO website structure</a>.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          The businesses that get the most from local SEO treat it as an ongoing operational discipline — review acquisition built into customer workflow, GBP treated as a real asset, content production focused on neighborhood-specific terms, AI-layer presence monitored as actively as Google rankings. The same composition-first approach that drives <a href="/insights/automated-lead-generation-seo" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">automated lead generation SEO</a> for B2B operators applies: the surface mix that produces visibility has changed, and programs that haven't adapted are paying the cost of the old model.
+          The businesses that get the most from local SEO treat it as an ongoing operational discipline — review acquisition built into customer workflow, GBP treated as a real asset, content production focused on neighborhood-specific terms, AI-layer presence monitored as actively as Google rankings. The same composition-first approach that drives <a href="/insights/b2b-sales-pipeline-automation" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">automated lead generation SEO</a> for B2B operators applies: the surface mix that produces visibility has changed, and programs that haven't adapted are paying the cost of the old model.
         </p>
 
         {/* ── SECTION: Making the call ── */}
@@ -8205,7 +7146,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           The crawlers split by purpose. OpenAI operates several: GPTBot (collects training data for the GPT models), OAI-SearchBot (powers ChatGPT\'s search function), and ChatGPT-User (makes live fetches when a user references a specific URL in a conversation). Anthropic similarly operates ClaudeBot (training) and Claude-SearchBot (search). Perplexity operates PerplexityBot. Others in server logs include Google-Extended (Google\'s AI training crawler, separate from Googlebot), Bytespider (ByteDance), and Meta-ExternalAgent. The purpose distinction matters for robots.txt strategy: blocking the <em>training</em> crawlers (GPTBot, ClaudeBot, Google-Extended) opts you out of model training but the <em>search</em> crawlers (OAI-SearchBot, Claude-SearchBot, PerplexityBot) are what fetch content for live AI search answers — so a site that wants to appear in AI search answers should allow the search crawlers even if it chooses to block the training crawlers. Blocking everything by default, a common reflexive move, removes the site from AI search visibility entirely.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          A related robots.txt trap, specific to the rendering problem: some configurations block the JavaScript, CSS, or API endpoints that crawlers need. While the AI crawlers don\'t execute JS, blocking these resources can interfere with crawlers (including Googlebot) that do attempt rendering, and can prevent proper page understanding. Confirm robots.txt doesn\'t block the resources needed to understand the page. To check how AI search visibility feeds into your B2B funnel goals, refer to our piece on <a href="/insights/automated-b2b-sales-pipeline-seo" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">automated B2B sales pipeline SEO</a>.
+          A related robots.txt trap, specific to the rendering problem: some configurations block the JavaScript, CSS, or API endpoints that crawlers need. While the AI crawlers don\'t execute JS, blocking these resources can interfere with crawlers (including Googlebot) that do attempt rendering, and can prevent proper page understanding. Confirm robots.txt doesn\'t block the resources needed to understand the page. To check how AI search visibility feeds into your B2B funnel goals, refer to our piece on <a href="/insights/b2b-sales-pipeline-automation" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">automated B2B sales pipeline SEO</a>.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
           One more operational reality: there is no Search Console equivalent for AI crawlers. The only reliable way to confirm AI crawlers are actually accessing your content is to check your server logs for their user-agent strings — GPTBot, OAI-SearchBot, ClaudeBot, Claude-SearchBot, PerplexityBot, Bytespider, and the others. Server-log monitoring is the AI-crawler analog of Search Console, and it\'s how a technical team verifies that the content acquisition is actually happening.
@@ -8225,7 +7166,7 @@ window.addEventListener('DOMContentLoaded', trackFirstTouch);`}
           The verification is simple and should be done on every important page: load the page with JavaScript disabled in the browser, and look at what remains. If the critical content — the claims, product descriptions, pricing, author signals — is still there with JS off, it\'s in the server HTML and AI crawlers can see it. If the page is blank or a shell with JS disabled, the content is client-side-rendered and invisible to AI crawlers. Also verify, in the raw HTML source (view-source, not the rendered DOM in dev tools), that schema markup and metadata are present in the server response rather than injected by JavaScript — structured data that only appears after JS runs is invisible to the crawlers that don\'t run JS.
         </p>
         <p className="text-[16px] sm:text-[18px] leading-[1.75] text-gray-800 mb-6">
-          This is genuinely the highest-leverage, fastest-acting fix in technical GEO. It\'s a one-time architectural correction (versus the ongoing work of content and authority optimization), and the moment the content is in the server HTML, the AI crawlers can see it on their next fetch. For a site that\'s been invisible to AI engines due to client-side rendering, fixing the rendering is the difference between absence and presence. Read more on how this impacts customer conversion on our page detailing <a href="/insights/automated-lead-generation-seo" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">automated lead generation SEO</a>.
+          This is genuinely the highest-leverage, fastest-acting fix in technical GEO. It\'s a one-time architectural correction (versus the ongoing work of content and authority optimization), and the moment the content is in the server HTML, the AI crawlers can see it on their next fetch. For a site that\'s been invisible to AI engines due to client-side rendering, fixing the rendering is the difference between absence and presence. Read more on how this impacts customer conversion on our page detailing <a href="/insights/b2b-sales-pipeline-automation" className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">automated lead generation SEO</a>.
         </p>
 
         {/* ── SECTION 6 ── */}
@@ -9090,7 +8031,7 @@ const RELATED_ARTICLES_MAP: Record<string, { href: string; category: string; tit
 
   'how-do-b2b-companies-use-seo-to-generate-predictable-revenue': [
     {
-      href: '/insights/automated-b2b-sales-pipeline-seo',
+      href: '/insights/b2b-sales-pipeline-automation',
       category: 'Strategy',
       title: 'Automated B2B Sales Pipeline SEO: How AI Citations Shape Your Shortlist in 2026',
       image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1200&q=80',
@@ -9109,9 +8050,9 @@ const RELATED_ARTICLES_MAP: Record<string, { href: string; category: string; tit
     },
   ],
 
-  'automated-b2b-sales-pipeline-seo': [
+  'b2b-sales-pipeline-automation': [
     {
-      href: '/insights/automated-lead-generation-seo',
+      href: '/insights/b2b-sales-pipeline-automation',
       category: 'Strategy',
       title: 'Automated Lead Generation SEO: How AI Pre-Qualifies Your Pipeline in 2026',
       image: 'https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=1200&q=80',
@@ -9129,26 +8070,6 @@ const RELATED_ARTICLES_MAP: Record<string, { href: string; category: string; tit
       image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&q=80',
     },
   ],
-  'automated-lead-generation-seo': [
-    {
-      href: '/insights/automated-b2b-sales-pipeline-seo',
-      category: 'Strategy',
-      title: 'Automated B2B Sales Pipeline SEO: How AI Citations Shape Your Shortlist in 2026',
-      image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&q=80',
-    },
-    {
-      href: '/insights/outbound-seo-prospecting',
-      category: 'Strategy',
-      title: 'Outbound SEO Prospecting: Timing-Anchored Outreach Powered by Intent Signals in 2026',
-      image: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?w=1200&q=80',
-    },
-    {
-      href: '/insights/seo-for-b2b-lead-generation',
-      category: 'Strategy',
-      title: 'SEO for B2B Lead Generation: How Committee-Architecture Content Outperforms Single-Persona Funnels',
-      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80',
-    },
-  ],
   'outbound-seo-prospecting': [
     {
       href: '/insights/b2b-seo-agency',
@@ -9157,7 +8078,7 @@ const RELATED_ARTICLES_MAP: Record<string, { href: string; category: string; tit
       image: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200&q=80',
     },
     {
-      href: '/insights/automated-lead-generation-seo',
+      href: '/insights/b2b-sales-pipeline-automation',
       category: 'Strategy',
       title: 'Automated Lead Generation SEO: How AI Pre-Qualifies Your Pipeline in 2026',
       image: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=1200&q=80',
@@ -9169,36 +8090,16 @@ const RELATED_ARTICLES_MAP: Record<string, { href: string; category: string; tit
       image: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1200&q=80',
     },
   ],
-  'b2b-sales-pipeline-automation': [
-    {
-      href: '/insights/automated-b2b-sales-pipeline-seo',
-      category: 'Strategy',
-      title: 'Automated B2B Sales Pipeline SEO: How AI Citations Shape Your Shortlist in 2026',
-      image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&q=80',
-    },
-    {
-      href: '/insights/best-seo-agency-for-b2b-brands',
-      category: 'Strategy',
-      title: 'How to Choose the Best SEO Agency for B2B Brands in 2026',
-      image: 'https://images.unsplash.com/photo-1553877522-43269d4ea984?w=1200&q=80',
-    },
-    {
-      href: '/insights/outbound-seo-prospecting',
-      category: 'Strategy',
-      title: 'Outbound SEO Prospecting: Timing-Anchored Outreach Powered by Intent Signals in 2026',
-      image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&q=80',
-    },
-  ],
 
   'best-seo-agency-for-b2b-brands': [
     {
-      href: '/insights/automated-b2b-sales-pipeline-seo',
+      href: '/insights/b2b-sales-pipeline-automation',
       category: 'Strategy',
       title: 'Automated B2B Sales Pipeline SEO: How AI Citations Shape Your Shortlist in 2026',
       image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1200&q=80',
     },
     {
-      href: '/insights/automated-lead-generation-seo',
+      href: '/insights/b2b-sales-pipeline-automation',
       category: 'Strategy',
       title: 'Automated Lead Generation SEO: How AI Pre-Qualifies Your Pipeline in 2026',
       image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80',
@@ -9213,7 +8114,7 @@ const RELATED_ARTICLES_MAP: Record<string, { href: string; category: string; tit
 
   'seo-for-b2b-lead-generation': [
     {
-      href: '/insights/automated-b2b-sales-pipeline-seo',
+      href: '/insights/b2b-sales-pipeline-automation',
       category: 'Strategy',
       title: 'Automated B2B Sales Pipeline SEO: How AI Citations Shape Your Shortlist in 2026',
       image: 'https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=1200&q=80',

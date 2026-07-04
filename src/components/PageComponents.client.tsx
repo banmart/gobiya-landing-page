@@ -26,7 +26,7 @@ export const AdminDashboard = lazy(() => import('./AdminDashboard'));
 export const ContactPage = lazy(() => import('./ContactPage'));
 export const OnPageSeoLosAngelesPage = lazy(() => import('./OnPageSeoLosAngelesPage'));
 export const AiSeoBeverlyHillsPage = lazy(() => import('./AiSeoBeverlyHillsPage'));
-export const LocalSeoGlendalePage = lazy(() => import('./LocalSeoGlendalePage'));
+
 export const LocalSeoBurbankPage = lazy(() => import('./LocalSeoBurbankPage'));
 export const SeoCompanyEncinoPage = lazy(() => import('./SeoCompanyEncinoPage'));
 export const LosAngelesSeoProf = lazy(() => import('./LosAngelesSeoProf'));

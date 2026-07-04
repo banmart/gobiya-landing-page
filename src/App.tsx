@@ -17,7 +17,6 @@ import {
   ContactPage,
   OnPageSeoLosAngelesPage,
   AiSeoBeverlyHillsPage,
-  LocalSeoGlendalePage,
   LocalSeoBurbankPage,
   SeoCompanyEncinoPage,
   LosAngelesSeoProf,
@@ -339,12 +338,10 @@ function App({ url }: AppProps) {
     '/admin',
     '/on-page-seo-los-angeles',
     '/ai-seo-beverly-hills',
-    '/local-seo-glendale',
     '/local-seo-company-burbank',
     '/seo-company-encino',
     '/los-angeles-seo-professional',
     '/book',
-    '/book-call',
     '/about/steve-martin',
     '/author/steve-martin',
     '/about',
@@ -382,15 +379,13 @@ function App({ url }: AppProps) {
         <OnPageSeoLosAngelesPage />
       ) : normalizedPath === '/ai-seo-beverly-hills' ? (
         <AiSeoBeverlyHillsPage />
-      ) : normalizedPath === '/local-seo-glendale' ? (
-        <LocalSeoGlendalePage />
       ) : normalizedPath === '/local-seo-company-burbank' ? (
         <LocalSeoBurbankPage />
       ) : normalizedPath === '/seo-company-encino' ? (
         <SeoCompanyEncinoPage />
       ) : normalizedPath === '/los-angeles-seo-professional' ? (
         <LosAngelesSeoProf />
-      ) : normalizedPath === '/book' || normalizedPath === '/book-call' ? (
+      ) : normalizedPath === '/book' ? (
         <BookingPage />
       ) : normalizedPath === '/about/steve-martin' || normalizedPath === '/author/steve-martin' ? (
         <AuthorPage key={normalizedPath} path={normalizedPath} />

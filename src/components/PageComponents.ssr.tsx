@@ -16,7 +16,7 @@ export { default as AdminDashboard } from './AdminDashboard';
 export { default as ContactPage } from './ContactPage';
 export { default as OnPageSeoLosAngelesPage } from './OnPageSeoLosAngelesPage';
 export { default as AiSeoBeverlyHillsPage } from './AiSeoBeverlyHillsPage';
-export { default as LocalSeoGlendalePage } from './LocalSeoGlendalePage';
+
 export { default as LocalSeoBurbankPage } from './LocalSeoBurbankPage';
 export { default as SeoCompanyEncinoPage } from './SeoCompanyEncinoPage';
 export { default as LosAngelesSeoProf } from './LosAngelesSeoProf';

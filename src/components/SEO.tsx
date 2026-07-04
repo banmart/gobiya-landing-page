@@ -20,10 +20,6 @@ const metadataMap: Record<string, SEOMetadata> = {
     title: `AI SEO Beverly Hills: ChatGPT, Claude & Gemini citations - Gobiya`,
     description: `AI SEO Beverly Hills — we engineer Google organic visibility and AI platform citations (ChatGPT, Claude, Gemini) for Beverly Hills businesses in the 90210 market. Entity graphs, GEO, and local Map Pack engineering.`
   },
-  '/local-seo-glendale': {
-    title: `Local SEO Glendale: Map Pack & GBP, top rated - Gobiya`,
-    description: `Local SEO Glendale — we engineer Google Map Pack dominance, GBP optimization, citation consistency, and review velocity for businesses on Brand Boulevard and throughout the Glendale, CA market.`
-  },
   '/seo-company-encino': {
     title: `SEO Company Encino: Google visibility & AI citations, BBB A+ - Gobiya`,
     description: `SEO company in Encino engineering Google visibility, AI citations, and organic pipeline growth for businesses on Ventura Boulevard and throughout the San Fernando Valley.`
@@ -231,10 +227,6 @@ const metadataMap: Record<string, SEOMetadata> = {
     title: `Book SEO Audit Los Angeles: free 15-min, open now - Gobiya`,
     description: `Book a strategy call with Steve Martin, founder of Gobiya. Audit your search performance, local map visibility, and site speed. Free, no obligation. Available Mon–Fri.`
   },
-  '/book-call': {
-    title: `Book SEO Audit Los Angeles: free 15-min, open now - Gobiya`,
-    description: `Book a strategy call with Steve Martin, founder of Gobiya. Audit your search performance, local map visibility, and site speed. Free, no obligation. Available Mon–Fri.`
-  },
   '/insights': {
     title: `SEO & AI Intelligence LA: core updates, GEO briefs - Gobiya`,
     description: `Advanced tactical intelligence on Google and AI search: algorithm update analysis, GEO and LLM citation tactics, entity SEO, technical recovery briefs, and pipeline engineering field notes from Gobiya.`
@@ -276,16 +268,7 @@ const metadataMap: Record<string, SEOMetadata> = {
     description: `We compare enterprise SEO agencies vs Gobiya, showing the speed, cost, and CRM pipeline differences for B2B brands.`,
     image: '/images/enterprise-seo-agencies-comparison.png'
   },
-  '/insights/automated-b2b-sales-pipeline-seo': {
-    title: `Automate B2B Sales Pipelines via AI Citations | Gobiya`,
-    description: `Integrate B2B sales pipeline automation with search intent. Learn how AI citation share decides who gets on the buyer shortlist.`,
-    image: '/images/b2b-sales-pipeline-automation-citation-share.png'
-  },
-  '/insights/automated-lead-generation-seo': {
-    title: `Automate Lead Generation: Search Intent Maps | Gobiya`,
-    description: `Set up automated lead generation by mapping high-intent search clusters to your B2B pipeline to drive closed sales, not just page views.`,
-    image: '/images/automated-lead-generation-intent-mapping-chart.png'
-  },
+
   '/insights/outbound-seo-prospecting': {
     title: `Outbound SEO Prospecting: Target Search Intent | Gobiya`,
     description: `Use outbound SEO prospecting to monitor search intent triggers. Learn how to pitch buyers at the exact moment they search for your service.`,

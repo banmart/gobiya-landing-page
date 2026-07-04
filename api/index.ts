@@ -1594,7 +1594,11 @@ export default async function handler(req: IncomingMessage, res: any) {
       '/capabilities/authority-building-agency': '/relations/authority-building-agency',
       '/company/about': '/about',
       '/company/approach': '/approach',
-      '/local-seo-services-burbank': '/local-seo-company-burbank'
+      '/local-seo-services-burbank': '/local-seo-company-burbank',
+      '/book-call': '/book',
+      '/local-seo-glendale': '/glendale-seo',
+      '/insights/automated-b2b-sales-pipeline-seo': '/insights/b2b-sales-pipeline-automation',
+      '/insights/automated-lead-generation-seo': '/insights/b2b-sales-pipeline-automation'
     };
 
     if (legacyRedirects[pathname]) {
