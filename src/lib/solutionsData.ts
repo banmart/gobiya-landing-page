@@ -162,7 +162,7 @@ export const SOLUTIONS_DATA: Record<string, SolutionData> = {
       desc: 'By migrating from a bloated WordPress setup to a custom, lightning-fast React application with native LocalBusiness schemas, we grew patient appointments and phone calls fivefold.',
       chartTitleLeft: 'Inbound Inquiries', chartTitleRight: 'migration point',
       chartMetaLeft: 'pre-migration', chartMetaRight: 'post-migration',
-      ctaText: 'View the case study', ctaLink: '/success-stories/smile-center-dentistry'
+      ctaText: 'View the case study', ctaLink: '/case-studies'
     },
     faqs: [
       { q: 'Our site is slow and we keep losing leads before they fill out the form. Can you fix it without rebuilding from scratch?', a: 'Usually we can diagnose the problem first — slow sites typically fail on a handful of specific issues: unoptimized images, render-blocking scripts, third-party tag bloat, or no server-side caching. A technical audit tells us whether a targeted fix is possible or whether the architecture is so constrained that a rebuild is the only real path. We tell you which it is before any work starts.' },
@@ -837,7 +837,7 @@ export const SOLUTIONS_DATA: Record<string, SolutionData> = {
       desc: 'By building high-authority local citations and cleanup of toxic backlink profiles alongside a custom React rebuild, we drove a massive increase in maps visibility and bookings.',
       chartTitleLeft: 'Domain Rating', chartTitleRight: 'campaign start',
       chartMetaLeft: 'pre-campaign', chartMetaRight: 'post-campaign',
-      ctaText: 'View the case study', ctaLink: '/success-stories/american-livescan'
+      ctaText: 'View the case study', ctaLink: '/case-studies'
     },
     faqs: [
       { q: 'We got hit by what we think was a bad link-building campaign. Can you help us clean it up?', a: 'Yes. The first step is a full backlink audit to identify which links are likely responsible — patterns to look for include low-authority directories, link farms, irrelevant niche sites, and anchor text over-optimization. From there we build a disavow file for the worst offenders and submit it to Google Search Console. If a manual action is involved, we document the cleanup and file a reconsideration request. The timeline from audit to visible recovery is typically six to twelve weeks.' },

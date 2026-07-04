@@ -194,9 +194,10 @@ export default function LocalSeoBurbankPage() {
       services={ORIGIN_CARDS.map(c => ({ title: c.title, body: c.body }))}
       faqs={FAQ_ITEMS}
       useHeroForm={true}
+      useClampPadding={true}
     >
       {/* CAPABILITIES SECTION */}
-      <section className="py-24 border-b border-gray-200 bg-gray-50 px-[5vw]">
+      <section className="border-b border-gray-200 bg-gray-50 py-24 px-[5vw]">
         <div className="mb-12">
           <span className="text-sm font-mono uppercase tracking-widest text-gray-400 block mb-3">Service Architecture</span>
           <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-gray-900">
@@ -219,7 +220,7 @@ export default function LocalSeoBurbankPage() {
       </section>
 
       {/* CHECKLIST SECTION */}
-      <section className="py-24 border-b border-gray-200 bg-white px-[5vw]">
+      <section className="border-b border-gray-200 bg-white py-24 px-[5vw]">
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16">
           <div data-anim="up">
             <span className="text-sm font-mono uppercase tracking-widest text-gray-400 block mb-3">Engagement Sequence</span>
@@ -270,7 +271,7 @@ export default function LocalSeoBurbankPage() {
       </section>
 
       {/* RATED CARDS SECTION */}
-      <section className="py-24 border-b border-gray-200 bg-gray-50 px-[5vw]">
+      <section className="border-b border-gray-200 bg-gray-50 py-24 px-[5vw]">
         <div className="mb-12">
           <span className="text-sm font-mono uppercase tracking-widest text-gray-400 block mb-3">What "Top Rated" Actually Means</span>
           <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-gray-900">
@@ -293,7 +294,7 @@ export default function LocalSeoBurbankPage() {
       </section>
 
       {/* RELATED CLUSTER SECTION */}
-      <section className="py-24 border-b border-gray-200 bg-gray-50 px-[5vw]">
+      <section className="border-b border-gray-200 bg-gray-50 py-24 px-[5vw]">
         <div className="mb-12">
           <span className="text-sm font-mono uppercase tracking-widest text-gray-400 block mb-3">SEO &amp; Discoverability Cluster</span>
           <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-gray-900">
@@ -329,7 +330,7 @@ export default function LocalSeoBurbankPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-24 px-[5vw] bg-white border-t border-gray-200">
+      <section className="bg-white border-t border-gray-200 py-24 px-[5vw]">
         <div className="max-w-4xl mx-auto p-12 bg-gray-50 border border-gray-200 flex flex-col md:flex-row gap-8 items-center" data-anim="up">
           <div className="flex-1">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">Start Your Burbank Local SEO Engagement</h2>

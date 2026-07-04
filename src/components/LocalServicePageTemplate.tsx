@@ -71,6 +71,7 @@ export interface LocalServicePageTemplateProps {
   spokesLabel?: string;
   useHeroForm?: boolean;
   relevantSlugs?: string[];
+  useClampPadding?: boolean;
   children?: React.ReactNode;
 }
 
@@ -93,6 +94,7 @@ export default function LocalServicePageTemplate({
   spokesLabel = "Explore",
   useHeroForm = false,
   relevantSlugs,
+  useClampPadding = false,
   children,
 }: LocalServicePageTemplateProps) {
   useEffect(() => {
@@ -148,7 +150,10 @@ export default function LocalServicePageTemplate({
       <SiteHeader />
 
       {/* 01. Hero Section (Light mode matching /creativity/ai-videos-agency) */}
-      <section className="bg-white pt-28 pb-20 lg:pt-40 lg:pb-24 border-b border-gray-200 px-[5vw]">
+      <section 
+        className={useClampPadding ? "bg-white border-b border-gray-200" : "bg-white pt-28 pb-20 lg:pt-40 lg:pb-24 border-b border-gray-200 px-[5vw]"}
+        style={useClampPadding ? { padding: 'clamp(7rem,15vw,13rem) 5vw 5rem' } : undefined}
+      >
         <div className="max-w-7xl mx-auto flex flex-wrap lg:flex-nowrap gap-12 lg:gap-24 items-start justify-between">
           <div className="flex-1 min-w-0 max-w-3xl">
             {/* Breadcrumb */}
@@ -225,8 +230,8 @@ export default function LocalServicePageTemplate({
       </section>
 
       {/* 02. Intro Section (50/50 split matching homepage) */}
-      <section id="intro" className="py-24 border-b border-gray-200 bg-white">
-        <div className="w-full mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 px-[5vw]">
+      <section id="intro" className={useClampPadding ? "border-b border-gray-200 bg-white" : "py-24 border-b border-gray-200 bg-white"} style={useClampPadding ? { padding: '5rem 5vw' } : undefined}>
+        <div className={useClampPadding ? "w-full mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24" : "w-full mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 px-[5vw]"}>
           <div className="flex flex-col justify-start" data-anim="up">
             <span className="text-sm font-mono uppercase tracking-widest text-gray-500 mb-4">
               Overview
@@ -261,7 +266,7 @@ export default function LocalServicePageTemplate({
 
       {/* 04. Services / Capabilities Grid */}
       {services && services.length > 0 && (
-        <section className="py-24 border-b border-gray-200 bg-white px-[5vw]">
+        <section className={useClampPadding ? "border-b border-gray-200 bg-white" : "py-24 border-b border-gray-200 bg-white px-[5vw]"} style={useClampPadding ? { padding: '5rem 5vw' } : undefined}>
           <div className="mb-12">
             <span className="text-sm font-mono uppercase tracking-widest text-gray-400 block mb-3">{servicesLabel}</span>
             <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-gray-900">
@@ -294,7 +299,7 @@ export default function LocalServicePageTemplate({
 
       {/* 05. Hub / Spokes Grid (if applicable) */}
       {spokes && spokes.length > 0 && (
-        <section className="py-24 border-b border-gray-200 bg-white px-[5vw]">
+        <section className={useClampPadding ? "border-b border-gray-200 bg-white" : "py-24 border-b border-gray-200 bg-white px-[5vw]"} style={useClampPadding ? { padding: '5rem 5vw' } : undefined}>
           <div className="mb-12">
             <span className="text-sm font-mono uppercase tracking-widest text-gray-400 block mb-3">{spokesLabel}</span>
             <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-gray-900">
@@ -331,7 +336,7 @@ export default function LocalServicePageTemplate({
 
       {/* 07. FAQs */}
       {faqs && faqs.length > 0 && (
-        <section className="py-24 border-b border-gray-200 bg-white px-[5vw]">
+        <section className={useClampPadding ? "border-b border-gray-200 bg-white" : "py-24 border-b border-gray-200 bg-white px-[5vw]"} style={useClampPadding ? { padding: '5rem 5vw' } : undefined}>
           <div className="max-w-3xl">
             <span className="text-sm font-mono uppercase tracking-widest text-gray-400 block mb-3">Common questions</span>
             <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-gray-900 mb-12">

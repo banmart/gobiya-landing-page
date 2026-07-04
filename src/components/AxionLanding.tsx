@@ -246,9 +246,9 @@ const AxionLanding = () => {
       {/* STATS BAR */}
       <div className="flex flex-col md:flex-row w-full bg-[#e05a1a] border-y border-white/10 z-20 relative">
         {[
-          { value: '5x', label: 'Patient inquiries', text: 'SmileCenter Dentistry — form completions & phone calls.', href: '/case-studies/smile-center-dentistry', client: 'SmileCenter' },
-          { value: '3x', label: 'Bookings & calls', text: 'American Livescan — online appointments & inbound calls.', href: '/case-studies/american-livescan', client: 'Livescan' },
-          { value: '+30%', label: 'Walk-in traffic', text: 'American Livescan — driven by speed & technical discoverability.', href: '/case-studies/american-livescan', client: 'Livescan' },
+          { value: '5x', label: 'Patient inquiries', text: 'SmileCenter Dentistry — form completions & phone calls.', href: '/case-studies', client: 'SmileCenter' },
+          { value: '3x', label: 'Bookings & calls', text: 'American Livescan — online appointments & inbound calls.', href: '/case-studies', client: 'Livescan' },
+          { value: '+30%', label: 'Walk-in traffic', text: 'American Livescan — driven by speed & technical discoverability.', href: '/case-studies', client: 'Livescan' },
           { value: '100%', label: 'Attribution Tracking', text: 'end-to-end visibility on all your marketing pipeline data.' }
         ].map((stat, idx) => (
           <div key={idx} className={`flex-1 p-8 lg:p-10 ${idx % 2 === 0 ? 'bg-[#F26522]' : 'bg-[#e05a1a]'} text-white ${stat.href ? 'group cursor-pointer hover:brightness-110 transition-[filter] duration-300' : ''}`}

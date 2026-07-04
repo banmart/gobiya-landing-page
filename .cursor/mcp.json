@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "gobiya": {
+      "command": "node",
+      "args": ["./mcp-server/dist/index.js"],
+      "env": {
+        "GOBIYA_API_BASE": "https://www.gobiya.com"
+      }
+    }
+  }
+}

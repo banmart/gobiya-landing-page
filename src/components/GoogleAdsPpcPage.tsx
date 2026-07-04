@@ -232,11 +232,11 @@ export default function GoogleAdsPpcPage() {
             American Livescan: a full Google Ads restructure that compressed cost-per-acquisition while growing lead volume — driven by intent-based campaign architecture and landing page alignment, not just higher bids.
           </p>
           <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-            <a href="/case-studies/american-livescan" className="btn btn-primary magnetic">Read the case study</a>
+            <a href="/case-studies" className="btn btn-primary magnetic">Read the case study</a>
             <a href="/case-studies" className="btn btn-ghost magnetic">All case studies</a>
           </div>
         </div>
-        <a href="/case-studies/american-livescan" style={{ display: 'block', overflow: 'hidden', aspectRatio: '16/9' }}>
+        <a href="/case-studies" style={{ display: 'block', overflow: 'hidden', aspectRatio: '16/9' }}>
           <img
             src="/images/american-livescan-homepage.webp"
             alt="American Livescan — Google Ads results"

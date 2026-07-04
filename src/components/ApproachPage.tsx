@@ -545,8 +545,8 @@ const ApproachPage: React.FC = () => {
       <section className="clients" aria-label="Clients">
         <div className="clients-inner" data-anim="fade">
           <span className="mono-tag">Doctrine in production for —</span>
-          <a href="/case-studies/smile-center-dentistry" className="client-name">SmileCenter</a>
-          <a href="/case-studies/american-livescan" className="client-name">American LiveScan</a>
+          <a href="/case-studies" className="client-name">SmileCenter</a>
+          <a href="/case-studies" className="client-name">American LiveScan</a>
           <span className="client-name">RemodelMe Pros</span>
           <span className="client-name">QuickPass</span>
           <span className="client-name">MyTrustWills</span>

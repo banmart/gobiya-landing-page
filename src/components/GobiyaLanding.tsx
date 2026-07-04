@@ -427,7 +427,7 @@ export default function GobiyaLanding() {
         <div>
         {/* Row 1: 2 featured cards */}
         <div className="hp-row-2">
-          <a href="/case-studies/smile-center-dentistry" className="hp-entry" data-anim="up">
+          <a href="/case-studies" className="hp-entry" data-anim="up">
             <div className="hp-frame hp-frame-2col">
               <div className="hp-bg hp-bg-photo" style={{ backgroundImage: 'url(/images/smile-center-homepage.webp)' }} />
               <div className="hp-overlay" />

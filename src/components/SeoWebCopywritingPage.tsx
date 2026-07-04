@@ -238,11 +238,11 @@ export default function SeoWebCopywritingPage() {
             SmileCenter Dentistry: 213K monthly search impressions and 5x patient inquiry growth, driven by location-specific copy architecture and GEO-optimized content clusters.
           </p>
           <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-            <a href="/case-studies/smile-center-dentistry" className="btn btn-primary magnetic">Read the case study</a>
+            <a href="/case-studies" className="btn btn-primary magnetic">Read the case study</a>
             <a href="/case-studies" className="btn btn-ghost magnetic">All case studies</a>
           </div>
         </div>
-        <a href="/case-studies/smile-center-dentistry" style={{ display: 'block', overflow: 'hidden', aspectRatio: '16/9' }}>
+        <a href="/case-studies" style={{ display: 'block', overflow: 'hidden', aspectRatio: '16/9' }}>
           <img
             src="/images/smile-center-homepage.webp"
             alt="Smile Center Dentistry — SEO copywriting results"

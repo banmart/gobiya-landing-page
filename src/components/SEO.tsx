@@ -219,14 +219,6 @@ const metadataMap: Record<string, SEOMetadata> = {
     title: `Forensic SEO Approach LA: entity structure & GEO - Gobiya`,
     description: `Gobiya's operating model for algorithmic dominance: entity-based indexing, topical authority and schema engineering, Generative Engine Optimization (GEO) for LLM visibility, and pipeline-first conversion architecture.`
   },
-  '/case-studies/smile-center-dentistry': {
-    title: `Dental SEO Case Study: 5x Patient Inquiries | Gobiya`,
-    description: `How we rebuilt SmileCenter's website on React/Vite, architected individual location pages for Southern California markets, and drove a 5x increase in form completions and phone calls.`
-  },
-  '/case-studies/american-livescan': {
-    title: `Local SEO Case Study: Tripled Online Bookings | Gobiya`,
-    description: `How we replaced a legacy .htm site with a clean-URL architecture, optimized the Google Business Profile, and tripled online appointments and phone calls for a high-volume LA fingerprinting service.`
-  },
   '/contact': {
     title: `Contact Gobiya LA: book call, free audit, open now - Gobiya`,
     description: `Reach Gobiya in Los Angeles. Call 323-744-1338, email hello@gobiya.com, or fill out our contact form for an SEO audit, web development, or AI growth consultation.`

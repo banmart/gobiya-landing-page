@@ -392,35 +392,10 @@ const SiteHeader: React.FC = () => {
               </li>
 
               {/* Case Studies Dropdown */}
-              <li className="menu-item group cursor-pointer relative lg:static h-full flex items-center" style={{ position: 'static' }}>
+              <li className="menu-item relative lg:static h-full flex items-center" style={{ position: 'static' }}>
                 <a href="/case-studies" className="flex items-center gap-1 py-4 font-medium hover:text-gray-400 transition-colors" style={{ color: isHeaderActive ? "#111827" : "#ffffff" }}>
                   Case Studies
-                  <svg width="12" height="12" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg" className="transform group-hover:rotate-180 transition-transform duration-300">
-                    <path fillRule="evenodd" clipRule="evenodd" d="M5.58564 3.52858C5.84599 3.26823 6.2681 3.26823 6.52845 3.52858L10.5285 7.52858C10.7888 7.78892 10.7888 8.21103 10.5285 8.47138L6.52845 12.4714C6.2681 12.7317 5.84599 12.7317 5.58564 12.4714C5.32529 12.211 5.32529 11.7889 5.58564 11.5286L9.11424 7.99998L5.58564 4.47138C5.32529 4.21103 5.32529 3.78892 5.58564 3.52858Z" fill="currentColor"/>
-                  </svg>
                 </a>
-                <div className="absolute top-full left-0 w-full bg-white opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 shadow-2xl border-t border-line">
-                  <div className="w-full mx-auto flex" style={{ paddingLeft: '5vw', paddingRight: '5vw' }}>
-                    <div className="w-full lg:w-1/3 py-12 pr-8 border-r border-line">
-                      <ul className="flex flex-col gap-3 text-left">
-                        <li><a href="/case-studies" className="text-gray-900 font-bold text-lg hover:text-gray-500 transition-colors block border-b border-line pb-4 mb-2">Overview &rarr;</a></li>
-                        <li>
-                          <a href="/case-studies/smile-center-dentistry" className="group/link text-gray-500 hover:text-gray-900 transition-all duration-200 flex items-center justify-between text-base py-2 border-b border-gray-100/30">
-                            <span>Smile Center Dentistry</span>
-                            <span className="opacity-0 -translate-x-2 group-hover/link:opacity-100 group-hover/link:translate-x-0 transition-all duration-200 text-gray-900 font-bold">&rarr;</span>
-                          </a>
-                        </li>
-                        <li>
-                          <a href="/case-studies/american-livescan" className="group/link text-gray-500 hover:text-gray-900 transition-all duration-200 flex items-center justify-between text-base py-2 border-b border-gray-100/30">
-                            <span>American Livescan</span>
-                            <span className="opacity-0 -translate-x-2 group-hover/link:opacity-100 group-hover/link:translate-x-0 transition-all duration-200 text-gray-900 font-bold">&rarr;</span>
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
-                    <div className="hidden lg:block lg:w-2/3 bg-gray-50/50"></div>
-                  </div>
-                </div>
               </li>
             </ul>
           </div>
@@ -544,18 +519,11 @@ const SiteHeader: React.FC = () => {
               </a>
             </div>
 
-            {/* Case Studies Accordion */}
+            {/* Case Studies */}
             <div className="border-b border-gray-200 pb-8">
-              <div className="w-full text-gray-900" style={{ fontSize: '2.5rem', fontWeight: 800, letterSpacing: '-0.02em', fontFamily: 'inherit' }}>
+              <a href="/case-studies" className="w-full text-gray-900 block" style={{ fontSize: '2.5rem', fontWeight: 800, letterSpacing: '-0.02em', fontFamily: 'inherit' }}>
                 Case Studies
-              </div>
-              <div style={{ overflow: 'hidden', marginTop: '1.5rem' }}>
-                <div className="flex flex-col gap-5 pl-4" style={{ borderLeft: '2px solid #F3F4F6' }}>
-                  <a href="/case-studies" style={{ fontSize: '1.25rem', fontWeight: 600, color: '#111827' }}>Overview &rarr;</a>
-                  <a href="/case-studies/smile-center-dentistry" style={{ fontSize: '1.125rem', color: '#6B7280' }}>Smile Center Dentistry</a>
-                  <a href="/case-studies/american-livescan" style={{ fontSize: '1.125rem', color: '#6B7280' }}>American Livescan</a>
-                </div>
-              </div>
+              </a>
             </div>
 
             {/* About Us Accordion */}

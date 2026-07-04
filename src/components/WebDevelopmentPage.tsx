@@ -235,11 +235,11 @@ export default function WebDevelopmentPage() {
             Trusted by teams at: Smile Center Dentistry, American Livescan, Remodel Me Pros, SafetyCentric, QuickPass AiD, The ARK Crypto, and others.
           </p>
           <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-            <a href="/case-studies/smile-center-dentistry" className="btn btn-primary magnetic">Read the case study</a>
+            <a href="/case-studies" className="btn btn-primary magnetic">Read the case study</a>
             <a href="/case-studies" className="btn btn-ghost magnetic">All case studies</a>
           </div>
         </div>
-        <a href="/case-studies/smile-center-dentistry" style={{ display: 'block', overflow: 'hidden', aspectRatio: '16/9' }}>
+        <a href="/case-studies" style={{ display: 'block', overflow: 'hidden', aspectRatio: '16/9' }}>
           <img
             src="/images/smile-center-homepage.webp"
             alt="Smile Center Dentistry — custom React build results"

@@ -1,4 +1,4 @@
-﻿import { supabase } from '../lib/supabase';
+import { supabase } from '../lib/supabase';
 import { trackCTA } from '../lib/analytics';
 import React, { useState, useEffect, useRef } from 'react';
 import DeferredShader, { Swirl, ChromaFlow, FlutedGlass, FilmGrain } from './DeferredShader';
@@ -1196,14 +1196,14 @@ export default function ServiceSubpage({ path, isFanOut, category, slug }: Servi
                 </div>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <a href="/case-studies/smile-center-dentistry" className="group block">
+                <a href="/case-studies" className="group block">
                   <div className="overflow-hidden mb-4" style={{ height: '320px' }}>
                     <img src="/images/smile-center-homepage.webp" alt="Smile Center Dentistry case study" width={720} height={320} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                   </div>
                   <h3 className="text-lg font-bold text-gray-900 mb-1">Smile Center Dentistry</h3>
                   <p className="text-sm text-gray-400">SEO & Web Development</p>
                 </a>
-                <a href="/case-studies/american-livescan" className="group block">
+                <a href="/case-studies" className="group block">
                   <div className="overflow-hidden mb-4" style={{ height: '320px' }}>
                     <img src="/images/american-livescan-storefront.webp" alt="American Livescan case study" width={720} height={320} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                   </div>
@@ -2002,7 +2002,7 @@ export default function ServiceSubpage({ path, isFanOut, category, slug }: Servi
       
       {/* SECTION: SCROLL REVEAL INTRO */}
       {path !== '/insights' && path !== '/contact' && path !== '/services' && path !== '/approach' && path !== '/case-studies' && (
-        <section className="w-full relative" data-logo-dark>
+        <section className="w-full relative">
           <SplitTextReveal text={config.introScrollText} />
         </section>
       )}
@@ -2117,7 +2117,7 @@ export default function ServiceSubpage({ path, isFanOut, category, slug }: Servi
 
       {/* DETAILED METHODOLOGY FOR THE APPROACH PATH */}
       {path === '/approach' && (
-        <section className="bg-gray-50 text-gray-900 py-20 sm:py-32 border-t border-black/10 relative z-20" data-logo-dark>
+        <section className="bg-gray-50 text-gray-900 py-20 sm:py-32 border-t border-black/10 relative z-20">
           <div className="max-w-[1440px] w-full mx-auto px-5 sm:px-8 lg:px-12">
             <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-16">
               
@@ -2351,7 +2351,7 @@ export default function ServiceSubpage({ path, isFanOut, category, slug }: Servi
 
       {/* REAL CASE STUDIES FOR SUCCESS STORIES PATH */}
       {path === '/case-studies' && (
-        <section className="bg-gray-50 text-gray-900 py-20 sm:py-32 border-t border-black/10 relative z-20" data-logo-dark>
+        <section className="bg-gray-50 text-gray-900 py-20 sm:py-32 border-t border-black/10 relative z-20">
           <div className="max-w-[1440px] w-full mx-auto px-5 sm:px-8 lg:px-12">
             <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-16">
 
@@ -2443,7 +2443,7 @@ export default function ServiceSubpage({ path, isFanOut, category, slug }: Servi
                       SmileCenter Dentistry — 5x Patient Inquiries
                     </h2>
                     <a
-                      href="/case-studies/smile-center-dentistry"
+                      href="/case-studies"
                       className="group flex items-center gap-2 text-[#F26522] hover:text-gray-900 border border-[#F26522]/40 hover:border-black/20 px-4 py-2 text-[13px] font-semibold transition-colors flex-shrink-0"
                     >
                       Full case study <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:-rotate-45" />
@@ -2513,7 +2513,7 @@ export default function ServiceSubpage({ path, isFanOut, category, slug }: Servi
                       American Livescan — 3x Bookings &amp; Calls After Legacy Site Migration
                     </h2>
                     <a
-                      href="/case-studies/american-livescan"
+                      href="/case-studies"
                       className="group flex items-center gap-2 text-[#F26522] hover:text-gray-900 border border-[#F26522]/40 hover:border-black/20 px-4 py-2 text-[13px] font-semibold transition-colors flex-shrink-0"
                     >
                       Full case study <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:-rotate-45" />
@@ -2599,7 +2599,7 @@ export default function ServiceSubpage({ path, isFanOut, category, slug }: Servi
 
       {/* SIMPLE SERVICES SHOWCASE FOR CONSOLIDATED PATH */}
       {path === '/services' && (
-        <section className="bg-gray-50 text-gray-900 py-16 sm:py-24 border-t border-black/10 relative z-20" data-logo-dark>
+        <section className="bg-gray-50 text-gray-900 py-16 sm:py-24 border-t border-black/10 relative z-20">
           <div className="max-w-[1440px] w-full mx-auto px-5 sm:px-8 lg:px-12">
             <h2 data-anim="up" className="text-2xl sm:text-4xl font-semibold tracking-tight text-gray-900 mb-12">Our Specialized Capabilities</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" data-anim="stagger">
@@ -2696,7 +2696,7 @@ export default function ServiceSubpage({ path, isFanOut, category, slug }: Servi
 
       {/* SECTION: ROI CALCULATOR */}
       {path !== '/insights' && path !== '/contact' && (
-        <div data-logo-dark className="relative">
+        <div className="relative">
           {config.showCalculator !== false && <RoiCalculator {...(config.calculatorProps || {})} />}
         </div>
       )}
@@ -2887,7 +2887,7 @@ export default function ServiceSubpage({ path, isFanOut, category, slug }: Servi
 
       {/* SECTION: LATEST INSIGHTS */}
       {(isServicesPath || path === '/google-penalty-recovery') && (
-        <div data-logo-dark className="relative">
+        <div className="relative">
           <InsightsSlider filterCategory={config.insightCategory} limit={3} currentPath={path} />
         </div>
       )}

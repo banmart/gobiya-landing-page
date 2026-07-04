@@ -21,8 +21,6 @@ export const SuccessStories = lazy(() => import('./SuccessStories'));
 export const ApproachPage = lazy(() => import('./ApproachPage'));
 export const InsightsPage = lazy(() => import('./InsightsPage'));
 export const RegionalHubPage = lazy(() => import('./RegionalHubPage'));
-export const SmileCenterCaseStudy = lazy(() => import('./SmileCenterCaseStudy'));
-export const AmericanLivescanCaseStudy = lazy(() => import('./AmericanLivescanCaseStudy'));
 export const AdminLogin = lazy(() => import('./AdminLogin'));
 export const AdminDashboard = lazy(() => import('./AdminDashboard'));
 export const ContactPage = lazy(() => import('./ContactPage'));

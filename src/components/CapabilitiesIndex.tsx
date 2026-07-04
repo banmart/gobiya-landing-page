@@ -563,7 +563,7 @@ export default function CapabilitiesIndex() {
 
 
 
-      <div data-logo-dark className="relative">
+      <div className="relative">
         <InsightsSlider currentPath="/capabilities" limit={3} />
       </div>
         </main>

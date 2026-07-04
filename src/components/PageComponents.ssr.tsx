@@ -11,8 +11,6 @@ export { default as SuccessStories } from './SuccessStories';
 export { default as ApproachPage } from './ApproachPage';
 export { default as InsightsPage } from './InsightsPage';
 export { default as RegionalHubPage } from './RegionalHubPage';
-export { default as SmileCenterCaseStudy } from './SmileCenterCaseStudy';
-export { default as AmericanLivescanCaseStudy } from './AmericanLivescanCaseStudy';
 export { default as AdminLogin } from './AdminLogin';
 export { default as AdminDashboard } from './AdminDashboard';
 export { default as ContactPage } from './ContactPage';

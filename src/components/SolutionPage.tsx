@@ -540,7 +540,7 @@ const SolutionPage: React.FC<{ path: string }> = ({ path }) => {
 
 
 
-      <div data-logo-dark className="relative">
+      <div className="relative">
         <InsightsSlider currentPath={path} limit={3} />
       </div>
         </main>

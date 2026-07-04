@@ -12,8 +12,6 @@ import {
   ApproachPage,
   InsightsPage,
   RegionalHubPage,
-  SmileCenterCaseStudy,
-  AmericanLivescanCaseStudy,
   AdminLogin,
   AdminDashboard,
   ContactPage,
@@ -236,8 +234,11 @@ function App({ url }: AppProps) {
       '/insights/google-my-business-optimization': '/insights/google-business-profile-optimization',
       '/company/success-stories': '/case-studies',
       '/success-stories': '/case-studies',
-      '/success-stories/smile-center-dentistry': '/case-studies/smile-center-dentistry',
-      '/success-stories/american-livescan': '/case-studies/american-livescan',
+      '/success-stories/smile-center-dentistry': '/case-studies',
+      '/success-stories/american-livescan': '/case-studies',
+      // Retired case-study subpages — consolidated into the /case-studies index
+      '/case-studies/smile-center-dentistry': '/case-studies',
+      '/case-studies/american-livescan': '/case-studies',
       '/services': '/capabilities',
       '/services/seo': '/performance/seo-discoverability-agency/',
       '/services/lead-generation': '/performance/native-crm-agency/',
@@ -300,6 +301,13 @@ function App({ url }: AppProps) {
     if (normalized === '/resources' || normalized.startsWith('/resources/')) {
       window.history.replaceState({}, '', '/insights');
       setCurrentPath('/insights');
+      return;
+    }
+
+    // Catch-all: any /case-studies/ subpath collapses to the index
+    if (normalized.startsWith('/case-studies/')) {
+      window.history.replaceState({}, '', '/case-studies');
+      setCurrentPath('/case-studies');
     }
   }, [currentPath]);
 
@@ -346,8 +354,6 @@ function App({ url }: AppProps) {
     '/approach',
     '/insights',
     '/contact',
-    '/case-studies/smile-center-dentistry',
-    '/case-studies/american-livescan',
     '/performance/seo-traffic-recovery',
 
     '/glendale-seo',
@@ -436,10 +442,6 @@ function App({ url }: AppProps) {
         <CryptoWeb3Page />
       ) : fanOutMatch ? (
         <ServiceSubpage key={normalizedPath} path={normalizedPath} isFanOut={true} category={fanOutCategory} slug={fanOutSlug} />
-      ) : normalizedPath === '/case-studies/smile-center-dentistry' ? (
-        <SmileCenterCaseStudy />
-      ) : normalizedPath === '/case-studies/american-livescan' ? (
-        <AmericanLivescanCaseStudy />
       ) : (
         <ServiceSubpage key={normalizedPath} path={normalizedPath} />
       )}

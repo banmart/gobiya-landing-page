@@ -534,14 +534,6 @@ const metadataMap: Record<string, SEOMetadata> = {
     title: "Forensic SEO Approach LA: entity structure & GEO - Gobiya",
     description: "Gobiya's operating model for algorithmic dominance: entity-based indexing, topical authority and schema engineering, Generative Engine Optimization (GEO) for LLM visibility, and pipeline-first conversion architecture."
   },
-  '/case-studies/smile-center-dentistry': {
-    title: "Dental SEO Case Study: 5x Patient Inquiries | Gobiya",
-    description: "How we rebuilt SmileCenter's website on React/Vite, architected individual location pages for Southern California markets, and drove a 5x increase in form completions and phone calls."
-  },
-  '/case-studies/american-livescan': {
-    title: "Local SEO Case Study: Tripled Online Bookings | Gobiya",
-    description: "How we replaced a legacy .htm site with a clean-URL architecture, optimized the Google Business Profile, and tripled online appointments and phone calls for a high-volume LA fingerprinting service."
-  },
   '/insights': {
     title: "SEO & AI Intelligence LA: core updates, GEO briefs - Gobiya",
     description: "Advanced tactical intelligence on Google and AI search: algorithm update analysis, GEO and LLM citation tactics, entity SEO, technical recovery briefs, and pipeline engineering field notes from Gobiya."
@@ -1564,8 +1556,11 @@ export default async function handler(req: IncomingMessage, res: any) {
       '/insights/google-my-business-optimization': '/insights/google-business-profile-optimization',
       '/company/success-stories': '/case-studies',
       '/success-stories': '/case-studies',
-      '/success-stories/smile-center-dentistry': '/case-studies/smile-center-dentistry',
-      '/success-stories/american-livescan': '/case-studies/american-livescan',
+      '/success-stories/smile-center-dentistry': '/case-studies',
+      '/success-stories/american-livescan': '/case-studies',
+      // Retired case-study subpages — consolidated into the /case-studies index
+      '/case-studies/smile-center-dentistry': '/case-studies',
+      '/case-studies/american-livescan': '/case-studies',
       '/services': '/capabilities',
       '/services/seo': '/performance/seo-discoverability-agency',
       '/services/lead-generation': '/performance/native-crm-agency',

@@ -47,6 +47,10 @@
       "dest": "/client/$1"
     },
     {
+      "src": "/mcp",
+      "dest": "api/mcp.ts"
+    },
+    {
       "src": "/(.*)",
       "dest": "api/index.ts"
     }

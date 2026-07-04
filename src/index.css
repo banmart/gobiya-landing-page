@@ -2318,3 +2318,38 @@ pre {
     position: static !important;
   }
 }
+
+/* ============================================================
+   DESIGN-SYSTEM BUTTONS — intentionally OUTSIDE any @layer.
+   /css/theme.css (legacy SAY theme) declares unlayered .btn rules
+   that beat everything inside @layer in the cascade; these
+   higher-specificity, unlayered rules restore the intended style.
+   ============================================================ */
+a.btn, button.btn {
+  position: relative; display: inline-flex; align-items: center; justify-content: center; gap: .7rem;
+  height: 54px; min-width: 0; padding: 0 2rem; border-radius: 999px;
+  font-family: var(--font-mono); font-size: 11px; font-weight: 500; line-height: 1.4;
+  letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; text-align: center;
+  transition: background .35s var(--ease), color .35s var(--ease), border-color .35s var(--ease), transform .35s var(--ease);
+  will-change: transform;
+}
+a.btn svg, button.btn svg { width: 14px; height: 14px; transition: transform .35s var(--ease); }
+a.btn svg path, button.btn svg path { fill: none; }
+a.btn:hover svg, button.btn:hover svg { transform: translate(2px,-2px) rotate(0deg); }
+a.btn-primary, button.btn-primary { background: var(--ink); color: var(--paper); border: 1px solid var(--ink); }
+a.btn-primary:hover, button.btn-primary:hover { background: var(--green); border-color: var(--green); color: var(--paper); }
+a.btn-ghost, button.btn-ghost { background: transparent; color: var(--ink); border: 1px solid var(--line); }
+a.btn-ghost:hover, button.btn-ghost:hover { background: transparent; border-color: var(--ink); color: var(--ink); }
+a.btn-light, button.btn-light { background: var(--paper); color: var(--ink); border: 1px solid var(--line); }
+a.btn-light:hover, button.btn-light:hover { background: var(--signal); border-color: var(--signal); color: var(--paper); }
+.hero-actions a.btn {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 16px; letter-spacing: normal; text-transform: none; font-weight: 500;
+  height: 52px; padding: 0 1.75rem; gap: .5rem;
+}
+.hero-actions a.btn svg { width: 12px; height: 12px; transform: rotate(-45deg); }
+.hero-actions a.btn:hover svg { transform: rotate(-45deg) translate(2px,-2px); }
+/* .btn combined with Tailwind color utilities (layered, so they lose
+   to legacy theme.css) — re-assert the intended white pill. */
+a.btn.bg-white, button.btn.bg-white { background: #ffffff; border: 1px solid #ffffff; color: #111827; }
+a.btn.bg-white:hover, button.btn.bg-white:hover { background: #e5e7eb; border-color: #e5e7eb; color: #111827; }

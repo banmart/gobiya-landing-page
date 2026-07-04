@@ -232,7 +232,7 @@
 }
 
 .success-stories-page .stat {
-  padding: 2.6rem var(--pad);
+  padding: 3.5rem 2rem;
   border-right: 1px solid var(--line);
 }
 
@@ -498,7 +498,7 @@
    ============================================================ */
 .success-stories-page .clients { border-bottom: 1px solid var(--line); background: var(--paper); }
 .success-stories-page .clients-inner {
-  max-width: var(--max-w); margin: 0 auto; padding: 2.4rem var(--pad);
+  max-width: var(--max-w); margin: 0 auto; padding: 3rem 5vw;
   display: flex; flex-wrap: wrap; align-items: center; gap: 1.2rem 2.6rem;
 }
 .success-stories-page .client-name {
