@@ -362,6 +362,12 @@ function App({ url }: AppProps) {
         <SuccessStories />
       ) : normalizedPath === '/contact' ? (
         <ContactPage />
+      ) : normalizedPath === '/glendale-seo' ? (
+        <GlendaleSeoPage />
+      ) : normalizedPath === '/plastic-surgery-internet-marketing' ? (
+        <PlasticSurgeryMarketingPage />
+      ) : normalizedPath === '/internet-marketing-services-los-angeles' ? (
+        <InternetMarketingServicesLosAngelesPage />
       ) : normalizedPath === '/ai-search-marketing-santa-clarita' ? (
         <AiSearchMarketingSantaClaritaPage />
       ) : (
