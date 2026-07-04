@@ -418,6 +418,48 @@ export default async function handler(req: IncomingMessage, res: ServerResponse)
     return;
   }
 
+  // ── Browser visit — return human-readable info page ──────────
+  // MCP GET requests must carry Accept: text/event-stream (SSE).
+  // A plain browser GET won't have it, so serve a friendly page instead.
+  const acceptHeader = (req.headers['accept'] as string) ?? '';
+  if (req.method === 'GET' && !acceptHeader.includes('text/event-stream')) {
+    res.writeHead(200, { 'Content-Type': 'application/json' });
+    res.end(JSON.stringify({
+      name: 'Gobiya MCP Server',
+      version: '1.0.0',
+      status: 'online',
+      description: 'MCP (Model Context Protocol) server for Gobiya. Allows AI agents to discover Gobiya services, approach, team, and submit leads.',
+      endpoint: 'https://www.gobiya.com/mcp',
+      transport: 'Streamable HTTP (MCP spec 2025-03-26)',
+      tools: [
+        'gobiya_get_company_info',
+        'gobiya_list_services',
+        'gobiya_get_service_detail',
+        'gobiya_list_insights',
+        'gobiya_get_approach',
+        'gobiya_get_case_studies',
+        'gobiya_get_team',
+        'gobiya_get_contact_info',
+        'gobiya_submit_contact',
+        'gobiya_submit_audit_request',
+        'gobiya_book_call',
+      ],
+      connect: {
+        claude_ai: 'Settings → Integrations → Add MCP Server → https://www.gobiya.com/mcp',
+        cursor: '{ "mcpServers": { "gobiya": { "url": "https://www.gobiya.com/mcp" } } }',
+        any_client: 'Transport: streamable-http | URL: https://www.gobiya.com/mcp',
+      },
+      company: {
+        name: 'Gobiya',
+        website: 'https://www.gobiya.com',
+        phone: '323-744-1338',
+        email: 'hello@gobiya.com',
+      },
+    }, null, 2));
+    return;
+  }
+
+  // ── MCP client request — hand off to transport ───────────────
   try {
     const server = buildServer();
     // stateless: sessionIdGenerator undefined = no session tracking needed
