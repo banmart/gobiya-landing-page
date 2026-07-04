@@ -433,65 +433,37 @@ export default async function handler(req: IncomingMessage, res: ServerResponse)
   <meta name="description" content="Connect any MCP-compatible AI agent to Gobiya. Discover services, submit leads, and book audits via the Model Context Protocol." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --orange: #F26522;
-      --orange-dim: rgba(242,101,34,0.12);
-      --orange-glow: rgba(242,101,34,0.25);
-      --bg: #060606;
-      --surface: #0e0e0e;
-      --surface2: #161616;
-      --border: rgba(255,255,255,0.07);
-      --border-hover: rgba(242,101,34,0.4);
-      --text: #e8e8e8;
-      --text-muted: #6b7280;
-      --text-dim: #9ca3af;
-      --green: #22c55e;
-      --mono: 'JetBrains Mono', monospace;
-      --sans: 'Inter', system-ui, sans-serif;
+      --paper: #FFFFFF;
+      --paper-2: #F9FAFB;
+      --paper-3: #F3F4F6;
+      --ink: #111827;
+      --ink-soft: #374151;
+      --ink-faint: #9CA3AF;
+      --line: #E5E7EB;
+      --green: #3E4D4C;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      --sans: 'Bricolage Grotesque', system-ui, -apple-system, sans-serif;
     }
 
     html { scroll-behavior: smooth; }
 
     body {
-      background: var(--bg);
-      color: var(--text);
+      background: var(--paper);
+      color: var(--ink);
       font-family: var(--sans);
-      font-size: 15px;
+      font-size: 16px;
       line-height: 1.6;
       min-height: 100vh;
       -webkit-font-smoothing: antialiased;
     }
 
-    /* ── noise texture ── */
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    /* ── radial glow ── */
-    body::after {
-      content: '';
-      position: fixed;
-      top: -30vh;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 900px;
-      height: 600px;
-      background: radial-gradient(ellipse at center, rgba(242,101,34,0.07) 0%, transparent 70%);
-      pointer-events: none;
-      z-index: 0;
-    }
-
     /* ── layout ── */
-    .wrap { position: relative; z-index: 1; max-width: 860px; margin: 0 auto; padding: 0 24px 80px; }
+    .wrap { position: relative; z-index: 1; max-width: 860px; margin: 0 auto; padding: 0 5vw 80px; }
 
     /* ── nav ── */
     nav {
@@ -500,11 +472,13 @@ export default async function handler(req: IncomingMessage, res: ServerResponse)
       justify-content: space-between;
       padding: 28px 0 0;
       margin-bottom: 72px;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 24px;
     }
-    .logo { font-size: 1.1rem; font-weight: 700; letter-spacing: -0.02em; color: #fff; text-decoration: none; }
-    .logo span { color: var(--orange); }
-    .nav-link { font-size: 0.82rem; color: var(--text-muted); text-decoration: none; letter-spacing: 0.04em; text-transform: uppercase; transition: color 0.2s; }
-    .nav-link:hover { color: var(--text); }
+    .logo { font-size: 1.25rem; font-weight: 700; letter-spacing: -0.02em; color: var(--ink); text-decoration: none; }
+    .logo span { color: var(--green); }
+    .nav-link { font-size: 0.875rem; font-weight: 600; color: var(--ink); text-decoration: none; text-transform: uppercase; transition: color 0.2s; }
+    .nav-link:hover { color: var(--ink-soft); }
 
     /* ── hero ── */
     .badge {
@@ -512,35 +486,35 @@ export default async function handler(req: IncomingMessage, res: ServerResponse)
       align-items: center;
       gap: 7px;
       font-family: var(--mono);
-      font-size: 0.72rem;
-      color: var(--green);
-      background: rgba(34,197,94,0.08);
-      border: 1px solid rgba(34,197,94,0.2);
+      font-size: 0.75rem;
+      color: var(--ink);
+      background: var(--paper-2);
+      border: 1px solid var(--line);
       border-radius: 999px;
-      padding: 5px 13px;
-      margin-bottom: 28px;
-      letter-spacing: 0.06em;
+      padding: 6px 14px;
+      margin-bottom: 32px;
+      letter-spacing: 0.05em;
       text-transform: uppercase;
     }
-    .badge-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green); animation: pulse 2s ease-in-out infinite; }
-    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(0.8)} }
+    .badge-dot { width: 8px; height: 8px; border-radius: 50%; background: #22c55e; animation: pulse 2s ease-in-out infinite; }
+    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.6;transform:scale(0.85)} }
 
     h1 {
-      font-size: clamp(2.2rem, 5vw, 3.5rem);
-      font-weight: 700;
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      font-weight: 800;
       letter-spacing: -0.04em;
-      line-height: 1.08;
-      color: #fff;
-      margin-bottom: 20px;
+      line-height: 1.05;
+      color: var(--ink);
+      margin-bottom: 24px;
     }
-    h1 em { font-style: normal; color: var(--orange); }
+    h1 em { font-style: normal; color: var(--ink-faint); }
 
     .hero-sub {
-      font-size: 1.05rem;
-      color: var(--text-dim);
-      max-width: 560px;
-      line-height: 1.75;
-      margin-bottom: 40px;
+      font-size: 1.125rem;
+      color: var(--ink-soft);
+      max-width: 600px;
+      line-height: 1.7;
+      margin-bottom: 48px;
     }
 
     /* ── endpoint box ── */
@@ -548,37 +522,36 @@ export default async function handler(req: IncomingMessage, res: ServerResponse)
       display: flex;
       align-items: center;
       gap: 0;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      overflow: hidden;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 0;
       margin-bottom: 64px;
       transition: border-color 0.2s;
     }
     .endpoint-box:focus-within,
-    .endpoint-box:hover { border-color: var(--border-hover); }
+    .endpoint-box:hover { border-color: var(--ink); }
 
     .ep-label {
       font-family: var(--mono);
-      font-size: 0.72rem;
-      color: var(--text-muted);
-      background: var(--surface2);
-      border-right: 1px solid var(--border);
-      padding: 0 16px;
-      height: 52px;
+      font-size: 0.75rem;
+      color: var(--ink-soft);
+      background: var(--paper-2);
+      border-right: 1px solid var(--line);
+      padding: 0 20px;
+      height: 56px;
       display: flex;
       align-items: center;
       white-space: nowrap;
-      letter-spacing: 0.04em;
+      letter-spacing: 0.05em;
       text-transform: uppercase;
     }
 
     .ep-url {
       font-family: var(--mono);
-      font-size: 0.92rem;
-      color: var(--orange);
+      font-size: 1rem;
+      color: var(--ink);
       flex: 1;
-      padding: 0 18px;
+      padding: 0 20px;
       background: transparent;
       border: none;
       outline: none;
@@ -589,143 +562,157 @@ export default async function handler(req: IncomingMessage, res: ServerResponse)
     .copy-btn {
       display: flex;
       align-items: center;
-      gap: 7px;
-      background: var(--orange);
-      color: #fff;
+      gap: 8px;
+      background: var(--ink);
+      color: var(--paper);
       border: none;
-      padding: 0 20px;
-      height: 52px;
+      padding: 0 24px;
+      height: 56px;
       font-family: var(--sans);
-      font-size: 0.82rem;
+      font-size: 0.875rem;
       font-weight: 600;
-      letter-spacing: 0.03em;
+      letter-spacing: 0.02em;
       cursor: pointer;
-      transition: background 0.18s, transform 0.1s;
+      transition: background 0.2s, transform 0.1s;
       white-space: nowrap;
+      text-transform: uppercase;
     }
-    .copy-btn:hover { background: #d95a1c; }
-    .copy-btn:active { transform: scale(0.97); }
+    .copy-btn:hover { background: var(--green); }
+    .copy-btn:active { transform: scale(0.98); }
     .copy-btn.copied { background: #22c55e; }
 
     /* ── section labels ── */
     .section-label {
       font-family: var(--mono);
-      font-size: 0.7rem;
-      color: var(--text-muted);
+      font-size: 0.75rem;
+      color: var(--ink-soft);
       text-transform: uppercase;
-      letter-spacing: 0.12em;
-      margin-bottom: 16px;
+      letter-spacing: 0.1em;
+      margin-bottom: 20px;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 8px;
     }
 
     /* ── client tabs ── */
-    .tabs { display: flex; gap: 6px; margin-bottom: 16px; flex-wrap: wrap; }
+    .tabs { display: flex; gap: 8px; margin-bottom: 24px; flex-wrap: wrap; }
     .tab {
-      font-size: 0.8rem;
-      font-weight: 500;
-      color: var(--text-muted);
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      padding: 6px 14px;
+      font-family: var(--sans);
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--ink-soft);
+      background: var(--paper-2);
+      border: 1px solid var(--line);
+      padding: 8px 16px;
       cursor: pointer;
-      transition: all 0.15s;
+      transition: all 0.2s;
     }
-    .tab:hover { color: var(--text); border-color: rgba(255,255,255,0.15); }
-    .tab.active { color: var(--orange); border-color: var(--orange-glow); background: var(--orange-dim); }
+    .tab:hover { color: var(--ink); border-color: var(--ink-faint); }
+    .tab.active { color: var(--paper); border-color: var(--ink); background: var(--ink); }
 
     .tab-panel { display: none; }
     .tab-panel.active { display: block; }
 
     /* ── code blocks ── */
     .code-block {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      overflow: hidden;
-      margin-bottom: 48px;
+      background: var(--paper-2);
+      border: 1px solid var(--line);
+      margin-bottom: 64px;
     }
     .code-header {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 10px 16px;
-      border-bottom: 1px solid var(--border);
-      background: var(--surface2);
+      padding: 12px 20px;
+      border-bottom: 1px solid var(--line);
+      background: var(--paper);
     }
     .code-filename {
       font-family: var(--mono);
-      font-size: 0.72rem;
-      color: var(--text-muted);
-      letter-spacing: 0.04em;
+      font-size: 0.75rem;
+      color: var(--ink-soft);
+      letter-spacing: 0.02em;
     }
     .code-copy {
-      font-family: var(--mono);
-      font-size: 0.7rem;
-      color: var(--text-muted);
+      font-family: var(--sans);
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: var(--ink);
       background: transparent;
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      padding: 3px 9px;
+      border: none;
       cursor: pointer;
-      transition: all 0.15s;
+      transition: color 0.2s;
     }
-    .code-copy:hover { color: var(--text); border-color: rgba(255,255,255,0.2); }
-    .code-copy.copied { color: var(--green); border-color: rgba(34,197,94,0.3); }
+    .code-copy:hover { color: var(--green); }
+    .code-copy.copied { color: #22c55e; }
     pre {
-      padding: 20px;
+      padding: 24px 20px;
       font-family: var(--mono);
-      font-size: 0.82rem;
-      line-height: 1.65;
-      color: var(--text-dim);
+      font-size: 0.875rem;
+      line-height: 1.7;
+      color: var(--ink-soft);
       overflow-x: auto;
       white-space: pre;
     }
-    .hl { color: var(--orange); }
+    .hl { color: var(--ink); font-weight: 500; }
     .hl-green { color: var(--green); }
-    .hl-blue { color: #60a5fa; }
-    .hl-muted { color: var(--text-muted); }
+    .hl-blue { color: #0369a1; }
+    .hl-muted { color: var(--ink-faint); }
 
     /* ── tools grid ── */
     .tools-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-      gap: 10px;
-      margin-bottom: 48px;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 16px;
+      margin-bottom: 64px;
     }
     .tool-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 14px 16px;
-      transition: border-color 0.2s, background 0.2s;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      padding: 20px;
+      transition: border-color 0.2s, box-shadow 0.2s;
     }
-    .tool-card:hover { border-color: var(--border-hover); background: var(--surface2); }
+    .tool-card:hover { border-color: var(--ink); box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
     .tool-name {
       font-family: var(--mono);
-      font-size: 0.75rem;
-      color: var(--orange);
-      margin-bottom: 5px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 8px;
     }
     .tool-desc {
-      font-size: 0.78rem;
-      color: var(--text-muted);
-      line-height: 1.5;
+      font-size: 0.875rem;
+      color: var(--ink-soft);
+      line-height: 1.6;
     }
     .tool-type {
       display: inline-block;
       font-family: var(--mono);
-      font-size: 0.62rem;
-      letter-spacing: 0.06em;
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
       text-transform: uppercase;
-      padding: 2px 6px;
-      border-radius: 3px;
-      margin-top: 8px;
+      padding: 4px 8px;
+      border: 1px solid var(--line);
+      margin-top: 12px;
     }
-    .tool-type.read { color: #60a5fa; background: rgba(96,165,250,0.08); }
-    .tool-type.write { color: var(--orange); background: var(--orange-dim); }
+    .tool-type.read { color: #0369a1; background: #f0f9ff; border-color: #bae6fd; }
+    .tool-type.write { color: var(--green); background: #f1f5f9; border-color: #cbd5e1; }
 
-    /* ── divider ── */
-    hr { border: none; border-top: 1px solid var(--border); margin: 48px 0; }
+    /* ── spec pill ── */
+    .spec-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      color: var(--ink-soft);
+      background: var(--paper);
+      border: 1px solid var(--line);
+      padding: 8px 16px;
+      margin-bottom: 64px;
+    }
+    .spec-pill span { color: var(--ink); font-weight: 500; }
 
     /* ── footer ── */
     footer {
@@ -733,34 +720,19 @@ export default async function handler(req: IncomingMessage, res: ServerResponse)
       align-items: center;
       justify-content: space-between;
       flex-wrap: wrap;
-      gap: 12px;
-      padding-top: 32px;
-      border-top: 1px solid var(--border);
-      font-size: 0.8rem;
-      color: var(--text-muted);
+      gap: 16px;
+      padding-top: 40px;
+      border-top: 1px solid var(--line);
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--ink-soft);
     }
-    footer a { color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
-    footer a:hover { color: var(--text); }
-    .footer-links { display: flex; gap: 20px; }
+    footer a { color: var(--ink); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 0.2s; }
+    footer a:hover { border-color: var(--ink); }
+    .footer-links { display: flex; gap: 24px; }
 
-    /* ── spec pill ── */
-    .spec-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-family: var(--mono);
-      font-size: 0.68rem;
-      color: var(--text-muted);
-      background: var(--surface2);
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      padding: 4px 12px;
-      margin-bottom: 48px;
-    }
-    .spec-pill span { color: var(--text-dim); }
-
-    @media (max-width: 600px) {
-      h1 { font-size: 2rem; }
+    @media (max-width: 640px) {
+      h1 { font-size: 2.5rem; }
       .ep-label { display: none; }
       footer { flex-direction: column; align-items: flex-start; }
     }
@@ -777,7 +749,7 @@ export default async function handler(req: IncomingMessage, res: ServerResponse)
 
   <!-- hero -->
   <div class="badge"><span class="badge-dot"></span>Server Online</div>
-  <h1>Gobiya <em>MCP</em><br>Server</h1>
+  <h1>Gobiya <em>MCP</em> Server</h1>
   <p class="hero-sub">
     Connect any MCP-compatible AI agent to Gobiya. Discover services, submit leads,
     and book audits — all via the Model Context Protocol.
@@ -788,30 +760,28 @@ export default async function handler(req: IncomingMessage, res: ServerResponse)
     <div class="ep-label">Endpoint</div>
     <div class="ep-url" id="ep-url">https://www.gobiya.com/mcp</div>
     <button class="copy-btn" id="copy-main" onclick="copyEndpoint()">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
       Copy URL
     </button>
   </div>
 
   <div class="spec-pill">
-    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
     <span>Transport:</span> Streamable HTTP &nbsp;·&nbsp; <span>Spec:</span> MCP 2025-03-26 &nbsp;·&nbsp; <span>Mode:</span> Stateless
   </div>
 
   <!-- connect section -->
-  <div class="section-label">Connect your AI client</div>
+  <div class="section-label">Client Configuration</div>
   <div class="tabs">
     <button class="tab active" onclick="switchTab('claude')">Claude.ai</button>
     <button class="tab" onclick="switchTab('cursor')">Cursor</button>
     <button class="tab" onclick="switchTab('windsurf')">Windsurf</button>
-    <button class="tab" onclick="switchTab('generic')">Any MCP Client</button>
+    <button class="tab" onclick="switchTab('generic')">Any Client</button>
   </div>
 
   <!-- Claude -->
   <div class="tab-panel active" id="tab-claude">
     <div class="code-block">
       <div class="code-header">
-        <span class="code-filename">Claude.ai → Settings → Integrations</span>
+        <span class="code-filename">Claude.ai Settings</span>
         <button class="code-copy" onclick="copyCode('claude-code', this)">Copy</button>
       </div>
       <pre id="claude-code"><span class="hl-muted">1.</span> Open <span class="hl">claude.ai</span> → click your avatar → <span class="hl">Settings</span>
@@ -862,7 +832,7 @@ export default async function handler(req: IncomingMessage, res: ServerResponse)
   <div class="tab-panel" id="tab-generic">
     <div class="code-block">
       <div class="code-header">
-        <span class="code-filename">Any MCP 1.x client</span>
+        <span class="code-filename">Any MCP 1.x Client</span>
         <button class="code-copy" onclick="copyCode('generic-code', this)">Copy</button>
       </div>
       <pre id="generic-code">Transport : <span class="hl">streamable-http</span>
@@ -873,47 +843,47 @@ Method    : <span class="hl-muted">POST (tool calls) · GET (SSE stream)</span><
   </div>
 
   <!-- tools -->
-  <div class="section-label">Available tools (11)</div>
+  <div class="section-label">Server Capabilities (11 Tools)</div>
   <div class="tools-grid">
     <div class="tool-card">
       <div class="tool-name">gobiya_get_company_info</div>
       <div class="tool-desc">Full company profile — founder, mission, ratings, contact details</div>
-      <span class="tool-type read">read</span>
+      <span class="tool-type read">discovery</span>
     </div>
     <div class="tool-card">
       <div class="tool-name">gobiya_list_services</div>
       <div class="tool-desc">All 20 services, filterable by category (performance / creativity / relations)</div>
-      <span class="tool-type read">read</span>
+      <span class="tool-type read">discovery</span>
     </div>
     <div class="tool-card">
       <div class="tool-name">gobiya_get_service_detail</div>
       <div class="tool-desc">Full features and fit profile for any service by slug</div>
-      <span class="tool-type read">read</span>
+      <span class="tool-type read">discovery</span>
     </div>
     <div class="tool-card">
       <div class="tool-name">gobiya_list_insights</div>
       <div class="tool-desc">20+ published articles — searchable by keyword or topic</div>
-      <span class="tool-type read">read</span>
+      <span class="tool-type read">discovery</span>
     </div>
     <div class="tool-card">
       <div class="tool-name">gobiya_get_approach</div>
       <div class="tool-desc">The 4-phase forensic SEO methodology</div>
-      <span class="tool-type read">read</span>
+      <span class="tool-type read">discovery</span>
     </div>
     <div class="tool-card">
       <div class="tool-name">gobiya_get_case_studies</div>
       <div class="tool-desc">Client success stories with documented results</div>
-      <span class="tool-type read">read</span>
+      <span class="tool-type read">discovery</span>
     </div>
     <div class="tool-card">
       <div class="tool-name">gobiya_get_team</div>
       <div class="tool-desc">Steve Martin — founder, expertise, and background</div>
-      <span class="tool-type read">read</span>
+      <span class="tool-type read">discovery</span>
     </div>
     <div class="tool-card">
       <div class="tool-name">gobiya_get_contact_info</div>
       <div class="tool-desc">Phone, email, address, hours, booking URL</div>
-      <span class="tool-type read">read</span>
+      <span class="tool-type read">discovery</span>
     </div>
     <div class="tool-card">
       <div class="tool-name">gobiya_submit_contact</div>
@@ -932,15 +902,13 @@ Method    : <span class="hl-muted">POST (tool calls) · GET (SSE stream)</span><
     </div>
   </div>
 
-  <hr />
-
   <!-- footer -->
   <footer>
-    <span>© 2026 Gobiya · Los Angeles, CA · <a href="tel:3237441338">323-744-1338</a></span>
+    <span>© 2026 Gobiya · Los Angeles, CA</span>
     <div class="footer-links">
       <a href="https://www.gobiya.com">gobiya.com</a>
       <a href="https://www.gobiya.com/contact">Contact</a>
-      <a href="https://www.gobiya.com/book">Book a Call</a>
+      <a href="tel:3237441338">323-744-1338</a>
     </div>
   </footer>
 
@@ -953,7 +921,7 @@ Method    : <span class="hl-muted">POST (tool calls) · GET (SSE stream)</span><
       const btn = document.getElementById('copy-main');
       const orig = btn.innerHTML;
       btn.classList.add('copied');
-      btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Copied!';
+      btn.innerHTML = 'Copied!';
       setTimeout(() => { btn.classList.remove('copied'); btn.innerHTML = orig; }, 2000);
     });
   }
