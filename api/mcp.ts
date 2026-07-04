@@ -423,39 +423,561 @@ export default async function handler(req: IncomingMessage, res: ServerResponse)
   // A plain browser GET won't have it, so serve a friendly page instead.
   const acceptHeader = (req.headers['accept'] as string) ?? '';
   if (req.method === 'GET' && !acceptHeader.includes('text/event-stream')) {
-    res.writeHead(200, { 'Content-Type': 'application/json' });
-    res.end(JSON.stringify({
-      name: 'Gobiya MCP Server',
-      version: '1.0.0',
-      status: 'online',
-      description: 'MCP (Model Context Protocol) server for Gobiya. Allows AI agents to discover Gobiya services, approach, team, and submit leads.',
-      endpoint: 'https://www.gobiya.com/mcp',
-      transport: 'Streamable HTTP (MCP spec 2025-03-26)',
-      tools: [
-        'gobiya_get_company_info',
-        'gobiya_list_services',
-        'gobiya_get_service_detail',
-        'gobiya_list_insights',
-        'gobiya_get_approach',
-        'gobiya_get_case_studies',
-        'gobiya_get_team',
-        'gobiya_get_contact_info',
-        'gobiya_submit_contact',
-        'gobiya_submit_audit_request',
-        'gobiya_book_call',
-      ],
-      connect: {
-        claude_ai: 'Settings → Integrations → Add MCP Server → https://www.gobiya.com/mcp',
-        cursor: '{ "mcpServers": { "gobiya": { "url": "https://www.gobiya.com/mcp" } } }',
-        any_client: 'Transport: streamable-http | URL: https://www.gobiya.com/mcp',
-      },
-      company: {
-        name: 'Gobiya',
-        website: 'https://www.gobiya.com',
-        phone: '323-744-1338',
-        email: 'hello@gobiya.com',
-      },
-    }, null, 2));
+    res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
+    res.end(`<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gobiya MCP Server — AI Agent Integration</title>
+  <meta name="description" content="Connect any MCP-compatible AI agent to Gobiya. Discover services, submit leads, and book audits via the Model Context Protocol." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --orange: #F26522;
+      --orange-dim: rgba(242,101,34,0.12);
+      --orange-glow: rgba(242,101,34,0.25);
+      --bg: #060606;
+      --surface: #0e0e0e;
+      --surface2: #161616;
+      --border: rgba(255,255,255,0.07);
+      --border-hover: rgba(242,101,34,0.4);
+      --text: #e8e8e8;
+      --text-muted: #6b7280;
+      --text-dim: #9ca3af;
+      --green: #22c55e;
+      --mono: 'JetBrains Mono', monospace;
+      --sans: 'Inter', system-ui, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+      font-size: 15px;
+      line-height: 1.6;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── noise texture ── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ── radial glow ── */
+    body::after {
+      content: '';
+      position: fixed;
+      top: -30vh;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 900px;
+      height: 600px;
+      background: radial-gradient(ellipse at center, rgba(242,101,34,0.07) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ── layout ── */
+    .wrap { position: relative; z-index: 1; max-width: 860px; margin: 0 auto; padding: 0 24px 80px; }
+
+    /* ── nav ── */
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 28px 0 0;
+      margin-bottom: 72px;
+    }
+    .logo { font-size: 1.1rem; font-weight: 700; letter-spacing: -0.02em; color: #fff; text-decoration: none; }
+    .logo span { color: var(--orange); }
+    .nav-link { font-size: 0.82rem; color: var(--text-muted); text-decoration: none; letter-spacing: 0.04em; text-transform: uppercase; transition: color 0.2s; }
+    .nav-link:hover { color: var(--text); }
+
+    /* ── hero ── */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      color: var(--green);
+      background: rgba(34,197,94,0.08);
+      border: 1px solid rgba(34,197,94,0.2);
+      border-radius: 999px;
+      padding: 5px 13px;
+      margin-bottom: 28px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .badge-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green); animation: pulse 2s ease-in-out infinite; }
+    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(0.8)} }
+
+    h1 {
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      line-height: 1.08;
+      color: #fff;
+      margin-bottom: 20px;
+    }
+    h1 em { font-style: normal; color: var(--orange); }
+
+    .hero-sub {
+      font-size: 1.05rem;
+      color: var(--text-dim);
+      max-width: 560px;
+      line-height: 1.75;
+      margin-bottom: 40px;
+    }
+
+    /* ── endpoint box ── */
+    .endpoint-box {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 64px;
+      transition: border-color 0.2s;
+    }
+    .endpoint-box:focus-within,
+    .endpoint-box:hover { border-color: var(--border-hover); }
+
+    .ep-label {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      background: var(--surface2);
+      border-right: 1px solid var(--border);
+      padding: 0 16px;
+      height: 52px;
+      display: flex;
+      align-items: center;
+      white-space: nowrap;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .ep-url {
+      font-family: var(--mono);
+      font-size: 0.92rem;
+      color: var(--orange);
+      flex: 1;
+      padding: 0 18px;
+      background: transparent;
+      border: none;
+      outline: none;
+      cursor: text;
+      user-select: all;
+    }
+
+    .copy-btn {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      background: var(--orange);
+      color: #fff;
+      border: none;
+      padding: 0 20px;
+      height: 52px;
+      font-family: var(--sans);
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      cursor: pointer;
+      transition: background 0.18s, transform 0.1s;
+      white-space: nowrap;
+    }
+    .copy-btn:hover { background: #d95a1c; }
+    .copy-btn:active { transform: scale(0.97); }
+    .copy-btn.copied { background: #22c55e; }
+
+    /* ── section labels ── */
+    .section-label {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 16px;
+    }
+
+    /* ── client tabs ── */
+    .tabs { display: flex; gap: 6px; margin-bottom: 16px; flex-wrap: wrap; }
+    .tab {
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 6px 14px;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .tab:hover { color: var(--text); border-color: rgba(255,255,255,0.15); }
+    .tab.active { color: var(--orange); border-color: var(--orange-glow); background: var(--orange-dim); }
+
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+
+    /* ── code blocks ── */
+    .code-block {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 48px;
+    }
+    .code-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 16px;
+      border-bottom: 1px solid var(--border);
+      background: var(--surface2);
+    }
+    .code-filename {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      letter-spacing: 0.04em;
+    }
+    .code-copy {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      background: transparent;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 3px 9px;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .code-copy:hover { color: var(--text); border-color: rgba(255,255,255,0.2); }
+    .code-copy.copied { color: var(--green); border-color: rgba(34,197,94,0.3); }
+    pre {
+      padding: 20px;
+      font-family: var(--mono);
+      font-size: 0.82rem;
+      line-height: 1.65;
+      color: var(--text-dim);
+      overflow-x: auto;
+      white-space: pre;
+    }
+    .hl { color: var(--orange); }
+    .hl-green { color: var(--green); }
+    .hl-blue { color: #60a5fa; }
+    .hl-muted { color: var(--text-muted); }
+
+    /* ── tools grid ── */
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 10px;
+      margin-bottom: 48px;
+    }
+    .tool-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 14px 16px;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .tool-card:hover { border-color: var(--border-hover); background: var(--surface2); }
+    .tool-name {
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      color: var(--orange);
+      margin-bottom: 5px;
+    }
+    .tool-desc {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+    .tool-type {
+      display: inline-block;
+      font-family: var(--mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 2px 6px;
+      border-radius: 3px;
+      margin-top: 8px;
+    }
+    .tool-type.read { color: #60a5fa; background: rgba(96,165,250,0.08); }
+    .tool-type.write { color: var(--orange); background: var(--orange-dim); }
+
+    /* ── divider ── */
+    hr { border: none; border-top: 1px solid var(--border); margin: 48px 0; }
+
+    /* ── footer ── */
+    footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      padding-top: 32px;
+      border-top: 1px solid var(--border);
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+    footer a { color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
+    footer a:hover { color: var(--text); }
+    .footer-links { display: flex; gap: 20px; }
+
+    /* ── spec pill ── */
+    .spec-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      color: var(--text-muted);
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 4px 12px;
+      margin-bottom: 48px;
+    }
+    .spec-pill span { color: var(--text-dim); }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 2rem; }
+      .ep-label { display: none; }
+      footer { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- nav -->
+  <nav>
+    <a href="https://www.gobiya.com" class="logo">GOBIYA<span>.</span></a>
+    <a href="https://www.gobiya.com/contact" class="nav-link">Contact</a>
+  </nav>
+
+  <!-- hero -->
+  <div class="badge"><span class="badge-dot"></span>Server Online</div>
+  <h1>Gobiya <em>MCP</em><br>Server</h1>
+  <p class="hero-sub">
+    Connect any MCP-compatible AI agent to Gobiya. Discover services, submit leads,
+    and book audits — all via the Model Context Protocol.
+  </p>
+
+  <!-- endpoint -->
+  <div class="endpoint-box">
+    <div class="ep-label">Endpoint</div>
+    <div class="ep-url" id="ep-url">https://www.gobiya.com/mcp</div>
+    <button class="copy-btn" id="copy-main" onclick="copyEndpoint()">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+      Copy URL
+    </button>
+  </div>
+
+  <div class="spec-pill">
+    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+    <span>Transport:</span> Streamable HTTP &nbsp;·&nbsp; <span>Spec:</span> MCP 2025-03-26 &nbsp;·&nbsp; <span>Mode:</span> Stateless
+  </div>
+
+  <!-- connect section -->
+  <div class="section-label">Connect your AI client</div>
+  <div class="tabs">
+    <button class="tab active" onclick="switchTab('claude')">Claude.ai</button>
+    <button class="tab" onclick="switchTab('cursor')">Cursor</button>
+    <button class="tab" onclick="switchTab('windsurf')">Windsurf</button>
+    <button class="tab" onclick="switchTab('generic')">Any MCP Client</button>
+  </div>
+
+  <!-- Claude -->
+  <div class="tab-panel active" id="tab-claude">
+    <div class="code-block">
+      <div class="code-header">
+        <span class="code-filename">Claude.ai → Settings → Integrations</span>
+        <button class="code-copy" onclick="copyCode('claude-code', this)">Copy</button>
+      </div>
+      <pre id="claude-code"><span class="hl-muted">1.</span> Open <span class="hl">claude.ai</span> → click your avatar → <span class="hl">Settings</span>
+<span class="hl-muted">2.</span> Go to <span class="hl">Integrations</span> → <span class="hl">Add MCP Server</span>
+<span class="hl-muted">3.</span> Paste the URL:
+
+   <span class="hl">https://www.gobiya.com/mcp</span>
+
+<span class="hl-muted">4.</span> Name it <span class="hl-green">Gobiya</span> and save.</pre>
+    </div>
+  </div>
+
+  <!-- Cursor -->
+  <div class="tab-panel" id="tab-cursor">
+    <div class="code-block">
+      <div class="code-header">
+        <span class="code-filename">.cursor/mcp.json</span>
+        <button class="code-copy" onclick="copyCode('cursor-code', this)">Copy</button>
+      </div>
+      <pre id="cursor-code">{
+  <span class="hl">"mcpServers"</span>: {
+    <span class="hl-green">"gobiya"</span>: {
+      <span class="hl">"url"</span>: <span class="hl-blue">"https://www.gobiya.com/mcp"</span>
+    }
+  }
+}</pre>
+    </div>
+  </div>
+
+  <!-- Windsurf -->
+  <div class="tab-panel" id="tab-windsurf">
+    <div class="code-block">
+      <div class="code-header">
+        <span class="code-filename">~/.codeium/windsurf/mcp_config.json</span>
+        <button class="code-copy" onclick="copyCode('windsurf-code', this)">Copy</button>
+      </div>
+      <pre id="windsurf-code">{
+  <span class="hl">"mcpServers"</span>: {
+    <span class="hl-green">"gobiya"</span>: {
+      <span class="hl">"serverUrl"</span>: <span class="hl-blue">"https://www.gobiya.com/mcp"</span>
+    }
+  }
+}</pre>
+    </div>
+  </div>
+
+  <!-- Generic -->
+  <div class="tab-panel" id="tab-generic">
+    <div class="code-block">
+      <div class="code-header">
+        <span class="code-filename">Any MCP 1.x client</span>
+        <button class="code-copy" onclick="copyCode('generic-code', this)">Copy</button>
+      </div>
+      <pre id="generic-code">Transport : <span class="hl">streamable-http</span>
+URL       : <span class="hl-blue">https://www.gobiya.com/mcp</span>
+Auth      : <span class="hl-green">none required</span>
+Method    : <span class="hl-muted">POST (tool calls) · GET (SSE stream)</span></pre>
+    </div>
+  </div>
+
+  <!-- tools -->
+  <div class="section-label">Available tools (11)</div>
+  <div class="tools-grid">
+    <div class="tool-card">
+      <div class="tool-name">gobiya_get_company_info</div>
+      <div class="tool-desc">Full company profile — founder, mission, ratings, contact details</div>
+      <span class="tool-type read">read</span>
+    </div>
+    <div class="tool-card">
+      <div class="tool-name">gobiya_list_services</div>
+      <div class="tool-desc">All 20 services, filterable by category (performance / creativity / relations)</div>
+      <span class="tool-type read">read</span>
+    </div>
+    <div class="tool-card">
+      <div class="tool-name">gobiya_get_service_detail</div>
+      <div class="tool-desc">Full features and fit profile for any service by slug</div>
+      <span class="tool-type read">read</span>
+    </div>
+    <div class="tool-card">
+      <div class="tool-name">gobiya_list_insights</div>
+      <div class="tool-desc">20+ published articles — searchable by keyword or topic</div>
+      <span class="tool-type read">read</span>
+    </div>
+    <div class="tool-card">
+      <div class="tool-name">gobiya_get_approach</div>
+      <div class="tool-desc">The 4-phase forensic SEO methodology</div>
+      <span class="tool-type read">read</span>
+    </div>
+    <div class="tool-card">
+      <div class="tool-name">gobiya_get_case_studies</div>
+      <div class="tool-desc">Client success stories with documented results</div>
+      <span class="tool-type read">read</span>
+    </div>
+    <div class="tool-card">
+      <div class="tool-name">gobiya_get_team</div>
+      <div class="tool-desc">Steve Martin — founder, expertise, and background</div>
+      <span class="tool-type read">read</span>
+    </div>
+    <div class="tool-card">
+      <div class="tool-name">gobiya_get_contact_info</div>
+      <div class="tool-desc">Phone, email, address, hours, booking URL</div>
+      <span class="tool-type read">read</span>
+    </div>
+    <div class="tool-card">
+      <div class="tool-name">gobiya_submit_contact</div>
+      <div class="tool-desc">Submit a contact form — saves to CRM and triggers email alert</div>
+      <span class="tool-type write">action</span>
+    </div>
+    <div class="tool-card">
+      <div class="tool-name">gobiya_submit_audit_request</div>
+      <div class="tool-desc">Request an SEO/GEO audit for a specific website</div>
+      <span class="tool-type write">action</span>
+    </div>
+    <div class="tool-card">
+      <div class="tool-name">gobiya_book_call</div>
+      <div class="tool-desc">Get the booking calendar link and scheduling instructions</div>
+      <span class="tool-type write">action</span>
+    </div>
+  </div>
+
+  <hr />
+
+  <!-- footer -->
+  <footer>
+    <span>© 2026 Gobiya · Los Angeles, CA · <a href="tel:3237441338">323-744-1338</a></span>
+    <div class="footer-links">
+      <a href="https://www.gobiya.com">gobiya.com</a>
+      <a href="https://www.gobiya.com/contact">Contact</a>
+      <a href="https://www.gobiya.com/book">Book a Call</a>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+  function copyEndpoint() {
+    const url = 'https://www.gobiya.com/mcp';
+    navigator.clipboard.writeText(url).then(() => {
+      const btn = document.getElementById('copy-main');
+      const orig = btn.innerHTML;
+      btn.classList.add('copied');
+      btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Copied!';
+      setTimeout(() => { btn.classList.remove('copied'); btn.innerHTML = orig; }, 2000);
+    });
+  }
+
+  function copyCode(id, btn) {
+    const el = document.getElementById(id);
+    const text = el.innerText || el.textContent;
+    navigator.clipboard.writeText(text).then(() => {
+      const orig = btn.textContent;
+      btn.classList.add('copied');
+      btn.textContent = 'Copied!';
+      setTimeout(() => { btn.classList.remove('copied'); btn.textContent = orig; }, 2000);
+    });
+  }
+
+  function switchTab(name) {
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    event.target.classList.add('active');
+    document.getElementById('tab-' + name).classList.add('active');
+  }
+</script>
+</body>
+</html>`);
     return;
   }
 
