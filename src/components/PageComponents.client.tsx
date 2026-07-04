@@ -18,6 +18,7 @@ export const ApproachPage = lazy(() => import('./ApproachPage'));
 export const AdminLogin = lazy(() => import('./AdminLogin'));
 export const AdminDashboard = lazy(() => import('./AdminDashboard'));
 export const ContactPage = lazy(() => import('./ContactPage'));
+export const NotFound = lazy(() => import('./NotFound'));
 export const OutcomesIndex = lazy(() => import('./OutcomesIndex'));
 export const OutcomeTrafficPage = lazy(() => import('./OutcomeTrafficPage'));
 export const OutcomeRankingsPage = lazy(() => import('./OutcomeRankingsPage'));
