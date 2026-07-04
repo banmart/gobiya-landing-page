@@ -16,7 +16,6 @@ export const AuthorPage = lazy(() => import('./AuthorPage'));
 export const ThankYouPage = lazy(() => import('./ThankYouPage'));
 export const BookingPage = lazy(() => import('./BookingPage'));
 export const SolutionPage = lazy(() => import('./SolutionPage'));
-export const CapabilitiesIndex = lazy(() => import('./CapabilitiesIndex'));
 export const SuccessStories = lazy(() => import('./SuccessStories'));
 export const ApproachPage = lazy(() => import('./ApproachPage'));
 export const InsightsPage = lazy(() => import('./InsightsPage'));
@@ -31,19 +30,11 @@ export const LocalSeoBurbankPage = lazy(() => import('./LocalSeoBurbankPage'));
 export const SeoCompanyEncinoPage = lazy(() => import('./SeoCompanyEncinoPage'));
 export const LosAngelesSeoProf = lazy(() => import('./LosAngelesSeoProf'));
 export const NotFound = lazy(() => import('./NotFound'));
-export const CategoryPage = lazy(() => import('./CategoryPage'));
-export const SeoWebCopywritingPage = lazy(() => import('./SeoWebCopywritingPage'));
-export const SeoDiscoverabilityPage = lazy(() => import('./SeoDiscoverabilityPage'));
-export const WebDevelopmentPage = lazy(() => import('./WebDevelopmentPage'));
-export const GoogleAdsPpcPage = lazy(() => import('./GoogleAdsPpcPage'));
-export const SeoTrafficRecoveryPage = lazy(() => import('./SeoTrafficRecoveryPage'));
 
 export const GlendaleSeoPage = lazy(() => import('./GlendaleSeoPage'));
 export const PlasticSurgeryMarketingPage = lazy(() => import('./PlasticSurgeryMarketingPage'));
 export const InternetMarketingServicesLosAngelesPage = lazy(() => import('./InternetMarketingServicesLosAngelesPage'));
 export const AiSearchMarketingSantaClaritaPage = lazy(() => import('./AiSearchMarketingSantaClaritaPage'));
-export const AiVideosPage = lazy(() => import('./AiVideosPage'));
-export const CryptoWeb3Page = lazy(() => import('./CryptoWeb3Page'));
 
 export const OutcomesIndex = lazy(() => import('./OutcomesIndex'));
 export const OutcomeTrafficPage = lazy(() => import('./OutcomeTrafficPage'));

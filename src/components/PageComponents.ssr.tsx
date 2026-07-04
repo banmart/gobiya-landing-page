@@ -6,7 +6,6 @@ export { default as AuthorPage } from './AuthorPage';
 export { default as ThankYouPage } from './ThankYouPage';
 export { default as BookingPage } from './BookingPage';
 export { default as SolutionPage } from './SolutionPage';
-export { default as CapabilitiesIndex } from './CapabilitiesIndex';
 export { default as SuccessStories } from './SuccessStories';
 export { default as ApproachPage } from './ApproachPage';
 export { default as InsightsPage } from './InsightsPage';
@@ -22,19 +21,11 @@ export { default as SeoCompanyEncinoPage } from './SeoCompanyEncinoPage';
 export { default as LosAngelesSeoProf } from './LosAngelesSeoProf';
 export { default as SEO } from './SEO';
 export { default as NotFound } from './NotFound';
-export { default as CategoryPage } from './CategoryPage';
-export { default as SeoWebCopywritingPage } from './SeoWebCopywritingPage';
-export { default as SeoDiscoverabilityPage } from './SeoDiscoverabilityPage';
-export { default as WebDevelopmentPage } from './WebDevelopmentPage';
-export { default as GoogleAdsPpcPage } from './GoogleAdsPpcPage';
-export { default as SeoTrafficRecoveryPage } from './SeoTrafficRecoveryPage';
 
 export { default as GlendaleSeoPage } from './GlendaleSeoPage';
 export { default as PlasticSurgeryMarketingPage } from './PlasticSurgeryMarketingPage';
 export { default as InternetMarketingServicesLosAngelesPage } from './InternetMarketingServicesLosAngelesPage';
 export { default as AiSearchMarketingSantaClaritaPage } from './AiSearchMarketingSantaClaritaPage';
-export { default as AiVideosPage } from './AiVideosPage';
-export { default as CryptoWeb3Page } from './CryptoWeb3Page';
 
 export { default as OutcomesIndex } from './OutcomesIndex';
 export { default as OutcomeTrafficPage } from './OutcomeTrafficPage';
