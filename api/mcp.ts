@@ -87,32 +87,38 @@ const APPROACH = {
 };
 
 const SERVICES = [
-  // Performance
-  { slug: 'web-development', category: 'performance', title: 'Web Development', short: 'Custom React & Next.js websites with sub-second load times and 90+ Lighthouse scores.', url: 'https://www.gobiya.com/performance/web-development-agency', features: ['React / Next.js / Vite', 'Sub-second load times', '90+ Lighthouse scores', 'SSR & static generation', 'Zero platform lock-in'] },
-  { slug: 'seo-discoverability', category: 'performance', title: 'SEO Indexing & Discoverability', short: 'Resolve crawl budget leaks, canonical errors, and indexation blocks.', url: 'https://www.gobiya.com/performance/seo-discoverability-agency', features: ['Crawl budget audit', 'Index coverage analysis', 'Canonical tag remediation', 'Structured data', 'Internal link architecture'] },
-  { slug: 'native-crm', category: 'performance', title: 'Native CRM Integration', short: 'Own your pipeline data — custom CRM built into your codebase, no monthly SaaS fees.', url: 'https://www.gobiya.com/performance/native-crm-agency', features: ['Custom lead capture', 'Supabase / PostgreSQL', 'Pipeline stage management', 'AI prospect scraper', 'Automated email sequences', 'Full data ownership'] },
-  { slug: 'b2b-seo', category: 'performance', title: 'B2B SEO', short: 'Pipeline attribution SEO — target decision-makers, not just traffic.', url: 'https://www.gobiya.com/performance/b2b-seo-agency', features: ['Buying committee mapping', 'Commercial-intent keywords', 'Topical authority clusters', 'Pipeline-attributed tracking'], metrics: 'Measured in pipeline value, not impressions' },
-  { slug: 'local-seo', category: 'performance', title: 'Local SEO Services', short: 'Google Map Pack dominance, GBP optimisation, citation consistency, and review velocity.', url: 'https://www.gobiya.com/performance/local-seo-services-agency', features: ['GBP optimisation', 'NAP citation audit', 'Review velocity', 'Local schema markup', 'Map Pack tracking'] },
-  { slug: 'technical-seo-audit', category: 'performance', title: 'Technical SEO Audit', short: 'Full diagnostic: crawl health, CWV, schema, index coverage — prioritised fix list.', url: 'https://www.gobiya.com/performance/technical-seo-audit-agency', features: ['Full crawl analysis', 'Core Web Vitals (LCP, INP, CLS)', 'Index coverage audit', 'Schema validation', 'Priority-ranked fix list'] },
-  { slug: 'seo-traffic-recovery', category: 'performance', title: 'SEO Traffic Recovery', short: 'Diagnose and reverse organic traffic drops from Google updates and penalties.', url: 'https://www.gobiya.com/performance/seo-traffic-recovery', features: ['Algorithm update attribution', 'Manual action removal', 'E-E-A-T content improvement', 'Link profile remediation', '12-week recovery roadmap'], metrics: '320% traffic recovery documented' },
-  { slug: 'ecommerce-seo', category: 'performance', title: 'E-Commerce SEO', short: 'Product schema, category architecture, faceted navigation — rankings that drive revenue.', url: 'https://www.gobiya.com/performance/ecommerce-seo-agency', features: ['Category & product architecture', 'Product schema & rich results', 'Faceted navigation control', 'Commercial-intent content clusters'] },
-  { slug: 'ai-prospect-scraper', category: 'performance', title: 'AI Prospect Scraper', short: 'CRM-ready lead pipeline — AI extracts contacts and automates outbound campaigns.', url: 'https://www.gobiya.com/performance/ai-prospect-scraper-agency', features: ['AI business data extraction', 'Contact enrichment', 'Automated personalised outreach', 'Gemini AI copywriting', 'Supabase CRM pipeline'] },
-  { slug: 'ai-llms-business', category: 'performance', title: 'AI & LLM Systems', short: 'Custom AI models and secure LLMs integrated into your office workflows.', url: 'https://www.gobiya.com/performance/ai-llms-business-agency', features: ['Custom LLM deployment', 'Document parsing automation', 'CRM data syncing', 'Secure — data stays private'] },
-  { slug: 'blockchain-web3', category: 'performance', title: 'Blockchain & Web3 Development', short: 'Smart contracts on Ethereum and Pulsechain, React dApps, and crypto SEO.', url: 'https://www.gobiya.com/performance/blockchain-web3-development-agency', features: ['Solidity smart contracts', 'Ethereum & Pulsechain', 'React dApp frontends', 'Crypto SEO content'] },
-  { slug: 'cro-ux-analysis', category: 'performance', title: 'CRO & UX Analysis', short: 'Heatmaps, session replays, and A/B tests — funnel friction isolated and fixed.', url: 'https://www.gobiya.com/performance/cro-ux-analysis-agency', features: ['Heatmap analysis', 'Session replay review', 'A/B test design', 'Form friction analysis', 'Landing page redesign'] },
-  // Creativity
-  { slug: 'seo-web-copywriting', category: 'creativity', title: 'SEO Web Copywriting', short: 'Keyword-mapped copy that ranks on Google and gets cited by AI platforms.', url: 'https://www.gobiya.com/creativity/seo-web-copywriting-agency', features: ['Keyword research & intent mapping', 'GEO formatting', 'Conversion copy', 'E-E-A-T signals', 'AI citation anchoring'] },
-  { slug: 'seo-content-strategy', category: 'creativity', title: 'SEO Content Strategy', short: 'Topic clusters, keyword mapping, internal link plan — architecture before the words.', url: 'https://www.gobiya.com/creativity/seo-content-strategy-agency', features: ['Competitor gap analysis', 'Topical authority clusters', 'Keyword-to-page mapping', 'Internal link blueprint', 'Editorial calendar'] },
-  { slug: 'geo-ai-content-writing', category: 'creativity', title: 'GEO & AI Content Writing', short: 'Content built to be cited by ChatGPT, Perplexity, and Google AI Overviews.', url: 'https://www.gobiya.com/creativity/geo-ai-content-writing-agency', features: ['RAG-compatible structure', 'Passage-level coherence', 'Entity verification', 'AI citation anchor placement', 'LLM citation monitoring'] },
-  { slug: 'landing-page-copywriting', category: 'creativity', title: 'Landing Page Copywriting', short: 'Copy engineered to convert ad clicks and organic traffic into leads.', url: 'https://www.gobiya.com/creativity/landing-page-copywriting-agency', features: ['Fogg Behavior Model', 'Above-the-fold hook', 'Social proof placement', 'CTA hierarchy', 'A/B test variants'] },
-  { slug: 'ai-videos', category: 'creativity', title: 'AI Video Production', short: 'YouTube, Amazon Prime Video, and social ads using Veo 3 — 3–5 day turnaround.', url: 'https://www.gobiya.com/creativity/ai-videos-agency', features: ['Google Veo 3 production', 'AI scriptwriting', 'Text-to-voice', 'YouTube pre-roll', 'Amazon Prime Video & Paramount+ spots', '3–5 day delivery'], metrics: '3–5 business day delivery' },
-  { slug: 'crypto-web3', category: 'creativity', title: 'Crypto & Web3 Agency', short: 'Launched, ranked, and cited — full-stack crypto marketing and Web3 development.', url: 'https://www.gobiya.com/creativity/crypto-web3-agency', features: ['Smart contracts', 'React dApp interfaces', 'Crypto SEO', 'AI citation optimisation', 'Token marketing'] },
-  // Relations
-  { slug: 'google-ads-ppc', category: 'relations', title: 'Google Ads & PPC Strategy', short: 'Precision-targeted paid pipelines — 5.7× ROAS, 61% lower CPL documented.', url: 'https://www.gobiya.com/relations/google-ads-ppc-strategy-agency', features: ['Campaign architecture', 'Landing page alignment', 'Negative keyword hygiene', 'Conversion tracking', 'Smart bidding optimisation'], metrics: '5.7× ROAS, 61% lower CPL' },
-  { slug: 'authority-building', category: 'relations', title: 'Authority Building', short: 'DR 50+ editorial backlinks and entity alignment for long-term organic authority.', url: 'https://www.gobiya.com/relations/authority-building-agency', features: ['DR 50+ editorial placements', 'Local citation building', 'Entity alignment (Wikidata, LinkedIn, GBP)', 'AI citation footprint'] },
-  { slug: 'digital-pr', category: 'relations', title: 'Digital PR & Media Outreach', short: 'Earned editorial coverage, press mentions, and backlinks that compound authority.', url: 'https://www.gobiya.com/relations/digital-pr-media-outreach-agency', features: ['Editorial story development', 'Publication outreach', 'Press release writing', 'Journalist relationships', 'AI citation coverage tracking'] },
-  // Standalone
-  { slug: 'plastic-surgery-marketing', category: 'standalone', title: 'Plastic Surgery Internet Marketing', short: 'Booked consultations — procedure-specific SEO and compliant Google Ads.', url: 'https://www.gobiya.com/plastic-surgery-internet-marketing', features: ['Procedure-specific SEO', 'Compliant Google Ads', 'Review velocity', 'AI citation for elective queries', 'Long-cycle content architecture'] },
+  { 
+    slug: 'traffic', 
+    category: 'outcomes', 
+    title: 'Traffic Growth', 
+    short: 'Drive qualified traffic through technical SEO and GEO.', 
+    url: 'https://www.gobiya.com/outcomes/traffic', 
+    features: ['Technical SEO Audits', 'Generative Engine Optimization (GEO)', 'Keyword Architecture'] 
+  },
+  { 
+    slug: 'rankings', 
+    category: 'outcomes', 
+    title: 'Search Dominance', 
+    short: 'Command top positions for high-intent B2B search terms.', 
+    url: 'https://www.gobiya.com/outcomes/rankings', 
+    features: ['Entity SEO & Schema Markup', 'Topical Authority Clusters', 'PR & Link Building'] 
+  },
+  { 
+    slug: 'sales', 
+    category: 'outcomes', 
+    title: 'Sales & Pipeline', 
+    short: 'Turn visibility into revenue with native CRMs and AI scrapers.', 
+    url: 'https://www.gobiya.com/outcomes/sales', 
+    features: ['Native CRM Pipelines', 'AI Prospect Scraping', 'Landing Page Conversion Architecture'] 
+  },
+  { 
+    slug: 'recovery', 
+    category: 'outcomes', 
+    title: 'Google Penalty Recovery', 
+    short: 'Diagnose and reverse organic traffic drops from Google updates.', 
+    url: 'https://www.gobiya.com/google-penalty-recovery', 
+    features: ['Forensic Algorithm Attribution', 'Manual Action Removal', '12-Week Recovery Roadmap'] 
+  }
 ];
 
 const CASE_STUDIES = [

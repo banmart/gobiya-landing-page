@@ -3,17 +3,16 @@ import { gsap } from 'gsap';
 import './StaggeredMenu.css';
 
 const DEFAULT_MENU_ITEMS = [
-  { label: 'Capabilities', isHeader: true },
-  { label: 'Web Development', link: '/capabilities/web-development-agency/' },
-  { label: 'Native CRM', link: '/capabilities/native-crm-agency/' },
-  { label: 'SEO & Discoverability', link: '/capabilities/seo-discoverability-agency/' },
-  { label: 'Blockchain & Web3 Dev', link: '/capabilities/blockchain-web3-development-agency/' },
-  { label: 'AI & LLMs for Business', link: '/capabilities/ai-llms-business-agency/' },
-  { label: 'Company', isHeader: true },
-  { label: 'About the Agency', link: '/about' },
+  { label: 'Outcomes', isHeader: true },
+  { label: 'Traffic', link: '/outcomes/traffic' },
+  { label: 'Rankings', link: '/outcomes/rankings' },
+  { label: 'Sales', link: '/outcomes/sales' },
+  { label: 'Recovery', link: '/google-penalty-recovery' },
   { label: 'Case Studies', link: '/case-studies' },
-  { label: 'Our Approach', link: '/approach' },
-  { label: 'Industry Insights', link: '/insights' },
+  { label: 'Approach', link: '/approach' },
+  { label: 'About', isHeader: true },
+  { label: 'Steve Martin', link: '/about/steve-martin' },
+  { label: 'Contact', link: '/contact' },
 ];
 
 

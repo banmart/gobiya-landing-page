@@ -35,3 +35,8 @@ export { default as InternetMarketingServicesLosAngelesPage } from './InternetMa
 export { default as AiSearchMarketingSantaClaritaPage } from './AiSearchMarketingSantaClaritaPage';
 export { default as AiVideosPage } from './AiVideosPage';
 export { default as CryptoWeb3Page } from './CryptoWeb3Page';
+
+export { default as OutcomesIndex } from './OutcomesIndex';
+export { default as OutcomeTrafficPage } from './OutcomeTrafficPage';
+export { default as OutcomeRankingsPage } from './OutcomeRankingsPage';
+export { default as OutcomeSalesPage } from './OutcomeSalesPage';

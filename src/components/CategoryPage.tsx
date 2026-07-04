@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import SiteHeader from './SiteHeader';
 import SiteFooter from './SiteFooter';
-import LatestInsights from './LatestInsights';
 
 interface ServiceLink {
   href: string;
@@ -438,9 +437,6 @@ export default function CategoryPage({ category }: CategoryPageProps) {
           </div>
         </div>
       </section>
-
-      {/* Latest Insights */}
-      <LatestInsights />
 
       <SiteFooter />
     </div>

@@ -34,7 +34,11 @@ import {
   InternetMarketingServicesLosAngelesPage,
   AiSearchMarketingSantaClaritaPage,
   AiVideosPage,
-  CryptoWeb3Page
+  CryptoWeb3Page,
+  OutcomesIndex,
+  OutcomeTrafficPage,
+  OutcomeRankingsPage,
+  OutcomeSalesPage
 } from './components/PageComponents';
 import BookingMessageBar from './components/BookingMessageBar';
 
@@ -283,9 +287,8 @@ function App({ url }: AppProps) {
       '/performance/it-consulting-services-agency': '/performance/web-development-agency',
       '/relations/influencer-marketing-agency': '/relations/authority-building-agency',
       '/relations/local-community-relations-agency': '/performance/local-seo-services-agency',
-      '/relations/content-marketing-syndication-agency': '/creativity/seo-content-strategy-agency',
-      // Canonical Google Ads page lives at /relations/ not /performance/
-      '/performance/google-ads-ppc-strategy-agency': '/relations/google-ads-ppc-strategy-agency'
+      '/relations/content-marketing-syndication-agency': '/outcomes',
+      '/performance/google-ads-ppc-strategy-agency': '/outcomes'
     };
     
     const target = legacyRedirects[normalized];
@@ -296,10 +299,9 @@ function App({ url }: AppProps) {
       return;
     }
 
-    // Catch-all: redirect any other /resources/ path not in the map
-    if (normalized === '/resources' || normalized.startsWith('/resources/')) {
-      window.history.replaceState({}, '', '/insights');
-      setCurrentPath('/insights');
+    if (normalized === '/resources' || normalized.startsWith('/resources/') || normalized === '/insights' || normalized.startsWith('/insights/')) {
+      window.history.replaceState({}, '', '/outcomes');
+      setCurrentPath('/outcomes');
       return;
     }
 
@@ -330,7 +332,11 @@ function App({ url }: AppProps) {
     '/services/geo-optimization',
     '/services/web-design',
     '/services/advertising',
-    '/company/careers'
+    '/company/careers',
+    '/outcomes',
+    '/outcomes/traffic',
+    '/outcomes/rankings',
+    '/outcomes/sales'
   ].includes(normalizedPath);
 
   const isValidRoute = [
@@ -356,7 +362,11 @@ function App({ url }: AppProps) {
     '/glendale-seo',
     '/plastic-surgery-internet-marketing',
     '/internet-marketing-services-los-angeles',
-    '/ai-search-marketing-santa-clarita'
+    '/ai-search-marketing-santa-clarita',
+    '/outcomes',
+    '/outcomes/traffic',
+    '/outcomes/rankings',
+    '/outcomes/sales'
   ].includes(normalizedPath) || normalizedPath === '/google-penalty-recovery' || isValidServiceSubpage || !!articleSlug || !!fanOutMatch;
 
   return (
@@ -395,6 +405,14 @@ function App({ url }: AppProps) {
         <ArticlePage key={articleSlug} slug={articleSlug} />
       ) : normalizedPath === '/thank-you' ? (
         <ThankYouPage />
+      ) : normalizedPath === '/outcomes' ? (
+        <OutcomesIndex />
+      ) : normalizedPath === '/outcomes/traffic' ? (
+        <OutcomeTrafficPage />
+      ) : normalizedPath === '/outcomes/rankings' ? (
+        <OutcomeRankingsPage />
+      ) : normalizedPath === '/outcomes/sales' ? (
+        <OutcomeSalesPage />
       ) : normalizedPath === '/capabilities' ? (
         <CapabilitiesIndex />
       ) : normalizedPath === '/case-studies' ? (

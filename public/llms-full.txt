@@ -126,12 +126,9 @@ Most SEO agencies sell activity — blog posts per month, link packages, keyword
 
 ## Service URLs
 
-- SEO & Discoverability: https://www.gobiya.com/performance/seo-discoverability-agency
-- Technical SEO Audit: https://www.gobiya.com/performance/technical-seo-audit-agency
+- Outcomes Hub: https://www.gobiya.com/outcomes
+- Traffic Growth: https://www.gobiya.com/outcomes/traffic
+- Search Dominance: https://www.gobiya.com/outcomes/rankings
+- Sales & Pipeline: https://www.gobiya.com/outcomes/sales
 - Google Penalty Recovery: https://www.gobiya.com/google-penalty-recovery
-- Local SEO: https://www.gobiya.com/performance/local-seo-services-agency
-- Google Ads & PPC: https://www.gobiya.com/performance/google-ads-ppc-strategy-agency
-- Web Development: https://www.gobiya.com/performance/web-development-agency
-- SEO Copywriting: https://www.gobiya.com/creativity/seo-web-copywriting-agency
-- GEO & AI Content: https://www.gobiya.com/creativity/geo-ai-content-writing-agency
 - Case Studies: https://www.gobiya.com/case-studies

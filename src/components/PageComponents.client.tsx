@@ -44,3 +44,8 @@ export const InternetMarketingServicesLosAngelesPage = lazy(() => import('./Inte
 export const AiSearchMarketingSantaClaritaPage = lazy(() => import('./AiSearchMarketingSantaClaritaPage'));
 export const AiVideosPage = lazy(() => import('./AiVideosPage'));
 export const CryptoWeb3Page = lazy(() => import('./CryptoWeb3Page'));
+
+export const OutcomesIndex = lazy(() => import('./OutcomesIndex'));
+export const OutcomeTrafficPage = lazy(() => import('./OutcomeTrafficPage'));
+export const OutcomeRankingsPage = lazy(() => import('./OutcomeRankingsPage'));
+export const OutcomeSalesPage = lazy(() => import('./OutcomeSalesPage'));

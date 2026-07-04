@@ -5,7 +5,6 @@ import SiteHeader from './SiteHeader';
 import SiteFooter from './SiteFooter';
 import HeroQuickForm from './HeroQuickForm';
 import ContentCta from './ContentCta';
-import LatestInsights from './LatestInsights';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -351,7 +350,6 @@ export default function LocalServicePageTemplate({
       )}
 
       <ContentCta />
-      <LatestInsights relevantSlugs={relevantSlugs} />
       <SiteFooter />
       
       {/* Mobile grid card border overrides for responsive design */}

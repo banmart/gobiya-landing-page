@@ -146,33 +146,7 @@ const SiteHeader: React.FC = () => {
                   : "#ffffff" 
               }}
             >
-              <li className="menu-item menu-item-has-children">
-                <a href="/about">
-                  About us{" "}
-                  <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path fillRule="evenodd" clipRule="evenodd" d="M5.58564 3.52858C5.84599 3.26823 6.2681 3.26823 6.52845 3.52858L10.5285 7.52858C10.7888 7.78892 10.7888 8.21103 10.5285 8.47138L6.52845 12.4714C6.2681 12.7317 5.84599 12.7317 5.58564 12.4714C5.32529 12.211 5.32529 11.7889 5.58564 11.5286L9.11424 7.99998L5.58564 4.47138C5.32529 4.21103 5.32529 3.78892 5.58564 3.52858Z" fill="currentColor"/>
-                  </svg>
-                </a>
-                <ul className="sub-menu">
-                  <li className="menu-item"><a href="/about">About Agency</a></li>
-                  <li className="menu-item"><a href="/about/steve-martin">Steve Martin</a></li>
-                  <li className="menu-item"><a href="/approach">Our Approach</a></li>
-                </ul>
-              </li>
-              <li className="menu-item menu-item-has-children">
-                <a href="/contact">
-                  Offices{" "}
-                  <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path fillRule="evenodd" clipRule="evenodd" d="M5.58564 3.52858C5.84599 3.26823 6.2681 3.26823 6.52845 3.52858L10.5285 7.52858C10.7888 7.78892 10.7888 8.21103 10.5285 8.47138L6.52845 12.4714C6.2681 12.7317 5.84599 12.7317 5.58564 12.4714C5.32529 12.211 5.32529 11.7889 5.58564 11.5286L9.11424 7.99998L5.58564 4.47138C5.32529 4.21103 5.32529 3.78892 5.58564 3.52858Z" fill="currentColor"/>
-                  </svg>
-                </a>
-                <ul className="sub-menu">
-                  <li className="menu-item"><a href="/contact">Los Angeles</a></li>
-                </ul>
-              </li>
-              <li className="menu-item"><a href="/insights">News &amp; Insights</a></li>
-              <li className="menu-item"><a href="/contact">Careers</a></li>
-              <li className="menu-item"><a href="/contact">Contact us</a></li>
+              {/* Top menu links removed per request */}
             </ul>
           </div>
         </div>
@@ -191,10 +165,10 @@ const SiteHeader: React.FC = () => {
         <div className="main-menu-wrapper flex-1 flex justify-end lg:pr-8 static" style={{ position: 'static' }}>
           <div className="menu-main-en-container flex w-full justify-end static" style={{ position: 'static' }}>
             <ul id="menu-main-en" className="menu flex items-center gap-10 h-full static" style={{ position: 'static' }}>
-              {/* Creativity Dropdown */}
+              {/* Outcomes Dropdown */}
               <li className="menu-item group cursor-pointer relative lg:static h-full flex items-center" style={{ position: 'static' }} onMouseLeave={() => setFlyoutItem(null)}>
-                <a href="/creativity" className="flex items-center gap-1 py-4 font-medium hover:text-gray-400 transition-colors" style={{ color: isHeaderActive ? "#111827" : "#ffffff" }}>
-                  Creativity
+                <a href="/outcomes" className="flex items-center gap-1 py-4 font-medium hover:text-gray-400 transition-colors" style={{ color: isHeaderActive ? "#111827" : "#ffffff" }}>
+                  Outcomes
                   <svg width="12" height="12" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg" className="transform group-hover:rotate-180 transition-transform duration-300">
                     <path fillRule="evenodd" clipRule="evenodd" d="M5.58564 3.52858C5.84599 3.26823 6.2681 3.26823 6.52845 3.52858L10.5285 7.52858C10.7888 7.78892 10.7888 8.21103 10.5285 8.47138L6.52845 12.4714C6.2681 12.7317 5.84599 12.7317 5.58564 12.4714C5.32529 12.211 5.32529 11.7889 5.58564 11.5286L9.11424 7.99998L5.58564 4.47138C5.32529 4.21103 5.32529 3.78892 5.58564 3.52858Z" fill="currentColor"/>
                   </svg>
@@ -204,138 +178,26 @@ const SiteHeader: React.FC = () => {
                     <div className="w-full py-12">
                       <ul className="flex flex-col gap-3 text-left" style={{ maxWidth: '380px' }}>
                         <li onMouseEnter={() => setFlyoutItem(null)}>
-                          <a href="/creativity" className="text-gray-900 font-bold text-lg hover:text-gray-500 transition-colors block border-b border-line pb-4 mb-2">Overview &rarr;</a>
-                        </li>
-                        <li onMouseEnter={() => setFlyoutItem(null)}>
-                          <a href="/creativity/seo-web-copywriting-agency" className="group/link text-gray-500 hover:text-gray-900 transition-all duration-200 flex items-center justify-between text-base py-2 border-b border-gray-100/30">
-                            <span>SEO &amp; Web Copywriting</span>
+                          <a href="/outcomes/traffic" className="group/link text-gray-500 hover:text-gray-900 transition-all duration-200 flex items-center justify-between text-base py-2 border-b border-gray-100/30">
+                            <span>Traffic</span>
                             <span className="opacity-0 -translate-x-2 group-hover/link:opacity-100 group-hover/link:translate-x-0 transition-all duration-200 text-gray-900 font-bold">&rarr;</span>
                           </a>
                         </li>
                         <li onMouseEnter={() => setFlyoutItem(null)}>
-                          <a href="/creativity/seo-content-strategy-agency" className="group/link text-gray-500 hover:text-gray-900 transition-all duration-200 flex items-center justify-between text-base py-2 border-b border-gray-100/30">
-                            <span>SEO Content Strategy</span>
+                          <a href="/outcomes/rankings" className="group/link text-gray-500 hover:text-gray-900 transition-all duration-200 flex items-center justify-between text-base py-2 border-b border-gray-100/30">
+                            <span>Rankings</span>
                             <span className="opacity-0 -translate-x-2 group-hover/link:opacity-100 group-hover/link:translate-x-0 transition-all duration-200 text-gray-900 font-bold">&rarr;</span>
                           </a>
                         </li>
                         <li onMouseEnter={() => setFlyoutItem(null)}>
-                          <a href="/creativity/geo-ai-content-writing-agency" className="group/link text-gray-500 hover:text-gray-900 transition-all duration-200 flex items-center justify-between text-base py-2 border-b border-gray-100/30">
-                            <span>GEO &amp; AI Content Writing</span>
+                          <a href="/outcomes/sales" className="group/link text-gray-500 hover:text-gray-900 transition-all duration-200 flex items-center justify-between text-base py-2 border-b border-gray-100/30">
+                            <span>Sales</span>
                             <span className="opacity-0 -translate-x-2 group-hover/link:opacity-100 group-hover/link:translate-x-0 transition-all duration-200 text-gray-900 font-bold">&rarr;</span>
                           </a>
                         </li>
                         <li onMouseEnter={() => setFlyoutItem(null)}>
-                          <a href="/creativity/ai-videos-agency" className="group/link text-gray-500 hover:text-gray-900 transition-all duration-200 flex items-center justify-between text-base py-2 border-b border-gray-100/30">
-                            <span>AI Videos &amp; Ads</span>
-                            <span className="opacity-0 -translate-x-2 group-hover/link:opacity-100 group-hover/link:translate-x-0 transition-all duration-200 text-gray-900 font-bold">&rarr;</span>
-                          </a>
-                        </li>
-                        <li onMouseEnter={() => setFlyoutItem(null)}>
-                          <a href="/creativity/crypto-web3-agency" className="group/link text-gray-500 hover:text-gray-900 transition-all duration-200 flex items-center justify-between text-base py-2 border-b border-gray-100/30">
-                            <span>Crypto &amp; Web3</span>
-                            <span className="opacity-0 -translate-x-2 group-hover/link:opacity-100 group-hover/link:translate-x-0 transition-all duration-200 text-gray-900 font-bold">&rarr;</span>
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              
-              {/* Performance Dropdown */}
-              <li className="menu-item group cursor-pointer relative lg:static h-full flex items-center" style={{ position: 'static' }} onMouseLeave={() => setFlyoutItem(null)}>
-                <a href="/performance" className="flex items-center gap-1 py-4 font-medium hover:text-gray-400 transition-colors" style={{ color: isHeaderActive ? "#111827" : "#ffffff" }}>
-                  Performance
-                  <svg width="12" height="12" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg" className="transform group-hover:rotate-180 transition-transform duration-300">
-                    <path fillRule="evenodd" clipRule="evenodd" d="M5.58564 3.52858C5.84599 3.26823 6.2681 3.26823 6.52845 3.52858L10.5285 7.52858C10.7888 7.78892 10.7888 8.21103 10.5285 8.47138L6.52845 12.4714C6.2681 12.7317 5.84599 12.7317 5.58564 12.4714C5.32529 12.211 5.32529 11.7889 5.58564 11.5286L9.11424 7.99998L5.58564 4.47138C5.32529 4.21103 5.32529 3.78892 5.58564 3.52858Z" fill="currentColor"/>
-                  </svg>
-                </a>
-                <div className="absolute top-full left-0 w-full bg-white opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 shadow-2xl border-t border-line">
-                  <div className="w-full mx-auto" style={{ paddingLeft: '5vw', paddingRight: '5vw' }}>
-                    <div className="w-full py-12">
-                      <ul className="flex flex-col gap-3 text-left" style={{ maxWidth: '380px' }}>
-                        <li onMouseEnter={() => setFlyoutItem(null)}>
-                          <a href="/performance" className="text-gray-900 font-bold text-lg hover:text-gray-500 transition-colors block border-b border-line pb-4 mb-2">Overview &rarr;</a>
-                        </li>
-                        {/* Hub item — inline spoke sub-nav */}
-                        <li onMouseEnter={() => setFlyoutItem('seo-discoverability')}>
-                          <a href="/performance/seo-discoverability-agency" className="group/link transition-all duration-200 flex items-center justify-between text-base py-2 border-b border-gray-100/30" style={{ color: flyoutItem === 'seo-discoverability' ? '#111827' : '#6b7280' }}>
-                            <span style={{ fontWeight: flyoutItem === 'seo-discoverability' ? 600 : 400 }}>SEO &amp; Discoverability</span>
-                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style={{ color: flyoutItem === 'seo-discoverability' ? '#111827' : '#9ca3af', transition: 'color 0.2s, transform 0.2s', transform: flyoutItem === 'seo-discoverability' ? 'rotate(90deg)' : 'none' }}>
-                              <path d="M5 3l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                            </svg>
-                          </a>
-                          {/* Inline spoke sub-list */}
-                          <ul style={{
-                            overflow: 'hidden',
-                            maxHeight: flyoutItem === 'seo-discoverability' ? '200px' : '0',
-                            opacity: flyoutItem === 'seo-discoverability' ? 1 : 0,
-                            transition: 'max-height 0.25s ease, opacity 0.2s ease',
-                            paddingLeft: '0.75rem',
-                            borderLeft: '2px solid #e5e7eb',
-                            marginTop: flyoutItem === 'seo-discoverability' ? '4px' : '0',
-                            marginBottom: flyoutItem === 'seo-discoverability' ? '4px' : '0',
-                          }}>
-                            {PERFORMANCE_SPOKES['seo-discoverability'].map((spoke, i) => (
-                              <li key={i}>
-                                <a href={spoke.href} className="group/spoke flex items-center justify-between transition-colors duration-150" style={{ color: '#6b7280', textDecoration: 'none', padding: '5px 0', fontSize: '0.875rem' }}
-                                  onMouseEnter={e => (e.currentTarget.style.color = '#111827')}
-                                  onMouseLeave={e => (e.currentTarget.style.color = '#6b7280')}
-                                >
-                                  {spoke.title}
-                                  <span className="opacity-0 group-hover/spoke:opacity-100 transition-opacity" style={{ fontWeight: 700 }}>&rarr;</span>
-                                </a>
-                              </li>
-                            ))}
-                          </ul>
-                        </li>
-                        {/* Hub item — inline spoke sub-nav */}
-                        <li onMouseEnter={() => setFlyoutItem('web-development')}>
-                          <a href="/performance/web-development-agency" className="group/link transition-all duration-200 flex items-center justify-between text-base py-2 border-b border-gray-100/30" style={{ color: flyoutItem === 'web-development' ? '#111827' : '#6b7280' }}>
-                            <span style={{ fontWeight: flyoutItem === 'web-development' ? 600 : 400 }}>Web &amp; IT App Development</span>
-                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style={{ color: flyoutItem === 'web-development' ? '#111827' : '#9ca3af', transition: 'color 0.2s, transform 0.2s', transform: flyoutItem === 'web-development' ? 'rotate(90deg)' : 'none' }}>
-                              <path d="M5 3l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                            </svg>
-                          </a>
-                          {/* Inline spoke sub-list */}
-                          <ul style={{
-                            overflow: 'hidden',
-                            maxHeight: flyoutItem === 'web-development' ? '200px' : '0',
-                            opacity: flyoutItem === 'web-development' ? 1 : 0,
-                            transition: 'max-height 0.25s ease, opacity 0.2s ease',
-                            paddingLeft: '0.75rem',
-                            borderLeft: '2px solid #e5e7eb',
-                            marginTop: flyoutItem === 'web-development' ? '4px' : '0',
-                            marginBottom: flyoutItem === 'web-development' ? '4px' : '0',
-                          }}>
-                            {PERFORMANCE_SPOKES['web-development'].map((spoke, i) => (
-                              <li key={i}>
-                                <a href={spoke.href} className="group/spoke flex items-center justify-between transition-colors duration-150" style={{ color: '#6b7280', textDecoration: 'none', padding: '5px 0', fontSize: '0.875rem' }}
-                                  onMouseEnter={e => (e.currentTarget.style.color = '#111827')}
-                                  onMouseLeave={e => (e.currentTarget.style.color = '#6b7280')}
-                                >
-                                  {spoke.title}
-                                  <span className="opacity-0 group-hover/spoke:opacity-100 transition-opacity" style={{ fontWeight: 700 }}>&rarr;</span>
-                                </a>
-                              </li>
-                            ))}
-                          </ul>
-                        </li>
-                        <li onMouseEnter={() => setFlyoutItem(null)}>
-                          <a href="/performance/google-ads-ppc-strategy-agency" className="group/link text-gray-500 hover:text-gray-900 transition-all duration-200 flex items-center justify-between text-base py-2 border-b border-gray-100/30">
-                            <span>Google Ads &amp; PPC Strategy</span>
-                            <span className="opacity-0 -translate-x-2 group-hover/link:opacity-100 group-hover/link:translate-x-0 transition-all duration-200 text-gray-900 font-bold">&rarr;</span>
-                          </a>
-                        </li>
-                        <li onMouseEnter={() => setFlyoutItem(null)}>
-                          <a href="/performance/cro-ux-analysis-agency" className="group/link text-gray-500 hover:text-gray-900 transition-all duration-200 flex items-center justify-between text-base py-2 border-b border-gray-100/30">
-                            <span>CRO &amp; UX Analysis</span>
-                            <span className="opacity-0 -translate-x-2 group-hover/link:opacity-100 group-hover/link:translate-x-0 transition-all duration-200 text-gray-900 font-bold">&rarr;</span>
-                          </a>
-                        </li>
-                        <li onMouseEnter={() => setFlyoutItem(null)}>
-                          <a href="/performance/ai-llms-business-agency" className="group/link text-gray-500 hover:text-gray-900 transition-all duration-200 flex items-center justify-between text-base py-2 border-b border-gray-100/30">
-                            <span>AI &amp; LLM Systems Consulting</span>
+                          <a href="/google-penalty-recovery" className="group/link text-gray-500 hover:text-gray-900 transition-all duration-200 flex items-center justify-between text-base py-2 border-b border-gray-100/30">
+                            <span>Recovery</span>
                             <span className="opacity-0 -translate-x-2 group-hover/link:opacity-100 group-hover/link:translate-x-0 transition-all duration-200 text-gray-900 font-bold">&rarr;</span>
                           </a>
                         </li>
@@ -345,56 +207,48 @@ const SiteHeader: React.FC = () => {
                 </div>
               </li>
 
-              {/* Relations Dropdown */}
-              <li className="menu-item group cursor-pointer relative lg:static h-full flex items-center" style={{ position: 'static' }} onMouseLeave={() => setFlyoutItem(null)}>
-                <a href="/relations" className="flex items-center gap-1 py-4 font-medium hover:text-gray-400 transition-colors" style={{ color: isHeaderActive ? "#111827" : "#ffffff" }}>
-                  Relations
-                  <svg width="12" height="12" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg" className="transform group-hover:rotate-180 transition-transform duration-300">
-                    <path fillRule="evenodd" clipRule="evenodd" d="M5.58564 3.52858C5.84599 3.26823 6.2681 3.26823 6.52845 3.52858L10.5285 7.52858C10.7888 7.78892 10.7888 8.21103 10.5285 8.47138L6.52845 12.4714C6.2681 12.7317 5.84599 12.7317 5.58564 12.4714C5.32529 12.211 5.32529 11.7889 5.58564 11.5286L9.11424 7.99998L5.58564 4.47138C5.32529 4.21103 5.32529 3.78892 5.58564 3.52858Z" fill="currentColor"/>
-                  </svg>
-                </a>
-                <div className="absolute top-full left-0 w-full bg-white opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 shadow-2xl border-t border-line">
-                  <div className="w-full mx-auto flex" style={{ paddingLeft: '5vw', paddingRight: '5vw' }}>
-                    <div className="w-full lg:w-1/3 py-12 pr-8 border-r border-line">
-                      <ul className="flex flex-col gap-3 text-left">
-                        <li onMouseEnter={() => setFlyoutItem(null)}><a href="/relations" className="text-gray-900 font-bold text-lg hover:text-gray-500 transition-colors block border-b border-line pb-4 mb-2">Overview &rarr;</a></li>
-                        <li onMouseEnter={() => setFlyoutItem(null)}>
-                          <a href="/relations/authority-building-agency" className="group/link text-gray-500 hover:text-gray-900 transition-all duration-200 flex items-center justify-between text-base py-2 border-b border-gray-100/30">
-                            <span>Authority &amp; Link Building</span>
-                            <span className="opacity-0 -translate-x-2 group-hover/link:opacity-100 group-hover/link:translate-x-0 transition-all duration-200 text-gray-900 font-bold">&rarr;</span>
-                          </a>
-                        </li>
-                        <li onMouseEnter={() => setFlyoutItem(null)}>
-                          <a href="/relations/digital-pr-media-outreach-agency" className="group/link text-gray-500 hover:text-gray-900 transition-all duration-200 flex items-center justify-between text-base py-2 border-b border-gray-100/30">
-                            <span>Digital PR &amp; Media Outreach</span>
-                            <span className="opacity-0 -translate-x-2 group-hover/link:opacity-100 group-hover/link:translate-x-0 transition-all duration-200 text-gray-900 font-bold">&rarr;</span>
-                          </a>
-                        </li>
-                        <li onMouseEnter={() => setFlyoutItem(null)}>
-                          <a href="/relations/google-ads-ppc-strategy-agency" className="group/link text-gray-500 hover:text-gray-900 transition-all duration-200 flex items-center justify-between text-base py-2 border-b border-gray-100/30">
-                            <span>Google Ads &amp; PPC Strategy</span>
-                            <span className="opacity-0 -translate-x-2 group-hover/link:opacity-100 group-hover/link:translate-x-0 transition-all duration-200 text-gray-900 font-bold">&rarr;</span>
-                          </a>
-                        </li>
-
-                      </ul>
-                    </div>
-                    <div className="hidden lg:block lg:w-2/3 bg-gray-50/50"></div>
-                  </div>
-                </div>
-              </li>
-
-              {/* Recovery Link */}
-              <li className="menu-item group cursor-pointer relative h-full flex items-center">
-                <a href="/google-penalty-recovery" className="flex items-center gap-1 py-4 font-medium hover:text-gray-400 transition-colors" style={{ color: isHeaderActive ? "#111827" : "#ffffff" }}>
-                  Recovery
-                </a>
-              </li>
-
-              {/* Case Studies Dropdown */}
+              {/* Case Studies */}
               <li className="menu-item relative lg:static h-full flex items-center" style={{ position: 'static' }}>
                 <a href="/case-studies" className="flex items-center gap-1 py-4 font-medium hover:text-gray-400 transition-colors" style={{ color: isHeaderActive ? "#111827" : "#ffffff" }}>
                   Case Studies
+                </a>
+              </li>
+
+              {/* Approach */}
+              <li className="menu-item relative lg:static h-full flex items-center" style={{ position: 'static' }}>
+                <a href="/approach" className="flex items-center gap-1 py-4 font-medium hover:text-gray-400 transition-colors" style={{ color: isHeaderActive ? "#111827" : "#ffffff" }}>
+                  Approach
+                </a>
+              </li>
+
+              {/* About Dropdown */}
+              <li className="menu-item group cursor-pointer relative lg:static h-full flex items-center" style={{ position: 'static' }} onMouseLeave={() => setFlyoutItem(null)}>
+                <a href="/about" className="flex items-center gap-1 py-4 font-medium hover:text-gray-400 transition-colors" style={{ color: isHeaderActive ? "#111827" : "#ffffff" }}>
+                  About
+                  <svg width="12" height="12" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg" className="transform group-hover:rotate-180 transition-transform duration-300">
+                    <path fillRule="evenodd" clipRule="evenodd" d="M5.58564 3.52858C5.84599 3.26823 6.2681 3.26823 6.52845 3.52858L10.5285 7.52858C10.7888 7.78892 10.7888 8.21103 10.5285 8.47138L6.52845 12.4714C6.2681 12.7317 5.84599 12.7317 5.58564 12.4714C5.32529 12.211 5.32529 11.7889 5.58564 11.5286L9.11424 7.99998L5.58564 4.47138C5.32529 4.21103 5.32529 3.78892 5.58564 3.52858Z" fill="currentColor"/>
+                  </svg>
+                </a>
+                <div className="absolute top-full left-0 w-full bg-white opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 shadow-2xl border-t border-line">
+                  <div className="w-full mx-auto" style={{ paddingLeft: '5vw', paddingRight: '5vw' }}>
+                    <div className="w-full py-12">
+                      <ul className="flex flex-col gap-3 text-left" style={{ maxWidth: '380px' }}>
+                        <li onMouseEnter={() => setFlyoutItem(null)}>
+                          <a href="/about/steve-martin" className="group/link text-gray-500 hover:text-gray-900 transition-all duration-200 flex items-center justify-between text-base py-2 border-b border-gray-100/30">
+                            <span>Steve Martin</span>
+                            <span className="opacity-0 -translate-x-2 group-hover/link:opacity-100 group-hover/link:translate-x-0 transition-all duration-200 text-gray-900 font-bold">&rarr;</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              {/* Contact */}
+              <li className="menu-item relative lg:static h-full flex items-center" style={{ position: 'static' }}>
+                <a href="/contact" className="flex items-center gap-1 py-4 font-medium hover:text-gray-400 transition-colors" style={{ color: isHeaderActive ? "#111827" : "#ffffff" }}>
+                  Contact
                 </a>
               </li>
             </ul>
@@ -429,94 +283,19 @@ const SiteHeader: React.FC = () => {
         <div className="h-full w-full overflow-y-auto pb-24" style={{ paddingLeft: '6vw', paddingRight: '6vw' }}>
           <div className="flex flex-col gap-6 mt-8">
             
-            {/* Creativity Accordion */}
+            {/* Outcomes Accordion */}
             <div className="border-b border-gray-200 pb-8">
               <div className="w-full text-gray-900" style={{ fontSize: '2.5rem', fontWeight: 800, letterSpacing: '-0.02em', fontFamily: 'inherit' }}>
-    Creativity
-  </div>
+                Outcomes
+              </div>
               <div style={{ overflow: 'hidden', marginTop: '1.5rem' }}>
                 <div className="flex flex-col gap-5 pl-4" style={{ borderLeft: '2px solid #F3F4F6' }}>
-                  <a href="/creativity" style={{ fontSize: '1.25rem', fontWeight: 600, color: '#111827' }}>Overview &rarr;</a>
-                  <a href="/creativity/seo-web-copywriting-agency" style={{ fontSize: '1.125rem', color: '#6B7280' }}>SEO &amp; Web Copywriting</a>
-                  <a href="/creativity/seo-content-strategy-agency" style={{ fontSize: '1.125rem', color: '#6B7280' }}>SEO Content Strategy</a>
-                  <a href="/creativity/geo-ai-content-writing-agency" style={{ fontSize: '1.125rem', color: '#6B7280' }}>GEO &amp; AI Content Writing</a>
-                  <a href="/creativity/ai-videos-agency" style={{ fontSize: '1.125rem', color: '#6B7280' }}>AI Videos &amp; Ads</a>
-                  <a href="/creativity/crypto-web3-agency" style={{ fontSize: '1.125rem', color: '#6B7280' }}>Crypto &amp; Web3</a>
+                  <a href="/outcomes/traffic" style={{ fontSize: '1.125rem', color: '#6B7280' }}>Traffic</a>
+                  <a href="/outcomes/rankings" style={{ fontSize: '1.125rem', color: '#6B7280' }}>Rankings</a>
+                  <a href="/outcomes/sales" style={{ fontSize: '1.125rem', color: '#6B7280' }}>Sales</a>
+                  <a href="/google-penalty-recovery" style={{ fontSize: '1.125rem', color: '#6B7280' }}>Recovery</a>
                 </div>
               </div>
-            </div>
-
-            {/* Performance Accordion */}
-            <div className="border-b border-gray-200 pb-8">
-              <div className="w-full text-gray-900" style={{ fontSize: '2.5rem', fontWeight: 800, letterSpacing: '-0.02em', fontFamily: 'inherit' }}>
-    Performance
-  </div>
-              <div style={{ overflow: 'hidden', marginTop: '1.5rem' }}>
-                <div className="flex flex-col gap-5 pl-4" style={{ borderLeft: '2px solid #F3F4F6' }}>
-                  <a href="/performance" style={{ fontSize: '1.25rem', fontWeight: 600, color: '#111827' }}>Overview &rarr;</a>
-                  {/* Hub item with tap-to-expand spokes */}
-                  <div>
-                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                      <a href="/performance/seo-discoverability-agency" style={{ fontSize: '1.125rem', color: '#111827', fontWeight: 600 }}>SEO &amp; Discoverability</a>
-                      <button onClick={() => setMobileExpanded(mobileExpanded === 'seo-discoverability' ? null : 'seo-discoverability')} style={{ background: 'none', border: '1px solid #e5e7eb', borderRadius: '4px', padding: '4px 8px', cursor: 'pointer', display: 'flex', alignItems: 'center' }} aria-label="Expand spoke pages">
-                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style={{ color: '#6B7280', transition: 'transform 0.2s', transform: mobileExpanded === 'seo-discoverability' ? 'rotate(90deg)' : 'none' }}>
-                          <path d="M5 3l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                        </svg>
-                      </button>
-                    </div>
-                    {mobileExpanded === 'seo-discoverability' && (
-                      <div style={{ marginTop: '0.75rem', paddingLeft: '1rem', borderLeft: '2px solid #e5e7eb', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-                        {PERFORMANCE_SPOKES['seo-discoverability'].map((spoke, i) => (
-                          <a key={i} href={spoke.href} style={{ fontSize: '1rem', color: '#6B7280' }}>{spoke.title}</a>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                  {/* Hub item with tap-to-expand spokes */}
-                  <div>
-                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                      <a href="/performance/web-development-agency" style={{ fontSize: '1.125rem', color: '#111827', fontWeight: 600 }}>Web &amp; IT App Development</a>
-                      <button onClick={() => setMobileExpanded(mobileExpanded === 'web-development' ? null : 'web-development')} style={{ background: 'none', border: '1px solid #e5e7eb', borderRadius: '4px', padding: '4px 8px', cursor: 'pointer', display: 'flex', alignItems: 'center' }} aria-label="Expand spoke pages">
-                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style={{ color: '#6B7280', transition: 'transform 0.2s', transform: mobileExpanded === 'web-development' ? 'rotate(90deg)' : 'none' }}>
-                          <path d="M5 3l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                        </svg>
-                      </button>
-                    </div>
-                    {mobileExpanded === 'web-development' && (
-                      <div style={{ marginTop: '0.75rem', paddingLeft: '1rem', borderLeft: '2px solid #e5e7eb', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-                        {PERFORMANCE_SPOKES['web-development'].map((spoke, i) => (
-                          <a key={i} href={spoke.href} style={{ fontSize: '1rem', color: '#6B7280' }}>{spoke.title}</a>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                  <a href="/performance/google-ads-ppc-strategy-agency" style={{ fontSize: '1.125rem', color: '#6B7280' }}>Google Ads &amp; PPC Strategy</a>
-                  <a href="/performance/cro-ux-analysis-agency" style={{ fontSize: '1.125rem', color: '#6B7280' }}>CRO &amp; UX Analysis</a>
-                  <a href="/performance/ai-llms-business-agency" style={{ fontSize: '1.125rem', color: '#6B7280' }}>AI &amp; LLM Systems Consulting</a>
-                </div>
-              </div>
-            </div>
-
-            {/* Relations Accordion */}
-            <div className="border-b border-gray-200 pb-8">
-              <div className="w-full text-gray-900" style={{ fontSize: '2.5rem', fontWeight: 800, letterSpacing: '-0.02em', fontFamily: 'inherit' }}>
-    Relations
-  </div>
-              <div style={{ overflow: 'hidden', marginTop: '1.5rem' }}>
-                <div className="flex flex-col gap-5 pl-4" style={{ borderLeft: '2px solid #F3F4F6' }}>
-                  <a href="/relations" style={{ fontSize: '1.25rem', fontWeight: 600, color: '#111827' }}>Overview &rarr;</a>
-                  <a href="/relations/authority-building-agency" style={{ fontSize: '1.125rem', color: '#6B7280' }}>Authority &amp; Link Building</a>
-                  <a href="/relations/digital-pr-media-outreach-agency" style={{ fontSize: '1.125rem', color: '#6B7280' }}>Digital PR &amp; Media Outreach</a>
-                  <a href="/relations/google-ads-ppc-strategy-agency" style={{ fontSize: '1.125rem', color: '#6B7280' }}>Google Ads &amp; PPC Strategy</a>
-                </div>
-              </div>
-            </div>
-
-            {/* Recovery Link */}
-            <div className="border-b border-gray-200 pb-8">
-              <a href="/google-penalty-recovery" className="w-full text-gray-900 block" style={{ fontSize: '2.5rem', fontWeight: 800, letterSpacing: '-0.02em', fontFamily: 'inherit' }}>
-                Recovery
-              </a>
             </div>
 
             {/* Case Studies */}
@@ -526,46 +305,29 @@ const SiteHeader: React.FC = () => {
               </a>
             </div>
 
-            {/* About Us Accordion */}
+            {/* Approach */}
+            <div className="border-b border-gray-200 pb-8">
+              <a href="/approach" className="w-full text-gray-900 block" style={{ fontSize: '2.5rem', fontWeight: 800, letterSpacing: '-0.02em', fontFamily: 'inherit' }}>
+                Approach
+              </a>
+            </div>
+
+            {/* About Accordion */}
             <div className="border-b border-gray-200 pb-8">
               <div className="w-full text-gray-900" style={{ fontSize: '2.5rem', fontWeight: 800, letterSpacing: '-0.02em', fontFamily: 'inherit' }}>
-                About Us
+                About
               </div>
               <div style={{ overflow: 'hidden', marginTop: '1.5rem' }}>
                 <div className="flex flex-col gap-5 pl-4" style={{ borderLeft: '2px solid #F3F4F6' }}>
-                  <a href="/about" style={{ fontSize: '1.125rem', color: '#6B7280' }}>About Agency</a>
                   <a href="/about/steve-martin" style={{ fontSize: '1.125rem', color: '#6B7280' }}>Steve Martin</a>
-                  <a href="/approach" style={{ fontSize: '1.125rem', color: '#6B7280' }}>Our Approach</a>
                 </div>
               </div>
             </div>
 
-            {/* Offices Accordion */}
-            <div className="border-b border-gray-200 pb-8">
-              <div className="w-full text-gray-900" style={{ fontSize: '2.5rem', fontWeight: 800, letterSpacing: '-0.02em', fontFamily: 'inherit' }}>
-                Offices
-              </div>
-              <div style={{ overflow: 'hidden', marginTop: '1.5rem' }}>
-                <div className="flex flex-col gap-5 pl-4" style={{ borderLeft: '2px solid #F3F4F6' }}>
-                  <a href="/contact" style={{ fontSize: '1.125rem', color: '#6B7280' }}>Los Angeles</a>
-                </div>
-              </div>
-            </div>
-
-            {/* Other Links */}
-            <div className="border-b border-gray-200 pb-8">
-              <a href="/insights" className="w-full text-gray-900 block" style={{ fontSize: '2.5rem', fontWeight: 800, letterSpacing: '-0.02em', fontFamily: 'inherit' }}>
-                News &amp; Insights
-              </a>
-            </div>
-            <div className="border-b border-gray-200 pb-8">
-              <a href="/contact" className="w-full text-gray-900 block" style={{ fontSize: '2.5rem', fontWeight: 800, letterSpacing: '-0.02em', fontFamily: 'inherit' }}>
-                Careers
-              </a>
-            </div>
+            {/* Contact */}
             <div className="pb-8">
               <a href="/contact" className="w-full text-gray-900 block" style={{ fontSize: '2.5rem', fontWeight: 800, letterSpacing: '-0.02em', fontFamily: 'inherit' }}>
-                Contact us
+                Contact
               </a>
             </div>
 

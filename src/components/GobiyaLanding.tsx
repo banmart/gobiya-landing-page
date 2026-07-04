@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import SiteHeader from './SiteHeader';
 import SiteFooter from './SiteFooter';
-import LatestInsights from './LatestInsights';
 import OfferNudge from './OfferNudge';
 
 const yieldToMain = (): Promise<void> => {
@@ -219,20 +218,20 @@ export default function GobiyaLanding() {
             <div className="cover-content w-full" style={{ position: 'relative', transform: 'none', top: 'auto', left: 'auto', right: 'auto', bottom: 'auto', paddingLeft: '5vw', paddingRight: '5vw', paddingBottom: '3rem', textAlign: 'left', maxWidth: 'none', margin: 0, zIndex: 20, display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', height: '100%', minHeight: '100%' }}>
               {/* Hero text removed as requested */}
               <div className="cover-actions" style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'flex-start', gap: '1.5rem', margin: 0 }}>
-                <a href="/creativity" className="btn-cover">
-                  Creativity
+                <a href="/outcomes/traffic" className="btn-cover">
+                  Traffic
                   <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M1 11L11 1M11 1H3M11 1V9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
                 </a>
-                <a href="/performance" className="btn-cover">
-                  Performance
+                <a href="/outcomes/rankings" className="btn-cover">
+                  Rankings
                   <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M1 11L11 1M11 1H3M11 1V9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
                 </a>
-                <a href="/relations" className="btn-cover">
-                  Relations
+                <a href="/outcomes/sales" className="btn-cover">
+                  Sales
                   <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M1 11L11 1M11 1H3M11 1V9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
                 </a>
-                <a href="/contact" className="btn-cover" style={{ background: '#ffffff', color: '#000000', borderColor: '#ffffff' }}>
-                  Contact Us
+                <a href="/google-penalty-recovery" className="btn-cover" style={{ background: '#ffffff', color: '#000000', borderColor: '#ffffff' }}>
+                  Recovery
                   <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M1 11L11 1M11 1H3M11 1V9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
                 </a>
               </div>
@@ -527,17 +526,13 @@ export default function GobiyaLanding() {
                   You need content, copy, or creative that actually brings people in — not just fills pages. We write SEO-mapped web copy, script and produce AI video ads, develop Web3 launch content, and build the content architecture that makes search engines and AI platforms choose your site as the answer.
                 </p>
                 <ol style={{ listStyleType: 'decimal', paddingLeft: '1.2rem', display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
-                  <li><a href="/creativity/seo-web-copywriting-agency" style={{ color: '#4b5563', fontSize: '0.875rem', textDecoration: 'underline', textUnderlineOffset: '4px', textDecorationColor: '#d1d5db' }}>SEO &amp; Web Copywriting</a></li>
-                  <li><a href="/creativity/seo-content-strategy-agency" style={{ color: '#4b5563', fontSize: '0.875rem', textDecoration: 'underline', textUnderlineOffset: '4px', textDecorationColor: '#d1d5db' }}>SEO Content Strategy</a></li>
-                  <li><a href="/creativity/geo-ai-content-writing-agency" style={{ color: '#4b5563', fontSize: '0.875rem', textDecoration: 'underline', textUnderlineOffset: '4px', textDecorationColor: '#d1d5db' }}>GEO &amp; AI Content Writing</a></li>
-                  <li><a href="/creativity/ai-videos-agency" style={{ color: '#4b5563', fontSize: '0.875rem', textDecoration: 'underline', textUnderlineOffset: '4px', textDecorationColor: '#d1d5db' }}>AI Videos &amp; Ads</a></li>
-                  <li><a href="/creativity/crypto-web3-agency" style={{ color: '#4b5563', fontSize: '0.875rem', textDecoration: 'underline', textUnderlineOffset: '4px', textDecorationColor: '#d1d5db' }}>Crypto &amp; Web3</a></li>
+                  <li><span style={{ color: '#4b5563', fontSize: '0.875rem' }}>SEO &amp; Web Copywriting</span></li>
+                  <li><span style={{ color: '#4b5563', fontSize: '0.875rem' }}>SEO Content Strategy</span></li>
+                  <li><span style={{ color: '#4b5563', fontSize: '0.875rem' }}>GEO &amp; AI Content Writing</span></li>
+                  <li><span style={{ color: '#4b5563', fontSize: '0.875rem' }}>AI Videos &amp; Ads</span></li>
+                  <li><span style={{ color: '#4b5563', fontSize: '0.875rem' }}>Crypto &amp; Web3</span></li>
                 </ol>
               </div>
-              <a href="/creativity" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.875rem', fontWeight: 500, color: '#374151', borderBottom: '1px solid #d1d5db', paddingBottom: '2px', marginTop: '2.5rem' }}>
-                Find more
-                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"><path fillRule="evenodd" clipRule="evenodd" d="M7 7C7 6.44772 7.44772 6 8 6H17C17.5523 6 18 6.44772 18 7V16C18 16.5523 17.5523 17 17 17C16.4477 17 16 16.5523 16 16V9.41421L7.70711 17.7071C7.31658 18.0976 6.68342 18.0976 6.29289 17.7071C5.90237 17.3166 5.90237 16.6834 6.29289 16.2929L14.5858 8H8C7.44772 8 7 7.55228 7 7Z" fill="currentColor"/></svg>
-              </a>
             </div>
 
             {/* Card 2 — Performance */}
@@ -549,17 +544,13 @@ export default function GobiyaLanding() {
                   Your site is slow, your rankings stalled, or your ads cost more than they return. We fix the technical architecture, rebuild campaigns around cost per lead, and hand-code custom sites that rank and convert — all measured against outcomes, not activity.
                 </p>
                 <ol style={{ listStyleType: 'decimal', paddingLeft: '1.2rem', display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
-                  <li><a href="/performance/seo-discoverability-agency" style={{ color: '#4b5563', fontSize: '0.875rem', textDecoration: 'underline', textUnderlineOffset: '4px', textDecorationColor: '#d1d5db' }}>SEO &amp; Discoverability</a></li>
-                  <li><a href="/performance/web-development-agency" style={{ color: '#4b5563', fontSize: '0.875rem', textDecoration: 'underline', textUnderlineOffset: '4px', textDecorationColor: '#d1d5db' }}>Web &amp; IT App Development</a></li>
-                  <li><a href="/performance/google-ads-ppc-strategy-agency" style={{ color: '#4b5563', fontSize: '0.875rem', textDecoration: 'underline', textUnderlineOffset: '4px', textDecorationColor: '#d1d5db' }}>Google Ads &amp; PPC Strategy</a></li>
-                  <li><a href="/performance/cro-ux-analysis-agency" style={{ color: '#4b5563', fontSize: '0.875rem', textDecoration: 'underline', textUnderlineOffset: '4px', textDecorationColor: '#d1d5db' }}>CRO &amp; UX Analysis</a></li>
-                  <li><a href="/performance/ai-llms-business-agency" style={{ color: '#4b5563', fontSize: '0.875rem', textDecoration: 'underline', textUnderlineOffset: '4px', textDecorationColor: '#d1d5db' }}>AI &amp; LLM Systems Consulting</a></li>
+                  <li><span style={{ color: '#4b5563', fontSize: '0.875rem' }}>SEO &amp; Discoverability</span></li>
+                  <li><span style={{ color: '#4b5563', fontSize: '0.875rem' }}>Web &amp; IT App Development</span></li>
+                  <li><span style={{ color: '#4b5563', fontSize: '0.875rem' }}>Google Ads &amp; PPC Strategy</span></li>
+                  <li><span style={{ color: '#4b5563', fontSize: '0.875rem' }}>CRO &amp; UX Analysis</span></li>
+                  <li><span style={{ color: '#4b5563', fontSize: '0.875rem' }}>AI &amp; LLM Systems Consulting</span></li>
                 </ol>
               </div>
-              <a href="/performance" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.875rem', fontWeight: 500, color: '#374151', borderBottom: '1px solid #d1d5db', paddingBottom: '2px', marginTop: '2.5rem' }}>
-                Find more
-                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"><path fillRule="evenodd" clipRule="evenodd" d="M7 7C7 6.44772 7.44772 6 8 6H17C17.5523 6 18 6.44772 18 7V16C18 16.5523 17.5523 17 17 17C16.4477 17 16 16.5523 16 16V9.41421L7.70711 17.7071C7.31658 18.0976 6.68342 18.0976 6.29289 17.7071C5.90237 17.3166 5.90237 16.6834 6.29289 16.2929L14.5858 8H8C7.44772 8 7 7.55228 7 7Z" fill="currentColor"/></svg>
-              </a>
             </div>
 
             {/* Card 3 — Relations */}
@@ -571,15 +562,11 @@ export default function GobiyaLanding() {
                   Being invisible to the publications, directories, and AI platforms your buyers trust costs you deals you never knew you were losing. We build the authority signals — backlinks, press mentions, structured data — that make your site the answer Google and AI serve first.
                 </p>
                 <ol style={{ listStyleType: 'decimal', paddingLeft: '1.2rem', display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
-                  <li><a href="/relations/authority-building-agency" style={{ color: '#4b5563', fontSize: '0.875rem', textDecoration: 'underline', textUnderlineOffset: '4px', textDecorationColor: '#d1d5db' }}>Authority &amp; Link Building</a></li>
-                  <li><a href="/relations/digital-pr-media-outreach-agency" style={{ color: '#4b5563', fontSize: '0.875rem', textDecoration: 'underline', textUnderlineOffset: '4px', textDecorationColor: '#d1d5db' }}>Digital PR &amp; Media Outreach</a></li>
-                  <li><a href="/relations/google-ads-ppc-strategy-agency" style={{ color: '#4b5563', fontSize: '0.875rem', textDecoration: 'underline', textUnderlineOffset: '4px', textDecorationColor: '#d1d5db' }}>Google Ads &amp; PPC Strategy</a></li>
+                  <li><span style={{ color: '#4b5563', fontSize: '0.875rem' }}>Authority &amp; Link Building</span></li>
+                  <li><span style={{ color: '#4b5563', fontSize: '0.875rem' }}>Digital PR &amp; Media Outreach</span></li>
+                  <li><span style={{ color: '#4b5563', fontSize: '0.875rem' }}>Google Ads &amp; PPC Strategy</span></li>
                 </ol>
               </div>
-              <a href="/relations" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.875rem', fontWeight: 500, color: '#374151', borderBottom: '1px solid #d1d5db', paddingBottom: '2px', marginTop: '2.5rem' }}>
-                Find more
-                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"><path fillRule="evenodd" clipRule="evenodd" d="M7 7C7 6.44772 7.44772 6 8 6H17C17.5523 6 18 6.44772 18 7V16C18 16.5523 17.5523 17 17 17C16.4477 17 16 16.5523 16 16V9.41421L7.70711 17.7071C7.31658 18.0976 6.68342 18.0976 6.29289 17.7071C5.90237 17.3166 5.90237 16.6834 6.29289 16.2929L14.5858 8H8C7.44772 8 7 7.55228 7 7Z" fill="currentColor"/></svg>
-              </a>
             </div>
 
           </div>
@@ -623,9 +610,6 @@ export default function GobiyaLanding() {
           </a>
         </div>
       </section>
-
-      {/* Latest Insights Slider Section */}
-      <LatestInsights />
 
       <OfferNudge />
 

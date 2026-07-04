@@ -257,53 +257,7 @@ const AuthorPage: React.FC<AuthorPageProps> = ({ path }) => {
               ))}
             </div>
 
-            {/* Podcast Section */}
-            <div className="podcast-section" data-anim="up">
-              <h3>
-                <Award className="w-5 h-5" /> Featured Podcast Episode
-              </h3>
-              <div className="podcast-card">
-                <h4>Winning with Generative Engine Optimization (GEO)</h4>
-                <p>
-                  Listen to Steve Martin discuss how generative engine citations work, key entity verification datasets, and why traditional B2B search signals are changing in the era of ChatGPT, Claude, and Perplexity.
-                </p>
-                <audio controls>
-                  <source src="/audio/Winning_with_generative_engine_optimization.m4a" type="audio/mp4" />
-                  Your browser does not support the audio element.
-                </audio>
-              </div>
-            </div>
 
-            {/* Written Articles Section */}
-            <h2 style={{ marginTop: '4rem' }} data-anim="up">Articles Written by Steve Martin</h2>
-            <div className="articles-list" data-anim="stagger">
-              {articles.map((article) => (
-                <div key={article.slug} className="article-row" data-anim-child>
-                  <div className="article-img-wrap">
-                    <img 
-                      src={article.image} 
-                      alt={article.title} 
-                    />
-                  </div>
-                  <div className="article-content">
-                    <span className="article-cat">
-                      {article.category}
-                    </span>
-                    <h3 className="article-title">
-                      <a href={`/insights/${article.slug}`}>{article.title}</a>
-                    </h3>
-                    <p className="article-desc">
-                      {article.description}
-                    </p>
-                    <div className="article-meta-bottom">
-                      <span>{article.date}</span>
-                      <span>•</span>
-                      <span>{article.readTime}</span>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
 
           </div>
         </div>
