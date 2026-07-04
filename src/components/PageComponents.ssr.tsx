@@ -1,5 +1,6 @@
 export { default as GobiyaLanding } from './GobiyaLanding';
 export { default as GobiyaAboutPage } from './GobiyaAboutPage';
+export { default as AuthorPage } from './AuthorPage';
 export { default as ThankYouPage } from './ThankYouPage';
 export { default as BookingPage } from './BookingPage';
 export { default as SolutionPage } from './SolutionPage';

@@ -10,6 +10,7 @@ export const GobiyaLanding = lazy(() => import('./GobiyaLanding'));
 
 // Dynamic/lazy exports for other pages
 export const GobiyaAboutPage = lazy(() => import('./GobiyaAboutPage'));
+export const AuthorPage = lazy(() => import('./AuthorPage'));
 export const ThankYouPage = lazy(() => import('./ThankYouPage'));
 export const BookingPage = lazy(() => import('./BookingPage'));
 export const SolutionPage = lazy(() => import('./SolutionPage'));

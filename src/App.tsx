@@ -2,6 +2,7 @@ import React, { useState, useEffect, Suspense } from 'react';
 import {
   GobiyaLanding,
   GobiyaAboutPage,
+  AuthorPage,
   ThankYouPage,
   BookingPage,
   SuccessStories,
@@ -305,6 +306,10 @@ function App({ url }: AppProps) {
   const isValidRoute = [
     '/',
     '/admin',
+    '/book',
+    '/about/steve-martin',
+    '/author/steve-martin',
+    '/about',
     '/contact',
   ].includes(normalizedPath);
 
@@ -336,6 +341,8 @@ function App({ url }: AppProps) {
         <LosAngelesSeoProf />
       ) : normalizedPath === '/book' ? (
         <BookingPage />
+      ) : normalizedPath === '/about/steve-martin' || normalizedPath === '/author/steve-martin' ? (
+        <AuthorPage key={normalizedPath} path={normalizedPath} />
       ) : normalizedPath === '/about' ? (
         <GobiyaAboutPage />
       ) : normalizedPath === '/thank-you' ? (
