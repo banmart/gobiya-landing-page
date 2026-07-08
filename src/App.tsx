@@ -309,7 +309,7 @@ function App({ url }: AppProps) {
   const articleMatch = normalizedPath.match(/^\/insights\/([a-z0-9-]+)$/);
   const articleSlug = articleMatch ? articleMatch[1] : null;
 
-  const isValidServiceSubpage = [
+  const isValid= [
     '/company/careers',
     '/outcomes',
     '/outcomes/traffic',
@@ -343,7 +343,7 @@ function App({ url }: AppProps) {
     '/outcomes/traffic',
     '/outcomes/rankings',
     '/outcomes/sales'
-  ].includes(normalizedPath) || normalizedPath === '/google-penalty-recovery' || isValidServiceSubpage || !!articleSlug;
+  ].includes(normalizedPath) || normalizedPath === '/google-penalty-recovery' || isValid|| !!articleSlug;
 
   return (
     <Suspense fallback={null}>
