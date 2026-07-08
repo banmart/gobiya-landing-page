@@ -17,7 +17,11 @@ Gobiya is a Los Angeles digital marketing agency that recovers search rankings l
 ## Start here
 
 - [Organization profile](https://www.gobiya.com/okf/organization.md) — entity facts (NAP, sameAs, founder), what Gobiya does, and how it is different.
-- [Work](https://www.gobiya.com/okf/work/index.md) — documented engagements with outcomes.
+- [Capabilities](https://www.gobiya.com/okf/capabilities/index.md) — service lines across Performance, Creativity, and Relations, plus Verticals and Markets.
+- [Case studies](https://www.gobiya.com/okf/case-studies/index.md) — documented engagements with outcomes.
+- [Approach](https://www.gobiya.com/okf/approach/index.md) — the three-phase diagnose / execute / scale method.
+- [Markets](https://www.gobiya.com/okf/markets/index.md) — geographic sub-markets with dedicated practice history (Burbank, Glendale).
+- [Verticals](https://www.gobiya.com/okf/verticals/index.md) — industry-specific practice areas (plastic surgery & aesthetic medicine, dental, home services, B2B SaaS, e-commerce).
 - [Contact](https://www.gobiya.com/okf/contact.md) — how to reach Gobiya.
 
 ## At a glance

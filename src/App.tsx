@@ -2,15 +2,28 @@ import React, { useState, useEffect, Suspense } from 'react';
 import {
   GobiyaLanding,
   GobiyaAboutPage,
+  ServiceSubpage,
+  ArticlePage,
   AuthorPage,
   ThankYouPage,
   BookingPage,
   SuccessStories,
+  InsightsPage,
+  RegionalHubPage,
   AdminLogin,
   AdminDashboard,
   ContactPage,
+  OnPageSeoLosAngelesPage,
+  AiSeoBeverlyHillsPage,
+  LocalSeoBurbankPage,
+  SeoCompanyEncinoPage,
+  LosAngelesSeoProf,
   SEO,
   NotFound,
+  GlendaleSeoPage,
+  PlasticSurgeryMarketingPage,
+  InternetMarketingServicesLosAngelesPage,
+  AiSearchMarketingSantaClaritaPage,
   OutcomesIndex,
   OutcomeTrafficPage,
   OutcomeRankingsPage,
@@ -251,17 +264,6 @@ function App({ url }: AppProps) {
       '/capabilities/authority-building-agency': '/relations/authority-building-agency/',
       '/company/about': '/about',
 
-      // Geo redirects
-      '/on-page-seo-los-angeles': '/',
-      '/ai-seo-beverly-hills': '/',
-      '/local-seo-company-burbank': '/',
-      '/seo-company-encino': '/',
-      '/los-angeles-seo-professional': '/',
-      '/glendale-seo': '/',
-      '/plastic-surgery-internet-marketing': '/',
-      '/internet-marketing-services-los-angeles': '/',
-      '/ai-search-marketing-santa-clarita': '/',
-
       // Legacy /resources/ URLs from prior CMS — 404ing in search results
       '/resources/zero-click-is-the-new-billboard-monetize-it-mk82t8ki': '/insights/automated-b2b-sales-pipeline-seo',
       '/resources/how-to-recover-from-a-google-algorithm-update-2026-guide-ml3c2pbz': '/insights/can-a-site-fully-recover-from-a-google-core-update',
@@ -303,21 +305,45 @@ function App({ url }: AppProps) {
   // Normalize path by splitting out search parameters
   const normalizedPath = currentPath.split('?')[0].toLowerCase().replace(/\/$/, '') || '/';
 
+  // Detect article routes: /insights/[slug]
+  const articleMatch = normalizedPath.match(/^\/insights\/([a-z0-9-]+)$/);
+  const articleSlug = articleMatch ? articleMatch[1] : null;
+
+  const isValidServiceSubpage = [
+    '/company/careers',
+    '/outcomes',
+    '/outcomes/traffic',
+    '/outcomes/rankings',
+    '/outcomes/sales'
+  ].includes(normalizedPath);
+
   const isValidRoute = [
     '/',
     '/admin',
+    '/on-page-seo-los-angeles',
+    '/ai-seo-beverly-hills',
+    '/local-seo-company-burbank',
+    '/seo-company-encino',
+    '/los-angeles-seo-professional',
     '/book',
     '/about/steve-martin',
     '/author/steve-martin',
     '/about',
-    '/contact',
+    '/thank-you',
     '/work',
+
+    '/insights',
+    '/contact',
+
+    '/glendale-seo',
+    '/plastic-surgery-internet-marketing',
+    '/internet-marketing-services-los-angeles',
+    '/ai-search-marketing-santa-clarita',
     '/outcomes',
     '/outcomes/traffic',
     '/outcomes/rankings',
-    '/outcomes/sales',
-    '/thank-you',
-  ].includes(normalizedPath);
+    '/outcomes/sales'
+  ].includes(normalizedPath) || normalizedPath === '/google-penalty-recovery' || isValidServiceSubpage || !!articleSlug;
 
   return (
     <Suspense fallback={null}>
@@ -351,6 +377,8 @@ function App({ url }: AppProps) {
         <AuthorPage key={normalizedPath} path={normalizedPath} />
       ) : normalizedPath === '/about' ? (
         <GobiyaAboutPage />
+      ) : articleSlug ? (
+        <ArticlePage key={articleSlug} slug={articleSlug} />
       ) : normalizedPath === '/thank-you' ? (
         <ThankYouPage />
       ) : normalizedPath === '/outcomes' ? (
@@ -363,10 +391,23 @@ function App({ url }: AppProps) {
         <OutcomeSalesPage />
       ) : normalizedPath === '/work' ? (
         <SuccessStories />
+
+      ) : normalizedPath === '/insights' ? (
+        <InsightsPage currentPath={currentPath} />
       ) : normalizedPath === '/contact' ? (
         <ContactPage />
+      ) : normalizedPath === '/google-penalty-recovery' ? (
+        <ServiceSubpage key={normalizedPath} path={normalizedPath} isFanOut={true} category="recovery" slug="google-penalty-recovery" />
+      ) : normalizedPath === '/glendale-seo' ? (
+        <GlendaleSeoPage />
+      ) : normalizedPath === '/plastic-surgery-internet-marketing' ? (
+        <PlasticSurgeryMarketingPage />
+      ) : normalizedPath === '/internet-marketing-services-los-angeles' ? (
+        <InternetMarketingServicesLosAngelesPage />
+      ) : normalizedPath === '/ai-search-marketing-santa-clarita' ? (
+        <AiSearchMarketingSantaClaritaPage />
       ) : (
-        <NotFound />
+        <ServiceSubpage key={normalizedPath} path={normalizedPath} />
       )}
 
       {/* Floating strategy session booking message bar */}

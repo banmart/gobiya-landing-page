@@ -40,7 +40,7 @@ const Header: React.FC<HeaderProps> = ({ theme = 'light', hideLogo = false, acce
             <img 
               src="/images/logo-gobiya-07082026.webp" 
               alt="Gobiya Logo" 
-              className={`h-8 sm:h-9 w-auto object-contain ${isDark ? 'filter brightness-0 invert' : ''}`}
+              className={`h-8 sm:h-9 w-auto object-contain ${!isDark ? 'filter brightness-0 invert' : ''}`}
             />
           </a>
         </div>

@@ -354,14 +354,6 @@ const metadataMap: Record<string, SEOMetadata> = {
     title: "Technical SEO & B2B Pipeline Engineering | Gobiya",
     description: "Lost rankings after a Google update? Invisible in ChatGPT answers? Gobiya is a Los Angeles digital marketing agency that recovers organic traffic and engineers AI citations for local service businesses and B2B firms."
   },
-  '/about/steve-martin': {
-    title: 'Steve Martin - Technical SEO Director & Founder',
-    description: 'Steve Martin is a technical SEO specialist and founder of Gobiya, based in Los Angeles.'
-  },
-  '/author/steve-martin': {
-    title: 'Steve Martin - Technical SEO Director & Founder',
-    description: 'Steve Martin is a technical SEO specialist and founder of Gobiya, based in Los Angeles.'
-  },
   '/local-seo-services-burbank': {
     title: 'Local SEO services Burbank | Gobiya',
     description: 'Local SEO services in Burbank, CA — top rated, online appointments available. We optimize Google Business Profile, NAP citations, review velocity, and local schema for businesses in the 91501–91510 corridor. Open Mon–Fri, book online.'
@@ -1572,7 +1564,7 @@ export default async function handler(req: IncomingMessage, res: any) {
     }
 
     // Build ogImageUrl
-    let ogImageUrl = 'https://www.gobiya.com/images/logo-gobiya-07082026.webp';
+    let ogImageUrl = 'https://www.gobiya.com/images/gobiya---logo.webp';
     if (seo.image) {
       ogImageUrl = seo.image.startsWith('http') ? seo.image : `https://www.gobiya.com${seo.image}`;
     } else if (pathname.startsWith('/insights/')) {
@@ -1639,10 +1631,10 @@ export default async function handler(req: IncomingMessage, res: any) {
         "logo": {
           "@type": "ImageObject",
           "@id": "https://www.gobiya.com/#logo",
-          "url": "https://www.gobiya.com/images/logo-gobiya-07082026.webp",
+          "url": "https://www.gobiya.com/images/gobiya---logo.webp",
           "caption": "Gobiya Logo"
         },
-        "image": "https://www.gobiya.com/images/logo-gobiya-07082026.webp",
+        "image": "https://www.gobiya.com/images/gobiya---logo.webp",
         "description": "Gobiya is a precision-engineered B2B SEO, Generative Engine Optimization (GEO), and sales pipeline agency. We recover lost organic traffic, architect AI citation strategies, and engineer automated outbound sales systems for mid-market and enterprise brands.",
         "address": {
           "@type": "PostalAddress",
@@ -1786,7 +1778,7 @@ export default async function handler(req: IncomingMessage, res: any) {
             "name": "Gobiya",
             "logo": {
               "@type": "ImageObject",
-              "url": "https://www.gobiya.com/images/logo-gobiya-07082026.webp"
+              "url": "https://www.gobiya.com/images/gobiya---logo.webp"
             }
           }
         }

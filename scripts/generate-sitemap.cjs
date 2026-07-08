@@ -57,8 +57,49 @@ const corePages = staticRoutes.map(route => {
 
 console.log(`Extracted ${corePages.length} core pages from api/index.ts`);
 
-// 4. Use core pages directly since articles were removed
-const allPages = [...corePages];
+// 3. Read ArticlePage.tsx content to extract article slugs and dates
+const articlePagePath = path.resolve(__dirname, '../src/components/ArticlePage.tsx');
+const articlePageContent = fs.readFileSync(articlePagePath, 'utf8');
+
+// Match slugs and dates
+const articleBlocks = articlePageContent.split(/^\s*'[a-z0-9-]+':\s*\{/gm);
+
+const articles = [];
+// Skip first block as it's the file header
+for (let i = 1; i < articleBlocks.length; i++) {
+  const block = articleBlocks[i];
+  
+  // Extract slug
+  const slugMatch = block.match(/slug:\s*'([a-z0-9-]+)'/);
+  if (!slugMatch) continue;
+  const slug = slugMatch[1];
+  
+  // Extract date string and convert to YYYY-MM-DD
+  const dateMatch = block.match(/date:\s*'([^']+)'/);
+  let formattedDate = currentDate; // Fallback
+  if (dateMatch) {
+    try {
+      const dateVal = new Date(dateMatch[1]);
+      if (!isNaN(dateVal.getTime())) {
+        formattedDate = dateVal.toISOString().split('T')[0];
+      }
+    } catch (e) {
+      console.warn(`Failed to parse date for ${slug}: ${dateMatch[1]}`);
+    }
+  }
+  
+  articles.push({
+    url: `https://www.gobiya.com/insights/${slug}`,
+    priority: '0.80',
+    changefreq: 'monthly',
+    lastmod: formattedDate
+  });
+}
+
+console.log(`Extracted ${articles.length} articles from ArticlePage.tsx`);
+
+// 4. Combine core pages and articles
+const allPages = [...corePages, ...articles];
 
 // 5. Generate XML content
 let xml = '<?xml version="1.0" encoding="UTF-8"?>\n';
