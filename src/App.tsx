@@ -361,24 +361,18 @@ function App({ url }: AppProps) {
         )
       ) : normalizedPath === '/' ? (
         <GobiyaLanding />
-      ) : normalizedPath === '/on-page-seo-los-angeles' ? (
-        < />
-      ) : normalizedPath === '/ai-seo-beverly-hills' ? (
-        < />
-      ) : normalizedPath === '/local-seo-company-burbank' ? (
-        < />
-      ) : normalizedPath === '/seo-company-encino' ? (
-        < />
-      ) : normalizedPath === '/los-angeles-seo-professional' ? (
-        < />
+      
+      
+      
+      
+      
       ) : normalizedPath === '/book' ? (
         <BookingPage />
       ) : normalizedPath === '/about/steve-martin' || normalizedPath === '/author/steve-martin' ? (
         <AuthorPage key={normalizedPath} path={normalizedPath} />
       ) : normalizedPath === '/about' ? (
         <GobiyaAboutPage />
-      ) : articleSlug ? (
-        < key={articleSlug} slug={articleSlug} />
+      
       ) : normalizedPath === '/thank-you' ? (
         <ThankYouPage />
       ) : normalizedPath === '/outcomes' ? (
@@ -396,18 +390,12 @@ function App({ url }: AppProps) {
         < currentPath={currentPath} />
       ) : normalizedPath === '/contact' ? (
         <ContactPage />
-      ) : normalizedPath === '/google-penalty-recovery' ? (
-        < key={normalizedPath} path={normalizedPath} isFanOut={true} category="recovery" slug="google-penalty-recovery" />
-      ) : normalizedPath === '/glendale-seo' ? (
-        < />
-      ) : normalizedPath === '/plastic-surgery-internet-marketing' ? (
-        < />
-      ) : normalizedPath === '/internet-marketing-services-los-angeles' ? (
-        < />
-      ) : normalizedPath === '/ai-search-marketing-santa-clarita' ? (
-        < />
-      ) : (
-        < key={normalizedPath} path={normalizedPath} />
+      
+      
+      
+      
+      
+      ) : null
       )}
 
       {/* Floating strategy session booking message bar */}
