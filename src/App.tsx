@@ -2,28 +2,15 @@ import React, { useState, useEffect, Suspense } from 'react';
 import {
   GobiyaLanding,
   GobiyaAboutPage,
-  
-  
   AuthorPage,
   ThankYouPage,
   BookingPage,
   SuccessStories,
-  
-  
   AdminLogin,
   AdminDashboard,
   ContactPage,
-  
-  
-  
-  
-  
   SEO,
   NotFound,
-  
-  
-  
-  
   OutcomesIndex,
   OutcomeTrafficPage,
   OutcomeRankingsPage,
@@ -309,7 +296,7 @@ function App({ url }: AppProps) {
   const articleMatch = normalizedPath.match(/^\/insights\/([a-z0-9-]+)$/);
   const articleSlug = articleMatch ? articleMatch[1] : null;
 
-  const isValid= [
+  const isValidServiceSubpage = [
     '/company/careers',
     '/outcomes',
     '/outcomes/traffic',
@@ -343,7 +330,7 @@ function App({ url }: AppProps) {
     '/outcomes/traffic',
     '/outcomes/rankings',
     '/outcomes/sales'
-  ].includes(normalizedPath) || normalizedPath === '/google-penalty-recovery' || isValid|| !!articleSlug;
+  ].includes(normalizedPath) || normalizedPath === '/google-penalty-recovery' || isValidServiceSubpage || !!articleSlug;
 
   return (
     <Suspense fallback={null}>
@@ -361,18 +348,14 @@ function App({ url }: AppProps) {
         )
       ) : normalizedPath === '/' ? (
         <GobiyaLanding />
-      
-      
-      
-      
-      
+
       ) : normalizedPath === '/book' ? (
         <BookingPage />
       ) : normalizedPath === '/about/steve-martin' || normalizedPath === '/author/steve-martin' ? (
         <AuthorPage key={normalizedPath} path={normalizedPath} />
       ) : normalizedPath === '/about' ? (
         <GobiyaAboutPage />
-      
+
       ) : normalizedPath === '/thank-you' ? (
         <ThankYouPage />
       ) : normalizedPath === '/outcomes' ? (
@@ -386,16 +369,11 @@ function App({ url }: AppProps) {
       ) : normalizedPath === '/work' ? (
         <SuccessStories />
 
-      ) : normalizedPath === '/insights' ? (
-        < currentPath={currentPath} />
+
       ) : normalizedPath === '/contact' ? (
         <ContactPage />
-      
-      
-      
-      
-      
-      ) : null
+      ) : (
+        <NotFound />
       )}
 
       {/* Floating strategy session booking message bar */}
