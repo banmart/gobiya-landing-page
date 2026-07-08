@@ -155,7 +155,7 @@ const AxionLanding = () => {
       {/* FLOATING ANIMATED LOGO */}
       <img 
         id="animated-logo"
-        src="/images/gobiya---logo.webp" 
+        src="/images/logo-gobiya-07082026.webp" 
         alt="Gobiya Logo" 
         className="h-8 sm:h-9 w-auto object-contain absolute left-[5px] sm:left-[16px] top-[5px] sm:top-[8px] pointer-events-none" 
         style={{ willChange: 'transform, filter', transition: 'filter 0.3s ease', zIndex: 9999, filter: 'brightness(0) invert(1)' }}

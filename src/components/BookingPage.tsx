@@ -556,7 +556,7 @@ const BookingPage: React.FC = () => {
                   </div>
                   <div className="mt-8 pt-6 border-t border-gray-200">
                     <img 
-                      src="/images/logo-favicon-gobiya-blastoff-large.webp" 
+                      src="/images/favicon-gobiya-07082026.png" 
                       alt="Gobiya Logo" 
                       className="opacity-30 object-contain"
                       style={{ height: '24px', width: 'auto' }}

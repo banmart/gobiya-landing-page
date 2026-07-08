@@ -1572,7 +1572,7 @@ export default async function handler(req: IncomingMessage, res: any) {
     }
 
     // Build ogImageUrl
-    let ogImageUrl = 'https://www.gobiya.com/images/gobiya---logo.webp';
+    let ogImageUrl = 'https://www.gobiya.com/images/logo-gobiya-07082026.webp';
     if (seo.image) {
       ogImageUrl = seo.image.startsWith('http') ? seo.image : `https://www.gobiya.com${seo.image}`;
     } else if (pathname.startsWith('/insights/')) {
@@ -1639,10 +1639,10 @@ export default async function handler(req: IncomingMessage, res: any) {
         "logo": {
           "@type": "ImageObject",
           "@id": "https://www.gobiya.com/#logo",
-          "url": "https://www.gobiya.com/images/gobiya---logo.webp",
+          "url": "https://www.gobiya.com/images/logo-gobiya-07082026.webp",
           "caption": "Gobiya Logo"
         },
-        "image": "https://www.gobiya.com/images/gobiya---logo.webp",
+        "image": "https://www.gobiya.com/images/logo-gobiya-07082026.webp",
         "description": "Gobiya is a precision-engineered B2B SEO, Generative Engine Optimization (GEO), and sales pipeline agency. We recover lost organic traffic, architect AI citation strategies, and engineer automated outbound sales systems for mid-market and enterprise brands.",
         "address": {
           "@type": "PostalAddress",
@@ -1786,7 +1786,7 @@ export default async function handler(req: IncomingMessage, res: any) {
             "name": "Gobiya",
             "logo": {
               "@type": "ImageObject",
-              "url": "https://www.gobiya.com/images/gobiya---logo.webp"
+              "url": "https://www.gobiya.com/images/logo-gobiya-07082026.webp"
             }
           }
         }

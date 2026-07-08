@@ -42,7 +42,7 @@ const SiteFooter: React.FC<SiteFooterProps> = ({ showWebGL = false, hideCTA = fa
               <a href="/" className="nav-brand flex items-center mb-10" aria-label="GOBIYA home">
                 <span className="flex items-center w-[120px] md:w-[150px]">
                   <img 
-                    src="/images/logo-gobiya-blastoff-small.webp" 
+                    src="/images/logo-gobiya-07082026.webp" 
                     alt="GOBIYA logo" 
                     className="w-full h-auto object-contain" 
                     style={{ filter: 'invert(1) brightness(2)' }} 

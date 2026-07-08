@@ -122,7 +122,7 @@ Deno.serve(async (req) => {
         const finalHtml = `
           <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto; color: #111827; line-height: 1.6;">
             <div style="border-bottom: 2px solid #F26522; padding-bottom: 15px; margin-bottom: 25px;">
-              <img src="https://www.gobiya.com/images/gobiya---logo.webp" alt="Gobiya" style="height: 35px; width: auto;" />
+              <img src="https://www.gobiya.com/images/logo-gobiya-07082026.webp" alt="Gobiya" style="height: 35px; width: auto;" />
             </div>
             <div style="font-size: 15px;">
               ${htmlBody}

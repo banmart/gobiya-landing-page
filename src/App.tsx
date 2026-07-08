@@ -311,6 +311,12 @@ function App({ url }: AppProps) {
     '/author/steve-martin',
     '/about',
     '/contact',
+    '/work',
+    '/outcomes',
+    '/outcomes/traffic',
+    '/outcomes/rankings',
+    '/outcomes/sales',
+    '/thank-you',
   ].includes(normalizedPath);
 
   return (

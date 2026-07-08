@@ -129,7 +129,7 @@ const SiteHeader: React.FC = () => {
         <div className="logos-wrapper flex items-center shrink-0 relative z-50">
           <a className="flex items-center gap-3 py-3" href="/" title="GOBIYA - Back to home">
             <span className="flex items-center w-[140px] md:w-[185px] lg:w-[210px]">
-              <img src="/images/logo-gobiya-blastoff-small.webp" alt="GOBIYA logo" className="w-full h-auto object-contain transition-all duration-300" style={{ filter: isHeaderActive ? "none" : "invert(1) brightness(2)" }} />
+              <img src="/images/logo-gobiya-07082026.webp" alt="GOBIYA logo" className="w-full h-auto object-contain transition-all duration-300" style={{ filter: isHeaderActive ? "none" : "invert(1) brightness(2)" }} />
             </span>
           </a>
         </div>
