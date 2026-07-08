@@ -2,28 +2,28 @@ import React, { useState, useEffect, Suspense } from 'react';
 import {
   GobiyaLanding,
   GobiyaAboutPage,
-  ServiceSubpage,
-  ArticlePage,
+  
+  
   AuthorPage,
   ThankYouPage,
   BookingPage,
   SuccessStories,
-  InsightsPage,
-  RegionalHubPage,
+  
+  
   AdminLogin,
   AdminDashboard,
   ContactPage,
-  OnPageSeoLosAngelesPage,
-  AiSeoBeverlyHillsPage,
-  LocalSeoBurbankPage,
-  SeoCompanyEncinoPage,
-  LosAngelesSeoProf,
+  
+  
+  
+  
+  
   SEO,
   NotFound,
-  GlendaleSeoPage,
-  PlasticSurgeryMarketingPage,
-  InternetMarketingServicesLosAngelesPage,
-  AiSearchMarketingSantaClaritaPage,
+  
+  
+  
+  
   OutcomesIndex,
   OutcomeTrafficPage,
   OutcomeRankingsPage,
@@ -362,15 +362,15 @@ function App({ url }: AppProps) {
       ) : normalizedPath === '/' ? (
         <GobiyaLanding />
       ) : normalizedPath === '/on-page-seo-los-angeles' ? (
-        <OnPageSeoLosAngelesPage />
+        < />
       ) : normalizedPath === '/ai-seo-beverly-hills' ? (
-        <AiSeoBeverlyHillsPage />
+        < />
       ) : normalizedPath === '/local-seo-company-burbank' ? (
-        <LocalSeoBurbankPage />
+        < />
       ) : normalizedPath === '/seo-company-encino' ? (
-        <SeoCompanyEncinoPage />
+        < />
       ) : normalizedPath === '/los-angeles-seo-professional' ? (
-        <LosAngelesSeoProf />
+        < />
       ) : normalizedPath === '/book' ? (
         <BookingPage />
       ) : normalizedPath === '/about/steve-martin' || normalizedPath === '/author/steve-martin' ? (
@@ -378,7 +378,7 @@ function App({ url }: AppProps) {
       ) : normalizedPath === '/about' ? (
         <GobiyaAboutPage />
       ) : articleSlug ? (
-        <ArticlePage key={articleSlug} slug={articleSlug} />
+        < key={articleSlug} slug={articleSlug} />
       ) : normalizedPath === '/thank-you' ? (
         <ThankYouPage />
       ) : normalizedPath === '/outcomes' ? (
@@ -393,21 +393,21 @@ function App({ url }: AppProps) {
         <SuccessStories />
 
       ) : normalizedPath === '/insights' ? (
-        <InsightsPage currentPath={currentPath} />
+        < currentPath={currentPath} />
       ) : normalizedPath === '/contact' ? (
         <ContactPage />
       ) : normalizedPath === '/google-penalty-recovery' ? (
-        <ServiceSubpage key={normalizedPath} path={normalizedPath} isFanOut={true} category="recovery" slug="google-penalty-recovery" />
+        < key={normalizedPath} path={normalizedPath} isFanOut={true} category="recovery" slug="google-penalty-recovery" />
       ) : normalizedPath === '/glendale-seo' ? (
-        <GlendaleSeoPage />
+        < />
       ) : normalizedPath === '/plastic-surgery-internet-marketing' ? (
-        <PlasticSurgeryMarketingPage />
+        < />
       ) : normalizedPath === '/internet-marketing-services-los-angeles' ? (
-        <InternetMarketingServicesLosAngelesPage />
+        < />
       ) : normalizedPath === '/ai-search-marketing-santa-clarita' ? (
-        <AiSearchMarketingSantaClaritaPage />
+        < />
       ) : (
-        <ServiceSubpage key={normalizedPath} path={normalizedPath} />
+        < key={normalizedPath} path={normalizedPath} />
       )}
 
       {/* Floating strategy session booking message bar */}
